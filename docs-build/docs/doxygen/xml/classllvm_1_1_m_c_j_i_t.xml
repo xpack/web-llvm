@@ -1,0 +1,1473 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_m_c_j_i_t" kind="class" language="C++" prot="public">
+    <compoundname>llvm::MCJIT</compoundname>
+    <basecompoundref refid="classllvm_1_1_execution_engine" prot="public" virt="non-virtual">llvm::ExecutionEngine</basecompoundref>
+    <includes refid="lib_2_execution_engine_2_m_c_j_i_t_2_m_c_j_i_t_8h" local="yes">ExecutionEngine/MCJIT/MCJIT.h</includes>
+    <innerclass refid="classllvm_1_1_m_c_j_i_t_1_1_owning_module_container" prot="private">llvm::MCJIT::OwningModuleContainer</innerclass>
+    <sectiondef kind="user-defined">
+      <header>ExecutionEngine interface implementation</header>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1af6ce1da6819f73ca2445152d98c9c48d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MCJIT::addModule</definition>
+        <argsstring>(std::unique_ptr&lt; Module &gt; M) override</argsstring>
+        <name>addModule</name>
+        <qualifiedname>llvm::MCJIT::addModule</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1a628a513b3b717f80fdc8e937cc503f26">addModule</reimplements>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &gt;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+<para>Add a <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> to the list of modules that we can JIT from. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="207" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="104" bodyend="111"/>
+        <references refid="classllvm_1_1_execution_engine_1a221f82626a9fd6d8dc7c76e097940b07" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="196" endline="196">llvm::ExecutionEngine::getDataLayout</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a63edbda22f0a1ab7ed361f27b5ff6145" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MCJIT::addObjectFile</definition>
+        <argsstring>(std::unique_ptr&lt; object::ObjectFile &gt; O) override</argsstring>
+        <name>addObjectFile</name>
+        <qualifiedname>llvm::MCJIT::addObjectFile</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1a9ec095fb0a6b58427bed62c3fa52fdc0">addObjectFile</reimplements>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1object_1_1_object_file" kindref="compound">object::ObjectFile</ref> &gt;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+<para>addObjectFile - Add an <ref refid="classllvm_1_1_object_file" kindref="compound">ObjectFile</ref> to the execution engine. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is only supported by <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref>. <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> will immediately load the object into memory and adds its symbols to the list used to resolve external symbols while preparing other objects for execution.</para>
+<para>Objects added using this function will not be made executable until needed by another object.</para>
+<para><ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> will take ownership of the <ref refid="classllvm_1_1_object_file" kindref="compound">ObjectFile</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="208" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="118" bodyend="126"/>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a4c77fd10082d414ff13ef63a7655fde6" compoundref="_m_c_j_i_t_8cpp" startline="653" endline="661">notifyObjectLoaded</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a7e7c8df2dff7cbbc59ee68d122f4d01d" compoundref="_m_c_j_i_t_8cpp" startline="128" endline="134">addObjectFile</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1ae7e58d02f5553c707ac40497b0e9cf26" compoundref="_m_c_j_i_t_8cpp" startline="336" endline="391">findSymbol</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a7e7c8df2dff7cbbc59ee68d122f4d01d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MCJIT::addObjectFile</definition>
+        <argsstring>(object::OwningBinary&lt; object::ObjectFile &gt; O) override</argsstring>
+        <name>addObjectFile</name>
+        <qualifiedname>llvm::MCJIT::addObjectFile</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1afa1c5c7eb8f616ebaec8be5d350d7ff8">addObjectFile</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1object_1_1_owning_binary" kindref="compound">object::OwningBinary</ref>&lt; <ref refid="classllvm_1_1object_1_1_object_file" kindref="compound">object::ObjectFile</ref> &gt;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="209" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="128" bodyend="134"/>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a63edbda22f0a1ab7ed361f27b5ff6145" compoundref="_m_c_j_i_t_8cpp" startline="118" endline="126">addObjectFile</references>
+        <references refid="classllvm_1_1object_1_1_owning_binary_1a8184b8ac734dace4ca9883a6f18ee53f" compoundref="_binary_8h" startline="232" endline="234">llvm::object::OwningBinary&lt; T &gt;::takeBinary</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a35d30954df16f2628d44d0132737f996" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MCJIT::addArchive</definition>
+        <argsstring>(object::OwningBinary&lt; object::Archive &gt; O) override</argsstring>
+        <name>addArchive</name>
+        <qualifiedname>llvm::MCJIT::addArchive</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1a2cc50fba7c734a3f4f2463826385ee3a">addArchive</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1object_1_1_owning_binary" kindref="compound">object::OwningBinary</ref>&lt; <ref refid="classllvm_1_1object_1_1_archive" kindref="compound">object::Archive</ref> &gt;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+<para>addArchive - Add an Archive to the execution engine. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is only supported by <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref>. <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> will use the archive to resolve external symbols in objects it is loading. If a symbol is found in the Archive the contained object file will be extracted (in memory) and loaded for possible execution. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="210" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="136" bodyend="138"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1aa6b3e346826c4d15f691fc6d6b9de5f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCJIT::removeModule</definition>
+        <argsstring>(Module *M) override</argsstring>
+        <name>removeModule</name>
+        <qualifiedname>llvm::MCJIT::removeModule</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1a514dfa1719bb6dadcc8bb7b71619805e">removeModule</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> *</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+<para>removeModule - Removes a <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> from the list of modules, but does not free the module&apos;s memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if M is found, in which case the caller assumes responsibility for deleting the module. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="211" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="113" bodyend="116"/>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a38b1949864f1c23210a57aa9edafe19b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+        <definition>Function * MCJIT::FindFunctionNamed</definition>
+        <argsstring>(StringRef FnName) override</argsstring>
+        <name>FindFunctionNamed</name>
+        <qualifiedname>llvm::MCJIT::FindFunctionNamed</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1af652436173a739833e0e382f181b2870">FindFunctionNamed</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>FnName</declname>
+        </param>
+        <briefdescription>
+<para>FindFunctionNamed - Search all of the active modules to find the function that defines FnName. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is very slow operation and shouldn&apos;t be used for general code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="216" column="12" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="486" bodyend="496"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1ab2c0265b94d36957565220a4932326e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref> *</type>
+        <definition>GlobalVariable * MCJIT::FindGlobalVariableNamed</definition>
+        <argsstring>(StringRef Name, bool AllowInternal=false) override</argsstring>
+        <name>FindGlobalVariableNamed</name>
+        <qualifiedname>llvm::MCJIT::FindGlobalVariableNamed</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1abcc4f77c7dbf7ed1f581b3773bc0f2df">FindGlobalVariableNamed</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>AllowInternal</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>FindGlobalVariableNamed - Search all of the active modules to find the global variable that defines Name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is very slow operation and shouldn&apos;t be used for general code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="221" column="18" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="498" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1aeb99f9a5f472aeeb2f5b3e1b279e1853" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MCJIT::setObjectCache</definition>
+        <argsstring>(ObjectCache *manager) override</argsstring>
+        <name>setObjectCache</name>
+        <qualifiedname>llvm::MCJIT::setObjectCache</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1abc8bd52d620507ca7a12622b0d9047c3">setObjectCache</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_object_cache" kindref="compound">ObjectCache</ref> *</type>
+          <declname>manager</declname>
+        </param>
+        <briefdescription>
+<para>Sets the object manager that <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> should use to avoid compilation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="225" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="140" bodyend="143"/>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a033df96c8b46bf1abba4a183718623c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::MCJIT::setProcessAllSections</definition>
+        <argsstring>(bool ProcessAllSections) override</argsstring>
+        <name>setProcessAllSections</name>
+        <qualifiedname>llvm::MCJIT::setProcessAllSections</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1a1aaf43bf637f85420de8d9fbd23fc6da">setProcessAllSections</reimplements>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ProcessAllSections</declname>
+        </param>
+        <briefdescription>
+<para>setProcessAllSections (<ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> Only): By default, only sections that are &quot;required for execution&quot; are passed to the <ref refid="classllvm_1_1_r_t_dyld_memory_manager" kindref="compound">RTDyldMemoryManager</ref>, and other sections are discarded. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Passing &apos;true&apos; to this method will cause <ref refid="classllvm_1_1_runtime_dyld" kindref="compound">RuntimeDyld</ref> to pass all sections to its <ref refid="classllvm_1_1_r_t_dyld_memory_manager" kindref="compound">RTDyldMemoryManager</ref> regardless of whether they are &quot;required to execute&quot; in the usual sense.</para>
+<para>Rationale: Some <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> clients want to be able to inspect metadata sections (e.g. Dwarf, Stack-maps) to enable functionality or analyze performance. Passing these sections to the memory manager allows the client to make policy about the relevant sections, rather than having <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> do it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="227" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="227" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a5236c37b672e45c22ef2ebb47518871e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MCJIT::generateCodeForModule</definition>
+        <argsstring>(Module *M) override</argsstring>
+        <name>generateCodeForModule</name>
+        <qualifiedname>llvm::MCJIT::generateCodeForModule</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1a63c3a5d438306a20122987aa04363f02">generateCodeForModule</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> *</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+<para>generateCodeForModule - Run code generation for the specified module and load it into memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When this function has completed, all code and data for the specified module, and any module on which this module depends, will be generated and loaded into memory, but relocations will not yet have been applied and all memory will be readable and writable but not executable.</para>
+<para>This function is primarily useful when generating code for an external target, allowing the client an opportunity to remap section addresses before relocations are applied. Clients that intend to execute code locally can use the getFunctionAddress call, which will generate code and apply final preparations all in one step.</para>
+<para>This method has no effect for the interpreter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="231" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="188" bodyend="235"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1object_1_1_object_file_1a926af6aca697fdbacb3e3ea1000f0ec4" compoundref="_object_file_8cpp" startline="209" endline="223">llvm::object::ObjectFile::createObjectFile</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a6ba8a53658ba2413897f0b674d06faec" compoundref="_m_c_j_i_t_8cpp" startline="145" endline="186">emitObject</references>
+        <references refid="classllvm_1_1_expected_1ad26ecbb6920f4ea55f5ed4f64e52342d" compoundref="llvm_2_support_2_error_8h" startline="578" endline="581">llvm::Expected&lt; T &gt;::get</references>
+        <references refid="classllvm_1_1_execution_engine_1a221f82626a9fd6d8dc7c76e097940b07" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="196" endline="196">llvm::ExecutionEngine::getDataLayout</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+        <references refid="namespacellvm_1a065ed35b75b9eeb5cca1aa73bcae7183" compoundref="_testing_2_support_2_error_8cpp" startline="65" endline="73">llvm::logAllUnhandledErrors</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a4c77fd10082d414ff13ef63a7655fde6" compoundref="_m_c_j_i_t_8cpp" startline="653" endline="661">notifyObjectLoaded</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1adcc54665978b90bea2376f8cf50f48cc" compoundref="_m_c_j_i_t_8cpp" startline="270" endline="281">finalizeModule</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a46de6cc1d24bff3fd2ae2006c8b35456" compoundref="_m_c_j_i_t_8cpp" startline="257" endline="268">finalizeObject</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1ae7e58d02f5553c707ac40497b0e9cf26" compoundref="_m_c_j_i_t_8cpp" startline="336" endline="391">findSymbol</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1ae9b6b618b65cd7355f31652c566c8e3c" compoundref="_m_c_j_i_t_8cpp" startline="410" endline="443">getPointerToFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a46de6cc1d24bff3fd2ae2006c8b35456" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MCJIT::finalizeObject</definition>
+        <argsstring>() override</argsstring>
+        <name>finalizeObject</name>
+        <qualifiedname>llvm::MCJIT::finalizeObject</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1ab2973f596de3b640bdc087bf2d46bcfa">finalizeObject</reimplements>
+        <briefdescription>
+<para>finalizeObject - ensure the module is fully processed and is usable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is the user-level function for completing the process of making the object usable for execution. It should be called after sections within an object have been relocated using mapSectionAddress. When this method is called the <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> execution engine will reapply relocations for a loaded object. Is it OK to finalize a set of modules, add modules and finalize again. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="242" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="257" bodyend="268"/>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a4c711730384b07b067887e93931004a8" compoundref="_m_c_j_i_t_8cpp" startline="237" endline="254">finalizeLoadedModules</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a5236c37b672e45c22ef2ebb47518871e" compoundref="_m_c_j_i_t_8cpp" startline="188" endline="235">generateCodeForModule</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1adcc54665978b90bea2376f8cf50f48cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MCJIT::finalizeModule</definition>
+        <argsstring>(Module *)</argsstring>
+        <name>finalizeModule</name>
+        <qualifiedname>llvm::MCJIT::finalizeModule</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> *</type>
+          <defname>M</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="243" column="16" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="270" bodyend="281"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a4c711730384b07b067887e93931004a8" compoundref="_m_c_j_i_t_8cpp" startline="237" endline="254">finalizeLoadedModules</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a5236c37b672e45c22ef2ebb47518871e" compoundref="_m_c_j_i_t_8cpp" startline="188" endline="235">generateCodeForModule</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a0198943262fb715d77dfd24ef32f9399" compoundref="_m_c_j_i_t_8cpp" startline="510" endline="611">runFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a4c711730384b07b067887e93931004a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MCJIT::finalizeLoadedModules</definition>
+        <argsstring>()</argsstring>
+        <name>finalizeLoadedModules</name>
+        <qualifiedname>llvm::MCJIT::finalizeLoadedModules</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="244" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="237" bodyend="254"/>
+        <references refid="classllvm_1_1_execution_engine_1a4eeec03dbb296860e68cfa3714117628" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="155">llvm::ExecutionEngine::ErrMsg</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1adcc54665978b90bea2376f8cf50f48cc" compoundref="_m_c_j_i_t_8cpp" startline="270" endline="281">finalizeModule</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a46de6cc1d24bff3fd2ae2006c8b35456" compoundref="_m_c_j_i_t_8cpp" startline="257" endline="268">finalizeObject</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a628b993cb94eed2150b435bcb25ae009" compoundref="_m_c_j_i_t_8cpp" startline="401" endline="407">getFunctionAddress</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1ab7bbc6d6aecb6d04aa719a85b7020089" compoundref="_m_c_j_i_t_8cpp" startline="393" endline="399">getGlobalValueAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a2611f76a93e6574c879ba5b5b9fd9dc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MCJIT::runStaticConstructorsDestructors</definition>
+        <argsstring>(bool isDtors) override</argsstring>
+        <name>runStaticConstructorsDestructors</name>
+        <qualifiedname>llvm::MCJIT::runStaticConstructorsDestructors</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1a6a34c6c082dc999d12f1f191b4108513">runStaticConstructorsDestructors</reimplements>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>isDtors</declname>
+        </param>
+        <briefdescription>
+<para>runStaticConstructorsDestructors - This method is used to execute all of the static constructors or destructors for a program. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isDtors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Run the destructors instead of constructors. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="250" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="452" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1ae9b6b618b65cd7355f31652c566c8e3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void *</type>
+        <definition>void * MCJIT::getPointerToFunction</definition>
+        <argsstring>(Function *F) override</argsstring>
+        <name>getPointerToFunction</name>
+        <qualifiedname>llvm::MCJIT::getPointerToFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1a54f6dc15011951227ed4065f2e934f90">getPointerToFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>getPointerToFunction - The different EE&apos;s represent function bodies in different ways. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>They should each implement this to say what a function pointer should look like. When F is destroyed, the <ref refid="classllvm_1_1_execution_engine" kindref="compound">ExecutionEngine</ref> will remove its global mapping and free any machine code. Be sure no threads are running inside F when that happens.</para>
+<para>This function is deprecated for the <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> execution engine. <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> getFunctionAddress instead. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="252" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="410" bodyend="443"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a5236c37b672e45c22ef2ebb47518871e" compoundref="_m_c_j_i_t_8cpp" startline="188" endline="235">generateCodeForModule</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a14f1cd53696dbd8b28129c519e8bd65d" compoundref="_m_c_j_i_t_8cpp" startline="613" endline="633">getPointerToNamedFunction</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+        <references refid="classllvm_1_1_execution_engine_1ae66e5ebc951c7d9c88c0c1884bd67872" compoundref="_execution_engine_8cpp" startline="240" endline="244">llvm::ExecutionEngine::updateGlobalMapping</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a0198943262fb715d77dfd24ef32f9399" compoundref="_m_c_j_i_t_8cpp" startline="510" endline="611">runFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a0198943262fb715d77dfd24ef32f9399" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="structllvm_1_1_generic_value" kindref="compound">GenericValue</ref></type>
+        <definition>GenericValue MCJIT::runFunction</definition>
+        <argsstring>(Function *F, ArrayRef&lt; GenericValue &gt; ArgValues) override</argsstring>
+        <name>runFunction</name>
+        <qualifiedname>llvm::MCJIT::runFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1ac65a03b7fbdb7acd7be0bae506238c9d">runFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1_generic_value" kindref="compound">GenericValue</ref> &gt;</type>
+          <declname>ArgValues</declname>
+        </param>
+        <briefdescription>
+<para>runFunction - Execute the specified function with the specified arguments, and return the result. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> execution engines, clients are encouraged to use the &quot;GetFunctionAddress&quot; method (rather than runFunction) and cast the returned <ref refid="classuint64__t" kindref="compound">uint64_t</ref> to the desired function pointer type. However, for backwards compatibility <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref>&apos;s implementation can execute &apos;main-like&apos; function (i.e. those returning void or int, and taking either no arguments or (int, char*[])). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="254" column="16" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="510" bodyend="611"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1abee0df5f7f703bb4462aba260ba0a60f" compoundref="_bitmask_enum_8h" startline="217">llvm::BitWidth</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_type_1a5e9e1c0dd93557be1b4ad72860f3cbdaabc549945f13bb5d5f5b80c550d2b92f5" compoundref="_i_r_2_type_8h" startline="59">llvm::Type::DoubleTyID</references>
+        <references refid="structllvm_1_1_generic_value_1a9810b36b4c4c17901d491f5aac030623" compoundref="_generic_value_8h" startline="29">llvm::GenericValue::DoubleVal</references>
+        <references refid="classllvm_1_1_array_ref_1ac835b8735b1b2faec0efdca236e37d94" compoundref="_array_ref_8h" startline="163" endline="163">llvm::ArrayRef&lt; T &gt;::empty</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1adcc54665978b90bea2376f8cf50f48cc" compoundref="_m_c_j_i_t_8cpp" startline="270" endline="281">finalizeModule</references>
+        <references refid="classllvm_1_1_type_1a5e9e1c0dd93557be1b4ad72860f3cbdaa6a5dd38c5c337ac6ce6d5847b1ca7f15" compoundref="_i_r_2_type_8h" startline="58">llvm::Type::FloatTyID</references>
+        <references refid="structllvm_1_1_generic_value_1a5160197592bd1fc5c8cc81cd803e0629" compoundref="_generic_value_8h" startline="30">llvm::GenericValue::FloatVal</references>
+        <references refid="classllvm_1_1_type_1a5e9e1c0dd93557be1b4ad72860f3cbdaaf645dbe1647a41fce26595aa8cd8bdfc" compoundref="_i_r_2_type_8h" startline="61">llvm::Type::FP128TyID</references>
+        <references refid="classllvm_1_1_function_type_1a104d6154321899b53e40455e71d8e83a" compoundref="_derived_types_8h" startline="144" endline="144">llvm::FunctionType::getNumParams</references>
+        <references refid="classllvm_1_1_function_type_1a1e415dc42f391c1d0cfcc1c28c00b2f4" compoundref="_derived_types_8h" startline="137" endline="140">llvm::FunctionType::getParamType</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1ae9b6b618b65cd7355f31652c566c8e3c" compoundref="_m_c_j_i_t_8cpp" startline="410" endline="443">getPointerToFunction</references>
+        <references refid="classllvm_1_1_function_type_1ad65790aa94dd4678a1d339d8304e1965" compoundref="_derived_types_8h" startline="126" endline="126">llvm::FunctionType::getReturnType</references>
+        <references refid="classllvm_1_1_type_1ac7b0ed5c6d30bad74769c6e87ab0edb8" compoundref="_i_r_2_type_8h" startline="136" endline="136">llvm::Type::getTypeID</references>
+        <references refid="namespacellvm_1ac3ff7c50d6ac50925243afaa521aa36a" compoundref="_generic_value_8h" startline="50" endline="50">llvm::GVTOP</references>
+        <references refid="classllvm_1_1_type_1a5e9e1c0dd93557be1b4ad72860f3cbdaa8e724092b0496fe3d16e29863b46c249" compoundref="_i_r_2_type_8h" startline="70">llvm::Type::IntegerTyID</references>
+        <references refid="structllvm_1_1_generic_value_1adc1cecb2e860959165c8ad83d0d26023" compoundref="_generic_value_8h" startline="35">llvm::GenericValue::IntVal</references>
+        <references refid="classllvm_1_1_type_1ac6d28a9b11139182134a9618028a0d07" compoundref="_i_r_2_type_8h" startline="237" endline="237">llvm::Type::isIntegerTy</references>
+        <references refid="classllvm_1_1_type_1a3b996fbf8458aafffc86cb98a68d0a47" compoundref="_i_r_2_type_8h" startline="264" endline="264">llvm::Type::isPointerTy</references>
+        <references refid="classllvm_1_1_function_type_1aa9d770048c7ab9e08222a50b7bc1be1c" compoundref="_derived_types_8h" startline="125" endline="125">llvm::FunctionType::isVarArg</references>
+        <references refid="classllvm_1_1_type_1ae8eaa0b4eeac52a2b2282cb1bfd981ae" compoundref="_i_r_2_type_8h" startline="139" endline="139">llvm::Type::isVoidTy</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="classllvm_1_1_type_1a5e9e1c0dd93557be1b4ad72860f3cbdaae68df805bc15b023748c2a78b80563ff" compoundref="_i_r_2_type_8h" startline="72">llvm::Type::PointerTyID</references>
+        <references refid="classllvm_1_1_type_1a5e9e1c0dd93557be1b4ad72860f3cbdaac1fd0acf788a4de492dc0e3f51088f48" compoundref="_i_r_2_type_8h" startline="62">llvm::Type::PPC_FP128TyID</references>
+        <references refid="namespacellvm_1a77905b5e34e8754df1ed4051e0ad9d1a" compoundref="_generic_value_8h" startline="49" endline="49">llvm::PTOGV</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+        <references refid="classllvm_1_1_type_1a5e9e1c0dd93557be1b4ad72860f3cbdaa567ac2c7944f770cfb2c2cffc94b3520" compoundref="_i_r_2_type_8h" startline="63">llvm::Type::VoidTyID</references>
+        <references refid="classllvm_1_1_type_1a5e9e1c0dd93557be1b4ad72860f3cbdaabd37be4e521c37c8b5c07edbab59b8d7" compoundref="_i_r_2_type_8h" startline="60">llvm::Type::X86_FP80TyID</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a14f1cd53696dbd8b28129c519e8bd65d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void *</type>
+        <definition>void * MCJIT::getPointerToNamedFunction</definition>
+        <argsstring>(StringRef Name, bool AbortOnFailure=true) override</argsstring>
+        <name>getPointerToNamedFunction</name>
+        <qualifiedname>llvm::MCJIT::getPointerToNamedFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1ae8c7ab2f89968276b54abf516e3e37cb">getPointerToNamedFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>AbortOnFailure</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+<para>getPointerToNamedFunction - This method returns the address of the specified function by using the dlsym function call. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>As such it is only useful for resolving library symbols, not code generated symbols.</para>
+<para>If AbortOnFailure is false and no function with the given name is found, this function silently returns a null pointer. Otherwise, it prints a message to stderr and aborts. </para>
+        </detaileddescription>
+        <inbodydescription>
+<para>If a LazyFunctionCreator is installed, use it to get/create the function.</para>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="265" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="613" bodyend="633"/>
+        <references refid="classllvm_1_1_execution_engine_1af22d74c24bf5144ae25380ff6abbe2a2" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="481" endline="483">llvm::ExecutionEngine::isSymbolSearchingDisabled</references>
+        <references refid="classllvm_1_1_execution_engine_1a7cc176a0cbdab69cff95f1908bb1898d" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="150">llvm::ExecutionEngine::LazyFunctionCreator</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1ae9b6b618b65cd7355f31652c566c8e3c" compoundref="_m_c_j_i_t_8cpp" startline="410" endline="443">getPointerToFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1aaf2fc842610d091ab018233b9db03761" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::MCJIT::mapSectionAddress</definition>
+        <argsstring>(const void *LocalAddress, uint64_t TargetAddress) override</argsstring>
+        <name>mapSectionAddress</name>
+        <qualifiedname>llvm::MCJIT::mapSectionAddress</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1a8771c83fc5aaa938bfa479cb99492335">mapSectionAddress</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> void *</type>
+          <declname>LocalAddress</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>TargetAddress</declname>
+        </param>
+        <briefdescription>
+<para>mapSectionAddress - map a section to its target address space value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Map the address of a JIT section as returned from the memory manager to the address in the target process as the running code will see it. This is the address which will be used for relocation resolution. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="272" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="272" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a18f6be37761ee5769051ea3fd2982e65" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MCJIT::RegisterJITEventListener</definition>
+        <argsstring>(JITEventListener *L) override</argsstring>
+        <name>RegisterJITEventListener</name>
+        <qualifiedname>llvm::MCJIT::RegisterJITEventListener</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1afcd2b4b92ca38812ca31640b0da14927">RegisterJITEventListener</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_j_i_t_event_listener" kindref="compound">JITEventListener</ref> *</type>
+        </param>
+        <briefdescription>
+<para>Registers a listener to be called back on various events within the JIT. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See <ref refid="_j_i_t_event_listener_8h" kindref="compound">JITEventListener.h</ref> for more details. Does not take ownership of the argument. The argument may be NULL, in which case these functions do nothing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="276" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="635" bodyend="640"/>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a9b80bb13abeaf36df96b8a7afdb2339d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MCJIT::UnregisterJITEventListener</definition>
+        <argsstring>(JITEventListener *L) override</argsstring>
+        <name>UnregisterJITEventListener</name>
+        <qualifiedname>llvm::MCJIT::UnregisterJITEventListener</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1abb965ebc64ac31d5906cc843c6c9eaa9">UnregisterJITEventListener</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_j_i_t_event_listener" kindref="compound">JITEventListener</ref> *</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="277" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="642" bodyend="651"/>
+        <references refid="namespacellvm_1a086e9fbdb06276db7753101a08a63adf" compoundref="_s_t_l_extras_8h" startline="1759" endline="1761">llvm::find</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+        <references refid="namespacellvm_1a6b0ac1fa4f05de76413c5e0ca6334035" compoundref="_s_t_l_extras_8h" startline="420" endline="426">llvm::reverse</references>
+        <references refid="namespacestd_1ab8424022895aee3e366fb9a32f2883cb" compoundref="_bit_vector_8h" startline="860" endline="860">std::swap</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1ab7bbc6d6aecb6d04aa719a85b7020089" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t MCJIT::getGlobalValueAddress</definition>
+        <argsstring>(const std::string &amp;Name) override</argsstring>
+        <name>getGlobalValueAddress</name>
+        <qualifiedname>llvm::MCJIT::getGlobalValueAddress</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1a966d4ff307d844ac32c737a521bbecd5">getGlobalValueAddress</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+<para>getGlobalValueAddress - Return the address of the specified global value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This may involve code generation.</para>
+<para>This function should not be called with the interpreter engine. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="282" column="12" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="393" bodyend="399"/>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a4c711730384b07b067887e93931004a8" compoundref="_m_c_j_i_t_8cpp" startline="237" endline="254">finalizeLoadedModules</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1ab9a66732fec3f835f54f4bb8f5388389" compoundref="_m_c_j_i_t_8cpp" startline="319" endline="334">getSymbolAddress</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a628b993cb94eed2150b435bcb25ae009" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t MCJIT::getFunctionAddress</definition>
+        <argsstring>(const std::string &amp;Name) override</argsstring>
+        <name>getFunctionAddress</name>
+        <qualifiedname>llvm::MCJIT::getFunctionAddress</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1a56ddd3e40138980c68a2e1c4dadaed31">getFunctionAddress</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+<para>getFunctionAddress - Return the address of the specified function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This may involve code generation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="283" column="12" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="401" bodyend="407"/>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a4c711730384b07b067887e93931004a8" compoundref="_m_c_j_i_t_8cpp" startline="237" endline="254">finalizeLoadedModules</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1ab9a66732fec3f835f54f4bb8f5388389" compoundref="_m_c_j_i_t_8cpp" startline="319" endline="334">getSymbolAddress</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a879fe4618f17facf9c24886eca53d03f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_target_machine" kindref="compound">TargetMachine</ref> *</type>
+        <definition>TargetMachine * llvm::MCJIT::getTargetMachine</definition>
+        <argsstring>() override</argsstring>
+        <name>getTargetMachine</name>
+        <qualifiedname>llvm::MCJIT::getTargetMachine</qualifiedname>
+        <reimplements refid="classllvm_1_1_execution_engine_1aabe62294b33c61da1c1a4aa42eb28dd4">getTargetMachine</reimplements>
+        <briefdescription>
+<para>Return the target machine (if available). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="285" column="17" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="285" bodyend="285"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>(Private) Registration Interfaces</header>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1ae7e58d02f5553c707ac40497b0e9cf26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_j_i_t_symbol" kindref="compound">JITSymbol</ref></type>
+        <definition>JITSymbol MCJIT::findSymbol</definition>
+        <argsstring>(const std::string &amp;Name, bool CheckFunctionsOnly)</argsstring>
+        <name>findSymbol</name>
+        <qualifiedname>llvm::MCJIT::findSymbol</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>CheckFunctionsOnly</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="305" column="13" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="336" bodyend="391"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a63edbda22f0a1ab7ed361f27b5ff6145" compoundref="_m_c_j_i_t_8cpp" startline="118" endline="126">addObjectFile</references>
+        <references refid="namespacellvm_1aee0e70be66536b9ef7b65ae2e5a45959" compoundref="llvm_2_support_2_error_8h" startline="1069" endline="1071">llvm::consumeError</references>
+        <references refid="classllvm_1_1_j_i_t_symbol_flags_1ad509c6d010720c4f71aeac1fba93f8cbaeb59403a31ee3f63734a411e9e42ddd8" compoundref="_j_i_t_symbol_8h" startline="85">llvm::JITSymbolFlags::Exported</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1ab20dd7532d54078744493a662f741061" compoundref="_m_c_j_i_t_8cpp" startline="283" endline="290">findExistingSymbol</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a28cc3d07256589bd54f2d22eb12bafad" compoundref="_m_c_j_i_t_8cpp" startline="292" endline="317">findModuleForSymbol</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a5236c37b672e45c22ef2ebb47518871e" compoundref="_m_c_j_i_t_8cpp" startline="188" endline="235">generateCodeForModule</references>
+        <references refid="classllvm_1_1_expected_1ad26ecbb6920f4ea55f5ed4f64e52342d" compoundref="llvm_2_support_2_error_8h" startline="578" endline="581">llvm::Expected&lt; T &gt;::get</references>
+        <references refid="classllvm_1_1_execution_engine_1a7cc176a0cbdab69cff95f1908bb1898d" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="150">llvm::ExecutionEngine::LazyFunctionCreator</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1ab9a66732fec3f835f54f4bb8f5388389" compoundref="_m_c_j_i_t_8cpp" startline="319" endline="334">getSymbolAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1ab9a66732fec3f835f54f4bb8f5388389" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t MCJIT::getSymbolAddress</definition>
+        <argsstring>(const std::string &amp;Name, bool CheckFunctionsOnly)</argsstring>
+        <name>getSymbolAddress</name>
+        <qualifiedname>llvm::MCJIT::getSymbolAddress</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>CheckFunctionsOnly</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="314" column="12" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="319" bodyend="334"/>
+        <references refid="classllvm_1_1_m_c_j_i_t_1ae7e58d02f5553c707ac40497b0e9cf26" compoundref="_m_c_j_i_t_8cpp" startline="336" endline="391">findSymbol</references>
+        <references refid="classllvm_1_1_execution_engine_1a221f82626a9fd6d8dc7c76e097940b07" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="196" endline="196">llvm::ExecutionEngine::getDataLayout</references>
+        <references refid="classllvm_1_1_mangler_1aa1c9296fd511eb96bb487befbf5e7cea" compoundref="_mangler_8cpp" startline="121" endline="186">llvm::Mangler::getNameWithPrefix</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a628b993cb94eed2150b435bcb25ae009" compoundref="_m_c_j_i_t_8cpp" startline="401" endline="407">getFunctionAddress</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1ab7bbc6d6aecb6d04aa719a85b7020089" compoundref="_m_c_j_i_t_8cpp" startline="393" endline="399">getGlobalValueAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a97c441ad61800b9fe204a455ae36298d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void llvm::MCJIT::Register</definition>
+        <argsstring>()</argsstring>
+        <name>Register</name>
+        <qualifiedname>llvm::MCJIT::Register</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="291" column="15" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="291" bodyend="293"/>
+        <references refid="classllvm_1_1_m_c_j_i_t_1a224802805182e755345184d485c164b8" compoundref="_m_c_j_i_t_8cpp" startline="44" endline="63">createJIT</references>
+        <references refid="classllvm_1_1_execution_engine_1a6ce88aa01ae7cf17c22e69718cff7299" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="138">llvm::ExecutionEngine::MCJITCtor</references>
+        <referencedby refid="structanonymous__namespace_02_m_c_j_i_t_8cpp_03_1_1_register_j_i_t_1afe025b12ae6998c326bd33a0e8d30036" compoundref="_m_c_j_i_t_8cpp" startline="35" endline="35">anonymous_namespace{MCJIT.cpp}::RegisterJIT::RegisterJIT</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a224802805182e755345184d485c164b8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_execution_engine" kindref="compound">ExecutionEngine</ref> *</type>
+        <definition>ExecutionEngine * MCJIT::createJIT</definition>
+        <argsstring>(std::unique_ptr&lt; Module &gt; M, std::string *ErrorStr, std::shared_ptr&lt; MCJITMemoryManager &gt; MemMgr, std::shared_ptr&lt; LegacyJITSymbolResolver &gt; Resolver, std::unique_ptr&lt; TargetMachine &gt; TM)</argsstring>
+        <name>createJIT</name>
+        <qualifiedname>llvm::MCJIT::createJIT</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &gt;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>ErrorStr</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classllvm_1_1_m_c_j_i_t_memory_manager" kindref="compound">MCJITMemoryManager</ref> &gt;</type>
+          <declname>MemMgr</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classllvm_1_1_legacy_j_i_t_symbol_resolver" kindref="compound">LegacyJITSymbolResolver</ref> &gt;</type>
+          <declname>Resolver</declname>
+        </param>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_target_machine" kindref="compound">TargetMachine</ref> &gt;</type>
+          <declname>TM</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="296" column="3" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="44" bodyend="63"/>
+        <references refid="classllvm_1_1sys_1_1_dynamic_library_1a53d32d3b3baefdec31d3d94b0586d437" compoundref="_dynamic_library_8h" startline="86" endline="89">llvm::sys::DynamicLibrary::LoadLibraryPermanently</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a97c441ad61800b9fe204a455ae36298d" compoundref="lib_2_execution_engine_2_m_c_j_i_t_2_m_c_j_i_t_8h" startline="291" endline="293">Register</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a6ba8a53658ba2413897f0b674d06faec" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_buffer" kindref="compound">MemoryBuffer</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; MemoryBuffer &gt; MCJIT::emitObject</definition>
+        <argsstring>(Module *M)</argsstring>
+        <name>emitObject</name>
+        <qualifiedname>llvm::MCJIT::emitObject</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> *</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+<para>emitObject <ndash/> Generate a JITed object in memory from the specified module Currently, <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> only supports a single module and the module passed to this function call is expected to be the contained module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The module is passed as a parameter here to prepare for multiple module support in the future. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="323" column="19" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="145" bodyend="186"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1aa1e1474f15df639f0d874b21f15666f7" compoundref="llvm_2_support_2_error_8h" startline="756" endline="768">llvm::cantFail</references>
+        <references refid="classllvm_1_1_execution_engine_1a230693f459e18c3b19615ffc33c23f69" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="492" endline="494">llvm::ExecutionEngine::getVerifyModules</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <references refid="classllvm_1_1legacy_1_1_pass_manager_1a2bdbe49f025814f15cd9c82aa08a389b" compoundref="_legacy_pass_manager_8cpp" startline="1647" endline="1649">llvm::legacy::PassManager::run</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a5236c37b672e45c22ef2ebb47518871e" compoundref="_m_c_j_i_t_8cpp" startline="188" endline="235">generateCodeForModule</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a4c77fd10082d414ff13ef63a7655fde6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MCJIT::notifyObjectLoaded</definition>
+        <argsstring>(const object::ObjectFile &amp;Obj, const RuntimeDyld::LoadedObjectInfo &amp;L)</argsstring>
+        <name>notifyObjectLoaded</name>
+        <qualifiedname>llvm::MCJIT::notifyObjectLoaded</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1object_1_1_object_file" kindref="compound">object::ObjectFile</ref> &amp;</type>
+          <declname>Obj</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_runtime_dyld_1_1_loaded_object_info" kindref="compound">RuntimeDyld::LoadedObjectInfo</ref> &amp;</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="325" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="653" bodyend="661"/>
+        <references refid="_static_data_splitter_8cpp_1ad2fefd8832b4b1ea3dbb1f621063bbff" compoundref="_static_data_splitter_8cpp" startline="176">data</references>
+        <references refid="classllvm_1_1object_1_1_binary_1a5379c20deca096e73006138ba387f171" compoundref="_binary_8cpp" startline="39" endline="39">llvm::object::Binary::getData</references>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a63edbda22f0a1ab7ed361f27b5ff6145" compoundref="_m_c_j_i_t_8cpp" startline="118" endline="126">addObjectFile</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a5236c37b672e45c22ef2ebb47518871e" compoundref="_m_c_j_i_t_8cpp" startline="188" endline="235">generateCodeForModule</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1ace9945d0e32337f9101716f572df0885" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MCJIT::notifyFreeingObject</definition>
+        <argsstring>(const object::ObjectFile &amp;Obj)</argsstring>
+        <name>notifyFreeingObject</name>
+        <qualifiedname>llvm::MCJIT::notifyFreeingObject</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1object_1_1_object_file" kindref="compound">object::ObjectFile</ref> &amp;</type>
+          <declname>Obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="327" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="663" bodyend="669"/>
+        <references refid="_static_data_splitter_8cpp_1ad2fefd8832b4b1ea3dbb1f621063bbff" compoundref="_static_data_splitter_8cpp" startline="176">data</references>
+        <references refid="classllvm_1_1object_1_1_binary_1a5379c20deca096e73006138ba387f171" compoundref="_binary_8cpp" startline="39" endline="39">llvm::object::Binary::getData</references>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1a3b1170b9779b23ea493913c303731067" compoundref="_m_c_j_i_t_8cpp" startline="92" endline="102">~MCJIT</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1ab20dd7532d54078744493a662f741061" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_j_i_t_symbol" kindref="compound">JITSymbol</ref></type>
+        <definition>JITSymbol MCJIT::findExistingSymbol</definition>
+        <argsstring>(const std::string &amp;Name)</argsstring>
+        <name>findExistingSymbol</name>
+        <qualifiedname>llvm::MCJIT::findExistingSymbol</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="329" column="13" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="283" bodyend="290"/>
+        <references refid="classllvm_1_1_j_i_t_symbol_flags_1ad509c6d010720c4f71aeac1fba93f8cbaeb59403a31ee3f63734a411e9e42ddd8" compoundref="_j_i_t_symbol_8h" startline="85">llvm::JITSymbolFlags::Exported</references>
+        <references refid="classllvm_1_1_execution_engine_1a29b4671f69facc701332f9510ca436aa" compoundref="_execution_engine_8cpp" startline="284" endline="289">llvm::ExecutionEngine::getPointerToGlobalIfAvailable</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1ae7e58d02f5553c707ac40497b0e9cf26" compoundref="_m_c_j_i_t_8cpp" startline="336" endline="391">findSymbol</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a28cc3d07256589bd54f2d22eb12bafad" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> *</type>
+        <definition>Module * MCJIT::findModuleForSymbol</definition>
+        <argsstring>(const std::string &amp;Name, bool CheckFunctionsOnly)</argsstring>
+        <name>findModuleForSymbol</name>
+        <qualifiedname>llvm::MCJIT::findModuleForSymbol</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>CheckFunctionsOnly</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="330" column="10" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="292" bodyend="317"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="classllvm_1_1_execution_engine_1a221f82626a9fd6d8dc7c76e097940b07" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="196" endline="196">llvm::ExecutionEngine::getDataLayout</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+        <references refid="classllvm_1_1_string_ref_1a25f1fd81f2132805676c82ab8ae0c109" compoundref="_string_ref_8h" startline="571" endline="575">llvm::StringRef::substr</references>
+        <referencedby refid="classllvm_1_1_m_c_j_i_t_1ae7e58d02f5553c707ac40497b0e9cf26" compoundref="_m_c_j_i_t_8cpp" startline="336" endline="391">findSymbol</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_m_c_j_i_t_1a5ebdb637cb8631131be02f68b69b22b4" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">llvm::SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> *, 4 &gt;</type>
+        <definition>typedef llvm::SmallPtrSet&lt;Module *, 4&gt; llvm::MCJIT::ModulePtrSet</definition>
+        <argsstring></argsstring>
+        <name>ModulePtrSet</name>
+        <qualifiedname>llvm::MCJIT::ModulePtrSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="71" column="29" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_m_c_j_i_t_1a51112ceb36ffa34aac4b0543dc8560d9" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_target_machine" kindref="compound">TargetMachine</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TargetMachine&gt; llvm::MCJIT::TM</definition>
+        <argsstring></argsstring>
+        <name>TM</name>
+        <qualifiedname>llvm::MCJIT::TM</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="171" column="19" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_j_i_t_1a510dbf2f1604e48352b281178447c733" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref> *</type>
+        <definition>MCContext* llvm::MCJIT::Ctx</definition>
+        <argsstring></argsstring>
+        <name>Ctx</name>
+        <qualifiedname>llvm::MCJIT::Ctx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="172" column="13" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_j_i_t_1aec308928d4a1339ae380a0613e3de397" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classllvm_1_1_m_c_j_i_t_memory_manager" kindref="compound">MCJITMemoryManager</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;MCJITMemoryManager&gt; llvm::MCJIT::MemMgr</definition>
+        <argsstring></argsstring>
+        <name>MemMgr</name>
+        <qualifiedname>llvm::MCJIT::MemMgr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="173" column="19" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_j_i_t_1a174c0775b08ddb9465bea160339fad8a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_linking_symbol_resolver" kindref="compound">LinkingSymbolResolver</ref></type>
+        <definition>LinkingSymbolResolver llvm::MCJIT::Resolver</definition>
+        <argsstring></argsstring>
+        <name>Resolver</name>
+        <qualifiedname>llvm::MCJIT::Resolver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="174" column="25" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_j_i_t_1a0f537fd9f2f52f247d6ef7f8e958d5c2" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_runtime_dyld" kindref="compound">RuntimeDyld</ref></type>
+        <definition>RuntimeDyld llvm::MCJIT::Dyld</definition>
+        <argsstring></argsstring>
+        <name>Dyld</name>
+        <qualifiedname>llvm::MCJIT::Dyld</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="175" column="15" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_j_i_t_1a8fa12d65abe3c11a36a2952a8f4b1095" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_j_i_t_event_listener" kindref="compound">JITEventListener</ref> * &gt;</type>
+        <definition>std::vector&lt;JITEventListener*&gt; llvm::MCJIT::EventListeners</definition>
+        <argsstring></argsstring>
+        <name>EventListeners</name>
+        <qualifiedname>llvm::MCJIT::EventListeners</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="176" column="15" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_j_i_t_1a2972a0fc4756fbeae49eb7e719723563" prot="private" static="no" mutable="no">
+        <type>OwningModuleContainer</type>
+        <definition>OwningModuleContainer llvm::MCJIT::OwnedModules</definition>
+        <argsstring></argsstring>
+        <name>OwnedModules</name>
+        <qualifiedname>llvm::MCJIT::OwnedModules</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="178" column="25" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_j_i_t_1a0c5143014ab9bf21a0e1309c8a22723d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1object_1_1_owning_binary" kindref="compound">object::OwningBinary</ref>&lt; <ref refid="classllvm_1_1object_1_1_archive" kindref="compound">object::Archive</ref> &gt;, 2 &gt;</type>
+        <definition>SmallVector&lt;object::OwningBinary&lt;object::Archive&gt;, 2&gt; llvm::MCJIT::Archives</definition>
+        <argsstring></argsstring>
+        <name>Archives</name>
+        <qualifiedname>llvm::MCJIT::Archives</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="180" column="15" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_j_i_t_1a28eb94d43021593885af4679adfba145" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_buffer" kindref="compound">MemoryBuffer</ref> &gt;, 2 &gt;</type>
+        <definition>SmallVector&lt;std::unique_ptr&lt;MemoryBuffer&gt;, 2&gt; llvm::MCJIT::Buffers</definition>
+        <argsstring></argsstring>
+        <name>Buffers</name>
+        <qualifiedname>llvm::MCJIT::Buffers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="181" column="15" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_j_i_t_1a05de5e745d6d8f2aa7791b34c54abef7" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1object_1_1_object_file" kindref="compound">object::ObjectFile</ref> &gt;, 2 &gt;</type>
+        <definition>SmallVector&lt;std::unique_ptr&lt;object::ObjectFile&gt;, 2&gt; llvm::MCJIT::LoadedObjects</definition>
+        <argsstring></argsstring>
+        <name>LoadedObjects</name>
+        <qualifiedname>llvm::MCJIT::LoadedObjects</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="183" column="15" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_j_i_t_1a7009273692f5dc792f96a24fb7fba397" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_object_cache" kindref="compound">ObjectCache</ref> *</type>
+        <definition>ObjectCache* llvm::MCJIT::ObjCache</definition>
+        <argsstring></argsstring>
+        <name>ObjCache</name>
+        <qualifiedname>llvm::MCJIT::ObjCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="187" column="15" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a88718d5cc71b9f594ae489ead7d227cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MCJIT::MCJIT</definition>
+        <argsstring>(std::unique_ptr&lt; Module &gt; M, std::unique_ptr&lt; TargetMachine &gt; tm, std::shared_ptr&lt; MCJITMemoryManager &gt; MemMgr, std::shared_ptr&lt; LegacyJITSymbolResolver &gt; Resolver)</argsstring>
+        <name>MCJIT</name>
+        <qualifiedname>llvm::MCJIT::MCJIT</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &gt;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_target_machine" kindref="compound">TargetMachine</ref> &gt;</type>
+          <declname>tm</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classllvm_1_1_m_c_j_i_t_memory_manager" kindref="compound">MCJITMemoryManager</ref> &gt;</type>
+          <declname>MemMgr</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classllvm_1_1_legacy_j_i_t_symbol_resolver" kindref="compound">LegacyJITSymbolResolver</ref> &gt;</type>
+          <declname>Resolver</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="67" column="3" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="65" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1afd7b996229ea235ab7e507d3056e8a3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+        <definition>Function * MCJIT::FindFunctionNamedInModulePtrSet</definition>
+        <argsstring>(StringRef FnName, ModulePtrSet::iterator I, ModulePtrSet::iterator E)</argsstring>
+        <name>FindFunctionNamedInModulePtrSet</name>
+        <qualifiedname>llvm::MCJIT::FindFunctionNamedInModulePtrSet</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>FnName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl_1aa1c0b29f447eccfd6c43dc236148e609" kindref="member">ModulePtrSet::iterator</ref></type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl_1aa1c0b29f447eccfd6c43dc236148e609" kindref="member">ModulePtrSet::iterator</ref></type>
+          <declname>E</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="189" column="12" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="462" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1abd530d57252fe45424a6ef3d92bdbf2a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref> *</type>
+        <definition>GlobalVariable * MCJIT::FindGlobalVariableNamedInModulePtrSet</definition>
+        <argsstring>(StringRef Name, bool AllowInternal, ModulePtrSet::iterator I, ModulePtrSet::iterator E)</argsstring>
+        <name>FindGlobalVariableNamedInModulePtrSet</name>
+        <qualifiedname>llvm::MCJIT::FindGlobalVariableNamedInModulePtrSet</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>AllowInternal</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl_1aa1c0b29f447eccfd6c43dc236148e609" kindref="member">ModulePtrSet::iterator</ref></type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl_1aa1c0b29f447eccfd6c43dc236148e609" kindref="member">ModulePtrSet::iterator</ref></type>
+          <declname>E</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="193" column="18" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="473" bodyend="483"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a6ff1d93574d158f344b35fe15a0bb0d3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MCJIT::runStaticConstructorsDestructorsInModulePtrSet</definition>
+        <argsstring>(bool isDtors, ModulePtrSet::iterator I, ModulePtrSet::iterator E)</argsstring>
+        <name>runStaticConstructorsDestructorsInModulePtrSet</name>
+        <qualifiedname>llvm::MCJIT::runStaticConstructorsDestructorsInModulePtrSet</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>isDtors</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl_1aa1c0b29f447eccfd6c43dc236148e609" kindref="member">ModulePtrSet::iterator</ref></type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl_1aa1c0b29f447eccfd6c43dc236148e609" kindref="member">ModulePtrSet::iterator</ref></type>
+          <declname>E</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="198" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="445" bodyend="450"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_m_c_j_i_t_1a3b1170b9779b23ea493913c303731067" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MCJIT::~MCJIT</definition>
+        <argsstring>() override</argsstring>
+        <name>~MCJIT</name>
+        <qualifiedname>llvm::MCJIT::~MCJIT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="203" column="3" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="92" bodyend="102"/>
+        <references refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" compoundref="llvm_2_execution_engine_2_execution_engine_8h" startline="160">llvm::ExecutionEngine::lock</references>
+        <references refid="classllvm_1_1_m_c_j_i_t_1ace9945d0e32337f9101716f572df0885" compoundref="_m_c_j_i_t_8cpp" startline="663" endline="669">notifyFreeingObject</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::ExecutionEngine</label>
+        <link refid="classllvm_1_1_execution_engine"/>
+      </node>
+      <node id="1">
+        <label>llvm::MCJIT</label>
+        <link refid="classllvm_1_1_m_c_j_i_t"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>Size_T</label>
+      </node>
+      <node id="9">
+        <label>SmallVectorSizeType&lt; std::unique_ptr&lt; llvm::Module &gt; &gt;</label>
+        <link refid="class_small_vector_size_type_3_01std_1_1unique__ptr_3_01llvm_1_1_module_01_4_01_4"/>
+      </node>
+      <node id="14">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="20">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="2">
+        <label>llvm::ExecutionEngine</label>
+        <link refid="classllvm_1_1_execution_engine"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Modules</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>InterpCtor</edgelabel>
+          <edgelabel>MCJITCtor</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>LazyFunctionCreator</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>ErrMsg</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>lock</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::MCJIT</label>
+        <link refid="classllvm_1_1_m_c_j_i_t"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::SmallVector&lt; std::unique_ptr&lt; llvm::Module &gt;, 1 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="private-inheritance">
+        </childnode>
+        <childnode refid="22" relation="template-instance">
+          <edgelabel>&lt; std::unique_ptr&lt; llvm::Module &gt;, 1 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; std::unique_ptr&lt; llvm::Module &gt; &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; std::unique_ptr&lt; llvm::Module &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::SmallVectorImpl&lt; std::unique_ptr&lt; llvm::Module &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="template-instance">
+          <edgelabel>&lt; std::unique_ptr&lt; llvm::Module &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="20" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="20" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::SmallVectorStorage&lt; std::unique_ptr&lt; llvm::Module &gt;, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="20" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="template-instance">
+          <edgelabel>&lt; std::unique_ptr&lt; llvm::Module &gt;, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::SmallVectorTemplateBase&lt; std::unique_ptr&lt; llvm::Module &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="template-instance">
+          <edgelabel>&lt; std::unique_ptr&lt; llvm::Module &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::SmallVectorTemplateCommon&lt; std::unique_ptr&lt; llvm::Module &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; std::unique_ptr&lt; llvm::Module &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm::sys::SmartMutex&lt; mt_only &gt;</label>
+        <link refid="classllvm_1_1sys_1_1_smart_mutex"/>
+      </node>
+      <node id="27">
+        <label>llvm::sys::SmartMutex&lt; false &gt;</label>
+        <link refid="classllvm_1_1sys_1_1_smart_mutex"/>
+        <childnode refid="28" relation="template-instance">
+          <edgelabel>&lt; false &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>function&lt; void *(const std::string &amp;)&gt;</label>
+      </node>
+      <node id="26">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="66" column="1" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="66" bodyend="331"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a35d30954df16f2628d44d0132737f996" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>addArchive</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a805704b52a327cc6b37aebf9cba14169" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>addGlobalMapping</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a3cd00b43a7e3416795b7a32d8e5c7131" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>addGlobalMapping</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1af6ce1da6819f73ca2445152d98c9c48d" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>addModule</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a63edbda22f0a1ab7ed361f27b5ff6145" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>addObjectFile</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a7e7c8df2dff7cbbc59ee68d122f4d01d" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>addObjectFile</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a0c5143014ab9bf21a0e1309c8a22723d" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>Archives</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a28eb94d43021593885af4679adfba145" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>Buffers</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a29f60ea31c2022f7f13fab8faf988705" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>clearAllGlobalMappings</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a37455f3715f92a4bbc9d0ade8348374f" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>clearErrorMessage</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a9565a2a404ec3802e545beb8f63fe347" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>clearGlobalMappingsFromModule</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a224802805182e755345184d485c164b8" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>createJIT</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a510dbf2f1604e48352b281178447c733" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>Ctx</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a34fc6d4cb8d45ff9b7ee30d1252f19ed" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>DisableGVCompilation</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a5169a202e9263a61fa11236953e50bb7" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>DisableLazyCompilation</name></member>
+      <member refid="classllvm_1_1_execution_engine_1af062585affb7cd16bab9867b706ea460" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>DisableSymbolSearching</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a0f537fd9f2f52f247d6ef7f8e958d5c2" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>Dyld</name></member>
+      <member refid="classllvm_1_1_execution_engine_1aca88a09e03611e624c1b6ac0aad41ce3" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>emitGlobals</name></member>
+      <member refid="classllvm_1_1_execution_engine_1ab98a836a506bb90245c243f8e4da3162" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>emitGlobalVariable</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a6ba8a53658ba2413897f0b674d06faec" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>emitObject</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a4eeec03dbb296860e68cfa3714117628" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>ErrMsg</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a8fa12d65abe3c11a36a2952a8f4b1095" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>EventListeners</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a92eef8691cfbe4446ee15d34258c3185" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>ExecutionEngine</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a3462fd165e3dcb3236dc69650d68ce6b" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>ExecutionEngine</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a1f9ec8ba2ed8dbf9b9c7f0bba1828402" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>ExecutionEngine</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a4c711730384b07b067887e93931004a8" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>finalizeLoadedModules</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1adcc54665978b90bea2376f8cf50f48cc" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>finalizeModule</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a46de6cc1d24bff3fd2ae2006c8b35456" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>finalizeObject</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1ab20dd7532d54078744493a662f741061" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>findExistingSymbol</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a38b1949864f1c23210a57aa9edafe19b" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>FindFunctionNamed</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1afd7b996229ea235ab7e507d3056e8a3b" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>FindFunctionNamedInModulePtrSet</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1ab2c0265b94d36957565220a4932326e2" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>FindGlobalVariableNamed</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1abd530d57252fe45424a6ef3d92bdbf2a" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>FindGlobalVariableNamedInModulePtrSet</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a28cc3d07256589bd54f2d22eb12bafad" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>findModuleForSymbol</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1ae7e58d02f5553c707ac40497b0e9cf26" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>findSymbol</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a5236c37b672e45c22ef2ebb47518871e" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>generateCodeForModule</name></member>
+      <member refid="classllvm_1_1_execution_engine_1ab2f6e6505348cc3f784771e75092c602" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>getAddressToGlobalIfAvailable</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a0a724dad58a66f883d1b88115237ae00" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>getConstantValue</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a221f82626a9fd6d8dc7c76e097940b07" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>getDataLayout</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a3678bf0330f2bc1970117b384045616b" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>getErrorMessage</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a628b993cb94eed2150b435bcb25ae009" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>getFunctionAddress</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1ab7bbc6d6aecb6d04aa719a85b7020089" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>getGlobalValueAddress</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a8796e9969f3352978e7f26f3c6b3cbd7" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>getGlobalValueAtAddress</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a3b63142ca24145028afa3a5bdf3fe7fb" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>getMangledName</name></member>
+      <member refid="classllvm_1_1_execution_engine_1ae739336f3ec474f015e91e7698af256b" prot="protected" virt="virtual"><scope>llvm::MCJIT</scope><name>getMemoryForGV</name></member>
+      <member refid="classllvm_1_1_execution_engine_1aab06dbc788612fabca42c90bf2516afe" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>getOrEmitGlobalVariable</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1ae9b6b618b65cd7355f31652c566c8e3c" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>getPointerToFunction</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a3aae274d0f4e7b494ee7807374f5c32b" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>getPointerToFunctionOrStub</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a9656c73d0da235ba5b99c14804175943" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>getPointerToGlobal</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a29b4671f69facc701332f9510ca436aa" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>getPointerToGlobalIfAvailable</name></member>
+      <member refid="classllvm_1_1_execution_engine_1aa5d335340f7ac093e81c965ba69a7aac" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>getPointerToGlobalIfAvailable</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a14f1cd53696dbd8b28129c519e8bd65d" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>getPointerToNamedFunction</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1ab9a66732fec3f835f54f4bb8f5388389" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>getSymbolAddress</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a879fe4618f17facf9c24886eca53d03f" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>getTargetMachine</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a230693f459e18c3b19615ffc33c23f69" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>getVerifyModules</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a8148bbdde0eb101f768526757cb754c8" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>hasError</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a38079cd1d3c8bc5f3aef1d3420c3b855" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>InitializeMemory</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a95a748aecbad479192aad27aa48b448e" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>InstallLazyFunctionCreator</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a6947cede6cdd00042e82b3597606a515" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>InterpCtor</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a0f85c9fd7538e8db65bf07459090b6c6" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>isCompilingLazily</name></member>
+      <member refid="classllvm_1_1_execution_engine_1ae33a27ffdc2af41c8d091798b79e9af7" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>isGVCompilationDisabled</name></member>
+      <member refid="classllvm_1_1_execution_engine_1af22d74c24bf5144ae25380ff6abbe2a2" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>isSymbolSearchingDisabled</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a7cc176a0cbdab69cff95f1908bb1898d" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>LazyFunctionCreator</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a05de5e745d6d8f2aa7791b34c54abef7" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>LoadedObjects</name></member>
+      <member refid="classllvm_1_1_execution_engine_1adec0e730f80de19f31127faedf39008c" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>LoadValueFromMemory</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a5972a6c7bf1cf22a359d9b7987d11dfd" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>lock</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1aaf2fc842610d091ab018233b9db03761" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>mapSectionAddress</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a88718d5cc71b9f594ae489ead7d227cd" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>MCJIT</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a6ce88aa01ae7cf17c22e69718cff7299" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>MCJITCtor</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1aec308928d4a1339ae380a0613e3de397" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>MemMgr</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a5ebdb637cb8631131be02f68b69b22b4" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>ModulePtrSet</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a82d981b08b138a888cf49e5c19c2c54d" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>Modules</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1ace9945d0e32337f9101716f572df0885" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>notifyFreeingObject</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a4c77fd10082d414ff13ef63a7655fde6" prot="protected" virt="non-virtual"><scope>llvm::MCJIT</scope><name>notifyObjectLoaded</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a7009273692f5dc792f96a24fb7fba397" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>ObjCache</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a2972a0fc4756fbeae49eb7e719723563" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>OwnedModules</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a97c441ad61800b9fe204a455ae36298d" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>Register</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a18f6be37761ee5769051ea3fd2982e65" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>RegisterJITEventListener</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1aa6b3e346826c4d15f691fc6d6b9de5f1" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>removeModule</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a174c0775b08ddb9465bea160339fad8a" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>Resolver</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a0198943262fb715d77dfd24ef32f9399" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>runFunction</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a97bbf524ee03354bb73dce9614b0e959" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>runFunctionAsMain</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a2611f76a93e6574c879ba5b5b9fd9dc7" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>runStaticConstructorsDestructors</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a60823e6b4ff77b319b51c9eb634241e2" prot="public" virt="non-virtual" ambiguityscope="llvm::ExecutionEngine::"><scope>llvm::MCJIT</scope><name>runStaticConstructorsDestructors</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a6ff1d93574d158f344b35fe15a0bb0d3" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>runStaticConstructorsDestructorsInModulePtrSet</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1aeb99f9a5f472aeeb2f5b3e1b279e1853" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>setObjectCache</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a033df96c8b46bf1abba4a183718623c2" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>setProcessAllSections</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a05f6219fb693e81805662dd4bb42e6e9" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>setVerifyModules</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a08ed33d3b3f8b9e21167918d5de40014" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>StoreValueToMemory</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a51112ceb36ffa34aac4b0543dc8560d9" prot="private" virt="non-virtual"><scope>llvm::MCJIT</scope><name>TM</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a9b80bb13abeaf36df96b8a7afdb2339d" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>UnregisterJITEventListener</name></member>
+      <member refid="classllvm_1_1_execution_engine_1ae66e5ebc951c7d9c88c0c1884bd67872" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>updateGlobalMapping</name></member>
+      <member refid="classllvm_1_1_execution_engine_1a7cb0a4c1d63616267c10b09286b36e8c" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>updateGlobalMapping</name></member>
+      <member refid="classllvm_1_1_execution_engine_1ae854ad96a2f8cf76b7f4aef063bf19ce" prot="public" virt="virtual"><scope>llvm::MCJIT</scope><name>~ExecutionEngine</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_1a3b1170b9779b23ea493913c303731067" prot="public" virt="non-virtual"><scope>llvm::MCJIT</scope><name>~MCJIT</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,688 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_live_range_calc" kind="class" language="C++" prot="public">
+    <compoundname>llvm::LiveRangeCalc</compoundname>
+    <derivedcompoundref refid="classllvm_1_1_live_interval_calc" prot="public" virt="non-virtual">llvm::LiveIntervalCalc</derivedcompoundref>
+    <includes refid="_live_range_calc_8h" local="yes">llvm/CodeGen/LiveRangeCalc.h</includes>
+    <innerclass refid="structllvm_1_1_live_range_calc_1_1_live_in_block" prot="private">llvm::LiveRangeCalc::LiveInBlock</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_live_range_calc_1a85afb5ab5edc2205dfdcdb8f5fad518d" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="classllvm_1_1_v_n_info" kindref="compound">VNInfo</ref> *, <ref refid="namespacellvm_1a94b65b831ad8756f7d3a029a1e599f75" kindref="member">MachineDomTreeNode</ref> * &gt;</type>
+        <definition>using llvm::LiveRangeCalc::LiveOutPair =  std::pair&lt;VNInfo *, MachineDomTreeNode *&gt;</definition>
+        <argsstring></argsstring>
+        <name>LiveOutPair</name>
+        <qualifiedname>llvm::LiveRangeCalc::LiveOutPair</qualifiedname>
+        <briefdescription>
+<para>LiveOutPair - A value and the block that defined it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The domtree node is redundant, it can be computed as: MDT[Indexes.getMBBFromIndex(VNI-&gt;def)]. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="54" column="3" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_live_range_calc_1aa8fd2372769502e3833805b30b621403" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_indexed_map" kindref="compound">IndexedMap</ref>&lt; LiveOutPair, <ref refid="structllvm_1_1_m_b_b2_number_functor" kindref="compound">MBB2NumberFunctor</ref> &gt;</type>
+        <definition>using llvm::LiveRangeCalc::LiveOutMap =  IndexedMap&lt;LiveOutPair, MBB2NumberFunctor&gt;</definition>
+        <argsstring></argsstring>
+        <name>LiveOutMap</name>
+        <qualifiedname>llvm::LiveRangeCalc::LiveOutMap</qualifiedname>
+        <briefdescription>
+<para>LiveOutMap - Map basic blocks to the value leaving the block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="57" column="3" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_live_range_calc_1aac4eda35d4dd1470f532505eeeb8cf96" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> *, std::pair&lt; <ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref>, <ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> &gt; &gt;</type>
+        <definition>using llvm::LiveRangeCalc::EntryInfoMap =  DenseMap&lt;LiveRange *, std::pair&lt;BitVector, BitVector&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>EntryInfoMap</name>
+        <qualifiedname>llvm::LiveRangeCalc::EntryInfoMap</qualifiedname>
+        <briefdescription>
+<para>Map <ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> to sets of blocks (represented by bit vectors) that in the live range are defined on entry and undefined on entry. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A block is defined on entry if there is a path from at least one of the defs in the live range to the entry of the block, and conversely, a block is undefined on entry, if there is no such path (i.e. no definition reaches the entry of the block). A single <ref refid="classllvm_1_1_live_range_calc" kindref="compound">LiveRangeCalc</ref> object is used to track live-out information for multiple registers in live range splitting (which is ok, since the live ranges of these registers do not overlap), but the defined/undefined information must be kept separate for each individual range. By convention, EntryInfoMap[&amp;LR] = { Defined, Undefined }. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="76" column="3" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_live_range_calc_1a1e21e9bb116a8e83265610c24217afc8" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>const MachineFunction* llvm::LiveRangeCalc::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>llvm::LiveRangeCalc::MF</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="46" column="25" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_range_calc_1a9e7f801341553dc1123d8793e6687697" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> *</type>
+        <definition>const MachineRegisterInfo* llvm::LiveRangeCalc::MRI</definition>
+        <argsstring></argsstring>
+        <name>MRI</name>
+        <qualifiedname>llvm::LiveRangeCalc::MRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="47" column="29" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_range_calc_1a9f9a3a7dda1749ddcaf3c9f3ab9c9c73" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_slot_indexes" kindref="compound">SlotIndexes</ref> *</type>
+        <definition>SlotIndexes* llvm::LiveRangeCalc::Indexes</definition>
+        <argsstring></argsstring>
+        <name>Indexes</name>
+        <qualifiedname>llvm::LiveRangeCalc::Indexes</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="48" column="15" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_range_calc_1aeae2aad504a71d29ff10f6527be73e97" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> *</type>
+        <definition>MachineDominatorTree* llvm::LiveRangeCalc::DomTree</definition>
+        <argsstring></argsstring>
+        <name>DomTree</name>
+        <qualifiedname>llvm::LiveRangeCalc::DomTree</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="49" column="24" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_range_calc_1aa1e119e1a29c2047e295b1e66153cf3e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_v_n_info_1aa750a7f159760b9c378d930deb6a9837" kindref="member">VNInfo::Allocator</ref> *</type>
+        <definition>VNInfo::Allocator* llvm::LiveRangeCalc::Alloc</definition>
+        <argsstring></argsstring>
+        <name>Alloc</name>
+        <qualifiedname>llvm::LiveRangeCalc::Alloc</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="50" column="21" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_range_calc_1a5b21a9bc676c95be138caf3757ac6d59" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref></type>
+        <definition>BitVector llvm::LiveRangeCalc::Seen</definition>
+        <argsstring></argsstring>
+        <name>Seen</name>
+        <qualifiedname>llvm::LiveRangeCalc::Seen</qualifiedname>
+        <briefdescription>
+<para>Bit vector of active entries in LiveOut, also used as a visited set by findReachingDefs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>One entry per basic block, indexed by block number. This is kept as a separate bit vector because it can be cleared quickly when switching live ranges. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="63" column="13" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_range_calc_1a4af75b162ef660fbe3a08262c84c7825" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">EntryInfoMap</ref></type>
+        <definition>EntryInfoMap llvm::LiveRangeCalc::EntryInfos</definition>
+        <argsstring></argsstring>
+        <name>EntryInfos</name>
+        <qualifiedname>llvm::LiveRangeCalc::EntryInfos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="77" column="16" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_range_calc_1a9e5608bb9852fb86990af4dd05842128" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_indexed_map" kindref="compound">LiveOutMap</ref></type>
+        <definition>LiveOutMap llvm::LiveRangeCalc::Map</definition>
+        <argsstring></argsstring>
+        <name>Map</name>
+        <qualifiedname>llvm::LiveRangeCalc::Map</qualifiedname>
+        <briefdescription>
+<para>Map each basic block where a live range is live out to the live-out value and its defining block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For every basic block, MBB, one of these conditions shall be true:</para>
+<para><orderedlist>
+<listitem><para>!Seen.count(MBB-&gt;getNumber()) Blocks without a Seen bit are ignored.</para>
+</listitem><listitem><para>LiveOut[MBB].second.getNode() == MBB The live-out value is defined in MBB.</para>
+</listitem><listitem><para>forall P in preds(MBB): LiveOut[P] == LiveOut[MBB] The live-out value passses through MBB. All predecessors must carry the same value.</para>
+</listitem></orderedlist>
+</para>
+<para>The domtree node may be null, it can be computed.</para>
+<para>The map can be shared by multiple live ranges as long as no two are live-out of the same block. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="96" column="14" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_range_calc_1abbb6fcf43c4c5e0e2778ce03512250a3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; LiveInBlock, 16 &gt;</type>
+        <definition>SmallVector&lt;LiveInBlock, 16&gt; llvm::LiveRangeCalc::LiveIn</definition>
+        <argsstring></argsstring>
+        <name>LiveIn</name>
+        <qualifiedname>llvm::LiveRangeCalc::LiveIn</qualifiedname>
+        <briefdescription>
+<para>LiveIn - Work list of blocks where the live-in value has yet to be determined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This list is typically computed by findReachingDefs() and used as a work list by updateSSA(). The low-level interface may also be used to add entries directly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="125" column="15" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1aecb04af202c3560e42fad62a5506f763" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool LiveRangeCalc::isDefOnEntry</definition>
+        <argsstring>(LiveRange &amp;LR, ArrayRef&lt; SlotIndex &gt; Undefs, MachineBasicBlock &amp;MBB, BitVector &amp;DefOnEntry, BitVector &amp;UndefOnEntry)</argsstring>
+        <name>isDefOnEntry</name>
+        <qualifiedname>llvm::LiveRangeCalc::isDefOnEntry</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>LR</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> &gt;</type>
+          <declname>Undefs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> &amp;</type>
+          <declname>DefOnEntry</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> &amp;</type>
+          <declname>UndefOnEntry</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if the entry to block <computeroutput>MBB</computeroutput> can be reached by any of the defs in <computeroutput>LR</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if none of the defs reach the entry to <computeroutput>MBB</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="129" column="8" bodyfile="lib/CodeGen/LiveRangeCalc.cpp" bodystart="121" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1ae243990ea455fd5ec0c3c70785a17228" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool LiveRangeCalc::findReachingDefs</definition>
+        <argsstring>(LiveRange &amp;LR, MachineBasicBlock &amp;UseMBB, SlotIndex Use, unsigned PhysReg, ArrayRef&lt; SlotIndex &gt; Undefs)</argsstring>
+        <name>findReachingDefs</name>
+        <qualifiedname>llvm::LiveRangeCalc::findReachingDefs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>LR</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>UseMBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>Use</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>PhysReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> &gt;</type>
+          <declname>Undefs</declname>
+        </param>
+        <briefdescription>
+<para>Find the set of defs that can reach <computeroutput>Kill</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>Kill</computeroutput> must belong to <computeroutput>UseMBB</computeroutput>.</para>
+<para>If exactly one def can reach <computeroutput>UseMBB</computeroutput>, and the def dominates <computeroutput>Kill</computeroutput>, all paths from the def to <computeroutput>UseMBB</computeroutput> are added to <computeroutput>LR</computeroutput>, and the function returns true.</para>
+<para>If multiple values can reach <computeroutput>UseMBB</computeroutput>, the blocks that need <computeroutput>LR</computeroutput> to be live in are added to the LiveIn array, and the function returns false.</para>
+<para>The array <computeroutput>Undef</computeroutput> provides the locations where the range <computeroutput>LR</computeroutput> becomes undefined by &lt;def,read-undef&gt; operands on other subranges. If <computeroutput>Undef</computeroutput> is non-empty and <computeroutput>Kill</computeroutput> is jointly dominated only by the entries of <computeroutput>Undef</computeroutput>, the function returns false.</para>
+<para>PhysReg, when set, is used to verify live-in lists on basic blocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="149" column="8" bodyfile="lib/CodeGen/LiveRangeCalc.cpp" bodystart="190" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1a8724ca9a385ad023d80339599cc037df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveRangeCalc::updateSSA</definition>
+        <argsstring>()</argsstring>
+        <name>updateSSA</name>
+        <qualifiedname>llvm::LiveRangeCalc::updateSSA</qualifiedname>
+        <briefdescription>
+<para>updateSSA - Compute the values that will be live in to all requested blocks in LiveIn. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Create PHI-def values as required to preserve SSA form.</para>
+<para>Every live-in block must be jointly dominated by the added live-out blocks. No values are read from the live ranges. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="157" column="8" bodyfile="lib/CodeGen/LiveRangeCalc.cpp" bodystart="331" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1aabd755af5c29164f99a73388406d9e8a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveRangeCalc::updateFromLiveIns</definition>
+        <argsstring>()</argsstring>
+        <name>updateFromLiveIns</name>
+        <qualifiedname>llvm::LiveRangeCalc::updateFromLiveIns</qualifiedname>
+        <briefdescription>
+<para>Transfer information from the LiveIn vector to the live ranges and update the given <computeroutput>LiveOuts</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="161" column="8" bodyfile="lib/CodeGen/LiveRangeCalc.cpp" bodystart="61" bodyend="84"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1ab032314f07277bf920fd315187ab9605" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>const MachineFunction * llvm::LiveRangeCalc::getMachineFunction</definition>
+        <argsstring>()</argsstring>
+        <name>getMachineFunction</name>
+        <qualifiedname>llvm::LiveRangeCalc::getMachineFunction</qualifiedname>
+        <briefdescription>
+<para>Some getters to expose in a read-only way some private fields to subclasses. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="166" column="25" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="166" bodyend="166"/>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1ad67d6b7f9f91a2d5852b0f9aebfe542a" compoundref="_live_interval_calc_8cpp" startline="41" endline="103">llvm::LiveIntervalCalc::calculate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1ad09d2d2f0c1d47c7bc6eb04e33b5e51d" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> *</type>
+        <definition>const MachineRegisterInfo * llvm::LiveRangeCalc::getRegInfo</definition>
+        <argsstring>() const</argsstring>
+        <name>getRegInfo</name>
+        <qualifiedname>llvm::LiveRangeCalc::getRegInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="167" column="29" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="167" bodyend="167"/>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1ad67d6b7f9f91a2d5852b0f9aebfe542a" compoundref="_live_interval_calc_8cpp" startline="41" endline="103">llvm::LiveIntervalCalc::calculate</referencedby>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1a1c36b75f4a0dac1a833a459617f03c76" compoundref="_live_interval_calc_8cpp" startline="122" endline="132">llvm::LiveIntervalCalc::createDeadDefs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1a11a21f58b3a7b8b7c401958cd3f7304f" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_slot_indexes" kindref="compound">SlotIndexes</ref> *</type>
+        <definition>SlotIndexes * llvm::LiveRangeCalc::getIndexes</definition>
+        <argsstring>()</argsstring>
+        <name>getIndexes</name>
+        <qualifiedname>llvm::LiveRangeCalc::getIndexes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="168" column="15" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="168" bodyend="168"/>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1ad67d6b7f9f91a2d5852b0f9aebfe542a" compoundref="_live_interval_calc_8cpp" startline="41" endline="103">llvm::LiveIntervalCalc::calculate</referencedby>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1a1c36b75f4a0dac1a833a459617f03c76" compoundref="_live_interval_calc_8cpp" startline="122" endline="132">llvm::LiveIntervalCalc::createDeadDefs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1a3c8fd02f213ccc28812243ec1f36957c" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> *</type>
+        <definition>MachineDominatorTree * llvm::LiveRangeCalc::getDomTree</definition>
+        <argsstring>()</argsstring>
+        <name>getDomTree</name>
+        <qualifiedname>llvm::LiveRangeCalc::getDomTree</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="169" column="24" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="169" bodyend="169"/>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1ad67d6b7f9f91a2d5852b0f9aebfe542a" compoundref="_live_interval_calc_8cpp" startline="41" endline="103">llvm::LiveIntervalCalc::calculate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1a60d4123651abf23e886661980d951ffc" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_n_info_1aa750a7f159760b9c378d930deb6a9837" kindref="member">VNInfo::Allocator</ref> *</type>
+        <definition>VNInfo::Allocator * llvm::LiveRangeCalc::getVNAlloc</definition>
+        <argsstring>()</argsstring>
+        <name>getVNAlloc</name>
+        <qualifiedname>llvm::LiveRangeCalc::getVNAlloc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="170" column="21" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="170" bodyend="170"/>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1ad67d6b7f9f91a2d5852b0f9aebfe542a" compoundref="_live_interval_calc_8cpp" startline="41" endline="103">llvm::LiveIntervalCalc::calculate</referencedby>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1af5198110c0058e3d60524eecf500ee51" compoundref="_live_interval_calc_8cpp" startline="105" endline="120">llvm::LiveIntervalCalc::constructMainRangeFromSubranges</referencedby>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1a1c36b75f4a0dac1a833a459617f03c76" compoundref="_live_interval_calc_8cpp" startline="122" endline="132">llvm::LiveIntervalCalc::createDeadDefs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1a56cefbb66ed770ce1e6df7cbd1fa90d1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveRangeCalc::resetLiveOutMap</definition>
+        <argsstring>()</argsstring>
+        <name>resetLiveOutMap</name>
+        <qualifiedname>llvm::LiveRangeCalc::resetLiveOutMap</qualifiedname>
+        <briefdescription>
+<para>Reset Map and Seen fields. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="173" column="8" bodyfile="lib/CodeGen/LiveRangeCalc.cpp" bodystart="40" bodyend="46"/>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1ad67d6b7f9f91a2d5852b0f9aebfe542a" compoundref="_live_interval_calc_8cpp" startline="41" endline="103">llvm::LiveIntervalCalc::calculate</referencedby>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1af5198110c0058e3d60524eecf500ee51" compoundref="_live_interval_calc_8cpp" startline="105" endline="120">llvm::LiveIntervalCalc::constructMainRangeFromSubranges</referencedby>
+        <referencedby refid="classllvm_1_1_live_range_calc_1a65f0beed94a7dbdf8c8d7e2b46a0afa0" compoundref="_live_range_calc_8cpp" startline="48" endline="59">reset</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1ae41cc4877968749dfa2b1fc3f1110a19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::LiveRangeCalc::LiveRangeCalc</definition>
+        <argsstring>()=default</argsstring>
+        <name>LiveRangeCalc</name>
+        <qualifiedname>llvm::LiveRangeCalc::LiveRangeCalc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="176" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1a65f0beed94a7dbdf8c8d7e2b46a0afa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveRangeCalc::reset</definition>
+        <argsstring>(const MachineFunction *mf, SlotIndexes *SI, MachineDominatorTree *MDT, VNInfo::Allocator *VNIA)</argsstring>
+        <name>reset</name>
+        <qualifiedname>llvm::LiveRangeCalc::reset</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_indexes" kindref="compound">SlotIndexes</ref> *</type>
+          <declname>SI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> *</type>
+          <declname>MDT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_n_info_1aa750a7f159760b9c378d930deb6a9837" kindref="member">VNInfo::Allocator</ref> *</type>
+          <declname>VNIA</declname>
+        </param>
+        <briefdescription>
+<para>reset - Prepare caches for a new set of non-overlapping live ranges. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The caches must be reset before attempting calculations with a live range that may overlap a previously computed live range, and before the first live range in a function. If live ranges are not known to be non-overlapping, call reset before each. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="190" column="8" bodyfile="lib/CodeGen/LiveRangeCalc.cpp" bodystart="48" bodyend="59"/>
+        <references refid="classllvm_1_1_machine_function_1a810234b6b3d223b7c74a4253fcc5ea5e" compoundref="_machine_function_8h" startline="743" endline="743">llvm::MachineFunction::getRegInfo</references>
+        <references refid="classllvm_1_1_live_range_calc_1a56cefbb66ed770ce1e6df7cbd1fa90d1" compoundref="_live_range_calc_8cpp" startline="40" endline="46">resetLiveOutMap</references>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1ad67d6b7f9f91a2d5852b0f9aebfe542a" compoundref="_live_interval_calc_8cpp" startline="41" endline="103">llvm::LiveIntervalCalc::calculate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1ad445a5028efdf094173a202811f003e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveRangeCalc::extend</definition>
+        <argsstring>(LiveRange &amp;LR, SlotIndex Use, unsigned PhysReg, ArrayRef&lt; SlotIndex &gt; Undefs)</argsstring>
+        <name>extend</name>
+        <qualifiedname>llvm::LiveRangeCalc::extend</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>LR</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>Use</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>PhysReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> &gt;</type>
+          <declname>Undefs</declname>
+        </param>
+        <briefdescription>
+<para>Extend the live range of <computeroutput>LR</computeroutput> to reach <computeroutput><ref refid="classllvm_1_1_use" kindref="compound">Use</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The existing values in <computeroutput>LR</computeroutput> must be live so they jointly dominate <computeroutput><ref refid="classllvm_1_1_use" kindref="compound">Use</ref></computeroutput>. If <computeroutput><ref refid="classllvm_1_1_use" kindref="compound">Use</ref></computeroutput> is not dominated by a single existing value, PHI-defs are inserted as required to preserve SSA form.</para>
+<para>PhysReg, when set, is used to verify live-in lists on basic blocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="207" column="8" bodyfile="lib/CodeGen/LiveRangeCalc.cpp" bodystart="86" bodyend="109"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_live_range_calc_1ae5c960114840d1c6dddfbaa529ac633e" compoundref="_live_range_calc_8cpp" startline="114" endline="119">calculateValues</references>
+        <references refid="classllvm_1_1_live_range_1a81f9d3d0b958e57c0c0f24982230885d" compoundref="_live_interval_8cpp" startline="549" endline="556">llvm::LiveRange::extendInBlock</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1ae8e6fcd2d2e7e04fb1aa8fab71910f68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::LiveRangeCalc::setLiveOutValue</definition>
+        <argsstring>(MachineBasicBlock *MBB, VNInfo *VNI)</argsstring>
+        <name>setLiveOutValue</name>
+        <qualifiedname>llvm::LiveRangeCalc::setLiveOutValue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_n_info" kindref="compound">VNInfo</ref> *</type>
+          <declname>VNI</declname>
+        </param>
+        <briefdescription>
+<para>setLiveOutValue - Indicate that VNI is live out from MBB. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="classllvm_1_1_live_range_calc_1ae5c960114840d1c6dddfbaa529ac633e" kindref="member">calculateValues()</ref> function will not add liveness for MBB, the caller should take care of that.</para>
+<para>VNI may be null only if MBB is a live-through block also passed to <ref refid="classllvm_1_1_live_range_calc_1a46981dd5d4bb3043b740ce285b7b4a95" kindref="member">addLiveInBlock()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="229" column="8" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="229" bodyend="232"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1a46981dd5d4bb3043b740ce285b7b4a95" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::LiveRangeCalc::addLiveInBlock</definition>
+        <argsstring>(LiveRange &amp;LR, MachineDomTreeNode *DomNode, SlotIndex Kill=SlotIndex())</argsstring>
+        <name>addLiveInBlock</name>
+        <qualifiedname>llvm::LiveRangeCalc::addLiveInBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>LR</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a94b65b831ad8756f7d3a029a1e599f75" kindref="member">MachineDomTreeNode</ref> *</type>
+          <declname>DomNode</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>Kill</declname>
+          <defval><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>addLiveInBlock - Add a block with an unknown live-in value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function can only be called once per basic block. Once the live-in value has been determined, <ref refid="classllvm_1_1_live_range_calc_1ae5c960114840d1c6dddfbaa529ac633e" kindref="member">calculateValues()</ref> will add liveness to LI.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>LR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The live range that is live-in to the block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DomNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The domtree node for the block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Kill</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index in block where LI is killed. If the value is live-through, set Kill = SLotIndex() and also call setLiveOutValue(MBB, 0). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="243" column="8" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="243" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1ae5c960114840d1c6dddfbaa529ac633e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveRangeCalc::calculateValues</definition>
+        <argsstring>()</argsstring>
+        <name>calculateValues</name>
+        <qualifiedname>llvm::LiveRangeCalc::calculateValues</qualifiedname>
+        <briefdescription>
+<para>calculateValues - Calculate the value that will be live-in to each block added with addLiveInBlock. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Add PHI-def values as needed to preserve SSA form. Add liveness to all live-in blocks up to the Kill point, or the whole block for live-through blocks.</para>
+<para>Every predecessor of a live-in block must have been given a value with setLiveOutValue, the value may be null for live-trough blocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="255" column="8" bodyfile="lib/CodeGen/LiveRangeCalc.cpp" bodystart="114" bodyend="119"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1_live_range_calc_1ad445a5028efdf094173a202811f003e3" compoundref="_live_range_calc_8cpp" startline="86" endline="109">extend</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_live_range_calc_1a13c4005ea769c09d88be76fa40744e7e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1acc1c483f4b4ee2f17bb6643a3b353609" kindref="member">LLVM_ATTRIBUTE_UNUSED</ref> <ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool LiveRangeCalc::isJointlyDominated</definition>
+        <argsstring>(const MachineBasicBlock *MBB, ArrayRef&lt; SlotIndex &gt; Defs, const SlotIndexes &amp;Indexes)</argsstring>
+        <name>isJointlyDominated</name>
+        <qualifiedname>llvm::LiveRangeCalc::isJointlyDominated</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> &gt;</type>
+          <declname>Defs</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_slot_indexes" kindref="compound">SlotIndexes</ref> &amp;</type>
+          <declname>Indexes</declname>
+        </param>
+        <briefdescription>
+<para>A diagnostic function to check if the end of the block <computeroutput>MBB</computeroutput> is jointly dominated by the blocks corresponding to the slot indices in <computeroutput>Defs</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is mainly for use in self-verification checks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="262" column="15" bodyfile="lib/CodeGen/LiveRangeCalc.cpp" bodystart="436" bodyend="461"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_set_vector_1af34eb71cc483e84d2eca80575cb9ccde" compoundref="_set_vector_8h" startline="162" endline="178">llvm::SetVector&lt; T, Vector, Set, N &gt;::insert</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="classllvm_1_1_bit_vector_1a62237ebe27691377a942abe7446332ec" compoundref="_bit_vector_8h" startline="351" endline="355">llvm::BitVector::set</references>
+        <references refid="classllvm_1_1_set_vector_1a1a42c1ba878bd637f374197d05f0a97f" compoundref="_set_vector_8h" startline="98" endline="100">llvm::SetVector&lt; T, Vector, Set, N &gt;::size</references>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1abc440c9fad640641c26ddae8c08dce82" compoundref="_machine_verifier_8cpp" startline="3643" endline="3869">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::verifyLiveRangeSegment</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::LiveIntervalCalc</label>
+        <link refid="classllvm_1_1_live_interval_calc"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::LiveRangeCalc</label>
+        <link refid="classllvm_1_1_live_range_calc"/>
+      </node>
+    </inheritancegraph>
+    <location file="include/llvm/CodeGen/LiveRangeCalc.h" line="45" column="1" bodyfile="include/llvm/CodeGen/LiveRangeCalc.h" bodystart="45" bodyend="265"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_live_range_calc_1a46981dd5d4bb3043b740ce285b7b4a95" prot="public" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>addLiveInBlock</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1aa1e119e1a29c2047e295b1e66153cf3e" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>Alloc</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ae5c960114840d1c6dddfbaa529ac633e" prot="public" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>calculateValues</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1aeae2aad504a71d29ff10f6527be73e97" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>DomTree</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1aac4eda35d4dd1470f532505eeeb8cf96" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>EntryInfoMap</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a4af75b162ef660fbe3a08262c84c7825" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>EntryInfos</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ad445a5028efdf094173a202811f003e3" prot="public" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>extend</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ae243990ea455fd5ec0c3c70785a17228" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>findReachingDefs</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a3c8fd02f213ccc28812243ec1f36957c" prot="protected" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>getDomTree</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a11a21f58b3a7b8b7c401958cd3f7304f" prot="protected" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>getIndexes</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ab032314f07277bf920fd315187ab9605" prot="protected" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>getMachineFunction</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ad09d2d2f0c1d47c7bc6eb04e33b5e51d" prot="protected" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>getRegInfo</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a60d4123651abf23e886661980d951ffc" prot="protected" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>getVNAlloc</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a9f9a3a7dda1749ddcaf3c9f3ab9c9c73" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>Indexes</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1aecb04af202c3560e42fad62a5506f763" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>isDefOnEntry</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a13c4005ea769c09d88be76fa40744e7e" prot="public" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>isJointlyDominated</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1abbb6fcf43c4c5e0e2778ce03512250a3" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>LiveIn</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1aa8fd2372769502e3833805b30b621403" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>LiveOutMap</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a85afb5ab5edc2205dfdcdb8f5fad518d" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>LiveOutPair</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ae41cc4877968749dfa2b1fc3f1110a19" prot="public" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>LiveRangeCalc</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a9e5608bb9852fb86990af4dd05842128" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>Map</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a1e21e9bb116a8e83265610c24217afc8" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>MF</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a9e7f801341553dc1123d8793e6687697" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a65f0beed94a7dbdf8c8d7e2b46a0afa0" prot="public" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>reset</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a56cefbb66ed770ce1e6df7cbd1fa90d1" prot="protected" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>resetLiveOutMap</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a5b21a9bc676c95be138caf3757ac6d59" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>Seen</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ae8e6fcd2d2e7e04fb1aa8fab71910f68" prot="public" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>setLiveOutValue</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1aabd755af5c29164f99a73388406d9e8a" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>updateFromLiveIns</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a8724ca9a385ad023d80339599cc037df" prot="private" virt="non-virtual"><scope>llvm::LiveRangeCalc</scope><name>updateSSA</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

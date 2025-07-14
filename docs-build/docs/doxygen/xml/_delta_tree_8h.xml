@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_delta_tree_8h" kind="file" language="C++">
+    <compoundname>DeltaTree.h</compoundname>
+    <includedby refid="_rewrite_buffer_8h" local="yes">include/llvm/ADT/RewriteBuffer.h</includedby>
+    <includedby refid="_delta_tree_8cpp" local="yes">lib/Support/DeltaTree.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/ADT/DeltaTree.h</label>
+        <link refid="_delta_tree_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/llvm/ADT/RewriteBuffer.h</label>
+        <link refid="_rewrite_buffer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>lib/Support/DeltaTree.cpp</label>
+        <link refid="_delta_tree_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Support/RewriteBuffer.cpp</label>
+        <link refid="_rewrite_buffer_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1_delta_tree" prot="public">llvm::DeltaTree</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>DeltaTree.h<sp/>-<sp/>B-Tree<sp/>for<sp/>Rewrite<sp/>Delta<sp/>tracking<sp/>----------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>defines<sp/>the<sp/>DeltaTree<sp/>class.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_ADT_DELTATREE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_ADT_DELTATREE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">///<sp/>DeltaTree<sp/>-<sp/>a<sp/>multiway<sp/>search<sp/>tree<sp/>(BTree)<sp/>structure<sp/>with<sp/>some<sp/>fancy</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">///<sp/>features.<sp/><sp/>B-Trees<sp/>are<sp/>generally<sp/>more<sp/>memory<sp/>and<sp/>cache<sp/>efficient<sp/>than</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">///<sp/>binary<sp/>trees,<sp/>because<sp/>they<sp/>store<sp/>multiple<sp/>keys/values<sp/>in<sp/>each<sp/>node.<sp/><sp/>This</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">///<sp/>implements<sp/>a<sp/>key/value<sp/>mapping<sp/>from<sp/>index<sp/>to<sp/>delta,<sp/>and<sp/>allows<sp/>fast<sp/>lookup</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">///<sp/>on<sp/>index.<sp/><sp/>However,<sp/>an<sp/>added<sp/>(important)<sp/>bonus<sp/>is<sp/>that<sp/>it<sp/>can<sp/>also</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">///<sp/>efficiently<sp/>tell<sp/>us<sp/>the<sp/>full<sp/>accumulated<sp/>delta<sp/>for<sp/>a<sp/>specific<sp/>file<sp/>offset</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">///<sp/>as<sp/>well,<sp/>without<sp/>traversing<sp/>the<sp/>whole<sp/>tree.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classllvm_1_1_delta_tree" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_delta_tree_1a93581c8e7d30de46117cc3e07a0af01d" kindref="member">DeltaTree</ref><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*Root;<sp/></highlight><highlight class="comment">//<sp/>&quot;DeltaTreeNode<sp/>*&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_delta_tree_1a93581c8e7d30de46117cc3e07a0af01d" kindref="member">DeltaTree</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Note:<sp/>Currently<sp/>we<sp/>only<sp/>support<sp/>copying<sp/>when<sp/>the<sp/>RHS<sp/>is<sp/>empty.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_delta_tree_1a93581c8e7d30de46117cc3e07a0af01d" kindref="member">DeltaTree</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_delta_tree_1a93581c8e7d30de46117cc3e07a0af01d" kindref="member">DeltaTree</ref><sp/>&amp;<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classllvm_1_1_delta_tree_1a5d79f8161fd4c4dbeb435534e56a2fc1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_delta_tree_1a93581c8e7d30de46117cc3e07a0af01d" kindref="member">DeltaTree</ref><sp/>&amp;<ref refid="classllvm_1_1_delta_tree_1a5d79f8161fd4c4dbeb435534e56a2fc1" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_delta_tree_1a93581c8e7d30de46117cc3e07a0af01d" kindref="member">DeltaTree</ref><sp/>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_delta_tree_1abf2c383983f61525048221dc5218c8a0" kindref="member">~DeltaTree</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/>///<sp/>getDeltaAt<sp/>-<sp/>Return<sp/>the<sp/>accumulated<sp/>delta<sp/>at<sp/>the<sp/>specified<sp/>file<sp/>offset.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/>///<sp/>This<sp/>includes<sp/>all<sp/>insertions<sp/>or<sp/>delections<sp/>that<sp/>occurred<sp/>*before*<sp/>the</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/>///<sp/>specified<sp/>file<sp/>index.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_delta_tree_1a9d2add1ca152069aa7cd796d3e7c552e" kindref="member">getDeltaAt</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>FileIndex)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/>///<sp/>AddDelta<sp/>-<sp/>When<sp/>a<sp/>change<sp/>is<sp/>made<sp/>that<sp/>shifts<sp/>around<sp/>the<sp/>text<sp/>buffer,</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/>///<sp/>this<sp/>method<sp/>is<sp/>used<sp/>to<sp/>record<sp/>that<sp/>info.<sp/><sp/>It<sp/>inserts<sp/>a<sp/>delta<sp/>of<sp/>&apos;Delta&apos;</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/>///<sp/>into<sp/>the<sp/>current<sp/>DeltaTree<sp/>at<sp/>offset<sp/>FileIndex.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_delta_tree_1a65b2200df7c029fc766e3486c6629ae5" kindref="member">AddDelta</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>FileIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Delta);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_ADT_DELTATREE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/ADT/DeltaTree.h"/>
+  </compounddef>
+</doxygen>

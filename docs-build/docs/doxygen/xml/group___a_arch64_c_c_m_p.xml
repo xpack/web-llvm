@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group___a_arch64_c_c_m_p" kind="group">
+    <compoundname>AArch64CCMP</compoundname>
+    <title>CMP;CCMP matching</title>
+    <briefdescription>
+<para>These functions deal with the formation of CMP;CCMP;... sequences. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The CCMP/CCMN/FCCMP/FCCMPE instructions allow the conditional execution of a comparison. They set the NZCV flags to a predefined value if their predicate is false. This allows to express arbitrary conjunctions, for example &quot;cmp 0 (and (setCA (cmp A)) (setCB (cmp B)))&quot; expressed as: cmp A ccmp B, inv(CB), CA check for CB flags</para>
+<para>This naturally lets us implement chains of AND operations with SETCC operands. And we can even implement some other situations by transforming them:<itemizedlist>
+<listitem><para>We can implement (NEG SETCC) i.e. negating a single comparison by negating the flags used in a CCMP/FCCMP operations.</para>
+</listitem><listitem><para>We can negate the result of a whole chain of CMP/CCMP/FCCMP operations by negating the flags we test for afterwards. i.e. NEG (CMP CCMP CCCMP ...) can be implemented.</para>
+</listitem><listitem><para>Note that we can only ever negate all previously processed results. What we can not implement by flipping the flags to test is a negation of two sub-trees (because the negation affects all sub-trees emitted so far, so the 2nd sub-tree we emit would also affect the first). With those tools we can implement some OR operations:</para>
+</listitem><listitem><para>(OR (SETCC A) (SETCC B)) can be implemented via: NEG (AND (NEG (SETCC A)) (NEG (SETCC B)))</para>
+</listitem><listitem><para>After transforming OR to NEG/AND combinations we may be able to use NEG elimination rules from earlier to implement the whole thing as a CCMP/FCCMP chain.</para>
+</listitem></itemizedlist>
+</para>
+<para>As complete example: or (or (setCA (cmp A)) (setCB (cmp B))) (and (setCC (cmp C)) (setCD (cmp D)))" can be reassociated to: or (and (setCC (cmp C)) setCD (cmp D)) </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

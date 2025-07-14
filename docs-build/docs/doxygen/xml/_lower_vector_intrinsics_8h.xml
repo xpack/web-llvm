@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_lower_vector_intrinsics_8h" kind="file" language="C++">
+    <compoundname>LowerVectorIntrinsics.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">optional</includes>
+    <includedby refid="_pre_i_sel_intrinsic_lowering_8cpp" local="yes">lib/CodeGen/PreISelIntrinsicLowering.cpp</includedby>
+    <includedby refid="_lower_vector_intrinsics_8cpp" local="yes">lib/Transforms/Utils/LowerVectorIntrinsics.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/Transforms/Utils/LowerVectorIntrinsics.h</label>
+        <link refid="_lower_vector_intrinsics_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>optional</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Transforms/Utils/LowerVectorIntrinsics.h</label>
+        <link refid="_lower_vector_intrinsics_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/CodeGen/PreISelIntrinsicLowering.cpp</label>
+        <link refid="_pre_i_sel_intrinsic_lowering_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Transforms/Utils/LowerVectorIntrinsics.cpp</label>
+        <link refid="_lower_vector_intrinsics_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>llvm/Transforms/Utils/LowerVectorIntrinsics.h<sp/>------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Lower<sp/>intrinsics<sp/>with<sp/>a<sp/>scalable<sp/>vector<sp/>arg<sp/>to<sp/>loops.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_TRANSFORMS_UTILS_LOWERVECTORINTRINSICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_TRANSFORMS_UTILS_LOWERVECTORINTRINSICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_call_inst" kindref="compound">CallInst</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_module" kindref="compound">Module</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">///<sp/>Lower<sp/>\p<sp/>CI<sp/>as<sp/>a<sp/>loop.<sp/>\p<sp/>CI<sp/>is<sp/>a<sp/>unary<sp/>intrinsic<sp/>with<sp/>a<sp/>vector<sp/>argument<sp/>and</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">///<sp/>is<sp/>deleted<sp/>and<sp/>replaced<sp/>with<sp/>a<sp/>loop.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a0947c6f5b0bdcd54aa4a8447602f8283" kindref="member">lowerUnaryVectorIntrinsicAsLoop</ref>(<ref refid="classllvm_1_1_module" kindref="compound">Module</ref><sp/>&amp;M,<sp/><ref refid="classllvm_1_1_call_inst" kindref="compound">CallInst</ref><sp/>*CI);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Transforms/Utils/LowerVectorIntrinsics.h"/>
+  </compounddef>
+</doxygen>

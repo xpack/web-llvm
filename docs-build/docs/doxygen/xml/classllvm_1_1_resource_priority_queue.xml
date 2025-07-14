@@ -1,0 +1,831 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_resource_priority_queue" kind="class" language="C++" prot="public">
+    <compoundname>llvm::ResourcePriorityQueue</compoundname>
+    <basecompoundref refid="classllvm_1_1_scheduling_priority_queue" prot="public" virt="non-virtual">llvm::SchedulingPriorityQueue</basecompoundref>
+    <includes refid="_resource_priority_queue_8h" local="yes">llvm/CodeGen/ResourcePriorityQueue.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1ad6b54da0b32a0843cf227ce5d0680045" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> &gt; *</type>
+        <definition>std::vector&lt;SUnit&gt;* llvm::ResourcePriorityQueue::SUnits</definition>
+        <argsstring></argsstring>
+        <name>SUnits</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::SUnits</qualifiedname>
+        <briefdescription>
+<para>SUnits - The SUnits for the current graph. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="39" column="17" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1a9a750d1b07f758c8980b730855d7754b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::vector&lt;unsigned&gt; llvm::ResourcePriorityQueue::NumNodesSolelyBlocking</definition>
+        <argsstring></argsstring>
+        <name>NumNodesSolelyBlocking</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::NumNodesSolelyBlocking</qualifiedname>
+        <briefdescription>
+<para>NumNodesSolelyBlocking - This vector contains, for every node in the Queue, the number of nodes that the node is the sole unscheduled predecessor for. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is used as a tie-breaker heuristic for better mobility. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="45" column="17" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1aa7f0ab9f9140d5abbba1fa80678ae14c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt;</type>
+        <definition>std::vector&lt;SUnit*&gt; llvm::ResourcePriorityQueue::Queue</definition>
+        <argsstring></argsstring>
+        <name>Queue</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::Queue</qualifiedname>
+        <briefdescription>
+<para>Queue - The queue. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="48" column="17" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1adf0318d0f260d04868d18b4c37b58639" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::vector&lt;unsigned&gt; llvm::ResourcePriorityQueue::RegPressure</definition>
+        <argsstring></argsstring>
+        <name>RegPressure</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::RegPressure</qualifiedname>
+        <briefdescription>
+<para>RegPressure - Tracking current reg pressure per register class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="52" column="17" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1a7f80715ba435e59f9912c9e8ab95fc7a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::vector&lt;unsigned&gt; llvm::ResourcePriorityQueue::RegLimit</definition>
+        <argsstring></argsstring>
+        <name>RegLimit</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::RegLimit</qualifiedname>
+        <briefdescription>
+<para>RegLimit - Tracking the number of allocatable registers per register class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="56" column="17" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1a4addc6889a189b43d091045fe9dc275e" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1resource__sort" kindref="compound">resource_sort</ref></type>
+        <definition>resource_sort llvm::ResourcePriorityQueue::Picker</definition>
+        <argsstring></argsstring>
+        <name>Picker</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::Picker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="58" column="19" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1ac2287923751d037da0ebad5111c818dd" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+        <definition>const TargetRegisterInfo* llvm::ResourcePriorityQueue::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::TRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="59" column="30" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1a0d480a3bcfbe1797efdde1d10e9f816d" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_lowering" kindref="compound">TargetLowering</ref> *</type>
+        <definition>const TargetLowering* llvm::ResourcePriorityQueue::TLI</definition>
+        <argsstring></argsstring>
+        <name>TLI</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::TLI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="60" column="26" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1a188e320453c6dc762ca123b9b29b4ee1" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> *</type>
+        <definition>const TargetInstrInfo* llvm::ResourcePriorityQueue::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::TII</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="61" column="27" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1a0fcd2a0bed8bc6a0de122d845b7a3568" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instr_itinerary_data" kindref="compound">InstrItineraryData</ref> *</type>
+        <definition>const InstrItineraryData* llvm::ResourcePriorityQueue::InstrItins</definition>
+        <argsstring></argsstring>
+        <name>InstrItins</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::InstrItins</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="62" column="30" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1a8a7bae92230d99c56041868d7f80aba3" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_d_f_a_packetizer" kindref="compound">DFAPacketizer</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;DFAPacketizer&gt; llvm::ResourcePriorityQueue::ResourcesModel</definition>
+        <argsstring></argsstring>
+        <name>ResourcesModel</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::ResourcesModel</qualifiedname>
+        <briefdescription>
+<para>ResourcesModel - Represents VLIW state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Not limited to VLIW targets per say, but assumes definition of DFA by a target. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="66" column="21" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1ac8be1cc1ea4d6d9c64b45a9603661c04" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt;</type>
+        <definition>std::vector&lt;SUnit*&gt; llvm::ResourcePriorityQueue::Packet</definition>
+        <argsstring></argsstring>
+        <name>Packet</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::Packet</qualifiedname>
+        <briefdescription>
+<para>Resource model - packet/bundle model. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Purely internal at the time. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="70" column="17" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1afb42f66678efa270325a549febebed73" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ResourcePriorityQueue::ParallelLiveRanges</definition>
+        <argsstring></argsstring>
+        <name>ParallelLiveRanges</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::ParallelLiveRanges</qualifiedname>
+        <briefdescription>
+<para>Heuristics for estimating register pressure. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="73" column="14" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_resource_priority_queue_1a50f20e048ac0d4b9a689f69aee2f5736" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int llvm::ResourcePriorityQueue::HorizontalVerticalBalance</definition>
+        <argsstring></argsstring>
+        <name>HorizontalVerticalBalance</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::HorizontalVerticalBalance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="74" column="9" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a16fbd46e51c3d60b6bb29c18ea546aa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResourcePriorityQueue::ResourcePriorityQueue</definition>
+        <argsstring>(SelectionDAGISel *IS)</argsstring>
+        <name>ResourcePriorityQueue</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::ResourcePriorityQueue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_selection_d_a_g_i_sel" kindref="compound">SelectionDAGISel</ref> *</type>
+          <declname>IS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="77" column="5" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="43" bodyend="64"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1acd858ed72f11db9444617740c3622608" compoundref="_target_subtarget_info_8h" startline="97" endline="97">llvm::TargetSubtargetInfo::getInstrInfo</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1a43c530c830206ecf5ad3359364634c75" compoundref="_target_subtarget_info_8h" startline="129" endline="129">llvm::TargetSubtargetInfo::getRegisterInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classllvm_1_1_selection_d_a_g_i_sel_1a23107e32342f5488a5edfa71aff54700" compoundref="_selection_d_a_g_i_sel_8h" startline="51">llvm::SelectionDAGISel::MF</references>
+        <references refid="classllvm_1_1_selection_d_a_g_i_sel_1a1ed864be04c93653277b0f5112a4f305" compoundref="_selection_d_a_g_i_sel_8h" startline="65">llvm::SelectionDAGISel::TLI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a551b7bf5f4abcc55fddd75912b1ebfed" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::ResourcePriorityQueue::isBottomUp</definition>
+        <argsstring>() const override</argsstring>
+        <name>isBottomUp</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::isBottomUp</qualifiedname>
+        <reimplements refid="classllvm_1_1_scheduling_priority_queue_1a30162f88748f91d1841ead3380d2a61c">isBottomUp</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="79" column="10" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="79" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a22d5e4af25a96cf3a8b85aa7bb0a0912" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ResourcePriorityQueue::initNodes</definition>
+        <argsstring>(std::vector&lt; SUnit &gt; &amp;sunits) override</argsstring>
+        <name>initNodes</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::initNodes</qualifiedname>
+        <reimplements refid="classllvm_1_1_scheduling_priority_queue_1a9bf957359081fc81753d4f4b466a6577">initNodes</reimplements>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> &gt; &amp;</type>
+          <declname>sunits</declname>
+        </param>
+        <briefdescription>
+<para>Initialize nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="81" column="10" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="163" bodyend="171"/>
+        <references refid="classllvm_1_1_resource_priority_queue_1ae40b5614303ad840c02bf2923d5f4305" compoundref="_resource_priority_queue_8cpp" startline="533" endline="558">initNumRegDefsLeft</references>
+        <references refid="classllvm_1_1_s_unit_1a26a3c0b6567d1e8cf9ac8492e6e5f62f" compoundref="_schedule_d_a_g_8h" startline="271">llvm::SUnit::NodeQueueId</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1af11e9cd80e3d8d5ea10e7fc2f0f6620f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::ResourcePriorityQueue::addNode</definition>
+        <argsstring>(const SUnit *SU) override</argsstring>
+        <name>addNode</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::addNode</qualifiedname>
+        <reimplements refid="classllvm_1_1_scheduling_priority_queue_1ad3004ef364238e718cb706252ae0fe15">addNode</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="83" column="10" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="83" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a44de12c23090da525fbda35f8672824a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::ResourcePriorityQueue::updateNode</definition>
+        <argsstring>(const SUnit *SU) override</argsstring>
+        <name>updateNode</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::updateNode</qualifiedname>
+        <reimplements refid="classllvm_1_1_scheduling_priority_queue_1ae786b608765a20cdd6d9c9e3b40195f1">updateNode</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="87" column="10" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="87" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a232a59162abf077b0b41b90f02b8bf57" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::ResourcePriorityQueue::releaseState</definition>
+        <argsstring>() override</argsstring>
+        <name>releaseState</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::releaseState</qualifiedname>
+        <reimplements refid="classllvm_1_1_scheduling_priority_queue_1a4a1424925a29a70383ebc11b7cac319d">releaseState</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="89" column="10" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a3d3407fb455041dd1edc5f0981a329a0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ResourcePriorityQueue::getLatency</definition>
+        <argsstring>(unsigned NodeNum) const</argsstring>
+        <name>getLatency</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::getLatency</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NodeNum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="93" column="14" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="93" bodyend="96"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1ad8f900be43b1eb24a38ef2aba9df3eef" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ResourcePriorityQueue::getNumSolelyBlockNodes</definition>
+        <argsstring>(unsigned NodeNum) const</argsstring>
+        <name>getNumSolelyBlockNodes</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::getNumSolelyBlockNodes</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NodeNum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="98" column="14" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="98" bodyend="101"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1ae3f9d679010b93efcba0721c8714d029" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ResourcePriorityQueue::SUSchedulingCost</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>SUSchedulingCost</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::SUSchedulingCost</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>Single cost function reflecting benefit of scheduling SU in the current cycle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns single number reflecting benefit of scheduling SU in the current cycle. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="105" column="9" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="388" bodyend="455"/>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a84c47705bcf7271413738ae8bf3871e6" compoundref="_i_s_d_opcodes_8h" startline="215">llvm::ISD::CopyFromReg</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a93bc27ca4d9e211c54b0d9efb660f080" compoundref="_i_s_d_opcodes_8h" startline="209">llvm::ISD::CopyToReg</references>
+        <references refid="_resource_priority_queue_8cpp_1a05e54c70e7a069ff7a57d93bda6a529b" compoundref="_resource_priority_queue_8cpp" startline="384">FactorOne</references>
+        <references refid="classllvm_1_1_s_unit_1a582da862b28b876ef2235781392cffa6" compoundref="_schedule_d_a_g_8h" startline="424" endline="428">llvm::SUnit::getHeight</references>
+        <references refid="classllvm_1_1_s_unit_1ac42c5c2e2899b5e891477e415a045503" compoundref="_schedule_d_a_g_8h" startline="370" endline="374">llvm::SUnit::getNode</references>
+        <references refid="classllvm_1_1_m_c_instr_desc_1aae1b2a98bb0ec92da21fc3ddf683ca71" compoundref="_m_c_instr_desc_8h" startline="288" endline="288">llvm::MCInstrDesc::isCall</references>
+        <references refid="classllvm_1_1_resource_priority_queue_1afba9f58251019a23a1d7f60d6c958071" compoundref="_resource_priority_queue_8cpp" startline="238" endline="278">isResourceAvailable</references>
+        <references refid="classllvm_1_1_s_unit_1a8c201d7a769bda1cd75d8d6788123068" compoundref="_schedule_d_a_g_8h" startline="296">llvm::SUnit::isScheduled</references>
+        <references refid="classllvm_1_1_s_unit_1a7faf5b0345dd1c2fd4b60d7f5108f3b5" compoundref="_schedule_d_a_g_8h" startline="297">llvm::SUnit::isScheduleHigh</references>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="classllvm_1_1_s_unit_1a3f708b119627541f144d703a1d183202" compoundref="_schedule_d_a_g_8h" startline="270">llvm::SUnit::NodeNum</references>
+        <references refid="_resource_priority_queue_8cpp_1abba8af881520ddbdd4284d9441e8db6b" compoundref="_resource_priority_queue_8cpp" startline="380">PriorityFour</references>
+        <references refid="_resource_priority_queue_8cpp_1a3e12c3463c47765c7655cbb3e74b854b" compoundref="_resource_priority_queue_8cpp" startline="377">PriorityOne</references>
+        <references refid="_resource_priority_queue_8cpp_1a0c694e892c63ea2253587a07eb428601" compoundref="_resource_priority_queue_8cpp" startline="379">PriorityThree</references>
+        <references refid="_resource_priority_queue_8cpp_1a05cbf54b10915334c7da67e47773f0c4" compoundref="_resource_priority_queue_8cpp" startline="378">PriorityTwo</references>
+        <references refid="classllvm_1_1_resource_priority_queue_1a810f1b98c4887804780355393149e783" compoundref="_resource_priority_queue_8cpp" startline="352" endline="373">regPressureDelta</references>
+        <references refid="_resource_priority_queue_8cpp_1a0df822aea97e1eeadc0845521726bc19">RegPressureThreshold</references>
+        <references refid="_resource_priority_queue_8cpp_1a2c30998d0887fcc4f3134287c8e5fd7f" compoundref="_resource_priority_queue_8cpp" startline="381">ScaleOne</references>
+        <references refid="_resource_priority_queue_8cpp_1ad9d9e3d964402bce3c531d7adfc89fb0" compoundref="_resource_priority_queue_8cpp" startline="383">ScaleThree</references>
+        <references refid="_resource_priority_queue_8cpp_1ac23161046eaf1ee7b7a3d363291ec7bb" compoundref="_resource_priority_queue_8cpp" startline="382">ScaleTwo</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ad469508535ce2082a1ab1f0e429187b8" compoundref="_i_s_d_opcodes_8h" startline="52">llvm::ISD::TokenFactor</references>
+        <referencedby refid="classllvm_1_1_resource_priority_queue_1a7720efbfc06e11a61338a3ab97142b62" compoundref="_resource_priority_queue_8cpp" startline="585" endline="614">pop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1ae40b5614303ad840c02bf2923d5f4305" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResourcePriorityQueue::initNumRegDefsLeft</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>initNumRegDefsLeft</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::initNumRegDefsLeft</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>InitNumRegDefsLeft - Determine the # of regs defined by this node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="109" column="10" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="533" bodyend="558"/>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a84c47705bcf7271413738ae8bf3871e6" compoundref="_i_s_d_opcodes_8h" startline="215">llvm::ISD::CopyFromReg</references>
+        <references refid="classllvm_1_1_s_unit_1ac42c5c2e2899b5e891477e415a045503" compoundref="_schedule_d_a_g_8h" startline="370" endline="374">llvm::SUnit::getNode</references>
+        <references refid="classllvm_1_1_m_c_instr_desc_1a3496944fcc473dfe584e6615503a7a76" compoundref="_m_c_instr_desc_8h" startline="248" endline="248">llvm::MCInstrDesc::getNumDefs</references>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="classllvm_1_1_s_unit_1a74f8123e14985c7599ffca039e80b70a" compoundref="_schedule_d_a_g_8h" startline="302">llvm::SUnit::NumRegDefsLeft</references>
+        <referencedby refid="classllvm_1_1_resource_priority_queue_1a22d5e4af25a96cf3a8b85aa7bb0a0912" compoundref="_resource_priority_queue_8cpp" startline="163" endline="171">initNodes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a810f1b98c4887804780355393149e783" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ResourcePriorityQueue::regPressureDelta</definition>
+        <argsstring>(SUnit *SU, bool RawPressure=false)</argsstring>
+        <name>regPressureDelta</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::regPressureDelta</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>RawPressure</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Estimates change in reg pressure from this SU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is achieved by trivial tracking of defined and used vregs in dependent instructions. The RawPressure flag makes this function to ignore existing reg file sizes, and report raw def/use balance. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="110" column="9" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="352" bodyend="373"/>
+        <references refid="classllvm_1_1_s_unit_1ac42c5c2e2899b5e891477e415a045503" compoundref="_schedule_d_a_g_8h" startline="370" endline="374">llvm::SUnit::getNode</references>
+        <references refid="classllvm_1_1_s_d_node_1a1223d6e9a7dfb6e51299b894beccc679" compoundref="_selection_d_a_g_nodes_8h" startline="720" endline="720">llvm::SDNode::isMachineOpcode</references>
+        <references refid="classllvm_1_1_resource_priority_queue_1a7be640126e3f1024b18981f1de2de20f" compoundref="_resource_priority_queue_8cpp" startline="318" endline="344">rawRegPressureDelta</references>
+        <referencedby refid="classllvm_1_1_resource_priority_queue_1ae3f9d679010b93efcba0721c8714d029" compoundref="_resource_priority_queue_8cpp" startline="388" endline="455">SUSchedulingCost</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a7be640126e3f1024b18981f1de2de20f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ResourcePriorityQueue::rawRegPressureDelta</definition>
+        <argsstring>(SUnit *SU, unsigned RCId)</argsstring>
+        <name>rawRegPressureDelta</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::rawRegPressureDelta</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>RCId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="111" column="9" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="318" bodyend="344"/>
+        <references refid="classllvm_1_1_s_unit_1ac42c5c2e2899b5e891477e415a045503" compoundref="_schedule_d_a_g_8h" startline="370" endline="374">llvm::SUnit::getNode</references>
+        <references refid="classllvm_1_1_s_d_node_1a7f311fcc2415eee3cb3694013b985304" compoundref="_selection_d_a_g_nodes_8h" startline="973" endline="973">llvm::SDNode::getNumOperands</references>
+        <references refid="classllvm_1_1_s_d_node_1a7f06dbaee5fa2b239de548d0a775b25b" compoundref="_selection_d_a_g_nodes_8h" startline="1059" endline="1059">llvm::SDNode::getNumValues</references>
+        <references refid="classllvm_1_1_s_d_node_1a8388f666d6e735f35837ad03ed1f7a7a" compoundref="_selection_d_a_g_nodes_8h" startline="992" endline="995">llvm::SDNode::getOperand</references>
+        <references refid="classllvm_1_1_s_d_node_1a7a6096cff14db41b299758115c6e261c" compoundref="_selection_d_a_g_nodes_8h" startline="1068" endline="1070">llvm::SDNode::getSimpleValueType</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1_s_d_node_1a1223d6e9a7dfb6e51299b894beccc679" compoundref="_selection_d_a_g_nodes_8h" startline="720" endline="720">llvm::SDNode::isMachineOpcode</references>
+        <referencedby refid="classllvm_1_1_resource_priority_queue_1a810f1b98c4887804780355393149e783" compoundref="_resource_priority_queue_8cpp" startline="352" endline="373">regPressureDelta</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a56029661ac1c764aef2f3a1647011fcc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::ResourcePriorityQueue::empty</definition>
+        <argsstring>() const override</argsstring>
+        <name>empty</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::empty</qualifiedname>
+        <reimplements refid="classllvm_1_1_scheduling_priority_queue_1aa19ea76a7eab9ab9d3c379c60c57e890">empty</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="113" column="10" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="113" bodyend="113"/>
+        <referencedby refid="classllvm_1_1_resource_priority_queue_1a7720efbfc06e11a61338a3ab97142b62" compoundref="_resource_priority_queue_8cpp" startline="585" endline="614">pop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a068e19beaca7ce41347bb87946fbe2c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ResourcePriorityQueue::push</definition>
+        <argsstring>(SUnit *U) override</argsstring>
+        <name>push</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::push</qualifiedname>
+        <reimplements refid="classllvm_1_1_scheduling_priority_queue_1afb99b3857dfc3e59e2213bd05756ac5a">push</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="115" column="10" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="224" bodyend="234"/>
+        <references refid="classllvm_1_1_s_dep_1a03a2dc5f9f321a2ce28f5c641dfe5455" compoundref="_schedule_d_a_g_8h" startline="498" endline="498">llvm::SDep::getSUnit</references>
+        <references refid="classllvm_1_1_s_unit_1a3f708b119627541f144d703a1d183202" compoundref="_schedule_d_a_g_8h" startline="270">llvm::SUnit::NodeNum</references>
+        <references refid="classllvm_1_1_s_unit_1aab4a86c51e6b126c9c6ef58dbb574431" compoundref="_schedule_d_a_g_8h" startline="263">llvm::SUnit::Succs</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a7720efbfc06e11a61338a3ab97142b62" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * ResourcePriorityQueue::pop</definition>
+        <argsstring>() override</argsstring>
+        <name>pop</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::pop</qualifiedname>
+        <reimplements refid="classllvm_1_1_scheduling_priority_queue_1a62035e5a96831f80e09190f6301242b3">pop</reimplements>
+        <briefdescription>
+<para>Main access point - returns next instructions to be placed in scheduling sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="117" column="11" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="585" bodyend="614"/>
+        <references refid="_resource_priority_queue_8cpp_1a51a9c7c5a9a8e47f6c5c3240e85d8ca6">DisableDFASched</references>
+        <references refid="classllvm_1_1_resource_priority_queue_1a56029661ac1c764aef2f3a1647011fcc" compoundref="_resource_priority_queue_8h" startline="113" endline="113">empty</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_resource_priority_queue_1ae3f9d679010b93efcba0721c8714d029" compoundref="_resource_priority_queue_8cpp" startline="388" endline="455">SUSchedulingCost</references>
+        <references refid="namespacestd_1ab8424022895aee3e366fb9a32f2883cb" compoundref="_bit_vector_8h" startline="860" endline="860">std::swap</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1aa9bda2c466d94861fe114da2dc0b217d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ResourcePriorityQueue::remove</definition>
+        <argsstring>(SUnit *SU) override</argsstring>
+        <name>remove</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::remove</qualifiedname>
+        <reimplements refid="classllvm_1_1_scheduling_priority_queue_1a271739ac4f1735c0982b74c9bb151adb">remove</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="119" column="10" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="617" bodyend="624"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a086e9fbdb06276db7753101a08a63adf" compoundref="_s_t_l_extras_8h" startline="1759" endline="1761">llvm::find</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacestd_1ab8424022895aee3e366fb9a32f2883cb" compoundref="_bit_vector_8h" startline="860" endline="860">std::swap</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a0ad9cbe1a5bd1eb9d026fc0e91fab117" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ResourcePriorityQueue::scheduledNode</definition>
+        <argsstring>(SUnit *SU) override</argsstring>
+        <name>scheduledNode</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::scheduledNode</qualifiedname>
+        <reimplements refid="classllvm_1_1_scheduling_priority_queue_1a64084f258f0c4ee199557ed54ac9592a">scheduledNode</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>scheduledNode - Main resource tracking point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Main resource tracking point. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="122" column="10" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="459" bodyend="531"/>
+        <references refid="classllvm_1_1_target_register_class_1a32a8b65536822d50171455a6baa81da7" compoundref="_target_register_info_8h" startline="73" endline="73">llvm::TargetRegisterClass::getID</references>
+        <references refid="classllvm_1_1_s_unit_1ac42c5c2e2899b5e891477e415a045503" compoundref="_schedule_d_a_g_8h" startline="370" endline="374">llvm::SUnit::getNode</references>
+        <references refid="classllvm_1_1_s_d_node_1a7f311fcc2415eee3cb3694013b985304" compoundref="_selection_d_a_g_nodes_8h" startline="973" endline="973">llvm::SDNode::getNumOperands</references>
+        <references refid="classllvm_1_1_s_d_node_1a7f06dbaee5fa2b239de548d0a775b25b" compoundref="_selection_d_a_g_nodes_8h" startline="1059" endline="1059">llvm::SDNode::getNumValues</references>
+        <references refid="classllvm_1_1_s_d_node_1a8388f666d6e735f35837ad03ed1f7a7a" compoundref="_selection_d_a_g_nodes_8h" startline="992" endline="995">llvm::SDNode::getOperand</references>
+        <references refid="classllvm_1_1_s_d_node_1a7a6096cff14db41b299758115c6e261c" compoundref="_selection_d_a_g_nodes_8h" startline="1068" endline="1070">llvm::SDNode::getSimpleValueType</references>
+        <references refid="classllvm_1_1_s_dep_1a03a2dc5f9f321a2ce28f5c641dfe5455" compoundref="_schedule_d_a_g_8h" startline="498" endline="498">llvm::SDep::getSUnit</references>
+        <references refid="classllvm_1_1_s_dep_1a8b4768ef4b1a0a2e8d50714b07465075" compoundref="_schedule_d_a_g_8h" startline="161" endline="163">llvm::SDep::isCtrl</references>
+        <references refid="classllvm_1_1_s_d_node_1a1223d6e9a7dfb6e51299b894beccc679" compoundref="_selection_d_a_g_nodes_8h" startline="720" endline="720">llvm::SDNode::isMachineOpcode</references>
+        <references refid="_resource_priority_queue_8cpp_1a4fd9efbedcbd8af579647f70a9c35f65" compoundref="_resource_priority_queue_8cpp" startline="142" endline="149">numberCtrlDepsInSU</references>
+        <references refid="_resource_priority_queue_8cpp_1a3ab96228908e98db52f1e1dd59bafbde" compoundref="_resource_priority_queue_8cpp" startline="151" endline="158">numberCtrlPredInSU</references>
+        <references refid="classllvm_1_1_s_unit_1a25329a072c76c185b8c5ff530c632762" compoundref="_schedule_d_a_g_8h" startline="272">llvm::SUnit::NumPreds</references>
+        <references refid="classllvm_1_1_s_unit_1a74f8123e14985c7599ffca039e80b70a" compoundref="_schedule_d_a_g_8h" startline="302">llvm::SUnit::NumRegDefsLeft</references>
+        <references refid="classllvm_1_1_s_unit_1ae2b43854b542de66eec6475adc48f56c" compoundref="_schedule_d_a_g_8h" startline="262">llvm::SUnit::Preds</references>
+        <references refid="classllvm_1_1_resource_priority_queue_1ae30e9e0cfb98797266d9fc1226cf467d" compoundref="_resource_priority_queue_8cpp" startline="281" endline="316">reserveResources</references>
+        <references refid="classllvm_1_1_s_unit_1aab4a86c51e6b126c9c6ef58dbb574431" compoundref="_schedule_d_a_g_8h" startline="263">llvm::SUnit::Succs</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1afba9f58251019a23a1d7f60d6c958071" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ResourcePriorityQueue::isResourceAvailable</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>isResourceAvailable</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::isResourceAvailable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if scheduling of this SU is possible in the current packet. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="123" column="10" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="238" bodyend="278"/>
+        <references refid="classllvm_1_1_s_d_node_1ae1fa8ded9bce6f8321a69e99e41a473c" compoundref="_selection_d_a_g_nodes_8h" startline="1027" endline="1032">llvm::SDNode::getGluedNode</references>
+        <references refid="classllvm_1_1_s_d_node_1a7f96a3399d86d6f136aaa121de4217a3" compoundref="_selection_d_a_g_nodes_8h" startline="725" endline="728">llvm::SDNode::getMachineOpcode</references>
+        <references refid="classllvm_1_1_s_unit_1ac42c5c2e2899b5e891477e415a045503" compoundref="_schedule_d_a_g_8h" startline="370" endline="374">llvm::SUnit::getNode</references>
+        <references refid="classllvm_1_1_s_dep_1a03a2dc5f9f321a2ce28f5c641dfe5455" compoundref="_schedule_d_a_g_8h" startline="498" endline="498">llvm::SDep::getSUnit</references>
+        <references refid="classllvm_1_1_s_dep_1a8b4768ef4b1a0a2e8d50714b07465075" compoundref="_schedule_d_a_g_8h" startline="161" endline="163">llvm::SDep::isCtrl</references>
+        <references refid="classllvm_1_1_s_d_node_1a1223d6e9a7dfb6e51299b894beccc679" compoundref="_selection_d_a_g_nodes_8h" startline="720" endline="720">llvm::SDNode::isMachineOpcode</references>
+        <referencedby refid="classllvm_1_1_resource_priority_queue_1ae30e9e0cfb98797266d9fc1226cf467d" compoundref="_resource_priority_queue_8cpp" startline="281" endline="316">reserveResources</referencedby>
+        <referencedby refid="classllvm_1_1_resource_priority_queue_1ae3f9d679010b93efcba0721c8714d029" compoundref="_resource_priority_queue_8cpp" startline="388" endline="455">SUSchedulingCost</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1ae30e9e0cfb98797266d9fc1226cf467d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResourcePriorityQueue::reserveResources</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>reserveResources</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::reserveResources</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>Keep track of available resources. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="124" column="10" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="281" bodyend="316"/>
+        <references refid="classllvm_1_1_s_d_node_1ae1fa8ded9bce6f8321a69e99e41a473c" compoundref="_selection_d_a_g_nodes_8h" startline="1027" endline="1032">llvm::SDNode::getGluedNode</references>
+        <references refid="classllvm_1_1_s_d_node_1a7f96a3399d86d6f136aaa121de4217a3" compoundref="_selection_d_a_g_nodes_8h" startline="725" endline="728">llvm::SDNode::getMachineOpcode</references>
+        <references refid="classllvm_1_1_s_unit_1ac42c5c2e2899b5e891477e415a045503" compoundref="_schedule_d_a_g_8h" startline="370" endline="374">llvm::SUnit::getNode</references>
+        <references refid="classllvm_1_1_s_d_node_1a1223d6e9a7dfb6e51299b894beccc679" compoundref="_selection_d_a_g_nodes_8h" startline="720" endline="720">llvm::SDNode::isMachineOpcode</references>
+        <references refid="classllvm_1_1_resource_priority_queue_1afba9f58251019a23a1d7f60d6c958071" compoundref="_resource_priority_queue_8cpp" startline="238" endline="278">isResourceAvailable</references>
+        <referencedby refid="classllvm_1_1_resource_priority_queue_1a0ad9cbe1a5bd1eb9d026fc0e91fab117" compoundref="_resource_priority_queue_8cpp" startline="459" endline="531">scheduledNode</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a080205c27c9ab1329c3ba77899f8ff64" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResourcePriorityQueue::adjustPriorityOfUnscheduledPreds</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>adjustPriorityOfUnscheduledPreds</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::adjustPriorityOfUnscheduledPreds</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>adjustPriorityOfUnscheduledPreds - One of the predecessors of SU was just scheduled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If SU is not itself available, then there is at least one predecessor node that has not been scheduled yet. If SU has exactly ONE unscheduled predecessor, we want to increase its priority: it getting scheduled will make this node available, so it is better than some other node of the same priority that will not make a node available. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="127" column="10" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="566" bodyend="580"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1a5a1050d9cfbe9965983a63bcf1b1425e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * ResourcePriorityQueue::getSingleUnscheduledPred</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>getSingleUnscheduledPred</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::getSingleUnscheduledPred</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>getSingleUnscheduledPred - If there is exactly one unscheduled predecessor of SU, return it, otherwise return null. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="128" column="11" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="209" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1ab10599e0c6773e8acf029c1de8c7f323" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned ResourcePriorityQueue::numberRCValPredInSU</definition>
+        <argsstring>(SUnit *SU, unsigned RCId)</argsstring>
+        <name>numberRCValPredInSU</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::numberRCValPredInSU</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>RCId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="129" column="14" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="67" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_priority_queue_1af57177f82ea1479ecb312cec91558c7b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned ResourcePriorityQueue::numberRCValSuccInSU</definition>
+        <argsstring>(SUnit *SU, unsigned RCId)</argsstring>
+        <name>numberRCValSuccInSU</name>
+        <qualifiedname>llvm::ResourcePriorityQueue::numberRCValSuccInSU</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>RCId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="130" column="14" bodyfile="lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp" bodystart="104" bodyend="140"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::ResourcePriorityQueue</label>
+        <link refid="classllvm_1_1_resource_priority_queue"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::SchedulingPriorityQueue</label>
+        <link refid="classllvm_1_1_scheduling_priority_queue"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::ResourcePriorityQueue</label>
+        <link refid="classllvm_1_1_resource_priority_queue"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::SchedulingPriorityQueue</label>
+        <link refid="classllvm_1_1_scheduling_priority_queue"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/CodeGen/ResourcePriorityQueue.h" line="37" column="3" bodyfile="include/llvm/CodeGen/ResourcePriorityQueue.h" bodystart="37" bodyend="131"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_resource_priority_queue_1af11e9cd80e3d8d5ea10e7fc2f0f6620f" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>addNode</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a080205c27c9ab1329c3ba77899f8ff64" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>adjustPriorityOfUnscheduledPreds</name></member>
+      <member refid="classllvm_1_1_scheduling_priority_queue_1a8518f98e41490c67a9042702ea511c4e" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a56029661ac1c764aef2f3a1647011fcc" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>empty</name></member>
+      <member refid="classllvm_1_1_scheduling_priority_queue_1ad9f56ce6787d4e02ce78829aa7a054ae" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>getCurCycle</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a3d3407fb455041dd1edc5f0981a329a0" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>getLatency</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1ad8f900be43b1eb24a38ef2aba9df3eef" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>getNumSolelyBlockNodes</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a5a1050d9cfbe9965983a63bcf1b1425e" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>getSingleUnscheduledPred</name></member>
+      <member refid="classllvm_1_1_scheduling_priority_queue_1a866473ce1ccdad456bbf1ef10f673feb" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>hasReadyFilter</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a50f20e048ac0d4b9a689f69aee2f5736" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>HorizontalVerticalBalance</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a22d5e4af25a96cf3a8b85aa7bb0a0912" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>initNodes</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1ae40b5614303ad840c02bf2923d5f4305" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>initNumRegDefsLeft</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a0fcd2a0bed8bc6a0de122d845b7a3568" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>InstrItins</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a551b7bf5f4abcc55fddd75912b1ebfed" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>isBottomUp</name></member>
+      <member refid="classllvm_1_1_scheduling_priority_queue_1a6464517aaf84d0af2fb33e65be0c514b" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>isReady</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1afba9f58251019a23a1d7f60d6c958071" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>isResourceAvailable</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1ab10599e0c6773e8acf029c1de8c7f323" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>numberRCValPredInSU</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1af57177f82ea1479ecb312cec91558c7b" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>numberRCValSuccInSU</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a9a750d1b07f758c8980b730855d7754b" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>NumNodesSolelyBlocking</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1ac8be1cc1ea4d6d9c64b45a9603661c04" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>Packet</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1afb42f66678efa270325a549febebed73" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>ParallelLiveRanges</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a4addc6889a189b43d091045fe9dc275e" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>Picker</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a7720efbfc06e11a61338a3ab97142b62" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>pop</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a068e19beaca7ce41347bb87946fbe2c9" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>push</name></member>
+      <member refid="classllvm_1_1_scheduling_priority_queue_1ac8e3cdd40835028f5ed87e27c5dfe968" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>push_all</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1aa7f0ab9f9140d5abbba1fa80678ae14c" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>Queue</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a7be640126e3f1024b18981f1de2de20f" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>rawRegPressureDelta</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a7f80715ba435e59f9912c9e8ab95fc7a" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>RegLimit</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1adf0318d0f260d04868d18b4c37b58639" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>RegPressure</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a810f1b98c4887804780355393149e783" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>regPressureDelta</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a232a59162abf077b0b41b90f02b8bf57" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>releaseState</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1aa9bda2c466d94861fe114da2dc0b217d" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>remove</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1ae30e9e0cfb98797266d9fc1226cf467d" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>reserveResources</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a16fbd46e51c3d60b6bb29c18ea546aa7" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>ResourcePriorityQueue</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a8a7bae92230d99c56041868d7f80aba3" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>ResourcesModel</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a0ad9cbe1a5bd1eb9d026fc0e91fab117" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>scheduledNode</name></member>
+      <member refid="classllvm_1_1_scheduling_priority_queue_1a04cd6cf6939bcdd0f343bab335f7f82f" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>SchedulingPriorityQueue</name></member>
+      <member refid="classllvm_1_1_scheduling_priority_queue_1a018c241de99a1f9d9bddee5b895afd01" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>setCurCycle</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1ad6b54da0b32a0843cf227ce5d0680045" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>SUnits</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1ae3f9d679010b93efcba0721c8714d029" prot="public" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>SUSchedulingCost</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a188e320453c6dc762ca123b9b29b4ee1" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>TII</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a0d480a3bcfbe1797efdde1d10e9f816d" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>TLI</name></member>
+      <member refid="classllvm_1_1_scheduling_priority_queue_1a740277c92e737f9caa203053551dc5d5" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>tracksRegPressure</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1ac2287923751d037da0ebad5111c818dd" prot="private" virt="non-virtual"><scope>llvm::ResourcePriorityQueue</scope><name>TRI</name></member>
+      <member refid="classllvm_1_1_scheduling_priority_queue_1aacecda7b05a8a9345e0c512a5faac9b9" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>unscheduledNode</name></member>
+      <member refid="classllvm_1_1_resource_priority_queue_1a44de12c23090da525fbda35f8672824a" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>updateNode</name></member>
+      <member refid="classllvm_1_1_scheduling_priority_queue_1a9ca958c0599a4581f3539f6b1f102f7b" prot="public" virt="virtual"><scope>llvm::ResourcePriorityQueue</scope><name>~SchedulingPriorityQueue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

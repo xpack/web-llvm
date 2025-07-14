@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_lower_mem_intrinsics_8h" kind="file" language="C++">
+    <compoundname>LowerMemIntrinsics.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">optional</includes>
+    <includedby refid="_pre_i_sel_intrinsic_lowering_8cpp" local="yes">lib/CodeGen/PreISelIntrinsicLowering.cpp</includedby>
+    <includedby refid="_n_v_p_t_x_lower_aggr_copies_8cpp" local="yes">lib/Target/NVPTX/NVPTXLowerAggrCopies.cpp</includedby>
+    <includedby refid="_s_p_i_r_v_merge_region_exit_targets_8cpp" local="yes">lib/Target/SPIRV/SPIRVMergeRegionExitTargets.cpp</includedby>
+    <includedby refid="_s_p_i_r_v_prepare_functions_8cpp" local="yes">lib/Target/SPIRV/SPIRVPrepareFunctions.cpp</includedby>
+    <includedby refid="_s_p_i_r_v_strip_convergent_intrinsics_8cpp" local="yes">lib/Target/SPIRV/SPIRVStripConvergentIntrinsics.cpp</includedby>
+    <includedby refid="_s_p_i_r_v_structurizer_8cpp" local="yes">lib/Target/SPIRV/SPIRVStructurizer.cpp</includedby>
+    <includedby refid="_lower_mem_intrinsics_8cpp" local="yes">lib/Transforms/Utils/LowerMemIntrinsics.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/Transforms/Utils/LowerMemIntrinsics.h</label>
+        <link refid="_lower_mem_intrinsics_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>optional</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Transforms/Utils/LowerMemIntrinsics.h</label>
+        <link refid="_lower_mem_intrinsics_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/CodeGen/PreISelIntrinsicLowering.cpp</label>
+        <link refid="_pre_i_sel_intrinsic_lowering_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Target/NVPTX/NVPTXLowerAggrCopies.cpp</label>
+        <link refid="_n_v_p_t_x_lower_aggr_copies_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Target/SPIRV/SPIRVMergeRegionExitTargets.cpp</label>
+        <link refid="_s_p_i_r_v_merge_region_exit_targets_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/Target/SPIRV/SPIRVPrepareFunctions.cpp</label>
+        <link refid="_s_p_i_r_v_prepare_functions_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/Target/SPIRV/SPIRVStripConvergentIntrinsics.cpp</label>
+        <link refid="_s_p_i_r_v_strip_convergent_intrinsics_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/Target/SPIRV/SPIRVStructurizer.cpp</label>
+        <link refid="_s_p_i_r_v_structurizer_8cpp"/>
+      </node>
+      <node id="8">
+        <label>lib/Transforms/Utils/LowerMemIntrinsics.cpp</label>
+        <link refid="_lower_mem_intrinsics_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>llvm/Transforms/Utils/LowerMemIntrinsics.h<sp/>---------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Lower<sp/>memset,<sp/>memcpy,<sp/>memmov<sp/>intrinsics<sp/>to<sp/>loops<sp/>(e.g.<sp/>for<sp/>targets<sp/>without</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>library<sp/>support).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_TRANSFORMS_UTILS_LOWERMEMINTRINSICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_TRANSFORMS_UTILS_LOWERMEMINTRINSICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_atomic_mem_cpy_inst" kindref="compound">AtomicMemCpyInst</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_constant_int" kindref="compound">ConstantInt</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_mem_cpy_inst" kindref="compound">MemCpyInst</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_mem_move_inst" kindref="compound">MemMoveInst</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_mem_set_inst" kindref="compound">MemSetInst</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_mem_set_pattern_inst" kindref="compound">MemSetPatternInst</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structllvm_1_1_align" kindref="compound">Align</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="34"><highlight class="comment">///<sp/>Emit<sp/>a<sp/>loop<sp/>implementing<sp/>the<sp/>semantics<sp/>of<sp/>llvm.memcpy<sp/>where<sp/>the<sp/>size<sp/>is<sp/>not</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">///<sp/>a<sp/>compile-time<sp/>constant.<sp/>Loop<sp/>will<sp/>be<sp/>insterted<sp/>at<sp/>\p<sp/>InsertBefore.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="namespacellvm_1a5c023a1cc267e243d2c52b149dfaeb73" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a5c023a1cc267e243d2c52b149dfaeb73" kindref="member">createMemCpyLoopUnknownSize</ref>(</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref><sp/>*InsertBefore,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*SrcAddr,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*DstAddr,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*CopyLen,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structllvm_1_1_align" kindref="compound">Align</ref><sp/>SrcAlign,<sp/><ref refid="structllvm_1_1_align" kindref="compound">Align</ref><sp/>DestAlign,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>SrcIsVolatile,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>DstIsVolatile,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>CanOverlap,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref><sp/>&amp;<ref refid="namespacellvm_1aa0d69e81725c10fa5407f0bf34462068" kindref="member">TTI</ref>,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;unsigned&gt;<sp/>AtomicSize<sp/>=<sp/>std::nullopt);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="42"><highlight class="comment">///<sp/>Emit<sp/>a<sp/>loop<sp/>implementing<sp/>the<sp/>semantics<sp/>of<sp/>an<sp/>llvm.memcpy<sp/>whose<sp/>size<sp/>is<sp/>a</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">///<sp/>compile<sp/>time<sp/>constant.<sp/>Loop<sp/>is<sp/>inserted<sp/>at<sp/>\p<sp/>InsertBefore.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a16d5e17e2ce1be5012b2d00ab6d6669a" kindref="member">createMemCpyLoopKnownSize</ref>(</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref><sp/>*InsertBefore,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*SrcAddr,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*DstAddr,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_constant_int" kindref="compound">ConstantInt</ref><sp/>*CopyLen,<sp/><ref refid="structllvm_1_1_align" kindref="compound">Align</ref><sp/>SrcAlign,<sp/><ref refid="structllvm_1_1_align" kindref="compound">Align</ref><sp/>DestAlign,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>SrcIsVolatile,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>DstIsVolatile,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>CanOverlap,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref><sp/>&amp;<ref refid="namespacellvm_1aa0d69e81725c10fa5407f0bf34462068" kindref="member">TTI</ref>,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;uint32_t&gt;<sp/>AtomicCpySize<sp/>=<sp/>std::nullopt);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment">///<sp/>Expand<sp/>\p<sp/>MemCpy<sp/>as<sp/>a<sp/>loop.<sp/>\p<sp/>MemCpy<sp/>is<sp/>not<sp/>deleted.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ad5625618c73d17563d851631e27444e6" kindref="member">expandMemCpyAsLoop</ref>(<ref refid="classllvm_1_1_mem_cpy_inst" kindref="compound">MemCpyInst</ref><sp/>*MemCpy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref><sp/>&amp;<ref refid="namespacellvm_1aa0d69e81725c10fa5407f0bf34462068" kindref="member">TTI</ref>,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref><sp/>*SE<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="54"><highlight class="comment">///<sp/>Expand<sp/>\p<sp/>MemMove<sp/>as<sp/>a<sp/>loop.<sp/>\p<sp/>MemMove<sp/>is<sp/>not<sp/>deleted.<sp/>Returns<sp/>true<sp/>if<sp/>the</highlight></codeline>
+<codeline lineno="55"><highlight class="comment">///<sp/>memmove<sp/>was<sp/>lowered.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a35f13ead4222c0c45fb21f7e63025bbc" kindref="member">expandMemMoveAsLoop</ref>(<ref refid="classllvm_1_1_mem_move_inst" kindref="compound">MemMoveInst</ref><sp/>*MemMove,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref><sp/>&amp;<ref refid="namespacellvm_1aa0d69e81725c10fa5407f0bf34462068" kindref="member">TTI</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment">///<sp/>Expand<sp/>\p<sp/>MemSet<sp/>as<sp/>a<sp/>loop.<sp/>\p<sp/>MemSet<sp/>is<sp/>not<sp/>deleted.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1aff2c3179f5913a4a4d6c80e3d7e564c0" kindref="member">expandMemSetAsLoop</ref>(<ref refid="classllvm_1_1_mem_set_inst" kindref="compound">MemSetInst</ref><sp/>*MemSet);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="61"><highlight class="comment">///<sp/>Expand<sp/>\p<sp/>MemSetPattern<sp/>as<sp/>a<sp/>loop.<sp/>\p<sp/>MemSet<sp/>is<sp/>not<sp/>deleted.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a2b152a4602737ffe1ac280df188402f8" kindref="member">expandMemSetPatternAsLoop</ref>(<ref refid="classllvm_1_1_mem_set_pattern_inst" kindref="compound">MemSetPatternInst</ref><sp/>*MemSet);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment">///<sp/>Expand<sp/>\p<sp/>AtomicMemCpy<sp/>as<sp/>a<sp/>loop.<sp/>\p<sp/>AtomicMemCpy<sp/>is<sp/>not<sp/>deleted.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ad71302bd643143c32b34b01104c2e364" kindref="member">expandAtomicMemCpyAsLoop</ref>(<ref refid="classllvm_1_1_atomic_mem_cpy_inst" kindref="compound">AtomicMemCpyInst</ref><sp/>*AtomicMemCpy,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref><sp/>&amp;<ref refid="namespacellvm_1aa0d69e81725c10fa5407f0bf34462068" kindref="member">TTI</ref>,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref><sp/>*SE);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>End<sp/>llvm<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Transforms/Utils/LowerMemIntrinsics.h"/>
+  </compounddef>
+</doxygen>

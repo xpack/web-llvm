@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1mca_1_1_default_resource_strategy" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>llvm::mca::DefaultResourceStrategy</compoundname>
+    <basecompoundref refid="classllvm_1_1mca_1_1_resource_strategy" prot="public" virt="non-virtual">llvm::mca::ResourceStrategy</basecompoundref>
+    <includes refid="_resource_manager_8h" local="yes">llvm/MCA/HardwareUnits/ResourceManager.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1mca_1_1_default_resource_strategy_1a1367398974ada69c45d2f8ab0120c981" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>const uint64_t llvm::mca::DefaultResourceStrategy::ResourceUnitMask</definition>
+        <argsstring></argsstring>
+        <name>ResourceUnitMask</name>
+        <qualifiedname>llvm::mca::DefaultResourceStrategy::ResourceUnitMask</qualifiedname>
+        <briefdescription>
+<para>A Mask of resource unit identifiers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There is one bit set for every available resource unit. It defaults to the value of field ResourceSizeMask in <ref refid="classllvm_1_1mca_1_1_resource_state" kindref="compound">ResourceState</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/HardwareUnits/ResourceManager.h" line="72" column="18" bodyfile="include/llvm/MCA/HardwareUnits/ResourceManager.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1mca_1_1_default_resource_strategy_1a2ff2007f601aa66c1c73c400d5c73902" prot="private" static="no" mutable="no">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::mca::DefaultResourceStrategy::NextInSequenceMask</definition>
+        <argsstring></argsstring>
+        <name>NextInSequenceMask</name>
+        <qualifiedname>llvm::mca::DefaultResourceStrategy::NextInSequenceMask</qualifiedname>
+        <briefdescription>
+<para>A simple round-robin selector for processor resource units. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each bit of this mask identifies a sub resource within a group.</para>
+<para>As an example, lets assume that this is a default policy for a processor resource group composed by the following three units: ResourceA <ndash/> 0b001 ResourceB <ndash/> 0b010 ResourceC <ndash/> 0b100</para>
+<para><ref refid="_optimized_struct_layout_8cpp_1a5208f2b0568d811c542f8d8097dbc035" kindref="member">Field</ref> NextInSequenceMask is used to select the next unit from the set of resource units. It defaults to the value of field <computeroutput>ResourceUnitMasks</computeroutput> (in this example, it defaults to mask &apos;0b111&apos;).</para>
+<para>The round-robin selector would firstly select &apos;ResourceC&apos;, then &apos;ResourceB&apos;, and eventually &apos;ResourceA&apos;. When a resource R is used, the corresponding bit in NextInSequenceMask is cleared. For example, if &apos;ResourceC&apos; is selected, then the new value of NextInSequenceMask becomes 0xb011.</para>
+<para>When NextInSequenceMask becomes zero, it is automatically reset to the default value (i.e. ResourceUnitMask). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/HardwareUnits/ResourceManager.h" line="95" column="12" bodyfile="include/llvm/MCA/HardwareUnits/ResourceManager.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1mca_1_1_default_resource_strategy_1a875fe6d657ee4e85a66e79d33f65c696" prot="private" static="no" mutable="no">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::mca::DefaultResourceStrategy::RemovedFromNextInSequence</definition>
+        <argsstring></argsstring>
+        <name>RemovedFromNextInSequence</name>
+        <qualifiedname>llvm::mca::DefaultResourceStrategy::RemovedFromNextInSequence</qualifiedname>
+        <briefdescription>
+<para>This field is used to track resource units that are used (i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>selected) by other groups other than the one associated with this strategy object.</para>
+<para>In LLVM processor resource groups are allowed to partially (or fully) overlap. That means, a same unit may be visible to multiple groups. This field keeps track of uses that have originated from outside of this group. The idea is to bias the selection strategy, so that resources that haven&apos;t been used by other groups get prioritized.</para>
+<para>The end goal is to (try to) keep the resource distribution as much uniform as possible. By construction, this mask only tracks one-level of resource usage. Therefore, this strategy is expected to be less accurate when same units are used multiple times by other groups within a single round of select.</para>
+<para>Note: an LRU selector would have a better accuracy at the cost of being slightly more expensive (mostly in terms of runtime cost). Methods &apos;select&apos; and &apos;used&apos;, are always in the hot execution path of llvm-mca. Therefore, a slow implementation of &apos;select&apos; would have a negative impact on the overall performance of the tool. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/HardwareUnits/ResourceManager.h" line="117" column="12" bodyfile="include/llvm/MCA/HardwareUnits/ResourceManager.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_default_resource_strategy_1a10cdf68ba23d403b70dd95f8d0f2023b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::mca::DefaultResourceStrategy::DefaultResourceStrategy</definition>
+        <argsstring>(uint64_t UnitMask)</argsstring>
+        <name>DefaultResourceStrategy</name>
+        <qualifiedname>llvm::mca::DefaultResourceStrategy::DefaultResourceStrategy</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>UnitMask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/HardwareUnits/ResourceManager.h" line="120" column="3" bodyfile="include/llvm/MCA/HardwareUnits/ResourceManager.h" bodystart="120" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_default_resource_strategy_1ae738360dc7fe17f32f3602264628f2dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual llvm::mca::DefaultResourceStrategy::~DefaultResourceStrategy</definition>
+        <argsstring>()=default</argsstring>
+        <name>~DefaultResourceStrategy</name>
+        <qualifiedname>llvm::mca::DefaultResourceStrategy::~DefaultResourceStrategy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/HardwareUnits/ResourceManager.h" line="123" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_default_resource_strategy_1ae98cd9a61040a0208a29df6238b7aa08" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::mca::DefaultResourceStrategy::select</definition>
+        <argsstring>(uint64_t ReadyMask) override</argsstring>
+        <name>select</name>
+        <qualifiedname>llvm::mca::DefaultResourceStrategy::select</qualifiedname>
+        <reimplements refid="classllvm_1_1mca_1_1_resource_strategy_1a1e2b6442d33e00ce41448e655dc22697">select</reimplements>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>ReadyMask</declname>
+        </param>
+        <briefdescription>
+<para>Selects a processor resource unit from a ReadyMask. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/HardwareUnits/ResourceManager.h" line="125" column="12" bodyfile="lib/MCA/HardwareUnits/ResourceManager.cpp" bodystart="34" bodyend="49"/>
+        <references refid="namespacellvm_1_1mca_1a9daeae4f77bbf637d7f5ed46c92ed5c5" compoundref="_resource_manager_8cpp" startline="26" endline="32">llvm::mca::selectImpl</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_default_resource_strategy_1a37c31dd9225bfb63fd296560b380c2bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::mca::DefaultResourceStrategy::used</definition>
+        <argsstring>(uint64_t Mask) override</argsstring>
+        <name>used</name>
+        <qualifiedname>llvm::mca::DefaultResourceStrategy::used</qualifiedname>
+        <reimplements refid="classllvm_1_1mca_1_1_resource_strategy_1a8f5c6f9a9d50b1d06510d43a736e9be9">used</reimplements>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>ResourceMask</declname>
+        </param>
+        <briefdescription>
+<para>Called by the <ref refid="classllvm_1_1_resource_manager" kindref="compound">ResourceManager</ref> when a processor resource group, or a processor resource with multiple units has become unavailable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default strategy uses this information to bias its selection logic. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/HardwareUnits/ResourceManager.h" line="126" column="8" bodyfile="lib/MCA/HardwareUnits/ResourceManager.cpp" bodystart="51" bodyend="63"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Default resource allocation strategy used by processor resource groups and processor resources with multiple units. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::mca::DefaultResourceStrategy</label>
+        <link refid="classllvm_1_1mca_1_1_default_resource_strategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::mca::ResourceStrategy</label>
+        <link refid="classllvm_1_1mca_1_1_resource_strategy"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::mca::DefaultResourceStrategy</label>
+        <link refid="classllvm_1_1mca_1_1_default_resource_strategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::mca::ResourceStrategy</label>
+        <link refid="classllvm_1_1mca_1_1_resource_strategy"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/MCA/HardwareUnits/ResourceManager.h" line="67" column="1" bodyfile="include/llvm/MCA/HardwareUnits/ResourceManager.h" bodystart="67" bodyend="127"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1mca_1_1_default_resource_strategy_1a10cdf68ba23d403b70dd95f8d0f2023b" prot="public" virt="non-virtual"><scope>llvm::mca::DefaultResourceStrategy</scope><name>DefaultResourceStrategy</name></member>
+      <member refid="classllvm_1_1mca_1_1_default_resource_strategy_1a2ff2007f601aa66c1c73c400d5c73902" prot="private" virt="non-virtual"><scope>llvm::mca::DefaultResourceStrategy</scope><name>NextInSequenceMask</name></member>
+      <member refid="classllvm_1_1mca_1_1_default_resource_strategy_1a875fe6d657ee4e85a66e79d33f65c696" prot="private" virt="non-virtual"><scope>llvm::mca::DefaultResourceStrategy</scope><name>RemovedFromNextInSequence</name></member>
+      <member refid="classllvm_1_1mca_1_1_resource_strategy_1ace11a0d466a1cb53ab316d1c0c4e300c" prot="public" virt="non-virtual"><scope>llvm::mca::DefaultResourceStrategy</scope><name>ResourceStrategy</name></member>
+      <member refid="classllvm_1_1mca_1_1_default_resource_strategy_1a1367398974ada69c45d2f8ab0120c981" prot="private" virt="non-virtual"><scope>llvm::mca::DefaultResourceStrategy</scope><name>ResourceUnitMask</name></member>
+      <member refid="classllvm_1_1mca_1_1_default_resource_strategy_1ae98cd9a61040a0208a29df6238b7aa08" prot="public" virt="virtual"><scope>llvm::mca::DefaultResourceStrategy</scope><name>select</name></member>
+      <member refid="classllvm_1_1mca_1_1_default_resource_strategy_1a37c31dd9225bfb63fd296560b380c2bd" prot="public" virt="virtual"><scope>llvm::mca::DefaultResourceStrategy</scope><name>used</name></member>
+      <member refid="classllvm_1_1mca_1_1_default_resource_strategy_1ae738360dc7fe17f32f3602264628f2dd" prot="public" virt="virtual"><scope>llvm::mca::DefaultResourceStrategy</scope><name>~DefaultResourceStrategy</name></member>
+      <member refid="classllvm_1_1mca_1_1_resource_strategy_1a7e949b40770b10b26d316a04bf2edcea" prot="public" virt="virtual"><scope>llvm::mca::DefaultResourceStrategy</scope><name>~ResourceStrategy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

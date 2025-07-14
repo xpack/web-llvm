@@ -1,0 +1,1532 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_hexagon_frame_lowering" kind="class" language="C++" prot="public">
+    <compoundname>llvm::HexagonFrameLowering</compoundname>
+    <basecompoundref refid="classllvm_1_1_target_frame_lowering" prot="public" virt="non-virtual">llvm::TargetFrameLowering</basecompoundref>
+    <includes refid="_hexagon_frame_lowering_8h" local="yes">Target/Hexagon/HexagonFrameLowering.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_hexagon_frame_lowering_1ac09807f722d51a9bf02b8163d5ee6c15" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_callee_saved_info" kindref="compound">CalleeSavedInfo</ref> &gt;</type>
+        <definition>using llvm::HexagonFrameLowering::CSIVect =  std::vector&lt;CalleeSavedInfo&gt;</definition>
+        <argsstring></argsstring>
+        <name>CSIVect</name>
+        <qualifiedname>llvm::HexagonFrameLowering::CSIVect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="120" column="3" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_hexagon_frame_lowering_1a605fcdfcc3568913799f93e037f2da5f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int llvm::HexagonFrameLowering::FirstVarArgSavedReg</definition>
+        <argsstring></argsstring>
+        <name>FirstVarArgSavedReg</name>
+        <qualifiedname>llvm::HexagonFrameLowering::FirstVarArgSavedReg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="34" column="7" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a5907981c158ef4c895f1418c281e53d6" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::HexagonFrameLowering::HexagonFrameLowering</definition>
+        <argsstring>()</argsstring>
+        <name>HexagonFrameLowering</name>
+        <qualifiedname>llvm::HexagonFrameLowering::HexagonFrameLowering</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="35" column="12" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.h" bodystart="35" bodyend="36"/>
+        <references refid="classllvm_1_1_target_frame_lowering_1a453c74e2daac0745b53f8b31c11fc50cad1fc7c9d0bae5bf76a67d2d26ce99c1a" compoundref="_target_frame_lowering_8h" startline="49">llvm::TargetFrameLowering::StackGrowsDown</references>
+        <references refid="classllvm_1_1_target_frame_lowering_1a6a6d31b2f1e5754f5824c5dec555eeac" compoundref="_target_frame_lowering_8h" startline="82" endline="85">llvm::TargetFrameLowering::TargetFrameLowering</references>
+        <references refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" compoundref="_basic_alias_analysis_8cpp" startline="1983">true</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a897d513f6255e5eeaba5074ca4095230" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::orderFrameObjects</definition>
+        <argsstring>(const MachineFunction &amp;MF, SmallVectorImpl&lt; int &gt; &amp;ObjectsToAllocate) const override</argsstring>
+        <name>orderFrameObjects</name>
+        <qualifiedname>llvm::HexagonFrameLowering::orderFrameObjects</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1a42fa24a22318377b109f90d4e007e0a6">orderFrameObjects</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; int &gt; &amp;</type>
+          <declname>objectsToAllocate</declname>
+        </param>
+        <briefdescription>
+<para>Order the symbols in the local stack frame. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The list of objects that we want to order is in <computeroutput>objectsToAllocate</computeroutput> as indices into the <ref refid="classllvm_1_1_machine_frame_info" kindref="compound">MachineFrameInfo</ref>. The array can be reordered in any way upon return. The contents of the array, however, may not be modified (i.e. only their order may be changed). By default, just maintain the original order. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="39" column="3" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2711" bodyend="2753"/>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_machine_function_1a54f334a9c8ca6d105eae383ae87e4524" compoundref="_machine_function_8h" startline="749" endline="749">llvm::MachineFunction::getFrameInfo</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a8320a54de0a273478de910ac3795058b" compoundref="_machine_frame_info_8h" startline="486" endline="490">llvm::MachineFrameInfo::getObjectAlign</references>
+        <references refid="classllvm_1_1_machine_frame_info_1ac51e2d34abb79b72afef355fac525c76" compoundref="_machine_frame_info_8h" startline="412" endline="412">llvm::MachineFrameInfo::getObjectIndexEnd</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a9284fd53296d2a2f8ae654d000971000" compoundref="_machine_frame_info_8h" startline="472" endline="476">llvm::MachineFrameInfo::getObjectSize</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="classllvm_1_1_small_vector_base_1a7b5a03b19133c790a4d6fff66a5d2135" compoundref="_small_vector_8h" startline="55">llvm::SmallVectorBase&lt; Size_T &gt;::Size</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <references refid="namespacellvm_1a076f93c387f454f0db13d4bc7d4e7f9c" compoundref="_s_t_l_extras_8h" startline="2037" endline="2039">llvm::stable_sort</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a851a237b27ce366221fcb1daf2f0d119" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::emitPrologue</definition>
+        <argsstring>(MachineFunction &amp;MF, MachineBasicBlock &amp;MBB) const override</argsstring>
+        <name>emitPrologue</name>
+        <qualifiedname>llvm::HexagonFrameLowering::emitPrologue</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1af2cae7511277edd7755e6f4d4e179d6c">emitPrologue</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+<para>Perform most of the PEI work here: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>saving/restoring of the callee-saved registers,</para>
+</listitem><listitem><para>stack frame creation and destruction. Normally, this work is distributed among various functions, but doing it in one place allows shrink-wrapping of the stack frame. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="45" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="511" bodyend="558"/>
+        <references refid="classllvm_1_1_machine_instr_1a469e271fba3a9b52dad4fa54eaf44e2b" compoundref="_machine_instr_8cpp" startline="205" endline="293">llvm::MachineInstr::addOperand</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_machine_operand_1af2c351dad09a71aa08e1d85c67ae6e53" compoundref="_machine_operand_8h" startline="838" endline="862">llvm::MachineOperand::CreateReg</references>
+        <references refid="_hexagon_frame_lowering_8cpp_1a946681fb4d3edbfd65016a162c375eff">EnableShrinkWrapping</references>
+        <references refid="classllvm_1_1_machine_function_1ac8ca28de0f4dcee651340e7ef0c45233" compoundref="_machine_function_8h" startline="959" endline="959">llvm::MachineFunction::front</references>
+        <references refid="classllvm_1_1_machine_frame_info_1aad474502cac7b22b83e74de089f8c81d" compoundref="_machine_frame_info_8h" startline="806" endline="808">llvm::MachineFrameInfo::getCalleeSavedInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a54f334a9c8ca6d105eae383ae87e4524" compoundref="_machine_function_8h" startline="749" endline="749">llvm::MachineFunction::getFrameInfo</references>
+        <references refid="classllvm_1_1_machine_function_1aa22424ba23740b6a748e8d0c239b7e4c" compoundref="_machine_function_8h" startline="876" endline="876">llvm::MachineFunction::getNumBlockIDs</references>
+        <references refid="classllvm_1_1_machine_instr_1a0363204b5fbab08a46f5a7cd7f376f78" compoundref="_machine_instr_8h" startline="577" endline="577">llvm::MachineInstr::getOpcode</references>
+        <references refid="_hexagon_frame_lowering_8cpp_1a071f218e31e9859b56b6d5626df030e7" compoundref="_hexagon_frame_lowering_8cpp" startline="360" endline="365">getReturn</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="_hexagon_frame_lowering_8cpp_1ad0f2d1de6cb820e8286d8269618d9284" compoundref="_hexagon_frame_lowering_8cpp" startline="367" endline="380">isRestoreCall</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1ad44d082016ff767ac4913b128d3a5f80" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::HexagonFrameLowering::emitEpilogue</definition>
+        <argsstring>(MachineFunction &amp;MF, MachineBasicBlock &amp;MBB) const override</argsstring>
+        <name>emitEpilogue</name>
+        <qualifiedname>llvm::HexagonFrameLowering::emitEpilogue</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1a12d7286898851b396d8fb5fb78db2deb">emitEpilogue</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="47" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.h" bodystart="47" bodyend="48"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a5588cfc8772cc2e0f7bda5e618cb7242" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::enableCalleeSaveSkip</definition>
+        <argsstring>(const MachineFunction &amp;MF) const override</argsstring>
+        <name>enableCalleeSaveSkip</name>
+        <qualifiedname>llvm::HexagonFrameLowering::enableCalleeSaveSkip</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1a37c34f0aa56d8aafa1238290de1fecc9">enableCalleeSaveSkip</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if the target can safely skip saving callee-saved registers for noreturn nounwind functions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="50" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="562" bodyend="572"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_machine_function_1a977ddce262de45c645be23d951066351" compoundref="_machine_function_8h" startline="704" endline="704">llvm::MachineFunction::getFunction</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1ad1df4d29452b039094c0205f4a24f5a7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::HexagonFrameLowering::spillCalleeSavedRegisters</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator MI, ArrayRef&lt; CalleeSavedInfo &gt; CSI, const TargetRegisterInfo *TRI) const override</argsstring>
+        <name>spillCalleeSavedRegisters</name>
+        <qualifiedname>llvm::HexagonFrameLowering::spillCalleeSavedRegisters</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1a4e3f90e73775a2603db1bc5f1cf8c1f0">spillCalleeSavedRegisters</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_callee_saved_info" kindref="compound">CalleeSavedInfo</ref> &gt;</type>
+          <declname>CSI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+          <declname>TRI</declname>
+        </param>
+        <briefdescription>
+<para>spillCalleeSavedRegisters - Issues instruction(s) to spill all callee saved registers and returns true if it isn&apos;t possible / profitable to do so by issuing a series of store instructions via storeRegToStackSlot(). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns false otherwise. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="52" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.h" bodystart="52" bodyend="57"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" compoundref="_machine_sink_8cpp" startline="2029">TRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1afe209d6441f38c76735d589d88f5145d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::HexagonFrameLowering::restoreCalleeSavedRegisters</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator MI, MutableArrayRef&lt; CalleeSavedInfo &gt; CSI, const TargetRegisterInfo *TRI) const override</argsstring>
+        <name>restoreCalleeSavedRegisters</name>
+        <qualifiedname>llvm::HexagonFrameLowering::restoreCalleeSavedRegisters</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1af4e91c7e613771679b2f0e71f03b172d">restoreCalleeSavedRegisters</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_mutable_array_ref" kindref="compound">MutableArrayRef</ref>&lt; <ref refid="classllvm_1_1_callee_saved_info" kindref="compound">CalleeSavedInfo</ref> &gt;</type>
+          <declname>CSI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+          <declname>TRI</declname>
+        </param>
+        <briefdescription>
+<para>restoreCalleeSavedRegisters - Issues instruction(s) to restore all callee saved registers and returns true if it isn&apos;t possible / profitable to do so by issuing a series of load instructions via loadRegToStackSlot(). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If it returns true, and any of the registers in CSI is not restored, it sets the corresponding Restored flag in CSI to false. Returns false otherwise. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="60" column="3" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.h" bodystart="60" bodyend="65"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" compoundref="_machine_sink_8cpp" startline="2029">TRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1ae8a256416cc40f3cc4e035cf10c27446" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::HexagonFrameLowering::hasReservedCallFrame</definition>
+        <argsstring>(const MachineFunction &amp;MF) const override</argsstring>
+        <name>hasReservedCallFrame</name>
+        <qualifiedname>llvm::HexagonFrameLowering::hasReservedCallFrame</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1a238c4b47777d9678c89b6ccfa9db504c">hasReservedCallFrame</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>hasReservedCallFrame - Under normal circumstances, when a frame pointer is not required, we reserve argument space for call sites in the function immediately on entry to the current function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This eliminates the need for add/sub sp brackets around call sites. Returns true if the call frame is included as part of the stack frame. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="67" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.h" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a68ed065274d6f54ebcd2946711871363" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::HexagonFrameLowering::canSimplifyCallFramePseudos</definition>
+        <argsstring>(const MachineFunction &amp;MF) const override</argsstring>
+        <name>canSimplifyCallFramePseudos</name>
+        <qualifiedname>llvm::HexagonFrameLowering::canSimplifyCallFramePseudos</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1accf065359be98068cbbfb847f17adc68">canSimplifyCallFramePseudos</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>canSimplifyCallFramePseudos - When possible, it&apos;s best to simplify the call frame pseudo ops before doing frame index elimination. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is possible only when frame index references between the pseudos won&apos;t need adjusting for the call frame adjustments. Normally, that&apos;s true if the function has a reserved call frame or a frame pointer. Some targets (Thumb2, for example) may have more complicated criteria, however, and can override this behavior. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="72" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.h" bodystart="72" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a5811c2c8b5e1ef63c58694190f8bd8c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+        <definition>MachineBasicBlock::iterator HexagonFrameLowering::eliminateCallFramePseudoInstr</definition>
+        <argsstring>(MachineFunction &amp;MF, MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator I) const override</argsstring>
+        <name>eliminateCallFramePseudoInstr</name>
+        <qualifiedname>llvm::HexagonFrameLowering::eliminateCallFramePseudoInstr</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1a726ab02febbe34c8ecbc226cd8e4a2c1">eliminateCallFramePseudoInstr</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>This method is called during prolog/epilog code insertion to eliminate call frame setup and destroy pseudo instructions (but only if the <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> is using them). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is responsible for eliminating these instructions, replacing them with concrete instructions. This method need only be implemented if using call frame setup/destroy pseudo instructions. Returns an iterator pointing to the instruction after the replaced one. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="79" column="3" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1492" bodyend="1501"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a8b67fcf985704c812d104989a617a939" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::processFunctionBeforeFrameFinalized</definition>
+        <argsstring>(MachineFunction &amp;MF, RegScavenger *RS=nullptr) const override</argsstring>
+        <name>processFunctionBeforeFrameFinalized</name>
+        <qualifiedname>llvm::HexagonFrameLowering::processFunctionBeforeFrameFinalized</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1a32bb6ffb3d46c78fdb7e48cf2f226e4c">processFunctionBeforeFrameFinalized</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_reg_scavenger" kindref="compound">RegScavenger</ref> *</type>
+          <declname>RS</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>processFunctionBeforeFrameFinalized - This method is called immediately before the specified function&apos;s frame layout (MF.getFrameInfo()) is finalized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Once the frame is finalized, MO_FrameIndex operands are replaced with direct constants. This method is optional. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="81" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1503" bodyend="1523"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_hexagon_frame_lowering_1a1b98e40bf428726d94f1d8a812aed738" compoundref="_hexagon_frame_lowering_8cpp" startline="2555" endline="2562">getAlignaInstr</references>
+        <references refid="classllvm_1_1_machine_function_1a54f334a9c8ca6d105eae383ae87e4524" compoundref="_machine_function_8h" startline="749" endline="749">llvm::MachineFunction::getFrameInfo</references>
+        <references refid="classllvm_1_1_machine_function_1ab7feae1932b436c8630e247166ec42b7" compoundref="_machine_function_8h" startline="831" endline="833">llvm::MachineFunction::getInfo</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a3836203fac855ac3c5718b701bd13ffd" compoundref="_machine_frame_info_8h" startline="603" endline="603">llvm::MachineFrameInfo::getMaxAlign</references>
+        <references refid="classllvm_1_1_target_frame_lowering_1a74d93035f53f5e8c2aaea5a8f307972d" compoundref="_target_frame_lowering_8h" startline="105" endline="105">llvm::TargetFrameLowering::getStackAlign</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a0509430713d587eba74220a8375948a8" compoundref="_machine_frame_info_8h" startline="357" endline="357">llvm::MachineFrameInfo::hasVarSizedObjects</references>
+        <references refid="classllvm_1_1_register_1affdbf5b92ed7e01352e2f39466efbe21" compoundref="_register_8h" startline="95" endline="95">llvm::Register::isPhysical</references>
+        <references refid="classllvm_1_1_register_1a7407603b3efcdc8d4c2b76697be34528" compoundref="_register_8h" startline="115" endline="115">llvm::Register::isValid</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a878a2b864e18e3d074d75b426ea7912d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::determineCalleeSaves</definition>
+        <argsstring>(MachineFunction &amp;MF, BitVector &amp;SavedRegs, RegScavenger *RS) const override</argsstring>
+        <name>determineCalleeSaves</name>
+        <qualifiedname>llvm::HexagonFrameLowering::determineCalleeSaves</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1a2f26766f4dcfa6457ba405584a34d5c3">determineCalleeSaves</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> &amp;</type>
+          <declname>SavedRegs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_reg_scavenger" kindref="compound">RegScavenger</ref> *</type>
+          <declname>RS</declname>
+        </param>
+        <briefdescription>
+<para>This method determines which of the registers reported by <ref refid="classllvm_1_1_target_register_info_1ad71b5bc0aa81f5dec06cbfecaf2f7183" kindref="member">TargetRegisterInfo::getCalleeSavedRegs()</ref> should actually get saved. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default implementation checks populates the <computeroutput>SavedRegs</computeroutput> bitset with all registers which are modified in the function, targets may override this function to save additional registers. This method also sets up the register scavenger ensuring there is a free register or a frameindex available. This method should not be called by any passes outside of PEI, because it may change state passed in by <computeroutput>MF</computeroutput> and <computeroutput>RS</computeroutput>. The preferred interface outside PEI is getCalleeSaves. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="83" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2077" bodyend="2131"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="classllvm_1_1_reg_scavenger_1aecaae26e25f7f952810d98e50264b5fb" compoundref="_register_scavenging_8h" startline="112" endline="114">llvm::RegScavenger::addScavengingFrameIndex</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a61960903871aa95a7161074c6f1eec8f" compoundref="_machine_frame_info_8cpp" startline="66" endline="72">llvm::MachineFrameInfo::CreateSpillStackObject</references>
+        <references refid="classllvm_1_1_target_frame_lowering_1a2f26766f4dcfa6457ba405584a34d5c3" compoundref="_target_frame_lowering_impl_8cpp" startline="95" endline="147">llvm::TargetFrameLowering::determineCalleeSaves</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_hexagon_register_info_1a6554d18a9a05725d38d2168737a1f340" compoundref="_hexagon_register_info_8cpp" startline="114" endline="133">llvm::HexagonRegisterInfo::getCalleeSavedRegs</references>
+        <references refid="classllvm_1_1_machine_function_1a54f334a9c8ca6d105eae383ae87e4524" compoundref="_machine_function_8h" startline="749" endline="749">llvm::MachineFunction::getFrameInfo</references>
+        <references refid="classllvm_1_1_target_register_class_1a32a8b65536822d50171455a6baa81da7" compoundref="_target_register_info_8h" startline="73" endline="73">llvm::TargetRegisterClass::getID</references>
+        <references refid="classllvm_1_1_machine_function_1ab7feae1932b436c8630e247166ec42b7" compoundref="_machine_function_8h" startline="831" endline="833">llvm::MachineFunction::getInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a810234b6b3d223b7c74a4253fcc5ea5e" compoundref="_machine_function_8h" startline="743" endline="743">llvm::MachineFunction::getRegInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classllvm_1_1_hexagon_machine_function_info_1a26cabdcea17c0f6da2330f0f72cb165e" compoundref="_hexagon_machine_function_info_8h" startline="83" endline="83">llvm::HexagonMachineFunctionInfo::hasEHReturn</references>
+        <references refid="classllvm_1_1_set_vector_1af34eb71cc483e84d2eca80575cb9ccde" compoundref="_set_vector_8h" startline="162" endline="178">llvm::SetVector&lt; T, Vector, Set, N &gt;::insert</references>
+        <references refid="_hexagon_frame_lowering_8cpp_1a18a4e42f7e87c45cc17df255466262db" compoundref="_hexagon_frame_lowering_8cpp" startline="382" endline="385">isOptNone</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="_hexagon_frame_lowering_8cpp_1a6f94ed74de2043a25224558de11aea10" compoundref="_hexagon_frame_lowering_8cpp" startline="1526" endline="1545">needToReserveScavengingSpillSlots</references>
+        <references refid="_hexagon_frame_lowering_8cpp_1aaa20bc596e83cc3f6e52ed08112366c3">NumberScavengerSlots</references>
+        <references refid="_hexagon_frame_lowering_8cpp_1ad4f0fc04d6f9b56f785b5c2cbf0b81c1">OptimizeSpillSlots</references>
+        <references refid="classllvm_1_1_bit_vector_1a32859a24aa7a3be269855b989d92a4b4" compoundref="_bit_vector_8h" startline="341" endline="346">llvm::BitVector::resize</references>
+        <references refid="classllvm_1_1_bit_vector_1a62237ebe27691377a942abe7446332ec" compoundref="_bit_vector_8h" startline="351" endline="355">llvm::BitVector::set</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a5629922e1363aee48e43307383782f92" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::HexagonFrameLowering::targetHandlesStackFrameRounding</definition>
+        <argsstring>() const override</argsstring>
+        <name>targetHandlesStackFrameRounding</name>
+        <qualifiedname>llvm::HexagonFrameLowering::targetHandlesStackFrameRounding</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1ae0c5515e407c37a5d3f0b61811d7012f">targetHandlesStackFrameRounding</reimplements>
+        <briefdescription>
+<para>targetHandlesStackFrameRounding - Returns true if the target is responsible for rounding up the stack frame (probably at emitPrologue time). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="86" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.h" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a75d48c8917ed2a09d85cf46fcda67002" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_stack_offset" kindref="compound">StackOffset</ref></type>
+        <definition>StackOffset HexagonFrameLowering::getFrameIndexReference</definition>
+        <argsstring>(const MachineFunction &amp;MF, int FI, Register &amp;FrameReg) const override</argsstring>
+        <name>getFrameIndexReference</name>
+        <qualifiedname>llvm::HexagonFrameLowering::getFrameIndexReference</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1af88a8f2328543f94aea3ba85d954fafa">getFrameIndexReference</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>FI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &amp;</type>
+          <declname>FrameReg</declname>
+        </param>
+        <briefdescription>
+<para>getFrameIndexReference - This method should return the base register and offset used to reference a frame index location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the displacement from the frame register to the stack frame of the specified index, along with the frame register used (in output arg FrameReg).</para>
+<para>The offset is returned directly, and the base register is returned via FrameReg.</para>
+<para>This is the default implementation which is overridden for some targets. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="90" column="15" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1263" bodyend="1358"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_a_arch64_i_sel_d_a_g_to_d_a_g_8cpp_1a2098a5fa6ada61b6c4a1f210ad84e4a1a4ebada6a2af2bcba53ded1d7b414f081" compoundref="_a_arch64_i_sel_d_a_g_to_d_a_g_8cpp" startline="1766">FP</references>
+        <references refid="classllvm_1_1_stack_offset_1a0775e5fb52ac148f4d06e7eedb34e94e" compoundref="_type_size_8h" startline="49" endline="49">llvm::StackOffset::getFixed</references>
+        <references refid="classllvm_1_1_machine_function_1a54f334a9c8ca6d105eae383ae87e4524" compoundref="_machine_function_8h" startline="749" endline="749">llvm::MachineFunction::getFrameInfo</references>
+        <references refid="classllvm_1_1_machine_function_1ab7feae1932b436c8630e247166ec42b7" compoundref="_machine_function_8h" startline="831" endline="833">llvm::MachineFunction::getInfo</references>
+        <references refid="classllvm_1_1_machine_frame_info_1adf98860d7f42290f873c82a981eb0ea6" compoundref="_machine_frame_info_8h" startline="528" endline="534">llvm::MachineFrameInfo::getObjectOffset</references>
+        <references refid="classllvm_1_1_target_machine_1a030edbec5a50c887caf3ec95c7c50c44" compoundref="llvm_2_target_2_target_machine_8h" startline="257" endline="257">llvm::TargetMachine::getOptLevel</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a14c39a24bf6ebbe339ae8a453c7fdd11" compoundref="_machine_frame_info_8h" startline="587" endline="587">llvm::MachineFrameInfo::getStackSize</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classllvm_1_1_machine_function_1af777ff93c9e07a6ff5ffe3226deb3e76" compoundref="_machine_function_8h" startline="729" endline="729">llvm::MachineFunction::getTarget</references>
+        <references refid="classllvm_1_1_target_frame_lowering_1a0c361440fb8d1e36932e65c8cc8497e7" compoundref="_target_frame_lowering_8h" startline="285" endline="287">llvm::TargetFrameLowering::hasFP</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a0509430713d587eba74220a8375948a8" compoundref="_machine_frame_info_8h" startline="357" endline="357">llvm::MachineFrameInfo::hasVarSizedObjects</references>
+        <references refid="classllvm_1_1_machine_frame_info_1ae6e7e975f7a4e5d535be32068a7c67df" compoundref="_machine_frame_info_8h" startline="700" endline="702">llvm::MachineFrameInfo::isFixedObjectIndex</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a11d6e0b1aa8f7709f0330318b2cc5f1b" compoundref="_machine_frame_info_8h" startline="465" endline="469">llvm::MachineFrameInfo::isObjectPreAllocated</references>
+        <references refid="namespacellvm_1a8ec1bf8d7b792ca9fac56f8514db18d2a6adf97f83acf6453d4a6a4b1070f3754" compoundref="_code_gen_8h" startline="55">llvm::None</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1acb02b62a77b649bcc7c89b940563bbee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_target_frame_lowering_1_1_spill_slot" kindref="compound">SpillSlot</ref> *</type>
+        <definition>const SpillSlot * llvm::HexagonFrameLowering::getCalleeSavedSpillSlots</definition>
+        <argsstring>(unsigned &amp;NumEntries) const override</argsstring>
+        <name>getCalleeSavedSpillSlots</name>
+        <qualifiedname>llvm::HexagonFrameLowering::getCalleeSavedSpillSlots</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1a1aa23c0f7511710137264c5845574e54">getCalleeSavedSpillSlots</reimplements>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>NumEntries</declname>
+        </param>
+        <briefdescription>
+<para>getCalleeSavedSpillSlots - This method returns a pointer to an array of pairs, that contains an entry for each callee saved register that must be spilled to a particular stack location if it is spilled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each entry in this array contains a &lt;register,offset&gt; pair, indicating the fixed offset from the incoming stack pointer that each register should be spilled at. If a register is not listed here, the code generator is allowed to spill it anywhere it chooses. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="93" column="19" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.h" bodystart="93" bodyend="105"/>
+        <referencedby refid="classllvm_1_1_hexagon_frame_lowering_1adc3de6cf6278fe59671bbdd02e4c1516" compoundref="_hexagon_frame_lowering_8cpp" startline="1558" endline="1716">assignCalleeSavedSpillSlots</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1adc3de6cf6278fe59671bbdd02e4c1516" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::assignCalleeSavedSpillSlots</definition>
+        <argsstring>(MachineFunction &amp;MF, const TargetRegisterInfo *TRI, std::vector&lt; CalleeSavedInfo &gt; &amp;CSI) const override</argsstring>
+        <name>assignCalleeSavedSpillSlots</name>
+        <qualifiedname>llvm::HexagonFrameLowering::assignCalleeSavedSpillSlots</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1a92320a6700ece82446fd508956577ca1">assignCalleeSavedSpillSlots</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+          <declname>TRI</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_callee_saved_info" kindref="compound">CalleeSavedInfo</ref> &gt; &amp;</type>
+          <declname>CSI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="107" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1558" bodyend="1716"/>
+        <references refid="classllvm_1_1_machine_frame_info_1ad2270087c6b8d7061c3a5e83fb61c0a6" compoundref="_machine_frame_info_8cpp" startline="102" endline="113">llvm::MachineFrameInfo::CreateFixedSpillStackObject</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_hexagon_frame_lowering_8cpp_1acee1b8853250afb7856e26623c828491" compoundref="_hexagon_frame_lowering_8cpp" startline="1548" endline="1555">dump_registers</references>
+        <references refid="classllvm_1_1_bit_vector_1a2da3bac3ad70ccb97150626385ebd6a7" compoundref="_bit_vector_8h" startline="300" endline="300">llvm::BitVector::find_first</references>
+        <references refid="classllvm_1_1_bit_vector_1a9941bbcdd7fadda44146fcc6f91af71f" compoundref="_bit_vector_8h" startline="308" endline="308">llvm::BitVector::find_next</references>
+        <references refid="classllvm_1_1_hexagon_frame_lowering_1acb02b62a77b649bcc7c89b940563bbee" compoundref="_hexagon_frame_lowering_8h" startline="93" endline="105">getCalleeSavedSpillSlots</references>
+        <references refid="classllvm_1_1_machine_function_1a54f334a9c8ca6d105eae383ae87e4524" compoundref="_machine_function_8h" startline="749" endline="749">llvm::MachineFunction::getFrameInfo</references>
+        <references refid="classllvm_1_1_machine_function_1ab7feae1932b436c8630e247166ec42b7" compoundref="_machine_function_8h" startline="831" endline="833">llvm::MachineFunction::getInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3d142c9e7c066059e15232c56dec9e2e" compoundref="_machine_function_8cpp" startline="645" endline="647">llvm::MachineFunction::getName</references>
+        <references refid="classllvm_1_1_machine_frame_info_1adf98860d7f42290f873c82a981eb0ea6" compoundref="_machine_frame_info_8h" startline="528" endline="534">llvm::MachineFrameInfo::getObjectOffset</references>
+        <references refid="classllvm_1_1_target_frame_lowering_1a74d93035f53f5e8c2aaea5a8f307972d" compoundref="_target_frame_lowering_8h" startline="105" endline="105">llvm::TargetFrameLowering::getStackAlign</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_register_1a7407603b3efcdc8d4c2b76697be34528" compoundref="_register_8h" startline="115" endline="115">llvm::Register::isValid</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="namespacellvm_1af085ea923a328b9fa6a1975f1a4ff987" compoundref="_target_register_info_8cpp" startline="107" endline="136">llvm::printReg</references>
+        <references refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15a942d4e37dd5607ab68e54755540d4a47" compoundref="_assignment_tracking_analysis_8h" startline="26">llvm::Reserved</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" compoundref="_machine_sink_8cpp" startline="2029">TRI</references>
+        <references refid="structllvm_1_1_align_1a80735739b49cf97a491922c8f9af2cc1" compoundref="_alignment_8h" startline="85" endline="85">llvm::Align::value</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1adb7726ddd215999f695aec70200b9d01" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::needsAligna</definition>
+        <argsstring>(const MachineFunction &amp;MF) const</argsstring>
+        <name>needsAligna</name>
+        <qualifiedname>llvm::HexagonFrameLowering::needsAligna</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="111" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2545" bodyend="2553"/>
+        <references refid="classllvm_1_1_machine_function_1a54f334a9c8ca6d105eae383ae87e4524" compoundref="_machine_function_8h" startline="749" endline="749">llvm::MachineFunction::getFrameInfo</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a0509430713d587eba74220a8375948a8" compoundref="_machine_frame_info_8h" startline="357" endline="357">llvm::MachineFrameInfo::hasVarSizedObjects</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a1b98e40bf428726d94f1d8a812aed738" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>const MachineInstr * HexagonFrameLowering::getAlignaInstr</definition>
+        <argsstring>(const MachineFunction &amp;MF) const</argsstring>
+        <name>getAlignaInstr</name>
+        <qualifiedname>llvm::HexagonFrameLowering::getAlignaInstr</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="112" column="22" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2555" bodyend="2562"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="classllvm_1_1_hexagon_frame_lowering_1a8b67fcf985704c812d104989a617a939" compoundref="_hexagon_frame_lowering_8cpp" startline="1503" endline="1523">processFunctionBeforeFrameFinalized</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a3907376550996d48bc452ae75fca1a16" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::insertCFIInstructions</definition>
+        <argsstring>(MachineFunction &amp;MF) const</argsstring>
+        <name>insertCFIInstructions</name>
+        <qualifiedname>llvm::HexagonFrameLowering::insertCFIInstructions</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="114" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1028" bodyend="1032"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_hexagon_frame_lowering_8cpp_1a27dbd19c8ca41f96a12935c6eb094c40" compoundref="_hexagon_frame_lowering_8cpp" startline="998" endline="1026">findCFILocation</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a484c3893b6ffdebaa29296c58fc366a1" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::hasFPImpl</definition>
+        <argsstring>(const MachineFunction &amp;MF) const override</argsstring>
+        <name>hasFPImpl</name>
+        <qualifiedname>llvm::HexagonFrameLowering::hasFPImpl</qualifiedname>
+        <reimplements refid="classllvm_1_1_target_frame_lowering_1ad0990de09ffe5b824d5319b0b7a275c4">hasFPImpl</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="117" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1147" bodyend="1183"/>
+        <references refid="_hexagon_frame_lowering_8cpp_1a2e1d909a7471acbff5242c87f59b076b">EliminateFramePointer</references>
+        <references refid="_hexagon_frame_lowering_8cpp_1a570b6a8a64b25a2e504e298e55f1ae54" compoundref="_hexagon_frame_lowering_8cpp" startline="579" endline="589">enableAllocFrameElim</references>
+        <references refid="_hexagon_frame_lowering_8cpp_1ae07f81f21046a4736c65f7a6d65411f5">EnableStackOVFSanitizer</references>
+        <references refid="classllvm_1_1_machine_function_1a54f334a9c8ca6d105eae383ae87e4524" compoundref="_machine_function_8h" startline="749" endline="749">llvm::MachineFunction::getFrameInfo</references>
+        <references refid="classllvm_1_1_machine_function_1ab7feae1932b436c8630e247166ec42b7" compoundref="_machine_function_8h" startline="831" endline="833">llvm::MachineFunction::getInfo</references>
+        <references refid="classllvm_1_1_target_machine_1a030edbec5a50c887caf3ec95c7c50c44" compoundref="llvm_2_target_2_target_machine_8h" startline="257" endline="257">llvm::TargetMachine::getOptLevel</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a14c39a24bf6ebbe339ae8a453c7fdd11" compoundref="_machine_frame_info_8h" startline="587" endline="587">llvm::MachineFrameInfo::getStackSize</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classllvm_1_1_machine_function_1af777ff93c9e07a6ff5ffe3226deb3e76" compoundref="_machine_function_8h" startline="729" endline="729">llvm::MachineFunction::getTarget</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a2cc8bb867c8949943ca7d88f1db31fde" compoundref="_machine_frame_info_8h" startline="621" endline="621">llvm::MachineFrameInfo::hasCalls</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a0509430713d587eba74220a8375948a8" compoundref="_machine_frame_info_8h" startline="357" endline="357">llvm::MachineFrameInfo::hasVarSizedObjects</references>
+        <references refid="namespacellvm_1a8ec1bf8d7b792ca9fac56f8514db18d2a6adf97f83acf6453d4a6a4b1070f3754" compoundref="_code_gen_8h" startline="55">llvm::None</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1ac31449baca70a9c36e5f6e94dae44f85" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::expandAlloca</definition>
+        <argsstring>(MachineInstr *AI, const HexagonInstrInfo &amp;TII, Register SP, unsigned CF) const</argsstring>
+        <name>expandAlloca</name>
+        <qualifiedname>llvm::HexagonFrameLowering::expandAlloca</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>AI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_instr_info" kindref="compound">HexagonInstrInfo</ref> &amp;</type>
+          <declname>TII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>SP</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="122" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2487" bodyend="2543"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a8474ec2812b7e2f05acb80c10213f45b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::insertPrologueInBlock</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB, bool PrologueStubs) const</argsstring>
+        <name>insertPrologueInBlock</name>
+        <qualifiedname>llvm::HexagonFrameLowering::insertPrologueInBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>PrologueStubs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="124" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="591" bodyend="764"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a49a8f4c3062465d4529e5758b8ea5038" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::insertEpilogueInBlock</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB) const</argsstring>
+        <name>insertEpilogueInBlock</name>
+        <qualifiedname>llvm::HexagonFrameLowering::insertEpilogueInBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="125" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="766" bodyend="885"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a168fbc264a2a928aa7509ea3d15ddde7" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::insertAllocframe</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator InsertPt, unsigned NumBytes) const</argsstring>
+        <name>insertAllocframe</name>
+        <qualifiedname>llvm::HexagonFrameLowering::insertAllocframe</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>InsertPt</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="126" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="887" bodyend="929"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a2f662904ebc5d1b4978d32285f2a92d2" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::insertCSRSpillsInBlock</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB, const CSIVect &amp;CSI, const HexagonRegisterInfo &amp;HRI, bool &amp;PrologueStubs) const</argsstring>
+        <name>insertCSRSpillsInBlock</name>
+        <qualifiedname>llvm::HexagonFrameLowering::insertCSRSpillsInBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> CSIVect &amp;</type>
+          <declname>CSI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_register_info" kindref="compound">HexagonRegisterInfo</ref> &amp;</type>
+          <declname>HRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>PrologueStubs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="128" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1360" bodyend="1426"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a9cc7c70150cb33d4128defbf248173ee" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::insertCSRRestoresInBlock</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB, const CSIVect &amp;CSI, const HexagonRegisterInfo &amp;HRI) const</argsstring>
+        <name>insertCSRRestoresInBlock</name>
+        <qualifiedname>llvm::HexagonFrameLowering::insertCSRRestoresInBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> CSIVect &amp;</type>
+          <declname>CSI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_register_info" kindref="compound">HexagonRegisterInfo</ref> &amp;</type>
+          <declname>HRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="130" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1428" bodyend="1490"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a4835e0946deef12e84e0fc21527c5bae" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::updateEntryPaths</definition>
+        <argsstring>(MachineFunction &amp;MF, MachineBasicBlock &amp;SaveB) const</argsstring>
+        <name>updateEntryPaths</name>
+        <qualifiedname>llvm::HexagonFrameLowering::updateEntryPaths</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>SaveB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="132" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="931" bodyend="951"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a9fd0cc6f11238606d95f0dc24ea28a37" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::updateExitPaths</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB, MachineBasicBlock &amp;RestoreB, BitVector &amp;DoneT, BitVector &amp;DoneF, BitVector &amp;Path) const</argsstring>
+        <name>updateExitPaths</name>
+        <qualifiedname>llvm::HexagonFrameLowering::updateExitPaths</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>RestoreB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> &amp;</type>
+          <declname>DoneT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> &amp;</type>
+          <declname>DoneF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> &amp;</type>
+          <declname>Path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="133" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="953" bodyend="995"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a3d4ac9a7408846b29c1f0d841dbdfe2f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::insertCFIInstructionsAt</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator At) const</argsstring>
+        <name>insertCFIInstructionsAt</name>
+        <qualifiedname>llvm::HexagonFrameLowering::insertCFIInstructionsAt</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>At</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="135" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1034" bodyend="1145"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a5a16545a36dc6a53006c0033f6d594a8" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::expandCopy</definition>
+        <argsstring>(MachineBasicBlock &amp;B, MachineBasicBlock::iterator It, MachineRegisterInfo &amp;MRI, const HexagonInstrInfo &amp;HII, SmallVectorImpl&lt; Register &gt; &amp;NewRegs) const</argsstring>
+        <name>expandCopy</name>
+        <qualifiedname>llvm::HexagonFrameLowering::expandCopy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>It</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_instr_info" kindref="compound">HexagonInstrInfo</ref> &amp;</type>
+          <declname>HII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt; &amp;</type>
+          <declname>NewRegs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="138" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1718" bodyend="1737"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a3e127cc672165d912848519e6d50cc6b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::expandStoreInt</definition>
+        <argsstring>(MachineBasicBlock &amp;B, MachineBasicBlock::iterator It, MachineRegisterInfo &amp;MRI, const HexagonInstrInfo &amp;HII, SmallVectorImpl&lt; Register &gt; &amp;NewRegs) const</argsstring>
+        <name>expandStoreInt</name>
+        <qualifiedname>llvm::HexagonFrameLowering::expandStoreInt</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>It</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_instr_info" kindref="compound">HexagonInstrInfo</ref> &amp;</type>
+          <declname>HII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt; &amp;</type>
+          <declname>NewRegs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="141" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1739" bodyend="1770"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a361238e71fb6d688e4e10c4fbdec5dc1" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::expandLoadInt</definition>
+        <argsstring>(MachineBasicBlock &amp;B, MachineBasicBlock::iterator It, MachineRegisterInfo &amp;MRI, const HexagonInstrInfo &amp;HII, SmallVectorImpl&lt; Register &gt; &amp;NewRegs) const</argsstring>
+        <name>expandLoadInt</name>
+        <qualifiedname>llvm::HexagonFrameLowering::expandLoadInt</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>It</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_instr_info" kindref="compound">HexagonInstrInfo</ref> &amp;</type>
+          <declname>HII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt; &amp;</type>
+          <declname>NewRegs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="144" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1772" bodyend="1801"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a184599f2ff1e21bdd6d1c038c106cc94" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::expandStoreVecPred</definition>
+        <argsstring>(MachineBasicBlock &amp;B, MachineBasicBlock::iterator It, MachineRegisterInfo &amp;MRI, const HexagonInstrInfo &amp;HII, SmallVectorImpl&lt; Register &gt; &amp;NewRegs) const</argsstring>
+        <name>expandStoreVecPred</name>
+        <qualifiedname>llvm::HexagonFrameLowering::expandStoreVecPred</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>It</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_instr_info" kindref="compound">HexagonInstrInfo</ref> &amp;</type>
+          <declname>HII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt; &amp;</type>
+          <declname>NewRegs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="147" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1803" bodyend="1838"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1aac15d459cf6f9836298c261a97722bb7" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::expandLoadVecPred</definition>
+        <argsstring>(MachineBasicBlock &amp;B, MachineBasicBlock::iterator It, MachineRegisterInfo &amp;MRI, const HexagonInstrInfo &amp;HII, SmallVectorImpl&lt; Register &gt; &amp;NewRegs) const</argsstring>
+        <name>expandLoadVecPred</name>
+        <qualifiedname>llvm::HexagonFrameLowering::expandLoadVecPred</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>It</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_instr_info" kindref="compound">HexagonInstrInfo</ref> &amp;</type>
+          <declname>HII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt; &amp;</type>
+          <declname>NewRegs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="150" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1840" bodyend="1873"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1ab3cd53b332c523b0d068e71804b7a138" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::expandStoreVec2</definition>
+        <argsstring>(MachineBasicBlock &amp;B, MachineBasicBlock::iterator It, MachineRegisterInfo &amp;MRI, const HexagonInstrInfo &amp;HII, SmallVectorImpl&lt; Register &gt; &amp;NewRegs) const</argsstring>
+        <name>expandStoreVec2</name>
+        <qualifiedname>llvm::HexagonFrameLowering::expandStoreVec2</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>It</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_instr_info" kindref="compound">HexagonInstrInfo</ref> &amp;</type>
+          <declname>HII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt; &amp;</type>
+          <declname>NewRegs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="153" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1875" bodyend="1933"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1ab68ac8044b149fb935d8bf9debf9d5a4" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::expandLoadVec2</definition>
+        <argsstring>(MachineBasicBlock &amp;B, MachineBasicBlock::iterator It, MachineRegisterInfo &amp;MRI, const HexagonInstrInfo &amp;HII, SmallVectorImpl&lt; Register &gt; &amp;NewRegs) const</argsstring>
+        <name>expandLoadVec2</name>
+        <qualifiedname>llvm::HexagonFrameLowering::expandLoadVec2</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>It</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_instr_info" kindref="compound">HexagonInstrInfo</ref> &amp;</type>
+          <declname>HII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt; &amp;</type>
+          <declname>NewRegs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="156" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1935" bodyend="1974"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1aed3e91eb0810e4ea93be0258161ecf57" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::expandStoreVec</definition>
+        <argsstring>(MachineBasicBlock &amp;B, MachineBasicBlock::iterator It, MachineRegisterInfo &amp;MRI, const HexagonInstrInfo &amp;HII, SmallVectorImpl&lt; Register &gt; &amp;NewRegs) const</argsstring>
+        <name>expandStoreVec</name>
+        <qualifiedname>llvm::HexagonFrameLowering::expandStoreVec</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>It</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_instr_info" kindref="compound">HexagonInstrInfo</ref> &amp;</type>
+          <declname>HII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt; &amp;</type>
+          <declname>NewRegs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="159" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="1976" bodyend="2003"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a348124c60cb79bcaa592d6727029103d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::expandLoadVec</definition>
+        <argsstring>(MachineBasicBlock &amp;B, MachineBasicBlock::iterator It, MachineRegisterInfo &amp;MRI, const HexagonInstrInfo &amp;HII, SmallVectorImpl&lt; Register &gt; &amp;NewRegs) const</argsstring>
+        <name>expandLoadVec</name>
+        <qualifiedname>llvm::HexagonFrameLowering::expandLoadVec</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>It</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_hexagon_instr_info" kindref="compound">HexagonInstrInfo</ref> &amp;</type>
+          <declname>HII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt; &amp;</type>
+          <declname>NewRegs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="162" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2005" bodyend="2030"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a1e255aab1c6aa7714431fc94522458c7" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::expandSpillMacros</definition>
+        <argsstring>(MachineFunction &amp;MF, SmallVectorImpl&lt; Register &gt; &amp;NewRegs) const</argsstring>
+        <name>expandSpillMacros</name>
+        <qualifiedname>llvm::HexagonFrameLowering::expandSpillMacros</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt; &amp;</type>
+          <declname>NewRegs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="165" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2032" bodyend="2075"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a57a40b3281e69f28fb2a7fa7a0492d5f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+        <definition>Register HexagonFrameLowering::findPhysReg</definition>
+        <argsstring>(MachineFunction &amp;MF, HexagonBlockRanges::IndexRange &amp;FIR, HexagonBlockRanges::InstrIndexMap &amp;IndexMap, HexagonBlockRanges::RegToRangeMap &amp;DeadMap, const TargetRegisterClass *RC) const</argsstring>
+        <name>findPhysReg</name>
+        <qualifiedname>llvm::HexagonFrameLowering::findPhysReg</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_hexagon_block_ranges_1_1_index_range" kindref="compound">HexagonBlockRanges::IndexRange</ref> &amp;</type>
+          <declname>FIR</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_hexagon_block_ranges_1_1_instr_index_map" kindref="compound">HexagonBlockRanges::InstrIndexMap</ref> &amp;</type>
+          <declname>IndexMap</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_hexagon_block_ranges_1a89b76d06bf1f65a5c61d6679afb83eba" kindref="member">HexagonBlockRanges::RegToRangeMap</ref> &amp;</type>
+          <declname>DeadMap</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_class" kindref="compound">TargetRegisterClass</ref> *</type>
+          <declname>RC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="168" column="12" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2133" bodyend="2163"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a1af433e48bc51d7f4d728dbf5d316355" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::optimizeSpillSlots</definition>
+        <argsstring>(MachineFunction &amp;MF, SmallVectorImpl&lt; Register &gt; &amp;VRegs) const</argsstring>
+        <name>optimizeSpillSlots</name>
+        <qualifiedname>llvm::HexagonFrameLowering::optimizeSpillSlots</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt; &amp;</type>
+          <declname>VRegs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="172" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2165" bodyend="2485"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a311eebe9ac3a0801e323a038b157a4a4" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::findShrunkPrologEpilog</definition>
+        <argsstring>(MachineFunction &amp;MF, MachineBasicBlock *&amp;PrologB, MachineBasicBlock *&amp;EpilogB) const</argsstring>
+        <name>findShrunkPrologEpilog</name>
+        <qualifiedname>llvm::HexagonFrameLowering::findShrunkPrologEpilog</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *&amp;</type>
+          <declname>PrologB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *&amp;</type>
+          <declname>EpilogB</declname>
+        </param>
+        <briefdescription>
+<para>Implements shrink-wrapping of the stack frame. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default, stack frame is created in the function entry block, and is cleaned up in every block that returns. This function finds alternate blocks: one for the frame setup (prolog) and one for the cleanup (epilog). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="175" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="400" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1ae205282b89ff0300659b87f7f96cf650" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HexagonFrameLowering::addCalleeSaveRegistersAsImpOperand</definition>
+        <argsstring>(MachineInstr *MI, const CSIVect &amp;CSI, bool IsDef, bool IsKill) const</argsstring>
+        <name>addCalleeSaveRegistersAsImpOperand</name>
+        <qualifiedname>llvm::HexagonFrameLowering::addCalleeSaveRegistersAsImpOperand</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> CSIVect &amp;</type>
+          <declname>CSI</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsDef</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsKill</declname>
+        </param>
+        <briefdescription>
+<para>Adds all callee-saved registers as implicit uses or defs to the instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="178" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2566" bodyend="2571"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a1c65e3345014328fbc6953223831ceb2" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::shouldInlineCSR</definition>
+        <argsstring>(const MachineFunction &amp;MF, const CSIVect &amp;CSI) const</argsstring>
+        <name>shouldInlineCSR</name>
+        <qualifiedname>llvm::HexagonFrameLowering::shouldInlineCSR</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> CSIVect &amp;</type>
+          <declname>CSI</declname>
+        </param>
+        <briefdescription>
+<para>Determine whether the callee-saved register saves and restores should be generated via inline code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If this function returns &quot;true&quot;, inline code will be generated. If this function returns &quot;false&quot;, additional checks are performed, which may still lead to the inline code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="180" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2577" bodyend="2609"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a4532055bc70d66421091f57b4b627c77" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::useSpillFunction</definition>
+        <argsstring>(const MachineFunction &amp;MF, const CSIVect &amp;CSI) const</argsstring>
+        <name>useSpillFunction</name>
+        <qualifiedname>llvm::HexagonFrameLowering::useSpillFunction</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> CSIVect &amp;</type>
+          <declname>CSI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="181" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2611" bodyend="2622"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a22c0651f81747b159d7a2f9e7ced476c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::useRestoreFunction</definition>
+        <argsstring>(const MachineFunction &amp;MF, const CSIVect &amp;CSI) const</argsstring>
+        <name>useRestoreFunction</name>
+        <qualifiedname>llvm::HexagonFrameLowering::useRestoreFunction</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> CSIVect &amp;</type>
+          <declname>CSI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="182" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2624" bodyend="2643"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_hexagon_frame_lowering_1a2876223b443774e1b6708bd0df26c7aa" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool HexagonFrameLowering::mayOverflowFrameOffset</definition>
+        <argsstring>(MachineFunction &amp;MF) const</argsstring>
+        <name>mayOverflowFrameOffset</name>
+        <qualifiedname>llvm::HexagonFrameLowering::mayOverflowFrameOffset</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="183" column="8" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.cpp" bodystart="2645" bodyend="2689"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::HexagonFrameLowering</label>
+        <link refid="classllvm_1_1_hexagon_frame_lowering"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::TargetFrameLowering</label>
+        <link refid="classllvm_1_1_target_frame_lowering"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>int</label>
+      </node>
+      <node id="1">
+        <label>llvm::HexagonFrameLowering</label>
+        <link refid="classllvm_1_1_hexagon_frame_lowering"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>FirstVarArgSavedReg</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::TargetFrameLowering</label>
+        <link refid="classllvm_1_1_target_frame_lowering"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/Hexagon/HexagonFrameLowering.h" line="31" column="1" bodyfile="lib/Target/Hexagon/HexagonFrameLowering.h" bodystart="31" bodyend="184"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1ae205282b89ff0300659b87f7f96cf650" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>addCalleeSaveRegistersAsImpOperand</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a4e2a78f58b7687954186ba5c219f846b" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>adjustForHiPEPrologue</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1ab5dbd43232cfd1d3e7ccc4ff15f7fb0a" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>adjustForSegmentedStacks</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1ac54cd9ae6b849b3a2fd1fe982f9d09e2" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>alignSPAdjust</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a251859cb890a0bfde6bed13d7d844494" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>allocateScavengingFrameIndexesNearIncomingSP</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1adc3de6cf6278fe59671bbdd02e4c1516" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>assignCalleeSavedSpillSlots</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a6a2d9dbee947de1e611cb27ae01419fe" prot="public" virt="virtual" ambiguityscope="llvm::TargetFrameLowering::"><scope>llvm::HexagonFrameLowering</scope><name>assignCalleeSavedSpillSlots</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a68ed065274d6f54ebcd2946711871363" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>canSimplifyCallFramePseudos</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1aa8730a5a3c02f4e15d69a69139952ff5" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>canUseAsEpilogue</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1abb3281d801126596bd751e965fc8e4aa" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>canUseAsPrologue</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1ac09807f722d51a9bf02b8163d5ee6c15" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>CSIVect</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a878a2b864e18e3d074d75b426ea7912d" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>determineCalleeSaves</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a5811c2c8b5e1ef63c58694190f8bd8c9" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>eliminateCallFramePseudoInstr</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a0c2ed81b43145199f20a2eeddfaa5ea8" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>emitCalleeSavedFrameMovesFullCFA</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1ad44d082016ff767ac4913b128d3a5f80" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>emitEpilogue</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a851a237b27ce366221fcb1daf2f0d119" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>emitPrologue</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1adb7ed2036956f0c33273e908cee56ba5" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>emitRemarks</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1ad18f895742692e472cf662c230a58e53" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>emitZeroCallUsedRegs</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a5588cfc8772cc2e0f7bda5e618cb7242" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>enableCalleeSaveSkip</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1ad4dfea35c4a2a801cf100b1be76b7329" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>enableCFIFixup</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a387a4e975fc47abc5b66b4d5379521f0" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>enableShrinkWrapping</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a24dcd82cec9e61485b359b2027b3852a" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>enableStackSlotScavenging</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1ac31449baca70a9c36e5f6e94dae44f85" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>expandAlloca</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a5a16545a36dc6a53006c0033f6d594a8" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>expandCopy</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a361238e71fb6d688e4e10c4fbdec5dc1" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>expandLoadInt</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a348124c60cb79bcaa592d6727029103d" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>expandLoadVec</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1ab68ac8044b149fb935d8bf9debf9d5a4" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>expandLoadVec2</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1aac15d459cf6f9836298c261a97722bb7" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>expandLoadVecPred</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a1e255aab1c6aa7714431fc94522458c7" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>expandSpillMacros</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a3e127cc672165d912848519e6d50cc6b" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>expandStoreInt</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1aed3e91eb0810e4ea93be0258161ecf57" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>expandStoreVec</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1ab3cd53b332c523b0d068e71804b7a138" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>expandStoreVec2</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a184599f2ff1e21bdd6d1c038c106cc94" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>expandStoreVecPred</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a57a40b3281e69f28fb2a7fa7a0492d5f" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>findPhysReg</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a311eebe9ac3a0801e323a038b157a4a4" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>findShrunkPrologEpilog</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a605fcdfcc3568913799f93e037f2da5f" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>FirstVarArgSavedReg</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a1b98e40bf428726d94f1d8a812aed738" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>getAlignaInstr</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1acb02b62a77b649bcc7c89b940563bbee" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getCalleeSavedSpillSlots</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a647fbf2c5d5bb2fe4f4b5b9af7e0ab00" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getCalleeSaves</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a67cf1d94afd29ba3f7fa7a05241c43ae" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getDwarfFrameBase</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a75d48c8917ed2a09d85cf46fcda67002" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getFrameIndexReference</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1adea691938e0e44353858c07a39a5d0a6" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getFrameIndexReferenceFromSP</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a9dec926cf53d7a5f44cdd642b011bc59" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getFrameIndexReferencePreferSP</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1aecd939af09169cfdde0d81d09d083dd7" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getInitialCFAOffset</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a501eab5d761b24b69bcab1ab58817a13" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getInitialCFARegister</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a88cd598b9a4d2501f393165601909f68" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getNonLocalFrameIndexReference</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a6521d4d5560c03b2e6490883558b882c" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>getOffsetOfLocalArea</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a74d93035f53f5e8c2aaea5a8f307972d" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>getStackAlign</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a07ed686a79bd6b4e4702981c4f85ec19" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>getStackAlignment</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1aa76eab97e3072a1ebd4bf1ff00d19423" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>getStackGrowthDirection</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a5fea26e6022c2ee4c4e5a9c74d6dbbb3" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getStackIDForScalableVectors</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a309fabb5424f0b563465484f21775555" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getStackThreshold</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a258e7041d4a768f291a4023db2b898b5" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>getTransientStackAlign</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1aed9bf2409dff79290e0c11065e84250e" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>getWinEHParentFrameOffset</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a0c361440fb8d1e36932e65c8cc8497e7" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>hasFP</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a484c3893b6ffdebaa29296c58fc366a1" prot="protected" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>hasFPImpl</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1ae8a256416cc40f3cc4e035cf10c27446" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>hasReservedCallFrame</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a5907981c158ef4c895f1418c281e53d6" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>HexagonFrameLowering</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a3a7941c88f2fe0c9ae9a9c4b84b94316" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>inlineStackProbe</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a168fbc264a2a928aa7509ea3d15ddde7" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>insertAllocframe</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a3907376550996d48bc452ae75fca1a16" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>insertCFIInstructions</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a3d4ac9a7408846b29c1f0d841dbdfe2f" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>insertCFIInstructionsAt</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a9cc7c70150cb33d4128defbf248173ee" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>insertCSRRestoresInBlock</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a2f662904ebc5d1b4978d32285f2a92d2" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>insertCSRSpillsInBlock</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a49a8f4c3062465d4529e5758b8ea5038" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>insertEpilogueInBlock</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a8474ec2812b7e2f05acb80c10213f45b" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>insertPrologueInBlock</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1aa1a6ae5d36efd70e65b069dae379031a" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>isProfitableForNoCSROpt</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1ac963fe332c54dc387889b0450dbf52f7" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>isSafeForNoCSROpt</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a43b49417104948585f33c2ce4795a217" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>isStackIdSafeForLocalArea</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a5eb659c968445b7676c09119894ef4ff" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>isStackRealignable</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a6e380efd1c5b2089017a2b2b04b2e95d" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>isSupportedStackID</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a2876223b443774e1b6708bd0df26c7aa" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>mayOverflowFrameOffset</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1adb7726ddd215999f695aec70200b9d01" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>needsAligna</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a6add5d4c2104f4ae4794984d3c256834" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>needsFrameIndexResolution</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a1af433e48bc51d7f4d728dbf5d316355" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>optimizeSpillSlots</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a897d513f6255e5eeaba5074ca4095230" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>orderFrameObjects</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a8b67fcf985704c812d104989a617a939" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>processFunctionBeforeFrameFinalized</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a93daa364163220d478400b78d3485c15" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>processFunctionBeforeFrameIndicesReplaced</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1accc7b9ef6880345f283b6585bdc09aa1" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>resetCFIToInitialState</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1afe209d6441f38c76735d589d88f5145d" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>restoreCalleeSavedRegisters</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a1c65e3345014328fbc6953223831ceb2" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>shouldInlineCSR</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1ad1df4d29452b039094c0205f4a24f5a7" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>spillCalleeSavedRegisters</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a0483ea70005f190ad01c28ca6dcac517" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>spillFPBP</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a453c74e2daac0745b53f8b31c11fc50c" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>StackDirection</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a453c74e2daac0745b53f8b31c11fc50cad1fc7c9d0bae5bf76a67d2d26ce99c1a" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>StackGrowsDown</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a453c74e2daac0745b53f8b31c11fc50ca5a5dea77f2a0aaffed9741ae04e8d865" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>StackGrowsUp</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a52171334abe255afc89c23b8c688bf49" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>stackProbeFunctionModifiesSP</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1a6a6d31b2f1e5754f5824c5dec555eeac" prot="public" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>TargetFrameLowering</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a5629922e1363aee48e43307383782f92" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>targetHandlesStackFrameRounding</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a4835e0946deef12e84e0fc21527c5bae" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>updateEntryPaths</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a9fd0cc6f11238606d95f0dc24ea28a37" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>updateExitPaths</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a22c0651f81747b159d7a2f9e7ced476c" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>useRestoreFunction</name></member>
+      <member refid="classllvm_1_1_hexagon_frame_lowering_1a4532055bc70d66421091f57b4b627c77" prot="private" virt="non-virtual"><scope>llvm::HexagonFrameLowering</scope><name>useSpillFunction</name></member>
+      <member refid="classllvm_1_1_target_frame_lowering_1adcbc3bf1fa8b1cd05ce63c1bdd58f08b" prot="public" virt="virtual"><scope>llvm::HexagonFrameLowering</scope><name>~TargetFrameLowering</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

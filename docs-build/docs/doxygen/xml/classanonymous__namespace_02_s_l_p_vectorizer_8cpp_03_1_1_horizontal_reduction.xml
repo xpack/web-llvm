@@ -1,0 +1,896 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</compoundname>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a82cb8939b908ceedc7fe66012636b16b" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, 16 &gt;</type>
+        <definition>using anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReductionOpsType =  SmallVector&lt;Value *, 16&gt;</definition>
+        <argsstring></argsstring>
+        <name>ReductionOpsType</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReductionOpsType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19383" column="3" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19383" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1ac1bbe2b8aa1728bb52634bcc2e283f26" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_small_vector" kindref="compound">ReductionOpsType</ref>, 2 &gt;</type>
+        <definition>using anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReductionOpsListType =  SmallVector&lt;ReductionOpsType, 2&gt;</definition>
+        <argsstring></argsstring>
+        <name>ReductionOpsListType</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReductionOpsListType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19384" column="3" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19384" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a13111b40234cadd74ba601594a3471cb" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">ReductionOpsListType</ref></type>
+        <definition>ReductionOpsListType anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReductionOps</definition>
+        <argsstring></argsstring>
+        <name>ReductionOps</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReductionOps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19385" column="24" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19385" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1af7d0f73b6be1b4d0305b89d3f6a1387c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &gt;</type>
+        <definition>SmallVector&lt;SmallVector&lt;Value *&gt; &gt; anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReducedVals</definition>
+        <argsstring></argsstring>
+        <name>ReducedVals</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReducedVals</qualifiedname>
+        <briefdescription>
+<para>List of possibly reduced values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19387" column="15" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19387" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a7ff356a8667a2de4812ca31faa76eb97" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> * &gt;, 16 &gt;</type>
+        <definition>SmallDenseMap&lt;Value *, SmallVector&lt;Instruction *&gt;, 16&gt; anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReducedValsToOps</definition>
+        <argsstring></argsstring>
+        <name>ReducedValsToOps</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReducedValsToOps</qualifiedname>
+        <briefdescription>
+<para>Maps reduced value to the corresponding reduction operation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19389" column="17" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19389" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a07bb39fe748d1c4b041fbc46d6cebf7f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_weak_tracking_v_h" kindref="compound">WeakTrackingVH</ref></type>
+        <definition>WeakTrackingVH anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReductionRoot</definition>
+        <argsstring></argsstring>
+        <name>ReductionRoot</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::ReductionRoot</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19390" column="18" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19390" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1af7e3740a39464de76bfe323cba1b8de6" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830e" kindref="member">RecurKind</ref></type>
+        <definition>RecurKind anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::RdxKind</definition>
+        <argsstring></argsstring>
+        <name>RdxKind</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::RdxKind</qualifiedname>
+        <briefdescription>
+<para>The type of reduction operation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19392" column="13" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19392" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a8d185e45d27c0915eefba9623b9dc5da" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::IsSupportedHorRdxIdentityOp</definition>
+        <argsstring></argsstring>
+        <name>IsSupportedHorRdxIdentityOp</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::IsSupportedHorRdxIdentityOp</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Checks if the optimization of original scalar identity operations on matched horizontal reductions is enabled and allowed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19395" column="8" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19395" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a2b503faa306494cff5bb0242110bd48b" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::isCmpSelMinMax</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>isCmpSelMinMax</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::isCmpSelMinMax</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19397" column="15" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19397" bodyend="19400"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a8650b74df12ce59ed7edb47ebe6fc356" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::isBoolLogicOp</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>isBoolLogicOp</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::isBoolLogicOp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19405" column="15" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19405" bodyend="19408"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1ac0ab594a25adc55c05b1d3fa601d44fd" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::isVectorizable</definition>
+        <argsstring>(RecurKind Kind, Instruction *I)</argsstring>
+        <name>isVectorizable</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::isVectorizable</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830e" kindref="member">RecurKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Checks if instruction is associative and can be vectorized. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19411" column="15" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19411" bodyend="19431"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a991f39946aa4a6c9fd946dc8221bffb3" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>static Value * anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::getRdxOperand</definition>
+        <argsstring>(Instruction *I, unsigned Index)</argsstring>
+        <name>getRdxOperand</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::getRdxOperand</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19433" column="16" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19433" bodyend="19441"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a7eb7173f8c5554251c785ecfb8ad4a84" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>static Value * anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::createOp</definition>
+        <argsstring>(IRBuilderBase &amp;Builder, RecurKind Kind, Value *LHS, Value *RHS, const Twine &amp;Name, bool UseSelect)</argsstring>
+        <name>createOp</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::createOp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_i_r_builder_base" kindref="compound">IRBuilderBase</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830e" kindref="member">RecurKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>LHS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>RHS</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>UseSelect</declname>
+        </param>
+        <briefdescription>
+<para>Creates reduction operation with the current opcode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19444" column="16" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19444" bodyend="19492"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1ab4899ad7457900fa098f5f39fe2fdf1c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>static Value * anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::createOp</definition>
+        <argsstring>(IRBuilderBase &amp;Builder, RecurKind RdxKind, Value *LHS, Value *RHS, const Twine &amp;Name, const ReductionOpsListType &amp;ReductionOps)</argsstring>
+        <name>createOp</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::createOp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_i_r_builder_base" kindref="compound">IRBuilderBase</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830e" kindref="member">RecurKind</ref></type>
+          <declname>RdxKind</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>LHS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>RHS</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector" kindref="compound">ReductionOpsListType</ref> &amp;</type>
+          <declname>ReductionOps</declname>
+        </param>
+        <briefdescription>
+<para>Creates reduction operation with the current opcode with the IR flags from <computeroutput>ReductionOps</computeroutput>, dropping nuw/nsw flags. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19496" column="16" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19496" bodyend="19518"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a718f11e982d5161c53e2360a8412adb6" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>static unsigned anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::getNumberOfOperands</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>getNumberOfOperands</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::getNumberOfOperands</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Total number of operands in the reduction operation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19629" column="19" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19629" bodyend="19631"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a08b7c1a781a7fa2b12c7f72d05cea24e" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::hasSameParent</definition>
+        <argsstring>(Instruction *I, BasicBlock *BB)</argsstring>
+        <name>hasSameParent</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::hasSameParent</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the instruction is in basic block <computeroutput>BB</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For a cmp+sel min/max reduction check that both ops are in <computeroutput>BB</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19635" column="15" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19635" bodyend="19642"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a3368a049b17486ecdc256a3cf8b82609" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::hasRequiredNumberOfUses</definition>
+        <argsstring>(bool IsCmpSelMinMax, Instruction *I)</argsstring>
+        <name>hasRequiredNumberOfUses</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::hasRequiredNumberOfUses</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsCmpSelMinMax</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref> number of uses for reduction operations/reduced values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19645" column="15" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19645" bodyend="19656"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a09a40a8ccd7d0464bb820420b07cae54" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::isGoodForReduction</definition>
+        <argsstring>(ArrayRef&lt; Value * &gt; Data)</argsstring>
+        <name>isGoodForReduction</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::isGoodForReduction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt;</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19676" column="15" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19676" bodyend="19681"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a842f13add9ede73561cdbad22101b255" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830e" kindref="member">RecurKind</ref></type>
+        <definition>static RecurKind anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::getRdxKind</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>getRdxKind</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::getRdxKind</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19521" column="20" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19521" bodyend="19620"/>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830eaec211f7c20af43e742bf2570c3cb84f9" compoundref="_i_v_descriptors_8h" startline="35">llvm::Add</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830eac33315685a0cba3ce53be378b3c7874b" compoundref="_i_v_descriptors_8h" startline="38">llvm::And</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a193847098793cdbab306803186676899" compoundref="_r_i_s_c_v_redundant_copy_elimination_8cpp" startline="75">Cond</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830eaf552e181879ad14956985859308d77d9" compoundref="_i_v_descriptors_8h" startline="44">llvm::FAdd</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ea8764eae15a1f2cf1c964d14dcf9283ee" compoundref="_i_v_descriptors_8h" startline="47">llvm::FMax</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ea8bdc72f64bbc121d5c6fa14cdef4c8bf" compoundref="_i_v_descriptors_8h" startline="49">llvm::FMaximum</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ead76b595f89852f41ac50173abae6da05" compoundref="_i_v_descriptors_8h" startline="46">llvm::FMin</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ea4e137992425232e2d0b0142b7062378b" compoundref="_i_v_descriptors_8h" startline="48">llvm::FMinimum</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830eab48b2a9934af7a531cfd7236ded9d50e" compoundref="_i_v_descriptors_8h" startline="45">llvm::FMul</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78bac1aa7b798ba11d2e497d5cce6ce6d3dc" compoundref="_instr_types_8h" startline="701">llvm::CmpInst::ICMP_SGE</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba720a42e85f7e981afd61e28473b0000a" compoundref="_instr_types_8h" startline="700">llvm::CmpInst::ICMP_SGT</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba2751d6136a2819749dcef65dc19a4246" compoundref="_instr_types_8h" startline="703">llvm::CmpInst::ICMP_SLE</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba15ae464950ac676919c2f0c7aafc706c" compoundref="_instr_types_8h" startline="702">llvm::CmpInst::ICMP_SLT</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba573bcd571c938fce863525330bbfc4b8" compoundref="_instr_types_8h" startline="697">llvm::CmpInst::ICMP_UGE</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba607cecdc5172814382033e001ed11fad" compoundref="_instr_types_8h" startline="696">llvm::CmpInst::ICMP_UGT</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78bad92f160316221fd4090520bb2b3cefc5" compoundref="_instr_types_8h" startline="699">llvm::CmpInst::ICMP_ULE</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba91d86a4753c8bd7624e01bf565d87f8e" compoundref="_instr_types_8h" startline="698">llvm::CmpInst::ICMP_ULT</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1_instruction_1ad848bd0184fc7bcb7b71e19248f08f34" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="914" endline="917">llvm::Instruction::isIdenticalTo</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a062ccd76a126632721e9aa09775d6c0e" compoundref="_pattern_match_8h" startline="1102" endline="1105">llvm::PatternMatch::m_Add</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a014d851989a66ce781c4f89dfffb26b5" compoundref="_pattern_match_8h" startline="1216" endline="1219">llvm::PatternMatch::m_And</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a7d9ab823fe85606fa795c0c6fc75aca6" compoundref="_pattern_match_8h" startline="105" endline="105">llvm::PatternMatch::m_Cmp</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a4ea054dc4c7dd6b5a27eaf33b7fa20b5" compoundref="_pattern_match_8h" startline="1108" endline="1111">llvm::PatternMatch::m_FAdd</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a2473234214d47e1991056897d735d82d" compoundref="_pattern_match_8h" startline="1174" endline="1177">llvm::PatternMatch::m_FMul</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a2adca0e23c974dbb32019dccb22547bc" compoundref="_pattern_match_8h" startline="826" endline="826">llvm::PatternMatch::m_Instruction</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a3c0adc1054838f4498e0e860b637a22b" compoundref="_pattern_match_8h" startline="2628" endline="2630">llvm::PatternMatch::m_Intrinsic</references>
+        <references refid="namespacellvm_1_1_pattern_match_1acf8c16eed89e5ee1a10b6dfc08a33b3a" compoundref="_pattern_match_8h" startline="3081" endline="3081">llvm::PatternMatch::m_LogicalAnd</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a5cce7a41c7581ff15a23ab90eb3b403a" compoundref="_pattern_match_8h" startline="3099" endline="3099">llvm::PatternMatch::m_LogicalOr</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a532515120d78196926b68c48460087ab" compoundref="_pattern_match_8h" startline="1168" endline="1171">llvm::PatternMatch::m_Mul</references>
+        <references refid="namespacellvm_1_1_pattern_match_1ae44af1eeb2e5f7a1973a4ab78963a503" compoundref="_pattern_match_8h" startline="1222" endline="1225">llvm::PatternMatch::m_Or</references>
+        <references refid="namespacellvm_1_1_pattern_match_1aac981768f6aa97f560e4cb0290f0aaa9" compoundref="_pattern_match_8h" startline="2342" endline="2345">llvm::PatternMatch::m_SMax</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a4709b4ef085b4ded2f9c2c888b35ee25" compoundref="_pattern_match_8h" startline="2348" endline="2351">llvm::PatternMatch::m_SMin</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a2d9861feadd3a09792967a012559e7b2" compoundref="_pattern_match_8h" startline="885" endline="885">llvm::PatternMatch::m_Specific</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a7c1d2015b4d26f5afe0baf87f9e75782" compoundref="_pattern_match_8h" startline="2354" endline="2357">llvm::PatternMatch::m_UMax</references>
+        <references refid="namespacellvm_1_1_pattern_match_1af627036178ac57e62dd894233ce10fcb" compoundref="_pattern_match_8h" startline="2360" endline="2363">llvm::PatternMatch::m_UMin</references>
+        <references refid="namespacellvm_1_1_pattern_match_1aaf522908fe903018eb9b087dd6e49296" compoundref="_pattern_match_8h" startline="92" endline="92">llvm::PatternMatch::m_Value</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a1cacb72e897c55bdfd5c726d13d69af1" compoundref="_pattern_match_8h" startline="1228" endline="1231">llvm::PatternMatch::m_Xor</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a25d956d9e0beadd47ce4bc255dfa811d" compoundref="_pattern_match_8h" startline="49" endline="51">llvm::PatternMatch::match</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ea62b6d55816cf737bfc6f42e60df1a3f2" compoundref="_i_v_descriptors_8h" startline="36">llvm::Mul</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ea6adf97f83acf6453d4a6a4b1070f3754" compoundref="_i_v_descriptors_8h" startline="34">llvm::None</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ea3a2d5fe857d8f9541136a124c2edec6c" compoundref="_i_v_descriptors_8h" startline="37">llvm::Or</references>
+        <references refid="_a_m_d_g_p_u_reg_bank_select_8cpp_1a09bc27545df3b02401428427d0b5ce6f" compoundref="_a_m_d_g_p_u_reg_bank_select_8cpp" startline="71">Select</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830eabccd0de85dfbe7aef83629b318a4df6e" compoundref="_i_v_descriptors_8h" startline="41">llvm::SMax</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ead6bb6a2eca7d60c75e349ea45e138d74" compoundref="_i_v_descriptors_8h" startline="40">llvm::SMin</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830eafaa1f94cd925672925f691e7f5727a6b" compoundref="_i_v_descriptors_8h" startline="43">llvm::UMax</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ea1c692ed4bf463fb08fca4d8cb8201ac0" compoundref="_i_v_descriptors_8h" startline="42">llvm::UMin</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ea76feb79109026728a20736a8c6504548" compoundref="_i_v_descriptors_8h" startline="39">llvm::Xor</references>
+        <referencedby refid="_s_l_p_vectorizer_8cpp_1ad281a65c549980abb2d08fc3973df2a8" compoundref="_s_l_p_vectorizer_8cpp" startline="20833" endline="20835">getRdxKind</referencedby>
+        <referencedby refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a7df4bae7dbd152d7a3c399384a110fe8" compoundref="_s_l_p_vectorizer_8cpp" startline="19687" endline="19847">matchAssociativeReduction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a9a63158f073cdcf3696b623f1b8e0601" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>static unsigned anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::getFirstOperandIndex</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>getFirstOperandIndex</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::getFirstOperandIndex</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Get the index of the first operand. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19623" column="19" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19623" bodyend="19625"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a7df4bae7dbd152d7a3c399384a110fe8" compoundref="_s_l_p_vectorizer_8cpp" startline="19687" endline="19847">matchAssociativeReduction</referencedby>
+        <referencedby refid="_s_l_p_vectorizer_8cpp_1ad25cdf8e7c874eae6f692b4319c6afe4" compoundref="_s_l_p_vectorizer_8cpp" startline="21009" endline="21023">tryGetSecondaryReductionRoot</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a0fc8bbaa3c19cabec1c0e277c095cf26" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::initReductionOps</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>initReductionOps</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::initReductionOps</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the list of reduction operations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19659" column="8" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19659" bodyend="19664"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a7e5c11dcf045a80ce42d0d7367869221" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::addReductionOps</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>addReductionOps</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::addReductionOps</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Add all reduction operations for the reduction instruction <computeroutput>I</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19667" column="8" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19667" bodyend="19674"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a3623100f171b3a13f9788ec31a15fc3e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref></type>
+        <definition>InstructionCost anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::getReductionCost</definition>
+        <argsstring>(TargetTransformInfo *TTI, ArrayRef&lt; Value * &gt; ReducedVals, bool IsCmpSelMinMax, FastMathFlags FMF, const BoUpSLP &amp;R)</argsstring>
+        <name>getReductionCost</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::getReductionCost</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+          <declname>TTI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt;</type>
+          <declname>ReducedVals</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsCmpSelMinMax</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_fast_math_flags" kindref="compound">FastMathFlags</ref></type>
+          <declname>FMF</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1slpvectorizer_1_1_bo_up_s_l_p" kindref="compound">BoUpSLP</ref> &amp;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+<para>Calculate the cost of a reduction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="20543" column="19" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="20543" bodyend="20651"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1aeef4eed59a6b591aa4eeabd821facd0b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::emitReduction</definition>
+        <argsstring>(Value *VectorizedValue, IRBuilderBase &amp;Builder, const TargetTransformInfo *TTI, Type *DestTy)</argsstring>
+        <name>emitReduction</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::emitReduction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>VectorizedValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_i_r_builder_base" kindref="compound">IRBuilderBase</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+          <declname>TTI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>DestTy</declname>
+        </param>
+        <briefdescription>
+<para>Emit a horizontal reduction of the vectorized value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="20654" column="9" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="20654" bodyend="20673"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a64c9106761190ed1b36944d02be8ea45" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::emitScaleForReusedOps</definition>
+        <argsstring>(Value *VectorizedValue, IRBuilderBase &amp;Builder, unsigned Cnt)</argsstring>
+        <name>emitScaleForReusedOps</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::emitScaleForReusedOps</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>VectorizedValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_i_r_builder_base" kindref="compound">IRBuilderBase</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Cnt</declname>
+        </param>
+        <briefdescription>
+<para>Emits optimized code for unique scalar value reused <computeroutput>Cnt</computeroutput> times. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="20676" column="9" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="20676" bodyend="20729"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a3acecd41e49a74e0b98bfc8e530ad2fb" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::emitReusedOps</definition>
+        <argsstring>(Value *VectorizedValue, IRBuilderBase &amp;Builder, BoUpSLP &amp;R, const SmallMapVector&lt; Value *, unsigned, 16 &gt; &amp;SameValuesCounter, const DenseMap&lt; Value *, Value * &gt; &amp;TrackedToOrig)</argsstring>
+        <name>emitReusedOps</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::emitReusedOps</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>VectorizedValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_i_r_builder_base" kindref="compound">IRBuilderBase</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1slpvectorizer_1_1_bo_up_s_l_p" kindref="compound">BoUpSLP</ref> &amp;</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_small_map_vector" kindref="compound">SmallMapVector</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref>, 16 &gt; &amp;</type>
+          <declname>SameValuesCounter</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>TrackedToOrig</declname>
+        </param>
+        <briefdescription>
+<para>Emits actual operation for the scalar identity values, found during horizontal reduction analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="20734" column="3" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="20734" bodyend="20828"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a9a19496e1483ab253ecc04ce3fa0c3a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::HorizontalReduction</definition>
+        <argsstring>()=default</argsstring>
+        <name>HorizontalReduction</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::HorizontalReduction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19684" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a7df4bae7dbd152d7a3c399384a110fe8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::matchAssociativeReduction</definition>
+        <argsstring>(BoUpSLP &amp;R, Instruction *Root, ScalarEvolution &amp;SE, const DataLayout &amp;DL, const TargetLibraryInfo &amp;TLI)</argsstring>
+        <name>matchAssociativeReduction</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::matchAssociativeReduction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1slpvectorizer_1_1_bo_up_s_l_p" kindref="compound">BoUpSLP</ref> &amp;</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Root</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> &amp;</type>
+          <declname>SE</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> &amp;</type>
+          <declname>TLI</declname>
+        </param>
+        <briefdescription>
+<para>Try to find a reduction tree. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19687" column="8" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19687" bodyend="19847"/>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1abf8c65a150fe96c228db5b19d6b09e3a" compoundref="_s_l_p_vectorizer_8cpp" startline="4790" endline="4805">arePointersCompatible</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1acd9e771a3296c6b24146955754620557" compoundref="_small_vector_8h" startline="308" endline="311">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::back</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" compoundref="_instr_prof_8h" startline="189">llvm::Data</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a396fcfee6914c76974b73c3d203da6a5" compoundref="_small_vector_8h" startline="937" endline="944">llvm::SmallVectorImpl&lt; T &gt;::emplace_back</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_dense_map_base_1a65520b9c67759099e313d0f4e7b5ff9e" compoundref="_dense_map_8h" startline="84" endline="86">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end</references>
+        <references refid="classllvm_1_1_dense_map_base_1a0c047f127ed4380a6f383d70bec4eb94" compoundref="_dense_map_8h" startline="156" endline="162">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::find</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1a81425fa662eac9cc9cd5d21f1c66695e" compoundref="_s_l_p_vectorizer_8cpp" startline="7417" endline="7498">generateKeySubkey</references>
+        <references refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a9a63158f073cdcf3696b623f1b8e0601" compoundref="_s_l_p_vectorizer_8cpp" startline="19623" endline="19625">getFirstOperandIndex</references>
+        <references refid="classllvm_1_1ilist__detail_1_1node__parent__access_1a7e19e7508415378ad9523e0339b23e22" compoundref="ilist__node_8h" startline="32" endline="34">llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;::getParent</references>
+        <references refid="namespacellvm_1a54b19432f9c7d4df0f2f2307175f73e4" compoundref="_instructions_8h" startline="4998" endline="5004">llvm::getPointerOperand</references>
+        <references refid="classllvm_1_1_load_inst_1a2d1ff28d6923802e165905b8d1766e76" compoundref="_instructions_8h" startline="255" endline="255">llvm::LoadInst::getPointerOperand</references>
+        <references refid="namespacellvm_1a034d66b8c0aeb72ea13fd26392083446" compoundref="_loop_access_analysis_8cpp" startline="1539" endline="1602">llvm::getPointersDiff</references>
+        <references refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a842f13add9ede73561cdbad22101b255" compoundref="_s_l_p_vectorizer_8cpp" startline="19521" endline="19620">getRdxKind</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1ad281a65c549980abb2d08fc3973df2a8" compoundref="_s_l_p_vectorizer_8cpp" startline="20833" endline="20835">getRdxKind</references>
+        <references refid="classllvm_1_1_value_1a0344a49526443edf90cc0aef3abd3337" compoundref="_i_r_2_value_8h" startline="255" endline="255">llvm::Value::getType</references>
+        <references refid="namespacellvm_1a3b1c5788b85ffa254be0e834edf5cf8f" compoundref="_value_tracking_8cpp" startline="6782" endline="6827">llvm::getUnderlyingObject</references>
+        <references refid="namespacellvm_1add71474638430694c84640146383fc44" compoundref="_hashing_8h" startline="590" endline="594">llvm::hash_combine</references>
+        <references refid="namespacellvm_1a0e2e479cf4860dc8a00614e36ee3d5e9" compoundref="_a_p_fixed_point_8h" startline="136" endline="138">llvm::hash_value</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+        <references refid="classllvm_1_1_small_set_1afcadfef2cf37c3e6dbdbc9cd7bea50a0" compoundref="_small_set_8h" startline="181" endline="181">llvm::SmallSet&lt; T, N, C &gt;::insert</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="namespacellvm_1af462c722ac0144c995057a2f6e616507" compoundref="_casting_8h" startline="836" endline="836">llvm::IsaPred</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1aa3ea54a95743867473d32853d3c65603" compoundref="_s_l_p_vectorizer_8cpp" startline="231" endline="237">isValidElementType</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a0c8ffe664a36e30d49c84d0aded2fe08" compoundref="_small_vector_8h" startline="673" endline="677">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val</references>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1adbff8697d64e4ee139aa777b68999872">RecursionMaxDepth</references>
+        <references refid="namespacellvm_1a6b0ac1fa4f05de76413c5e0ca6334035" compoundref="_s_t_l_extras_8h" startline="420" endline="426">llvm::reverse</references>
+        <references refid="namespacellvm_1adc4eb8be6f7a12ede962987fb9cabb47" compoundref="_sequence_8h" startline="305" endline="307">llvm::seq</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+        <references refid="namespacellvm_1a076f93c387f454f0db13d4bc7d4e7f9c" compoundref="_s_t_l_extras_8h" startline="2037" endline="2039">llvm::stable_sort</references>
+        <references refid="classllvm_1_1_dense_map_base_1a1a245b31aced1374f28f45d2b297f402" compoundref="_dense_map_8h" startline="226" endline="245">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::try_emplace</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1ab1f9d3b9bc61d6ec2606916f8d7b92f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::tryToReduce</definition>
+        <argsstring>(BoUpSLP &amp;V, const DataLayout &amp;DL, TargetTransformInfo *TTI, const TargetLibraryInfo &amp;TLI, AssumptionCache *AC)</argsstring>
+        <name>tryToReduce</name>
+        <qualifiedname>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction::tryToReduce</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1slpvectorizer_1_1_bo_up_s_l_p" kindref="compound">BoUpSLP</ref> &amp;</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+          <declname>TTI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> &amp;</type>
+          <declname>TLI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref> *</type>
+          <declname>AC</declname>
+        </param>
+        <briefdescription>
+<para>Attempt to vectorize the tree found by matchAssociativeReduction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19850" column="9" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19850" bodyend="20539"/>
+        <references refid="_itanium_demangle_8h_1a536e22898d28a9340a4204407a75ad5d" compoundref="_itanium_demangle_8h" startline="3433">AbstractManglingParser&lt; Derived, Alloc &gt;::NumOps</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830eaec211f7c20af43e742bf2570c3cb84f9" compoundref="_i_v_descriptors_8h" startline="35">llvm::Add</references>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1a7568c08b526dbf7f7b5402f3eb605b55" compoundref="_s_l_p_vectorizer_8cpp" startline="485" endline="489">allConstant</references>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_dense_map_base_1a6cf1231457e9dca2d160ee236da9dfaa" compoundref="_dense_map_8h" startline="202" endline="206">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::at</references>
+        <references refid="classllvm_1_1_array_ref_1a291ac49156942529f159a9ec003cc25f" compoundref="_array_ref_8h" startline="177" endline="180">llvm::ArrayRef&lt; T &gt;::back</references>
+        <references refid="classllvm_1_1_array_ref_1aab36927882fbfdcbb860d87fd9c30da8" compoundref="_array_ref_8h" startline="156" endline="156">llvm::ArrayRef&lt; T &gt;::begin</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a8a045d250952c0867382a9840ee18fdf" compoundref="_small_vector_8h" startline="267" endline="267">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::begin</references>
+        <references refid="namespacellvm_1ae22967d11b695d268992470debfae4b2" compoundref="bit_8h" startline="327" endline="333">llvm::bit_floor</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_map_vector_1ae091b147039557cf8ce505740e7ff7ac" compoundref="_map_vector_8h" startline="88" endline="91">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::clear</references>
+        <references refid="classllvm_1_1detail_1_1_dense_set_impl_1ad409c2de8502b94c8a0b1193307c63b6" compoundref="_dense_set_8h" startline="193" endline="195">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::contains</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1af74676a3c7447be34bd2c1da76ec0c48" compoundref="_small_ptr_set_8h" startline="458" endline="460">llvm::SmallPtrSetImpl&lt; PtrType &gt;::contains</references>
+        <references refid="classllvm_1_1_small_set_1a2a98f19750ba941ce791b75ca6d77e48" compoundref="_small_set_8h" startline="175" endline="175">llvm::SmallSet&lt; T, N, C &gt;::count</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1a563ec77bbc82ad22aab9621dd14c01cd" compoundref="_i_r_builder_8h" startline="2574" endline="2576">llvm::IRBuilderBase::CreateFreeze</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1a17320ebd77e834577a5ebd1063039625" compoundref="_i_r_builder_8h" startline="2511" endline="2514">llvm::IRBuilderBase::CreateInsertElement</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1ac79ca3c2d2d74cf33684397a91846564" compoundref="_i_r_builder_8h" startline="2225" endline="2232">llvm::IRBuilderBase::CreateIntCast</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1aa226d30eebf99ef84a0c2b1afcfc98b2" compoundref="_i_r_builder_8h" startline="2533" endline="2538">llvm::IRBuilderBase::CreateShuffleVector</references>
+        <references refid="namespacellvm_1a689f785bfa4f3650dc44d519df0406fd" compoundref="_vector_utils_8cpp" startline="1032" endline="1038">llvm::createStrideMask</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="namespacellvm_1a02981de53fb6ffd384d39addc4d25f37" compoundref="_s_t_l_extras_8h" startline="329" endline="332">llvm::drop_begin</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a396fcfee6914c76974b73c3d203da6a5" compoundref="_small_vector_8h" startline="937" endline="944">llvm::SmallVectorImpl&lt; T &gt;::emplace_back</references>
+        <references refid="classllvm_1_1_map_vector_1a8da97c44f514ad1ae9ccf4518b0f88aa" compoundref="_map_vector_8h" startline="79" endline="81">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::empty</references>
+        <references refid="classllvm_1_1_array_ref_1a7ca5197533a9c1fb8a2bd30587fcec6b" compoundref="_array_ref_8h" startline="157" endline="157">llvm::ArrayRef&lt; T &gt;::end</references>
+        <references refid="classllvm_1_1_dense_map_base_1a65520b9c67759099e313d0f4e7b5ff9e" compoundref="_dense_map_8h" startline="84" endline="86">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end</references>
+        <references refid="classllvm_1_1_map_vector_1a0881334358ff6ff7ff8cea5562c7988e" compoundref="_map_vector_8h" startline="71" endline="71">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::end</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830eaf552e181879ad14956985859308d77d9" compoundref="_i_v_descriptors_8h" startline="44">llvm::FAdd</references>
+        <references refid="classllvm_1_1_dense_map_base_1a0c047f127ed4380a6f383d70bec4eb94" compoundref="_dense_map_8h" startline="156" endline="162">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::find</references>
+        <references refid="classllvm_1_1_map_vector_1a6b0c3e15c351ba9682837c29b0a141b6" compoundref="_map_vector_8h" startline="167" endline="171">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::find</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830eab48b2a9934af7a531cfd7236ded9d50e" compoundref="_i_v_descriptors_8h" startline="45">llvm::FMul</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830eaa7dad289ea38506fb1c9b5b148405d0c" compoundref="_i_v_descriptors_8h" startline="50">llvm::FMulAdd</references>
+        <references refid="classllvm_1_1_array_ref_1a721fc555cb3d8dc2a1a680dcc2ce69b2" compoundref="_array_ref_8h" startline="171" endline="174">llvm::ArrayRef&lt; T &gt;::front</references>
+        <references refid="classllvm_1_1_map_vector_1adb824684d8ec5b843fb4d9b5ac906c9a" compoundref="_map_vector_8h" startline="83" endline="83">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::front</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a58dc840fc84420b7f0b773794b8101c1" compoundref="_small_vector_8h" startline="299" endline="302">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::front</references>
+        <references refid="classllvm_1_1_fixed_vector_type_1af9a870d5df50fe0133a410b7c9114c80" compoundref="_sandbox_i_r_2_type_8cpp" startline="791" endline="806">llvm::FixedVectorType::get</references>
+        <references refid="classllvm_1_1_poison_value_1a1bf08613fb664a2e377a9a72c59a6b66" compoundref="_constants_8cpp" startline="1878" endline="1884">llvm::PoisonValue::get</references>
+        <references refid="classllvm_1_1_instruction_1a4b8faae4ff9e7434a1d226d03d15dcd2" compoundref="_i_r_2_instruction_8h" startline="511" endline="511">llvm::Instruction::getDebugLoc</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1abd93b259f88f77258d2428448d9f8032" compoundref="_s_l_p_vectorizer_8cpp" startline="286" endline="298">getFloorFullVectorNumberOfElements</references>
+        <references refid="namespacellvm_1ac2e6c50683f73779b6b83effaf07ca30" compoundref="_s_l_p_vectorizer_8cpp" startline="1321" endline="1331">llvm::getNumberOfParts</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1a2f1d58ac35de4475017aca6c5bda6d44" compoundref="_s_l_p_vectorizer_8cpp" startline="254" endline="260">getNumElements</references>
+        <references refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_instructions_state_1a7db7259747f6de85c6d0f47c26a5e3c6" compoundref="_s_l_p_vectorizer_8cpp" startline="831" endline="831">anonymous_namespace{SLPVectorizer.cpp}::InstructionsState::getOpcode</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1acb2c6a8dafac1cdf8927e67b28baab1c" compoundref="_s_l_p_vectorizer_8cpp" startline="909" endline="1089">getSameOpcode</references>
+        <references refid="classllvm_1_1_type_1a7c742b32ebcd73d6dc851afac295b0f2" compoundref="_i_r_2_type_8h" startline="355" endline="359">llvm::Type::getScalarType</references>
+        <references refid="classllvm_1_1_value_1a0344a49526443edf90cc0aef3abd3337" compoundref="_i_r_2_value_8h" startline="255" endline="255">llvm::Value::getType</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1a065bd87e0b855701cd8ca61aa05d4c50" compoundref="_s_l_p_vectorizer_8cpp" startline="263" endline="266">getWidenedType</references>
+        <references refid="namespacellvm_1a617c1c04cfa1325ad04eb69339d92188" compoundref="bit_8h" startline="146" endline="148">llvm::has_single_bit</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_a_r_m_low_overhead_loops_8cpp_1aee9acb24ef4f057644a7cf7217922eaa" compoundref="_a_r_m_low_overhead_loops_8cpp" startline="531" endline="573">Ignore</references>
+        <references refid="classllvm_1_1detail_1_1_dense_set_impl_1a1b0f3ebdced8fce4b22c6a63b25d9525" compoundref="_dense_set_8h" startline="213" endline="216">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="classllvm_1_1_small_set_1afcadfef2cf37c3e6dbdbc9cd7bea50a0" compoundref="_small_set_8h" startline="181" endline="181">llvm::SmallSet&lt; T, N, C &gt;::insert</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_instructions_state_1acb6cc486b256266fa853de50c2ab7e5a" compoundref="_s_l_p_vectorizer_8cpp" startline="836" endline="836">anonymous_namespace{SLPVectorizer.cpp}::InstructionsState::isAltShuffle</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1ad5d72247c1a3137bc2c2c7aaf0000b03" compoundref="_s_l_p_vectorizer_8cpp" startline="706" endline="791">isFixedVectorShuffle</references>
+        <references refid="namespacellvm_1ae058c4750de2c85f12a1f96841ac9ae3" compoundref="_value_tracking_8cpp" startline="7865" endline="7870">llvm::isGuaranteedNotToBePoison</references>
+        <references refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_instructions_state_1a3b16378b59a09f2d469fd125bdbf19f2" compoundref="_s_l_p_vectorizer_8cpp" startline="838" endline="841">anonymous_namespace{SLPVectorizer.cpp}::InstructionsState::isOpcodeOrAlt</references>
+        <references refid="_lower_matrix_intrinsics_8cpp_1a6a2164e5aeea9c3e9a02eab3747efd8c" compoundref="_lower_matrix_intrinsics_8cpp" startline="102" endline="106">isSplat</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1a06a9edb69d0ed6fda201d59948acfd89" compoundref="_s_l_p_vectorizer_8cpp" startline="417" endline="430">isVectorLikeInstWithConstOps</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_dense_map_base_1a0b2ca98dc28c61793ff5c90d23e5f14e" compoundref="_dense_map_8h" startline="194" endline="198">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::lookup</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ea62b6d55816cf737bfc6f42e60df1a3f2" compoundref="_i_v_descriptors_8h" startline="36">llvm::Mul</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a499ea32ca1b8d16cedfe01d1e5b08f29" compoundref="_small_vector_8h" startline="663" endline="666">llvm::SmallVectorImpl&lt; T &gt;::reserve</references>
+        <references refid="classllvm_1_1_small_vector_impl_1ad0b3d8447f88377b62d9c019f3c4e118" compoundref="_small_vector_8h" startline="638" endline="638">llvm::SmallVectorImpl&lt; T &gt;::resize</references>
+        <references refid="namespacellvm_1adc4eb8be6f7a12ede962987fb9cabb47" compoundref="_sequence_8h" startline="305" endline="307">llvm::seq</references>
+        <references refid="classllvm_1_1_fast_math_flags_1a871def72ec0294092d71c3370c70228e" compoundref="_f_m_f_8h" startline="62" endline="62">llvm::FastMathFlags::set</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1a63fc74646456a3bed261512f21efe29c" compoundref="_i_r_builder_8h" startline="239" endline="241">llvm::IRBuilderBase::SetCurrentDebugLocation</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1a6370e29617c71c8081bbbc68d6058403" compoundref="_i_r_builder_8h" startline="330" endline="330">llvm::IRBuilderBase::setFastMathFlags</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1ace45cae6925c65e9d6916e09dd5b17cc" compoundref="_i_r_builder_8h" startline="199" endline="202">llvm::IRBuilderBase::SetInsertPoint</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+        <references refid="classllvm_1_1_map_vector_1acf4c09e1f30cdd4e0b5b1b8a236ead34" compoundref="_map_vector_8h" startline="60" endline="60">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::size</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1a704fbec676f53c0e32a778dcd57d21d9">SLPCostThreshold</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1a8b6f16f98498a168902dd2d5cd8f9462">SLPReVec</references>
+        <references refid="_sandbox_vectorizer_8cpp_1a274654b7f5932cae6a71a113322481be" compoundref="_sandbox_vectorizer_8cpp" startline="17">SV_NAME</references>
+        <references refid="classllvm_1_1_small_vector_impl_1abd962b7b01f49ce61ea41ee10c49e313" compoundref="_small_vector_8h" startline="968" endline="1001">llvm::SmallVectorImpl&lt; T &gt;::swap</references>
+        <references refid="namespacestd_1ab8424022895aee3e366fb9a32f2883cb" compoundref="_bit_vector_8h" startline="860" endline="860">std::swap</references>
+        <references refid="namespacellvm_1a615619b0b2879029152b9a20e96624bc" compoundref="_s_t_l_extras_8h" startline="1952" endline="1954">llvm::transform</references>
+        <references refid="classllvm_1_1_dense_map_base_1a1a245b31aced1374f28f45d2b297f402" compoundref="_dense_map_8h" startline="226" endline="245">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::try_emplace</references>
+        <references refid="classllvm_1_1_map_vector_1ab23f183e7947aaf3caad7960217f843c" compoundref="_map_vector_8h" startline="118" endline="127">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::try_emplace</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1a617fa15d11df5807cbc0e7191ff649d3">VectorizeNonPowerOf2</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ea76feb79109026728a20736a8c6504548" compoundref="_i_v_descriptors_8h" startline="39">llvm::Xor</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Model horizontal reductions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A horizontal reduction is a tree of reduction instructions that has values that can be put into a vector as its leaves. For example:</para>
+<para>mul mul mul mul \ / \ /<itemizedlist>
+<listitem><para>+ \ /<itemizedlist>
+<listitem><para>This tree has &quot;mul&quot; as its leaf values and &quot;+&quot; as its reduction instructions. A reduction can feed into a store or a binary operation feeding a phi. ... \ /</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para>| phi +=</para>
+<para>Or: ... \ /<itemizedlist>
+<listitem><para>| *p = </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="19382" column="1" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="19382" bodyend="20829"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a7e5c11dcf045a80ce42d0d7367869221" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>addReductionOps</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a7eb7173f8c5554251c785ecfb8ad4a84" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>createOp</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1ab4899ad7457900fa098f5f39fe2fdf1c" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>createOp</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1aeef4eed59a6b591aa4eeabd821facd0b" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>emitReduction</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a3acecd41e49a74e0b98bfc8e530ad2fb" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>emitReusedOps</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a64c9106761190ed1b36944d02be8ea45" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>emitScaleForReusedOps</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a9a63158f073cdcf3696b623f1b8e0601" prot="public" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>getFirstOperandIndex</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a718f11e982d5161c53e2360a8412adb6" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>getNumberOfOperands</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a842f13add9ede73561cdbad22101b255" prot="public" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>getRdxKind</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a991f39946aa4a6c9fd946dc8221bffb3" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>getRdxOperand</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a3623100f171b3a13f9788ec31a15fc3e" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>getReductionCost</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a3368a049b17486ecdc256a3cf8b82609" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>hasRequiredNumberOfUses</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a08b7c1a781a7fa2b12c7f72d05cea24e" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>hasSameParent</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a9a19496e1483ab253ecc04ce3fa0c3a6" prot="public" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>HorizontalReduction</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a0fc8bbaa3c19cabec1c0e277c095cf26" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>initReductionOps</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a8650b74df12ce59ed7edb47ebe6fc356" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>isBoolLogicOp</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a2b503faa306494cff5bb0242110bd48b" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>isCmpSelMinMax</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a09a40a8ccd7d0464bb820420b07cae54" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>isGoodForReduction</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a8d185e45d27c0915eefba9623b9dc5da" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>IsSupportedHorRdxIdentityOp</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1ac0ab594a25adc55c05b1d3fa601d44fd" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>isVectorizable</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a7df4bae7dbd152d7a3c399384a110fe8" prot="public" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>matchAssociativeReduction</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1af7e3740a39464de76bfe323cba1b8de6" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>RdxKind</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1af7d0f73b6be1b4d0305b89d3f6a1387c" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>ReducedVals</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a7ff356a8667a2de4812ca31faa76eb97" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>ReducedValsToOps</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a13111b40234cadd74ba601594a3471cb" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>ReductionOps</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1ac1bbe2b8aa1728bb52634bcc2e283f26" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>ReductionOpsListType</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a82cb8939b908ceedc7fe66012636b16b" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>ReductionOpsType</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1a07bb39fe748d1c4b041fbc46d6cebf7f" prot="private" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>ReductionRoot</name></member>
+      <member refid="classanonymous__namespace_02_s_l_p_vectorizer_8cpp_03_1_1_horizontal_reduction_1ab1f9d3b9bc61d6ec2606916f8d7b92f4" prot="public" virt="non-virtual"><scope>anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</scope><name>tryToReduce</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1457 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_function_pass" prot="public" virt="non-virtual">llvm::MachineFunctionPass</basecompoundref>
+    <basecompoundref refid="classllvm_1_1_live_range_edit_1_1_delegate" prot="private" virt="non-virtual">llvm::LiveRangeEdit::Delegate</basecompoundref>
+    <innerclass refid="structanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1_1_p_h_i_val_pos" prot="private">anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::PHIValPos</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a8c7dfc993f06b8bc1aee810a92dbf2c2" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref>, <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt;</type>
+        <definition>using anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::DbgValueLoc =  std::pair&lt;SlotIndex, MachineInstr *&gt;</definition>
+        <argsstring></argsstring>
+        <name>DbgValueLoc</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::DbgValueLoc</qualifiedname>
+        <briefdescription>
+<para>Debug variable location tracking <ndash/> for each VReg, maintain an ordered-by-slot-index set of DBG_VALUEs, to help quick identification of whether coalescing may change location validity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="153" column="3" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a0ff13ab4950e391dfc5d9526a2c64f4b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>MachineFunction* anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::MF</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="127" column="19" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a133af1aee00d04d460f113d4286af07e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> *</type>
+        <definition>MachineRegisterInfo* anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::MRI</definition>
+        <argsstring></argsstring>
+        <name>MRI</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::MRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="128" column="23" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a23bddc5607b97be15c45e8ff7ca93430" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+        <definition>const TargetRegisterInfo* anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::TRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="129" column="28" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a16e661ae415777c0318a647cbc9b3e05" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> *</type>
+        <definition>const TargetInstrInfo* anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::TII</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="130" column="25" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a94a4b5b483eeeebf19e0454f9c40b0b8" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_live_intervals" kindref="compound">LiveIntervals</ref> *</type>
+        <definition>LiveIntervals* anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::LIS</definition>
+        <argsstring></argsstring>
+        <name>LIS</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::LIS</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="131" column="17" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a927a3f7048bd00c71cf87c9b99715231" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_loop_info" kindref="compound">MachineLoopInfo</ref> *</type>
+        <definition>const MachineLoopInfo* anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::Loops</definition>
+        <argsstring></argsstring>
+        <name>Loops</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::Loops</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="132" column="25" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a9e8b177ea40e2001f49aa1eef67fe40c" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1ae457f1cf451ed893666c4a384e58f8e5" kindref="member">AliasAnalysis</ref> *</type>
+        <definition>AliasAnalysis* anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::AA</definition>
+        <argsstring></argsstring>
+        <name>AA</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::AA</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="133" column="17" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1aea455db969a62961ded94f9767bfaf24" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_register_class_info" kindref="compound">RegisterClassInfo</ref></type>
+        <definition>RegisterClassInfo anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::RegClassInfo</definition>
+        <argsstring></argsstring>
+        <name>RegClassInfo</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::RegClassInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="134" column="21" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1adf3dde739e9157b469aefb9bf531ff8e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, PHIValPos &gt;</type>
+        <definition>DenseMap&lt;unsigned, PHIValPos&gt; anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::PHIValToPos</definition>
+        <argsstring></argsstring>
+        <name>PHIValToPos</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::PHIValToPos</qualifiedname>
+        <briefdescription>
+<para>Map from debug instruction number to PHI position during coalescing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="144" column="12" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a971e9d8c308f19e71e34c87a436c9419" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, 2 &gt; &gt;</type>
+        <definition>DenseMap&lt;Register, SmallVector&lt;unsigned, 2&gt; &gt; anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::RegToPHIIdx</definition>
+        <argsstring></argsstring>
+        <name>RegToPHIIdx</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::RegToPHIIdx</qualifiedname>
+        <briefdescription>
+<para>Index of, for each VReg, which debug instruction numbers and corresponding PHIs are sensitive to coalescing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each VReg may have multiple PHI defs, at different positions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="148" column="12" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a3a1f32e8fffd36820b4a57305cc01830" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, std::vector&lt; DbgValueLoc &gt; &gt;</type>
+        <definition>DenseMap&lt;Register, std::vector&lt;DbgValueLoc&gt; &gt; anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::DbgVRegToValues</definition>
+        <argsstring></argsstring>
+        <name>DbgVRegToValues</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::DbgVRegToValues</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="154" column="12" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ac9242333d474321e6f60fed88a40ce16" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1_lane_bitmask" kindref="compound">LaneBitmask</ref></type>
+        <definition>LaneBitmask anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::ShrinkMask</definition>
+        <argsstring></argsstring>
+        <name>ShrinkMask</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::ShrinkMask</qualifiedname>
+        <briefdescription>
+<para>A LaneMask to remember on which subregister live ranges we need to call shrinkToUses() later. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="158" column="15" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a13f0f5fe7caa69f5fbcb192ec17aba5b" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::ShrinkMainRange</definition>
+        <argsstring></argsstring>
+        <name>ShrinkMainRange</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::ShrinkMainRange</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>True if the main range of the currently coalesced intervals should be checked for smaller live intervals. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="162" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a6696022731c214a613616632829ccc90" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::JoinGlobalCopies</definition>
+        <argsstring></argsstring>
+        <name>JoinGlobalCopies</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::JoinGlobalCopies</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>True if the coalescer should aggressively coalesce global copies in favor of keeping local copies. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="166" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ad359f59eafb8cc883a28bca77f9d3d2e" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::JoinSplitEdges</definition>
+        <argsstring></argsstring>
+        <name>JoinSplitEdges</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::JoinSplitEdges</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>True if the coalescer should aggressively coalesce fall-thru blocks exclusively containing copies. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="170" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a82fd73dcac70e457c3b681845df9dfce" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, 8 &gt;</type>
+        <definition>SmallVector&lt;MachineInstr *, 8&gt; anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::WorkList</definition>
+        <argsstring></argsstring>
+        <name>WorkList</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::WorkList</qualifiedname>
+        <briefdescription>
+<para>Copy instructions yet to be coalesced. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="173" column="15" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ac4083e50440e8341167a6eae1607fe57" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, 8 &gt;</type>
+        <definition>SmallVector&lt;MachineInstr *, 8&gt; anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::LocalWorkList</definition>
+        <argsstring></argsstring>
+        <name>LocalWorkList</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::LocalWorkList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="174" column="15" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ad2b2edb3abf228413d150024b583ce7d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, 8 &gt;</type>
+        <definition>SmallPtrSet&lt;MachineInstr *, 8&gt; anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::ErasedInstrs</definition>
+        <argsstring></argsstring>
+        <name>ErasedInstrs</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::ErasedInstrs</qualifiedname>
+        <briefdescription>
+<para>Set of instruction pointers that have been erased, and that may be present in WorkList. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="178" column="15" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a835f4171022ebabafe78a4e6d550ca78" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, 8 &gt;</type>
+        <definition>SmallVector&lt;MachineInstr *, 8&gt; anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::DeadDefs</definition>
+        <argsstring></argsstring>
+        <name>DeadDefs</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::DeadDefs</qualifiedname>
+        <briefdescription>
+<para>Dead instructions that are about to be deleted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="181" column="15" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a1102dc198e6c38e28e6e918251870439" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, 8 &gt;</type>
+        <definition>SmallVector&lt;Register, 8&gt; anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::InflateRegs</definition>
+        <argsstring></argsstring>
+        <name>InflateRegs</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::InflateRegs</qualifiedname>
+        <briefdescription>
+<para>Virtual registers to be considered for register class inflation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="184" column="15" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ad1669b7b4f17e18b2593c9ad4c687ef0" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt;</type>
+        <definition>DenseSet&lt;Register&gt; anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::ToBeUpdated</definition>
+        <argsstring></argsstring>
+        <name>ToBeUpdated</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::ToBeUpdated</qualifiedname>
+        <briefdescription>
+<para>The collection of live intervals which should have been updated immediately after rematerialiation but delayed until lateLiveIntervalUpdate is called. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="189" column="12" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a768beb6bcdff869fc8d4883c591d3ce5" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> long &gt;</type>
+        <definition>DenseMap&lt;Register, unsigned long&gt; anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::LargeLIVisitCounter</definition>
+        <argsstring></argsstring>
+        <name>LargeLIVisitCounter</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::LargeLIVisitCounter</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> how many times the large live interval with many valnos has been tried to join with other live interval. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="193" column="12" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="193" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a4199b9116f012d49b3ea0ef0dee730fa" prot="public" static="yes" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>char RegisterCoalescer::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::ID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Class identification, replacement for typeinfo. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="378" column="15" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="378" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a0969ad06eb530c7fc3a7d2b8b9911fa6" compoundref="_register_coalescer_8cpp" startline="380" endline="382">RegisterCoalescer</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a7a4075764a012dafe047446c03ddff98" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::eliminateDeadDefs</definition>
+        <argsstring>(LiveRangeEdit *Edit=nullptr)</argsstring>
+        <name>eliminateDeadDefs</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::eliminateDeadDefs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range_edit" kindref="compound">LiveRangeEdit</ref> *</type>
+          <declname>Edit</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Recursively eliminate dead defs in DeadDefs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="196" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="601" bodyend="609"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a01b36d2af0621e232ba88ed398a23f00" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::LRE_WillEraseInstruction</definition>
+        <argsstring>(MachineInstr *MI) override</argsstring>
+        <name>LRE_WillEraseInstruction</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::LRE_WillEraseInstruction</qualifiedname>
+        <reimplements refid="classllvm_1_1_live_range_edit_1_1_delegate_1a96b115435073090e6061b5206a5b4ebc">LRE_WillEraseInstruction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_live_range_edit" kindref="compound">LiveRangeEdit</ref> callback for eliminateDeadDefs(). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="199" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="611" bodyend="614"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1abf26f147cca7787d6a6714a4c0f42101" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::coalesceLocals</definition>
+        <argsstring>()</argsstring>
+        <name>coalesceLocals</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::coalesceLocals</qualifiedname>
+        <briefdescription>
+<para>Coalesce the LocalWorkList. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="202" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="4195" bodyend="4202"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ae9102fe3c500cef03dd5936b5c65b697" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::joinAllIntervals</definition>
+        <argsstring>()</argsstring>
+        <name>joinAllIntervals</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::joinAllIntervals</qualifiedname>
+        <briefdescription>
+<para>Join compatible live intervals. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="205" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="4204" bodyend="4234"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ab74e0121710281929f61cb3a21886391" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::copyCoalesceInMBB</definition>
+        <argsstring>(MachineBasicBlock *MBB)</argsstring>
+        <name>copyCoalesceInMBB</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::copyCoalesceInMBB</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+<para>Coalesce copies in the specified MBB, putting copies that cannot yet be coalesced into WorkList. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="209" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="4140" bodyend="4193"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a21c520bdcf7ee37905ffcbadfa13a386" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::copyCoalesceWorkList</definition>
+        <argsstring>(MutableArrayRef&lt; MachineInstr * &gt; CurrList)</argsstring>
+        <name>copyCoalesceWorkList</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::copyCoalesceWorkList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_mutable_array_ref" kindref="compound">MutableArrayRef</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt;</type>
+          <declname>CurrList</declname>
+        </param>
+        <briefdescription>
+<para>Tries to coalesce all copies in CurrList. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if any progress was made. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="213" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="4046" bodyend="4077"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a4ebe5b7afa42a06d3ddc7658287d4124" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::lateLiveIntervalUpdate</definition>
+        <argsstring>()</argsstring>
+        <name>lateLiveIntervalUpdate</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::lateLiveIntervalUpdate</qualifiedname>
+        <briefdescription>
+<para>If one def has many copy like uses, and those copy uses are all rematerialized, the live interval update needed for those rematerializations will be delayed and done all at once instead of being done multiple times. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is to save compile cost because live interval update is costly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="220" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="4034" bodyend="4044"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a655c1b576fce35cbf83af011c1d37ef5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::copyValueUndefInPredecessors</definition>
+        <argsstring>(LiveRange &amp;S, const MachineBasicBlock *MBB, LiveQueryResult SLRQ)</argsstring>
+        <name>copyValueUndefInPredecessors</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::copyValueUndefInPredecessors</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_live_query_result" kindref="compound">LiveQueryResult</ref></type>
+          <declname>SLRQ</declname>
+        </param>
+        <briefdescription>
+<para>Check if the incoming value defined by a COPY at <computeroutput>SLRQ</computeroutput> in the subrange has no value defined in the predecessors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the incoming value is the same as defined by the copy itself, the value is considered undefined. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="225" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="1978" bodyend="1990"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a2c81ce82e07a9c465584cab9ee4101a3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::setUndefOnPrunedSubRegUses</definition>
+        <argsstring>(LiveInterval &amp;LI, Register Reg, LaneBitmask PrunedLanes)</argsstring>
+        <name>setUndefOnPrunedSubRegUses</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::setUndefOnPrunedSubRegUses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>LI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_lane_bitmask" kindref="compound">LaneBitmask</ref></type>
+          <declname>PrunedLanes</declname>
+        </param>
+        <briefdescription>
+<para>Set necessary undef flags on subregister uses after pruning out undef lane segments from the subrange. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="230" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="1992" bodyend="2019"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a2d2e2f179365b6d94d7c352fb96cd12e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::joinCopy</definition>
+        <argsstring>(MachineInstr *CopyMI, bool &amp;Again, SmallPtrSetImpl&lt; MachineInstr * &gt; &amp;CurrentErasedInstrs)</argsstring>
+        <name>joinCopy</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::joinCopy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CopyMI</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>Again</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>CurrentErasedInstrs</declname>
+        </param>
+        <briefdescription>
+<para>Attempt to join intervals corresponding to SrcReg/DstReg, which are the src/dst of the copy instruction CopyMI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns true if the copy was successfully coalesced away. If it is not currently possible to coalesce this interval, but it may be possible if other things get coalesced, then it returns true by reference in &apos;Again&apos;. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="238" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="2021" bodyend="2270"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a8aae63029f26808ab075291fd04b5d6d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::joinIntervals</definition>
+        <argsstring>(CoalescerPair &amp;CP)</argsstring>
+        <name>joinIntervals</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::joinIntervals</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_coalescer_pair" kindref="compound">CoalescerPair</ref> &amp;</type>
+          <declname>CP</declname>
+        </param>
+        <briefdescription>
+<para>Attempt to join these two intervals. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>On failure, this returns false. The output &quot;SrcInt&quot; will not have been modified, so we can use this information below to update aliases. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="244" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="3842" bodyend="3844"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a8fce080efda7d42c6666d5c511c6f9b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::joinVirtRegs</definition>
+        <argsstring>(CoalescerPair &amp;CP)</argsstring>
+        <name>joinVirtRegs</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::joinVirtRegs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_coalescer_pair" kindref="compound">CoalescerPair</ref> &amp;</type>
+          <declname>CP</declname>
+        </param>
+        <briefdescription>
+<para>Attempt joining two virtual registers. Return true on success. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="247" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="3661" bodyend="3840"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1acda4553af4bdd4a58a9c697f5b7bb1b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::isHighCostLiveInterval</definition>
+        <argsstring>(LiveInterval &amp;LI)</argsstring>
+        <name>isHighCostLiveInterval</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::isHighCostLiveInterval</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>LI</declname>
+        </param>
+        <briefdescription>
+<para>If a live interval has many valnos and is coalesced with other live intervals many times, we regard such live interval as having high compile time cost. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="252" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="3650" bodyend="3659"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a5577f2b5142dcc2a326d22ea625cd95b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::joinReservedPhysReg</definition>
+        <argsstring>(CoalescerPair &amp;CP)</argsstring>
+        <name>joinReservedPhysReg</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::joinReservedPhysReg</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_coalescer_pair" kindref="compound">CoalescerPair</ref> &amp;</type>
+          <declname>CP</declname>
+        </param>
+        <briefdescription>
+<para>Attempt joining with a reserved physreg. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="255" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="2272" bodyend="2386"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1aa594927fd89d6ab71047198e5cc65748" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::mergeSubRangeInto</definition>
+        <argsstring>(LiveInterval &amp;LI, const LiveRange &amp;ToMerge, LaneBitmask LaneMask, CoalescerPair &amp;CP, unsigned DstIdx)</argsstring>
+        <name>mergeSubRangeInto</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::mergeSubRangeInto</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>LI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>ToMerge</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_lane_bitmask" kindref="compound">LaneBitmask</ref></type>
+          <declname>LaneMask</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_coalescer_pair" kindref="compound">CoalescerPair</ref> &amp;</type>
+          <declname>CP</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>DstIdx</declname>
+        </param>
+        <briefdescription>
+<para>Add the <ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> <computeroutput>ToMerge</computeroutput> as a subregister liverange of <computeroutput>LI</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Subranges in <computeroutput>LI</computeroutput> which only partially interfere with the desired LaneMask are split as necessary. <computeroutput>LaneMask</computeroutput> are the lanes that <computeroutput>ToMerge</computeroutput> will occupy in the coalescer register. <computeroutput>LI</computeroutput> has its subrange lanemasks already adjusted to the coalesced register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="262" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="3630" bodyend="3648"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a0a7da43b43fa0bc3ddc12a6845c640fa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::joinSubRegRanges</definition>
+        <argsstring>(LiveRange &amp;LRange, LiveRange &amp;RRange, LaneBitmask LaneMask, const CoalescerPair &amp;CP)</argsstring>
+        <name>joinSubRegRanges</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::joinSubRegRanges</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>LRange</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>RRange</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_lane_bitmask" kindref="compound">LaneBitmask</ref></type>
+          <declname>LaneMask</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_coalescer_pair" kindref="compound">CoalescerPair</ref> &amp;</type>
+          <declname>CP</declname>
+        </param>
+        <briefdescription>
+<para>Join the liveranges of two subregisters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Joins <computeroutput>RRange</computeroutput> into <computeroutput>LRange</computeroutput>, <computeroutput>RRange</computeroutput> may be invalid afterwards. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="268" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="3568" bodyend="3628"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1aabd9b114350c1510e31adb543bacba61" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::adjustCopiesBackFrom</definition>
+        <argsstring>(const CoalescerPair &amp;CP, MachineInstr *CopyMI)</argsstring>
+        <name>adjustCopiesBackFrom</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::adjustCopiesBackFrom</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_coalescer_pair" kindref="compound">CoalescerPair</ref> &amp;</type>
+          <declname>CP</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CopyMI</declname>
+        </param>
+        <briefdescription>
+<para>We found a non-trivially-coalescable copy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the source value number is defined by a copy from the destination reg see if we can merge these two destination reg valno# into a single value number, eliminating a copy. This returns true if an interval was modified. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="275" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="616" bodyend="756"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ab78146ade2cca09d093a09e646487922" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::hasOtherReachingDefs</definition>
+        <argsstring>(LiveInterval &amp;IntA, LiveInterval &amp;IntB, VNInfo *AValNo, VNInfo *BValNo)</argsstring>
+        <name>hasOtherReachingDefs</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::hasOtherReachingDefs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>IntA</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>IntB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_n_info" kindref="compound">VNInfo</ref> *</type>
+          <declname>AValNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_n_info" kindref="compound">VNInfo</ref> *</type>
+          <declname>BValNo</declname>
+        </param>
+        <briefdescription>
+<para>Return true if there are definitions of IntB other than BValNo val# that can reach uses of AValno val# of IntA. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="279" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="758" bodyend="782"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a013343bf430b98ca00397d521c24f8d3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classbool" kindref="compound">bool</ref>, <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+        <definition>std::pair&lt; bool, bool &gt; RegisterCoalescer::removeCopyByCommutingDef</definition>
+        <argsstring>(const CoalescerPair &amp;CP, MachineInstr *CopyMI)</argsstring>
+        <name>removeCopyByCommutingDef</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::removeCopyByCommutingDef</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_coalescer_pair" kindref="compound">CoalescerPair</ref> &amp;</type>
+          <declname>CP</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CopyMI</declname>
+        </param>
+        <briefdescription>
+<para>We found a non-trivially-coalescable copy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the source value number is defined by a commutable instruction and its other operand is coalesced to the copy dest register, see if we can transform the copy into a noop by commuting the definition. This returns a pair of two flags:<itemizedlist>
+<listitem><para>the first element is true if an interval was modified,</para>
+</listitem><listitem><para>the second element is true if the destination interval needs to be shrunk after deleting the copy. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="290" column="13" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="811" bodyend="1045"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1af401ae3181b375370da57f82242977ad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::removePartialRedundancy</definition>
+        <argsstring>(const CoalescerPair &amp;CP, MachineInstr &amp;CopyMI)</argsstring>
+        <name>removePartialRedundancy</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::removePartialRedundancy</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_coalescer_pair" kindref="compound">CoalescerPair</ref> &amp;</type>
+          <declname>CP</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>CopyMI</declname>
+        </param>
+        <briefdescription>
+<para>We found a copy which can be moved to its less frequent predecessor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For copy B = A in BB2, if A is defined by A = B in BB0 which is a predecessor of BB2, and if B is not redefined on the way from A = B in BB0 to B = A in BB2, B = A in BB2 is partially redundant if the execution goes through the path from BB0 to BB2.</para>
+<para>We may move B = A to the predecessor without such reversed copy. So we will transform the program from: BB0: A = B; BB1: ... ... / \ / BB2: ... B = A;</para>
+<para>to:</para>
+<para>BB0: BB1: A = B; ... ... B = A; / \ / BB2: ...</para>
+<para>A special case is when BB0 and BB2 are the same BB which is the only BB in a loop: BB1: ... BB0/BB2: -<mdash/> B = A; | ... | A = B; | |----<mdash/> | We may hoist B = A from BB0/BB2 to BB1.</para>
+<para>The major preconditions for correctness to remove such partial redundancy include:<orderedlist>
+<listitem><para>A in B = A in BB2 is defined by a PHI in BB2, and one operand of the PHI is defined by the reversed copy A = B in BB0.</para>
+</listitem><listitem><para>No B is referenced from the start of BB2 to B = A.</para>
+</listitem><listitem><para>No B is defined from A = B to the end of BB0.</para>
+</listitem><listitem><para>BB1 has only one successor.</para>
+</listitem></orderedlist>
+</para>
+<para>2 and 4 implicitly ensure B is not live at the end of BB1. 4 guarantees BB2 is hotter than BB1, so we can only move a copy to a colder place, which not only prevent endless loop, but also make sure the movement of copy is beneficial. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="294" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="1094" bodyend="1275"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a29f67ac5c76b42c9305070ba09f20d65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::reMaterializeTrivialDef</definition>
+        <argsstring>(const CoalescerPair &amp;CP, MachineInstr *CopyMI, bool &amp;IsDefCopy)</argsstring>
+        <name>reMaterializeTrivialDef</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::reMaterializeTrivialDef</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_coalescer_pair" kindref="compound">CoalescerPair</ref> &amp;</type>
+          <declname>CP</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CopyMI</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>IsDefCopy</declname>
+        </param>
+        <briefdescription>
+<para>If the source of a copy is defined by a trivial computation, replace the copy by rematerialize the definition. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="298" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="1293" bodyend="1717"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a2358cdf7dd5c20ff7467363643607f12" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::canJoinPhys</definition>
+        <argsstring>(const CoalescerPair &amp;CP)</argsstring>
+        <name>canJoinPhys</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::canJoinPhys</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_coalescer_pair" kindref="compound">CoalescerPair</ref> &amp;</type>
+          <declname>CP</declname>
+        </param>
+        <briefdescription>
+<para>Return true if a copy involving a physreg should be joined. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="302" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="1960" bodyend="1976"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a39d9dfec4217cd95bf74dac69799d65d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::updateRegDefsUses</definition>
+        <argsstring>(Register SrcReg, Register DstReg, unsigned SubIdx)</argsstring>
+        <name>updateRegDefsUses</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::updateRegDefsUses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>SrcReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>DstReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>SubIdx</declname>
+        </param>
+        <briefdescription>
+<para>Replace all defs and uses of SrcReg to DstReg and update the subregister number if it is not zero. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If DstReg is a physical register and the existing subregister number of the def / use being updated is not zero, make sure to set it to the correct physical subregister. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="308" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="1866" bodyend="1958"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a7094b4d51c802f98996727d6f0b0122a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::addUndefFlag</definition>
+        <argsstring>(const LiveInterval &amp;Int, SlotIndex UseIdx, MachineOperand &amp;MO, unsigned SubRegIdx)</argsstring>
+        <name>addUndefFlag</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::addUndefFlag</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>Int</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>UseIdx</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> &amp;</type>
+          <declname>MO</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>SubRegIdx</declname>
+        </param>
+        <briefdescription>
+<para>If the given machine operand reads only undefined lanes add an undef flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can happen when undef uses were previously concealed by a copy which we coalesced. Example: %0:sub0&lt;def,read-undef&gt; = ... %1 = COPY %0 &lt;<ndash/> Coalescing COPY reveals undef = use %1:sub1 &lt;<ndash/> hidden undef use </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="317" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="1840" bodyend="1864"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a7ba20b7c32f0906249d6977543d4b64e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * RegisterCoalescer::eliminateUndefCopy</definition>
+        <argsstring>(MachineInstr *CopyMI)</argsstring>
+        <name>eliminateUndefCopy</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::eliminateUndefCopy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CopyMI</declname>
+        </param>
+        <briefdescription>
+<para>Handle copies of undef values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the undef value is an incoming PHI value, it will convert <computeroutput>CopyMI</computeroutput> to an IMPLICIT_DEF. Returns nullptr if <computeroutput>CopyMI</computeroutput> was not in any way eliminable. Otherwise, it returns <computeroutput>CopyMI</computeroutput> (which could be an IMPLICIT_DEF at this point). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="324" column="16" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="1719" bodyend="1838"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a4d891694cb295affbd9c105fec7294ae" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::applyTerminalRule</definition>
+        <argsstring>(const MachineInstr &amp;Copy) const</argsstring>
+        <name>applyTerminalRule</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::applyTerminalRule</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>Copy</declname>
+        </param>
+        <briefdescription>
+<para>Check whether or not we should apply the terminal rule on the destination (Dst) of <computeroutput>Copy</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When the terminal rule applies, Copy is not profitable to coalesce. Dst is terminal if it has exactly one affinity (Dst, Src) and at least one interference (Dst, Dst2). If Dst is terminal, the terminal rule consists in checking that at least one of interfering node, say Dst2, has an affinity of equal or greater weight with Src. In that case, Dst2 and Dst will not be able to be both coalesced with Src. Since Dst2 exposes more coalescing opportunities than Dst, we can drop <computeroutput>Copy</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="338" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="4091" bodyend="4138"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ab757d2f8e3c7b7f5dd03521a3545fbc1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::shrinkToUses</definition>
+        <argsstring>(LiveInterval *LI, SmallVectorImpl&lt; MachineInstr * &gt; *Dead=nullptr)</argsstring>
+        <name>shrinkToUses</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::shrinkToUses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> *</type>
+          <declname>LI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; *</type>
+          <declname>Dead</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Wrapper method for. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classllvm_1_1_live_intervals_1ac7446b2819c44bf459763351b5bcc29b" kindref="member">LiveIntervals::shrinkToUses</ref>. This method does the proper fixing of the live-ranges when the afore mentioned method returns <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Check whether or not <computeroutput>LI</computeroutput> is composed by multiple connected components and if that is the case, fix that.</para>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="343" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="343" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a5add2193b55fa2b5f4865ba846ea3914" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::deleteInstr</definition>
+        <argsstring>(MachineInstr *MI)</argsstring>
+        <name>deleteInstr</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::deleteInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Wrapper Method to do all the necessary work when an <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> is deleted. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Optimizations should use this to make sure that deleted instructions are always accounted for. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="358" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="358" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1abcd287e6b0f450d939995f5bc7a9f04f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::buildVRegToDbgValueMap</definition>
+        <argsstring>(MachineFunction &amp;MF)</argsstring>
+        <name>buildVRegToDbgValueMap</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::buildVRegToDbgValueMap</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>Walk over function and initialize the DbgVRegToValues map. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="365" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="3846" bodyend="3888"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1aaf2eddaecf92f0b6359eaccae3eac808" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::checkMergingChangesDbgValues</definition>
+        <argsstring>(CoalescerPair &amp;CP, LiveRange &amp;LHS, JoinVals &amp;LHSVals, LiveRange &amp;RHS, JoinVals &amp;RHSVals)</argsstring>
+        <name>checkMergingChangesDbgValues</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::checkMergingChangesDbgValues</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_coalescer_pair" kindref="compound">CoalescerPair</ref> &amp;</type>
+          <declname>CP</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>LHS</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_join_vals" kindref="compound">JoinVals</ref> &amp;</type>
+          <declname>LHSVals</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_join_vals" kindref="compound">JoinVals</ref> &amp;</type>
+          <declname>RHSVals</declname>
+        </param>
+        <briefdescription>
+<para>Test whether, after merging, any DBG_VALUEs would refer to a different value number than before merging, and whether this can be resolved. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If not, mark the DBG_VALUE as being undef. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="370" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="3890" bodyend="3906"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1afbb2800a5cfdd0733cbe24dc5f8c513c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::checkMergingChangesDbgValuesImpl</definition>
+        <argsstring>(Register Reg, LiveRange &amp;OtherRange, LiveRange &amp;RegRange, JoinVals &amp;Vals2)</argsstring>
+        <name>checkMergingChangesDbgValuesImpl</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::checkMergingChangesDbgValuesImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>OtherRange</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>RegRange</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_join_vals" kindref="compound">JoinVals</ref> &amp;</type>
+          <declname>Vals2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="374" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="3908" bodyend="3976"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a0969ad06eb530c7fc3a7d2b8b9911fa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::RegisterCoalescer</definition>
+        <argsstring>()</argsstring>
+        <name>RegisterCoalescer</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::RegisterCoalescer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="380" column="3" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="380" bodyend="382"/>
+        <references refid="classllvm_1_1_pass_registry_1a05a729900b76c89e808c6c3094921b2f" compoundref="_pass_registry_8cpp" startline="24" endline="27">llvm::PassRegistry::getPassRegistry</references>
+        <references refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a4199b9116f012d49b3ea0ef0dee730fa" compoundref="_register_coalescer_8cpp" startline="378">ID</references>
+        <references refid="namespacellvm_1a238eae485eb747cb1ca649ea599b5c82">llvm::initializeRegisterCoalescerPass</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" compoundref="_machine_function_pass_8h" startline="41" endline="41">llvm::MachineFunctionPass::MachineFunctionPass</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a3ae96d8cb445f62aa68d962e73704705" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::getAnalysisUsage</definition>
+        <argsstring>(AnalysisUsage &amp;AU) const override</argsstring>
+        <name>getAnalysisUsage</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::getAnalysisUsage</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e">getAnalysisUsage</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_analysis_usage" kindref="compound">AnalysisUsage</ref> &amp;</type>
+          <declname>AU</declname>
+        </param>
+        <briefdescription>
+<para>getAnalysisUsage - Subclasses that override getAnalysisUsage must call this. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For MachineFunctionPasses, calling AU.preservesCFG() indicates that the pass does not modify the MachineBasicBlock CFG. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="384" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="589" bodyend="599"/>
+        <references refid="classllvm_1_1_analysis_usage_1ae9356b720f6fbab112d809738dcc4f2a" compoundref="_pass_analysis_support_8h" startline="98" endline="101">llvm::AnalysisUsage::addPreserved</references>
+        <references refid="classllvm_1_1_analysis_usage_1a573df5c9c3024ebb646e15cc7450bf91" compoundref="_pass_analysis_support_8h" startline="88" endline="91">llvm::AnalysisUsage::addPreservedID</references>
+        <references refid="classllvm_1_1_analysis_usage_1ae0adcccca08fb686c9ce00f9397b660c" compoundref="_pass_analysis_support_8h" startline="75" endline="77">llvm::AnalysisUsage::addRequired</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e" compoundref="_machine_function_pass_8cpp" startline="169" endline="190">llvm::MachineFunctionPass::getAnalysisUsage</references>
+        <references refid="namespacellvm_1a311f0d695e161f1c86664c796d6cfea0" compoundref="_machine_dominators_8cpp" startline="98">llvm::MachineDominatorsID</references>
+        <references refid="classllvm_1_1_analysis_usage_1af11a6ebf7ab3c388234cb6d5378439a3" compoundref="_sandbox_i_r_2_pass_8cpp" startline="256" endline="260">llvm::AnalysisUsage::setPreservesCFG</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a7d6fd0a43420aacdcb844afc48c3b9cb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_function_properties" kindref="compound">MachineFunctionProperties</ref></type>
+        <definition>MachineFunctionProperties anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::getClearedProperties</definition>
+        <argsstring>() const override</argsstring>
+        <name>getClearedProperties</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::getClearedProperties</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1a22bc7c91051dca8dc211c3afe9929603">getClearedProperties</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="386" column="29" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="386" bodyend="389"/>
+        <references refid="classllvm_1_1_machine_function_properties_1ad85237c6c667e4713efe8921e9c32ac1a4fc3b812627e58da17a703f73013db96" compoundref="_machine_function_8h" startline="188">llvm::MachineFunctionProperties::IsSSA</references>
+        <references refid="classllvm_1_1_machine_function_properties_1aa7780563d7ca260d0ae67d957b56427f" compoundref="_machine_function_8h" startline="207" endline="210">llvm::MachineFunctionProperties::set</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a55edcac6ac25614b341d7c34c5a2926c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::releaseMemory</definition>
+        <argsstring>() override</argsstring>
+        <name>releaseMemory</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::releaseMemory</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1aeb6e74b0f36a0acd1d20149ef088715a">releaseMemory</reimplements>
+        <briefdescription>
+<para><ref refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a55edcac6ac25614b341d7c34c5a2926c" kindref="member">releaseMemory()</ref> - This member can be implemented by a pass if it wants to be able to release its memory when it is no longer needed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default behavior of passes is to hold onto memory for the entire duration of their lifetime (which is the entire compile time). For pipelined passes, this is not a big deal because that memory gets recycled every time the pass is invoked on another program unit. For IP passes, it is more important to free memory when it is unused.</para>
+<para>Optionally implement this function to release pass memory when it is no longer used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="391" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="4236" bodyend="4242"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1aa408ab9747b8ce0bd0a81465c10e8f29" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RegisterCoalescer::runOnMachineFunction</definition>
+        <argsstring>(MachineFunction &amp;) override</argsstring>
+        <name>runOnMachineFunction</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::runOnMachineFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1abb98ed32e4e5acae62ef3edd7bf04fb5">runOnMachineFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <defname>fn</defname>
+        </param>
+        <briefdescription>
+<para>This is the pass entry point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="394" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="4244" bodyend="4356"/>
+        <references refid="namespacellvm_1add1eb5637dd671428b6f138ed3db6428" compoundref="_s_t_l_extras_8h" startline="1624" endline="1633">llvm::array_pod_sort</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1cl_1a9241f2e42b7587b123c885d7a659ad44ad7c4bd83c337c86d34f6c2d8eba1e736" compoundref="_command_line_8h" startline="637">llvm::cl::BOU_TRUE</references>
+        <references refid="namespacellvm_1_1cl_1a9241f2e42b7587b123c885d7a659ad44aa5bd521ebe67ddf0e90f1a9e540a6d43" compoundref="_command_line_8h" startline="637">llvm::cl::BOU_UNSET</references>
+        <references refid="_web_assembly_reg_coloring_8cpp_1a363e3f71faf094bba68a16bb32f43cff" compoundref="_web_assembly_reg_coloring_8cpp" startline="80" endline="125">buildVRegToDbgValueMap</references>
+        <references refid="classllvm_1_1_live_interval_1afbdcbb3187e46987286c59c4963e21ae" compoundref="_live_interval_8cpp" startline="861" endline="867">llvm::LiveInterval::clearSubRanges</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1a03503773241005f01b090b9862aad304" compoundref="_sparse_bit_vector_8h" startline="877" endline="889">llvm::dump</references>
+        <references refid="_register_coalescer_8cpp_1a233a6770a940d2da877cafd1263f9dc8">EnableGlobalCopies</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1a1322687bebc99c66aa3e9ed55b4e384d" compoundref="_target_subtarget_info_8cpp" startline="40" endline="42">llvm::TargetSubtargetInfo::enableJoinGlobalCopies</references>
+        <references refid="_register_coalescer_8cpp_1ab8ef19815a62704144427de2c79d058e">EnableJoining</references>
+        <references refid="_register_coalescer_8cpp_1ab3861763540aea165ffd7a63a0bc2f06">EnableJoinSplits</references>
+        <references refid="namespacellvm_1a9a7b5c68c90f85baaedaa854cc5002cc" compoundref="raw__ostream_8cpp" startline="907" endline="915">llvm::errs</references>
+        <references refid="classllvm_1_1_machine_function_1a4b94e0ca517e149914aa0c34ee06c9fa" compoundref="_machine_function_8h" startline="795" endline="797">llvm::MachineFunction::exposesReturnsTwice</references>
+        <references refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" compoundref="_pass_analysis_support_8h" startline="230" endline="233">llvm::Pass::getAnalysis</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1acd858ed72f11db9444617740c3622608" compoundref="_target_subtarget_info_8h" startline="97" endline="97">llvm::TargetSubtargetInfo::getInstrInfo</references>
+        <references refid="classllvm_1_1_slot_indexes_1aaf0c07cc1cdb9c78c6dfdfdd5913420a" compoundref="_slot_indexes_8h" startline="460" endline="462">llvm::SlotIndexes::getMBBStartIdx</references>
+        <references refid="classllvm_1_1_machine_function_1a3d142c9e7c066059e15232c56dec9e2e" compoundref="_machine_function_8cpp" startline="645" endline="647">llvm::MachineFunction::getName</references>
+        <references refid="classllvm_1_1_machine_function_1a810234b6b3d223b7c74a4253fcc5ea5e" compoundref="_machine_function_8h" startline="743" endline="743">llvm::MachineFunction::getRegInfo</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1a43c530c830206ecf5ad3359364634c75" compoundref="_target_subtarget_info_8h" startline="129" endline="129">llvm::TargetSubtargetInfo::getRegisterInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classllvm_1_1_live_interval_1a1c198291d6ee66150b76633cda8a1749" compoundref="_live_interval_8h" startline="810" endline="812">llvm::LiveInterval::hasSubRanges</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="namespacellvm_1af085ea923a328b9fa6a1975f1a4ff987" compoundref="_target_register_info_8cpp" startline="107" endline="136">llvm::printReg</references>
+        <references refid="classllvm_1_1_live_interval_1a9545a896d571165e9f43cf4b29a6d072" compoundref="_live_interval_8h" startline="782" endline="784">llvm::LiveInterval::subranges</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1a92a6b0a9b7228d190b0a7d8ae3ef03c7" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="104">SubReg</references>
+        <references refid="namespacellvm_1a48f85da577c6ce7d9aed90437dc0d07c" compoundref="_s_t_l_extras_8h" startline="2055" endline="2057">llvm::unique</references>
+        <references refid="_register_coalescer_8cpp_1aa8b58294e993b77e8215298b1ef440a6">VerifyCoalescing</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a4ef281c7441a224dc5d5e31f795ff2e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RegisterCoalescer::print</definition>
+        <argsstring>(raw_ostream &amp;O, const Module *=nullptr) const override</argsstring>
+        <name>print</name>
+        <qualifiedname>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer::print</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1a061b4c01e9c189208dbfd3c77fdb9a5c">print</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> *</type>
+          <defname>m</defname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Implement the dump method. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/RegisterCoalescer.cpp" line="397" column="8" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="4358" bodyend="4360"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</label>
+        <link refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::LiveRangeEdit::Delegate</label>
+        <link refid="classllvm_1_1_live_range_edit_1_1_delegate"/>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</label>
+        <link refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="private-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::LiveRangeEdit::Delegate</label>
+        <link refid="classllvm_1_1_live_range_edit_1_1_delegate"/>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/CodeGen/RegisterCoalescer.cpp" line="125" column="1" bodyfile="lib/CodeGen/RegisterCoalescer.cpp" bodystart="126" bodyend="398"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a9e8b177ea40e2001f49aa1eef67fe40c" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>AA</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a7094b4d51c802f98996727d6f0b0122a" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>addUndefFlag</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1aabd9b114350c1510e31adb543bacba61" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>adjustCopiesBackFrom</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a4d891694cb295affbd9c105fec7294ae" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>applyTerminalRule</name></member>
+      <member refid="classllvm_1_1_function_pass_1a748922f143f2da9a13b0b15ff6a3dd22" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>assignPassManager</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1abcd287e6b0f450d939995f5bc7a9f04f" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>buildVRegToDbgValueMap</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a2358cdf7dd5c20ff7467363643607f12" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>canJoinPhys</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1aaf2eddaecf92f0b6359eaccae3eac808" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>checkMergingChangesDbgValues</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1afbb2800a5cfdd0733cbe24dc5f8c513c" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>checkMergingChangesDbgValuesImpl</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1abf26f147cca7787d6a6714a4c0f42101" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>coalesceLocals</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ab74e0121710281929f61cb3a21886391" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>copyCoalesceInMBB</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a21c520bdcf7ee37905ffcbadfa13a386" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>copyCoalesceWorkList</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a655c1b576fce35cbf83af011c1d37ef5" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>copyValueUndefInPredecessors</name></member>
+      <member refid="classllvm_1_1_pass_1a2ed7d79d79dffe7368c3d3cdf40dd80e" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>createPass</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a8c7dfc993f06b8bc1aee810a92dbf2c2" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>DbgValueLoc</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a3a1f32e8fffd36820b4a57305cc01830" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>DbgVRegToValues</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a835f4171022ebabafe78a4e6d550ca78" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>DeadDefs</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a5add2193b55fa2b5f4865ba846ea3914" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>deleteInstr</name></member>
+      <member refid="classllvm_1_1_pass_1ac7811985250c75d7e2a244292d615fff" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>doFinalization</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a204ffdf4717a340f8cbe1fd1341a8148" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>doInitialization</name></member>
+      <member refid="classllvm_1_1_pass_1a1a60731eeff800b39fca7280a5a167ae" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_pass_1ad2f0576ef7c9c4af40e35001c81f4922" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>dumpPassStructure</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a7a4075764a012dafe047446c03ddff98" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>eliminateDeadDefs</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a7ba20b7c32f0906249d6977543d4b64e" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>eliminateUndefCopy</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ad2b2edb3abf228413d150024b583ce7d" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>ErasedInstrs</name></member>
+      <member refid="classllvm_1_1_function_pass_1a7691d83e3561f781cae4ce4a01bdfa93" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>FunctionPass</name></member>
+      <member refid="classllvm_1_1_pass_1a03d3a81b1c46aff7c38ef3a6750ba225" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getAdjustedAnalysisPointer</name></member>
+      <member refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a560d384c0cef7f62836884fdbbd1fe66" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a6613f29d3e54ce175ac33fb9ba264fae" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1a2190247edbacb33b4e8a3d409fa2d99e" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getAnalysisIfAvailable</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a3ae96d8cb445f62aa68d962e73704705" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getAnalysisUsage</name></member>
+      <member refid="classllvm_1_1_pass_1ae31759fd992cddb1f2d62ab0df85834a" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getAsImmutablePass</name></member>
+      <member refid="classllvm_1_1_pass_1a626b77ef8abdfa9f53c697ad129a6e5a" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getAsPMDataManager</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a7d6fd0a43420aacdcb844afc48c3b9cb" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getClearedProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a63192e749ba4a0ee29336a59d6a19647" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getPassID</name></member>
+      <member refid="classllvm_1_1_pass_1a9de4db62e6884f2e5efea6793af30d99" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getPassKind</name></member>
+      <member refid="classllvm_1_1_pass_1ad729b39eacf070a9bca84533b3c743bf" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getPassName</name></member>
+      <member refid="classllvm_1_1_function_pass_1a68517706d9801aec6d20c32a424ed152" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getPotentialPassManagerType</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1af0f2f06a3a773431ee9813351d609c4d" prot="protected" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getRequiredProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a969c082f66671df288441bbad9ca87db" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getResolver</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a8fbedd15c1c809e6050f3fd3ccd3338e" prot="protected" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>getSetProperties</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ab78146ade2cca09d093a09e646487922" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>hasOtherReachingDefs</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a4199b9116f012d49b3ea0ef0dee730fa" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>ID</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a1102dc198e6c38e28e6e918251870439" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>InflateRegs</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1acda4553af4bdd4a58a9c697f5b7bb1b6" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>isHighCostLiveInterval</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ae9102fe3c500cef03dd5936b5c65b697" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>joinAllIntervals</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a2d2e2f179365b6d94d7c352fb96cd12e" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>joinCopy</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a6696022731c214a613616632829ccc90" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>JoinGlobalCopies</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a8aae63029f26808ab075291fd04b5d6d" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>joinIntervals</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a5577f2b5142dcc2a326d22ea625cd95b" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>joinReservedPhysReg</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ad359f59eafb8cc883a28bca77f9d3d2e" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>JoinSplitEdges</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a0a7da43b43fa0bc3ddc12a6845c640fa" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>joinSubRegRanges</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a8fce080efda7d42c6666d5c511c6f9b9" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>joinVirtRegs</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a768beb6bcdff869fc8d4883c591d3ce5" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>LargeLIVisitCounter</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a4ebe5b7afa42a06d3ddc7658287d4124" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>lateLiveIntervalUpdate</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a94a4b5b483eeeebf19e0454f9c40b0b8" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>LIS</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ac4083e50440e8341167a6eae1607fe57" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>LocalWorkList</name></member>
+      <member refid="classllvm_1_1_pass_1aab174263c400ece13a7278990e102fa6" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_pass_1a992ff669acca94459037cfb1f41cb9dc" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>lookupPassInfo</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a927a3f7048bd00c71cf87c9b99715231" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>Loops</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a01b36d2af0621e232ba88ed398a23f00" prot="private" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>LRE_WillEraseInstruction</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>MachineFunctionPass</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1aa594927fd89d6ab71047198e5cc65748" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>mergeSubRangeInto</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a0ff13ab4950e391dfc5d9526a2c64f4b" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>MF</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a133af1aee00d04d460f113d4286af07e" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1_pass_1a0b4a511579939b07831db90c3fc98996" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>mustPreserveAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af468a2aeb0d98e3dbeda38176ce516d3" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_pass_1a16baa169d062524be5a6b67609266174" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1ad40d19ce644ec38c52ea00be59016cd5" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>Pass</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1adf3dde739e9157b469aefb9bf531ff8e" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>PHIValToPos</name></member>
+      <member refid="classllvm_1_1_pass_1aa5f61a8789f87816c5f494d42a70f01f" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>preparePassManager</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a4ef281c7441a224dc5d5e31f795ff2e1" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>print</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1aea455db969a62961ded94f9767bfaf24" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>RegClassInfo</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a0969ad06eb530c7fc3a7d2b8b9911fa6" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>RegisterCoalescer</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a971e9d8c308f19e71e34c87a436c9419" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>RegToPHIIdx</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a55edcac6ac25614b341d7c34c5a2926c" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>releaseMemory</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a29f67ac5c76b42c9305070ba09f20d65" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>reMaterializeTrivialDef</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a013343bf430b98ca00397d521c24f8d3" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>removeCopyByCommutingDef</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1af401ae3181b375370da57f82242977ad" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>removePartialRedundancy</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1aa408ab9747b8ce0bd0a81465c10e8f29" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>runOnMachineFunction</name></member>
+      <member refid="classllvm_1_1_pass_1a2423fcc912a698d4f36c9c9380b53a50" prot="public" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>setResolver</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a2c81ce82e07a9c465584cab9ee4101a3" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>setUndefOnPrunedSubRegUses</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a13f0f5fe7caa69f5fbcb192ec17aba5b" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>ShrinkMainRange</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ac9242333d474321e6f60fed88a40ce16" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>ShrinkMask</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ab757d2f8e3c7b7f5dd03521a3545fbc1" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>shrinkToUses</name></member>
+      <member refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>skipFunction</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a16e661ae415777c0318a647cbc9b3e05" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>TII</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1ad1669b7b4f17e18b2593c9ad4c687ef0" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>ToBeUpdated</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a23bddc5607b97be15c45e8ff7ca93430" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>TRI</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a39d9dfec4217cd95bf74dac69799d65d" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>updateRegDefsUses</name></member>
+      <member refid="classllvm_1_1_pass_1ac8ef6f57d4ec869a7f1007aeddf2b169" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>verifyAnalysis</name></member>
+      <member refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_register_coalescer_1a82fd73dcac70e457c3b681845df9dfce" prot="private" virt="non-virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>WorkList</name></member>
+      <member refid="classllvm_1_1_pass_1abe2fe9b29d21424fe4b410fc8e98606c" prot="public" virt="virtual"><scope>anonymous_namespace{RegisterCoalescer.cpp}::RegisterCoalescer</scope><name>~Pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

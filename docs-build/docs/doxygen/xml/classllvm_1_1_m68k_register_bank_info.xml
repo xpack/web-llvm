@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_m68k_register_bank_info" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>llvm::M68kRegisterBankInfo</compoundname>
+    <basecompoundref refid="classllvm_1_1_m68k_gen_register_bank_info" prot="public" virt="non-virtual">llvm::M68kGenRegisterBankInfo</basecompoundref>
+    <includes refid="_m68k_register_bank_info_8h" local="yes">Target/M68k/GISel/M68kRegisterBankInfo.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_m68k_register_bank_info_1a18f5a1209aa4d2a3cfa5892ad5cf4c3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>M68kRegisterBankInfo::M68kRegisterBankInfo</definition>
+        <argsstring>(const TargetRegisterInfo &amp;TRI)</argsstring>
+        <name>M68kRegisterBankInfo</name>
+        <qualifiedname>llvm::M68kRegisterBankInfo::M68kRegisterBankInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> &amp;</type>
+          <declname>TRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/M68k/GISel/M68kRegisterBankInfo.h" line="36" column="3" bodyfile="lib/Target/M68k/GISel/M68kRegisterBankInfo.cpp" bodystart="58" bodyend="59"/>
+        <references refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" compoundref="_machine_sink_8cpp" startline="2029">TRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m68k_register_bank_info_1a1c1174fbc250d7fa3773584dfd942728" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_register_bank_info_1_1_instruction_mapping" kindref="compound">InstructionMapping</ref> &amp;</type>
+        <definition>const RegisterBankInfo::InstructionMapping &amp; M68kRegisterBankInfo::getInstrMapping</definition>
+        <argsstring>(const MachineInstr &amp;MI) const override</argsstring>
+        <name>getInstrMapping</name>
+        <qualifiedname>llvm::M68kRegisterBankInfo::getInstrMapping</qualifiedname>
+        <reimplements refid="classllvm_1_1_register_bank_info_1a3f495e9cf115e5d32f21d729c46a484e">getInstrMapping</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Get the mapping of the different operands of <computeroutput>MI</computeroutput> on the register bank. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This mapping should be the direct translation of <computeroutput>MI</computeroutput>. In other words, when <computeroutput>MI</computeroutput> is mapped with the returned mapping, only the register banks of the operands of <computeroutput>MI</computeroutput> need to be updated. In particular, neither the opcode nor the type of <computeroutput>MI</computeroutput> needs to be updated for this direct mapping.</para>
+<para>The target independent implementation gives a mapping based on the register classes for the target specific opcode. It uses the <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> <ref refid="classllvm_1_1_register_bank_info_1abe7d332de484fcc6cdc4c2a5e7bdd31b" kindref="member">RegisterBankInfo::DefaultMappingID</ref> for that mapping. Make sure you do not use that <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> for the alternative mapping for MI. See getInstrAlternativeMappings for the alternative mappings.</para>
+<para>For instance, if <computeroutput>MI</computeroutput> is a vector add, the mapping should not be a scalarization of the add.</para>
+<para><simplesect kind="post"><para>returnedVal.verify(MI).</para>
+</simplesect>
+<simplesect kind="note"><para>If returnedVal does not verify MI, this would probably mean that the target does not support that instruction. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/M68k/GISel/M68kRegisterBankInfo.h" line="39" column="3" bodyfile="lib/Target/M68k/GISel/M68kRegisterBankInfo.cpp" bodystart="62" bodyend="99"/>
+        <references refid="classllvm_1_1_register_bank_info_1abe7d332de484fcc6cdc4c2a5e7bdd31b" compoundref="_register_bank_info_8h" startline="672">llvm::RegisterBankInfo::DefaultMappingID</references>
+        <references refid="classllvm_1_1_register_bank_info_1af5535a05921d5db8486cc4ce527b066f" compoundref="_register_bank_info_8cpp" startline="162" endline="265">llvm::RegisterBankInfo::getInstrMappingImpl</references>
+        <references refid="classllvm_1_1_register_bank_info_1a5b7e84a2ea3cdb118f44543cdb33f670" compoundref="_register_bank_info_8h" startline="534" endline="539">llvm::RegisterBankInfo::getInstructionMapping</references>
+        <references refid="classllvm_1_1_register_bank_info_1a640c554d91abd68270b79cdef71b99a2" compoundref="_register_bank_info_8h" startline="542" endline="544">llvm::RegisterBankInfo::getInvalidInstructionMapping</references>
+        <references refid="classllvm_1_1_register_bank_info_1ab899ee374f95aa9e56c35eae354f8188" compoundref="_register_bank_info_8cpp" startline="333" endline="360">llvm::RegisterBankInfo::getOperandsMapping</references>
+        <references refid="namespacellvm_1_1_m68k_1ad5c2ec44d6d18d9dc85e3f409c67adfca79902e57879f4fca82eaaf5ef0b81890" compoundref="_m68k_register_bank_info_8cpp" startline="43">llvm::M68k::GPR3OpsIdx</references>
+        <references refid="namespacellvm_1a2cdb63ce3baf9ea9a1f86aed27f40fe8" compoundref="_target_opcodes_8h" startline="30" endline="33">llvm::isPreISelGenericOpcode</references>
+        <references refid="classllvm_1_1_register_bank_info_1_1_instruction_mapping_1af484a43d5e4fa2ff1f1790d06f2ca94d" compoundref="_register_bank_info_8h" startline="255" endline="257">llvm::RegisterBankInfo::InstructionMapping::isValid</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1_1_m68k_1a3ab41b597a967d9fb5ff98f2fa88ecea" compoundref="_m68k_register_bank_info_8cpp" startline="46" endline="54">llvm::M68k::ValueMappings</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class provides the information for the target register banks. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::M68kGenRegisterBankInfo</label>
+        <link refid="classllvm_1_1_m68k_gen_register_bank_info"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::M68kRegisterBankInfo</label>
+        <link refid="classllvm_1_1_m68k_register_bank_info"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::RegisterBankInfo</label>
+        <link refid="classllvm_1_1_register_bank_info"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="16">
+        <label>DenseMapBase&lt; DenseMap&lt; llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::InstructionMapping &gt;, DenseMapInfo&lt;llvm::hash_code&gt;, llvm::detail::DenseMapPair&lt;llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::InstructionMapping &gt;&gt; &gt;, llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::InstructionMapping &gt;, DenseMapInfo&lt;llvm::hash_code&gt;, llvm::detail::DenseMapPair&lt;llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::InstructionMapping &gt;&gt; &gt;</label>
+      </node>
+      <node id="7">
+        <label>DenseMapBase&lt; DenseMap&lt; llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::PartialMapping &gt;, DenseMapInfo&lt;llvm::hash_code&gt;, llvm::detail::DenseMapPair&lt;llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::PartialMapping &gt;&gt; &gt;, llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::PartialMapping &gt;, DenseMapInfo&lt;llvm::hash_code&gt;, llvm::detail::DenseMapPair&lt;llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::PartialMapping &gt;&gt; &gt;</label>
+      </node>
+      <node id="12">
+        <label>DenseMapBase&lt; DenseMap&lt; llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::ValueMapping &gt;, DenseMapInfo&lt;llvm::hash_code&gt;, llvm::detail::DenseMapPair&lt;llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::ValueMapping &gt;&gt; &gt;, llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::ValueMapping &gt;, DenseMapInfo&lt;llvm::hash_code&gt;, llvm::detail::DenseMapPair&lt;llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::ValueMapping &gt;&gt; &gt;</label>
+      </node>
+      <node id="14">
+        <label>DenseMapBase&lt; DenseMap&lt; llvm::hash_code, std::unique_ptr&lt; llvm::RegisterBankInfo::ValueMapping[]&gt;, DenseMapInfo&lt;llvm::hash_code&gt;, llvm::detail::DenseMapPair&lt;llvm::hash_code, std::unique_ptr&lt; llvm::RegisterBankInfo::ValueMapping[]&gt;&gt; &gt;, llvm::hash_code, std::unique_ptr&lt; llvm::RegisterBankInfo::ValueMapping[]&gt;, DenseMapInfo&lt;llvm::hash_code&gt;, llvm::detail::DenseMapPair&lt;llvm::hash_code, std::unique_ptr&lt; llvm::RegisterBankInfo::ValueMapping[]&gt;&gt; &gt;</label>
+      </node>
+      <node id="10">
+        <label>llvm::DebugEpochBase</label>
+        <link refid="classllvm_1_1_debug_epoch_base"/>
+      </node>
+      <node id="8">
+        <label>llvm::DenseMap&lt; KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm::DenseMap&lt; llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::InstructionMapping &gt; &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="template-instance">
+          <edgelabel>&lt; llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::InstructionMapping &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::DenseMap&lt; llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::PartialMapping &gt; &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="template-instance">
+          <edgelabel>&lt; llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::PartialMapping &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::DenseMap&lt; llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::ValueMapping &gt; &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="template-instance">
+          <edgelabel>&lt; llvm::hash_code, std::unique_ptr&lt; const llvm::RegisterBankInfo::ValueMapping &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::DenseMap&lt; llvm::hash_code, std::unique_ptr&lt; llvm::RegisterBankInfo::ValueMapping[]&gt; &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="template-instance">
+          <edgelabel>&lt; llvm::hash_code, std::unique_ptr&lt; llvm::RegisterBankInfo::ValueMapping[]&gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::DenseMap&lt; unsigned, const llvm::TargetRegisterClass * &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="template-instance">
+          <edgelabel>&lt; unsigned, const llvm::TargetRegisterClass * &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::M68kGenRegisterBankInfo</label>
+        <link refid="classllvm_1_1_m68k_gen_register_bank_info"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::M68kRegisterBankInfo</label>
+        <link refid="classllvm_1_1_m68k_register_bank_info"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::RegisterBank</label>
+        <link refid="classllvm_1_1_register_bank"/>
+      </node>
+      <node id="3">
+        <label>llvm::RegisterBankInfo</label>
+        <link refid="classllvm_1_1_register_bank_info"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>RegBanks</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>DefaultMappingID</edgelabel>
+          <edgelabel>HwMode</edgelabel>
+          <edgelabel>InvalidMappingID</edgelabel>
+          <edgelabel>NumRegBanks</edgelabel>
+          <edgelabel>Sizes</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>MapOfPartialMappings</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>MapOfValueMappings</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>MapOfOperandsMappings</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>MapOfInstructionMappings</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>PhysRegMinimalRCs</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/M68k/GISel/M68kRegisterBankInfo.h" line="34" column="1" bodyfile="lib/Target/M68k/GISel/M68kRegisterBankInfo.h" bodystart="34" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_register_bank_info_1a5c8b942e0a2e8ebef5a138c8d3c4462c" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>applyDefaultMapping</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a0c85003f2e4060a7b61ebff7c2fb33cd" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>applyMapping</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a456001a06a780d59754de42e0fdb8d84" prot="public" virt="virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>applyMappingImpl</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a803fef00c0213ef55fae6339086d86b1" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>cannotCopy</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a1cfd8b1df608cb89b0acb94d29d447b3" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>constrainGenericRegister</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1ace62a3b4e043e1740264ffd8a6b6cfb5" prot="public" virt="virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>copyCost</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1abe7d332de484fcc6cdc4c2a5e7bdd31b" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>DefaultMappingID</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1ae826c1439a2f1735834dfb2ec45fb906" prot="public" virt="virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getBreakDownCost</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a104c33de0485a9518a9cae99b7023c84" prot="public" virt="virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getInstrAlternativeMappings</name></member>
+      <member refid="classllvm_1_1_m68k_register_bank_info_1a1c1174fbc250d7fa3773584dfd942728" prot="public" virt="virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getInstrMapping</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1af5535a05921d5db8486cc4ce527b066f" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getInstrMappingImpl</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a9ad9f326100ec08e3cde9f430fcb36f1" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getInstrPossibleMappings</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a5b7e84a2ea3cdb118f44543cdb33f670" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getInstructionMapping</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a640c554d91abd68270b79cdef71b99a2" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getInvalidInstructionMapping</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a86c7cb8b065aaa7ceace9c9218ace573" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getMaximumSize</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a5f1318c87bc0007368e815c55c31d06b" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getMinimalPhysRegClass</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a955b1188aace2fd0ff954c427821b49a" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getNumRegBanks</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1ab899ee374f95aa9e56c35eae354f8188" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getOperandsMapping</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a724d32daf4f554526f15b36eab12e129" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getOperandsMapping</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1acb92f4f15dbcf2c4fb654108ed026353" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getOperandsMapping</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a063bcf2a2c95c6a33a7aaef9246b26de" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getPartialMapping</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a7b7ace4016fc342a5535307a10198daa" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getRegBank</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1aa67fe0dd995134920cbffc441302c2ce" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getRegBank</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a93a0a8ab06630d5406ef007e182bc05f" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getRegBank</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a96b1c6181f78fcdb7aba634c687d20a7" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getRegBankFromConstraints</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a9a3a4079fc2830c334da4406288bce24" prot="public" virt="virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getRegBankFromRegClass</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a9986db3729defa2e0181a6f8be03615e" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getSizeInBits</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a5f683dcd4b6530d6f1b29d50b92e2907" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getValueMapping</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a85689f6171de434d7b01fdd1854e3ccf" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>getValueMapping</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1ac0ce287dd4d4cd434f52b7c6f0bc4c5d" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>HwMode</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1ac89dbbb6460391f27fb352c20c600769" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>InstructionMappings</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1aabde40ed6dff50ce0fc5922ce428c79d" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>InvalidMappingID</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a02005f6abd229d62b4b708665c9473d5" prot="public" virt="virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>isDivergentRegBank</name></member>
+      <member refid="classllvm_1_1_m68k_register_bank_info_1a18f5a1209aa4d2a3cfa5892ad5cf4c3d" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>M68kRegisterBankInfo</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a24613d27c71fc9afbdf123a8fe968831" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>MapOfInstructionMappings</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a68961b55ca0a388313028d387291f2d2" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>MapOfOperandsMappings</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a3e50a2e023b3326abe501dcaf4110d17" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>MapOfPartialMappings</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a5eb573eba36f7a9f363ac9c2b322beda" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>MapOfValueMappings</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a45f91f5fb3c739aa01e83fc81b5c5cb8" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>NumRegBanks</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1aa184b7fc50428ff89191311836458be7" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>PhysRegMinimalRCs</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a37be705ed10221b7360ccdbb09c51795" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>RegBanks</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1aa9467bf23c0dfb8176a54358477962fa" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>RegisterBankInfo</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a3a09b5d459b62b61b338fe86afaecaf2" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>RegisterBankInfo</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a7efe71b047699bd4139c3e5f36318aa2" prot="protected" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>Sizes</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1aca0f86b578b560c1ea67d71987c1df57" prot="public" virt="non-virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>verify</name></member>
+      <member refid="classllvm_1_1_register_bank_info_1a1509c98e8ac62e07011d2915c527ad16" prot="public" virt="virtual"><scope>llvm::M68kRegisterBankInfo</scope><name>~RegisterBankInfo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

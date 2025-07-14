@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="llvm-c_2_error_handling_8h" kind="file" language="C++">
+    <compoundname>ErrorHandling.h</compoundname>
+    <includes refid="_extern_c_8h" local="yes">llvm-c/ExternC.h</includes>
+    <includedby refid="llvm-c_2_core_8h" local="yes">include/llvm-c/Core.h</includedby>
+    <includedby refid="_error_handling_8cpp" local="yes">lib/Support/ErrorHandling.cpp</includedby>
+    <includedby refid="_pretty_stack_trace_8cpp" local="yes">lib/Support/PrettyStackTrace.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm-c/ErrorHandling.h</label>
+        <link refid="llvm-c_2_error_handling_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm-c/ExternC.h</label>
+        <link refid="_extern_c_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/llvm-c/Core.h</label>
+        <link refid="llvm-c_2_core_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/llvm-c/ErrorHandling.h</label>
+        <link refid="llvm-c_2_error_handling_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>lib/Bitcode/Reader/BitReader.cpp</label>
+        <link refid="_bit_reader_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/IR/Core.cpp</label>
+        <link refid="_i_r_2_core_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/Support/ErrorHandling.cpp</label>
+        <link refid="_error_handling_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/Support/PrettyStackTrace.cpp</label>
+        <link refid="_pretty_stack_trace_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/Target/TargetMachineC.cpp</label>
+        <link refid="_target_machine_c_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="typedef">
+      <member refid="group___l_l_v_m_c_error_1gaaba79ae56a17485c5d3fbd004ff60e47" kind="typedef"><name>LLVMFatalErrorHandler</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group___l_l_v_m_c_error_1gaf6159e6764fb23072ec25514b90b0ebd" kind="function"><name>LLVMInstallFatalErrorHandler</name></member>
+      <member refid="group___l_l_v_m_c_error_1ga7ea3d621a4b178b39e068f2c017ae617" kind="function"><name>LLVMResetFatalErrorHandler</name></member>
+      <member refid="group___l_l_v_m_c_error_1gacd4315fc836550166df8bff5bf55dc32" kind="function"><name>LLVMEnablePrettyStackTrace</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*===--<sp/>llvm-c/ErrorHandling.h<sp/>-<sp/>Error<sp/>Handling<sp/>C<sp/>Interface<sp/>-------*-<sp/>C<sp/>-*-===*\</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">|*<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">|*<sp/>Exceptions.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">|*<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">|*<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">|*===----------------------------------------------------------------------===*|</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">|*<sp/>This<sp/>file<sp/>defines<sp/>the<sp/>C<sp/>interface<sp/>to<sp/>LLVM&apos;s<sp/>error<sp/>handling<sp/>mechanism.<sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">\*===----------------------------------------------------------------------===*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_C_ERRORHANDLING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_C_ERRORHANDLING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_extern_c_8h" kindref="compound">llvm-c/ExternC.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="_extern_c_8h_1a4789aaabaa5bf3b7a549171b47cc4d4a" kindref="member">LLVM_C_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="21"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>@addtogroup<sp/>LLVMCError</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>@{</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="group___l_l_v_m_c_error_1gaaba79ae56a17485c5d3fbd004ff60e47" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="group___l_l_v_m_c_error_1gaaba79ae56a17485c5d3fbd004ff60e47" kindref="member">LLVMFatalErrorHandler</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*Reason);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="29"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>Install<sp/>a<sp/>fatal<sp/>error<sp/>handler.<sp/>By<sp/>default,<sp/>if<sp/>LLVM<sp/>detects<sp/>a<sp/>fatal<sp/>error,<sp/>it</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>will<sp/>call<sp/>exit(1).<sp/>This<sp/>may<sp/>not<sp/>be<sp/>appropriate<sp/>in<sp/>many<sp/>contexts.<sp/>For<sp/>example,</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>doing<sp/>exit(1)<sp/>will<sp/>bypass<sp/>many<sp/>crash<sp/>reporting/tracing<sp/>system<sp/>tools.<sp/>This</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>function<sp/>allows<sp/>you<sp/>to<sp/>install<sp/>a<sp/>callback<sp/>that<sp/>will<sp/>be<sp/>invoked<sp/>prior<sp/>to<sp/>the</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>call<sp/>to<sp/>exit(1).</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___l_l_v_m_c_error_1gaf6159e6764fb23072ec25514b90b0ebd" kindref="member">LLVMInstallFatalErrorHandler</ref>(<ref refid="group___l_l_v_m_c_error_1gaaba79ae56a17485c5d3fbd004ff60e47" kindref="member">LLVMFatalErrorHandler</ref><sp/>Handler);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="38"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>Reset<sp/>the<sp/>fatal<sp/>error<sp/>handler.<sp/>This<sp/>resets<sp/>LLVM&apos;s<sp/>fatal<sp/>error<sp/>handling</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>behavior<sp/>to<sp/>the<sp/>default.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___l_l_v_m_c_error_1ga7ea3d621a4b178b39e068f2c017ae617" kindref="member">LLVMResetFatalErrorHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="44"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>Enable<sp/>LLVM&apos;s<sp/>built-in<sp/>stack<sp/>trace<sp/>code.<sp/>This<sp/>intercepts<sp/>the<sp/>OS&apos;s<sp/>crash</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>signals<sp/>and<sp/>prints<sp/>which<sp/>component<sp/>of<sp/>LLVM<sp/>you<sp/>were<sp/>in<sp/>at<sp/>the<sp/>time<sp/>if<sp/>the</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>crash.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___l_l_v_m_c_error_1gacd4315fc836550166df8bff5bf55dc32" kindref="member">LLVMEnablePrettyStackTrace</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="51"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>@}</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><ref refid="_extern_c_8h_1ae016a3733553fe3990c8dfcec10d9d3a" kindref="member">LLVM_C_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm-c/ErrorHandling.h"/>
+  </compounddef>
+</doxygen>

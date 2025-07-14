@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1sampleprofutil" kind="namespace" language="C++">
+    <compoundname>llvm::sampleprofutil</compoundname>
+    <innerclass refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker" prot="public">llvm::sampleprofutil::SampleCoverageTracker</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1sampleprofutil_1ab6789a9522443425d339fa34c25f89d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sampleprofutil::callsiteIsHot</definition>
+        <argsstring>(const FunctionSamples *CallsiteFS, ProfileSummaryInfo *PSI, bool ProfAccForSymsInList)</argsstring>
+        <name>callsiteIsHot</name>
+        <qualifiedname>llvm::sampleprofutil::callsiteIsHot</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sampleprof_1_1_function_samples" kindref="compound">FunctionSamples</ref> *</type>
+          <declname>CallsiteFS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+          <declname>PSI</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ProfAccForSymsInList</declname>
+        </param>
+        <briefdescription>
+<para>Return true if the given callsite is hot wrt to hot cutoff threshold. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Functions that were inlined in the original binary will be represented in the inline stack in the sample profile. If the profile shows that the original inline decision was &quot;good&quot; (i.e., the callsite is executed frequently), then we will recreate the inline decision and apply the profile from the inlined callsite.</para>
+<para>To decide whether an inlined callsite is hot, we compare the callsite sample count with the hot cutoff computed by <ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref>, it is regarded as hot if the count is above the cutoff value.</para>
+<para>When ProfileAccurateForSymsInList is enabled and profile symbol list is present, functions in the profile symbol list but without profile will be regarded as cold and much less inlining will happen in CGSCC inlining pass, so we tend to lower the hot criteria here to allow more early inlining to happen for warm callsites and it is helpful for performance. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/SampleProfileLoaderBaseUtil.cpp" line="64" column="6" bodyfile="lib/Transforms/Utils/SampleProfileLoaderBaseUtil.cpp" bodystart="64" bodyend="75" declfile="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" declline="89" declcolumn="6"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1sampleprof_1_1_function_samples_1adb2786061d3e569b42b7d661ccc57484" compoundref="_sample_prof_8h" startline="934" endline="934">llvm::sampleprof::FunctionSamples::getTotalSamples</references>
+        <references refid="classllvm_1_1_profile_summary_info_1a5f58eb949321536363605ac9920a95cb" compoundref="_profile_summary_info_8cpp" startline="168" endline="170">llvm::ProfileSummaryInfo::isColdCount</references>
+        <references refid="classllvm_1_1_profile_summary_info_1ac46d4d55dd867977ba88d57a170e31de" compoundref="_profile_summary_info_8cpp" startline="164" endline="166">llvm::ProfileSummaryInfo::isHotCount</references>
+        <referencedby refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a115955d2509b80c7c2c435899404b086" compoundref="_sample_profile_loader_base_util_8cpp" startline="122" endline="135">llvm::sampleprofutil::SampleCoverageTracker::countBodyRecords</referencedby>
+        <referencedby refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a982cd37395d6c62bb2030d3e1b09b4d0" compoundref="_sample_profile_loader_base_util_8cpp" startline="141" endline="156">llvm::sampleprofutil::SampleCoverageTracker::countBodySamples</referencedby>
+        <referencedby refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a3dd722b8bbc4b043fd9a360f68aead04" compoundref="_sample_profile_loader_base_util_8cpp" startline="97" endline="116">llvm::sampleprofutil::SampleCoverageTracker::countUsedRecords</referencedby>
+        <referencedby refid="classanonymous__namespace_02_sample_profile_8cpp_03_1_1_sample_profile_loader_1aa730b58924baf8f35394c2e5a0bb3714" compoundref="_sample_profile_8cpp" startline="1140" endline="1235">anonymous_namespace{SampleProfile.cpp}::SampleProfileLoader::inlineHotFunctions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sampleprofutil_1a9495513e04a8f797cc8723887bdbd13c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sampleprofutil::createFSDiscriminatorVariable</definition>
+        <argsstring>(Module *M)</argsstring>
+        <name>createFSDiscriminatorVariable</name>
+        <qualifiedname>llvm::sampleprofutil::createFSDiscriminatorVariable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> *</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+<para>Create a global variable to flag FSDiscriminators are used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/SampleProfileLoaderBaseUtil.cpp" line="171" column="6" bodyfile="lib/Transforms/Utils/SampleProfileLoaderBaseUtil.cpp" bodystart="171" bodyend="182" declfile="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" declline="93" declcolumn="6"/>
+        <references refid="namespacellvm_1ae879dd14ccc28696f3d8c7b484df3c9a" compoundref="_module_utils_8cpp" startline="157" endline="159">llvm::appendToUsed</references>
+        <references refid="classllvm_1_1_type_1aa75984a442f2379de0c66018201fa628" compoundref="_sandbox_i_r_2_type_8cpp" startline="284" endline="284">llvm::Type::getInt1Ty</references>
+        <references refid="classllvm_1_1_constant_int_1a82dbbd8e3688b0bc1eedb338864d0d0c" compoundref="_constants_8cpp" startline="866" endline="871">llvm::ConstantInt::getTrue</references>
+        <references refid="classllvm_1_1_global_value_1aedfa75f0c85c4aa85b257f066fbea57ca696bb1c9b0b0e76bb70c61f68866452a" compoundref="_global_value_8h" startline="57">llvm::GlobalValue::WeakODRLinkage</references>
+        <referencedby refid="_add_discriminators_8cpp_1a6201294406f0d7ffae87b86d867045f8" compoundref="_add_discriminators_8cpp" startline="140" endline="240">addDiscriminators</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="33" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1766 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_loop_vectorization_legality" kind="class" language="C++" prot="public">
+    <compoundname>llvm::LoopVectorizationLegality</compoundname>
+    <includes refid="_loop_vectorization_legality_8h" local="yes">llvm/Transforms/Vectorize/LoopVectorizationLegality.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_loop_vectorization_legality_1abe830a64fea7dbeee20cdda3726b0120" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_map_vector" kindref="compound">MapVector</ref>&lt; <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *, <ref refid="classllvm_1_1_recurrence_descriptor" kindref="compound">RecurrenceDescriptor</ref> &gt;</type>
+        <definition>using llvm::LoopVectorizationLegality::ReductionList =  MapVector&lt;PHINode *, RecurrenceDescriptor&gt;</definition>
+        <argsstring></argsstring>
+        <name>ReductionList</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::ReductionList</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_loop_vectorization_legality_1abe830a64fea7dbeee20cdda3726b0120" kindref="member">ReductionList</ref> contains the reduction descriptors for all of the reductions that were found in the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="266" column="3" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_loop_vectorization_legality_1a063c4d98febe7ef90dddbfedcfc59d16" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_map_vector" kindref="compound">MapVector</ref>&lt; <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *, <ref refid="classllvm_1_1_induction_descriptor" kindref="compound">InductionDescriptor</ref> &gt;</type>
+        <definition>using llvm::LoopVectorizationLegality::InductionList =  MapVector&lt;PHINode *, InductionDescriptor&gt;</definition>
+        <argsstring></argsstring>
+        <name>InductionList</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::InductionList</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_loop_vectorization_legality_1a063c4d98febe7ef90dddbfedcfc59d16" kindref="member">InductionList</ref> saves induction variables and maps them to the induction descriptor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="270" column="3" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="270" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_loop_vectorization_legality_1a543d30d3a2b289aaa6b363be25d2b295" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *, 8 &gt;</type>
+        <definition>using llvm::LoopVectorizationLegality::RecurrenceSet =  SmallPtrSet&lt;const PHINode *, 8&gt;</definition>
+        <argsstring></argsstring>
+        <name>RecurrenceSet</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::RecurrenceSet</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_loop_vectorization_legality_1a543d30d3a2b289aaa6b363be25d2b295" kindref="member">RecurrenceSet</ref> contains the phi nodes that are recurrences other than inductions and reductions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="274" column="3" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="274" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a3808cce17fc47f8edd58849af507fc2f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+        <definition>Loop* llvm::LoopVectorizationLegality::TheLoop</definition>
+        <argsstring></argsstring>
+        <name>TheLoop</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::TheLoop</qualifiedname>
+        <briefdescription>
+<para>The loop that we evaluate. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="549" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="549" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1aecb9b6635ed708773bc9c079fc10cb1b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> *</type>
+        <definition>LoopInfo* llvm::LoopVectorizationLegality::LI</definition>
+        <argsstring></argsstring>
+        <name>LI</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::LI</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> Info analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="552" column="12" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="552" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a3bdd6f36c94c7915cb98d7ad501a49be" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_predicated_scalar_evolution" kindref="compound">PredicatedScalarEvolution</ref> &amp;</type>
+        <definition>PredicatedScalarEvolution&amp; llvm::LoopVectorizationLegality::PSE</definition>
+        <argsstring></argsstring>
+        <name>PSE</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::PSE</qualifiedname>
+        <briefdescription>
+<para>A wrapper around <ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> used to add runtime <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> checks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Applies dynamic knowledge to simplify <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expressions in the context of existing <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> assumptions. The analysis will also add a minimal set of new predicates if this is required to enable vectorization and unrolling. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="559" column="29" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="559" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1acaaacd1e1d906e11bdf1f8b6fb7c91b9" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+        <definition>TargetTransformInfo* llvm::LoopVectorizationLegality::TTI</definition>
+        <argsstring></argsstring>
+        <name>TTI</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::TTI</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_target" kindref="compound">Target</ref> Transform Info. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="562" column="23" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="562" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1aa863ed59572b0d4943ce4cce06179f12" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+        <definition>TargetLibraryInfo* llvm::LoopVectorizationLegality::TLI</definition>
+        <argsstring></argsstring>
+        <name>TLI</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::TLI</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_target" kindref="compound">Target</ref> Library Info. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="565" column="21" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="565" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a27b56d32f00a7726f94dfa06ed752670" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+        <definition>DominatorTree* llvm::LoopVectorizationLegality::DT</definition>
+        <argsstring></argsstring>
+        <name>DT</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::DT</qualifiedname>
+        <briefdescription>
+<para>Dominator Tree. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="568" column="17" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="568" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a9867aa9ca1a32c23a5c99862d1699bac" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_access_info_manager" kindref="compound">LoopAccessInfoManager</ref> &amp;</type>
+        <definition>LoopAccessInfoManager&amp; llvm::LoopVectorizationLegality::LAIs</definition>
+        <argsstring></argsstring>
+        <name>LAIs</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::LAIs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="571" column="25" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="571" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1aaca72182d1d5250777d463e2254ed8ac" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop_access_info" kindref="compound">LoopAccessInfo</ref> *</type>
+        <definition>const LoopAccessInfo* llvm::LoopVectorizationLegality::LAI</definition>
+        <argsstring></argsstring>
+        <name>LAI</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::LAI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="573" column="24" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="573" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a1dd8f7c0effe71c22a81569e18560945" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_optimization_remark_emitter" kindref="compound">OptimizationRemarkEmitter</ref> *</type>
+        <definition>OptimizationRemarkEmitter* llvm::LoopVectorizationLegality::ORE</definition>
+        <argsstring></argsstring>
+        <name>ORE</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::ORE</qualifiedname>
+        <briefdescription>
+<para>Interface to emit optimization remarks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="576" column="29" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="576" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a09ebbb2516317552943315010ba587c6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *</type>
+        <definition>PHINode* llvm::LoopVectorizationLegality::PrimaryInduction</definition>
+        <argsstring></argsstring>
+        <name>PrimaryInduction</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::PrimaryInduction</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Holds the primary induction variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the counter of the loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="582" column="11" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="582" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1ac847a2194c17711fa779faf681db9633" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_vectorization_legality_1abe830a64fea7dbeee20cdda3726b0120" kindref="member">ReductionList</ref></type>
+        <definition>ReductionList llvm::LoopVectorizationLegality::Reductions</definition>
+        <argsstring></argsstring>
+        <name>Reductions</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::Reductions</qualifiedname>
+        <briefdescription>
+<para>Holds the reduction variables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="585" column="17" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="585" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a051d230e9e98d92f852cfd260bb5e9a4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_vectorization_legality_1a063c4d98febe7ef90dddbfedcfc59d16" kindref="member">InductionList</ref></type>
+        <definition>InductionList llvm::LoopVectorizationLegality::Inductions</definition>
+        <argsstring></argsstring>
+        <name>Inductions</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::Inductions</qualifiedname>
+        <briefdescription>
+<para>Holds all of the induction variables that we found in the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Notice that inductions don&apos;t need to start at zero and that induction variables can be pointers. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="590" column="17" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="590" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a4a4f19197a92484b208fc2bfe0aca7a3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, 4 &gt;</type>
+        <definition>SmallPtrSet&lt;Instruction *, 4&gt; llvm::LoopVectorizationLegality::InductionCastsToIgnore</definition>
+        <argsstring></argsstring>
+        <name>InductionCastsToIgnore</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::InductionCastsToIgnore</qualifiedname>
+        <briefdescription>
+<para>Holds all the casts that participate in the update chain of the induction variables, and that have been proven to be redundant (possibly under a runtime guard). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These casts can be ignored when creating the vectorized loop body. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="596" column="15" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="596" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a191a73e34e9a7d2e062bb060ed4e7ade" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_vectorization_legality_1a543d30d3a2b289aaa6b363be25d2b295" kindref="member">RecurrenceSet</ref></type>
+        <definition>RecurrenceSet llvm::LoopVectorizationLegality::FixedOrderRecurrences</definition>
+        <argsstring></argsstring>
+        <name>FixedOrderRecurrences</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::FixedOrderRecurrences</qualifiedname>
+        <briefdescription>
+<para>Holds the phi nodes that are fixed-order recurrences. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="599" column="17" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="599" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a721cfa46a725be4df869b2ae813b2220" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+        <definition>Type* llvm::LoopVectorizationLegality::WidestIndTy</definition>
+        <argsstring></argsstring>
+        <name>WidestIndTy</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::WidestIndTy</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Holds the widest induction type encountered. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="602" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="602" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1aa6d7005ce88b86f4f401da73fe6b3deb" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, 4 &gt;</type>
+        <definition>SmallPtrSet&lt;Value *, 4&gt; llvm::LoopVectorizationLegality::AllowedExit</definition>
+        <argsstring></argsstring>
+        <name>AllowedExit</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::AllowedExit</qualifiedname>
+        <briefdescription>
+<para>Allowed outside users. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This holds the variables that can be accessed from outside the loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="606" column="15" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="606" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1abd645b276e25a4f01514a0356d3c3384" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_vectorization_requirements" kindref="compound">LoopVectorizationRequirements</ref> *</type>
+        <definition>LoopVectorizationRequirements* llvm::LoopVectorizationLegality::Requirements</definition>
+        <argsstring></argsstring>
+        <name>Requirements</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::Requirements</qualifiedname>
+        <briefdescription>
+<para>Vectorization requirements that will go through late-evaluation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="609" column="33" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="609" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a3667ca6a2694b97d6fae411ab3a3c5fd" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_vectorize_hints" kindref="compound">LoopVectorizeHints</ref> *</type>
+        <definition>LoopVectorizeHints* llvm::LoopVectorizationLegality::Hints</definition>
+        <argsstring></argsstring>
+        <name>Hints</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::Hints</qualifiedname>
+        <briefdescription>
+<para>Used to emit an analysis of any legality issues. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="612" column="22" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="612" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1adc4b9d46b9523a6b927694ed619a5867" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_demanded_bits" kindref="compound">DemandedBits</ref> *</type>
+        <definition>DemandedBits* llvm::LoopVectorizationLegality::DB</definition>
+        <argsstring></argsstring>
+        <name>DB</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::DB</qualifiedname>
+        <briefdescription>
+<para>The demanded bits analysis is used to compute the minimum type size in which a reduction can be computed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="616" column="16" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="616" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a860a8a7b7929889b96c26360e192e383" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref> *</type>
+        <definition>AssumptionCache* llvm::LoopVectorizationLegality::AC</definition>
+        <argsstring></argsstring>
+        <name>AC</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::AC</qualifiedname>
+        <briefdescription>
+<para>The assumption cache analysis is used to compute the minimum type size in which a reduction can be computed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="620" column="19" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="620" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1afccd90bfd1e42ce5292774817868ad50" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, 8 &gt;</type>
+        <definition>SmallPtrSet&lt;const Instruction *, 8&gt; llvm::LoopVectorizationLegality::MaskedOp</definition>
+        <argsstring></argsstring>
+        <name>MaskedOp</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::MaskedOp</qualifiedname>
+        <briefdescription>
+<para>While vectorizing these instructions we have to generate a call to the appropriate masked intrinsic or drop them in case of conditional assumes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="625" column="15" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="625" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a585a359098cc54d37a1e25848125648d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_histogram_info" kindref="compound">HistogramInfo</ref>, 1 &gt;</type>
+        <definition>SmallVector&lt;HistogramInfo, 1&gt; llvm::LoopVectorizationLegality::Histograms</definition>
+        <argsstring></argsstring>
+        <name>Histograms</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::Histograms</qualifiedname>
+        <briefdescription>
+<para>Contains all identified histogram operations, which are sequences of load -&gt; update -&gt; store instructions where multiple lanes in a vector may work on the same memory location. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="630" column="15" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="630" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1abfc77083a325ee5d9e483dd5b4129a28" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_block_frequency_info" kindref="compound">BlockFrequencyInfo</ref> *</type>
+        <definition>BlockFrequencyInfo* llvm::LoopVectorizationLegality::BFI</definition>
+        <argsstring></argsstring>
+        <name>BFI</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::BFI</qualifiedname>
+        <briefdescription>
+<para>BFI and PSI are used to check for profile guided size optimizations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="633" column="22" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="633" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a6651b04bacfb0bbeca80220c9c106e43" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+        <definition>ProfileSummaryInfo* llvm::LoopVectorizationLegality::PSI</definition>
+        <argsstring></argsstring>
+        <name>PSI</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::PSI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="634" column="22" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="634" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1ab4a395814e2243de64a10a416dc8735f" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::VecCallVariantsFound</definition>
+        <argsstring></argsstring>
+        <name>VecCallVariantsFound</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::VecCallVariantsFound</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>If we discover function calls within the loop which have a valid vectorized variant, record that fact so that LoopVectorize can (potentially) make a better decision on the maximum VF and enable the use of those function variants. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="640" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="640" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1aa1e9e9e7a204e2a788f60c966c899e85" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::StructVecCallFound</definition>
+        <argsstring></argsstring>
+        <name>StructVecCallFound</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::StructVecCallFound</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>If we find a call (to be vectorized) that returns a struct type, record that so we can bail out until this is supported. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>TODO: Remove this flag once vectorizing calls with struct returns is supported. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="646" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="646" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1a2d36674731fde829eee1057072582274" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, 4 &gt;</type>
+        <definition>SmallVector&lt;BasicBlock *, 4&gt; llvm::LoopVectorizationLegality::CountableExitingBlocks</definition>
+        <argsstring></argsstring>
+        <name>CountableExitingBlocks</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::CountableExitingBlocks</qualifiedname>
+        <briefdescription>
+<para>Keep track of all the countable and uncountable exiting blocks if the exact backedge taken count is not computable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="650" column="15" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="650" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_loop_vectorization_legality_1adde701a5f5765e682e8b4480ebae3be5" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::pair&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt; &gt;</type>
+        <definition>std::optional&lt;std::pair&lt;BasicBlock *, BasicBlock *&gt; &gt; llvm::LoopVectorizationLegality::UncountableEdge</definition>
+        <argsstring></argsstring>
+        <name>UncountableEdge</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::UncountableEdge</qualifiedname>
+        <briefdescription>
+<para>Keep track of the loop edge to an uncountable exit, comprising a pair of (Exiting, Exit) blocks, if there is exactly one early exit. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="654" column="17" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="654" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a57ee5ed437953ba182781372d6a03fb3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::LoopVectorizationLegality::LoopVectorizationLegality</definition>
+        <argsstring>(Loop *L, PredicatedScalarEvolution &amp;PSE, DominatorTree *DT, TargetTransformInfo *TTI, TargetLibraryInfo *TLI, Function *F, LoopAccessInfoManager &amp;LAIs, LoopInfo *LI, OptimizationRemarkEmitter *ORE, LoopVectorizationRequirements *R, LoopVectorizeHints *H, DemandedBits *DB, AssumptionCache *AC, BlockFrequencyInfo *BFI, ProfileSummaryInfo *PSI)</argsstring>
+        <name>LoopVectorizationLegality</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::LoopVectorizationLegality</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_predicated_scalar_evolution" kindref="compound">PredicatedScalarEvolution</ref> &amp;</type>
+          <declname>PSE</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+          <declname>DT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+          <declname>TTI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+          <declname>TLI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_loop_access_info_manager" kindref="compound">LoopAccessInfoManager</ref> &amp;</type>
+          <declname>LAIs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> *</type>
+          <declname>LI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_optimization_remark_emitter" kindref="compound">OptimizationRemarkEmitter</ref> *</type>
+          <declname>ORE</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_loop_vectorization_requirements" kindref="compound">LoopVectorizationRequirements</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_loop_vectorize_hints" kindref="compound">LoopVectorizeHints</ref> *</type>
+          <declname>H</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_demanded_bits" kindref="compound">DemandedBits</ref> *</type>
+          <declname>DB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref> *</type>
+          <declname>AC</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_block_frequency_info" kindref="compound">BlockFrequencyInfo</ref> *</type>
+          <declname>BFI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+          <declname>PSI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="254" column="3" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="254" bodyend="262"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="_m_d5_8cpp_1ae42219072d798876e6b08e6b78614ff6" compoundref="_m_d5_8cpp" startline="57">H</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a3ce10d1174bdfcac2b73ed7efa352b7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::canVectorize</definition>
+        <argsstring>(bool UseVPlanNativePath)</argsstring>
+        <name>canVectorize</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::canVectorize</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>UseVPlanNativePath</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if it is legal to vectorize this loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This does not mean that it is profitable to vectorize this loop, only that it is legal to do so. Temporarily taking UseVPlanNativePath parameter. If true, take the new code path being implemented for outer loop vectorization (should be functional for inner loop vectorization) based on <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. If false, good old LV code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="283" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1762" bodyend="1877"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_generic_cycle_impl_8h_1ad78e062f62e0d6e453941fb4ca843e4d" compoundref="_generic_cycle_impl_8h" startline="31">DEBUG_TYPE</references>
+        <references refid="classllvm_1_1_loop_vectorize_hints_1a55ab1072c44295ad279535d714a0f33ea278ca681847fb2bad9707f76d899b231" compoundref="_loop_vectorization_legality_8h" startline="110">llvm::LoopVectorizeHints::FK_Enabled</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_loop_vectorization_legality_8cpp_1a1692f783b14148757cae5bcb6ece48c3">PragmaVectorizeSCEVCheckThreshold</references>
+        <references refid="namespacellvm_1ab425bb10a0f4af749bbb29aa07fc6854" compoundref="_loop_vectorize_8cpp" startline="887" endline="896">llvm::reportVectorizationFailure</references>
+        <references refid="_loop_vectorization_legality_8cpp_1ac43b82ae3bb3c5acae897a8b18c0d3fc">VectorizeSCEVCheckThreshold</references>
+        <referencedby refid="structllvm_1_1_loop_vectorize_pass_1a160afa01e95095aa0c8115b6e0e6f4a6" compoundref="_loop_vectorize_8cpp" startline="10327" endline="10756">llvm::LoopVectorizePass::processLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a552a158f5a673da0a26461d1471cea41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::canVectorizeFPMath</definition>
+        <argsstring>(bool EnableStrictReductions)</argsstring>
+        <name>canVectorizeFPMath</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::canVectorizeFPMath</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>EnableStrictReductions</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if it is legal to vectorize the FP math operations in this loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Vectorizing is legal if we allow reordering of FP operations, or if we can use in-order reductions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="288" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1311" bodyend="1335"/>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="classllvm_1_1_induction_descriptor_1aee5a5c8071e7352a9ec7199bca954882" compoundref="_i_v_descriptors_8h" startline="387" endline="392">llvm::InductionDescriptor::getExactFPMathInst</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1a8dffddf3feec953bba0425b324b380dc" compoundref="_loop_vectorization_legality_8h" startline="305" endline="305">getInductionVars</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1aa31c04881c640716da40ae22ddda69ad" compoundref="_loop_vectorization_legality_8h" startline="302" endline="302">getReductionVars</references>
+        <references refid="classllvm_1_1_recurrence_descriptor_1a25187781de77a2ccf8406804fe510ce8" compoundref="_i_v_descriptors_8h" startline="222" endline="222">llvm::RecurrenceDescriptor::hasExactFPMath</references>
+        <references refid="classllvm_1_1_recurrence_descriptor_1a8dad5abc2bd929acd8391643b2dbe4c5" compoundref="_i_v_descriptors_8h" startline="288" endline="288">llvm::RecurrenceDescriptor::isOrdered</references>
+        <references refid="_loop_strength_reduce_8cpp_1a175f1f53cc9c3619505ffbd13aca087f" compoundref="_loop_strength_reduce_8cpp" startline="7191">Reduction</references>
+        <referencedby refid="structllvm_1_1_loop_vectorize_pass_1a160afa01e95095aa0c8115b6e0e6f4a6" compoundref="_loop_vectorize_8cpp" startline="10327" endline="10756">llvm::LoopVectorizePass::processLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1aafa8144325b3c584e828b07d73a8cb25" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::canFoldTailByMasking</definition>
+        <argsstring>() const</argsstring>
+        <name>canFoldTailByMasking</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::canFoldTailByMasking</qualifiedname>
+        <briefdescription>
+<para>Return true if we can vectorize this loop while folding its tail by masking. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="292" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1879" bodyend="1935"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a1f475b0df44ebd7169e720fa1bf9169e" compoundref="_small_ptr_set_8h" startline="452" endline="454">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1a8dffddf3feec953bba0425b324b380dc" compoundref="_loop_vectorization_legality_8h" startline="305" endline="305">getInductionVars</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1aa31c04881c640716da40ae22ddda69ad" compoundref="_loop_vectorization_legality_8h" startline="302" endline="302">getReductionVars</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_loop_strength_reduce_8cpp_1a175f1f53cc9c3619505ffbd13aca087f" compoundref="_loop_strength_reduce_8cpp" startline="7191">Reduction</references>
+        <references refid="classllvm_1_1_value_1a411cf3e3932f209ce3374cb31adc1da6" compoundref="_i_r_2_value_8h" startline="421" endline="424">llvm::Value::users</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1ab0b7c658c190bc113272ef4257a47659" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::LoopVectorizationLegality::prepareToFoldTailByMasking</definition>
+        <argsstring>()</argsstring>
+        <name>prepareToFoldTailByMasking</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::prepareToFoldTailByMasking</qualifiedname>
+        <briefdescription>
+<para>Mark all respective loads/stores for masking. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Must only be called when tail-folding is possible. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="296" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1937" bodyend="1947"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a78dab1aa1facf4bf6300b3275490fa11" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *</type>
+        <definition>PHINode * llvm::LoopVectorizationLegality::getPrimaryInduction</definition>
+        <argsstring>()</argsstring>
+        <name>getPrimaryInduction</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getPrimaryInduction</qualifiedname>
+        <briefdescription>
+<para>Returns the primary induction variable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="299" column="11" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="299" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1aa31c04881c640716da40ae22ddda69ad" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop_vectorization_legality_1abe830a64fea7dbeee20cdda3726b0120" kindref="member">ReductionList</ref> &amp;</type>
+        <definition>const ReductionList &amp; llvm::LoopVectorizationLegality::getReductionVars</definition>
+        <argsstring>() const</argsstring>
+        <name>getReductionVars</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getReductionVars</qualifiedname>
+        <briefdescription>
+<para>Returns the reduction variables found in the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="302" column="23" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="302" bodyend="302"/>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1aafa8144325b3c584e828b07d73a8cb25" compoundref="_loop_vectorization_legality_8cpp" startline="1879" endline="1935">canFoldTailByMasking</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a552a158f5a673da0a26461d1471cea41" compoundref="_loop_vectorization_legality_8cpp" startline="1311" endline="1335">canVectorizeFPMath</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a34f384c7ff8e4b23cc79156daf2a5c11" compoundref="_loop_vectorization_legality_8cpp" startline="1344" endline="1355">isInvariantAddressOfReduction</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a1c9fd1c0627dfa3e013a1b2c7416ae90" compoundref="_loop_vectorization_legality_8cpp" startline="1337" endline="1342">isInvariantStoreOfReduction</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1ab68c7ba7bd95784715357a3fbf5235a7" compoundref="_a_arch64_target_transform_info_8cpp" startline="5062" endline="5100">llvm::AArch64TTIImpl::preferPredicateOverEpilogue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a8dffddf3feec953bba0425b324b380dc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop_vectorization_legality_1a063c4d98febe7ef90dddbfedcfc59d16" kindref="member">InductionList</ref> &amp;</type>
+        <definition>const InductionList &amp; llvm::LoopVectorizationLegality::getInductionVars</definition>
+        <argsstring>() const</argsstring>
+        <name>getInductionVars</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getInductionVars</qualifiedname>
+        <briefdescription>
+<para>Returns the induction variables found in the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="305" column="23" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="305" bodyend="305"/>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1aafa8144325b3c584e828b07d73a8cb25" compoundref="_loop_vectorization_legality_8cpp" startline="1879" endline="1935">canFoldTailByMasking</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a552a158f5a673da0a26461d1471cea41" compoundref="_loop_vectorization_legality_8cpp" startline="1311" endline="1335">canVectorizeFPMath</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a74bcb5c6d80d9d7fb0eeb1131eeef2dc" compoundref="_loop_vectorization_legality_8cpp" startline="1367" endline="1375">getIntOrFpInductionDescriptor</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a728069d0bcacf976cbb3764bad749562" compoundref="_loop_vectorization_legality_8cpp" startline="1378" endline="1385">getPointerInductionDescriptor</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a317c5bedc82363ee7513fe56790878e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_loop_vectorization_legality_1a543d30d3a2b289aaa6b363be25d2b295" kindref="member">RecurrenceSet</ref> &amp;</type>
+        <definition>RecurrenceSet &amp; llvm::LoopVectorizationLegality::getFixedOrderRecurrences</definition>
+        <argsstring>()</argsstring>
+        <name>getFixedOrderRecurrences</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getFixedOrderRecurrences</qualifiedname>
+        <briefdescription>
+<para>Return the fixed-order recurrences found in the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="308" column="17" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="308" bodyend="308"/>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1ab68c7ba7bd95784715357a3fbf5235a7" compoundref="_a_arch64_target_transform_info_8cpp" startline="5062" endline="5100">llvm::AArch64TTIImpl::preferPredicateOverEpilogue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1ab1bbdeff3d286d3cd7a6e1f67a7e43ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+        <definition>Type * llvm::LoopVectorizationLegality::getWidestInductionType</definition>
+        <argsstring>()</argsstring>
+        <name>getWidestInductionType</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getWidestInductionType</qualifiedname>
+        <briefdescription>
+<para>Returns the widest induction type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="311" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="311" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a1c9fd1c0627dfa3e013a1b2c7416ae90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isInvariantStoreOfReduction</definition>
+        <argsstring>(StoreInst *SI)</argsstring>
+        <name>isInvariantStoreOfReduction</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isInvariantStoreOfReduction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_store_inst" kindref="compound">StoreInst</ref> *</type>
+          <declname>SI</declname>
+        </param>
+        <briefdescription>
+<para>Returns True if given store is a final invariant store of one of the reductions found in the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="315" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1337" bodyend="1342"/>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1aa31c04881c640716da40ae22ddda69ad" compoundref="_loop_vectorization_legality_8h" startline="302" endline="302">getReductionVars</references>
+        <references refid="classllvm_1_1_recurrence_descriptor_1a9e4044de402972428a2101b8afcaa1b7" compoundref="_i_v_descriptors_8h" startline="304">llvm::RecurrenceDescriptor::IntermediateStore</references>
+        <references refid="_loop_strength_reduce_8cpp_1a175f1f53cc9c3619505ffbd13aca087f" compoundref="_loop_strength_reduce_8cpp" startline="7191">Reduction</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a34f384c7ff8e4b23cc79156daf2a5c11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isInvariantAddressOfReduction</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>isInvariantAddressOfReduction</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isInvariantAddressOfReduction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Returns True if given address is invariant and is used to store recurrent expression. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="319" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1344" bodyend="1355"/>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="classllvm_1_1_store_inst_1aefb15964facf7f35f22a6e8a7fb67285" compoundref="_instructions_8h" startline="381" endline="381">llvm::StoreInst::getPointerOperand</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1aa31c04881c640716da40ae22ddda69ad" compoundref="_loop_vectorization_legality_8h" startline="302" endline="302">getReductionVars</references>
+        <references refid="classllvm_1_1_scalar_evolution_1a30bd18ac905eacf3601bc6a553a9ff49" compoundref="_scalar_evolution_8cpp" startline="4547" endline="4553">llvm::ScalarEvolution::getSCEV</references>
+        <references refid="classllvm_1_1_recurrence_descriptor_1a9e4044de402972428a2101b8afcaa1b7" compoundref="_i_v_descriptors_8h" startline="304">llvm::RecurrenceDescriptor::IntermediateStore</references>
+        <references refid="_loop_strength_reduce_8cpp_1a175f1f53cc9c3619505ffbd13aca087f" compoundref="_loop_strength_reduce_8cpp" startline="7191">Reduction</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a7803d6f1162773c3b1a61e3ff441fcb8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isInductionPhi</definition>
+        <argsstring>(const Value *V) const</argsstring>
+        <name>isInductionPhi</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isInductionPhi</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Returns True if V is a Phi node of an induction variable in this loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="322" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1357" bodyend="1364"/>
+        <references refid="namespacellvm_1a5f6182886dc2f96c204299e92c1565d5" compoundref="_casting_8h" startline="759" endline="761">llvm::dyn_cast_or_null</references>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a74bcb5c6d80d9d7fb0eeb1131eeef2dc" compoundref="_loop_vectorization_legality_8cpp" startline="1367" endline="1375">getIntOrFpInductionDescriptor</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a728069d0bcacf976cbb3764bad749562" compoundref="_loop_vectorization_legality_8cpp" startline="1378" endline="1385">getPointerInductionDescriptor</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1af9f3d6495086eb1a43e829bf045fd073" compoundref="_loop_vectorization_legality_8cpp" startline="1393" endline="1395">isInductionVariable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a74bcb5c6d80d9d7fb0eeb1131eeef2dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_induction_descriptor" kindref="compound">InductionDescriptor</ref> *</type>
+        <definition>const InductionDescriptor * llvm::LoopVectorizationLegality::getIntOrFpInductionDescriptor</definition>
+        <argsstring>(PHINode *Phi) const</argsstring>
+        <name>getIntOrFpInductionDescriptor</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getIntOrFpInductionDescriptor</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *</type>
+          <declname>Phi</declname>
+        </param>
+        <briefdescription>
+<para>Returns a pointer to the induction descriptor, if <computeroutput>Phi</computeroutput> is an integer or floating point induction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="326" column="29" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1367" bodyend="1375"/>
+        <references refid="classllvm_1_1_map_vector_1a6b0c3e15c351ba9682837c29b0a141b6" compoundref="_map_vector_8h" startline="167" endline="171">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::find</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1a8dffddf3feec953bba0425b324b380dc" compoundref="_loop_vectorization_legality_8h" startline="305" endline="305">getInductionVars</references>
+        <references refid="classllvm_1_1_induction_descriptor_1ac2d32589e2e153088b8a35db1a9eabccab0b71801de025f26b088a8cb22825f79" compoundref="_i_v_descriptors_8h" startline="341">llvm::InductionDescriptor::IK_FpInduction</references>
+        <references refid="classllvm_1_1_induction_descriptor_1ac2d32589e2e153088b8a35db1a9eabccaf0191e822c9708e106d7bb58aa9ec947" compoundref="_i_v_descriptors_8h" startline="339">llvm::InductionDescriptor::IK_IntInduction</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1a7803d6f1162773c3b1a61e3ff441fcb8" compoundref="_loop_vectorization_legality_8cpp" startline="1357" endline="1364">isInductionPhi</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a728069d0bcacf976cbb3764bad749562" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_induction_descriptor" kindref="compound">InductionDescriptor</ref> *</type>
+        <definition>const InductionDescriptor * llvm::LoopVectorizationLegality::getPointerInductionDescriptor</definition>
+        <argsstring>(PHINode *Phi) const</argsstring>
+        <name>getPointerInductionDescriptor</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getPointerInductionDescriptor</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *</type>
+          <declname>Phi</declname>
+        </param>
+        <briefdescription>
+<para>Returns a pointer to the induction descriptor, if <computeroutput>Phi</computeroutput> is pointer induction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="330" column="29" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1378" bodyend="1385"/>
+        <references refid="classllvm_1_1_map_vector_1a6b0c3e15c351ba9682837c29b0a141b6" compoundref="_map_vector_8h" startline="167" endline="171">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::find</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1a8dffddf3feec953bba0425b324b380dc" compoundref="_loop_vectorization_legality_8h" startline="305" endline="305">getInductionVars</references>
+        <references refid="classllvm_1_1_induction_descriptor_1ac2d32589e2e153088b8a35db1a9eabccab61689ca7d0a024fc4ff52a74d691ae2" compoundref="_i_v_descriptors_8h" startline="340">llvm::InductionDescriptor::IK_PtrInduction</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1a7803d6f1162773c3b1a61e3ff441fcb8" compoundref="_loop_vectorization_legality_8cpp" startline="1357" endline="1364">isInductionPhi</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1afd0c0e675aff7e870f18b9c911977b7a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isCastedInductionVariable</definition>
+        <argsstring>(const Value *V) const</argsstring>
+        <name>isCastedInductionVariable</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isCastedInductionVariable</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Returns True if V is a cast that is part of an induction def-use chain, and had been proven to be redundant under a runtime guard (in other words, the cast has the same <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expression as the induction phi). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="335" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1387" bodyend="1391"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1af9f3d6495086eb1a43e829bf045fd073" compoundref="_loop_vectorization_legality_8cpp" startline="1393" endline="1395">isInductionVariable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1af9f3d6495086eb1a43e829bf045fd073" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isInductionVariable</definition>
+        <argsstring>(const Value *V) const</argsstring>
+        <name>isInductionVariable</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isInductionVariable</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Returns True if V can be considered as an induction variable in this loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>V can be the induction phi, or some redundant cast in the def-use chain of the inducion phi. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="340" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1393" bodyend="1395"/>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1afd0c0e675aff7e870f18b9c911977b7a" compoundref="_loop_vectorization_legality_8cpp" startline="1387" endline="1391">isCastedInductionVariable</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1a7803d6f1162773c3b1a61e3ff441fcb8" compoundref="_loop_vectorization_legality_8cpp" startline="1357" endline="1364">isInductionPhi</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a5c26e54d871c42c42dc62f9d449c633a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isReductionVariable</definition>
+        <argsstring>(PHINode *PN) const</argsstring>
+        <name>isReductionVariable</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isReductionVariable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *</type>
+          <declname>PN</declname>
+        </param>
+        <briefdescription>
+<para>Returns True if PN is a reduction variable in this loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="343" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="343" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a5d6b8f1a562e7d26404946de46d3045b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isFixedOrderRecurrence</definition>
+        <argsstring>(const PHINode *Phi) const</argsstring>
+        <name>isFixedOrderRecurrence</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isFixedOrderRecurrence</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *</type>
+          <declname>Phi</declname>
+        </param>
+        <briefdescription>
+<para>Returns True if Phi is a fixed-order recurrence in this loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="346" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1397" bodyend="1400"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a3b78b24a3c241e611957b82cd12640da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::blockNeedsPredication</definition>
+        <argsstring>(BasicBlock *BB) const</argsstring>
+        <name>blockNeedsPredication</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::blockNeedsPredication</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Return true if the block BB needs to be predicated in order for the loop to be vectorized. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="350" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1402" bodyend="1414"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_loop_access_info_1aa67d22298695c49e80b79cb8a271928b" compoundref="_loop_access_analysis_8cpp" startline="2777" endline="2784">llvm::LoopAccessInfo::blockNeedsPredication</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1ae1727fd1036f0c932cae65a5b5db5a0d" compoundref="_loop_vectorization_legality_8h" startline="399" endline="401">getUncountableEarlyExitingBlock</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1ab22ff9e23f7f27234c8f6ec76db0c1f3" compoundref="_loop_vectorization_legality_8h" startline="394" endline="396">hasUncountableEarlyExit</references>
+        <references refid="namespacellvm_1acd1cd968cb420c82d70926920fcdc7d7" compoundref="_s_t_l_extras_8h" startline="1903" endline="1911">llvm::is_contained</references>
+        <references refid="namespacellvm_1acb22fb04083152eee862457e42e8dc31" compoundref="_machine_basic_block_8h" startline="1386" endline="1388">llvm::predecessors</references>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1ac562402715584ed9e836026bae1ac150" compoundref="_loop_vectorization_legality_8cpp" startline="600" endline="610">isUniformMemOp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a4589ea484ebe1919b451fff3948a17cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::LoopVectorizationLegality::isConsecutivePtr</definition>
+        <argsstring>(Type *AccessTy, Value *Ptr) const</argsstring>
+        <name>isConsecutivePtr</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isConsecutivePtr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>AccessTy</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Ptr</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if this pointer is consecutive when vectorizing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This happens when the last index of the GEP is the induction variable, or that the pointer itself is an induction variable. This check allows us to vectorize A[idx] into a wide load/store. Returns: 0 - Stride is unknown or non-consecutive. 1 - Address is consecutive. -1 - Address is consecutive, and decreasing. NOTE: This method must only be used before modifying the original scalar loop. Do not use after invoking &apos;createVectorizedLoopSkeleton&apos; (PR34965). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="362" column="7" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="454" bodyend="470"/>
+        <references refid="namespacellvm_1a8021a49018596bcbea563e6d5cac9a70" compoundref="_loop_access_analysis_8cpp" startline="1439" endline="1537">llvm::getPtrStride</references>
+        <references refid="namespacellvm_1aec7c967a5416fa6e154433965357a50ea089e7eb4db258e05f70eef4ed5aa10bb" compoundref="_size_opts_8h" startline="35">llvm::IRPass</references>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+        <references refid="namespacellvm_1a3af72f14ea20f2c762c751d2d49e5ea3" compoundref="_machine_size_opts_8cpp" startline="27" endline="34">llvm::shouldOptimizeForSize</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1aa10b9dac96a36c8b4da25fc6fa1d4352" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isInvariant</definition>
+        <argsstring>(Value *V) const</argsstring>
+        <name>isInvariant</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isInvariant</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if <computeroutput>V</computeroutput> is invariant across all loop iterations according to <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="366" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="472" bodyend="474"/>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a86e581cb8e98cb0649e8b524eed5c9c0" compoundref="_loop_vectorization_legality_8cpp" startline="567" endline="598">isUniform</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a86e581cb8e98cb0649e8b524eed5c9c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isUniform</definition>
+        <argsstring>(Value *V, ElementCount VF) const</argsstring>
+        <name>isUniform</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isUniform</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_element_count" kindref="compound">ElementCount</ref></type>
+          <declname>VF</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if value V is uniform across <computeroutput>VF</computeroutput> lanes, when <computeroutput>VF</computeroutput> is provided, and otherwise if <computeroutput>V</computeroutput> is invariant across all loop iterations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="370" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="567" bodyend="598"/>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="classllvm_1_1details_1_1_fixed_or_scalable_quantity_1ac4ab9dd9440c55bee1aa4a1195cee759" compoundref="_type_size_8h" startline="168" endline="168">llvm::details::FixedOrScalableQuantity&lt; LeafTy, ValueTy &gt;::getKnownMinValue</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1aa10b9dac96a36c8b4da25fc6fa1d4352" compoundref="_loop_vectorization_legality_8cpp" startline="472" endline="474">isInvariant</references>
+        <references refid="classllvm_1_1details_1_1_fixed_or_scalable_quantity_1a9188f84e1dd67530330dcab9cae787d7" compoundref="_type_size_8h" startline="171" endline="171">llvm::details::FixedOrScalableQuantity&lt; LeafTy, ValueTy &gt;::isScalable</references>
+        <references refid="classllvm_1_1_element_count_1a991f269cde2e7fbcb254ef371efc8d1a" compoundref="_type_size_8h" startline="322" endline="324">llvm::ElementCount::isScalar</references>
+        <references refid="namespacellvm_1a6b0ac1fa4f05de76413c5e0ca6334035" compoundref="_s_t_l_extras_8h" startline="420" endline="426">llvm::reverse</references>
+        <references refid="namespacellvm_1adc4eb8be6f7a12ede962987fb9cabb47" compoundref="_sequence_8h" startline="305" endline="307">llvm::seq</references>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1ac562402715584ed9e836026bae1ac150" compoundref="_loop_vectorization_legality_8cpp" startline="600" endline="610">isUniformMemOp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1ac562402715584ed9e836026bae1ac150" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isUniformMemOp</definition>
+        <argsstring>(Instruction &amp;I, ElementCount VF) const</argsstring>
+        <name>isUniformMemOp</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isUniformMemOp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_element_count" kindref="compound">ElementCount</ref></type>
+          <declname>VF</declname>
+        </param>
+        <briefdescription>
+<para>A uniform memory op is a load or store which accesses the same memory location on all <computeroutput>VF</computeroutput> lanes, if <computeroutput>VF</computeroutput> is provided and otherwise if the memory location is invariant. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="375" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="600" bodyend="610"/>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1a3b78b24a3c241e611957b82cd12640da" compoundref="_loop_vectorization_legality_8cpp" startline="1402" endline="1414">blockNeedsPredication</references>
+        <references refid="namespacellvm_1a2922c0c507ccec5bea4642aff9e2e328" compoundref="_instructions_8h" startline="4984" endline="4990">llvm::getLoadStorePointerOperand</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1a86e581cb8e98cb0649e8b524eed5c9c0" compoundref="_loop_vectorization_legality_8cpp" startline="567" endline="598">isUniform</references>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1af15a090796e9a873af5163ba057f4c85" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_runtime_pointer_checking" kindref="compound">RuntimePointerChecking</ref> *</type>
+        <definition>const RuntimePointerChecking * llvm::LoopVectorizationLegality::getRuntimePointerChecking</definition>
+        <argsstring>() const</argsstring>
+        <name>getRuntimePointerChecking</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getRuntimePointerChecking</qualifiedname>
+        <briefdescription>
+<para>Returns the information that we collected about runtime memory check. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="378" column="32" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="378" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1ab5632546144c4db5bbe1f975aeebd9d2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop_access_info" kindref="compound">LoopAccessInfo</ref> *</type>
+        <definition>const LoopAccessInfo * llvm::LoopVectorizationLegality::getLAI</definition>
+        <argsstring>() const</argsstring>
+        <name>getLAI</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getLAI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="382" column="24" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="382" bodyend="382"/>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a8ac11c0decb75671fa7087748d32c156" compoundref="_a_r_m_target_transform_info_8cpp" startline="2437" endline="2488">llvm::ARMTTIImpl::preferPredicateOverEpilogue</referencedby>
+        <referencedby refid="structllvm_1_1_loop_vectorize_pass_1a160afa01e95095aa0c8115b6e0e6f4a6" compoundref="_loop_vectorize_8cpp" startline="10327" endline="10756">llvm::LoopVectorizePass::processLoop</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1adeb41c907ebde15846bc643325909f95" compoundref="_loop_vectorize_8cpp" startline="9946" endline="10007">processLoopInVPlanNativePath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1aa6717c9edc2614476ebb19bd73e8bcb8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isSafeForAnyVectorWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>isSafeForAnyVectorWidth</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isSafeForAnyVectorWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="384" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="384" bodyend="386"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a2551d678f358fcb0f498224876f58673" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::LoopVectorizationLegality::getMaxSafeVectorWidthInBits</definition>
+        <argsstring>() const</argsstring>
+        <name>getMaxSafeVectorWidthInBits</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getMaxSafeVectorWidthInBits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="388" column="12" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="388" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1ab22ff9e23f7f27234c8f6ec76db0c1f3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::hasUncountableEarlyExit</definition>
+        <argsstring>() const</argsstring>
+        <name>hasUncountableEarlyExit</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::hasUncountableEarlyExit</qualifiedname>
+        <briefdescription>
+<para>Returns true if the loop has exactly one uncountable early exit, i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>an uncountable exit that isn&apos;t the latch block. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="394" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="394" bodyend="396"/>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1ad9e8b4a71d2eb63862cf0dfcb0e7d786" compoundref="_loop_vectorization_legality_8h" startline="463" endline="465">getUncountableEdge</references>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a3b78b24a3c241e611957b82cd12640da" compoundref="_loop_vectorization_legality_8cpp" startline="1402" endline="1414">blockNeedsPredication</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a64fd596d86681aff77584c0fd661f18a" compoundref="_loop_vectorization_legality_8h" startline="405" endline="407">getUncountableEarlyExitBlock</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1ae1727fd1036f0c932cae65a5b5db5a0d" compoundref="_loop_vectorization_legality_8h" startline="399" endline="401">getUncountableEarlyExitingBlock</referencedby>
+        <referencedby refid="structllvm_1_1_loop_vectorize_pass_1a160afa01e95095aa0c8115b6e0e6f4a6" compoundref="_loop_vectorize_8cpp" startline="10327" endline="10756">llvm::LoopVectorizePass::processLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1ae1727fd1036f0c932cae65a5b5db5a0d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+        <definition>BasicBlock * llvm::LoopVectorizationLegality::getUncountableEarlyExitingBlock</definition>
+        <argsstring>() const</argsstring>
+        <name>getUncountableEarlyExitingBlock</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getUncountableEarlyExitingBlock</qualifiedname>
+        <briefdescription>
+<para>Returns the uncountable early exiting block, if there is exactly one. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="399" column="14" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="399" bodyend="401"/>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1ad9e8b4a71d2eb63862cf0dfcb0e7d786" compoundref="_loop_vectorization_legality_8h" startline="463" endline="465">getUncountableEdge</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1ab22ff9e23f7f27234c8f6ec76db0c1f3" compoundref="_loop_vectorization_legality_8h" startline="394" endline="396">hasUncountableEarlyExit</references>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a3b78b24a3c241e611957b82cd12640da" compoundref="_loop_vectorization_legality_8cpp" startline="1402" endline="1414">blockNeedsPredication</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a64fd596d86681aff77584c0fd661f18a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+        <definition>BasicBlock * llvm::LoopVectorizationLegality::getUncountableEarlyExitBlock</definition>
+        <argsstring>() const</argsstring>
+        <name>getUncountableEarlyExitBlock</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getUncountableEarlyExitBlock</qualifiedname>
+        <briefdescription>
+<para>Returns the destination of the uncountable early exiting block, if there is exactly one. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="405" column="14" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="405" bodyend="407"/>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1ad9e8b4a71d2eb63862cf0dfcb0e7d786" compoundref="_loop_vectorization_legality_8h" startline="463" endline="465">getUncountableEdge</references>
+        <references refid="classllvm_1_1_loop_vectorization_legality_1ab22ff9e23f7f27234c8f6ec76db0c1f3" compoundref="_loop_vectorization_legality_8h" startline="394" endline="396">hasUncountableEarlyExit</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1af0ced1e23ba4d4a56286b5f17f448ed7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isMaskRequired</definition>
+        <argsstring>(const Instruction *I) const</argsstring>
+        <name>isMaskRequired</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isMaskRequired</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if vector representation of the instruction <computeroutput>I</computeroutput> requires mask. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="411" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="411" bodyend="413"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a23ba553cf7c1e1b64bbf9d30eb540234" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::hasVectorCallVariants</definition>
+        <argsstring>() const</argsstring>
+        <name>hasVectorCallVariants</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::hasVectorCallVariants</qualifiedname>
+        <briefdescription>
+<para>Returns true if there is at least one function call in the loop which has a vectorized variant available. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="417" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="417" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a9ede4d70a86b91ae038a77c86b3f4aaa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::hasStructVectorCall</definition>
+        <argsstring>() const</argsstring>
+        <name>hasStructVectorCall</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::hasStructVectorCall</qualifiedname>
+        <briefdescription>
+<para>Returns true if there is at least one function call in the loop which returns a struct type and needs to be vectorized. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="421" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="421" bodyend="421"/>
+        <referencedby refid="structllvm_1_1_loop_vectorize_pass_1a160afa01e95095aa0c8115b6e0e6f4a6" compoundref="_loop_vectorize_8cpp" startline="10327" endline="10756">llvm::LoopVectorizePass::processLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a0f59a9c87ede76fde54388f16562a930" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::LoopVectorizationLegality::getNumStores</definition>
+        <argsstring>() const</argsstring>
+        <name>getNumStores</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getNumStores</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="423" column="12" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="423" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1aa9d35bb02e49c20fcafc8d179559da10" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::LoopVectorizationLegality::getNumLoads</definition>
+        <argsstring>() const</argsstring>
+        <name>getNumLoads</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getNumLoads</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="424" column="12" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="424" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a4f5c51eb16a87d311cfebdceb7b04ea7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_histogram_info" kindref="compound">HistogramInfo</ref> * &gt;</type>
+        <definition>std::optional&lt; const HistogramInfo * &gt; llvm::LoopVectorizationLegality::getHistogramInfo</definition>
+        <argsstring>(Instruction *I) const</argsstring>
+        <name>getHistogramInfo</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getHistogramInfo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Returns a HistogramInfo* for the given instruction if it was determined to be part of a load -&gt; update -&gt; store sequence where multiple lanes may be working on the same memory address. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="429" column="17" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="429" bodyend="435"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1ab306c8094bdb8c7cbdbdfb9a05800007" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::hasHistograms</definition>
+        <argsstring>() const</argsstring>
+        <name>hasHistograms</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::hasHistograms</qualifiedname>
+        <briefdescription>
+<para>Returns a list of all known histogram operations in the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="438" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="438" bodyend="438"/>
+        <referencedby refid="structllvm_1_1_loop_vectorize_pass_1a160afa01e95095aa0c8115b6e0e6f4a6" compoundref="_loop_vectorize_8cpp" startline="10327" endline="10756">llvm::LoopVectorizePass::processLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a3ecfb3b35e9665ce1444966f8ae0930f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_predicated_scalar_evolution" kindref="compound">PredicatedScalarEvolution</ref> *</type>
+        <definition>PredicatedScalarEvolution * llvm::LoopVectorizationLegality::getPredicatedScalarEvolution</definition>
+        <argsstring>() const</argsstring>
+        <name>getPredicatedScalarEvolution</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getPredicatedScalarEvolution</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="440" column="29" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="440" bodyend="442"/>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1ab68c7ba7bd95784715357a3fbf5235a7" compoundref="_a_arch64_target_transform_info_8cpp" startline="5062" endline="5100">llvm::AArch64TTIImpl::preferPredicateOverEpilogue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1ae2bbeec474957c61045c6cb37f2d8379" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+        <definition>Loop * llvm::LoopVectorizationLegality::getLoop</definition>
+        <argsstring>() const</argsstring>
+        <name>getLoop</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getLoop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="444" column="8" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="444" bodyend="444"/>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1ab68c7ba7bd95784715357a3fbf5235a7" compoundref="_a_arch64_target_transform_info_8cpp" startline="5062" endline="5100">llvm::AArch64TTIImpl::preferPredicateOverEpilogue</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a8ac11c0decb75671fa7087748d32c156" compoundref="_a_r_m_target_transform_info_8cpp" startline="2437" endline="2488">llvm::ARMTTIImpl::preferPredicateOverEpilogue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a13545e37bc06efcf7642cfda97c65bd3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> *</type>
+        <definition>LoopInfo * llvm::LoopVectorizationLegality::getLoopInfo</definition>
+        <argsstring>() const</argsstring>
+        <name>getLoopInfo</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getLoopInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="446" column="12" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="446" bodyend="446"/>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a8ac11c0decb75671fa7087748d32c156" compoundref="_a_r_m_target_transform_info_8cpp" startline="2437" endline="2488">llvm::ARMTTIImpl::preferPredicateOverEpilogue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a4b011656b75317bd3e291ef771491f10" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref> *</type>
+        <definition>AssumptionCache * llvm::LoopVectorizationLegality::getAssumptionCache</definition>
+        <argsstring>() const</argsstring>
+        <name>getAssumptionCache</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getAssumptionCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="448" column="19" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="448" bodyend="448"/>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a8ac11c0decb75671fa7087748d32c156" compoundref="_a_r_m_target_transform_info_8cpp" startline="2437" endline="2488">llvm::ARMTTIImpl::preferPredicateOverEpilogue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1abf6b349a0e6598527d2ea3ef89dba230" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> *</type>
+        <definition>ScalarEvolution * llvm::LoopVectorizationLegality::getScalarEvolution</definition>
+        <argsstring>() const</argsstring>
+        <name>getScalarEvolution</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getScalarEvolution</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="450" column="19" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="450" bodyend="450"/>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a8ac11c0decb75671fa7087748d32c156" compoundref="_a_r_m_target_transform_info_8cpp" startline="2437" endline="2488">llvm::ARMTTIImpl::preferPredicateOverEpilogue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a3add6f3f23fa2ec67277682de9acef7f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+        <definition>DominatorTree * llvm::LoopVectorizationLegality::getDominatorTree</definition>
+        <argsstring>() const</argsstring>
+        <name>getDominatorTree</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getDominatorTree</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="452" column="17" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="452" bodyend="452"/>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a8ac11c0decb75671fa7087748d32c156" compoundref="_a_r_m_target_transform_info_8cpp" startline="2437" endline="2488">llvm::ARMTTIImpl::preferPredicateOverEpilogue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a7a32abdcf9e80b2483aa55bc36f2840e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, 4 &gt; &amp;</type>
+        <definition>const SmallVector&lt; BasicBlock *, 4 &gt; &amp; llvm::LoopVectorizationLegality::getCountableExitingBlocks</definition>
+        <argsstring>() const</argsstring>
+        <name>getCountableExitingBlocks</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getCountableExitingBlocks</qualifiedname>
+        <briefdescription>
+<para>Returns all exiting blocks with a countable exit, i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>the exit-not-taken count is known exactly at compile time. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="456" column="21" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="456" bodyend="458"/>
+        <referencedby refid="structllvm_1_1_loop_vectorize_pass_1a160afa01e95095aa0c8115b6e0e6f4a6" compoundref="_loop_vectorize_8cpp" startline="10327" endline="10756">llvm::LoopVectorizePass::processLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1ad9e8b4a71d2eb63862cf0dfcb0e7d786" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; std::pair&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt; &gt;</type>
+        <definition>std::optional&lt; std::pair&lt; BasicBlock *, BasicBlock * &gt; &gt; llvm::LoopVectorizationLegality::getUncountableEdge</definition>
+        <argsstring>() const</argsstring>
+        <name>getUncountableEdge</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::getUncountableEdge</qualifiedname>
+        <briefdescription>
+<para>Returns the loop edge to an uncountable exit, or std::nullopt if there isn&apos;t a single such edge. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="463" column="3" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="463" bodyend="465"/>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1a64fd596d86681aff77584c0fd661f18a" compoundref="_loop_vectorization_legality_8h" startline="405" endline="407">getUncountableEarlyExitBlock</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1ae1727fd1036f0c932cae65a5b5db5a0d" compoundref="_loop_vectorization_legality_8h" startline="399" endline="401">getUncountableEarlyExitingBlock</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_legality_1ab22ff9e23f7f27234c8f6ec76db0c1f3" compoundref="_loop_vectorization_legality_8h" startline="394" endline="396">hasUncountableEarlyExit</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a9a41b60d10bc31461995d56e5e05d8c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::canVectorizeLoopNestCFG</definition>
+        <argsstring>(Loop *Lp, bool UseVPlanNativePath)</argsstring>
+        <name>canVectorizeLoopNestCFG</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::canVectorizeLoopNestCFG</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+          <declname>Lp</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>UseVPlanNativePath</declname>
+        </param>
+        <briefdescription>
+<para>Return true if the pre-header, exiting and latch blocks of <computeroutput>Lp</computeroutput> and all its nested loops are considered legal for vectorization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These legal checks are common for inner and outer loop vectorization. Temporarily taking UseVPlanNativePath parameter. If true, take the new code path being implemented for outer loop vectorization (should be functional for inner loop vectorization) based on <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. If false, good old LV code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="475" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1586" bodyend="1610"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1aa2be4e9ca1d89ddb6724948c0dfc57d4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::setupOuterLoopInductions</definition>
+        <argsstring>()</argsstring>
+        <name>setupOuterLoopInductions</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::setupOuterLoopInductions</qualifiedname>
+        <briefdescription>
+<para>Set up outer loop inductions by checking Phis in outer loop header for supported inductions (int inductions). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return false if any of these Phis is not a supported induction or if we fail to find an induction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="480" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="731" bodyend="750"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1adb63ada87ea6eadc31ce33747903538f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::canVectorizeLoopCFG</definition>
+        <argsstring>(Loop *Lp, bool UseVPlanNativePath)</argsstring>
+        <name>canVectorizeLoopCFG</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::canVectorizeLoopCFG</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+          <declname>Lp</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>UseVPlanNativePath</declname>
+        </param>
+        <briefdescription>
+<para>Return true if the pre-header, exiting and latch blocks of <computeroutput>Lp</computeroutput> (non-recursive) are considered legal for vectorization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Temporarily taking UseVPlanNativePath parameter. If true, take the new code path being implemented for outer loop vectorization (should be functional for inner loop vectorization) based on <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. If false, good old LV code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="488" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1545" bodyend="1584"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1aba58236b7663ae958f41a085233e758a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::canVectorizeInstrs</definition>
+        <argsstring>()</argsstring>
+        <name>canVectorizeInstrs</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::canVectorizeInstrs</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if a single basic block loop is vectorizable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>At this point we know that this is a loop with a constant trip count and we only need to check individual instructions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="493" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="793" bodyend="1078"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a637e3ecb85b6fff4f0f166d67f45c270" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::canVectorizeMemory</definition>
+        <argsstring>()</argsstring>
+        <name>canVectorizeMemory</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::canVectorizeMemory</qualifiedname>
+        <briefdescription>
+<para>When we vectorize loops we may change the order in which we read and write from memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method checks if it is legal to vectorize the code, considering only memory constrains. Returns true if the loop is vectorizable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="499" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1207" bodyend="1309"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a05fda32a2e1807a0b70938d95a27c2ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::canVectorizeIndirectUnsafeDependences</definition>
+        <argsstring>()</argsstring>
+        <name>canVectorizeIndirectUnsafeDependences</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::canVectorizeIndirectUnsafeDependences</qualifiedname>
+        <briefdescription>
+<para>If LAA cannot determine whether all dependences are safe, we may be able to further analyse some IndirectUnsafe dependences and if they match a certain pattern (like a histogram) then we may still be able to vectorize. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="504" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1163" bodyend="1205"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1ae6a5ae24d98b624801fe6776da7e47dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::canVectorizeWithIfConvert</definition>
+        <argsstring>()</argsstring>
+        <name>canVectorizeWithIfConvert</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::canVectorizeWithIfConvert</qualifiedname>
+        <briefdescription>
+<para>Return true if we can vectorize this loop using the IF-conversion transformation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="508" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1467" bodyend="1542"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a9c5aafa99304a61bb2e13f6c2bd25a7d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::canVectorizeOuterLoop</definition>
+        <argsstring>()</argsstring>
+        <name>canVectorizeOuterLoop</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::canVectorizeOuterLoop</qualifiedname>
+        <briefdescription>
+<para>Return true if we can vectorize this outer loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The method performs specific checks for outer loop vectorization. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="512" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="612" bodyend="677"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a0961a8a5109f7d5c34a2313293e602e2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::isVectorizableEarlyExitLoop</definition>
+        <argsstring>()</argsstring>
+        <name>isVectorizableEarlyExitLoop</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::isVectorizableEarlyExitLoop</qualifiedname>
+        <briefdescription>
+<para>Returns true if this is an early exit loop that can be vectorized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Currently, a loop with an uncountable early exit is considered vectorizable if:<orderedlist>
+<listitem><para>There are no writes to memory in the loop.</para>
+</listitem><listitem><para>The loop has only one early uncountable exit</para>
+</listitem><listitem><para>The early exit block dominates the latch block.</para>
+</listitem><listitem><para>The latch block has an exact exit count.</para>
+</listitem><listitem><para>The loop does not contain reductions or recurrences.</para>
+</listitem><listitem><para>We can prove at compile-time that loops will not contain faulting loads.</para>
+</listitem><listitem><para>It is safe to speculatively execute instructions such as divide or call instructions. The list above is not based on theoretical limitations of vectorization, but simply a statement that more work is needed to support these additional cases safely. </para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="529" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1612" bodyend="1760"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1aeb9b746c802505da2247f2d2252b6b43" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::LoopVectorizationLegality::blockCanBePredicated</definition>
+        <argsstring>(BasicBlock *BB, SmallPtrSetImpl&lt; Value * &gt; &amp;SafePtrs, SmallPtrSetImpl&lt; const Instruction * &gt; &amp;MaskedOp) const</argsstring>
+        <name>blockCanBePredicated</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::blockCanBePredicated</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>SafePtrs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> * &gt; &amp;</type>
+          <declname>MaskedOp</declname>
+        </param>
+        <briefdescription>
+<para>Return true if all of the instructions in the block can be speculatively executed, and record the loads/stores that require masking. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>SafePtrs</computeroutput> is a list of addresses that are known to be legal and we know that we can read from them without segfault. <computeroutput>MaskedOp</computeroutput> is a list of instructions that have to be transformed into calls to the appropriate masked intrinsic when the loop is vectorized or dropped if the instruction is a conditional assume intrinsic. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="539" column="3" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="1416" bodyend="1465"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_loop_vectorization_legality_1a7c97b098510b893ff3c16829cfa78f3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::LoopVectorizationLegality::addInductionPhi</definition>
+        <argsstring>(PHINode *Phi, const InductionDescriptor &amp;ID, SmallPtrSetImpl&lt; Value * &gt; &amp;AllowedExit)</argsstring>
+        <name>addInductionPhi</name>
+        <qualifiedname>llvm::LoopVectorizationLegality::addInductionPhi</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *</type>
+          <declname>Phi</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_induction_descriptor" kindref="compound">InductionDescriptor</ref> &amp;</type>
+          <declname>ID</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>AllowedExit</declname>
+        </param>
+        <briefdescription>
+<para>Updates the vectorization state by adding <computeroutput>Phi</computeroutput> to the inductions list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can set <computeroutput>Phi</computeroutput> as the main induction of the loop if <computeroutput>Phi</computeroutput> is a better choice for the main induction than the existing one. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="545" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorizationLegality.cpp" bodystart="679" bodyend="729"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1_loop_vectorization_legality" kindref="compound">LoopVectorizationLegality</ref> checks if it is legal to vectorize a loop, and to what vectorization factor. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class does not look at the profitability of vectorization, only the legality. This class has two main kinds of checks:<itemizedlist>
+<listitem><para><ref refid="classllvm_1_1sys_1_1_memory" kindref="compound">Memory</ref> checks - The code in canVectorizeMemory checks if vectorization will change the order of memory accesses in a way that will change the correctness of the program.</para>
+</listitem><listitem><para>Scalars checks - The code in canVectorizeInstrs and canVectorizeMemory checks for a number of different conditions, such as the availability of a single induction variable, that all types are supported and vectorize-able, etc. This code reflects the capabilities of <ref refid="classllvm_1_1_inner_loop_vectorizer" kindref="compound">InnerLoopVectorizer</ref>. This class is also used by <ref refid="classllvm_1_1_inner_loop_vectorizer" kindref="compound">InnerLoopVectorizer</ref> for identifying induction variable and the different reduction variables. </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" line="252" column="1" bodyfile="include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h" bodystart="252" bodyend="655"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a860a8a7b7929889b96c26360e192e383" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>AC</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a7c97b098510b893ff3c16829cfa78f3b" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>addInductionPhi</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aa6d7005ce88b86f4f401da73fe6b3deb" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>AllowedExit</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1abfc77083a325ee5d9e483dd5b4129a28" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>BFI</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aeb9b746c802505da2247f2d2252b6b43" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>blockCanBePredicated</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a3b78b24a3c241e611957b82cd12640da" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>blockNeedsPredication</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aafa8144325b3c584e828b07d73a8cb25" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>canFoldTailByMasking</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a3ce10d1174bdfcac2b73ed7efa352b7f" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>canVectorize</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a552a158f5a673da0a26461d1471cea41" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>canVectorizeFPMath</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a05fda32a2e1807a0b70938d95a27c2ed" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>canVectorizeIndirectUnsafeDependences</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aba58236b7663ae958f41a085233e758a" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>canVectorizeInstrs</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1adb63ada87ea6eadc31ce33747903538f" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>canVectorizeLoopCFG</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a9a41b60d10bc31461995d56e5e05d8c9" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>canVectorizeLoopNestCFG</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a637e3ecb85b6fff4f0f166d67f45c270" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>canVectorizeMemory</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a9c5aafa99304a61bb2e13f6c2bd25a7d" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>canVectorizeOuterLoop</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ae6a5ae24d98b624801fe6776da7e47dc" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>canVectorizeWithIfConvert</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a2d36674731fde829eee1057072582274" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>CountableExitingBlocks</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1adc4b9d46b9523a6b927694ed619a5867" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>DB</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a27b56d32f00a7726f94dfa06ed752670" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>DT</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a191a73e34e9a7d2e062bb060ed4e7ade" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>FixedOrderRecurrences</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a4b011656b75317bd3e291ef771491f10" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getAssumptionCache</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a7a32abdcf9e80b2483aa55bc36f2840e" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getCountableExitingBlocks</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a3add6f3f23fa2ec67277682de9acef7f" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getDominatorTree</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a317c5bedc82363ee7513fe56790878e7" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getFixedOrderRecurrences</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a4f5c51eb16a87d311cfebdceb7b04ea7" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getHistogramInfo</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a8dffddf3feec953bba0425b324b380dc" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getInductionVars</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a74bcb5c6d80d9d7fb0eeb1131eeef2dc" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getIntOrFpInductionDescriptor</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ab5632546144c4db5bbe1f975aeebd9d2" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getLAI</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ae2bbeec474957c61045c6cb37f2d8379" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getLoop</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a13545e37bc06efcf7642cfda97c65bd3" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getLoopInfo</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a2551d678f358fcb0f498224876f58673" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getMaxSafeVectorWidthInBits</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aa9d35bb02e49c20fcafc8d179559da10" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getNumLoads</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a0f59a9c87ede76fde54388f16562a930" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getNumStores</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a728069d0bcacf976cbb3764bad749562" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getPointerInductionDescriptor</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a3ecfb3b35e9665ce1444966f8ae0930f" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getPredicatedScalarEvolution</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a78dab1aa1facf4bf6300b3275490fa11" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getPrimaryInduction</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aa31c04881c640716da40ae22ddda69ad" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getReductionVars</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1af15a090796e9a873af5163ba057f4c85" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getRuntimePointerChecking</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1abf6b349a0e6598527d2ea3ef89dba230" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getScalarEvolution</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a64fd596d86681aff77584c0fd661f18a" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getUncountableEarlyExitBlock</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ae1727fd1036f0c932cae65a5b5db5a0d" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getUncountableEarlyExitingBlock</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ad9e8b4a71d2eb63862cf0dfcb0e7d786" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getUncountableEdge</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ab1bbdeff3d286d3cd7a6e1f67a7e43ea" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>getWidestInductionType</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ab306c8094bdb8c7cbdbdfb9a05800007" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>hasHistograms</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a9ede4d70a86b91ae038a77c86b3f4aaa" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>hasStructVectorCall</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ab22ff9e23f7f27234c8f6ec76db0c1f3" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>hasUncountableEarlyExit</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a23ba553cf7c1e1b64bbf9d30eb540234" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>hasVectorCallVariants</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a3667ca6a2694b97d6fae411ab3a3c5fd" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>Hints</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a585a359098cc54d37a1e25848125648d" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>Histograms</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a4a4f19197a92484b208fc2bfe0aca7a3" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>InductionCastsToIgnore</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a063c4d98febe7ef90dddbfedcfc59d16" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>InductionList</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a051d230e9e98d92f852cfd260bb5e9a4" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>Inductions</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1afd0c0e675aff7e870f18b9c911977b7a" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isCastedInductionVariable</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a4589ea484ebe1919b451fff3948a17cc" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isConsecutivePtr</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a5d6b8f1a562e7d26404946de46d3045b" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isFixedOrderRecurrence</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a7803d6f1162773c3b1a61e3ff441fcb8" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isInductionPhi</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1af9f3d6495086eb1a43e829bf045fd073" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isInductionVariable</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aa10b9dac96a36c8b4da25fc6fa1d4352" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isInvariant</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a34f384c7ff8e4b23cc79156daf2a5c11" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isInvariantAddressOfReduction</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a1c9fd1c0627dfa3e013a1b2c7416ae90" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isInvariantStoreOfReduction</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1af0ced1e23ba4d4a56286b5f17f448ed7" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isMaskRequired</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a5c26e54d871c42c42dc62f9d449c633a" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isReductionVariable</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aa6717c9edc2614476ebb19bd73e8bcb8" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isSafeForAnyVectorWidth</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a86e581cb8e98cb0649e8b524eed5c9c0" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isUniform</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ac562402715584ed9e836026bae1ac150" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isUniformMemOp</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a0961a8a5109f7d5c34a2313293e602e2" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>isVectorizableEarlyExitLoop</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aaca72182d1d5250777d463e2254ed8ac" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>LAI</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a9867aa9ca1a32c23a5c99862d1699bac" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>LAIs</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aecb9b6635ed708773bc9c079fc10cb1b" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>LI</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a57ee5ed437953ba182781372d6a03fb3" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>LoopVectorizationLegality</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1afccd90bfd1e42ce5292774817868ad50" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>MaskedOp</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a1dd8f7c0effe71c22a81569e18560945" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>ORE</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ab0b7c658c190bc113272ef4257a47659" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>prepareToFoldTailByMasking</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a09ebbb2516317552943315010ba587c6" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>PrimaryInduction</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a3bdd6f36c94c7915cb98d7ad501a49be" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>PSE</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a6651b04bacfb0bbeca80220c9c106e43" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>PSI</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a543d30d3a2b289aaa6b363be25d2b295" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>RecurrenceSet</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1abe830a64fea7dbeee20cdda3726b0120" prot="public" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>ReductionList</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ac847a2194c17711fa779faf681db9633" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>Reductions</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1abd645b276e25a4f01514a0356d3c3384" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>Requirements</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aa2be4e9ca1d89ddb6724948c0dfc57d4" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>setupOuterLoopInductions</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aa1e9e9e7a204e2a788f60c966c899e85" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>StructVecCallFound</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a3808cce17fc47f8edd58849af507fc2f" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>TheLoop</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1aa863ed59572b0d4943ce4cce06179f12" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>TLI</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1acaaacd1e1d906e11bdf1f8b6fb7c91b9" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>TTI</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1adde701a5f5765e682e8b4480ebae3be5" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>UncountableEdge</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1ab4a395814e2243de64a10a416dc8735f" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>VecCallVariantsFound</name></member>
+      <member refid="classllvm_1_1_loop_vectorization_legality_1a721cfa46a725be4df869b2ae813b2220" prot="private" virt="non-virtual"><scope>llvm::LoopVectorizationLegality</scope><name>WidestIndTy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

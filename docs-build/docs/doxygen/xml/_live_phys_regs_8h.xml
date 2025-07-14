@@ -1,0 +1,2189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_live_phys_regs_8h" kind="file" language="C++">
+    <compoundname>LivePhysRegs.h</compoundname>
+    <includes refid="_sparse_set_8h" local="yes">llvm/ADT/SparseSet.h</includes>
+    <includes refid="_machine_basic_block_8h" local="yes">llvm/CodeGen/MachineBasicBlock.h</includes>
+    <includes refid="_target_register_info_8h" local="yes">llvm/CodeGen/TargetRegisterInfo.h</includes>
+    <includes refid="_m_c_register_8h" local="yes">llvm/MC/MCRegister.h</includes>
+    <includes refid="_m_c_register_info_8h" local="yes">llvm/MC/MCRegisterInfo.h</includes>
+    <includes local="no">cassert</includes>
+    <includes local="no">utility</includes>
+    <includedby refid="_branch_folding_8h" local="yes">lib/CodeGen/BranchFolding.h</includedby>
+    <includedby refid="_branch_relaxation_8cpp" local="yes">lib/CodeGen/BranchRelaxation.cpp</includedby>
+    <includedby refid="_break_false_deps_8cpp" local="yes">lib/CodeGen/BreakFalseDeps.cpp</includedby>
+    <includedby refid="_if_conversion_8cpp" local="yes">lib/CodeGen/IfConversion.cpp</includedby>
+    <includedby refid="_live_phys_regs_8cpp" local="yes">lib/CodeGen/LivePhysRegs.cpp</includedby>
+    <includedby refid="_machine_basic_block_8cpp" local="yes">lib/CodeGen/MachineBasicBlock.cpp</includedby>
+    <includedby refid="_machine_outliner_8cpp" local="yes">lib/CodeGen/MachineOutliner.cpp</includedby>
+    <includedby refid="_schedule_d_a_g_instrs_8cpp" local="yes">lib/CodeGen/ScheduleDAGInstrs.cpp</includedby>
+    <includedby refid="_stack_map_liveness_analysis_8cpp" local="yes">lib/CodeGen/StackMapLivenessAnalysis.cpp</includedby>
+    <includedby refid="_a_arch64_expand_pseudo_insts_8cpp" local="yes">lib/Target/AArch64/AArch64ExpandPseudoInsts.cpp</includedby>
+    <includedby refid="_a_arch64_frame_lowering_8cpp" local="yes">lib/Target/AArch64/AArch64FrameLowering.cpp</includedby>
+    <includedby refid="_a_arch64_instr_info_8cpp" local="yes">lib/Target/AArch64/AArch64InstrInfo.cpp</includedby>
+    <includedby refid="_a_r_m_block_placement_8cpp" local="yes">lib/Target/ARM/ARMBlockPlacement.cpp</includedby>
+    <includedby refid="_a_r_m_constant_island_pass_8cpp" local="yes">lib/Target/ARM/ARMConstantIslandPass.cpp</includedby>
+    <includedby refid="_a_r_m_expand_pseudo_insts_8cpp" local="yes">lib/Target/ARM/ARMExpandPseudoInsts.cpp</includedby>
+    <includedby refid="_a_r_m_low_overhead_loops_8cpp" local="yes">lib/Target/ARM/ARMLowOverheadLoops.cpp</includedby>
+    <includedby refid="_thumb1_frame_lowering_8cpp" local="yes">lib/Target/ARM/Thumb1FrameLowering.cpp</includedby>
+    <includedby refid="_b_p_f_m_i_peephole_8cpp" local="yes">lib/Target/BPF/BPFMIPeephole.cpp</includedby>
+    <includedby refid="_hexagon_frame_lowering_8cpp" local="yes">lib/Target/Hexagon/HexagonFrameLowering.cpp</includedby>
+    <includedby refid="_hexagon_instr_info_8cpp" local="yes">lib/Target/Hexagon/HexagonInstrInfo.cpp</includedby>
+    <includedby refid="_loong_arch_expand_atomic_pseudo_insts_8cpp" local="yes">lib/Target/LoongArch/LoongArchExpandAtomicPseudoInsts.cpp</includedby>
+    <includedby refid="_loong_arch_expand_pseudo_insts_8cpp" local="yes">lib/Target/LoongArch/LoongArchExpandPseudoInsts.cpp</includedby>
+    <includedby refid="_m68k_instr_info_8cpp" local="yes">lib/Target/M68k/M68kInstrInfo.cpp</includedby>
+    <includedby refid="_mips_expand_pseudo_8cpp" local="yes">lib/Target/Mips/MipsExpandPseudo.cpp</includedby>
+    <includedby refid="_p_p_c_expand_atomic_pseudo_insts_8cpp" local="yes">lib/Target/PowerPC/PPCExpandAtomicPseudoInsts.cpp</includedby>
+    <includedby refid="_p_p_c_frame_lowering_8cpp" local="yes">lib/Target/PowerPC/PPCFrameLowering.cpp</includedby>
+    <includedby refid="_p_p_c_instr_info_8cpp" local="yes">lib/Target/PowerPC/PPCInstrInfo.cpp</includedby>
+    <includedby refid="_p_p_c_pre_emit_peephole_8cpp" local="yes">lib/Target/PowerPC/PPCPreEmitPeephole.cpp</includedby>
+    <includedby refid="_r_i_s_c_v_expand_atomic_pseudo_insts_8cpp" local="yes">lib/Target/RISCV/RISCVExpandAtomicPseudoInsts.cpp</includedby>
+    <includedby refid="_r_i_s_c_v_expand_pseudo_insts_8cpp" local="yes">lib/Target/RISCV/RISCVExpandPseudoInsts.cpp</includedby>
+    <includedby refid="_r_i_s_c_v_frame_lowering_8cpp" local="yes">lib/Target/RISCV/RISCVFrameLowering.cpp</includedby>
+    <includedby refid="_system_z_frame_lowering_8cpp" local="yes">lib/Target/SystemZ/SystemZFrameLowering.cpp</includedby>
+    <includedby refid="_system_z_post_rewrite_8cpp" local="yes">lib/Target/SystemZ/SystemZPostRewrite.cpp</includedby>
+    <includedby refid="_x86_expand_pseudo_8cpp" local="yes">lib/Target/X86/X86ExpandPseudo.cpp</includedby>
+    <includedby refid="_x86_frame_lowering_8cpp" local="yes">lib/Target/X86/X86FrameLowering.cpp</includedby>
+    <includedby refid="_x86_instr_info_8cpp" local="yes">lib/Target/X86/X86InstrInfo.cpp</includedby>
+    <includedby refid="_x86_win_fixup_buffer_security_check_8cpp" local="yes">lib/Target/X86/X86WinFixupBufferSecurityCheck.cpp</includedby>
+    <incdepgraph>
+      <node id="34">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>llvm-c/ExternC.h</label>
+        <link refid="_extern_c_8h"/>
+      </node>
+      <node id="81">
+        <label>llvm-c/Types.h</label>
+        <link refid="_types_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm/ADT/ADL.h</label>
+        <link refid="_a_d_l_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>llvm/ADT/ArrayRef.h</label>
+        <link refid="_array_ref_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>llvm/ADT/Bitfields.h</label>
+        <link refid="_bitfields_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>llvm/ADT/BitmaskEnum.h</label>
+        <link refid="_bitmask_enum_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>llvm/ADT/DenseMap.h</label>
+        <link refid="_dense_map_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm/ADT/DenseMapInfo.h</label>
+        <link refid="_dense_map_info_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>llvm/ADT/EpochTracker.h</label>
+        <link refid="_epoch_tracker_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm/ADT/GraphTraits.h</label>
+        <link refid="_graph_traits_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm/ADT/Hashing.h</label>
+        <link refid="_hashing_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>llvm/ADT/PointerIntPair.h</label>
+        <link refid="_pointer_int_pair_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>llvm/ADT/PointerSumType.h</label>
+        <link refid="_pointer_sum_type_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>llvm/ADT/PointerUnion.h</label>
+        <link refid="_pointer_union_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm/ADT/STLExtras.h</label>
+        <link refid="_s_t_l_extras_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>llvm/ADT/Sequence.h</label>
+        <link refid="_sequence_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>llvm/ADT/SmallString.h</label>
+        <link refid="_small_string_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm/ADT/SmallVector.h</label>
+        <link refid="_small_vector_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>llvm/ADT/SparseBitVector.h</label>
+        <link refid="_sparse_bit_vector_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm/ADT/SparseSet.h</label>
+        <link refid="_sparse_set_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>llvm/ADT/StringMapEntry.h</label>
+        <link refid="_a_d_t_2_string_map_entry_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>llvm/ADT/StringRef.h</label>
+        <link refid="_string_ref_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm/ADT/bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm/ADT/identity.h</label>
+        <link refid="identity_8h"/>
+      </node>
+      <node id="55">
+        <label>llvm/ADT/ilist.h</label>
+        <link refid="ilist_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>llvm/ADT/ilist_base.h</label>
+        <link refid="ilist__base_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>llvm/ADT/ilist_iterator.h</label>
+        <link refid="ilist__iterator_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>llvm/ADT/ilist_node.h</label>
+        <link refid="ilist__node_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>llvm/ADT/ilist_node_base.h</label>
+        <link refid="ilist__node__base_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>llvm/ADT/ilist_node_options.h</label>
+        <link refid="ilist__node__options_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm/ADT/iterator.h</label>
+        <link refid="iterator_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm/ADT/iterator_range.h</label>
+        <link refid="iterator__range_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>llvm/ADT/simple_ilist.h</label>
+        <link refid="simple__ilist_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>llvm/Analysis/MemoryLocation.h</label>
+        <link refid="_memory_location_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/llvm/CodeGen/LivePhysRegs.h</label>
+        <link refid="_live_phys_regs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm/CodeGen/MachineBasicBlock.h</label>
+        <link refid="_machine_basic_block_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>llvm/CodeGen/MachineInstr.h</label>
+        <link refid="_machine_instr_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="127">
+        <label>llvm/CodeGen/MachineInstrBundleIterator.h</label>
+        <link refid="_machine_instr_bundle_iterator_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>llvm/CodeGen/MachineMemOperand.h</label>
+        <link refid="_machine_mem_operand_8h"/>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>llvm/CodeGen/MachineOperand.h</label>
+        <link refid="_machine_operand_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>llvm/CodeGen/PseudoSourceValue.h</label>
+        <link refid="_pseudo_source_value_8h"/>
+      </node>
+      <node id="104">
+        <label>llvm/CodeGen/Register.h</label>
+        <link refid="_register_8h"/>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>llvm/CodeGen/RegisterBank.h</label>
+        <link refid="_register_bank_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>llvm/CodeGen/TargetOpcodes.h</label>
+        <link refid="_target_opcodes_8h"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+      <node id="134">
+        <label>llvm/CodeGen/TargetRegisterInfo.h</label>
+        <link refid="_target_register_info_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>llvm/CodeGenTypes/LowLevelType.h</label>
+        <link refid="_low_level_type_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>llvm/CodeGenTypes/MachineValueType.h</label>
+        <link refid="_machine_value_type_8h"/>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+      </node>
+      <node id="136">
+        <label>llvm/IR/CallingConv.h</label>
+        <link refid="_calling_conv_8h"/>
+      </node>
+      <node id="78">
+        <label>llvm/IR/Constant.h</label>
+        <link refid="_i_r_2_constant_8h"/>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>llvm/IR/DebugLoc.h</label>
+        <link refid="_debug_loc_8h"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>llvm/IR/DerivedTypes.h</label>
+        <link refid="_derived_types_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>llvm/IR/DiagnosticHandler.h</label>
+        <link refid="_diagnostic_handler_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>llvm/IR/InlineAsm.h</label>
+        <link refid="_inline_asm_8h"/>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>llvm/IR/Intrinsics.h</label>
+        <link refid="_intrinsics_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>llvm/IR/LLVMContext.h</label>
+        <link refid="_l_l_v_m_context_8h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>llvm/IR/Metadata.h</label>
+        <link refid="_metadata_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>llvm/IR/TrackingMDRef.h</label>
+        <link refid="_tracking_m_d_ref_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>llvm/IR/Type.h</label>
+        <link refid="_i_r_2_type_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>llvm/IR/Use.h</label>
+        <link refid="_i_r_2_use_8h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>llvm/IR/User.h</label>
+        <link refid="_i_r_2_user_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>llvm/IR/Value.h</label>
+        <link refid="_i_r_2_value_8h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="128">
+        <label>llvm/MC/LaneBitmask.h</label>
+        <link refid="_lane_bitmask_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>llvm/MC/MCExpr.h</label>
+        <link refid="_m_c_expr_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>llvm/MC/MCFixup.h</label>
+        <link refid="_m_c_fixup_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="119">
+        <label>llvm/MC/MCFragment.h</label>
+        <link refid="_m_c_fragment_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="122">
+        <label>llvm/MC/MCInst.h</label>
+        <link refid="_m_c_inst_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>llvm/MC/MCInstrDesc.h</label>
+        <link refid="_m_c_instr_desc_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>llvm/MC/MCRegister.h</label>
+        <link refid="_m_c_register_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="137">
+        <label>llvm/MC/MCRegisterInfo.h</label>
+        <link refid="_m_c_register_info_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>llvm/MC/MCSymbol.h</label>
+        <link refid="_m_c_symbol_8h"/>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>llvm/MC/MCSymbolTableEntry.h</label>
+        <link refid="_m_c_symbol_table_entry_8h"/>
+        <childnode refid="116" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>llvm/Support/AlignOf.h</label>
+        <link refid="_align_of_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>llvm/Support/Alignment.h</label>
+        <link refid="_alignment_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="125">
+        <label>llvm/Support/Allocator.h</label>
+        <link refid="_allocator_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm/Support/AllocatorBase.h</label>
+        <link refid="_allocator_base_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>llvm/Support/ArrayRecycler.h</label>
+        <link refid="_array_recycler_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>llvm/Support/AtomicOrdering.h</label>
+        <link refid="_atomic_ordering_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>llvm/Support/BranchProbability.h</label>
+        <link refid="_branch_probability_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>llvm/Support/CBindingWrapping.h</label>
+        <link refid="_c_binding_wrapping_8h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>llvm/Support/Casting.h</label>
+        <link refid="_casting_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>llvm/Support/DataTypes.h</label>
+        <link refid="llvm_2_support_2_data_types_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>llvm/Support/Debug.h</label>
+        <link refid="_debug_8h"/>
+      </node>
+      <node id="24">
+        <label>llvm/Support/ErrorHandling.h</label>
+        <link refid="llvm_2_support_2_error_handling_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="129">
+        <label>llvm/Support/Format.h</label>
+        <link refid="_format_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>llvm/Support/MathExtras.h</label>
+        <link refid="_math_extras_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm/Support/MemAlloc.h</label>
+        <link refid="_mem_alloc_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>llvm/Support/PointerLikeTypeTraits.h</label>
+        <link refid="_pointer_like_type_traits_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>llvm/Support/Printable.h</label>
+        <link refid="_printable_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>llvm/Support/ReverseIteration.h</label>
+        <link refid="_reverse_iteration_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>llvm/Support/SMLoc.h</label>
+        <link refid="_s_m_loc_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm/Support/SwapByteOrder.h</label>
+        <link refid="_swap_byte_order_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>llvm/Support/TrailingObjects.h</label>
+        <link refid="_trailing_objects_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>llvm/Support/TypeSize.h</label>
+        <link refid="_type_size_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>llvm/Support/raw_ostream.h</label>
+        <link refid="raw__ostream_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm/Support/type_traits.h</label>
+        <link refid="type__traits_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>algorithm</label>
+      </node>
+      <node id="69">
+        <label>array</label>
+      </node>
+      <node id="9">
+        <label>cassert</label>
+      </node>
+      <node id="53">
+        <label>climits</label>
+      </node>
+      <node id="10">
+        <label>cstddef</label>
+      </node>
+      <node id="11">
+        <label>cstdint</label>
+      </node>
+      <node id="130">
+        <label>cstdio</label>
+      </node>
+      <node id="12">
+        <label>cstdlib</label>
+      </node>
+      <node id="13">
+        <label>cstring</label>
+      </node>
+      <node id="14">
+        <label>functional</label>
+      </node>
+      <node id="15">
+        <label>initializer_list</label>
+      </node>
+      <node id="35">
+        <label>inttypes.h</label>
+      </node>
+      <node id="16">
+        <label>iterator</label>
+      </node>
+      <node id="17">
+        <label>limits</label>
+      </node>
+      <node id="54">
+        <label>list</label>
+      </node>
+      <node id="98">
+        <label>llvm/CodeGen/GenVT.inc</label>
+      </node>
+      <node id="32">
+        <label>llvm/Config/abi-breaking.h</label>
+      </node>
+      <node id="6">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="89">
+        <label>llvm/IR/FixedMetadataKinds.def</label>
+      </node>
+      <node id="107">
+        <label>llvm/IR/IntrinsicEnums.inc</label>
+      </node>
+      <node id="90">
+        <label>llvm/IR/Metadata.def</label>
+      </node>
+      <node id="86">
+        <label>llvm/IR/Value.def</label>
+      </node>
+      <node id="109">
+        <label>llvm/Support/TargetOpcodes.def</label>
+      </node>
+      <node id="42">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="18">
+        <label>memory</label>
+      </node>
+      <node id="19">
+        <label>new</label>
+      </node>
+      <node id="133">
+        <label>numeric</label>
+      </node>
+      <node id="40">
+        <label>optional</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="36">
+        <label>stdint.h</label>
+      </node>
+      <node id="44">
+        <label>string</label>
+      </node>
+      <node id="51">
+        <label>string_view</label>
+      </node>
+      <node id="37">
+        <label>sys/types.h</label>
+      </node>
+      <node id="52">
+        <label>system_error</label>
+      </node>
+      <node id="27">
+        <label>tuple</label>
+      </node>
+      <node id="20">
+        <label>type_traits</label>
+      </node>
+      <node id="21">
+        <label>utility</label>
+      </node>
+      <node id="70">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/CodeGen/LivePhysRegs.h</label>
+        <link refid="_live_phys_regs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>lib/CodeGen/BranchFolding.cpp</label>
+        <link refid="_branch_folding_8cpp"/>
+      </node>
+      <node id="2">
+        <label>lib/CodeGen/BranchFolding.h</label>
+        <link refid="_branch_folding_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>lib/CodeGen/BranchRelaxation.cpp</label>
+        <link refid="_branch_relaxation_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/CodeGen/BreakFalseDeps.cpp</label>
+        <link refid="_break_false_deps_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/CodeGen/IfConversion.cpp</label>
+        <link refid="_if_conversion_8cpp"/>
+      </node>
+      <node id="8">
+        <label>lib/CodeGen/LivePhysRegs.cpp</label>
+        <link refid="_live_phys_regs_8cpp"/>
+      </node>
+      <node id="9">
+        <label>lib/CodeGen/MachineBasicBlock.cpp</label>
+        <link refid="_machine_basic_block_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/CodeGen/MachineBlockPlacement.cpp</label>
+        <link refid="_machine_block_placement_8cpp"/>
+      </node>
+      <node id="10">
+        <label>lib/CodeGen/MachineOutliner.cpp</label>
+        <link refid="_machine_outliner_8cpp"/>
+      </node>
+      <node id="11">
+        <label>lib/CodeGen/ScheduleDAGInstrs.cpp</label>
+        <link refid="_schedule_d_a_g_instrs_8cpp"/>
+      </node>
+      <node id="12">
+        <label>lib/CodeGen/StackMapLivenessAnalysis.cpp</label>
+        <link refid="_stack_map_liveness_analysis_8cpp"/>
+      </node>
+      <node id="13">
+        <label>lib/Target/AArch64/AArch64ExpandPseudoInsts.cpp</label>
+        <link refid="_a_arch64_expand_pseudo_insts_8cpp"/>
+      </node>
+      <node id="14">
+        <label>lib/Target/AArch64/AArch64FrameLowering.cpp</label>
+        <link refid="_a_arch64_frame_lowering_8cpp"/>
+      </node>
+      <node id="15">
+        <label>lib/Target/AArch64/AArch64InstrInfo.cpp</label>
+        <link refid="_a_arch64_instr_info_8cpp"/>
+      </node>
+      <node id="16">
+        <label>lib/Target/ARM/ARMBlockPlacement.cpp</label>
+        <link refid="_a_r_m_block_placement_8cpp"/>
+      </node>
+      <node id="17">
+        <label>lib/Target/ARM/ARMConstantIslandPass.cpp</label>
+        <link refid="_a_r_m_constant_island_pass_8cpp"/>
+      </node>
+      <node id="18">
+        <label>lib/Target/ARM/ARMExpandPseudoInsts.cpp</label>
+        <link refid="_a_r_m_expand_pseudo_insts_8cpp"/>
+      </node>
+      <node id="19">
+        <label>lib/Target/ARM/ARMLowOverheadLoops.cpp</label>
+        <link refid="_a_r_m_low_overhead_loops_8cpp"/>
+      </node>
+      <node id="20">
+        <label>lib/Target/ARM/Thumb1FrameLowering.cpp</label>
+        <link refid="_thumb1_frame_lowering_8cpp"/>
+      </node>
+      <node id="21">
+        <label>lib/Target/BPF/BPFMIPeephole.cpp</label>
+        <link refid="_b_p_f_m_i_peephole_8cpp"/>
+      </node>
+      <node id="22">
+        <label>lib/Target/Hexagon/HexagonFrameLowering.cpp</label>
+        <link refid="_hexagon_frame_lowering_8cpp"/>
+      </node>
+      <node id="23">
+        <label>lib/Target/Hexagon/HexagonInstrInfo.cpp</label>
+        <link refid="_hexagon_instr_info_8cpp"/>
+      </node>
+      <node id="24">
+        <label>lib/Target/LoongArch/LoongArchExpandAtomicPseudoInsts.cpp</label>
+        <link refid="_loong_arch_expand_atomic_pseudo_insts_8cpp"/>
+      </node>
+      <node id="25">
+        <label>lib/Target/LoongArch/LoongArchExpandPseudoInsts.cpp</label>
+        <link refid="_loong_arch_expand_pseudo_insts_8cpp"/>
+      </node>
+      <node id="26">
+        <label>lib/Target/M68k/M68kInstrInfo.cpp</label>
+        <link refid="_m68k_instr_info_8cpp"/>
+      </node>
+      <node id="27">
+        <label>lib/Target/Mips/MipsExpandPseudo.cpp</label>
+        <link refid="_mips_expand_pseudo_8cpp"/>
+      </node>
+      <node id="28">
+        <label>lib/Target/PowerPC/PPCExpandAtomicPseudoInsts.cpp</label>
+        <link refid="_p_p_c_expand_atomic_pseudo_insts_8cpp"/>
+      </node>
+      <node id="29">
+        <label>lib/Target/PowerPC/PPCFrameLowering.cpp</label>
+        <link refid="_p_p_c_frame_lowering_8cpp"/>
+      </node>
+      <node id="30">
+        <label>lib/Target/PowerPC/PPCInstrInfo.cpp</label>
+        <link refid="_p_p_c_instr_info_8cpp"/>
+      </node>
+      <node id="31">
+        <label>lib/Target/PowerPC/PPCPreEmitPeephole.cpp</label>
+        <link refid="_p_p_c_pre_emit_peephole_8cpp"/>
+      </node>
+      <node id="32">
+        <label>lib/Target/RISCV/RISCVExpandAtomicPseudoInsts.cpp</label>
+        <link refid="_r_i_s_c_v_expand_atomic_pseudo_insts_8cpp"/>
+      </node>
+      <node id="33">
+        <label>lib/Target/RISCV/RISCVExpandPseudoInsts.cpp</label>
+        <link refid="_r_i_s_c_v_expand_pseudo_insts_8cpp"/>
+      </node>
+      <node id="34">
+        <label>lib/Target/RISCV/RISCVFrameLowering.cpp</label>
+        <link refid="_r_i_s_c_v_frame_lowering_8cpp"/>
+      </node>
+      <node id="35">
+        <label>lib/Target/SystemZ/SystemZFrameLowering.cpp</label>
+        <link refid="_system_z_frame_lowering_8cpp"/>
+      </node>
+      <node id="36">
+        <label>lib/Target/SystemZ/SystemZPostRewrite.cpp</label>
+        <link refid="_system_z_post_rewrite_8cpp"/>
+      </node>
+      <node id="37">
+        <label>lib/Target/X86/X86ExpandPseudo.cpp</label>
+        <link refid="_x86_expand_pseudo_8cpp"/>
+      </node>
+      <node id="38">
+        <label>lib/Target/X86/X86FrameLowering.cpp</label>
+        <link refid="_x86_frame_lowering_8cpp"/>
+      </node>
+      <node id="39">
+        <label>lib/Target/X86/X86InstrInfo.cpp</label>
+        <link refid="_x86_instr_info_8cpp"/>
+      </node>
+      <node id="40">
+        <label>lib/Target/X86/X86WinFixupBufferSecurityCheck.cpp</label>
+        <link refid="_x86_win_fixup_buffer_security_check_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1_live_phys_regs" prot="public">llvm::LivePhysRegs</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+<para>This file implements the LivePhysRegs utility for tracking liveness of physical registers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This can be used for ad-hoc liveness tracking after register allocation. You can start with the live-ins/live-outs at the beginning/end of a block and update the information while walking the instructions inside the block. This implementation tracks the liveness on a sub-register granularity.</para>
+<para>We assume that the high bits of a physical super-register are not preserved unless the instruction has an implicit-use operand reading the super- register.</para>
+<para>X86 Example: ymm0 = ... xmm0 = ... (Kills xmm0, all xmm0s sub-registers, and ymm0)</para>
+<para>ymm0 = ... xmm0 = ..., implicit ymm0 (ymm0 and all its sub-registers are alive) </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>llvm/CodeGen/LivePhysRegs.h<sp/>-<sp/>Live<sp/>Physical<sp/>Register<sp/>Set<sp/>-*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">///<sp/>\file</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">///<sp/>This<sp/>file<sp/>implements<sp/>the<sp/>LivePhysRegs<sp/>utility<sp/>for<sp/>tracking<sp/>liveness<sp/>of</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">///<sp/>physical<sp/>registers.<sp/>This<sp/>can<sp/>be<sp/>used<sp/>for<sp/>ad-hoc<sp/>liveness<sp/>tracking<sp/>after</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">///<sp/>register<sp/>allocation.<sp/>You<sp/>can<sp/>start<sp/>with<sp/>the<sp/>live-ins/live-outs<sp/>at<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">///<sp/>beginning/end<sp/>of<sp/>a<sp/>block<sp/>and<sp/>update<sp/>the<sp/>information<sp/>while<sp/>walking<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">///<sp/>instructions<sp/>inside<sp/>the<sp/>block.<sp/>This<sp/>implementation<sp/>tracks<sp/>the<sp/>liveness<sp/>on<sp/>a</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">///<sp/>sub-register<sp/>granularity.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">///<sp/>We<sp/>assume<sp/>that<sp/>the<sp/>high<sp/>bits<sp/>of<sp/>a<sp/>physical<sp/>super-register<sp/>are<sp/>not<sp/>preserved</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">///<sp/>unless<sp/>the<sp/>instruction<sp/>has<sp/>an<sp/>implicit-use<sp/>operand<sp/>reading<sp/>the<sp/>super-</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">///<sp/>register.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">///<sp/>X86<sp/>Example:</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">///<sp/>%ymm0<sp/>=<sp/>...</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">///<sp/>%xmm0<sp/>=<sp/>...<sp/>(Kills<sp/>%xmm0,<sp/>all<sp/>%xmm0s<sp/>sub-registers,<sp/>and<sp/>%ymm0)</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">///<sp/>%ymm0<sp/>=<sp/>...</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">///<sp/>%xmm0<sp/>=<sp/>...,<sp/>implicit<sp/>%ymm0<sp/>(%ymm0<sp/>and<sp/>all<sp/>its<sp/>sub-registers<sp/>are<sp/>alive)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_CODEGEN_LIVEPHYSREGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_CODEGEN_LIVEPHYSREGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_sparse_set_8h" kindref="compound">llvm/ADT/SparseSet.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_machine_basic_block_8h" kindref="compound">llvm/CodeGen/MachineBasicBlock.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_target_register_info_8h" kindref="compound">llvm/CodeGen/TargetRegisterInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_register_8h" kindref="compound">llvm/MC/MCRegister.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_register_info_8h" kindref="compound">llvm/MC/MCRegisterInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment">///<sp/>A<sp/>set<sp/>of<sp/>physical<sp/>registers<sp/>with<sp/>utility<sp/>functions<sp/>to<sp/>track<sp/>liveness</highlight></codeline>
+<codeline lineno="51"><highlight class="comment">///<sp/>when<sp/>walking<sp/>backward/forward<sp/>through<sp/>a<sp/>basic<sp/>block.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classllvm_1_1_live_phys_regs" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_live_phys_regs_1abbe6939e3bddd71f4a12a6528d1abb78" kindref="member">LivePhysRegs</ref><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref><sp/>*<ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">RegisterSet<sp/>=<sp/><ref refid="classllvm_1_1_sparse_set" kindref="compound">SparseSet&lt;MCPhysReg, identity&lt;MCPhysReg&gt;</ref>&gt;;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>RegisterSet<sp/>LiveRegs;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/>///<sp/>Constructs<sp/>an<sp/>unitialized<sp/>set.<sp/>init()<sp/>needs<sp/>to<sp/>be<sp/>called<sp/>to<sp/>initialize<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classllvm_1_1_live_phys_regs_1abbe6939e3bddd71f4a12a6528d1abb78" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_live_phys_regs_1abbe6939e3bddd71f4a12a6528d1abb78" kindref="member">LivePhysRegs</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/>///<sp/>Constructs<sp/>and<sp/>initializes<sp/>an<sp/>empty<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classllvm_1_1_live_phys_regs_1ab60ebf245879fc2c1a9299329d343081" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_live_phys_regs_1ab60ebf245879fc2c1a9299329d343081" kindref="member">LivePhysRegs</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref><sp/>&amp;<ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref>)<sp/>:<sp/><ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref>(&amp;<ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>LiveRegs.setUniverse(<ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref>.getNumRegs());</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classllvm_1_1_live_phys_regs_1a5c680bb9900ecd38fd9cfa94c024911f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_live_phys_regs_1a5c680bb9900ecd38fd9cfa94c024911f" kindref="member">LivePhysRegs</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1abbe6939e3bddd71f4a12a6528d1abb78" kindref="member">LivePhysRegs</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67" refid="classllvm_1_1_live_phys_regs_1ad0013c439ff8a7df2974b9b6930d03c8" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_live_phys_regs_1abbe6939e3bddd71f4a12a6528d1abb78" kindref="member">LivePhysRegs</ref><sp/>&amp;<ref refid="classllvm_1_1_live_phys_regs_1ad0013c439ff8a7df2974b9b6930d03c8" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1abbe6939e3bddd71f4a12a6528d1abb78" kindref="member">LivePhysRegs</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/><sp/>///<sp/>(re-)initializes<sp/>and<sp/>clears<sp/>the<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classllvm_1_1_live_phys_regs_1a8b52495cd160fff98521b57a4479f2da" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1a8b52495cd160fff98521b57a4479f2da" kindref="member">init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref><sp/>&amp;<ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;TRI<sp/>=<sp/>&amp;<ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>LiveRegs.clear();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>LiveRegs.setUniverse(<ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref>.getNumRegs());</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/>///<sp/>Clears<sp/>the<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classllvm_1_1_live_phys_regs_1a30e045ff918c93beb68e7db808287d7a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1a30e045ff918c93beb68e7db808287d7a" kindref="member">clear</ref>()<sp/>{<sp/>LiveRegs.clear();<sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/>///<sp/>Returns<sp/>true<sp/>if<sp/>the<sp/>set<sp/>is<sp/>empty.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classllvm_1_1_live_phys_regs_1ae9dd17c81890dfa50eceb32282809600" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1ae9dd17c81890dfa50eceb32282809600" kindref="member">empty</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>LiveRegs.empty();<sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/>///<sp/>Adds<sp/>a<sp/>physical<sp/>register<sp/>and<sp/>all<sp/>its<sp/>sub-registers<sp/>to<sp/>the<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classllvm_1_1_live_phys_regs_1adbf2afbb346e40106f344191309324fc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1adbf2afbb346e40106f344191309324fc" kindref="member">addReg</ref>(<ref refid="namespacellvm_1aad72cfbb210808985a9dc19f4e5d8542" kindref="member">MCPhysReg</ref><sp/><ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref><sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;LivePhysRegs<sp/>is<sp/>not<sp/>initialized.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg &lt;= TRI-&gt;</ref>getNumRegs()<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Expected<sp/>a<sp/>physical<sp/>register.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1aad72cfbb210808985a9dc19f4e5d8542" kindref="member">MCPhysReg</ref><sp/><ref refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1a92a6b0a9b7228d190b0a7d8ae3ef03c7" kindref="member">SubReg</ref><sp/>:<sp/><ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref>-&gt;subregs_inclusive(<ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref>))</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>LiveRegs.insert(<ref refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1a92a6b0a9b7228d190b0a7d8ae3ef03c7" kindref="member">SubReg</ref>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/>///<sp/>Removes<sp/>a<sp/>physical<sp/>register,<sp/>all<sp/>its<sp/>sub-registers,<sp/>and<sp/>all<sp/>its</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/>///<sp/>super-registers<sp/>from<sp/>the<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classllvm_1_1_live_phys_regs_1a7b644203b542cf4091b1ff74bafe78ac" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1a7b644203b542cf4091b1ff74bafe78ac" kindref="member">removeReg</ref>(<ref refid="namespacellvm_1aad72cfbb210808985a9dc19f4e5d8542" kindref="member">MCPhysReg</ref><sp/><ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref><sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;LivePhysRegs<sp/>is<sp/>not<sp/>initialized.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg &lt;= TRI-&gt;</ref>getNumRegs()<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Expected<sp/>a<sp/>physical<sp/>register.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_m_c_reg_alias_iterator" kindref="compound">MCRegAliasIterator</ref><sp/>R(<ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref>,<sp/><ref refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" kindref="member">TRI</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/>R.isValid();<sp/>++R)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>LiveRegs.erase((*R).id());</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/>///<sp/>Removes<sp/>physical<sp/>registers<sp/>clobbered<sp/>by<sp/>the<sp/>regmask<sp/>operand<sp/>\p<sp/>MO.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1adfee5cf71110ecb406e359e538fc3cf9" kindref="member">removeRegsInMask</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref><sp/>&amp;MO,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt;std::pair&lt;MCPhysReg,<sp/>const<sp/>MachineOperand*&gt;&gt;<sp/>*Clobbers<sp/>=</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/>///<sp/>Returns<sp/>true<sp/>if<sp/>register<sp/>\p<sp/>Reg<sp/>is<sp/>contained<sp/>in<sp/>the<sp/>set.<sp/>This<sp/>also</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/>///<sp/>works<sp/>if<sp/>only<sp/>the<sp/>super<sp/>register<sp/>of<sp/>\p<sp/>Reg<sp/>has<sp/>been<sp/>defined,<sp/>because</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/>///<sp/>addReg()<sp/>always<sp/>adds<sp/>all<sp/>sub-registers<sp/>to<sp/>the<sp/>set<sp/>as<sp/>well.</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/>///<sp/>Note:<sp/>Returns<sp/>false<sp/>if<sp/>just<sp/>some<sp/>sub<sp/>registers<sp/>are<sp/>live,<sp/>use<sp/>available()</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/>///<sp/>when<sp/>searching<sp/>a<sp/>free<sp/>register.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="classllvm_1_1_live_phys_regs_1a05ce2aec67d9c398ce268ac0c33c5c7b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1a05ce2aec67d9c398ce268ac0c33c5c7b" kindref="member">contains</ref>(<ref refid="namespacellvm_1aad72cfbb210808985a9dc19f4e5d8542" kindref="member">MCPhysReg</ref><sp/><ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>LiveRegs.count(<ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/>///<sp/>Returns<sp/>true<sp/>if<sp/>register<sp/>\p<sp/>Reg<sp/>and<sp/>no<sp/>aliasing<sp/>register<sp/>is<sp/>in<sp/>the<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1a5c249924553aa84c5927b2335c490583" kindref="member">available</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref><sp/>&amp;<ref refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" kindref="member">MRI</ref>,<sp/><ref refid="namespacellvm_1aad72cfbb210808985a9dc19f4e5d8542" kindref="member">MCPhysReg</ref><sp/><ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/>///<sp/>Remove<sp/>defined<sp/>registers<sp/>and<sp/>regmask<sp/>kills<sp/>from<sp/>the<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1aa9eb9ea8517269ca82f836b915fa94ca" kindref="member">removeDefs</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref><sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/>///<sp/>Add<sp/>uses<sp/>to<sp/>the<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1aa64a4c432876fe5615cab79fd5650f7a" kindref="member">addUses</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref><sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/>///<sp/>Simulates<sp/>liveness<sp/>when<sp/>stepping<sp/>backwards<sp/>over<sp/>an<sp/>instruction(bundle).</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/>///<sp/>Remove<sp/>Defs,<sp/>add<sp/>uses.<sp/>This<sp/>is<sp/>the<sp/>recommended<sp/>way<sp/>of<sp/>calculating</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/>///<sp/>liveness.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1a683d33b7b0ca1cf29e61a3dc4614a046" kindref="member">stepBackward</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref><sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/>///<sp/>Simulates<sp/>liveness<sp/>when<sp/>stepping<sp/>forward<sp/>over<sp/>an<sp/>instruction(bundle).</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/>///<sp/>Remove<sp/>killed-uses,<sp/>add<sp/>defs.<sp/>This<sp/>is<sp/>the<sp/>not<sp/>recommended<sp/>way,<sp/>because<sp/>it</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/>///<sp/>depends<sp/>on<sp/>accurate<sp/>kill<sp/>flags.<sp/>If<sp/>possible<sp/>use<sp/>stepBackward()<sp/>instead<sp/>of</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/>///<sp/>this<sp/>function.<sp/>The<sp/>clobbers<sp/>set<sp/>will<sp/>be<sp/>the<sp/>list<sp/>of<sp/>registers<sp/>either</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/>///<sp/>defined<sp/>or<sp/>clobbered<sp/>by<sp/>a<sp/>regmask.<sp/><sp/>The<sp/>operand<sp/>will<sp/>identify<sp/>whether<sp/>this</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/>///<sp/>is<sp/>a<sp/>regmask<sp/>or<sp/>register<sp/>operand.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1a3f06df57fdd66d54f952c1c60e5048c3" kindref="member">stepForward</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref><sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt;std::pair&lt;MCPhysReg,<sp/>const<sp/>MachineOperand*&gt;&gt;<sp/>&amp;Clobbers);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/>///<sp/>Adds<sp/>all<sp/>live-in<sp/>registers<sp/>of<sp/>basic<sp/>block<sp/>\p<sp/>MBB.</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/>///<sp/>Live<sp/>in<sp/>registers<sp/>are<sp/>the<sp/>registers<sp/>in<sp/>the<sp/>blocks<sp/>live-in<sp/>list<sp/>and<sp/>the</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/>///<sp/>pristine<sp/>registers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1a972dc07ee343dfa21fc84131ada0e688" kindref="member">addLiveIns</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/>///<sp/>Adds<sp/>all<sp/>live-in<sp/>registers<sp/>of<sp/>basic<sp/>block<sp/>\p<sp/>MBB<sp/>but<sp/>skips<sp/>pristine</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/>///<sp/>registers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1aceb9a8356104b139deb7cec444f8361c" kindref="member">addLiveInsNoPristines</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/>///<sp/>Adds<sp/>all<sp/>live-out<sp/>registers<sp/>of<sp/>basic<sp/>block<sp/>\p<sp/>MBB.</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/>///<sp/>Live<sp/>out<sp/>registers<sp/>are<sp/>the<sp/>union<sp/>of<sp/>the<sp/>live-in<sp/>registers<sp/>of<sp/>the<sp/>successor</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/>///<sp/>blocks<sp/>and<sp/>pristine<sp/>registers.<sp/>Live<sp/>out<sp/>registers<sp/>of<sp/>the<sp/>end<sp/>block<sp/>are<sp/>the</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/>///<sp/>callee<sp/>saved<sp/>registers.</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/>///<sp/>If<sp/>a<sp/>register<sp/>is<sp/>not<sp/>added<sp/>by<sp/>this<sp/>method,<sp/>it<sp/>is<sp/>guaranteed<sp/>to<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/>///<sp/>live<sp/>out<sp/>from<sp/>MBB,<sp/>although<sp/>a<sp/>sub-register<sp/>may<sp/>be.<sp/>This<sp/>is<sp/>true</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/>///<sp/>both<sp/>before<sp/>and<sp/>after<sp/>regalloc.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1abb67d4b6f48395a5aca25fc32e042928" kindref="member">addLiveOuts</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/>///<sp/>Adds<sp/>all<sp/>live-out<sp/>registers<sp/>of<sp/>basic<sp/>block<sp/>\p<sp/>MBB<sp/>but<sp/>skips<sp/>pristine</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/><sp/>///<sp/>registers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1ab22bacf399a5964155b56e9be835a6b3" kindref="member">addLiveOutsNoPristines</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="classllvm_1_1_live_phys_regs_1a1912d31185cc61ee9ba2fa62b5ccaf5f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_live_phys_regs_1a1912d31185cc61ee9ba2fa62b5ccaf5f" kindref="member">const_iterator</ref><sp/>=<sp/><ref refid="classllvm_1_1_sparse_set_1adcffed9f9e28c03e4b254b733dd9a9d1" kindref="member">RegisterSet::const_iterator</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="classllvm_1_1_live_phys_regs_1acc2dfac325582d82eb5782973d8e3ded" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_live_phys_regs_1a1912d31185cc61ee9ba2fa62b5ccaf5f" kindref="member">const_iterator</ref><sp/><ref refid="classllvm_1_1_live_phys_regs_1acc2dfac325582d82eb5782973d8e3ded" kindref="member">begin</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>LiveRegs.begin();<sp/>}</highlight></codeline>
+<codeline lineno="159" refid="classllvm_1_1_live_phys_regs_1a2312b1101c183ac421957b4aab3c4c68" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_live_phys_regs_1a1912d31185cc61ee9ba2fa62b5ccaf5f" kindref="member">const_iterator</ref><sp/><ref refid="classllvm_1_1_live_phys_regs_1a2312b1101c183ac421957b4aab3c4c68" kindref="member">end</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>LiveRegs.end();<sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/><sp/>///<sp/>Prints<sp/>the<sp/>currently<sp/>live<sp/>registers<sp/>to<sp/>\p<sp/>OS.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1a60cf8009004efc869b27da93e796c2ec" kindref="member">print</ref>(<ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref><sp/>&amp;OS)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/><sp/>///<sp/>Dumps<sp/>the<sp/>currently<sp/>live<sp/>registers<sp/>to<sp/>the<sp/>debug<sp/>output.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs_1af68fa50d948afb8a15aaa9f2bea1f1d0" kindref="member">dump</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/><sp/>///<sp/>Adds<sp/>live-in<sp/>registers<sp/>from<sp/>basic<sp/>block<sp/>\p<sp/>MBB,<sp/>taking<sp/>associated</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/><sp/>///<sp/>lane<sp/>masks<sp/>into<sp/>consideration.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_live_reg_units_8cpp_1a7bf7b112a802239baee4a71a848de0f1" kindref="member">addBlockLiveIns</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/><sp/>///<sp/>Adds<sp/>pristine<sp/>registers.<sp/>Pristine<sp/>registers<sp/>are<sp/>callee<sp/>saved<sp/>registers</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/><sp/>///<sp/>that<sp/>are<sp/>unused<sp/>in<sp/>the<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addPristines(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref><sp/>&amp;MF);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="namespacellvm_1a25b95f61221dcd3dfda8165527c77163" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref><sp/>&amp;<ref refid="namespacellvm_1ab89f1db02887aa569176f0e29622eb47" kindref="member">operator&lt;&lt;</ref>(<ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref><sp/>&amp;OS,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_live_phys_regs" kindref="compound">LivePhysRegs</ref>&amp;<sp/>LR)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/>LR.<ref refid="classllvm_1_1_live_phys_regs_1a60cf8009004efc869b27da93e796c2ec" kindref="member">print</ref>(OS);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>OS;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="182"><highlight class="comment">///<sp/>Computes<sp/>registers<sp/>live-in<sp/>to<sp/>\p<sp/>MBB<sp/>assuming<sp/>all<sp/>of<sp/>its<sp/>successors</highlight></codeline>
+<codeline lineno="183"><highlight class="comment">///<sp/>live-in<sp/>lists<sp/>are<sp/>up-to-date.<sp/>Puts<sp/>the<sp/>result<sp/>into<sp/>the<sp/>given<sp/>LivePhysReg</highlight></codeline>
+<codeline lineno="184"><highlight class="comment">///<sp/>instance<sp/>\p<sp/>LiveRegs.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1adf741b422c5f449eb83144c3c2fe9730" kindref="member">computeLiveIns</ref>(LivePhysRegs<sp/>&amp;LiveRegs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MachineBasicBlock<sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="187"><highlight class="comment">///<sp/>Recomputes<sp/>dead<sp/>and<sp/>kill<sp/>flags<sp/>in<sp/>\p<sp/>MBB.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1aa323e6c0586d706279d7e764fc18d1ba" kindref="member">recomputeLivenessFlags</ref>(MachineBasicBlock<sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="190"><highlight class="comment">///<sp/>Adds<sp/>registers<sp/>contained<sp/>in<sp/>\p<sp/>LiveRegs<sp/>to<sp/>the<sp/>block<sp/>live-in<sp/>list<sp/>of<sp/>\p<sp/>MBB.</highlight></codeline>
+<codeline lineno="191"><highlight class="comment">///<sp/>Does<sp/>not<sp/>add<sp/>reserved<sp/>registers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1af9a1ca470b2b9c8e97304f5be5448422" kindref="member">addLiveIns</ref>(MachineBasicBlock<sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>LivePhysRegs<sp/>&amp;LiveRegs);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="194"><highlight class="comment">///<sp/>Convenience<sp/>function<sp/>combining<sp/>computeLiveIns()<sp/>and<sp/>addLiveIns().</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1acef857f72308ae9602dcf37ff032bc2f" kindref="member">computeAndAddLiveIns</ref>(LivePhysRegs<sp/>&amp;LiveRegs,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MachineBasicBlock<sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="198"><highlight class="comment">///<sp/>Convenience<sp/>function<sp/>for<sp/>recomputing<sp/>live-in&apos;s<sp/>for<sp/>a<sp/>MBB.<sp/>Returns<sp/>true<sp/>if</highlight></codeline>
+<codeline lineno="199"><highlight class="comment">///<sp/>any<sp/>changes<sp/>were<sp/>made.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="namespacellvm_1afa085408917f638621fd769b56325645" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1afa085408917f638621fd769b56325645" kindref="member">recomputeLiveIns</ref>(<ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_live_phys_regs" kindref="compound">LivePhysRegs</ref><sp/>LPR;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/>std::vector&lt;MachineBasicBlock::RegisterMaskPair&gt;<sp/>OldLiveIns;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>.clearLiveIns(OldLiveIns);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1acef857f72308ae9602dcf37ff032bc2f" kindref="member">computeAndAddLiveIns</ref>(LPR,<sp/><ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>.sortUniqueLiveIns();</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;MachineBasicBlock::RegisterMaskPair&gt;<sp/>&amp;NewLiveIns<sp/>=</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>.getLiveIns();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>OldLiveIns<sp/>!=<sp/>NewLiveIns;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="213"><highlight class="comment">///<sp/>Convenience<sp/>function<sp/>for<sp/>recomputing<sp/>live-in&apos;s<sp/>for<sp/>a<sp/>set<sp/>of<sp/>MBBs<sp/>until<sp/>the</highlight></codeline>
+<codeline lineno="214"><highlight class="comment">///<sp/>computation<sp/>converges.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="namespacellvm_1aee5f6b149b3f5ee5ed6ad7db9b58b148" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1aee5f6b149b3f5ee5ed6ad7db9b58b148" kindref="member">fullyRecomputeLiveIns</ref>(<ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;MachineBasicBlock *&gt;</ref><sp/>MBBs)<sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<ref refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" kindref="member">Data</ref><sp/>=<sp/>MBBs.<ref refid="classllvm_1_1_array_ref_1adb9cab4abca6bf2855c882dcf79fb1cb" kindref="member">data</ref>();</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>Len<sp/>=<sp/>MBBs.<ref refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" kindref="member">size</ref>();</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>AnyChange<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref><sp/>=<sp/>0;<sp/><ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref><sp/>&lt;<sp/>Len;<sp/>++<ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref>)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1afa085408917f638621fd769b56325645" kindref="member">recomputeLiveIns</ref>(*<ref refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" kindref="member">Data</ref>[<ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref>]))</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AnyChange<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!AnyChange)</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_CODEGEN_LIVEPHYSREGS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/CodeGen/LivePhysRegs.h"/>
+  </compounddef>
+</doxygen>

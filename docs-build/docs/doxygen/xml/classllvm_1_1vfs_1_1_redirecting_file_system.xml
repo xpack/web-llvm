@@ -1,0 +1,1448 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1vfs_1_1_redirecting_file_system" kind="class" language="C++" prot="public">
+    <compoundname>llvm::vfs::RedirectingFileSystem</compoundname>
+    <basecompoundref refid="classllvm_1_1_r_t_t_i_extends" prot="public" virt="non-virtual">llvm::RTTIExtends&lt; RedirectingFileSystem, vfs::FileSystem &gt;</basecompoundref>
+    <includes refid="_virtual_file_system_8h" local="yes">llvm/Support/VirtualFileSystem.h</includes>
+    <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_directory_entry" prot="public">llvm::vfs::RedirectingFileSystem::DirectoryEntry</innerclass>
+    <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_directory_remap_entry" prot="public">llvm::vfs::RedirectingFileSystem::DirectoryRemapEntry</innerclass>
+    <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_entry" prot="public">llvm::vfs::RedirectingFileSystem::Entry</innerclass>
+    <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_file_entry" prot="public">llvm::vfs::RedirectingFileSystem::FileEntry</innerclass>
+    <innerclass refid="structllvm_1_1vfs_1_1_redirecting_file_system_1_1_lookup_result" prot="public">llvm::vfs::RedirectingFileSystem::LookupResult</innerclass>
+    <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_remap_entry" prot="public">llvm::vfs::RedirectingFileSystem::RemapEntry</innerclass>
+    <sectiondef kind="user-defined">
+      <header>Configuration</header>
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a39656e314338ee73adb1149cd31a81fd" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::vfs::RedirectingFileSystem::CaseSensitive</definition>
+        <argsstring></argsstring>
+        <name>CaseSensitive</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::CaseSensitive</qualifiedname>
+        <initializer>= is_style_posix(<ref refid="namespacellvm_1_1sys_1_1path_1a58cfd8a47c0ef96db27b451c2d6ec49fa8e5f3adee38c8fccc13c1f3be0143796" kindref="member">sys::path::Style::native</ref>)</initializer>
+        <briefdescription>
+<para>Whether to perform case-sensitive comparisons. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Currently, case-insensitive matching only works correctly with ASCII. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1006" column="8" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="1006" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a8ad1c648e9b0c12589d7718f90ebf4b3" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::vfs::RedirectingFileSystem::IsRelativeOverlay</definition>
+        <argsstring></argsstring>
+        <name>IsRelativeOverlay</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::IsRelativeOverlay</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>IsRelativeOverlay marks whether a OverlayFileDir path must be prefixed in every &apos;external-contents&apos; when reading from YAML files. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1010" column="8" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="1010" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1abafea9a6b5142571e005c225c491ddae" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::vfs::RedirectingFileSystem::UseExternalNames</definition>
+        <argsstring></argsstring>
+        <name>UseExternalNames</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::UseExternalNames</qualifiedname>
+        <initializer>= <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></initializer>
+        <briefdescription>
+<para>Whether to use to use the value of &apos;external-contents&apos; for the names of files. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This global value is overridable on a per-file basis. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1014" column="8" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="1014" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1ade22860baa85296ff5062249e2600493" prot="private" static="no" mutable="yes">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::vfs::RedirectingFileSystem::HasBeenUsed</definition>
+        <argsstring></argsstring>
+        <name>HasBeenUsed</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::HasBeenUsed</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>True if this FS has redirected a lookup. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This does not include fallthrough. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1018" column="16" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="1018" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a6e7914bd413b3fabf9090208a94e70a0" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::vfs::RedirectingFileSystem::UsageTrackingActive</definition>
+        <argsstring></argsstring>
+        <name>UsageTrackingActive</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::UsageTrackingActive</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Used to enable or disable updating <computeroutput>HasBeenUsed</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1021" column="8" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="1021" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a31de67b17a61a111b4c48f22bfdd04b1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0" kindref="member">RedirectKind</ref></type>
+        <definition>RedirectKind llvm::vfs::RedirectingFileSystem::Redirection</definition>
+        <argsstring></argsstring>
+        <name>Redirection</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::Redirection</qualifiedname>
+        <initializer>= <ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a5d562a226f723ccf02b8c640f15f354b" kindref="member">RedirectKind::Fallthrough</ref></initializer>
+        <briefdescription>
+<para>Determines the lookups to perform, as well as their order. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See <computeroutput><ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0" kindref="member">RedirectKind</ref></computeroutput> for details. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1025" column="16" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="1025" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a8073c0af6b6171550c623664671fdbb1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a09f22a5612ee3a09f13d4641d5017f2d" kindref="member">RootRelativeKind</ref></type>
+        <definition>RootRelativeKind llvm::vfs::RedirectingFileSystem::RootRelative</definition>
+        <argsstring></argsstring>
+        <name>RootRelative</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::RootRelative</qualifiedname>
+        <initializer>= <ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a09f22a5612ee3a09f13d4641d5017f2dae2523df869c463690e853798ddc82f28" kindref="member">RootRelativeKind::CWD</ref></initializer>
+        <briefdescription>
+<para>Determine the prefix directory if the roots are relative paths. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See <computeroutput><ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a09f22a5612ee3a09f13d4641d5017f2d" kindref="member">RootRelativeKind</ref></computeroutput> for details. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1029" column="20" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="1029" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a9507b40bcb88580411b40aaf59c105ae" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EntryKind</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::EntryKind</qualifiedname>
+        <enumvalue id="classllvm_1_1vfs_1_1_redirecting_file_system_1a9507b40bcb88580411b40aaf59c105aea53dd0141cf4c202d8b1167608b16368e" prot="public">
+          <name>EK_Directory</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1vfs_1_1_redirecting_file_system_1a9507b40bcb88580411b40aaf59c105aea2c13f4e113c2d83046295f95a17aa19d" prot="public">
+          <name>EK_DirectoryRemap</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1vfs_1_1_redirecting_file_system_1a9507b40bcb88580411b40aaf59c105aea03e8d48c99b4e6a894fb7651aee0c727" prot="public">
+          <name>EK_File</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="781" column="3" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="781" bodyend="781"/>
+      </memberdef>
+      <memberdef kind="enum" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042" prot="public" static="no" strong="no">
+        <type></type>
+        <name>NameKind</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::NameKind</qualifiedname>
+        <enumvalue id="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042ad999c8c10cab1f4c45fbb748c6592ebd" prot="public">
+          <name>NK_NotSet</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042a89b3ca06f9a5f78465654ab19f83fbad" prot="public">
+          <name>NK_External</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042a1a039623fd4526d60bde1baa877d46fa" prot="public">
+          <name>NK_Virtual</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="782" column="3" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="782" bodyend="782"/>
+      </memberdef>
+      <memberdef kind="enum" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>RedirectKind</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::RedirectKind</qualifiedname>
+        <enumvalue id="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a5d562a226f723ccf02b8c640f15f354b" prot="public">
+          <name>Fallthrough</name>
+          <briefdescription>
+<para>Lookup the redirected path first (ie. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>the one specified in &apos;external-contents&apos;) and if that fails &quot;fallthrough&quot; to a lookup of the originally provided path. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a882277bdf25efaeb8295e842ebcb3d11" prot="public">
+          <name>Fallback</name>
+          <briefdescription>
+<para>Lookup the provided path first and if that fails, &quot;fallback&quot; to a lookup of the redirected path. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0ad1329fb446b085c1ef41002bc84a510f" prot="public">
+          <name>RedirectOnly</name>
+          <briefdescription>
+<para>Only lookup the redirected path, do not lookup the originally provided path. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The type of redirection to perform. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="785" column="3" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="785" bodyend="796"/>
+      </memberdef>
+      <memberdef kind="enum" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a09f22a5612ee3a09f13d4641d5017f2d" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>RootRelativeKind</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::RootRelativeKind</qualifiedname>
+        <enumvalue id="classllvm_1_1vfs_1_1_redirecting_file_system_1a09f22a5612ee3a09f13d4641d5017f2dae2523df869c463690e853798ddc82f28" prot="public">
+          <name>CWD</name>
+          <briefdescription>
+<para>The roots are relative to the current working directory. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1vfs_1_1_redirecting_file_system_1a09f22a5612ee3a09f13d4641d5017f2da883fce724fbb5ef711e9860e56d2f4f9" prot="public">
+          <name>OverlayDir</name>
+          <briefdescription>
+<para>The roots are relative to the directory where the Overlay YAML file. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The type of relative path used by Roots. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="799" column="3" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="799" bodyend="805"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1aaa40459111845179e104abb274985ec7" prot="public" static="yes" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>const char RedirectingFileSystem::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::ID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="780" column="21" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="780" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a97b4b51c367a6158df7ec96b2faf0ed2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class RedirectingFSDirIterImpl</definition>
+        <argsstring></argsstring>
+        <name>RedirectingFSDirIterImpl</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::RedirectingFSDirIterImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1vfs_1_1_redirecting_f_s_dir_iter_impl" kindref="compound">RedirectingFSDirIterImpl</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="945" column="16" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="945" bodyend="-1"/>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a97b4b51c367a6158df7ec96b2faf0ed2" compoundref="_virtual_file_system_8h" startline="945">RedirectingFSDirIterImpl</references>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a97b4b51c367a6158df7ec96b2faf0ed2" compoundref="_virtual_file_system_8h" startline="945">RedirectingFSDirIterImpl</referencedby>
+      </memberdef>
+      <memberdef kind="friend" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a341937336432d0819c602220545628e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class RedirectingFileSystemParser</definition>
+        <argsstring></argsstring>
+        <name>RedirectingFileSystemParser</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::RedirectingFileSystemParser</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_parser" kindref="compound">RedirectingFileSystemParser</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="946" column="16" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="946" bodyend="-1"/>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a341937336432d0819c602220545628e5" compoundref="_virtual_file_system_8h" startline="946">RedirectingFileSystemParser</references>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a9f274211d8e2baf7f13ec1e030e09de6" compoundref="_virtual_file_system_8cpp" startline="2176" endline="2216">create</referencedby>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a341937336432d0819c602220545628e5" compoundref="_virtual_file_system_8h" startline="946">RedirectingFileSystemParser</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a3290a380f493d79438fdeab078c91725" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_entry" kindref="compound">Entry</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;Entry&gt; &gt; llvm::vfs::RedirectingFileSystem::Roots</definition>
+        <argsstring></argsstring>
+        <name>Roots</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::Roots</qualifiedname>
+        <briefdescription>
+<para>The root(s) of the virtual file system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="986" column="15" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="986" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a53c086dfbfbb7efb7eb10b7b58a0f86c" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::vfs::RedirectingFileSystem::WorkingDirectory</definition>
+        <argsstring></argsstring>
+        <name>WorkingDirectory</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::WorkingDirectory</qualifiedname>
+        <briefdescription>
+<para>The current working directory of the file system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="989" column="15" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="989" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1aba283723052667bb7a31283bd2b05549" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_intrusive_ref_cnt_ptr" kindref="compound">IntrusiveRefCntPtr</ref>&lt; <ref refid="classllvm_1_1vfs_1_1_file_system" kindref="compound">FileSystem</ref> &gt;</type>
+        <definition>IntrusiveRefCntPtr&lt;FileSystem&gt; llvm::vfs::RedirectingFileSystem::ExternalFS</definition>
+        <argsstring></argsstring>
+        <name>ExternalFS</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::ExternalFS</qualifiedname>
+        <briefdescription>
+<para>The file system to use for external references. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="992" column="22" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="992" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a3d515e4c2b6cbd1ffc127a8f75e44d24" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::vfs::RedirectingFileSystem::OverlayFileDir</definition>
+        <argsstring></argsstring>
+        <name>OverlayFileDir</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::OverlayFileDir</qualifiedname>
+        <briefdescription>
+<para>This represents the directory path that the YAML file is located. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This will be prefixed to each &apos;external-contents&apos; if IsRelativeOverlay is set. This will also be prefixed to each &apos;roots-&gt;name&apos; if RootRelative is set to <ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a09f22a5612ee3a09f13d4641d5017f2da883fce724fbb5ef711e9860e56d2f4f9" kindref="member">RootRelativeKind::OverlayDir</ref> and the path is relative. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="998" column="15" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="998" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a2bc1af828e7c570098c13a761733836c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code RedirectingFileSystem::makeCanonicalForLookup</definition>
+        <argsstring>(SmallVectorImpl&lt; char &gt; &amp;Path) const</argsstring>
+        <name>makeCanonicalForLookup</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::makeCanonicalForLookup</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classchar" kindref="compound">char</ref> &gt; &amp;</type>
+          <declname>Path</declname>
+        </param>
+        <briefdescription>
+<para>Canonicalize path by removing &quot;.&quot;, &quot;..&quot;, &quot;./&quot;, components. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a VFS request, do not bother about symlinks in the path components but canonicalize in order to perform the correct entry search. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="951" column="19" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="2294" bodyend="2306"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a3332f5925aec0b0166c5f5085d866b57" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error_or" kindref="compound">ErrorOr</ref>&lt; <ref refid="classllvm_1_1vfs_1_1_status" kindref="compound">Status</ref> &gt;</type>
+        <definition>ErrorOr&lt; Status &gt; RedirectingFileSystem::getExternalStatus</definition>
+        <argsstring>(const Twine &amp;LookupPath, const Twine &amp;OriginalPath) const</argsstring>
+        <name>getExternalStatus</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::getExternalStatus</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>LookupPath</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>OriginalPath</declname>
+        </param>
+        <briefdescription>
+<para>Get the <ref refid="classllvm_1_1vfs_1_1_file" kindref="compound">File</ref> status, or error, from the underlying external file system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns the status with the originally requested name, while looking up the entry using a potentially different path. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="956" column="11" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="2416" bodyend="2425"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a99b517aebffadc4c834aad6a559171bc" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code RedirectingFileSystem::makeAbsolute</definition>
+        <argsstring>(StringRef WorkingDir, SmallVectorImpl&lt; char &gt; &amp;Path) const</argsstring>
+        <name>makeAbsolute</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::makeAbsolute</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>WorkingDir</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classchar" kindref="compound">char</ref> &gt; &amp;</type>
+          <declname>Path</declname>
+        </param>
+        <briefdescription>
+<para>Make <emphasis>Path</emphasis> an absolute path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Makes <emphasis>Path</emphasis> absolute using the <emphasis>WorkingDir</emphasis> if it is not already.</para>
+<para>/absolute/path =&gt; /absolute/path relative/../path =&gt; &lt;WorkingDir&gt;/relative/../path</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>WorkingDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A path that will be used as the base Dir if <emphasis>Path</emphasis> is not already absolute. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A path that is modified to be an absolute path. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>success if <emphasis>path</emphasis> has been made absolute, otherwise a platform-specific error_code. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="971" column="19" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1400" bodyend="1436"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1ae6b7e7203bbae0bc91a7324e343675e3" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::vfs::RedirectingFileSystem::pathComponentMatches</definition>
+        <argsstring>(llvm::StringRef lhs, llvm::StringRef rhs) const</argsstring>
+        <name>pathComponentMatches</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::pathComponentMatches</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref></type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref></type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="979" column="8" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="979" bodyend="983"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a540b5d6fddce2f91f2e43fa18e81fb79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RedirectingFileSystem::RedirectingFileSystem</definition>
+        <argsstring>(IntrusiveRefCntPtr&lt; FileSystem &gt; ExternalFS)</argsstring>
+        <name>RedirectingFileSystem</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::RedirectingFileSystem</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_intrusive_ref_cnt_ptr" kindref="compound">IntrusiveRefCntPtr</ref>&lt; <ref refid="classllvm_1_1vfs_1_1_file_system" kindref="compound">FileSystem</ref> &gt;</type>
+          <declname>ExternalFS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1032" column="3" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1257" bodyend="1264"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a625d69f2c0e7664560f0cb6360a84bcc" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error_or" kindref="compound">ErrorOr</ref>&lt; <ref refid="structllvm_1_1vfs_1_1_redirecting_file_system_1_1_lookup_result" kindref="compound">LookupResult</ref> &gt;</type>
+        <definition>ErrorOr&lt; RedirectingFileSystem::LookupResult &gt; RedirectingFileSystem::lookupPathImpl</definition>
+        <argsstring>(llvm::sys::path::const_iterator Start, llvm::sys::path::const_iterator End, Entry *From, llvm::SmallVectorImpl&lt; Entry * &gt; &amp;Entries) const</argsstring>
+        <name>lookupPathImpl</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::lookupPathImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sys_1_1path_1_1const__iterator" kindref="compound">llvm::sys::path::const_iterator</ref></type>
+          <declname>Start</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1sys_1_1path_1_1const__iterator" kindref="compound">llvm::sys::path::const_iterator</ref></type>
+          <declname>End</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_entry" kindref="compound">Entry</ref> *</type>
+          <declname>From</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">llvm::SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_entry" kindref="compound">Entry</ref> * &gt; &amp;</type>
+          <declname>Entries</declname>
+        </param>
+        <briefdescription>
+<para>Looks up the path <computeroutput>[Start, End)</computeroutput> in <computeroutput>From</computeroutput>, possibly recursing into the contents of <computeroutput>From</computeroutput> if it is a directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="structllvm_1_1vfs_1_1_redirecting_file_system_1_1_lookup_result" kindref="compound">LookupResult</ref> giving the matched entry and, if that entry is a <ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_file_entry" kindref="compound">FileEntry</ref> or <ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_directory_remap_entry" kindref="compound">DirectoryRemapEntry</ref>, the path it redirects to in the external file system. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1039" column="3" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="2335" bodyend="2376"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1af1118af80c15ddaa69d5a7ca25e184a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error_or" kindref="compound">ErrorOr</ref>&lt; <ref refid="classllvm_1_1vfs_1_1_status" kindref="compound">Status</ref> &gt;</type>
+        <definition>ErrorOr&lt; Status &gt; RedirectingFileSystem::status</definition>
+        <argsstring>(const Twine &amp;LookupPath, const Twine &amp;OriginalPath, const LookupResult &amp;Result)</argsstring>
+        <name>status</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::status</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>LookupPath</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>OriginalPath</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1vfs_1_1_redirecting_file_system_1_1_lookup_result" kindref="compound">LookupResult</ref> &amp;</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+<para>Get the status for a path with the provided <computeroutput><ref refid="structllvm_1_1vfs_1_1_redirecting_file_system_1_1_lookup_result" kindref="compound">LookupResult</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1044" column="11" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="2394" bodyend="2413"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a5f8600aa879b6d745a7f94e5b0ffaffd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error_or" kindref="compound">ErrorOr</ref>&lt; <ref refid="structllvm_1_1vfs_1_1_redirecting_file_system_1_1_lookup_result" kindref="compound">LookupResult</ref> &gt;</type>
+        <definition>ErrorOr&lt; RedirectingFileSystem::LookupResult &gt; RedirectingFileSystem::lookupPath</definition>
+        <argsstring>(StringRef Path) const</argsstring>
+        <name>lookupPath</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::lookupPath</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Path</declname>
+        </param>
+        <briefdescription>
+<para>Looks up <computeroutput>Path</computeroutput> in <computeroutput>Roots</computeroutput> and returns a <ref refid="structllvm_1_1vfs_1_1_redirecting_file_system_1_1_lookup_result" kindref="compound">LookupResult</ref> giving the matched entry and, if the entry was a <ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_file_entry" kindref="compound">FileEntry</ref> or <ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_directory_remap_entry" kindref="compound">DirectoryRemapEntry</ref>, the path it redirects to in the external file system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1051" column="11" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="2309" bodyend="2332"/>
+        <references refid="namespacellvm_1_1sys_1_1path_1a2798f80ce7d64ebc7049d1231e675137" compoundref="_path_8cpp" startline="226" endline="233">llvm::sys::path::begin</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1ae6199e07e1f06cdaf0ad59b959045035" compoundref="_path_8cpp" startline="235" endline="240">llvm::sys::path::end</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="namespacellvm_1a20e3e08c7de6a230cd66f9e4322c3fbe" compoundref="_bitcode_reader_8h" startline="310" endline="312">llvm::make_error_code</references>
+        <references refid="namespacellvm_1a59739a4f15fb2ec57a6b7fcfe938546ba2e70fc89b08f26fa3fc77694c91e8f7a" compoundref="_errc_8h" startline="65">llvm::no_such_file_or_directory</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0ad1329fb446b085c1ef41002bc84a510f" compoundref="_virtual_file_system_8h" startline="795">RedirectOnly</references>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a5edc743f072765fe8146c1f597d4bb37" compoundref="_virtual_file_system_8cpp" startline="1438" endline="1536">dir_begin</referencedby>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a0a4a25ca3fa9ef5bb3246ca2162f4f96" compoundref="_virtual_file_system_8cpp" startline="2464" endline="2509">exists</referencedby>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a716fd28e6537ab39f3d930edfb00dc66" compoundref="_virtual_file_system_8cpp" startline="2614" endline="2661">getRealPath</referencedby>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a756f82cf24e75f443c6f032253d84dba" compoundref="_virtual_file_system_8cpp" startline="2553" endline="2611">openFileForRead</referencedby>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a041113ae9c86afaf78aca845b270af82" compoundref="_virtual_file_system_8cpp" startline="2427" endline="2462">status</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a041113ae9c86afaf78aca845b270af82" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error_or" kindref="compound">ErrorOr</ref>&lt; <ref refid="classllvm_1_1vfs_1_1_status" kindref="compound">Status</ref> &gt;</type>
+        <definition>ErrorOr&lt; Status &gt; RedirectingFileSystem::status</definition>
+        <argsstring>(const Twine &amp;Path) override</argsstring>
+        <name>status</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::status</qualifiedname>
+        <reimplements refid="classllvm_1_1vfs_1_1_file_system_1aff88129c51b36391cd8eb9f41747a03d">status</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Path</declname>
+        </param>
+        <briefdescription>
+<para>Get the status of the entry at <computeroutput>Path</computeroutput>, if one exists. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1065" column="11" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="2427" bodyend="2462"/>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a882277bdf25efaeb8295e842ebcb3d11" compoundref="_virtual_file_system_8h" startline="792">Fallback</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a5d562a226f723ccf02b8c640f15f354b" compoundref="_virtual_file_system_8h" startline="789">Fallthrough</references>
+        <references refid="classllvm_1_1_error_or_1a8300c72908f1845c931951ed4b2a2375" compoundref="_error_or_8h" startline="152" endline="154">llvm::ErrorOr&lt; T &gt;::getError</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a5f8600aa879b6d745a7f94e5b0ffaffd" compoundref="_virtual_file_system_8cpp" startline="2309" endline="2332">lookupPath</references>
+        <references refid="classllvm_1_1_twine_1ae2cc7378ca67e19c45648f7800686933" compoundref="_twine_8cpp" startline="32" endline="35">llvm::Twine::toVector</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a0a4a25ca3fa9ef5bb3246ca2162f4f96" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool RedirectingFileSystem::exists</definition>
+        <argsstring>(const Twine &amp;Path) override</argsstring>
+        <name>exists</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::exists</qualifiedname>
+        <reimplements refid="classllvm_1_1vfs_1_1_file_system_1a156f5ab4b5c3a318b8012703959de26f">exists</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Path</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> whether <computeroutput>Path</computeroutput> exists. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default this uses <computeroutput>status()</computeroutput>, but filesystems may provide a more efficient implementation if available. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1066" column="8" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="2464" bodyend="2509"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a882277bdf25efaeb8295e842ebcb3d11" compoundref="_virtual_file_system_8h" startline="792">Fallback</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a5d562a226f723ccf02b8c640f15f354b" compoundref="_virtual_file_system_8h" startline="789">Fallthrough</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a5f8600aa879b6d745a7f94e5b0ffaffd" compoundref="_virtual_file_system_8cpp" startline="2309" endline="2332">lookupPath</references>
+        <references refid="classllvm_1_1_twine_1ae2cc7378ca67e19c45648f7800686933" compoundref="_twine_8cpp" startline="32" endline="35">llvm::Twine::toVector</references>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1aade7a1732e7a6faf95b10e4c084c19da" compoundref="_virtual_file_system_8cpp" startline="1358" endline="1369">setCurrentWorkingDirectory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a756f82cf24e75f443c6f032253d84dba" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error_or" kindref="compound">ErrorOr</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1vfs_1_1_file" kindref="compound">File</ref> &gt; &gt;</type>
+        <definition>ErrorOr&lt; std::unique_ptr&lt; File &gt; &gt; RedirectingFileSystem::openFileForRead</definition>
+        <argsstring>(const Twine &amp;Path) override</argsstring>
+        <name>openFileForRead</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::openFileForRead</qualifiedname>
+        <reimplements refid="classllvm_1_1vfs_1_1_file_system_1a65c402dbd63349a9e91c7102693d1db8">openFileForRead</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Path</declname>
+        </param>
+        <briefdescription>
+<para>Get a <computeroutput><ref refid="classllvm_1_1vfs_1_1_file" kindref="compound">File</ref></computeroutput> object for the text file at <computeroutput>Path</computeroutput>, if one exists. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1067" column="11" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="2553" bodyend="2611"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a882277bdf25efaeb8295e842ebcb3d11" compoundref="_virtual_file_system_8h" startline="792">Fallback</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a5d562a226f723ccf02b8c640f15f354b" compoundref="_virtual_file_system_8h" startline="789">Fallthrough</references>
+        <references refid="_virtual_file_system_8cpp_1a8fc685edd229a3c37701f7520c54eb23" compoundref="_virtual_file_system_8cpp" startline="2378" endline="2392">getRedirectedFileStatus</references>
+        <references refid="classllvm_1_1vfs_1_1_file_1a087eb20712ef755e7ff0bc36b722f789" compoundref="_virtual_file_system_8cpp" startline="2539" endline="2550">llvm::vfs::File::getWithPath</references>
+        <references refid="namespacellvm_1a59739a4f15fb2ec57a6b7fcfe938546bae55d43eabeefe5a8271b4a3c898bd18f" compoundref="_errc_8h" startline="56">llvm::invalid_argument</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a5f8600aa879b6d745a7f94e5b0ffaffd" compoundref="_virtual_file_system_8cpp" startline="2309" endline="2332">lookupPath</references>
+        <references refid="namespacellvm_1a20e3e08c7de6a230cd66f9e4322c3fbe" compoundref="_bitcode_reader_8h" startline="310" endline="312">llvm::make_error_code</references>
+        <references refid="classllvm_1_1_string_ref_1a223dd14e7d12bc5cea01889b972a98b2" compoundref="_string_ref_8h" startline="229" endline="233">llvm::StringRef::str</references>
+        <references refid="classllvm_1_1_twine_1ae2cc7378ca67e19c45648f7800686933" compoundref="_twine_8cpp" startline="32" endline="35">llvm::Twine::toVector</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a716fd28e6537ab39f3d930edfb00dc66" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code RedirectingFileSystem::getRealPath</definition>
+        <argsstring>(const Twine &amp;Path, SmallVectorImpl&lt; char &gt; &amp;Output) override</argsstring>
+        <name>getRealPath</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::getRealPath</qualifiedname>
+        <reimplements refid="classllvm_1_1vfs_1_1_file_system_1a68841d3d9bfc5d03b934a4826f922961">getRealPath</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Path</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classchar" kindref="compound">char</ref> &gt; &amp;</type>
+          <declname>Output</declname>
+        </param>
+        <briefdescription>
+<para>Gets real path of <computeroutput>Path</computeroutput> e.g. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>collapse all . and .. patterns, resolve symlinks. For real file system, this uses <computeroutput><ref refid="namespacellvm_1_1sys_1_1fs_1a2363fbfbd0a348f5d81fc3d3223ecae3" kindref="member">llvm::sys::fs::real_path</ref></computeroutput>. This returns <ref refid="namespacellvm_1a59739a4f15fb2ec57a6b7fcfe938546ba8344b3d509942f035d5e303022f9b986" kindref="member">errc::operation_not_permitted</ref> if not implemented by subclass. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1069" column="19" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="2614" bodyend="2661"/>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a882277bdf25efaeb8295e842ebcb3d11" compoundref="_virtual_file_system_8h" startline="792">Fallback</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a5d562a226f723ccf02b8c640f15f354b" compoundref="_virtual_file_system_8h" startline="789">Fallthrough</references>
+        <references refid="namespacellvm_1a59739a4f15fb2ec57a6b7fcfe938546bae55d43eabeefe5a8271b4a3c898bd18f" compoundref="_errc_8h" startline="56">llvm::invalid_argument</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a5f8600aa879b6d745a7f94e5b0ffaffd" compoundref="_virtual_file_system_8cpp" startline="2309" endline="2332">lookupPath</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="classllvm_1_1_twine_1ae2cc7378ca67e19c45648f7800686933" compoundref="_twine_8cpp" startline="32" endline="35">llvm::Twine::toVector</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a820eac46902b52ddd3ab17be3313e410" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error_or" kindref="compound">llvm::ErrorOr</ref>&lt; std::string &gt;</type>
+        <definition>llvm::ErrorOr&lt; std::string &gt; RedirectingFileSystem::getCurrentWorkingDirectory</definition>
+        <argsstring>() const override</argsstring>
+        <name>getCurrentWorkingDirectory</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::getCurrentWorkingDirectory</qualifiedname>
+        <reimplements refid="classllvm_1_1vfs_1_1_file_system_1a06a566a07420654035107b21dfc84220">getCurrentWorkingDirectory</reimplements>
+        <briefdescription>
+<para>Get the working directory of this file system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1072" column="17" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1353" bodyend="1355"/>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a34121aca2e132eb1499ce67598c87c1b" compoundref="_virtual_file_system_8cpp" startline="1382" endline="1397">makeAbsolute</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1aade7a1732e7a6faf95b10e4c084c19da" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code RedirectingFileSystem::setCurrentWorkingDirectory</definition>
+        <argsstring>(const Twine &amp;Path) override</argsstring>
+        <name>setCurrentWorkingDirectory</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::setCurrentWorkingDirectory</qualifiedname>
+        <reimplements refid="classllvm_1_1vfs_1_1_file_system_1a1c986ffa977f9bc4bbe9fbcf150c0ad0">setCurrentWorkingDirectory</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Path</declname>
+        </param>
+        <briefdescription>
+<para>Set the working directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This will affect all following operations on this file system and may propagate down for nested file systems. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1074" column="19" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1358" bodyend="1369"/>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a0a4a25ca3fa9ef5bb3246ca2162f4f96" compoundref="_virtual_file_system_8cpp" startline="2464" endline="2509">exists</references>
+        <references refid="namespacellvm_1a59739a4f15fb2ec57a6b7fcfe938546ba2e70fc89b08f26fa3fc77694c91e8f7a" compoundref="_errc_8h" startline="65">llvm::no_such_file_or_directory</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a927f391dc40ec58157bc3456784ab726" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code RedirectingFileSystem::isLocal</definition>
+        <argsstring>(const Twine &amp;Path, bool &amp;Result) override</argsstring>
+        <name>isLocal</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::isLocal</qualifiedname>
+        <reimplements refid="classllvm_1_1vfs_1_1_file_system_1afa880760c41789e5eedfac372d223a7a">isLocal</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Path</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+<para>Is the file mounted on a local filesystem? </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1076" column="19" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1371" bodyend="1380"/>
+        <references refid="classllvm_1_1_twine_1ae2cc7378ca67e19c45648f7800686933" compoundref="_twine_8cpp" startline="32" endline="35">llvm::Twine::toVector</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a34121aca2e132eb1499ce67598c87c1b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code RedirectingFileSystem::makeAbsolute</definition>
+        <argsstring>(SmallVectorImpl&lt; char &gt; &amp;Path) const override</argsstring>
+        <name>makeAbsolute</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::makeAbsolute</qualifiedname>
+        <reimplements refid="classllvm_1_1vfs_1_1_file_system_1a4181855db0a672fd3271cf9f867b58b4">makeAbsolute</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classchar" kindref="compound">char</ref> &gt; &amp;</type>
+          <declname>Path</declname>
+        </param>
+        <briefdescription>
+<para>Make <emphasis>Path</emphasis> an absolute path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Makes <emphasis>Path</emphasis> absolute using the current directory if it is not already. An empty <emphasis>Path</emphasis> will result in the current directory.</para>
+<para>/absolute/path =&gt; /absolute/path relative/../path =&gt; &lt;current-directory&gt;/relative/../path</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A path that is modified to be an absolute path. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>success if <emphasis>path</emphasis> has been made absolute, otherwise a platform-specific error_code. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1078" column="19" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1382" bodyend="1397"/>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a820eac46902b52ddd3ab17be3313e410" compoundref="_virtual_file_system_8cpp" startline="1353" endline="1355">getCurrentWorkingDirectory</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1ac35ec1dacb408d4c65d55249c0e02474" compoundref="_path_8cpp" startline="671" endline="679">llvm::sys::path::is_absolute</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1a58cfd8a47c0ef96db27b451c2d6ec49fa950616e5405e4ef51a87d384180e7aa1" compoundref="_path_8h" startline="29">llvm::sys::path::posix</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1a58cfd8a47c0ef96db27b451c2d6ec49fa20919b5752b40386cb56aff9b8f07723" compoundref="_path_8h" startline="31">llvm::sys::path::windows_backslash</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a5edc743f072765fe8146c1f597d4bb37" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1vfs_1_1directory__iterator" kindref="compound">directory_iterator</ref></type>
+        <definition>directory_iterator RedirectingFileSystem::dir_begin</definition>
+        <argsstring>(const Twine &amp;Dir, std::error_code &amp;EC) override</argsstring>
+        <name>dir_begin</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::dir_begin</qualifiedname>
+        <reimplements refid="classllvm_1_1vfs_1_1_file_system_1a864ab0cadce5efa12c143f4f1429b22d">dir_begin</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Dir</declname>
+        </param>
+        <param>
+          <type>std::error_code &amp;</type>
+          <declname>EC</declname>
+        </param>
+        <briefdescription>
+<para>Get a <ref refid="classllvm_1_1vfs_1_1directory__iterator" kindref="compound">directory_iterator</ref> for <computeroutput>Dir</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The &apos;end&apos; iterator is directory_iterator(). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1080" column="22" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1438" bodyend="1536"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a882277bdf25efaeb8295e842ebcb3d11" compoundref="_virtual_file_system_8h" startline="792">Fallback</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a5d562a226f723ccf02b8c640f15f354b" compoundref="_virtual_file_system_8h" startline="789">Fallthrough</references>
+        <references refid="classllvm_1_1_error_or_1a8300c72908f1845c931951ed4b2a2375" compoundref="_error_or_8h" startline="152" endline="154">llvm::ErrorOr&lt; T &gt;::getError</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a5f8600aa879b6d745a7f94e5b0ffaffd" compoundref="_virtual_file_system_8cpp" startline="2309" endline="2332">lookupPath</references>
+        <references refid="namespacellvm_1a59739a4f15fb2ec57a6b7fcfe938546ba2e70fc89b08f26fa3fc77694c91e8f7a" compoundref="_errc_8h" startline="65">llvm::no_such_file_or_directory</references>
+        <references refid="namespacellvm_1a59739a4f15fb2ec57a6b7fcfe938546ba21e867ca95e1dfecff4701863547dcec" compoundref="_errc_8h" startline="67">llvm::not_a_directory</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0ad1329fb446b085c1ef41002bc84a510f" compoundref="_virtual_file_system_8h" startline="795">RedirectOnly</references>
+        <references refid="classllvm_1_1_twine_1ae2cc7378ca67e19c45648f7800686933" compoundref="_twine_8cpp" startline="32" endline="35">llvm::Twine::toVector</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a7f03c0aad8c4b61df40be450082ed1b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RedirectingFileSystem::setOverlayFileDir</definition>
+        <argsstring>(StringRef PrefixDir)</argsstring>
+        <name>setOverlayFileDir</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::setOverlayFileDir</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>PrefixDir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1082" column="8" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1538" bodyend="1540"/>
+        <references refid="classllvm_1_1_string_ref_1a223dd14e7d12bc5cea01889b972a98b2" compoundref="_string_ref_8h" startline="229" endline="233">llvm::StringRef::str</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1add3401ac1a6c10fb58b66c92b64b0c45" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef RedirectingFileSystem::getOverlayFileDir</definition>
+        <argsstring>() const</argsstring>
+        <name>getOverlayFileDir</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::getOverlayFileDir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1084" column="13" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1542" bodyend="1544"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a6bd51073acd1e6304294ab7153610175" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RedirectingFileSystem::setFallthrough</definition>
+        <argsstring>(bool Fallthrough)</argsstring>
+        <name>setFallthrough</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::setFallthrough</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Fallthrough</declname>
+        </param>
+        <briefdescription>
+<para>Sets the redirection kind to <computeroutput>Fallthrough</computeroutput> if true or <computeroutput>RedirectOnly</computeroutput> otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Will removed in the future, use <computeroutput>setRedirection</computeroutput> instead. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1088" column="8" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1546" bodyend="1552"/>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0a5d562a226f723ccf02b8c640f15f354b" compoundref="_virtual_file_system_8h" startline="789">Fallthrough</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0ad1329fb446b085c1ef41002bc84a510f" compoundref="_virtual_file_system_8h" startline="795">RedirectOnly</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a8c3c0f2215ac02029211cd0f4046ecf2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RedirectingFileSystem::setRedirection</definition>
+        <argsstring>(RedirectingFileSystem::RedirectKind Kind)</argsstring>
+        <name>setRedirection</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::setRedirection</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0" kindref="member">RedirectingFileSystem::RedirectKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1090" column="8" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1554" bodyend="1557"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a4327c6f3162138e889dc61ccde683b85" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref> &gt;</type>
+        <definition>std::vector&lt; StringRef &gt; RedirectingFileSystem::getRoots</definition>
+        <argsstring>() const</argsstring>
+        <name>getRoots</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::getRoots</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1092" column="15" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1559" bodyend="1565"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1aa6179e2be01a39ae871447534cd8638f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::vfs::RedirectingFileSystem::hasBeenUsed</definition>
+        <argsstring>() const</argsstring>
+        <name>hasBeenUsed</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::hasBeenUsed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1094" column="8" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="1094" bodyend="1094"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1ad5f94a31e3b200b44d7474e77974b4cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::vfs::RedirectingFileSystem::clearHasBeenUsed</definition>
+        <argsstring>()</argsstring>
+        <name>clearHasBeenUsed</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::clearHasBeenUsed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1095" column="8" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="1095" bodyend="1095"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a0116b538ab0138e93e0c9ed5d9e04c07" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::vfs::RedirectingFileSystem::setUsageTrackingActive</definition>
+        <argsstring>(bool Active)</argsstring>
+        <name>setUsageTrackingActive</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::setUsageTrackingActive</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Active</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1097" column="8" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="1097" bodyend="1097"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1af4447c8eb1acebfa76ee7b580ccf93cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RedirectingFileSystem::printEntry</definition>
+        <argsstring>(raw_ostream &amp;OS, Entry *E, unsigned IndentLevel=0) const</argsstring>
+        <name>printEntry</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::printEntry</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_entry" kindref="compound">Entry</ref> *</type>
+          <declname>E</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>IndentLevel</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1099" column="8" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1584" bodyend="1618"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a9507b40bcb88580411b40aaf59c105aea53dd0141cf4c202d8b1167608b16368e" compoundref="_virtual_file_system_8h" startline="781">EK_Directory</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a9507b40bcb88580411b40aaf59c105aea2c13f4e113c2d83046295f95a17aa19d" compoundref="_virtual_file_system_8h" startline="781">EK_DirectoryRemap</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a9507b40bcb88580411b40aaf59c105aea03e8d48c99b4e6a894fb7651aee0c727" compoundref="_virtual_file_system_8h" startline="781">EK_File</references>
+        <references refid="namespacellvm_1a341215803e83773a3e97860dc291f121" compoundref="iterator__range_8h" startline="77" endline="79">llvm::make_range</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042a89b3ca06f9a5f78465654ab19f83fbad" compoundref="_virtual_file_system_8h" startline="782">NK_External</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042ad999c8c10cab1f4c45fbb748c6592ebd" compoundref="_virtual_file_system_8h" startline="782">NK_NotSet</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042a1a039623fd4526d60bde1baa877d46fa" compoundref="_virtual_file_system_8h" startline="782">NK_Virtual</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1af4447c8eb1acebfa76ee7b580ccf93cc" compoundref="_virtual_file_system_8cpp" startline="1584" endline="1618">printEntry</references>
+        <references refid="classllvm_1_1vfs_1_1_file_system_1a8c7d80ced435a4f134fa61d5d92a9968" compoundref="_virtual_file_system_8h" startline="363" endline="366">llvm::vfs::FileSystem::printIndent</references>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1af4447c8eb1acebfa76ee7b580ccf93cc" compoundref="_virtual_file_system_8cpp" startline="1584" endline="1618">printEntry</referencedby>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a15ce8d2f492ee147cf4875bf7b8c24e3" compoundref="_virtual_file_system_8cpp" startline="1567" endline="1582">printImpl</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a9f274211d8e2baf7f13ec1e030e09de6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1vfs_1_1_redirecting_file_system" kindref="compound">RedirectingFileSystem</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; RedirectingFileSystem &gt; RedirectingFileSystem::create</definition>
+        <argsstring>(std::unique_ptr&lt; MemoryBuffer &gt; Buffer, SourceMgr::DiagHandlerTy DiagHandler, StringRef YAMLFilePath, void *DiagContext, IntrusiveRefCntPtr&lt; FileSystem &gt; ExternalFS)</argsstring>
+        <name>create</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::create</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_buffer" kindref="compound">MemoryBuffer</ref> &gt;</type>
+          <declname>Buffer</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr_1acf78be89ec851a45f37a776a5a58bfe8" kindref="member">SourceMgr::DiagHandlerTy</ref></type>
+          <declname>DiagHandler</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>YAMLFilePath</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>DiagContext</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_intrusive_ref_cnt_ptr" kindref="compound">IntrusiveRefCntPtr</ref>&lt; <ref refid="classllvm_1_1vfs_1_1_file_system" kindref="compound">FileSystem</ref> &gt;</type>
+          <declname>ExternalFS</declname>
+        </param>
+        <briefdescription>
+<para>Parses <computeroutput>Buffer</computeroutput>, which is expected to be in YAML format and returns a virtual file system representing its contents. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1056" column="3" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="2176" bodyend="2216"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1yaml_1_1_stream_1a28a9f3738483f46eb7087f114ec3c074" compoundref="_y_a_m_l_parser_8cpp" startline="1935" endline="1944">llvm::yaml::Stream::begin</references>
+        <references refid="_text_stub_8cpp_1aa9f07add63589fb3b28821d089f069a7" compoundref="_text_stub_8cpp" startline="1060" endline="1072">DiagHandler</references>
+        <references refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777adaf658d40b0b4eb15c0350864c87c2b8" compoundref="_support_2_source_mgr_8h" startline="34">llvm::SourceMgr::DK_Error</references>
+        <references refid="classllvm_1_1_string_ref_1a2dc80c585ad5882da8cae7b5968f7e74" compoundref="_string_ref_8h" startline="147" endline="147">llvm::StringRef::empty</references>
+        <references refid="classllvm_1_1yaml_1_1_stream_1a19ac1ea26f1dc39bc0922145ebc30ed3" compoundref="_y_a_m_l_parser_8cpp" startline="1946" endline="1948">llvm::yaml::Stream::end</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a144ec9dcc77027317d16af9fc5fec1c8" compoundref="_path_8cpp" startline="906" endline="953">llvm::sys::fs::make_absolute</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1a5326427c87607b2364a1fcdf13fa0eea" compoundref="_path_8cpp" startline="467" endline="472">llvm::sys::path::parent_path</references>
+        <references refid="classllvm_1_1_source_mgr_1a5fb499d84f3af1286e8d508a760aa396" compoundref="_source_mgr_8cpp" startline="352" endline="357">llvm::SourceMgr::PrintMessage</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a341937336432d0819c602220545628e5" compoundref="_virtual_file_system_8h" startline="946">RedirectingFileSystemParser</references>
+        <references refid="classllvm_1_1_source_mgr_1ad324bef18696e3fcd110ffb2d33a2b58" compoundref="_support_2_source_mgr_8h" startline="112" endline="115">llvm::SourceMgr::setDiagHandler</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a1889d01b571d20008558e46cea63f435" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1vfs_1_1_redirecting_file_system" kindref="compound">RedirectingFileSystem</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; RedirectingFileSystem &gt; RedirectingFileSystem::create</definition>
+        <argsstring>(ArrayRef&lt; std::pair&lt; std::string, std::string &gt; &gt; RemappedFiles, bool UseExternalNames, FileSystem &amp;ExternalFS)</argsstring>
+        <name>create</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::create</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::pair&lt; std::string, std::string &gt; &gt;</type>
+          <declname>RemappedFiles</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>UseExternalNames</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1vfs_1_1_file_system" kindref="compound">FileSystem</ref> &amp;</type>
+          <declname>ExternalFS</declname>
+        </param>
+        <briefdescription>
+<para>Redirect each of the remapped files from first to second. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1062" column="3" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="2218" bodyend="2269"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1a2798f80ce7d64ebc7049d1231e675137" compoundref="_path_8cpp" startline="226" endline="233">llvm::sys::path::begin</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1ae6199e07e1f06cdaf0ad59b959045035" compoundref="_path_8cpp" startline="235" endline="240">llvm::sys::path::end</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1aa56d25bb5127dd7a5831c25764f76cbe" compoundref="_path_8cpp" startline="577" endline="577">llvm::sys::path::filename</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_parser_1ac3b4d9a8bed01afc755fcbd6ecdee265" compoundref="_virtual_file_system_8cpp" startline="1738" endline="1774">llvm::vfs::RedirectingFileSystemParser::lookupOrCreateEntry</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042a89b3ca06f9a5f78465654ab19f83fbad" compoundref="_virtual_file_system_8h" startline="782">NK_External</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042a1a039623fd4526d60bde1baa877d46fa" compoundref="_virtual_file_system_8h" startline="782">NK_Virtual</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1a5326427c87607b2364a1fcdf13fa0eea" compoundref="_path_8cpp" startline="467" endline="472">llvm::sys::path::parent_path</references>
+        <references refid="namespacellvm_1a6b0ac1fa4f05de76413c5e0ca6334035" compoundref="_s_t_l_extras_8h" startline="420" endline="426">llvm::reverse</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a15ce8d2f492ee147cf4875bf7b8c24e3" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RedirectingFileSystem::printImpl</definition>
+        <argsstring>(raw_ostream &amp;OS, PrintType Type, unsigned IndentLevel) const override</argsstring>
+        <name>printImpl</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::printImpl</qualifiedname>
+        <reimplements refid="classllvm_1_1vfs_1_1_file_system_1a29a9cdc111e72ed7a282ba2307d795fe">printImpl</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1vfs_1_1_file_system_1a18e26e37e377b73c564488e7b77424ec" kindref="member">PrintType</ref></type>
+          <declname>Type</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>IndentLevel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1102" column="8" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1567" bodyend="1582"/>
+        <references refid="classllvm_1_1vfs_1_1_file_system_1a18e26e37e377b73c564488e7b77424ecac1df1da7a1ce305a3b60af9d5733ac1d" compoundref="_virtual_file_system_8h" startline="339">llvm::vfs::FileSystem::Contents</references>
+        <references refid="classllvm_1_1vfs_1_1_redirecting_file_system_1af4447c8eb1acebfa76ee7b580ccf93cc" compoundref="_virtual_file_system_8cpp" startline="1584" endline="1618">printEntry</references>
+        <references refid="classllvm_1_1vfs_1_1_file_system_1a8c7d80ced435a4f134fa61d5d92a9968" compoundref="_virtual_file_system_8h" startline="363" endline="366">llvm::vfs::FileSystem::printIndent</references>
+        <references refid="classllvm_1_1vfs_1_1_file_system_1a18e26e37e377b73c564488e7b77424eca290612199861c31d1036b185b4e69b75" compoundref="_virtual_file_system_8h" startline="339">llvm::vfs::FileSystem::Summary</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a6f20eb73a275b0fd618ce145f565a262" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RedirectingFileSystem::visitChildFileSystems</definition>
+        <argsstring>(VisitCallbackTy Callback) override</argsstring>
+        <name>visitChildFileSystems</name>
+        <qualifiedname>llvm::vfs::RedirectingFileSystem::visitChildFileSystems</qualifiedname>
+        <reimplements refid="classllvm_1_1vfs_1_1_file_system_1ab1cb27e1272c6e7e2f197ae37d52e3d9">visitChildFileSystems</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1vfs_1_1_file_system_1a043edde8f3c87c7869e5112c5ef954e6" kindref="member">VisitCallbackTy</ref></type>
+          <declname>Callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/VirtualFileSystem.h" line="1104" column="8" bodyfile="lib/Support/VirtualFileSystem.cpp" bodystart="1620" bodyend="1625"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A virtual file system parsed from a YAML file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Currently, this class allows creating virtual files and directories. Virtual files map to existing external files in <computeroutput>ExternalFS</computeroutput>, and virtual directories may either map to existing directories in <computeroutput>ExternalFS</computeroutput> or list their contents in the form of other virtual directories and/or files.</para>
+<para>The basic structure of the parsed file is: <verbatim>/// {
+///   &apos;version&apos;: &lt;version number&gt;,
+///   &lt;optional configuration&gt;
+///   &apos;roots&apos;: [
+///              &lt;directory entries&gt;
+///            ]
+/// }
+/// </verbatim> The roots may be absolute or relative. If relative they will be made absolute against either current working directory or the directory where the Overlay YAML file is located, depending on the &apos;root-relative&apos; configuration.</para>
+<para>All configuration options are optional. &apos;case-sensitive&apos;: &lt;boolean, default=(true for Posix, false for Windows)&gt; &apos;use-external-names&apos;: &lt;boolean, default=true&gt; &apos;root-relative&apos;: &lt;string, one of &apos;cwd&apos; or &apos;overlay-dir&apos;, default=&apos;cwd&apos;&gt; &apos;overlay-relative&apos;: &lt;boolean, default=false&gt; &apos;fallthrough&apos;: &lt;boolean, default=true, deprecated - use &apos;redirecting-with&apos; instead&gt; &apos;redirecting-with&apos;: &lt;string, one of &apos;fallthrough&apos;, &apos;fallback&apos;, or &apos;redirect-only&apos;, default=&apos;fallthrough&apos;&gt;</para>
+<para>To clarify, &apos;root-relative&apos; option will prepend the current working directory, or the overlay directory to the &apos;roots-&gt;name&apos; field only if &apos;roots-&gt;name&apos; is a relative path. On the other hand, when &apos;overlay-relative&apos; is set to &apos;true&apos;, external paths will always be prepended with the overlay directory, even if external paths are not relative paths. The &apos;root-relative&apos; option has no interaction with the &apos;overlay-relative&apos; option.</para>
+<para>Virtual directories that list their contents are represented as <verbatim>/// {
+///   &apos;type&apos;: &apos;directory&apos;,
+///   &apos;name&apos;: &lt;string&gt;,
+///   &apos;contents&apos;: [ &lt;file or directory entries&gt; ]
+/// }
+/// </verbatim> The default attributes for such virtual directories are: <verbatim>/// MTime = now() when created
+/// Perms = 0777
+/// User = Group = 0
+/// Size = 0
+/// UniqueID = unspecified unique value
+/// </verbatim> When a path prefix matches such a directory, the next component in the path is matched against the entries in the &apos;contents&apos; array.</para>
+<para>Re-mapped directories, on the other hand, are represented as /// <verbatim>/// {
+///   &apos;type&apos;: &apos;directory-remap&apos;,
+///   &apos;name&apos;: &lt;string&gt;,
+///   &apos;use-external-name&apos;: &lt;boolean&gt;, # Optional
+///   &apos;external-contents&apos;: &lt;path to external directory&gt;
+/// }
+/// </verbatim> and inherit their attributes from the external directory. When a path prefix matches such an entry, the unmatched components are appended to the &apos;external-contents&apos; path, and the resulting path is looked up in the external file system instead.</para>
+<para>Re-mapped files are represented as <verbatim>/// {
+///   &apos;type&apos;: &apos;file&apos;,
+///   &apos;name&apos;: &lt;string&gt;,
+///   &apos;use-external-name&apos;: &lt;boolean&gt;, # Optional
+///   &apos;external-contents&apos;: &lt;path to external file&gt;
+/// }
+/// </verbatim> Their attributes and file contents are determined by looking up the file at their &apos;external-contents&apos; path in the external file system.</para>
+<para>For &apos;file&apos;, &apos;directory&apos; and &apos;directory-remap&apos; entries the &apos;name&apos; field may contain multiple path components (e.g. /path/to/file). However, any directory in such a path that contains more than one child must be uniquely represented by a &apos;directory&apos; entry.</para>
+<para>When the &apos;use-external-name&apos; field is set, calls to <emphasis><ref refid="classllvm_1_1vfs_1_1_file_1a42e50c531aa6b96228eed7c6b885fcaf" kindref="member">vfs::File::status()</ref></emphasis> give the external (remapped) filesystem name instead of the name the file was accessed by. This is an intentional leak through the <emphasis><ref refid="classllvm_1_1vfs_1_1_redirecting_file_system" kindref="compound">RedirectingFileSystem</ref></emphasis> abstraction layer. It enables clients to discover (and use) the external file location when communicating with users or tools that don&apos;t use the same VFS overlay.</para>
+<para>FIXME: &apos;use-external-name&apos; causes behaviour that&apos;s inconsistent with how &quot;real&quot; filesystems behave. Maybe there should be a separate channel for this information. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>ParentT</label>
+        <link refid="class_parent_t"/>
+      </node>
+      <node id="8">
+        <label>ParentTs...</label>
+      </node>
+      <node id="9">
+        <label>llvm::RTTIExtends&lt; ThisT, ParentT, ParentTs &gt;</label>
+        <link refid="classllvm_1_1_r_t_t_i_extends"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::RTTIExtends&lt; FileSystem, RTTIRoot &gt;</label>
+        <link refid="classllvm_1_1_r_t_t_i_extends"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="template-instance">
+          <edgelabel>&lt; FileSystem, RTTIRoot &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::RTTIExtends&lt; RedirectingFileSystem, vfs::FileSystem &gt;</label>
+        <link refid="classllvm_1_1_r_t_t_i_extends"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="template-instance">
+          <edgelabel>&lt; RedirectingFileSystem, vfs::FileSystem &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::RTTIRoot</label>
+        <link refid="classllvm_1_1_r_t_t_i_root"/>
+      </node>
+      <node id="5">
+        <label>llvm::ThreadSafeRefCountedBase&lt; Derived &gt;</label>
+        <link refid="classllvm_1_1_thread_safe_ref_counted_base"/>
+      </node>
+      <node id="4">
+        <label>llvm::ThreadSafeRefCountedBase&lt; FileSystem &gt;</label>
+        <link refid="classllvm_1_1_thread_safe_ref_counted_base"/>
+        <childnode refid="5" relation="template-instance">
+          <edgelabel>&lt; FileSystem &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::vfs::FileSystem</label>
+        <link refid="classllvm_1_1vfs_1_1_file_system"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::vfs::RedirectingFileSystem</label>
+        <link refid="classllvm_1_1vfs_1_1_redirecting_file_system"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10">
+        <label>ParentT</label>
+        <link refid="class_parent_t"/>
+      </node>
+      <node id="8">
+        <label>ParentTs...</label>
+      </node>
+      <node id="11">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="9">
+        <label>llvm::RTTIExtends&lt; ThisT, ParentT, ParentTs &gt;</label>
+        <link refid="classllvm_1_1_r_t_t_i_extends"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::RTTIExtends&lt; FileSystem, RTTIRoot &gt;</label>
+        <link refid="classllvm_1_1_r_t_t_i_extends"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="template-instance">
+          <edgelabel>&lt; FileSystem, RTTIRoot &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::RTTIExtends&lt; RedirectingFileSystem, vfs::FileSystem &gt;</label>
+        <link refid="classllvm_1_1_r_t_t_i_extends"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="template-instance">
+          <edgelabel>&lt; RedirectingFileSystem, vfs::FileSystem &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::RTTIRoot</label>
+        <link refid="classllvm_1_1_r_t_t_i_root"/>
+      </node>
+      <node id="5">
+        <label>llvm::ThreadSafeRefCountedBase&lt; Derived &gt;</label>
+        <link refid="classllvm_1_1_thread_safe_ref_counted_base"/>
+      </node>
+      <node id="4">
+        <label>llvm::ThreadSafeRefCountedBase&lt; FileSystem &gt;</label>
+        <link refid="classllvm_1_1_thread_safe_ref_counted_base"/>
+        <childnode refid="5" relation="template-instance">
+          <edgelabel>&lt; FileSystem &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::vfs::FileSystem</label>
+        <link refid="classllvm_1_1vfs_1_1_file_system"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::vfs::RedirectingFileSystem</label>
+        <link refid="classllvm_1_1vfs_1_1_redirecting_file_system"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Support/VirtualFileSystem.h" line="777" column="1" bodyfile="include/llvm/Support/VirtualFileSystem.h" bodystart="778" bodyend="1105"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a39656e314338ee73adb1149cd31a81fd" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>CaseSensitive</name></member>
+      <member refid="classllvm_1_1_r_t_t_i_extends_1a6710d5591d45a3fe56384f0709590775" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>classID</name></member>
+      <member refid="classllvm_1_1_r_t_t_i_extends_1a8fbf02d404b399aca2b64f4b533a3feb" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>classof</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1ad5f94a31e3b200b44d7474e77974b4cb" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>clearHasBeenUsed</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a9f274211d8e2baf7f13ec1e030e09de6" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>create</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a1889d01b571d20008558e46cea63f435" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>create</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a5edc743f072765fe8146c1f597d4bb37" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>dir_begin</name></member>
+      <member refid="classllvm_1_1vfs_1_1_file_system_1aa9e4d505290b64f43c16bb57ab1b6819" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_r_t_t_i_extends_1a7ce2323e6f112c2a7a376c62fe44deb3" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>dynamicClassID</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a9507b40bcb88580411b40aaf59c105aea53dd0141cf4c202d8b1167608b16368e" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>EK_Directory</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a9507b40bcb88580411b40aaf59c105aea2c13f4e113c2d83046295f95a17aa19d" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>EK_DirectoryRemap</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a9507b40bcb88580411b40aaf59c105aea03e8d48c99b4e6a894fb7651aee0c727" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>EK_File</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a9507b40bcb88580411b40aaf59c105ae" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>EntryKind</name></member>
+      <member refid="classllvm_1_1vfs_1_1_file_system_1ae5e4bbdf96882da02d89b2103accc353" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>equivalent</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a0a4a25ca3fa9ef5bb3246ca2162f4f96" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>exists</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1aba283723052667bb7a31283bd2b05549" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>ExternalFS</name></member>
+      <member refid="classllvm_1_1vfs_1_1_file_system_1ac2998b305007e6726aead7b5bdd8346d" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>getBufferForFile</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a820eac46902b52ddd3ab17be3313e410" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>getCurrentWorkingDirectory</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a3332f5925aec0b0166c5f5085d866b57" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>getExternalStatus</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1add3401ac1a6c10fb58b66c92b64b0c45" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>getOverlayFileDir</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a716fd28e6537ab39f3d930edfb00dc66" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>getRealPath</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a4327c6f3162138e889dc61ccde683b85" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>getRoots</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1ade22860baa85296ff5062249e2600493" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>HasBeenUsed</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1aa6179e2be01a39ae871447534cd8638f" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>hasBeenUsed</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1aaa40459111845179e104abb274985ec7" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>ID</name></member>
+      <member refid="classllvm_1_1_r_t_t_i_extends_1a2e45c252a6446b0332791483e6adab1f" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>isA</name></member>
+      <member refid="classllvm_1_1_r_t_t_i_root_1a934251d38a92004b4dab4635f50f4424" prot="public" virt="virtual" ambiguityscope="llvm::RTTIRoot::"><scope>llvm::vfs::RedirectingFileSystem</scope><name>isA</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a927f391dc40ec58157bc3456784ab726" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>isLocal</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a8ad1c648e9b0c12589d7718f90ebf4b3" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>IsRelativeOverlay</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a5f8600aa879b6d745a7f94e5b0ffaffd" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>lookupPath</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a625d69f2c0e7664560f0cb6360a84bcc" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>lookupPathImpl</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a99b517aebffadc4c834aad6a559171bc" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>makeAbsolute</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a34121aca2e132eb1499ce67598c87c1b" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>makeAbsolute</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a2bc1af828e7c570098c13a761733836c" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>makeCanonicalForLookup</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>NameKind</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042a89b3ca06f9a5f78465654ab19f83fbad" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>NK_External</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042ad999c8c10cab1f4c45fbb748c6592ebd" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>NK_NotSet</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a837bbd43fe03a47cfafb99d47a9fa042a1a039623fd4526d60bde1baa877d46fa" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>NK_Virtual</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a756f82cf24e75f443c6f032253d84dba" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>openFileForRead</name></member>
+      <member refid="classllvm_1_1vfs_1_1_file_system_1a16e0a1364b5172561351fe7968efb48f" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>openFileForReadBinary</name></member>
+      <member refid="classllvm_1_1_thread_safe_ref_counted_base_1a6d2ae9903c07f633671063e1aa0aeb59" prot="protected" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a3d515e4c2b6cbd1ffc127a8f75e44d24" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>OverlayFileDir</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1ae6b7e7203bbae0bc91a7324e343675e3" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>pathComponentMatches</name></member>
+      <member refid="classllvm_1_1vfs_1_1_file_system_1aaf3591a4983ed89f1106d653458f0158" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>print</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1af4447c8eb1acebfa76ee7b580ccf93cc" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>printEntry</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a15ce8d2f492ee147cf4875bf7b8c24e3" prot="protected" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>printImpl</name></member>
+      <member refid="classllvm_1_1vfs_1_1_file_system_1a8c7d80ced435a4f134fa61d5d92a9968" prot="protected" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>printIndent</name></member>
+      <member refid="classllvm_1_1vfs_1_1_file_system_1a18e26e37e377b73c564488e7b77424ec" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>PrintType</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a540b5d6fddce2f91f2e43fa18e81fb79" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>RedirectingFileSystem</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a341937336432d0819c602220545628e5" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>RedirectingFileSystemParser</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a97b4b51c367a6158df7ec96b2faf0ed2" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>RedirectingFSDirIterImpl</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a31de67b17a61a111b4c48f22bfdd04b1" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>Redirection</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a63bec507dd571ea0302cd27827af81c0" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>RedirectKind</name></member>
+      <member refid="classllvm_1_1_thread_safe_ref_counted_base_1aace72d8ed6b135fd20d71cad7727316b" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>Release</name></member>
+      <member refid="classllvm_1_1_thread_safe_ref_counted_base_1a6f3f202ac7c4bf335f8635144126a5e8" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>Retain</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a8073c0af6b6171550c623664671fdbb1" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>RootRelative</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a09f22a5612ee3a09f13d4641d5017f2d" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>RootRelativeKind</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a3290a380f493d79438fdeab078c91725" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>Roots</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1aade7a1732e7a6faf95b10e4c084c19da" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>setCurrentWorkingDirectory</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a6bd51073acd1e6304294ab7153610175" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>setFallthrough</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a7f03c0aad8c4b61df40be450082ed1b5" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>setOverlayFileDir</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a8c3c0f2215ac02029211cd0f4046ecf2" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>setRedirection</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a0116b538ab0138e93e0c9ed5d9e04c07" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>setUsageTrackingActive</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1af1118af80c15ddaa69d5a7ca25e184a8" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>status</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a041113ae9c86afaf78aca845b270af82" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>status</name></member>
+      <member refid="classllvm_1_1_thread_safe_ref_counted_base_1a66adfdfd789c9f71dbf3a4c0942ef4fe" prot="protected" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>ThreadSafeRefCountedBase</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a6e7914bd413b3fabf9090208a94e70a0" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>UsageTrackingActive</name></member>
+      <member refid="classllvm_1_1_thread_safe_ref_counted_base_1ab4cf744e265a2fd40c9a9938c0d941ad" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>UseCount</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1abafea9a6b5142571e005c225c491ddae" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>UseExternalNames</name></member>
+      <member refid="classllvm_1_1vfs_1_1_file_system_1aba644fc33bc2276f5d46f62bb672208b" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>visit</name></member>
+      <member refid="classllvm_1_1vfs_1_1_file_system_1a043edde8f3c87c7869e5112c5ef954e6" prot="public" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>VisitCallbackTy</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a6f20eb73a275b0fd618ce145f565a262" prot="protected" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>visitChildFileSystems</name></member>
+      <member refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a53c086dfbfbb7efb7eb10b7b58a0f86c" prot="private" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>WorkingDirectory</name></member>
+      <member refid="classllvm_1_1vfs_1_1_file_system_1a9e366f036e9d9cd884fa689963aacc49" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>~FileSystem</name></member>
+      <member refid="classllvm_1_1_r_t_t_i_root_1a9ba1c484907c74c64cfa2e6c3611b8b0" prot="public" virt="virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>~RTTIRoot</name></member>
+      <member refid="classllvm_1_1_thread_safe_ref_counted_base_1a3d954694c4ed27106628b469e2020279" prot="protected" virt="non-virtual"><scope>llvm::vfs::RedirectingFileSystem</scope><name>~ThreadSafeRefCountedBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

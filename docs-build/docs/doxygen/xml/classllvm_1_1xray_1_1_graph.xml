@@ -1,0 +1,808 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1xray_1_1_graph" kind="class" language="C++" prot="public">
+    <compoundname>llvm::xray::Graph</compoundname>
+    <includes refid="_x_ray_2_graph_8h" local="yes">llvm/XRay/Graph.h</includes>
+    <innerclass refid="classllvm_1_1xray_1_1_graph_1_1_edge_view" prot="public">llvm::xray::Graph::EdgeView</innerclass>
+    <innerclass refid="classllvm_1_1xray_1_1_graph_1_1_in_out_edge_view" prot="public">llvm::xray::Graph::InOutEdgeView</innerclass>
+    <innerclass refid="classllvm_1_1xray_1_1_graph_1_1_neighbor_edge_iterator_t" prot="private">llvm::xray::Graph::NeighborEdgeIteratorT</innerclass>
+    <innerclass refid="classllvm_1_1xray_1_1_graph_1_1_vertex_view" prot="public">llvm::xray::Graph::VertexView</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename VertexAttribute</type>
+      </param>
+      <param>
+        <type>typename EdgeAttribute</type>
+      </param>
+      <param>
+        <type>typename VI</type>
+        <defval>int32_t</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" prot="public" static="no">
+        <type>VI</type>
+        <definition>typedef VI llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::VertexIdentifier</definition>
+        <argsstring></argsstring>
+        <name>VertexIdentifier</name>
+        <qualifiedname>llvm::xray::Graph::VertexIdentifier</qualifiedname>
+        <briefdescription>
+<para>These objects are used to name edges and vertices in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="77" column="14" bodyfile="include/llvm/XRay/Graph.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1af18457e2a495ea45229584fa1c471cf6" prot="public" static="no">
+        <type>std::pair&lt; VI, VI &gt;</type>
+        <definition>typedef std::pair&lt;VI, VI&gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::EdgeIdentifier</definition>
+        <argsstring></argsstring>
+        <name>EdgeIdentifier</name>
+        <qualifiedname>llvm::xray::Graph::EdgeIdentifier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="78" column="21" bodyfile="include/llvm/XRay/Graph.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1a9d690636cf7cdf754037819e22c6eed8" prot="public" static="no">
+        <type><ref refid="structllvm_1_1detail_1_1_dense_map_pair" kindref="compound">detail::DenseMapPair</ref>&lt; <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref>, VertexAttribute &gt;</type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::VertexValueType = 
+      detail::DenseMapPair&lt;VertexIdentifier, VertexAttribute&gt;</definition>
+        <argsstring></argsstring>
+        <name>VertexValueType</name>
+        <qualifiedname>llvm::xray::Graph::VertexValueType</qualifiedname>
+        <briefdescription>
+<para>This type is the value_type of all iterators which range over vertices, Determined by the Vertices <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="82" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1af3591e0d96718a0f1b28a7e3b7d8705a" prot="public" static="no">
+        <type><ref refid="structllvm_1_1detail_1_1_dense_map_pair" kindref="compound">detail::DenseMapPair</ref>&lt; <ref refid="classllvm_1_1xray_1_1_graph_1af18457e2a495ea45229584fa1c471cf6" kindref="member">EdgeIdentifier</ref>, EdgeAttribute &gt;</type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::EdgeValueType =  detail::DenseMapPair&lt;EdgeIdentifier, EdgeAttribute&gt;</definition>
+        <argsstring></argsstring>
+        <name>EdgeValueType</name>
+        <qualifiedname>llvm::xray::Graph::EdgeValueType</qualifiedname>
+        <briefdescription>
+<para>This type is the value_type of all iterators which range over edges, Determined by the Edges <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="87" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1a54673fcf8298aefa4e10707b86123391" prot="public" static="no">
+        <type>std::size_t</type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::size_type =  std::size_t</definition>
+        <argsstring></argsstring>
+        <name>size_type</name>
+        <qualifiedname>llvm::xray::Graph::size_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="89" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1a5043d96a53eddd19ffcbd9baa4be1f33" prot="public" static="no">
+        <type>NeighborEdgeIteratorT&lt; <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref>, false &gt;</type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::ConstInEdgeIterator =  NeighborEdgeIteratorT&lt;true, false&gt;</definition>
+        <argsstring></argsstring>
+        <name>ConstInEdgeIterator</name>
+        <qualifiedname>llvm::xray::Graph::ConstInEdgeIterator</qualifiedname>
+        <briefdescription>
+<para>A const iterator type for iterating through the set of edges entering a vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Has a const <ref refid="classllvm_1_1xray_1_1_graph_1af3591e0d96718a0f1b28a7e3b7d8705a" kindref="member">EdgeValueType</ref> as its value_type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="175" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1a66ac965d888a7c7419082546e1270091" prot="public" static="no">
+        <type>NeighborEdgeIteratorT&lt; false, false &gt;</type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::InEdgeIterator =  NeighborEdgeIteratorT&lt;false, false&gt;</definition>
+        <argsstring></argsstring>
+        <name>InEdgeIterator</name>
+        <qualifiedname>llvm::xray::Graph::InEdgeIterator</qualifiedname>
+        <briefdescription>
+<para>An iterator type for iterating through the set of edges leaving a vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Has an <ref refid="classllvm_1_1xray_1_1_graph_1af3591e0d96718a0f1b28a7e3b7d8705a" kindref="member">EdgeValueType</ref> as its value_type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="180" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1a62ab3aace08cd6e4243731012d2eb737" prot="public" static="no">
+        <type>NeighborEdgeIteratorT&lt; <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref>, <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref> &gt;</type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::ConstOutEdgeIterator =  NeighborEdgeIteratorT&lt;true, true&gt;</definition>
+        <argsstring></argsstring>
+        <name>ConstOutEdgeIterator</name>
+        <qualifiedname>llvm::xray::Graph::ConstOutEdgeIterator</qualifiedname>
+        <briefdescription>
+<para>A const iterator type for iterating through the set of edges entering a vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Has a const <ref refid="classllvm_1_1xray_1_1_graph_1af3591e0d96718a0f1b28a7e3b7d8705a" kindref="member">EdgeValueType</ref> as its value_type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="186" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1a2bc58a2e3704bca6457211da14ea579a" prot="public" static="no">
+        <type>NeighborEdgeIteratorT&lt; false, <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref> &gt;</type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::OutEdgeIterator =  NeighborEdgeIteratorT&lt;false, true&gt;</definition>
+        <argsstring></argsstring>
+        <name>OutEdgeIterator</name>
+        <qualifiedname>llvm::xray::Graph::OutEdgeIterator</qualifiedname>
+        <briefdescription>
+<para>An iterator type for iterating through the set of edges leaving a vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Has an <ref refid="classllvm_1_1xray_1_1_graph_1af3591e0d96718a0f1b28a7e3b7d8705a" kindref="member">EdgeValueType</ref> as its value_type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="191" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1ad1b3a96bffc932e4dbedcd66b9951b02" prot="public" static="no">
+        <type>typename <ref refid="classllvm_1_1_dense_map_base_1a5784c312872bef21d9344dae0a0e8fc0" kindref="member">VertexMapT::const_iterator</ref></type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::ConstVertexIterator =  typename VertexMapT::const_iterator</definition>
+        <argsstring></argsstring>
+        <name>ConstVertexIterator</name>
+        <qualifiedname>llvm::xray::Graph::ConstVertexIterator</qualifiedname>
+        <briefdescription>
+<para>A const iterator type for iterating through the whole vertex set of the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Has a const <ref refid="classllvm_1_1xray_1_1_graph_1a9d690636cf7cdf754037819e22c6eed8" kindref="member">VertexValueType</ref> as its value_type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="261" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1a755f8ce931504b6bde92bd3d9500d0f3" prot="public" static="no">
+        <type>typename <ref refid="classllvm_1_1_dense_map_base_1a214e872d61db2ea8cb023f127cafd0b9" kindref="member">VertexMapT::iterator</ref></type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::VertexIterator =  typename VertexMapT::iterator</definition>
+        <argsstring></argsstring>
+        <name>VertexIterator</name>
+        <qualifiedname>llvm::xray::Graph::VertexIterator</qualifiedname>
+        <briefdescription>
+<para>An iterator type for iterating through the whole vertex set of the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Has a <ref refid="classllvm_1_1xray_1_1_graph_1a9d690636cf7cdf754037819e22c6eed8" kindref="member">VertexValueType</ref> as its value_type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="266" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1a9157284e108b7e443924f66a19e73b0c" prot="public" static="no">
+        <type>typename <ref refid="classllvm_1_1_dense_map_base_1a5784c312872bef21d9344dae0a0e8fc0" kindref="member">EdgeMapT::const_iterator</ref></type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::ConstEdgeIterator =  typename EdgeMapT::const_iterator</definition>
+        <argsstring></argsstring>
+        <name>ConstEdgeIterator</name>
+        <qualifiedname>llvm::xray::Graph::ConstEdgeIterator</qualifiedname>
+        <briefdescription>
+<para>A const iterator for iterating through the entire edge set of the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Has a const <ref refid="classllvm_1_1xray_1_1_graph_1af3591e0d96718a0f1b28a7e3b7d8705a" kindref="member">EdgeValueType</ref> as its value_type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="298" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1ad5874033ed1dc6d8d2b4583d3db0c7bf" prot="public" static="no">
+        <type>typename <ref refid="classllvm_1_1_dense_map_base_1a214e872d61db2ea8cb023f127cafd0b9" kindref="member">EdgeMapT::iterator</ref></type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::EdgeIterator =  typename EdgeMapT::iterator</definition>
+        <argsstring></argsstring>
+        <name>EdgeIterator</name>
+        <qualifiedname>llvm::xray::Graph::EdgeIterator</qualifiedname>
+        <briefdescription>
+<para>An iterator for iterating through the entire edge set of the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Has an <ref refid="classllvm_1_1xray_1_1_graph_1af3591e0d96718a0f1b28a7e3b7d8705a" kindref="member">EdgeValueType</ref> as its value_type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="303" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="303" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1a3295e34dd86dd261fd632f9ffec111ab" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1xray_1_1_graph_1af18457e2a495ea45229584fa1c471cf6" kindref="member">EdgeIdentifier</ref>, EdgeAttribute &gt;</type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::EdgeMapT =  DenseMap&lt;EdgeIdentifier, EdgeAttribute&gt;</definition>
+        <argsstring></argsstring>
+        <name>EdgeMapT</name>
+        <qualifiedname>llvm::xray::Graph::EdgeMapT</qualifiedname>
+        <briefdescription>
+<para>The type used for storing the EdgeAttribute for each edge in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="93" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1a86044cbc31bc0804c8280fff6910d706" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref>, VertexAttribute &gt;</type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::VertexMapT =  DenseMap&lt;VertexIdentifier, VertexAttribute&gt;</definition>
+        <argsstring></argsstring>
+        <name>VertexMapT</name>
+        <qualifiedname>llvm::xray::Graph::VertexMapT</qualifiedname>
+        <briefdescription>
+<para>The type used for storing the VertexAttribute for each vertex in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="97" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1ab567d93df9a9d4330e4b2bea80450040" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref> &gt;</type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::NeighborSetT =  DenseSet&lt;VertexIdentifier&gt;</definition>
+        <argsstring></argsstring>
+        <name>NeighborSetT</name>
+        <qualifiedname>llvm::xray::Graph::NeighborSetT</qualifiedname>
+        <briefdescription>
+<para>The type used for storing the edges entering a vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Indexed by the <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref> of the start of the edge. Only used to determine where the incoming edges are, the EdgeIdentifiers are stored in an InnerEdgeMapT. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="103" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1xray_1_1_graph_1a4ec8b44a628767e9f8e6c76903d738fb" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref>, <ref refid="classllvm_1_1_dense_set" kindref="compound">NeighborSetT</ref> &gt;</type>
+        <definition>using llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::NeighborLookupT =  DenseMap&lt;VertexIdentifier, NeighborSetT&gt;</definition>
+        <argsstring></argsstring>
+        <name>NeighborLookupT</name>
+        <qualifiedname>llvm::xray::Graph::NeighborLookupT</qualifiedname>
+        <briefdescription>
+<para>The type storing the InnerInvGraphT corresponding to each vertex in the graph (When a vertex has an incoming edge incident to it) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="107" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1xray_1_1_graph_1a846dc042de180fc8cb58f4ed2d53c139" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">EdgeMapT</ref></type>
+        <definition>EdgeMapT llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::Edges</definition>
+        <argsstring></argsstring>
+        <name>Edges</name>
+        <qualifiedname>llvm::xray::Graph::Edges</qualifiedname>
+        <briefdescription>
+<para>Stores the map from the start and end vertex of an edge to it&apos;s EdgeAttribute. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="112" column="12" bodyfile="include/llvm/XRay/Graph.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1xray_1_1_graph_1a7e3bdf0d646ea2a7b3194dd45d5ca2ed" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">VertexMapT</ref></type>
+        <definition>VertexMapT llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::Vertices</definition>
+        <argsstring></argsstring>
+        <name>Vertices</name>
+        <qualifiedname>llvm::xray::Graph::Vertices</qualifiedname>
+        <briefdescription>
+<para>Stores the map from <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref> to VertexAttribute. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="115" column="14" bodyfile="include/llvm/XRay/Graph.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1xray_1_1_graph_1a69eec28d4c653bb5cf11f59100707acd" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">NeighborLookupT</ref></type>
+        <definition>NeighborLookupT llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::InNeighbors</definition>
+        <argsstring></argsstring>
+        <name>InNeighbors</name>
+        <qualifiedname>llvm::xray::Graph::InNeighbors</qualifiedname>
+        <briefdescription>
+<para>Allows fast lookup for the incoming edge set of any given vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="118" column="19" bodyfile="include/llvm/XRay/Graph.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1xray_1_1_graph_1a4170c27a500caf5c1c78259661318497" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">NeighborLookupT</ref></type>
+        <definition>NeighborLookupT llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::OutNeighbors</definition>
+        <argsstring></argsstring>
+        <name>OutNeighbors</name>
+        <qualifiedname>llvm::xray::Graph::OutNeighbors</qualifiedname>
+        <briefdescription>
+<para>Allows fast lookup for the outgoing edge set of any given vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="121" column="19" bodyfile="include/llvm/XRay/Graph.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a4c5b8f18fe884f08a1cb2bb9baf4cea0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::xray::Graph::clear</qualifiedname>
+        <briefdescription>
+<para>Empty the <ref refid="classllvm_1_1xray_1_1_graph" kindref="compound">Graph</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="340" column="8" bodyfile="include/llvm/XRay/Graph.h" bodystart="340" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a224fda303f76fc909404743b24fda297" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1xray_1_1_graph_1_1_vertex_view" kindref="compound">VertexView</ref>&lt; false &gt;</type>
+        <definition>VertexView&lt; false &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::vertices</definition>
+        <argsstring>()</argsstring>
+        <name>vertices</name>
+        <qualifiedname>llvm::xray::Graph::vertices</qualifiedname>
+        <briefdescription>
+<para>Returns a view object allowing iteration over the vertices of the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>also allows access to the size of the vertex set. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="349" column="14" bodyfile="include/llvm/XRay/Graph.h" bodystart="349" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1ac06ecd496d7ee841363ab0daa9852f83" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1xray_1_1_graph_1_1_vertex_view" kindref="compound">VertexView</ref>&lt; <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref> &gt;</type>
+        <definition>VertexView&lt; true &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::vertices</definition>
+        <argsstring>() const</argsstring>
+        <name>vertices</name>
+        <qualifiedname>llvm::xray::Graph::vertices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="351" column="14" bodyfile="include/llvm/XRay/Graph.h" bodystart="351" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a5bf62c6f5a93eed499233f9aeaebeff4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1xray_1_1_graph_1_1_edge_view" kindref="compound">EdgeView</ref>&lt; false &gt;</type>
+        <definition>EdgeView&lt; false &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::edges</definition>
+        <argsstring>()</argsstring>
+        <name>edges</name>
+        <qualifiedname>llvm::xray::Graph::edges</qualifiedname>
+        <briefdescription>
+<para>Returns a view object allowing iteration over the edges of the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>also allows access to the size of the edge set. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="355" column="12" bodyfile="include/llvm/XRay/Graph.h" bodystart="355" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a4d3b1fc5fa1331c92d848ffa165036f0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1xray_1_1_graph_1_1_edge_view" kindref="compound">EdgeView</ref>&lt; <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref> &gt;</type>
+        <definition>EdgeView&lt; true &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::edges</definition>
+        <argsstring>() const</argsstring>
+        <name>edges</name>
+        <qualifiedname>llvm::xray::Graph::edges</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="357" column="12" bodyfile="include/llvm/XRay/Graph.h" bodystart="357" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1aff1b9575f8ffc028ecc11a03752231b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1xray_1_1_graph_1_1_in_out_edge_view" kindref="compound">InOutEdgeView</ref>&lt; false, <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref> &gt;</type>
+        <definition>InOutEdgeView&lt; false, true &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::outEdges</definition>
+        <argsstring>(const VertexIdentifier I)</argsstring>
+        <name>outEdges</name>
+        <qualifiedname>llvm::xray::Graph::outEdges</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref></type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Returns a view object allowing iteration over the edges which start at a vertex I. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="361" column="17" bodyfile="include/llvm/XRay/Graph.h" bodystart="361" bodyend="363"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a397ffcfd063bf829741b7b0491d6ccdb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1xray_1_1_graph_1_1_in_out_edge_view" kindref="compound">InOutEdgeView</ref>&lt; <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref>, <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref> &gt;</type>
+        <definition>InOutEdgeView&lt; true, true &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::outEdges</definition>
+        <argsstring>(const VertexIdentifier I) const</argsstring>
+        <name>outEdges</name>
+        <qualifiedname>llvm::xray::Graph::outEdges</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref></type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="365" column="17" bodyfile="include/llvm/XRay/Graph.h" bodystart="365" bodyend="367"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a78beebc3a96e045b525328f2668a98ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1xray_1_1_graph_1_1_in_out_edge_view" kindref="compound">InOutEdgeView</ref>&lt; false, false &gt;</type>
+        <definition>InOutEdgeView&lt; false, false &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::inEdges</definition>
+        <argsstring>(const VertexIdentifier I)</argsstring>
+        <name>inEdges</name>
+        <qualifiedname>llvm::xray::Graph::inEdges</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref></type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Returns a view object allowing iteration over the edges which point to a vertex I. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="371" column="17" bodyfile="include/llvm/XRay/Graph.h" bodystart="371" bodyend="373"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1ac7541e92af7bf828643cbf535f6b8bfd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1xray_1_1_graph_1_1_in_out_edge_view" kindref="compound">InOutEdgeView</ref>&lt; <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref>, false &gt;</type>
+        <definition>InOutEdgeView&lt; true, false &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::inEdges</definition>
+        <argsstring>(const VertexIdentifier I) const</argsstring>
+        <name>inEdges</name>
+        <qualifiedname>llvm::xray::Graph::inEdges</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref></type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="375" column="17" bodyfile="include/llvm/XRay/Graph.h" bodystart="375" bodyend="377"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1abd1f5cdb03235fd278b187b33ddc42cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>VertexAttribute &amp;</type>
+        <definition>VertexAttribute &amp; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::operator[]</definition>
+        <argsstring>(const VertexIdentifier &amp;I)</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>llvm::xray::Graph::operator[]</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Looks up the vertex with identifier I, if it does not exist it default constructs it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="381" column="19" bodyfile="include/llvm/XRay/Graph.h" bodystart="381" bodyend="381"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a0bdb5839e8a3935e3a80373c053dfd87" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>EdgeAttribute &amp;</type>
+        <definition>EdgeAttribute &amp; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::operator[]</definition>
+        <argsstring>(const EdgeIdentifier &amp;I)</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>llvm::xray::Graph::operator[]</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1af18457e2a495ea45229584fa1c471cf6" kindref="member">EdgeIdentifier</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Looks up the edge with identifier I, if it does not exist it default constructs it, if it&apos;s endpoints do not exist it also default constructs them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="386" column="17" bodyfile="include/llvm/XRay/Graph.h" bodystart="386" bodyend="392"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1aa99875b753d8f7de2424d5a16f4f6311" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; VertexAttribute &amp; &gt;</type>
+        <definition>Expected&lt; VertexAttribute &amp; &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::at</definition>
+        <argsstring>(const VertexIdentifier &amp;I)</argsstring>
+        <name>at</name>
+        <qualifiedname>llvm::xray::Graph::at</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Looks up a vertex with Identifier I, or an error if it does not exist. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="395" column="12" bodyfile="include/llvm/XRay/Graph.h" bodystart="395" bodyend="402"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1aa4327672d888282e6652fbfd9d2ff453" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> VertexAttribute &amp; &gt;</type>
+        <definition>Expected&lt; const VertexAttribute &amp; &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::at</definition>
+        <argsstring>(const VertexIdentifier &amp;I) const</argsstring>
+        <name>at</name>
+        <qualifiedname>llvm::xray::Graph::at</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="404" column="12" bodyfile="include/llvm/XRay/Graph.h" bodystart="404" bodyend="411"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1afc64b3ff5029254a295ae690242f951a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; EdgeAttribute &amp; &gt;</type>
+        <definition>Expected&lt; EdgeAttribute &amp; &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::at</definition>
+        <argsstring>(const EdgeIdentifier &amp;I)</argsstring>
+        <name>at</name>
+        <qualifiedname>llvm::xray::Graph::at</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1af18457e2a495ea45229584fa1c471cf6" kindref="member">EdgeIdentifier</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Looks up an edge with Identifier I, or an error if it does not exist. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="414" column="12" bodyfile="include/llvm/XRay/Graph.h" bodystart="414" bodyend="421"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1af994001328142a30b87b6080a057c2cb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> EdgeAttribute &amp; &gt;</type>
+        <definition>Expected&lt; const EdgeAttribute &amp; &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::at</definition>
+        <argsstring>(const EdgeIdentifier &amp;I) const</argsstring>
+        <name>at</name>
+        <qualifiedname>llvm::xray::Graph::at</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1af18457e2a495ea45229584fa1c471cf6" kindref="member">EdgeIdentifier</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="423" column="12" bodyfile="include/llvm/XRay/Graph.h" bodystart="423" bodyend="430"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a4d7a0fc576121934102c3bf9f738e024" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1xray_1_1_graph_1a54673fcf8298aefa4e10707b86123391" kindref="member">size_type</ref></type>
+        <definition>size_type llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::count</definition>
+        <argsstring>(const VertexIdentifier &amp;I) const</argsstring>
+        <name>count</name>
+        <qualifiedname>llvm::xray::Graph::count</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Looks for a vertex with identifier I, returns 1 if one exists, and 0 otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="434" column="13" bodyfile="include/llvm/XRay/Graph.h" bodystart="434" bodyend="436"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a4b05b885e5ea127c6f75fa5a65c0e3e2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1xray_1_1_graph_1a54673fcf8298aefa4e10707b86123391" kindref="member">size_type</ref></type>
+        <definition>size_type llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::count</definition>
+        <argsstring>(const EdgeIdentifier &amp;I) const</argsstring>
+        <name>count</name>
+        <qualifiedname>llvm::xray::Graph::count</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1xray_1_1_graph_1af18457e2a495ea45229584fa1c471cf6" kindref="member">EdgeIdentifier</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Looks for an edge with Identifier I, returns 1 if one exists and 0 otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="440" column="13" bodyfile="include/llvm/XRay/Graph.h" bodystart="440" bodyend="440"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a933fbf8a7ab093dbef65a60ff59f9814" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classllvm_1_1xray_1_1_graph_1a755f8ce931504b6bde92bd3d9500d0f3" kindref="member">VertexIterator</ref>, <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+        <definition>std::pair&lt; VertexIterator, bool &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::insert</definition>
+        <argsstring>(const std::pair&lt; VertexIdentifier, VertexAttribute &gt; &amp;Val)</argsstring>
+        <name>insert</name>
+        <qualifiedname>llvm::xray::Graph::insert</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::pair&lt; <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref>, VertexAttribute &gt; &amp;</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+<para>Inserts a vertex into the graph with Identifier Val.first, and <ref refid="classllvm_1_1_attribute" kindref="compound">Attribute</ref> Val.second. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="445" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="445" bodyend="447"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a1fbed973b7d9d8d38e1ab8112d111f50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classllvm_1_1xray_1_1_graph_1a755f8ce931504b6bde92bd3d9500d0f3" kindref="member">VertexIterator</ref>, <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+        <definition>std::pair&lt; VertexIterator, bool &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::insert</definition>
+        <argsstring>(std::pair&lt; VertexIdentifier, VertexAttribute &gt; &amp;&amp;Val)</argsstring>
+        <name>insert</name>
+        <qualifiedname>llvm::xray::Graph::insert</qualifiedname>
+        <param>
+          <type>std::pair&lt; <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref>, VertexAttribute &gt; &amp;&amp;</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="450" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="450" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a0b0b00af1e169ae0720380560c6e2610" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classllvm_1_1xray_1_1_graph_1ad5874033ed1dc6d8d2b4583d3db0c7bf" kindref="member">EdgeIterator</ref>, <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+        <definition>std::pair&lt; EdgeIterator, bool &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::insert</definition>
+        <argsstring>(const std::pair&lt; EdgeIdentifier, EdgeAttribute &gt; &amp;Val)</argsstring>
+        <name>insert</name>
+        <qualifiedname>llvm::xray::Graph::insert</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::pair&lt; <ref refid="classllvm_1_1xray_1_1_graph_1af18457e2a495ea45229584fa1c471cf6" kindref="member">EdgeIdentifier</ref>, EdgeAttribute &gt; &amp;</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+<para>Inserts an edge into the graph with Identifier Val.first, and <ref refid="classllvm_1_1_attribute" kindref="compound">Attribute</ref> Val.second. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the key is already in the map, it returns false and doesn&apos;t update the value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="458" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="458" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1xray_1_1_graph_1a085b9fe5336c4d3f35328dce8033555d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classllvm_1_1xray_1_1_graph_1ad5874033ed1dc6d8d2b4583d3db0c7bf" kindref="member">EdgeIterator</ref>, <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+        <definition>std::pair&lt; EdgeIterator, bool &gt; llvm::xray::Graph&lt; VertexAttribute, EdgeAttribute, VI &gt;::insert</definition>
+        <argsstring>(std::pair&lt; EdgeIdentifier, EdgeAttribute &gt; &amp;&amp;Val)</argsstring>
+        <name>insert</name>
+        <qualifiedname>llvm::xray::Graph::insert</qualifiedname>
+        <param>
+          <type>std::pair&lt; <ref refid="classllvm_1_1xray_1_1_graph_1af18457e2a495ea45229584fa1c471cf6" kindref="member">EdgeIdentifier</ref>, EdgeAttribute &gt; &amp;&amp;</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+<para>Inserts an edge into the graph with Identifier Val.first, and <ref refid="classllvm_1_1_attribute" kindref="compound">Attribute</ref> Val.second. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the key is already in the map, it returns false and doesn&apos;t update the value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/XRay/Graph.h" line="475" column="3" bodyfile="include/llvm/XRay/Graph.h" bodystart="475" bodyend="486"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A <ref refid="classllvm_1_1xray_1_1_graph" kindref="compound">Graph</ref> object represents a Directed <ref refid="classllvm_1_1xray_1_1_graph" kindref="compound">Graph</ref> and is used in XRay to compute and store function call graphs and associated statistical information. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The graph takes in four template parameters, these are:<itemizedlist>
+<listitem><para>VertexAttribute, this is a structure which is stored for each vertex. Must be DefaultConstructible, CopyConstructible, CopyAssignable and Destructible.</para>
+</listitem><listitem><para>EdgeAttribute, this is a structure which is stored for each edge Must be DefaultConstructible, CopyConstructible, CopyAssignable and Destructible.</para>
+</listitem><listitem><para>EdgeAttribute, this is a structure which is stored for each variable</para>
+</listitem><listitem><para>VI, this is a type over which <ref refid="structllvm_1_1_dense_map_info" kindref="compound">DenseMapInfo</ref> is defined and is the type used look up strings, available as <ref refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" kindref="member">VertexIdentifier</ref>.</para>
+</listitem><listitem><para>If the built in <ref refid="structllvm_1_1_dense_map_info" kindref="compound">DenseMapInfo</ref> is not defined, provide a specialization class type here.</para>
+</listitem></itemizedlist>
+</para>
+<para><ref refid="classllvm_1_1xray_1_1_graph" kindref="compound">Graph</ref> is CopyConstructible, CopyAssignable, MoveConstructible and MoveAssignable but is not EqualityComparible or LessThanComparible.</para>
+<para>Usage Example <ref refid="classllvm_1_1xray_1_1_graph" kindref="compound">Graph</ref> with weighted edges and vertices: <ref refid="classllvm_1_1xray_1_1_graph" kindref="compound">Graph&lt;int, int, int&gt;</ref> G;</para>
+<para>G[1] = 0; G[2] = 2; G[{1,2}] = 1; G[{2,1}] = -1; for(const auto &amp;v : G.vertices()){ // Do something with the vertices in the graph; } for(const auto &amp;e : G.edges()){ // Do something with the edges in the graph; }</para>
+<para>Usage Example with StrRef keys. <ref refid="classllvm_1_1xray_1_1_graph" kindref="compound">Graph&lt;int, double, StrRef&gt;</ref> StrG; char va[] = &quot;Vertex A&quot;; char vaa[] = &quot;Vertex A&quot;; char vb[] = &quot;Vertex B&quot;; // Vertices are referenced by String Refs. G[va] = 0; G[vb] = 1; G[{va, vb}] = 1.0; cout() &lt;&lt; G[vaa] &lt;&lt; &quot; &quot; &lt;&lt; G[{vaa, vb}]; //prints &quot;0 1.0&quot;. </para>
+    </detaileddescription>
+    <location file="include/llvm/XRay/Graph.h" line="74" column="1" bodyfile="include/llvm/XRay/Graph.h" bodystart="74" bodyend="487"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1xray_1_1_graph_1aa99875b753d8f7de2424d5a16f4f6311" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>at</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1aa4327672d888282e6652fbfd9d2ff453" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>at</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1afc64b3ff5029254a295ae690242f951a" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>at</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1af994001328142a30b87b6080a057c2cb" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>at</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a4c5b8f18fe884f08a1cb2bb9baf4cea0" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>clear</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a9157284e108b7e443924f66a19e73b0c" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>ConstEdgeIterator</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a5043d96a53eddd19ffcbd9baa4be1f33" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>ConstInEdgeIterator</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a62ab3aace08cd6e4243731012d2eb737" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>ConstOutEdgeIterator</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1ad1b3a96bffc932e4dbedcd66b9951b02" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>ConstVertexIterator</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a4d7a0fc576121934102c3bf9f738e024" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>count</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a4b05b885e5ea127c6f75fa5a65c0e3e2" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>count</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1af18457e2a495ea45229584fa1c471cf6" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>EdgeIdentifier</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1ad5874033ed1dc6d8d2b4583d3db0c7bf" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>EdgeIterator</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a3295e34dd86dd261fd632f9ffec111ab" prot="private" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>EdgeMapT</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a846dc042de180fc8cb58f4ed2d53c139" prot="private" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>Edges</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a5bf62c6f5a93eed499233f9aeaebeff4" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>edges</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a4d3b1fc5fa1331c92d848ffa165036f0" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>edges</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1af3591e0d96718a0f1b28a7e3b7d8705a" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>EdgeValueType</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a66ac965d888a7c7419082546e1270091" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>InEdgeIterator</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a78beebc3a96e045b525328f2668a98ed" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>inEdges</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1ac7541e92af7bf828643cbf535f6b8bfd" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>inEdges</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a69eec28d4c653bb5cf11f59100707acd" prot="private" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>InNeighbors</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a933fbf8a7ab093dbef65a60ff59f9814" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>insert</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a1fbed973b7d9d8d38e1ab8112d111f50" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>insert</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a0b0b00af1e169ae0720380560c6e2610" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>insert</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a085b9fe5336c4d3f35328dce8033555d" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>insert</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a4ec8b44a628767e9f8e6c76903d738fb" prot="private" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>NeighborLookupT</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1ab567d93df9a9d4330e4b2bea80450040" prot="private" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>NeighborSetT</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1abd1f5cdb03235fd278b187b33ddc42cf" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>operator[]</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a0bdb5839e8a3935e3a80373c053dfd87" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>operator[]</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a2bc58a2e3704bca6457211da14ea579a" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>OutEdgeIterator</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1aff1b9575f8ffc028ecc11a03752231b6" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>outEdges</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a397ffcfd063bf829741b7b0491d6ccdb" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>outEdges</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a4170c27a500caf5c1c78259661318497" prot="private" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>OutNeighbors</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a54673fcf8298aefa4e10707b86123391" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>size_type</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1aa7d4f1e9198ebd47ab0fc3cef797ac86" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>VertexIdentifier</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a755f8ce931504b6bde92bd3d9500d0f3" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>VertexIterator</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a86044cbc31bc0804c8280fff6910d706" prot="private" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>VertexMapT</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a9d690636cf7cdf754037819e22c6eed8" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>VertexValueType</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a7e3bdf0d646ea2a7b3194dd45d5ca2ed" prot="private" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>Vertices</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1a224fda303f76fc909404743b24fda297" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>vertices</name></member>
+      <member refid="classllvm_1_1xray_1_1_graph_1ac06ecd496d7ee841363ab0daa9852f83" prot="public" virt="non-virtual"><scope>llvm::xray::Graph</scope><name>vertices</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

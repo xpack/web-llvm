@@ -1,0 +1,2604 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_instruction_simplify_8h" kind="file" language="C++">
+    <compoundname>InstructionSimplify.h</compoundname>
+    <includes refid="_simplify_query_8h" local="yes">llvm/Analysis/SimplifyQuery.h</includes>
+    <includes refid="_f_p_env_8h" local="yes">llvm/IR/FPEnv.h</includes>
+    <includedby refid="_inst_simplify_folder_8h" local="yes">include/llvm/Analysis/InstSimplifyFolder.h</includedby>
+    <includedby refid="_inst_combiner_8h" local="yes">include/llvm/Transforms/InstCombine/InstCombiner.h</includedby>
+    <includedby refid="_inline_cost_8cpp" local="yes">lib/Analysis/InlineCost.cpp</includedby>
+    <includedby refid="_instruction_simplify_8cpp" local="yes">lib/Analysis/InstructionSimplify.cpp</includedby>
+    <includedby refid="_lazy_value_info_8cpp" local="yes">lib/Analysis/LazyValueInfo.cpp</includedby>
+    <includedby refid="_lint_8cpp" local="yes">lib/Analysis/Lint.cpp</includedby>
+    <includedby refid="_loop_unroll_analyzer_8cpp" local="yes">lib/Analysis/LoopUnrollAnalyzer.cpp</includedby>
+    <includedby refid="_must_execute_8cpp" local="yes">lib/Analysis/MustExecute.cpp</includedby>
+    <includedby refid="_p_h_i_trans_addr_8cpp" local="yes">lib/Analysis/PHITransAddr.cpp</includedby>
+    <includedby refid="_scalar_evolution_8cpp" local="yes">lib/Analysis/ScalarEvolution.cpp</includedby>
+    <includedby refid="_value_tracking_8cpp" local="yes">lib/Analysis/ValueTracking.cpp</includedby>
+    <includedby refid="_code_gen_prepare_8cpp" local="yes">lib/CodeGen/CodeGenPrepare.cpp</includedby>
+    <includedby refid="_a_m_d_g_p_u_promote_alloca_8cpp" local="yes">lib/Target/AMDGPU/AMDGPUPromoteAlloca.cpp</includedby>
+    <includedby refid="_hexagon_loop_idiom_recognition_8cpp" local="yes">lib/Target/Hexagon/HexagonLoopIdiomRecognition.cpp</includedby>
+    <includedby refid="_hexagon_vector_combine_8cpp" local="yes">lib/Target/Hexagon/HexagonVectorCombine.cpp</includedby>
+    <includedby refid="_coro_elide_8cpp" local="yes">lib/Transforms/Coroutines/CoroElide.cpp</includedby>
+    <includedby refid="_attributor_attributes_8cpp" local="yes">lib/Transforms/IPO/AttributorAttributes.cpp</includedby>
+    <includedby refid="_function_specialization_8cpp" local="yes">lib/Transforms/IPO/FunctionSpecialization.cpp</includedby>
+    <includedby refid="_inst_combine_add_sub_8cpp" local="yes">lib/Transforms/InstCombine/InstCombineAddSub.cpp</includedby>
+    <includedby refid="_inst_combine_and_or_xor_8cpp" local="yes">lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</includedby>
+    <includedby refid="_inst_combine_calls_8cpp" local="yes">lib/Transforms/InstCombine/InstCombineCalls.cpp</includedby>
+    <includedby refid="_inst_combine_compares_8cpp" local="yes">lib/Transforms/InstCombine/InstCombineCompares.cpp</includedby>
+    <includedby refid="_inst_combine_internal_8h" local="yes">lib/Transforms/InstCombine/InstCombineInternal.h</includedby>
+    <includedby refid="_inst_combine_mul_div_rem_8cpp" local="yes">lib/Transforms/InstCombine/InstCombineMulDivRem.cpp</includedby>
+    <includedby refid="_inst_combine_p_h_i_8cpp" local="yes">lib/Transforms/InstCombine/InstCombinePHI.cpp</includedby>
+    <includedby refid="_inst_combine_select_8cpp" local="yes">lib/Transforms/InstCombine/InstCombineSelect.cpp</includedby>
+    <includedby refid="_inst_combine_shifts_8cpp" local="yes">lib/Transforms/InstCombine/InstCombineShifts.cpp</includedby>
+    <includedby refid="_inst_combine_vector_ops_8cpp" local="yes">lib/Transforms/InstCombine/InstCombineVectorOps.cpp</includedby>
+    <includedby refid="_instruction_combining_8cpp" local="yes">lib/Transforms/InstCombine/InstructionCombining.cpp</includedby>
+    <includedby refid="_correlated_value_propagation_8cpp" local="yes">lib/Transforms/Scalar/CorrelatedValuePropagation.cpp</includedby>
+    <includedby refid="_early_c_s_e_8cpp" local="yes">lib/Transforms/Scalar/EarlyCSE.cpp</includedby>
+    <includedby refid="_g_v_n_8cpp" local="yes">lib/Transforms/Scalar/GVN.cpp</includedby>
+    <includedby refid="_inst_simplify_pass_8cpp" local="yes">lib/Transforms/Scalar/InstSimplifyPass.cpp</includedby>
+    <includedby refid="_jump_threading_8cpp" local="yes">lib/Transforms/Scalar/JumpThreading.cpp</includedby>
+    <includedby refid="_loop_deletion_8cpp" local="yes">lib/Transforms/Scalar/LoopDeletion.cpp</includedby>
+    <includedby refid="_loop_inst_simplify_8cpp" local="yes">lib/Transforms/Scalar/LoopInstSimplify.cpp</includedby>
+    <includedby refid="_loop_rotation_8cpp" local="yes">lib/Transforms/Scalar/LoopRotation.cpp</includedby>
+    <includedby refid="_lower_constant_intrinsics_8cpp" local="yes">lib/Transforms/Scalar/LowerConstantIntrinsics.cpp</includedby>
+    <includedby refid="_mem_cpy_optimizer_8cpp" local="yes">lib/Transforms/Scalar/MemCpyOptimizer.cpp</includedby>
+    <includedby refid="_new_g_v_n_8cpp" local="yes">lib/Transforms/Scalar/NewGVN.cpp</includedby>
+    <includedby refid="_structurize_c_f_g_8cpp" local="yes">lib/Transforms/Scalar/StructurizeCFG.cpp</includedby>
+    <includedby refid="_tail_recursion_elimination_8cpp" local="yes">lib/Transforms/Scalar/TailRecursionElimination.cpp</includedby>
+    <includedby refid="_clone_function_8cpp" local="yes">lib/Transforms/Utils/CloneFunction.cpp</includedby>
+    <includedby refid="_inline_function_8cpp" local="yes">lib/Transforms/Utils/InlineFunction.cpp</includedby>
+    <includedby refid="_transforms_2_utils_2_local_8cpp" local="yes">lib/Transforms/Utils/Local.cpp</includedby>
+    <includedby refid="_loop_rotation_utils_8cpp" local="yes">lib/Transforms/Utils/LoopRotationUtils.cpp</includedby>
+    <includedby refid="_loop_simplify_8cpp" local="yes">lib/Transforms/Utils/LoopSimplify.cpp</includedby>
+    <includedby refid="_loop_unroll_8cpp" local="yes">lib/Transforms/Utils/LoopUnroll.cpp</includedby>
+    <includedby refid="_loop_unroll_runtime_8cpp" local="yes">lib/Transforms/Utils/LoopUnrollRuntime.cpp</includedby>
+    <includedby refid="_promote_memory_to_register_8cpp" local="yes">lib/Transforms/Utils/PromoteMemoryToRegister.cpp</includedby>
+    <includedby refid="_s_c_c_p_solver_8cpp" local="yes">lib/Transforms/Utils/SCCPSolver.cpp</includedby>
+    <includedby refid="_s_s_a_updater_8cpp" local="yes">lib/Transforms/Utils/SSAUpdater.cpp</includedby>
+    <includedby refid="_scalar_evolution_expander_8cpp" local="yes">lib/Transforms/Utils/ScalarEvolutionExpander.cpp</includedby>
+    <includedby refid="_simplify_c_f_g_8cpp" local="yes">lib/Transforms/Utils/SimplifyCFG.cpp</includedby>
+    <incdepgraph>
+      <node id="21">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>llvm-c/ExternC.h</label>
+        <link refid="_extern_c_8h"/>
+      </node>
+      <node id="71">
+        <label>llvm-c/Types.h</label>
+        <link refid="_types_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>llvm/ADT/ADL.h</label>
+        <link refid="_a_d_l_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>llvm/ADT/APFloat.h</label>
+        <link refid="_a_p_float_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm/ADT/APInt.h</label>
+        <link refid="_a_p_int_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>llvm/ADT/ArrayRef.h</label>
+        <link refid="_array_ref_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>llvm/ADT/Bitfields.h</label>
+        <link refid="_bitfields_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>llvm/ADT/BitmaskEnum.h</label>
+        <link refid="_bitmask_enum_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm/ADT/DenseMap.h</label>
+        <link refid="_dense_map_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm/ADT/DenseMapInfo.h</label>
+        <link refid="_dense_map_info_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>llvm/ADT/DenseSet.h</label>
+        <link refid="_dense_set_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm/ADT/EpochTracker.h</label>
+        <link refid="_epoch_tracker_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>llvm/ADT/FloatingPointMode.h</label>
+        <link refid="_floating_point_mode_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>llvm/ADT/Hashing.h</label>
+        <link refid="_hashing_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>llvm/ADT/MapVector.h</label>
+        <link refid="_map_vector_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>llvm/ADT/PointerIntPair.h</label>
+        <link refid="_pointer_int_pair_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>llvm/ADT/PointerUnion.h</label>
+        <link refid="_pointer_union_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>llvm/ADT/STLExtras.h</label>
+        <link refid="_s_t_l_extras_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>llvm/ADT/Sequence.h</label>
+        <link refid="_sequence_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm/ADT/SmallPtrSet.h</label>
+        <link refid="_small_ptr_set_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm/ADT/SmallVector.h</label>
+        <link refid="_small_vector_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>llvm/ADT/StringMap.h</label>
+        <link refid="_a_d_t_2_string_map_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>llvm/ADT/StringMapEntry.h</label>
+        <link refid="_a_d_t_2_string_map_entry_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>llvm/ADT/StringRef.h</label>
+        <link refid="_string_ref_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>llvm/ADT/StringSwitch.h</label>
+        <link refid="_string_switch_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>llvm/ADT/Twine.h</label>
+        <link refid="_twine_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm/ADT/bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>llvm/ADT/ilist.h</label>
+        <link refid="ilist_8h"/>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>llvm/ADT/ilist_base.h</label>
+        <link refid="ilist__base_8h"/>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>llvm/ADT/ilist_iterator.h</label>
+        <link refid="ilist__iterator_8h"/>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>llvm/ADT/ilist_node.h</label>
+        <link refid="ilist__node_8h"/>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>llvm/ADT/ilist_node_base.h</label>
+        <link refid="ilist__node__base_8h"/>
+        <childnode refid="98" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>llvm/ADT/ilist_node_options.h</label>
+        <link refid="ilist__node__options_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>llvm/ADT/iterator.h</label>
+        <link refid="iterator_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>llvm/ADT/iterator_range.h</label>
+        <link refid="iterator__range_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>llvm/ADT/simple_ilist.h</label>
+        <link refid="simple__ilist_8h"/>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/llvm/Analysis/InstructionSimplify.h</label>
+        <link refid="_instruction_simplify_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm/Analysis/SimplifyQuery.h</label>
+        <link refid="_simplify_query_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>llvm/IR/Argument.h</label>
+        <link refid="_i_r_2_argument_8h"/>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>llvm/IR/Attributes.h</label>
+        <link refid="_attributes_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>llvm/IR/BasicBlock.h</label>
+        <link refid="_i_r_2_basic_block_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>llvm/IR/CallingConv.h</label>
+        <link refid="_calling_conv_8h"/>
+      </node>
+      <node id="68">
+        <label>llvm/IR/Constant.h</label>
+        <link refid="_i_r_2_constant_8h"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>llvm/IR/ConstantRange.h</label>
+        <link refid="_constant_range_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>llvm/IR/Constants.h</label>
+        <link refid="_constants_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>llvm/IR/DbgVariableFragmentInfo.h</label>
+        <link refid="_dbg_variable_fragment_info_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>llvm/IR/DebugLoc.h</label>
+        <link refid="_debug_loc_8h"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>llvm/IR/DebugProgramInstruction.h</label>
+        <link refid="_debug_program_instruction_8h"/>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>llvm/IR/DerivedTypes.h</label>
+        <link refid="_derived_types_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>llvm/IR/DiagnosticHandler.h</label>
+        <link refid="_diagnostic_handler_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>llvm/IR/FMF.h</label>
+        <link refid="_f_m_f_8h"/>
+      </node>
+      <node id="128">
+        <label>llvm/IR/FPEnv.h</label>
+        <link refid="_f_p_env_8h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>llvm/IR/Function.h</label>
+        <link refid="_i_r_2_function_8h"/>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>llvm/IR/GEPNoWrapFlags.h</label>
+        <link refid="_g_e_p_no_wrap_flags_8h"/>
+        <childnode refid="125" relation="include">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>llvm/IR/GlobalObject.h</label>
+        <link refid="_global_object_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="122">
+        <label>llvm/IR/GlobalValue.h</label>
+        <link refid="_global_value_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>llvm/IR/InstrTypes.h</label>
+        <link refid="_instr_types_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>llvm/IR/Instruction.h</label>
+        <link refid="_i_r_2_instruction_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>llvm/IR/Intrinsics.h</label>
+        <link refid="_intrinsics_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>llvm/IR/LLVMContext.h</label>
+        <link refid="_l_l_v_m_context_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>llvm/IR/Metadata.h</label>
+        <link refid="_metadata_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>llvm/IR/OperandTraits.h</label>
+        <link refid="_operand_traits_8h"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>llvm/IR/Operator.h</label>
+        <link refid="_i_r_2_operator_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>llvm/IR/SymbolTableListTraits.h</label>
+        <link refid="_symbol_table_list_traits_8h"/>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>llvm/IR/TrackingMDRef.h</label>
+        <link refid="_tracking_m_d_ref_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>llvm/IR/Type.h</label>
+        <link refid="_i_r_2_type_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>llvm/IR/Use.h</label>
+        <link refid="_i_r_2_use_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>llvm/IR/User.h</label>
+        <link refid="_i_r_2_user_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>llvm/IR/Value.h</label>
+        <link refid="_i_r_2_value_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>llvm/Support/AlignOf.h</label>
+        <link refid="_align_of_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>llvm/Support/Alignment.h</label>
+        <link refid="_alignment_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>llvm/Support/AllocatorBase.h</label>
+        <link refid="_allocator_base_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="119">
+        <label>llvm/Support/AtomicOrdering.h</label>
+        <link refid="_atomic_ordering_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>llvm/Support/CBindingWrapping.h</label>
+        <link refid="_c_binding_wrapping_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>llvm/Support/Casting.h</label>
+        <link refid="_casting_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>llvm/Support/CodeGen.h</label>
+        <link refid="_code_gen_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm/Support/DataTypes.h</label>
+        <link refid="llvm_2_support_2_data_types_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>llvm/Support/ErrorHandling.h</label>
+        <link refid="llvm_2_support_2_error_handling_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm/Support/MathExtras.h</label>
+        <link refid="_math_extras_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm/Support/MemAlloc.h</label>
+        <link refid="_mem_alloc_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>llvm/Support/ModRef.h</label>
+        <link refid="_mod_ref_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm/Support/PointerLikeTypeTraits.h</label>
+        <link refid="_pointer_like_type_traits_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm/Support/ReverseIteration.h</label>
+        <link refid="_reverse_iteration_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>llvm/Support/SwapByteOrder.h</label>
+        <link refid="_swap_byte_order_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>llvm/Support/TypeSize.h</label>
+        <link refid="_type_size_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm/Support/float128.h</label>
+        <link refid="float128_8h"/>
+      </node>
+      <node id="66">
+        <label>llvm/Support/raw_ostream.h</label>
+        <link refid="raw__ostream_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm/Support/type_traits.h</label>
+        <link refid="type__traits_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>algorithm</label>
+      </node>
+      <node id="59">
+        <label>array</label>
+      </node>
+      <node id="125">
+        <label>assert.h</label>
+      </node>
+      <node id="16">
+        <label>cassert</label>
+      </node>
+      <node id="17">
+        <label>climits</label>
+      </node>
+      <node id="28">
+        <label>cstddef</label>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="29">
+        <label>cstdlib</label>
+      </node>
+      <node id="14">
+        <label>cstring</label>
+      </node>
+      <node id="42">
+        <label>functional</label>
+      </node>
+      <node id="30">
+        <label>initializer_list</label>
+      </node>
+      <node id="22">
+        <label>inttypes.h</label>
+      </node>
+      <node id="31">
+        <label>iterator</label>
+      </node>
+      <node id="12">
+        <label>limits</label>
+      </node>
+      <node id="5">
+        <label>llvm/Config/abi-breaking.h</label>
+      </node>
+      <node id="10">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="88">
+        <label>llvm/IR/Attributes.inc</label>
+      </node>
+      <node id="114">
+        <label>llvm/IR/FixedMetadataKinds.def</label>
+      </node>
+      <node id="120">
+        <label>llvm/IR/Instruction.def</label>
+      </node>
+      <node id="127">
+        <label>llvm/IR/IntrinsicEnums.inc</label>
+      </node>
+      <node id="115">
+        <label>llvm/IR/Metadata.def</label>
+      </node>
+      <node id="77">
+        <label>llvm/IR/Value.def</label>
+      </node>
+      <node id="15">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="43">
+        <label>memory</label>
+      </node>
+      <node id="40">
+        <label>new</label>
+      </node>
+      <node id="48">
+        <label>optional</label>
+      </node>
+      <node id="11">
+        <label>stddef.h</label>
+      </node>
+      <node id="23">
+        <label>stdint.h</label>
+      </node>
+      <node id="53">
+        <label>string</label>
+      </node>
+      <node id="65">
+        <label>string_view</label>
+      </node>
+      <node id="24">
+        <label>sys/types.h</label>
+      </node>
+      <node id="67">
+        <label>system_error</label>
+      </node>
+      <node id="36">
+        <label>tuple</label>
+      </node>
+      <node id="13">
+        <label>type_traits</label>
+      </node>
+      <node id="26">
+        <label>utility</label>
+      </node>
+      <node id="60">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/llvm/Analysis/InstSimplifyFolder.h</label>
+        <link refid="_inst_simplify_folder_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/llvm/Analysis/InstructionSimplify.h</label>
+        <link refid="_instruction_simplify_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>include/llvm/Transforms/InstCombine/InstCombiner.h</label>
+        <link refid="_inst_combiner_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/llvm/Transforms/Utils/ScalarEvolutionExpander.h</label>
+        <link refid="_scalar_evolution_expander_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>lib/Analysis/InlineCost.cpp</label>
+        <link refid="_inline_cost_8cpp"/>
+      </node>
+      <node id="32">
+        <label>lib/Analysis/InstructionSimplify.cpp</label>
+        <link refid="_instruction_simplify_8cpp"/>
+      </node>
+      <node id="61">
+        <label>lib/Analysis/LazyValueInfo.cpp</label>
+        <link refid="_lazy_value_info_8cpp"/>
+      </node>
+      <node id="62">
+        <label>lib/Analysis/Lint.cpp</label>
+        <link refid="_lint_8cpp"/>
+      </node>
+      <node id="63">
+        <label>lib/Analysis/LoopUnrollAnalyzer.cpp</label>
+        <link refid="_loop_unroll_analyzer_8cpp"/>
+      </node>
+      <node id="64">
+        <label>lib/Analysis/MustExecute.cpp</label>
+        <link refid="_must_execute_8cpp"/>
+      </node>
+      <node id="65">
+        <label>lib/Analysis/PHITransAddr.cpp</label>
+        <link refid="_p_h_i_trans_addr_8cpp"/>
+      </node>
+      <node id="66">
+        <label>lib/Analysis/ScalarEvolution.cpp</label>
+        <link refid="_scalar_evolution_8cpp"/>
+      </node>
+      <node id="67">
+        <label>lib/Analysis/ValueTracking.cpp</label>
+        <link refid="_value_tracking_8cpp"/>
+      </node>
+      <node id="33">
+        <label>lib/CodeGen/AtomicExpandPass.cpp</label>
+        <link refid="_atomic_expand_pass_8cpp"/>
+      </node>
+      <node id="68">
+        <label>lib/CodeGen/CodeGenPrepare.cpp</label>
+        <link refid="_code_gen_prepare_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/CodeGen/HardwareLoops.cpp</label>
+        <link refid="_hardware_loops_8cpp"/>
+      </node>
+      <node id="38">
+        <label>lib/Target/AArch64/AArch64TargetTransformInfo.cpp</label>
+        <link refid="_a_arch64_target_transform_info_8cpp"/>
+      </node>
+      <node id="39">
+        <label>lib/Target/AMDGPU/AMDGPUInstCombineIntrinsic.cpp</label>
+        <link refid="_a_m_d_g_p_u_inst_combine_intrinsic_8cpp"/>
+      </node>
+      <node id="34">
+        <label>lib/Target/AMDGPU/AMDGPUPromoteAlloca.cpp</label>
+        <link refid="_a_m_d_g_p_u_promote_alloca_8cpp"/>
+      </node>
+      <node id="40">
+        <label>lib/Target/ARM/ARMTargetTransformInfo.cpp</label>
+        <link refid="_a_r_m_target_transform_info_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/Target/ARM/MVETailPredication.cpp</label>
+        <link refid="_m_v_e_tail_predication_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/Target/BPF/BPFTargetMachine.cpp</label>
+        <link refid="_b_p_f_target_machine_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/Target/BPF/BPFTargetTransformInfo.h</label>
+        <link refid="_b_p_f_target_transform_info_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>lib/Target/Hexagon/HexagonLoopIdiomRecognition.cpp</label>
+        <link refid="_hexagon_loop_idiom_recognition_8cpp"/>
+      </node>
+      <node id="35">
+        <label>lib/Target/Hexagon/HexagonVectorCombine.cpp</label>
+        <link refid="_hexagon_vector_combine_8cpp"/>
+      </node>
+      <node id="41">
+        <label>lib/Target/NVPTX/NVPTXTargetTransformInfo.cpp</label>
+        <link refid="_n_v_p_t_x_target_transform_info_8cpp"/>
+      </node>
+      <node id="9">
+        <label>lib/Target/PowerPC/PPCLoopInstrFormPrep.cpp</label>
+        <link refid="_p_p_c_loop_instr_form_prep_8cpp"/>
+      </node>
+      <node id="42">
+        <label>lib/Target/PowerPC/PPCTargetTransformInfo.cpp</label>
+        <link refid="_p_p_c_target_transform_info_8cpp"/>
+      </node>
+      <node id="36">
+        <label>lib/Target/RISCV/RISCVGatherScatterLowering.cpp</label>
+        <link refid="_r_i_s_c_v_gather_scatter_lowering_8cpp"/>
+      </node>
+      <node id="43">
+        <label>lib/Target/X86/X86InstCombineIntrinsic.cpp</label>
+        <link refid="_x86_inst_combine_intrinsic_8cpp"/>
+      </node>
+      <node id="69">
+        <label>lib/Transforms/Coroutines/CoroElide.cpp</label>
+        <link refid="_coro_elide_8cpp"/>
+      </node>
+      <node id="70">
+        <label>lib/Transforms/IPO/AttributorAttributes.cpp</label>
+        <link refid="_attributor_attributes_8cpp"/>
+      </node>
+      <node id="71">
+        <label>lib/Transforms/IPO/FunctionSpecialization.cpp</label>
+        <link refid="_function_specialization_8cpp"/>
+      </node>
+      <node id="44">
+        <label>lib/Transforms/InstCombine/InstCombineAddSub.cpp</label>
+        <link refid="_inst_combine_add_sub_8cpp"/>
+      </node>
+      <node id="45">
+        <label>lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</label>
+        <link refid="_inst_combine_and_or_xor_8cpp"/>
+      </node>
+      <node id="50">
+        <label>lib/Transforms/InstCombine/InstCombineAtomicRMW.cpp</label>
+        <link refid="_inst_combine_atomic_r_m_w_8cpp"/>
+      </node>
+      <node id="46">
+        <label>lib/Transforms/InstCombine/InstCombineCalls.cpp</label>
+        <link refid="_inst_combine_calls_8cpp"/>
+      </node>
+      <node id="47">
+        <label>lib/Transforms/InstCombine/InstCombineCasts.cpp</label>
+        <link refid="_inst_combine_casts_8cpp"/>
+      </node>
+      <node id="48">
+        <label>lib/Transforms/InstCombine/InstCombineCompares.cpp</label>
+        <link refid="_inst_combine_compares_8cpp"/>
+      </node>
+      <node id="49">
+        <label>lib/Transforms/InstCombine/InstCombineInternal.h</label>
+        <link refid="_inst_combine_internal_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>lib/Transforms/InstCombine/InstCombineLoadStoreAlloca.cpp</label>
+        <link refid="_inst_combine_load_store_alloca_8cpp"/>
+      </node>
+      <node id="52">
+        <label>lib/Transforms/InstCombine/InstCombineMulDivRem.cpp</label>
+        <link refid="_inst_combine_mul_div_rem_8cpp"/>
+      </node>
+      <node id="53">
+        <label>lib/Transforms/InstCombine/InstCombineNegator.cpp</label>
+        <link refid="_inst_combine_negator_8cpp"/>
+      </node>
+      <node id="54">
+        <label>lib/Transforms/InstCombine/InstCombinePHI.cpp</label>
+        <link refid="_inst_combine_p_h_i_8cpp"/>
+      </node>
+      <node id="55">
+        <label>lib/Transforms/InstCombine/InstCombineSelect.cpp</label>
+        <link refid="_inst_combine_select_8cpp"/>
+      </node>
+      <node id="56">
+        <label>lib/Transforms/InstCombine/InstCombineShifts.cpp</label>
+        <link refid="_inst_combine_shifts_8cpp"/>
+      </node>
+      <node id="57">
+        <label>lib/Transforms/InstCombine/InstCombineSimplifyDemanded.cpp</label>
+        <link refid="_inst_combine_simplify_demanded_8cpp"/>
+      </node>
+      <node id="58">
+        <label>lib/Transforms/InstCombine/InstCombineVectorOps.cpp</label>
+        <link refid="_inst_combine_vector_ops_8cpp"/>
+      </node>
+      <node id="59">
+        <label>lib/Transforms/InstCombine/InstructionCombining.cpp</label>
+        <link refid="_instruction_combining_8cpp"/>
+      </node>
+      <node id="72">
+        <label>lib/Transforms/Scalar/CorrelatedValuePropagation.cpp</label>
+        <link refid="_correlated_value_propagation_8cpp"/>
+      </node>
+      <node id="73">
+        <label>lib/Transforms/Scalar/EarlyCSE.cpp</label>
+        <link refid="_early_c_s_e_8cpp"/>
+      </node>
+      <node id="74">
+        <label>lib/Transforms/Scalar/GVN.cpp</label>
+        <link refid="_g_v_n_8cpp"/>
+      </node>
+      <node id="10">
+        <label>lib/Transforms/Scalar/IndVarSimplify.cpp</label>
+        <link refid="_ind_var_simplify_8cpp"/>
+      </node>
+      <node id="75">
+        <label>lib/Transforms/Scalar/InstSimplifyPass.cpp</label>
+        <link refid="_inst_simplify_pass_8cpp"/>
+      </node>
+      <node id="76">
+        <label>lib/Transforms/Scalar/JumpThreading.cpp</label>
+        <link refid="_jump_threading_8cpp"/>
+      </node>
+      <node id="11">
+        <label>lib/Transforms/Scalar/LoopBoundSplit.cpp</label>
+        <link refid="_loop_bound_split_8cpp"/>
+      </node>
+      <node id="12">
+        <label>lib/Transforms/Scalar/LoopDataPrefetch.cpp</label>
+        <link refid="_loop_data_prefetch_8cpp"/>
+      </node>
+      <node id="77">
+        <label>lib/Transforms/Scalar/LoopDeletion.cpp</label>
+        <link refid="_loop_deletion_8cpp"/>
+      </node>
+      <node id="13">
+        <label>lib/Transforms/Scalar/LoopFlatten.cpp</label>
+        <link refid="_loop_flatten_8cpp"/>
+      </node>
+      <node id="14">
+        <label>lib/Transforms/Scalar/LoopIdiomRecognize.cpp</label>
+        <link refid="_loop_idiom_recognize_8cpp"/>
+      </node>
+      <node id="78">
+        <label>lib/Transforms/Scalar/LoopInstSimplify.cpp</label>
+        <link refid="_loop_inst_simplify_8cpp"/>
+      </node>
+      <node id="15">
+        <label>lib/Transforms/Scalar/LoopLoadElimination.cpp</label>
+        <link refid="_loop_load_elimination_8cpp"/>
+      </node>
+      <node id="16">
+        <label>lib/Transforms/Scalar/LoopPredication.cpp</label>
+        <link refid="_loop_predication_8cpp"/>
+      </node>
+      <node id="79">
+        <label>lib/Transforms/Scalar/LoopRotation.cpp</label>
+        <link refid="_loop_rotation_8cpp"/>
+      </node>
+      <node id="17">
+        <label>lib/Transforms/Scalar/LoopStrengthReduce.cpp</label>
+        <link refid="_loop_strength_reduce_8cpp"/>
+      </node>
+      <node id="18">
+        <label>lib/Transforms/Scalar/LoopTermFold.cpp</label>
+        <link refid="_loop_term_fold_8cpp"/>
+      </node>
+      <node id="19">
+        <label>lib/Transforms/Scalar/LoopUnrollPass.cpp</label>
+        <link refid="_loop_unroll_pass_8cpp"/>
+      </node>
+      <node id="80">
+        <label>lib/Transforms/Scalar/LowerConstantIntrinsics.cpp</label>
+        <link refid="_lower_constant_intrinsics_8cpp"/>
+      </node>
+      <node id="81">
+        <label>lib/Transforms/Scalar/MemCpyOptimizer.cpp</label>
+        <link refid="_mem_cpy_optimizer_8cpp"/>
+      </node>
+      <node id="20">
+        <label>lib/Transforms/Scalar/NaryReassociate.cpp</label>
+        <link refid="_nary_reassociate_8cpp"/>
+      </node>
+      <node id="82">
+        <label>lib/Transforms/Scalar/NewGVN.cpp</label>
+        <link refid="_new_g_v_n_8cpp"/>
+      </node>
+      <node id="83">
+        <label>lib/Transforms/Scalar/StructurizeCFG.cpp</label>
+        <link refid="_structurize_c_f_g_8cpp"/>
+      </node>
+      <node id="84">
+        <label>lib/Transforms/Scalar/TailRecursionElimination.cpp</label>
+        <link refid="_tail_recursion_elimination_8cpp"/>
+      </node>
+      <node id="85">
+        <label>lib/Transforms/Utils/CloneFunction.cpp</label>
+        <link refid="_clone_function_8cpp"/>
+      </node>
+      <node id="86">
+        <label>lib/Transforms/Utils/InlineFunction.cpp</label>
+        <link refid="_inline_function_8cpp"/>
+      </node>
+      <node id="87">
+        <label>lib/Transforms/Utils/Local.cpp</label>
+        <link refid="_transforms_2_utils_2_local_8cpp"/>
+      </node>
+      <node id="21">
+        <label>lib/Transforms/Utils/LoopConstrainer.cpp</label>
+        <link refid="_loop_constrainer_8cpp"/>
+      </node>
+      <node id="88">
+        <label>lib/Transforms/Utils/LoopRotationUtils.cpp</label>
+        <link refid="_loop_rotation_utils_8cpp"/>
+      </node>
+      <node id="89">
+        <label>lib/Transforms/Utils/LoopSimplify.cpp</label>
+        <link refid="_loop_simplify_8cpp"/>
+      </node>
+      <node id="22">
+        <label>lib/Transforms/Utils/LoopUnroll.cpp</label>
+        <link refid="_loop_unroll_8cpp"/>
+      </node>
+      <node id="23">
+        <label>lib/Transforms/Utils/LoopUnrollAndJam.cpp</label>
+        <link refid="_loop_unroll_and_jam_8cpp"/>
+      </node>
+      <node id="24">
+        <label>lib/Transforms/Utils/LoopUnrollRuntime.cpp</label>
+        <link refid="_loop_unroll_runtime_8cpp"/>
+      </node>
+      <node id="25">
+        <label>lib/Transforms/Utils/LoopUtils.cpp</label>
+        <link refid="_loop_utils_8cpp"/>
+      </node>
+      <node id="26">
+        <label>lib/Transforms/Utils/LoopVersioning.cpp</label>
+        <link refid="_loop_versioning_8cpp"/>
+      </node>
+      <node id="90">
+        <label>lib/Transforms/Utils/PromoteMemoryToRegister.cpp</label>
+        <link refid="_promote_memory_to_register_8cpp"/>
+      </node>
+      <node id="91">
+        <label>lib/Transforms/Utils/SCCPSolver.cpp</label>
+        <link refid="_s_c_c_p_solver_8cpp"/>
+      </node>
+      <node id="92">
+        <label>lib/Transforms/Utils/SSAUpdater.cpp</label>
+        <link refid="_s_s_a_updater_8cpp"/>
+      </node>
+      <node id="27">
+        <label>lib/Transforms/Utils/ScalarEvolutionExpander.cpp</label>
+        <link refid="_scalar_evolution_expander_8cpp"/>
+      </node>
+      <node id="93">
+        <label>lib/Transforms/Utils/SimplifyCFG.cpp</label>
+        <link refid="_simplify_c_f_g_8cpp"/>
+      </node>
+      <node id="28">
+        <label>lib/Transforms/Utils/SimplifyIndVar.cpp</label>
+        <link refid="_simplify_ind_var_8cpp"/>
+      </node>
+      <node id="29">
+        <label>lib/Transforms/Vectorize/LoopVectorize.cpp</label>
+        <link refid="_loop_vectorize_8cpp"/>
+      </node>
+      <node id="30">
+        <label>lib/Transforms/Vectorize/SLPVectorizer.cpp</label>
+        <link refid="_s_l_p_vectorizer_8cpp"/>
+      </node>
+      <node id="31">
+        <label>lib/Transforms/Vectorize/VPlanRecipes.cpp</label>
+        <link refid="_v_plan_recipes_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===--<sp/>InstructionSimplify.h<sp/>-<sp/>Fold<sp/>instrs<sp/>into<sp/>simpler<sp/>forms<sp/>--*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>declares<sp/>routines<sp/>for<sp/>folding<sp/>instructions<sp/>into<sp/>simpler<sp/>forms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>that<sp/>do<sp/>not<sp/>require<sp/>creating<sp/>new<sp/>instructions.<sp/><sp/>This<sp/>does<sp/>constant<sp/>folding</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(&quot;add<sp/>i32<sp/>1,<sp/>1&quot;<sp/>-&gt;<sp/>&quot;2&quot;)<sp/>but<sp/>can<sp/>also<sp/>handle<sp/>non-constant<sp/>operands,<sp/>either</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>returning<sp/>a<sp/>constant<sp/>(&quot;and<sp/>i32<sp/>%x,<sp/>0&quot;<sp/>-&gt;<sp/>&quot;0&quot;)<sp/>or<sp/>an<sp/>already<sp/>existing<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(&quot;and<sp/>i32<sp/>%x,<sp/>%x&quot;<sp/>-&gt;<sp/>&quot;%x&quot;).<sp/><sp/>If<sp/>the<sp/>simplification<sp/>is<sp/>also<sp/>an<sp/>instruction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>then<sp/>it<sp/>dominates<sp/>the<sp/>original<sp/>instruction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>These<sp/>routines<sp/>implicitly<sp/>resolve<sp/>undef<sp/>uses.<sp/>The<sp/>easiest<sp/>way<sp/>to<sp/>be<sp/>safe<sp/>when</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>using<sp/>these<sp/>routines<sp/>to<sp/>obtain<sp/>simplified<sp/>values<sp/>for<sp/>existing<sp/>instructions<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>to<sp/>always<sp/>replace<sp/>all<sp/>uses<sp/>of<sp/>the<sp/>instructions<sp/>with<sp/>the<sp/>resulting<sp/>simplified</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>values.<sp/>This<sp/>will<sp/>prevent<sp/>other<sp/>code<sp/>from<sp/>seeing<sp/>the<sp/>same<sp/>undef<sp/>uses<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>resolving<sp/>them<sp/>to<sp/>different<sp/>values.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>They<sp/>require<sp/>that<sp/>all<sp/>the<sp/>IR<sp/>that<sp/>they<sp/>encounter<sp/>be<sp/>valid<sp/>and<sp/>inserted<sp/>into<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>parent<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Additionally,<sp/>these<sp/>routines<sp/>can&apos;t<sp/>simplify<sp/>to<sp/>the<sp/>instructions<sp/>that<sp/>are<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>def-reachable,<sp/>meaning<sp/>we<sp/>can&apos;t<sp/>just<sp/>scan<sp/>the<sp/>basic<sp/>block<sp/>for<sp/>instructions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>to<sp/>simplify<sp/>to.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_ANALYSIS_INSTRUCTIONSIMPLIFY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_ANALYSIS_INSTRUCTIONSIMPLIFY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_simplify_query_8h" kindref="compound">llvm/Analysis/SimplifyQuery.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_f_p_env_8h" kindref="compound">llvm/IR/FPEnv.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>TArgs&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_analysis_manager" kindref="compound">AnalysisManager</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_function" kindref="compound">Function</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_cmp_predicate" kindref="compound">CmpPredicate</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structllvm_1_1_loop_standard_analysis_results" kindref="compound">LoopStandardAnalysisResults</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_pass" kindref="compound">Pass</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>n&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_small_set_vector" kindref="compound">SmallSetVector</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_type" kindref="compound">Type</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//<sp/>NOTE:<sp/>the<sp/>explicit<sp/>multiple<sp/>argument<sp/>versions<sp/>of<sp/>these<sp/>functions<sp/>are</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>deprecated.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Please<sp/>use<sp/>the<sp/>SimplifyQuery<sp/>versions<sp/>in<sp/>new<sp/>code.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="60"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>Add,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a5e0af1b16cab9e0efc63a6ce9de2b9cc" kindref="member">simplifyAddInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsNSW,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsNUW,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>Sub,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a5942ddc4393a8ef081555f9a938c86e9" kindref="member">simplifySubInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsNSW,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsNUW,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="68"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>Mul,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a2b9904a62f8c9179b90d1cb89e6e05ac" kindref="member">simplifyMulInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsNSW,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsNUW,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="72"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>SDiv,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a23805d3a4c907766bf29b589ba786c81" kindref="member">simplifySDivInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsExact,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="76"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>UDiv,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1ab3b0406324f59a9dcdd00f68345ef9b7" kindref="member">simplifyUDivInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsExact,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="80"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>SRem,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1acb98fd0d755e436c5749105d46b0c0d1" kindref="member">simplifySRemInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="83"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>URem,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1aecb805c568634be3390c7da36836d63e" kindref="member">simplifyURemInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="86"><highlight class="comment">///<sp/>Given<sp/>operand<sp/>for<sp/>an<sp/>FNeg,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a6e06e93488a2f32aeb56f86797a78c33" kindref="member">simplifyFNegInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref>,<sp/><ref refid="classllvm_1_1_fast_math_flags" kindref="compound">FastMathFlags</ref><sp/>FMF,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="90"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>FAdd,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><ref refid="namespacellvm_1a76162df5082ce14f7796e4307cba27fd" kindref="member">simplifyFAddInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/><ref refid="classllvm_1_1_fast_math_flags" kindref="compound">FastMathFlags</ref><sp/>FMF,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630" kindref="member">fp::ExceptionBehavior</ref><sp/>ExBehavior<sp/>=<sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630ad8009e7c0ce2967115e856052243ac62" kindref="member">fp::ebIgnore</ref>,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7c" kindref="member">RoundingMode</ref><sp/>Rounding<sp/>=<sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7ca44467144e3b6bdac3e85ef6f90e7d832" kindref="member">RoundingMode::NearestTiesToEven</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="97"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>FSub,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><ref refid="namespacellvm_1a6e8a8610223f1f09b6000dcbca9649a5" kindref="member">simplifyFSubInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/><ref refid="classllvm_1_1_fast_math_flags" kindref="compound">FastMathFlags</ref><sp/>FMF,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630" kindref="member">fp::ExceptionBehavior</ref><sp/>ExBehavior<sp/>=<sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630ad8009e7c0ce2967115e856052243ac62" kindref="member">fp::ebIgnore</ref>,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7c" kindref="member">RoundingMode</ref><sp/>Rounding<sp/>=<sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7ca44467144e3b6bdac3e85ef6f90e7d832" kindref="member">RoundingMode::NearestTiesToEven</ref>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="104"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>FMul,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><ref refid="namespacellvm_1a0d4bdb0619aad92ee2de8f939930ba05" kindref="member">simplifyFMulInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/><ref refid="classllvm_1_1_fast_math_flags" kindref="compound">FastMathFlags</ref><sp/>FMF,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630" kindref="member">fp::ExceptionBehavior</ref><sp/>ExBehavior<sp/>=<sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630ad8009e7c0ce2967115e856052243ac62" kindref="member">fp::ebIgnore</ref>,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7c" kindref="member">RoundingMode</ref><sp/>Rounding<sp/>=<sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7ca44467144e3b6bdac3e85ef6f90e7d832" kindref="member">RoundingMode::NearestTiesToEven</ref>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="111"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>the<sp/>multiplication<sp/>of<sp/>a<sp/>FMA,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return</highlight></codeline>
+<codeline lineno="112"><highlight class="comment">///<sp/>null.<sp/>In<sp/>contrast<sp/>to<sp/>simplifyFMulInst,<sp/>this<sp/>function<sp/>will<sp/>not<sp/>perform</highlight></codeline>
+<codeline lineno="113"><highlight class="comment">///<sp/>simplifications<sp/>whose<sp/>unrounded<sp/>results<sp/>differ<sp/>when<sp/>rounded<sp/>to<sp/>the<sp/>argument</highlight></codeline>
+<codeline lineno="114"><highlight class="comment">///<sp/>type.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a9e6861fa4cb7fe1437d3057b8b3d1601" kindref="member">simplifyFMAFMul</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/><ref refid="classllvm_1_1_fast_math_flags" kindref="compound">FastMathFlags</ref><sp/>FMF,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630" kindref="member">fp::ExceptionBehavior</ref><sp/>ExBehavior<sp/>=<sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630ad8009e7c0ce2967115e856052243ac62" kindref="member">fp::ebIgnore</ref>,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7c" kindref="member">RoundingMode</ref><sp/>Rounding<sp/>=<sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7ca44467144e3b6bdac3e85ef6f90e7d832" kindref="member">RoundingMode::NearestTiesToEven</ref>);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="120"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>FDiv,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><ref refid="namespacellvm_1a97ff52bca68f0168c930daf2fad29c72" kindref="member">simplifyFDivInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/><ref refid="classllvm_1_1_fast_math_flags" kindref="compound">FastMathFlags</ref><sp/>FMF,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630" kindref="member">fp::ExceptionBehavior</ref><sp/>ExBehavior<sp/>=<sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630ad8009e7c0ce2967115e856052243ac62" kindref="member">fp::ebIgnore</ref>,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7c" kindref="member">RoundingMode</ref><sp/>Rounding<sp/>=<sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7ca44467144e3b6bdac3e85ef6f90e7d832" kindref="member">RoundingMode::NearestTiesToEven</ref>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="127"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>FRem,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><ref refid="namespacellvm_1a75983bc94469337f93d99c6a2ad05699" kindref="member">simplifyFRemInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/><ref refid="classllvm_1_1_fast_math_flags" kindref="compound">FastMathFlags</ref><sp/>FMF,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630" kindref="member">fp::ExceptionBehavior</ref><sp/>ExBehavior<sp/>=<sp/><ref refid="namespacellvm_1_1fp_1a51c5e09b2604faec548aef87bd482630ad8009e7c0ce2967115e856052243ac62" kindref="member">fp::ebIgnore</ref>,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7c" kindref="member">RoundingMode</ref><sp/>Rounding<sp/>=<sp/><ref refid="namespacellvm_1ab7af0c09900daed62bbdb01dba180f7ca44467144e3b6bdac3e85ef6f90e7d832" kindref="member">RoundingMode::NearestTiesToEven</ref>);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="134"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>Shl,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a6c052bfdf5f83877d32736ff3895cba5" kindref="member">simplifyShlInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op0,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op1,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsNSW,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsNUW,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="138"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>LShr,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a7a41cf2067684aff8591bb68edad443e" kindref="member">simplifyLShrInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op0,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op1,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsExact,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="142"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>AShr,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>nulll.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a0490e6e3fbdff8ae439abff8380ec7e2" kindref="member">simplifyAShrInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op0,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op1,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsExact,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="146"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>And,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a8f751e3ed5adc61048480e9fd0e257cc" kindref="member">simplifyAndInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="149"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>Or,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a4f2dc2393a7799e74a0ab4aaa96783f6" kindref="member">simplifyOrInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="152"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>Xor,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a4f6b08837306196c6ff45fc5c65fe815" kindref="member">simplifyXorInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="155"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>ICmpInst,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a83813cbf71633220ae57ad2b79498f77" kindref="member">simplifyICmpInst</ref>(<ref refid="classllvm_1_1_cmp_predicate" kindref="compound">CmpPredicate</ref><sp/>Pred,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="159"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>FCmpInst,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a45d5f84f92a3fffaaca5d922ad632dba" kindref="member">simplifyFCmpInst</ref>(<ref refid="classllvm_1_1_cmp_predicate" kindref="compound">CmpPredicate</ref><sp/>Predicate,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_fast_math_flags" kindref="compound">FastMathFlags</ref><sp/>FMF,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="163"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>SelectInst,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1af03a113ed05a87f07ee096463723cfc0" kindref="member">simplifySelectInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a193847098793cdbab306803186676899" kindref="member">Cond</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*TrueVal,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*FalseVal,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="167"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>GetElementPtrInst,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a0f010abd897957459c535649fa702c98" kindref="member">simplifyGEPInst</ref>(<ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*SrcTy,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" kindref="member">Ptr</ref>,<sp/><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;Value *&gt;</ref><sp/>Indices,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_g_e_p_no_wrap_flags" kindref="compound">GEPNoWrapFlags</ref><sp/>NW,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="171"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>InsertValueInst,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a94b67449bc2ce740bcec33d149769fe0" kindref="member">simplifyInsertValueInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Agg,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Val,<sp/><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;unsigned&gt;</ref><sp/>Idxs,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="175"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>InsertElement,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1abdf4b5f9e1dc6887cac393ee643c10b6" kindref="member">simplifyInsertElementInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Vec,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Elt,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Idx,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="179"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>ExtractValueInst,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a9442ed00a8dff89558d50f9c150951ff" kindref="member">simplifyExtractValueInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Agg,<sp/><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;unsigned&gt;</ref><sp/>Idxs,</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="183"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>an<sp/>ExtractElementInst,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1aee89448981f9fbc0d97fe68f354a8e82" kindref="member">simplifyExtractElementInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Vec,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Idx,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="187"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>CastInst,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a57b7707bae1b59648d9b09e7c3e1106c" kindref="member">simplifyCastInst</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>CastOpc,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref>,<sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*Ty,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="191"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>BinaryIntrinsic,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1ab720ac4c86a5f16a755b1e5cd0d32c80" kindref="member">simplifyBinaryIntrinsic</ref>(<ref refid="namespacellvm_1_1_intrinsic_1a80add6b3b1cdaec560907995127adc16" kindref="member">Intrinsic::ID</ref><sp/>IID,<sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*ReturnType,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op0,</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref><sp/>*<ref refid="group___a_r_c_opt_1ga9c9cf6ad55eb23d77d083a184e416c09" kindref="member">Call</ref>);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="196"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>ShuffleVectorInst,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight></codeline>
+<codeline lineno="197"><highlight class="comment">///<sp/>See<sp/>class<sp/>ShuffleVectorInst<sp/>for<sp/>a<sp/>description<sp/>of<sp/>the<sp/>mask<sp/>representation.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a4e04471ed9ac60e70f5cf2d81f49b8c4" kindref="member">simplifyShuffleVectorInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op0,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op1,<sp/><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;int&gt;</ref><sp/>Mask,</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*RetTy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="comment">//===<sp/>Helper<sp/>functions<sp/>for<sp/>higher<sp/>up<sp/>the<sp/>class<sp/>hierarchy.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="203"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>CmpInst,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1adccdd5d6b0c85f7917306e296b27c4cd" kindref="member">simplifyCmpInst</ref>(<ref refid="classllvm_1_1_cmp_predicate" kindref="compound">CmpPredicate</ref><sp/>Predicate,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="207"><highlight class="comment">///<sp/>Given<sp/>operand<sp/>for<sp/>a<sp/>UnaryOperator,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a27487de7fe616848977b268e8aa6354d" kindref="member">simplifyUnOp</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Opcode,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="210"><highlight class="comment">///<sp/>Given<sp/>operand<sp/>for<sp/>a<sp/>UnaryOperator,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight></codeline>
+<codeline lineno="211"><highlight class="comment">///<sp/>Try<sp/>to<sp/>use<sp/>FastMathFlags<sp/>when<sp/>folding<sp/>the<sp/>result.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a27487de7fe616848977b268e8aa6354d" kindref="member">simplifyUnOp</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Opcode,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref>,<sp/><ref refid="classllvm_1_1_fast_math_flags" kindref="compound">FastMathFlags</ref><sp/>FMF,</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="215"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>BinaryOperator,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1aa750395459fa1eb7130d6de8e3d074f6" kindref="member">simplifyBinOp</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Opcode,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="219"><highlight class="comment">///<sp/>Given<sp/>operands<sp/>for<sp/>a<sp/>BinaryOperator,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight></codeline>
+<codeline lineno="220"><highlight class="comment">///<sp/>Try<sp/>to<sp/>use<sp/>FastMathFlags<sp/>when<sp/>folding<sp/>the<sp/>result.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1aa750395459fa1eb7130d6de8e3d074f6" kindref="member">simplifyBinOp</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Opcode,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" kindref="member">LHS</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>,<sp/><ref refid="classllvm_1_1_fast_math_flags" kindref="compound">FastMathFlags</ref><sp/>FMF,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="224"><highlight class="comment">///<sp/>Given<sp/>a<sp/>callsite,<sp/>callee,<sp/>and<sp/>arguments,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a3cc3d823b751599d37440440bd06096c" kindref="member">simplifyCall</ref>(<ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref><sp/>*<ref refid="group___a_r_c_opt_1ga9c9cf6ad55eb23d77d083a184e416c09" kindref="member">Call</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Callee,<sp/><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;Value *&gt;</ref><sp/>Args,</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="228"><highlight class="comment">///<sp/>Given<sp/>a<sp/>constrained<sp/>FP<sp/>intrinsic<sp/>call,<sp/>tries<sp/>to<sp/>compute<sp/>its<sp/>simplified</highlight></codeline>
+<codeline lineno="229"><highlight class="comment">///<sp/>version.<sp/>Returns<sp/>a<sp/>simplified<sp/>result<sp/>or<sp/>null.</highlight></codeline>
+<codeline lineno="230"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="231"><highlight class="comment">///<sp/>This<sp/>function<sp/>provides<sp/>an<sp/>additional<sp/>contract:<sp/>it<sp/>guarantees<sp/>that<sp/>if</highlight></codeline>
+<codeline lineno="232"><highlight class="comment">///<sp/>simplification<sp/>succeeds<sp/>that<sp/>the<sp/>intrinsic<sp/>is<sp/>side<sp/>effect<sp/>free.<sp/>As<sp/>a<sp/>result,</highlight></codeline>
+<codeline lineno="233"><highlight class="comment">///<sp/>successful<sp/>simplification<sp/>can<sp/>be<sp/>used<sp/>to<sp/>delete<sp/>the<sp/>intrinsic<sp/>not<sp/>just</highlight></codeline>
+<codeline lineno="234"><highlight class="comment">///<sp/>replace<sp/>its<sp/>result.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1aa45b543e17160f4f37f50d283ea5e2fe" kindref="member">simplifyConstrainedFPCall</ref>(<ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref><sp/>*<ref refid="group___a_r_c_opt_1ga9c9cf6ad55eb23d77d083a184e416c09" kindref="member">Call</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="237"><highlight class="comment">///<sp/>Given<sp/>an<sp/>operand<sp/>for<sp/>a<sp/>Freeze,<sp/>see<sp/>if<sp/>we<sp/>can<sp/>fold<sp/>the<sp/>result.</highlight></codeline>
+<codeline lineno="238"><highlight class="comment">///<sp/>If<sp/>not,<sp/>this<sp/>returns<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a12c01eba586da4db7ad4662e901b10a0" kindref="member">simplifyFreezeInst</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="241"><highlight class="comment">///<sp/>Given<sp/>a<sp/>load<sp/>instruction<sp/>and<sp/>its<sp/>pointer<sp/>operand,<sp/>fold<sp/>the<sp/>result<sp/>or<sp/>return</highlight></codeline>
+<codeline lineno="242"><highlight class="comment">///<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a99fa28f2d78ae2ce889b621ab275a4ad" kindref="member">simplifyLoadInst</ref>(<ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref><sp/>*LI,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*PtrOp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="245"><highlight class="comment">///<sp/>See<sp/>if<sp/>we<sp/>can<sp/>compute<sp/>a<sp/>simplified<sp/>version<sp/>of<sp/>this<sp/>instruction.<sp/>If<sp/>not,</highlight></codeline>
+<codeline lineno="246"><highlight class="comment">///<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a57feb935aaafd1bd4bfbb8dc56ad2129" kindref="member">simplifyInstruction</ref>(<ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref><sp/>*<ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="249"><highlight class="comment">///<sp/>Like<sp/>\p<sp/>simplifyInstruction<sp/>but<sp/>the<sp/>operands<sp/>of<sp/>\p<sp/>I<sp/>are<sp/>replaced<sp/>with</highlight></codeline>
+<codeline lineno="250"><highlight class="comment">///<sp/>\p<sp/>NewOps.<sp/>Returns<sp/>a<sp/>simplified<sp/>value,<sp/>or<sp/>null<sp/>if<sp/>none<sp/>was<sp/>found.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><ref refid="namespacellvm_1a367cc3c1cd48f8723586daebe9a17d00" kindref="member">simplifyInstructionWithOperands</ref>(<ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref><sp/>*<ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref>,<sp/><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;Value *&gt;</ref><sp/>NewOps,</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="255"><highlight class="comment">///<sp/>See<sp/>if<sp/>V<sp/>simplifies<sp/>when<sp/>its<sp/>operand<sp/>Op<sp/>is<sp/>replaced<sp/>with<sp/>RepOp.<sp/>If<sp/>not,</highlight></codeline>
+<codeline lineno="256"><highlight class="comment">///<sp/>return<sp/>null.</highlight></codeline>
+<codeline lineno="257"><highlight class="comment">///<sp/>AllowRefinement<sp/>specifies<sp/>whether<sp/>the<sp/>simplification<sp/>can<sp/>be<sp/>a<sp/>refinement</highlight></codeline>
+<codeline lineno="258"><highlight class="comment">///<sp/>(e.g.<sp/>0<sp/>instead<sp/>of<sp/>poison),<sp/>or<sp/>whether<sp/>it<sp/>needs<sp/>to<sp/>be<sp/>strictly<sp/>identical.</highlight></codeline>
+<codeline lineno="259"><highlight class="comment">///<sp/>Op<sp/>and<sp/>RepOp<sp/>can<sp/>be<sp/>assumed<sp/>to<sp/>not<sp/>be<sp/>poison<sp/>when<sp/>determining<sp/>refinement.</highlight></codeline>
+<codeline lineno="260"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="261"><highlight class="comment">///<sp/>If<sp/>DropFlags<sp/>is<sp/>passed,<sp/>then<sp/>the<sp/>replacement<sp/>result<sp/>is<sp/>only<sp/>valid<sp/>if</highlight></codeline>
+<codeline lineno="262"><highlight class="comment">///<sp/>poison-generating<sp/>flags/metadata<sp/>on<sp/>those<sp/>instructions<sp/>are<sp/>dropped.<sp/>This</highlight></codeline>
+<codeline lineno="263"><highlight class="comment">///<sp/>is<sp/>only<sp/>useful<sp/>in<sp/>conjunction<sp/>with<sp/>AllowRefinement=false.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><ref refid="namespacellvm_1ac2c120392853d2011de12503a12a16be" kindref="member">simplifyWithOpReplaced</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*V,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*RepOp,</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/>&amp;Q,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>AllowRefinement,</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;Instruction *&gt;</ref><sp/>*DropFlags<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="269"><highlight class="comment">///<sp/>Replace<sp/>all<sp/>uses<sp/>of<sp/>&apos;I&apos;<sp/>with<sp/>&apos;SimpleV&apos;<sp/>and<sp/>simplify<sp/>the<sp/>uses<sp/>recursively.</highlight></codeline>
+<codeline lineno="270"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="271"><highlight class="comment">///<sp/>This<sp/>first<sp/>performs<sp/>a<sp/>normal<sp/>RAUW<sp/>of<sp/>I<sp/>with<sp/>SimpleV.<sp/>It<sp/>then<sp/>recursively</highlight></codeline>
+<codeline lineno="272"><highlight class="comment">///<sp/>attempts<sp/>to<sp/>simplify<sp/>those<sp/>users<sp/>updated<sp/>by<sp/>the<sp/>operation.<sp/>The<sp/>&apos;I&apos;</highlight></codeline>
+<codeline lineno="273"><highlight class="comment">///<sp/>instruction<sp/>must<sp/>not<sp/>be<sp/>equal<sp/>to<sp/>the<sp/>simplified<sp/>value<sp/>&apos;SimpleV&apos;.</highlight></codeline>
+<codeline lineno="274"><highlight class="comment">///<sp/>If<sp/>UnsimplifiedUsers<sp/>is<sp/>provided,<sp/>instructions<sp/>that<sp/>could<sp/>not<sp/>be<sp/>simplified</highlight></codeline>
+<codeline lineno="275"><highlight class="comment">///<sp/>are<sp/>added<sp/>to<sp/>it.</highlight></codeline>
+<codeline lineno="276"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="277"><highlight class="comment">///<sp/>The<sp/>function<sp/>returns<sp/>true<sp/>if<sp/>any<sp/>simplifications<sp/>were<sp/>performed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a66a40e8dfb026aef2f90764d2e49a8f1" kindref="member">replaceAndRecursivelySimplify</ref>(</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref><sp/>*<ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref>,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*SimpleV,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref><sp/>*TLI<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>*DT<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref><sp/>*AC<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_set_vector" kindref="compound">SmallSetVector&lt;Instruction *, 8&gt;</ref><sp/>*UnsimplifiedUsers<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="comment">//<sp/>These<sp/>helper<sp/>functions<sp/>return<sp/>a<sp/>SimplifyQuery<sp/>structure<sp/>that<sp/>contains<sp/>as</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="comment">//<sp/>many<sp/>of<sp/>the<sp/>optional<sp/>analysis<sp/>we<sp/>use<sp/>as<sp/>are<sp/>currently<sp/>valid.<sp/><sp/>This<sp/>is<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="comment">//<sp/>strongly<sp/>preferred<sp/>way<sp/>of<sp/>constructing<sp/>SimplifyQuery<sp/>in<sp/>passes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/><ref refid="namespacellvm_1ae489f96813329d10c0f6904477109f3b" kindref="member">getBestSimplifyQuery</ref>(<ref refid="classllvm_1_1_pass" kindref="compound">Pass</ref><sp/>&amp;,<sp/><ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">...<sp/>TArgs&gt;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/><ref refid="namespacellvm_1ae489f96813329d10c0f6904477109f3b" kindref="member">getBestSimplifyQuery</ref>(<ref refid="classllvm_1_1_analysis_manager" kindref="compound">AnalysisManager&lt;T, TArgs...&gt;</ref><sp/>&amp;,</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref><sp/><ref refid="namespacellvm_1ae489f96813329d10c0f6904477109f3b" kindref="member">getBestSimplifyQuery</ref>(<ref refid="structllvm_1_1_loop_standard_analysis_results" kindref="compound">LoopStandardAnalysisResults</ref><sp/>&amp;,</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref><sp/>&amp;);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Analysis/InstructionSimplify.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,448 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_resource_segments" kind="class" language="C++" prot="public">
+    <compoundname>llvm::ResourceSegments</compoundname>
+    <includes refid="_machine_scheduler_8h" local="yes">llvm/CodeGen/MachineScheduler.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_resource_segments_1ac93528094c576c984aed5f8cd6923bc0" prot="public" static="no">
+        <type>std::pair&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref>, <ref refid="classint64__t" kindref="compound">int64_t</ref> &gt;</type>
+        <definition>typedef std::pair&lt;int64_t, int64_t&gt; llvm::ResourceSegments::IntervalTy</definition>
+        <argsstring></argsstring>
+        <name>IntervalTy</name>
+        <qualifiedname>llvm::ResourceSegments::IntervalTy</qualifiedname>
+        <briefdescription>
+<para>Represents an interval of discrete integer values closed on the left and open on the right: [a, b). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="640" column="21" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="640" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_resource_segments_1ad9d5e619b87a9aa6dabcec2d454add5e" prot="private" static="no" mutable="no">
+        <type>std::list&lt; <ref refid="classllvm_1_1_resource_segments_1ac93528094c576c984aed5f8cd6923bc0" kindref="member">IntervalTy</ref> &gt;</type>
+        <definition>std::list&lt;IntervalTy&gt; llvm::ResourceSegments::_Intervals</definition>
+        <argsstring></argsstring>
+        <name>_Intervals</name>
+        <qualifiedname>llvm::ResourceSegments::_Intervals</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="807" column="13" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="807" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_resource_segments_1a173bcdd8f59b31a810aead1000274448" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResourceSegments::add</definition>
+        <argsstring>(IntervalTy A, const unsigned CutOff=10)</argsstring>
+        <name>add</name>
+        <qualifiedname>llvm::ResourceSegments::add</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_resource_segments_1ac93528094c576c984aed5f8cd6923bc0" kindref="member">IntervalTy</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CutOff</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+<para>Adds an interval [a, b) to the collection of the instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When adding [a, b[ to the collection, the operation merges the adjacent intervals. For example <verbatim>  0  1  2  3  4  5  6  7  8  9  10
+  [-----)  [--)     [--)
++       [--)
+= [-----------)     [--)
+</verbatim></para>
+<para>To be able to debug duplicate resource usage, the function has assertion that checks that no interval should be added if it overlaps any of the intervals in the collection. We can require this because by definition a <ref refid="classllvm_1_1_resource_segments" kindref="compound">ResourceSegments</ref> is attached only to an individual resource instance. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="657" column="8" bodyfile="lib/CodeGen/MachineScheduler.cpp" bodystart="4505" bodyend="4530"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_dbg_entity_history_calculator_8cpp_1a0250c150e720772b7e0feac3d2f43e82" compoundref="_dbg_entity_history_calculator_8cpp" startline="114" endline="127">intersects</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_segments_1aed8869791acb35bc33a55d3ed1016f94" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ResourceSegments::getFirstAvailableAtFromBottom</definition>
+        <argsstring>(unsigned CurrCycle, unsigned AcquireAtCycle, unsigned ReleaseAtCycle) const</argsstring>
+        <name>getFirstAvailableAtFromBottom</name>
+        <qualifiedname>llvm::ResourceSegments::getFirstAvailableAtFromBottom</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CurrCycle</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>AcquireAtCycle</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ReleaseAtCycle</declname>
+        </param>
+        <briefdescription>
+<para>getFirstAvailableAtFromBottom and getFirstAvailableAtFromTop should be merged in a single function in which a function that creates the <computeroutput>NewInterval</computeroutput> is passed as a parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="793" column="12" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="793" bodyend="798"/>
+        <references refid="classllvm_1_1_resource_segments_1a46315c932ddcacb368f78ecc39a96fe3" compoundref="_machine_scheduler_8h" startline="726" endline="730">getResourceIntervalBottom</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_segments_1a99e566d4dd4d552a9e38af4e047e4c1f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ResourceSegments::getFirstAvailableAtFromTop</definition>
+        <argsstring>(unsigned CurrCycle, unsigned AcquireAtCycle, unsigned ReleaseAtCycle) const</argsstring>
+        <name>getFirstAvailableAtFromTop</name>
+        <qualifiedname>llvm::ResourceSegments::getFirstAvailableAtFromTop</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CurrCycle</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>AcquireAtCycle</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ReleaseAtCycle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="799" column="12" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="799" bodyend="804"/>
+        <references refid="classllvm_1_1_resource_segments_1ad0173019797b2f865e64a85377cb3bd5" compoundref="_machine_scheduler_8h" startline="731" endline="735">getResourceIntervalTop</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_segments_1a1acb88064bee4429a66c43624abf0fad" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ResourceSegments::ResourceSegments</definition>
+        <argsstring>()</argsstring>
+        <name>ResourceSegments</name>
+        <qualifiedname>llvm::ResourceSegments::ResourceSegments</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="817" column="12" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="817" bodyend="817"/>
+        <referencedby refid="classllvm_1_1_resource_segments_1a9d6d29af031766f1b32ce8d496db7d25" compoundref="_machine_scheduler_8h" startline="828" endline="835">operator&lt;&lt;</referencedby>
+        <referencedby refid="classllvm_1_1_resource_segments_1a6c0f046546e4f1a19ef1546cb4f0c813" compoundref="_machine_scheduler_8h" startline="824" endline="827">operator==</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_segments_1a3dfd42064c0179ac5c5f90951bcdbbdf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::ResourceSegments::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>llvm::ResourceSegments::empty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="818" column="8" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="818" bodyend="818"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_segments_1ade0e5e61ec4d1af9caa7af68ceea9c4c" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ResourceSegments::ResourceSegments</definition>
+        <argsstring>(const std::list&lt; IntervalTy &gt; &amp;Intervals)</argsstring>
+        <name>ResourceSegments</name>
+        <qualifiedname>llvm::ResourceSegments::ResourceSegments</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::list&lt; <ref refid="classllvm_1_1_resource_segments_1ac93528094c576c984aed5f8cd6923bc0" kindref="member">IntervalTy</ref> &gt; &amp;</type>
+          <declname>Intervals</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="819" column="12" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="819" bodyend="822"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_resource_segments_1a7fbb23b17b45652a8d28aadabbabf3c9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ResourceSegments::intersects</definition>
+        <argsstring>(IntervalTy A, IntervalTy B)</argsstring>
+        <name>intersects</name>
+        <qualifiedname>llvm::ResourceSegments::intersects</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_resource_segments_1ac93528094c576c984aed5f8cd6923bc0" kindref="member">IntervalTy</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_resource_segments_1ac93528094c576c984aed5f8cd6923bc0" kindref="member">IntervalTy</ref></type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether intervals intersect. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="661" column="15" bodyfile="lib/CodeGen/MachineScheduler.cpp" bodystart="4532" bodyend="4557"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_segments_1a46315c932ddcacb368f78ecc39a96fe3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_resource_segments_1ac93528094c576c984aed5f8cd6923bc0" kindref="member">IntervalTy</ref></type>
+        <definition>static IntervalTy llvm::ResourceSegments::getResourceIntervalBottom</definition>
+        <argsstring>(unsigned C, unsigned AcquireAtCycle, unsigned ReleaseAtCycle)</argsstring>
+        <name>getResourceIntervalBottom</name>
+        <qualifiedname>llvm::ResourceSegments::getResourceIntervalBottom</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>AcquireAtCycle</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ReleaseAtCycle</declname>
+        </param>
+        <briefdescription>
+<para>These function return the interval used by a resource in bottom and top scheduling. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Consider an instruction that uses resources X0, X1 and X2 as follows:</para>
+<para>X0 X1 X1 X2 +-----<mdash/>+----------<mdash/>+-----------<mdash/>+ |Resource|AcquireAtCycle|ReleaseAtCycle| +-----<mdash/>+----------<mdash/>+-----------<mdash/>+ | X0 | 0 | 1 | +-----<mdash/>+----------<mdash/>+-----------<mdash/>+ | X1 | 1 | 3 | +-----<mdash/>+----------<mdash/>+-----------<mdash/>+ | X2 | 3 | 4 | +-----<mdash/>+----------<mdash/>+-----------<mdash/>+</para>
+<para>If we can schedule the instruction at cycle C, we need to compute the interval of the resource as follows:</para>
+<sect1 id="classllvm_1_1_resource_segments_1autotoc_md24">
+<title>TOP DOWN SCHEDULING</title><para>Cycles scheduling flows to the <emphasis>right</emphasis>, in the same direction of time. <verbatim>  C      1      2      3      4      5  ...
+</verbatim> ---<mdash/>|---<mdash/>|---<mdash/>|---<mdash/>|---<mdash/>|---<mdash/>|-----&gt; X0 X1 X1 X2 ---&gt; direction of time X0 [C, C+1) X1 [C+1, C+3) X2 [C+3, C+4)</para>
+<para>Therefore, the formula to compute the interval for a resource of an instruction that can be scheduled at cycle C in top-down scheduling is: <verbatim>  [C+AcquireAtCycle, C+ReleaseAtCycle)
+</verbatim></para>
+</sect1>
+<sect1 id="classllvm_1_1_resource_segments_1autotoc_md25">
+<title>BOTTOM UP SCHEDULING</title><para>Cycles scheduling flows to the <emphasis>left</emphasis>, in opposite direction of time.</para>
+<para>In bottom up scheduling, the scheduling happens in opposite direction to the execution of the cycles of the instruction. When the instruction is scheduled at cycle <computeroutput>C</computeroutput>, the resources are allocated in the past relative to <computeroutput>C</computeroutput>: <verbatim>  2      1      C     -1     -2     -3     -4     -5  ...
+</verbatim> &lt;--<mdash/>|---<mdash/>|---<mdash/>|---<mdash/>|---<mdash/>|---<mdash/>|---<mdash/>|---<mdash/>|<mdash/> X0 X1 X1 X2 ---&gt; direction of time X0 (C+1, C] X1 (C, C-2] X2 (C-2, C-3]</para>
+<para>Therefore, the formula to compute the interval for a resource of an instruction that can be scheduled at cycle C in bottom-up scheduling is: <verbatim>  [C-ReleaseAtCycle+1, C-AcquireAtCycle+1)
+</verbatim></para>
+<para>NOTE: In both cases, the number of cycles booked by a resources is the value (ReleaseAtCycle - AcquireAtCycle). </para>
+</sect1>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="726" column="21" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="726" bodyend="730"/>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <referencedby refid="classllvm_1_1_sched_boundary_1a6b1771cf492495f8f82727657c68e571" compoundref="_machine_scheduler_8cpp" startline="2675" endline="2836">llvm::SchedBoundary::bumpNode</referencedby>
+        <referencedby refid="classllvm_1_1_resource_segments_1aed8869791acb35bc33a55d3ed1016f94" compoundref="_machine_scheduler_8h" startline="793" endline="798">getFirstAvailableAtFromBottom</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_segments_1ad0173019797b2f865e64a85377cb3bd5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_resource_segments_1ac93528094c576c984aed5f8cd6923bc0" kindref="member">IntervalTy</ref></type>
+        <definition>static IntervalTy llvm::ResourceSegments::getResourceIntervalTop</definition>
+        <argsstring>(unsigned C, unsigned AcquireAtCycle, unsigned ReleaseAtCycle)</argsstring>
+        <name>getResourceIntervalTop</name>
+        <qualifiedname>llvm::ResourceSegments::getResourceIntervalTop</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>AcquireAtCycle</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ReleaseAtCycle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="731" column="21" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="731" bodyend="735"/>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <referencedby refid="classllvm_1_1_sched_boundary_1a6b1771cf492495f8f82727657c68e571" compoundref="_machine_scheduler_8cpp" startline="2675" endline="2836">llvm::SchedBoundary::bumpNode</referencedby>
+        <referencedby refid="classllvm_1_1_resource_segments_1a99e566d4dd4d552a9e38af4e047e4c1f" compoundref="_machine_scheduler_8h" startline="799" endline="804">getFirstAvailableAtFromTop</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_resource_segments_1af6110abf43726025e099e715e1343864" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned ResourceSegments::getFirstAvailableAt</definition>
+        <argsstring>(unsigned CurrCycle, unsigned AcquireAtCycle, unsigned ReleaseAtCycle, std::function&lt; IntervalTy(unsigned, unsigned, unsigned)&gt; IntervalBuilder) const</argsstring>
+        <name>getFirstAvailableAt</name>
+        <qualifiedname>llvm::ResourceSegments::getFirstAvailableAt</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CurrCycle</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>AcquireAtCycle</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ReleaseAtCycle</declname>
+        </param>
+        <param>
+          <type>std::function&lt; <ref refid="classllvm_1_1_resource_segments_1ac93528094c576c984aed5f8cd6923bc0" kindref="member">IntervalTy</ref>(<ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref>)&gt;</type>
+          <declname>IntervalBuilder</declname>
+        </param>
+        <briefdescription>
+<para>Finds the first cycle in which a resource can be allocated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The function uses the<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>IntervalBuider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[*] to build a resource interval [a, b[ out of the input parameters</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>CurrCycle</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+param AcquireAtCycle and<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ReleaseAtCycle.</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The function then loops through the intervals in the <ref refid="classllvm_1_1_resource_segments" kindref="compound">ResourceSegments</ref> and shifts the interval [a, b[ and the ReturnCycle to the right until there is no intersection between the intervals of the <ref refid="classllvm_1_1_resource_segments" kindref="compound">ResourceSegments</ref> instance and the new shifted [a, b[. When this condition is met, the ReturnCycle (which correspond to the cycle in which the resource can be allocated) is returned. <verbatim>          c = CurrCycle in input
+          c   1   2   3   4   5   6   7   8   9   10 ... ---&gt; (time
+          flow)
+</verbatim> <ref refid="classllvm_1_1_resource_segments" kindref="compound">ResourceSegments</ref>... [<mdash/>) [----<mdash/>) [--------<mdash/>) c [1 3[ -&gt; AcquireAtCycle=1, ReleaseAtCycle=3 ++c [1 3) ++c [1 3) ++c [1 3) ++c [1 3) ++c [1 3) ---&gt; returns c incremented by 5 (c+5)</para>
+<para>Notice that for bottom-up scheduling the diagram is slightly different because the current cycle c is always on the right of the interval [a, b) (see <computeroutput>getResourceIntervalBottom</computeroutput>). This is because the cycle increments for bottom-up scheduling moved in the direction opposite to the direction of time: <verbatim>--------&gt; direction of time.
+XXYZZZ    (resource usage)
+--------&gt; direction of top-down execution cycles.
+&lt;-------- direction of bottom-up execution cycles.
+</verbatim></para>
+<para>Even though bottom-up scheduling moves against the flow of time, the algorithm used to find the first free slot in between intervals is the same as for top-down scheduling.</para>
+<para>[*] See `getResourceIntervalTop` and `getResourceIntervalBottom` to see how such resource intervals are built. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="784" column="12" bodyfile="lib/CodeGen/MachineScheduler.cpp" bodystart="4475" bodyend="4503"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_resource_segments_1a2162c9490a6bd80892be4ea294043141" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResourceSegments::sortAndMerge</definition>
+        <argsstring>()</argsstring>
+        <name>sortAndMerge</name>
+        <qualifiedname>llvm::ResourceSegments::sortAndMerge</qualifiedname>
+        <briefdescription>
+<para>Merge all adjacent intervals in the collection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For all pairs of adjacient intervals, it performs [a, b) + [b, c) -&gt; [a, c).</para>
+<para>Before performing the merge operation, the intervals are sorted with sort_predicate. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="813" column="8" bodyfile="lib/CodeGen/MachineScheduler.cpp" bodystart="4559" bodyend="4576"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_resource_segments_1a6c0f046546e4f1a19ef1546cb4f0c813" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool operator==</definition>
+        <argsstring>(const ResourceSegments &amp;c1, const ResourceSegments &amp;c2)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>llvm::ResourceSegments::operator==</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_resource_segments" kindref="compound">ResourceSegments</ref> &amp;</type>
+          <declname>c1</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_resource_segments" kindref="compound">ResourceSegments</ref> &amp;</type>
+          <declname>c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="824" column="15" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="824" bodyend="827"/>
+        <references refid="classllvm_1_1_resource_segments_1a1acb88064bee4429a66c43624abf0fad" compoundref="_machine_scheduler_8h" startline="817" endline="817">ResourceSegments</references>
+      </memberdef>
+      <memberdef kind="friend" id="classllvm_1_1_resource_segments_1a9d6d29af031766f1b32ce8d496db7d25" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">llvm::raw_ostream</ref> &amp;</type>
+        <definition>llvm::raw_ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(llvm::raw_ostream &amp;os, const ResourceSegments &amp;Segments)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>llvm::ResourceSegments::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">llvm::raw_ostream</ref> &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_resource_segments" kindref="compound">ResourceSegments</ref> &amp;</type>
+          <declname>Segments</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="828" column="10" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="828" bodyend="835"/>
+        <references refid="classllvm_1_1_resource_segments_1a1acb88064bee4429a66c43624abf0fad" compoundref="_machine_scheduler_8h" startline="817" endline="817">ResourceSegments</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1_resource_segments" kindref="compound">ResourceSegments</ref> are a collection of intervals closed on the left and opened on the right: </para>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>list{ [a1, b1), [a2, b2), ..., [a_N, b_N) }
+</verbatim></para>
+<para>The collection has the following properties:</para>
+<para><orderedlist>
+<listitem><para>The list is ordered: a_i &lt; b_i and b_i &lt; a_(i+1)</para>
+</listitem><listitem><para>The intervals in the collection do not intersect each other.</para>
+</listitem></orderedlist>
+</para>
+<para>A <ref refid="classllvm_1_1_resource_segments" kindref="compound">ResourceSegments</ref> instance represents the cycle reservation history of the instance of and individual resource. </para>
+    </detaileddescription>
+    <location file="include/llvm/CodeGen/MachineScheduler.h" line="636" column="1" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="636" bodyend="836"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_resource_segments_1ad9d5e619b87a9aa6dabcec2d454add5e" prot="private" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>_Intervals</name></member>
+      <member refid="classllvm_1_1_resource_segments_1a173bcdd8f59b31a810aead1000274448" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>add</name></member>
+      <member refid="classllvm_1_1_resource_segments_1a3dfd42064c0179ac5c5f90951bcdbbdf" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>empty</name></member>
+      <member refid="classllvm_1_1_resource_segments_1af6110abf43726025e099e715e1343864" prot="private" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>getFirstAvailableAt</name></member>
+      <member refid="classllvm_1_1_resource_segments_1aed8869791acb35bc33a55d3ed1016f94" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>getFirstAvailableAtFromBottom</name></member>
+      <member refid="classllvm_1_1_resource_segments_1a99e566d4dd4d552a9e38af4e047e4c1f" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>getFirstAvailableAtFromTop</name></member>
+      <member refid="classllvm_1_1_resource_segments_1a46315c932ddcacb368f78ecc39a96fe3" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>getResourceIntervalBottom</name></member>
+      <member refid="classllvm_1_1_resource_segments_1ad0173019797b2f865e64a85377cb3bd5" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>getResourceIntervalTop</name></member>
+      <member refid="classllvm_1_1_resource_segments_1a7fbb23b17b45652a8d28aadabbabf3c9" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>intersects</name></member>
+      <member refid="classllvm_1_1_resource_segments_1ac93528094c576c984aed5f8cd6923bc0" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>IntervalTy</name></member>
+      <member refid="classllvm_1_1_resource_segments_1a9d6d29af031766f1b32ce8d496db7d25" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1_resource_segments_1a6c0f046546e4f1a19ef1546cb4f0c813" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>operator==</name></member>
+      <member refid="classllvm_1_1_resource_segments_1a1acb88064bee4429a66c43624abf0fad" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>ResourceSegments</name></member>
+      <member refid="classllvm_1_1_resource_segments_1ade0e5e61ec4d1af9caa7af68ceea9c4c" prot="public" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>ResourceSegments</name></member>
+      <member refid="classllvm_1_1_resource_segments_1a2162c9490a6bd80892be4ea294043141" prot="private" virt="non-virtual"><scope>llvm::ResourceSegments</scope><name>sortAndMerge</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

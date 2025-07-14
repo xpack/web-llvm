@@ -1,0 +1,1456 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file" kind="class" language="C++" prot="public">
+    <compoundname>llvm::objcopy::elf::ELFFile</compoundname>
+    <includes refid="_object_2_e_l_f_8h" local="yes">llvm/Object/ELF.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class ELFT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aded5f2aa590cbcfe256b517b31aba812" prot="public" static="no">
+        <type><ref refid="classllvm_1_1function__ref" kindref="compound">llvm::function_ref</ref>&lt; <ref refid="classllvm_1_1_error" kindref="compound">Error</ref>(<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;Msg)&gt;</type>
+        <definition>using llvm::object::ELFFile&lt; ELFT &gt;::WarningHandler =  llvm::function_ref&lt;Error(const Twine &amp;Msg)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WarningHandler</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::WarningHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="264" column="3" bodyfile="include/llvm/Object/ELF.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1af7aa9ddd837c6041eb52bd45cae11289" prot="public" static="no">
+        <type>std::pair&lt; std::vector&lt; Elf_Rel &gt;, std::vector&lt; Elf_Rela &gt; &gt;</type>
+        <definition>using llvm::object::ELFFile&lt; ELFT &gt;::RelsOrRelas =  std::pair&lt;std::vector&lt;Elf_Rel&gt;, std::vector&lt;Elf_Rela&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>RelsOrRelas</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::RelsOrRelas</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="369" column="3" bodyfile="include/llvm/Object/ELF.h" bodystart="369" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a74a462dc40aa024b20303b88e898139d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef llvm::object::ELFFile&lt; ELFT &gt;::Buf</definition>
+        <argsstring></argsstring>
+        <name>Buf</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::Buf</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="272" column="13" bodyfile="include/llvm/Object/ELF.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a81b5e689ab29cf52ed4cee3b8895ba52" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; Elf_Shdr &gt;</type>
+        <definition>std::vector&lt;Elf_Shdr&gt; llvm::object::ELFFile&lt; ELFT &gt;::FakeSections</definition>
+        <argsstring></argsstring>
+        <name>FakeSections</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::FakeSections</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="273" column="15" bodyfile="include/llvm/Object/ELF.h" bodystart="273" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a2aa7a9df67f2874e46d37ea0cc0f2b85" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_string" kindref="compound">SmallString</ref>&lt; 0 &gt;</type>
+        <definition>SmallString&lt;0&gt; llvm::object::ELFFile&lt; ELFT &gt;::FakeSectionStrings</definition>
+        <argsstring></argsstring>
+        <name>FakeSectionStrings</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::FakeSectionStrings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="274" column="15" bodyfile="include/llvm/Object/ELF.h" bodystart="274" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ab6cf194b594fa748bf8cd72df35d6479" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint8__t" kindref="compound">uint8_t</ref> *</type>
+        <definition>const uint8_t * llvm::object::ELFFile&lt; ELFT &gt;::base</definition>
+        <argsstring>() const</argsstring>
+        <name>base</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::base</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="266" column="17" bodyfile="include/llvm/Object/ELF.h" bodystart="266" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a8693389f2e062787589d31dbf6c304ee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint8__t" kindref="compound">uint8_t</ref> *</type>
+        <definition>const uint8_t * llvm::object::ELFFile&lt; ELFT &gt;::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="267" column="17" bodyfile="include/llvm/Object/ELF.h" bodystart="267" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a6e33078a7d937377faff3c10d2e1efaa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::object::ELFFile&lt; ELFT &gt;::getBufSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getBufSize</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getBufSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="269" column="10" bodyfile="include/llvm/Object/ELF.h" bodystart="269" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a02cea47a954fd499a8dc8d80b75935ee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Ehdr &amp;</type>
+        <definition>const Elf_Ehdr &amp; llvm::object::ELFFile&lt; ELFT &gt;::getHeader</definition>
+        <argsstring>() const</argsstring>
+        <name>getHeader</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="279" column="18" bodyfile="include/llvm/Object/ELF.h" bodystart="279" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a6fe4eac160aa377a7f8e1edfcc4a17dd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_t" kindref="compound">T</ref> * &gt;</type>
+        <definition>Expected&lt; const T * &gt; llvm::object::ELFFile&lt; ELFT &gt;::getEntry</definition>
+        <argsstring>(uint32_t Section, uint32_t Entry) const</argsstring>
+        <name>getEntry</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getEntry</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Section</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="284" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="978" bodyend="984"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a98e19eaf03c9744a18996776d77d0ee1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_t" kindref="compound">T</ref> * &gt;</type>
+        <definition>Expected&lt; const T * &gt; llvm::object::ELFFile&lt; ELFT &gt;::getEntry</definition>
+        <argsstring>(const Elf_Shdr &amp;Section, uint32_t Entry) const</argsstring>
+        <name>getEntry</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getEntry</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Section</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="286" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="988" bodyend="1002"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a20ac73b763595fb7dd3d76f6a221408c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::vector&lt; <ref refid="structllvm_1_1object_1_1_ver_def" kindref="compound">VerDef</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::vector&lt; VerDef &gt; &gt; llvm::object::ELFFile&lt; ELFT &gt;::getVersionDefinitions</definition>
+        <argsstring>(const Elf_Shdr &amp;Sec) const</argsstring>
+        <name>getVersionDefinitions</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getVersionDefinitions</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="289" column="3" bodyfile="include/llvm/Object/ELF.h" bodystart="1034" bodyend="1117"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a6d7f36df9f1e78161aa1117443ec74e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::vector&lt; <ref refid="structllvm_1_1object_1_1_ver_need" kindref="compound">VerNeed</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::vector&lt; VerNeed &gt; &gt; llvm::object::ELFFile&lt; ELFT &gt;::getVersionDependencies</definition>
+        <argsstring>(const Elf_Shdr &amp;Sec, WarningHandler WarnHandler=&amp;defaultWarningHandler) const</argsstring>
+        <name>getVersionDependencies</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getVersionDependencies</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aded5f2aa590cbcfe256b517b31aba812" kindref="member">WarningHandler</ref></type>
+          <declname>WarnHandler</declname>
+          <defval>&amp;<ref refid="namespacellvm_1_1object_1a6f4bdf18fcce304e2e7bdaaf312b5744" kindref="member">defaultWarningHandler</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="290" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="1121" bodyend="1205"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a56343d577008471112adcb121718f1b2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+        <definition>Expected&lt; StringRef &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSymbolVersionByIndex</definition>
+        <argsstring>(uint32_t SymbolVersionIndex, bool &amp;IsDefault, SmallVector&lt; std::optional&lt; VersionEntry &gt;, 0 &gt; &amp;VersionMap, std::optional&lt; bool &gt; IsSymHidden) const</argsstring>
+        <name>getSymbolVersionByIndex</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSymbolVersionByIndex</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>SymbolVersionIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>IsDefault</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::optional&lt; <ref refid="structllvm_1_1object_1_1_version_entry" kindref="compound">VersionEntry</ref> &gt;, 0 &gt; &amp;</type>
+          <declname>VersionMap</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+          <declname>IsSymHidden</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="293" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="1005" bodyend="1030"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1add75d06af5256ffc8ac789721f09ef4e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+        <definition>Expected&lt; StringRef &gt; llvm::object::ELFFile&lt; ELFT &gt;::getStringTable</definition>
+        <argsstring>(const Elf_Shdr &amp;Section, WarningHandler WarnHandler=&amp;defaultWarningHandler) const</argsstring>
+        <name>getStringTable</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getStringTable</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Section</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aded5f2aa590cbcfe256b517b31aba812" kindref="member">WarningHandler</ref></type>
+          <declname>WarnHandler</declname>
+          <defval>&amp;<ref refid="namespacellvm_1_1object_1a6f4bdf18fcce304e2e7bdaaf312b5744" kindref="member">defaultWarningHandler</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="299" column="3" bodyfile="include/llvm/Object/ELF.h" bodystart="1218" bodyend="1240"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a6a6612a17f1ed83c751bab1ed91ce355" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+        <definition>Expected&lt; StringRef &gt; llvm::object::ELFFile&lt; ELFT &gt;::getStringTableForSymtab</definition>
+        <argsstring>(const Elf_Shdr &amp;Section) const</argsstring>
+        <name>getStringTableForSymtab</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getStringTableForSymtab</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Section</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="301" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="1282" bodyend="1287"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1adfb3d16a4f2cb55b615809b97c5e6b13" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+        <definition>Expected&lt; StringRef &gt; llvm::object::ELFFile&lt; ELFT &gt;::getStringTableForSymtab</definition>
+        <argsstring>(const Elf_Shdr &amp;Section, Elf_Shdr_Range Sections) const</argsstring>
+        <name>getStringTableForSymtab</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getStringTableForSymtab</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Section</declname>
+        </param>
+        <param>
+          <type>Elf_Shdr_Range</type>
+          <declname>Sections</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="302" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="1291" bodyend="1302"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a0bbb4e885d31a6ae8eb4486532fb3108" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+        <definition>Expected&lt; StringRef &gt; llvm::object::ELFFile&lt; ELFT &gt;::getLinkAsStrtab</definition>
+        <argsstring>(const typename ELFT::Shdr &amp;Sec) const</argsstring>
+        <name>getLinkAsStrtab</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getLinkAsStrtab</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> typename ELFT::Shdr &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="304" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="1306" bodyend="1319"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a26eb5a3830fae63f1263c58b0fb79621" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; Elf_Word &gt; &gt;</type>
+        <definition>Expected&lt; ArrayRef&lt; typename ELFT::Word &gt; &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSHNDXTable</definition>
+        <argsstring>(const Elf_Shdr &amp;Section) const</argsstring>
+        <name>getSHNDXTable</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSHNDXTable</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Section</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="306" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="1244" bodyend="1249"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a1b7e5aceb97b03a61eee57e8a2a4889c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; Elf_Word &gt; &gt;</type>
+        <definition>Expected&lt; ArrayRef&lt; typename ELFT::Word &gt; &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSHNDXTable</definition>
+        <argsstring>(const Elf_Shdr &amp;Section, Elf_Shdr_Range Sections) const</argsstring>
+        <name>getSHNDXTable</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSHNDXTable</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Section</declname>
+        </param>
+        <param>
+          <type>Elf_Shdr_Range</type>
+          <declname>Sections</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="307" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="1253" bodyend="1278"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a8e0db63318e9923b354d95e0391c05db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>Expected&lt; uint64_t &gt; llvm::object::ELFFile&lt; ELFT &gt;::getDynSymtabSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getDynSymtabSize</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getDynSymtabSize</qualifiedname>
+        <briefdescription>
+<para>This function determines the number of dynamic symbols. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It reads section headers first. If section headers are not available, the number of symbols will be inferred by parsing dynamic hash tables. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="310" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="825" bodyend="883"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ad45bb5df167eb8cac974b25d4c4ff5cd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef llvm::object::ELFFile&lt; ELFT &gt;::getRelocationTypeName</definition>
+        <argsstring>(uint32_t Type) const</argsstring>
+        <name>getRelocationTypeName</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getRelocationTypeName</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="312" column="13" bodyfile="include/llvm/Object/ELF.h" bodystart="677" bodyend="679"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a6ff64d4cf042294e0aa84c193e5061f7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::object::ELFFile&lt; ELFT &gt;::getRelocationTypeName</definition>
+        <argsstring>(uint32_t Type, SmallVectorImpl&lt; char &gt; &amp;Result) const</argsstring>
+        <name>getRelocationTypeName</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getRelocationTypeName</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Type</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classchar" kindref="compound">char</ref> &gt; &amp;</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="313" column="8" bodyfile="include/llvm/Object/ELF.h" bodystart="682" bodyend="710"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a504594efdb5d22d6233ba933e550bc2a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t llvm::object::ELFFile&lt; ELFT &gt;::getRelativeRelocationType</definition>
+        <argsstring>() const</argsstring>
+        <name>getRelativeRelocationType</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getRelativeRelocationType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="315" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="713" bodyend="715"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a26c25aaa2bbfe08a9e398cfa15769616" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ELFFile::getDynamicTagAsString</definition>
+        <argsstring>(unsigned Arch, uint64_t Type) const</argsstring>
+        <name>getDynamicTagAsString</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getDynamicTagAsString</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Arch</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="317" column="15" bodyfile="lib/Object/ELF.cpp" bodystart="520" bodyend="601"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ac8208b85e5ab2b28adf34fa92b116103" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ELFFile::getDynamicTagAsString</definition>
+        <argsstring>(uint64_t Type) const</argsstring>
+        <name>getDynamicTagAsString</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getDynamicTagAsString</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="318" column="15" bodyfile="lib/Object/ELF.cpp" bodystart="604" bodyend="606"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a815105a2af24d7dffc158173b5324272" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Sym * &gt;</type>
+        <definition>Expected&lt; const typename ELFT::Sym * &gt; llvm::object::ELFFile&lt; ELFT &gt;::getRelocationSymbol</definition>
+        <argsstring>(const Elf_Rel &amp;Rel, const Elf_Shdr *SymTab) const</argsstring>
+        <name>getRelocationSymbol</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getRelocationSymbol</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Rel &amp;</type>
+          <declname>Rel</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr *</type>
+          <declname>SymTab</declname>
+        </param>
+        <briefdescription>
+<para>Get the symbol for a given relocation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="321" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="756" bodyend="762"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aeb221ffeffa3ec7eaaa8eecf37b0146d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::optional&lt; <ref refid="structllvm_1_1object_1_1_version_entry" kindref="compound">VersionEntry</ref> &gt;, 0 &gt; &gt;</type>
+        <definition>Expected&lt; SmallVector&lt; std::optional&lt; VersionEntry &gt;, 0 &gt; &gt; llvm::object::ELFFile&lt; ELFT &gt;::loadVersionMap</definition>
+        <argsstring>(const Elf_Shdr *VerNeedSec, const Elf_Shdr *VerDefSec) const</argsstring>
+        <name>loadVersionMap</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::loadVersionMap</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr *</type>
+          <declname>VerNeedSec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr *</type>
+          <declname>VerDefSec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="325" column="3" bodyfile="include/llvm/Object/ELF.h" bodystart="719" bodyend="752"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ac9e50507b6d18dc2f18508ff067e140e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::object::ELFFile&lt; ELFT &gt;::isLE</definition>
+        <argsstring>() const</argsstring>
+        <name>isLE</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::isLE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="329" column="8" bodyfile="include/llvm/Object/ELF.h" bodystart="329" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ab9ee8e7123cfc8843e8558e604ad56b4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::object::ELFFile&lt; ELFT &gt;::isMipsELF64</definition>
+        <argsstring>() const</argsstring>
+        <name>isMipsELF64</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::isMipsELF64</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="333" column="8" bodyfile="include/llvm/Object/ELF.h" bodystart="333" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1accd50e330d567f984dfff0557e49e044" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::object::ELFFile&lt; ELFT &gt;::isMips64EL</definition>
+        <argsstring>() const</argsstring>
+        <name>isMips64EL</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::isMips64EL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="338" column="8" bodyfile="include/llvm/Object/ELF.h" bodystart="338" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ab64e03f049c8588f24e0ec69a568aef9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; Elf_Shdr_Range &gt;</type>
+        <definition>Expected&lt; typename ELFT::ShdrRange &gt; llvm::object::ELFFile&lt; ELFT &gt;::sections</definition>
+        <argsstring>() const</argsstring>
+        <name>sections</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::sections</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="340" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="925" bodyend="974"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aa438ee4f7cc143674ffb81a41c01fcb2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; Elf_Dyn_Range &gt;</type>
+        <definition>Expected&lt; typename ELFT::DynRange &gt; ELFFile::dynamicEntries</definition>
+        <argsstring>() const</argsstring>
+        <name>dynamicEntries</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::dynamicEntries</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="342" column="12" bodyfile="lib/Object/ELF.cpp" bodystart="609" bodyend="657"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1abf0867b6082e1e0408b1b5d8301f27e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint8__t" kindref="compound">uint8_t</ref> * &gt;</type>
+        <definition>Expected&lt; const uint8_t * &gt; ELFFile::toMappedAddr</definition>
+        <argsstring>(uint64_t VAddr, WarningHandler WarnHandler=&amp;defaultWarningHandler) const</argsstring>
+        <name>toMappedAddr</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::toMappedAddr</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>VAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aded5f2aa590cbcfe256b517b31aba812" kindref="member">WarningHandler</ref></type>
+          <declname>WarnHandler</declname>
+          <defval>&amp;<ref refid="namespacellvm_1_1object_1a6f4bdf18fcce304e2e7bdaaf312b5744" kindref="member">defaultWarningHandler</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="345" column="3" bodyfile="lib/Object/ELF.cpp" bodystart="661" bodyend="709"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a29639dfbcf056708f68f1cc4b2d8c237" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; Elf_Sym_Range &gt;</type>
+        <definition>Expected&lt; Elf_Sym_Range &gt; llvm::object::ELFFile&lt; ELFT &gt;::symbols</definition>
+        <argsstring>(const Elf_Shdr *Sec) const</argsstring>
+        <name>symbols</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::symbols</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr *</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="348" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="348" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a63434f54fe78bfe55d1c3de263359e6f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; Elf_Rela_Range &gt;</type>
+        <definition>Expected&lt; Elf_Rela_Range &gt; llvm::object::ELFFile&lt; ELFT &gt;::relas</definition>
+        <argsstring>(const Elf_Shdr &amp;Sec) const</argsstring>
+        <name>relas</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::relas</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="354" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="354" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aed56eba38ac0877432634af5d02d282f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; Elf_Rel_Range &gt;</type>
+        <definition>Expected&lt; Elf_Rel_Range &gt; llvm::object::ELFFile&lt; ELFT &gt;::rels</definition>
+        <argsstring>(const Elf_Shdr &amp;Sec) const</argsstring>
+        <name>rels</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::rels</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="358" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="358" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1abfc0395a4aa4e229de6ff4f2c8c8f63c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; Elf_Relr_Range &gt;</type>
+        <definition>Expected&lt; Elf_Relr_Range &gt; llvm::object::ELFFile&lt; ELFT &gt;::relrs</definition>
+        <argsstring>(const Elf_Shdr &amp;Sec) const</argsstring>
+        <name>relrs</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::relrs</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="362" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="362" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1af6fe298454e5320427d65c40da7981aa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; Elf_Rel &gt;</type>
+        <definition>std::vector&lt; typename ELFT::Rel &gt; ELFFile::decode_relrs</definition>
+        <argsstring>(Elf_Relr_Range relrs) const</argsstring>
+        <name>decode_relrs</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::decode_relrs</qualifiedname>
+        <param>
+          <type>Elf_Relr_Range</type>
+          <declname>relrs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="366" column="15" bodyfile="lib/Object/ELF.cpp" bodystart="336" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aa1027abe2321f5eee653435e5305ddab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>Expected&lt; uint64_t &gt; ELFFile::getCrelHeader</definition>
+        <argsstring>(ArrayRef&lt; uint8_t &gt; Content) const</argsstring>
+        <name>getCrelHeader</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getCrelHeader</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt;</type>
+          <declname>Content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="368" column="12" bodyfile="lib/Object/ELF.cpp" bodystart="400" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a85a04b6f06b8f42bce6a666eee85d745" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1af7aa9ddd837c6041eb52bd45cae11289" kindref="member">RelsOrRelas</ref> &gt;</type>
+        <definition>Expected&lt; typename ELFFile&lt; ELFT &gt;::RelsOrRelas &gt; ELFFile::decodeCrel</definition>
+        <argsstring>(ArrayRef&lt; uint8_t &gt; Content) const</argsstring>
+        <name>decodeCrel</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::decodeCrel</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt;</type>
+          <declname>Content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="370" column="12" bodyfile="lib/Object/ELF.cpp" bodystart="412" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ae2039f20cc8322c8af90fb0dec7bb772" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1af7aa9ddd837c6041eb52bd45cae11289" kindref="member">RelsOrRelas</ref> &gt;</type>
+        <definition>Expected&lt; typename ELFFile&lt; ELFT &gt;::RelsOrRelas &gt; ELFFile::crels</definition>
+        <argsstring>(const Elf_Shdr &amp;Sec) const</argsstring>
+        <name>crels</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::crels</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="371" column="12" bodyfile="lib/Object/ELF.cpp" bodystart="443" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a0752ad646759ea4a034a218da571ab8b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::vector&lt; Elf_Rela &gt; &gt;</type>
+        <definition>Expected&lt; std::vector&lt; typename ELFT::Rela &gt; &gt; ELFFile::android_relas</definition>
+        <argsstring>(const Elf_Shdr &amp;Sec) const</argsstring>
+        <name>android_relas</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::android_relas</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="373" column="12" bodyfile="lib/Object/ELF.cpp" bodystart="452" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a685264b0f25cd162e8b4e85365aee004" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; Elf_Phdr_Range &gt;</type>
+        <definition>Expected&lt; Elf_Phdr_Range &gt; llvm::object::ELFFile&lt; ELFT &gt;::program_headers</definition>
+        <argsstring>() const</argsstring>
+        <name>program_headers</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::program_headers</qualifiedname>
+        <briefdescription>
+<para>Iterate over program header table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="376" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="376" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a5d91616c8a62b5988aa2570be36c7912" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Elf_Note_Iterator</type>
+        <definition>Elf_Note_Iterator llvm::object::ELFFile&lt; ELFT &gt;::notes_begin</definition>
+        <argsstring>(const Elf_Phdr &amp;Phdr, Error &amp;Err) const</argsstring>
+        <name>notes_begin</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::notes_begin</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Phdr &amp;</type>
+          <declname>Phdr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref> &amp;</type>
+          <declname>Err</declname>
+        </param>
+        <briefdescription>
+<para>Get an iterator over notes in a program header. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The program header must be of type <computeroutput>PT_NOTE</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Phdr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the program header to iterate over. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] an error to support fallible iteration, which should be checked after iteration ends. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="402" column="21" bodyfile="include/llvm/Object/ELF.h" bodystart="402" bodyend="421"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a472b2e829986b644129759fb3249df7c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Elf_Note_Iterator</type>
+        <definition>Elf_Note_Iterator llvm::object::ELFFile&lt; ELFT &gt;::notes_begin</definition>
+        <argsstring>(const Elf_Shdr &amp;Shdr, Error &amp;Err) const</argsstring>
+        <name>notes_begin</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::notes_begin</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Shdr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref> &amp;</type>
+          <declname>Err</declname>
+        </param>
+        <briefdescription>
+<para>Get an iterator over notes in a section. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The section must be of type <computeroutput>SHT_NOTE</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Shdr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the section to iterate over. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] an error to support fallible iteration, which should be checked after iteration ends. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="430" column="21" bodyfile="include/llvm/Object/ELF.h" bodystart="430" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1acea5c9c723deca7b70c527a846819168" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Elf_Note_Iterator</type>
+        <definition>Elf_Note_Iterator llvm::object::ELFFile&lt; ELFT &gt;::notes_end</definition>
+        <argsstring>() const</argsstring>
+        <name>notes_end</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::notes_end</qualifiedname>
+        <briefdescription>
+<para>Get the end iterator for notes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="451" column="21" bodyfile="include/llvm/Object/ELF.h" bodystart="451" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a54e0eb7b4c7bff44dd72334b6184a045" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; Elf_Note_Iterator &gt;</type>
+        <definition>iterator_range&lt; Elf_Note_Iterator &gt; llvm::object::ELFFile&lt; ELFT &gt;::notes</definition>
+        <argsstring>(const Elf_Phdr &amp;Phdr, Error &amp;Err) const</argsstring>
+        <name>notes</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::notes</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Phdr &amp;</type>
+          <declname>Phdr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref> &amp;</type>
+          <declname>Err</declname>
+        </param>
+        <briefdescription>
+<para>Get an iterator range over notes of a program header. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The program header must be of type <computeroutput>PT_NOTE</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Phdr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the program header to iterate over. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] an error to support fallible iteration, which should be checked after iteration ends. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="462" column="18" bodyfile="include/llvm/Object/ELF.h" bodystart="462" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ab6be02fcc36d1f6e76eb877a09f5a225" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; Elf_Note_Iterator &gt;</type>
+        <definition>iterator_range&lt; Elf_Note_Iterator &gt; llvm::object::ELFFile&lt; ELFT &gt;::notes</definition>
+        <argsstring>(const Elf_Shdr &amp;Shdr, Error &amp;Err) const</argsstring>
+        <name>notes</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::notes</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Shdr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref> &amp;</type>
+          <declname>Err</declname>
+        </param>
+        <briefdescription>
+<para>Get an iterator range over notes of a section. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The section must be of type <computeroutput>SHT_NOTE</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Shdr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the section to iterate over. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] an error to support fallible iteration, which should be checked after iteration ends. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="474" column="18" bodyfile="include/llvm/Object/ELF.h" bodystart="474" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a88bd58d28de77251dc67fef8cf87e7a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+        <definition>Expected&lt; StringRef &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSectionStringTable</definition>
+        <argsstring>(Elf_Shdr_Range Sections, WarningHandler WarnHandler=&amp;defaultWarningHandler) const</argsstring>
+        <name>getSectionStringTable</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSectionStringTable</qualifiedname>
+        <param>
+          <type>Elf_Shdr_Range</type>
+          <declname>Sections</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aded5f2aa590cbcfe256b517b31aba812" kindref="member">WarningHandler</ref></type>
+          <declname>WarnHandler</declname>
+          <defval>&amp;<ref refid="namespacellvm_1_1object_1a6f4bdf18fcce304e2e7bdaaf312b5744" kindref="member">defaultWarningHandler</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="479" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="766" bodyend="790"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1afe8f1b1f8599971e74d71887513cfd60" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>Expected&lt; uint32_t &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSectionIndex</definition>
+        <argsstring>(const Elf_Sym &amp;Sym, Elf_Sym_Range Syms, DataRegion&lt; Elf_Word &gt; ShndxTable) const</argsstring>
+        <name>getSectionIndex</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSectionIndex</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Sym &amp;</type>
+          <declname>Sym</declname>
+        </param>
+        <param>
+          <type>Elf_Sym_Range</type>
+          <declname>Syms</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1object_1_1_data_region" kindref="compound">DataRegion</ref>&lt; Elf_Word &gt;</type>
+          <declname>ShndxTable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="482" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="560" bodyend="573"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1af1e96fd6674f65a3dcc5c4f46a4112b6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr * &gt;</type>
+        <definition>Expected&lt; const typename ELFT::Shdr * &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSection</definition>
+        <argsstring>(const Elf_Sym &amp;Sym, const Elf_Shdr *SymTab, DataRegion&lt; Elf_Word &gt; ShndxTable) const</argsstring>
+        <name>getSection</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSection</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Sym &amp;</type>
+          <declname>Sym</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr *</type>
+          <declname>SymTab</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1object_1_1_data_region" kindref="compound">DataRegion</ref>&lt; Elf_Word &gt;</type>
+          <declname>ShndxTable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="484" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="577" bodyend="583"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a293b1243e72e557969d357e6e195e929" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr * &gt;</type>
+        <definition>Expected&lt; const typename ELFT::Shdr * &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSection</definition>
+        <argsstring>(const Elf_Sym &amp;Sym, Elf_Sym_Range Symtab, DataRegion&lt; Elf_Word &gt; ShndxTable) const</argsstring>
+        <name>getSection</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSection</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Sym &amp;</type>
+          <declname>Sym</declname>
+        </param>
+        <param>
+          <type>Elf_Sym_Range</type>
+          <declname>Symtab</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1object_1_1_data_region" kindref="compound">DataRegion</ref>&lt; Elf_Word &gt;</type>
+          <declname>ShndxTable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="487" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="587" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a14680087ccae0d9f57cda7380290b23d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr * &gt;</type>
+        <definition>Expected&lt; const typename ELFT::Shdr * &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSection</definition>
+        <argsstring>(uint32_t Index) const</argsstring>
+        <name>getSection</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSection</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="490" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="1209" bodyend="1214"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a1d1adf40e179d829e92251f584b6f849" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Sym * &gt;</type>
+        <definition>Expected&lt; const typename ELFT::Sym * &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSymbol</definition>
+        <argsstring>(const Elf_Shdr *Sec, uint32_t Index) const</argsstring>
+        <name>getSymbol</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSymbol</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr *</type>
+          <declname>Sec</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="492" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="600" bodyend="611"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ad1657b415560e76194871821263f1273" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+        <definition>Expected&lt; StringRef &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSectionName</definition>
+        <argsstring>(const Elf_Shdr &amp;Section, WarningHandler WarnHandler=&amp;defaultWarningHandler) const</argsstring>
+        <name>getSectionName</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSectionName</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Section</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aded5f2aa590cbcfe256b517b31aba812" kindref="member">WarningHandler</ref></type>
+          <declname>WarnHandler</declname>
+          <defval>&amp;<ref refid="namespacellvm_1_1object_1a6f4bdf18fcce304e2e7bdaaf312b5744" kindref="member">defaultWarningHandler</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="496" column="3" bodyfile="include/llvm/Object/ELF.h" bodystart="1323" bodyend="1332"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a1b21b0b6b92569afb3b677c440ecb3b6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+        <definition>Expected&lt; StringRef &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSectionName</definition>
+        <argsstring>(const Elf_Shdr &amp;Section, StringRef DotShstrtab) const</argsstring>
+        <name>getSectionName</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSectionName</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Section</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>DotShstrtab</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="498" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="1335" bodyend="1347"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ae1123dddef9e813facbc60595e9427f8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="class_t" kindref="compound">T</ref> &gt; &gt;</type>
+        <definition>Expected&lt; ArrayRef&lt; T &gt; &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSectionContentsAsArray</definition>
+        <argsstring>(const Elf_Shdr &amp;Sec) const</argsstring>
+        <name>getSectionContentsAsArray</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSectionContentsAsArray</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="501" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="616" bodyend="648"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a5fd489ea4559343125c546221251b743" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt; &gt;</type>
+        <definition>Expected&lt; ArrayRef&lt; uint8_t &gt; &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSectionContents</definition>
+        <argsstring>(const Elf_Shdr &amp;Sec) const</argsstring>
+        <name>getSectionContents</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSectionContents</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="502" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="672" bodyend="674"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a464c7849464818cb8c8f45b84d375f8c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt; &gt;</type>
+        <definition>Expected&lt; ArrayRef&lt; uint8_t &gt; &gt; llvm::object::ELFFile&lt; ELFT &gt;::getSegmentContents</definition>
+        <argsstring>(const Elf_Phdr &amp;Phdr) const</argsstring>
+        <name>getSegmentContents</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSegmentContents</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Phdr &amp;</type>
+          <declname>Phdr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="503" column="12" bodyfile="include/llvm/Object/ELF.h" bodystart="652" bodyend="668"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a46e1bbe3fd829b216165917625cb142d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::vector&lt; <ref refid="structllvm_1_1object_1_1_b_b_addr_map" kindref="compound">BBAddrMap</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::vector&lt; BBAddrMap &gt; &gt; ELFFile::decodeBBAddrMap</definition>
+        <argsstring>(const Elf_Shdr &amp;Sec, const Elf_Shdr *RelaSec=nullptr, std::vector&lt; PGOAnalysisMap &gt; *PGOAnalyses=nullptr) const</argsstring>
+        <name>decodeBBAddrMap</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::decodeBBAddrMap</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr *</type>
+          <declname>RelaSec</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="structllvm_1_1object_1_1_p_g_o_analysis_map" kindref="compound">PGOAnalysisMap</ref> &gt; *</type>
+          <declname>PGOAnalyses</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Returns a vector of <ref refid="structllvm_1_1object_1_1_b_b_addr_map" kindref="compound">BBAddrMap</ref> structs corresponding to each function within the text section that the SHT_LLVM_BB_ADDR_MAP section <computeroutput>Sec</computeroutput> is associated with. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the current <ref refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file" kindref="compound">ELFFile</ref> is relocatable, a corresponding <computeroutput>RelaSec</computeroutput> must be passed in as an argument. Optional out variable to collect all PGO Analyses. New elements are only added if no error occurs. If not provided, the PGO Analyses are decoded then ignored. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="513" column="3" bodyfile="lib/Object/ELF.cpp" bodystart="932" bodyend="940"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ac224640f48ef4ce451d49bbb1b68e9ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_map_vector" kindref="compound">MapVector</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr * &gt; &gt;</type>
+        <definition>Expected&lt; MapVector&lt; const typename ELFT::Shdr *, const typename ELFT::Shdr * &gt; &gt; ELFFile::getSectionAndRelocations</definition>
+        <argsstring>(std::function&lt; Expected&lt; bool &gt;(const Elf_Shdr &amp;)&gt; IsMatch) const</argsstring>
+        <name>getSectionAndRelocations</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::getSectionAndRelocations</qualifiedname>
+        <param>
+          <type>std::function&lt; <ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classbool" kindref="compound">bool</ref> &gt;(<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Elf_Shdr &amp;)&gt;</type>
+          <declname>IsMatch</declname>
+        </param>
+        <briefdescription>
+<para>Returns a map from every section matching <computeroutput>IsMatch</computeroutput> to its relocation section, or <computeroutput>nullptr</computeroutput> if it has no relocation section. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function returns an error if any of the <computeroutput>IsMatch</computeroutput> calls fail or if it fails to retrieve the content section of any relocation section. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="521" column="3" bodyfile="lib/Object/ELF.cpp" bodystart="945" bodyend="984"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aab0b3761016cb8d51d680debe57389b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::object::ELFFile&lt; ELFT &gt;::createFakeSections</definition>
+        <argsstring>()</argsstring>
+        <name>createFakeSections</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::createFakeSections</qualifiedname>
+        <briefdescription>
+<para>Used by llvm-objdump -d (which needs sections for disassembly) to disassemble objects without a section header table (e.g. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ET_CORE objects analyzed by linux perf or ET_EXEC with llvm-strip <ndash/>strip-sections). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="524" column="8" bodyfile="include/llvm/Object/ELF.h" bodystart="899" bodyend="922"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a54dee86341ca720bda5b7493841671b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::object::ELFFile&lt; ELFT &gt;::ELFFile</definition>
+        <argsstring>(StringRef Object)</argsstring>
+        <name>ELFFile</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::ELFFile</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="276" column="3" bodyfile="include/llvm/Object/ELF.h" bodystart="885" bodyend="885"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a0c43c56d0ce8c5e87d92506d7b567a5b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1object_1_1_e_l_f_file" kindref="compound">ELFFile</ref> &gt;</type>
+        <definition>Expected&lt; ELFFile&lt; ELFT &gt; &gt; llvm::object::ELFFile&lt; ELFT &gt;::create</definition>
+        <argsstring>(StringRef Object)</argsstring>
+        <name>create</name>
+        <qualifiedname>llvm::objcopy::elf::ELFFile::create</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Object/ELF.h" line="327" column="19" bodyfile="include/llvm/Object/ELF.h" bodystart="888" bodyend="894"/>
+        <referencedby refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_builder_1a519ecfe86aa85ba1247cd07c4e7c7822" compoundref="_e_l_f_object_8cpp" startline="1920" endline="1947">llvm::objcopy::elf::ELFBuilder&lt; ELFT &gt;::build</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::objcopy::elf::ELFFile&lt; ELFT &gt;</label>
+        <link refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file"/>
+      </node>
+      <node id="4">
+        <label>llvm::object::ELFFile&lt; ELF32BE &gt;</label>
+        <link refid="classllvm_1_1object_1_1_e_l_f_file"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ELF32BE &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::object::ELFFile&lt; ELF32LE &gt;</label>
+        <link refid="classllvm_1_1object_1_1_e_l_f_file"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ELF32LE &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::object::ELFFile&lt; ELF64BE &gt;</label>
+        <link refid="classllvm_1_1object_1_1_e_l_f_file"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ELF64BE &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::object::ELFFile&lt; ELF64LE &gt;</label>
+        <link refid="classllvm_1_1object_1_1_e_l_f_file"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ELF64LE &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/llvm/Object/ELF.h" line="255" column="1" bodyfile="include/llvm/Object/ELF.h" bodystart="255" bodyend="525"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a0752ad646759ea4a034a218da571ab8b" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>android_relas</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ab6cf194b594fa748bf8cd72df35d6479" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>base</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a74a462dc40aa024b20303b88e898139d" prot="private" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>Buf</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a0c43c56d0ce8c5e87d92506d7b567a5b" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>create</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aab0b3761016cb8d51d680debe57389b6" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>createFakeSections</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ae2039f20cc8322c8af90fb0dec7bb772" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>crels</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1af6fe298454e5320427d65c40da7981aa" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>decode_relrs</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a46e1bbe3fd829b216165917625cb142d" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>decodeBBAddrMap</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a85a04b6f06b8f42bce6a666eee85d745" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>decodeCrel</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aa438ee4f7cc143674ffb81a41c01fcb2" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>dynamicEntries</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a54dee86341ca720bda5b7493841671b0" prot="private" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>ELFFile</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a8693389f2e062787589d31dbf6c304ee" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>end</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a81b5e689ab29cf52ed4cee3b8895ba52" prot="private" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>FakeSections</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a2aa7a9df67f2874e46d37ea0cc0f2b85" prot="private" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>FakeSectionStrings</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a6e33078a7d937377faff3c10d2e1efaa" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getBufSize</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aa1027abe2321f5eee653435e5305ddab" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getCrelHeader</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a26c25aaa2bbfe08a9e398cfa15769616" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getDynamicTagAsString</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ac8208b85e5ab2b28adf34fa92b116103" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getDynamicTagAsString</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a8e0db63318e9923b354d95e0391c05db" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getDynSymtabSize</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a6fe4eac160aa377a7f8e1edfcc4a17dd" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getEntry</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a98e19eaf03c9744a18996776d77d0ee1" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getEntry</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a02cea47a954fd499a8dc8d80b75935ee" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getHeader</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a0bbb4e885d31a6ae8eb4486532fb3108" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getLinkAsStrtab</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a504594efdb5d22d6233ba933e550bc2a" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getRelativeRelocationType</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a815105a2af24d7dffc158173b5324272" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getRelocationSymbol</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ad45bb5df167eb8cac974b25d4c4ff5cd" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getRelocationTypeName</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a6ff64d4cf042294e0aa84c193e5061f7" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getRelocationTypeName</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1af1e96fd6674f65a3dcc5c4f46a4112b6" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSection</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a293b1243e72e557969d357e6e195e929" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSection</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a14680087ccae0d9f57cda7380290b23d" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSection</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ac224640f48ef4ce451d49bbb1b68e9ca" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSectionAndRelocations</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a5fd489ea4559343125c546221251b743" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSectionContents</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ae1123dddef9e813facbc60595e9427f8" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSectionContentsAsArray</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1afe8f1b1f8599971e74d71887513cfd60" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSectionIndex</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ad1657b415560e76194871821263f1273" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSectionName</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a1b21b0b6b92569afb3b677c440ecb3b6" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSectionName</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a88bd58d28de77251dc67fef8cf87e7a8" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSectionStringTable</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a464c7849464818cb8c8f45b84d375f8c" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSegmentContents</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a26eb5a3830fae63f1263c58b0fb79621" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSHNDXTable</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a1b7e5aceb97b03a61eee57e8a2a4889c" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSHNDXTable</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1add75d06af5256ffc8ac789721f09ef4e" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getStringTable</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a6a6612a17f1ed83c751bab1ed91ce355" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getStringTableForSymtab</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1adfb3d16a4f2cb55b615809b97c5e6b13" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getStringTableForSymtab</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a1d1adf40e179d829e92251f584b6f849" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSymbol</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a56343d577008471112adcb121718f1b2" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getSymbolVersionByIndex</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a20ac73b763595fb7dd3d76f6a221408c" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getVersionDefinitions</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a6d7f36df9f1e78161aa1117443ec74e1" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>getVersionDependencies</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ac9e50507b6d18dc2f18508ff067e140e" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>isLE</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1accd50e330d567f984dfff0557e49e044" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>isMips64EL</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ab9ee8e7123cfc8843e8558e604ad56b4" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>isMipsELF64</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aeb221ffeffa3ec7eaaa8eecf37b0146d" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>loadVersionMap</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a54e0eb7b4c7bff44dd72334b6184a045" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>notes</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ab6be02fcc36d1f6e76eb877a09f5a225" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>notes</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a5d91616c8a62b5988aa2570be36c7912" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>notes_begin</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a472b2e829986b644129759fb3249df7c" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>notes_begin</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1acea5c9c723deca7b70c527a846819168" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>notes_end</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a685264b0f25cd162e8b4e85365aee004" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>program_headers</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a63434f54fe78bfe55d1c3de263359e6f" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>relas</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1abfc0395a4aa4e229de6ff4f2c8c8f63c" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>relrs</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aed56eba38ac0877432634af5d02d282f" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>rels</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1af7aa9ddd837c6041eb52bd45cae11289" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>RelsOrRelas</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1ab64e03f049c8588f24e0ec69a568aef9" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>sections</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1a29639dfbcf056708f68f1cc4b2d8c237" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>symbols</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1abf0867b6082e1e0408b1b5d8301f27e2" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>toMappedAddr</name></member>
+      <member refid="classllvm_1_1objcopy_1_1elf_1_1_e_l_f_file_1aded5f2aa590cbcfe256b517b31aba812" prot="public" virt="non-virtual"><scope>llvm::objcopy::elf::ELFFile</scope><name>WarningHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

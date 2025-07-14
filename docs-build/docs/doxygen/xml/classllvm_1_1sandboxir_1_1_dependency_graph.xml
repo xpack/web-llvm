@@ -1,0 +1,683 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1sandboxir_1_1_dependency_graph" kind="class" language="C++" prot="public">
+    <compoundname>llvm::sandboxir::DependencyGraph</compoundname>
+    <includes refid="_dependency_graph_8h" local="yes">llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1sandboxir_1_1_dependency_graph_1af4c4ae4efd379d5909425bcde3a895c0" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>DependencyType</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::DependencyType</qualifiedname>
+        <enumvalue id="classllvm_1_1sandboxir_1_1_dependency_graph_1af4c4ae4efd379d5909425bcde3a895c0af7ffd3bf370060bf4f8b165a240ab04d" prot="private">
+          <name>ReadAfterWrite</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1sandboxir_1_1_dependency_graph_1af4c4ae4efd379d5909425bcde3a895c0aa08b0599f006ea7bb1feadd3fc50527f" prot="private">
+          <name>WriteAfterWrite</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><blockquote><para><ref refid="classllvm_1_1sys_1_1_memory" kindref="compound">Memory</ref> dependency write -&gt; read </para>
+</blockquote></para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1sandboxir_1_1_dependency_graph_1af4c4ae4efd379d5909425bcde3a895c0a7a15f80f73d5a9a70d3fabe6907dcb3b" prot="private">
+          <name>WriteAfterRead</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><blockquote><para><ref refid="classllvm_1_1sys_1_1_memory" kindref="compound">Memory</ref> dependency write -&gt; write </para>
+</blockquote></para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1sandboxir_1_1_dependency_graph_1af4c4ae4efd379d5909425bcde3a895c0aa1595abbb4c3a326636dd178757cd6c1" prot="private">
+          <name>Control</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><blockquote><para><ref refid="classllvm_1_1sys_1_1_memory" kindref="compound">Memory</ref> dependency read -&gt; write </para>
+</blockquote></para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1sandboxir_1_1_dependency_graph_1af4c4ae4efd379d5909425bcde3a895c0a6311ae17c1ee52b36e68aaf4ad066387" prot="private">
+          <name>Other</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><blockquote><para>Control-related dependency, like with PHI/Terminator </para>
+</blockquote></para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1sandboxir_1_1_dependency_graph_1af4c4ae4efd379d5909425bcde3a895c0a6adf97f83acf6453d4a6a4b1070f3754" prot="private">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><blockquote><para>Currently used for stack related instrs </para>
+</blockquote></para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="319" column="3" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="319" bodyend="326"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a7c384a470e8b404bb95b100784f54712" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> *, std::unique_ptr&lt; <ref refid="classllvm_1_1sandboxir_1_1_d_g_node" kindref="compound">DGNode</ref> &gt; &gt;</type>
+        <definition>DenseMap&lt;Instruction *, std::unique_ptr&lt;DGNode&gt; &gt; llvm::sandboxir::DependencyGraph::InstrToNodeMap</definition>
+        <argsstring></argsstring>
+        <name>InstrToNodeMap</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::InstrToNodeMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="308" column="12" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a10f9a55cf0e7d2748b1be3aee5eb22e2" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_interval" kindref="compound">Interval</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> &gt;</type>
+        <definition>Interval&lt;Instruction&gt; llvm::sandboxir::DependencyGraph::DAGInterval</definition>
+        <argsstring></argsstring>
+        <name>DAGInterval</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::DAGInterval</qualifiedname>
+        <briefdescription>
+<para>The DAG spans across all instructions in this interval. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="310" column="12" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="310" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_dependency_graph_1ad2fab80e8b258b648a4c174153bb4d6f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_context" kindref="compound">Context</ref> *</type>
+        <definition>Context* llvm::sandboxir::DependencyGraph::Ctx</definition>
+        <argsstring></argsstring>
+        <name>Ctx</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::Ctx</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="312" column="11" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a6fc01d94541248aed73cd7876a5577a8" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classllvm_1_1sandboxir_1_1_context_1_1_callback_i_d" kindref="compound">Context::CallbackID</ref> &gt;</type>
+        <definition>std::optional&lt;Context::CallbackID&gt; llvm::sandboxir::DependencyGraph::CreateInstrCB</definition>
+        <argsstring></argsstring>
+        <name>CreateInstrCB</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::CreateInstrCB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="313" column="17" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a7e65a1c6f6a36cec2f44e2a2615ab403" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classllvm_1_1sandboxir_1_1_context_1_1_callback_i_d" kindref="compound">Context::CallbackID</ref> &gt;</type>
+        <definition>std::optional&lt;Context::CallbackID&gt; llvm::sandboxir::DependencyGraph::EraseInstrCB</definition>
+        <argsstring></argsstring>
+        <name>EraseInstrCB</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::EraseInstrCB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="314" column="17" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a0952a6ce706f3c15ce9fe0b59bec806f" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classllvm_1_1sandboxir_1_1_context_1_1_callback_i_d" kindref="compound">Context::CallbackID</ref> &gt;</type>
+        <definition>std::optional&lt;Context::CallbackID&gt; llvm::sandboxir::DependencyGraph::MoveInstrCB</definition>
+        <argsstring></argsstring>
+        <name>MoveInstrCB</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::MoveInstrCB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="315" column="17" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a20a45e8aa0e1c4634669e1306aba3825" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_batch_a_a_results" kindref="compound">BatchAAResults</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;BatchAAResults&gt; llvm::sandboxir::DependencyGraph::BatchAA</definition>
+        <argsstring></argsstring>
+        <name>BatchAA</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::BatchAA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="317" column="19" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="317" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a9755e843016dd6cfeeecdd4740ffcea9" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DependencyType</type>
+        <definition>DependencyGraph::DependencyType llvm::sandboxir::DependencyGraph::getRoughDepType</definition>
+        <argsstring>(Instruction *FromI, Instruction *ToI)</argsstring>
+        <name>getRoughDepType</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::getRoughDepType</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>FromI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>ToI</declname>
+        </param>
+        <briefdescription>
+<para>\Returns the dependency type depending on whether instructions may read/write memory or whether they are some specific opcode-related restrictions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note: It does not check whether a memory dependency is actually correct, as it won&apos;t call <ref refid="namespacellvm_1_1_a_a" kindref="compound">AA</ref>. Therefore it returns the worst-case dep type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="332" column="25" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="124" bodyend="143"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a3a77d064e2679f3142f452af12c06288" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sandboxir::DependencyGraph::alias</definition>
+        <argsstring>(Instruction *SrcI, Instruction *DstI, DependencyType DepType)</argsstring>
+        <name>alias</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::alias</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>SrcI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>DstI</declname>
+        </param>
+        <param>
+          <type>DependencyType</type>
+          <declname>DepType</declname>
+        </param>
+        <briefdescription>
+<para>\Returns true if there is a memory/other dependency <computeroutput>SrcI-&gt;DstI</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="336" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="161" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a304780f82b784f09b5c378f2e87e28bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sandboxir::DependencyGraph::hasDep</definition>
+        <argsstring>(sandboxir::Instruction *SrcI, sandboxir::Instruction *DstI)</argsstring>
+        <name>hasDep</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::hasDep</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> *</type>
+          <declname>SrcI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> *</type>
+          <declname>DstI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="338" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="186" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a35f8f716c5275436025caf11548385f0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::DependencyGraph::scanAndAddDeps</definition>
+        <argsstring>(MemDGNode &amp;DstN, const Interval&lt; MemDGNode &gt; &amp;SrcScanRange)</argsstring>
+        <name>scanAndAddDeps</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::scanAndAddDeps</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_mem_d_g_node" kindref="compound">MemDGNode</ref> &amp;</type>
+          <declname>DstN</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sandboxir_1_1_interval" kindref="compound">Interval</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_mem_d_g_node" kindref="compound">MemDGNode</ref> &gt; &amp;</type>
+          <declname>SrcScanRange</declname>
+        </param>
+        <briefdescription>
+<para>Go through all mem nodes in <computeroutput>SrcScanRange</computeroutput> and try to add dependencies to <computeroutput>DstN</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="342" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="207" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a1e3dba7792bad1a55453a9522089feb7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::DependencyGraph::setDefUseUnscheduledSuccs</definition>
+        <argsstring>(const Interval&lt; Instruction &gt; &amp;NewInterval)</argsstring>
+        <name>setDefUseUnscheduledSuccs</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::setDefUseUnscheduledSuccs</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sandboxir_1_1_interval" kindref="compound">Interval</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> &gt; &amp;</type>
+          <declname>NewInterval</declname>
+        </param>
+        <briefdescription>
+<para>Sets the UnscheduledSuccs of all DGNodes in <computeroutput>NewInterval</computeroutput> based on def-use edges. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="346" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="221" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a1f3034b2ff231a27994a8629e06c8ed9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::DependencyGraph::createNewNodes</definition>
+        <argsstring>(const Interval&lt; Instruction &gt; &amp;NewInterval)</argsstring>
+        <name>createNewNodes</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::createNewNodes</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sandboxir_1_1_interval" kindref="compound">Interval</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> &gt; &amp;</type>
+          <declname>NewInterval</declname>
+        </param>
+        <briefdescription>
+<para>Create DAG nodes for instrs in <computeroutput>NewInterval</computeroutput> and update the MemNode chain. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="350" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="280" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1af452576e49e4fd9d67a27106fc3c015a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_mem_d_g_node" kindref="compound">MemDGNode</ref> *</type>
+        <definition>MemDGNode * llvm::sandboxir::DependencyGraph::getMemDGNodeBefore</definition>
+        <argsstring>(DGNode *N, bool IncludingN, MemDGNode *SkipN=nullptr) const</argsstring>
+        <name>getMemDGNodeBefore</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::getMemDGNodeBefore</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_d_g_node" kindref="compound">DGNode</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IncludingN</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_mem_d_g_node" kindref="compound">MemDGNode</ref> *</type>
+          <declname>SkipN</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Helper for <computeroutput>notify*Instr()</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>\Returns the first <ref refid="classllvm_1_1sandboxir_1_1_mem_d_g_node" kindref="compound">MemDGNode</ref> that comes before <computeroutput>N</computeroutput>, skipping <computeroutput>SkipN</computeroutput>, including or excluding <computeroutput>N</computeroutput> based on <computeroutput>IncludingN</computeroutput>, or nullptr if not found. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="355" column="13" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="328" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1af89a71b006efc89877cd19adea60a766" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_mem_d_g_node" kindref="compound">MemDGNode</ref> *</type>
+        <definition>MemDGNode * llvm::sandboxir::DependencyGraph::getMemDGNodeAfter</definition>
+        <argsstring>(DGNode *N, bool IncludingN, MemDGNode *SkipN=nullptr) const</argsstring>
+        <name>getMemDGNodeAfter</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::getMemDGNodeAfter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_d_g_node" kindref="compound">DGNode</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IncludingN</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_mem_d_g_node" kindref="compound">MemDGNode</ref> *</type>
+          <declname>SkipN</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Helper for <computeroutput>notifyMoveInstr()</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>\Returns the first <ref refid="classllvm_1_1sandboxir_1_1_mem_d_g_node" kindref="compound">MemDGNode</ref> that comes after <computeroutput>N</computeroutput>, skipping <computeroutput>SkipN</computeroutput>, including or excluding <computeroutput>N</computeroutput> based on <computeroutput>IncludingN</computeroutput>, or nullptr if not found. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="360" column="13" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="343" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1ad847a5eff7d0078304b5e148de8224a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::DependencyGraph::notifyCreateInstr</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>notifyCreateInstr</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::notifyCreateInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Called by the callbacks when a new instruction <computeroutput>I</computeroutput> has been created. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="364" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="358" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1ae9434a0c9c866151369e7715b8a50f40" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::DependencyGraph::notifyEraseInstr</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>notifyEraseInstr</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::notifyEraseInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Called by the callbacks when instruction <computeroutput>I</computeroutput> is about to get deleted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="367" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="442" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1ad5a2f48b8a602b9b291ecf24d0c94cd7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::DependencyGraph::notifyMoveInstr</definition>
+        <argsstring>(Instruction *I, const BBIterator &amp;To)</argsstring>
+        <name>notifyMoveInstr</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::notifyMoveInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> BBIterator &amp;</type>
+          <declname>To</declname>
+        </param>
+        <briefdescription>
+<para>Called by the callbacks when instruction <computeroutput>I</computeroutput> is about to be moved to <computeroutput>To</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="370" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="375" bodyend="440"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a7ad6892c718b879bc0698bf964c26082" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::sandboxir::DependencyGraph::DependencyGraph</definition>
+        <argsstring>(AAResults &amp;AA, Context &amp;Ctx)</argsstring>
+        <name>DependencyGraph</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::DependencyGraph</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_a_a_results" kindref="compound">AAResults</ref> &amp;</type>
+          <declname>AA</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_context" kindref="compound">Context</ref> &amp;</type>
+          <declname>Ctx</declname>
+        </param>
+        <briefdescription>
+<para>This constructor also registers callbacks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="374" column="3" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="374" bodyend="384"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a8b3c9c7bbc1c42116b170288ca439786" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::sandboxir::DependencyGraph::~DependencyGraph</definition>
+        <argsstring>()</argsstring>
+        <name>~DependencyGraph</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::~DependencyGraph</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="385" column="3" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="385" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a53d01fa2445dc8a828884a106979acc1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_d_g_node" kindref="compound">DGNode</ref> *</type>
+        <definition>DGNode * llvm::sandboxir::DependencyGraph::getNode</definition>
+        <argsstring>(Instruction *I) const</argsstring>
+        <name>getNode</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::getNode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="394" column="10" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="394" bodyend="397"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="classllvm_1_1sandboxir_1_1_mem_d_g_node_interval_builder_1a5a0f15c37075c267f196cf8b7924e972" compoundref="_dependency_graph_8cpp" startline="98" endline="108">llvm::sandboxir::MemDGNodeIntervalBuilder::getBotMemDGNode</referencedby>
+        <referencedby refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a9b46d781baee65722d04c13cf46d68ee" compoundref="_dependency_graph_8h" startline="399" endline="403">getNodeOrNull</referencedby>
+        <referencedby refid="classllvm_1_1sandboxir_1_1_mem_d_g_node_interval_builder_1a99dd801df4d1697edd4ddd637666c084" compoundref="_dependency_graph_8cpp" startline="85" endline="95">llvm::sandboxir::MemDGNodeIntervalBuilder::getTopMemDGNode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a9b46d781baee65722d04c13cf46d68ee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_d_g_node" kindref="compound">DGNode</ref> *</type>
+        <definition>DGNode * llvm::sandboxir::DependencyGraph::getNodeOrNull</definition>
+        <argsstring>(Instruction *I) const</argsstring>
+        <name>getNodeOrNull</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::getNodeOrNull</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Like <ref refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a53d01fa2445dc8a828884a106979acc1" kindref="member">getNode()</ref> but returns nullptr if <computeroutput>I</computeroutput> is nullptr. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="399" column="10" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="399" bodyend="403"/>
+        <references refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a53d01fa2445dc8a828884a106979acc1" compoundref="_dependency_graph_8h" startline="394" endline="397">getNode</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1ab738214b8747fd2e0d9429149718b286" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_d_g_node" kindref="compound">DGNode</ref> *</type>
+        <definition>DGNode * llvm::sandboxir::DependencyGraph::getOrCreateNode</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>getOrCreateNode</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::getOrCreateNode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="404" column="10" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="404" bodyend="413"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1sandboxir_1_1_d_g_node_1ac1b89d7c178eb196de3d1f05cc205642" compoundref="_dependency_graph_8h" startline="190" endline="196">llvm::sandboxir::DGNode::isMemDepNodeCandidate</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1ab89419b289ce60676c9dcca14e365b7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_interval" kindref="compound">Interval</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> &gt;</type>
+        <definition>Interval&lt; Instruction &gt; llvm::sandboxir::DependencyGraph::extend</definition>
+        <argsstring>(ArrayRef&lt; Instruction * &gt; Instrs)</argsstring>
+        <name>extend</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::extend</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> * &gt;</type>
+          <declname>Instrs</declname>
+        </param>
+        <briefdescription>
+<para>Build/extend the dependency graph such that it includes <computeroutput>Instrs</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the range of instructions added to the DAG. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="416" column="12" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="458" bodyend="561"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a02981de53fb6ffd384d39addc4d25f37" compoundref="_s_t_l_extras_8h" startline="329" endline="332">llvm::drop_begin</references>
+        <references refid="classllvm_1_1_array_ref_1ac835b8735b1b2faec0efdca236e37d94" compoundref="_array_ref_8h" startline="163" endline="163">llvm::ArrayRef&lt; T &gt;::empty</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="classllvm_1_1sandboxir_1_1_mem_d_g_node_interval_builder_1af0cf2e45248094d2e024dc4ce6917fdc" compoundref="_dependency_graph_8cpp" startline="111" endline="121">llvm::sandboxir::MemDGNodeIntervalBuilder::make</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a1209a84e8b6d155d6450bf793d098066" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_interval" kindref="compound">Interval</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> &gt;</type>
+        <definition>Interval&lt; Instruction &gt; llvm::sandboxir::DependencyGraph::getInterval</definition>
+        <argsstring>() const</argsstring>
+        <name>getInterval</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::getInterval</qualifiedname>
+        <briefdescription>
+<para>\Returns the range of instructions included in the DAG. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="418" column="12" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="418" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a0878831867afeb41543432d50679ae00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::DependencyGraph::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="419" column="8" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="419" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a1e6263e5ae80d0e8dffd164c1587af04" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sandboxir::DependencyGraph::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::empty</qualifiedname>
+        <briefdescription>
+<para>\Returns true if the DAG&apos;s state is clear. Used in assertions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="425" column="8" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="425" bodyend="430"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1aa8602ab3d40d78dfbf826e154ac3fb8d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::DependencyGraph::print</definition>
+        <argsstring>(raw_ostream &amp;OS) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="431" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="564" bodyend="576"/>
+        <references refid="classllvm_1_1sandboxir_1_1_instruction_1ad1664de8206ba30fc8d13a01850f42db" compoundref="_sandbox_i_r_2_instruction_8h" startline="214" endline="217">llvm::sandboxir::Instruction::comesBefore</references>
+        <references refid="classllvm_1_1sandboxir_1_1_d_g_node_1ad6adf15fe451a7d857cea3f8a1905f81" compoundref="_dependency_graph_8h" startline="198" endline="198">llvm::sandboxir::DGNode::getInstruction</references>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a499ea32ca1b8d16cedfe01d1e5b08f29" compoundref="_small_vector_8h" startline="663" endline="666">llvm::SmallVectorImpl&lt; T &gt;::reserve</references>
+        <references refid="namespacellvm_1a74cdbd1e4f731e7d7cd83461b8b1de0b" compoundref="_s_t_l_extras_8h" startline="1664" endline="1675">llvm::sort</references>
+        <referencedby refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a4c5d61503c625e40ca3f67bbbbad8916" compoundref="_dependency_graph_8cpp" startline="578" endline="581">dump</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_dependency_graph_1a4c5d61503c625e40ca3f67bbbbad8916" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" kindref="member">LLVM_DUMP_METHOD</ref> void</type>
+        <definition>void llvm::sandboxir::DependencyGraph::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::sandboxir::DependencyGraph::dump</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="432" column="25" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.cpp" bodystart="578" bodyend="581"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1sandboxir_1_1_dependency_graph_1aa8602ab3d40d78dfbf826e154ac3fb8d" compoundref="_dependency_graph_8cpp" startline="564" endline="576">print</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" line="306" column="1" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h" bodystart="306" bodyend="434"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a3a77d064e2679f3142f452af12c06288" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>alias</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a20a45e8aa0e1c4634669e1306aba3825" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>BatchAA</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a0878831867afeb41543432d50679ae00" prot="public" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>clear</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a6fc01d94541248aed73cd7876a5577a8" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>CreateInstrCB</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a1f3034b2ff231a27994a8629e06c8ed9" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>createNewNodes</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1ad2fab80e8b258b648a4c174153bb4d6f" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>Ctx</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a10f9a55cf0e7d2748b1be3aee5eb22e2" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>DAGInterval</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a7ad6892c718b879bc0698bf964c26082" prot="public" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>DependencyGraph</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1af4c4ae4efd379d5909425bcde3a895c0" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>DependencyType</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a4c5d61503c625e40ca3f67bbbbad8916" prot="public" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>dump</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a1e6263e5ae80d0e8dffd164c1587af04" prot="public" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>empty</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a7e65a1c6f6a36cec2f44e2a2615ab403" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>EraseInstrCB</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1ab89419b289ce60676c9dcca14e365b7b" prot="public" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>extend</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a1209a84e8b6d155d6450bf793d098066" prot="public" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>getInterval</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1af89a71b006efc89877cd19adea60a766" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>getMemDGNodeAfter</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1af452576e49e4fd9d67a27106fc3c015a" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>getMemDGNodeBefore</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a53d01fa2445dc8a828884a106979acc1" prot="public" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>getNode</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a9b46d781baee65722d04c13cf46d68ee" prot="public" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>getNodeOrNull</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1ab738214b8747fd2e0d9429149718b286" prot="public" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>getOrCreateNode</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a9755e843016dd6cfeeecdd4740ffcea9" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>getRoughDepType</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a304780f82b784f09b5c378f2e87e28bb" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>hasDep</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a7c384a470e8b404bb95b100784f54712" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>InstrToNodeMap</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a0952a6ce706f3c15ce9fe0b59bec806f" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>MoveInstrCB</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1ad847a5eff7d0078304b5e148de8224a1" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>notifyCreateInstr</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1ae9434a0c9c866151369e7715b8a50f40" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>notifyEraseInstr</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1ad5a2f48b8a602b9b291ecf24d0c94cd7" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>notifyMoveInstr</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1aa8602ab3d40d78dfbf826e154ac3fb8d" prot="public" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>print</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a35f8f716c5275436025caf11548385f0" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>scanAndAddDeps</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a1e3dba7792bad1a55453a9522089feb7" prot="private" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>setDefUseUnscheduledSuccs</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_dependency_graph_1a8b3c9c7bbc1c42116b170288ca439786" prot="public" virt="non-virtual"><scope>llvm::sandboxir::DependencyGraph</scope><name>~DependencyGraph</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

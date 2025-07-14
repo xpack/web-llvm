@@ -1,0 +1,1563 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_generic_scheduler_base" kind="class" language="C++" prot="public">
+    <compoundname>llvm::GenericSchedulerBase</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_sched_strategy" prot="public" virt="non-virtual">llvm::MachineSchedStrategy</basecompoundref>
+    <derivedcompoundref refid="classllvm_1_1_generic_scheduler" prot="public" virt="non-virtual">llvm::GenericScheduler</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_post_generic_scheduler" prot="public" virt="non-virtual">llvm::PostGenericScheduler</derivedcompoundref>
+    <includes refid="_machine_scheduler_8h" local="yes">llvm/CodeGen/MachineScheduler.h</includes>
+    <innerclass refid="structllvm_1_1_generic_scheduler_base_1_1_cand_policy" prot="public">llvm::GenericSchedulerBase::CandPolicy</innerclass>
+    <innerclass refid="structllvm_1_1_generic_scheduler_base_1_1_sched_candidate" prot="public">llvm::GenericSchedulerBase::SchedCandidate</innerclass>
+    <innerclass refid="structllvm_1_1_generic_scheduler_base_1_1_sched_resource_delta" prot="public">llvm::GenericSchedulerBase::SchedResourceDelta</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3" prot="public" static="no" strong="no">
+        <type><ref refid="classuint8__t" kindref="compound">uint8_t</ref></type>
+        <name>CandReason</name>
+        <qualifiedname>llvm::GenericSchedulerBase::CandReason</qualifiedname>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a810d389a7def234e94c2631683ab0ece" prot="public">
+          <name>NoCand</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a3e5ec7d7634a70f61fd64c3ef22d02f1" prot="public">
+          <name>Only1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3ab58c08e8fa9324ebf332e11601ec6c0d" prot="public">
+          <name>PhysReg</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a01d264553167fb005aba23a6d2a6e9bb" prot="public">
+          <name>RegExcess</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a974161ce84e375b6d40bd8855c29dd7f" prot="public">
+          <name>RegCritical</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3ab6aae8902e724a36ed16d537784777a2" prot="public">
+          <name>Stall</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a5a905614458af47ec4a5054a53d23e1b" prot="public">
+          <name>Cluster</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3aed8b719fe1a669c2fed4bacc6f46e8df" prot="public">
+          <name>Weak</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a01ef8d8423fe645e50ad5a179b4f4483" prot="public">
+          <name>RegMax</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a56637d3435d7e1953a615371cfe4d5ec" prot="public">
+          <name>ResourceReduce</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a07409a8a5b9657af23f0a1c962f5c0c1" prot="public">
+          <name>ResourceDemand</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a8ea4d71243c1b82d5e35065d580c1e49" prot="public">
+          <name>BotHeightReduce</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3ad3c3c8a47c777d0f591ca18eaf7000d4" prot="public">
+          <name>BotPathReduce</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3afb16e35278ff80f34d2ad9889213b406" prot="public">
+          <name>TopDepthReduce</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a768a7f66e30d6b2d2d81ab1af56bf6c4" prot="public">
+          <name>TopPathReduce</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3af9d4eb6d4d0ca011ccbb24f139c9bf73" prot="public">
+          <name>NextDefUse</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3aa00a8e5741a604eb07320e981473b4e7" prot="public">
+          <name>NodeOrder</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Represent the type of <ref refid="structllvm_1_1_generic_scheduler_base_1_1_sched_candidate" kindref="compound">SchedCandidate</ref> found within a single queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>pickNodeBidirectional depends on these listed by decreasing priority. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1080" column="3" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="1080" bodyend="1083"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_generic_scheduler_base_1ad0f9f52bf2f7c54d9546cedd1c47ef45" prot="protected" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_machine_sched_context" kindref="compound">MachineSchedContext</ref> *</type>
+        <definition>const MachineSchedContext* llvm::GenericSchedulerBase::Context</definition>
+        <argsstring></argsstring>
+        <name>Context</name>
+        <qualifiedname>llvm::GenericSchedulerBase::Context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1175" column="29" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="1175" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_generic_scheduler_base_1abf7a31296b8d3ede091a25b7777c3a15" compoundref="_machine_scheduler_8h" startline="1183" endline="1183">GenericSchedulerBase</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_sched_strategy_1ab57c0b13438062a884d3e620300fbc03" compoundref="_g_c_n_sched_strategy_8cpp" startline="73" endline="123">llvm::GCNSchedStrategy::initialize</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1ac8e2225e71c3b7d40575a2ab9bfffc78" compoundref="_machine_scheduler_8cpp" startline="3275" endline="3319">llvm::GenericScheduler::initPolicy</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_generic_scheduler_base_1a9730ea0068843718868a8667f52e3680" prot="protected" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_sched_model" kindref="compound">TargetSchedModel</ref> *</type>
+        <definition>const TargetSchedModel* llvm::GenericSchedulerBase::SchedModel</definition>
+        <argsstring></argsstring>
+        <name>SchedModel</name>
+        <qualifiedname>llvm::GenericSchedulerBase::SchedModel</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1176" column="26" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="1176" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1a0aa33f27fbf7be1e7e53512ceb6de885" compoundref="_machine_scheduler_8cpp" startline="3341" endline="3367">llvm::GenericScheduler::checkAcyclicLatency</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1aa8cddd2ea015f8177a8395035f87e332" compoundref="_machine_scheduler_8cpp" startline="3245" endline="3272">llvm::GenericScheduler::initialize</referencedby>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1a744ad04adf5ae507a33542ec18b0d97f" compoundref="_machine_scheduler_8cpp" startline="3875" endline="3893">llvm::PostGenericScheduler::initialize</referencedby>
+        <referencedby refid="structllvm_1_1_generic_scheduler_base_1_1_sched_candidate_1a47cc8c89db10ac27483585cd61cf4f91" compoundref="_machine_scheduler_8cpp" startline="2970" endline="2984">llvm::GenericSchedulerBase::SchedCandidate::initResourceDelta</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_sched_strategy_1a2777a131d60f64dbebce2d7116f198c7" compoundref="_g_c_n_sched_strategy_8cpp" startline="322" endline="360">llvm::GCNSchedStrategy::pickNodeFromQueue</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1ad9779ec3011b4547f9a509af82d87a6e" compoundref="_machine_scheduler_8cpp" startline="3635" endline="3657">llvm::GenericScheduler::pickNodeFromQueue</referencedby>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1a5db5287f3514fcc23bb3f93d769b3e96" compoundref="_machine_scheduler_8cpp" startline="3989" endline="4002">llvm::PostGenericScheduler::pickNodeFromQueue</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1ac047246e76df6b86564a6b62c2403aef" compoundref="_machine_scheduler_8cpp" startline="3369" endline="3386">llvm::GenericScheduler::registerRoots</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_base_1a8668556014566994c07b21391762551b" compoundref="_machine_scheduler_8cpp" startline="3034" endline="3086">setPolicy</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_base_1a0fc28b204833d49b88dbeceb366b7439" compoundref="_machine_scheduler_8cpp" startline="3113" endline="3163">traceCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_max_i_l_p_sched_strategy_1adaaa8b026820461823cf355979353b3a" compoundref="_g_c_n_sched_strategy_8cpp" startline="540" endline="622">llvm::GCNMaxILPSchedStrategy::tryCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_max_memory_clause_sched_strategy_1a9eba23f1b8a103c8e88a2ca6227d97b3" compoundref="_g_c_n_sched_strategy_8cpp" startline="640" endline="754">llvm::GCNMaxMemoryClauseSchedStrategy::tryCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1a6ef23d22af6c895d9c255de3e940b8bf" compoundref="_machine_scheduler_8cpp" startline="3524" endline="3628">llvm::GenericScheduler::tryCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_pre_r_a_sched_strategy_1a4b73638109c4ea048c148a781996272d" compoundref="_p_p_c_machine_scheduler_8cpp" startline="49" endline="163">llvm::PPCPreRASchedStrategy::tryCandidate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_generic_scheduler_base_1ae9476ffbc2f3f195a2116b13f3186194" prot="protected" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+        <definition>const TargetRegisterInfo* llvm::GenericSchedulerBase::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>llvm::GenericSchedulerBase::TRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1177" column="28" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="1177" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1ab0d12eb20352f092840f7f8df60abe26" compoundref="_machine_scheduler_8cpp" startline="3476" endline="3511">llvm::GenericScheduler::initCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1aa8cddd2ea015f8177a8395035f87e332" compoundref="_machine_scheduler_8cpp" startline="3245" endline="3272">llvm::GenericScheduler::initialize</referencedby>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1a744ad04adf5ae507a33542ec18b0d97f" compoundref="_machine_scheduler_8cpp" startline="3875" endline="3893">llvm::PostGenericScheduler::initialize</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_sched_strategy_1a2777a131d60f64dbebce2d7116f198c7" compoundref="_g_c_n_sched_strategy_8cpp" startline="322" endline="360">llvm::GCNSchedStrategy::pickNodeFromQueue</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_base_1a0fc28b204833d49b88dbeceb366b7439" compoundref="_machine_scheduler_8cpp" startline="3113" endline="3163">traceCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_max_i_l_p_sched_strategy_1adaaa8b026820461823cf355979353b3a" compoundref="_g_c_n_sched_strategy_8cpp" startline="540" endline="622">llvm::GCNMaxILPSchedStrategy::tryCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_max_memory_clause_sched_strategy_1a9eba23f1b8a103c8e88a2ca6227d97b3" compoundref="_g_c_n_sched_strategy_8cpp" startline="640" endline="754">llvm::GCNMaxMemoryClauseSchedStrategy::tryCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1a6ef23d22af6c895d9c255de3e940b8bf" compoundref="_machine_scheduler_8cpp" startline="3524" endline="3628">llvm::GenericScheduler::tryCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_pre_r_a_sched_strategy_1a4b73638109c4ea048c148a781996272d" compoundref="_p_p_c_machine_scheduler_8cpp" startline="49" endline="163">llvm::PPCPreRASchedStrategy::tryCandidate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_generic_scheduler_base_1a8e13153e8ed7676ddbba73dd9318d35e" prot="protected" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1_machine_sched_policy" kindref="compound">MachineSchedPolicy</ref></type>
+        <definition>MachineSchedPolicy llvm::GenericSchedulerBase::RegionPolicy</definition>
+        <argsstring></argsstring>
+        <name>RegionPolicy</name>
+        <qualifiedname>llvm::GenericSchedulerBase::RegionPolicy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1179" column="22" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="1179" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1a8329c2fe0a6267d1e0f94dc4aecc5892" compoundref="_machine_scheduler_8cpp" startline="3321" endline="3330">llvm::GenericScheduler::dumpPolicy</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_base_1ab29d166bcf9429b14ba2db21e948ac6d" compoundref="_machine_scheduler_8h" startline="1188" endline="1188">getPolicy</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1aa8cddd2ea015f8177a8395035f87e332" compoundref="_machine_scheduler_8cpp" startline="3245" endline="3272">llvm::GenericScheduler::initialize</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1ac8e2225e71c3b7d40575a2ab9bfffc78" compoundref="_machine_scheduler_8cpp" startline="3275" endline="3319">llvm::GenericScheduler::initPolicy</referencedby>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1a04711828471ee40bed1b0e0ae8584cf4" compoundref="_machine_scheduler_8cpp" startline="3895" endline="3919">llvm::PostGenericScheduler::initPolicy</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_sched_strategy_1af3f3a45f145bc8538e160bc3177ffc8f" compoundref="_g_c_n_sched_strategy_8cpp" startline="445" endline="488">llvm::GCNSchedStrategy::pickNode</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1ad4cc558b6cbcc4e9cea5df915c197e14" compoundref="_machine_scheduler_8cpp" startline="3738" endline="3796">llvm::GenericScheduler::pickNode</referencedby>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1af8a37b0efa51cfd3f6b4729e3298de7f" compoundref="_machine_scheduler_8cpp" startline="4086" endline="4139">llvm::PostGenericScheduler::pickNode</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1ada10b0f311c10e4c89f7449fdd38b965" compoundref="_machine_scheduler_8h" startline="1239" endline="1241">llvm::GenericScheduler::shouldTrackLaneMasks</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1ab1ad1eb71432f2b381687717ced8b052" compoundref="_machine_scheduler_8h" startline="1235" endline="1237">llvm::GenericScheduler::shouldTrackPressure</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_max_memory_clause_sched_strategy_1a9eba23f1b8a103c8e88a2ca6227d97b3" compoundref="_g_c_n_sched_strategy_8cpp" startline="640" endline="754">llvm::GCNMaxMemoryClauseSchedStrategy::tryCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1a6ef23d22af6c895d9c255de3e940b8bf" compoundref="_machine_scheduler_8cpp" startline="3524" endline="3628">llvm::GenericScheduler::tryCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_pre_r_a_sched_strategy_1a4b73638109c4ea048c148a781996272d" compoundref="_p_p_c_machine_scheduler_8cpp" startline="49" endline="163">llvm::PPCPreRASchedStrategy::tryCandidate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_generic_scheduler_base_1a3cab76d375dbb626e5179b96f84fd3dc" prot="protected" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1_sched_remainder" kindref="compound">SchedRemainder</ref></type>
+        <definition>SchedRemainder llvm::GenericSchedulerBase::Rem</definition>
+        <argsstring></argsstring>
+        <name>Rem</name>
+        <qualifiedname>llvm::GenericSchedulerBase::Rem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1181" column="18" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="1181" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1a0aa33f27fbf7be1e7e53512ceb6de885" compoundref="_machine_scheduler_8cpp" startline="3341" endline="3367">llvm::GenericScheduler::checkAcyclicLatency</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1aa8cddd2ea015f8177a8395035f87e332" compoundref="_machine_scheduler_8cpp" startline="3245" endline="3272">llvm::GenericScheduler::initialize</referencedby>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1a744ad04adf5ae507a33542ec18b0d97f" compoundref="_machine_scheduler_8cpp" startline="3875" endline="3893">llvm::PostGenericScheduler::initialize</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1ac047246e76df6b86564a6b62c2403aef" compoundref="_machine_scheduler_8cpp" startline="3369" endline="3386">llvm::GenericScheduler::registerRoots</referencedby>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1aee5ca47cbb46d1237ce496179411b03e" compoundref="_machine_scheduler_8cpp" startline="3921" endline="3933">llvm::PostGenericScheduler::registerRoots</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_base_1a8668556014566994c07b21391762551b" compoundref="_machine_scheduler_8cpp" startline="3034" endline="3086">setPolicy</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_max_memory_clause_sched_strategy_1a9eba23f1b8a103c8e88a2ca6227d97b3" compoundref="_g_c_n_sched_strategy_8cpp" startline="640" endline="754">llvm::GCNMaxMemoryClauseSchedStrategy::tryCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1a6ef23d22af6c895d9c255de3e940b8bf" compoundref="_machine_scheduler_8cpp" startline="3524" endline="3628">llvm::GenericScheduler::tryCandidate</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_pre_r_a_sched_strategy_1a4b73638109c4ea048c148a781996272d" compoundref="_p_p_c_machine_scheduler_8cpp" startline="49" endline="163">llvm::PPCPreRASchedStrategy::tryCandidate</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_generic_scheduler_base_1a9df77ae80f822b788cb2464992a05bc1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>const char * GenericSchedulerBase::getReasonStr</definition>
+        <argsstring>(GenericSchedulerBase::CandReason Reason)</argsstring>
+        <name>getReasonStr</name>
+        <qualifiedname>llvm::GenericSchedulerBase::getReasonStr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3" kindref="member">GenericSchedulerBase::CandReason</ref></type>
+          <declname>Reason</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1086" column="21" bodyfile="lib/CodeGen/MachineScheduler.cpp" bodystart="3089" bodyend="3111"/>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a8ea4d71243c1b82d5e35065d580c1e49" compoundref="_machine_scheduler_8h" startline="1082">BotHeightReduce</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3ad3c3c8a47c777d0f591ca18eaf7000d4" compoundref="_machine_scheduler_8h" startline="1082">BotPathReduce</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a5a905614458af47ec4a5054a53d23e1b" compoundref="_machine_scheduler_8h" startline="1081">Cluster</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3af9d4eb6d4d0ca011ccbb24f139c9bf73" compoundref="_machine_scheduler_8h" startline="1083">NextDefUse</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a810d389a7def234e94c2631683ab0ece" compoundref="_machine_scheduler_8h" startline="1081">NoCand</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3aa00a8e5741a604eb07320e981473b4e7" compoundref="_machine_scheduler_8h" startline="1083">NodeOrder</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a3e5ec7d7634a70f61fd64c3ef22d02f1" compoundref="_machine_scheduler_8h" startline="1081">Only1</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3ab58c08e8fa9324ebf332e11601ec6c0d" compoundref="_machine_scheduler_8h" startline="1081">PhysReg</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a974161ce84e375b6d40bd8855c29dd7f" compoundref="_machine_scheduler_8h" startline="1081">RegCritical</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a01d264553167fb005aba23a6d2a6e9bb" compoundref="_machine_scheduler_8h" startline="1081">RegExcess</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a01ef8d8423fe645e50ad5a179b4f4483" compoundref="_machine_scheduler_8h" startline="1082">RegMax</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a07409a8a5b9657af23f0a1c962f5c0c1" compoundref="_machine_scheduler_8h" startline="1082">ResourceDemand</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a56637d3435d7e1953a615371cfe4d5ec" compoundref="_machine_scheduler_8h" startline="1082">ResourceReduce</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3ab6aae8902e724a36ed16d537784777a2" compoundref="_machine_scheduler_8h" startline="1081">Stall</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3afb16e35278ff80f34d2ad9889213b406" compoundref="_machine_scheduler_8h" startline="1083">TopDepthReduce</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a768a7f66e30d6b2d2d81ab1af56bf6c4" compoundref="_machine_scheduler_8h" startline="1083">TopPathReduce</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3aed8b719fe1a669c2fed4bacc6f46e8df" compoundref="_machine_scheduler_8h" startline="1081">Weak</references>
+        <referencedby refid="classllvm_1_1_generic_scheduler_base_1a0fc28b204833d49b88dbeceb366b7439" compoundref="_machine_scheduler_8cpp" startline="3113" endline="3163">traceCandidate</referencedby>
+        <referencedby refid="_machine_scheduler_8cpp_1a14c35b53586841aad69751a52b7d358a" compoundref="_machine_scheduler_8cpp" startline="3236" endline="3239">tracePick</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classllvm_1_1_generic_scheduler_base_1abf7a31296b8d3ede091a25b7777c3a15" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::GenericSchedulerBase::GenericSchedulerBase</definition>
+        <argsstring>(const MachineSchedContext *C)</argsstring>
+        <name>GenericSchedulerBase</name>
+        <qualifiedname>llvm::GenericSchedulerBase::GenericSchedulerBase</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_machine_sched_context" kindref="compound">MachineSchedContext</ref> *</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1183" column="3" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="1183" bodyend="1183"/>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ad0f9f52bf2f7c54d9546cedd1c47ef45" compoundref="_machine_scheduler_8h" startline="1175">Context</references>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1ae8dd2d1a734d828faa812af4a9a135e3" compoundref="_machine_scheduler_8h" startline="1225" endline="1227">llvm::GenericScheduler::GenericScheduler</referencedby>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1ac8d3e1ce009ee1e50dfd8897346404bb" compoundref="_machine_scheduler_8h" startline="1315" endline="1317">llvm::PostGenericScheduler::PostGenericScheduler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_generic_scheduler_base_1a8668556014566994c07b21391762551b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GenericSchedulerBase::setPolicy</definition>
+        <argsstring>(CandPolicy &amp;Policy, bool IsPostRA, SchedBoundary &amp;CurrZone, SchedBoundary *OtherZone)</argsstring>
+        <name>setPolicy</name>
+        <qualifiedname>llvm::GenericSchedulerBase::setPolicy</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_generic_scheduler_base_1_1_cand_policy" kindref="compound">CandPolicy</ref> &amp;</type>
+          <declname>Policy</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsPostRA</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_sched_boundary" kindref="compound">SchedBoundary</ref> &amp;</type>
+          <declname>CurrZone</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_sched_boundary" kindref="compound">SchedBoundary</ref> *</type>
+          <declname>OtherZone</declname>
+        </param>
+        <briefdescription>
+<para>Set the <ref refid="structllvm_1_1_generic_scheduler_base_1_1_cand_policy" kindref="compound">CandPolicy</ref> given a scheduling zone given the current resources and latencies inside and outside the zone. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1185" column="8" bodyfile="lib/CodeGen/MachineScheduler.cpp" bodystart="3034" bodyend="3086"/>
+        <references refid="classllvm_1_1_sched_boundary_1aa49fbb78ca6f0a19a967f2f8fb70097d" compoundref="_machine_scheduler_8h" startline="854">llvm::SchedBoundary::Available</references>
+        <references refid="_machine_scheduler_8cpp_1a77e51ffc94a77ff8e4778e59a02e7b67" compoundref="_machine_scheduler_8cpp" startline="2234" endline="2241">checkResourceLimit</references>
+        <references refid="_machine_scheduler_8cpp_1a4d6bf176cc854701f61fba566b9dbf9b" compoundref="_machine_scheduler_8cpp" startline="3002" endline="3009">computeRemLatency</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="structllvm_1_1_generic_scheduler_base_1_1_cand_policy_1a61f080e69dc94a237cc49b7a3ca8c558" compoundref="_machine_scheduler_8h" startline="1093">llvm::GenericSchedulerBase::CandPolicy::DemandResIdx</references>
+        <references refid="classllvm_1_1_sched_boundary_1acef1c37226a48a752d933063e8ba6f83" compoundref="_machine_scheduler_8h" startline="970" endline="970">llvm::SchedBoundary::getCurrCycle</references>
+        <references refid="classllvm_1_1_ready_queue_1ac90e8349a5117f988bbb4cf8bf8c5f9f" compoundref="_machine_scheduler_8h" startline="559" endline="559">llvm::ReadyQueue::getName</references>
+        <references refid="classllvm_1_1_sched_boundary_1a5af50e4260bb23b1035c52c186fdcc8b" compoundref="_machine_scheduler_8cpp" startline="2524" endline="2548">llvm::SchedBoundary::getOtherResourceCount</references>
+        <references refid="classllvm_1_1_sched_boundary_1ae98af615296b8adf67556301343d6ca2" compoundref="_machine_scheduler_8h" startline="1009" endline="1009">llvm::SchedBoundary::getZoneCritResIdx</references>
+        <references refid="_pass_builder_bindings_8cpp_1acdfbcf188e2d4a80837e89de2ccdffab" compoundref="_pass_builder_bindings_8cpp" startline="64" endline="71">if</references>
+        <references refid="classllvm_1_1_sched_boundary_1a2ec93f0e570be68d89930c8e4032ef83" compoundref="_machine_scheduler_8h" startline="1012" endline="1012">llvm::SchedBoundary::isResourceLimited</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="structllvm_1_1_generic_scheduler_base_1_1_cand_policy_1acd9f1ecfaa9db2800e6fe15a385b4a6f" compoundref="_machine_scheduler_8h" startline="1091">llvm::GenericSchedulerBase::CandPolicy::ReduceLatency</references>
+        <references refid="structllvm_1_1_generic_scheduler_base_1_1_cand_policy_1a413ba6a1fb7916faa6b5d34aa4397d9b" compoundref="_machine_scheduler_8h" startline="1092">llvm::GenericSchedulerBase::CandPolicy::ReduceResIdx</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1a3cab76d375dbb626e5179b96f84fd3dc" compoundref="_machine_scheduler_8h" startline="1181">Rem</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1a9730ea0068843718868a8667f52e3680" compoundref="_machine_scheduler_8h" startline="1176">SchedModel</references>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1af8a37b0efa51cfd3f6b4729e3298de7f" compoundref="_machine_scheduler_8cpp" startline="4086" endline="4139">llvm::PostGenericScheduler::pickNode</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_sched_strategy_1a26b8231b39c104871f78b2da6dc1eff5" compoundref="_g_c_n_sched_strategy_8cpp" startline="364" endline="441">llvm::GCNSchedStrategy::pickNodeBidirectional</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1aef82bce77971408815c3b90979188d1e" compoundref="_machine_scheduler_8cpp" startline="3660" endline="3735">llvm::GenericScheduler::pickNodeBidirectional</referencedby>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1ae8950b6343e504e2112df60ee464603d" compoundref="_machine_scheduler_8cpp" startline="4005" endline="4083">llvm::PostGenericScheduler::pickNodeBidirectional</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_generic_scheduler_base_1ab29d166bcf9429b14ba2db21e948ac6d" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="structllvm_1_1_machine_sched_policy" kindref="compound">MachineSchedPolicy</ref></type>
+        <definition>MachineSchedPolicy llvm::GenericSchedulerBase::getPolicy</definition>
+        <argsstring>() const override</argsstring>
+        <name>getPolicy</name>
+        <qualifiedname>llvm::GenericSchedulerBase::getPolicy</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1a4f4eb9938f16f954935e4cb393a78c23">getPolicy</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1188" column="22" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="1188" bodyend="1188"/>
+        <references refid="classllvm_1_1_generic_scheduler_base_1a8e13153e8ed7676ddbba73dd9318d35e" compoundref="_machine_scheduler_8h" startline="1179">RegionPolicy</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_generic_scheduler_base_1a0fc28b204833d49b88dbeceb366b7439" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GenericSchedulerBase::traceCandidate</definition>
+        <argsstring>(const SchedCandidate &amp;Cand)</argsstring>
+        <name>traceCandidate</name>
+        <qualifiedname>llvm::GenericSchedulerBase::traceCandidate</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_generic_scheduler_base_1_1_sched_candidate" kindref="compound">SchedCandidate</ref> &amp;</type>
+          <declname>Cand</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1191" column="8" bodyfile="lib/CodeGen/MachineScheduler.cpp" bodystart="3113" bodyend="3163"/>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a8ea4d71243c1b82d5e35065d580c1e49" compoundref="_machine_scheduler_8h" startline="1082">BotHeightReduce</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3ad3c3c8a47c777d0f591ca18eaf7000d4" compoundref="_machine_scheduler_8h" startline="1082">BotPathReduce</references>
+        <references refid="structllvm_1_1_reg_pressure_delta_1a277da5755f2b30ebcebdba51d0de1acf" compoundref="_register_pressure_8h" startline="242">llvm::RegPressureDelta::CriticalMax</references>
+        <references refid="structllvm_1_1_reg_pressure_delta_1a589e1a7e9a8a095d8d01ff8ba32b3d14" compoundref="_register_pressure_8h" startline="243">llvm::RegPressureDelta::CurrentMax</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="structllvm_1_1_generic_scheduler_base_1_1_cand_policy_1a61f080e69dc94a237cc49b7a3ca8c558" compoundref="_machine_scheduler_8h" startline="1093">llvm::GenericSchedulerBase::CandPolicy::DemandResIdx</references>
+        <references refid="structllvm_1_1_reg_pressure_delta_1aff9c3b403c6d4af795dd8be1c9612240" compoundref="_register_pressure_8h" startline="241">llvm::RegPressureDelta::Excess</references>
+        <references refid="classllvm_1_1_s_unit_1a8926b25df7254ba2730fa5d7ec139862" compoundref="_schedule_d_a_g_8h" startline="416" endline="420">llvm::SUnit::getDepth</references>
+        <references refid="classllvm_1_1_s_unit_1a582da862b28b876ef2235781392cffa6" compoundref="_schedule_d_a_g_8h" startline="424" endline="428">llvm::SUnit::getHeight</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1a9df77ae80f822b788cb2464992a05bc1" compoundref="_machine_scheduler_8cpp" startline="3089" endline="3111">getReasonStr</references>
+        <references refid="namespacellvm_1a1eb5609345b906d024fbf9e4bc1adc06a2d68d32ff95cd10b4899c2823ec28e97" compoundref="_s_i_machine_scheduler_8h" startline="34">llvm::Latency</references>
+        <references refid="classllvm_1_1_s_unit_1a3f708b119627541f144d703a1d183202" compoundref="_schedule_d_a_g_8h" startline="270">llvm::SUnit::NodeNum</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="structllvm_1_1_generic_scheduler_base_1_1_sched_candidate_1ae861d440b366cf033d7f2764b2b34be0" compoundref="_machine_scheduler_8h" startline="1129">llvm::GenericSchedulerBase::SchedCandidate::Policy</references>
+        <references refid="structllvm_1_1_generic_scheduler_base_1_1_sched_candidate_1ad9372964d55580636efe92281b42ad6c" compoundref="_machine_scheduler_8h" startline="1135">llvm::GenericSchedulerBase::SchedCandidate::Reason</references>
+        <references refid="structllvm_1_1_generic_scheduler_base_1_1_cand_policy_1a413ba6a1fb7916faa6b5d34aa4397d9b" compoundref="_machine_scheduler_8h" startline="1092">llvm::GenericSchedulerBase::CandPolicy::ReduceResIdx</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a974161ce84e375b6d40bd8855c29dd7f" compoundref="_machine_scheduler_8h" startline="1081">RegCritical</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a01d264553167fb005aba23a6d2a6e9bb" compoundref="_machine_scheduler_8h" startline="1081">RegExcess</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a01ef8d8423fe645e50ad5a179b4f4483" compoundref="_machine_scheduler_8h" startline="1082">RegMax</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a07409a8a5b9657af23f0a1c962f5c0c1" compoundref="_machine_scheduler_8h" startline="1082">ResourceDemand</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a56637d3435d7e1953a615371cfe4d5ec" compoundref="_machine_scheduler_8h" startline="1082">ResourceReduce</references>
+        <references refid="structllvm_1_1_generic_scheduler_base_1_1_sched_candidate_1a81fbfdac1b8c1e736493b56b50853322" compoundref="_machine_scheduler_8h" startline="1141">llvm::GenericSchedulerBase::SchedCandidate::RPDelta</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1a9730ea0068843718868a8667f52e3680" compoundref="_machine_scheduler_8h" startline="1176">SchedModel</references>
+        <references refid="structllvm_1_1_generic_scheduler_base_1_1_sched_candidate_1a310a170b7d2442d12634d53db262fb92" compoundref="_machine_scheduler_8h" startline="1132">llvm::GenericSchedulerBase::SchedCandidate::SU</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3afb16e35278ff80f34d2ad9889213b406" compoundref="_machine_scheduler_8h" startline="1083">TopDepthReduce</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a768a7f66e30d6b2d2d81ab1af56bf6c4" compoundref="_machine_scheduler_8h" startline="1083">TopPathReduce</references>
+        <references refid="classllvm_1_1_generic_scheduler_base_1ae9476ffbc2f3f195a2116b13f3186194" compoundref="_machine_scheduler_8h" startline="1177">TRI</references>
+        <referencedby refid="classllvm_1_1_g_c_n_sched_strategy_1a26b8231b39c104871f78b2da6dc1eff5" compoundref="_g_c_n_sched_strategy_8cpp" startline="364" endline="441">llvm::GCNSchedStrategy::pickNodeBidirectional</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1aef82bce77971408815c3b90979188d1e" compoundref="_machine_scheduler_8cpp" startline="3660" endline="3735">llvm::GenericScheduler::pickNodeBidirectional</referencedby>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1ae8950b6343e504e2112df60ee464603d" compoundref="_machine_scheduler_8cpp" startline="4005" endline="4083">llvm::PostGenericScheduler::pickNodeBidirectional</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_sched_strategy_1a2777a131d60f64dbebce2d7116f198c7" compoundref="_g_c_n_sched_strategy_8cpp" startline="322" endline="360">llvm::GCNSchedStrategy::pickNodeFromQueue</referencedby>
+        <referencedby refid="classllvm_1_1_generic_scheduler_1ad9779ec3011b4547f9a509af82d87a6e" compoundref="_machine_scheduler_8cpp" startline="3635" endline="3657">llvm::GenericScheduler::pickNodeFromQueue</referencedby>
+        <referencedby refid="classllvm_1_1_post_generic_scheduler_1a5db5287f3514fcc23bb3f93d769b3e96" compoundref="_machine_scheduler_8cpp" startline="3989" endline="4002">llvm::PostGenericScheduler::pickNodeFromQueue</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_generic_scheduler_base_1ae0460d556c22aeab1f569f865f217cd5" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GenericSchedulerBase::shouldReduceLatency</definition>
+        <argsstring>(const CandPolicy &amp;Policy, SchedBoundary &amp;CurrZone, bool ComputeRemLatency, unsigned &amp;RemLatency) const</argsstring>
+        <name>shouldReduceLatency</name>
+        <qualifiedname>llvm::GenericSchedulerBase::shouldReduceLatency</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_generic_scheduler_base_1_1_cand_policy" kindref="compound">CandPolicy</ref> &amp;</type>
+          <declname>Policy</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_sched_boundary" kindref="compound">SchedBoundary</ref> &amp;</type>
+          <declname>CurrZone</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ComputeRemLatency</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>RemLatency</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if the current cycle plus remaning latency is greater than the critical path in the scheduling region. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineScheduler.h" line="1195" column="8" bodyfile="lib/CodeGen/MachineScheduler.cpp" bodystart="3013" bodyend="3030"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for <ref refid="classllvm_1_1_generic_scheduler" kindref="compound">GenericScheduler</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class maintains information about scheduling candidates based on <ref refid="classllvm_1_1_target_sched_model" kindref="compound">TargetSchedModel</ref> making it easy to implement heuristics for either preRA or postRA scheduling. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>llvm::AArch64PostRASchedStrategy</label>
+        <link refid="classllvm_1_1_a_arch64_post_r_a_sched_strategy"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::GCNMaxILPSchedStrategy</label>
+        <link refid="classllvm_1_1_g_c_n_max_i_l_p_sched_strategy"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::GCNMaxMemoryClauseSchedStrategy</label>
+        <link refid="classllvm_1_1_g_c_n_max_memory_clause_sched_strategy"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::GCNMaxOccupancySchedStrategy</label>
+        <link refid="classllvm_1_1_g_c_n_max_occupancy_sched_strategy"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::GCNSchedStrategy</label>
+        <link refid="classllvm_1_1_g_c_n_sched_strategy"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::GenericScheduler</label>
+        <link refid="classllvm_1_1_generic_scheduler"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::GenericSchedulerBase</label>
+        <link refid="classllvm_1_1_generic_scheduler_base"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineSchedStrategy</label>
+        <link refid="classllvm_1_1_machine_sched_strategy"/>
+      </node>
+      <node id="11">
+        <label>llvm::PPCPostRASchedStrategy</label>
+        <link refid="classllvm_1_1_p_p_c_post_r_a_sched_strategy"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::PPCPreRASchedStrategy</label>
+        <link refid="classllvm_1_1_p_p_c_pre_r_a_sched_strategy"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::PostGenericScheduler</label>
+        <link refid="classllvm_1_1_post_generic_scheduler"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="78">
+        <label>BasicBlockSection</label>
+      </node>
+      <node id="68">
+        <label>CodeGenOptLevel</label>
+      </node>
+      <node id="66">
+        <label>Model</label>
+      </node>
+      <node id="91">
+        <label>DebugCompressionType</label>
+      </node>
+      <node id="84">
+        <label>DebuggerKind</label>
+      </node>
+      <node id="40">
+        <label>DomTreeBase&lt; MachineBasicBlock &gt;</label>
+        <link refid="classllvm_1_1_dominator_tree_base"/>
+        <childnode refid="41" relation="template-instance">
+          <edgelabel>&lt; T, false &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="54">
+        <label>DomTreeNodeBase&lt; NodeT &gt; *</label>
+      </node>
+      <node id="90">
+        <label>DwarfDirectory</label>
+      </node>
+      <node id="83">
+        <label>EABI</label>
+      </node>
+      <node id="88">
+        <label>EmitDwarfUnwindType</label>
+      </node>
+      <node id="85">
+        <label>ExceptionHandling</label>
+      </node>
+      <node id="81">
+        <label>FPOpFusionMode</label>
+      </node>
+      <node id="80">
+        <label>ABIType</label>
+      </node>
+      <node id="76">
+        <label>GlobalISelAbortMode</label>
+      </node>
+      <node id="65">
+        <label>Model</label>
+      </node>
+      <node id="12">
+        <label>Size_T</label>
+      </node>
+      <node id="101">
+        <label>SmallVectorSizeType&lt; InsertedPass &gt;</label>
+        <link refid="class_small_vector_size_type_3_01_inserted_pass_01_4"/>
+      </node>
+      <node id="48">
+        <label>SmallVectorSizeType&lt; NodeT * &gt;</label>
+        <link refid="class_small_vector_size_type_3_01_node_t_01_5_01_4"/>
+      </node>
+      <node id="25">
+        <label>SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_machine_function_1_1_debug_substitution_01_4"/>
+      </node>
+      <node id="116">
+        <label>SmallVectorSizeType&lt; unsigned &gt;</label>
+        <link refid="class_small_vector_size_type_3_01unsigned_01_4"/>
+      </node>
+      <node id="52">
+        <label>SmallVectorStorage&lt; std::unique_ptr&lt; DomTreeNodeBase&lt; NodeT &gt; &gt;, CalculateSmallVectorDefaultInlinedElements&lt;std::unique_ptr&lt; DomTreeNodeBase&lt; NodeT &gt; &gt;&gt;::value &gt;</label>
+      </node>
+      <node id="77">
+        <label>SwiftAsyncFramePointerMode</label>
+      </node>
+      <node id="82">
+        <label>Model</label>
+      </node>
+      <node id="13">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="15">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="89">
+        <label>int</label>
+      </node>
+      <node id="103">
+        <label>llvm::AAResults</label>
+        <link refid="classllvm_1_1_a_a_results"/>
+      </node>
+      <node id="62">
+        <label>llvm::DataLayout</label>
+        <link refid="classllvm_1_1_data_layout"/>
+      </node>
+      <node id="33">
+        <label>llvm::DebugEpochBase</label>
+        <link refid="classllvm_1_1_debug_epoch_base"/>
+      </node>
+      <node id="34">
+        <label>llvm::DenseMap&lt; KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>llvm::DenseMap&lt; AnalysisID, llvm::IdentifyingPassPtr &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+        <childnode refid="34" relation="template-instance">
+          <edgelabel>&lt; AnalysisID, llvm::IdentifyingPassPtr &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::DenseMap&lt; unsigned, llvm::MachineFunction::DebugPHIRegallocPos &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+        <childnode refid="34" relation="template-instance">
+          <edgelabel>&lt; unsigned, llvm::MachineFunction::DebugPHIRegallocPos &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="95">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;</label>
+        <link refid="classllvm_1_1_dominator_tree_base"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>DFSInfoValid</edgelabel>
+          <edgelabel>IsPostDominator</edgelabel>
+        </childnode>
+        <childnode refid="42" relation="usage">
+          <edgelabel>Delete</edgelabel>
+          <edgelabel>Insert</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>Roots</edgelabel>
+        </childnode>
+        <childnode refid="50" relation="usage">
+          <edgelabel>DomTreeNodes</edgelabel>
+        </childnode>
+        <childnode refid="53" relation="usage">
+          <edgelabel>NodeNumberMap</edgelabel>
+        </childnode>
+        <childnode refid="54" relation="usage">
+          <edgelabel>RootNode</edgelabel>
+        </childnode>
+        <childnode refid="55" relation="usage">
+          <edgelabel>Parent</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>BlockNumberEpoch</edgelabel>
+          <edgelabel>SlowQueries</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::GenericSchedulerBase</label>
+        <link refid="classllvm_1_1_generic_scheduler_base"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Context</edgelabel>
+        </childnode>
+        <childnode refid="106" relation="usage">
+          <edgelabel>SchedModel</edgelabel>
+        </childnode>
+        <childnode refid="107" relation="usage">
+          <edgelabel>TRI</edgelabel>
+        </childnode>
+        <childnode refid="109" relation="usage">
+          <edgelabel>RegionPolicy</edgelabel>
+        </childnode>
+        <childnode refid="110" relation="usage">
+          <edgelabel>Rem</edgelabel>
+        </childnode>
+      </node>
+      <node id="57">
+        <label>llvm::ImmutablePass</label>
+        <link refid="classllvm_1_1_immutable_pass"/>
+        <childnode refid="58" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>llvm::LiveIntervals</label>
+        <link refid="classllvm_1_1_live_intervals"/>
+      </node>
+      <node id="38">
+        <label>llvm::LoopInfoBase&lt; BlockT, LoopT &gt;</label>
+        <link refid="classllvm_1_1_loop_info_base"/>
+      </node>
+      <node id="37">
+        <label>llvm::LoopInfoBase&lt; MachineBasicBlock, MachineLoop &gt;</label>
+        <link refid="classllvm_1_1_loop_info_base"/>
+        <childnode refid="38" relation="template-instance">
+          <edgelabel>&lt; MachineBasicBlock, MachineLoop &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="108">
+        <label>llvm::MCRegisterInfo</label>
+        <link refid="classllvm_1_1_m_c_register_info"/>
+      </node>
+      <node id="86">
+        <label>llvm::MCTargetOptions</label>
+        <link refid="classllvm_1_1_m_c_target_options"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>AsmVerbose</edgelabel>
+          <edgelabel>Crel</edgelabel>
+          <edgelabel>Dwarf64</edgelabel>
+          <edgelabel>EmitCompactUnwindNonCanonical</edgelabel>
+          <edgelabel>FDPIC</edgelabel>
+          <edgelabel>ImplicitMapSyms</edgelabel>
+          <edgelabel>MCFatalWarnings</edgelabel>
+          <edgelabel>MCIncrementalLinkerCompatible</edgelabel>
+          <edgelabel>MCNoDeprecatedWarn</edgelabel>
+          <edgelabel>MCNoExecStack</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="87" relation="usage">
+          <edgelabel>OutputAsmVariant</edgelabel>
+        </childnode>
+        <childnode refid="88" relation="usage">
+          <edgelabel>EmitDwarfUnwind</edgelabel>
+        </childnode>
+        <childnode refid="89" relation="usage">
+          <edgelabel>DwarfVersion</edgelabel>
+        </childnode>
+        <childnode refid="90" relation="usage">
+          <edgelabel>MCUseDwarfDirectory</edgelabel>
+        </childnode>
+        <childnode refid="91" relation="usage">
+          <edgelabel>CompressDebugSections</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="usage">
+          <edgelabel>ABIName</edgelabel>
+          <edgelabel>Argv0</edgelabel>
+          <edgelabel>AsSecureLogFile</edgelabel>
+          <edgelabel>AssemblyLanguage</edgelabel>
+          <edgelabel>CommandlineArgs</edgelabel>
+          <edgelabel>SplitDwarfFile</edgelabel>
+        </childnode>
+        <childnode refid="92" relation="usage">
+          <edgelabel>IASSearchPaths</edgelabel>
+        </childnode>
+      </node>
+      <node id="39">
+        <label>llvm::MachineDominatorTree</label>
+        <link refid="classllvm_1_1_machine_dominator_tree"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::MachineFunction</label>
+        <link refid="classllvm_1_1_machine_function"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>VariableDbgInfos</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>DebugInstrNumberingCount</edgelabel>
+          <edgelabel>DebugOperandMemNumber</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>DebugValueSubstitutions</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>DebugPHIPositions</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>UseDebugInstrRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="36">
+        <label>llvm::MachineLoopInfo</label>
+        <link refid="classllvm_1_1_machine_loop_info"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::MachineSchedContext</label>
+        <link refid="structllvm_1_1_machine_sched_context"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>MF</edgelabel>
+        </childnode>
+        <childnode refid="36" relation="usage">
+          <edgelabel>MLI</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>MDT</edgelabel>
+        </childnode>
+        <childnode refid="56" relation="usage">
+          <edgelabel>PassConfig</edgelabel>
+        </childnode>
+        <childnode refid="103" relation="usage">
+          <edgelabel>AA</edgelabel>
+        </childnode>
+        <childnode refid="104" relation="usage">
+          <edgelabel>LIS</edgelabel>
+        </childnode>
+        <childnode refid="105" relation="usage">
+          <edgelabel>RegClassInfo</edgelabel>
+        </childnode>
+      </node>
+      <node id="109">
+        <label>llvm::MachineSchedPolicy</label>
+        <link refid="structllvm_1_1_machine_sched_policy"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>ComputeDFSResult</edgelabel>
+          <edgelabel>DisableLatencyHeuristic</edgelabel>
+          <edgelabel>OnlyBottomUp</edgelabel>
+          <edgelabel>OnlyTopDown</edgelabel>
+          <edgelabel>ShouldTrackLaneMasks</edgelabel>
+          <edgelabel>ShouldTrackPressure</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineSchedStrategy</label>
+        <link refid="classllvm_1_1_machine_sched_strategy"/>
+      </node>
+      <node id="58">
+        <label>llvm::ModulePass</label>
+        <link refid="classllvm_1_1_module_pass"/>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+      <node id="93">
+        <label>llvm::PassConfigImpl</label>
+        <link refid="classllvm_1_1_pass_config_impl"/>
+        <childnode refid="94" relation="usage">
+          <edgelabel>TargetPasses</edgelabel>
+        </childnode>
+        <childnode refid="96" relation="usage">
+          <edgelabel>InsertedPasses</edgelabel>
+        </childnode>
+      </node>
+      <node id="105">
+        <label>llvm::RegisterClassInfo</label>
+        <link refid="classllvm_1_1_register_class_info"/>
+      </node>
+      <node id="110">
+        <label>llvm::SchedRemainder</label>
+        <link refid="structllvm_1_1_sched_remainder"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>CriticalPath</edgelabel>
+          <edgelabel>CyclicCritPath</edgelabel>
+          <edgelabel>RemIssueCount</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>IsAcyclicLatencyLimited</edgelabel>
+        </childnode>
+        <childnode refid="111" relation="usage">
+          <edgelabel>RemainingCounts</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="18" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>llvm::SmallVector&lt; InsertedPass, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="97" relation="public-inheritance">
+        </childnode>
+        <childnode refid="102" relation="private-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; InsertedPass, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm::SmallVector&lt; NodeT *, IsPostDom ? 4 :1 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="44" relation="public-inheritance">
+        </childnode>
+        <childnode refid="49" relation="private-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; NodeT *, IsPostDom ? 4 :1 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::SmallVector&lt; VariableDbgInfo, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="14" relation="private-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; VariableDbgInfo, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::SmallVector&lt; llvm::MachineFunction::DebugSubstitution, 8 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+        <childnode refid="29" relation="private-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution, 8 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="50">
+        <label>llvm::SmallVector&lt; std::unique_ptr&lt; DomTreeNodeBase&lt; NodeT &gt; &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+        <childnode refid="52" relation="private-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; std::unique_ptr&lt; DomTreeNodeBase&lt; NodeT &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="111">
+        <label>llvm::SmallVector&lt; unsigned, 16 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="112" relation="public-inheritance">
+        </childnode>
+        <childnode refid="117" relation="private-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; unsigned, 16 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="100">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; InsertedPass &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="101" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; InsertedPass &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; NodeT * &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; NodeT * &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="115">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; unsigned &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="116" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; unsigned &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>llvm::SmallVectorImpl&lt; InsertedPass &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="98" relation="public-inheritance">
+        </childnode>
+        <childnode refid="28" relation="template-instance">
+          <edgelabel>&lt; InsertedPass &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="44">
+        <label>llvm::SmallVectorImpl&lt; NodeT * &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+        <childnode refid="28" relation="template-instance">
+          <edgelabel>&lt; NodeT * &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>llvm::SmallVectorImpl&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+        <childnode refid="28" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="51">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>llvm::SmallVectorImpl&lt; unsigned &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="113" relation="public-inheritance">
+        </childnode>
+        <childnode refid="28" relation="template-instance">
+          <edgelabel>&lt; unsigned &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="102">
+        <label>llvm::SmallVectorStorage&lt; InsertedPass, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="template-instance">
+          <edgelabel>&lt; InsertedPass, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="49">
+        <label>llvm::SmallVectorStorage&lt; NodeT *, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="template-instance">
+          <edgelabel>&lt; NodeT *, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm::SmallVectorStorage&lt; llvm::MachineFunction::DebugSubstitution, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="117">
+        <label>llvm::SmallVectorStorage&lt; unsigned, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="template-instance">
+          <edgelabel>&lt; unsigned, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="98">
+        <label>llvm::SmallVectorTemplateBase&lt; InsertedPass &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="99" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="template-instance">
+          <edgelabel>&lt; InsertedPass &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="45">
+        <label>llvm::SmallVectorTemplateBase&lt; NodeT * &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="template-instance">
+          <edgelabel>&lt; NodeT * &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="113">
+        <label>llvm::SmallVectorTemplateBase&lt; unsigned &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="114" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="template-instance">
+          <edgelabel>&lt; unsigned &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>llvm::SmallVectorTemplateCommon&lt; InsertedPass &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="100" relation="public-inheritance">
+        </childnode>
+        <childnode refid="26" relation="template-instance">
+          <edgelabel>&lt; InsertedPass &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm::SmallVectorTemplateCommon&lt; NodeT * &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+        <childnode refid="26" relation="template-instance">
+          <edgelabel>&lt; NodeT * &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+        <childnode refid="26" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="114">
+        <label>llvm::SmallVectorTemplateCommon&lt; unsigned &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="115" relation="public-inheritance">
+        </childnode>
+        <childnode refid="26" relation="template-instance">
+          <edgelabel>&lt; unsigned &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>llvm::Target</label>
+        <link refid="classllvm_1_1_target"/>
+      </node>
+      <node id="60">
+        <label>llvm::TargetMachine</label>
+        <link refid="classllvm_1_1_target_machine"/>
+        <childnode refid="61" relation="usage">
+          <edgelabel>TheTarget</edgelabel>
+        </childnode>
+        <childnode refid="62" relation="usage">
+          <edgelabel>DL</edgelabel>
+        </childnode>
+        <childnode refid="63" relation="usage">
+          <edgelabel>TargetTriple</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="usage">
+          <edgelabel>TargetCPU</edgelabel>
+          <edgelabel>TargetFS</edgelabel>
+        </childnode>
+        <childnode refid="65" relation="usage">
+          <edgelabel>RM</edgelabel>
+        </childnode>
+        <childnode refid="66" relation="usage">
+          <edgelabel>CMModel</edgelabel>
+        </childnode>
+        <childnode refid="67" relation="usage">
+          <edgelabel>LargeDataThreshold</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>OptLevel</edgelabel>
+        </childnode>
+        <childnode refid="69" relation="usage">
+          <edgelabel>AsmInfo</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>MRI</edgelabel>
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>MII</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>STI</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>DefaultSjLjDataSize</edgelabel>
+          <edgelabel>O0WantsFastISel</edgelabel>
+          <edgelabel>RequireStructuredCFG</edgelabel>
+        </childnode>
+        <childnode refid="73" relation="usage">
+          <edgelabel>PGOOption</edgelabel>
+        </childnode>
+        <childnode refid="74" relation="usage">
+          <edgelabel>Options</edgelabel>
+        </childnode>
+      </node>
+      <node id="74">
+        <label>llvm::TargetOptions</label>
+        <link refid="classllvm_1_1_target_options"/>
+        <childnode refid="75" relation="usage">
+          <edgelabel>BinutilsVersion</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>ApproxFuncFPMath</edgelabel>
+          <edgelabel>BBAddrMap</edgelabel>
+          <edgelabel>DataSections</edgelabel>
+          <edgelabel>DebugStrictDwarf</edgelabel>
+          <edgelabel>DisableIntegratedAS</edgelabel>
+          <edgelabel>EmitAddrsig</edgelabel>
+          <edgelabel>EmitCallSiteInfo</edgelabel>
+          <edgelabel>EmitStackSizeSection</edgelabel>
+          <edgelabel>EmulatedTLS</edgelabel>
+          <edgelabel>EnableAIXExtendedAltivecABI</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="76" relation="usage">
+          <edgelabel>GlobalISelAbort</edgelabel>
+        </childnode>
+        <childnode refid="77" relation="usage">
+          <edgelabel>SwiftAsyncFramePointer</edgelabel>
+        </childnode>
+        <childnode refid="78" relation="usage">
+          <edgelabel>BBSections</edgelabel>
+        </childnode>
+        <childnode refid="79" relation="usage">
+          <edgelabel>BBSectionsFuncListBuf</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="usage">
+          <edgelabel>ObjectFilenameForDebug</edgelabel>
+          <edgelabel>StackUsageOutput</edgelabel>
+        </childnode>
+        <childnode refid="80" relation="usage">
+          <edgelabel>FloatABIType</edgelabel>
+        </childnode>
+        <childnode refid="81" relation="usage">
+          <edgelabel>AllowFPOpFusion</edgelabel>
+        </childnode>
+        <childnode refid="82" relation="usage">
+          <edgelabel>ThreadModel</edgelabel>
+        </childnode>
+        <childnode refid="83" relation="usage">
+          <edgelabel>EABIVersion</edgelabel>
+        </childnode>
+        <childnode refid="84" relation="usage">
+          <edgelabel>DebuggerTuning</edgelabel>
+        </childnode>
+        <childnode refid="85" relation="usage">
+          <edgelabel>ExceptionModel</edgelabel>
+        </childnode>
+        <childnode refid="86" relation="usage">
+          <edgelabel>MCOptions</edgelabel>
+        </childnode>
+      </node>
+      <node id="56">
+        <label>llvm::TargetPassConfig</label>
+        <link refid="classllvm_1_1_target_pass_config"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+        <childnode refid="60" relation="usage">
+          <edgelabel>TM</edgelabel>
+        </childnode>
+        <childnode refid="93" relation="usage">
+          <edgelabel>Impl</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>DisableVerify</edgelabel>
+          <edgelabel>EnableLoopTermFold</edgelabel>
+          <edgelabel>EnableSinkAndFold</edgelabel>
+          <edgelabel>EnableTailMerge</edgelabel>
+          <edgelabel>Initialized</edgelabel>
+          <edgelabel>RequireCodeGenSCCOrder</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+      <node id="107">
+        <label>llvm::TargetRegisterInfo</label>
+        <link refid="classllvm_1_1_target_register_info"/>
+        <childnode refid="108" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>llvm::TargetSchedModel</label>
+        <link refid="classllvm_1_1_target_sched_model"/>
+      </node>
+      <node id="63">
+        <label>llvm::Triple</label>
+        <link refid="classllvm_1_1_triple"/>
+      </node>
+      <node id="42">
+        <label>static constexpr UpdateKind</label>
+      </node>
+      <node id="53">
+        <label>conditional_t&lt;!GraphHasNodeNumbers&lt; NodeT * &gt;, llvm::DenseMap&lt; const NodeT *, unsigned &gt;, std::tuple&lt;&gt; &gt;</label>
+      </node>
+      <node id="73">
+        <label>optional&lt; llvm::PGOOptions &gt;</label>
+      </node>
+      <node id="87">
+        <label>optional&lt; unsigned &gt;</label>
+      </node>
+      <node id="75">
+        <label>pair&lt; int, int &gt;</label>
+      </node>
+      <node id="79">
+        <label>shared_ptr&lt; llvm::MemoryBuffer &gt;</label>
+      </node>
+      <node id="64">
+        <label>string</label>
+      </node>
+      <node id="69">
+        <label>unique_ptr&lt; const llvm::MCAsmInfo &gt;</label>
+      </node>
+      <node id="71">
+        <label>unique_ptr&lt; const llvm::MCInstrInfo &gt;</label>
+      </node>
+      <node id="70">
+        <label>unique_ptr&lt; const llvm::MCRegisterInfo &gt;</label>
+      </node>
+      <node id="72">
+        <label>unique_ptr&lt; const llvm::MCSubtargetInfo &gt;</label>
+      </node>
+      <node id="92">
+        <label>vector&lt; std::string &gt;</label>
+      </node>
+      <node id="55">
+        <label>ParentPtr</label>
+      </node>
+      <node id="67">
+        <label>uint64_t</label>
+        <link refid="classuint64__t"/>
+      </node>
+      <node id="19">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+      <node id="11">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/CodeGen/MachineScheduler.h" line="1076" column="1" bodyfile="include/llvm/CodeGen/MachineScheduler.h" bodystart="1076" bodyend="1197"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a8ea4d71243c1b82d5e35065d580c1e49" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>BotHeightReduce</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3ad3c3c8a47c777d0f591ca18eaf7000d4" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>BotPathReduce</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>CandReason</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a5a905614458af47ec4a5054a53d23e1b" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>Cluster</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ad0f9f52bf2f7c54d9546cedd1c47ef45" prot="protected" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>Context</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a9b216890fb3108d84248b54044fe2670" prot="public" virt="virtual"><scope>llvm::GenericSchedulerBase</scope><name>doMBBSchedRegionsTopDown</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a9671665fa833900c1b7d4dafe8f7c93e" prot="public" virt="virtual"><scope>llvm::GenericSchedulerBase</scope><name>dumpPolicy</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a2ecebd8a29fabb301a5799dc4d034667" prot="public" virt="virtual"><scope>llvm::GenericSchedulerBase</scope><name>enterMBB</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1abf7a31296b8d3ede091a25b7777c3a15" prot="protected" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>GenericSchedulerBase</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ab29d166bcf9429b14ba2db21e948ac6d" prot="protected" virt="virtual"><scope>llvm::GenericSchedulerBase</scope><name>getPolicy</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1a9df77ae80f822b788cb2464992a05bc1" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>getReasonStr</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a42eed718d961aaef1f3715e91e3ccaf7" prot="public" virt="pure-virtual"><scope>llvm::GenericSchedulerBase</scope><name>initialize</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1ae3ec4fd225f0e252e6dfabc03d0903bf" prot="public" virt="virtual"><scope>llvm::GenericSchedulerBase</scope><name>initPolicy</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a1767939c59515562b576fc23075ef7df" prot="public" virt="virtual"><scope>llvm::GenericSchedulerBase</scope><name>leaveMBB</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3af9d4eb6d4d0ca011ccbb24f139c9bf73" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>NextDefUse</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a810d389a7def234e94c2631683ab0ece" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>NoCand</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3aa00a8e5741a604eb07320e981473b4e7" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>NodeOrder</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a3e5ec7d7634a70f61fd64c3ef22d02f1" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>Only1</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3ab58c08e8fa9324ebf332e11601ec6c0d" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>PhysReg</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1ab8f81fac35fcedf80a58ef268409d328" prot="public" virt="pure-virtual"><scope>llvm::GenericSchedulerBase</scope><name>pickNode</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a974161ce84e375b6d40bd8855c29dd7f" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>RegCritical</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a01d264553167fb005aba23a6d2a6e9bb" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>RegExcess</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1a8e13153e8ed7676ddbba73dd9318d35e" prot="protected" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>RegionPolicy</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1af9b2f5ad8048d175fc88cbd6684ac720" prot="public" virt="virtual"><scope>llvm::GenericSchedulerBase</scope><name>registerRoots</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a01ef8d8423fe645e50ad5a179b4f4483" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>RegMax</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1aee56664b72ea174c22ef095dc828a0b5" prot="public" virt="pure-virtual"><scope>llvm::GenericSchedulerBase</scope><name>releaseBottomNode</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a870625307391612fc91db410cf9820b0" prot="public" virt="pure-virtual"><scope>llvm::GenericSchedulerBase</scope><name>releaseTopNode</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1a3cab76d375dbb626e5179b96f84fd3dc" prot="protected" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>Rem</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a07409a8a5b9657af23f0a1c962f5c0c1" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>ResourceDemand</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a56637d3435d7e1953a615371cfe4d5ec" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>ResourceReduce</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1a9730ea0068843718868a8667f52e3680" prot="protected" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>SchedModel</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a3be6a6d3b879d048d8df6ae13c7b9698" prot="public" virt="pure-virtual"><scope>llvm::GenericSchedulerBase</scope><name>schedNode</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a3a8386beb0371134711bb85e91c5e616" prot="public" virt="virtual"><scope>llvm::GenericSchedulerBase</scope><name>scheduleTree</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1a8668556014566994c07b21391762551b" prot="protected" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>setPolicy</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0460d556c22aeab1f569f865f217cd5" prot="private" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>shouldReduceLatency</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1af1f5d487c749cd8b3fe868e48b80a84d" prot="public" virt="virtual"><scope>llvm::GenericSchedulerBase</scope><name>shouldTrackLaneMasks</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a0ee5c4dca10fa653801aa73cf1723f84" prot="public" virt="virtual"><scope>llvm::GenericSchedulerBase</scope><name>shouldTrackPressure</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3ab6aae8902e724a36ed16d537784777a2" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>Stall</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3afb16e35278ff80f34d2ad9889213b406" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>TopDepthReduce</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3a768a7f66e30d6b2d2d81ab1af56bf6c4" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>TopPathReduce</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1a0fc28b204833d49b88dbeceb366b7439" prot="protected" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>traceCandidate</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae9476ffbc2f3f195a2116b13f3186194" prot="protected" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>TRI</name></member>
+      <member refid="classllvm_1_1_generic_scheduler_base_1ae0da1bc94e326020069c0f44170a48d3aed8b719fe1a669c2fed4bacc6f46e8df" prot="public" virt="non-virtual"><scope>llvm::GenericSchedulerBase</scope><name>Weak</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a3d07f24fe972db3fc65bd905a95a5bdb" prot="public" virt="virtual"><scope>llvm::GenericSchedulerBase</scope><name>~MachineSchedStrategy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

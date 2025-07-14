@@ -1,0 +1,1051 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_pattern" kind="class" language="C++" prot="public">
+    <compoundname>llvm::Pattern</compoundname>
+    <includes refid="_file_check_impl_8h" local="yes">FileCheck/FileCheckImpl.h</includes>
+    <innerclass refid="structllvm_1_1_pattern_1_1_match" prot="public">llvm::Pattern::Match</innerclass>
+    <innerclass refid="structllvm_1_1_pattern_1_1_match_result" prot="public">llvm::Pattern::MatchResult</innerclass>
+    <innerclass refid="structllvm_1_1_pattern_1_1_numeric_variable_match" prot="private">llvm::Pattern::NumericVariableMatch</innerclass>
+    <innerclass refid="structllvm_1_1_pattern_1_1_variable_properties" prot="public">llvm::Pattern::VariableProperties</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1_pattern_1a66f908b43f1abb512fe86d06c38ce330" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>AllowedOperand</name>
+        <qualifiedname>llvm::Pattern::AllowedOperand</qualifiedname>
+        <enumvalue id="classllvm_1_1_pattern_1a66f908b43f1abb512fe86d06c38ce330a06246d2d0759469d1a9293b638f5b12d" prot="private">
+          <name>LineVar</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_pattern_1a66f908b43f1abb512fe86d06c38ce330a51d29b58d058d936eae9ae149ea54314" prot="private">
+          <name>LegacyLiteral</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_pattern_1a66f908b43f1abb512fe86d06c38ce330aed36a1ef76a59ee3f15180e0441188ad" prot="private">
+          <name>Any</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="759" column="3" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="759" bodyend="759"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_pattern_1ad0b44d4483629dac9c74e91c90820521" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+        <definition>SMLoc llvm::Pattern::PatternLoc</definition>
+        <argsstring></argsstring>
+        <name>PatternLoc</name>
+        <qualifiedname>llvm::Pattern::PatternLoc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="566" column="9" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="566" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_pattern_1a8274e7720d93acf9904b90005d67e377" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef llvm::Pattern::FixedStr</definition>
+        <argsstring></argsstring>
+        <name>FixedStr</name>
+        <qualifiedname>llvm::Pattern::FixedStr</qualifiedname>
+        <briefdescription>
+<para>A fixed string to match as the pattern or empty if this pattern requires a regex match. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="570" column="13" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="570" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_pattern_1a63cf4dbaca95beea07b39b1c9859be7f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::Pattern::RegExStr</definition>
+        <argsstring></argsstring>
+        <name>RegExStr</name>
+        <qualifiedname>llvm::Pattern::RegExStr</qualifiedname>
+        <briefdescription>
+<para>A regex string to match as the pattern or empty if this pattern requires a fixed string to match. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="574" column="15" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="574" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_pattern_1aff56304525c840e6174b955002dfac1f" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_substitution" kindref="compound">Substitution</ref> * &gt;</type>
+        <definition>std::vector&lt;Substitution *&gt; llvm::Pattern::Substitutions</definition>
+        <argsstring></argsstring>
+        <name>Substitutions</name>
+        <qualifiedname>llvm::Pattern::Substitutions</qualifiedname>
+        <briefdescription>
+<para>Entries in this vector represent a substitution of a string variable or an expression in the RegExStr regex at match time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For example, in the case of a CHECK directive with the pattern &quot;foo[[bar]]baz[[#N+1]]&quot;, RegExStr will contain &quot;foobaz&quot; and we&apos;ll get two entries in this vector that tells us to insert the value of string variable &quot;bar&quot; at offset 3 and the value of expression &quot;N+1&quot; at offset 6. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="582" column="15" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="582" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_pattern_1a8dc704521498407c55d187400bcfba6e" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::map&lt;StringRef, unsigned&gt; llvm::Pattern::VariableDefs</definition>
+        <argsstring></argsstring>
+        <name>VariableDefs</name>
+        <qualifiedname>llvm::Pattern::VariableDefs</qualifiedname>
+        <briefdescription>
+<para>Maps names of string variables defined in a pattern to the number of their parenthesis group in RegExStr capturing their last definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>E.g. for the pattern &quot;foo[[bar:.*]]baz([[bar]][[QUUX]][[bar:.*]])&quot;, RegExStr will be &quot;foo(.*)baz(\1&lt;quux value&gt;(.*))&quot; where &lt;quux value&gt; is the value captured for QUUX on the earlier line where it was defined, and VariableDefs will map &quot;bar&quot; to the third parenthesis group which captures the second definition of &quot;bar&quot;.</para>
+<para>Note: uses std::map rather than <ref refid="classllvm_1_1_string_map" kindref="compound">StringMap</ref> to be able to get the key when iterating over values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="595" column="12" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="595" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_pattern_1acfd0167c30287e0d447043bd7d9f25cc" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_map" kindref="compound">StringMap</ref>&lt; NumericVariableMatch &gt;</type>
+        <definition>StringMap&lt;NumericVariableMatch&gt; llvm::Pattern::NumericVariableDefs</definition>
+        <argsstring></argsstring>
+        <name>NumericVariableDefs</name>
+        <qualifiedname>llvm::Pattern::NumericVariableDefs</qualifiedname>
+        <briefdescription>
+<para>Holds the number of the parenthesis group in RegExStr and pointer to the corresponding <ref refid="classllvm_1_1_numeric_variable" kindref="compound">NumericVariable</ref> class instance of all numeric variable definitions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used to set the matched value of all those variables. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="614" column="13" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="614" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_pattern_1a92ca0f2165075c5cc9b914a985c59181" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_file_check_pattern_context" kindref="compound">FileCheckPatternContext</ref> *</type>
+        <definition>FileCheckPatternContext* llvm::Pattern::Context</definition>
+        <argsstring></argsstring>
+        <name>Context</name>
+        <qualifiedname>llvm::Pattern::Context</qualifiedname>
+        <briefdescription>
+<para>Pointer to a class instance holding the global state shared by all patterns: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>separate tables with the values of live string and numeric variables respectively at the start of any given CHECK line;</para>
+</listitem><listitem><para>table holding whether a string variable has been defined at any given point during the parsing phase. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="622" column="27" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="622" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_pattern_1a7a5f81ce94c4a9ae6f92b4d750fc447c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_check_1_1_file_check_type" kindref="compound">Check::FileCheckType</ref></type>
+        <definition>Check::FileCheckType llvm::Pattern::CheckTy</definition>
+        <argsstring></argsstring>
+        <name>CheckTy</name>
+        <qualifiedname>llvm::Pattern::CheckTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="624" column="24" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="624" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_pattern_1a72caffe6ede6d89a559dd833157ea5bd" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classsize__t" kindref="compound">size_t</ref> &gt;</type>
+        <definition>std::optional&lt;size_t&gt; llvm::Pattern::LineNumber</definition>
+        <argsstring></argsstring>
+        <name>LineNumber</name>
+        <qualifiedname>llvm::Pattern::LineNumber</qualifiedname>
+        <briefdescription>
+<para>Line number for this CHECK pattern or std::nullopt if it is an implicit pattern. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used to determine whether a variable definition is made on an earlier line to the one with this CHECK. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="629" column="17" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="629" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_pattern_1a716c6ef466cab85e024e5154118b83ca" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::Pattern::IgnoreCase</definition>
+        <argsstring></argsstring>
+        <name>IgnoreCase</name>
+        <qualifiedname>llvm::Pattern::IgnoreCase</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Ignore case while matching if set to true. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="632" column="8" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="632" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a8ca22b7cb255f175dc6918f3d2171834" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::Pattern::Pattern</definition>
+        <argsstring>(Check::FileCheckType Ty, FileCheckPatternContext *Context, std::optional&lt; size_t &gt; Line=std::nullopt)</argsstring>
+        <name>Pattern</name>
+        <qualifiedname>llvm::Pattern::Pattern</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_check_1_1_file_check_type" kindref="compound">Check::FileCheckType</ref></type>
+          <declname>Ty</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_file_check_pattern_context" kindref="compound">FileCheckPatternContext</ref> *</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classsize__t" kindref="compound">size_t</ref> &gt;</type>
+          <declname>Line</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="635" column="3" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="635" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a695dab5368e4f50fb49e8849c144b5d3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+        <definition>SMLoc llvm::Pattern::getLoc</definition>
+        <argsstring>() const</argsstring>
+        <name>getLoc</name>
+        <qualifiedname>llvm::Pattern::getLoc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the location in source code. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="640" column="9" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="640" bodyend="640"/>
+        <referencedby refid="classllvm_1_1_pattern_1a3331028c9eef66f4022ac3efa310af7d" compoundref="_file_check_8cpp" startline="1313" endline="1357">printFuzzyMatch</referencedby>
+        <referencedby refid="classllvm_1_1_pattern_1a3a4e8a88439506522a2a0f3850802d3f" compoundref="_file_check_8cpp" startline="1205" endline="1237">printSubstitutions</referencedby>
+        <referencedby refid="classllvm_1_1_pattern_1a91f729b936911342abb6b606e0606cdc" compoundref="_file_check_8cpp" startline="1239" endline="1290">printVariableDefs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a6b4c59c2efdda38066089fa98dd6134a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_file_check_pattern_context" kindref="compound">FileCheckPatternContext</ref> *</type>
+        <definition>FileCheckPatternContext * llvm::Pattern::getContext</definition>
+        <argsstring>() const</argsstring>
+        <name>getContext</name>
+        <qualifiedname>llvm::Pattern::getContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the pointer to the global state for all patterns in this <ref refid="classllvm_1_1_file_check" kindref="compound">FileCheck</ref> instance. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="644" column="27" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="644" bodyend="644"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1ae173fad50624dec05877e86be7b7e429" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool Pattern::parsePattern</definition>
+        <argsstring>(StringRef PatternStr, StringRef Prefix, SourceMgr &amp;SM, const FileCheckRequest &amp;Req)</argsstring>
+        <name>parsePattern</name>
+        <qualifiedname>llvm::Pattern::parsePattern</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>PatternStr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Prefix</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_file_check_request" kindref="compound">FileCheckRequest</ref> &amp;</type>
+          <declname>Req</declname>
+        </param>
+        <briefdescription>
+<para>Parses the pattern in <computeroutput>PatternStr</computeroutput> and initializes this <ref refid="classllvm_1_1_pattern" kindref="compound">Pattern</ref> instance accordingly. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>Prefix</computeroutput> provides which prefix is being matched, <computeroutput>Req</computeroutput> describes the global options that influence the parsing such as whitespace canonicalization, <computeroutput>SM</computeroutput> provides the <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> used for error reports. <simplesect kind="return"><para>true in case of an error, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="683" column="8" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="764" bodyend="1055"/>
+        <references refid="namespacellvm_1aa1e1474f15df639f0d874b21f15666f7" compoundref="llvm_2_support_2_error_8h" startline="756" endline="768">llvm::cantFail</references>
+        <references refid="namespacellvm_1_1_check_1a61538d341f95c09113a9a0d0434d8dcca80e33945f521f203f2a632bc0f2041e5" compoundref="_file_check_8h" startline="58">llvm::Check::CheckEmpty</references>
+        <references refid="namespacellvm_1_1_check_1a61538d341f95c09113a9a0d0434d8dcca4f9655da5198915aff91bd25115d22fa" compoundref="_file_check_8h" startline="55">llvm::Check::CheckNot</references>
+        <references refid="classllvm_1_1_string_ref_1a8a7fac667f8ae35285b8b53d9f2dd9dc" compoundref="_string_ref_8h" startline="635" endline="641">llvm::StringRef::consume_front</references>
+        <references refid="classllvm_1_1_string_ref_1a83a294111af6d4412163b209725ca556" compoundref="_string_ref_8h" startline="424" endline="426">llvm::StringRef::contains</references>
+        <references refid="classllvm_1_1_string_ref_1a7b0fa1a82461032cdf16b7f6c59f0a6a" compoundref="_string_ref_8h" startline="144" endline="144">llvm::StringRef::data</references>
+        <references refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777adaf658d40b0b4eb15c0350864c87c2b8" compoundref="_support_2_source_mgr_8h" startline="34">llvm::SourceMgr::DK_Error</references>
+        <references refid="classllvm_1_1_string_ref_1a2dc80c585ad5882da8cae7b5968f7e74" compoundref="_string_ref_8h" startline="147" endline="147">llvm::StringRef::empty</references>
+        <references refid="namespacellvm_1a9a7b5c68c90f85baaedaa854cc5002cc" compoundref="raw__ostream_8cpp" startline="907" endline="915">llvm::errs</references>
+        <references refid="classllvm_1_1_regex_1a2f9ca9cf19b3d8803cfb233c2cb32af4" compoundref="_regex_8cpp" startline="239" endline="248">llvm::Regex::escape</references>
+        <references refid="classllvm_1_1_string_ref_1aab312a8386488873bac2eddfc67c22be" compoundref="_string_ref_8h" startline="297" endline="299">llvm::StringRef::find</references>
+        <references refid="classllvm_1_1_string_ref_1a93b15a8c0022febbe39d17ab933737a8" compoundref="_string_ref_8h" startline="377" endline="379">llvm::StringRef::find_first_of</references>
+        <references refid="namespacellvm_1ab7530cd22b8952cb41774507dd40c6f3a520d0db389f362bf79ef56ca0af3dcab" compoundref="_format_variadic_8h" startline="46">llvm::Format</references>
+        <references refid="classllvm_1_1_s_m_loc_1a16ebb09610e55f63cfc55f28e3a56ad5" compoundref="_s_m_loc_8h" startline="36" endline="40">llvm::SMLoc::getFromPointer</references>
+        <references refid="structllvm_1_1_file_check_request_1ae884000984dd09d1cfbb3628ea820ed2" compoundref="_file_check_8h" startline="39">llvm::FileCheckRequest::IgnoreCase</references>
+        <references refid="namespacellvm_1a065ed35b75b9eeb5cca1aa73bcae7183" compoundref="_testing_2_support_2_error_8cpp" startline="65" endline="73">llvm::logAllUnhandledErrors</references>
+        <references refid="structllvm_1_1_file_check_request_1aa028a0ee1d4971af329f05d81c9b2bfd" compoundref="_file_check_8h" startline="38">llvm::FileCheckRequest::MatchFullLines</references>
+        <references refid="structllvm_1_1_file_check_request_1a568ab5f904650e1b022c8ec1d4c0fe06" compoundref="_file_check_8h" startline="33">llvm::FileCheckRequest::NoCanonicalizeWhiteSpace</references>
+        <references refid="classllvm_1_1_string_ref_1ad0f54a163ac500b144590640c6f1eb6b" compoundref="_string_ref_8h" startline="53">llvm::StringRef::npos</references>
+        <references refid="classllvm_1_1_pattern_1a7d176c2f7da2816d871ca9dbecd13b7e" compoundref="_file_check_8cpp" startline="617" endline="762">parseNumericSubstitutionBlock</references>
+        <references refid="classllvm_1_1_pattern_1a21cf4e03d53e49c96bf3f26cafdf7e82" compoundref="_file_check_8cpp" startline="289" endline="317">parseVariable</references>
+        <references refid="classllvm_1_1_source_mgr_1a5fb499d84f3af1286e8d508a760aa396" compoundref="_source_mgr_8cpp" startline="352" endline="357">llvm::SourceMgr::PrintMessage</references>
+        <references refid="classllvm_1_1_string_ref_1a9b52404a8d2877d3b32ebb5d1f5c72ff" compoundref="_string_ref_8h" startline="803" endline="805">llvm::StringRef::rtrim</references>
+        <references refid="classllvm_1_1_string_ref_1a5db9240c74644c67759dd0f901fc3c7d" compoundref="_string_ref_8h" startline="150" endline="150">llvm::StringRef::size</references>
+        <references refid="classllvm_1_1_string_ref_1a2cd8968ff703aaeb395dcd63f6805ff1" compoundref="_string_ref_8h" startline="265" endline="268">llvm::StringRef::starts_with</references>
+        <references refid="classllvm_1_1_string_ref_1a25f1fd81f2132805676c82ab8ae0c109" compoundref="_string_ref_8h" startline="571" endline="575">llvm::StringRef::substr</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a23cdde8b9bdd40fd4a93d3635ca77dc6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_pattern_1_1_match_result" kindref="compound">MatchResult</ref></type>
+        <definition>Pattern::MatchResult Pattern::match</definition>
+        <argsstring>(StringRef Buffer, const SourceMgr &amp;SM) const</argsstring>
+        <name>match</name>
+        <qualifiedname>llvm::Pattern::match</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Buffer</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+<para>Matches the pattern string against the input buffer <computeroutput>Buffer</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>either (1) an error resulting in no match or (2) a match possibly with an error encountered while processing the match.</para>
+</simplesect>
+The GlobalVariableTable <ref refid="classllvm_1_1_string_map" kindref="compound">StringMap</ref> in the <ref refid="classllvm_1_1_file_check_pattern_context" kindref="compound">FileCheckPatternContext</ref> class instance provides the current values of <ref refid="classllvm_1_1_file_check" kindref="compound">FileCheck</ref> string variables and is updated if this match defines new values. Likewise, the GlobalNumericVariableTable <ref refid="classllvm_1_1_string_map" kindref="compound">StringMap</ref> in the same class provides the current values of <ref refid="classllvm_1_1_file_check" kindref="compound">FileCheck</ref> numeric variables and is updated if this match defines new numeric values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="708" column="15" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="1077" bodyend="1186"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1_check_1a61538d341f95c09113a9a0d0434d8dcca80e33945f521f203f2a632bc0f2041e5" compoundref="_file_check_8h" startline="58">llvm::Check::CheckEmpty</references>
+        <references refid="namespacellvm_1_1_check_1a61538d341f95c09113a9a0d0434d8dccaba2d525032487e7def52c8154b19e29c" compoundref="_file_check_8h" startline="63">llvm::Check::CheckEOF</references>
+        <references refid="classllvm_1_1_string_ref_1a7b0fa1a82461032cdf16b7f6c59f0a6a" compoundref="_string_ref_8h" startline="144" endline="144">llvm::StringRef::data</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_string_ref_1aab312a8386488873bac2eddfc67c22be" compoundref="_string_ref_8h" startline="297" endline="299">llvm::StringRef::find</references>
+        <references refid="classllvm_1_1_string_ref_1abc37e42bcf44968ae55ddc8c69748150" compoundref="_string_ref_8cpp" startline="57" endline="60">llvm::StringRef::find_insensitive</references>
+        <references refid="namespacellvm_1ab7530cd22b8952cb41774507dd40c6f3a520d0db389f362bf79ef56ca0af3dcab" compoundref="_format_variadic_8h" startline="46">llvm::Format</references>
+        <references refid="classllvm_1_1_numeric_variable_1a307e40ec1e902bd8fa29819520ff33a9" compoundref="_file_check_impl_8h" startline="245" endline="245">llvm::NumericVariable::getImplicitFormat</references>
+        <references refid="classllvm_1_1_substitution_1a4cb8271788f45323ee85e99c0621e189" compoundref="_file_check_impl_8h" startline="367" endline="367">llvm::Substitution::getIndex</references>
+        <references refid="classllvm_1_1_substitution_1ad78740e164cb18ead36b8353f45e829f">llvm::Substitution::getResult</references>
+        <references refid="namespacellvm_1a3285d0c2736154c3ea72dbecaa446eec" compoundref="llvm_2_support_2_error_8h" startline="954" endline="971">llvm::handleErrors</references>
+        <references refid="classllvm_1_1_regex_1a1cc1c3ad43ad382ef8d864fe9c16e25ca5f9b72100ddf65c55baa3cd82e778c4b" compoundref="_regex_8h" startline="33">llvm::Regex::IgnoreCase</references>
+        <references refid="namespacellvm_1a71210b99d2ef87236d8505c1771a7ab1" compoundref="llvm_2_support_2_error_8h" startline="438" endline="440">llvm::joinErrors</references>
+        <references refid="structllvm_1_1_pattern_1_1_match_1a026da53ebcf239c0c67deee806165d38" compoundref="_file_check_impl_8h" startline="687">llvm::Pattern::Match::Len</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="classllvm_1_1_pattern_1a23cdde8b9bdd40fd4a93d3635ca77dc6" compoundref="_file_check_8cpp" startline="1077" endline="1186">match</references>
+        <references refid="classllvm_1_1_regex_1a1cc1c3ad43ad382ef8d864fe9c16e25ca58612c80b543a7e989edd919e009b25b" compoundref="_regex_8h" startline="39">llvm::Regex::Newline</references>
+        <references refid="classllvm_1_1_string_ref_1ad0f54a163ac500b144590640c6f1eb6b" compoundref="_string_ref_8h" startline="53">llvm::StringRef::npos</references>
+        <references refid="structllvm_1_1_pattern_1_1_match_1ac72cc457a7bb55b7ea1030ebbd600e72" compoundref="_file_check_impl_8h" startline="686">llvm::Pattern::Match::Pos</references>
+        <references refid="classllvm_1_1_numeric_variable_1a2a13f0b809c580616bb241ffda9c31d6" compoundref="_file_check_impl_8h" startline="260" endline="264">llvm::NumericVariable::setValue</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <references refid="classllvm_1_1_string_ref_1a5db9240c74644c67759dd0f901fc3c7d" compoundref="_string_ref_8h" startline="150" endline="150">llvm::StringRef::size</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <referencedby refid="namespacellvm_1_1ifs_1ad3d6148db61bf742f0e6a2c6a0f43fd9" compoundref="_i_f_s_handler_8cpp" startline="348" endline="372">llvm::ifs::filterIFSSyms</referencedby>
+        <referencedby refid="classllvm_1_1_pattern_1a23cdde8b9bdd40fd4a93d3635ca77dc6" compoundref="_file_check_8cpp" startline="1077" endline="1186">match</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a3a4e8a88439506522a2a0f3850802d3f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pattern::printSubstitutions</definition>
+        <argsstring>(const SourceMgr &amp;SM, StringRef Buffer, SMRange MatchRange, FileCheckDiag::MatchType MatchTy, std::vector&lt; FileCheckDiag &gt; *Diags) const</argsstring>
+        <name>printSubstitutions</name>
+        <qualifiedname>llvm::Pattern::printSubstitutions</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Buffer</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_range" kindref="compound">SMRange</ref></type>
+          <declname>MatchRange</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0" kindref="member">FileCheckDiag::MatchType</ref></type>
+          <declname>MatchTy</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="structllvm_1_1_file_check_diag" kindref="compound">FileCheckDiag</ref> &gt; *</type>
+          <declname>Diags</declname>
+        </param>
+        <briefdescription>
+<para>Prints the value of successful substitutions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="710" column="8" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="1205" bodyend="1237"/>
+        <references refid="namespacellvm_1aee0e70be66536b9ef7b65ae2e5a45959" compoundref="llvm_2_support_2_error_8h" startline="1069" endline="1071">llvm::consumeError</references>
+        <references refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777ad5935d1ea3df60ee7ba90b8e23fa6b42" compoundref="_support_2_source_mgr_8h" startline="37">llvm::SourceMgr::DK_Note</references>
+        <references refid="classllvm_1_1_substitution_1a255f149343d5a52972fcd99b782c2db6" compoundref="_file_check_impl_8h" startline="364" endline="364">llvm::Substitution::getFromString</references>
+        <references refid="classllvm_1_1_pattern_1a695dab5368e4f50fb49e8849c144b5d3" compoundref="_file_check_impl_8h" startline="640" endline="640">getLoc</references>
+        <references refid="classllvm_1_1_substitution_1ad78740e164cb18ead36b8353f45e829f">llvm::Substitution::getResult</references>
+        <references refid="classllvm_1_1_source_mgr_1a5fb499d84f3af1286e8d508a760aa396" compoundref="_source_mgr_8cpp" startline="352" endline="357">llvm::SourceMgr::PrintMessage</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <references refid="classllvm_1_1raw__svector__ostream_1a9c2cac84e46d3e744aeca03dd3d557d1" compoundref="raw__ostream_8h" startline="720" endline="720">llvm::raw_svector_ostream::str</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+        <references refid="classllvm_1_1raw__ostream_1a5ba2ece4b959bae02752c34b784ba087" compoundref="raw__ostream_8cpp" startline="168" endline="206">llvm::raw_ostream::write_escaped</references>
+        <referencedby refid="_file_check_8cpp_1adadd7e41a96b9e407d8e07cb45a0d6e2" compoundref="_file_check_8cpp" startline="1975" endline="2040">printMatch</referencedby>
+        <referencedby refid="_file_check_8cpp_1a5d394830d4143542278afee43f527b48" compoundref="_file_check_8cpp" startline="2045" endline="2124">printNoMatch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a3331028c9eef66f4022ac3efa310af7d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pattern::printFuzzyMatch</definition>
+        <argsstring>(const SourceMgr &amp;SM, StringRef Buffer, std::vector&lt; FileCheckDiag &gt; *Diags) const</argsstring>
+        <name>printFuzzyMatch</name>
+        <qualifiedname>llvm::Pattern::printFuzzyMatch</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Buffer</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="structllvm_1_1_file_check_diag" kindref="compound">FileCheckDiag</ref> &gt; *</type>
+          <declname>Diags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="713" column="8" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="1313" bodyend="1357"/>
+        <references refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777ad5935d1ea3df60ee7ba90b8e23fa6b42" compoundref="_support_2_source_mgr_8h" startline="37">llvm::SourceMgr::DK_Note</references>
+        <references refid="classllvm_1_1_pattern_1ac112adffc4bcc18c146110a4c648b683" compoundref="_file_check_impl_8h" startline="722" endline="722">getCheckTy</references>
+        <references refid="classllvm_1_1_pattern_1a695dab5368e4f50fb49e8849c144b5d3" compoundref="_file_check_impl_8h" startline="640" endline="640">getLoc</references>
+        <references refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0a6c8cff7a0ac871bde6a0e4e33a8e90d2" compoundref="_file_check_8h" startline="159">llvm::FileCheckDiag::MatchFuzzy</references>
+        <references refid="classllvm_1_1_string_ref_1ad0f54a163ac500b144590640c6f1eb6b" compoundref="_string_ref_8h" startline="53">llvm::StringRef::npos</references>
+        <references refid="classllvm_1_1_source_mgr_1a5fb499d84f3af1286e8d508a760aa396" compoundref="_source_mgr_8cpp" startline="352" endline="357">llvm::SourceMgr::PrintMessage</references>
+        <references refid="_file_check_8cpp_1aa386d2cd704c6f1176a5aef1f0f178da" compoundref="_file_check_8cpp" startline="1292" endline="1311">ProcessMatchResult</references>
+        <references refid="classllvm_1_1_string_ref_1a5db9240c74644c67759dd0f901fc3c7d" compoundref="_string_ref_8h" startline="150" endline="150">llvm::StringRef::size</references>
+        <references refid="classllvm_1_1_s_m_range_1a95721f80bb5e9cfa8571695f8807881b" compoundref="_s_m_loc_8h" startline="50">llvm::SMRange::Start</references>
+        <references refid="classllvm_1_1_string_ref_1a25f1fd81f2132805676c82ab8ae0c109" compoundref="_string_ref_8h" startline="571" endline="575">llvm::StringRef::substr</references>
+        <referencedby refid="_file_check_8cpp_1a5d394830d4143542278afee43f527b48" compoundref="_file_check_8cpp" startline="2045" endline="2124">printNoMatch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a403b8b5edaa8e13e36a81cf6c6ea43a5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::Pattern::hasVariable</definition>
+        <argsstring>() const</argsstring>
+        <name>hasVariable</name>
+        <qualifiedname>llvm::Pattern::hasVariable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="716" column="8" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="716" bodyend="718"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a91f729b936911342abb6b606e0606cdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pattern::printVariableDefs</definition>
+        <argsstring>(const SourceMgr &amp;SM, FileCheckDiag::MatchType MatchTy, std::vector&lt; FileCheckDiag &gt; *Diags) const</argsstring>
+        <name>printVariableDefs</name>
+        <qualifiedname>llvm::Pattern::printVariableDefs</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0" kindref="member">FileCheckDiag::MatchType</ref></type>
+          <declname>MatchTy</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="structllvm_1_1_file_check_diag" kindref="compound">FileCheckDiag</ref> &gt; *</type>
+          <declname>Diags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="719" column="8" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="1239" bodyend="1290"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777ad5935d1ea3df60ee7ba90b8e23fa6b42" compoundref="_support_2_source_mgr_8h" startline="37">llvm::SourceMgr::DK_Note</references>
+        <references refid="classllvm_1_1_s_m_loc_1a16ebb09610e55f63cfc55f28e3a56ad5" compoundref="_s_m_loc_8h" startline="36" endline="40">llvm::SMLoc::getFromPointer</references>
+        <references refid="classllvm_1_1_pattern_1a695dab5368e4f50fb49e8849c144b5d3" compoundref="_file_check_impl_8h" startline="640" endline="640">getLoc</references>
+        <references refid="classllvm_1_1_source_mgr_1a5fb499d84f3af1286e8d508a760aa396" compoundref="_source_mgr_8cpp" startline="352" endline="357">llvm::SourceMgr::PrintMessage</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <references refid="namespacellvm_1a74cdbd1e4f731e7d7cd83461b8b1de0b" compoundref="_s_t_l_extras_8h" startline="1664" endline="1675">llvm::sort</references>
+        <references refid="classllvm_1_1raw__svector__ostream_1a9c2cac84e46d3e744aeca03dd3d557d1" compoundref="raw__ostream_8h" startline="720" endline="720">llvm::raw_svector_ostream::str</references>
+        <referencedby refid="_file_check_8cpp_1adadd7e41a96b9e407d8e07cb45a0d6e2" compoundref="_file_check_8cpp" startline="1975" endline="2040">printMatch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1ac112adffc4bcc18c146110a4c648b683" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_check_1_1_file_check_type" kindref="compound">Check::FileCheckType</ref></type>
+        <definition>Check::FileCheckType llvm::Pattern::getCheckTy</definition>
+        <argsstring>() const</argsstring>
+        <name>getCheckTy</name>
+        <qualifiedname>llvm::Pattern::getCheckTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="722" column="24" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="722" bodyend="722"/>
+        <referencedby refid="classllvm_1_1_file_check_1a95a7a7f317661b984c86d196fa44dff9" compoundref="_file_check_8cpp" startline="2674" endline="2733">llvm::FileCheck::checkInput</referencedby>
+        <referencedby refid="classllvm_1_1_pattern_1a3331028c9eef66f4022ac3efa310af7d" compoundref="_file_check_8cpp" startline="1313" endline="1357">printFuzzyMatch</referencedby>
+        <referencedby refid="_file_check_8cpp_1adadd7e41a96b9e407d8e07cb45a0d6e2" compoundref="_file_check_8cpp" startline="1975" endline="2040">printMatch</referencedby>
+        <referencedby refid="_file_check_8cpp_1a5d394830d4143542278afee43f527b48" compoundref="_file_check_8cpp" startline="2045" endline="2124">printNoMatch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1abc8c2d9a0d0a8809940c9627857135ca" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::Pattern::getCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getCount</name>
+        <qualifiedname>llvm::Pattern::getCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="724" column="7" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="724" bodyend="724"/>
+        <referencedby refid="_file_check_8cpp_1adadd7e41a96b9e407d8e07cb45a0d6e2" compoundref="_file_check_8cpp" startline="1975" endline="2040">printMatch</referencedby>
+        <referencedby refid="_file_check_8cpp_1a5d394830d4143542278afee43f527b48" compoundref="_file_check_8cpp" startline="2045" endline="2124">printNoMatch</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_pattern_1aa0710447b6816c22e98d213c789f30ca" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool Pattern::isValidVarNameStart</definition>
+        <argsstring>(char C)</argsstring>
+        <name>isValidVarNameStart</name>
+        <qualifiedname>llvm::Pattern::isValidVarNameStart</qualifiedname>
+        <param>
+          <type><ref refid="classchar" kindref="compound">char</ref></type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>whether <computeroutput>C</computeroutput> is a valid first character for a variable name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="647" column="15" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="286" bodyend="286"/>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="namespacellvm_1a66ccf722f4d0e4e08522420fb43849ff" compoundref="_string_extras_8h" startline="117" endline="117">llvm::isAlpha</references>
+        <referencedby refid="classllvm_1_1_pattern_1a21cf4e03d53e49c96bf3f26cafdf7e82" compoundref="_file_check_8cpp" startline="289" endline="317">parseVariable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a21cf4e03d53e49c96bf3f26cafdf7e82" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="structllvm_1_1_pattern_1_1_variable_properties" kindref="compound">VariableProperties</ref> &gt;</type>
+        <definition>Expected&lt; Pattern::VariableProperties &gt; Pattern::parseVariable</definition>
+        <argsstring>(StringRef &amp;Str, const SourceMgr &amp;SM)</argsstring>
+        <name>parseVariable</name>
+        <qualifiedname>llvm::Pattern::parseVariable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &amp;</type>
+          <declname>Str</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+<para>Parses the string at the start of <computeroutput>Str</computeroutput> for a variable name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a <ref refid="structllvm_1_1_pattern_1_1_variable_properties" kindref="compound">VariableProperties</ref> structure holding the variable name and whether it is the name of a pseudo variable, or an error holding a diagnostic against <computeroutput>SM</computeroutput> if parsing fail. If parsing was successful, also strips <computeroutput>Str</computeroutput> from the variable name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="660" column="19" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="289" bodyend="317"/>
+        <references refid="classllvm_1_1_error_diagnostic_1afd2d10db0e8822de9860636d612a13af" compoundref="_file_check_impl_8h" startline="508" endline="512">llvm::ErrorDiagnostic::get</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a8a0d39a17f2152e31271da7e7491d60e" compoundref="_string_extras_8h" startline="121" endline="121">llvm::isAlnum</references>
+        <references refid="classllvm_1_1_pattern_1aa0710447b6816c22e98d213c789f30ca" compoundref="_file_check_8cpp" startline="286" endline="286">isValidVarNameStart</references>
+        <referencedby refid="classllvm_1_1_file_check_pattern_context_1a7137a381bae270178ff79807b1d096d3" compoundref="_file_check_8cpp" startline="2512" endline="2648">llvm::FileCheckPatternContext::defineCmdlineVariables</referencedby>
+        <referencedby refid="classllvm_1_1_pattern_1ae173fad50624dec05877e86be7b7e429" compoundref="_file_check_8cpp" startline="764" endline="1055">parsePattern</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a7d176c2f7da2816d871ca9dbecd13b7e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_expression" kindref="compound">Expression</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; Expression &gt; &gt; Pattern::parseNumericSubstitutionBlock</definition>
+        <argsstring>(StringRef Expr, std::optional&lt; NumericVariable * &gt; &amp;DefinedNumericVariable, bool IsLegacyLineExpr, std::optional&lt; size_t &gt; LineNumber, FileCheckPatternContext *Context, const SourceMgr &amp;SM)</argsstring>
+        <name>parseNumericSubstitutionBlock</name>
+        <qualifiedname>llvm::Pattern::parseNumericSubstitutionBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Expr</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classllvm_1_1_numeric_variable" kindref="compound">NumericVariable</ref> * &gt; &amp;</type>
+          <declname>DefinedNumericVariable</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsLegacyLineExpr</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; size_t &gt;</type>
+          <declname>LineNumber</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_file_check_pattern_context" kindref="compound">FileCheckPatternContext</ref> *</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+<para>Parses <computeroutput>Expr</computeroutput> for a numeric substitution block at line <computeroutput>LineNumber</computeroutput>, or before input is parsed if <computeroutput>LineNumber</computeroutput> is None. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Parameter <computeroutput>IsLegacyLineExpr</computeroutput> indicates whether <computeroutput>Expr</computeroutput> should be a legacy @LINE expression and <computeroutput>Context</computeroutput> points to the class instance holding the live string and numeric variables. <simplesect kind="return"><para>a pointer to the class instance representing the expression whose value must be substitued, or an error holding a diagnostic against <computeroutput>SM</computeroutput> if parsing fails. If substitution was successful, sets <computeroutput>DefinedNumericVariable</computeroutput> to point to the class representing the numeric variable defined in this numeric substitution block, or std::nullopt if this block does not define any variable. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="672" column="19" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="617" bodyend="762"/>
+        <references refid="classllvm_1_1_string_ref_1a8a7fac667f8ae35285b8b53d9f2dd9dc" compoundref="_string_ref_8h" startline="635" endline="641">llvm::StringRef::consume_front</references>
+        <references refid="classllvm_1_1_string_ref_1a1643e7698ddbfd40fbd374a85f015846" compoundref="_string_ref_8h" startline="499" endline="514">llvm::StringRef::consumeInteger</references>
+        <references refid="classllvm_1_1_string_ref_1a7b0fa1a82461032cdf16b7f6c59f0a6a" compoundref="_string_ref_8h" startline="144" endline="144">llvm::StringRef::data</references>
+        <references refid="classllvm_1_1_string_ref_1a3fb2867a1e9fa36e135d9ee4dffb0167" compoundref="_string_ref_8h" startline="609" endline="612">llvm::StringRef::drop_front</references>
+        <references refid="classllvm_1_1_string_ref_1a2dc80c585ad5882da8cae7b5968f7e74" compoundref="_string_ref_8h" startline="147" endline="147">llvm::StringRef::empty</references>
+        <references refid="classllvm_1_1_string_ref_1aab312a8386488873bac2eddfc67c22be" compoundref="_string_ref_8h" startline="297" endline="299">llvm::StringRef::find</references>
+        <references refid="namespacellvm_1ab7530cd22b8952cb41774507dd40c6f3a520d0db389f362bf79ef56ca0af3dcab" compoundref="_format_variadic_8h" startline="46">llvm::Format</references>
+        <references refid="classllvm_1_1_error_diagnostic_1afd2d10db0e8822de9860636d612a13af" compoundref="_file_check_impl_8h" startline="508" endline="512">llvm::ErrorDiagnostic::get</references>
+        <references refid="classllvm_1_1_s_m_loc_1a16ebb09610e55f63cfc55f28e3a56ad5" compoundref="_s_m_loc_8h" startline="36" endline="40">llvm::SMLoc::getFromPointer</references>
+        <references refid="structllvm_1_1_expression_format_1a8aa1badb3ecc62f86172f9f85928fb61a64aea1932b88d7985edd8a140425a3a3" compoundref="_file_check_impl_8h" startline="50">llvm::ExpressionFormat::HexLower</references>
+        <references refid="structllvm_1_1_expression_format_1a8aa1badb3ecc62f86172f9f85928fb61a71c7fabc0d41ad9cf4ddf4857b98615b" compoundref="_file_check_impl_8h" startline="48">llvm::ExpressionFormat::HexUpper</references>
+        <references refid="classllvm_1_1_string_ref_1a8265efd805e4ce0c9d3c18e78194324c" compoundref="_string_ref_8h" startline="791" endline="793">llvm::StringRef::ltrim</references>
+        <references refid="classllvm_1_1_string_ref_1ad0f54a163ac500b144590640c6f1eb6b" compoundref="_string_ref_8h" startline="53">llvm::StringRef::npos</references>
+        <references refid="_file_check_8cpp_1a5618db29d0000023a813f4d00e3bf484" compoundref="_file_check_8cpp" startline="324" endline="328">popFront</references>
+        <references refid="classllvm_1_1_string_ref_1a9b52404a8d2877d3b32ebb5d1f5c72ff" compoundref="_string_ref_8h" startline="803" endline="805">llvm::StringRef::rtrim</references>
+        <references refid="structllvm_1_1_expression_format_1a8aa1badb3ecc62f86172f9f85928fb61a71fed0c3428bf1a2e19af257c4bac379" compoundref="_file_check_impl_8h" startline="46">llvm::ExpressionFormat::Signed</references>
+        <references refid="_file_check_8cpp_1a56ec02135bf1d64543cc44379b40d59d" compoundref="_file_check_8cpp" startline="321">SpaceChars</references>
+        <references refid="classllvm_1_1_string_ref_1a25f1fd81f2132805676c82ab8ae0c109" compoundref="_string_ref_8h" startline="571" endline="575">llvm::StringRef::substr</references>
+        <references refid="classllvm_1_1_string_ref_1aa28286a33491b5d9a936fb6ae853baee" compoundref="_string_ref_8h" startline="580" endline="584">llvm::StringRef::take_front</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+        <references refid="classllvm_1_1_string_ref_1ab9990397f97b40d5d8564e000d00174a" compoundref="_string_ref_8h" startline="815" endline="817">llvm::StringRef::trim</references>
+        <references refid="structllvm_1_1_expression_format_1a8aa1badb3ecc62f86172f9f85928fb61aa1a914735b205424ba6c40b85528d78a" compoundref="_file_check_impl_8h" startline="44">llvm::ExpressionFormat::Unsigned</references>
+        <referencedby refid="classllvm_1_1_file_check_pattern_context_1a7137a381bae270178ff79807b1d096d3" compoundref="_file_check_8cpp" startline="2512" endline="2648">llvm::FileCheckPatternContext::defineCmdlineVariables</referencedby>
+        <referencedby refid="classllvm_1_1_pattern_1ae173fad50624dec05877e86be7b7e429" compoundref="_file_check_8cpp" startline="764" endline="1055">parsePattern</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a8656ba59f7446d275fb24a26ed1234e1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool Pattern::AddRegExToRegEx</definition>
+        <argsstring>(StringRef RS, unsigned &amp;CurParen, SourceMgr &amp;SM)</argsstring>
+        <name>AddRegExToRegEx</name>
+        <qualifiedname>llvm::Pattern::AddRegExToRegEx</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>RS</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>CurParen</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="727" column="8" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="1057" bodyend="1069"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1aec79a1e3297409ba8ccbd546c6692ecc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pattern::AddBackrefToRegEx</definition>
+        <argsstring>(unsigned BackrefNum)</argsstring>
+        <name>AddBackrefToRegEx</name>
+        <qualifiedname>llvm::Pattern::AddBackrefToRegEx</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BackrefNum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="728" column="8" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="1071" bodyend="1075"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a7d257b67b3a8cc172b127a83f7dc9497" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned Pattern::computeMatchDistance</definition>
+        <argsstring>(StringRef Buffer) const</argsstring>
+        <name>computeMatchDistance</name>
+        <qualifiedname>llvm::Pattern::computeMatchDistance</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Buffer</declname>
+        </param>
+        <briefdescription>
+<para>Computes an arbitrary estimate for the quality of matching this pattern at the start of <computeroutput>Buffer</computeroutput>; a distance of zero should correspond to a perfect match. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="732" column="12" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="1188" bodyend="1203"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a8022ee24be560fa6a1b83ba4f8878ba6" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t Pattern::FindRegexVarEnd</definition>
+        <argsstring>(StringRef Str, SourceMgr &amp;SM)</argsstring>
+        <name>FindRegexVarEnd</name>
+        <qualifiedname>llvm::Pattern::FindRegexVarEnd</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Str</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+<para>Finds the closing sequence of a regex variable usage or definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>Str</computeroutput> has to point in the beginning of the definition (right after the opening sequence). <computeroutput>SM</computeroutput> holds the <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> used for error reporting. <simplesect kind="return"><para>the offset of the closing sequence within Str, or npos if it was not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="739" column="17" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="1390" bodyend="1426"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a8c71e3cb43c704c48b90007ed8622d63" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_numeric_variable" kindref="compound">NumericVariable</ref> * &gt;</type>
+        <definition>Expected&lt; NumericVariable * &gt; Pattern::parseNumericVariableDefinition</definition>
+        <argsstring>(StringRef &amp;Expr, FileCheckPatternContext *Context, std::optional&lt; size_t &gt; LineNumber, ExpressionFormat ImplicitFormat, const SourceMgr &amp;SM)</argsstring>
+        <name>parseNumericVariableDefinition</name>
+        <qualifiedname>llvm::Pattern::parseNumericVariableDefinition</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &amp;</type>
+          <declname>Expr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_file_check_pattern_context" kindref="compound">FileCheckPatternContext</ref> *</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; size_t &gt;</type>
+          <declname>LineNumber</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_expression_format" kindref="compound">ExpressionFormat</ref></type>
+          <declname>ImplicitFormat</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+<para>Parses <computeroutput>Expr</computeroutput> for the name of a numeric variable to be defined at line <computeroutput>LineNumber</computeroutput>, or before input is parsed if <computeroutput>LineNumber</computeroutput> is None. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a pointer to the class instance representing that variable, creating it if needed, or an error holding a diagnostic against <computeroutput>SM</computeroutput> should defining such a variable be invalid. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="746" column="19" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="336" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1ac29ea8cd6af5b2f6250d41c9d8e74004" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_numeric_variable_use" kindref="compound">NumericVariableUse</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; NumericVariableUse &gt; &gt; Pattern::parseNumericVariableUse</definition>
+        <argsstring>(StringRef Name, bool IsPseudo, std::optional&lt; size_t &gt; LineNumber, FileCheckPatternContext *Context, const SourceMgr &amp;SM)</argsstring>
+        <name>parseNumericVariableUse</name>
+        <qualifiedname>llvm::Pattern::parseNumericVariableUse</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsPseudo</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; size_t &gt;</type>
+          <declname>LineNumber</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_file_check_pattern_context" kindref="compound">FileCheckPatternContext</ref> *</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+<para>Parses <computeroutput>Name</computeroutput> as a (pseudo if <computeroutput>IsPseudo</computeroutput> is true) numeric variable use at line <computeroutput>LineNumber</computeroutput>, or before input is parsed if <computeroutput>LineNumber</computeroutput> is None. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Parameter <computeroutput>Context</computeroutput> points to the class instance holding the live string and numeric variables. <simplesect kind="return"><para>the pointer to the class instance representing that variable if successful, or an error holding a diagnostic against <computeroutput>SM</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="756" column="19" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="374" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a380ed99e91e488eea79aab11d6343cfa" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_expression_a_s_t" kindref="compound">ExpressionAST</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; ExpressionAST &gt; &gt; Pattern::parseNumericOperand</definition>
+        <argsstring>(StringRef &amp;Expr, AllowedOperand AO, bool ConstraintParsed, std::optional&lt; size_t &gt; LineNumber, FileCheckPatternContext *Context, const SourceMgr &amp;SM)</argsstring>
+        <name>parseNumericOperand</name>
+        <qualifiedname>llvm::Pattern::parseNumericOperand</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &amp;</type>
+          <declname>Expr</declname>
+        </param>
+        <param>
+          <type>AllowedOperand</type>
+          <declname>AO</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ConstraintParsed</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; size_t &gt;</type>
+          <declname>LineNumber</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_file_check_pattern_context" kindref="compound">FileCheckPatternContext</ref> *</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+<para>Parses <computeroutput>Expr</computeroutput> for use of a numeric operand at line <computeroutput>LineNumber</computeroutput>, or before input is parsed if <computeroutput>LineNumber</computeroutput> is None. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Accepts literal values, numeric variables and function calls, depending on the value of <computeroutput>AO</computeroutput>. <computeroutput>MaybeInvalidConstraint</computeroutput> indicates whether the text being parsed could be an invalid constraint. <computeroutput>Context</computeroutput> points to the class instance holding the live string and numeric variables. <simplesect kind="return"><para>the class representing that operand in the AST of the expression or an error holding a diagnostic against <computeroutput>SM</computeroutput> otherwise. If <computeroutput>Expr</computeroutput> starts with a &quot;(&quot; this function will attempt to parse a parenthesized expression. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="770" column="3" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="409" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1aac8d9c4cfdb07e05d629156a84f94098" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_expression_a_s_t" kindref="compound">ExpressionAST</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; ExpressionAST &gt; &gt; Pattern::parseBinop</definition>
+        <argsstring>(StringRef Expr, StringRef &amp;RemainingExpr, std::unique_ptr&lt; ExpressionAST &gt; LeftOp, bool IsLegacyLineExpr, std::optional&lt; size_t &gt; LineNumber, FileCheckPatternContext *Context, const SourceMgr &amp;SM)</argsstring>
+        <name>parseBinop</name>
+        <qualifiedname>llvm::Pattern::parseBinop</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Expr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &amp;</type>
+          <declname>RemainingExpr</declname>
+        </param>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_expression_a_s_t" kindref="compound">ExpressionAST</ref> &gt;</type>
+          <declname>LeftOp</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsLegacyLineExpr</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; size_t &gt;</type>
+          <declname>LineNumber</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_file_check_pattern_context" kindref="compound">FileCheckPatternContext</ref> *</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+<para>Parses and updates <computeroutput>RemainingExpr</computeroutput> for a binary operation at line <computeroutput>LineNumber</computeroutput>, or before input is parsed if <computeroutput>LineNumber</computeroutput> is None. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The left operand of this binary operation is given in <computeroutput>LeftOp</computeroutput> and <computeroutput>Expr</computeroutput> holds the string for the full expression, including the left operand. Parameter <computeroutput>IsLegacyLineExpr</computeroutput> indicates whether we are parsing a legacy @LINE expression. Parameter <computeroutput>Context</computeroutput> points to the class instance holding the live string and numeric variables. <simplesect kind="return"><para>the class representing the binary operation in the AST of the expression, or an error holding a diagnostic against <computeroutput>SM</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="783" column="3" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="497" bodyend="539"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a17f6d1ca14d1012b74a1a0a6f87d8ab1" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_expression_a_s_t" kindref="compound">ExpressionAST</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; ExpressionAST &gt; &gt; Pattern::parseParenExpr</definition>
+        <argsstring>(StringRef &amp;Expr, std::optional&lt; size_t &gt; LineNumber, FileCheckPatternContext *Context, const SourceMgr &amp;SM)</argsstring>
+        <name>parseParenExpr</name>
+        <qualifiedname>llvm::Pattern::parseParenExpr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &amp;</type>
+          <declname>Expr</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; size_t &gt;</type>
+          <declname>LineNumber</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_file_check_pattern_context" kindref="compound">FileCheckPatternContext</ref> *</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+<para>Parses a parenthesized expression inside <computeroutput>Expr</computeroutput> at line <computeroutput>LineNumber</computeroutput>, or before input is parsed if <computeroutput>LineNumber</computeroutput> is None. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>Expr</computeroutput> must start with a &apos;(&apos;. Accepts both literal values and numeric variables. Parameter <computeroutput>Context</computeroutput> points to the class instance holding the live string and numeric variables. <simplesect kind="return"><para>the class representing that operand in the AST of the expression or an error holding a diagnostic against <computeroutput>SM</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="795" column="3" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="464" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_pattern_1a4a3500d003443bb0561c4b38770d44a3" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_expression_a_s_t" kindref="compound">ExpressionAST</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; ExpressionAST &gt; &gt; Pattern::parseCallExpr</definition>
+        <argsstring>(StringRef &amp;Expr, StringRef FuncName, std::optional&lt; size_t &gt; LineNumber, FileCheckPatternContext *Context, const SourceMgr &amp;SM)</argsstring>
+        <name>parseCallExpr</name>
+        <qualifiedname>llvm::Pattern::parseCallExpr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &amp;</type>
+          <declname>Expr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>FuncName</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; size_t &gt;</type>
+          <declname>LineNumber</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_file_check_pattern_context" kindref="compound">FileCheckPatternContext</ref> *</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+<para>Parses <computeroutput>Expr</computeroutput> for an argument list belonging to a call to function <computeroutput>FuncName</computeroutput> at line <computeroutput>LineNumber</computeroutput>, or before input is parsed if <computeroutput>LineNumber</computeroutput> is None. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Parameter <computeroutput>FuncLoc</computeroutput> is the source location used for diagnostics. Parameter <computeroutput>Context</computeroutput> points to the class instance holding the live string and numeric variables. <simplesect kind="return"><para>the class representing that call in the AST of the expression or an error holding a diagnostic against <computeroutput>SM</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/FileCheck/FileCheckImpl.h" line="806" column="3" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="542" bodyend="615"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/FileCheck/FileCheckImpl.h" line="565" column="1" bodyfile="lib/FileCheck/FileCheckImpl.h" bodystart="565" bodyend="809"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_pattern_1aec79a1e3297409ba8ccbd546c6692ecc" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>AddBackrefToRegEx</name></member>
+      <member refid="classllvm_1_1_pattern_1a8656ba59f7446d275fb24a26ed1234e1" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>AddRegExToRegEx</name></member>
+      <member refid="classllvm_1_1_pattern_1a66f908b43f1abb512fe86d06c38ce330" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>AllowedOperand</name></member>
+      <member refid="classllvm_1_1_pattern_1a7a5f81ce94c4a9ae6f92b4d750fc447c" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>CheckTy</name></member>
+      <member refid="classllvm_1_1_pattern_1a7d257b67b3a8cc172b127a83f7dc9497" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>computeMatchDistance</name></member>
+      <member refid="classllvm_1_1_pattern_1a92ca0f2165075c5cc9b914a985c59181" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>Context</name></member>
+      <member refid="classllvm_1_1_pattern_1a8022ee24be560fa6a1b83ba4f8878ba6" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>FindRegexVarEnd</name></member>
+      <member refid="classllvm_1_1_pattern_1a8274e7720d93acf9904b90005d67e377" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>FixedStr</name></member>
+      <member refid="classllvm_1_1_pattern_1ac112adffc4bcc18c146110a4c648b683" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>getCheckTy</name></member>
+      <member refid="classllvm_1_1_pattern_1a6b4c59c2efdda38066089fa98dd6134a" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>getContext</name></member>
+      <member refid="classllvm_1_1_pattern_1abc8c2d9a0d0a8809940c9627857135ca" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>getCount</name></member>
+      <member refid="classllvm_1_1_pattern_1a695dab5368e4f50fb49e8849c144b5d3" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>getLoc</name></member>
+      <member refid="classllvm_1_1_pattern_1a403b8b5edaa8e13e36a81cf6c6ea43a5" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>hasVariable</name></member>
+      <member refid="classllvm_1_1_pattern_1a716c6ef466cab85e024e5154118b83ca" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>IgnoreCase</name></member>
+      <member refid="classllvm_1_1_pattern_1aa0710447b6816c22e98d213c789f30ca" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>isValidVarNameStart</name></member>
+      <member refid="classllvm_1_1_pattern_1a72caffe6ede6d89a559dd833157ea5bd" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>LineNumber</name></member>
+      <member refid="classllvm_1_1_pattern_1a23cdde8b9bdd40fd4a93d3635ca77dc6" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>match</name></member>
+      <member refid="classllvm_1_1_pattern_1acfd0167c30287e0d447043bd7d9f25cc" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>NumericVariableDefs</name></member>
+      <member refid="classllvm_1_1_pattern_1aac8d9c4cfdb07e05d629156a84f94098" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>parseBinop</name></member>
+      <member refid="classllvm_1_1_pattern_1a4a3500d003443bb0561c4b38770d44a3" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>parseCallExpr</name></member>
+      <member refid="classllvm_1_1_pattern_1a380ed99e91e488eea79aab11d6343cfa" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>parseNumericOperand</name></member>
+      <member refid="classllvm_1_1_pattern_1a7d176c2f7da2816d871ca9dbecd13b7e" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>parseNumericSubstitutionBlock</name></member>
+      <member refid="classllvm_1_1_pattern_1a8c71e3cb43c704c48b90007ed8622d63" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>parseNumericVariableDefinition</name></member>
+      <member refid="classllvm_1_1_pattern_1ac29ea8cd6af5b2f6250d41c9d8e74004" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>parseNumericVariableUse</name></member>
+      <member refid="classllvm_1_1_pattern_1a17f6d1ca14d1012b74a1a0a6f87d8ab1" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>parseParenExpr</name></member>
+      <member refid="classllvm_1_1_pattern_1ae173fad50624dec05877e86be7b7e429" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>parsePattern</name></member>
+      <member refid="classllvm_1_1_pattern_1a21cf4e03d53e49c96bf3f26cafdf7e82" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>parseVariable</name></member>
+      <member refid="classllvm_1_1_pattern_1a8ca22b7cb255f175dc6918f3d2171834" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>Pattern</name></member>
+      <member refid="classllvm_1_1_pattern_1ad0b44d4483629dac9c74e91c90820521" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>PatternLoc</name></member>
+      <member refid="classllvm_1_1_pattern_1a3331028c9eef66f4022ac3efa310af7d" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>printFuzzyMatch</name></member>
+      <member refid="classllvm_1_1_pattern_1a3a4e8a88439506522a2a0f3850802d3f" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>printSubstitutions</name></member>
+      <member refid="classllvm_1_1_pattern_1a91f729b936911342abb6b606e0606cdc" prot="public" virt="non-virtual"><scope>llvm::Pattern</scope><name>printVariableDefs</name></member>
+      <member refid="classllvm_1_1_pattern_1a63cf4dbaca95beea07b39b1c9859be7f" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>RegExStr</name></member>
+      <member refid="classllvm_1_1_pattern_1aff56304525c840e6174b955002dfac1f" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>Substitutions</name></member>
+      <member refid="classllvm_1_1_pattern_1a8dc704521498407c55d187400bcfba6e" prot="private" virt="non-virtual"><scope>llvm::Pattern</scope><name>VariableDefs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

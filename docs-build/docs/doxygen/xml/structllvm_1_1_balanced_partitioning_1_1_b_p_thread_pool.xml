@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool" kind="struct" language="C++" prot="private">
+    <compoundname>llvm::BalancedPartitioning::BPThreadPool</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1af835d5701989eff2f80099981615cf59" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_thread_pool_interface" kindref="compound">ThreadPoolInterface</ref> &amp;</type>
+        <definition>ThreadPoolInterface&amp; llvm::BalancedPartitioning::BPThreadPool::TheThreadPool</definition>
+        <argsstring></argsstring>
+        <name>TheThreadPool</name>
+        <qualifiedname>llvm::BalancedPartitioning::BPThreadPool::TheThreadPool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/BalancedPartitioning.h" line="118" column="25" bodyfile="include/llvm/Support/BalancedPartitioning.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1a37d209eed7729d6358c6bdbd208dee88" prot="public" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex llvm::BalancedPartitioning::BPThreadPool::mtx</definition>
+        <argsstring></argsstring>
+        <name>mtx</name>
+        <qualifiedname>llvm::BalancedPartitioning::BPThreadPool::mtx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/BalancedPartitioning.h" line="119" column="16" bodyfile="include/llvm/Support/BalancedPartitioning.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1a29b1b0c6b5faebd6e9c5f7efd1094dbc" prot="public" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable llvm::BalancedPartitioning::BPThreadPool::cv</definition>
+        <argsstring></argsstring>
+        <name>cv</name>
+        <qualifiedname>llvm::BalancedPartitioning::BPThreadPool::cv</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/BalancedPartitioning.h" line="120" column="29" bodyfile="include/llvm/Support/BalancedPartitioning.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1a450052d8436f0b93cd0a9f7450705981" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int &gt;</type>
+        <definition>std::atomic&lt;int&gt; llvm::BalancedPartitioning::BPThreadPool::NumActiveThreads</definition>
+        <argsstring></argsstring>
+        <name>NumActiveThreads</name>
+        <qualifiedname>llvm::BalancedPartitioning::BPThreadPool::NumActiveThreads</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The number of threads that could spawn more threads. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/BalancedPartitioning.h" line="122" column="17" bodyfile="include/llvm/Support/BalancedPartitioning.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1ab60ed5291d7d3a35f6cb12fd6755c9dc" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::BalancedPartitioning::BPThreadPool::IsFinishedSpawning</definition>
+        <argsstring></argsstring>
+        <name>IsFinishedSpawning</name>
+        <qualifiedname>llvm::BalancedPartitioning::BPThreadPool::IsFinishedSpawning</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Only true when all threads are down spawning new threads. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/BalancedPartitioning.h" line="124" column="10" bodyfile="include/llvm/Support/BalancedPartitioning.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1aeb27f1d96e107361b46a9e76df2b748d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void BalancedPartitioning::BPThreadPool::async</definition>
+        <argsstring>(Func &amp;&amp;F)</argsstring>
+        <name>async</name>
+        <qualifiedname>llvm::BalancedPartitioning::BPThreadPool::async</qualifiedname>
+        <param>
+          <type>Func &amp;&amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Asynchronous submission of the task to the pool. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/BalancedPartitioning.h" line="126" column="22" bodyfile="lib/Support/BalancedPartitioning.cpp" bodystart="30" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1a3ae8940403707f6eb671dd34e23365e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BalancedPartitioning::BPThreadPool::wait</definition>
+        <argsstring>()</argsstring>
+        <name>wait</name>
+        <qualifiedname>llvm::BalancedPartitioning::BPThreadPool::wait</qualifiedname>
+        <briefdescription>
+<para>Blocking wait for all threads to complete. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Unlike ThreadPool, it is acceptable for other threads to add more tasks while blocking on this call. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/BalancedPartitioning.h" line="130" column="10" bodyfile="lib/Support/BalancedPartitioning.cpp" bodystart="54" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1ac998b052c1023f58bc050762aadcd96a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BalancedPartitioning::BPThreadPool::BPThreadPool</definition>
+        <argsstring>(ThreadPoolInterface &amp;TheThreadPool)</argsstring>
+        <name>BPThreadPool</name>
+        <qualifiedname>llvm::BalancedPartitioning::BPThreadPool::BPThreadPool</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_pool_interface" kindref="compound">ThreadPoolInterface</ref> &amp;</type>
+          <declname>TheThreadPool</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/BalancedPartitioning.h" line="131" column="5" bodyfile="include/llvm/Support/BalancedPartitioning.h" bodystart="131" bodyend="132"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A special ThreadPool that allows for spawning new tasks after blocking on wait(). </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classllvm_1_1_balanced_partitioning" kindref="compound">BalancedPartitioning</ref> recursively spawns new threads inside other threads, so we need to track how many active threads that could spawn more threads. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="1">
+        <label>llvm::BalancedPartitioning::BPThreadPool</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>TheThreadPool</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>mtx</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>cv</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>NumActiveThreads</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>IsFinishedSpawning</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::ThreadPoolInterface</label>
+        <link refid="classllvm_1_1_thread_pool_interface"/>
+      </node>
+      <node id="5">
+        <label>atomic&lt; int &gt;</label>
+      </node>
+      <node id="4">
+        <label>condition_variable</label>
+      </node>
+      <node id="3">
+        <label>mutex</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Support/BalancedPartitioning.h" line="117" column="3" bodyfile="include/llvm/Support/BalancedPartitioning.h" bodystart="117" bodyend="133"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1aeb27f1d96e107361b46a9e76df2b748d" prot="public" virt="non-virtual"><scope>llvm::BalancedPartitioning::BPThreadPool</scope><name>async</name></member>
+      <member refid="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1ac998b052c1023f58bc050762aadcd96a" prot="public" virt="non-virtual"><scope>llvm::BalancedPartitioning::BPThreadPool</scope><name>BPThreadPool</name></member>
+      <member refid="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1a29b1b0c6b5faebd6e9c5f7efd1094dbc" prot="public" virt="non-virtual"><scope>llvm::BalancedPartitioning::BPThreadPool</scope><name>cv</name></member>
+      <member refid="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1ab60ed5291d7d3a35f6cb12fd6755c9dc" prot="public" virt="non-virtual"><scope>llvm::BalancedPartitioning::BPThreadPool</scope><name>IsFinishedSpawning</name></member>
+      <member refid="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1a37d209eed7729d6358c6bdbd208dee88" prot="public" virt="non-virtual"><scope>llvm::BalancedPartitioning::BPThreadPool</scope><name>mtx</name></member>
+      <member refid="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1a450052d8436f0b93cd0a9f7450705981" prot="public" virt="non-virtual"><scope>llvm::BalancedPartitioning::BPThreadPool</scope><name>NumActiveThreads</name></member>
+      <member refid="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1af835d5701989eff2f80099981615cf59" prot="public" virt="non-virtual"><scope>llvm::BalancedPartitioning::BPThreadPool</scope><name>TheThreadPool</name></member>
+      <member refid="structllvm_1_1_balanced_partitioning_1_1_b_p_thread_pool_1a3ae8940403707f6eb671dd34e23365e2" prot="public" virt="non-virtual"><scope>llvm::BalancedPartitioning::BPThreadPool</scope><name>wait</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

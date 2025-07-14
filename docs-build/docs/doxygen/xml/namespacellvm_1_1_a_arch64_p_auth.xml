@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1_a_arch64_p_auth" kind="namespace" language="C++">
+    <compoundname>llvm::AArch64PAuth</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>AuthCheckMethod</name>
+        <qualifiedname>llvm::AArch64PAuth::AuthCheckMethod</qualifiedname>
+        <enumvalue id="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10a6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <briefdescription>
+<para>Do not check the value at all. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10a24204a7fa8ab4d609a76a48ac4673b22" prot="public">
+          <name>DummyLoad</name>
+          <briefdescription>
+<para>Perform a load to a temporary register. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10a47343d56dc562d3a8366d3854eb64161" prot="public">
+          <name>HighBitsNoTBI</name>
+          <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> by comparing bits 62 and 61 of the authenticated address. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This method modifies control flow and inserts the following checker:</para>
+<para><programlisting><codeline><highlight class="normal">eor<sp/>Xtmp,<sp/>Xn,<sp/>Xn,<sp/>lsl<sp/>#1</highlight></codeline>
+<codeline><highlight class="normal">tbz<sp/>Xtmp,<sp/>#62,<sp/>on_success</highlight></codeline>
+</programlisting> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10a1fb8b484947fc2d97a18d9b90e0c08fb" prot="public">
+          <name>XPACHint</name>
+          <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> by comparing the authenticated value with an XPAC-ed one without using PAuth instructions not encoded as HINT. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Can only be applied to LR.</para>
+<para>This method modifies control flow and inserts the following checker:</para>
+<para><programlisting><codeline><highlight class="normal">mov<sp/>Xtmp,<sp/>LR</highlight></codeline>
+<codeline><highlight class="normal">xpaclri<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;<sp/>encoded<sp/>as<sp/></highlight><highlight class="stringliteral">&quot;hint<sp/>#7&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">;<sp/><ref refid="namespacellvm_1ac226f3d2b9ca090171a8e0a8cb92c343a3b0649c72650c313a357338dcdfb64ec" kindref="member">Note</ref>:<sp/><ref refid="namespacellvm_1_1at" kindref="compound">at</ref><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>point,<sp/>the<sp/>LR<sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/><ref refid="_sandbox_i_r_2_value_8cpp_1a34433c37334a1cde3d58cde3099257dd" kindref="member">contains</ref><sp/>the<sp/>address<sp/>as<sp/><ref refid="_pass_builder_bindings_8cpp_1acdfbcf188e2d4a80837e89de2ccdffab" kindref="member">if</ref></highlight></codeline>
+<codeline><highlight class="normal">;<sp/>the<sp/>authentication<sp/><ref refid="namespacellvm_1a18200ebe6910244f83bbaeedf6a9d460" kindref="member">succeeded</ref><sp/>and<sp/>the<sp/>temporary<sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/><ref refid="_sandbox_i_r_2_value_8cpp_1a34433c37334a1cde3d58cde3099257dd" kindref="member">contains</ref><sp/>the</highlight></codeline>
+<codeline><highlight class="normal">;<sp/>*real*<sp/>result<sp/>of<sp/>authentication.</highlight></codeline>
+<codeline><highlight class="normal">cmp<sp/>Xtmp,<sp/>LR</highlight></codeline>
+<codeline><highlight class="normal">b.eq<sp/>on_success</highlight></codeline>
+</programlisting> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10ae34527c9d45ac8d5e68634911bfcd36e" prot="public">
+          <name>XPAC</name>
+          <briefdescription>
+<para>Similar to XPACHint but using Armv8.3-only XPAC instruction, thus not restricted to LR: </para>
+          </briefdescription>
+          <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">mov<sp/>Xtmp,<sp/>Xn</highlight></codeline>
+<codeline><highlight class="normal">xpac(i|d)<sp/>Xn</highlight></codeline>
+<codeline><highlight class="normal">cmp<sp/>Xtmp,<sp/>Xn</highlight></codeline>
+<codeline><highlight class="normal">b.eq<sp/>on_success</highlight></codeline>
+</programlisting> </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Variants of check performed on an authenticated pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In cases such as authenticating the LR value when performing a tail call or when re-signing a signed pointer with a different signing schema, a failed authentication may not generate an exception on its own and may create an authentication or signing oracle if not checked explicitly.</para>
+<para>A number of check methods modify control flow in a similar way by rewriting the code</para>
+<para><programlisting><codeline><highlight class="normal">&lt;authenticate<sp/>LR&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;more<sp/><ref refid="namespacellvm_1a7e3e687ddfdcbacd404bcf17b917dd88" kindref="member">instructions</ref>&gt;</highlight></codeline>
+</programlisting></para>
+<para>as follows:</para>
+<para><programlisting><codeline><highlight class="normal"><sp/><sp/>&lt;authenticate<sp/>LR&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;method-specific<sp/>checker&gt;</highlight></codeline>
+<codeline><highlight class="normal">on_fail:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>brk<sp/>&lt;code&gt;</highlight></codeline>
+<codeline><highlight class="normal">on_success:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;more<sp/><ref refid="namespacellvm_1a7e3e687ddfdcbacd404bcf17b917dd88" kindref="member">instructions</ref>&gt;</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/AArch64PointerAuth.h" line="44" column="1" bodyfile="lib/Target/AArch64/AArch64PointerAuth.h" bodystart="44" bodyend="86"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1_a_arch64_p_auth_1a89f9d58f53aa5fefd75ce86659f52f71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::AArch64PAuth::getCheckerSizeInBytes</definition>
+        <argsstring>(AuthCheckMethod Method)</argsstring>
+        <name>getCheckerSizeInBytes</name>
+        <qualifiedname>llvm::AArch64PAuth::getCheckerSizeInBytes</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10" kindref="member">AuthCheckMethod</ref></type>
+          <declname>Method</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of bytes added by checkAuthenticatedRegister. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/AArch64PointerAuth.h" line="105" column="10" bodyfile="lib/Target/AArch64/AArch64PointerAuth.cpp" bodystart="244" bodyend="257" declfile="lib/Target/AArch64/AArch64PointerAuth.h" declline="105" declcolumn="10"/>
+        <references refid="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10a24204a7fa8ab4d609a76a48ac4673b22" compoundref="_a_arch64_pointer_auth_8h" startline="49">DummyLoad</references>
+        <references refid="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10a47343d56dc562d3a8366d3854eb64161" compoundref="_a_arch64_pointer_auth_8h" startline="59">HighBitsNoTBI</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10a6adf97f83acf6453d4a6a4b1070f3754" compoundref="_a_arch64_pointer_auth_8h" startline="46">None</references>
+        <references refid="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10ae34527c9d45ac8d5e68634911bfcd36e" compoundref="_a_arch64_pointer_auth_8h" startline="85">XPAC</references>
+        <references refid="namespacellvm_1_1_a_arch64_p_auth_1abf78b4a589091577668be8331dbf3e10a1fb8b484947fc2d97a18d9b90e0c08fb" compoundref="_a_arch64_pointer_auth_8h" startline="75">XPACHint</references>
+        <referencedby refid="classllvm_1_1_a_arch64_instr_info_1a1bf38b3bbe867377cde6e530a0256b29" compoundref="_a_arch64_instr_info_8cpp" startline="88" endline="178">llvm::AArch64InstrInfo::getInstSizeInBytes</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/Target/AArch64/AArch64PointerAuth.h" line="16" column="1"/>
+  </compounddef>
+</doxygen>

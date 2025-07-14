@@ -1,0 +1,394 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_microsoft_demangle_8h" kind="file" language="C++">
+    <compoundname>MicrosoftDemangle.h</compoundname>
+    <includes refid="_demangle_8h" local="yes">llvm/Demangle/Demangle.h</includes>
+    <includes refid="_microsoft_demangle_nodes_8h" local="yes">llvm/Demangle/MicrosoftDemangleNodes.h</includes>
+    <includes local="no">cassert</includes>
+    <includes local="no">string_view</includes>
+    <includes local="no">utility</includes>
+    <includedby refid="_microsoft_demangle_8cpp" local="yes">lib/Demangle/MicrosoftDemangle.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>llvm/Demangle/Demangle.h</label>
+        <link refid="_demangle_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/llvm/Demangle/MicrosoftDemangle.h</label>
+        <link refid="_microsoft_demangle_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm/Demangle/MicrosoftDemangleNodes.h</label>
+        <link refid="_microsoft_demangle_nodes_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>array</label>
+      </node>
+      <node id="10">
+        <label>cassert</label>
+      </node>
+      <node id="3">
+        <label>cstddef</label>
+      </node>
+      <node id="9">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>optional</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>string_view</label>
+      </node>
+      <node id="11">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Demangle/MicrosoftDemangle.h</label>
+        <link refid="_microsoft_demangle_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Demangle/MicrosoftDemangle.cpp</label>
+        <link refid="_microsoft_demangle_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1ms__demangle_1_1_arena_allocator" prot="public">llvm::ms_demangle::ArenaAllocator</innerclass>
+    <innerclass refid="structllvm_1_1ms__demangle_1_1_arena_allocator_1_1_allocator_node" prot="private">llvm::ms_demangle::ArenaAllocator::AllocatorNode</innerclass>
+    <innerclass refid="structllvm_1_1ms__demangle_1_1_backref_context" prot="public">llvm::ms_demangle::BackrefContext</innerclass>
+    <innerclass refid="classllvm_1_1ms__demangle_1_1_demangler" prot="public">llvm::ms_demangle::Demangler</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <innernamespace refid="namespacellvm_1_1ms__demangle">llvm::ms_demangle</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-------------------------<sp/>MicrosoftDemangle.h<sp/>--------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_DEMANGLE_MICROSOFTDEMANGLE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_DEMANGLE_MICROSOFTDEMANGLE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_demangle_8h" kindref="compound">llvm/Demangle/Demangle.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_microsoft_demangle_nodes_8h" kindref="compound">llvm/Demangle/MicrosoftDemangleNodes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="20" refid="namespacellvm_1_1ms__demangle" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm_1_1ms__demangle" kindref="compound">ms_demangle</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>memory<sp/>allocator<sp/>is<sp/>extremely<sp/>fast,<sp/>but<sp/>it<sp/>doesn&apos;t<sp/>call<sp/>dtors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>for<sp/>allocated<sp/>objects.<sp/>That<sp/>means<sp/>you<sp/>can&apos;t<sp/>use<sp/>STL<sp/>containers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(such<sp/>as<sp/>std::vector)<sp/>with<sp/>this<sp/>allocator.<sp/>But<sp/>it<sp/>pays<sp/>off<sp/>--</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>the<sp/>demangler<sp/>is<sp/>3x<sp/>faster<sp/>with<sp/>this<sp/>allocator<sp/>compared<sp/>to<sp/>one<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>STL<sp/>containers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="namespacellvm_1_1ms__demangle_1a9024de5a690e75130c917fcf883e3c27" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1ms__demangle_1a9024de5a690e75130c917fcf883e3c27" kindref="member">AllocUnit</ref><sp/>=<sp/>4096;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classllvm_1_1ms__demangle_1_1_arena_allocator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1a648d7a14f4fcc1f8dfbbb869bc280fab" kindref="member">ArenaAllocator</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">AllocatorNode<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>*Buf<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>Used<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>Capacity<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>AllocatorNode<sp/>*<ref refid="namespacellvm_1ab13c360340346d082b959b8cd79f2c1a" kindref="member">Next</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addNode(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>Capacity)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>AllocatorNode<sp/>*NewHead<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>AllocatorNode;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>NewHead-&gt;Buf<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref>[Capacity];</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>NewHead-&gt;Next<sp/>=<sp/>Head;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>NewHead-&gt;Capacity<sp/>=<sp/>Capacity;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>Head<sp/>=<sp/>NewHead;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>NewHead-&gt;Used<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46" refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1a648d7a14f4fcc1f8dfbbb869bc280fab" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1a648d7a14f4fcc1f8dfbbb869bc280fab" kindref="member">ArenaAllocator</ref>()<sp/>{<sp/>addNode(<ref refid="namespacellvm_1_1ms__demangle_1a9024de5a690e75130c917fcf883e3c27" kindref="member">AllocUnit</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1a73398bfd242ba736658732d36e533ab1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1a73398bfd242ba736658732d36e533ab1" kindref="member">~ArenaAllocator</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(Head)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Head-&gt;Buf);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>Head-&gt;Buf;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>AllocatorNode<sp/>*<ref refid="namespacellvm_1ab13c360340346d082b959b8cd79f2c1a" kindref="member">Next</ref><sp/>=<sp/>Head-&gt;Next;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>Head;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Head<sp/>=<sp/><ref refid="namespacellvm_1ab13c360340346d082b959b8cd79f2c1a" kindref="member">Next</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Delete<sp/>the<sp/>copy<sp/>constructor<sp/>and<sp/>the<sp/>copy<sp/>assignment<sp/>operator.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1adffdb60c9ca83900de84e42ba9df31ca" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1adffdb60c9ca83900de84e42ba9df31ca" kindref="member">ArenaAllocator</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1a648d7a14f4fcc1f8dfbbb869bc280fab" kindref="member">ArenaAllocator</ref><sp/>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60" refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1ad9d67cd4bd61f6cb0e41de9f89cc70a3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1a648d7a14f4fcc1f8dfbbb869bc280fab" kindref="member">ArenaAllocator</ref><sp/>&amp;<ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1ad9d67cd4bd61f6cb0e41de9f89cc70a3" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1a648d7a14f4fcc1f8dfbbb869bc280fab" kindref="member">ArenaAllocator</ref><sp/>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1ad5f9b14f789ad50481b05f721a117d4c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1ad5f9b14f789ad50481b05f721a117d4c" kindref="member">allocUnalignedBuffer</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Head<sp/>&amp;&amp;<sp/>Head-&gt;Buf);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>*<ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>=<sp/>Head-&gt;Buf<sp/>+<sp/>Head-&gt;Used;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>Head-&gt;Used<sp/>+=<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Head-&gt;Used<sp/>&lt;=<sp/>Head-&gt;Capacity)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>addNode(std::max(<ref refid="namespacellvm_1_1ms__demangle_1a9024de5a690e75130c917fcf883e3c27" kindref="member">AllocUnit</ref>,<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>));</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>Head-&gt;Used<sp/>=<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(Head-&gt;Buf);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1add7764f5fc091f27879341e17684b9ed" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args&gt;<sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*<ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1add7764f5fc091f27879341e17684b9ed" kindref="member">allocArray</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a845e08be4b0320d66901a66b0c0e9509" kindref="member">Count</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>=<sp/><ref refid="namespacellvm_1a845e08be4b0320d66901a66b0c0e9509" kindref="member">Count</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Head<sp/>&amp;&amp;<sp/>Head-&gt;Buf);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>=<sp/>(<ref refid="classsize__t" kindref="compound">size_t</ref>)Head-&gt;Buf<sp/>+<sp/>Head-&gt;Used;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>uintptr_t<sp/>AlignedP<sp/>=</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((<ref refid="classsize__t" kindref="compound">size_t</ref>)<ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>+<sp/></highlight><highlight class="keyword">alignof</highlight><highlight class="normal">(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>)<sp/>-<sp/>1)<sp/>&amp;<sp/>~(<ref refid="classsize__t" kindref="compound">size_t</ref>)(</highlight><highlight class="keyword">alignof</highlight><highlight class="normal">(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>)<sp/>-<sp/>1));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>*PP<sp/>=<sp/>(<ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>*)AlignedP;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>Adjustment<sp/>=<sp/>AlignedP<sp/>-<sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>Head-&gt;Used<sp/>+=<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>+<sp/>Adjustment;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Head-&gt;Used<sp/>&lt;=<sp/>Head-&gt;Capacity)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>(PP)<sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>[<ref refid="namespacellvm_1a845e08be4b0320d66901a66b0c0e9509" kindref="member">Count</ref>]();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>addNode(std::max(<ref refid="namespacellvm_1_1ms__demangle_1a9024de5a690e75130c917fcf883e3c27" kindref="member">AllocUnit</ref>,<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>));</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>Head-&gt;Used<sp/>=<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>(Head-&gt;Buf)<sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>[<ref refid="namespacellvm_1a845e08be4b0320d66901a66b0c0e9509" kindref="member">Count</ref>]();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1a68c5ae418fcf0a7ea3873c534821889e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args&gt;<sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*<ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator_1a68c5ae418fcf0a7ea3873c534821889e" kindref="member">alloc</ref>(Args<sp/>&amp;&amp;...<sp/>ConstructorArgs)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Head<sp/>&amp;&amp;<sp/>Head-&gt;Buf);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>=<sp/>(<ref refid="classsize__t" kindref="compound">size_t</ref>)Head-&gt;Buf<sp/>+<sp/>Head-&gt;Used;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>uintptr_t<sp/>AlignedP<sp/>=</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((<ref refid="classsize__t" kindref="compound">size_t</ref>)<ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>+<sp/></highlight><highlight class="keyword">alignof</highlight><highlight class="normal">(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>)<sp/>-<sp/>1)<sp/>&amp;<sp/>~(<ref refid="classsize__t" kindref="compound">size_t</ref>)(</highlight><highlight class="keyword">alignof</highlight><highlight class="normal">(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>)<sp/>-<sp/>1));</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>*PP<sp/>=<sp/>(<ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>*)AlignedP;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>Adjustment<sp/>=<sp/>AlignedP<sp/>-<sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>Head-&gt;Used<sp/>+=<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>+<sp/>Adjustment;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Head-&gt;Used<sp/>&lt;=<sp/>Head-&gt;Capacity)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>(PP)<sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>(std::forward&lt;Args&gt;(ConstructorArgs)...);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(<ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>&lt;<sp/><ref refid="namespacellvm_1_1ms__demangle_1a9024de5a690e75130c917fcf883e3c27" kindref="member">AllocUnit</ref>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>addNode(<ref refid="namespacellvm_1_1ms__demangle_1a9024de5a690e75130c917fcf883e3c27" kindref="member">AllocUnit</ref>);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>Head-&gt;Used<sp/>=<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>(Head-&gt;Buf)<sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>(std::forward&lt;Args&gt;(ConstructorArgs)...);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>AllocatorNode<sp/>*Head<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="structllvm_1_1ms__demangle_1_1_backref_context" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structllvm_1_1ms__demangle_1_1_backref_context" kindref="compound">BackrefContext</ref><sp/>{</highlight></codeline>
+<codeline lineno="120" refid="structllvm_1_1ms__demangle_1_1_backref_context_1a2cad29c1d331604a888514241d91b9a7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1ms__demangle_1_1_backref_context_1a2cad29c1d331604a888514241d91b9a7" kindref="member">Max</ref><sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="structllvm_1_1ms__demangle_1_1_backref_context_1aa6c7bb3cf2ed3bba605047443b74d546" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_type_node" kindref="compound">TypeNode</ref><sp/>*<ref refid="structllvm_1_1ms__demangle_1_1_backref_context_1aa6c7bb3cf2ed3bba605047443b74d546" kindref="member">FunctionParams</ref>[<ref refid="structllvm_1_1ms__demangle_1_1_backref_context_1a2cad29c1d331604a888514241d91b9a7" kindref="member">Max</ref>];</highlight></codeline>
+<codeline lineno="123" refid="structllvm_1_1ms__demangle_1_1_backref_context_1abbdff5bf6570cae481b62eddf5d797d6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1ms__demangle_1_1_backref_context_1abbdff5bf6570cae481b62eddf5d797d6" kindref="member">FunctionParamCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>first<sp/>10<sp/>BackReferences<sp/>in<sp/>a<sp/>mangled<sp/>name<sp/>can<sp/>be<sp/>back-referenced<sp/>by</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>special<sp/>name<sp/>@[0-9].<sp/>This<sp/>is<sp/>a<sp/>storage<sp/>for<sp/>the<sp/>first<sp/>10<sp/>BackReferences.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="structllvm_1_1ms__demangle_1_1_backref_context_1a5e06716af0b11712cb947e2fbe0fd76b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_named_identifier_node" kindref="compound">NamedIdentifierNode</ref><sp/>*<ref refid="structllvm_1_1ms__demangle_1_1_backref_context_1a5e06716af0b11712cb947e2fbe0fd76b" kindref="member">Names</ref>[<ref refid="structllvm_1_1ms__demangle_1_1_backref_context_1a2cad29c1d331604a888514241d91b9a7" kindref="member">Max</ref>];</highlight></codeline>
+<codeline lineno="128" refid="structllvm_1_1ms__demangle_1_1_backref_context_1ac33522bbc16d5d89f4d84a01a2937081" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1ms__demangle_1_1_backref_context_1ac33522bbc16d5d89f4d84a01a2937081" kindref="member">NamesCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="namespacellvm_1_1ms__demangle_1afb795990ffc0cb7321e7d1eacc246324a3e679cff5b3a6f6f8f32aead541a0a12" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1ms__demangle_1afb795990ffc0cb7321e7d1eacc246324" kindref="member">QualifierMangleMode</ref><sp/>{<sp/><ref refid="namespacellvm_1_1ms__demangle_1afb795990ffc0cb7321e7d1eacc246324a3e679cff5b3a6f6f8f32aead541a0a12" kindref="member">Drop</ref>,<sp/><ref refid="namespacellvm_1_1ms__demangle_1afb795990ffc0cb7321e7d1eacc246324aa26650625d0b324c8f102c8d1fd46f22" kindref="member">Mangle</ref>,<sp/><ref refid="namespacellvm_1_1ms__demangle_1afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e" kindref="member">Result</ref><sp/>};</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="namespacellvm_1_1ms__demangle_1ab932b4e3b27a81db21a963a06da55f1f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1ms__demangle_1ab932b4e3b27a81db21a963a06da55f1f" kindref="member">NameBackrefBehavior</ref><sp/>:<sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>{</highlight></codeline>
+<codeline lineno="134" refid="namespacellvm_1_1ms__demangle_1ab932b4e3b27a81db21a963a06da55f1fa8c81529e57374e0cb5b830c7de80ac31" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1ab932b4e3b27a81db21a963a06da55f1fa8c81529e57374e0cb5b830c7de80ac31" kindref="member">NBB_None</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>don&apos;t<sp/>save<sp/>any<sp/>names<sp/>as<sp/>backrefs.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="namespacellvm_1_1ms__demangle_1ab932b4e3b27a81db21a963a06da55f1fa81ed7bf72c5649f77470339d26edd58c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1ab932b4e3b27a81db21a963a06da55f1fa81ed7bf72c5649f77470339d26edd58c" kindref="member">NBB_Template</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>0,<sp/></highlight><highlight class="comment">//<sp/>save<sp/>template<sp/>instanations.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="namespacellvm_1_1ms__demangle_1ab932b4e3b27a81db21a963a06da55f1fa3814668813742329b4babbd49a8f6e4d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1ab932b4e3b27a81db21a963a06da55f1fa3814668813742329b4babbd49a8f6e4d" kindref="member">NBB_Simple</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>1,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>save<sp/>simple<sp/>names.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="namespacellvm_1_1ms__demangle_1a03674045d0444f4d01342d81d202da35a972e73b7a882d0802a4e3a16946a2f94" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1ms__demangle_1a03674045d0444f4d01342d81d202da35" kindref="member">FunctionIdentifierCodeGroup</ref><sp/>{<sp/><ref refid="namespacellvm_1_1ms__demangle_1a03674045d0444f4d01342d81d202da35a972e73b7a882d0802a4e3a16946a2f94" kindref="member">Basic</ref>,<sp/><ref refid="namespacellvm_1_1ms__demangle_1a03674045d0444f4d01342d81d202da35a02552d3c116b8a96f9ff0001b6ae661c" kindref="member">Under</ref>,<sp/><ref refid="namespacellvm_1_1ms__demangle_1a03674045d0444f4d01342d81d202da35a6f2e81acf2a4929de036c8e3f425952f" kindref="member">DoubleUnder</ref><sp/>};</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Demangler<sp/>class<sp/>takes<sp/>the<sp/>main<sp/>role<sp/>in<sp/>demangling<sp/>symbols.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">//<sp/>It<sp/>has<sp/>a<sp/>set<sp/>of<sp/>functions<sp/>to<sp/>parse<sp/>mangled<sp/>symbols<sp/>into<sp/>Type<sp/>instances.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">//<sp/>It<sp/>also<sp/>has<sp/>a<sp/>set<sp/>of<sp/>functions<sp/>to<sp/>convert<sp/>Type<sp/>instances<sp/>to<sp/>strings.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="classllvm_1_1ms__demangle_1_1_demangler" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1ms__demangle_1_1_demangler_1a05d787d0b1cc5fee84a59d5297e7bc13" kindref="member">Demangler</ref><sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::optional&lt;size_t&gt;</highlight></codeline>
+<codeline lineno="146" refid="classllvm_1_1ms__demangle_1_1_demangler_1a00ab77724bdd2d5f6a3495e69600d3ad" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a5e1da6c34a3216e370efab344977e0d7" kindref="member">llvm::getArm64ECInsertionPointInMangledName</ref>(std::string_view<sp/>MangledName);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="149" refid="classllvm_1_1ms__demangle_1_1_demangler_1a05d787d0b1cc5fee84a59d5297e7bc13" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1ms__demangle_1_1_demangler_1a05d787d0b1cc5fee84a59d5297e7bc13" kindref="member">Demangler</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150" refid="classllvm_1_1ms__demangle_1_1_demangler_1a942ff5c66c6c2139e0bf561ee8aceb8e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1ms__demangle_1_1_demangler_1a942ff5c66c6c2139e0bf561ee8aceb8e" kindref="member">~Demangler</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>You<sp/>are<sp/>supposed<sp/>to<sp/>call<sp/>parse()<sp/>first<sp/>and<sp/>then<sp/>check<sp/>if<sp/>error<sp/>is<sp/>true.<sp/><sp/>If</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>it<sp/>is<sp/>false,<sp/>call<sp/>output()<sp/>to<sp/>write<sp/>the<sp/>formatted<sp/>name<sp/>to<sp/>the<sp/>given<sp/>stream.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_symbol_node" kindref="compound">SymbolNode</ref><sp/>*<ref refid="classllvm_1_1ms__demangle_1_1_demangler_1a92ceaf0f7302bb57c5c7e1e810c56093" kindref="member">parse</ref>(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_tag_type_node" kindref="compound">TagTypeNode</ref><sp/>*<ref refid="classllvm_1_1ms__demangle_1_1_demangler_1a2e7b39f476fe2783df4d468b8103f7c7" kindref="member">parseTagUniqueName</ref>(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>True<sp/>if<sp/>an<sp/>error<sp/>occurred.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="classllvm_1_1ms__demangle_1_1_demangler_1ac3736a2dc172d32fe98674a1fac7ded8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1ms__demangle_1_1_demangler_1ac3736a2dc172d32fe98674a1fac7ded8" kindref="member">Error</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1ms__demangle_1_1_demangler_1ae64ec0c9c49acf91da4f0c361e7c2a76" kindref="member">dumpBackReferences</ref>();</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_symbol_node" kindref="compound">SymbolNode</ref><sp/>*demangleEncodedSymbol(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_qualified_name_node" kindref="compound">QualifiedNameNode</ref><sp/>*QN);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_symbol_node" kindref="compound">SymbolNode</ref><sp/>*demangleDeclarator(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_symbol_node" kindref="compound">SymbolNode</ref><sp/>*demangleMD5Name(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_symbol_node" kindref="compound">SymbolNode</ref><sp/>*demangleTypeinfoName(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_variable_symbol_node" kindref="compound">VariableSymbolNode</ref><sp/>*demangleVariableEncoding(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1ae868dcbebdf0e8890ff2942c9367fa65" kindref="member">StorageClass</ref><sp/>SC);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_function_symbol_node" kindref="compound">FunctionSymbolNode</ref><sp/>*demangleFunctionEncoding(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1a763fe714f87aa4f54dfa246ab2cc382c" kindref="member">Qualifiers</ref><sp/>demanglePointerExtQualifiers(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Parser<sp/>functions.<sp/>This<sp/>is<sp/>a<sp/>recursive-descent<sp/>parser.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_type_node" kindref="compound">TypeNode</ref><sp/>*demangleType(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1afb795990ffc0cb7321e7d1eacc246324" kindref="member">QualifierMangleMode</ref><sp/>QMM);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_primitive_type_node" kindref="compound">PrimitiveTypeNode</ref><sp/>*demanglePrimitiveType(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_custom_type_node" kindref="compound">CustomTypeNode</ref><sp/>*demangleCustomType(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_tag_type_node" kindref="compound">TagTypeNode</ref><sp/>*demangleClassType(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_pointer_type_node" kindref="compound">PointerTypeNode</ref><sp/>*demanglePointerType(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_pointer_type_node" kindref="compound">PointerTypeNode</ref><sp/>*demangleMemberPointerType(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_function_signature_node" kindref="compound">FunctionSignatureNode</ref><sp/>*demangleFunctionType(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>HasThisQuals);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_array_type_node" kindref="compound">ArrayTypeNode</ref><sp/>*demangleArrayType(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_node_array_node" kindref="compound">NodeArrayNode</ref><sp/>*demangleFunctionParameterList(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;IsVariadic);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_node_array_node" kindref="compound">NodeArrayNode</ref><sp/>*demangleTemplateParameterList(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>std::pair&lt;uint64_t,<sp/>bool&gt;<sp/>demangleNumber(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>demangleUnsigned(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><ref refid="classint64__t" kindref="compound">int64_t</ref><sp/>demangleSigned(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>memorizeString(std::string_view<sp/>s);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>memorizeIdentifier(<ref refid="structllvm_1_1ms__demangle_1_1_identifier_node" kindref="compound">IdentifierNode</ref><sp/>*<ref refid="namespacellvm_1_1ms__demangle_1a234f091f9559c82176ae3e89447add46a29ee5d1ebcc033234938a5234f1f2075" kindref="member">Identifier</ref>);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/><sp/>///<sp/>Allocate<sp/>a<sp/>copy<sp/>of<sp/>\p<sp/>Borrowed<sp/>into<sp/>memory<sp/>that<sp/>we<sp/>own.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/>std::string_view<sp/>copyString(std::string_view<sp/>Borrowed);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_qualified_name_node" kindref="compound">QualifiedNameNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/>demangleFullyQualifiedTypeName(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_qualified_name_node" kindref="compound">QualifiedNameNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/>demangleFullyQualifiedSymbolName(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_identifier_node" kindref="compound">IdentifierNode</ref><sp/>*demangleUnqualifiedTypeName(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Memorize);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_identifier_node" kindref="compound">IdentifierNode</ref><sp/>*demangleUnqualifiedSymbolName(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1ab932b4e3b27a81db21a963a06da55f1f" kindref="member">NameBackrefBehavior</ref><sp/>NBB);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_qualified_name_node" kindref="compound">QualifiedNameNode</ref><sp/>*demangleNameScopeChain(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_identifier_node" kindref="compound">IdentifierNode</ref><sp/>*UnqualifiedName);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_identifier_node" kindref="compound">IdentifierNode</ref><sp/>*demangleNameScopePiece(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_named_identifier_node" kindref="compound">NamedIdentifierNode</ref><sp/>*demangleBackRefName(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_identifier_node" kindref="compound">IdentifierNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/>demangleTemplateInstantiationName(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1ab932b4e3b27a81db21a963a06da55f1f" kindref="member">NameBackrefBehavior</ref><sp/>NBB);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1a851a17f7dc73f9988807242926dcc645" kindref="member">IntrinsicFunctionKind</ref></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/>translateIntrinsicFunctionCode(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_s_h_a256_8cpp_1a0ed6c9c714485592a8c317a8ad91c83b" kindref="member">CH</ref>,<sp/><ref refid="namespacellvm_1_1ms__demangle_1a03674045d0444f4d01342d81d202da35" kindref="member">FunctionIdentifierCodeGroup</ref><sp/>Group);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_identifier_node" kindref="compound">IdentifierNode</ref><sp/>*demangleFunctionIdentifierCode(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_identifier_node" kindref="compound">IdentifierNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/>demangleFunctionIdentifierCode(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1a03674045d0444f4d01342d81d202da35" kindref="member">FunctionIdentifierCodeGroup</ref><sp/>Group);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_structor_identifier_node" kindref="compound">StructorIdentifierNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/>demangleStructorIdentifier(std::string_view<sp/>&amp;MangledName,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsDestructor);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_conversion_operator_identifier_node" kindref="compound">ConversionOperatorIdentifierNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/>demangleConversionOperatorIdentifier(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_literal_operator_identifier_node" kindref="compound">LiteralOperatorIdentifierNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/>demangleLiteralOperatorIdentifier(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_symbol_node" kindref="compound">SymbolNode</ref><sp/>*demangleSpecialIntrinsic(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_special_table_symbol_node" kindref="compound">SpecialTableSymbolNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>demangleSpecialTableSymbolNode(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1ae4a66b98c39e5894dd537b3fbc724739" kindref="member">SpecialIntrinsicKind</ref><sp/>SIK);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_local_static_guard_variable_node" kindref="compound">LocalStaticGuardVariableNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>demangleLocalStaticGuard(std::string_view<sp/>&amp;MangledName,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsThread);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_variable_symbol_node" kindref="compound">VariableSymbolNode</ref><sp/>*demangleUntypedVariable(<ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator" kindref="compound">ArenaAllocator</ref><sp/>&amp;Arena,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string_view<sp/>VariableName);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_variable_symbol_node" kindref="compound">VariableSymbolNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/>demangleRttiBaseClassDescriptorNode(<ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator" kindref="compound">ArenaAllocator</ref><sp/>&amp;Arena,</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_function_symbol_node" kindref="compound">FunctionSymbolNode</ref><sp/>*demangleInitFiniStub(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsDestructor);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_named_identifier_node" kindref="compound">NamedIdentifierNode</ref><sp/>*demangleSimpleName(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Memorize);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_named_identifier_node" kindref="compound">NamedIdentifierNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/>demangleAnonymousNamespaceName(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_named_identifier_node" kindref="compound">NamedIdentifierNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/>demangleLocallyScopedNamePiece(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_encoded_string_literal_node" kindref="compound">EncodedStringLiteralNode</ref><sp/>*</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/>demangleStringLiteral(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_function_symbol_node" kindref="compound">FunctionSymbolNode</ref><sp/>*demangleVcallThunkNode(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/>std::string_view<sp/>demangleSimpleString(std::string_view<sp/>&amp;MangledName,</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Memorize);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1ad53863aa95fab722d9979b1b38230e7b" kindref="member">FuncClass</ref><sp/>demangleFunctionClass(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1a1c7534e329bd2e3760c37d8123909e63" kindref="member">CallingConv</ref><sp/>demangleCallingConvention(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1_1ms__demangle_1ae868dcbebdf0e8890ff2942c9367fa65" kindref="member">StorageClass</ref><sp/>demangleVariableStorageClass(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>demangleThrowSpecification(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/>demangleWcharLiteral(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>demangleCharLiteral(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/>std::pair&lt;Qualifiers,<sp/>bool&gt;<sp/>demangleQualifiers(std::string_view<sp/>&amp;MangledName);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Memory<sp/>allocator.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1ms__demangle_1_1_arena_allocator" kindref="compound">ArenaAllocator</ref><sp/>Arena;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>single<sp/>type<sp/>uses<sp/>one<sp/>global<sp/>back-ref<sp/>table<sp/>for<sp/>all<sp/>function<sp/>params.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>means<sp/>back-refs<sp/>can<sp/>even<sp/>go<sp/>&quot;into&quot;<sp/>other<sp/>types.<sp/><sp/>Examples:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>//<sp/>Second<sp/>int*<sp/>is<sp/>a<sp/>back-ref<sp/>to<sp/>first.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>void<sp/>foo(int<sp/>*,<sp/>int*);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>//<sp/>Second<sp/>int*<sp/>is<sp/>not<sp/>a<sp/>back-ref<sp/>to<sp/>first<sp/>(first<sp/>is<sp/>not<sp/>a<sp/>function<sp/>param).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>int*<sp/>foo(int*);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>//<sp/>Second<sp/>int*<sp/>is<sp/>a<sp/>back-ref<sp/>to<sp/>first<sp/>(ALL<sp/>function<sp/>types<sp/>share<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>//<sp/>back-ref<sp/>map.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>using<sp/>F<sp/>=<sp/>void(*)(int*);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>F<sp/>G(int<sp/>*);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1ms__demangle_1_1_backref_context" kindref="compound">BackrefContext</ref><sp/>Backrefs;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ms_demangle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_DEMANGLE_MICROSOFTDEMANGLE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Demangle/MicrosoftDemangle.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group___find_root_d_i_es" kind="group">
+    <compoundname>FindRootDIEs</compoundname>
+    <title>Find DIEs corresponding to Address map entries.</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group___find_root_d_i_es_1ga2b4682e0fe0146440fe8826e4e67182e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DWARFLinker::lookForDIEsToKeep</definition>
+        <argsstring>(AddressesMap &amp;RelocMgr, const UnitListTy &amp;Units, const DWARFDie &amp;DIE, const DWARFFile &amp;File, CompileUnit &amp;CU, unsigned Flags)</argsstring>
+        <name>lookForDIEsToKeep</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::lookForDIEsToKeep</qualifiedname>
+        <param>
+          <type>AddressesMap &amp;</type>
+          <declname>RelocMgr</declname>
+          <defname>AddressesMap</defname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> UnitListTy &amp;</type>
+          <declname>Units</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFDie &amp;</type>
+          <declname>DIE</declname>
+          <defname>Die</defname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFFile &amp;</type>
+          <declname>File</declname>
+        </param>
+        <param>
+          <type>CompileUnit &amp;</type>
+          <declname>CU</declname>
+          <defname>Cu</defname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <briefdescription>
+<para>Recursively walk the <computeroutput><ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref></computeroutput> tree and look for DIEs to keep. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Store that information in <computeroutput><ref refid="namespace_c_u" kindref="compound">CU</ref>&apos;s</computeroutput> DIEInfo.</para>
+<para>This function is the entry point of the <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> selection algorithm. It is expected to walk the <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> tree in file order and (though the mediation of its helper) call hasValidRelocation() on each <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> that might be a &apos;root <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref>&apos; (See DwarfLinker class comment).</para>
+<para>While walking the dependencies of root DIEs, this function is also called, but during these dependency walks the file order is not respected. The TF_DependencyWalk flag tells us which kind of traversal we are currently doing.</para>
+<para>The recursive algorithm is implemented iteratively as a work list because very deep recursion could exhaust the stack for large projects. The work list acts as a scheduler for different types of work that need to be performed.</para>
+<para>The recursive nature of the algorithm is simulated by running the &quot;main&quot; algorithm (LookForDIEsToKeep) followed by either looking at more DIEs (LookForChildDIEsToKeep, LookForRefDIEsToKeep, LookForParentDIEsToKeep) or fixing up a computed property (UpdateChildIncompleteness, UpdateRefIncompleteness).</para>
+<para>The return value indicates whether the <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> is incomplete. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="464" column="8" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="848" bodyend="950"/>
+      </memberdef>
+      <memberdef kind="function" id="group___find_root_d_i_es_1ga343cf73eec78f37be68c0f8a131a0d49" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classbool" kindref="compound">bool</ref>, <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+        <definition>std::pair&lt; bool, bool &gt; llvm::DWARFLinker::isClangModuleRef</definition>
+        <argsstring>(const DWARFDie &amp;CUDie, std::string &amp;PCMFile, LinkContext &amp;Context, unsigned Indent, bool Quiet)</argsstring>
+        <name>isClangModuleRef</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::isClangModuleRef</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFDie &amp;</type>
+          <declname>CUDie</declname>
+        </param>
+        <param>
+          <type><ref refid="_itanium_demangle_8h_1ae2b0d0345572d6718e219aa76d1d54edab45cffe084dd3d20d928bee85e7b0f21" kindref="member">std::string</ref> &amp;</type>
+          <declname>PCMFile</declname>
+        </param>
+        <param>
+          <type>LinkContext &amp;</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Indent</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Quiet</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> whether specified <computeroutput>CUDie</computeroutput> is a Clang module reference. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>if <computeroutput>Quiet</computeroutput> is false then display error messages. <simplesect kind="return"><para>first == true if CUDie is a Clang module reference. second == true if module is already loaded. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="472" column="13" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="2468" bodyend="2508"/>
+      </memberdef>
+      <memberdef kind="function" id="group___find_root_d_i_es_1gabd5556765c8fe5426d92dc474a1e7966" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::DWARFLinker::registerModuleReference</definition>
+        <argsstring>(const DWARFDie &amp;CUDie, LinkContext &amp;Context, ObjFileLoaderTy Loader, CompileUnitHandlerTy OnCUDieLoaded, unsigned Indent=0)</argsstring>
+        <name>registerModuleReference</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::registerModuleReference</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFDie &amp;</type>
+          <declname>CUDie</declname>
+        </param>
+        <param>
+          <type>LinkContext &amp;</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type>ObjFileLoaderTy</type>
+          <declname>Loader</declname>
+        </param>
+        <param>
+          <type>CompileUnitHandlerTy</type>
+          <declname>OnCUDieLoaded</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Indent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>If this compile unit is really a skeleton <ref refid="namespace_c_u" kindref="compound">CU</ref> that points to a clang module, register it in ClangModules and return true. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A skeleton <ref refid="namespace_c_u" kindref="compound">CU</ref> is a <ref refid="namespace_c_u" kindref="compound">CU</ref> without children, a DW_AT_gnu_dwo_name pointing to the module, and a DW_AT_gnu_dwo_id with the module hash. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="483" column="8" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="2510" bodyend="2538"/>
+      </memberdef>
+      <memberdef kind="function" id="group___find_root_d_i_es_1ga173d5c588b7bec182a851c6cfd7b3fa4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Error</type>
+        <definition>Error llvm::DWARFLinker::loadClangModule</definition>
+        <argsstring>(ObjFileLoaderTy Loader, const DWARFDie &amp;CUDie, const std::string &amp;PCMFile, LinkContext &amp;Context, CompileUnitHandlerTy OnCUDieLoaded, unsigned Indent=0)</argsstring>
+        <name>loadClangModule</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::loadClangModule</qualifiedname>
+        <param>
+          <type>ObjFileLoaderTy</type>
+          <declname>Loader</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFDie &amp;</type>
+          <declname>CUDie</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="_itanium_demangle_8h_1ae2b0d0345572d6718e219aa76d1d54edab45cffe084dd3d20d928bee85e7b0f21" kindref="member">std::string</ref> &amp;</type>
+          <declname>PCMFile</declname>
+        </param>
+        <param>
+          <type>LinkContext &amp;</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type>CompileUnitHandlerTy</type>
+          <declname>OnCUDieLoaded</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Indent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Recursively add the debug info in this clang module .pcm file (and all the modules imported by it in a bottom-up fashion) to ModuleUnits. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Using a <ref refid="classllvm_1_1_small_string" kindref="compound">SmallString&lt;0&gt;</ref> because loadClangModule() is recursive.</para>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="491" column="9" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="2540" bodyend="2606"/>
+      </memberdef>
+      <memberdef kind="function" id="group___find_root_d_i_es_1ga16541c95c463709f1163b52f913e6bc4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Error</type>
+        <definition>Error llvm::DWARFLinker::cloneModuleUnit</definition>
+        <argsstring>(LinkContext &amp;Context, RefModuleUnit &amp;Unit, DeclContextTree &amp;ODRContexts, OffsetsStringPool &amp;DebugStrPool, OffsetsStringPool &amp;DebugLineStrPool, DebugDieValuePool &amp;StringOffsetPool, unsigned Indent=0)</argsstring>
+        <name>cloneModuleUnit</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::cloneModuleUnit</qualifiedname>
+        <param>
+          <type>LinkContext &amp;</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type>RefModuleUnit &amp;</type>
+          <declname>Unit</declname>
+        </param>
+        <param>
+          <type>DeclContextTree &amp;</type>
+          <declname>ODRContexts</declname>
+        </param>
+        <param>
+          <type>OffsetsStringPool &amp;</type>
+          <declname>DebugStrPool</declname>
+        </param>
+        <param>
+          <type>OffsetsStringPool &amp;</type>
+          <declname>DebugLineStrPool</declname>
+        </param>
+        <param>
+          <type>DebugDieValuePool &amp;</type>
+          <declname>StringOffsetPool</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Indent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Clone specified Clang module unit <computeroutput>Unit</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="497" column="9" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="3031" bodyend="3066"/>
+      </memberdef>
+      <memberdef kind="function" id="group___find_root_d_i_es_1ga24c2bcead90bfc63a47c4c1832093b10" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::DWARFLinker::shouldKeepDIE</definition>
+        <argsstring>(AddressesMap &amp;RelocMgr, const DWARFDie &amp;DIE, const DWARFFile &amp;File, CompileUnit &amp;Unit, CompileUnit::DIEInfo &amp;MyInfo, unsigned Flags)</argsstring>
+        <name>shouldKeepDIE</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::shouldKeepDIE</qualifiedname>
+        <param>
+          <type>AddressesMap &amp;</type>
+          <declname>RelocMgr</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFDie &amp;</type>
+          <declname>DIE</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFFile &amp;</type>
+          <declname>File</declname>
+        </param>
+        <param>
+          <type>CompileUnit &amp;</type>
+          <declname>Unit</declname>
+        </param>
+        <param>
+          <type>CompileUnit::DIEInfo &amp;</type>
+          <declname>MyInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if a <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> should be kept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>updated TraversalFlags. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="504" column="12" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="619" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="group___find_root_d_i_es_1gaa180d20c87f7cda613a75894475ca2f0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classbool" kindref="compound">bool</ref>, std::optional&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref> &gt; &gt;</type>
+        <definition>std::pair&lt; bool, std::optional&lt; int64_t &gt; &gt; llvm::DWARFLinker::getVariableRelocAdjustment</definition>
+        <argsstring>(AddressesMap &amp;RelocMgr, const DWARFDie &amp;DIE)</argsstring>
+        <name>getVariableRelocAdjustment</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::getVariableRelocAdjustment</qualifiedname>
+        <param>
+          <type>AddressesMap &amp;</type>
+          <declname>RelocMgr</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFDie &amp;</type>
+          <declname>DIE</declname>
+        </param>
+        <briefdescription>
+<para>This function checks whether variable has DWARF expression containing operation referencing live address(f.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>DW_OP_addr, DW_OP_addrx...). <simplesect kind="return"><para>first is true if the expression has an operation referencing an address. second is the relocation adjustment value if the live address is referenced. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="515" column="3" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="417" bodyend="505"/>
+      </memberdef>
+      <memberdef kind="function" id="group___find_root_d_i_es_1ga036b9988329e2d2dff7482b094cc5d63" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::DWARFLinker::shouldKeepVariableDIE</definition>
+        <argsstring>(AddressesMap &amp;RelocMgr, const DWARFDie &amp;DIE, CompileUnit::DIEInfo &amp;MyInfo, unsigned Flags)</argsstring>
+        <name>shouldKeepVariableDIE</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::shouldKeepVariableDIE</qualifiedname>
+        <param>
+          <type>AddressesMap &amp;</type>
+          <declname>RelocMgr</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFDie &amp;</type>
+          <declname>DIE</declname>
+        </param>
+        <param>
+          <type>CompileUnit::DIEInfo &amp;</type>
+          <declname>MyInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if a variable describing <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> should be kept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>updated TraversalFlags. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="519" column="12" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="509" bodyend="552"/>
+      </memberdef>
+      <memberdef kind="function" id="group___find_root_d_i_es_1gaf0bf84a58c76b6f9173903dc44014df7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::DWARFLinker::shouldKeepSubprogramDIE</definition>
+        <argsstring>(AddressesMap &amp;RelocMgr, const DWARFDie &amp;DIE, const DWARFFile &amp;File, CompileUnit &amp;Unit, CompileUnit::DIEInfo &amp;MyInfo, unsigned Flags)</argsstring>
+        <name>shouldKeepSubprogramDIE</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::shouldKeepSubprogramDIE</qualifiedname>
+        <param>
+          <type>AddressesMap &amp;</type>
+          <declname>RelocMgr</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFDie &amp;</type>
+          <declname>DIE</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFFile &amp;</type>
+          <declname>File</declname>
+        </param>
+        <param>
+          <type>CompileUnit &amp;</type>
+          <declname>Unit</declname>
+        </param>
+        <param>
+          <type>CompileUnit::DIEInfo &amp;</type>
+          <declname>MyInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if a function describing <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> should be kept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>updated TraversalFlags. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="522" column="12" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="556" bodyend="615"/>
+      </memberdef>
+      <memberdef kind="function" id="group___find_root_d_i_es_1ga6061ea947e754c29e1a73d644b113f03" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DWARFDie</type>
+        <definition>DWARFDie llvm::DWARFLinker::resolveDIEReference</definition>
+        <argsstring>(const DWARFFile &amp;File, const UnitListTy &amp;Units, const DWARFFormValue &amp;RefValue, const DWARFDie &amp;DIE, CompileUnit *&amp;RefCU)</argsstring>
+        <name>resolveDIEReference</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::resolveDIEReference</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFFile &amp;</type>
+          <declname>File</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> UnitListTy &amp;</type>
+          <declname>Units</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFFormValue &amp;</type>
+          <declname>RefValue</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> DWARFDie &amp;</type>
+          <declname>DIE</declname>
+        </param>
+        <param>
+          <type>CompileUnit *&amp;</type>
+          <declname>RefCU</declname>
+        </param>
+        <briefdescription>
+<para>Resolve the <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> attribute reference that has been extracted in <computeroutput>RefValue</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The resulting <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> might be in another <ref refid="classllvm_1_1dwarf__linker_1_1classic_1_1_compile_unit" kindref="compound">CompileUnit</ref> which is stored into <computeroutput>ReferencedCU</computeroutput>. <simplesect kind="return"><para>null if resolving fails for any reason. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="531" column="12" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="74" bodyend="99"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Recursively walk the <computeroutput><ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref></computeroutput> tree and look for DIEs to keep. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Store that information in <computeroutput><ref refid="namespace_c_u" kindref="compound">CU</ref>&apos;s</computeroutput> DIEInfo.</para>
+<para>The return value indicates whether the <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> is incomplete. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

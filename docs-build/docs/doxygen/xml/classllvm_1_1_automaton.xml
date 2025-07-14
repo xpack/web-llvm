@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_automaton" kind="class" language="C++" prot="public">
+    <compoundname>llvm::Automaton</compoundname>
+    <includes refid="_automaton_8h" local="yes">llvm/Support/Automaton.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename ActionT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_automaton_1a3ed601358dcead55d7299f124c7417aa" prot="private" static="no">
+        <type>std::map&lt; std::pair&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref>, ActionT &gt;, std::pair&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt;</type>
+        <definition>using llvm::Automaton&lt; ActionT &gt;::MapTy =  std::map&lt;std::pair&lt;uint64_t, ActionT&gt;, std::pair&lt;uint64_t, unsigned&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>MapTy</name>
+        <qualifiedname>llvm::Automaton::MapTy</qualifiedname>
+        <briefdescription>
+<para>Map from {State, Action} to {NewState, TransitionInfoIdx}. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>TransitionInfoIdx is used by the DfaTranscriber to analyze the transition. FIXME: This uses a std::map because ActionT can be a pair type including an enum. In particular <ref refid="structllvm_1_1_dense_map_info" kindref="compound">DenseMapInfo&lt;ActionT&gt;</ref> must be defined to use <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref> here. This is a shared_ptr to allow very quick copy-construction of Automata; this state is immutable after construction so this is safe. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="168" column="3" bodyfile="include/llvm/Support/Automaton.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_automaton_1aa83ee188c66f74ed78d5eb6b0e2b7e94" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; MapTy &gt;</type>
+        <definition>std::shared_ptr&lt;MapTy&gt; llvm::Automaton&lt; ActionT &gt;::M</definition>
+        <argsstring></argsstring>
+        <name>M</name>
+        <qualifiedname>llvm::Automaton::M</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="169" column="19" bodyfile="include/llvm/Support/Automaton.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_automaton_1a863c0781f406ba2bf7f2d79472b2d0c7" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classllvm_1_1internal_1_1_nfa_transcriber" kindref="compound">internal::NfaTranscriber</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;internal::NfaTranscriber&gt; llvm::Automaton&lt; ActionT &gt;::Transcriber</definition>
+        <argsstring></argsstring>
+        <name>Transcriber</name>
+        <qualifiedname>llvm::Automaton::Transcriber</qualifiedname>
+        <briefdescription>
+<para>An optional transcription object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This uses much more state than simply traversing the DFA for acceptance, so is heap allocated. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="172" column="19" bodyfile="include/llvm/Support/Automaton.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_automaton_1a4775b526d6e6e28d07266cb148732f75" prot="private" static="no" mutable="no">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::Automaton&lt; ActionT &gt;::State</definition>
+        <argsstring></argsstring>
+        <name>State</name>
+        <qualifiedname>llvm::Automaton::State</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>The initial DFA state is 1. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="174" column="12" bodyfile="include/llvm/Support/Automaton.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_automaton_1aca89c3fcad786aea10404e4c6b9734e2" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::Automaton&lt; ActionT &gt;::Transcribe</definition>
+        <argsstring></argsstring>
+        <name>Transcribe</name>
+        <qualifiedname>llvm::Automaton::Transcribe</qualifiedname>
+        <briefdescription>
+<para>True if we should transcribe and false if not (even if Transcriber is defined). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="176" column="8" bodyfile="include/llvm/Support/Automaton.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_automaton_1adbfe7e804f0c334162d71db7e2f77ded" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename InfoT</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>llvm::Automaton&lt; ActionT &gt;::Automaton</definition>
+        <argsstring>(ArrayRef&lt; InfoT &gt; Transitions, ArrayRef&lt; NfaStatePair &gt; TranscriptionTable={})</argsstring>
+        <name>Automaton</name>
+        <qualifiedname>llvm::Automaton::Automaton</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; InfoT &gt;</type>
+          <declname>Transitions</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1_nfa_state_pair" kindref="compound">NfaStatePair</ref> &gt;</type>
+          <declname>TranscriptionTable</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Create an automaton. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Transitions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Transitions table as created by <ref refid="namespacellvm_1_1_table_gen" kindref="compound">TableGen</ref>. Note that because the action type differs per automaton, the table type is templated as <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;InfoT&gt;</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TranscriptionTable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The TransitionInfo table as created by <ref refid="namespacellvm_1_1_table_gen" kindref="compound">TableGen</ref>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Providing the TranscriptionTable argument as non-empty will enable the use of transcription, which analyzes the possible paths in the original NFA taken by the DFA. NOTE: This is substantially more work than simply driving the DFA, so unless you require the getPaths() method leave this empty. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="191" column="3" bodyfile="include/llvm/Support/Automaton.h" bodystart="191" bodyend="202"/>
+        <referencedby refid="classllvm_1_1_automaton_1a9ade48998a5f4ef2d6c9b7ceecbe209d" compoundref="_automaton_8h" startline="203" endline="209">llvm::Automaton&lt; ActionT &gt;::Automaton</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_automaton_1a9ade48998a5f4ef2d6c9b7ceecbe209d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::Automaton&lt; ActionT &gt;::Automaton</definition>
+        <argsstring>(const Automaton &amp;Other)</argsstring>
+        <name>Automaton</name>
+        <qualifiedname>llvm::Automaton::Automaton</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_automaton" kindref="compound">Automaton</ref> &amp;</type>
+          <declname>Other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="203" column="3" bodyfile="include/llvm/Support/Automaton.h" bodystart="203" bodyend="209"/>
+        <references refid="classllvm_1_1_automaton_1adbfe7e804f0c334162d71db7e2f77ded" compoundref="_automaton_8h" startline="191" endline="202">llvm::Automaton&lt; ActionT &gt;::Automaton</references>
+        <references refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387" compoundref="_mod_ref_8h" startline="65">llvm::Other</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_automaton_1a30f80f4c7e00f9a31b9d6e6221805b4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::Automaton&lt; ActionT &gt;::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>llvm::Automaton::reset</qualifiedname>
+        <briefdescription>
+<para>Reset the automaton to its initial state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="212" column="8" bodyfile="include/llvm/Support/Automaton.h" bodystart="212" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_automaton_1ab475bbd3819025a90bd009e18988bb40" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::Automaton&lt; ActionT &gt;::enableTranscription</definition>
+        <argsstring>(bool Enable=true)</argsstring>
+        <name>enableTranscription</name>
+        <qualifiedname>llvm::Automaton::enableTranscription</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Enable</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+<para>Enable or disable transcription. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Transcription is only available if TranscriptionTable was provided to the constructor. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="220" column="8" bodyfile="include/llvm/Support/Automaton.h" bodystart="220" bodyend="225"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1afdccf3ff7a8dfaa084b07c1fb417bbe2a2faec1f9f8cc7f8f40d521c4dd574f49" compoundref="_with_color_8h" startline="47">llvm::Enable</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_automaton_1aa2620d2287c9bf8cd15da84914af65e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::Automaton&lt; ActionT &gt;::add</definition>
+        <argsstring>(const ActionT &amp;A)</argsstring>
+        <name>add</name>
+        <qualifiedname>llvm::Automaton::add</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> ActionT &amp;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+<para>Transition the automaton based on input symbol A. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if the automaton transitioned to a valid state, false if the automaton transitioned to an invalid state.</para>
+<para>If this function returns false, all methods are undefined until <ref refid="classllvm_1_1_automaton_1a30f80f4c7e00f9a31b9d6e6221805b4d" kindref="member">reset()</ref> is called. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="233" column="8" bodyfile="include/llvm/Support/Automaton.h" bodystart="233" bodyend="241"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_automaton_1a8b955bf418dc9539b07a58a6e94ec638" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::Automaton&lt; ActionT &gt;::canAdd</definition>
+        <argsstring>(const ActionT &amp;A)</argsstring>
+        <name>canAdd</name>
+        <qualifiedname>llvm::Automaton::canAdd</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> ActionT &amp;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+<para>Return true if the automaton can be transitioned based on input symbol A. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="244" column="8" bodyfile="include/llvm/Support/Automaton.h" bodystart="244" bodyend="247"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_automaton_1ad6fe99d549af75e18cd1e383e70c5beb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="namespacellvm_1a7c51673db3dd1c6d2088fc30224393d3" kindref="member">NfaPath</ref> &gt;</type>
+        <definition>ArrayRef&lt; NfaPath &gt; llvm::Automaton&lt; ActionT &gt;::getNfaPaths</definition>
+        <argsstring>()</argsstring>
+        <name>getNfaPaths</name>
+        <qualifiedname>llvm::Automaton::getNfaPaths</qualifiedname>
+        <briefdescription>
+<para>Obtain a set of possible paths through the input nondeterministic automaton that could be obtained from the sequence of input actions presented to this deterministic automaton. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="252" column="12" bodyfile="include/llvm/Support/Automaton.h" bodystart="252" bodyend="256"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A deterministic finite-state automaton. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The automaton is defined in <ref refid="namespacellvm_1_1_table_gen" kindref="compound">TableGen</ref>; this object drives an automaton defined by tblgen-emitted tables.</para>
+<para>An automaton accepts a sequence of input tokens (&quot;actions&quot;). This class is templated on the type of these actions. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::Automaton&lt; ActionT &gt;</label>
+        <link refid="classllvm_1_1_automaton"/>
+      </node>
+      <node id="2">
+        <label>llvm::Automaton&lt; uint64_t &gt;</label>
+        <link refid="classllvm_1_1_automaton"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; uint64_t &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/llvm/Support/Automaton.h" line="160" column="12" bodyfile="include/llvm/Support/Automaton.h" bodystart="160" bodyend="257"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_automaton_1aa2620d2287c9bf8cd15da84914af65e2" prot="public" virt="non-virtual"><scope>llvm::Automaton</scope><name>add</name></member>
+      <member refid="classllvm_1_1_automaton_1adbfe7e804f0c334162d71db7e2f77ded" prot="public" virt="non-virtual"><scope>llvm::Automaton</scope><name>Automaton</name></member>
+      <member refid="classllvm_1_1_automaton_1a9ade48998a5f4ef2d6c9b7ceecbe209d" prot="public" virt="non-virtual"><scope>llvm::Automaton</scope><name>Automaton</name></member>
+      <member refid="classllvm_1_1_automaton_1a8b955bf418dc9539b07a58a6e94ec638" prot="public" virt="non-virtual"><scope>llvm::Automaton</scope><name>canAdd</name></member>
+      <member refid="classllvm_1_1_automaton_1ab475bbd3819025a90bd009e18988bb40" prot="public" virt="non-virtual"><scope>llvm::Automaton</scope><name>enableTranscription</name></member>
+      <member refid="classllvm_1_1_automaton_1ad6fe99d549af75e18cd1e383e70c5beb" prot="public" virt="non-virtual"><scope>llvm::Automaton</scope><name>getNfaPaths</name></member>
+      <member refid="classllvm_1_1_automaton_1aa83ee188c66f74ed78d5eb6b0e2b7e94" prot="private" virt="non-virtual"><scope>llvm::Automaton</scope><name>M</name></member>
+      <member refid="classllvm_1_1_automaton_1a3ed601358dcead55d7299f124c7417aa" prot="private" virt="non-virtual"><scope>llvm::Automaton</scope><name>MapTy</name></member>
+      <member refid="classllvm_1_1_automaton_1a30f80f4c7e00f9a31b9d6e6221805b4d" prot="public" virt="non-virtual"><scope>llvm::Automaton</scope><name>reset</name></member>
+      <member refid="classllvm_1_1_automaton_1a4775b526d6e6e28d07266cb148732f75" prot="private" virt="non-virtual"><scope>llvm::Automaton</scope><name>State</name></member>
+      <member refid="classllvm_1_1_automaton_1aca89c3fcad786aea10404e4c6b9734e2" prot="private" virt="non-virtual"><scope>llvm::Automaton</scope><name>Transcribe</name></member>
+      <member refid="classllvm_1_1_automaton_1a863c0781f406ba2bf7f2d79472b2d0c7" prot="private" virt="non-virtual"><scope>llvm::Automaton</scope><name>Transcriber</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

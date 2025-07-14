@@ -1,0 +1,888 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_s_p_i_r_v_inst_printer" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SPIRVInstPrinter</compoundname>
+    <basecompoundref refid="classllvm_1_1_m_c_inst_printer" prot="public" virt="non-virtual">llvm::MCInstPrinter</basecompoundref>
+    <includes refid="_s_p_i_r_v_inst_printer_8h" local="yes">Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a54954c60be635e1d3615495a06b36bcb" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, SPIRV::InstructionSet::InstructionSet &gt;</type>
+        <definition>SmallDenseMap&lt;unsigned, SPIRV::InstructionSet::InstructionSet&gt; llvm::SPIRVInstPrinter::ExtInstSetIDs</definition>
+        <argsstring></argsstring>
+        <name>ExtInstSetIDs</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::ExtInstSetIDs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="23" column="17" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a9a87081188b2c618022298ecb8ccb4a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SPIRVInstPrinter::recordOpExtInstImport</definition>
+        <argsstring>(const MCInst *MI)</argsstring>
+        <name>recordOpExtInstImport</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::recordOpExtInstImport</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="24" column="8" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.cpp" bodystart="100" bodyend="105"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a538b1435d732f0d2620cea4849af80aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SPIRVInstPrinter::printInst</definition>
+        <argsstring>(const MCInst *MI, uint64_t Address, StringRef Annot, const MCSubtargetInfo &amp;STI, raw_ostream &amp;OS) override</argsstring>
+        <name>printInst</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::printInst</qualifiedname>
+        <reimplements refid="classllvm_1_1_m_c_inst_printer_1ac297f3bc74269d7fe98eaf7300cba9fa">printInst</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Annot</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref> &amp;</type>
+          <declname>STI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+<para>Print the specified <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> to the specified <ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>Address</computeroutput> the address of current instruction on most targets, used to print a PC relative immediate as the target address. On targets where a PC relative immediate is relative to the next instruction and the length of a <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> is difficult to measure (e.g. x86), this is the address of the next instruction. If Address is 0, the immediate will be printed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="29" column="8" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.cpp" bodystart="107" bodyend="251"/>
+        <references refid="_itanium_demangle_8h_1a536e22898d28a9340a4204407a75ad5d" compoundref="_itanium_demangle_8h" startline="3433">AbstractManglingParser&lt; Derived, Alloc &gt;::NumOps</references>
+        <references refid="namespacellvm_1a8e02bbea14c70bab55fbc1384e1472d9add7bf230fde8d4836917806aff6a6b27" compoundref="_mod_ref_8h" startline="280">llvm::Address</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_m_c_instr_desc_1a0ca904e64ee29c8812ed34e632d3c947" compoundref="_m_c_instr_desc_8h" startline="237" endline="237">llvm::MCInstrDesc::getNumOperands</references>
+        <references refid="namespacellvm_1a93d7a87f617e779623a45518a54db3eb" compoundref="_s_p_i_r_v_base_info_8cpp" startline="57" endline="91">llvm::getSymbolicOperandMnemonic</references>
+        <references refid="classllvm_1_1_m_c_instr_desc_1ade5781c13cce7ee39fe5cc54dcebccd8" compoundref="_m_c_instr_desc_8h" startline="261" endline="261">llvm::MCInstrDesc::isVariadic</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1a41acdb280262403252bc72f6d3f23f7a" compoundref="_m_c_inst_printer_8h" startline="53">llvm::MCInstPrinter::MII</references>
+        <references refid="namespacellvm_1_1_m_c_o_i_1ad9dfed338ec3d47f30c593ee49cbf96da83076f86f6450732bc883b8723492eb2" compoundref="_m_c_instr_desc_8h" startline="59">llvm::MCOI::OPERAND_UNKNOWN</references>
+        <references refid="classllvm_1_1_m_c_instr_desc_1a0f4e09a761d45bf0914f26d4c149ddeb" compoundref="_m_c_instr_desc_8h" startline="239" endline="242">llvm::MCInstrDesc::operands</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1aab90c946a08959c165433b2c125895ea" compoundref="_m_c_inst_printer_8cpp" startline="50" endline="61">llvm::MCInstPrinter::printAnnotation</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a33628819cbdccc8547d8e26c1a76c4a9">printInstruction</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a80115cc3d462d211e2526c4236950fb4" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="51" endline="98">printOpConstantVarOps</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1ab9572d51415fe9448360292077d55435" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="268" endline="315">printOpDecorate</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a27c4a87f88c20ac4710c4e092dadb6fb" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="333" endline="349">printOperand</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a5ae494d9fb7b6ef87715f462677938b9" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="253" endline="266">printOpExtInst</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a8e83cb710af6896d3dadac7e853ec6d4" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="36" endline="49">printRemainingVariableOps</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a8bfc8b31b54285b440b6d92760ca524a" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="399" endline="404">printSymbolicOperand</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a27c4a87f88c20ac4710c4e092dadb6fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SPIRVInstPrinter::printOperand</definition>
+        <argsstring>(const MCInst *MI, unsigned OpNo, raw_ostream &amp;O, const char *Modifier=nullptr)</argsstring>
+        <name>printOperand</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::printOperand</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>OpNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Modifier</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="31" column="8" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.cpp" bodystart="333" bodyend="349"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1ab13fc5e3f3dc12bc75fe3d764b832812" compoundref="_m_c_inst_printer_8h" startline="175" endline="177">llvm::MCInstPrinter::formatImm</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_r_c_inst_printer_8cpp_1a0092f28dd2ee076c70d4c225678dc6ce" compoundref="_a_r_c_inst_printer_8cpp" startline="107" endline="138">printExpr</references>
+        <references refid="classllvm_1_1_register_1a4df23dddc646b6a4b36ff483063a4ff8" compoundref="_register_8h" startline="77" endline="80">llvm::Register::virtReg2Index</references>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a538b1435d732f0d2620cea4849af80aa" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="107" endline="251">printInst</referencedby>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1ab9572d51415fe9448360292077d55435" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="268" endline="315">printOpDecorate</referencedby>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a8e83cb710af6896d3dadac7e853ec6d4" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="36" endline="49">printRemainingVariableOps</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a105abb876069fdc83b7d07e7f0eea8f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SPIRVInstPrinter::printStringImm</definition>
+        <argsstring>(const MCInst *MI, unsigned OpNo, raw_ostream &amp;O)</argsstring>
+        <name>printStringImm</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::printStringImm</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>OpNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="34" column="8" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.cpp" bodystart="351" bodyend="388"/>
+        <references refid="_itanium_demangle_8h_1a536e22898d28a9340a4204407a75ad5d" compoundref="_itanium_demangle_8h" startline="3433">AbstractManglingParser&lt; Derived, Alloc &gt;::NumOps</references>
+        <references refid="namespacellvm_1a77058bb5ca6b26baa532531b4f865133" compoundref="_s_p_i_r_v_base_info_8h" startline="260" endline="281">llvm::getSPIRVStringOperand</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a8bfc8b31b54285b440b6d92760ca524a" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="399" endline="404">printSymbolicOperand</references>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1ab9572d51415fe9448360292077d55435" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="268" endline="315">printOpDecorate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1ab9572d51415fe9448360292077d55435" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SPIRVInstPrinter::printOpDecorate</definition>
+        <argsstring>(const MCInst *MI, raw_ostream &amp;O)</argsstring>
+        <name>printOpDecorate</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::printOpDecorate</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="36" column="8" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.cpp" bodystart="268" bodyend="315"/>
+        <references refid="classllvm_1_1_m_c_instr_desc_1a0ca904e64ee29c8812ed34e632d3c947" compoundref="_m_c_instr_desc_8h" startline="237" endline="237">llvm::MCInstrDesc::getNumOperands</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1a41acdb280262403252bc72f6d3f23f7a" compoundref="_m_c_inst_printer_8h" startline="53">llvm::MCInstPrinter::MII</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a27c4a87f88c20ac4710c4e092dadb6fb" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="333" endline="349">printOperand</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a8e83cb710af6896d3dadac7e853ec6d4" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="36" endline="49">printRemainingVariableOps</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a105abb876069fdc83b7d07e7f0eea8f2" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="351" endline="388">printStringImm</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a8bfc8b31b54285b440b6d92760ca524a" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="399" endline="404">printSymbolicOperand</references>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a538b1435d732f0d2620cea4849af80aa" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="107" endline="251">printInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a5ae494d9fb7b6ef87715f462677938b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SPIRVInstPrinter::printOpExtInst</definition>
+        <argsstring>(const MCInst *MI, raw_ostream &amp;O)</argsstring>
+        <name>printOpExtInst</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::printOpExtInst</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="37" column="8" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.cpp" bodystart="253" bodyend="266"/>
+        <references refid="_itanium_demangle_8h_1a536e22898d28a9340a4204407a75ad5d" compoundref="_itanium_demangle_8h" startline="3433">AbstractManglingParser&lt; Derived, Alloc &gt;::NumOps</references>
+        <references refid="classllvm_1_1_m_c_instr_desc_1a0ca904e64ee29c8812ed34e632d3c947" compoundref="_m_c_instr_desc_8h" startline="237" endline="237">llvm::MCInstrDesc::getNumOperands</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1a41acdb280262403252bc72f6d3f23f7a" compoundref="_m_c_inst_printer_8h" startline="53">llvm::MCInstPrinter::MII</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a8e83cb710af6896d3dadac7e853ec6d4" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="36" endline="49">printRemainingVariableOps</references>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a538b1435d732f0d2620cea4849af80aa" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="107" endline="251">printInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a8e83cb710af6896d3dadac7e853ec6d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SPIRVInstPrinter::printRemainingVariableOps</definition>
+        <argsstring>(const MCInst *MI, unsigned StartIndex, raw_ostream &amp;O, bool SkipFirstSpace=false, bool SkipImmediates=false)</argsstring>
+        <name>printRemainingVariableOps</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::printRemainingVariableOps</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>StartIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>SkipFirstSpace</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>SkipImmediates</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="38" column="8" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.cpp" bodystart="36" bodyend="49"/>
+        <references refid="_itanium_demangle_8h_1a536e22898d28a9340a4204407a75ad5d" compoundref="_itanium_demangle_8h" startline="3433">AbstractManglingParser&lt; Derived, Alloc &gt;::NumOps</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a27c4a87f88c20ac4710c4e092dadb6fb" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="333" endline="349">printOperand</references>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a538b1435d732f0d2620cea4849af80aa" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="107" endline="251">printInst</referencedby>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1ab9572d51415fe9448360292077d55435" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="268" endline="315">printOpDecorate</referencedby>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a5ae494d9fb7b6ef87715f462677938b9" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="253" endline="266">printOpExtInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a80115cc3d462d211e2526c4236950fb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SPIRVInstPrinter::printOpConstantVarOps</definition>
+        <argsstring>(const MCInst *MI, unsigned StartIndex, raw_ostream &amp;O)</argsstring>
+        <name>printOpConstantVarOps</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::printOpConstantVarOps</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>StartIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="41" column="8" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.cpp" bodystart="51" bodyend="98"/>
+        <references refid="namespacellvm_1_1_s_p_i_r_v_1a2a33c3bcd5f8b3cc9a7e074d7f25351fa7ceba9b37fa216e9828a10ca88a475e7" compoundref="_s_p_i_r_v_instr_info_8h" startline="63">llvm::SPIRV::ASM_PRINTER_WIDTH16</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+        <references refid="_a_arch64_i_sel_d_a_g_to_d_a_g_8cpp_1a2098a5fa6ada61b6c4a1f210ad84e4a1a4ebada6a2af2bcba53ded1d7b414f081" compoundref="_a_arch64_i_sel_d_a_g_to_d_a_g_8cpp" startline="1766">FP</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a538b1435d732f0d2620cea4849af80aa" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="107" endline="251">printInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a0999edf1cc0734578bc545e935311a83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SPIRVInstPrinter::printExtension</definition>
+        <argsstring>(const MCInst *MI, unsigned OpNo, raw_ostream &amp;O)</argsstring>
+        <name>printExtension</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::printExtension</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>OpNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="44" column="8" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.cpp" bodystart="390" bodyend="396"/>
+        <references refid="namespacellvm_1a1b0bb604ba95a6990e336d1f7ba910d5" compoundref="_s_p_i_r_v_base_info_8cpp" startline="228" endline="237">llvm::getExtInstName</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a8bfc8b31b54285b440b6d92760ca524a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>SPIRV::OperandCategory::OperandCategory</type>
+            <declname>category</declname>
+            <defname>category</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void SPIRVInstPrinter::printSymbolicOperand</definition>
+        <argsstring>(const MCInst *MI, unsigned OpNo, raw_ostream &amp;O)</argsstring>
+        <name>printSymbolicOperand</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::printSymbolicOperand</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>OpNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="46" column="8" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.cpp" bodystart="399" bodyend="404"/>
+        <references refid="namespacellvm_1a93d7a87f617e779623a45518a54db3eb" compoundref="_s_p_i_r_v_base_info_8cpp" startline="57" endline="91">llvm::getSymbolicOperandMnemonic</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a538b1435d732f0d2620cea4849af80aa" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="107" endline="251">printInst</referencedby>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1ab9572d51415fe9448360292077d55435" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="268" endline="315">printOpDecorate</referencedby>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a105abb876069fdc83b7d07e7f0eea8f2" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="351" endline="388">printStringImm</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a072b00663770ad0fa1df757b45a5c4dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *, <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>std::pair&lt; const char *, uint64_t &gt; llvm::SPIRVInstPrinter::getMnemonic</definition>
+        <argsstring>(const MCInst &amp;MI) const override</argsstring>
+        <name>getMnemonic</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::getMnemonic</qualifiedname>
+        <reimplements refid="classllvm_1_1_m_c_inst_printer_1ad3e4ca8fe0215000850b46704e98a95d">getMnemonic</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Returns a pair containing the mnemonic for <computeroutput>MI</computeroutput> and the number of bits left for further processing by printInstruction (generated by tablegen). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="50" column="3"/>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a33628819cbdccc8547d8e26c1a76c4a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SPIRVInstPrinter::printInstruction</definition>
+        <argsstring>(const MCInst *MI, uint64_t Address, raw_ostream &amp;O)</argsstring>
+        <name>printInstruction</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::printInstruction</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="51" column="8"/>
+        <references refid="namespacellvm_1a8e02bbea14c70bab55fbc1384e1472d9add7bf230fde8d4836917806aff6a6b27" compoundref="_mod_ref_8h" startline="280">llvm::Address</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a538b1435d732f0d2620cea4849af80aa" compoundref="_s_p_i_r_v_inst_printer_8cpp" startline="107" endline="251">printInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1af0525fc87f3e2054109908599d21098d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MCInstPrinter::MCInstPrinter</definition>
+        <argsstring>(const MCAsmInfo &amp;mai, const MCInstrInfo &amp;mii, const MCRegisterInfo &amp;mri)</argsstring>
+        <name>MCInstPrinter</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::MCInstPrinter</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_asm_info" kindref="compound">MCAsmInfo</ref> &amp;</type>
+          <declname>mai</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_instr_info" kindref="compound">MCInstrInfo</ref> &amp;</type>
+          <declname>mii</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_register_info" kindref="compound">MCRegisterInfo</ref> &amp;</type>
+          <declname>mri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="27" column="3" bodyfile="include/llvm/MC/MCInstPrinter.h" bodystart="90" bodyend="91"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_s_p_i_r_v_inst_printer_1a0d38ec90351abf4bdf9f903110573ecd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>static const char * llvm::SPIRVInstPrinter::getRegisterName</definition>
+        <argsstring>(MCRegister Reg)</argsstring>
+        <name>getRegisterName</name>
+        <qualifiedname>llvm::SPIRVInstPrinter::getRegisterName</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_register" kindref="compound">MCRegister</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="52" column="21"/>
+        <references refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" compoundref="_machine_sink_8cpp" startline="2028">Reg</references>
+        <referencedby refid="classanonymous__namespace_02_s_p_i_r_v_asm_printer_8cpp_03_1_1_s_p_i_r_v_asm_printer_1a84913da63189f7b4166625f0f01a37e5" compoundref="_s_p_i_r_v_asm_printer_8cpp" startline="207" endline="247">anonymous_namespace{SPIRVAsmPrinter.cpp}::SPIRVAsmPrinter::printOperand</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::MCInstPrinter</label>
+        <link refid="classllvm_1_1_m_c_inst_printer"/>
+      </node>
+      <node id="1">
+        <label>llvm::SPIRVInstPrinter</label>
+        <link refid="classllvm_1_1_s_p_i_r_v_inst_printer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>AsmCharLiteralSyntax</label>
+      </node>
+      <node id="14">
+        <label>ExceptionHandling</label>
+      </node>
+      <node id="21">
+        <label>Style</label>
+      </node>
+      <node id="12">
+        <label>LCOMMType</label>
+      </node>
+      <node id="13">
+        <label>MCSymbolAttr</label>
+      </node>
+      <node id="30">
+        <label>Size_T</label>
+      </node>
+      <node id="28">
+        <label>SmallVectorSizeType&lt; raw_ostream::Colors &gt;</label>
+        <link refid="class_small_vector_size_type_3_01raw__ostream_1_1_colors_01_4"/>
+      </node>
+      <node id="15">
+        <label>EncodingType</label>
+      </node>
+      <node id="7">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="8">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="5">
+        <label>llvm::MCAsmInfo</label>
+        <link refid="classllvm_1_1_m_c_asm_info"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>AssemblerDialect</edgelabel>
+          <edgelabel>CalleeSaveStackSlotSize</edgelabel>
+          <edgelabel>CodePointerSize</edgelabel>
+          <edgelabel>CommentColumn</edgelabel>
+          <edgelabel>MaxInstLength</edgelabel>
+          <edgelabel>MinInstAlignment</edgelabel>
+          <edgelabel>TextAlignFillValue</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>AlignmentIsInBytes</edgelabel>
+          <edgelabel>AllowAdditionalComments</edgelabel>
+          <edgelabel>AllowAtAtStartOfIdentifier</edgelabel>
+          <edgelabel>AllowAtInName</edgelabel>
+          <edgelabel>AllowDollarAtStartOfIdentifier</edgelabel>
+          <edgelabel>AllowQuestionAtStartOfIdentifier</edgelabel>
+          <edgelabel>AvoidWeakIfComdat</edgelabel>
+          <edgelabel>COMMDirectiveAlignmentIsInBytes</edgelabel>
+          <edgelabel>DollarIsPC</edgelabel>
+          <edgelabel>DwarfFDESymbolsUseAbsDiff</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>AsciiDirective</edgelabel>
+          <edgelabel>AscizDirective</edgelabel>
+          <edgelabel>Code16Directive</edgelabel>
+          <edgelabel>Code32Directive</edgelabel>
+          <edgelabel>Code64Directive</edgelabel>
+          <edgelabel>DTPRel32Directive</edgelabel>
+          <edgelabel>DTPRel64Directive</edgelabel>
+          <edgelabel>Data16bitsDirective</edgelabel>
+          <edgelabel>Data32bitsDirective</edgelabel>
+          <edgelabel>Data64bitsDirective</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>CommentString</edgelabel>
+          <edgelabel>LinkerPrivateGlobalPrefix</edgelabel>
+          <edgelabel>PrivateGlobalPrefix</edgelabel>
+          <edgelabel>PrivateLabelPrefix</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>CharacterLiteralSyntax</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>LCOMMDirectiveAlignmentType</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>ExportedVisibilityAttr</edgelabel>
+          <edgelabel>HiddenDeclarationVisibilityAttr</edgelabel>
+          <edgelabel>HiddenVisibilityAttr</edgelabel>
+          <edgelabel>MemtagAttr</edgelabel>
+          <edgelabel>ProtectedVisibilityAttr</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>ExceptionsType</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>WinEHEncodingType</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>InitialFrameState</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>BinutilsVersion</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MCInstPrinter</label>
+        <link refid="classllvm_1_1_m_c_inst_printer"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>CommentStream</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>MAI</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>MII</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>MRI</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>MIA</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>PrintAliases</edgelabel>
+          <edgelabel>PrintBranchImmAsAddress</edgelabel>
+          <edgelabel>PrintImmHex</edgelabel>
+          <edgelabel>SymbolizeOperands</edgelabel>
+          <edgelabel>UseColor</edgelabel>
+          <edgelabel>UseMarkup</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>PrintHexStyle</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>ColorStack</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::MCInstrAnalysis</label>
+        <link refid="classllvm_1_1_m_c_instr_analysis"/>
+        <childnode refid="18" relation="usage">
+          <edgelabel>Info</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::MCInstrInfo</label>
+        <link refid="classllvm_1_1_m_c_instr_info"/>
+      </node>
+      <node id="19">
+        <label>llvm::MCRegisterInfo</label>
+        <link refid="classllvm_1_1_m_c_register_info"/>
+      </node>
+      <node id="1">
+        <label>llvm::SPIRVInstPrinter</label>
+        <link refid="classllvm_1_1_s_p_i_r_v_inst_printer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+        <childnode refid="41" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::SmallVector&lt; raw_ostream::Colors, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="37" relation="private-inheritance">
+        </childnode>
+        <childnode refid="39" relation="template-instance">
+          <edgelabel>&lt; raw_ostream::Colors, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="27" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="32">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="29" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; raw_ostream::Colors &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="27" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; raw_ostream::Colors &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::SmallVectorImpl&lt; raw_ostream::Colors &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+        <childnode refid="35" relation="template-instance">
+          <edgelabel>&lt; raw_ostream::Colors &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>llvm::SmallVectorStorage&lt; raw_ostream::Colors, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="template-instance">
+          <edgelabel>&lt; raw_ostream::Colors, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="36">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::SmallVectorTemplateBase&lt; raw_ostream::Colors &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="template-instance">
+          <edgelabel>&lt; raw_ostream::Colors &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::SmallVectorTemplateCommon&lt; raw_ostream::Colors &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+        <childnode refid="31" relation="template-instance">
+          <edgelabel>&lt; raw_ostream::Colors &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::StringRef</label>
+        <link refid="classllvm_1_1_string_ref"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>npos</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::raw_ostream</label>
+        <link refid="classllvm_1_1raw__ostream"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>BLACK</edgelabel>
+          <edgelabel>BLUE</edgelabel>
+          <edgelabel>BRIGHT_BLACK</edgelabel>
+          <edgelabel>BRIGHT_BLUE</edgelabel>
+          <edgelabel>BRIGHT_CYAN</edgelabel>
+          <edgelabel>BRIGHT_GREEN</edgelabel>
+          <edgelabel>BRIGHT_MAGENTA</edgelabel>
+          <edgelabel>BRIGHT_RED</edgelabel>
+          <edgelabel>BRIGHT_WHITE</edgelabel>
+          <edgelabel>BRIGHT_YELLOW</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>size_t</label>
+        <link refid="classsize__t"/>
+      </node>
+      <node id="4">
+        <label>static constexpr Colors</label>
+      </node>
+      <node id="17">
+        <label>pair&lt; int, int &gt;</label>
+      </node>
+      <node id="16">
+        <label>vector&lt; llvm::MCCFIInstruction &gt;</label>
+      </node>
+      <node id="6">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+      <node id="27">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" line="21" column="1" bodyfile="lib/Target/SPIRV/MCTargetDesc/SPIRVInstPrinter.h" bodystart="21" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a363576a336d10dec34bf190017ffc68f" prot="public" virt="virtual"><scope>llvm::SPIRVInstPrinter</scope><name>applyTargetSpecificCLOption</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a715c5d502c8de89fcfdf281ce964d6fe" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>ColorStack</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a43f767b1fc960c3a7528055069b0ae97" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>CommentStream</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a54954c60be635e1d3615495a06b36bcb" prot="private" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>ExtInstSetIDs</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1aa062041642a7343958a53aa65564147e" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>formatDec</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a152eff13caf242abc99d47f5a197a4d9" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>formatHex</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ae984d0ef2a117d681fee8e563786c9b8" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>formatHex</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ab13fc5e3f3dc12bc75fe3d764b832812" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>formatImm</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a072b00663770ad0fa1df757b45a5c4dc" prot="public" virt="virtual"><scope>llvm::SPIRVInstPrinter</scope><name>getMnemonic</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a62c484cd2ea7bf71dad8fd6d223864bb" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>getOpcodeName</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a4957778d98023b01a166bc52820cbd4b" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>getPrintImmHex</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a0d38ec90351abf4bdf9f903110573ecd" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>getRegisterName</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a2724fcd7769447ccd8459f7fe617a911" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>getUseColor</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ac29057263eeedcc271ae4ec3dfd2353d" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>getUseMarkup</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1aacb2bfbafa57a37e627bf1334d349bc6" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>MAI</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a4e0302b2f7a78c8741bc07ca7655b859" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>Markup</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a00c158b4d63bb4b8cc91e6cfb0150341" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>markup</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ae9677047c398a916ab4a5a6fabeb36e7" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>matchAliasPatterns</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1af0525fc87f3e2054109908599d21098d" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>MCInstPrinter</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1aea22be8e7b7e6922680a8369bcf7e3b7" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>MIA</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a41acdb280262403252bc72f6d3f23f7a" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>MII</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1aaaeadf26b0e3ae38625c5469231bbce6" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1afb00adba3dbd7afd9ee2b432c2edffbb" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>PrintAliases</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1aab90c946a08959c165433b2c125895ea" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printAnnotation</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1acef595ffd1764f8c06f5347db94ee756" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>PrintBranchImmAsAddress</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a0999edf1cc0734578bc545e935311a83" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printExtension</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1af9e5aa3371a52ac7283a2c8aa217b73b" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>PrintHexStyle</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a23492d33eb76ba85db3600115fed651b" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>PrintImmHex</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a538b1435d732f0d2620cea4849af80aa" prot="public" virt="virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printInst</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a33628819cbdccc8547d8e26c1a76c4a9" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printInstruction</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a80115cc3d462d211e2526c4236950fb4" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printOpConstantVarOps</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1ab9572d51415fe9448360292077d55435" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printOpDecorate</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a27c4a87f88c20ac4710c4e092dadb6fb" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printOperand</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a5ae494d9fb7b6ef87715f462677938b9" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printOpExtInst</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ad0ad5f0b1236badc25e0613d3b962997" prot="public" virt="virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printRegName</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a8e83cb710af6896d3dadac7e853ec6d4" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printRemainingVariableOps</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a105abb876069fdc83b7d07e7f0eea8f2" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printStringImm</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a8bfc8b31b54285b440b6d92760ca524a" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>printSymbolicOperand</name></member>
+      <member refid="classllvm_1_1_s_p_i_r_v_inst_printer_1a9a87081188b2c618022298ecb8ccb4a8" prot="private" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>recordOpExtInstImport</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a3216205cbe92e7720a22058cf2d57676" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>setCommentStream</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a0a5ab1597f769f3c0016aaa98f00e27a" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>setMCInstrAnalysis</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a0389bf1c38ceac3d1bac5801f726c50b" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>setPrintBranchImmAsAddress</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ae555ad59948ec618ceb8f19d50bd1601" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>setPrintHexStyle</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a5315ee213d2bb70bfb0d581369c8bd47" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>setPrintImmHex</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a49e30b2456b2073db0e92ddc5a9d8191" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>setSymbolizeOperands</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a3aa0680085158cfb0c14163a07ce9515" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>setUseColor</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a93ea46134ac48f273fb38c88c4edde07" prot="public" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>setUseMarkup</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a5151f8e39f6265b5528efed4b516bae7" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>SymbolizeOperands</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ab98b5a4fbd0a43ca838ff5cbaef3f2d4" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>UseColor</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a0a1fa89c14ac7b72829c033469ec1fbd" prot="protected" virt="non-virtual"><scope>llvm::SPIRVInstPrinter</scope><name>UseMarkup</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a55e82de41ab06366834cbef13e46ac6d" prot="public" virt="virtual"><scope>llvm::SPIRVInstPrinter</scope><name>~MCInstPrinter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

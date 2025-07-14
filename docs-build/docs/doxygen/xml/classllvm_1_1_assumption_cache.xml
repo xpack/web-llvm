@@ -1,0 +1,430 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_assumption_cache" kind="class" language="C++" prot="public">
+    <compoundname>llvm::AssumptionCache</compoundname>
+    <includes refid="_assumption_cache_8h" local="yes">llvm/Analysis/AssumptionCache.h</includes>
+    <innerclass refid="classllvm_1_1_assumption_cache_1_1_affected_value_callback_v_h" prot="private">llvm::AssumptionCache::AffectedValueCallbackVH</innerclass>
+    <innerclass refid="structllvm_1_1_assumption_cache_1_1_result_elem" prot="public">llvm::AssumptionCache::ResultElem</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_assumption_cache_1a05a03a071a8a55948ba0db3b5bf594ba" prot="public" static="no" strong="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <name></name>
+        <qualifiedname>llvm::AssumptionCache</qualifiedname>
+        <enumvalue id="classllvm_1_1_assumption_cache_1a05a03a071a8a55948ba0db3b5bf594baabe329e327a2448aff6bd087678df1c26" prot="public">
+          <name>ExprResultIdx</name>
+          <initializer>= std::numeric_limits&lt;unsigned&gt;::max()</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> of <ref refid="structllvm_1_1_assumption_cache_1_1_result_elem_1a0085dfe0ee247e594c95dbb6f768f235" kindref="member">ResultElem::Index</ref> indicating that the argument to the call of the llvm.assume. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="46" column="3" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="46" bodyend="46"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_assumption_cache_1a6cb96f5985968dbd97e67c57164122ba" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; AffectedValueCallbackVH, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_assumption_cache_1_1_result_elem" kindref="compound">ResultElem</ref>, 1 &gt;, <ref refid="structllvm_1_1_dense_map_info" kindref="compound">AffectedValueCallbackVH::DMI</ref> &gt;</type>
+        <definition>using llvm::AssumptionCache::AffectedValuesMap = 
+      DenseMap&lt;AffectedValueCallbackVH, SmallVector&lt;ResultElem, 1&gt;,
+               AffectedValueCallbackVH::DMI&gt;</definition>
+        <argsstring></argsstring>
+        <name>AffectedValuesMap</name>
+        <qualifiedname>llvm::AssumptionCache::AffectedValuesMap</qualifiedname>
+        <briefdescription>
+<para>A map of values about which an assumption might be providing information to the relevant set of assumptions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="86" column="3" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_assumption_cache_1a952edfcd1f444ce5c89978299ae9cd57" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+        <definition>Function&amp; llvm::AssumptionCache::F</definition>
+        <argsstring></argsstring>
+        <name>F</name>
+        <qualifiedname>llvm::AssumptionCache::F</qualifiedname>
+        <briefdescription>
+<para>The function for which this cache is handling assumptions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We track this to lazily populate our assumptions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="61" column="12" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_assumption_cache_1a3d80b90e6981cb5dd7fedc7bec6aed02" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+        <definition>TargetTransformInfo* llvm::AssumptionCache::TTI</definition>
+        <argsstring></argsstring>
+        <name>TTI</name>
+        <qualifiedname>llvm::AssumptionCache::TTI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="63" column="23" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_assumption_cache_1af8a34836ef83d3d507bd13cc58c1ef60" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_assumption_cache_1_1_result_elem" kindref="compound">ResultElem</ref>, 4 &gt;</type>
+        <definition>SmallVector&lt;ResultElem, 4&gt; llvm::AssumptionCache::AssumeHandles</definition>
+        <argsstring></argsstring>
+        <name>AssumeHandles</name>
+        <qualifiedname>llvm::AssumptionCache::AssumeHandles</qualifiedname>
+        <briefdescription>
+<para>Vector of weak value handles to calls of the @llvm.assume intrinsic. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="67" column="15" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_assumption_cache_1a59c99217904c801604f1a430a11e7ccf" prot="private" static="no" mutable="no">
+        <type>friend</type>
+        <definition>friend llvm::AssumptionCache::AffectedValueCallbackVH</definition>
+        <argsstring></argsstring>
+        <name>AffectedValueCallbackVH</name>
+        <qualifiedname>llvm::AssumptionCache::AffectedValueCallbackVH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="82" column="10" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_assumption_cache_1af2029524118f64d0aa47fb0f32676772" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">AffectedValuesMap</ref></type>
+        <definition>AffectedValuesMap llvm::AssumptionCache::AffectedValues</definition>
+        <argsstring></argsstring>
+        <name>AffectedValues</name>
+        <qualifiedname>llvm::AssumptionCache::AffectedValues</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="89" column="21" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_assumption_cache_1a39a54db9071afa97154a47e853fed8a0" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AssumptionCache::Scanned</definition>
+        <argsstring></argsstring>
+        <name>Scanned</name>
+        <qualifiedname>llvm::AssumptionCache::Scanned</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Flag tracking whether we have scanned the function yet. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We want to be as lazy about this as possible, and so we scan the function at the last moment. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="101" column="8" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_assumption_cache_1a31a4886ab0d28861fdc78be8f5967e7b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_assumption_cache_1_1_result_elem" kindref="compound">ResultElem</ref>, 1 &gt; &amp;</type>
+        <definition>SmallVector&lt; AssumptionCache::ResultElem, 1 &gt; &amp; AssumptionCache::getOrInsertAffectedValues</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>getOrInsertAffectedValues</name>
+        <qualifiedname>llvm::AssumptionCache::getOrInsertAffectedValues</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Get the vector of assumptions which affect a value from the cache. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="92" column="15" bodyfile="lib/Analysis/AssumptionCache.cpp" bodystart="46" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_assumption_cache_1a8be61e61997de05181e113f6755fbfa3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssumptionCache::transferAffectedValuesInCache</definition>
+        <argsstring>(Value *OV, Value *NV)</argsstring>
+        <name>transferAffectedValuesInCache</name>
+        <qualifiedname>llvm::AssumptionCache::transferAffectedValuesInCache</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>OV</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>NV</declname>
+        </param>
+        <briefdescription>
+<para>Move affected values in the cache for OV to be affected values for NV. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="95" column="8" bodyfile="lib/Analysis/AssumptionCache.cpp" bodystart="142" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_assumption_cache_1a4e13b95cccc7a9ca5d4914d3765ef81e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssumptionCache::scanFunction</definition>
+        <argsstring>()</argsstring>
+        <name>scanFunction</name>
+        <qualifiedname>llvm::AssumptionCache::scanFunction</qualifiedname>
+        <briefdescription>
+<para>Scan the function for assumptions and add them to the cache. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="104" column="8" bodyfile="lib/Analysis/AssumptionCache.cpp" bodystart="166" bodyend="183"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_assumption_cache_1ab6a2d92539d4596ba55f6d953ec7c188" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::AssumptionCache::AssumptionCache</definition>
+        <argsstring>(Function &amp;F, TargetTransformInfo *TTI=nullptr)</argsstring>
+        <name>AssumptionCache</name>
+        <qualifiedname>llvm::AssumptionCache::AssumptionCache</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+          <declname>TTI</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Construct an <ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref> from a function by scanning all of its instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="109" column="3" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="109" bodyend="110"/>
+        <referencedby refid="classllvm_1_1_assumption_analysis_1aeb8f2cc893c02d3d5a926b69bab89185" compoundref="_assumption_cache_8cpp" startline="219" endline="223">llvm::AssumptionAnalysis::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_assumption_cache_1a4867ed1b6dfd356558bd881567602049" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AssumptionCache::invalidate</definition>
+        <argsstring>(Function &amp;, const PreservedAnalyses &amp;, FunctionAnalysisManager::Invalidator &amp;)</argsstring>
+        <name>invalidate</name>
+        <qualifiedname>llvm::AssumptionCache::invalidate</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_preserved_analyses" kindref="compound">PreservedAnalyses</ref> &amp;</type>
+        </param>
+        <param>
+          <type>FunctionAnalysisManager::Invalidator &amp;</type>
+        </param>
+        <briefdescription>
+<para>This cache is designed to be self-updating and so it should never be invalidated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="114" column="8" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="114" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_assumption_cache_1a23187618f079555e127ba0e7b4581530" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssumptionCache::registerAssumption</definition>
+        <argsstring>(AssumeInst *CI)</argsstring>
+        <name>registerAssumption</name>
+        <qualifiedname>llvm::AssumptionCache::registerAssumption</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_assume_inst" kindref="compound">AssumeInst</ref> *</type>
+          <declname>CI</declname>
+        </param>
+        <briefdescription>
+<para>Add an @llvm.assume intrinsic to this function&apos;s cache. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The call passed in must be an instruction within this function and must not already be in the cache. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="123" column="8" bodyfile="lib/Analysis/AssumptionCache.cpp" bodystart="185" bodyend="217"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_assumption_cache_1a05a03a071a8a55948ba0db3b5bf594baabe329e327a2448aff6bd087678df1c26" compoundref="_assumption_cache_8h" startline="46">ExprResultIdx</references>
+        <references refid="_basic_alias_analysis_8cpp_1a1b8850f1ed44c12bc3501175a71c251c" compoundref="_basic_alias_analysis_8cpp" startline="863" endline="874">getParent</references>
+        <references refid="classllvm_1_1ilist__detail_1_1node__parent__access_1a7e19e7508415378ad9523e0339b23e22" compoundref="ilist__node_8h" startline="32" endline="34">llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;::getParent</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a3c0adc1054838f4498e0e860b637a22b" compoundref="_pattern_match_8h" startline="2628" endline="2630">llvm::PatternMatch::m_Intrinsic</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a25d956d9e0beadd47ce4bc255dfa811d" compoundref="_pattern_match_8h" startline="49" endline="51">llvm::PatternMatch::match</references>
+        <references refid="classllvm_1_1_assumption_cache_1a5fa8956db34e5076680cfd8398d090dc" compoundref="_assumption_cache_8cpp" startline="97" endline="108">updateAffectedValues</references>
+        <referencedby refid="_inline_function_8cpp_1ae54a643a9f9d83374bb4d7d22d4662d7" compoundref="_inline_function_8cpp" startline="1664" endline="1699">AddAlignmentAssumptions</referencedby>
+        <referencedby refid="_promote_memory_to_register_8cpp_1aebae63f31076e8c0dfe153c45a730497" compoundref="_promote_memory_to_register_8cpp" startline="446" endline="455">addAssumeNonNull</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aea49493e2ae224d30cda2b3235d180b0" compoundref="_simple_loop_unswitch_8cpp" startline="1166" endline="1355">buildClonedLoopBlocks</referencedby>
+        <referencedby refid="_instruction_combining_8cpp_1a45a945c85468ec7d17b48b0d4f612b7e" compoundref="_instruction_combining_8cpp" startline="5508" endline="5582">combineInstructionsOverFunction</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ac0fb2da7eaa616e8ef8a8f52b981334b" compoundref="_simplify_c_f_g_8cpp" startline="3564" endline="3719">foldCondBranchOnValueKnownInPredecessorImpl</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1af04adca83664ebd947723470c4da58aa" compoundref="_simplify_c_f_g_8cpp" startline="8309" endline="8369">removeUndefIntroducingPredecessor</referencedby>
+        <referencedby refid="namespacellvm_1aa5df9c7cb06c08a066a30482d77cc1d9" compoundref="_assume_bundle_builder_8cpp" startline="293" endline="307">llvm::salvageKnowledge</referencedby>
+        <referencedby refid="namespacellvm_1ae45123597a5abb30853572614c1b2d4b" compoundref="_loop_unroll_and_jam_8cpp" startline="215" endline="622">llvm::UnrollAndJamLoop</referencedby>
+        <referencedby refid="namespacellvm_1af78eb969de6e17fe20fa8834d3e9c9aa" compoundref="_loop_unroll_8cpp" startline="458" endline="1084">llvm::UnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_assumption_cache_1a8137607e298da393c72cfcffb2edc352" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssumptionCache::unregisterAssumption</definition>
+        <argsstring>(AssumeInst *CI)</argsstring>
+        <name>unregisterAssumption</name>
+        <qualifiedname>llvm::AssumptionCache::unregisterAssumption</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_assume_inst" kindref="compound">AssumeInst</ref> *</type>
+          <declname>CI</declname>
+        </param>
+        <briefdescription>
+<para>Remove an @llvm.assume intrinsic from this function&apos;s cache if it has been added to the cache earlier. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="127" column="8" bodyfile="lib/Analysis/AssumptionCache.cpp" bodystart="110" bodyend="135"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="structllvm_1_1_assumption_cache_1_1_result_elem_1a14c11eb4c6cb72fc9922b742c71fe3b3" compoundref="_assumption_cache_8h" startline="49">llvm::AssumptionCache::ResultElem::Assume</references>
+        <references refid="namespacellvm_1a60a348350395aef11d68f58111bcf499" compoundref="_s_t_l_extras_8h" startline="2107" endline="2109">llvm::erase</references>
+        <references refid="_assumption_cache_8cpp_1a51e2be2d1cd63e7b951c1f25c8eb182b" compoundref="_assumption_cache_8cpp" startline="57" endline="95">findAffectedValues</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_assumption_cache_1a5fa8956db34e5076680cfd8398d090dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssumptionCache::updateAffectedValues</definition>
+        <argsstring>(AssumeInst *CI)</argsstring>
+        <name>updateAffectedValues</name>
+        <qualifiedname>llvm::AssumptionCache::updateAffectedValues</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_assume_inst" kindref="compound">AssumeInst</ref> *</type>
+          <declname>CI</declname>
+        </param>
+        <briefdescription>
+<para>Update the cache of values being affected by this assumption (i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>the values about which this assumption provides information). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="131" column="8" bodyfile="lib/Analysis/AssumptionCache.cpp" bodystart="97" bodyend="108"/>
+        <references refid="structllvm_1_1_assumption_cache_1_1_result_elem_1a14c11eb4c6cb72fc9922b742c71fe3b3" compoundref="_assumption_cache_8h" startline="49">llvm::AssumptionCache::ResultElem::Assume</references>
+        <references refid="_assumption_cache_8cpp_1a51e2be2d1cd63e7b951c1f25c8eb182b" compoundref="_assumption_cache_8cpp" startline="57" endline="95">findAffectedValues</references>
+        <references refid="structllvm_1_1_assumption_cache_1_1_result_elem_1a0085dfe0ee247e594c95dbb6f768f235" compoundref="_assumption_cache_8h" startline="53">llvm::AssumptionCache::ResultElem::Index</references>
+        <references refid="namespacellvm_1a7dc3069afa2ce5ea62ac2eb183e51c00" compoundref="_s_t_l_extras_8h" startline="1753" endline="1755">llvm::none_of</references>
+        <referencedby refid="classllvm_1_1_assumption_cache_1a23187618f079555e127ba0e7b4581530" compoundref="_assumption_cache_8cpp" startline="185" endline="217">registerAssumption</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_assumption_cache_1a2f5aab0e9687dd8250c8fa49d4de1b1b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::AssumptionCache::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::AssumptionCache::clear</qualifiedname>
+        <briefdescription>
+<para>Clear the cache of @llvm.assume intrinsics for a function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It will be re-scanned the next time it is requested. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="136" column="8" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="136" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_assumption_cache_1a6bc4a01d7ae02545172aaee110d4a01c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_mutable_array_ref" kindref="compound">MutableArrayRef</ref>&lt; <ref refid="structllvm_1_1_assumption_cache_1_1_result_elem" kindref="compound">ResultElem</ref> &gt;</type>
+        <definition>MutableArrayRef&lt; ResultElem &gt; llvm::AssumptionCache::assumptions</definition>
+        <argsstring>()</argsstring>
+        <name>assumptions</name>
+        <qualifiedname>llvm::AssumptionCache::assumptions</qualifiedname>
+        <briefdescription>
+<para>Access the list of assumption handles currently tracked for this function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that these produce weak handles that may be null. The caller must handle that case. FIXME: We should replace this with <ref refid="structllvm_1_1pointee__iterator" kindref="compound">pointee_iterator&lt;filter_iterator&lt;...&gt;&gt;</ref> when we can write that to filter out the null values. Then caller code will become simpler. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="150" column="19" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="150" bodyend="154"/>
+        <referencedby refid="structllvm_1_1_code_metrics_1a12fe141dcc45d0acb90cd466649ae556" compoundref="_code_metrics_8cpp" startline="95" endline="113">llvm::CodeMetrics::collectEphemeralValues</referencedby>
+        <referencedby refid="structllvm_1_1_code_metrics_1a7e174506b52ad46ea1f746a7f727d999" compoundref="_code_metrics_8cpp" startline="71" endline="93">llvm::CodeMetrics::collectEphemeralValues</referencedby>
+        <referencedby refid="classllvm_1_1_assumption_printer_pass_1a140e7194c82dc0eda75b3602736a0b83" compoundref="_assumption_cache_8cpp" startline="227" endline="237">llvm::AssumptionPrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_alignment_from_assumptions_pass_1a8438c57f709573b02939ac340a2df1ec" compoundref="_alignment_from_assumptions_8cpp" startline="283" endline="298">llvm::AlignmentFromAssumptionsPass::runImpl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_assumption_cache_1ab711f68db26cb29c8332ac93c0bebed1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_mutable_array_ref" kindref="compound">MutableArrayRef</ref>&lt; <ref refid="structllvm_1_1_assumption_cache_1_1_result_elem" kindref="compound">ResultElem</ref> &gt;</type>
+        <definition>MutableArrayRef&lt; ResultElem &gt; llvm::AssumptionCache::assumptionsFor</definition>
+        <argsstring>(const Value *V)</argsstring>
+        <name>assumptionsFor</name>
+        <qualifiedname>llvm::AssumptionCache::assumptionsFor</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Access the list of assumptions which affect this value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AssumptionCache.h" line="157" column="19" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="157" bodyend="166"/>
+        <references refid="namespacellvm_1a99416758c13252bef45320a6ba6aa09c">llvm::MutableArrayRef</references>
+        <referencedby refid="namespacellvm_1a546e6f5ba8f510c3e7ed2e20013548d9" compoundref="_value_tracking_8cpp" startline="10094" endline="10172">llvm::computeConstantRange</referencedby>
+        <referencedby refid="namespacellvm_1a4d8cb47f2535cdf5f9608baabfa78f4e" compoundref="_value_tracking_8cpp" startline="830" endline="927">llvm::computeKnownBitsFromContext</referencedby>
+        <referencedby refid="_value_tracking_8cpp_1a93cb45813945a1bb817bee6664d452be" compoundref="_value_tracking_8cpp" startline="4985" endline="5032">computeKnownFPClassFromContext</referencedby>
+        <referencedby refid="namespacellvm_1a5ade489c0f3b2b272cfcf0bb8f011399" compoundref="_assume_bundle_queries_8cpp" startline="157" endline="195">llvm::getKnowledgeForValue</referencedby>
+        <referencedby refid="_value_tracking_8cpp_1ad96e48bda36fb8540a3973cee993c5b3" compoundref="_value_tracking_8cpp" startline="630" endline="675">isKnownNonZeroFromAssume</referencedby>
+        <referencedby refid="namespacellvm_1a94e5917e7d2f3648965d7c69deb17ae6" compoundref="_value_tracking_8cpp" startline="2386" endline="2580">llvm::isKnownToBeAPowerOfTwo</referencedby>
+        <referencedby refid="_instruction_simplify_8cpp_1ae9417447cf23234d645221bda42e00c4" compoundref="_instruction_simplify_8cpp" startline="3670" endline="3691">simplifyICmpWithDominatingAssume</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A cache of @llvm.assume calls within a function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This cache provides fast lookup of assumptions within a function by caching them and amortizing the cost of scanning for them across all queries. Passes that create new assumptions are required to call <ref refid="classllvm_1_1_assumption_cache_1a23187618f079555e127ba0e7b4581530" kindref="member">registerAssumption()</ref> to register any new @llvm.assume calls that they create. Deletions of @llvm.assume calls do not require special handling. </para>
+    </detaileddescription>
+    <location file="include/llvm/Analysis/AssumptionCache.h" line="42" column="1" bodyfile="include/llvm/Analysis/AssumptionCache.h" bodystart="42" bodyend="167"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_assumption_cache_1a59c99217904c801604f1a430a11e7ccf" prot="private" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>AffectedValueCallbackVH</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1af2029524118f64d0aa47fb0f32676772" prot="private" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>AffectedValues</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a6cb96f5985968dbd97e67c57164122ba" prot="private" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>AffectedValuesMap</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1af8a34836ef83d3d507bd13cc58c1ef60" prot="private" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>AssumeHandles</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1ab6a2d92539d4596ba55f6d953ec7c188" prot="public" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>AssumptionCache</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a6bc4a01d7ae02545172aaee110d4a01c" prot="public" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>assumptions</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1ab711f68db26cb29c8332ac93c0bebed1" prot="public" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>assumptionsFor</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a2f5aab0e9687dd8250c8fa49d4de1b1b" prot="public" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>clear</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a05a03a071a8a55948ba0db3b5bf594baabe329e327a2448aff6bd087678df1c26" prot="public" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>ExprResultIdx</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a952edfcd1f444ce5c89978299ae9cd57" prot="private" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>F</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a31a4886ab0d28861fdc78be8f5967e7b" prot="private" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>getOrInsertAffectedValues</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a4867ed1b6dfd356558bd881567602049" prot="public" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>invalidate</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a23187618f079555e127ba0e7b4581530" prot="public" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>registerAssumption</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a4e13b95cccc7a9ca5d4914d3765ef81e" prot="private" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>scanFunction</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a39a54db9071afa97154a47e853fed8a0" prot="private" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>Scanned</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a8be61e61997de05181e113f6755fbfa3" prot="private" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>transferAffectedValuesInCache</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a3d80b90e6981cb5dd7fedc7bec6aed02" prot="private" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>TTI</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a8137607e298da393c72cfcffb2edc352" prot="public" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>unregisterAssumption</name></member>
+      <member refid="classllvm_1_1_assumption_cache_1a5fa8956db34e5076680cfd8398d090dc" prot="public" virt="non-virtual"><scope>llvm::AssumptionCache</scope><name>updateAffectedValues</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

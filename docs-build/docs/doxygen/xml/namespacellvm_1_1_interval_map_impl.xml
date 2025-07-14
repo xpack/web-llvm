@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1_interval_map_impl" kind="namespace" language="C++">
+    <compoundname>llvm::IntervalMapImpl</compoundname>
+    <innerclass refid="classllvm_1_1_interval_map_impl_1_1_branch_node" prot="public">llvm::IntervalMapImpl::BranchNode</innerclass>
+    <innerclass refid="classllvm_1_1_interval_map_impl_1_1_leaf_node" prot="public">llvm::IntervalMapImpl::LeafNode</innerclass>
+    <innerclass refid="classllvm_1_1_interval_map_impl_1_1_node_base" prot="public">llvm::IntervalMapImpl::NodeBase</innerclass>
+    <innerclass refid="classllvm_1_1_interval_map_impl_1_1_node_ref" prot="public">llvm::IntervalMapImpl::NodeRef</innerclass>
+    <innerclass refid="structllvm_1_1_interval_map_impl_1_1_node_sizer" prot="public">llvm::IntervalMapImpl::NodeSizer</innerclass>
+    <innerclass refid="classllvm_1_1_interval_map_impl_1_1_path" prot="public">llvm::IntervalMapImpl::Path</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacellvm_1_1_interval_map_impl_1aacf91952cde5989ab8c6b38b501021c1" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <qualifiedname>llvm::IntervalMapImpl</qualifiedname>
+        <enumvalue id="namespacellvm_1_1_interval_map_impl_1aacf91952cde5989ab8c6b38b501021c1a4b980c1f20e48e79647774737cf4f1ce" prot="public">
+          <name>Log2CacheLine</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_interval_map_impl_1aacf91952cde5989ab8c6b38b501021c1a22be8a9f335245b5ce05d2a3d35a9221" prot="public">
+          <name>CacheLineBytes</name>
+          <initializer>= 1 &lt;&lt; Log2CacheLine</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_interval_map_impl_1aacf91952cde5989ab8c6b38b501021c1ab4675b39ebff7a48b8f66be1e97f1575" prot="public">
+          <name>DesiredNodeBytes</name>
+          <initializer>= 3 * CacheLineBytes</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/IntervalMap.h" line="430" column="1" bodyfile="include/llvm/ADT/IntervalMap.h" bodystart="430" bodyend="436"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacellvm_1_1_interval_map_impl_1ab92974e292699af764f4bd02d1f44448" prot="public" static="no">
+        <type>std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using llvm::IntervalMapImpl::IdxPair =  std::pair&lt;unsigned,unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>IdxPair</name>
+        <qualifiedname>llvm::IntervalMapImpl::IdxPair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/IntervalMap.h" line="193" column="1" bodyfile="include/llvm/ADT/IntervalMap.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1_interval_map_impl_1a1edda7c684a88b0c8aa8480aa869451b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename NodeT</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::IntervalMapImpl::adjustSiblingSizes</definition>
+        <argsstring>(NodeT *Node[], unsigned Nodes, unsigned CurSize[], const unsigned NewSize[])</argsstring>
+        <name>adjustSiblingSizes</name>
+        <qualifiedname>llvm::IntervalMapImpl::adjustSiblingSizes</qualifiedname>
+        <param>
+          <type>NodeT *</type>
+          <declname>Node</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Nodes</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CurSize</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NewSize</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_interval_map_impl_1a1edda7c684a88b0c8aa8480aa869451b" kindref="member">IntervalMapImpl::adjustSiblingSizes</ref> - Move elements between sibling nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_node" kindref="compound">Node</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of pointers to sibling nodes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Nodes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of nodes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>CurSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of current node sizes, will be overwritten. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NewSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of desired node sizes. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/IntervalMap.h" line="340" column="6" bodyfile="include/llvm/ADT/IntervalMap.h" bodystart="340" bodyend="379"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1_interval_map_impl_1adc507d70d9385ae35dcdb70dc1bebc19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1_interval_map_impl_1ab92974e292699af764f4bd02d1f44448" kindref="member">IdxPair</ref></type>
+        <definition>IdxPair llvm::IntervalMapImpl::distribute</definition>
+        <argsstring>(unsigned Nodes, unsigned Elements, unsigned Capacity, const unsigned *CurSize, unsigned NewSize[], unsigned Position, bool Grow)</argsstring>
+        <name>distribute</name>
+        <qualifiedname>llvm::IntervalMapImpl::distribute</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Nodes</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Elements</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Capacity</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref> *</type>
+          <declname>CurSize</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NewSize</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Position</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Grow</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_interval_map_impl_1adc507d70d9385ae35dcdb70dc1bebc19" kindref="member">IntervalMapImpl::distribute</ref> - Compute a new distribution of node elements after an overflow or underflow. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Reserve space for a new element at Position, and compute the node that will hold Position after redistributing node elements.</para>
+<para>It is required that</para>
+<para>Elements == sum(CurSize), and Elements + Grow &lt;= Nodes * Capacity.</para>
+<para>NewSize[] will be filled in such that:</para>
+<para>sum(NewSize) == Elements, and NewSize[i] &lt;= Capacity.</para>
+<para>The returned index is the node where Position will go, so:</para>
+<para>sum(NewSize[0..idx-1]) &lt;= Position sum(NewSize[0..idx]) &gt;= Position</para>
+<para>The last equality, sum(NewSize[0..idx]) == Position, can only happen when Grow is set and NewSize[idx] == Capacity-1. The index points to the node before the one holding the Position&apos;th element where there is room for an insertion.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Nodes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of nodes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Elements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Total elements in all nodes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Capacity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The capacity of each node. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>CurSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array[Nodes] of current node sizes, or NULL. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NewSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array[Nodes] to receive the new node sizes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Insert position. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Grow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reserve space for a new element at Position. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(node, offset) for Position. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/IntervalMap.cpp" line="120" column="9" bodyfile="lib/Support/IntervalMap.cpp" bodystart="120" bodyend="157" declfile="include/llvm/ADT/IntervalMap.h" declline="414" declcolumn="9"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="namespacellvm_1_1_interval_map_impl" kindref="compound">IntervalMapImpl</ref> - Namespace used for <ref refid="classllvm_1_1_interval_map" kindref="compound">IntervalMap</ref> implementation details. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It should be considered private to the implementation. </para>
+    </detaileddescription>
+    <location file="include/llvm/ADT/IntervalMap.h" line="191" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,956 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_c_s_e_m_i_r_builder" kind="class" language="C++" prot="public">
+    <compoundname>llvm::CSEMIRBuilder</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_i_r_builder" prot="public" virt="non-virtual">llvm::MachineIRBuilder</basecompoundref>
+    <includes refid="_c_s_e_m_i_r_builder_8h" local="yes">llvm/CodeGen/GlobalISel/CSEMIRBuilder.h</includes>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1ab53292a8500fa16004af814a68e277fb" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSEMIRBuilder::dominates</definition>
+        <argsstring>(MachineBasicBlock::const_iterator A, MachineBasicBlock::const_iterator B) const</argsstring>
+        <name>dominates</name>
+        <qualifiedname>llvm::CSEMIRBuilder::dominates</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1a199a6e4bfdffc8f3379ef4f35004488f" kindref="member">MachineBasicBlock::const_iterator</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1a199a6e4bfdffc8f3379ef4f35004488f" kindref="member">MachineBasicBlock::const_iterator</ref></type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if A dominates B (within the same basic block). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Both iterators must be in the same basic block. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="49" column="8" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="23" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a6bce118c21f6190369af1a308b734807" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+        <definition>MachineInstrBuilder CSEMIRBuilder::getDominatingInstrForID</definition>
+        <argsstring>(FoldingSetNodeID &amp;ID, void *&amp;NodeInsertPos)</argsstring>
+        <name>getDominatingInstrForID</name>
+        <qualifiedname>llvm::CSEMIRBuilder::getDominatingInstrForID</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_folding_set_node_i_d" kindref="compound">FoldingSetNodeID</ref> &amp;</type>
+          <declname>ID</declname>
+        </param>
+        <param>
+          <type>void *&amp;</type>
+          <declname>NodeInsertPos</declname>
+        </param>
+        <briefdescription>
+<para>For given <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>, find a machineinstr in the CSE Map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If found, check if it dominates the current insertion point and if not, move it just before the current insertion point and return it. If not found, return Null <ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="56" column="23" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="38" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1ae6e8209ef4c337a011476b902bd799cc" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSEMIRBuilder::canPerformCSEForOpc</definition>
+        <argsstring>(unsigned Opc) const</argsstring>
+        <name>canPerformCSEForOpc</name>
+        <qualifiedname>llvm::CSEMIRBuilder::canPerformCSEForOpc</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Opc</declname>
+        </param>
+        <briefdescription>
+<para>Simple check if we can CSE (we have the CSEInfo) or if this Opcode is safe to CSE. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="60" column="8" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="66" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a665403895fbe470c1252de4819d00f04" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSEMIRBuilder::profileDstOp</definition>
+        <argsstring>(const DstOp &amp;Op, GISelInstProfileBuilder &amp;B) const</argsstring>
+        <name>profileDstOp</name>
+        <qualifiedname>llvm::CSEMIRBuilder::profileDstOp</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &amp;</type>
+          <declname>Op</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_inst_profile_builder" kindref="compound">GISelInstProfileBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="62" column="8" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="73" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1af9dea911a6daa75a4db7e113076bef58" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::CSEMIRBuilder::profileDstOps</definition>
+        <argsstring>(ArrayRef&lt; DstOp &gt; Ops, GISelInstProfileBuilder &amp;B) const</argsstring>
+        <name>profileDstOps</name>
+        <qualifiedname>llvm::CSEMIRBuilder::profileDstOps</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &gt;</type>
+          <declname>Ops</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_inst_profile_builder" kindref="compound">GISelInstProfileBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="64" column="8" bodyfile="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1ac091b02ba9259014e18c883b2b829d92" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSEMIRBuilder::profileSrcOp</definition>
+        <argsstring>(const SrcOp &amp;Op, GISelInstProfileBuilder &amp;B) const</argsstring>
+        <name>profileSrcOp</name>
+        <qualifiedname>llvm::CSEMIRBuilder::profileSrcOp</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_src_op" kindref="compound">SrcOp</ref> &amp;</type>
+          <declname>Op</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_inst_profile_builder" kindref="compound">GISelInstProfileBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="69" column="8" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="96" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a599a4fcb5249b1c6c96ad7a6800bb4c1" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::CSEMIRBuilder::profileSrcOps</definition>
+        <argsstring>(ArrayRef&lt; SrcOp &gt; Ops, GISelInstProfileBuilder &amp;B) const</argsstring>
+        <name>profileSrcOps</name>
+        <qualifiedname>llvm::CSEMIRBuilder::profileSrcOps</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_src_op" kindref="compound">SrcOp</ref> &gt;</type>
+          <declname>Ops</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_inst_profile_builder" kindref="compound">GISelInstProfileBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="71" column="8" bodyfile="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a39e86102e53060a9daabe3fbeb4e27f3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSEMIRBuilder::profileMBBOpcode</definition>
+        <argsstring>(GISelInstProfileBuilder &amp;B, unsigned Opc) const</argsstring>
+        <name>profileMBBOpcode</name>
+        <qualifiedname>llvm::CSEMIRBuilder::profileMBBOpcode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_inst_profile_builder" kindref="compound">GISelInstProfileBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Opc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="76" column="8" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="111" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1ad7619bee4a86d2909d5861716198eb23" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSEMIRBuilder::profileEverything</definition>
+        <argsstring>(unsigned Opc, ArrayRef&lt; DstOp &gt; DstOps, ArrayRef&lt; SrcOp &gt; SrcOps, std::optional&lt; unsigned &gt; Flags, GISelInstProfileBuilder &amp;B) const</argsstring>
+        <name>profileEverything</name>
+        <qualifiedname>llvm::CSEMIRBuilder::profileEverything</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Opc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &gt;</type>
+          <declname>DstOps</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_src_op" kindref="compound">SrcOp</ref> &gt;</type>
+          <declname>SrcOps</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+          <declname>Flags</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_inst_profile_builder" kindref="compound">GISelInstProfileBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="78" column="8" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="119" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a20ecb12f5d22d71cd40f9e3ea6553296" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+        <definition>MachineInstrBuilder CSEMIRBuilder::memoizeMI</definition>
+        <argsstring>(MachineInstrBuilder MIB, void *NodeInsertPos)</argsstring>
+        <name>memoizeMI</name>
+        <qualifiedname>llvm::CSEMIRBuilder::memoizeMI</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+          <declname>MIB</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>NodeInsertPos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="84" column="23" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="134" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a9d23c2aafd35499e6ab41c13cb8c9523" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+        <definition>MachineInstrBuilder CSEMIRBuilder::generateCopiesIfRequired</definition>
+        <argsstring>(ArrayRef&lt; DstOp &gt; DstOps, MachineInstrBuilder &amp;MIB)</argsstring>
+        <name>generateCopiesIfRequired</name>
+        <qualifiedname>llvm::CSEMIRBuilder::generateCopiesIfRequired</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &gt;</type>
+          <declname>DstOps</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref> &amp;</type>
+          <declname>MIB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="88" column="23" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="154" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a17236385c665da0dbf18b5ab098bb58e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSEMIRBuilder::checkCopyToDefsPossible</definition>
+        <argsstring>(ArrayRef&lt; DstOp &gt; DstOps)</argsstring>
+        <name>checkCopyToDefsPossible</name>
+        <qualifiedname>llvm::CSEMIRBuilder::checkCopyToDefsPossible</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &gt;</type>
+          <declname>DstOps</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="94" column="8" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="143" bodyend="151"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a9c2e15b867893ec15cb49acfbb38e542" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+        <definition>MachineInstrBuilder CSEMIRBuilder::buildInstr</definition>
+        <argsstring>(unsigned Opc, ArrayRef&lt; DstOp &gt; DstOps, ArrayRef&lt; SrcOp &gt; SrcOps, std::optional&lt; unsigned &gt; Flag=std::nullopt) override</argsstring>
+        <name>buildInstr</name>
+        <qualifiedname>llvm::CSEMIRBuilder::buildInstr</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_i_r_builder_1a6dacb1328b30771530a48be17307efb0">buildInstr</reimplements>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Opc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &gt;</type>
+          <declname>DstOps</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_src_op" kindref="compound">SrcOp</ref> &gt;</type>
+          <declname>SrcOps</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+          <declname>Flag</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="101" column="3" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="181" bodyend="332"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a60609bd46d38414e2c9e2334f9740727" compoundref="_machine_i_r_builder_8cpp" startline="720" endline="727">llvm::MachineIRBuilder::buildBuildVector</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a96b7ed72c9782cd69b2b9b341cf73112" compoundref="_machine_i_r_builder_8cpp" startline="730" endline="738">llvm::MachineIRBuilder::buildBuildVectorConstant</references>
+        <references refid="classllvm_1_1_c_s_e_m_i_r_builder_1af20c06f6ef57cddf624f531efbaf69e7" compoundref="_c_s_e_m_i_r_builder_8cpp" startline="334" endline="359">buildConstant</references>
+        <references refid="classllvm_1_1_c_s_e_m_i_r_builder_1ae1fe7f5085d203a5984b2450f907b239" compoundref="_c_s_e_m_i_r_builder_8cpp" startline="361" endline="385">buildFConstant</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a8bc92b8a902afb7675480ecc729a66d4" compoundref="_machine_i_r_builder_8h" startline="417" endline="419">llvm::MachineIRBuilder::buildInstr</references>
+        <references refid="namespacellvm_1a59a7ed1e5bfd8f5d0c66a7346ee5f87b" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="664" endline="730">llvm::ConstantFoldBinOp</references>
+        <references refid="namespacellvm_1a3442c3f5bc7a9a528d36fcedf116b19c" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="997" endline="1026">llvm::ConstantFoldCountZeros</references>
+        <references refid="namespacellvm_1a3692c4606635fb9fb9391257b422c761" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="943" endline="958">llvm::ConstantFoldExtOp</references>
+        <references refid="namespacellvm_1a2664741ca8fa0d154ef9e738aef0db7b" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="733" endline="784">llvm::ConstantFoldFPBinOp</references>
+        <references refid="namespacellvm_1a840d23b9684bb12aa8254d66bcbd3cce" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="1029" endline="1094">llvm::ConstantFoldICmp</references>
+        <references refid="namespacellvm_1a1aef656147029ec93dabe8abf51806b6" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="984" endline="994">llvm::ConstantFoldIntToFloat</references>
+        <references refid="namespacellvm_1a904cc16cfe269559a2ff1cc7f06df6d5" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="787" endline="807">llvm::ConstantFoldVectorBinop</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a396fcfee6914c76974b73c3d203da6a5" compoundref="_small_vector_8h" startline="937" endline="944">llvm::SmallVectorImpl&lt; T &gt;::emplace_back</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_array_ref_1a721fc555cb3d8dc2a1a680dcc2ce69b2" compoundref="_array_ref_8h" startline="171" endline="174">llvm::ArrayRef&lt; T &gt;::front</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a2a885e28d6a7936c7442d063aea666f6" compoundref="_machine_i_r_builder_8h" startline="329" endline="329">llvm::MachineIRBuilder::getCSEInfo</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1aeb6d0a9254bc3183046873436fc7c12e" compoundref="_machine_i_r_builder_8h" startline="297" endline="299">llvm::MachineIRBuilder::getDataLayout</references>
+        <references refid="classllvm_1_1_src_op_1a9370c0de85c12bd0062063b7fcbc64ed" compoundref="_machine_i_r_builder_8h" startline="216" endline="223">llvm::SrcOp::getImm</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1ad7322f56c0659b8dc8e55567767b74d6" compoundref="_machine_i_r_builder_8h" startline="309" endline="309">llvm::MachineIRBuilder::getMRI</references>
+        <references refid="_mips_disassembler_8cpp_1a15b5b86944f6df97d2c3659d77f51f91" compoundref="_mips_disassembler_8cpp" startline="520" endline="523">getReg</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a1c5fadb14ff1d77faad0cb58a43252ab" compoundref="_machine_instr_builder_8h" startline="96" endline="96">llvm::MachineInstrBuilder::getReg</references>
+        <references refid="classllvm_1_1_src_op_1ae229785d0c8a8ce25d34be18fe150a54" compoundref="_machine_i_r_builder_8h" startline="194" endline="205">llvm::SrcOp::getReg</references>
+        <references refid="classllvm_1_1_l_l_t_1ae4165ca7bcbee300d5e9c065adcc1415" compoundref="_low_level_type_8h" startline="205" endline="207">llvm::LLT::getScalarType</references>
+        <references refid="classllvm_1_1_g_i_sel_c_s_e_info_1a8e8e16efa8d6ea664212d5d10d4a2141" compoundref="_c_s_e_info_8cpp" startline="218" endline="224">llvm::GISelCSEInfo::handleRemoveInst</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1af20c06f6ef57cddf624f531efbaf69e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+        <definition>MachineInstrBuilder CSEMIRBuilder::buildConstant</definition>
+        <argsstring>(const DstOp &amp;Res, const ConstantInt &amp;Val) override</argsstring>
+        <name>buildConstant</name>
+        <qualifiedname>llvm::CSEMIRBuilder::buildConstant</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_i_r_builder_1af751c28a69e1d07e19dad11e4e26a70d">buildConstant</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &amp;</type>
+          <declname>Res</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_constant_int" kindref="compound">ConstantInt</ref> &amp;</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+<para>Build and insert <computeroutput>Res</computeroutput> = G_CONSTANT <computeroutput>Val</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>G_CONSTANT is an integer constant with the specified size and value. <computeroutput>Val</computeroutput> will be extended or truncated to the size of <computeroutput>Reg</computeroutput>.</para>
+<para><simplesect kind="pre"><para>setBasicBlock or setMI must have been called. </para>
+</simplesect>
+<simplesect kind="pre"><para><computeroutput>Res</computeroutput> must be a generic virtual register with scalar or pointer type.</para>
+</simplesect>
+<simplesect kind="return"><para>The newly created instruction. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="106" column="23" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="334" bodyend="359"/>
+        <references refid="classllvm_1_1_g_i_sel_inst_profile_builder_1af6e18ff9d3e123fa8f958b846796e531" compoundref="_c_s_e_info_8cpp" startline="417" endline="439">llvm::GISelInstProfileBuilder::addNodeIDMachineOperand</references>
+        <references refid="classllvm_1_1_c_s_e_m_i_r_builder_1af20c06f6ef57cddf624f531efbaf69e7" compoundref="_c_s_e_m_i_r_builder_8cpp" startline="334" endline="359">buildConstant</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1af751c28a69e1d07e19dad11e4e26a70d" compoundref="_machine_i_r_builder_8cpp" startline="317" endline="339">llvm::MachineIRBuilder::buildConstant</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a55bde2ba6aacac745a29a7e50c6be007" compoundref="_machine_i_r_builder_8cpp" startline="740" endline="744">llvm::MachineIRBuilder::buildSplatBuildVector</references>
+        <references refid="classllvm_1_1_machine_operand_1a5e7a07b4efeaec2afcb83a6551b38441" compoundref="_machine_operand_8h" startline="826" endline="830">llvm::MachineOperand::CreateCImm</references>
+        <references refid="classllvm_1_1_dst_op_1a49a5649c0de9dee3dacbab3019872923" compoundref="_machine_i_r_builder_8h" startline="107" endline="119">llvm::DstOp::getLLTTy</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1ad7322f56c0659b8dc8e55567767b74d6" compoundref="_machine_i_r_builder_8h" startline="309" endline="309">llvm::MachineIRBuilder::getMRI</references>
+        <referencedby refid="classllvm_1_1_c_s_e_m_i_r_builder_1af20c06f6ef57cddf624f531efbaf69e7" compoundref="_c_s_e_m_i_r_builder_8cpp" startline="334" endline="359">buildConstant</referencedby>
+        <referencedby refid="classllvm_1_1_c_s_e_m_i_r_builder_1a9c2e15b867893ec15cb49acfbb38e542" compoundref="_c_s_e_m_i_r_builder_8cpp" startline="181" endline="332">buildInstr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1ae1fe7f5085d203a5984b2450f907b239" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+        <definition>MachineInstrBuilder CSEMIRBuilder::buildFConstant</definition>
+        <argsstring>(const DstOp &amp;Res, const ConstantFP &amp;Val) override</argsstring>
+        <name>buildFConstant</name>
+        <qualifiedname>llvm::CSEMIRBuilder::buildFConstant</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_i_r_builder_1a81a7959d3e7f624343ecdf6905e251dd">buildFConstant</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &amp;</type>
+          <declname>Res</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_constant_f_p" kindref="compound">ConstantFP</ref> &amp;</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+<para>Build and insert <computeroutput>Res</computeroutput> = G_FCONSTANT <computeroutput>Val</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>G_FCONSTANT is a floating-point constant with the specified size and value.</para>
+<para><simplesect kind="pre"><para>setBasicBlock or setMI must have been called. </para>
+</simplesect>
+<simplesect kind="pre"><para><computeroutput>Res</computeroutput> must be a generic virtual register with scalar type.</para>
+</simplesect>
+<simplesect kind="return"><para>The newly created instruction. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="111" column="23" bodyfile="lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp" bodystart="361" bodyend="385"/>
+        <references refid="classllvm_1_1_g_i_sel_inst_profile_builder_1af6e18ff9d3e123fa8f958b846796e531" compoundref="_c_s_e_info_8cpp" startline="417" endline="439">llvm::GISelInstProfileBuilder::addNodeIDMachineOperand</references>
+        <references refid="classllvm_1_1_c_s_e_m_i_r_builder_1ae1fe7f5085d203a5984b2450f907b239" compoundref="_c_s_e_m_i_r_builder_8cpp" startline="361" endline="385">buildFConstant</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a81a7959d3e7f624343ecdf6905e251dd" compoundref="_machine_i_r_builder_8cpp" startline="349" endline="376">llvm::MachineIRBuilder::buildFConstant</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a55bde2ba6aacac745a29a7e50c6be007" compoundref="_machine_i_r_builder_8cpp" startline="740" endline="744">llvm::MachineIRBuilder::buildSplatBuildVector</references>
+        <references refid="classllvm_1_1_machine_operand_1a2cd605d7476194cf38e7ef6d2c57391a" compoundref="_machine_operand_8h" startline="832" endline="836">llvm::MachineOperand::CreateFPImm</references>
+        <references refid="classllvm_1_1_dst_op_1a49a5649c0de9dee3dacbab3019872923" compoundref="_machine_i_r_builder_8h" startline="107" endline="119">llvm::DstOp::getLLTTy</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1ad7322f56c0659b8dc8e55567767b74d6" compoundref="_machine_i_r_builder_8h" startline="309" endline="309">llvm::MachineIRBuilder::getMRI</references>
+        <referencedby refid="classllvm_1_1_c_s_e_m_i_r_builder_1ae1fe7f5085d203a5984b2450f907b239" compoundref="_c_s_e_m_i_r_builder_8cpp" startline="361" endline="385">buildFConstant</referencedby>
+        <referencedby refid="classllvm_1_1_c_s_e_m_i_r_builder_1a9c2e15b867893ec15cb49acfbb38e542" compoundref="_c_s_e_m_i_r_builder_8cpp" startline="181" endline="332">buildInstr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1ad662a74c60eeb99f6a24927479eda063" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MachineIRBuilder::MachineIRBuilder</definition>
+        <argsstring>()=default</argsstring>
+        <name>MachineIRBuilder</name>
+        <qualifiedname>llvm::CSEMIRBuilder::MachineIRBuilder</qualifiedname>
+        <briefdescription>
+<para>Some constructors for easy use. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="98" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1aa03c7e0eb5346e000177cb95b910cc71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MachineIRBuilder::MachineIRBuilder</definition>
+        <argsstring>(MachineFunction &amp;MF)</argsstring>
+        <name>MachineIRBuilder</name>
+        <qualifiedname>llvm::CSEMIRBuilder::MachineIRBuilder</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="98" column="3" bodyfile="include/llvm/CodeGen/GlobalISel/MachineIRBuilder.h" bodystart="259" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a6149c9a2642b91bfdb471868a7f8bd1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MachineIRBuilder::MachineIRBuilder</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator InsPt)</argsstring>
+        <name>MachineIRBuilder</name>
+        <qualifiedname>llvm::CSEMIRBuilder::MachineIRBuilder</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>InsPt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="98" column="3" bodyfile="include/llvm/CodeGen/GlobalISel/MachineIRBuilder.h" bodystart="261" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a7d5d8e859928cc003454a2ba18372a71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MachineIRBuilder::MachineIRBuilder</definition>
+        <argsstring>(MachineInstr &amp;MI)</argsstring>
+        <name>MachineIRBuilder</name>
+        <qualifiedname>llvm::CSEMIRBuilder::MachineIRBuilder</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="98" column="3" bodyfile="include/llvm/CodeGen/GlobalISel/MachineIRBuilder.h" bodystart="266" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a8d69fb9fe28f38bfe61a276caec92263" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MachineIRBuilder::MachineIRBuilder</definition>
+        <argsstring>(MachineInstr &amp;MI, GISelChangeObserver &amp;Observer)</argsstring>
+        <name>MachineIRBuilder</name>
+        <qualifiedname>llvm::CSEMIRBuilder::MachineIRBuilder</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_change_observer" kindref="compound">GISelChangeObserver</ref> &amp;</type>
+          <declname>Observer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="98" column="3" bodyfile="include/llvm/CodeGen/GlobalISel/MachineIRBuilder.h" bodystart="272" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1aa048045615f06db86c3a4e317ed3a2b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MachineIRBuilder::MachineIRBuilder</definition>
+        <argsstring>(const MachineIRBuilderState &amp;BState)</argsstring>
+        <name>MachineIRBuilder</name>
+        <qualifiedname>llvm::CSEMIRBuilder::MachineIRBuilder</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_machine_i_r_builder_state" kindref="compound">MachineIRBuilderState</ref> &amp;</type>
+          <declname>BState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="98" column="3" bodyfile="include/llvm/CodeGen/GlobalISel/MachineIRBuilder.h" bodystart="279" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1afdce4b9880a0aed02fe487da6a613cbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+        <definition>MachineInstrBuilder MachineIRBuilder::buildConstant</definition>
+        <argsstring>(const DstOp &amp;Res, int64_t Val)</argsstring>
+        <name>buildConstant</name>
+        <qualifiedname>llvm::CSEMIRBuilder::buildConstant</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &amp;</type>
+          <declname>Res</declname>
+        </param>
+        <param>
+          <type><ref refid="classint64__t" kindref="compound">int64_t</ref></type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+<para>Build and insert <computeroutput>Res</computeroutput> = G_CONSTANT <computeroutput>Val</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>G_CONSTANT is an integer constant with the specified size and value.</para>
+<para><simplesect kind="pre"><para>setBasicBlock or setMI must have been called. </para>
+</simplesect>
+<simplesect kind="pre"><para><computeroutput>Res</computeroutput> must be a generic virtual register with scalar type.</para>
+</simplesect>
+<simplesect kind="return"><para>The newly created instruction. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="104" column="3" bodyfile="lib/CodeGen/GlobalISel/MachineIRBuilder.cpp" bodystart="341" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1ab952b8b71fdba5baaf6a083e06d71da2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+        <definition>MachineInstrBuilder MachineIRBuilder::buildConstant</definition>
+        <argsstring>(const DstOp &amp;Res, const APInt &amp;Val)</argsstring>
+        <name>buildConstant</name>
+        <qualifiedname>llvm::CSEMIRBuilder::buildConstant</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &amp;</type>
+          <declname>Res</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref> &amp;</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="104" column="3" bodyfile="lib/CodeGen/GlobalISel/MachineIRBuilder.cpp" bodystart="378" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1a4265ff404073d12b765bc9fee4e7f186" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+        <definition>MachineInstrBuilder MachineIRBuilder::buildFConstant</definition>
+        <argsstring>(const DstOp &amp;Res, double Val)</argsstring>
+        <name>buildFConstant</name>
+        <qualifiedname>llvm::CSEMIRBuilder::buildFConstant</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &amp;</type>
+          <declname>Res</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="110" column="3" bodyfile="lib/CodeGen/GlobalISel/MachineIRBuilder.cpp" bodystart="384" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_c_s_e_m_i_r_builder_1aa28f164b227803f0fef41094366c2dca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+        <definition>MachineInstrBuilder MachineIRBuilder::buildFConstant</definition>
+        <argsstring>(const DstOp &amp;Res, const APFloat &amp;Val)</argsstring>
+        <name>buildFConstant</name>
+        <qualifiedname>llvm::CSEMIRBuilder::buildFConstant</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dst_op" kindref="compound">DstOp</ref> &amp;</type>
+          <declname>Res</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_a_p_float" kindref="compound">APFloat</ref> &amp;</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="110" column="3" bodyfile="lib/CodeGen/GlobalISel/MachineIRBuilder.cpp" bodystart="393" bodyend="398"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Defines a builder that does CSE of MachineInstructions using <ref refid="classllvm_1_1_g_i_sel_c_s_e_info" kindref="compound">GISelCSEInfo</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Eg usage.</para>
+<para><programlisting><codeline><highlight class="normal">GISelCSEInfo<sp/>*<ref refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" kindref="member">Info</ref><sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&amp;getAnalysis&lt;GISelCSEAnalysisWrapperPass&gt;().getCSEInfo();</highlight></codeline>
+<codeline><highlight class="normal">CSEMIRBuilder<sp/>CB(Builder.getState());</highlight></codeline>
+<codeline><highlight class="normal">CB.setCSEInfo(<ref refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" kindref="member">Info</ref>);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72" kindref="member">A</ref><sp/>=<sp/>CB.buildConstant(s32,<sp/>42);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da" kindref="member">B</ref><sp/>=<sp/>CB.buildConstant(s32,<sp/>42);</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72" kindref="member">A</ref><sp/>==<sp/><ref refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da" kindref="member">B</ref>);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>CReg<sp/>=<sp/><ref refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" kindref="member">MRI</ref>.createGenericVirtualRegister(s32);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" kindref="member">C</ref><sp/>=<sp/>CB.buildConstant(CReg,<sp/>42);</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" kindref="member">C</ref>-&gt;getOpcode()<sp/>==<sp/>TargetOpcode::COPY);</highlight></codeline>
+</programlisting></para>
+<para>Explicitly passing in a register would materialize a copy if possible. <ref refid="classllvm_1_1_c_s_e_m_i_r_builder" kindref="compound">CSEMIRBuilder</ref> also does trivial constant folding for binary ops. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::CSEMIRBuilder</label>
+        <link refid="classllvm_1_1_c_s_e_m_i_r_builder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineIRBuilder</label>
+        <link refid="classllvm_1_1_machine_i_r_builder"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::CSEMIRBuilder</label>
+        <link refid="classllvm_1_1_c_s_e_m_i_r_builder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineIRBuilder</label>
+        <link refid="classllvm_1_1_machine_i_r_builder"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" line="38" column="1" bodyfile="include/llvm/CodeGen/GlobalISel/CSEMIRBuilder.h" bodystart="38" bodyend="113"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a90c3b61ed604fab822cb8f20a8e93fcb" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAbds</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a631d12fbfa91b33345eeec945832c8dd" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAbdu</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a96860390999e933a817881a50a905219" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAbs</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a12a128f6b9c963b6fd300cbdf52fba84" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAdd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a534266d65ce335e1d212f37fc554dbb4" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAddrSpaceCast</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a33eb6083767372c564ea4bcf6c06eaf1" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAnd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1acac15566596b1d588d87450ab77bf0d7" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAnyExt</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a40c85353b0cd7cfdc7d8f8b364758c15" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAnyExtOrTrunc</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a1d8cf0723104442c5ec84740aa7d43f9" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAShr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aa5f844c0201df2446266aa977e285f5f" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAssertAlign</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1adf3d2a21deea258c4c4a961586114ef9" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAssertInstr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1af22c90d17d814b2d13e0024cb4139c81" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAssertSExt</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6b02e5030940984fb331116653635050" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAssertZExt</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1adbf5d6125fa84e067907320d93e9fab5" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicCmpXchg</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1acc22ffc46525708d66c036f878572523" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicCmpXchgWithSuccess</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a497e8884b8ae421c7dadff0f0eea5e3e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMW</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ad774da71cf0e58cad3b2436fc229b132" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWAdd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a25352371c64f8746170df411d8929e2a" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWAnd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a35fc180add02489be9e74ac41feacaf5" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWFAdd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ac162dd239c19924c2ea4b0168b4dd551" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWFMax</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a01da2856dd0ee1c3f1ecf64b5500e714" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWFMin</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1af1ffbbfa60b85f1fed7801afeb4a04a7" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWFSub</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aea9f7405f8585dc061b0d5acb0988af0" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWMax</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a2c003dfc5b9bf2d8caa989ee52b3ee1b" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWMin</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a37b11e193190795f9e0978f79faf6912" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWNand</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ac79b1872a1bb01984f7c9470a1bc7bc7" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWOr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1abb60c486a89a799e7fce06a7ea27d6fc" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWSub</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a5fc31f69cb8aa379a0980ae5dce016bb" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWUmax</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a97ffa56276d72a7b72e8b35d399d78a3" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWUmin</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a4b09525023b6ebfc6954493271dded49" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWUSubCond</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a17fe1c83d1fe58f743ec0d66f2073443" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWUSubSat</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1af5df6737579f8493e9dbf21b3e042daa" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWXchg</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a0a35bae390b9e7d83ce0ef35512da4ce" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildAtomicRMWXor</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1acf0f51041fbaaed06a39f2fe2686bb92" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBitcast</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a828ddf4cfe2b05f70a6566d36b4804c5" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBitReverse</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ae83cc330c36190cf8ee9618a28e9a300" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBlockAddress</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a1e5b88856596e413494661b5fae9fc39" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBoolExt</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a060616c6385361df8bd72cde315d4267" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBoolExtInReg</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a0ae44597e21d583e46c8bdfa52e56fa3" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6e0f051c17bd6354aec061d308d80841" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBrCond</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aecf67aca8d78d0136244799c4182e52f" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBrIndirect</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aaf1013659ccc9708197f76c0bd724936" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBrJT</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a4ef9ec8bbb1cbf1ad44e5039537ddfe3" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBSwap</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a60609bd46d38414e2c9e2334f9740727" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBuildVector</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a96b7ed72c9782cd69b2b9b341cf73112" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBuildVectorConstant</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a7acf8a5ebb4b351a451a2d63faf13294" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildBuildVectorTrunc</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a3493ece271aff0f2c3d162494e3fcc81" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildCast</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a46cfa445be514255440f986c4b7b496f" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildConcatVectors</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1af20c06f6ef57cddf624f531efbaf69e7" prot="public" virt="virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildConstant</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1afdce4b9880a0aed02fe487da6a613cbd" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildConstant</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1ab952b8b71fdba5baaf6a083e06d71da2" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildConstant</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a1da8389b4eb951b11309c28ad492e8d4" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildConstantPool</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aff3c145b6d12a00e7432953b1c454ebc" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildConstantPtrAuth</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6ab34a535b1441b48a0ede2c2aa6fb98" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildConstDbgValue</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ae32b6e2213ad3119a124e6e0673a5898" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildCopy</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6a31c8e33dcb4c2c60d965227c227e8e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildCTLZ</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a4fe52c440f33a8895fb01730017de4be" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildCTLZ_ZERO_UNDEF</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a9607e5a365ae4ce30b73b802f590bb21" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildCTPOP</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a1c1ac6707657ae4a0b6509e7857c1c68" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildCTTZ</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a80194aed09e8b4c04c228940ff2a56a5" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildCTTZ_ZERO_UNDEF</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aadc416be0ccae999a06a3a9452bf8d37" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildDbgLabel</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ad68c3cafb2cc7ee28ee3c7dff2a45f2e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildDeleteTrailingVectorElements</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a92bad84c9e323ab0a96d8d8bbb22d149" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildDirectDbgValue</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ab00eba007903e9b4a69440782cd7c9c9" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildDynStackAlloc</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ab8da4d08f2c0875e9623bb712aa64303" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildExtOrTrunc</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a2f52fec4aa17c3066db14a8d4717469d" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildExtract</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aeb07fff3cb0ad02bf88651e9388777de" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildExtractSubvector</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a7835e6cd3f1b340d3bb617304038d744" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildExtractVectorElement</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a7e58ecea881b2ea06fee315563860e39" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildExtractVectorElementConstant</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a2161bd545c3baa8bfaa0d7b44ecf38c4" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFAbs</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1afc51b7318978bc4878cce41bdf1774db" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFAdd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1afe0950de33581b21ef3c56db5f4382c1" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFCanonicalize</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1afb3340c638c09709ce5766dcf672500d" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFCmp</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1ae1fe7f5085d203a5984b2450f907b239" prot="public" virt="virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFConstant</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a4265ff404073d12b765bc9fee4e7f186" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFConstant</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1aa28f164b227803f0fef41094366c2dca" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFConstant</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ac6b47b51bfacb6c594a3c6b8472202c1" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFCopysign</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6f3162ab8134a05797e7a1d21889d880" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFDiv</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a21f358f36e1ae7fc91568266264f760e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFence</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a5849bcf7d4b148009464f4a8b7d3d367" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFExp2</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ad5b247bb13afd8a0d31abedb522c7f46" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFFloor</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ad6391767e768c022d095516b3b86f3ae" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFFrexp</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ab107810eccfb0e46e47348ea9ef8d0ed" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFIDbgValue</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a081e4f97d236d1d1c4e6599b7530498d" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFLdexp</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a914ca92cbc07e52a5115a023dc474f08" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFLog</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a1d453180d499c717c2d4a189e7615b48" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFLog2</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a23b0488d15477183dec5de35d9082ef7" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFMA</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a8d77ec102570efb92c2b7571ac17cf4f" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFMAD</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aabf1fb6f032d501430f9f917739aaf11" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFMaxNum</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ad32b91bbb8f081b9c3d3040697dc5eac" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFMaxNumIEEE</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aad3884fe393aca6b2c9aa240a2bcdea4" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFMinNum</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a226e1d000521c2ff3964171f4f78ab5e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFMinNumIEEE</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a04873b91eebbedfe4fd28d54029068d6" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFMul</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ac939f3c7fdf6c976421d61564d078506" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFNeg</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a14b6de2cb8956f133042a43a1f888efe" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFPExt</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a3f2727e87d9863c60b67b7d08b05d2e6" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFPow</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a03241215374b8ba88272333652a4a151" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFPTOSI</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a170e74a42d89ea7a0b8e0b8634afa404" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFPTOSI_SAT</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a3bb6c93f088c2df4bcb58e6f677e1213" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFPTOUI</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a00ac61b8d79a357bd578193be5f15454" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFPTOUI_SAT</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ad84b765997ad4d3bb1ca3e9393d70ab8" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFPTrunc</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a92664cdbeb0b24030809439993ac271d" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFrameIndex</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a08361fe1409d7e2a9b96b0cabb918383" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFreeze</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1adaa44dab2084014833b3744dfa291c89" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFSincos</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a02d0daf870f6458a98b61f4b82a399c3" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildFSub</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ac69ef19d33fd455e8684cb53be2e46bb" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildGetFPEnv</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a23dbfe8493962b776dd1635121d87cd0" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildGetFPMode</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a0ac2ceaa32ba0511bb9e14e6edfbc329" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildGlobalValue</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a3a618c7b84d45b5e188f6a7e4305ee39" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildICmp</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a5a76abb6dd3946ca5c9cd6e8f341d63c" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildIndirectDbgValue</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aaf34795e0fa82f3edac1a235f50da4c1" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildInsert</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a33a09195e1324b12063bf4d35c646066" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildInsertSubvector</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aca31191486506a279715dd3bf677d75f" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildInsertVectorElement</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a9c2e15b867893ec15cb49acfbb38e542" prot="public" virt="virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildInstr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a8bc92b8a902afb7675480ecc729a66d4" prot="public" virt="non-virtual" ambiguityscope="llvm::MachineIRBuilder::"><scope>llvm::CSEMIRBuilder</scope><name>buildInstr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ae04499daa8807ddb4d00e7ed18b1698f" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildInstrNoInsert</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a4b8abd0c10d11d7388c85825c9c220bf" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildIntrinsic</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a3481726c6f5714e53ed2efc761ed52bc" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildIntrinsic</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a84f7ac7613ff133970f83e8531085353" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildIntrinsic</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a41d7c53499da41b1739015f7036cf6da" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildIntrinsic</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ab6de576f28600915731f6825a5c967f6" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildIntrinsicRoundeven</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a4252eb25f822e53c1bea2ec59e5c0f07" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildIntrinsicTrunc</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a5986a45c021d42bcc2f1563aa25c4cc8" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildIntToPtr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1abe81abfee02ad99b922c40c0571e87a3" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildIsFPClass</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a1e0ff1c3970daea3b6b33a07f4ad839e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildJumpTable</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a7962eca94c9f77da448245745fb22f57" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildLoad</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a3d61feda2a7e9f526ff461c900295bc1" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildLoad</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a010032df630a417383fa44deee43ac0c" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildLoadFromOffset</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aeede510b1aaac978daaba60dcc2817de" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildLoadInstr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a3e17399c568f784acb8ebf8be9a558ec" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildLShr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1af6aed1d3b2cf7133b73cf8bfa5122186" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildMaskLowPtrBits</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aa3b92017579b7ddbca8c13cf7f746789" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildMemCpy</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ae57ad469173d1ad36cb91dde447623ce" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildMemTransferInst</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a7075ef788cb3dea0ea239c1a6830734c" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildMergeLikeInstr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aa0c1b48d1366572e4f3afa03e5c5f175" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildMergeLikeInstr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1abe954ecff531c2cb1dcca7ed8813a318" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildMergeValues</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a31a4848346777be4c13b39d57c0885d0" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildMul</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a66aef31356eb4467a34fbcb72f1649ad" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildNeg</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a16532d0d8fb47080714810131b45b75b" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildNot</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ad93e8a9d68a578f6a53c70d39aef0dbe" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildOr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a901a49f9b5721ab01d9d371f96e4bcea" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildPadVectorWithUndefElements</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aeacc7cca9ff75b34872d7f7099d4261e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildPrefetch</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a7aae2634e3c0980c4f68983738b90ff7" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildPtrAdd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ae1d84823ec8a6332f2e5f8572a492255" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildPtrMask</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1afd3920e024c9e79df5fd07b03c64d314" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildPtrToInt</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ab727f77aa5c064c0881a08e4bbb61c86" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildResetFPEnv</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a14a087440fb584f0874f38801175bc64" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildResetFPMode</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aff16332e2953a0f1430e9204b84f5aa6" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildRotateLeft</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a197cbf8c5affd9a6e856e2ccb8085438" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildRotateRight</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a36e19c5ffd6bb0b19cd01c41104fb083" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSAdde</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a3b6ed90b8df9e1da2212087d1f9199ba" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSAddo</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aa8a77031249a2b8a1d527d156f54f9d5" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSbfx</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a21c1b400982de1ca29ecc051da8bb5b6" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSCmp</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a23ad1ea55dda3ab7617c7fad52c571ab" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSelect</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1afc7eb07b74fdeb50e151b325880fd51d" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSetFPEnv</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a585b4bef3330a9b489810dab77c07d3b" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSetFPMode</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a42427e969917da5da61fadd006fed326" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSExt</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1afe73ac7a93f98c40c8fb66fce8fa4400" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSExtInReg</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a437e7190e38ee7e10daee0f4909d5066" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSExtOrTrunc</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a8528b8088d41e3b859d4ea0f25e13991" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildShl</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a43b43271e5bcbbc5cc620b4dfa94937a" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildShuffleSplat</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aded2b440bea348970816da1ecd40f2c1" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildShuffleVector</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a8c0db0c02bedbc26aba0fe9ebc77fff9" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSITOFP</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6a42ee731fc4e33eab8c5d6f76f8d8b2" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSMax</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aad02a49b6c2f7c3c92a4ad7df5c4eb47" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSMin</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a284731f0ecc71898bf4ddc032e9f9a47" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSMulH</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a55bde2ba6aacac745a29a7e50c6be007" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSplatBuildVector</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aeea5857133a04085b450948e90fdcd1e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSplatVector</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ab3bc600ec4a43f1914fed894c9cf9fc0" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSSube</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ac7553894d44938e9e9f4016dae66b72e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSSubo</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1af1b182c58ed8ff82a5958635de5ccb15" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildStepVector</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a87a7405685118d45876c996318829ceb" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildStore</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aea1b43a8ad482493c4b6898bf120a176" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildStore</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6c47deaeb76718f7eaa6262308a72dd5" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildStrictFAdd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a4b2fab18274c6ca276053bb774c6e8c3" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildSub</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ad5732a98562641ab5536b451ec72c5d4" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildTrap</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1abf1763199cd36c9253c6f062fa5e973e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildTrunc</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1abfcd8132aaf36162d0ac865c74933456" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUAdde</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ad01ffef0e7c1bd556a76f6ead4d7d9fb" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUAddo</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a942b13bfd9c50bb5af1828739035ebe1" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUbfx</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a19fd5e11c62df9e228eb03dd466f5d0f" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUCmp</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a86e0c21f3e1e706b8d26733726c76195" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUITOFP</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1afae1758b4922383832826f8382b0ab54" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUMax</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1af9ac32566a3d7b10a68fac371f15f643" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUMin</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6bf669233b50fac473a92c3039c48c4b" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUMulH</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a137bf40e73f82a78b6d2227ff65aeadf" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUndef</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a1e9e055fc19307bc3c7c1be6ccd36812" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUnmerge</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a330499e5e11e1c2e82e0a8c7179f335d" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUnmerge</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aeec9f9188630ac797d11be83445197b0" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUnmerge</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ac3c19ecc16565c150796b834a8a63963" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUnmerge</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a3b08f09b085506a31ea5ac83f5d8fda1" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildURem</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ac80662067cf7650fa86ffb1c9cf75249" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUSube</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a5c12041fb9751bb3445d1da887a91e66" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildUSubo</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aba86fb134fa3b2f01695749e0c7d84b6" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceAdd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a997b3e4a8a93ae662f2f972297415fd6" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceAnd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a5e1c6502399d7e0af30cba7a9925003f" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceFAdd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a2cfde3d2db07050c016b443eaae2702d" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceFMax</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a9a71277627a30c423608a2e598ba4d32" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceFMaximum</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6ededbd32ca155120e2dfd50f755688c" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceFMin</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6397aa0392a0e4e57470de5e450da0b2" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceFMinimum</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a4f45e804fb39d50c4d8ec6bb1f5307a5" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceFMul</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1af80e0eddf323d627ac891582fcb4710e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceMul</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a1cf2e534999d7df7c847a4331924000d" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceOr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a17c80c4630830047bb693ee47f58c8c3" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceSeqFAdd</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a4a5597c997afda710f863873c38c534e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceSeqFMul</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ae4f70fb94cc8468f64183b6a5c75a0e0" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceSMax</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a686f39d5b9c570d44717e2cf9ca3da07" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceSMin</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a92a4e4e7dc4ca706beb3fb702283a77f" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceUMax</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ab0d22cadad3d84314a8847549ecc0a55" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceUMin</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6e96b1d2ea4e991019ef283c4f588904" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVecReduceXor</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a50ec87d072ddb08830486e9fb31ca6de" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVScale</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ab3480c1f40e51b1673754af7384a5078" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVScale</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aad8f2c80f7625613c869923fbe25db5b" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildVScale</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1af474773f09e4dbbc430d8d8df632e9fb" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildXor</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a44a49b5f4dd2932058e3fbe21c098655" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildZExt</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a26edc3c3cae5a3f4d6ddd7f628b98c45" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildZExtInReg</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a7ac5295bdfdd480a2c66ee54273ebe21" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>buildZExtOrTrunc</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1ae6e8209ef4c337a011476b902bd799cc" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>canPerformCSEForOpc</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a17236385c665da0dbf18b5ab098bb58e" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>checkCopyToDefsPossible</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1ab53292a8500fa16004af814a68e277fb" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>dominates</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a9d23c2aafd35499e6ab41c13cb8c9523" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>generateCopiesIfRequired</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a5aafc4bc2c28b6cb5d9aeb319b186d11" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getBoolExtOp</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a120dbb8d0a1ad4437456001a302a1da7" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getContext</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a2a885e28d6a7936c7442d063aea666f6" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getCSEInfo</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a7336e3815d2fdc6dec4d59d47db6b5b9" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getCSEInfo</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1aeb6d0a9254bc3183046873436fc7c12e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getDataLayout</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1acfe60198abd7ecf64270c987689c6c1b" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getDebugLoc</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a93ab05c4fb48bd5e87965bef6ec9ac2e" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getDL</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a6bce118c21f6190369af1a308b734807" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getDominatingInstrForID</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a430daa77692b7b25f93a72d83e51964f" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getInsertPt</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ac8f6c5b9180bd630c92e1126877d0b08" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getMBB</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a7be5d9bbd5832221068ae6c93cf24d51" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getMBB</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a9ec04f3692b9601036d2d4477c4c3749" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getMF</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a0e8dc93a8e1664c946eca6f60140ea29" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getMF</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ae93b0a855cdf8afb141d16e217158683" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getMMRAMetadata</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ad7322f56c0659b8dc8e55567767b74d6" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getMRI</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a94a2451b7b4e853eb884be8d8e3c69d9" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getMRI</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a035ff811981517c4885338606c70d928" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getObserver</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a4d965aceed7f5b45e11799d0fa0b36e3" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getPCSections</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1adc500b8cc6b22cec3d3cdc03234f23b9" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getState</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a35384c47e5ca9690216b1aa8fed5a8c9" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>getTII</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a06dc2f24e1f4dea357bf6c646f5b2607" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>insertInstr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ac79fef5aa90485941b9c604ece34199d" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>isObservingChanges</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1ad662a74c60eeb99f6a24927479eda063" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>MachineIRBuilder</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1aa03c7e0eb5346e000177cb95b910cc71" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>MachineIRBuilder</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a6149c9a2642b91bfdb471868a7f8bd1f" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>MachineIRBuilder</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a7d5d8e859928cc003454a2ba18372a71" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>MachineIRBuilder</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a8d69fb9fe28f38bfe61a276caec92263" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>MachineIRBuilder</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1aa048045615f06db86c3a4e317ed3a2b3" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>MachineIRBuilder</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a0f2bb4d63ad6914f3783967bf881a14b" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>materializePtrAdd</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a20ecb12f5d22d71cd40f9e3ea6553296" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>memoizeMI</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a665403895fbe470c1252de4819d00f04" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>profileDstOp</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1af9dea911a6daa75a4db7e113076bef58" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>profileDstOps</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1ad7619bee4a86d2909d5861716198eb23" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>profileEverything</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a39e86102e53060a9daabe3fbeb4e27f3" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>profileMBBOpcode</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1ac091b02ba9259014e18c883b2b829d92" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>profileSrcOp</name></member>
+      <member refid="classllvm_1_1_c_s_e_m_i_r_builder_1a599a4fcb5249b1c6c96ad7a6800bb4c1" prot="private" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>profileSrcOps</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a6baa0ad8a95dcded4f50f3bf0d20c94d" prot="protected" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>recordInsertion</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1af69cfe118f734f35607c8fd4615ea1bf" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>setChangeObserver</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ad2a55990c65a2e9965e91c74a293df22" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>setCSEInfo</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ac444a61cbfb8a46d48688a530e5defe1" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>setDebugLoc</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a0df93c0f752428162e14b54f8999172d" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>setInsertPt</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a4cac2a17ab11d53dd0a49871b80f5c7a" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>setInstr</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ab24db762f0912a99f1e4d9e44eaeaa44" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>setInstrAndDebugLoc</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1acd5c75a12ec8c12c35de46c60d18c699" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>setMBB</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1af0d9669bbadd4d5e1d75c3c833c8d5ac" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>setMF</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ab2ef6f73b6f2821c0852ab1a60866a3d" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>setMMRAMetadata</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ab86e7a422665e421ea6e21cbf1902d7c" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>setPCSections</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1af66f20f7acbbf9bbb0585aeaa2dcfdbd" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>setState</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a7fc63d7dce70789203fc3966a2c08243" prot="public" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>stopObservingChanges</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a9856f0ee59ced7e9724315502ea9a380" prot="protected" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>validateBinaryOp</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a91a10c5f7ca3b7a86768cb33f8955b5c" prot="protected" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>validateSelectOp</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a9c8154c310c33839a5d134b63c4d9cb6" prot="protected" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>validateShiftOp</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1adfd8cf26645132e9a23697eed85685e1" prot="protected" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>validateTruncExt</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1ae63e90ab103cd2159b9431b5ed5e9a53" prot="protected" virt="non-virtual"><scope>llvm::CSEMIRBuilder</scope><name>validateUnaryOp</name></member>
+      <member refid="classllvm_1_1_machine_i_r_builder_1a1c9f7862be40509888ddd3febc051c85" prot="public" virt="virtual"><scope>llvm::CSEMIRBuilder</scope><name>~MachineIRBuilder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

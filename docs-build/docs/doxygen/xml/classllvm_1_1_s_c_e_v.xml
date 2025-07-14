@@ -1,0 +1,840 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_s_c_e_v" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SCEV</compoundname>
+    <basecompoundref refid="classllvm_1_1_folding_set_base_1_1_node" prot="public" virt="non-virtual">llvm::FoldingSetBase::Node</basecompoundref>
+    <derivedcompoundref refid="classllvm_1_1_s_c_e_v_cast_expr" prot="public" virt="non-virtual">llvm::SCEVCastExpr</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_s_c_e_v_constant" prot="public" virt="non-virtual">llvm::SCEVConstant</derivedcompoundref>
+    <derivedcompoundref refid="structllvm_1_1_s_c_e_v_could_not_compute" prot="public" virt="non-virtual">llvm::SCEVCouldNotCompute</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_s_c_e_v_n_ary_expr" prot="public" virt="non-virtual">llvm::SCEVNAryExpr</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_s_c_e_v_u_div_expr" prot="public" virt="non-virtual">llvm::SCEVUDivExpr</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_s_c_e_v_unknown" prot="public" virt="non-virtual">llvm::SCEVUnknown</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_s_c_e_v_v_scale" prot="public" virt="non-virtual">llvm::SCEVVScale</derivedcompoundref>
+    <includes refid="_scalar_evolution_8h" local="yes">llvm/Analysis/ScalarEvolution.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>NoWrapFlags</name>
+        <qualifiedname>llvm::SCEV::NoWrapFlags</qualifiedname>
+        <enumvalue id="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6fa23e74052c4d79cfdaa23460a3c946656" prot="public">
+          <name>FlagAnyWrap</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6faf763167030e97d18e8f8c8ed3dba28e3" prot="public">
+          <name>FlagNW</name>
+          <initializer>= (1 &lt;&lt; 0)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6faafb62cd6afdc004ef6e8a1f6288eb382" prot="public">
+          <name>FlagNUW</name>
+          <initializer>= (1 &lt;&lt; 1)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6fa2f7a8775a783f7ea3ad24b3f9cb5d949" prot="public">
+          <name>FlagNSW</name>
+          <initializer>= (1 &lt;&lt; 2)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6fae022582ed4b56bdb108b4488809e11e6" prot="public">
+          <name>NoWrapMask</name>
+          <initializer>= (1 &lt;&lt; 3) - 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6f" kindref="member">NoWrapFlags</ref> are bitfield indices into SubclassData. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Add and Mul expressions may have no-unsigned-wrap &lt;NUW&gt; or no-signed-wrap &lt;NSW&gt; properties, which are derived from the IR operator. NSW is a misnomer that we use to mean no signed overflow or underflow.</para>
+<para>AddRec expressions may have a no-self-wraparound &lt;NW&gt; property if, in the integer domain, abs(step) * max-iteration(loop) &lt;= unsigned-max(bitwidth). This means that the recurrence will never reach its start value if the step is non-zero. Computing the same value on each iteration is not considered wrapping, and recurrences with step = 0 are trivially &lt;NW&gt;. &lt;NW&gt; is independent of the sign of step and the value the add recurrence starts with.</para>
+<para>Note that NUW and NSW are also valid properties of a recurrence, and either implies NW. For convenience, NW will be set for a recurrence whenever either NUW or NSW are set.</para>
+<para>We require that the flag on a <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> apply to the entire scope in which that <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> is defined. A <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref>&apos;s scope is set of locations dominated by a defining location, which is in turn described by the following rules:<itemizedlist>
+<listitem><para>A <ref refid="classllvm_1_1_s_c_e_v_unknown" kindref="compound">SCEVUnknown</ref> is at the point of definition of the <ref refid="classllvm_1_1_value" kindref="compound">Value</ref>.</para>
+</listitem><listitem><para>A <ref refid="classllvm_1_1_s_c_e_v_constant" kindref="compound">SCEVConstant</ref> is defined at all points.</para>
+</listitem><listitem><para>A SCEVAddRec is defined starting with the header of the associated loop.</para>
+</listitem><listitem><para>All other SCEVs are defined at the earlest point all operands are defined.</para>
+</listitem></itemizedlist>
+</para>
+<para>The above rules describe a maximally hoisted form (without regards to potential control dependence). A <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> is defined anywhere a corresponding instruction could be defined in said maximally hoisted form. Note that <ref refid="classllvm_1_1_s_c_e_v_u_div_expr" kindref="compound">SCEVUDivExpr</ref> (currently the only expression type which can trap) can be defined per these rules in regions where it would trap at runtime. A <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> being defined does not require the existence of any instruction within the defined scope. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="126" column="3" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="126" bodyend="132"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_s_c_e_v_1ae29da85cd2dc185164c105e98fb7ec58" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct</type>
+        <definition>friend struct FoldingSetTrait&lt; SCEV &gt;</definition>
+        <argsstring></argsstring>
+        <name>FoldingSetTrait&lt; SCEV &gt;</name>
+        <qualifiedname>llvm::SCEV::FoldingSetTrait&lt; SCEV &gt;</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_folding_set_trait" kindref="compound">FoldingSetTrait</ref>&lt; <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="412" column="25" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="72" bodyend="-1"/>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="classllvm_1_1_s_c_e_v_predicate_1a6d2a13cb997f4164ed8d17c16b50acf1">llvm::SCEVPredicate::SCEVPredicate</references>
+        <references refid="classllvm_1_1_s_c_e_v_union_predicate_1aad6219405572b4180a5080b2642e020f" compoundref="_scalar_evolution_8cpp" startline="15048" endline="15053">llvm::SCEVUnionPredicate::SCEVUnionPredicate</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_s_c_e_v_1a717659b1a38d7bb265ec0d47292f68fa" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_folding_set_node_i_d_ref" kindref="compound">FoldingSetNodeIDRef</ref></type>
+        <definition>FoldingSetNodeIDRef llvm::SCEV::FastID</definition>
+        <argsstring></argsstring>
+        <name>FastID</name>
+        <qualifiedname>llvm::SCEV::FastID</qualifiedname>
+        <briefdescription>
+<para>A reference to an Interned <ref refid="classllvm_1_1_folding_set_node_i_d" kindref="compound">FoldingSetNodeID</ref> for this node. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref>&apos;s <ref refid="namespacellvm_1a8e612822d4ba7bb36c9c79582a567108" kindref="member">BumpPtrAllocator</ref> holds the data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="76" column="23" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_s_c_e_v_1a93693efb507be35c82004a164ab9b4f8" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5e" kindref="member">SCEVTypes</ref></type>
+        <definition>const SCEVTypes llvm::SCEV::SCEVType</definition>
+        <argsstring></argsstring>
+        <name>SCEVType</name>
+        <qualifiedname>llvm::SCEV::SCEVType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="79" column="19" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_s_c_e_v_1aaf1d4f0b6eece16e8a081906d13a84f9" prot="protected" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref> short</type>
+        <definition>const unsigned short llvm::SCEV::ExpressionSize</definition>
+        <argsstring></argsstring>
+        <name>ExpressionSize</name>
+        <qualifiedname>llvm::SCEV::ExpressionSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="83" column="24" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_s_c_e_v_1a102c99af586cd76e0d9ff32ac0e825e0" compoundref="_scalar_evolution_8h" startline="169" endline="171">getExpressionSize</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_1ace7f137cfb19ce8073b78b85f819430c" compoundref="_scalar_evolution_8h" startline="134" endline="136">SCEV</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_s_c_e_v_1ade1f1b89affe842dacd20c7f950e99c9" prot="protected" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref> short</type>
+        <definition>unsigned short llvm::SCEV::SubclassData</definition>
+        <argsstring></argsstring>
+        <name>SubclassData</name>
+        <qualifiedname>llvm::SCEV::SubclassData</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>This field is initialized to zero and may be used in subclasses to store miscellaneous information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="87" column="18" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="87" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_s_c_e_v_n_ary_expr_1a7275347a4dce174f4fecd548fd3255dc" compoundref="_scalar_evolution_expressions_8h" startline="222" endline="224">llvm::SCEVNAryExpr::getNoWrapFlags</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_add_rec_expr_1a5316a2763777f3670c1606452f4e99d7" compoundref="_scalar_evolution_expressions_8h" startline="389" endline="393">llvm::SCEVAddRecExpr::setNoWrapFlags</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_commutative_expr_1a46be9fc927263a605e288de91f7c367b" compoundref="_scalar_evolution_expressions_8h" startline="262" endline="262">llvm::SCEVCommutativeExpr::setNoWrapFlags</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1ace7f137cfb19ce8073b78b85f819430c" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SCEV::SCEV</definition>
+        <argsstring>(const FoldingSetNodeIDRef ID, SCEVTypes SCEVTy, unsigned short ExpressionSize)</argsstring>
+        <name>SCEV</name>
+        <qualifiedname>llvm::SCEV::SCEV</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_folding_set_node_i_d_ref" kindref="compound">FoldingSetNodeIDRef</ref></type>
+          <declname>ID</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5e" kindref="member">SCEVTypes</ref></type>
+          <declname>SCEVTy</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> short</type>
+          <declname>ExpressionSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="134" column="12" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="134" bodyend="136"/>
+        <references refid="classllvm_1_1_s_c_e_v_1aaf1d4f0b6eece16e8a081906d13a84f9" compoundref="_scalar_evolution_8h" startline="83">ExpressionSize</references>
+        <referencedby refid="classllvm_1_1_s_c_e_v_cast_expr_1aea85e11db3d72c739df477f88e3e1913" compoundref="_scalar_evolution_expressions_8h" startline="122" endline="125">llvm::SCEVCastExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_constant_1ade52c1d7a2aba84029a91c05eae309db" compoundref="_scalar_evolution_expressions_8h" startline="75" endline="75">llvm::SCEVConstant::classof</referencedby>
+        <referencedby refid="structllvm_1_1_s_c_e_v_could_not_compute_1ad3cca751f8e7a761a113ee2414a5c05c" compoundref="_scalar_evolution_8cpp" startline="469" endline="471">llvm::SCEVCouldNotCompute::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_n_ary_expr_1a683f6ac8f67a2aa12754c196dc96c9e3" compoundref="_scalar_evolution_expressions_8h" startline="237" endline="243">llvm::SCEVNAryExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_u_div_expr_1a0af07c0b7413ed4f8eb74102ae19e2e7" compoundref="_scalar_evolution_expressions_8h" startline="336" endline="336">llvm::SCEVUDivExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_unknown_1a4e62c555edb269cdfff199b897a12a0e" compoundref="_scalar_evolution_expressions_8h" startline="603" endline="603">llvm::SCEVUnknown::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_v_scale_1aa33a0f24ffc13ae1f926d3d9a9826202" compoundref="_scalar_evolution_expressions_8h" startline="92" endline="92">llvm::SCEVVScale::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_u_div_expr_1a64f39bbc1130d1a36d3824633863dc51" compoundref="_scalar_evolution_expressions_8h" startline="316" endline="316">llvm::SCEVUDivExpr::getLHS</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_cast_expr_1ab6c2fb358d83304761d3848aa70ee5d6" compoundref="_scalar_evolution_expressions_8h" startline="112" endline="112">llvm::SCEVCastExpr::getOperand</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_cast_expr_1a23f00d09bfec103f4a500db452aaace2" compoundref="_scalar_evolution_expressions_8h" startline="113" endline="116">llvm::SCEVCastExpr::getOperand</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_n_ary_expr_1ad99e00da7acb7973ae006f5b53ce04f6" compoundref="_scalar_evolution_expressions_8h" startline="213" endline="216">llvm::SCEVNAryExpr::getOperand</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_u_div_expr_1a3de87bd936348d41261ca1cd806ff819" compoundref="_scalar_evolution_expressions_8h" startline="319" endline="322">llvm::SCEVUDivExpr::getOperand</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_u_div_expr_1ad0fdc55c45a39b722f3d990505b55dd7" compoundref="_scalar_evolution_expressions_8h" startline="317" endline="317">llvm::SCEVUDivExpr::getRHS</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_1a17f5f384636a04166136c6b74934655b">operator=</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_1acdbe9e14ed6edbd5b5e3c252585902ec" compoundref="_scalar_evolution_8cpp" startline="273" endline="384">print</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_constant_1a15a0237aaba54972c69acad43448c093" compoundref="_scalar_evolution_expressions_8h" startline="61">llvm::SCEVConstant::ScalarEvolution</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_u_div_expr_1a15a0237aaba54972c69acad43448c093" compoundref="_scalar_evolution_expressions_8h" startline="305">llvm::SCEVUDivExpr::ScalarEvolution</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_unknown_1a15a0237aaba54972c69acad43448c093" compoundref="_scalar_evolution_expressions_8h" startline="578">llvm::SCEVUnknown::ScalarEvolution</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_v_scale_1a15a0237aaba54972c69acad43448c093" compoundref="_scalar_evolution_expressions_8h" startline="81">llvm::SCEVVScale::ScalarEvolution</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_1a4d7d3fc30d912cee99348a044b76f2a8">SCEV</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_cast_expr_1acb400ab122ec2c7e1222c7dc7eac079e" compoundref="_scalar_evolution_8cpp" startline="513" endline="515">llvm::SCEVCastExpr::SCEVCastExpr</referencedby>
+        <referencedby refid="structllvm_1_1_s_c_e_v_could_not_compute_1a4879e3633c19d6a7c7b9c56cfd3cec18" compoundref="_scalar_evolution_8cpp" startline="466" endline="467">llvm::SCEVCouldNotCompute::SCEVCouldNotCompute</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_n_ary_expr_1a76d2af00b10cda0b511a84a742d13f00" compoundref="_scalar_evolution_expressions_8h" startline="205" endline="208">llvm::SCEVNAryExpr::SCEVNAryExpr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1a4d7d3fc30d912cee99348a044b76f2a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SCEV::SCEV</definition>
+        <argsstring>(const SCEV &amp;)=delete</argsstring>
+        <name>SCEV</name>
+        <qualifiedname>llvm::SCEV::SCEV</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="137" column="3"/>
+        <references refid="classllvm_1_1_s_c_e_v_1ace7f137cfb19ce8073b78b85f819430c" compoundref="_scalar_evolution_8h" startline="134" endline="136">SCEV</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1a17f5f384636a04166136c6b74934655b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> &amp;</type>
+        <definition>SCEV &amp; llvm::SCEV::operator=</definition>
+        <argsstring>(const SCEV &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::SCEV::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="138" column="8"/>
+        <references refid="classllvm_1_1_s_c_e_v_1ace7f137cfb19ce8073b78b85f819430c" compoundref="_scalar_evolution_8h" startline="134" endline="136">SCEV</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1ad4f956914bf94bdcd1058badb5bd90e6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5e" kindref="member">SCEVTypes</ref></type>
+        <definition>SCEVTypes llvm::SCEV::getSCEVType</definition>
+        <argsstring>() const</argsstring>
+        <name>getSCEVType</name>
+        <qualifiedname>llvm::SCEV::getSCEVType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="140" column="13" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="140" bodyend="140"/>
+        <referencedby refid="classllvm_1_1_s_c_e_v_add_expr_1a8c1ca261e3edd4bdc20a12945e52c523" compoundref="_scalar_evolution_expressions_8h" startline="286" endline="286">llvm::SCEVAddExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_add_rec_expr_1a93b096608fec2f6b2c6d5b4fec2dbb6c" compoundref="_scalar_evolution_expressions_8h" startline="418" endline="420">llvm::SCEVAddRecExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_cast_expr_1aea85e11db3d72c739df477f88e3e1913" compoundref="_scalar_evolution_expressions_8h" startline="122" endline="125">llvm::SCEVCastExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_commutative_expr_1a3a72bdabacd1814a63b8a71ce6109992" compoundref="_scalar_evolution_expressions_8h" startline="255" endline="259">llvm::SCEVCommutativeExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_constant_1ade52c1d7a2aba84029a91c05eae309db" compoundref="_scalar_evolution_expressions_8h" startline="75" endline="75">llvm::SCEVConstant::classof</referencedby>
+        <referencedby refid="structllvm_1_1_s_c_e_v_could_not_compute_1ad3cca751f8e7a761a113ee2414a5c05c" compoundref="_scalar_evolution_8cpp" startline="469" endline="471">llvm::SCEVCouldNotCompute::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_integral_cast_expr_1ab8b71fdad3c03ecb7064beceb718ebea" compoundref="_scalar_evolution_expressions_8h" startline="148" endline="151">llvm::SCEVIntegralCastExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_min_max_expr_1aaa92ab300fe307d86daa5a5ab04e8e8e" compoundref="_scalar_evolution_expressions_8h" startline="445" endline="445">llvm::SCEVMinMaxExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_mul_expr_1aca64f06e0f646497cff2e2160588f916" compoundref="_scalar_evolution_expressions_8h" startline="300" endline="300">llvm::SCEVMulExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_n_ary_expr_1a683f6ac8f67a2aa12754c196dc96c9e3" compoundref="_scalar_evolution_expressions_8h" startline="237" endline="243">llvm::SCEVNAryExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_ptr_to_int_expr_1a287679cc6d0f88eaaea49ce423b421a5" compoundref="_scalar_evolution_expressions_8h" startline="137" endline="137">llvm::SCEVPtrToIntExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_sequential_min_max_expr_1a5cb30517ec635f4dd45b75546774c62e" compoundref="_scalar_evolution_expressions_8h" startline="554" endline="556">llvm::SCEVSequentialMinMaxExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_sequential_u_min_expr_1a5427624b08a39a74a1b7c3dde28494aa" compoundref="_scalar_evolution_expressions_8h" startline="569" endline="571">llvm::SCEVSequentialUMinExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_sign_extend_expr_1a7c752075048c7262ba253f020a236f93" compoundref="_scalar_evolution_expressions_8h" startline="189" endline="191">llvm::SCEVSignExtendExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_s_max_expr_1a0187000e3bd38397580e28c6c7b62fb2" compoundref="_scalar_evolution_expressions_8h" startline="472" endline="472">llvm::SCEVSMaxExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_s_min_expr_1ad2851cdb61daea9cb47e7383dfd84cdb" compoundref="_scalar_evolution_expressions_8h" startline="496" endline="496">llvm::SCEVSMinExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_truncate_expr_1a064e40e3128c4f3babba705c638b1af3" compoundref="_scalar_evolution_expressions_8h" startline="163" endline="163">llvm::SCEVTruncateExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_u_div_expr_1a0af07c0b7413ed4f8eb74102ae19e2e7" compoundref="_scalar_evolution_expressions_8h" startline="336" endline="336">llvm::SCEVUDivExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_u_max_expr_1ab14e9721aabf5b7d27aa5d6fa8f8a17e" compoundref="_scalar_evolution_expressions_8h" startline="484" endline="484">llvm::SCEVUMaxExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_u_min_expr_1a53befb3a11f61891384d5959b1da44f6" compoundref="_scalar_evolution_expressions_8h" startline="508" endline="508">llvm::SCEVUMinExpr::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_unknown_1a4e62c555edb269cdfff199b897a12a0e" compoundref="_scalar_evolution_expressions_8h" startline="603" endline="603">llvm::SCEVUnknown::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_v_scale_1aa33a0f24ffc13ae1f926d3d9a9826202" compoundref="_scalar_evolution_expressions_8h" startline="92" endline="92">llvm::SCEVVScale::classof</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_zero_extend_expr_1a0072432c384b3870d9aa40c058540947" compoundref="_scalar_evolution_expressions_8h" startline="175" endline="177">llvm::SCEVZeroExtendExpr::classof</referencedby>
+        <referencedby refid="structanonymous__namespace_02_scalar_evolution_8cpp_03_1_1_s_c_e_v_poison_collector_1a8f7456a85b68eb2303d072fa2560c95a" compoundref="_scalar_evolution_8cpp" startline="4120" endline="4130">anonymous_namespace{ScalarEvolution.cpp}::SCEVPoisonCollector::follow</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_sequential_min_max_expr_1af8532b54a025a850863502cadc554fdd" compoundref="_scalar_evolution_expressions_8h" startline="550" endline="552">llvm::SCEVSequentialMinMaxExpr::getEquivalentNonSequentialSCEVType</referencedby>
+        <referencedby refid="_loop_strength_reduce_8cpp_1a60008b3cbf2b4ef3e3d14af04beb6a06" compoundref="_loop_strength_reduce_8cpp" startline="2999" endline="3030">getExprBase</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_1aefeda9454a5e8dfcec3deb106964832a" compoundref="_scalar_evolution_8cpp" startline="386" endline="418">getType</referencedby>
+        <referencedby refid="_scalar_evolution_8cpp_1a4d43163acfcdefe57d402dab3640d8be" compoundref="_scalar_evolution_8cpp" startline="774" endline="818">GroupByComplexity</referencedby>
+        <referencedby refid="_loop_strength_reduce_8cpp_1a7ac21134b2aaca2a7d55f6ff9d92f5b2" compoundref="_loop_strength_reduce_8cpp" startline="1102" endline="1164">isHighCostExpansion</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_1a0b675a820ab094d694d602eb16ef02e5" compoundref="_scalar_evolution_8cpp" startline="420" endline="446">operands</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_1acdbe9e14ed6edbd5b5e3c252585902ec" compoundref="_scalar_evolution_8cpp" startline="273" endline="384">print</referencedby>
+        <referencedby refid="_scalar_evolution_8cpp_1a02c3cff4baf0eb36d46fd37369a0bb88" compoundref="_scalar_evolution_8cpp" startline="6067" endline="6101">SCEVMinMaxExprContains</referencedby>
+        <referencedby refid="structllvm_1_1_s_c_e_v_visitor_1a1e7a5297e3ded4db5e828ee4bd651b34" compoundref="_scalar_evolution_expressions_8h" startline="609" endline="648">llvm::SCEVVisitor&lt; SCEVSequentialMinMaxDeduplicatingVisitor, RetVal &gt;::visit</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_traversal_1aa3e492f428e815c1c89e3a5625e2c233" compoundref="_scalar_evolution_expressions_8h" startline="675" endline="709">llvm::SCEVTraversal&lt; SV &gt;::visitAll</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1aefeda9454a5e8dfcec3deb106964832a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+        <definition>Type * SCEV::getType</definition>
+        <argsstring>() const</argsstring>
+        <name>getType</name>
+        <qualifiedname>llvm::SCEV::getType</qualifiedname>
+        <briefdescription>
+<para>Return the LLVM type of this <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expression. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="143" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="386" bodyend="418"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_s_c_e_v_1ad4f956914bf94bdcd1058badb5bd90e6" compoundref="_scalar_evolution_8h" startline="140" endline="140">getSCEVType</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea3a80b1a7dda48464be1849ee1fb85868" compoundref="_scalar_evolution_expressions_8h" startline="45">llvm::scAddExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea222c9c7b5d5e742d5d1238a3256b1ea5" compoundref="_scalar_evolution_expressions_8h" startline="48">llvm::scAddRecExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eabcb1f797cb330e61a5879fc260aaec5b" compoundref="_scalar_evolution_expressions_8h" startline="40">llvm::scConstant</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eab6b4550f8ae7180f0e83ebb40a9882ec" compoundref="_scalar_evolution_expressions_8h" startline="56">llvm::scCouldNotCompute</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eafd56f054da3d1f9b827ae1003da3a38b" compoundref="_scalar_evolution_expressions_8h" startline="46">llvm::scMulExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eae996cdd31b3e2df5dbd55ff638d2d456" compoundref="_scalar_evolution_expressions_8h" startline="54">llvm::scPtrToInt</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea376414ac1f3ac8cb449fd5167a2db091" compoundref="_scalar_evolution_expressions_8h" startline="53">llvm::scSequentialUMinExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ead05711646a19cb20775cfbc8ef0a8c09" compoundref="_scalar_evolution_expressions_8h" startline="44">llvm::scSignExtend</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea684b8e2484b12d494e82f7053d005754" compoundref="_scalar_evolution_expressions_8h" startline="50">llvm::scSMaxExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea88dad4534f471d79d0a7a094d809ef55" compoundref="_scalar_evolution_expressions_8h" startline="52">llvm::scSMinExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ead3656bcc84af213cc488acb56c60de22" compoundref="_scalar_evolution_expressions_8h" startline="42">llvm::scTruncate</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eaee62cac87c0dc1f483d783aae69101c4" compoundref="_scalar_evolution_expressions_8h" startline="47">llvm::scUDivExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ead3d0abdf8125de904320df332dbefedb" compoundref="_scalar_evolution_expressions_8h" startline="49">llvm::scUMaxExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea0bf2fc9a454ce237fde0906ee24b0acc" compoundref="_scalar_evolution_expressions_8h" startline="51">llvm::scUMinExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea80488550b42b6548ec4d5c7118c7ff1d" compoundref="_scalar_evolution_expressions_8h" startline="55">llvm::scUnknown</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea61df12d6bb21842a8f766c4433c85717" compoundref="_scalar_evolution_expressions_8h" startline="41">llvm::scVScale</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eadd4a8d5cb0d78c9be22d01e1546bafc6" compoundref="_scalar_evolution_expressions_8h" startline="43">llvm::scZeroExtend</references>
+        <referencedby refid="classllvm_1_1_s_c_e_v_a_a_result_1a688068ae24921ce2ed14ca5ff0b732e2" compoundref="_scalar_evolution_alias_analysis_8cpp" startline="36" endline="122">llvm::SCEVAAResult::alias</referencedby>
+        <referencedby refid="_scalar_evolution_8cpp_1a55aceb0318074f694f763d011f71cd90" compoundref="_scalar_evolution_8cpp" startline="876" endline="979">BinomialCoefficient</referencedby>
+        <referencedby refid="_s_l_p_vectorizer_8cpp_1a0a8a72a5038e4a261d35418751506868" compoundref="_s_l_p_vectorizer_8cpp" startline="4834" endline="4944">calculateRtStride</referencedby>
+        <referencedby refid="namespacellvm_1a5704370a1379cfd0062d47b73ba65cb0" compoundref="_loop_utils_8cpp" startline="1427" endline="1436">llvm::cannotBeMaxInLoop</referencedby>
+        <referencedby refid="namespacellvm_1aef5f1583da883ba28cb113c02d29f1d9" compoundref="_loop_utils_8cpp" startline="1416" endline="1425">llvm::cannotBeMinInLoop</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1ae0ca564918ec63a9b4d2229374fec747" compoundref="_scalar_evolution_8cpp" startline="12058" endline="12172">llvm::ScalarEvolution::computeConstantDifference</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1a65ab4267c6c132d06451b5d97bc9ee83" compoundref="_loop_vectorize_8cpp" startline="3931" endline="4120">llvm::LoopVectorizationCostModel::computeMaxVF</referencedby>
+        <referencedby refid="classllvm_1_1_indexed_reference_1a0182cdf55f9bfbdd904e3f5e6802316a" compoundref="_loop_cache_analysis_8cpp" startline="272" endline="355">llvm::IndexedReference::computeRefCost</referencedby>
+        <referencedby refid="_loop_cache_analysis_8cpp_1a605f4ae007c6b19244c175eb1990abc1" compoundref="_loop_cache_analysis_8cpp" startline="109" endline="124">computeTripCount</referencedby>
+        <referencedby refid="_loop_peel_8cpp_1a7098623cafc05376a44b27d202b03372" compoundref="_loop_peel_8cpp" startline="341" endline="508">countToEliminateCompares</referencedby>
+        <referencedby refid="_scalar_evolution_8cpp_1a51c0653682103a713b0c3695aae3a1ff" compoundref="_scalar_evolution_8cpp" startline="6211" endline="6241">createNodeForSelectViaUMinSeq</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a8160c4d5a8fc34f6085af951980dbaa6" compoundref="_ind_var_simplify_8cpp" startline="1262" endline="1317">createReplacement</referencedby>
+        <referencedby refid="classanonymous__namespace_02_simplify_ind_var_8cpp_03_1_1_widen_i_v_1a5586ec5eac8a93b87b095f949ea8daf3" compoundref="_simplify_ind_var_8cpp" startline="2034" endline="2157">anonymous_namespace{SimplifyIndVar.cpp}::WidenIV::createWideIV</referencedby>
+        <referencedby refid="_loop_strength_reduce_8cpp_1aa59a46776e15b1f1bd597c4e1e769f59" compoundref="_loop_strength_reduce_8cpp" startline="541" endline="591">DoInitialMatch</referencedby>
+        <referencedby refid="_loop_utils_8cpp_1a43288882d546aed1ef0a23ffc620ddff" compoundref="_loop_utils_8cpp" startline="1866" endline="1931">expandBounds</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_expander_1aac98cc9f91ac31468cb93febcd484e5b" compoundref="_scalar_evolution_expander_8cpp" startline="1450" endline="1460">llvm::SCEVExpander::expandCodeFor</referencedby>
+        <referencedby refid="_loop_access_analysis_8cpp_1a202c5827957336be308d423d78ff7119" compoundref="_loop_access_analysis_8cpp" startline="868" endline="1020">findForkedSCEVs</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1adc183a6edc37f305ee9ca5ff0bc33a6e" compoundref="_ind_var_simplify_8cpp" startline="833" endline="908">FindLoopCounter</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_expander_1a16e9052fd33aedf29b009262d35d59f8" compoundref="_scalar_evolution_expander_8cpp" startline="2094" endline="2216">llvm::SCEVExpander::generateOverflowCheck</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a14bc7872374f530d4ed193d9921825c5" compoundref="_ind_var_simplify_8cpp" startline="913" endline="940">genLoopLimit</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1aa35959e3f6bea8e35cffcfd8659e3156" compoundref="_scalar_evolution_8cpp" startline="2180" endline="2225">llvm::ScalarEvolution::getAnyExtendExpr</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a0f3039f831c483956c153ed9dee23dba" compoundref="_scalar_evolution_8cpp" startline="3736" endline="3811">llvm::ScalarEvolution::getGEPExpr</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a094d95c92490272d4b7a6bf4ab90009d" compoundref="_scalar_evolution_8cpp" startline="11275" endline="11336">llvm::ScalarEvolution::getLoopInvariantExitCondDuringFirstIterationsImpl</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a4bab447a6422427e5fc92bbbc0c12fba" compoundref="_scalar_evolution_8cpp" startline="1016" endline="1138">llvm::ScalarEvolution::getLosslessPtrToIntExpr</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a765b135bf0191fca6004b4167bcfb493" compoundref="_scalar_evolution_8cpp" startline="6409" endline="6412">llvm::ScalarEvolution::getMinTrailingZeros</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_strength_reduce_8cpp_03_1_1_immediate_1a81bada52d17e453e10221581a1bda050" compoundref="_loop_strength_reduce_8cpp" startline="328" endline="333">anonymous_namespace{LoopStrengthReduce.cpp}::Immediate::getNegativeSCEV</referencedby>
+        <referencedby refid="_alignment_from_assumptions_8cpp_1af2917523aba1c4fae828904ab0992254" compoundref="_alignment_from_assumptions_8cpp" startline="82" endline="157">getNewAlignment</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_strength_reduce_8cpp_03_1_1_immediate_1a51c730254cd6b346d9fa4588c58a7517" compoundref="_loop_strength_reduce_8cpp" startline="321" endline="326">anonymous_namespace{LoopStrengthReduce.cpp}::Immediate::getSCEV</referencedby>
+        <referencedby refid="_scalar_evolution_8cpp_1ae8a19e1b12d26ad87bc379e576ff5a7f" compoundref="_scalar_evolution_8cpp" startline="1247" endline="1262">getSignedOverflowLimitForStep</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a643b61ddaf17331f3ff1d4f85c7c9a23" compoundref="_scalar_evolution_8cpp" startline="1919" endline="2160">llvm::ScalarEvolution::getSignExtendExprImpl</referencedby>
+        <referencedby refid="namespacellvm_1afdd1ebe6412f9afb43d0639420afffe0" compoundref="_loop_access_analysis_8cpp" startline="193" endline="246">llvm::getStartAndEndForAccess</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a3e3935d45c4b79b85a117b47cc1d2e61" compoundref="_scalar_evolution_8cpp" startline="8180" endline="8189">llvm::ScalarEvolution::getTripCountFromExitCount</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a17e35fd9a6e590c201fd05105589ce47" compoundref="_scalar_evolution_8cpp" startline="8191" endline="8219">llvm::ScalarEvolution::getTripCountFromExitCount</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_add_rec_expr_1a1596600146d065022af8b9c4a1d0b427" compoundref="_scalar_evolution_expressions_8h" startline="357" endline="357">llvm::SCEVAddRecExpr::getType</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_min_max_expr_1a0b15683671fc89c570661c1c1783273e" compoundref="_scalar_evolution_expressions_8h" startline="443" endline="443">llvm::SCEVMinMaxExpr::getType</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_mul_expr_1aeb2d92e2cfbf96877bd5c18683bf2390" compoundref="_scalar_evolution_expressions_8h" startline="297" endline="297">llvm::SCEVMulExpr::getType</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_sequential_min_max_expr_1ad62e2173f3880516093efbf3bcaf68e2" compoundref="_scalar_evolution_expressions_8h" startline="538" endline="538">llvm::SCEVSequentialMinMaxExpr::getType</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_u_div_expr_1a94507c7b770ce5695c0450a782050016" compoundref="_scalar_evolution_expressions_8h" startline="326" endline="333">llvm::SCEVUDivExpr::getType</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1aef86e2e34d31e4595f5a442fe55ecbe9" compoundref="_scalar_evolution_8cpp" startline="4798" endline="4821">llvm::ScalarEvolution::getUMinFromMismatchedTypes</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_strength_reduce_8cpp_03_1_1_immediate_1a8829aacd47e6a4f3dbaf6c359d5afdfb" compoundref="_loop_strength_reduce_8cpp" startline="335" endline="340">anonymous_namespace{LoopStrengthReduce.cpp}::Immediate::getUnknownSCEV</referencedby>
+        <referencedby refid="_scalar_evolution_8cpp_1aff0515f214b4d4e5d5a3197b11d5eacc" compoundref="_scalar_evolution_8cpp" startline="1267" endline="1275">getUnsignedOverflowLimitForStep</referencedby>
+        <referencedby refid="classanonymous__namespace_02_simplify_ind_var_8cpp_03_1_1_widen_i_v_1a2c90afd148f896bab791bdcad6b41dd0" compoundref="_simplify_ind_var_8cpp" startline="1542" endline="1575">anonymous_namespace{SimplifyIndVar.cpp}::WidenIV::getWideRecurrence</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a26ffa319e1953452b1d1df84923f2108" compoundref="_scalar_evolution_8cpp" startline="1584" endline="1897">llvm::ScalarEvolution::getZeroExtendExprImpl</referencedby>
+        <referencedby refid="namespacellvm_1ac438183b3cdb70d2fa78265512238514" compoundref="_loop_utils_8cpp" startline="900" endline="920">llvm::hasIterationCountInvariantInParent</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a1bb4ca5c2810fc70f58fcf2581fa5bca" compoundref="_scalar_evolution_8cpp" startline="14968" endline="15005">llvm::SCEVWrapPredicate::implies</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a50702846ece6b5c6ef8826ca0e137bc5" compoundref="_a_r_m_target_transform_info_8cpp" startline="2201" endline="2294">llvm::ARMTTIImpl::isHardwareLoopProfitable</referencedby>
+        <referencedby refid="namespacellvm_1abc1d309b62fc59309659ac3fa7f3f68f" compoundref="_loop_utils_8cpp" startline="1388" endline="1393">llvm::isKnownNegativeInLoop</referencedby>
+        <referencedby refid="namespacellvm_1af042aac9d86aacb5ee9e1af24590f4c2" compoundref="_loop_utils_8cpp" startline="1395" endline="1400">llvm::isKnownNonNegativeInLoop</referencedby>
+        <referencedby refid="namespacellvm_1a1dc474f11162cc2893aa0f7d208d6ea2" compoundref="_loop_utils_8cpp" startline="1409" endline="1414">llvm::isKnownNonPositiveInLoop</referencedby>
+        <referencedby refid="namespacellvm_1a947ac955070bcb92444d3bb31077eb13" compoundref="_loop_utils_8cpp" startline="1402" endline="1407">llvm::isKnownPositiveInLoop</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a8b617baf7fc5914d8a245e702ea65a7d" compoundref="_scalar_evolution_8cpp" startline="11515" endline="11619">llvm::ScalarEvolution::isLoopBackedgeGuardedByCond</referencedby>
+        <referencedby refid="_loop_constrainer_8cpp_1ac8cf3aa27282d640f5acbc3a676e03c5" compoundref="_loop_constrainer_8cpp" startline="19" endline="64">isSafeDecreasingBound</referencedby>
+        <referencedby refid="_loop_access_analysis_8cpp_1a917578aa4ba03c192fa1c048ed3b5b00" compoundref="_loop_access_analysis_8cpp" startline="1794" endline="1844">isSafeDependenceDistance</referencedby>
+        <referencedby refid="_loop_constrainer_8cpp_1adbc17f3ace73f701522eefe28104c06c" compoundref="_loop_constrainer_8cpp" startline="68" endline="109">isSafeIncreasingBound</referencedby>
+        <referencedby refid="_loop_strength_reduce_8cpp_1a6c630dc63715497e5e49ab1ca9dc6ccb" compoundref="_loop_strength_reduce_8cpp" startline="5307" endline="5328">IsSimplerBaseSCEVForTarget</referencedby>
+        <referencedby refid="structllvm_1_1_s_c_e_v_pattern_match_1_1cst__pred__ty_1ab4dc630e0981601d51bf88cf21779d7e" compoundref="_scalar_evolution_pattern_match_8h" startline="27" endline="32">llvm::SCEVPatternMatch::cst_pred_ty&lt; Predicate &gt;::match</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1af25d938764b8634e70e95ff3f0c35129" compoundref="_v_plan_transforms_8cpp" startline="978" endline="1051">llvm::VPlanTransforms::optimizeForVFAndUF</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a740a442f349b36821071c21e265e23e1" compoundref="_ind_var_simplify_8cpp" startline="1319" endline="1421">optimizeLoopExitWithUnknownExitCount</referencedby>
+        <referencedby refid="structllvm_1_1_loop_structure_1adc8650d6098e0949f6ecc6368c2ebb99" compoundref="_loop_constrainer_8cpp" startline="125" endline="430">llvm::LoopStructure::parseLoopStructure</referencedby>
+        <referencedby refid="_scalar_evolution_8cpp_1a6d272ad3fd2fe1420ccd7c464dfb03a3" compoundref="_scalar_evolution_8cpp" startline="13723" endline="13727">PrintSCEVWithTypeHint</referencedby>
+        <referencedby refid="classanonymous__namespace_02_simplify_ind_var_8cpp_03_1_1_widen_i_v_1ac65b91bafca4f727e589bdfbfb79edc1" compoundref="_simplify_ind_var_8cpp" startline="2002" endline="2024">anonymous_namespace{SimplifyIndVar.cpp}::WidenIV::pushNarrowIVUsers</referencedby>
+        <referencedby refid="namespacellvm_1aaec5d8efaa82dedb3a3b23f4482f31eb" compoundref="_loop_access_analysis_8cpp" startline="154" endline="181">llvm::replaceSymbolicStrideSCEV</referencedby>
+        <referencedby refid="namespacellvm_1a2776b4c8cd41fd60781f7b9e18af9edb" compoundref="_loop_bound_split_8cpp" startline="287" endline="470">llvm::splitLoopBound</referencedby>
+        <referencedby refid="namespacellvm_1acd628d451ca9d9b021876d59f46e670b" compoundref="_loop_unroll_runtime_8cpp" startline="581" endline="1037">llvm::UnrollRuntimeLoopRemainder</referencedby>
+        <referencedby refid="_loop_flatten_8cpp_1a11a65ce1550eac260dca320a7028328e" compoundref="_loop_flatten_8cpp" startline="321" endline="384">verifyTripCount</referencedby>
+        <referencedby refid="structllvm_1_1_s_c_e_v_division_1ae8ee3aa50e72940cabb7d758613ce2cf" compoundref="_scalar_evolution_division_8cpp" startline="150" endline="174">llvm::SCEVDivision::visitAddExpr</referencedby>
+        <referencedby refid="structllvm_1_1_s_c_e_v_division_1ac38f0b8f591d282177a689cabe66c392" compoundref="_scalar_evolution_division_8cpp" startline="133" endline="148">llvm::SCEVDivision::visitAddRecExpr</referencedby>
+        <referencedby refid="structllvm_1_1_s_c_e_v_division_1afab4a1d0e1f34b286eec49ac8bd96ef1" compoundref="_scalar_evolution_division_8cpp" startline="176" endline="241">llvm::SCEVDivision::visitMulExpr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1a0b675a820ab094d694d602eb16ef02e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> * &gt;</type>
+        <definition>ArrayRef&lt; const SCEV * &gt; SCEV::operands</definition>
+        <argsstring>() const</argsstring>
+        <name>operands</name>
+        <qualifiedname>llvm::SCEV::operands</qualifiedname>
+        <briefdescription>
+<para>Return operands of this <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expression. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="146" column="12" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="420" bodyend="446"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_s_c_e_v_1ad4f956914bf94bdcd1058badb5bd90e6" compoundref="_scalar_evolution_8h" startline="140" endline="140">getSCEVType</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea3a80b1a7dda48464be1849ee1fb85868" compoundref="_scalar_evolution_expressions_8h" startline="45">llvm::scAddExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea222c9c7b5d5e742d5d1238a3256b1ea5" compoundref="_scalar_evolution_expressions_8h" startline="48">llvm::scAddRecExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eabcb1f797cb330e61a5879fc260aaec5b" compoundref="_scalar_evolution_expressions_8h" startline="40">llvm::scConstant</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eab6b4550f8ae7180f0e83ebb40a9882ec" compoundref="_scalar_evolution_expressions_8h" startline="56">llvm::scCouldNotCompute</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eafd56f054da3d1f9b827ae1003da3a38b" compoundref="_scalar_evolution_expressions_8h" startline="46">llvm::scMulExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eae996cdd31b3e2df5dbd55ff638d2d456" compoundref="_scalar_evolution_expressions_8h" startline="54">llvm::scPtrToInt</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea376414ac1f3ac8cb449fd5167a2db091" compoundref="_scalar_evolution_expressions_8h" startline="53">llvm::scSequentialUMinExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ead05711646a19cb20775cfbc8ef0a8c09" compoundref="_scalar_evolution_expressions_8h" startline="44">llvm::scSignExtend</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea684b8e2484b12d494e82f7053d005754" compoundref="_scalar_evolution_expressions_8h" startline="50">llvm::scSMaxExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea88dad4534f471d79d0a7a094d809ef55" compoundref="_scalar_evolution_expressions_8h" startline="52">llvm::scSMinExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ead3656bcc84af213cc488acb56c60de22" compoundref="_scalar_evolution_expressions_8h" startline="42">llvm::scTruncate</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eaee62cac87c0dc1f483d783aae69101c4" compoundref="_scalar_evolution_expressions_8h" startline="47">llvm::scUDivExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ead3d0abdf8125de904320df332dbefedb" compoundref="_scalar_evolution_expressions_8h" startline="49">llvm::scUMaxExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea0bf2fc9a454ce237fde0906ee24b0acc" compoundref="_scalar_evolution_expressions_8h" startline="51">llvm::scUMinExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea80488550b42b6548ec4d5c7118c7ff1d" compoundref="_scalar_evolution_expressions_8h" startline="55">llvm::scUnknown</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea61df12d6bb21842a8f766c4433c85717" compoundref="_scalar_evolution_expressions_8h" startline="41">llvm::scVScale</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eadd4a8d5cb0d78c9be22d01e1546bafc6" compoundref="_scalar_evolution_expressions_8h" startline="43">llvm::scZeroExtend</references>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1ae0ca564918ec63a9b4d2229374fec747" compoundref="_scalar_evolution_8cpp" startline="12058" endline="12172">llvm::ScalarEvolution::computeConstantDifference</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1ad299b0f4378f644f67168c72c763716f" compoundref="_scalar_evolution_8cpp" startline="3106" endline="3368">llvm::ScalarEvolution::getMulExpr</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a7391ca35e3a370a408a9b1967b6a9832" compoundref="_scalar_evolution_8cpp" startline="4596" endline="4623">llvm::ScalarEvolution::getNotSCEV</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1aff82c03c1ce8b945170bcb1f0f624c17" compoundref="_scalar_evolution_8cpp" startline="14357" endline="14648">llvm::ScalarEvolution::verify</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_traversal_1aa3e492f428e815c1c89e3a5625e2c233" compoundref="_scalar_evolution_expressions_8h" startline="675" endline="709">llvm::SCEVTraversal&lt; SV &gt;::visitAll</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1a4541962f9c18aacceb7243520eb15e1f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SCEV::isZero</definition>
+        <argsstring>() const</argsstring>
+        <name>isZero</name>
+        <qualifiedname>llvm::SCEV::isZero</qualifiedname>
+        <briefdescription>
+<para>Return true if the expression is a constant zero. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="149" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="448" bodyend="448"/>
+        <references refid="namespacellvm_1_1_s_c_e_v_pattern_match_1a62d53a67714c66eee08eeabddc553f90" compoundref="_scalar_evolution_pattern_match_8h" startline="39" endline="39">llvm::SCEVPatternMatch::m_scev_Zero</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a25d956d9e0beadd47ce4bc255dfa811d" compoundref="_pattern_match_8h" startline="49" endline="51">llvm::PatternMatch::match</references>
+        <referencedby refid="_loop_deletion_8cpp_1a11da3451c68e56248a152964e5915cd8" compoundref="_loop_deletion_8cpp" startline="399" endline="420">breakBackedgeIfNotTaken</referencedby>
+        <referencedby refid="_s_l_p_vectorizer_8cpp_1a0a8a72a5038e4a261d35418751506868" compoundref="_s_l_p_vectorizer_8cpp" startline="4834" endline="4944">calculateRtStride</referencedby>
+        <referencedby refid="_loop_strength_reduce_8cpp_1ad0531a07d7868c1577980524cf2add3a" compoundref="_loop_strength_reduce_8cpp" startline="3835" endline="3889">CollectSubexprs</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1a65ab4267c6c132d06451b5d97bc9ee83" compoundref="_loop_vectorize_8cpp" startline="3931" endline="4120">llvm::LoopVectorizationCostModel::computeMaxVF</referencedby>
+        <referencedby refid="structllvm_1_1_s_c_e_v_division_1a0dfe5dc28e2f4ac38e33880cfd0170ae" compoundref="_scalar_evolution_division_8cpp" startline="55" endline="106">llvm::SCEVDivision::divide</referencedby>
+        <referencedby refid="namespacellvm_1a174350306649bc16f97803763bcae8f7" compoundref="_delinearization_8cpp" startline="276" endline="338">llvm::findArrayDimensions</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1adc183a6edc37f305ee9ca5ff0bc33a6e" compoundref="_ind_var_simplify_8cpp" startline="833" endline="908">FindLoopCounter</referencedby>
+        <referencedby refid="structanonymous__namespace_02_loop_strength_reduce_8cpp_03_1_1_formula_1a5e104e7ceecb5b2eddfc08e66e925c09" compoundref="_loop_strength_reduce_8cpp" startline="595" endline="612">anonymous_namespace{LoopStrengthReduce.cpp}::Formula::initialMatch</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_strength_reduce_8cpp_03_1_1_l_s_r_use_1ab2507970e8b86d818892ad183328b450" compoundref="_loop_strength_reduce_8cpp" startline="1715" endline="1746">anonymous_namespace{LoopStrengthReduce.cpp}::LSRUse::InsertFormula</referencedby>
+        <referencedby refid="_loop_strength_reduce_8cpp_1a290c161463cbfb7720d6499dba1310ad" compoundref="_loop_strength_reduce_8cpp" startline="2040" endline="2069">isAlwaysFoldable</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1af25d938764b8634e70e95ff3f0c35129" compoundref="_v_plan_transforms_8cpp" startline="978" endline="1051">llvm::VPlanTransforms::optimizeForVFAndUF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_ind_var_simplify_8cpp_03_1_1_ind_var_simplify_1a145b6ea5ff08ca6373ed24389ca97c40" compoundref="_ind_var_simplify_8cpp" startline="1898" endline="2059">anonymous_namespace{IndVarSimplify.cpp}::IndVarSimplify::run</referencedby>
+        <referencedby refid="_scalar_evolution_8cpp_1a8fa1050509c4edb3c4683179e01035a2" compoundref="_scalar_evolution_8cpp" startline="10395" endline="10521">SolveQuadraticAddRecRange</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1aff82c03c1ce8b945170bcb1f0f624c17" compoundref="_scalar_evolution_8cpp" startline="14357" endline="14648">llvm::ScalarEvolution::verify</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1a1ecb726f4e7b445057b795ed500546a0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SCEV::isOne</definition>
+        <argsstring>() const</argsstring>
+        <name>isOne</name>
+        <qualifiedname>llvm::SCEV::isOne</qualifiedname>
+        <briefdescription>
+<para>Return true if the expression is a constant one. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="152" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="450" bodyend="450"/>
+        <references refid="namespacellvm_1_1_s_c_e_v_pattern_match_1a32f18a399d4211e82f655952be83b3fe" compoundref="_scalar_evolution_pattern_match_8h" startline="45" endline="45">llvm::SCEVPatternMatch::m_scev_One</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a25d956d9e0beadd47ce4bc255dfa811d" compoundref="_pattern_match_8h" startline="49" endline="51">llvm::PatternMatch::match</references>
+        <referencedby refid="classllvm_1_1_s_c_e_v_expander_1a16e9052fd33aedf29b009262d35d59f8" compoundref="_scalar_evolution_expander_8cpp" startline="2094" endline="2216">llvm::SCEVExpander::generateOverflowCheck</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a14bc7872374f530d4ed193d9921825c5" compoundref="_ind_var_simplify_8cpp" startline="913" endline="940">genLoopLimit</referencedby>
+        <referencedby refid="_loop_idiom_recognize_8cpp_1ab0f2467f35df49e4d9d0c9623e2530cf" compoundref="_loop_idiom_recognize_8cpp" startline="974" endline="986">getStartForNegStride</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a7803cd22b4405090d0cb0b87d697a612" compoundref="_ind_var_simplify_8cpp" startline="804" endline="824">isLoopCounter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1a7ac0db66a4bb6e1e1066609d5c6d28d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SCEV::isAllOnesValue</definition>
+        <argsstring>() const</argsstring>
+        <name>isAllOnesValue</name>
+        <qualifiedname>llvm::SCEV::isAllOnesValue</qualifiedname>
+        <briefdescription>
+<para>Return true if the expression is a constant all-ones value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="155" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="452" bodyend="452"/>
+        <references refid="namespacellvm_1_1_s_c_e_v_pattern_match_1a1de79361b162493659d416289d71be8f" compoundref="_scalar_evolution_pattern_match_8h" startline="51" endline="53">llvm::SCEVPatternMatch::m_scev_AllOnes</references>
+        <references refid="namespacellvm_1_1_pattern_match_1a25d956d9e0beadd47ce4bc255dfa811d" compoundref="_pattern_match_8h" startline="49" endline="51">llvm::PatternMatch::match</references>
+        <referencedby refid="_scalar_evolution_8cpp_1adaa8fd1f2af30380d7080ef96b976209" compoundref="_scalar_evolution_8cpp" startline="4581" endline="4593">MatchNotExpr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1a87b23e247f35b163544f1ce8e920801c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SCEV::isNonConstantNegative</definition>
+        <argsstring>() const</argsstring>
+        <name>isNonConstantNegative</name>
+        <qualifiedname>llvm::SCEV::isNonConstantNegative</qualifiedname>
+        <briefdescription>
+<para>Return true if the specified scev is negated, but not a constant. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="158" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="454" bodyend="464"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="namespacellvm_1aac36edd0f1ce976f0025c98e88d3830ea62b6d55816cf737bfc6f42e60df1a3f2" compoundref="_i_v_descriptors_8h" startline="36">llvm::Mul</references>
+        <referencedby refid="_s_l_p_vectorizer_8cpp_1a0a8a72a5038e4a261d35418751506868" compoundref="_s_l_p_vectorizer_8cpp" startline="4834" endline="4944">calculateRtStride</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1a102c99af586cd76e0d9ff32ac0e825e0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref> short</type>
+        <definition>unsigned short llvm::SCEV::getExpressionSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getExpressionSize</name>
+        <qualifiedname>llvm::SCEV::getExpressionSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="169" column="18" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="169" bodyend="171"/>
+        <references refid="classllvm_1_1_s_c_e_v_1aaf1d4f0b6eece16e8a081906d13a84f9" compoundref="_scalar_evolution_8h" startline="83">ExpressionSize</references>
+        <referencedby refid="structanonymous__namespace_02_loop_strength_reduce_8cpp_03_1_1_s_c_e_v_dbg_value_builder_1ac651c1875f806ba7d3b74b6e32323048" compoundref="_loop_strength_reduce_8cpp" startline="6562" endline="6590">anonymous_namespace{LoopStrengthReduce.cpp}::SCEVDbgValueBuilder::createIterCountExpr</referencedby>
+        <referencedby refid="_scalar_evolution_8cpp_1a81a7153270eb1fafa4502adc85f49adf" compoundref="_scalar_evolution_8cpp" startline="822" endline="826">hasHugeExpression</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1acdbe9e14ed6edbd5b5e3c252585902ec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SCEV::print</definition>
+        <argsstring>(raw_ostream &amp;OS) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::SCEV::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+<para>Print out the internal representation of this scalar to the specified stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This should really only be used for debugging purposes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="175" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="273" bodyend="384"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6fa2f7a8775a783f7ea3ad24b3f9cb5d949" compoundref="_scalar_evolution_8h" startline="130">FlagNSW</references>
+        <references refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6faafb62cd6afdc004ef6e8a1f6288eb382" compoundref="_scalar_evolution_8h" startline="129">FlagNUW</references>
+        <references refid="classllvm_1_1_loop_base_1a4a75755081e9a3803d2f4ccf6f0cb1f8" compoundref="_generic_loop_info_8h" startline="90" endline="90">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader</references>
+        <references refid="classllvm_1_1_s_c_e_v_u_div_expr_1a64f39bbc1130d1a36d3824633863dc51" compoundref="_scalar_evolution_expressions_8h" startline="316" endline="316">llvm::SCEVUDivExpr::getLHS</references>
+        <references refid="classllvm_1_1_s_c_e_v_add_rec_expr_1a99ab4a82c6d7373e2e367986b9527bf0" compoundref="_scalar_evolution_expressions_8h" startline="359" endline="359">llvm::SCEVAddRecExpr::getLoop</references>
+        <references refid="classllvm_1_1_s_c_e_v_n_ary_expr_1a7275347a4dce174f4fecd548fd3255dc" compoundref="_scalar_evolution_expressions_8h" startline="222" endline="224">llvm::SCEVNAryExpr::getNoWrapFlags</references>
+        <references refid="classllvm_1_1_s_c_e_v_n_ary_expr_1a689b72d735546bcbfc4b48a266503085" compoundref="_scalar_evolution_expressions_8h" startline="211" endline="211">llvm::SCEVNAryExpr::getNumOperands</references>
+        <references refid="classllvm_1_1_s_c_e_v_cast_expr_1ab6c2fb358d83304761d3848aa70ee5d6" compoundref="_scalar_evolution_expressions_8h" startline="112" endline="112">llvm::SCEVCastExpr::getOperand</references>
+        <references refid="classllvm_1_1_s_c_e_v_n_ary_expr_1ad99e00da7acb7973ae006f5b53ce04f6" compoundref="_scalar_evolution_expressions_8h" startline="213" endline="216">llvm::SCEVNAryExpr::getOperand</references>
+        <references refid="classllvm_1_1_s_c_e_v_u_div_expr_1ad0fdc55c45a39b722f3d990505b55dd7" compoundref="_scalar_evolution_expressions_8h" startline="317" endline="317">llvm::SCEVUDivExpr::getRHS</references>
+        <references refid="classllvm_1_1_s_c_e_v_1ad4f956914bf94bdcd1058badb5bd90e6" compoundref="_scalar_evolution_8h" startline="140" endline="140">getSCEVType</references>
+        <references refid="classllvm_1_1_s_c_e_v_cast_expr_1ae53e251228db4e03f1134e39b89a80f7" compoundref="_scalar_evolution_expressions_8h" startline="119" endline="119">llvm::SCEVCastExpr::getType</references>
+        <references refid="classllvm_1_1_s_c_e_v_n_ary_expr_1a6429bca8fd0024ceb2d76ccaace43c4e" compoundref="_scalar_evolution_expressions_8h" startline="234" endline="234">llvm::SCEVNAryExpr::hasNoSelfWrap</references>
+        <references refid="classllvm_1_1_s_c_e_v_n_ary_expr_1a71deee7ef49ab5407b7e1aa758b6ec0a" compoundref="_scalar_evolution_expressions_8h" startline="230" endline="232">llvm::SCEVNAryExpr::hasNoSignedWrap</references>
+        <references refid="classllvm_1_1_s_c_e_v_n_ary_expr_1a09cc70290a71475141063b6dff42a5d2" compoundref="_scalar_evolution_expressions_8h" startline="226" endline="228">llvm::SCEVNAryExpr::hasNoUnsignedWrap</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="classllvm_1_1_s_c_e_v_n_ary_expr_1ae77d0f7b81cbde08d5fd75fcf2fcf36b" compoundref="_scalar_evolution_expressions_8h" startline="218" endline="220">llvm::SCEVNAryExpr::operands</references>
+        <references refid="classllvm_1_1_value_1a62213d5211c9d944e5ede1f0059a6ae2" compoundref="_asm_writer_8cpp" startline="5144" endline="5157">llvm::Value::printAsOperand</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea3a80b1a7dda48464be1849ee1fb85868" compoundref="_scalar_evolution_expressions_8h" startline="45">llvm::scAddExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea222c9c7b5d5e742d5d1238a3256b1ea5" compoundref="_scalar_evolution_expressions_8h" startline="48">llvm::scAddRecExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eabcb1f797cb330e61a5879fc260aaec5b" compoundref="_scalar_evolution_expressions_8h" startline="40">llvm::scConstant</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eab6b4550f8ae7180f0e83ebb40a9882ec" compoundref="_scalar_evolution_expressions_8h" startline="56">llvm::scCouldNotCompute</references>
+        <references refid="classllvm_1_1_s_c_e_v_1ace7f137cfb19ce8073b78b85f819430c" compoundref="_scalar_evolution_8h" startline="134" endline="136">SCEV</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eafd56f054da3d1f9b827ae1003da3a38b" compoundref="_scalar_evolution_expressions_8h" startline="46">llvm::scMulExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eae996cdd31b3e2df5dbd55ff638d2d456" compoundref="_scalar_evolution_expressions_8h" startline="54">llvm::scPtrToInt</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea376414ac1f3ac8cb449fd5167a2db091" compoundref="_scalar_evolution_expressions_8h" startline="53">llvm::scSequentialUMinExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ead05711646a19cb20775cfbc8ef0a8c09" compoundref="_scalar_evolution_expressions_8h" startline="44">llvm::scSignExtend</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea684b8e2484b12d494e82f7053d005754" compoundref="_scalar_evolution_expressions_8h" startline="50">llvm::scSMaxExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea88dad4534f471d79d0a7a094d809ef55" compoundref="_scalar_evolution_expressions_8h" startline="52">llvm::scSMinExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ead3656bcc84af213cc488acb56c60de22" compoundref="_scalar_evolution_expressions_8h" startline="42">llvm::scTruncate</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eaee62cac87c0dc1f483d783aae69101c4" compoundref="_scalar_evolution_expressions_8h" startline="47">llvm::scUDivExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ead3d0abdf8125de904320df332dbefedb" compoundref="_scalar_evolution_expressions_8h" startline="49">llvm::scUMaxExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea0bf2fc9a454ce237fde0906ee24b0acc" compoundref="_scalar_evolution_expressions_8h" startline="51">llvm::scUMinExpr</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea80488550b42b6548ec4d5c7118c7ff1d" compoundref="_scalar_evolution_expressions_8h" startline="55">llvm::scUnknown</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5ea61df12d6bb21842a8f766c4433c85717" compoundref="_scalar_evolution_expressions_8h" startline="41">llvm::scVScale</references>
+        <references refid="namespacellvm_1ad409632178dd00316abd4c35d3e14b5eadd4a8d5cb0d78c9be22d01e1546bafc6" compoundref="_scalar_evolution_expressions_8h" startline="43">llvm::scZeroExtend</references>
+        <referencedby refid="classllvm_1_1_s_c_e_v_1a6ae35ec967d69bc1cd21ae482bbdd4a2" compoundref="_scalar_evolution_8cpp" startline="267" endline="270">dump</referencedby>
+        <referencedby refid="namespacellvm_1abe2c4ad0936d39f25554aa36e8357d1f" compoundref="_scalar_evolution_8h" startline="196" endline="199">llvm::operator&lt;&lt;</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a77b275a78beac200ef1f703d2a5fbb7d" compoundref="_scalar_evolution_8cpp" startline="13924" endline="14012">llvm::ScalarEvolution::print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_1a6ae35ec967d69bc1cd21ae482bbdd4a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void SCEV::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::SCEV::dump</qualifiedname>
+        <briefdescription>
+<para>This method is used for debugging. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="178" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="267" bodyend="270"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" compoundref="_compiler_8h" startline="622">LLVM_DUMP_METHOD</references>
+        <references refid="classllvm_1_1_s_c_e_v_1acdbe9e14ed6edbd5b5e3c252585902ec" compoundref="_scalar_evolution_8cpp" startline="273" endline="384">print</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class represents an analyzed expression in the program. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>These are opaque objects that the client is not allowed to do much with directly. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>FoldingSetNode</label>
+        <link refid="classllvm_1_1_folding_set_base_1_1_node"/>
+      </node>
+      <node id="1">
+        <label>llvm::SCEV</label>
+        <link refid="classllvm_1_1_s_c_e_v"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm::SCEVAddExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_add_expr"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm::SCEVAddRecExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_add_rec_expr"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::SCEVCastExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_cast_expr"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::SCEVCommutativeExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_commutative_expr"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::SCEVConstant</label>
+        <link refid="classllvm_1_1_s_c_e_v_constant"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::SCEVCouldNotCompute</label>
+        <link refid="structllvm_1_1_s_c_e_v_could_not_compute"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::SCEVIntegralCastExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_integral_cast_expr"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm::SCEVMinMaxExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_min_max_expr"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::SCEVMulExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_mul_expr"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::SCEVNAryExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_n_ary_expr"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::SCEVPtrToIntExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_ptr_to_int_expr"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::SCEVSMaxExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_s_max_expr"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::SCEVSMinExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_s_min_expr"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>llvm::SCEVSequentialMinMaxExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_sequential_min_max_expr"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::SCEVSequentialUMinExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_sequential_u_min_expr"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::SCEVSignExtendExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_sign_extend_expr"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::SCEVTruncateExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_truncate_expr"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::SCEVUDivExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_u_div_expr"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::SCEVUMaxExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_u_max_expr"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::SCEVUMinExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_u_min_expr"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::SCEVUnknown</label>
+        <link refid="classllvm_1_1_s_c_e_v_unknown"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::SCEVVScale</label>
+        <link refid="classllvm_1_1_s_c_e_v_v_scale"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::SCEVZeroExtendExpr</label>
+        <link refid="classllvm_1_1_s_c_e_v_zero_extend_expr"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>FoldingSetNode</label>
+        <link refid="classllvm_1_1_folding_set_base_1_1_node"/>
+      </node>
+      <node id="1">
+        <label>llvm::SCEV</label>
+        <link refid="classllvm_1_1_s_c_e_v"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ExpressionSize</edgelabel>
+          <edgelabel>SubclassData</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Analysis/ScalarEvolution.h" line="71" column="1" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="71" bodyend="179"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_s_c_e_v_1a6ae35ec967d69bc1cd21ae482bbdd4a2" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1aaf1d4f0b6eece16e8a081906d13a84f9" prot="protected" virt="non-virtual"><scope>llvm::SCEV</scope><name>ExpressionSize</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1a717659b1a38d7bb265ec0d47292f68fa" prot="private" virt="non-virtual"><scope>llvm::SCEV</scope><name>FastID</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6fa23e74052c4d79cfdaa23460a3c946656" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>FlagAnyWrap</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6fa2f7a8775a783f7ea3ad24b3f9cb5d949" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>FlagNSW</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6faafb62cd6afdc004ef6e8a1f6288eb382" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>FlagNUW</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6faf763167030e97d18e8f8c8ed3dba28e3" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>FlagNW</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1ae29da85cd2dc185164c105e98fb7ec58" prot="private" virt="non-virtual"><scope>llvm::SCEV</scope><name>FoldingSetTrait&lt; SCEV &gt;</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1a102c99af586cd76e0d9ff32ac0e825e0" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>getExpressionSize</name></member>
+      <member refid="classllvm_1_1_folding_set_base_1_1_node_1a15cf5b457269c092dd96871e8a49d59c" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>getNextInBucket</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1ad4f956914bf94bdcd1058badb5bd90e6" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>getSCEVType</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1aefeda9454a5e8dfcec3deb106964832a" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>getType</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1a7ac0db66a4bb6e1e1066609d5c6d28d8" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>isAllOnesValue</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1a87b23e247f35b163544f1ce8e920801c" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>isNonConstantNegative</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1a1ecb726f4e7b445057b795ed500546a0" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>isOne</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1a4541962f9c18aacceb7243520eb15e1f" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>isZero</name></member>
+      <member refid="classllvm_1_1_folding_set_base_1_1_node_1afa5afed4884694da5a79d61c7b7492a4" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>Node</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6f" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>NoWrapFlags</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6fae022582ed4b56bdb108b4488809e11e6" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>NoWrapMask</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1a0b675a820ab094d694d602eb16ef02e5" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>operands</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1a17f5f384636a04166136c6b74934655b" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1acdbe9e14ed6edbd5b5e3c252585902ec" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>print</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1ace7f137cfb19ce8073b78b85f819430c" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>SCEV</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1a4d7d3fc30d912cee99348a044b76f2a8" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>SCEV</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1a93693efb507be35c82004a164ab9b4f8" prot="private" virt="non-virtual"><scope>llvm::SCEV</scope><name>SCEVType</name></member>
+      <member refid="classllvm_1_1_folding_set_base_1_1_node_1a5e89537cd2bf241c821568a8790cba6a" prot="public" virt="non-virtual"><scope>llvm::SCEV</scope><name>SetNextInBucket</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_1ade1f1b89affe842dacd20c7f950e99c9" prot="protected" virt="non-virtual"><scope>llvm::SCEV</scope><name>SubclassData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1676 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_m_c_e_l_f_object_writer_8h" kind="file" language="C++">
+    <compoundname>MCELFObjectWriter.h</compoundname>
+    <includes refid="_dense_map_8h" local="yes">llvm/ADT/DenseMap.h</includes>
+    <includes refid="_small_vector_8h" local="yes">llvm/ADT/SmallVector.h</includes>
+    <includes refid="_binary_format_2_e_l_f_8h" local="yes">llvm/BinaryFormat/ELF.h</includes>
+    <includes refid="_m_c_object_writer_8h" local="yes">llvm/MC/MCObjectWriter.h</includes>
+    <includes refid="_m_c_section_e_l_f_8h" local="yes">llvm/MC/MCSectionELF.h</includes>
+    <includes refid="_casting_8h" local="yes">llvm/Support/Casting.h</includes>
+    <includes refid="raw__ostream_8h" local="yes">llvm/Support/raw_ostream.h</includes>
+    <includes refid="_triple_8h" local="yes">llvm/TargetParser/Triple.h</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="_e_l_f_object_writer_8cpp" local="yes">lib/MC/ELFObjectWriter.cpp</includedby>
+    <includedby refid="_m_c_asm_backend_8cpp" local="yes">lib/MC/MCAsmBackend.cpp</includedby>
+    <includedby refid="_m_c_e_l_f_object_target_writer_8cpp" local="yes">lib/MC/MCELFObjectTargetWriter.cpp</includedby>
+    <includedby refid="_m_c_e_l_f_streamer_8cpp" local="yes">lib/MC/MCELFStreamer.cpp</includedby>
+    <includedby refid="_a_arch64_asm_backend_8cpp" local="yes">lib/Target/AArch64/MCTargetDesc/AArch64AsmBackend.cpp</includedby>
+    <includedby refid="_a_arch64_e_l_f_object_writer_8cpp" local="yes">lib/Target/AArch64/MCTargetDesc/AArch64ELFObjectWriter.cpp</includedby>
+    <includedby refid="_a_arch64_e_l_f_streamer_8cpp" local="yes">lib/Target/AArch64/MCTargetDesc/AArch64ELFStreamer.cpp</includedby>
+    <includedby refid="_a_m_d_g_p_u_e_l_f_object_writer_8cpp" local="yes">lib/Target/AMDGPU/MCTargetDesc/AMDGPUELFObjectWriter.cpp</includedby>
+    <includedby refid="_a_m_d_g_p_u_target_streamer_8cpp" local="yes">lib/Target/AMDGPU/MCTargetDesc/AMDGPUTargetStreamer.cpp</includedby>
+    <includedby refid="_a_r_m_asm_backend_8cpp" local="yes">lib/Target/ARM/MCTargetDesc/ARMAsmBackend.cpp</includedby>
+    <includedby refid="_a_r_m_e_l_f_object_writer_8cpp" local="yes">lib/Target/ARM/MCTargetDesc/ARMELFObjectWriter.cpp</includedby>
+    <includedby refid="_a_r_m_e_l_f_streamer_8cpp" local="yes">lib/Target/ARM/MCTargetDesc/ARMELFStreamer.cpp</includedby>
+    <includedby refid="_a_v_r_asm_backend_8cpp" local="yes">lib/Target/AVR/MCTargetDesc/AVRAsmBackend.cpp</includedby>
+    <includedby refid="_a_v_r_e_l_f_object_writer_8cpp" local="yes">lib/Target/AVR/MCTargetDesc/AVRELFObjectWriter.cpp</includedby>
+    <includedby refid="_a_v_r_e_l_f_streamer_8cpp" local="yes">lib/Target/AVR/MCTargetDesc/AVRELFStreamer.cpp</includedby>
+    <includedby refid="_b_p_f_e_l_f_object_writer_8cpp" local="yes">lib/Target/BPF/MCTargetDesc/BPFELFObjectWriter.cpp</includedby>
+    <includedby refid="_c_s_k_y_e_l_f_object_writer_8cpp" local="yes">lib/Target/CSKY/MCTargetDesc/CSKYELFObjectWriter.cpp</includedby>
+    <includedby refid="_c_s_k_y_e_l_f_streamer_8cpp" local="yes">lib/Target/CSKY/MCTargetDesc/CSKYELFStreamer.cpp</includedby>
+    <includedby refid="_hexagon_asm_backend_8cpp" local="yes">lib/Target/Hexagon/MCTargetDesc/HexagonAsmBackend.cpp</includedby>
+    <includedby refid="_hexagon_e_l_f_object_writer_8cpp" local="yes">lib/Target/Hexagon/MCTargetDesc/HexagonELFObjectWriter.cpp</includedby>
+    <includedby refid="_hexagon_m_c_target_desc_8cpp" local="yes">lib/Target/Hexagon/MCTargetDesc/HexagonMCTargetDesc.cpp</includedby>
+    <includedby refid="_lanai_asm_backend_8cpp" local="yes">lib/Target/Lanai/MCTargetDesc/LanaiAsmBackend.cpp</includedby>
+    <includedby refid="_lanai_e_l_f_object_writer_8cpp" local="yes">lib/Target/Lanai/MCTargetDesc/LanaiELFObjectWriter.cpp</includedby>
+    <includedby refid="_loong_arch_asm_backend_8cpp" local="yes">lib/Target/LoongArch/MCTargetDesc/LoongArchAsmBackend.cpp</includedby>
+    <includedby refid="_loong_arch_e_l_f_object_writer_8cpp" local="yes">lib/Target/LoongArch/MCTargetDesc/LoongArchELFObjectWriter.cpp</includedby>
+    <includedby refid="_loong_arch_e_l_f_streamer_8cpp" local="yes">lib/Target/LoongArch/MCTargetDesc/LoongArchELFStreamer.cpp</includedby>
+    <includedby refid="_m68k_asm_backend_8cpp" local="yes">lib/Target/M68k/MCTargetDesc/M68kAsmBackend.cpp</includedby>
+    <includedby refid="_m68k_e_l_f_object_writer_8cpp" local="yes">lib/Target/M68k/MCTargetDesc/M68kELFObjectWriter.cpp</includedby>
+    <includedby refid="_m_s_p430_asm_backend_8cpp" local="yes">lib/Target/MSP430/MCTargetDesc/MSP430AsmBackend.cpp</includedby>
+    <includedby refid="_m_s_p430_e_l_f_object_writer_8cpp" local="yes">lib/Target/MSP430/MCTargetDesc/MSP430ELFObjectWriter.cpp</includedby>
+    <includedby refid="_mips_asm_backend_8cpp" local="yes">lib/Target/Mips/MCTargetDesc/MipsAsmBackend.cpp</includedby>
+    <includedby refid="_mips_e_l_f_object_writer_8cpp" local="yes">lib/Target/Mips/MCTargetDesc/MipsELFObjectWriter.cpp</includedby>
+    <includedby refid="_mips_target_streamer_8cpp" local="yes">lib/Target/Mips/MCTargetDesc/MipsTargetStreamer.cpp</includedby>
+    <includedby refid="_p_p_c_asm_backend_8cpp" local="yes">lib/Target/PowerPC/MCTargetDesc/PPCAsmBackend.cpp</includedby>
+    <includedby refid="_p_p_c_e_l_f_object_writer_8cpp" local="yes">lib/Target/PowerPC/MCTargetDesc/PPCELFObjectWriter.cpp</includedby>
+    <includedby refid="_p_p_c_m_c_target_desc_8cpp" local="yes">lib/Target/PowerPC/MCTargetDesc/PPCMCTargetDesc.cpp</includedby>
+    <includedby refid="_r_i_s_c_v_asm_backend_8cpp" local="yes">lib/Target/RISCV/MCTargetDesc/RISCVAsmBackend.cpp</includedby>
+    <includedby refid="_r_i_s_c_v_e_l_f_object_writer_8cpp" local="yes">lib/Target/RISCV/MCTargetDesc/RISCVELFObjectWriter.cpp</includedby>
+    <includedby refid="_r_i_s_c_v_e_l_f_streamer_8cpp" local="yes">lib/Target/RISCV/MCTargetDesc/RISCVELFStreamer.cpp</includedby>
+    <includedby refid="_sparc_asm_backend_8cpp" local="yes">lib/Target/Sparc/MCTargetDesc/SparcAsmBackend.cpp</includedby>
+    <includedby refid="_sparc_e_l_f_object_writer_8cpp" local="yes">lib/Target/Sparc/MCTargetDesc/SparcELFObjectWriter.cpp</includedby>
+    <includedby refid="_sparc_target_streamer_8cpp" local="yes">lib/Target/Sparc/MCTargetDesc/SparcTargetStreamer.cpp</includedby>
+    <includedby refid="_system_z_e_l_f_object_writer_8cpp" local="yes">lib/Target/SystemZ/MCTargetDesc/SystemZELFObjectWriter.cpp</includedby>
+    <includedby refid="_system_z_m_c_asm_backend_8cpp" local="yes">lib/Target/SystemZ/MCTargetDesc/SystemZMCAsmBackend.cpp</includedby>
+    <includedby refid="_v_e_asm_backend_8cpp" local="yes">lib/Target/VE/MCTargetDesc/VEAsmBackend.cpp</includedby>
+    <includedby refid="_v_e_e_l_f_object_writer_8cpp" local="yes">lib/Target/VE/MCTargetDesc/VEELFObjectWriter.cpp</includedby>
+    <includedby refid="_x86_asm_backend_8cpp" local="yes">lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp</includedby>
+    <includedby refid="_x86_e_l_f_object_writer_8cpp" local="yes">lib/Target/X86/MCTargetDesc/X86ELFObjectWriter.cpp</includedby>
+    <includedby refid="_xtensa_asm_backend_8cpp" local="yes">lib/Target/Xtensa/MCTargetDesc/XtensaAsmBackend.cpp</includedby>
+    <includedby refid="_xtensa_e_l_f_object_writer_8cpp" local="yes">lib/Target/Xtensa/MCTargetDesc/XtensaELFObjectWriter.cpp</includedby>
+    <incdepgraph>
+      <node id="28">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm/ADT/ADL.h</label>
+        <link refid="_a_d_l_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>llvm/ADT/ArrayRef.h</label>
+        <link refid="_array_ref_8h"/>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm/ADT/DenseMap.h</label>
+        <link refid="_dense_map_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm/ADT/DenseMapInfo.h</label>
+        <link refid="_dense_map_info_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm/ADT/EpochTracker.h</label>
+        <link refid="_epoch_tracker_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>llvm/ADT/Hashing.h</label>
+        <link refid="_hashing_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>llvm/ADT/PointerIntPair.h</label>
+        <link refid="_pointer_int_pair_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>llvm/ADT/STLExtras.h</label>
+        <link refid="_s_t_l_extras_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>llvm/ADT/SmallString.h</label>
+        <link refid="_small_string_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>llvm/ADT/SmallVector.h</label>
+        <link refid="_small_vector_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>llvm/ADT/StringMapEntry.h</label>
+        <link refid="_a_d_t_2_string_map_entry_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm/ADT/StringRef.h</label>
+        <link refid="_string_ref_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>llvm/ADT/Twine.h</label>
+        <link refid="_twine_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm/ADT/bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>llvm/ADT/ilist_node.h</label>
+        <link refid="ilist__node_8h"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>llvm/ADT/ilist_node_base.h</label>
+        <link refid="ilist__node__base_8h"/>
+        <childnode refid="89" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>llvm/ADT/ilist_node_options.h</label>
+        <link refid="ilist__node__options_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>llvm/ADT/iterator.h</label>
+        <link refid="iterator_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>llvm/ADT/iterator_range.h</label>
+        <link refid="iterator__range_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm/BinaryFormat/ELF.h</label>
+        <link refid="_binary_format_2_e_l_f_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/llvm/MC/MCELFObjectWriter.h</label>
+        <link refid="_m_c_e_l_f_object_writer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>llvm/MC/MCExpr.h</label>
+        <link refid="_m_c_expr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>llvm/MC/MCFixup.h</label>
+        <link refid="_m_c_fixup_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>llvm/MC/MCFragment.h</label>
+        <link refid="_m_c_fragment_8h"/>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>llvm/MC/MCInst.h</label>
+        <link refid="_m_c_inst_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>llvm/MC/MCObjectWriter.h</label>
+        <link refid="_m_c_object_writer_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>llvm/MC/MCRegister.h</label>
+        <link refid="_m_c_register_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>llvm/MC/MCSection.h</label>
+        <link refid="_m_c_section_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>llvm/MC/MCSectionELF.h</label>
+        <link refid="_m_c_section_e_l_f_8h"/>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>llvm/MC/MCSymbol.h</label>
+        <link refid="_m_c_symbol_8h"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>llvm/MC/MCSymbolELF.h</label>
+        <link refid="_m_c_symbol_e_l_f_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>llvm/MC/MCSymbolTableEntry.h</label>
+        <link refid="_m_c_symbol_table_entry_8h"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>llvm/MC/SectionKind.h</label>
+        <link refid="_section_kind_8h"/>
+      </node>
+      <node id="12">
+        <label>llvm/Support/AlignOf.h</label>
+        <link refid="_align_of_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>llvm/Support/Alignment.h</label>
+        <link refid="_alignment_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>llvm/Support/Casting.h</label>
+        <link refid="_casting_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>llvm/Support/DataTypes.h</label>
+        <link refid="llvm_2_support_2_data_types_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm/Support/ErrorHandling.h</label>
+        <link refid="llvm_2_support_2_error_handling_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm/Support/MathExtras.h</label>
+        <link refid="_math_extras_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm/Support/MemAlloc.h</label>
+        <link refid="_mem_alloc_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm/Support/PointerLikeTypeTraits.h</label>
+        <link refid="_pointer_like_type_traits_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm/Support/ReverseIteration.h</label>
+        <link refid="_reverse_iteration_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>llvm/Support/SMLoc.h</label>
+        <link refid="_s_m_loc_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>llvm/Support/SwapByteOrder.h</label>
+        <link refid="_swap_byte_order_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>llvm/Support/VersionTuple.h</label>
+        <link refid="_version_tuple_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>llvm/Support/raw_ostream.h</label>
+        <link refid="raw__ostream_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>llvm/Support/type_traits.h</label>
+        <link refid="type__traits_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>llvm/TargetParser/Triple.h</label>
+        <link refid="_triple_8h"/>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>DynamicTags.def</label>
+      </node>
+      <node id="53">
+        <label>ELFRelocs/AArch64.def</label>
+      </node>
+      <node id="64">
+        <label>ELFRelocs/AMDGPU.def</label>
+      </node>
+      <node id="55">
+        <label>ELFRelocs/ARC.def</label>
+      </node>
+      <node id="54">
+        <label>ELFRelocs/ARM.def</label>
+      </node>
+      <node id="56">
+        <label>ELFRelocs/AVR.def</label>
+      </node>
+      <node id="65">
+        <label>ELFRelocs/BPF.def</label>
+      </node>
+      <node id="69">
+        <label>ELFRelocs/CSKY.def</label>
+      </node>
+      <node id="58">
+        <label>ELFRelocs/Hexagon.def</label>
+      </node>
+      <node id="59">
+        <label>ELFRelocs/Lanai.def</label>
+      </node>
+      <node id="70">
+        <label>ELFRelocs/LoongArch.def</label>
+      </node>
+      <node id="66">
+        <label>ELFRelocs/M68k.def</label>
+      </node>
+      <node id="67">
+        <label>ELFRelocs/MSP430.def</label>
+      </node>
+      <node id="57">
+        <label>ELFRelocs/Mips.def</label>
+      </node>
+      <node id="51">
+        <label>ELFRelocs/PowerPC.def</label>
+      </node>
+      <node id="52">
+        <label>ELFRelocs/PowerPC64.def</label>
+      </node>
+      <node id="60">
+        <label>ELFRelocs/RISCV.def</label>
+      </node>
+      <node id="61">
+        <label>ELFRelocs/RISCV_nonstandard.def</label>
+      </node>
+      <node id="63">
+        <label>ELFRelocs/Sparc.def</label>
+      </node>
+      <node id="62">
+        <label>ELFRelocs/SystemZ.def</label>
+      </node>
+      <node id="68">
+        <label>ELFRelocs/VE.def</label>
+      </node>
+      <node id="71">
+        <label>ELFRelocs/Xtensa.def</label>
+      </node>
+      <node id="50">
+        <label>ELFRelocs/i386.def</label>
+      </node>
+      <node id="49">
+        <label>ELFRelocs/x86_64.def</label>
+      </node>
+      <node id="33">
+        <label>algorithm</label>
+      </node>
+      <node id="84">
+        <label>array</label>
+      </node>
+      <node id="4">
+        <label>cassert</label>
+      </node>
+      <node id="21">
+        <label>climits</label>
+      </node>
+      <node id="5">
+        <label>cstddef</label>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="24">
+        <label>cstdlib</label>
+      </node>
+      <node id="19">
+        <label>cstring</label>
+      </node>
+      <node id="38">
+        <label>functional</label>
+      </node>
+      <node id="34">
+        <label>initializer_list</label>
+      </node>
+      <node id="29">
+        <label>inttypes.h</label>
+      </node>
+      <node id="35">
+        <label>iterator</label>
+      </node>
+      <node id="18">
+        <label>limits</label>
+      </node>
+      <node id="11">
+        <label>llvm/Config/abi-breaking.h</label>
+      </node>
+      <node id="14">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="20">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="39">
+        <label>memory</label>
+      </node>
+      <node id="36">
+        <label>new</label>
+      </node>
+      <node id="44">
+        <label>optional</label>
+      </node>
+      <node id="15">
+        <label>stddef.h</label>
+      </node>
+      <node id="30">
+        <label>stdint.h</label>
+      </node>
+      <node id="47">
+        <label>string</label>
+      </node>
+      <node id="48">
+        <label>string_view</label>
+      </node>
+      <node id="31">
+        <label>sys/types.h</label>
+      </node>
+      <node id="105">
+        <label>system_error</label>
+      </node>
+      <node id="7">
+        <label>tuple</label>
+      </node>
+      <node id="8">
+        <label>type_traits</label>
+      </node>
+      <node id="9">
+        <label>utility</label>
+      </node>
+      <node id="85">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/MC/MCELFObjectWriter.h</label>
+        <link refid="_m_c_e_l_f_object_writer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/MC/ELFObjectWriter.cpp</label>
+        <link refid="_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/MC/MCAsmBackend.cpp</label>
+        <link refid="_m_c_asm_backend_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/MC/MCELFObjectTargetWriter.cpp</label>
+        <link refid="_m_c_e_l_f_object_target_writer_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/MC/MCELFStreamer.cpp</label>
+        <link refid="_m_c_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/Target/AArch64/MCTargetDesc/AArch64AsmBackend.cpp</label>
+        <link refid="_a_arch64_asm_backend_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/Target/AArch64/MCTargetDesc/AArch64ELFObjectWriter.cpp</label>
+        <link refid="_a_arch64_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="8">
+        <label>lib/Target/AArch64/MCTargetDesc/AArch64ELFStreamer.cpp</label>
+        <link refid="_a_arch64_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="9">
+        <label>lib/Target/AMDGPU/MCTargetDesc/AMDGPUELFObjectWriter.cpp</label>
+        <link refid="_a_m_d_g_p_u_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="10">
+        <label>lib/Target/AMDGPU/MCTargetDesc/AMDGPUTargetStreamer.cpp</label>
+        <link refid="_a_m_d_g_p_u_target_streamer_8cpp"/>
+      </node>
+      <node id="11">
+        <label>lib/Target/ARM/MCTargetDesc/ARMAsmBackend.cpp</label>
+        <link refid="_a_r_m_asm_backend_8cpp"/>
+      </node>
+      <node id="12">
+        <label>lib/Target/ARM/MCTargetDesc/ARMELFObjectWriter.cpp</label>
+        <link refid="_a_r_m_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="13">
+        <label>lib/Target/ARM/MCTargetDesc/ARMELFStreamer.cpp</label>
+        <link refid="_a_r_m_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="14">
+        <label>lib/Target/AVR/MCTargetDesc/AVRAsmBackend.cpp</label>
+        <link refid="_a_v_r_asm_backend_8cpp"/>
+      </node>
+      <node id="15">
+        <label>lib/Target/AVR/MCTargetDesc/AVRELFObjectWriter.cpp</label>
+        <link refid="_a_v_r_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="16">
+        <label>lib/Target/AVR/MCTargetDesc/AVRELFStreamer.cpp</label>
+        <link refid="_a_v_r_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="17">
+        <label>lib/Target/BPF/MCTargetDesc/BPFELFObjectWriter.cpp</label>
+        <link refid="_b_p_f_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="18">
+        <label>lib/Target/CSKY/MCTargetDesc/CSKYELFObjectWriter.cpp</label>
+        <link refid="_c_s_k_y_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="19">
+        <label>lib/Target/CSKY/MCTargetDesc/CSKYELFStreamer.cpp</label>
+        <link refid="_c_s_k_y_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="20">
+        <label>lib/Target/Hexagon/MCTargetDesc/HexagonAsmBackend.cpp</label>
+        <link refid="_hexagon_asm_backend_8cpp"/>
+      </node>
+      <node id="21">
+        <label>lib/Target/Hexagon/MCTargetDesc/HexagonELFObjectWriter.cpp</label>
+        <link refid="_hexagon_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="22">
+        <label>lib/Target/Hexagon/MCTargetDesc/HexagonMCTargetDesc.cpp</label>
+        <link refid="_hexagon_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="23">
+        <label>lib/Target/Lanai/MCTargetDesc/LanaiAsmBackend.cpp</label>
+        <link refid="_lanai_asm_backend_8cpp"/>
+      </node>
+      <node id="24">
+        <label>lib/Target/Lanai/MCTargetDesc/LanaiELFObjectWriter.cpp</label>
+        <link refid="_lanai_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="25">
+        <label>lib/Target/LoongArch/MCTargetDesc/LoongArchAsmBackend.cpp</label>
+        <link refid="_loong_arch_asm_backend_8cpp"/>
+      </node>
+      <node id="26">
+        <label>lib/Target/LoongArch/MCTargetDesc/LoongArchELFObjectWriter.cpp</label>
+        <link refid="_loong_arch_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="27">
+        <label>lib/Target/LoongArch/MCTargetDesc/LoongArchELFStreamer.cpp</label>
+        <link refid="_loong_arch_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="28">
+        <label>lib/Target/M68k/MCTargetDesc/M68kAsmBackend.cpp</label>
+        <link refid="_m68k_asm_backend_8cpp"/>
+      </node>
+      <node id="29">
+        <label>lib/Target/M68k/MCTargetDesc/M68kELFObjectWriter.cpp</label>
+        <link refid="_m68k_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="30">
+        <label>lib/Target/MSP430/MCTargetDesc/MSP430AsmBackend.cpp</label>
+        <link refid="_m_s_p430_asm_backend_8cpp"/>
+      </node>
+      <node id="31">
+        <label>lib/Target/MSP430/MCTargetDesc/MSP430ELFObjectWriter.cpp</label>
+        <link refid="_m_s_p430_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="32">
+        <label>lib/Target/Mips/MCTargetDesc/MipsAsmBackend.cpp</label>
+        <link refid="_mips_asm_backend_8cpp"/>
+      </node>
+      <node id="33">
+        <label>lib/Target/Mips/MCTargetDesc/MipsELFObjectWriter.cpp</label>
+        <link refid="_mips_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="34">
+        <label>lib/Target/Mips/MCTargetDesc/MipsTargetStreamer.cpp</label>
+        <link refid="_mips_target_streamer_8cpp"/>
+      </node>
+      <node id="35">
+        <label>lib/Target/PowerPC/MCTargetDesc/PPCAsmBackend.cpp</label>
+        <link refid="_p_p_c_asm_backend_8cpp"/>
+      </node>
+      <node id="36">
+        <label>lib/Target/PowerPC/MCTargetDesc/PPCELFObjectWriter.cpp</label>
+        <link refid="_p_p_c_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="37">
+        <label>lib/Target/PowerPC/MCTargetDesc/PPCMCTargetDesc.cpp</label>
+        <link refid="_p_p_c_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="38">
+        <label>lib/Target/RISCV/MCTargetDesc/RISCVAsmBackend.cpp</label>
+        <link refid="_r_i_s_c_v_asm_backend_8cpp"/>
+      </node>
+      <node id="39">
+        <label>lib/Target/RISCV/MCTargetDesc/RISCVELFObjectWriter.cpp</label>
+        <link refid="_r_i_s_c_v_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="40">
+        <label>lib/Target/RISCV/MCTargetDesc/RISCVELFStreamer.cpp</label>
+        <link refid="_r_i_s_c_v_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="41">
+        <label>lib/Target/Sparc/MCTargetDesc/SparcAsmBackend.cpp</label>
+        <link refid="_sparc_asm_backend_8cpp"/>
+      </node>
+      <node id="42">
+        <label>lib/Target/Sparc/MCTargetDesc/SparcELFObjectWriter.cpp</label>
+        <link refid="_sparc_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="43">
+        <label>lib/Target/Sparc/MCTargetDesc/SparcTargetStreamer.cpp</label>
+        <link refid="_sparc_target_streamer_8cpp"/>
+      </node>
+      <node id="44">
+        <label>lib/Target/SystemZ/MCTargetDesc/SystemZELFObjectWriter.cpp</label>
+        <link refid="_system_z_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="45">
+        <label>lib/Target/SystemZ/MCTargetDesc/SystemZMCAsmBackend.cpp</label>
+        <link refid="_system_z_m_c_asm_backend_8cpp"/>
+      </node>
+      <node id="46">
+        <label>lib/Target/VE/MCTargetDesc/VEAsmBackend.cpp</label>
+        <link refid="_v_e_asm_backend_8cpp"/>
+      </node>
+      <node id="47">
+        <label>lib/Target/VE/MCTargetDesc/VEELFObjectWriter.cpp</label>
+        <link refid="_v_e_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="48">
+        <label>lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp</label>
+        <link refid="_x86_asm_backend_8cpp"/>
+      </node>
+      <node id="49">
+        <label>lib/Target/X86/MCTargetDesc/X86ELFObjectWriter.cpp</label>
+        <link refid="_x86_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="50">
+        <label>lib/Target/Xtensa/MCTargetDesc/XtensaAsmBackend.cpp</label>
+        <link refid="_xtensa_asm_backend_8cpp"/>
+      </node>
+      <node id="51">
+        <label>lib/Target/Xtensa/MCTargetDesc/XtensaELFObjectWriter.cpp</label>
+        <link refid="_xtensa_e_l_f_object_writer_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structllvm_1_1_e_l_f_relocation_entry" prot="public">llvm::ELFRelocationEntry</innerclass>
+    <innerclass refid="classllvm_1_1_m_c_e_l_f_object_target_writer" prot="public">llvm::MCELFObjectTargetWriter</innerclass>
+    <innerclass refid="classllvm_1_1_e_l_f_object_writer" prot="public">llvm::ELFObjectWriter</innerclass>
+    <innerclass refid="structllvm_1_1_e_l_f_object_writer_1_1_symver" prot="public">llvm::ELFObjectWriter::Symver</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="_m_c_e_l_f_object_writer_8h_1a710124b7970e8cebca22df0e226da7d8" prot="public" static="no">
+        <name>R_TYPE_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCELFObjectWriter.h" line="108" column="9" bodyfile="include/llvm/MC/MCELFObjectWriter.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a5d6c2092d58cf33bcff3f53f762cae44" compoundref="_m_c_e_l_f_object_writer_8h" startline="118" endline="120">llvm::MCELFObjectTargetWriter::getRType</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a4a5f0265da0f4592af582f8a50dc14a4" compoundref="_m_c_e_l_f_object_writer_8h" startline="132" endline="136">llvm::MCELFObjectTargetWriter::setRTypes</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="_m_c_e_l_f_object_writer_8h_1ae64894f05430a4b5d223ca3f6c6964b6" prot="public" static="no">
+        <name>R_TYPE_MASK</name>
+        <initializer>0xffffff00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCELFObjectWriter.h" line="109" column="9" bodyfile="include/llvm/MC/MCELFObjectWriter.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_m_c_e_l_f_object_writer_8h_1a0d260d775f89f135efee43aaa1c98e9e" prot="public" static="no">
+        <name>R_TYPE2_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCELFObjectWriter.h" line="110" column="9" bodyfile="include/llvm/MC/MCELFObjectWriter.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1af1da84187c8aa9911fa48cd5df6829c9" compoundref="_m_c_e_l_f_object_writer_8h" startline="121" endline="123">llvm::MCELFObjectTargetWriter::getRType2</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a4a5f0265da0f4592af582f8a50dc14a4" compoundref="_m_c_e_l_f_object_writer_8h" startline="132" endline="136">llvm::MCELFObjectTargetWriter::setRTypes</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="_m_c_e_l_f_object_writer_8h_1ae350f9b4f5c8d0b7a776e613b67e8d83" prot="public" static="no">
+        <name>R_TYPE2_MASK</name>
+        <initializer>0xffff00ff</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCELFObjectWriter.h" line="111" column="9" bodyfile="include/llvm/MC/MCELFObjectWriter.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_m_c_e_l_f_object_writer_8h_1aa904156213c4c0e632f7dcad287162c8" prot="public" static="no">
+        <name>R_TYPE3_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCELFObjectWriter.h" line="112" column="9" bodyfile="include/llvm/MC/MCELFObjectWriter.h" bodystart="112" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1afb9bc55b9329d3cc85ab7704a6075371" compoundref="_m_c_e_l_f_object_writer_8h" startline="124" endline="126">llvm::MCELFObjectTargetWriter::getRType3</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a4a5f0265da0f4592af582f8a50dc14a4" compoundref="_m_c_e_l_f_object_writer_8h" startline="132" endline="136">llvm::MCELFObjectTargetWriter::setRTypes</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="_m_c_e_l_f_object_writer_8h_1ae644f9601c761afc8ae7ed330ebc45da" prot="public" static="no">
+        <name>R_TYPE3_MASK</name>
+        <initializer>0xff00ffff</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCELFObjectWriter.h" line="113" column="9" bodyfile="include/llvm/MC/MCELFObjectWriter.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_m_c_e_l_f_object_writer_8h_1ad14ce36a55269483268b9a36a053f829" prot="public" static="no">
+        <name>R_SSYM_SHIFT</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCELFObjectWriter.h" line="114" column="9" bodyfile="include/llvm/MC/MCELFObjectWriter.h" bodystart="114" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a69e2fef7d22705695a71d9143a2e2ac9" compoundref="_m_c_e_l_f_object_writer_8h" startline="127" endline="129">llvm::MCELFObjectTargetWriter::getRSsym</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1adc547cbcfbf56e8f1b02c4cf18e44172" compoundref="_m_c_e_l_f_object_writer_8h" startline="137" endline="139">llvm::MCELFObjectTargetWriter::setRSsym</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="_m_c_e_l_f_object_writer_8h_1a222dbf0ba1dfd11254e16d178d1675d7" prot="public" static="no">
+        <name>R_SSYM_MASK</name>
+        <initializer>0x00ffffff</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCELFObjectWriter.h" line="115" column="9" bodyfile="include/llvm/MC/MCELFObjectWriter.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1adc547cbcfbf56e8f1b02c4cf18e44172" compoundref="_m_c_e_l_f_object_writer_8h" startline="137" endline="139">llvm::MCELFObjectTargetWriter::setRSsym</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>llvm/MC/MCELFObjectWriter.h<sp/>-<sp/>ELF<sp/>Object<sp/>Writer<sp/>----------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_MC_MCELFOBJECTWRITER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_MC_MCELFOBJECTWRITER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_dense_map_8h" kindref="compound">llvm/ADT/DenseMap.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_small_vector_8h" kindref="compound">llvm/ADT/SmallVector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_binary_format_2_e_l_f_8h" kindref="compound">llvm/BinaryFormat/ELF.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_object_writer_8h" kindref="compound">llvm/MC/MCObjectWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_section_e_l_f_8h" kindref="compound">llvm/MC/MCSectionELF.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_casting_8h" kindref="compound">llvm/Support/Casting.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="raw__ostream_8h" kindref="compound">llvm/Support/raw_ostream.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_triple_8h" kindref="compound">llvm/TargetParser/Triple.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_symbol_e_l_f" kindref="compound">MCSymbolELF</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_target_options" kindref="compound">MCTargetOptions</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="structllvm_1_1_e_l_f_relocation_entry" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a27d9ac4b915b35fe73370cd479aebd3c" kindref="member">ELFRelocationEntry</ref><sp/>{</highlight></codeline>
+<codeline lineno="36" refid="structllvm_1_1_e_l_f_relocation_entry_1a3ddf497680bbb8cf1183c1a1e275bf58" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a3ddf497680bbb8cf1183c1a1e275bf58" kindref="member">Offset</ref>;<sp/></highlight><highlight class="comment">//<sp/>Where<sp/>is<sp/>the<sp/>relocation.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structllvm_1_1_e_l_f_relocation_entry_1a75e3deac26e7d9cf6605342d94173e90" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_symbol_e_l_f" kindref="compound">MCSymbolELF</ref><sp/>*<ref refid="structllvm_1_1_e_l_f_relocation_entry_1a75e3deac26e7d9cf6605342d94173e90" kindref="member">Symbol</ref>;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>symbol<sp/>to<sp/>relocate<sp/>with.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="structllvm_1_1_e_l_f_relocation_entry_1a715b87a3a627d8a6e77529601b2312fe" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a715b87a3a627d8a6e77529601b2312fe" kindref="member">Type</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>type<sp/>of<sp/>the<sp/>relocation.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structllvm_1_1_e_l_f_relocation_entry_1a5cb1ed223ef7942e6ea6233cd63567ec" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a5cb1ed223ef7942e6ea6233cd63567ec" kindref="member">Addend</ref>;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>addend<sp/>to<sp/>use.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="structllvm_1_1_e_l_f_relocation_entry_1a27d9ac4b915b35fe73370cd479aebd3c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a27d9ac4b915b35fe73370cd479aebd3c" kindref="member">ELFRelocationEntry</ref>(<ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a3ddf497680bbb8cf1183c1a1e275bf58" kindref="member">Offset</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_symbol_e_l_f" kindref="compound">MCSymbolELF</ref><sp/>*<ref refid="structllvm_1_1_e_l_f_relocation_entry_1a75e3deac26e7d9cf6605342d94173e90" kindref="member">Symbol</ref>,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a715b87a3a627d8a6e77529601b2312fe" kindref="member">Type</ref>,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a5cb1ed223ef7942e6ea6233cd63567ec" kindref="member">Addend</ref>)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a3ddf497680bbb8cf1183c1a1e275bf58" kindref="member">Offset</ref>(<ref refid="structllvm_1_1_e_l_f_relocation_entry_1a3ddf497680bbb8cf1183c1a1e275bf58" kindref="member">Offset</ref>),<sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a75e3deac26e7d9cf6605342d94173e90" kindref="member">Symbol</ref>(<ref refid="structllvm_1_1_e_l_f_relocation_entry_1a75e3deac26e7d9cf6605342d94173e90" kindref="member">Symbol</ref>),<sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a715b87a3a627d8a6e77529601b2312fe" kindref="member">Type</ref>(<ref refid="structllvm_1_1_e_l_f_relocation_entry_1a715b87a3a627d8a6e77529601b2312fe" kindref="member">Type</ref>),<sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a5cb1ed223ef7942e6ea6233cd63567ec" kindref="member">Addend</ref>(<ref refid="structllvm_1_1_e_l_f_relocation_entry_1a5cb1ed223ef7942e6ea6233cd63567ec" kindref="member">Addend</ref>)<sp/>{}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structllvm_1_1_e_l_f_relocation_entry_1ad2ba84c3293117b85d768e86d027fb63" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1ad2ba84c3293117b85d768e86d027fb63" kindref="member">print</ref>(<ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref><sp/>&amp;Out)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Out<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Off=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a3ddf497680bbb8cf1183c1a1e275bf58" kindref="member">Offset</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>Sym=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a75e3deac26e7d9cf6605342d94173e90" kindref="member">Symbol</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>Type=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a715b87a3a627d8a6e77529601b2312fe" kindref="member">Type</ref></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>Addend=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1a5cb1ed223ef7942e6ea6233cd63567ec" kindref="member">Addend</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="structllvm_1_1_e_l_f_relocation_entry_1af31f5f1bfb380669b7fbac97e2df7d35" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" kindref="member">LLVM_DUMP_METHOD</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1af31f5f1bfb380669b7fbac97e2df7d35" kindref="member">dump</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/><ref refid="structllvm_1_1_e_l_f_relocation_entry_1ad2ba84c3293117b85d768e86d027fb63" kindref="member">print</ref>(<ref refid="namespacellvm_1a9a7b5c68c90f85baaedaa854cc5002cc" kindref="member">errs</ref>());<sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classllvm_1_1_m_c_e_l_f_object_target_writer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1ae6c6e76c9d8e0c912542fe4f8375e8ce" kindref="member">MCELFObjectTargetWriter</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_object_target_writer" kindref="compound">MCObjectTargetWriter</ref><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>OSABI;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>ABIVersion;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classuint16__t" kindref="compound">uint16_t</ref><sp/>EMachine;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>HasRelocationAddend<sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Is64Bit<sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1ae6c6e76c9d8e0c912542fe4f8375e8ce" kindref="member">MCELFObjectTargetWriter</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Is64Bit_,<sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>OSABI_,<sp/><ref refid="classuint16__t" kindref="compound">uint16_t</ref><sp/>EMachine_,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>HasRelocationAddend_,<sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>ABIVersion_<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a855e2d6fd171e9611a01cce1e73bcf0e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a855e2d6fd171e9611a01cce1e73bcf0e" kindref="member">~MCELFObjectTargetWriter</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a21f1f8a4f976b6a0136f3c353ec44265" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_triple_1a83e907e55fa50e093caa96a0aff96201" kindref="member">Triple::ObjectFormatType</ref><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a21f1f8a4f976b6a0136f3c353ec44265" kindref="member">getFormat</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_triple_1a83e907e55fa50e093caa96a0aff96201a456b64e26b8bcdbd8294689615d8a055" kindref="member">Triple::ELF</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="68" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a012f329be553853d60e39c57c8c04419" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a012f329be553853d60e39c57c8c04419" kindref="member">classof</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_object_target_writer" kindref="compound">MCObjectTargetWriter</ref><sp/>*W)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>W-&gt;getFormat()<sp/>==<sp/><ref refid="classllvm_1_1_triple_1a83e907e55fa50e093caa96a0aff96201a456b64e26b8bcdbd8294689615d8a055" kindref="member">Triple::ELF</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1acb68e5e499fa476923a02f379546d450" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1acb68e5e499fa476923a02f379546d450" kindref="member">getOSABI</ref>(<ref refid="classllvm_1_1_triple_1a3cfefc755ab656000934f91193afb1cd" kindref="member">Triple::OSType</ref><sp/>OSType)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(OSType)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_triple_1a3cfefc755ab656000934f91193afb1cda5523c4eadf302b516ae738ddf52076a5" kindref="member">Triple::HermitCore</ref>:</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_e_l_f_1a71ceb704cd8260b471b28358df7bd0d4a83e73d65519a6c8ccdf65b9c6d86b926" kindref="member">ELF::ELFOSABI_STANDALONE</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_triple_1a3cfefc755ab656000934f91193afb1cda63d6dc93c7b6ab41ba169620a639bec1" kindref="member">Triple::PS4</ref>:</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_triple_1a3cfefc755ab656000934f91193afb1cda64fc6929b84f845ced55d3313ebcf423" kindref="member">Triple::FreeBSD</ref>:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_e_l_f_1a71ceb704cd8260b471b28358df7bd0d4a78245924e20856d9317e537709083772" kindref="member">ELF::ELFOSABI_FREEBSD</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_triple_1a3cfefc755ab656000934f91193afb1cdac44628c2fbd9505dc608a330838fccce" kindref="member">Triple::Solaris</ref>:</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_e_l_f_1a71ceb704cd8260b471b28358df7bd0d4a751e4191f9a44197287300f33a71f320" kindref="member">ELF::ELFOSABI_SOLARIS</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_triple_1a3cfefc755ab656000934f91193afb1cda13c01bda5d01cb2264a0cebe7b411c54" kindref="member">Triple::OpenBSD</ref>:</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_e_l_f_1a71ceb704cd8260b471b28358df7bd0d4a484746e3feeafb95b272953d9039db0c" kindref="member">ELF::ELFOSABI_OPENBSD</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_e_l_f_1a71ceb704cd8260b471b28358df7bd0d4afc97566f2e931d4d0e88c4425e88b56b" kindref="member">ELF::ELFOSABI_NONE</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a65f5a849898158c5f6fa5831ee0b06e7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a65f5a849898158c5f6fa5831ee0b06e7" kindref="member">getRelocType</ref>(<ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;Ctx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref><sp/>&amp;<ref refid="classllvm_1_1_target" kindref="compound">Target</ref>,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsPCRel)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a127848a3bc36554bb84312dc5adf0fec" kindref="member">needsRelocateWithSymbol</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref><sp/>&amp;Val,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref><sp/>&amp;Sym,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a0b3eaf15965546520323927606d27226" kindref="member">sortRelocs</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;ELFRelocationEntry&gt;<sp/>&amp;Relocs);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/>///<sp/>\name<sp/>Accessors</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/>///<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a886c9935f33464c780eb3b937c4560da" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a886c9935f33464c780eb3b937c4560da" kindref="member">getOSABI</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>OSABI;<sp/>}</highlight></codeline>
+<codeline lineno="100" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a318ac088613cc8163956a3e990749273" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a318ac088613cc8163956a3e990749273" kindref="member">getABIVersion</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ABIVersion;<sp/>}</highlight></codeline>
+<codeline lineno="101" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1aa738fe086e60de985036d2df8f7069e3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint16__t" kindref="compound">uint16_t</ref><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1aa738fe086e60de985036d2df8f7069e3" kindref="member">getEMachine</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EMachine;<sp/>}</highlight></codeline>
+<codeline lineno="102" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a18895a2343e1b4a90083d13c8ddc90cd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a18895a2343e1b4a90083d13c8ddc90cd" kindref="member">hasRelocationAddend</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>HasRelocationAddend;<sp/>}</highlight></codeline>
+<codeline lineno="103" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1af1596fcc642359d1fbb138da1910b616" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1af1596fcc642359d1fbb138da1910b616" kindref="member">is64Bit</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Is64Bit;<sp/>}</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/>///<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Instead<sp/>of<sp/>changing<sp/>everyone&apos;s<sp/>API<sp/>we<sp/>pack<sp/>the<sp/>N64<sp/>Type<sp/>fields</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>into<sp/>the<sp/>existing<sp/>32<sp/>bit<sp/>data<sp/>unsigned.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="_m_c_e_l_f_object_writer_8h_1a710124b7970e8cebca22df0e226da7d8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R_TYPE_SHIFT<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="_m_c_e_l_f_object_writer_8h_1ae64894f05430a4b5d223ca3f6c6964b6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R_TYPE_MASK<sp/>0xffffff00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="_m_c_e_l_f_object_writer_8h_1a0d260d775f89f135efee43aaa1c98e9e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R_TYPE2_SHIFT<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="_m_c_e_l_f_object_writer_8h_1ae350f9b4f5c8d0b7a776e613b67e8d83" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R_TYPE2_MASK<sp/>0xffff00ff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="_m_c_e_l_f_object_writer_8h_1aa904156213c4c0e632f7dcad287162c8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R_TYPE3_SHIFT<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="_m_c_e_l_f_object_writer_8h_1ae644f9601c761afc8ae7ed330ebc45da" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R_TYPE3_MASK<sp/>0xff00ffff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="_m_c_e_l_f_object_writer_8h_1ad14ce36a55269483268b9a36a053f829" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R_SSYM_SHIFT<sp/>24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="_m_c_e_l_f_object_writer_8h_1a222dbf0ba1dfd11254e16d178d1675d7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R_SSYM_MASK<sp/>0x00ffffff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>N64<sp/>relocation<sp/>type<sp/>accessors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a5d6c2092d58cf33bcff3f53f762cae44" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a5d6c2092d58cf33bcff3f53f762cae44" kindref="member">getRType</ref>(<ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)((<ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>&gt;&gt;<sp/><ref refid="_m_c_e_l_f_object_writer_8h_1a710124b7970e8cebca22df0e226da7d8" kindref="member">R_TYPE_SHIFT</ref>)<sp/>&amp;<sp/>0xff);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1af1da84187c8aa9911fa48cd5df6829c9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1af1da84187c8aa9911fa48cd5df6829c9" kindref="member">getRType2</ref>(<ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)((<ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>&gt;&gt;<sp/><ref refid="_m_c_e_l_f_object_writer_8h_1a0d260d775f89f135efee43aaa1c98e9e" kindref="member">R_TYPE2_SHIFT</ref>)<sp/>&amp;<sp/>0xff);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1afb9bc55b9329d3cc85ab7704a6075371" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1afb9bc55b9329d3cc85ab7704a6075371" kindref="member">getRType3</ref>(<ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)((<ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>&gt;&gt;<sp/><ref refid="_m_c_e_l_f_object_writer_8h_1aa904156213c4c0e632f7dcad287162c8" kindref="member">R_TYPE3_SHIFT</ref>)<sp/>&amp;<sp/>0xff);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a69e2fef7d22705695a71d9143a2e2ac9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a69e2fef7d22705695a71d9143a2e2ac9" kindref="member">getRSsym</ref>(<ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)((<ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>&gt;&gt;<sp/><ref refid="_m_c_e_l_f_object_writer_8h_1ad14ce36a55269483268b9a36a053f829" kindref="member">R_SSYM_SHIFT</ref>)<sp/>&amp;<sp/>0xff);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>N64<sp/>relocation<sp/>type<sp/>setting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a4a5f0265da0f4592af582f8a50dc14a4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1a4a5f0265da0f4592af582f8a50dc14a4" kindref="member">setRTypes</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Value1,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Value2,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Value3)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((Value1<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/><ref refid="_m_c_e_l_f_object_writer_8h_1a710124b7970e8cebca22df0e226da7d8" kindref="member">R_TYPE_SHIFT</ref>)<sp/>|</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((Value2<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/><ref refid="_m_c_e_l_f_object_writer_8h_1a0d260d775f89f135efee43aaa1c98e9e" kindref="member">R_TYPE2_SHIFT</ref>)<sp/>|</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((Value3<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/><ref refid="_m_c_e_l_f_object_writer_8h_1aa904156213c4c0e632f7dcad287162c8" kindref="member">R_TYPE3_SHIFT</ref>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137" refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1adc547cbcfbf56e8f1b02c4cf18e44172" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_e_l_f_object_target_writer_1adc547cbcfbf56e8f1b02c4cf18e44172" kindref="member">setRSsym</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>&amp;<sp/><ref refid="_m_c_e_l_f_object_writer_8h_1a222dbf0ba1dfd11254e16d178d1675d7" kindref="member">R_SSYM_MASK</ref>)<sp/>|<sp/>((<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/><ref refid="_m_c_e_l_f_object_writer_8h_1ad14ce36a55269483268b9a36a053f829" kindref="member">R_SSYM_SHIFT</ref>);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="classllvm_1_1_e_l_f_object_writer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_e_l_f_object_writer_1a033022b18a55aaa384c6fb1797583cd8" kindref="member">ELFObjectWriter</ref><sp/>final<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_object_writer_1a0e06822ad41ef36f2abad4a02733963b" kindref="member">MCObjectWriter</ref><sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>ELFHeaderEFlags<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="146" refid="classllvm_1_1_e_l_f_object_writer_1a02dad1fcfb973d2121b2e7567b598f62" refkind="member"><highlight class="normal"><sp/><sp/>std::unique_ptr&lt;MCELFObjectTargetWriter&gt;<sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a02dad1fcfb973d2121b2e7567b598f62" kindref="member">TargetObjectWriter</ref>;</highlight></codeline>
+<codeline lineno="147" refid="classllvm_1_1_e_l_f_object_writer_1a9f1491eb40df95facc4bfbb33c584e0c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1raw__pwrite__stream" kindref="compound">raw_pwrite_stream</ref><sp/>&amp;<ref refid="classllvm_1_1_e_l_f_object_writer_1a9f1491eb40df95facc4bfbb33c584e0c" kindref="member">OS</ref>;</highlight></codeline>
+<codeline lineno="148" refid="classllvm_1_1_e_l_f_object_writer_1aec9a6dc0548d7b00708ff53c4bdc78c4" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1raw__pwrite__stream" kindref="compound">raw_pwrite_stream</ref><sp/>*<ref refid="classllvm_1_1_e_l_f_object_writer_1aec9a6dc0548d7b00708ff53c4bdc78c4" kindref="member">DwoOS</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="classllvm_1_1_e_l_f_object_writer_1a7a1379734cf96ac1be3f482b563063c9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap&lt;const MCSectionELF *, std::vector&lt;ELFRelocationEntry&gt;</ref>&gt;<sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a7a1379734cf96ac1be3f482b563063c9" kindref="member">Relocations</ref>;</highlight></codeline>
+<codeline lineno="151" refid="classllvm_1_1_e_l_f_object_writer_1af7cd8330c99457d825d6fbab0bb31bd8" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap&lt;const MCSymbolELF *, const MCSymbolELF *&gt;</ref><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1af7cd8330c99457d825d6fbab0bb31bd8" kindref="member">Renames</ref>;</highlight></codeline>
+<codeline lineno="152" refid="classllvm_1_1_e_l_f_object_writer_1a8e01f143765fc5a890ba733be83e3b63" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a8e01f143765fc5a890ba733be83e3b63" kindref="member">IsLittleEndian</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153" refid="classllvm_1_1_e_l_f_object_writer_1a623d9c1149f65288accebd4a5e120de2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a623d9c1149f65288accebd4a5e120de2" kindref="member">SeenGnuAbi</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154" refid="classllvm_1_1_e_l_f_object_writer_1a6fec30050565f48e54ef91ab3980d170" refkind="member"><highlight class="normal"><sp/><sp/>std::optional&lt;uint8_t&gt;<sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a6fec30050565f48e54ef91ab3980d170" kindref="member">OverrideABIVersion</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="structllvm_1_1_e_l_f_object_writer_1_1_symver" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structllvm_1_1_e_l_f_object_writer_1_1_symver" kindref="compound">Symver</ref><sp/>{</highlight></codeline>
+<codeline lineno="157" refid="structllvm_1_1_e_l_f_object_writer_1_1_symver_1a01647153a7a842ace3339590818e1aff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref><sp/><ref refid="structllvm_1_1_e_l_f_object_writer_1_1_symver_1a01647153a7a842ace3339590818e1aff" kindref="member">Loc</ref>;</highlight></codeline>
+<codeline lineno="158" refid="structllvm_1_1_e_l_f_object_writer_1_1_symver_1a2dcf2a258052640fd2727f1e580c10e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref><sp/>*<ref refid="structllvm_1_1_e_l_f_object_writer_1_1_symver_1a2dcf2a258052640fd2727f1e580c10e7" kindref="member">Sym</ref>;</highlight></codeline>
+<codeline lineno="159" refid="structllvm_1_1_e_l_f_object_writer_1_1_symver_1a7b10df64c618da52797257a646929f88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/><ref refid="structllvm_1_1_e_l_f_object_writer_1_1_symver_1a7b10df64c618da52797257a646929f88" kindref="member">Name</ref>;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>True<sp/>if<sp/>.symver<sp/>*,<sp/>*@@@*<sp/>or<sp/>.symver<sp/>*,<sp/>*,<sp/>remove.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="structllvm_1_1_e_l_f_object_writer_1_1_symver_1a25f29947b98ae2a5a8189fdbb25122b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_e_l_f_object_writer_1_1_symver_1a25f29947b98ae2a5a8189fdbb25122b8" kindref="member">KeepOriginalSym</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="163" refid="classllvm_1_1_e_l_f_object_writer_1a9a763138e66c59d79b02484292292fc5" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector&lt;Symver, 0&gt;</ref><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a9a763138e66c59d79b02484292292fc5" kindref="member">Symvers</ref>;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a033022b18a55aaa384c6fb1797583cd8" kindref="member">ELFObjectWriter</ref>(std::unique_ptr&lt;MCELFObjectTargetWriter&gt;<sp/>MOTW,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1raw__pwrite__stream" kindref="compound">raw_pwrite_stream</ref><sp/>&amp;<ref refid="classllvm_1_1_e_l_f_object_writer_1a9f1491eb40df95facc4bfbb33c584e0c" kindref="member">OS</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a8e01f143765fc5a890ba733be83e3b63" kindref="member">IsLittleEndian</ref>);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a033022b18a55aaa384c6fb1797583cd8" kindref="member">ELFObjectWriter</ref>(std::unique_ptr&lt;MCELFObjectTargetWriter&gt;<sp/>MOTW,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1raw__pwrite__stream" kindref="compound">raw_pwrite_stream</ref><sp/>&amp;<ref refid="classllvm_1_1_e_l_f_object_writer_1a9f1491eb40df95facc4bfbb33c584e0c" kindref="member">OS</ref>,<sp/><ref refid="classllvm_1_1raw__pwrite__stream" kindref="compound">raw_pwrite_stream</ref><sp/>&amp;<ref refid="classllvm_1_1_e_l_f_object_writer_1aec9a6dc0548d7b00708ff53c4bdc78c4" kindref="member">DwoOS</ref>,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a8e01f143765fc5a890ba733be83e3b63" kindref="member">IsLittleEndian</ref>);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a5162bfa45db4fd05ba9e41044cfc7da9" kindref="member">reset</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a481e97810e8743a7c0f25a51dbcad8c1" kindref="member">executePostLayoutBinding</ref>(<ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a73aed7794053594cfb9536d55eac30fd" kindref="member">recordRelocation</ref>(<ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fragment" kindref="compound">MCFragment</ref><sp/>*Fragment,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>,<sp/><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref><sp/><ref refid="classllvm_1_1_target" kindref="compound">Target</ref>,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>&amp;FixedValue)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1ac2d01e55341f0be3c3d62a8346dc4807" kindref="member">isSymbolRefDifferenceFullyResolvedImpl</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref><sp/>&amp;SymA,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fragment" kindref="compound">MCFragment</ref><sp/>&amp;FB,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>InSet,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsPCRel)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a4056ea540d0a44a99e87763a256fac2e" kindref="member">writeObject</ref>(<ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1ac49bf4bfafa56380ee8dccfc4076c290" kindref="member">hasRelocationAddend</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1af1d4d772f1ae1ed6488491408a1244a4" kindref="member">usesRela</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_target_options" kindref="compound">MCTargetOptions</ref><sp/>*TO,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_section_e_l_f" kindref="compound">MCSectionELF</ref><sp/>&amp;Sec)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a3f3abd737c618cd14f32c74a1ac03ef1" kindref="member">shouldRelocateWithSymbol</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref><sp/>&amp;Val,</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_symbol_e_l_f" kindref="compound">MCSymbolELF</ref><sp/>*Sym,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" kindref="member">C</ref>,</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1aec678d26512f5d62ccedf4941b13c954" kindref="member">checkRelocation</ref>(<ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;Ctx,<sp/><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref><sp/><ref refid="namespacellvm_1_1_loc" kindref="compound">Loc</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_section_e_l_f" kindref="compound">MCSectionELF</ref><sp/>*From,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_section_e_l_f" kindref="compound">MCSectionELF</ref><sp/>*To);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="classllvm_1_1_e_l_f_object_writer_1a33212890ff45c137c0efbd25f1cdacfc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a33212890ff45c137c0efbd25f1cdacfc" kindref="member">getELFHeaderEFlags</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ELFHeaderEFlags;<sp/>}</highlight></codeline>
+<codeline lineno="193" refid="classllvm_1_1_e_l_f_object_writer_1a5d19b60f2ecf6cd909a3b5cd7f8f93a5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a5d19b60f2ecf6cd909a3b5cd7f8f93a5" kindref="member">setELFHeaderEFlags</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Flags)<sp/>{<sp/>ELFHeaderEFlags<sp/>=<sp/>Flags;<sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Mark<sp/>that<sp/>we<sp/>have<sp/>seen<sp/>GNU<sp/>ABI<sp/>usage<sp/>(e.g.<sp/>SHF_GNU_RETAIN,<sp/>STB_GNU_UNIQUE).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="classllvm_1_1_e_l_f_object_writer_1a286c4bf793b9b65b5ad50051e73e7137" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a286c4bf793b9b65b5ad50051e73e7137" kindref="member">markGnuAbi</ref>()<sp/>{<sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a623d9c1149f65288accebd4a5e120de2" kindref="member">SeenGnuAbi</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="197" refid="classllvm_1_1_e_l_f_object_writer_1a77f03ee1de505d1c93100a537aa83132" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a77f03ee1de505d1c93100a537aa83132" kindref="member">seenGnuAbi</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a623d9c1149f65288accebd4a5e120de2" kindref="member">SeenGnuAbi</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Override<sp/>the<sp/>default<sp/>e_ident[EI_ABIVERSION]<sp/>in<sp/>the<sp/>ELF<sp/>header.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="classllvm_1_1_e_l_f_object_writer_1a5da90630926c228a4d9740ba2776e353" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a5da90630926c228a4d9740ba2776e353" kindref="member">setOverrideABIVersion</ref>(<ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>V)<sp/>{<sp/><ref refid="classllvm_1_1_e_l_f_object_writer_1a6fec30050565f48e54ef91ab3980d170" kindref="member">OverrideABIVersion</ref><sp/>=<sp/>V;<sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_MC_MCELFOBJECTWRITER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/MC/MCELFObjectWriter.h"/>
+  </compounddef>
+</doxygen>

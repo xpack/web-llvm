@@ -1,0 +1,459 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</compoundname>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1ae2b13825e8a28afefe465890ccfd8ba8" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, <ref refid="classllvm_1_1_small_dense_set" kindref="compound">SmallDenseSet</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, 4 &gt; &gt;</type>
+        <definition>using anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::Instr2LastUsesTy =  DenseMap&lt;MachineInstr *, SmallDenseSet&lt;Register, 4&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>Instr2LastUsesTy</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::Instr2LastUsesTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1237" column="3" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1237" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a43673ed1b76740af63433d640af52ef9" prot="public" static="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt;</type>
+        <definition>using anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::OrderedInstsTy =  std::vector&lt;MachineInstr *&gt;</definition>
+        <argsstring></argsstring>
+        <name>OrderedInstsTy</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::OrderedInstsTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1240" column="3" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1acb06e4c5051b2d44b62ddd53a46904e3" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::Instr2StageTy =  DenseMap&lt;MachineInstr *, unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>Instr2StageTy</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::Instr2StageTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1241" column="3" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1241" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1acb627c5061651df6ac08390229a756ee" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock* anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::OrigMBB</definition>
+        <argsstring></argsstring>
+        <name>OrigMBB</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::OrigMBB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1219" column="21" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a65b5c7752a8d7e992e09990c777d23dd" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+        <definition>const MachineRegisterInfo&amp; anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::MRI</definition>
+        <argsstring></argsstring>
+        <name>MRI</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::MRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1220" column="29" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a45c133bfe236ec0b2d9607ab4072d466" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+        <definition>const TargetRegisterInfo* anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::TRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1221" column="28" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a737f55e812cb364c776b1bd68d9f6c64" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>const unsigned anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::PSetNum</definition>
+        <argsstring></argsstring>
+        <name>PSetNum</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::PSetNum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1223" column="18" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1ac6f38488c23f1883d09dab6bf6064452" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::vector&lt;unsigned&gt; anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::InitSetPressure</definition>
+        <argsstring></argsstring>
+        <name>InitSetPressure</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::InitSetPressure</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1229" column="15" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1aaaf2f2f1f396ec8a301a6e6593bdcb65" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::vector&lt;unsigned&gt; anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::PressureSetLimit</definition>
+        <argsstring></argsstring>
+        <name>PressureSetLimit</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::PressureSetLimit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1233" column="15" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a0f58f155f394b3f7fb024bc886bb1e8a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, <ref refid="classllvm_1_1_register_operands" kindref="compound">RegisterOperands</ref> &gt;</type>
+        <definition>DenseMap&lt;MachineInstr *, RegisterOperands&gt; anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::ROMap</definition>
+        <argsstring></argsstring>
+        <name>ROMap</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::ROMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1235" column="12" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1235" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a6254da6c37d7b3fd1b648c9619ed2166" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::dumpRegisterPressures</definition>
+        <argsstring>(const std::vector&lt; unsigned &gt; &amp;Pressures)</argsstring>
+        <name>dumpRegisterPressures</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::dumpRegisterPressures</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <declname>Pressures</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1244" column="15" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1244" bodyend="1255"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1abc1da3815fd310edfa14f227c251f38b" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::dumpPSet</definition>
+        <argsstring>(Register Reg) const</argsstring>
+        <name>dumpPSet</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::dumpPSet</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1257" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1257" bodyend="1264"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a123ebed55967ab2c8f8265b16e1a45b8" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::increaseRegisterPressure</definition>
+        <argsstring>(std::vector&lt; unsigned &gt; &amp;Pressure, Register Reg) const</argsstring>
+        <name>increaseRegisterPressure</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::increaseRegisterPressure</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <declname>Pressure</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1266" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1266" bodyend="1272"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1af0dd6bd6596d8635e7467f3c5700764d" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::decreaseRegisterPressure</definition>
+        <argsstring>(std::vector&lt; unsigned &gt; &amp;Pressure, Register Reg) const</argsstring>
+        <name>decreaseRegisterPressure</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::decreaseRegisterPressure</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <declname>Pressure</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1274" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1274" bodyend="1284"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a1e38c59fe785c510796b0a2f18180eb2" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::isReservedRegister</definition>
+        <argsstring>(Register Reg) const</argsstring>
+        <name>isReservedRegister</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::isReservedRegister</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1287" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1287" bodyend="1289"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a286dd3e19b12a495fa5bdda86fce9a3a" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::isDefinedInThisLoop</definition>
+        <argsstring>(Register Reg) const</argsstring>
+        <name>isDefinedInThisLoop</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::isDefinedInThisLoop</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1291" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1291" bodyend="1293"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1afec78a6c0af9f46a0c9df3a82ec95dba" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::computeLiveIn</definition>
+        <argsstring>()</argsstring>
+        <name>computeLiveIn</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::computeLiveIn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1303" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1303" bodyend="1324"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1afb250a35d71e89be90ba9afe97255a51" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::computePressureSetLimit</definition>
+        <argsstring>(const RegisterClassInfo &amp;RCI)</argsstring>
+        <name>computePressureSetLimit</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::computePressureSetLimit</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_register_class_info" kindref="compound">RegisterClassInfo</ref> &amp;</type>
+          <declname>RCI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1327" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1327" bodyend="1330"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1ab817cf3df232466075a29138ad475745" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">Instr2LastUsesTy</ref></type>
+        <definition>Instr2LastUsesTy anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::computeLastUses</definition>
+        <argsstring>(const OrderedInstsTy &amp;OrderedInsts, Instr2StageTy &amp;Stages) const</argsstring>
+        <name>computeLastUses</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::computeLastUses</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a43673ed1b76740af63433d640af52ef9" kindref="member">OrderedInstsTy</ref> &amp;</type>
+          <declname>OrderedInsts</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1acb06e4c5051b2d44b62ddd53a46904e3" kindref="member">Instr2StageTy</ref> &amp;</type>
+          <declname>Stages</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1343" column="20" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1343" bodyend="1388"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a19a8102b30bc3bc809db007fed9f385f" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::vector&lt; unsigned &gt; anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::computeMaxSetPressure</definition>
+        <argsstring>(const OrderedInstsTy &amp;OrderedInsts, Instr2StageTy &amp;Stages, const unsigned StageCount) const</argsstring>
+        <name>computeMaxSetPressure</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::computeMaxSetPressure</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a43673ed1b76740af63433d640af52ef9" kindref="member">OrderedInstsTy</ref> &amp;</type>
+          <declname>OrderedInsts</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1acb06e4c5051b2d44b62ddd53a46904e3" kindref="member">Instr2StageTy</ref> &amp;</type>
+          <declname>Stages</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>StageCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1403" column="3" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1403" bodyend="1487"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a553e7babc6efca1b99f3129de1f6aff0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::HighRegisterPressureDetector</definition>
+        <argsstring>(MachineBasicBlock *OrigMBB, const MachineFunction &amp;MF)</argsstring>
+        <name>HighRegisterPressureDetector</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::HighRegisterPressureDetector</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>OrigMBB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1490" column="3" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1490" bodyend="1495"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a92c7d26c01af052f0cf08bc779da68ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::init</definition>
+        <argsstring>(const RegisterClassInfo &amp;RCI)</argsstring>
+        <name>init</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::init</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_register_class_info" kindref="compound">RegisterClassInfo</ref> &amp;</type>
+          <declname>RCI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1499" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1499" bodyend="1508"/>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a2524e7409d9cd131d9ce08336245f0fb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::detect</definition>
+        <argsstring>(const SwingSchedulerDAG *SSD, SMSchedule &amp;Schedule, const unsigned MaxStage) const</argsstring>
+        <name>detect</name>
+        <qualifiedname>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector::detect</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_swing_scheduler_d_a_g" kindref="compound">SwingSchedulerDAG</ref> *</type>
+          <declname>SSD</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_schedule" kindref="compound">SMSchedule</ref> &amp;</type>
+          <declname>Schedule</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>MaxStage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachinePipeliner.cpp" line="1512" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1512" bodyend="1544"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_machine_pipeliner_8cpp_1a4923617d2f897074725d389de4f450de" compoundref="_machine_pipeliner_8cpp" startline="1081" endline="1109">computeScheduledInsts</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_machine_pipeliner_8cpp_1a2f52bbe7e54fc353a5ca45a71d4b8d08">RegPressureMargin</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Calculate the maximum register pressure of the scheduled instructions stream. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/MachinePipeliner.cpp" line="1218" column="1" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1218" bodyend="1545"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1ab817cf3df232466075a29138ad475745" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>computeLastUses</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1afec78a6c0af9f46a0c9df3a82ec95dba" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>computeLiveIn</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a19a8102b30bc3bc809db007fed9f385f" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>computeMaxSetPressure</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1afb250a35d71e89be90ba9afe97255a51" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>computePressureSetLimit</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1af0dd6bd6596d8635e7467f3c5700764d" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>decreaseRegisterPressure</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a2524e7409d9cd131d9ce08336245f0fb" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>detect</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1abc1da3815fd310edfa14f227c251f38b" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>dumpPSet</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a6254da6c37d7b3fd1b648c9619ed2166" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>dumpRegisterPressures</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a553e7babc6efca1b99f3129de1f6aff0" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>HighRegisterPressureDetector</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a123ebed55967ab2c8f8265b16e1a45b8" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>increaseRegisterPressure</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a92c7d26c01af052f0cf08bc779da68ea" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>init</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1ac6f38488c23f1883d09dab6bf6064452" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>InitSetPressure</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1ae2b13825e8a28afefe465890ccfd8ba8" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>Instr2LastUsesTy</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1acb06e4c5051b2d44b62ddd53a46904e3" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>Instr2StageTy</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a286dd3e19b12a495fa5bdda86fce9a3a" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>isDefinedInThisLoop</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a1e38c59fe785c510796b0a2f18180eb2" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>isReservedRegister</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a65b5c7752a8d7e992e09990c777d23dd" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>MRI</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a43673ed1b76740af63433d640af52ef9" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>OrderedInstsTy</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1acb627c5061651df6ac08390229a756ee" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>OrigMBB</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1aaaf2f2f1f396ec8a301a6e6593bdcb65" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>PressureSetLimit</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a737f55e812cb364c776b1bd68d9f6c64" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>PSetNum</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a0f58f155f394b3f7fb024bc886bb1e8a" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>ROMap</name></member>
+      <member refid="classanonymous__namespace_02_machine_pipeliner_8cpp_03_1_1_high_register_pressure_detector_1a45c133bfe236ec0b2d9607ab4072d466" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachinePipeliner.cpp}::HighRegisterPressureDetector</scope><name>TRI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

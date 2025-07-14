@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1mca_1_1_incremental_source_mgr" kind="class" language="C++" prot="public">
+    <compoundname>llvm::mca::IncrementalSourceMgr</compoundname>
+    <basecompoundref refid="structllvm_1_1mca_1_1_source_mgr" prot="public" virt="non-virtual">llvm::mca::SourceMgr</basecompoundref>
+    <includes refid="_incremental_source_mgr_8h" local="yes">llvm/MCA/IncrementalSourceMgr.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a56f6f6cee3110562acdf6b7c4302809a" prot="private" static="no">
+        <type>std::function&lt; void(<ref refid="classllvm_1_1mca_1_1_instruction" kindref="compound">Instruction</ref> *)&gt;</type>
+        <definition>using llvm::mca::IncrementalSourceMgr::InstFreedCallback =  std::function&lt;void(Instruction *)&gt;</definition>
+        <argsstring></argsstring>
+        <name>InstFreedCallback</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::InstFreedCallback</qualifiedname>
+        <briefdescription>
+<para>Called when an instruction is no longer needed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="44" column="3" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a874a1818f5ba4817157d0b9984c48709" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; <ref refid="structllvm_1_1mca_1_1_source_mgr_1ac81a93288d7e85027cbd1ec07d5d8432" kindref="member">UniqueInst</ref> &gt;</type>
+        <definition>std::deque&lt;UniqueInst&gt; llvm::mca::IncrementalSourceMgr::InstStorage</definition>
+        <argsstring></argsstring>
+        <name>InstStorage</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::InstStorage</qualifiedname>
+        <briefdescription>
+<para>Owner of all <ref refid="classllvm_1_1mca_1_1_instruction" kindref="compound">mca::Instruction</ref> instances. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that we use std::deque here to have a better throughput, in comparison to std::vector or <ref refid="classllvm_1_1_small_vector" kindref="compound">llvm::SmallVector</ref>, as they usually pay a higher re-allocation cost when there is a large number of instructions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="31" column="14" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a8cfc9c04f70a48fff31cc9e7c83051c5" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; <ref refid="classllvm_1_1mca_1_1_instruction" kindref="compound">Instruction</ref> * &gt;</type>
+        <definition>std::deque&lt;Instruction *&gt; llvm::mca::IncrementalSourceMgr::Staging</definition>
+        <argsstring></argsstring>
+        <name>Staging</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::Staging</qualifiedname>
+        <briefdescription>
+<para>Instructions that are ready to be used. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each of them is a pointer of an <emphasis><ref refid="structllvm_1_1mca_1_1_source_mgr_1ac81a93288d7e85027cbd1ec07d5d8432" kindref="member">UniqueInst</ref></emphasis> inside InstStorage. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="35" column="14" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a2d888c0488860f2071c07dcf4aad16ae" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::mca::IncrementalSourceMgr::TotalCounter</definition>
+        <argsstring></argsstring>
+        <name>TotalCounter</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::TotalCounter</qualifiedname>
+        <initializer>= 0U</initializer>
+        <briefdescription>
+<para>Current instruction index. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="38" column="12" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a2444704e623564b0785065d57ef0e4db" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::mca::IncrementalSourceMgr::EOS</definition>
+        <argsstring></argsstring>
+        <name>EOS</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::EOS</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>End-of-stream flag. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="41" column="8" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1mca_1_1_incremental_source_mgr_1abbcd36a4378ebe614b46a1a4ec91943a" prot="private" static="no" mutable="no">
+        <type>InstFreedCallback</type>
+        <definition>InstFreedCallback llvm::mca::IncrementalSourceMgr::InstFreedCB</definition>
+        <argsstring></argsstring>
+        <name>InstFreedCB</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::InstFreedCB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="45" column="21" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1aa90e9baa09e3b21a90ea3df2b802749e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::mca::IncrementalSourceMgr::IncrementalSourceMgr</definition>
+        <argsstring>()=default</argsstring>
+        <name>IncrementalSourceMgr</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::IncrementalSourceMgr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="48" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1aac1bf46c1b8d46f2675e857ff328b2e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IncrementalSourceMgr::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="50" column="8" bodyfile="lib/MCA/IncrementalSourceMgr.cpp" bodystart="22" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a0f4a2d708bc5d5a3f9c139948ae3c2e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::mca::IncrementalSourceMgr::setOnInstFreedCallback</definition>
+        <argsstring>(InstFreedCallback CB)</argsstring>
+        <name>setOnInstFreedCallback</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::setOnInstFreedCallback</qualifiedname>
+        <param>
+          <type>InstFreedCallback</type>
+          <declname>CB</declname>
+        </param>
+        <briefdescription>
+<para>Set a callback that is invoked when a <ref refid="classllvm_1_1mca_1_1_instruction" kindref="compound">mca::Instruction</ref> is no longer needed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is usually used for recycling the instruction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="55" column="8" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a5bc6c0a4359b9969b36c14eb243cbfe0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1mca_1_1_source_mgr_1ac81a93288d7e85027cbd1ec07d5d8432" kindref="member">UniqueInst</ref> &gt;</type>
+        <definition>ArrayRef&lt; UniqueInst &gt; llvm::mca::IncrementalSourceMgr::getInstructions</definition>
+        <argsstring>() const override</argsstring>
+        <name>getInstructions</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::getInstructions</qualifiedname>
+        <reimplements refid="structllvm_1_1mca_1_1_source_mgr_1a83bbe5e07cea5bde328dde339681a168">getInstructions</reimplements>
+        <briefdescription>
+<para>Provides a fixed range of <emphasis><ref refid="structllvm_1_1mca_1_1_source_mgr_1ac81a93288d7e85027cbd1ec07d5d8432" kindref="member">UniqueInst</ref></emphasis> to iterate. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="57" column="12" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="57" bodyend="59"/>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a7ab6fe3fb026ff48265f9836f282d5b3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::mca::IncrementalSourceMgr::hasNext</definition>
+        <argsstring>() const override</argsstring>
+        <name>hasNext</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::hasNext</qualifiedname>
+        <reimplements refid="structllvm_1_1mca_1_1_source_mgr_1afe16a1071f44255130ad8e0a8b47be4f">hasNext</reimplements>
+        <briefdescription>
+<para>Whether there is any <emphasis><ref refid="namespacellvm_1_1mca_1a6194ec8d4ff9d0552963291008b31ee7" kindref="member">SourceRef</ref></emphasis> to inspect / peek next. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that returning false from this doesn&apos;t mean the instruction stream has ended. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="61" column="8" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="61" bodyend="61"/>
+        <referencedby refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a6c1ccc01d5bce4605ec868529a91bc5f" compoundref="_incremental_source_mgr_8h" startline="64" endline="67">peekNext</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a4ba19dadd2449aab5779bf9677d35604" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::mca::IncrementalSourceMgr::isEnd</definition>
+        <argsstring>() const override</argsstring>
+        <name>isEnd</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::isEnd</qualifiedname>
+        <reimplements refid="structllvm_1_1mca_1_1_source_mgr_1aa062242c151e18d00bd68f6bde3726a7">isEnd</reimplements>
+        <briefdescription>
+<para>Whether the instruction stream has eneded. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="62" column="8" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a6c1ccc01d5bce4605ec868529a91bc5f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespacellvm_1_1mca_1a6194ec8d4ff9d0552963291008b31ee7" kindref="member">SourceRef</ref></type>
+        <definition>SourceRef llvm::mca::IncrementalSourceMgr::peekNext</definition>
+        <argsstring>() const override</argsstring>
+        <name>peekNext</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::peekNext</qualifiedname>
+        <reimplements refid="structllvm_1_1mca_1_1_source_mgr_1ad28a21d3b817efd2ca56891b7df785e6">peekNext</reimplements>
+        <briefdescription>
+<para>The next <emphasis><ref refid="namespacellvm_1_1mca_1a6194ec8d4ff9d0552963291008b31ee7" kindref="member">SourceRef</ref></emphasis>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="64" column="13" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="64" bodyend="67"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a7ab6fe3fb026ff48265f9836f282d5b3" compoundref="_incremental_source_mgr_8h" startline="61" endline="61">hasNext</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a5a79fdf47b12f2543c93039662106caf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::mca::IncrementalSourceMgr::addInst</definition>
+        <argsstring>(UniqueInst &amp;&amp;Inst)</argsstring>
+        <name>addInst</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::addInst</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1mca_1_1_source_mgr_1ac81a93288d7e85027cbd1ec07d5d8432" kindref="member">UniqueInst</ref> &amp;&amp;</type>
+          <declname>Inst</declname>
+        </param>
+        <briefdescription>
+<para>Add a new instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="70" column="8" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a3145b940234a234e7ce649909952500a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::mca::IncrementalSourceMgr::addRecycledInst</definition>
+        <argsstring>(Instruction *Inst)</argsstring>
+        <name>addRecycledInst</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::addRecycledInst</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1mca_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <briefdescription>
+<para>Add a recycled instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="76" column="8" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="76" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1ae7e7a65dca58ec0969862ae9fe6ba64e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void IncrementalSourceMgr::updateNext</definition>
+        <argsstring>() override</argsstring>
+        <name>updateNext</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::updateNext</qualifiedname>
+        <reimplements refid="structllvm_1_1mca_1_1_source_mgr_1a07533029273c58a25a28ec3d68856abd">updateNext</reimplements>
+        <briefdescription>
+<para>Advance to the next <emphasis><ref refid="namespacellvm_1_1mca_1a6194ec8d4ff9d0552963291008b31ee7" kindref="member">SourceRef</ref></emphasis>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="78" column="8" bodyfile="lib/MCA/IncrementalSourceMgr.cpp" bodystart="29" bodyend="37"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a95676d1de997484e03ec6f0ce79d1331" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::mca::IncrementalSourceMgr::endOfStream</definition>
+        <argsstring>()</argsstring>
+        <name>endOfStream</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::endOfStream</qualifiedname>
+        <briefdescription>
+<para>Mark the end of instruction stream. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="81" column="8" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="81" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1mca_1_1_incremental_source_mgr_1a55086232b62ba76e882e380ca1e4576a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IncrementalSourceMgr::printStatistic</definition>
+        <argsstring>(raw_ostream &amp;OS)</argsstring>
+        <name>printStatistic</name>
+        <qualifiedname>llvm::mca::IncrementalSourceMgr::printStatistic</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+<para>Print statistic about instruction recycling stats. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="85" column="8" bodyfile="lib/MCA/IncrementalSourceMgr.cpp" bodystart="40" bodyend="50"/>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>An implementation of <emphasis><ref refid="structllvm_1_1mca_1_1_source_mgr" kindref="compound">SourceMgr</ref></emphasis> that allows users to add new instructions incrementally / dynamically. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Note that this <ref refid="structllvm_1_1mca_1_1_source_mgr" kindref="compound">SourceMgr</ref> takes ownership of all <emphasis><ref refid="classllvm_1_1mca_1_1_instruction" kindref="compound">mca::Instruction</ref></emphasis>. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::mca::IncrementalSourceMgr</label>
+        <link refid="classllvm_1_1mca_1_1_incremental_source_mgr"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::mca::SourceMgr</label>
+        <link refid="structllvm_1_1mca_1_1_source_mgr"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::mca::IncrementalSourceMgr</label>
+        <link refid="classllvm_1_1mca_1_1_incremental_source_mgr"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::mca::SourceMgr</label>
+        <link refid="structllvm_1_1mca_1_1_source_mgr"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/MCA/IncrementalSourceMgr.h" line="26" column="1" bodyfile="include/llvm/MCA/IncrementalSourceMgr.h" bodystart="26" bodyend="87"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a5a79fdf47b12f2543c93039662106caf" prot="public" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>addInst</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a3145b940234a234e7ce649909952500a" prot="public" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>addRecycledInst</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1aac1bf46c1b8d46f2675e857ff328b2e1" prot="public" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>clear</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a95676d1de997484e03ec6f0ce79d1331" prot="public" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>endOfStream</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a2444704e623564b0785065d57ef0e4db" prot="private" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>EOS</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a5bc6c0a4359b9969b36c14eb243cbfe0" prot="public" virt="virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>getInstructions</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a7ab6fe3fb026ff48265f9836f282d5b3" prot="public" virt="virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>hasNext</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1aa90e9baa09e3b21a90ea3df2b802749e" prot="public" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>IncrementalSourceMgr</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a56f6f6cee3110562acdf6b7c4302809a" prot="private" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>InstFreedCallback</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1abbcd36a4378ebe614b46a1a4ec91943a" prot="private" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>InstFreedCB</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a874a1818f5ba4817157d0b9984c48709" prot="private" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>InstStorage</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a4ba19dadd2449aab5779bf9677d35604" prot="public" virt="virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>isEnd</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a6c1ccc01d5bce4605ec868529a91bc5f" prot="public" virt="virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>peekNext</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a55086232b62ba76e882e380ca1e4576a" prot="public" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>printStatistic</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a0f4a2d708bc5d5a3f9c139948ae3c2e2" prot="public" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>setOnInstFreedCallback</name></member>
+      <member refid="structllvm_1_1mca_1_1_source_mgr_1a28567a06f9ff4a7bbdb9d23603b14cf5" prot="public" virt="virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>size</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a8cfc9c04f70a48fff31cc9e7c83051c5" prot="private" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>Staging</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1a2d888c0488860f2071c07dcf4aad16ae" prot="private" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>TotalCounter</name></member>
+      <member refid="structllvm_1_1mca_1_1_source_mgr_1ac81a93288d7e85027cbd1ec07d5d8432" prot="public" virt="non-virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>UniqueInst</name></member>
+      <member refid="classllvm_1_1mca_1_1_incremental_source_mgr_1ae7e7a65dca58ec0969862ae9fe6ba64e" prot="public" virt="virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>updateNext</name></member>
+      <member refid="structllvm_1_1mca_1_1_source_mgr_1a888710418e29a832599c9a3c763b9f98" prot="public" virt="virtual"><scope>llvm::mca::IncrementalSourceMgr</scope><name>~SourceMgr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

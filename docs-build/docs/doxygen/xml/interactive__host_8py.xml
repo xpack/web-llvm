@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="interactive__host_8py" kind="file" language="Python">
+    <compoundname>interactive_host.py</compoundname>
+    <innernamespace refid="namespaceinteractive__host">interactive_host</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespaceinteractive__host" refkind="compound"><highlight class="stringliteral">&quot;&quot;&quot;Utility<sp/>for<sp/>testing<sp/>InteractiveModelRunner.</highlight></codeline>
+<codeline lineno="2"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral">Use<sp/>it<sp/>from<sp/>pass-specific<sp/>tests<sp/>by<sp/>providing<sp/>a<sp/>main<sp/>.py<sp/>which<sp/>calls<sp/>this<sp/>library&apos;s</highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">`run_interactive`<sp/>with<sp/>an<sp/>appropriate<sp/>callback<sp/>to<sp/>provide<sp/>advice.</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral">From<sp/>.ll<sp/>tests,<sp/>just<sp/>call<sp/>the<sp/>above-mentioned<sp/>main<sp/>as<sp/>a<sp/>prefix<sp/>to<sp/>the<sp/>opt/llc</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral">invocation<sp/>(with<sp/>the<sp/>appropriate<sp/>flags<sp/>enabling<sp/>the<sp/>interactive<sp/>mode)</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral">Examples:</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral">test/Transforms/Inline/ML/interactive-mode.ll</highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral">test/CodeGen/MLRegAlloc/interactive-mode.ll</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>ctypes</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>log_reader</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>io</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>math</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>subprocess</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>typing<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Callable,<sp/>List,<sp/>Union</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="namespaceinteractive__host_1af0b6c53060991a300bbffea33a67a8aa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespaceinteractive__host_1af0b6c53060991a300bbffea33a67a8aa" kindref="member">send</ref>(f:<sp/>io.BufferedWriter,<sp/>value:<sp/>Union[int,<sp/>float],<sp/>spec:<sp/><ref refid="classlog__reader_1_1_tensor_spec" kindref="compound">log_reader.TensorSpec</ref>):</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Send<sp/>the<sp/>`value`<sp/>-<sp/>currently<sp/>just<sp/>a<sp/>scalar<sp/>-<sp/>formatted<sp/>as<sp/>per<sp/>`spec`.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>just<sp/>int64<sp/>for<sp/>now</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>spec.element_type<sp/>==<sp/>ctypes.c_int64</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>to_send<sp/>=<sp/>ctypes.c_int64(int(value))</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>f.write(bytes(to_send))<sp/>==<sp/>ctypes.sizeof(spec.element_type)<sp/>*<sp/>math.prod(</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spec.shape</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>f.flush()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="namespaceinteractive__host_1a0eded48c2eef46879e2f4d0fd284238b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespaceinteractive__host_1a0eded48c2eef46879e2f4d0fd284238b" kindref="member">run_interactive</ref>(</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>temp_rootname:<sp/>str,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>make_response:<sp/>Callable[[List[<ref refid="classlog__reader_1_1_tensor_value" kindref="compound">log_reader.TensorValue</ref>]],<sp/>Union[int,<sp/>float]],</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>process_and_args:<sp/>List[str],</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">):</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Host<sp/>the<sp/>compiler.</highlight></codeline>
+<codeline lineno="41"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="42"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>temp_rootname:<sp/>the<sp/>base<sp/>file<sp/>name<sp/>from<sp/>which<sp/>to<sp/>construct<sp/>the<sp/>2<sp/>pipes<sp/>for</highlight></codeline>
+<codeline lineno="43"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>communicating<sp/>with<sp/>the<sp/>compiler.</highlight></codeline>
+<codeline lineno="44"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>make_response:<sp/>a<sp/>function<sp/>that,<sp/>given<sp/>the<sp/>current<sp/>tensor<sp/>values,<sp/>provides<sp/>a</highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>response.</highlight></codeline>
+<codeline lineno="46"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>process_and_args:<sp/>the<sp/>full<sp/>commandline<sp/>for<sp/>the<sp/>compiler.<sp/>It<sp/>it<sp/>assumed<sp/>it</highlight></codeline>
+<codeline lineno="47"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>contains<sp/>a<sp/>flag<sp/>poiting<sp/>to<sp/>`temp_rootname`<sp/>so<sp/>that<sp/>the<sp/>InteractiveModeRunner</highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>would<sp/>attempt<sp/>communication<sp/>on<sp/>the<sp/>same<sp/>pair<sp/>as<sp/>this<sp/>function<sp/>opens.</highlight></codeline>
+<codeline lineno="49"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="50"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>This<sp/>function<sp/>sets<sp/>up<sp/>the<sp/>communication<sp/>with<sp/>the<sp/>compiler<sp/>-<sp/>via<sp/>2<sp/>files<sp/>named</highlight></codeline>
+<codeline lineno="51"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>`temp_rootname`.in<sp/>and<sp/>`temp_rootname`.out<sp/>-<sp/>prints<sp/>out<sp/>the<sp/>received<sp/>features,</highlight></codeline>
+<codeline lineno="52"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>and<sp/>sends<sp/>back<sp/>to<sp/>the<sp/>compiler<sp/>an<sp/>advice<sp/>(which<sp/>it<sp/>gets<sp/>from<sp/>`make_response`).</highlight></codeline>
+<codeline lineno="53"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>It&apos;s<sp/>used<sp/>for<sp/>testing,<sp/>and<sp/>also<sp/>to<sp/>showcase<sp/>how<sp/>to<sp/>set<sp/>up<sp/>communication<sp/>in<sp/>an</highlight></codeline>
+<codeline lineno="54"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>interactive<sp/>ML<sp/>(&quot;gym&quot;)<sp/>environment.</highlight></codeline>
+<codeline lineno="55"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>to_compiler<sp/>=<sp/>temp_rootname<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.in&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>from_compiler<sp/>=<sp/>temp_rootname<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.out&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.mkfifo(to_compiler,<sp/>0o666)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.mkfifo(from_compiler,<sp/>0o666)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compiler_proc<sp/>=<sp/>subprocess.Popen(</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>process_and_args,<sp/>stderr=subprocess.PIPE,<sp/>stdout=subprocess.DEVNULL</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">with</highlight><highlight class="normal"><sp/>io.BufferedWriter(io.FileIO(to_compiler,<sp/></highlight><highlight class="stringliteral">&quot;wb&quot;</highlight><highlight class="normal">))<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>tc:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">with</highlight><highlight class="normal"><sp/>io.BufferedReader(io.FileIO(from_compiler,<sp/></highlight><highlight class="stringliteral">&quot;rb&quot;</highlight><highlight class="normal">))<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>fc:</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tensor_specs,<sp/>_,<sp/>advice_spec<sp/>=<sp/><ref refid="namespacelog__reader_1ab40242c357e077a78fbfb8fd4a61cf90" kindref="member">log_reader.read_header</ref>(fc)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>compiler_proc.poll()<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>next_event<sp/>=<sp/>fc.readline()</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>next_event:</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>last_context,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>observation_id,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>features,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>=<sp/><ref refid="namespacelog__reader_1a224d6d585cf78a7b3baeaa7474fffc13" kindref="member">log_reader.read_one_observation</ref>(</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context,<sp/>next_event,<sp/>fc,<sp/>tensor_specs,<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>last_context<sp/>!=<sp/>context:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_archive_writer_8cpp_1aa9f638c7ae7fdd206a6c60e26bef9751" kindref="member">print</ref>(f</highlight><highlight class="stringliteral">&quot;context:<sp/>{last_context}&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context<sp/>=<sp/>last_context</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_archive_writer_8cpp_1aa9f638c7ae7fdd206a6c60e26bef9751" kindref="member">print</ref>(f</highlight><highlight class="stringliteral">&quot;observation:<sp/>{observation_id}&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tensor_values<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>fv<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>features:</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacelog__reader_1a14b90855a54de6f662b45732cb262314" kindref="member">log_reader.pretty_print_tensor_value</ref>(fv)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tensor_values.append(fv)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceinteractive__host_1af0b6c53060991a300bbffea33a67a8aa" kindref="member">send</ref>(tc,<sp/>make_response(tensor_values),<sp/>advice_spec)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_,<sp/>err<sp/>=<sp/>compiler_proc.communicate()</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_archive_writer_8cpp_1aa9f638c7ae7fdd206a6c60e26bef9751" kindref="member">print</ref>(err.decode(</highlight><highlight class="stringliteral">&quot;utf-8&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compiler_proc.wait()</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">finally</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.unlink(to_compiler)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.unlink(from_compiler)</highlight></codeline>
+    </programlisting>
+    <location file="lib/Analysis/models/interactive_host.py"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1a58aaa09a6e2d647ecdf2ff5624c5d578" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1ae457f1cf451ed893666c4a384e58f8e5" kindref="member">AliasAnalysis</ref> *</type>
+        <definition>AliasAnalysis* anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt::AA</definition>
+        <argsstring></argsstring>
+        <name>AA</name>
+        <qualifiedname>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt::AA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/FlattenCFG.cpp" line="36" column="17" bodyfile="lib/Transforms/Utils/FlattenCFG.cpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1a01c4a877405938fc939c1d6a0608a66c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool FlattenCFGOpt::FlattenParallelAndOr</definition>
+        <argsstring>(BasicBlock *BB, IRBuilder&lt;&gt; &amp;Builder)</argsstring>
+        <name>FlattenParallelAndOr</name>
+        <qualifiedname>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt::FlattenParallelAndOr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_i_r_builder" kindref="compound">IRBuilder</ref>&lt;&gt; &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_use" kindref="compound">Use</ref> parallel-and or parallel-or to generate conditions for conditional branches. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">BB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>has more than one predecessor that is a conditional branch, attempt to use parallel and/or for the branch condition. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on success.</para>
+</simplesect>
+Before: ...... cmp10 = fcmp une float tmp1, tmp2 br i1 cmp10, label if.then, label lor.rhs</para>
+<para>lor.rhs: ...... cmp11 = fcmp une float tmp3, tmp4 br i1 cmp11, label if.then, label ifend</para>
+<para>if.end: // the merge block ......</para>
+<para>if.then: // has two predecessors, both of them contains conditional branch. ...... br label if.end;</para>
+<para>After: ...... cmp10 = fcmp une float tmp1, tmp2 ...... cmp11 = fcmp une float tmp3, tmp4 cmp12 = or i1 cmp10, cmp11 // parallel-or mode. br i1 cmp12, label if.then, label ifend</para>
+<para>if.end: ......</para>
+<para>if.then: ...... br label if.end;</para>
+<para>Current implementation handles two cases. Case 1: BB is on the else-path. <verbatim>    BB1
+  /     |
+ BB2    |
+/   \   |
+</verbatim> BB3 \ | where, BB1, BB2 contain conditional branches. \ | / BB3 contains unconditional branch. \ | / BB4 corresponds to BB which is also the merge. BB =&gt; BB4</para>
+<para>Corresponding source code:</para>
+<para>if (a == b &amp;&amp; c == d) statement; // BB3</para>
+<para>Case 2: BB is on the then-path. <verbatim>       BB1
+    /      |
+   |      BB2
+   \    /    |  where BB1, BB2 contain conditional branches.
+</verbatim> BB =&gt; BB3 | BB3 contains unconditiona branch and corresponds \ / to BB. BB4 is the merge. BB4</para>
+<para>Corresponding source code:</para>
+<para>if (a == b || c == d) statement; // BB3</para>
+<para>In both cases, BB is the common successor of conditional branches. In Case 1, BB (BB4) has an unconditional branch (BB3) as its predecessor. In Case 2, BB (BB3) only has conditional branches as its predecessors. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/FlattenCFG.cpp" line="40" column="8" bodyfile="lib/Transforms/Utils/FlattenCFG.cpp" bodystart="136" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1a65d79d777754e58abf8492a744102e07" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool FlattenCFGOpt::MergeIfRegion</definition>
+        <argsstring>(BasicBlock *BB, IRBuilder&lt;&gt; &amp;Builder)</argsstring>
+        <name>MergeIfRegion</name>
+        <qualifiedname>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt::MergeIfRegion</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_i_r_builder" kindref="compound">IRBuilder</ref>&lt;&gt; &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <briefdescription>
+<para>If. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Check whether.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>BB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the merge block of an if-region, attempt to merge the if-region with an adjacent if-region upstream if two if-regions contain identical instructions.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>BB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the merge block of a if-region. If yes, check whether there exists an adjacent if-region upstream, the two if-regions contain identical instructions and can be legally merged. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the two if-regions are merged.</para>
+</simplesect>
+From: if (a) statement; if (b) statement;</para>
+<para>To: if (a || b) statement;</para>
+<para>And from: if (a) ; else statement; if (b) ; else statement;</para>
+<para>To: if (a &amp;&amp; b) ; else statement;</para>
+<para>We always take the form of the first if-region. This means that if the statement in the first if-region, is in the &quot;then-path&quot;, while in the second if-region it is in the &quot;else-path&quot;, then we convert the second to the first form, by inverting the condition and the branch successors. The same approach goes for the opposite case. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/FlattenCFG.cpp" line="45" column="8" bodyfile="lib/Transforms/Utils/FlattenCFG.cpp" bodystart="409" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1aa6497762f15f3955e4f17e95706189cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool FlattenCFGOpt::CompareIfRegionBlock</definition>
+        <argsstring>(BasicBlock *Block1, BasicBlock *Block2, BasicBlock *Head2)</argsstring>
+        <name>CompareIfRegionBlock</name>
+        <qualifiedname>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt::CompareIfRegionBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Block1</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Block2</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Head2</declname>
+        </param>
+        <briefdescription>
+<para>Compare a pair of blocks: <computeroutput>Block1</computeroutput> and <computeroutput>Block2</computeroutput>, which are from two if-regions, where <computeroutput>Head2</computeroutput> is the entry block of the 2nd if-region. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Compare blocks from two if-regions, where.</para>
+<para><simplesect kind="return"><para>true if <computeroutput>Block1</computeroutput> and <computeroutput>Block2</computeroutput> contain identical instructions, and have no memory reference alias with <computeroutput>Head2</computeroutput>. This is used as a legality check for merging if-regions.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Head2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the entry of the 2nd if-region.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Block1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a block in the 1st if-region to compare. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Block2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a block in the 2nd if-region to compare. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if Block1 and Block2 have identical instructions and do not have memory reference alias with Head2. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/FlattenCFG.cpp" line="52" column="8" bodyfile="lib/Transforms/Utils/FlattenCFG.cpp" bodystart="320" bodyend="370"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1ae4e871a2e46ee5238f21562d2bf1c73d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt::FlattenCFGOpt</definition>
+        <argsstring>(AliasAnalysis *AA)</argsstring>
+        <name>FlattenCFGOpt</name>
+        <qualifiedname>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt::FlattenCFGOpt</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1ae457f1cf451ed893666c4a384e58f8e5" kindref="member">AliasAnalysis</ref> *</type>
+          <declname>AA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/FlattenCFG.cpp" line="56" column="3" bodyfile="lib/Transforms/Utils/FlattenCFG.cpp" bodystart="56" bodyend="56"/>
+        <referencedby refid="namespacellvm_1a17cfa55ecdb44273a17f59b0a68503eb" compoundref="_flatten_c_f_g_8cpp" startline="533" endline="535">llvm::FlattenCFG</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1a602f2acd35dc9f79595697f2a5296541" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool FlattenCFGOpt::run</definition>
+        <argsstring>(BasicBlock *BB)</argsstring>
+        <name>run</name>
+        <qualifiedname>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt::run</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/FlattenCFG.cpp" line="58" column="8" bodyfile="lib/Transforms/Utils/FlattenCFG.cpp" bodystart="519" bodyend="528"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_basic_block_1a1b4bf7c97cdc8159fd73d48063f0b250" compoundref="_i_r_2_basic_block_8h" startline="220" endline="220">llvm::BasicBlock::getParent</references>
+        <references refid="classllvm_1_1_basic_block_1aef9e9fcf4c5dfce90276ca16d91b8e46" compoundref="_i_r_2_basic_block_8h" startline="240" endline="244">llvm::BasicBlock::getTerminator</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/Transforms/Utils/FlattenCFG.cpp" line="35" column="1" bodyfile="lib/Transforms/Utils/FlattenCFG.cpp" bodystart="35" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1a58aaa09a6e2d647ecdf2ff5624c5d578" prot="private" virt="non-virtual"><scope>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt</scope><name>AA</name></member>
+      <member refid="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1aa6497762f15f3955e4f17e95706189cb" prot="private" virt="non-virtual"><scope>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt</scope><name>CompareIfRegionBlock</name></member>
+      <member refid="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1ae4e871a2e46ee5238f21562d2bf1c73d" prot="public" virt="non-virtual"><scope>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt</scope><name>FlattenCFGOpt</name></member>
+      <member refid="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1a01c4a877405938fc939c1d6a0608a66c" prot="private" virt="non-virtual"><scope>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt</scope><name>FlattenParallelAndOr</name></member>
+      <member refid="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1a65d79d777754e58abf8492a744102e07" prot="private" virt="non-virtual"><scope>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt</scope><name>MergeIfRegion</name></member>
+      <member refid="classanonymous__namespace_02_flatten_c_f_g_8cpp_03_1_1_flatten_c_f_g_opt_1a602f2acd35dc9f79595697f2a5296541" prot="public" virt="non-virtual"><scope>anonymous_namespace{FlattenCFG.cpp}::FlattenCFGOpt</scope><name>run</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

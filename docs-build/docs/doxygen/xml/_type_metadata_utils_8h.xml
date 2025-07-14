@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_type_metadata_utils_8h" kind="file" language="C++">
+    <compoundname>TypeMetadataUtils.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">utility</includes>
+    <includedby refid="_module_summary_analysis_8cpp" local="yes">lib/Analysis/ModuleSummaryAnalysis.cpp</includedby>
+    <includedby refid="_type_metadata_utils_8cpp" local="yes">lib/Analysis/TypeMetadataUtils.cpp</includedby>
+    <includedby refid="_global_d_c_e_8cpp" local="yes">lib/Transforms/IPO/GlobalDCE.cpp</includedby>
+    <includedby refid="_lower_type_tests_8cpp" local="yes">lib/Transforms/IPO/LowerTypeTests.cpp</includedby>
+    <includedby refid="_thin_l_t_o_bitcode_writer_8cpp" local="yes">lib/Transforms/IPO/ThinLTOBitcodeWriter.cpp</includedby>
+    <includedby refid="_whole_program_devirt_8cpp" local="yes">lib/Transforms/IPO/WholeProgramDevirt.cpp</includedby>
+    <includedby refid="_indirect_call_promotion_8cpp" local="yes">lib/Transforms/Instrumentation/IndirectCallPromotion.cpp</includedby>
+    <includedby refid="_call_promotion_utils_8cpp" local="yes">lib/Transforms/Utils/CallPromotionUtils.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/Analysis/TypeMetadataUtils.h</label>
+        <link refid="_type_metadata_utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Analysis/TypeMetadataUtils.h</label>
+        <link refid="_type_metadata_utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Analysis/ModuleSummaryAnalysis.cpp</label>
+        <link refid="_module_summary_analysis_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Analysis/TypeMetadataUtils.cpp</label>
+        <link refid="_type_metadata_utils_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Transforms/IPO/GlobalDCE.cpp</label>
+        <link refid="_global_d_c_e_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/Transforms/IPO/LowerTypeTests.cpp</label>
+        <link refid="_lower_type_tests_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/Transforms/IPO/ThinLTOBitcodeWriter.cpp</label>
+        <link refid="_thin_l_t_o_bitcode_writer_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/Transforms/IPO/WholeProgramDevirt.cpp</label>
+        <link refid="_whole_program_devirt_8cpp"/>
+      </node>
+      <node id="8">
+        <label>lib/Transforms/Instrumentation/IndirectCallPromotion.cpp</label>
+        <link refid="_indirect_call_promotion_8cpp"/>
+      </node>
+      <node id="9">
+        <label>lib/Transforms/Utils/CallPromotionUtils.cpp</label>
+        <link refid="_call_promotion_utils_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structllvm_1_1_devirt_call_site" prot="public">llvm::DevirtCallSite</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>TypeMetadataUtils.h<sp/>-<sp/>Utilities<sp/>related<sp/>to<sp/>type<sp/>metadata<sp/>--*-<sp/>C++<sp/>-*-==//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>contains<sp/>functions<sp/>that<sp/>make<sp/>it<sp/>easier<sp/>to<sp/>manipulate<sp/>type<sp/>metadata</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>for<sp/>devirtualization.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_ANALYSIS_TYPEMETADATAUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_ANALYSIS_TYPEMETADATAUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_call_inst" kindref="compound">CallInst</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_function" kindref="compound">Function</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_module" kindref="compound">Module</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">///<sp/>The<sp/>type<sp/>of<sp/>CFI<sp/>jumptable<sp/>needed<sp/>for<sp/>a<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="namespacellvm_1ae8f67fbc50a05486efacc898909c8fa6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ae8f67fbc50a05486efacc898909c8fa6" kindref="member">CfiFunctionLinkage</ref><sp/>{</highlight></codeline>
+<codeline lineno="34" refid="namespacellvm_1ae8f67fbc50a05486efacc898909c8fa6a3fedbac88865b0c78cef42848ade7db1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1ae8f67fbc50a05486efacc898909c8fa6a3fedbac88865b0c78cef42848ade7db1" kindref="member">CFL_Definition</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="35" refid="namespacellvm_1ae8f67fbc50a05486efacc898909c8fa6a84fe6ecd344a02c3b9ed071670b3dafa" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1ae8f67fbc50a05486efacc898909c8fa6a84fe6ecd344a02c3b9ed071670b3dafa" kindref="member">CFL_Declaration</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="36" refid="namespacellvm_1ae8f67fbc50a05486efacc898909c8fa6a2c774a7021d843a45dccfa54a21fa83b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1ae8f67fbc50a05486efacc898909c8fa6a2c774a7021d843a45dccfa54a21fa83b" kindref="member">CFL_WeakDeclaration</ref><sp/>=<sp/>2</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="39"><highlight class="comment">///<sp/>A<sp/>call<sp/>site<sp/>that<sp/>could<sp/>be<sp/>devirtualized.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structllvm_1_1_devirt_call_site" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structllvm_1_1_devirt_call_site" kindref="compound">DevirtCallSite</ref><sp/>{</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/>///<sp/>The<sp/>offset<sp/>from<sp/>the<sp/>address<sp/>point<sp/>to<sp/>the<sp/>virtual<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="structllvm_1_1_devirt_call_site_1a4e18d6f8a24327a95d0b222babe223c2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="structllvm_1_1_devirt_call_site_1a4e18d6f8a24327a95d0b222babe223c2" kindref="member">Offset</ref>;</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/>///<sp/>The<sp/>call<sp/>site<sp/>itself.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="structllvm_1_1_devirt_call_site_1ab4277fa2a53bc238194ebdb892af3557" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref><sp/>&amp;<ref refid="structllvm_1_1_devirt_call_site_1ab4277fa2a53bc238194ebdb892af3557" kindref="member">CB</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="47"><highlight class="comment">///<sp/>Given<sp/>a<sp/>call<sp/>to<sp/>the<sp/>intrinsic<sp/>\@llvm.type.test,<sp/>find<sp/>all<sp/>devirtualizable</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">///<sp/>call<sp/>sites<sp/>based<sp/>on<sp/>the<sp/>call<sp/>and<sp/>return<sp/>them<sp/>in<sp/>DevirtCalls.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1af88f364cd09c715e8853a1027c7180ef" kindref="member">findDevirtualizableCallsForTypeTest</ref>(</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;DevirtCallSite&gt;</ref><sp/>&amp;DevirtCalls,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;CallInst *&gt;</ref><sp/>&amp;Assumes,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_call_inst" kindref="compound">CallInst</ref><sp/>*CI,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>&amp;DT);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="54"><highlight class="comment">///<sp/>Given<sp/>a<sp/>call<sp/>to<sp/>the<sp/>intrinsic<sp/>\@llvm.type.checked.load,<sp/>find<sp/>all</highlight></codeline>
+<codeline lineno="55"><highlight class="comment">///<sp/>devirtualizable<sp/>call<sp/>sites<sp/>based<sp/>on<sp/>the<sp/>call<sp/>and<sp/>return<sp/>them<sp/>in<sp/>DevirtCalls.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a8148654fcf3528ef06d7a0e28b57b952" kindref="member">findDevirtualizableCallsForTypeCheckedLoad</ref>(</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;DevirtCallSite&gt;</ref><sp/>&amp;DevirtCalls,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;Instruction *&gt;</ref><sp/>&amp;LoadedPtrs,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;Instruction *&gt;</ref><sp/>&amp;Preds,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;HasNonCallUses,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_call_inst" kindref="compound">CallInst</ref><sp/>*CI,<sp/><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>&amp;DT);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="62"><highlight class="comment">///<sp/>Processes<sp/>a<sp/>Constant<sp/>recursively<sp/>looking<sp/>into<sp/>elements<sp/>of<sp/>arrays,<sp/>structs</highlight></codeline>
+<codeline lineno="63"><highlight class="comment">///<sp/>and<sp/>expressions<sp/>to<sp/>find<sp/>a<sp/>trivial<sp/>pointer<sp/>element<sp/>that<sp/>is<sp/>located<sp/>at<sp/>the</highlight></codeline>
+<codeline lineno="64"><highlight class="comment">///<sp/>given<sp/>offset<sp/>(relative<sp/>to<sp/>the<sp/>beginning<sp/>of<sp/>the<sp/>whole<sp/>outer<sp/>Constant).</highlight></codeline>
+<codeline lineno="65"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="66"><highlight class="comment">///<sp/>Used<sp/>for<sp/>example<sp/>from<sp/>GlobalDCE<sp/>to<sp/>find<sp/>an<sp/>entry<sp/>in<sp/>a<sp/>C++<sp/>vtable<sp/>that</highlight></codeline>
+<codeline lineno="67"><highlight class="comment">///<sp/>matches<sp/>a<sp/>vcall<sp/>offset.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="69"><highlight class="comment">///<sp/>To<sp/>support<sp/>relative<sp/>vtables,<sp/>getPointerAtOffset<sp/>can<sp/>see<sp/>through<sp/>&quot;relative</highlight></codeline>
+<codeline lineno="70"><highlight class="comment">///<sp/>pointers&quot;,<sp/>i.e.<sp/>(sub-)expressions<sp/>of<sp/>the<sp/>form<sp/>of:</highlight></codeline>
+<codeline lineno="71"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="72"><highlight class="comment">///<sp/>@symbol<sp/>=<sp/>...<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="comment">///<sp/><sp/><sp/>i32<sp/>trunc<sp/>(i64<sp/>sub<sp/>(</highlight></codeline>
+<codeline lineno="74"><highlight class="comment">///<sp/><sp/><sp/><sp/><sp/>i64<sp/>ptrtoint<sp/>(&lt;type&gt;<sp/>@target<sp/>to<sp/>i64),<sp/>i64<sp/>ptrtoint<sp/>(...<sp/>@symbol<sp/>to<sp/>i64)</highlight></codeline>
+<codeline lineno="75"><highlight class="comment">///<sp/><sp/><sp/>)<sp/>to<sp/>i32)</highlight></codeline>
+<codeline lineno="76"><highlight class="comment">///<sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="78"><highlight class="comment">///<sp/>For<sp/>such<sp/>(sub-)expressions,<sp/>getPointerAtOffset<sp/>returns<sp/>the<sp/>@target<sp/>pointer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref><sp/>*<ref refid="namespacellvm_1af9ea314c7ebcfef667f1d7b67fe09c69" kindref="member">getPointerAtOffset</ref>(<ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref><sp/>*<ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref>,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" kindref="member">Offset</ref>,<sp/><ref refid="classllvm_1_1_module" kindref="compound">Module</ref><sp/>&amp;M,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref><sp/>*TopLevelGlobal<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="82"><highlight class="comment">///<sp/>Given<sp/>a<sp/>vtable<sp/>and<sp/>a<sp/>specified<sp/>offset,<sp/>returns<sp/>the<sp/>function<sp/>and<sp/>the<sp/>trivial</highlight></codeline>
+<codeline lineno="83"><highlight class="comment">///<sp/>pointer<sp/>at<sp/>the<sp/>specified<sp/>offset<sp/>in<sp/>pair<sp/>iff<sp/>the<sp/>pointer<sp/>at<sp/>the<sp/>specified</highlight></codeline>
+<codeline lineno="84"><highlight class="comment">///<sp/>offset<sp/>is<sp/>a<sp/>function<sp/>or<sp/>an<sp/>alias<sp/>to<sp/>a<sp/>function.<sp/>Returns<sp/>a<sp/>pair<sp/>of<sp/>nullptr</highlight></codeline>
+<codeline lineno="85"><highlight class="comment">///<sp/>otherwise.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">std::pair&lt;Function<sp/>*,<sp/>Constant<sp/>*&gt;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><ref refid="namespacellvm_1afc0a5ead9186ecbdc82f6ebe331c25ee" kindref="member">getFunctionAtVTableOffset</ref>(<ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref><sp/>*GV,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" kindref="member">Offset</ref>,<sp/><ref refid="classllvm_1_1_module" kindref="compound">Module</ref><sp/>&amp;M);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="89"><highlight class="comment">///<sp/>Finds<sp/>the<sp/>same<sp/>&quot;relative<sp/>pointer&quot;<sp/>pattern<sp/>as<sp/>described<sp/>above,<sp/>where<sp/>the</highlight></codeline>
+<codeline lineno="90"><highlight class="comment">///<sp/>target<sp/>is<sp/>`C`,<sp/>and<sp/>replaces<sp/>the<sp/>entire<sp/>pattern<sp/>with<sp/>a<sp/>constant<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1adb95b461a284d8670fc10d24d56cbf56" kindref="member">replaceRelativePointerUsersWithZero</ref>(<ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref><sp/>*<ref refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" kindref="member">C</ref>);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Analysis/TypeMetadataUtils.h"/>
+  </compounddef>
+</doxygen>

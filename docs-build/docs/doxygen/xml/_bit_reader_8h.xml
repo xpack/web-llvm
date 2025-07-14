@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_bit_reader_8h" kind="file" language="C++">
+    <compoundname>BitReader.h</compoundname>
+    <includes refid="_extern_c_8h" local="yes">llvm-c/ExternC.h</includes>
+    <includes refid="_types_8h" local="yes">llvm-c/Types.h</includes>
+    <includedby refid="_bit_reader_8cpp" local="yes">lib/Bitcode/Reader/BitReader.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm-c/BitReader.h</label>
+        <link refid="_bit_reader_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm-c/ExternC.h</label>
+        <link refid="_extern_c_8h"/>
+      </node>
+      <node id="3">
+        <label>llvm-c/Types.h</label>
+        <link refid="_types_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>inttypes.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="7">
+        <label>sys/types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm-c/BitReader.h</label>
+        <link refid="_bit_reader_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Bitcode/Reader/BitReader.cpp</label>
+        <link refid="_bit_reader_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <member refid="group___l_l_v_m_c_bit_reader_1ga35c7ba7712a92e44a030425e8cf2421e" kind="function"><name>LLVMParseBitcode</name></member>
+      <member refid="group___l_l_v_m_c_bit_reader_1ga174e4aedd6fb37982840af7664774d51" kind="function"><name>LLVMParseBitcode2</name></member>
+      <member refid="group___l_l_v_m_c_bit_reader_1ga668b459026b5a6c7f32325408265e616" kind="function"><name>LLVMParseBitcodeInContext</name></member>
+      <member refid="group___l_l_v_m_c_bit_reader_1ga4a0ce3a2d9e26acbefa41a1bd7d1a225" kind="function"><name>LLVMParseBitcodeInContext2</name></member>
+      <member refid="group___l_l_v_m_c_bit_reader_1gad617205cd3fbbb1ad78e6f79f9ce0e4b" kind="function"><name>LLVMGetBitcodeModuleInContext</name></member>
+      <member refid="group___l_l_v_m_c_bit_reader_1ga1af45a3355d75b61ece499ee8965dcf5" kind="function"><name>LLVMGetBitcodeModuleInContext2</name></member>
+      <member refid="group___l_l_v_m_c_bit_reader_1gabf2ec026b221928be801e182aeab7ecf" kind="function"><name>LLVMGetBitcodeModule</name></member>
+      <member refid="group___l_l_v_m_c_bit_reader_1gabb3dfb8c76f75007a53d0bc62e814a96" kind="function"><name>LLVMGetBitcodeModule2</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*===--<sp/>llvm-c/BitReader.h<sp/>-<sp/>BitReader<sp/>Library<sp/>C<sp/>Interface<sp/>------*-<sp/>C++<sp/>-*-===*\</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">|*<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">|*<sp/>Exceptions.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">|*<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">|*<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">|*===----------------------------------------------------------------------===*|</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">|*<sp/>This<sp/>header<sp/>declares<sp/>the<sp/>C<sp/>interface<sp/>to<sp/>libLLVMBitReader.a,<sp/>which<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">|*<sp/>implements<sp/>input<sp/>of<sp/>the<sp/>LLVM<sp/>bitcode<sp/>format.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">|*<sp/>Many<sp/>exotic<sp/>languages<sp/>can<sp/>interoperate<sp/>with<sp/>C<sp/>code<sp/>but<sp/>have<sp/>a<sp/>harder<sp/>time<sp/><sp/>*|</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">|*<sp/>with<sp/>C++<sp/>due<sp/>to<sp/>name<sp/>mangling.<sp/>So<sp/>in<sp/>addition<sp/>to<sp/>C,<sp/>this<sp/>interface<sp/>enables<sp/>*|</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">|*<sp/>tools<sp/>written<sp/>in<sp/>such<sp/>languages.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">\*===----------------------------------------------------------------------===*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_C_BITREADER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_C_BITREADER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_extern_c_8h" kindref="compound">llvm-c/ExternC.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_types_8h" kindref="compound">llvm-c/Types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="_extern_c_8h_1a4789aaabaa5bf3b7a549171b47cc4d4a" kindref="member">LLVM_C_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="27"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>@defgroup<sp/>LLVMCBitReader<sp/>Bit<sp/>Reader</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>@ingroup<sp/>LLVMC</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>@{</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Builds<sp/>a<sp/>module<sp/>from<sp/>the<sp/>bitcode<sp/>in<sp/>the<sp/>specified<sp/>memory<sp/>buffer,<sp/>returning<sp/>a</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/>reference<sp/>to<sp/>the<sp/>module<sp/>via<sp/>the<sp/>OutModule<sp/>parameter.<sp/>Returns<sp/>0<sp/>on<sp/>success.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/>Optionally<sp/>returns<sp/>a<sp/>human-readable<sp/>error<sp/>message<sp/>via<sp/>OutMessage.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"></highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/>This<sp/>is<sp/>deprecated.<sp/>Use<sp/>LLVMParseBitcode2.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><ref refid="group___l_l_v_m_c_support_types_1ga209de0bceb13179a973c6a45211617bd" kindref="member">LLVMBool</ref><sp/><ref refid="group___l_l_v_m_c_bit_reader_1ga35c7ba7712a92e44a030425e8cf2421e" kindref="member">LLVMParseBitcode</ref>(<ref refid="group___l_l_v_m_c_support_types_1ga9867eaa7b17ba17405cdf2539bedb108" kindref="member">LLVMMemoryBufferRef</ref><sp/>MemBuf,<sp/><ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>*OutModule,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**OutMessage);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Builds<sp/>a<sp/>module<sp/>from<sp/>the<sp/>bitcode<sp/>in<sp/>the<sp/>specified<sp/>memory<sp/>buffer,<sp/>returning<sp/>a</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/>reference<sp/>to<sp/>the<sp/>module<sp/>via<sp/>the<sp/>OutModule<sp/>parameter.<sp/>Returns<sp/>0<sp/>on<sp/>success.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="group___l_l_v_m_c_support_types_1ga209de0bceb13179a973c6a45211617bd" kindref="member">LLVMBool</ref><sp/><ref refid="group___l_l_v_m_c_bit_reader_1ga174e4aedd6fb37982840af7664774d51" kindref="member">LLVMParseBitcode2</ref>(<ref refid="group___l_l_v_m_c_support_types_1ga9867eaa7b17ba17405cdf2539bedb108" kindref="member">LLVMMemoryBufferRef</ref><sp/>MemBuf,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>*OutModule);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>deprecated.<sp/>Use<sp/>LLVMParseBitcodeInContext2.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="group___l_l_v_m_c_support_types_1ga209de0bceb13179a973c6a45211617bd" kindref="member">LLVMBool</ref><sp/><ref refid="group___l_l_v_m_c_bit_reader_1ga668b459026b5a6c7f32325408265e616" kindref="member">LLVMParseBitcodeInContext</ref>(<ref refid="group___l_l_v_m_c_support_types_1ga9c43e01525516ff6b4feab5166c5b1da" kindref="member">LLVMContextRef</ref><sp/>ContextRef,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_l_v_m_c_support_types_1ga9867eaa7b17ba17405cdf2539bedb108" kindref="member">LLVMMemoryBufferRef</ref><sp/>MemBuf,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>*OutModule,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**OutMessage);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="group___l_l_v_m_c_support_types_1ga209de0bceb13179a973c6a45211617bd" kindref="member">LLVMBool</ref><sp/><ref refid="group___l_l_v_m_c_bit_reader_1ga4a0ce3a2d9e26acbefa41a1bd7d1a225" kindref="member">LLVMParseBitcodeInContext2</ref>(<ref refid="group___l_l_v_m_c_support_types_1ga9c43e01525516ff6b4feab5166c5b1da" kindref="member">LLVMContextRef</ref><sp/>ContextRef,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_l_v_m_c_support_types_1ga9867eaa7b17ba17405cdf2539bedb108" kindref="member">LLVMMemoryBufferRef</ref><sp/>MemBuf,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>*OutModule);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="56"><highlight class="comment">/**<sp/>Reads<sp/>a<sp/>module<sp/>from<sp/>the<sp/>specified<sp/>path,<sp/>returning<sp/>via<sp/>the<sp/>OutMP<sp/>parameter</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/>a<sp/>module<sp/>provider<sp/>which<sp/>performs<sp/>lazy<sp/>deserialization.<sp/>Returns<sp/>0<sp/>on<sp/>success.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/>Optionally<sp/>returns<sp/>a<sp/>human-readable<sp/>error<sp/>message<sp/>via<sp/>OutMessage.</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>is<sp/>deprecated.<sp/>Use<sp/>LLVMGetBitcodeModuleInContext2.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="group___l_l_v_m_c_support_types_1ga209de0bceb13179a973c6a45211617bd" kindref="member">LLVMBool</ref><sp/><ref refid="group___l_l_v_m_c_bit_reader_1gad617205cd3fbbb1ad78e6f79f9ce0e4b" kindref="member">LLVMGetBitcodeModuleInContext</ref>(<ref refid="group___l_l_v_m_c_support_types_1ga9c43e01525516ff6b4feab5166c5b1da" kindref="member">LLVMContextRef</ref><sp/>ContextRef,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_l_v_m_c_support_types_1ga9867eaa7b17ba17405cdf2539bedb108" kindref="member">LLVMMemoryBufferRef</ref><sp/>MemBuf,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>*OutM,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**OutMessage);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment">/**<sp/>Reads<sp/>a<sp/>module<sp/>from<sp/>the<sp/>given<sp/>memory<sp/>buffer,<sp/>returning<sp/>via<sp/>the<sp/>OutMP</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>parameter<sp/>a<sp/>module<sp/>provider<sp/>which<sp/>performs<sp/>lazy<sp/>deserialization.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>Returns<sp/>0<sp/>on<sp/>success.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>Takes<sp/>ownership<sp/>of<sp/>\p<sp/>MemBuf<sp/>if<sp/>(and<sp/>only<sp/>if)<sp/>the<sp/>module<sp/>was<sp/>read</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>successfully.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><ref refid="group___l_l_v_m_c_support_types_1ga209de0bceb13179a973c6a45211617bd" kindref="member">LLVMBool</ref><sp/><ref refid="group___l_l_v_m_c_bit_reader_1ga1af45a3355d75b61ece499ee8965dcf5" kindref="member">LLVMGetBitcodeModuleInContext2</ref>(<ref refid="group___l_l_v_m_c_support_types_1ga9c43e01525516ff6b4feab5166c5b1da" kindref="member">LLVMContextRef</ref><sp/>ContextRef,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_l_v_m_c_support_types_1ga9867eaa7b17ba17405cdf2539bedb108" kindref="member">LLVMMemoryBufferRef</ref><sp/>MemBuf,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>*OutM);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>deprecated.<sp/>Use<sp/>LLVMGetBitcodeModule2.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><ref refid="group___l_l_v_m_c_support_types_1ga209de0bceb13179a973c6a45211617bd" kindref="member">LLVMBool</ref><sp/><ref refid="group___l_l_v_m_c_bit_reader_1gabf2ec026b221928be801e182aeab7ecf" kindref="member">LLVMGetBitcodeModule</ref>(<ref refid="group___l_l_v_m_c_support_types_1ga9867eaa7b17ba17405cdf2539bedb108" kindref="member">LLVMMemoryBufferRef</ref><sp/>MemBuf,<sp/><ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>*OutM,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**OutMessage);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><ref refid="group___l_l_v_m_c_support_types_1ga209de0bceb13179a973c6a45211617bd" kindref="member">LLVMBool</ref><sp/><ref refid="group___l_l_v_m_c_bit_reader_1gabb3dfb8c76f75007a53d0bc62e814a96" kindref="member">LLVMGetBitcodeModule2</ref>(<ref refid="group___l_l_v_m_c_support_types_1ga9867eaa7b17ba17405cdf2539bedb108" kindref="member">LLVMMemoryBufferRef</ref><sp/>MemBuf,<sp/><ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>*OutM);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="81"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/>@}</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><ref refid="_extern_c_8h_1ae016a3733553fe3990c8dfcec10d9d3a" kindref="member">LLVM_C_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm-c/BitReader.h"/>
+  </compounddef>
+</doxygen>

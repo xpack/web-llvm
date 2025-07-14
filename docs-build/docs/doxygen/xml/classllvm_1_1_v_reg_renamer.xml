@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_v_reg_renamer" kind="class" language="C++" prot="public">
+    <compoundname>llvm::VRegRenamer</compoundname>
+    <includes refid="_m_i_r_v_reg_namer_utils_8h" local="yes">CodeGen/MIRVRegNamerUtils.h</includes>
+    <innerclass refid="classllvm_1_1_v_reg_renamer_1_1_named_v_reg" prot="private">llvm::VRegRenamer::NamedVReg</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_v_reg_renamer_1ab9800de4cb415373abe969d8a0d03181" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+        <definition>MachineRegisterInfo&amp; llvm::VRegRenamer::MRI</definition>
+        <argsstring></argsstring>
+        <name>MRI</name>
+        <qualifiedname>llvm::VRegRenamer::MRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="48" column="23" bodyfile="lib/CodeGen/MIRVRegNamerUtils.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_reg_renamer_1a3b2ea1658be8ad213b7dd39989939b45" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::VRegRenamer::CurrentBBNumber</definition>
+        <argsstring></argsstring>
+        <name>CurrentBBNumber</name>
+        <qualifiedname>llvm::VRegRenamer::CurrentBBNumber</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="50" column="12" bodyfile="lib/CodeGen/MIRVRegNamerUtils.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_v_reg_renamer_1a679c893eebe76d49bae96b06cbf5b49a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string VRegRenamer::getInstructionOpcodeHash</definition>
+        <argsstring>(MachineInstr &amp;MI)</argsstring>
+        <name>getInstructionOpcodeHash</name>
+        <qualifiedname>llvm::VRegRenamer::getInstructionOpcodeHash</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Given an <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>, construct a hash of the operands of the instructions along with the opcode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When dealing with virtual registers, just hash the opcode of the instruction defining that vreg. Handle immediates, registers (physical and virtual) explicitly, and return a common value for the other cases. <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> will be named in the following scheme bb&lt;block_no&gt;<emphasis>hash</emphasis>&lt;collission_count&gt;. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="60" column="15" bodyfile="lib/CodeGen/MIRVRegNamerUtils.cpp" bodystart="54" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_reg_renamer_1a98acfdcb080981ca02dff3ae19532892" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>VRegRenameMap VRegRenamer::getVRegRenameMap</definition>
+        <argsstring>(const std::vector&lt; NamedVReg &gt; &amp;VRegs)</argsstring>
+        <name>getVRegRenameMap</name>
+        <qualifiedname>llvm::VRegRenamer::getVRegRenameMap</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; NamedVReg &gt; &amp;</type>
+          <declname>VRegs</declname>
+        </param>
+        <briefdescription>
+<para>For all the VRegs that are candidates for renaming, return a mapping from old vregs to new vregs with names. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="65" column="3" bodyfile="lib/CodeGen/MIRVRegNamerUtils.cpp" bodystart="37" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_reg_renamer_1ab8320b631eaa9d19b6ce216907f3eee1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool VRegRenamer::doVRegRenaming</definition>
+        <argsstring>(const std::map&lt; unsigned, unsigned &gt; &amp;VRegRenameMap)</argsstring>
+        <name>doVRegRenaming</name>
+        <qualifiedname>llvm::VRegRenamer::doVRegRenaming</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::map&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <declname>VRegRenameMap</declname>
+        </param>
+        <briefdescription>
+<para>Perform replacing of registers based on the &lt;old,new&gt; vreg map. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="68" column="8" bodyfile="lib/CodeGen/MIRVRegNamerUtils.cpp" bodystart="25" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_reg_renamer_1aa7d6c0231b92c8422054117cb39b379f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned VRegRenamer::createVirtualRegister</definition>
+        <argsstring>(unsigned VReg)</argsstring>
+        <name>createVirtualRegister</name>
+        <qualifiedname>llvm::VRegRenamer::createVirtualRegister</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>VReg</declname>
+        </param>
+        <briefdescription>
+<para>createVirtualRegister - Given an existing vreg, create a named vreg to take its place. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The name is determined by calling getInstructionOpcodeHash. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="73" column="12" bodyfile="lib/CodeGen/MIRVRegNamerUtils.cpp" bodystart="139" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_reg_renamer_1a1c015c0ada12ddf764529b71def15392" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned VRegRenamer::createVirtualRegisterWithLowerName</definition>
+        <argsstring>(unsigned VReg, StringRef Name)</argsstring>
+        <name>createVirtualRegisterWithLowerName</name>
+        <qualifiedname>llvm::VRegRenamer::createVirtualRegisterWithLowerName</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>VReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+<para>Create a vreg with name and return it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="76" column="12" bodyfile="lib/CodeGen/MIRVRegNamerUtils.cpp" bodystart="166" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_reg_renamer_1a3f460c69bb6bd8a7c1e77d1a11246303" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool VRegRenamer::renameInstsInMBB</definition>
+        <argsstring>(MachineBasicBlock *MBB)</argsstring>
+        <name>renameInstsInMBB</name>
+        <qualifiedname>llvm::VRegRenamer::renameInstsInMBB</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+<para>Linearly traverse the <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> and rename each instruction&apos;s vreg definition based on the semantics of the instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Names are as follows bb&lt;BBNum&gt;<emphasis>hash</emphasis>[0-9]+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="81" column="8" bodyfile="lib/CodeGen/MIRVRegNamerUtils.cpp" bodystart="145" bodyend="164"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_v_reg_renamer_1ae40e2165f07ee6464a85366f53b08e8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::VRegRenamer::VRegRenamer</definition>
+        <argsstring>()=delete</argsstring>
+        <name>VRegRenamer</name>
+        <qualifiedname>llvm::VRegRenamer::VRegRenamer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="84" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_reg_renamer_1ad424af22e00bb521388ec299c0a3cac7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::VRegRenamer::VRegRenamer</definition>
+        <argsstring>(MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>VRegRenamer</name>
+        <qualifiedname>llvm::VRegRenamer::VRegRenamer</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="85" column="3" bodyfile="lib/CodeGen/MIRVRegNamerUtils.h" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_reg_renamer_1ae0de3daa9030d33988e07804f9faa03a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::VRegRenamer::renameVRegs</definition>
+        <argsstring>(MachineBasicBlock *MBB, unsigned BBNum)</argsstring>
+        <name>renameVRegs</name>
+        <qualifiedname>llvm::VRegRenamer::renameVRegs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BBNum</declname>
+        </param>
+        <briefdescription>
+<para>Same as the above, but sets a BBNum depending on BB traversal that will be used as prefix for the vreg names. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="89" column="8" bodyfile="lib/CodeGen/MIRVRegNamerUtils.h" bodystart="89" bodyend="92"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <referencedby refid="_m_i_r_canonicalizer_pass_8cpp_1a08d8c562daea622f17cb5ba28e7efb4c" compoundref="_m_i_r_canonicalizer_pass_8cpp" startline="358" endline="390">runOnBasicBlock</referencedby>
+        <referencedby refid="classanonymous__namespace_02_m_i_r_namer_pass_8cpp_03_1_1_m_i_r_namer_1aa10d9a5cfb79a609801d4a4ac79e7b6d" compoundref="_m_i_r_namer_pass_8cpp" startline="48" endline="62">anonymous_namespace{MIRNamerPass.cpp}::MIRNamer::runOnMachineFunction</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1_v_reg_renamer" kindref="compound">VRegRenamer</ref> - This class is used for renaming vregs in a machine basic block according to semantics of the instruction. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/MIRVRegNamerUtils.h" line="34" column="1" bodyfile="lib/CodeGen/MIRVRegNamerUtils.h" bodystart="34" bodyend="93"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_v_reg_renamer_1aa7d6c0231b92c8422054117cb39b379f" prot="private" virt="non-virtual"><scope>llvm::VRegRenamer</scope><name>createVirtualRegister</name></member>
+      <member refid="classllvm_1_1_v_reg_renamer_1a1c015c0ada12ddf764529b71def15392" prot="private" virt="non-virtual"><scope>llvm::VRegRenamer</scope><name>createVirtualRegisterWithLowerName</name></member>
+      <member refid="classllvm_1_1_v_reg_renamer_1a3b2ea1658be8ad213b7dd39989939b45" prot="private" virt="non-virtual"><scope>llvm::VRegRenamer</scope><name>CurrentBBNumber</name></member>
+      <member refid="classllvm_1_1_v_reg_renamer_1ab8320b631eaa9d19b6ce216907f3eee1" prot="private" virt="non-virtual"><scope>llvm::VRegRenamer</scope><name>doVRegRenaming</name></member>
+      <member refid="classllvm_1_1_v_reg_renamer_1a679c893eebe76d49bae96b06cbf5b49a" prot="private" virt="non-virtual"><scope>llvm::VRegRenamer</scope><name>getInstructionOpcodeHash</name></member>
+      <member refid="classllvm_1_1_v_reg_renamer_1a98acfdcb080981ca02dff3ae19532892" prot="private" virt="non-virtual"><scope>llvm::VRegRenamer</scope><name>getVRegRenameMap</name></member>
+      <member refid="classllvm_1_1_v_reg_renamer_1ab9800de4cb415373abe969d8a0d03181" prot="private" virt="non-virtual"><scope>llvm::VRegRenamer</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1_v_reg_renamer_1a3f460c69bb6bd8a7c1e77d1a11246303" prot="private" virt="non-virtual"><scope>llvm::VRegRenamer</scope><name>renameInstsInMBB</name></member>
+      <member refid="classllvm_1_1_v_reg_renamer_1ae0de3daa9030d33988e07804f9faa03a" prot="public" virt="non-virtual"><scope>llvm::VRegRenamer</scope><name>renameVRegs</name></member>
+      <member refid="classllvm_1_1_v_reg_renamer_1ae40e2165f07ee6464a85366f53b08e8f" prot="public" virt="non-virtual"><scope>llvm::VRegRenamer</scope><name>VRegRenamer</name></member>
+      <member refid="classllvm_1_1_v_reg_renamer_1ad424af22e00bb521388ec299c0a3cac7" prot="public" virt="non-virtual"><scope>llvm::VRegRenamer</scope><name>VRegRenamer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

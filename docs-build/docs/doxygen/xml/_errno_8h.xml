@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_errno_8h" kind="file" language="C++">
+    <compoundname>Errno.h</compoundname>
+    <includes local="no">cerrno</includes>
+    <includes local="no">string</includes>
+    <includedby refid="_intel_j_i_t_event_listener_8cpp" local="yes">lib/ExecutionEngine/IntelJITEvents/IntelJITEventListener.cpp</includedby>
+    <includedby refid="_o_profile_j_i_t_event_listener_8cpp" local="yes">lib/ExecutionEngine/OProfileJIT/OProfileJITEventListener.cpp</includedby>
+    <includedby refid="_executor_shared_memory_mapper_service_8cpp" local="no">lib/ExecutionEngine/Orc/TargetProcess/ExecutorSharedMemoryMapperService.cpp</includedby>
+    <includedby refid="_perf_j_i_t_event_listener_8cpp" local="yes">lib/ExecutionEngine/PerfJITEvents/PerfJITEventListener.cpp</includedby>
+    <includedby refid="_errno_8cpp" local="yes">lib/Support/Errno.cpp</includedby>
+    <includedby refid="_unix_8h" local="yes">lib/Support/Unix/Unix.h</includedby>
+    <includedby refid="rpmalloc_8c" local="no">lib/Support/rpmalloc/rpmalloc.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/Errno.h</label>
+        <link refid="_errno_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cerrno</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/Errno.h</label>
+        <link refid="_errno_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/ExecutionEngine/IntelJITEvents/IntelJITEventListener.cpp</label>
+        <link refid="_intel_j_i_t_event_listener_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/ExecutionEngine/OProfileJIT/OProfileJITEventListener.cpp</label>
+        <link refid="_o_profile_j_i_t_event_listener_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/ExecutionEngine/Orc/TargetProcess/ExecutorSharedMemoryMapperService.cpp</label>
+        <link refid="_executor_shared_memory_mapper_service_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/ExecutionEngine/PerfJITEvents/PerfJITEventListener.cpp</label>
+        <link refid="_perf_j_i_t_event_listener_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/Support/Errno.cpp</label>
+        <link refid="_errno_8cpp"/>
+      </node>
+      <node id="8">
+        <label>lib/Support/RandomNumberGenerator.cpp</label>
+        <link refid="_random_number_generator_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/Support/Unix/Unix.h</label>
+        <link refid="_unix_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>lib/Support/rpmalloc/rpmalloc.c</label>
+        <link refid="rpmalloc_8c"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <innernamespace refid="namespacellvm_1_1sys">llvm::sys</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>llvm/Support/Errno.h<sp/>-<sp/>Portable+convenient<sp/>errno<sp/>handling<sp/>-*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>declares<sp/>some<sp/>portable<sp/>and<sp/>convenient<sp/>functions<sp/>to<sp/>deal<sp/>with<sp/>errno.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_SUPPORT_ERRNO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_SUPPORT_ERRNO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cerrno&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm_1_1sys" kindref="compound">sys</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">///<sp/>Returns<sp/>a<sp/>string<sp/>representation<sp/>of<sp/>the<sp/>errno<sp/>value,<sp/>using<sp/>whatever</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">///<sp/>thread-safe<sp/>variant<sp/>of<sp/>strerror()<sp/>is<sp/>available.<sp/><sp/>Be<sp/>sure<sp/>to<sp/>call<sp/>this</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">///<sp/>immediately<sp/>after<sp/>the<sp/>function<sp/>that<sp/>set<sp/>errno,<sp/>or<sp/>errno<sp/>may<sp/>have<sp/>been</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">///<sp/>overwritten<sp/>by<sp/>an<sp/>intervening<sp/>call.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">std::string<sp/><ref refid="namespacellvm_1_1sys_1a1b09e9233389121e1492219e25daf411" kindref="member">StrError</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="28"><highlight class="comment">///<sp/>Like<sp/>the<sp/>no-argument<sp/>version<sp/>above,<sp/>but<sp/>uses<sp/>\p<sp/>errnum<sp/>instead<sp/>of<sp/>errno.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">std::string<sp/><ref refid="namespacellvm_1_1sys_1a1b09e9233389121e1492219e25daf411" kindref="member">StrError</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errnum);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>FailT,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/><ref refid="_pass_builder_bindings_8cpp_1aec1db240440db5948a5f72be2665b8c5" kindref="member">Fun</ref>,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/><ref refid="namespacellvm_1_1_a_m_d_g_p_u_1_1_h_s_a_m_d_1_1_kernel_1_1_key_1a1958a762261549463a280bac3274d6d5" kindref="member">Args</ref>&gt;</highlight></codeline>
+<codeline lineno="32" refid="namespacellvm_1_1sys_1a137eaaa673e8fbf6bd1bfc41ea0c12b5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">)<sp/><ref refid="namespacellvm_1_1sys_1a137eaaa673e8fbf6bd1bfc41ea0c12b5" kindref="member">RetryAfterSignal</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FailT<sp/>&amp;<ref refid="_a_arch64_disassembler_8cpp_1aae15979c93f7f0929116b975b5c46cd6" kindref="member">Fail</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="_pass_builder_bindings_8cpp_1aec1db240440db5948a5f72be2665b8c5" kindref="member">Fun</ref><sp/>&amp;<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Args<sp/>&amp;...<sp/>As)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>(As...))<sp/>Res;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>errno<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Res<sp/>=<sp/><ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>(As...);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(Res<sp/>==<sp/><ref refid="_a_arch64_disassembler_8cpp_1aae15979c93f7f0929116b975b5c46cd6" kindref="member">Fail</ref><sp/>&amp;&amp;<sp/>errno<sp/>==<sp/>EINTR);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Res;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>sys</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_SUPPORT_ERRNO_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Support/Errno.h"/>
+  </compounddef>
+</doxygen>

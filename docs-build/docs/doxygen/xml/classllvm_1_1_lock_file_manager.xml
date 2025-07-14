@@ -1,0 +1,482 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_lock_file_manager" kind="class" language="C++" prot="public">
+    <compoundname>llvm::LockFileManager</compoundname>
+    <includes refid="_lock_file_manager_8h" local="yes">llvm/Support/LockFileManager.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fc" prot="public" static="no" strong="no">
+        <type></type>
+        <name>LockFileState</name>
+        <qualifiedname>llvm::LockFileManager::LockFileState</qualifiedname>
+        <enumvalue id="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fca78582d1ab0d9e0abbed2abbea232f529" prot="public">
+          <name>LFS_Owned</name>
+          <briefdescription>
+<para>The lock file has been created and is owned by this instance of the object. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fcabfd64c399ca341b115a17cf25bf161a2" prot="public">
+          <name>LFS_Shared</name>
+          <briefdescription>
+<para>The lock file already exists and is owned by some other instance. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fca5efdb4b665559526df56fb2634198440" prot="public">
+          <name>LFS_Error</name>
+          <briefdescription>
+<para>An error occurred while trying to create or find the lock file. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Describes the state of a lock file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="30" column="3" bodyfile="include/llvm/Support/LockFileManager.h" bodystart="30" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="enum" id="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30" prot="public" static="no" strong="no">
+        <type></type>
+        <name>WaitForUnlockResult</name>
+        <qualifiedname>llvm::LockFileManager::WaitForUnlockResult</qualifiedname>
+        <enumvalue id="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30a213a07aec4e7e7d016b3bd594daf9cc5" prot="public">
+          <name>Res_Success</name>
+          <briefdescription>
+<para>The lock was released successfully. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30ae933c5a1f2e505b61d59df1e3937adef" prot="public">
+          <name>Res_OwnerDied</name>
+          <briefdescription>
+<para>Owner died while holding the lock. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30a2b00d68ed92fa7423fd1e18f31945d53" prot="public">
+          <name>Res_Timeout</name>
+          <briefdescription>
+<para>Reached timeout while waiting for the owner to release the lock. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Describes the result of waiting for the owner to release the lock. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="43" column="3" bodyfile="include/llvm/Support/LockFileManager.h" bodystart="43" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_lock_file_manager_1a88c69d5283cf5c582ac621a67a7ecfbf" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_string" kindref="compound">SmallString</ref>&lt; 128 &gt;</type>
+        <definition>SmallString&lt;128&gt; llvm::LockFileManager::FileName</definition>
+        <argsstring></argsstring>
+        <name>FileName</name>
+        <qualifiedname>llvm::LockFileManager::FileName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="53" column="15" bodyfile="include/llvm/Support/LockFileManager.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_lock_file_manager_1aecdaf7644450328b99ae61bac9710e4b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_string" kindref="compound">SmallString</ref>&lt; 128 &gt;</type>
+        <definition>SmallString&lt;128&gt; llvm::LockFileManager::LockFileName</definition>
+        <argsstring></argsstring>
+        <name>LockFileName</name>
+        <qualifiedname>llvm::LockFileManager::LockFileName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="54" column="15" bodyfile="include/llvm/Support/LockFileManager.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_lock_file_manager_1aeb82e984eb44924d6b972b46a92ad597" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_string" kindref="compound">SmallString</ref>&lt; 128 &gt;</type>
+        <definition>SmallString&lt;128&gt; llvm::LockFileManager::UniqueLockFileName</definition>
+        <argsstring></argsstring>
+        <name>UniqueLockFileName</name>
+        <qualifiedname>llvm::LockFileManager::UniqueLockFileName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="55" column="15" bodyfile="include/llvm/Support/LockFileManager.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_lock_file_manager_1ab9eb6295f4157672c80d9b2e022f4294" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::pair&lt; std::string, int &gt; &gt;</type>
+        <definition>std::optional&lt;std::pair&lt;std::string, int&gt; &gt; llvm::LockFileManager::Owner</definition>
+        <argsstring></argsstring>
+        <name>Owner</name>
+        <qualifiedname>llvm::LockFileManager::Owner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="57" column="17" bodyfile="include/llvm/Support/LockFileManager.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_lock_file_manager_1aa50a79174f3f83b36788272f35542158" prot="private" static="no" mutable="no">
+        <type>std::error_code</type>
+        <definition>std::error_code llvm::LockFileManager::ErrorCode</definition>
+        <argsstring></argsstring>
+        <name>ErrorCode</name>
+        <qualifiedname>llvm::LockFileManager::ErrorCode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="58" column="19" bodyfile="include/llvm/Support/LockFileManager.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_lock_file_manager_1a5856afdace2e29052d3171ebfa78bdc5" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::LockFileManager::ErrorDiagMsg</definition>
+        <argsstring></argsstring>
+        <name>ErrorDiagMsg</name>
+        <qualifiedname>llvm::LockFileManager::ErrorDiagMsg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="59" column="15" bodyfile="include/llvm/Support/LockFileManager.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1ae62726b0ef31c87d9ba9f4d644e269da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::LockFileManager::LockFileManager</definition>
+        <argsstring>(const LockFileManager &amp;)=delete</argsstring>
+        <name>LockFileManager</name>
+        <qualifiedname>llvm::LockFileManager::LockFileManager</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_lock_file_manager" kindref="compound">LockFileManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="61" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1a9bcc381e3a964eebef1d4518f9fe4725" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_lock_file_manager" kindref="compound">LockFileManager</ref> &amp;</type>
+        <definition>LockFileManager &amp; llvm::LockFileManager::operator=</definition>
+        <argsstring>(const LockFileManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::LockFileManager::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_lock_file_manager" kindref="compound">LockFileManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="62" column="19"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1ac9680279a64003d185d4c87a009de9a2" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::pair&lt; std::string, int &gt; &gt;</type>
+        <definition>std::optional&lt; std::pair&lt; std::string, int &gt; &gt; LockFileManager::readLockFile</definition>
+        <argsstring>(StringRef LockFileName)</argsstring>
+        <name>readLockFile</name>
+        <qualifiedname>llvm::LockFileManager::readLockFile</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>LockFileName</declname>
+        </param>
+        <briefdescription>
+<para>Attempt to read the lock file with the given name, if it exists. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>LockFileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the lock file to read.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The process <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> of the process that owns this lock file </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="65" column="3" bodyfile="lib/Support/LockFileManager.cpp" bodystart="55" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1a5ad1b8cbbcc6f591f9402652a6e10a31" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool LockFileManager::processStillExecuting</definition>
+        <argsstring>(StringRef Hostname, int PID)</argsstring>
+        <name>processStillExecuting</name>
+        <qualifiedname>llvm::LockFileManager::processStillExecuting</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Hostname</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>PID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="67" column="15" bodyfile="lib/Support/LockFileManager.cpp" bodystart="113" bodyend="125"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1ae09841830258172ba68866f0376898eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LockFileManager::LockFileManager</definition>
+        <argsstring>(StringRef FileName)</argsstring>
+        <name>LockFileManager</name>
+        <qualifiedname>llvm::LockFileManager::LockFileManager</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>FileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="71" column="3" bodyfile="lib/Support/LockFileManager.cpp" bodystart="160" bodyend="258"/>
+        <references refid="classllvm_1_1raw__fd__ostream_1a7b4fefe70f73556669fd513ed9d0fae4" compoundref="raw__ostream_8h" startline="573" endline="573">llvm::raw_fd_ostream::clear_error</references>
+        <references refid="classllvm_1_1raw__fd__ostream_1a293545f9b5864a8e1b33e57becbc5b3a" compoundref="raw__ostream_8cpp" startline="804" endline="811">llvm::raw_fd_ostream::close</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a104eea5a51402274ef2499a3ee6c64b8">llvm::sys::fs::create_link</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a7efe580e0855b9d68d0b884b79ebf955" compoundref="_path_8cpp" startline="822" endline="827">llvm::sys::fs::createUniqueFile</references>
+        <references refid="classllvm_1_1raw__fd__ostream_1a215c95ed69aa5b5756dd9c0f1b1de410" compoundref="raw__ostream_8h" startline="556" endline="556">llvm::raw_fd_ostream::error</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a645a607ffcccb12f16a5736db991e7d9" compoundref="_path_8cpp" startline="1077" endline="1079">llvm::sys::fs::exists</references>
+        <references refid="namespacellvm_1a59739a4f15fb2ec57a6b7fcfe938546ba41edf636e3c7b59f797348fc58472258" compoundref="_errc_8h" startline="48">llvm::file_exists</references>
+        <references refid="_lock_file_manager_8cpp_1a9a22b7220c3b5b3b0a05ab7070c8e5ff" compoundref="_lock_file_manager_8cpp" startline="82" endline="111">getHostID</references>
+        <references refid="classllvm_1_1sys_1_1_process_1afee014293ce837f92658166fc36a2d15">llvm::sys::Process::getProcessId</references>
+        <references refid="classllvm_1_1raw__fd__ostream_1a0d5a564fb5459ab9ce6e56401786542b" compoundref="raw__ostream_8h" startline="562" endline="562">llvm::raw_fd_ostream::has_error</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a144ec9dcc77027317d16af9fc5fec1c8" compoundref="_path_8cpp" startline="906" endline="953">llvm::sys::fs::make_absolute</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a921e0b01f22f9a37012450f9b5f0ccb7">llvm::sys::fs::remove</references>
+        <references refid="classllvm_1_1_lock_file_manager_1a5c1d619b63ed612ce3102028fb6940af" compoundref="_lock_file_manager_8h" startline="92" endline="95">setError</references>
+        <references refid="classllvm_1_1raw__string__ostream_1a6732e8d3ff8100a662ce73634840b990" compoundref="raw__ostream_8h" startline="679" endline="679">llvm::raw_string_ostream::str</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1a12291e21b11c09c114c05a7225bb0812" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LockFileManager::~LockFileManager</definition>
+        <argsstring>()</argsstring>
+        <name>~LockFileManager</name>
+        <qualifiedname>llvm::LockFileManager::~LockFileManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="72" column="3" bodyfile="lib/Support/LockFileManager.cpp" bodystart="282" bodyend="292"/>
+        <references refid="namespacellvm_1_1sys_1a7936dae925973eb8b0921c01b70b16d8">llvm::sys::DontRemoveFileOnSignal</references>
+        <references refid="classllvm_1_1_lock_file_manager_1ae2a81443bc8265b761544ed8d58cd391" compoundref="_lock_file_manager_8cpp" startline="260" endline="268">getState</references>
+        <references refid="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fca78582d1ab0d9e0abbed2abbea232f529" compoundref="_lock_file_manager_8h" startline="33">LFS_Owned</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a921e0b01f22f9a37012450f9b5f0ccb7">llvm::sys::fs::remove</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1ae2a81443bc8265b761544ed8d58cd391" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fc" kindref="member">LockFileState</ref></type>
+        <definition>LockFileManager::LockFileState LockFileManager::getState</definition>
+        <argsstring>() const</argsstring>
+        <name>getState</name>
+        <qualifiedname>llvm::LockFileManager::getState</qualifiedname>
+        <briefdescription>
+<para>Determine the state of the lock file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="75" column="17" bodyfile="lib/Support/LockFileManager.cpp" bodystart="260" bodyend="268"/>
+        <references refid="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fca5efdb4b665559526df56fb2634198440" compoundref="_lock_file_manager_8h" startline="39">LFS_Error</references>
+        <references refid="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fca78582d1ab0d9e0abbed2abbea232f529" compoundref="_lock_file_manager_8h" startline="33">LFS_Owned</references>
+        <references refid="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fcabfd64c399ca341b115a17cf25bf161a2" compoundref="_lock_file_manager_8h" startline="36">LFS_Shared</references>
+        <referencedby refid="classllvm_1_1_lock_file_manager_1a2d524267ff5db7badda8ff1bfbe5a30f" compoundref="_lock_file_manager_8h" startline="77" endline="77">operator LockFileState</referencedby>
+        <referencedby refid="classllvm_1_1_lock_file_manager_1a8a975a4bfeea746f3269211bd72a02e2" compoundref="_lock_file_manager_8cpp" startline="295" endline="324">waitForUnlock</referencedby>
+        <referencedby refid="classllvm_1_1_lock_file_manager_1a12291e21b11c09c114c05a7225bb0812" compoundref="_lock_file_manager_8cpp" startline="282" endline="292">~LockFileManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1a2d524267ff5db7badda8ff1bfbe5a30f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::LockFileManager::operator LockFileState</definition>
+        <argsstring>() const</argsstring>
+        <name>operator LockFileState</name>
+        <qualifiedname>llvm::LockFileManager::operator LockFileState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="77" column="3" bodyfile="include/llvm/Support/LockFileManager.h" bodystart="77" bodyend="77"/>
+        <references refid="classllvm_1_1_lock_file_manager_1ae2a81443bc8265b761544ed8d58cd391" compoundref="_lock_file_manager_8cpp" startline="260" endline="268">getState</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1a8a975a4bfeea746f3269211bd72a02e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30" kindref="member">WaitForUnlockResult</ref></type>
+        <definition>LockFileManager::WaitForUnlockResult LockFileManager::waitForUnlock</definition>
+        <argsstring>(const unsigned MaxSeconds=90)</argsstring>
+        <name>waitForUnlock</name>
+        <qualifiedname>llvm::LockFileManager::waitForUnlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>MaxSeconds</declname>
+          <defval>90</defval>
+        </param>
+        <briefdescription>
+<para>For a shared lock, wait until the owner releases the lock. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Total timeout for the file to appear is ~1.5 minutes. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>MaxSeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum total wait time in seconds. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="82" column="23" bodyfile="lib/Support/LockFileManager.cpp" bodystart="295" bodyend="324"/>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a592297dd80c13e993380e2bf972721ac">llvm::sys::fs::access</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1ab3cde71d019a4b19046fa286973656ebadd7f7c3323353f547eb98a8efba37ed0" compoundref="_file_system_8h" startline="443">llvm::sys::fs::Exist</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a645a607ffcccb12f16a5736db991e7d9" compoundref="_path_8cpp" startline="1077" endline="1079">llvm::sys::fs::exists</references>
+        <references refid="classllvm_1_1_lock_file_manager_1ae2a81443bc8265b761544ed8d58cd391" compoundref="_lock_file_manager_8cpp" startline="260" endline="268">getState</references>
+        <references refid="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fcabfd64c399ca341b115a17cf25bf161a2" compoundref="_lock_file_manager_8h" startline="36">LFS_Shared</references>
+        <references refid="namespacellvm_1a59739a4f15fb2ec57a6b7fcfe938546ba2e70fc89b08f26fa3fc77694c91e8f7a" compoundref="_errc_8h" startline="65">llvm::no_such_file_or_directory</references>
+        <references refid="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30ae933c5a1f2e505b61d59df1e3937adef" compoundref="_lock_file_manager_8h" startline="47">Res_OwnerDied</references>
+        <references refid="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30a213a07aec4e7e7d016b3bd594daf9cc5" compoundref="_lock_file_manager_8h" startline="45">Res_Success</references>
+        <references refid="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30a2b00d68ed92fa7423fd1e18f31945d53" compoundref="_lock_file_manager_8h" startline="49">Res_Timeout</references>
+        <references refid="classllvm_1_1_exponential_backoff_1a2e8404047337057e4fff7e416f28ce3b" compoundref="_exponential_backoff_8cpp" startline="14" endline="29">llvm::ExponentialBackoff::waitForNextAttempt</references>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_split_module_pass_1a5fdf4ead69288861f3151e0f035a9877" compoundref="_a_m_d_g_p_u_split_module_8cpp" startline="1527" endline="1589">llvm::AMDGPUSplitModulePass::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1a69275e764ccafbee027de7780fa72e4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code LockFileManager::unsafeRemoveLockFile</definition>
+        <argsstring>()</argsstring>
+        <name>unsafeRemoveLockFile</name>
+        <qualifiedname>llvm::LockFileManager::unsafeRemoveLockFile</qualifiedname>
+        <briefdescription>
+<para>Remove the lock file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This may delete a different lock file than the one previously read if there is a race. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="86" column="19" bodyfile="lib/Support/LockFileManager.cpp" bodystart="326" bodyend="328"/>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a921e0b01f22f9a37012450f9b5f0ccb7">llvm::sys::fs::remove</references>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_split_module_pass_1a5fdf4ead69288861f3151e0f035a9877" compoundref="_a_m_d_g_p_u_split_module_8cpp" startline="1527" endline="1589">llvm::AMDGPUSplitModulePass::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1a304e4ca0ae264c754c47af07ef4cfaa6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string LockFileManager::getErrorMessage</definition>
+        <argsstring>() const</argsstring>
+        <name>getErrorMessage</name>
+        <qualifiedname>llvm::LockFileManager::getErrorMessage</qualifiedname>
+        <briefdescription>
+<para>Get error message, or &quot;&quot; if there is no error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="89" column="15" bodyfile="lib/Support/LockFileManager.cpp" bodystart="270" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_lock_file_manager_1a5c1d619b63ed612ce3102028fb6940af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::LockFileManager::setError</definition>
+        <argsstring>(const std::error_code &amp;EC, StringRef ErrorMsg=&quot;&quot;)</argsstring>
+        <name>setError</name>
+        <qualifiedname>llvm::LockFileManager::setError</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::error_code &amp;</type>
+          <declname>EC</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>ErrorMsg</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Set error and error message. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/LockFileManager.h" line="92" column="8" bodyfile="include/llvm/Support/LockFileManager.h" bodystart="92" bodyend="95"/>
+        <referencedby refid="classllvm_1_1_lock_file_manager_1ae09841830258172ba68866f0376898eb" compoundref="_lock_file_manager_8cpp" startline="160" endline="258">LockFileManager</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class that manages the creation of a lock file to aid implicit coordination between different processes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The implicit coordination works by creating a &quot;.lock&quot; file alongside the file that we&apos;re coordinating for, using the atomicity of the file system to ensure that only a single process can create that &quot;.lock&quot; file. When the lock file is removed, the owning process has finished the operation. </para>
+    </detaileddescription>
+    <location file="include/llvm/Support/LockFileManager.h" line="27" column="1" bodyfile="include/llvm/Support/LockFileManager.h" bodystart="27" bodyend="96"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_lock_file_manager_1aa50a79174f3f83b36788272f35542158" prot="private" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>ErrorCode</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a5856afdace2e29052d3171ebfa78bdc5" prot="private" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>ErrorDiagMsg</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a88c69d5283cf5c582ac621a67a7ecfbf" prot="private" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>FileName</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a304e4ca0ae264c754c47af07ef4cfaa6" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>getErrorMessage</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1ae2a81443bc8265b761544ed8d58cd391" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>getState</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fca5efdb4b665559526df56fb2634198440" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>LFS_Error</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fca78582d1ab0d9e0abbed2abbea232f529" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>LFS_Owned</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fcabfd64c399ca341b115a17cf25bf161a2" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>LFS_Shared</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1ae62726b0ef31c87d9ba9f4d644e269da" prot="private" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>LockFileManager</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1ae09841830258172ba68866f0376898eb" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>LockFileManager</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1aecdaf7644450328b99ae61bac9710e4b" prot="private" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>LockFileName</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a1fcefc1a8c747197b9ee8b5e99d732fc" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>LockFileState</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a2d524267ff5db7badda8ff1bfbe5a30f" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>operator LockFileState</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a9bcc381e3a964eebef1d4518f9fe4725" prot="private" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1ab9eb6295f4157672c80d9b2e022f4294" prot="private" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>Owner</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a5ad1b8cbbcc6f591f9402652a6e10a31" prot="private" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>processStillExecuting</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1ac9680279a64003d185d4c87a009de9a2" prot="private" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>readLockFile</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30ae933c5a1f2e505b61d59df1e3937adef" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>Res_OwnerDied</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30a213a07aec4e7e7d016b3bd594daf9cc5" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>Res_Success</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30a2b00d68ed92fa7423fd1e18f31945d53" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>Res_Timeout</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a5c1d619b63ed612ce3102028fb6940af" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>setError</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1aeb82e984eb44924d6b972b46a92ad597" prot="private" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>UniqueLockFileName</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a69275e764ccafbee027de7780fa72e4a" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>unsafeRemoveLockFile</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a8a975a4bfeea746f3269211bd72a02e2" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>waitForUnlock</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a9973b06ec4b8e2f93a9308b85c1b8b30" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>WaitForUnlockResult</name></member>
+      <member refid="classllvm_1_1_lock_file_manager_1a12291e21b11c09c114c05a7225bb0812" prot="public" virt="non-virtual"><scope>llvm::LockFileManager</scope><name>~LockFileManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_overflow_inst_analysis_8h" kind="file" language="C++">
+    <compoundname>OverflowInstAnalysis.h</compoundname>
+    <includedby refid="_instruction_simplify_8cpp" local="yes">lib/Analysis/InstructionSimplify.cpp</includedby>
+    <includedby refid="_overflow_inst_analysis_8cpp" local="yes">lib/Analysis/OverflowInstAnalysis.cpp</includedby>
+    <includedby refid="_inst_combine_select_8cpp" local="yes">lib/Transforms/InstCombine/InstCombineSelect.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Analysis/OverflowInstAnalysis.h</label>
+        <link refid="_overflow_inst_analysis_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Analysis/InstructionSimplify.cpp</label>
+        <link refid="_instruction_simplify_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Analysis/OverflowInstAnalysis.cpp</label>
+        <link refid="_overflow_inst_analysis_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Transforms/InstCombine/InstCombineSelect.cpp</label>
+        <link refid="_inst_combine_select_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===--<sp/>OverflowInstAnalysis.h<sp/>-<sp/>Utils<sp/>to<sp/>fold<sp/>overflow<sp/>insts<sp/>----*-<sp/>C++<sp/>-*-==//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>holds<sp/>routines<sp/>to<sp/>help<sp/>analyse<sp/>overflow<sp/>instructions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>and<sp/>fold<sp/>them<sp/>into<sp/>constants<sp/>or<sp/>other<sp/>overflow<sp/>instructions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_ANALYSIS_OVERFLOWINSTANALYSIS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_ANALYSIS_OVERFLOWINSTANALYSIS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_use" kindref="compound">Use</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="21"><highlight class="comment">///<sp/>Match<sp/>one<sp/>of<sp/>the<sp/>patterns<sp/>up<sp/>to<sp/>the<sp/>select/logic<sp/>op:</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">///<sp/><sp/><sp/>%Op0<sp/>=<sp/>icmp<sp/>ne<sp/>i4<sp/>%X,<sp/>0</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">///<sp/><sp/><sp/>%Agg<sp/>=<sp/>call<sp/>{<sp/>i4,<sp/>i1<sp/>}<sp/>@llvm.[us]mul.with.overflow.i4(i4<sp/>%X,<sp/>i4<sp/>%Y)</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">///<sp/><sp/><sp/>%Op1<sp/>=<sp/>extractvalue<sp/>{<sp/>i4,<sp/>i1<sp/>}<sp/>%Agg,<sp/>1</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">///<sp/><sp/><sp/>%ret<sp/>=<sp/>select<sp/>i1<sp/>%Op0,<sp/>i1<sp/>%Op1,<sp/>i1<sp/>false<sp/>/<sp/>%ret<sp/>=<sp/>and<sp/>i1<sp/>%Op0,<sp/>%Op1</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">///<sp/><sp/><sp/>%Op0<sp/>=<sp/>icmp<sp/>eq<sp/>i4<sp/>%X,<sp/>0</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">///<sp/><sp/><sp/>%Agg<sp/>=<sp/>call<sp/>{<sp/>i4,<sp/>i1<sp/>}<sp/>@llvm.[us]mul.with.overflow.i4(i4<sp/>%X,<sp/>i4<sp/>%Y)</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">///<sp/><sp/><sp/>%NotOp1<sp/>=<sp/>extractvalue<sp/>{<sp/>i4,<sp/>i1<sp/>}<sp/>%Agg,<sp/>1</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">///<sp/><sp/><sp/>%Op1<sp/>=<sp/>xor<sp/>i1<sp/>%NotOp1,<sp/>true</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">///<sp/><sp/><sp/>%ret<sp/>=<sp/>select<sp/>i1<sp/>%Op0,<sp/>i1<sp/>true,<sp/>i1<sp/>%Op1<sp/>/<sp/>%ret<sp/>=<sp/>or<sp/>i1<sp/>%Op0,<sp/>%Op1</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">///<sp/>Callers<sp/>are<sp/>expected<sp/>to<sp/>align<sp/>that<sp/>with<sp/>the<sp/>operands<sp/>of<sp/>the<sp/>select/logic.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">///<sp/>IsAnd<sp/>is<sp/>set<sp/>to<sp/>true<sp/>if<sp/>the<sp/>Op0<sp/>and<sp/>Op1<sp/>are<sp/>used<sp/>as<sp/>the<sp/>first<sp/>pattern.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">///<sp/>If<sp/>Op0<sp/>and<sp/>Op1<sp/>match<sp/>one<sp/>of<sp/>the<sp/>patterns<sp/>above,<sp/>return<sp/>true<sp/>and<sp/>fill<sp/>Y&apos;s</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">///<sp/>use.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1aebd66f6649c1449adbcfcedf1651af18" kindref="member">isCheckForZeroAndMulWithOverflow</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op0,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op1,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsAnd,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_use" kindref="compound">Use</ref><sp/>*&amp;<ref refid="_table_gen_backend_skeleton_8cpp_1a262774d3e5186511427e5b2414a85f7f" kindref="member">Y</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1aebd66f6649c1449adbcfcedf1651af18" kindref="member">isCheckForZeroAndMulWithOverflow</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op0,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*Op1,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsAnd);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Analysis/OverflowInstAnalysis.h"/>
+  </compounddef>
+</doxygen>

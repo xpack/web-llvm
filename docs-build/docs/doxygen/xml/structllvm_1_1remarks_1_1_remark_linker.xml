@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1remarks_1_1_remark_linker" kind="struct" language="C++" prot="public">
+    <compoundname>llvm::remarks::RemarkLinker</compoundname>
+    <includes refid="_remark_linker_8h" local="yes">llvm/Remarks/RemarkLinker.h</includes>
+    <innerclass refid="structllvm_1_1remarks_1_1_remark_linker_1_1_remark_ptr_compare" prot="private">llvm::remarks::RemarkLinker::RemarkPtrCompare</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structllvm_1_1remarks_1_1_remark_linker_1a51509ff44e1e04487662ede678e76533" prot="public" static="no">
+        <type><ref refid="structllvm_1_1pointee__iterator" kindref="compound">pointee_iterator</ref>&lt; decltype(Remarks)<ref refid="class_symbols_map_type_1_1const__iterator" kindref="compound">::const_iterator</ref> &gt;</type>
+        <definition>using llvm::remarks::RemarkLinker::iterator =  pointee_iterator&lt;decltype(Remarks)::const_iterator&gt;</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::iterator</qualifiedname>
+        <briefdescription>
+<para>Return a collection of the linked unique remarks to iterate on. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Ex: for (const <ref refid="structllvm_1_1remarks_1_1_remark" kindref="compound">Remark</ref> &amp;R : RL.remarks() { [...] } </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="102" column="3" bodyfile="include/llvm/Remarks/RemarkLinker.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structllvm_1_1remarks_1_1_remark_linker_1af1d42a233044ca367f9fc9fb2af1df3d" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1remarks_1_1_string_table" kindref="compound">StringTable</ref></type>
+        <definition>StringTable llvm::remarks::RemarkLinker::StrTab</definition>
+        <argsstring></argsstring>
+        <name>StrTab</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::StrTab</qualifiedname>
+        <briefdescription>
+<para>The main string table for the remarks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note: all remarks should use the strings from this string table to avoid dangling references. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="46" column="15" bodyfile="include/llvm/Remarks/RemarkLinker.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1remarks_1_1_remark_linker_1a44626e555ad9e79a10df1d4b573e2f17" prot="private" static="no" mutable="no">
+        <type>std::set&lt; std::unique_ptr&lt; <ref refid="structllvm_1_1remarks_1_1_remark" kindref="compound">Remark</ref> &gt;, RemarkPtrCompare &gt;</type>
+        <definition>std::set&lt;std::unique_ptr&lt;Remark&gt;, RemarkPtrCompare&gt; llvm::remarks::RemarkLinker::Remarks</definition>
+        <argsstring></argsstring>
+        <name>Remarks</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::Remarks</qualifiedname>
+        <briefdescription>
+<para>A set holding unique remarks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>FIXME: std::set is probably not the most appropriate data structure here. Due to the limitation of having a move-only key, there isn&apos;t another obvious choice for now. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="52" column="12" bodyfile="include/llvm/Remarks/RemarkLinker.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1remarks_1_1_remark_linker_1a0f0be94f33572fc6578d3b1b142b1ac4" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; llvm::remarks::RemarkLinker::PrependPath</definition>
+        <argsstring></argsstring>
+        <name>PrependPath</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::PrependPath</qualifiedname>
+        <briefdescription>
+<para>A path to append before the external file path found in remark metadata. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="55" column="17" bodyfile="include/llvm/Remarks/RemarkLinker.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1remarks_1_1_remark_linker_1a404034ad5a6fe59ed2cae373244b75a0" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::remarks::RemarkLinker::KeepAllRemarks</definition>
+        <argsstring></argsstring>
+        <name>KeepAllRemarks</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::KeepAllRemarks</qualifiedname>
+        <initializer>= <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></initializer>
+        <briefdescription>
+<para>If true, keep all remarks, otherwise only keep remarks with valid debug locations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="59" column="8" bodyfile="include/llvm/Remarks/RemarkLinker.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="structllvm_1_1remarks_1_1_remark_linker_1ab9e8b05322c3596f40a9077cae508ac9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1remarks_1_1_remark" kindref="compound">Remark</ref> &amp;</type>
+        <definition>Remark &amp; RemarkLinker::keep</definition>
+        <argsstring>(std::unique_ptr&lt; Remark &gt; Remark)</argsstring>
+        <name>keep</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::keep</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="structllvm_1_1remarks_1_1_remark" kindref="compound">Remark</ref> &gt;</type>
+          <declname>Remark</declname>
+        </param>
+        <briefdescription>
+<para>Keep this remark. If it&apos;s already in the set, discard it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="62" column="10" bodyfile="lib/Remarks/RemarkLinker.cpp" bodystart="59" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1remarks_1_1_remark_linker_1a689584b7d83c06c54030883084041679" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::remarks::RemarkLinker::shouldKeepRemark</definition>
+        <argsstring>(const Remark &amp;R)</argsstring>
+        <name>shouldKeepRemark</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::shouldKeepRemark</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1remarks_1_1_remark" kindref="compound">Remark</ref> &amp;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if <computeroutput>R</computeroutput> should be kept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If KeepAllRemarks is false, only return true if <computeroutput>R</computeroutput> has a valid debug location. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="66" column="8" bodyfile="include/llvm/Remarks/RemarkLinker.h" bodystart="66" bodyend="68"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structllvm_1_1remarks_1_1_remark_linker_1a2c2acd23f65c858448855008917e63c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RemarkLinker::setExternalFilePrependPath</definition>
+        <argsstring>(StringRef PrependPath)</argsstring>
+        <name>setExternalFilePrependPath</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::setExternalFilePrependPath</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>PrependPath</declname>
+        </param>
+        <briefdescription>
+<para>Set a path to prepend to the external file path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="72" column="8" bodyfile="lib/Remarks/RemarkLinker.cpp" bodystart="65" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1remarks_1_1_remark_linker_1a8d717eef5f50f721c590bc64167551e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::remarks::RemarkLinker::setKeepAllRemarks</definition>
+        <argsstring>(bool B)</argsstring>
+        <name>setKeepAllRemarks</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::setKeepAllRemarks</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+<para>Set KeepAllRemarks to <computeroutput>B</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="75" column="8" bodyfile="include/llvm/Remarks/RemarkLinker.h" bodystart="75" bodyend="75"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1remarks_1_1_remark_linker_1ac548aeb7853ce7d7cd2a3b33fb761d1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error RemarkLinker::link</definition>
+        <argsstring>(StringRef Buffer, std::optional&lt; Format &gt; RemarkFormat=std::nullopt)</argsstring>
+        <name>link</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::link</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Buffer</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="namespacellvm_1_1remarks_1a6e038f443b9029221c590524f08be0be" kindref="member">Format</ref> &gt;</type>
+          <declname>RemarkFormat</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Link the remarks found in <computeroutput>Buffer</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>RemarkFormat</computeroutput> is not provided, try to deduce it from the metadata in <computeroutput>Buffer</computeroutput>. <computeroutput>Buffer</computeroutput> can be either a standalone remark container or just metadata. This takes care of uniquing and merging the remarks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="82" column="9" bodyfile="lib/Remarks/RemarkLinker.cpp" bodystart="69" bodyend="103"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1aee0e70be66536b9ef7b65ae2e5a45959" compoundref="llvm_2_support_2_error_8h" startline="1069" endline="1071">llvm::consumeError</references>
+        <references refid="namespacellvm_1_1remarks_1a9b0d185878d538e933f92e5827653169" compoundref="_remark_parser_8cpp" startline="89" endline="107">llvm::remarks::createRemarkParserFromMeta</references>
+        <references refid="namespacellvm_1_1remarks_1a33db5e22d2f3b0403b2fcd906f5a2377" compoundref="_remark_format_8cpp" startline="35" endline="47">llvm::remarks::magicToFormat</references>
+        <references refid="namespacellvm_1ab13c360340346d082b959b8cd79f2c1a" compoundref="_instr_prof_8h" startline="141">llvm::Next</references>
+        <references refid="structllvm_1_1remarks_1_1_remark_parser_1af41ce5d552a2f97ed547661bcee5c26e">llvm::remarks::RemarkParser::next</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+        <referencedby refid="structllvm_1_1remarks_1_1_remark_linker_1a2f0b07de873627d24a364adbc61b0da3" compoundref="_remark_linker_8cpp" startline="105" endline="115">link</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1remarks_1_1_remark_linker_1a2f0b07de873627d24a364adbc61b0da3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error RemarkLinker::link</definition>
+        <argsstring>(const object::ObjectFile &amp;Obj, std::optional&lt; Format &gt; RemarkFormat=std::nullopt)</argsstring>
+        <name>link</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::link</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1object_1_1_object_file" kindref="compound">object::ObjectFile</ref> &amp;</type>
+          <declname>Obj</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="namespacellvm_1_1remarks_1a6e038f443b9029221c590524f08be0be" kindref="member">Format</ref> &gt;</type>
+          <declname>RemarkFormat</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Link the remarks found in <computeroutput>Obj</computeroutput> by looking for the right section and calling the method above. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="87" column="9" bodyfile="lib/Remarks/RemarkLinker.cpp" bodystart="105" bodyend="115"/>
+        <references refid="namespacellvm_1_1remarks_1aff5f4a955d855eddcf05807595306406" compoundref="_remark_linker_8cpp" startline="39" endline="57">llvm::remarks::getRemarksSectionContents</references>
+        <references refid="structllvm_1_1remarks_1_1_remark_linker_1ac548aeb7853ce7d7cd2a3b33fb761d1b" compoundref="_remark_linker_8cpp" startline="69" endline="103">link</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1remarks_1_1_remark_linker_1a520480e348343b25dce916ceca76dcd5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error RemarkLinker::serialize</definition>
+        <argsstring>(raw_ostream &amp;OS, Format RemarksFormat) const</argsstring>
+        <name>serialize</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::serialize</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1remarks_1a6e038f443b9029221c590524f08be0be" kindref="member">Format</ref></type>
+          <declname>RemarksFormat</declname>
+        </param>
+        <briefdescription>
+<para>Serialize the linked remarks to the stream <computeroutput>OS</computeroutput>, using the format <computeroutput>RemarkFormat</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This clears internal state such as the string table. Note: this implies that the serialization mode is standalone. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="94" column="9" bodyfile="lib/Remarks/RemarkLinker.cpp" bodystart="117" bodyend="130"/>
+        <references refid="namespacellvm_1_1remarks_1a4ecdd1fa742884c757fc22ad0674d761" compoundref="_remark_serializer_8cpp" startline="21" endline="35">llvm::remarks::createRemarkSerializer</references>
+        <references refid="structllvm_1_1remarks_1_1_remark_linker_1aed4941ce0de71fb529dad68a145605e1" compoundref="_remark_linker_8h" startline="104" endline="106">remarks</references>
+        <references refid="namespacellvm_1a0a00aed2787bd3f818d745a1ef171bf3" compoundref="_thin_l_t_o_code_generator_8cpp" startline="85">llvm::RemarksFormat</references>
+        <references refid="namespacellvm_1_1remarks_1ae5b0a3a7cf356fc6c7602b8279061a66a5c80f101108a356211fcb26b3f83eabb" compoundref="_remark_serializer_8h" startline="33">llvm::remarks::Standalone</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1remarks_1_1_remark_linker_1a5dcab292efb44b438d13165d728289c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::remarks::RemarkLinker::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::empty</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> whether there are any remarks linked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="97" column="8" bodyfile="include/llvm/Remarks/RemarkLinker.h" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1remarks_1_1_remark_linker_1aed4941ce0de71fb529dad68a145605e1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; <ref refid="structllvm_1_1remarks_1_1_remark_linker_1a51509ff44e1e04487662ede678e76533" kindref="member">iterator</ref> &gt;</type>
+        <definition>iterator_range&lt; iterator &gt; llvm::remarks::RemarkLinker::remarks</definition>
+        <argsstring>() const</argsstring>
+        <name>remarks</name>
+        <qualifiedname>llvm::remarks::RemarkLinker::remarks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Remarks/RemarkLinker.h" line="104" column="18" bodyfile="include/llvm/Remarks/RemarkLinker.h" bodystart="104" bodyend="106"/>
+        <referencedby refid="structllvm_1_1remarks_1_1_remark_linker_1a520480e348343b25dce916ceca76dcd5" compoundref="_remark_linker_8cpp" startline="117" endline="130">serialize</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Remarks/RemarkLinker.h" line="32" column="1" bodyfile="include/llvm/Remarks/RemarkLinker.h" bodystart="32" bodyend="107"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1a5dcab292efb44b438d13165d728289c3" prot="public" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>empty</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1a51509ff44e1e04487662ede678e76533" prot="public" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>iterator</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1ab9e8b05322c3596f40a9077cae508ac9" prot="private" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>keep</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1a404034ad5a6fe59ed2cae373244b75a0" prot="private" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>KeepAllRemarks</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1ac548aeb7853ce7d7cd2a3b33fb761d1b" prot="public" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>link</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1a2f0b07de873627d24a364adbc61b0da3" prot="public" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>link</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1a0f0be94f33572fc6578d3b1b142b1ac4" prot="private" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>PrependPath</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1a44626e555ad9e79a10df1d4b573e2f17" prot="private" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>Remarks</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1aed4941ce0de71fb529dad68a145605e1" prot="public" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>remarks</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1a520480e348343b25dce916ceca76dcd5" prot="public" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>serialize</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1a2c2acd23f65c858448855008917e63c3" prot="public" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>setExternalFilePrependPath</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1a8d717eef5f50f721c590bc64167551e1" prot="public" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>setKeepAllRemarks</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1a689584b7d83c06c54030883084041679" prot="private" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>shouldKeepRemark</name></member>
+      <member refid="structllvm_1_1remarks_1_1_remark_linker_1af1d42a233044ca367f9fc9fb2af1df3d" prot="private" virt="non-virtual"><scope>llvm::remarks::RemarkLinker</scope><name>StrTab</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

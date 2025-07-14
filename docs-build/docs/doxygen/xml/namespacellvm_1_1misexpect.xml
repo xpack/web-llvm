@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1misexpect" kind="namespace" language="C++">
+    <compoundname>llvm::misexpect</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1misexpect_1a62ecd68a608ec120263975c279ae3dab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::misexpect::checkBackendInstrumentation</definition>
+        <argsstring>(Instruction &amp;I, const llvm::ArrayRef&lt; uint32_t &gt; RealWeights)</argsstring>
+        <name>checkBackendInstrumentation</name>
+        <qualifiedname>llvm::misexpect::checkBackendInstrumentation</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_array_ref" kindref="compound">llvm::ArrayRef</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+          <declname>RealWeights</declname>
+        </param>
+        <briefdescription>
+<para>checkBackendInstrumentation - compares PGO counters to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It extracts the expected weights from the MD_prof weights attached to the instruction, which are assumed to come from lowered llvm.expect intrinsics. The RealWeights parameter and the extracted expected weights are then passed to verifyMisexpect() for verification</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>I</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> being checked </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>RealWeights</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of profile weights for each target block </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/MisExpect.cpp" line="179" column="6" bodyfile="lib/Transforms/Utils/MisExpect.cpp" bodystart="179" bodyend="192" declfile="include/llvm/Transforms/Utils/MisExpect.h" declline="37" declcolumn="6"/>
+        <references refid="namespacellvm_1ac19cbbc4935a23e1d44f65e1eaba6b1d" compoundref="_prof_data_utils_8cpp" startline="170" endline="176">llvm::extractBranchWeights</references>
+        <references refid="namespacellvm_1a4a3bd60427b33355559566bdec3c9f90" compoundref="_prof_data_utils_8cpp" startline="122" endline="125">llvm::hasBranchWeightOrigin</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1_1misexpect_1a8677c5d2618fcf52eda43f5530decb6b" compoundref="_mis_expect_8cpp" startline="122" endline="177">verifyMisExpect</references>
+        <referencedby refid="namespacellvm_1_1misexpect_1a4c52059f91406714507309d168ff95b8" compoundref="_mis_expect_8cpp" startline="202" endline="210">checkExpectAnnotations</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1misexpect_1a21de4796e674d8dabcea69242abe5005" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::misexpect::checkFrontendInstrumentation</definition>
+        <argsstring>(Instruction &amp;I, const ArrayRef&lt; uint32_t &gt; ExpectedWeights)</argsstring>
+        <name>checkFrontendInstrumentation</name>
+        <qualifiedname>llvm::misexpect::checkFrontendInstrumentation</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+          <declname>ExpectedWeights</declname>
+        </param>
+        <briefdescription>
+<para>checkFrontendInstrumentation - compares PGO counters to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It extracts the expected weights from the MD_prof weights attached to the instruction, which are assumed to come from profiling data attached by the frontend prior to llvm.expect intrinsic lowering. The ExpectedWeights parameter and the extracted real weights are then passed to verifyMisexpect() for verification</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>I</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> being checked </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ExpectedWeights</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of the expected weights for each target block, this determines the threshold values used when emitting diagnostics </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/MisExpect.cpp" line="194" column="6" bodyfile="lib/Transforms/Utils/MisExpect.cpp" bodystart="194" bodyend="200" declfile="include/llvm/Transforms/Utils/MisExpect.h" declline="51" declcolumn="6"/>
+        <references refid="namespacellvm_1ac19cbbc4935a23e1d44f65e1eaba6b1d" compoundref="_prof_data_utils_8cpp" startline="170" endline="176">llvm::extractBranchWeights</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1_1misexpect_1a8677c5d2618fcf52eda43f5530decb6b" compoundref="_mis_expect_8cpp" startline="122" endline="177">verifyMisExpect</references>
+        <referencedby refid="namespacellvm_1_1misexpect_1a4c52059f91406714507309d168ff95b8" compoundref="_mis_expect_8cpp" startline="202" endline="210">checkExpectAnnotations</referencedby>
+        <referencedby refid="_lower_expect_intrinsic_8cpp_1a6ac9067dc7c125cd83855df3e480e04c" compoundref="_lower_expect_intrinsic_8cpp" startline="276" endline="355">handleBrSelExpect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1misexpect_1a8677c5d2618fcf52eda43f5530decb6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::misexpect::verifyMisExpect</definition>
+        <argsstring>(Instruction &amp;I, ArrayRef&lt; uint32_t &gt; RealWeights, const ArrayRef&lt; uint32_t &gt; ExpectedWeights)</argsstring>
+        <name>verifyMisExpect</name>
+        <qualifiedname>llvm::misexpect::verifyMisExpect</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+          <declname>RealWeights</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+          <declname>ExpectedWeights</declname>
+        </param>
+        <briefdescription>
+<para>veryifyMisExpect - compares RealWeights to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>I</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> being checked </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>RealWeights</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of profile weights from the profile data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ExpectedWeights</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of the weights attatch by llvm.expect </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/MisExpect.cpp" line="122" column="6" bodyfile="lib/Transforms/Utils/MisExpect.cpp" bodystart="122" bodyend="177" declfile="include/llvm/Transforms/Utils/MisExpect.h" declline="61" declcolumn="6"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_array_ref_1aab36927882fbfdcbb860d87fd9c30da8" compoundref="_array_ref_8h" startline="156" endline="156">llvm::ArrayRef&lt; T &gt;::begin</references>
+        <references refid="classllvm_1_1_array_ref_1a7ca5197533a9c1fb8a2bd30587fcec6b" compoundref="_array_ref_8h" startline="157" endline="157">llvm::ArrayRef&lt; T &gt;::end</references>
+        <references refid="classllvm_1_1_branch_probability_1a0333345669e75a54c7de3d5fe0f6e746" compoundref="_branch_probability_8cpp" startline="53" endline="63">llvm::BranchProbability::getBranchProbability</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_lower_expect_intrinsic_8cpp_1aae93c90b6047163d33af8cc1bd57a193">LikelyBranchWeight</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+        <references refid="_lower_expect_intrinsic_8cpp_1a351a1280d0bfece4f72e806eba12d284">UnlikelyBranchWeight</references>
+        <referencedby refid="namespacellvm_1_1misexpect_1a62ecd68a608ec120263975c279ae3dab" compoundref="_mis_expect_8cpp" startline="179" endline="192">checkBackendInstrumentation</referencedby>
+        <referencedby refid="namespacellvm_1_1misexpect_1a21de4796e674d8dabcea69242abe5005" compoundref="_mis_expect_8cpp" startline="194" endline="200">checkFrontendInstrumentation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1misexpect_1a4c52059f91406714507309d168ff95b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::misexpect::checkExpectAnnotations</definition>
+        <argsstring>(Instruction &amp;I, const ArrayRef&lt; uint32_t &gt; ExistingWeights, bool IsFrontend)</argsstring>
+        <name>checkExpectAnnotations</name>
+        <qualifiedname>llvm::misexpect::checkExpectAnnotations</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+          <declname>ExistingWeights</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsFrontend</declname>
+        </param>
+        <briefdescription>
+<para>checkExpectAnnotations - compares PGO counters to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It extracts the expected weights from the MD_prof weights attached to the instruction, which are assumed to come from lowered llvm.expect intrinsics. The RealWeights parameter and the extracted expected weights are then passed to verifyMisexpect() for verification. It is a thin wrapper around the checkFrontendInstrumentation and checkBackendInstrumentation APIs</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>I</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> being checked </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ExistingWeights</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of profile weights for each target block </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IsFrontend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean describing if this is Frontend instrumentation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/MisExpect.cpp" line="202" column="6" bodyfile="lib/Transforms/Utils/MisExpect.cpp" bodystart="202" bodyend="210" declfile="include/llvm/Transforms/Utils/MisExpect.h" declline="75" declcolumn="6"/>
+        <references refid="namespacellvm_1_1misexpect_1a62ecd68a608ec120263975c279ae3dab" compoundref="_mis_expect_8cpp" startline="179" endline="192">checkBackendInstrumentation</references>
+        <references refid="namespacellvm_1_1misexpect_1a21de4796e674d8dabcea69242abe5005" compoundref="_mis_expect_8cpp" startline="194" endline="200">checkFrontendInstrumentation</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="classanonymous__namespace_02_sample_profile_8cpp_03_1_1_sample_profile_loader_1acf512f516130aaabdd835c48140c9e5c" compoundref="_sample_profile_8cpp" startline="1619" endline="1784">anonymous_namespace{SampleProfile.cpp}::SampleProfileLoader::generateMDProfMetadata</referencedby>
+        <referencedby refid="_lower_expect_intrinsic_8cpp_1ab61a60817533b84f369d2623e0593ec7" compoundref="_lower_expect_intrinsic_8cpp" startline="76" endline="107">handleSwitchExpect</referencedby>
+        <referencedby refid="namespacellvm_1ad272ce4631595e235e560baf59dc1ffd" compoundref="_p_g_o_instrumentation_8cpp" startline="2387" endline="2428">llvm::setProfMetadata</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/Utils/MisExpect.h" line="26" column="1"/>
+  </compounddef>
+</doxygen>

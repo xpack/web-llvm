@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_linking_symbol_resolver" kind="class" language="C++" prot="public">
+    <compoundname>llvm::LinkingSymbolResolver</compoundname>
+    <basecompoundref refid="classllvm_1_1_legacy_j_i_t_symbol_resolver" prot="public" virt="non-virtual">llvm::LegacyJITSymbolResolver</basecompoundref>
+    <includes refid="lib_2_execution_engine_2_m_c_j_i_t_2_m_c_j_i_t_8h" local="yes">ExecutionEngine/MCJIT/MCJIT.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_linking_symbol_resolver_1a3ed92c16c4b6fb69009f2fb699ed9283" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> &amp;</type>
+        <definition>MCJIT&amp; llvm::LinkingSymbolResolver::ParentEngine</definition>
+        <argsstring></argsstring>
+        <name>ParentEngine</name>
+        <qualifiedname>llvm::LinkingSymbolResolver::ParentEngine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="41" column="9" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_linking_symbol_resolver_1a84eb1f68f3f447c671a66d52848b0e0c" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classllvm_1_1_legacy_j_i_t_symbol_resolver" kindref="compound">LegacyJITSymbolResolver</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;LegacyJITSymbolResolver&gt; llvm::LinkingSymbolResolver::ClientResolver</definition>
+        <argsstring></argsstring>
+        <name>ClientResolver</name>
+        <qualifiedname>llvm::LinkingSymbolResolver::ClientResolver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="42" column="19" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_linking_symbol_resolver_1a2bb409bf96817ad9f3986efe65a74524" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::LinkingSymbolResolver::LinkingSymbolResolver</definition>
+        <argsstring>(MCJIT &amp;Parent, std::shared_ptr&lt; LegacyJITSymbolResolver &gt; Resolver)</argsstring>
+        <name>LinkingSymbolResolver</name>
+        <qualifiedname>llvm::LinkingSymbolResolver::LinkingSymbolResolver</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> &amp;</type>
+          <declname>Parent</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classllvm_1_1_legacy_j_i_t_symbol_resolver" kindref="compound">LegacyJITSymbolResolver</ref> &gt;</type>
+          <declname>Resolver</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="29" column="3" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="29" bodyend="31"/>
+        <references refid="namespacellvm_1abfc9c7ecf70f66901e439f7c04ef3dbb" compoundref="_s_t_l_extras_8h" startline="1873" endline="1875">llvm::move</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_linking_symbol_resolver_1a3acbc4aeeddc8e52c6b69854432f211c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_j_i_t_symbol" kindref="compound">JITSymbol</ref></type>
+        <definition>JITSymbol LinkingSymbolResolver::findSymbol</definition>
+        <argsstring>(const std::string &amp;Name) override</argsstring>
+        <name>findSymbol</name>
+        <qualifiedname>llvm::LinkingSymbolResolver::findSymbol</qualifiedname>
+        <reimplements refid="classllvm_1_1_legacy_j_i_t_symbol_resolver_1a2612c868eb773faf53d42254da895290">findSymbol</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+<para>This method returns the address of the specified function or variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is used to resolve symbols during module linking.</para>
+<para>If the returned symbol&apos;s address is equal to ~0ULL then <ref refid="classllvm_1_1_runtime_dyld" kindref="compound">RuntimeDyld</ref> will skip all relocations for that symbol, and the client will be responsible for handling them manually. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="33" column="13" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="672" bodyend="679"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_linking_symbol_resolver_1a6902252429e09a9d391dd020f8d91e96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_j_i_t_symbol" kindref="compound">JITSymbol</ref></type>
+        <definition>JITSymbol llvm::LinkingSymbolResolver::findSymbolInLogicalDylib</definition>
+        <argsstring>(const std::string &amp;Name) override</argsstring>
+        <name>findSymbolInLogicalDylib</name>
+        <qualifiedname>llvm::LinkingSymbolResolver::findSymbolInLogicalDylib</qualifiedname>
+        <reimplements refid="classllvm_1_1_legacy_j_i_t_symbol_resolver_1a7380b8beb758e62402b0817f6d5adfcb">findSymbolInLogicalDylib</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+<para>This method returns the address of the specified symbol if it exists within the logical dynamic library represented by this <ref refid="classllvm_1_1_j_i_t_symbol_resolver" kindref="compound">JITSymbolResolver</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Unlike findSymbol, queries through this interface should return addresses for hidden symbols.</para>
+<para>This is of particular importance for the Orc JIT APIs, which support lazy compilation by breaking up modules: Each of those broken out modules must be able to resolve hidden symbols provided by the others. Clients writing memory managers for <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> can usually ignore this method.</para>
+<para>This method will be queried by <ref refid="classllvm_1_1_runtime_dyld" kindref="compound">RuntimeDyld</ref> when checking for previous definitions of common symbols. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="36" column="13" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="36" bodyend="38"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_linking_symbol_resolver_1aed415bd0788bee25eb78cc33069d698e" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LinkingSymbolResolver::anchor</definition>
+        <argsstring>() override</argsstring>
+        <name>anchor</name>
+        <qualifiedname>llvm::LinkingSymbolResolver::anchor</qualifiedname>
+        <reimplements refid="classllvm_1_1_legacy_j_i_t_symbol_resolver_1a36b1823ae48f68eb092ada5887e54953">anchor</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="43" column="8" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.cpp" bodystart="681" bodyend="681"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>llvm::JITSymbolResolver</label>
+        <link refid="classllvm_1_1_j_i_t_symbol_resolver"/>
+      </node>
+      <node id="2">
+        <label>llvm::LegacyJITSymbolResolver</label>
+        <link refid="classllvm_1_1_legacy_j_i_t_symbol_resolver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::LinkingSymbolResolver</label>
+        <link refid="classllvm_1_1_linking_symbol_resolver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>llvm::JITSymbolResolver</label>
+        <link refid="classllvm_1_1_j_i_t_symbol_resolver"/>
+      </node>
+      <node id="2">
+        <label>llvm::LegacyJITSymbolResolver</label>
+        <link refid="classllvm_1_1_legacy_j_i_t_symbol_resolver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::LinkingSymbolResolver</label>
+        <link refid="classllvm_1_1_linking_symbol_resolver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib/ExecutionEngine/MCJIT/MCJIT.h" line="27" column="1" bodyfile="lib/ExecutionEngine/MCJIT/MCJIT.h" bodystart="27" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_j_i_t_symbol_resolver_1a338af39f9777578922ab4764ac5502f5" prot="public" virt="virtual"><scope>llvm::LinkingSymbolResolver</scope><name>allowsZeroSymbols</name></member>
+      <member refid="classllvm_1_1_linking_symbol_resolver_1aed415bd0788bee25eb78cc33069d698e" prot="private" virt="virtual"><scope>llvm::LinkingSymbolResolver</scope><name>anchor</name></member>
+      <member refid="classllvm_1_1_linking_symbol_resolver_1a84eb1f68f3f447c671a66d52848b0e0c" prot="private" virt="non-virtual"><scope>llvm::LinkingSymbolResolver</scope><name>ClientResolver</name></member>
+      <member refid="classllvm_1_1_linking_symbol_resolver_1a3acbc4aeeddc8e52c6b69854432f211c" prot="public" virt="virtual"><scope>llvm::LinkingSymbolResolver</scope><name>findSymbol</name></member>
+      <member refid="classllvm_1_1_linking_symbol_resolver_1a6902252429e09a9d391dd020f8d91e96" prot="public" virt="virtual"><scope>llvm::LinkingSymbolResolver</scope><name>findSymbolInLogicalDylib</name></member>
+      <member refid="classllvm_1_1_legacy_j_i_t_symbol_resolver_1a70654ce07c092ce4e460bb98d10319f6" prot="public" virt="virtual"><scope>llvm::LinkingSymbolResolver</scope><name>getResponsibilitySet</name></member>
+      <member refid="classllvm_1_1_linking_symbol_resolver_1a2bb409bf96817ad9f3986efe65a74524" prot="public" virt="non-virtual"><scope>llvm::LinkingSymbolResolver</scope><name>LinkingSymbolResolver</name></member>
+      <member refid="classllvm_1_1_legacy_j_i_t_symbol_resolver_1aadf85c83250f0a519c4e6c498dd91a15" prot="public" virt="virtual"><scope>llvm::LinkingSymbolResolver</scope><name>lookup</name></member>
+      <member refid="classllvm_1_1_j_i_t_symbol_resolver_1a40474784a8f731d0ad49f39774a11a2a" prot="public" virt="non-virtual"><scope>llvm::LinkingSymbolResolver</scope><name>LookupResult</name></member>
+      <member refid="classllvm_1_1_j_i_t_symbol_resolver_1a487abfdc466598f156d5398ae986c6f9" prot="public" virt="non-virtual"><scope>llvm::LinkingSymbolResolver</scope><name>LookupSet</name></member>
+      <member refid="classllvm_1_1_j_i_t_symbol_resolver_1a01f534cbe65344148ec2986691ff632a" prot="public" virt="non-virtual"><scope>llvm::LinkingSymbolResolver</scope><name>OnResolvedFunction</name></member>
+      <member refid="classllvm_1_1_linking_symbol_resolver_1a3ed92c16c4b6fb69009f2fb699ed9283" prot="private" virt="non-virtual"><scope>llvm::LinkingSymbolResolver</scope><name>ParentEngine</name></member>
+      <member refid="classllvm_1_1_j_i_t_symbol_resolver_1a23b07bed0b5e0fec6e9dfee153e899a3" prot="public" virt="virtual"><scope>llvm::LinkingSymbolResolver</scope><name>~JITSymbolResolver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

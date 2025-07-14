@@ -1,0 +1,1963 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_m_c_asm_parser" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>llvm::MCAsmParser</compoundname>
+    <derivedcompoundref refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser" prot="public" virt="non-virtual">anonymous_namespace{AsmParser.cpp}::AsmParser</derivedcompoundref>
+    <derivedcompoundref refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser" prot="public" virt="non-virtual">anonymous_namespace{MasmParser.cpp}::MasmParser</derivedcompoundref>
+    <includes refid="_m_c_asm_parser_8h" local="yes">llvm/MC/MCParser/MCAsmParser.h</includes>
+    <innerclass refid="structllvm_1_1_m_c_asm_parser_1_1_m_c_pending_error" prot="public">llvm::MCAsmParser::MCPendingError</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_m_c_asm_parser_1aa8ecac29af2004375ccba91a8527a251" prot="public" static="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref>(*)(<ref refid="classllvm_1_1_m_c_asm_parser_extension" kindref="compound">MCAsmParserExtension</ref> *, <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>, <ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref>)</type>
+        <definition>using llvm::MCAsmParser::DirectiveHandler =  bool (*)(MCAsmParserExtension*, StringRef, SMLoc)</definition>
+        <argsstring></argsstring>
+        <name>DirectiveHandler</name>
+        <qualifiedname>llvm::MCAsmParser::DirectiveHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="125" column="3" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_m_c_asm_parser_1a9ce3532c090e7b66928ff9a42dae508c" prot="public" static="no">
+        <type>std::pair&lt; <ref refid="classllvm_1_1_m_c_asm_parser_extension" kindref="compound">MCAsmParserExtension</ref> *, <ref refid="classllvm_1_1_m_c_asm_parser_1aa8ecac29af2004375ccba91a8527a251" kindref="member">DirectiveHandler</ref> &gt;</type>
+        <definition>using llvm::MCAsmParser::ExtensionDirectiveHandler = 
+      std::pair&lt;MCAsmParserExtension*, DirectiveHandler&gt;</definition>
+        <argsstring></argsstring>
+        <name>ExtensionDirectiveHandler</name>
+        <qualifiedname>llvm::MCAsmParser::ExtensionDirectiveHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="126" column="3" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_m_c_asm_parser_1ae53fc77de81f2e5b009b61c2b625f82d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_m_c_target_asm_parser" kindref="compound">MCTargetAsmParser</ref> *</type>
+        <definition>MCTargetAsmParser* llvm::MCAsmParser::TargetParser</definition>
+        <argsstring></argsstring>
+        <name>TargetParser</name>
+        <qualifiedname>llvm::MCAsmParser::TargetParser</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="136" column="21" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_m_c_asm_parser_1a7cdbb86564e6641120ab773fac6a62d4" prot="protected" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_m_c_asm_parser_1_1_m_c_pending_error" kindref="compound">MCPendingError</ref>, 0 &gt;</type>
+        <definition>SmallVector&lt;MCPendingError, 0&gt; llvm::MCAsmParser::PendingErrors</definition>
+        <argsstring></argsstring>
+        <name>PendingErrors</name>
+        <qualifiedname>llvm::MCAsmParser::PendingErrors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="141" column="15" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="141" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a189e6cc46ddc7ca69bddd7f1a757a736" compoundref="_m_c_asm_parser_8cpp" startline="116" endline="123">addErrorSuffix</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a47420f87b1401934de51a165550a7481" compoundref="_m_c_asm_parser_8h" startline="246" endline="246">clearPendingErrors</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1afe58695435b93e0599ed2f77e877a0aa" compoundref="_m_c_asm_parser_8cpp" startline="101" endline="114">Error</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a4947313871f8935468ae02f6621260c8" compoundref="_m_c_asm_parser_8h" startline="235" endline="235">hasPendingError</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a25158c234ca9e60f3976a36d7d6ef271" compoundref="_m_c_asm_parser_8h" startline="237" endline="244">printPendingErrors</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_asm_parser_1afad5b9aac74030a159903f3cf64c481c" prot="protected" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MCAsmParser::HadError</definition>
+        <argsstring></argsstring>
+        <name>HadError</name>
+        <qualifiedname>llvm::MCAsmParser::HadError</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Flag tracking whether any errors have been encountered. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="144" column="8" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="144" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a66d1a7fb69c6ee8e272ede2e29448a50" compoundref="_asm_parser_8cpp" startline="777" endline="826">anonymous_namespace{AsmParser.cpp}::AsmParser::AsmParser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a314e31f13f6e31ef75cced99a4e946c2" compoundref="_masm_parser_8cpp" startline="1090" endline="1119">anonymous_namespace{MasmParser.cpp}::MasmParser::MasmParser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a307a44ebfb83c5c16d6a0af1861547c1" compoundref="_asm_parser_8cpp" startline="862" endline="867">anonymous_namespace{AsmParser.cpp}::AsmParser::printError</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ac54c7247683fdbcce5c47cf186227d00" compoundref="_masm_parser_8cpp" startline="1156" endline="1161">anonymous_namespace{MasmParser.cpp}::MasmParser::printError</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1f9777a39f525bf9f8a85ce9d52cccd9" compoundref="_asm_parser_8cpp" startline="964" endline="1082">anonymous_namespace{AsmParser.cpp}::AsmParser::Run</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a46449244c1f2d4e4b2022d1126e7c5ab" compoundref="_masm_parser_8cpp" startline="1336" endline="1454">anonymous_namespace{MasmParser.cpp}::MasmParser::Run</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a47ed0042b8e6c36abcf883ba9efb975d" compoundref="_asm_parser_8cpp" startline="828" endline="837">anonymous_namespace{AsmParser.cpp}::AsmParser::~AsmParser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a3b475bb30badf7d39f82d088bc7e45aa" compoundref="_masm_parser_8cpp" startline="1121" endline="1128">anonymous_namespace{MasmParser.cpp}::MasmParser::~MasmParser</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_m_c_asm_parser_1a256770fb45edae64541efa7f31ea1d18" prot="protected" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MCAsmParser::ShowParsedOperands</definition>
+        <argsstring></argsstring>
+        <name>ShowParsedOperands</name>
+        <qualifiedname>llvm::MCAsmParser::ShowParsedOperands</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="146" column="8" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="146" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a6e4af5e4d650f5bec85b99dfe0fc4d04" compoundref="_m_c_asm_parser_8h" startline="176" endline="176">getShowParsedOperands</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1aa3cdd92e164e2004543e4a56811cbb2b" compoundref="_m_c_asm_parser_8h" startline="177" endline="177">setShowParsedOperands</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1af7b89d03df4325baa998c69d6ae8c95a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MCAsmParser::MCAsmParser</definition>
+        <argsstring>()</argsstring>
+        <name>MCAsmParser</name>
+        <qualifiedname>llvm::MCAsmParser::MCAsmParser</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="139" column="3"/>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1ace7ef596d65729ae610db919be806113" compoundref="_m_c_asm_parser_8h" startline="161" endline="163">getLexer</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a6cafc2281e28c0a263e484d4ed280d36">MCAsmParser</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a74666f4edd91bcb2d1d86e222d53ba23">operator=</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a6cafc2281e28c0a263e484d4ed280d36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MCAsmParser::MCAsmParser</definition>
+        <argsstring>(const MCAsmParser &amp;)=delete</argsstring>
+        <name>MCAsmParser</name>
+        <qualifiedname>llvm::MCAsmParser::MCAsmParser</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_asm_parser" kindref="compound">MCAsmParser</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="149" column="3"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1af7b89d03df4325baa998c69d6ae8c95a">MCAsmParser</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a74666f4edd91bcb2d1d86e222d53ba23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_m_c_asm_parser" kindref="compound">MCAsmParser</ref> &amp;</type>
+        <definition>MCAsmParser &amp; llvm::MCAsmParser::operator=</definition>
+        <argsstring>(const MCAsmParser &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::MCAsmParser::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_asm_parser" kindref="compound">MCAsmParser</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="150" column="15"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1af7b89d03df4325baa998c69d6ae8c95a">MCAsmParser</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1ac4ec749397fb66602fd7feadc0a444bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>MCAsmParser::~MCAsmParser</definition>
+        <argsstring>()</argsstring>
+        <name>~MCAsmParser</name>
+        <qualifiedname>llvm::MCAsmParser::~MCAsmParser</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="151" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1afd887f0964a96c5e02314deac1ac584f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::MCAsmParser::addDirectiveHandler</definition>
+        <argsstring>(StringRef Directive, ExtensionDirectiveHandler Handler)=0</argsstring>
+        <name>addDirectiveHandler</name>
+        <qualifiedname>llvm::MCAsmParser::addDirectiveHandler</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1ac4abe3da9de4f2f7293fec78bebf6e93">addDirectiveHandler</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ad89ebc499fe4187fb52f86729c44316d">addDirectiveHandler</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Directive</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_asm_parser_1a9ce3532c090e7b66928ff9a42dae508c" kindref="member">ExtensionDirectiveHandler</ref></type>
+          <declname>Handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="153" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1abd600bd726e3f0dc6745757b8ff99322" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::MCAsmParser::addAliasForDirective</definition>
+        <argsstring>(StringRef Directive, StringRef Alias)=0</argsstring>
+        <name>addAliasForDirective</name>
+        <qualifiedname>llvm::MCAsmParser::addAliasForDirective</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a9b3a355413b120f5a101863780e3c44a">addAliasForDirective</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a24dd12008c998554435cec558a45c26a">addAliasForDirective</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Directive</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="156" column="16"/>
+        <referencedby refid="classanonymous__namespace_02_mips_asm_parser_8cpp_03_1_1_mips_asm_parser_1a96cded7294d54537fbb8eb5a6148448a" compoundref="_mips_asm_parser_8cpp" startline="525" endline="570">anonymous_namespace{MipsAsmParser.cpp}::MipsAsmParser::MipsAsmParser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_system_z_asm_parser_8cpp_03_1_1_system_z_asm_parser_1a25dceb5ece7a0cba343ac8f7341ce4f2" compoundref="_system_z_asm_parser_8cpp" startline="491" endline="502">anonymous_namespace{SystemZAsmParser.cpp}::SystemZAsmParser::SystemZAsmParser</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a592091f24541a576ac6294b097a4061d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+        <definition>virtual SourceMgr &amp; llvm::MCAsmParser::getSourceManager</definition>
+        <argsstring>()=0</argsstring>
+        <name>getSourceManager</name>
+        <qualifiedname>llvm::MCAsmParser::getSourceManager</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1aeeeb1b807d25ed0a194d15135330796f">getSourceManager</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1af3cad9372a815b281af642700fff1fbc">getSourceManager</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="158" column="21"/>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1a0401ba9b53470dbdefa8e78d8b344e5d" compoundref="_m_c_asm_parser_extension_8h" startline="66" endline="66">llvm::MCAsmParserExtension::getSourceManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1aa4e7ba9b1dd10c4262ff498f9a7dd397" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classllvm_1_1_m_c_asm_lexer" kindref="compound">MCAsmLexer</ref> &amp;</type>
+        <definition>virtual MCAsmLexer &amp; llvm::MCAsmParser::getLexer</definition>
+        <argsstring>()=0</argsstring>
+        <name>getLexer</name>
+        <qualifiedname>llvm::MCAsmParser::getLexer</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a33ddf50b4cf84a930050c2e3affa6190">getLexer</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ad17ba7a1f3ebadc9d347d00f9d910c14">getLexer</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="160" column="22"/>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1afe58695435b93e0599ed2f77e877a0aa" compoundref="_m_c_asm_parser_8cpp" startline="101" endline="114">Error</referencedby>
+        <referencedby refid="_a_m_d_kernel_code_t_utils_8cpp_1a6c0aead93728457ceebf342312b92807" compoundref="_a_m_d_kernel_code_t_utils_8cpp" startline="285" endline="299">expectAbsExpression</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1ace7ef596d65729ae610db919be806113" compoundref="_m_c_asm_parser_8h" startline="161" endline="163">getLexer</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1afba734fed57c0c0343c2f8e096ce3c16" compoundref="_m_c_asm_parser_extension_8h" startline="56" endline="56">llvm::MCAsmParserExtension::getLexer</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" compoundref="_m_c_asm_parser_8cpp" startline="40" endline="42">getTok</referencedby>
+        <referencedby refid="_a_m_d_kernel_code_t_utils_8cpp_1a7a374b13bc9d10c9298dd591ee50fc82" compoundref="_a_m_d_kernel_code_t_utils_8cpp" startline="323" endline="336">parseExpr</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1aca3b32b0f673fcda41b604540f49a4f9" compoundref="_m_c_asm_parser_8cpp" startline="97" endline="99">TokError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1ace7ef596d65729ae610db919be806113" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_asm_lexer" kindref="compound">MCAsmLexer</ref> &amp;</type>
+        <definition>const MCAsmLexer &amp; llvm::MCAsmParser::getLexer</definition>
+        <argsstring>() const</argsstring>
+        <name>getLexer</name>
+        <qualifiedname>llvm::MCAsmParser::getLexer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="161" column="20" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="161" bodyend="163"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1aa4e7ba9b1dd10c4262ff498f9a7dd397">getLexer</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1af7b89d03df4325baa998c69d6ae8c95a">MCAsmParser</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1af5501a0543911b575ec50e456ee228ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref> &amp;</type>
+        <definition>virtual MCContext &amp; llvm::MCAsmParser::getContext</definition>
+        <argsstring>()=0</argsstring>
+        <name>getContext</name>
+        <qualifiedname>llvm::MCAsmParser::getContext</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a054e4ac93e14d4f4c594f1b58a7c8e0a">getContext</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a8e18d4299230d21094f423f2fdc7fc72">getContext</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="165" column="21"/>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1aa7399d73f97fdf5bcf6b19f760264848" compoundref="_m_c_asm_parser_extension_8h" startline="54" endline="54">llvm::MCAsmParserExtension::getContext</referencedby>
+        <referencedby refid="namespacellvm_1_1_m_c_parser_utils_1a71d0c2aeb5e324a4a962bcfa85617f2c" compoundref="_asm_parser_8cpp" startline="6424" endline="6472">llvm::MCParserUtils::parseAssignmentExpression</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a40ca835fddf3ca47f6b9a7bd43d929f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classllvm_1_1_m_c_streamer" kindref="compound">MCStreamer</ref> &amp;</type>
+        <definition>virtual MCStreamer &amp; llvm::MCAsmParser::getStreamer</definition>
+        <argsstring>()=0</argsstring>
+        <name>getStreamer</name>
+        <qualifiedname>llvm::MCAsmParser::getStreamer</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a3af0d74b30ef9c0a4e4d1c07300c26d6">getStreamer</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a08041d421b04248dc8a9a193868fa850">getStreamer</reimplementedby>
+        <briefdescription>
+<para>Return the output streamer for the assembler. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="168" column="22"/>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1ad4802c6230c2d4e9ddf64155b05344a9" compoundref="_m_c_asm_parser_extension_8h" startline="67" endline="67">llvm::MCAsmParserExtension::getStreamer</referencedby>
+        <referencedby refid="namespacellvm_1_1_m_c_parser_utils_1a71d0c2aeb5e324a4a962bcfa85617f2c" compoundref="_asm_parser_8cpp" startline="6424" endline="6472">llvm::MCParserUtils::parseAssignmentExpression</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1afc6c7d84cb78a0d8586215b53b7bee33" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_m_c_target_asm_parser" kindref="compound">MCTargetAsmParser</ref> &amp;</type>
+        <definition>MCTargetAsmParser &amp; llvm::MCAsmParser::getTargetParser</definition>
+        <argsstring>() const</argsstring>
+        <name>getTargetParser</name>
+        <qualifiedname>llvm::MCAsmParser::getTargetParser</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="170" column="21" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="170" bodyend="170"/>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a252ed0bb8924351d3e4a6a6cd6dd938f" compoundref="_asm_parser_8cpp" startline="1084" endline="1091">anonymous_namespace{AsmParser.cpp}::AsmParser::checkForValidSection</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a10d982772a36fe8255164eced5dd71bf" compoundref="_masm_parser_8cpp" startline="1456" endline="1464">anonymous_namespace{MasmParser.cpp}::MasmParser::checkForValidSection</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1afaaaf7da6379fe3994da86bf71024ddc" compoundref="_asm_parser_8cpp" startline="2320" endline="2390">anonymous_namespace{AsmParser.cpp}::AsmParser::parseAndMatchAndEmitTargetInstruction</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1ac7fc5af218d2f17280c5b443dbe20838" compoundref="_asm_parser_8cpp" startline="1500" endline="1536">anonymous_namespace{AsmParser.cpp}::AsmParser::parseExpression</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a46e587fd477a44bb0b3c9e3689ff2f92" compoundref="_masm_parser_8cpp" startline="1887" endline="1901">anonymous_namespace{MasmParser.cpp}::MasmParser::parseExpression</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a6779c29e343b8e71d97734686a3eabd2" compoundref="_asm_parser_8cpp" startline="6029" endline="6298">anonymous_namespace{AsmParser.cpp}::AsmParser::parseMSInlineAsm</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ae48dce9460eac00f49a306f8d48fdf11" compoundref="_masm_parser_8cpp" startline="7340" endline="7599">anonymous_namespace{MasmParser.cpp}::MasmParser::parseMSInlineAsm</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a02bbdeea1375089f06a52747e919b4dc" compoundref="_asm_parser_8cpp" startline="1156" endline="1390">anonymous_namespace{AsmParser.cpp}::AsmParser::parsePrimaryExpr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a48e574342f9028f1077132c27267952b" compoundref="_masm_parser_8cpp" startline="1564" endline="1836">anonymous_namespace{MasmParser.cpp}::MasmParser::parsePrimaryExpr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a034b546ea133319ab2244f9bfa28ecae" compoundref="_asm_parser_8cpp" startline="1779" endline="2318">anonymous_namespace{AsmParser.cpp}::AsmParser::parseStatement</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1f9777a39f525bf9f8a85ce9d52cccd9" compoundref="_asm_parser_8cpp" startline="964" endline="1082">anonymous_namespace{AsmParser.cpp}::AsmParser::Run</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a46449244c1f2d4e4b2022d1126e7c5ab" compoundref="_masm_parser_8cpp" startline="1336" endline="1454">anonymous_namespace{MasmParser.cpp}::MasmParser::Run</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a57a5adf3db1aba1fc30809f73fc05c08" compoundref="_asm_parser_8cpp" startline="852" endline="860">anonymous_namespace{AsmParser.cpp}::AsmParser::Warning</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a08f88c883adc92a0b9eacbc5a4064d2b" compoundref="_masm_parser_8cpp" startline="1146" endline="1154">anonymous_namespace{MasmParser.cpp}::MasmParser::Warning</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1af473082d59d84b25a63d18be49ecb271" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MCAsmParser::setTargetParser</definition>
+        <argsstring>(MCTargetAsmParser &amp;P)</argsstring>
+        <name>setTargetParser</name>
+        <qualifiedname>llvm::MCAsmParser::setTargetParser</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_target_asm_parser" kindref="compound">MCTargetAsmParser</ref> &amp;</type>
+          <declname>P</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="171" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="34" bodyend="38"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a97e3b31312d2e3411622872cb2ac6109" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>virtual unsigned llvm::MCAsmParser::getAssemblerDialect</definition>
+        <argsstring>()</argsstring>
+        <name>getAssemblerDialect</name>
+        <qualifiedname>llvm::MCAsmParser::getAssemblerDialect</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1f4126089fcd9bbd3b8721c69567f847">getAssemblerDialect</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a2d473a254f569b1c1fdf6b1244cf8b38">getAssemblerDialect</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="173" column="20" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="173" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1af3cf81a517d41f1357dfbdaa6607940a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void llvm::MCAsmParser::setAssemblerDialect</definition>
+        <argsstring>(unsigned i)</argsstring>
+        <name>setAssemblerDialect</name>
+        <qualifiedname>llvm::MCAsmParser::setAssemblerDialect</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1c016ce9ac36c99065a1c51b817c8cad">setAssemblerDialect</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a18ee9263e29f8eec6f6a01be947f3a60">setAssemblerDialect</reimplementedby>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="174" column="16" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="174" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a6e4af5e4d650f5bec85b99dfe0fc4d04" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MCAsmParser::getShowParsedOperands</definition>
+        <argsstring>() const</argsstring>
+        <name>getShowParsedOperands</name>
+        <qualifiedname>llvm::MCAsmParser::getShowParsedOperands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="176" column="8" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="176" bodyend="176"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a256770fb45edae64541efa7f31ea1d18" compoundref="_m_c_asm_parser_8h" startline="146">ShowParsedOperands</references>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1afaaaf7da6379fe3994da86bf71024ddc" compoundref="_asm_parser_8cpp" startline="2320" endline="2390">anonymous_namespace{AsmParser.cpp}::AsmParser::parseAndMatchAndEmitTargetInstruction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1aa3cdd92e164e2004543e4a56811cbb2b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::MCAsmParser::setShowParsedOperands</definition>
+        <argsstring>(bool Value)</argsstring>
+        <name>setShowParsedOperands</name>
+        <qualifiedname>llvm::MCAsmParser::setShowParsedOperands</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="177" column="8" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="177" bodyend="177"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a256770fb45edae64541efa7f31ea1d18" compoundref="_m_c_asm_parser_8h" startline="146">ShowParsedOperands</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1ab1b2fb0acb2550076d5dcab1039b2bb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::Run</definition>
+        <argsstring>(bool NoInitialTextSection, bool NoFinalize=false)=0</argsstring>
+        <name>Run</name>
+        <qualifiedname>llvm::MCAsmParser::Run</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1f9777a39f525bf9f8a85ce9d52cccd9">Run</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a46449244c1f2d4e4b2022d1126e7c5ab">Run</reimplementedby>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>NoInitialTextSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>NoFinalize</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Run the parser on the input source buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="180" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1af57aeac4a24de62226147e49b62f34b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::MCAsmParser::setParsingMSInlineAsm</definition>
+        <argsstring>(bool V)=0</argsstring>
+        <name>setParsingMSInlineAsm</name>
+        <qualifiedname>llvm::MCAsmParser::setParsingMSInlineAsm</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a59ef0d658df455dcf1c37cce90712788">setParsingMSInlineAsm</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ac13733656a25cdd26131630f2ec1d1b5">setParsingMSInlineAsm</reimplementedby>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="182" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a81bd71316fbce01f2e8055dcc8fdb062" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::isParsingMSInlineAsm</definition>
+        <argsstring>()=0</argsstring>
+        <name>isParsingMSInlineAsm</name>
+        <qualifiedname>llvm::MCAsmParser::isParsingMSInlineAsm</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1aaca8544a6b02c09c6fadee9c549fd0ec">isParsingMSInlineAsm</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a42c43698f83b23ab4f8ba2f5e350f38d">isParsingMSInlineAsm</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="183" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a6fa72434836eef7654ebee54ca467945" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::discardLTOSymbol</definition>
+        <argsstring>(StringRef) const</argsstring>
+        <name>discardLTOSymbol</name>
+        <qualifiedname>llvm::MCAsmParser::discardLTOSymbol</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1abfd6ef18b9ebd50358b7d4c3ddfa2f9e">discardLTOSymbol</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="185" column="16" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="185" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a67ead6c5858726cf466bfa5ded2b5ab7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::isParsingMasm</definition>
+        <argsstring>() const</argsstring>
+        <name>isParsingMasm</name>
+        <qualifiedname>llvm::MCAsmParser::isParsingMasm</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a9d49e00ff845f0165f228a3484de058e">isParsingMasm</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="187" column="16" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="187" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a30603fa16428eeb671da88714c6ef874" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::defineMacro</definition>
+        <argsstring>(StringRef Name, StringRef Value)</argsstring>
+        <name>defineMacro</name>
+        <qualifiedname>llvm::MCAsmParser::defineMacro</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ae39bffc615ea979f44a25c730094bbb4">defineMacro</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="189" column="16" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="189" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1add0e53028d15679b96b8f66849b4e971" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::lookUpField</definition>
+        <argsstring>(StringRef Name, AsmFieldInfo &amp;Info) const</argsstring>
+        <name>lookUpField</name>
+        <qualifiedname>llvm::MCAsmParser::lookUpField</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a84d778f1ca3df360a0a0e09cef5930f1">lookUpField</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_asm_field_info" kindref="compound">AsmFieldInfo</ref> &amp;</type>
+          <declname>Info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="191" column="16" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="191" bodyend="193"/>
+        <references refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" compoundref="_c_s_e_info_8cpp" startline="27">Info</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1ad75338a56ab81e83583aafaf2f2f1246" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::lookUpField</definition>
+        <argsstring>(StringRef Base, StringRef Member, AsmFieldInfo &amp;Info) const</argsstring>
+        <name>lookUpField</name>
+        <qualifiedname>llvm::MCAsmParser::lookUpField</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a6bb608aba526021fe280a23f84ee7754">lookUpField</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Base</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Member</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_asm_field_info" kindref="compound">AsmFieldInfo</ref> &amp;</type>
+          <declname>Info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="194" column="16" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="194" bodyend="197"/>
+        <references refid="namespacellvm_1_1sampleprof_1a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41" compoundref="_discriminator_8h" startline="58">llvm::sampleprof::Base</references>
+        <references refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" compoundref="_c_s_e_info_8cpp" startline="27">Info</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1ac9dea6fd0f51f338ae588d9cef3fa6e8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::lookUpType</definition>
+        <argsstring>(StringRef Name, AsmTypeInfo &amp;Info) const</argsstring>
+        <name>lookUpType</name>
+        <qualifiedname>llvm::MCAsmParser::lookUpType</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ae2e029f6e72e5147a329b0a221f38fbf">lookUpType</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_asm_type_info" kindref="compound">AsmTypeInfo</ref> &amp;</type>
+          <declname>Info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="199" column="16" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="199" bodyend="201"/>
+        <references refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" compoundref="_c_s_e_info_8cpp" startline="27">Info</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1afc2a0f9ef9ceee382a5644dedf7e7d7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::parseMSInlineAsm</definition>
+        <argsstring>(std::string &amp;AsmString, unsigned &amp;NumOutputs, unsigned &amp;NumInputs, SmallVectorImpl&lt; std::pair&lt; void *, bool &gt; &gt; &amp;OpDecls, SmallVectorImpl&lt; std::string &gt; &amp;Constraints, SmallVectorImpl&lt; std::string &gt; &amp;Clobbers, const MCInstrInfo *MII, MCInstPrinter *IP, MCAsmParserSemaCallback &amp;SI)=0</argsstring>
+        <name>parseMSInlineAsm</name>
+        <qualifiedname>llvm::MCAsmParser::parseMSInlineAsm</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a6779c29e343b8e71d97734686a3eabd2">parseMSInlineAsm</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ae48dce9460eac00f49a306f8d48fdf11">parseMSInlineAsm</reimplementedby>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>AsmString</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>NumOutputs</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>NumInputs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; std::pair&lt; void *, <ref refid="classbool" kindref="compound">bool</ref> &gt; &gt; &amp;</type>
+          <declname>OpDecls</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; std::string &gt; &amp;</type>
+          <declname>Constraints</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; std::string &gt; &amp;</type>
+          <declname>Clobbers</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_instr_info" kindref="compound">MCInstrInfo</ref> *</type>
+          <declname>MII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_inst_printer" kindref="compound">MCInstPrinter</ref> *</type>
+          <declname>IP</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_asm_parser_sema_callback" kindref="compound">MCAsmParserSemaCallback</ref> &amp;</type>
+          <declname>SI</declname>
+        </param>
+        <briefdescription>
+<para>Parse MS-style inline assembly. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="204" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a51860cb8160776d84628d48f53e26a62" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::MCAsmParser::Note</definition>
+        <argsstring>(SMLoc L, const Twine &amp;Msg, SMRange Range=std::nullopt)=0</argsstring>
+        <name>Note</name>
+        <qualifiedname>llvm::MCAsmParser::Note</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1afd8b63a81cb9bf1891795b81d34b6972">Note</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a9203278cccf22c7dafdfe75efa742ff4">Note</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_range" kindref="compound">SMRange</ref></type>
+          <declname>Range</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Emit a note at the location <computeroutput>L</computeroutput>, with the message <computeroutput>Msg</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="212" column="16"/>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1aa825e0d4496e84cdd4b6d8efac571952" compoundref="_m_c_asm_parser_extension_8h" startline="77" endline="79">llvm::MCAsmParserExtension::Note</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1ab0573f4b31f141fba5ffffe9b0a53688" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::Warning</definition>
+        <argsstring>(SMLoc L, const Twine &amp;Msg, SMRange Range=std::nullopt)=0</argsstring>
+        <name>Warning</name>
+        <qualifiedname>llvm::MCAsmParser::Warning</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a57a5adf3db1aba1fc30809f73fc05c08">Warning</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a08f88c883adc92a0b9eacbc5a4064d2b">Warning</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_range" kindref="compound">SMRange</ref></type>
+          <declname>Range</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Emit a warning at the location <computeroutput>L</computeroutput>, with the message <computeroutput>Msg</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The return value is true, if warnings are fatal. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="218" column="16"/>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1a693fb5fe74d5bc374102bba3a1dc6431" compoundref="_m_c_asm_parser_extension_8h" startline="69" endline="71">llvm::MCAsmParserExtension::Warning</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1afe58695435b93e0599ed2f77e877a0aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::Error</definition>
+        <argsstring>(SMLoc L, const Twine &amp;Msg, SMRange Range=std::nullopt)</argsstring>
+        <name>Error</name>
+        <qualifiedname>llvm::MCAsmParser::Error</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_range" kindref="compound">SMRange</ref></type>
+          <declname>Range</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Return an error at the location <computeroutput>L</computeroutput>, with the message <computeroutput>Msg</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This may be modified before being emitted.</para>
+<para><simplesect kind="return"><para>The return value is always true, as an idiomatic convenience to clients. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="226" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="101" bodyend="114"/>
+        <references refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a1a7046e38c86395ad911f3f0d86b1012" compoundref="_m_c_asm_macro_8h" startline="25">llvm::AsmToken::Error</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1aa4e7ba9b1dd10c4262ff498f9a7dd397">getLexer</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" compoundref="_m_c_asm_parser_8cpp" startline="40" endline="42">getTok</references>
+        <references refid="classllvm_1_1_m_c_asm_lexer_1ac53eb41641168379037fde8952d5f01e" compoundref="_m_c_asm_lexer_8h" startline="79" endline="91">llvm::MCAsmLexer::Lex</references>
+        <references refid="structllvm_1_1_m_c_asm_parser_1_1_m_c_pending_error_1a1def4a048e32d16864473e0f6fe82dec" compoundref="_m_c_asm_parser_8h" startline="130">llvm::MCAsmParser::MCPendingError::Loc</references>
+        <references refid="structllvm_1_1_m_c_asm_parser_1_1_m_c_pending_error_1a99b6f8e4fcb44f2bd4017e71685fbca0" compoundref="_m_c_asm_parser_8h" startline="131">llvm::MCAsmParser::MCPendingError::Msg</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a7cdbb86564e6641120ab773fac6a62d4" compoundref="_m_c_asm_parser_8h" startline="141">PendingErrors</references>
+        <references refid="structllvm_1_1_m_c_asm_parser_1_1_m_c_pending_error_1ad6be755a547950c83558d03f02993795" compoundref="_m_c_asm_parser_8h" startline="132">llvm::MCAsmParser::MCPendingError::Range</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <references refid="classllvm_1_1_twine_1ae2cc7378ca67e19c45648f7800686933" compoundref="_twine_8cpp" startline="32" endline="35">llvm::Twine::toVector</references>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1ab34712e7b8a90ef1894fd6a3b483179f" compoundref="_m_c_asm_parser_extension_8h" startline="73" endline="75">llvm::MCAsmParserExtension::Error</referencedby>
+        <referencedby refid="namespacellvm_1_1_m_c_parser_utils_1a71d0c2aeb5e324a4a962bcfa85617f2c" compoundref="_asm_parser_8cpp" startline="6424" endline="6472">llvm::MCParserUtils::parseAssignmentExpression</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a198ec1b8458ce38de9ad18a6f483c278" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::printError</definition>
+        <argsstring>(SMLoc L, const Twine &amp;Msg, SMRange Range=std::nullopt)=0</argsstring>
+        <name>printError</name>
+        <qualifiedname>llvm::MCAsmParser::printError</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a307a44ebfb83c5c16d6a0af1861547c1">printError</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ac54c7247683fdbcce5c47cf186227d00">printError</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_range" kindref="compound">SMRange</ref></type>
+          <declname>Range</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Emit an error at the location <computeroutput>L</computeroutput>, with the message <computeroutput>Msg</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The return value is always true, as an idiomatic convenience to clients. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="232" column="16"/>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a25158c234ca9e60f3976a36d7d6ef271" compoundref="_m_c_asm_parser_8h" startline="237" endline="244">printPendingErrors</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a4947313871f8935468ae02f6621260c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MCAsmParser::hasPendingError</definition>
+        <argsstring>()</argsstring>
+        <name>hasPendingError</name>
+        <qualifiedname>llvm::MCAsmParser::hasPendingError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="235" column="8" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="235" bodyend="235"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a7cdbb86564e6641120ab773fac6a62d4" compoundref="_m_c_asm_parser_8h" startline="141">PendingErrors</references>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1afaaaf7da6379fe3994da86bf71024ddc" compoundref="_asm_parser_8cpp" startline="2320" endline="2390">anonymous_namespace{AsmParser.cpp}::AsmParser::parseAndMatchAndEmitTargetInstruction</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a6779c29e343b8e71d97734686a3eabd2" compoundref="_asm_parser_8cpp" startline="6029" endline="6298">anonymous_namespace{AsmParser.cpp}::AsmParser::parseMSInlineAsm</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ae48dce9460eac00f49a306f8d48fdf11" compoundref="_masm_parser_8cpp" startline="7340" endline="7599">anonymous_namespace{MasmParser.cpp}::MasmParser::parseMSInlineAsm</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a034b546ea133319ab2244f9bfa28ecae" compoundref="_asm_parser_8cpp" startline="1779" endline="2318">anonymous_namespace{AsmParser.cpp}::AsmParser::parseStatement</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_h_l_a_s_m_asm_parser_1a7ab8a603879e4abd860791912451799c" compoundref="_asm_parser_8cpp" startline="6361" endline="6419">anonymous_namespace{AsmParser.cpp}::HLASMAsmParser::parseStatement</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1f9777a39f525bf9f8a85ce9d52cccd9" compoundref="_asm_parser_8cpp" startline="964" endline="1082">anonymous_namespace{AsmParser.cpp}::AsmParser::Run</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a46449244c1f2d4e4b2022d1126e7c5ab" compoundref="_masm_parser_8cpp" startline="1336" endline="1454">anonymous_namespace{MasmParser.cpp}::MasmParser::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a25158c234ca9e60f3976a36d7d6ef271" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MCAsmParser::printPendingErrors</definition>
+        <argsstring>()</argsstring>
+        <name>printPendingErrors</name>
+        <qualifiedname>llvm::MCAsmParser::printPendingErrors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="237" column="8" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="237" bodyend="244"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a7cdbb86564e6641120ab773fac6a62d4" compoundref="_m_c_asm_parser_8h" startline="141">PendingErrors</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a198ec1b8458ce38de9ad18a6f483c278">printError</references>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1afd8b63a81cb9bf1891795b81d34b6972" compoundref="_asm_parser_8cpp" startline="846" endline="850">anonymous_namespace{AsmParser.cpp}::AsmParser::Note</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a9203278cccf22c7dafdfe75efa742ff4" compoundref="_masm_parser_8cpp" startline="1140" endline="1144">anonymous_namespace{MasmParser.cpp}::MasmParser::Note</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a6779c29e343b8e71d97734686a3eabd2" compoundref="_asm_parser_8cpp" startline="6029" endline="6298">anonymous_namespace{AsmParser.cpp}::AsmParser::parseMSInlineAsm</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ae48dce9460eac00f49a306f8d48fdf11" compoundref="_masm_parser_8cpp" startline="7340" endline="7599">anonymous_namespace{MasmParser.cpp}::MasmParser::parseMSInlineAsm</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1f9777a39f525bf9f8a85ce9d52cccd9" compoundref="_asm_parser_8cpp" startline="964" endline="1082">anonymous_namespace{AsmParser.cpp}::AsmParser::Run</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a46449244c1f2d4e4b2022d1126e7c5ab" compoundref="_masm_parser_8cpp" startline="1336" endline="1454">anonymous_namespace{MasmParser.cpp}::MasmParser::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a47420f87b1401934de51a165550a7481" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::MCAsmParser::clearPendingErrors</definition>
+        <argsstring>()</argsstring>
+        <name>clearPendingErrors</name>
+        <qualifiedname>llvm::MCAsmParser::clearPendingErrors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="246" column="8" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="246" bodyend="246"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a7cdbb86564e6641120ab773fac6a62d4" compoundref="_m_c_asm_parser_8h" startline="141">PendingErrors</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a189e6cc46ddc7ca69bddd7f1a757a736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::addErrorSuffix</definition>
+        <argsstring>(const Twine &amp;Suffix)</argsstring>
+        <name>addErrorSuffix</name>
+        <qualifiedname>llvm::MCAsmParser::addErrorSuffix</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Suffix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="248" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="116" bodyend="123"/>
+        <references refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a1a7046e38c86395ad911f3f0d86b1012" compoundref="_m_c_asm_macro_8h" startline="25">llvm::AsmToken::Error</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" compoundref="_m_c_asm_parser_8cpp" startline="40" endline="42">getTok</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a922370d34654382dd4ff2b8a1a9c50d6">Lex</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a7cdbb86564e6641120ab773fac6a62d4" compoundref="_m_c_asm_parser_8h" startline="141">PendingErrors</references>
+        <references refid="classllvm_1_1_twine_1ae2cc7378ca67e19c45648f7800686933" compoundref="_twine_8cpp" startline="32" endline="35">llvm::Twine::toVector</references>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1a3fa87f63e16161bde91f88f7d4484c8a" compoundref="_m_c_asm_parser_extension_8h" startline="111" endline="113">llvm::MCAsmParserExtension::addErrorSuffix</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a922370d34654382dd4ff2b8a1a9c50d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_asm_token" kindref="compound">AsmToken</ref> &amp;</type>
+        <definition>virtual const AsmToken &amp; llvm::MCAsmParser::Lex</definition>
+        <argsstring>()=0</argsstring>
+        <name>Lex</name>
+        <qualifiedname>llvm::MCAsmParser::Lex</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1af3d4af20be9f94cbdad904d45cafbefa">Lex</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a3606169bb499457fe3acc26441161166">Lex</reimplementedby>
+        <briefdescription>
+<para>Get the next <ref refid="classllvm_1_1_asm_token" kindref="compound">AsmToken</ref> in the stream, possibly handling file inclusion first. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="252" column="26"/>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a189e6cc46ddc7ca69bddd7f1a757a736" compoundref="_m_c_asm_parser_8cpp" startline="116" endline="123">addErrorSuffix</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" compoundref="_m_c_asm_parser_extension_8h" startline="85" endline="85">llvm::MCAsmParserExtension::Lex</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a7b442abcc8f942ce12304975367e1fa2" compoundref="_m_c_asm_parser_8cpp" startline="49" endline="54">parseEOL</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1adbf0064a97b1ecde598fee1ed3d8cf52" compoundref="_m_c_asm_parser_8cpp" startline="56" endline="61">parseEOL</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1ae70fbaacac6a12bfc3904b3e1af622bb" compoundref="_m_c_asm_parser_8cpp" startline="144" endline="161">parseGNUAttribute</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a8d9acbc65c25f0330cd2d8d6baded980" compoundref="_m_c_asm_parser_8cpp" startline="72" endline="78">parseIntToken</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a137818cb489ba17770a17ee9eb6f269e" compoundref="_m_c_asm_parser_8cpp" startline="63" endline="70">parseToken</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_asm_token" kindref="compound">AsmToken</ref> &amp;</type>
+        <definition>const AsmToken &amp; MCAsmParser::getTok</definition>
+        <argsstring>() const</argsstring>
+        <name>getTok</name>
+        <qualifiedname>llvm::MCAsmParser::getTok</qualifiedname>
+        <briefdescription>
+<para>Get the current <ref refid="classllvm_1_1_asm_token" kindref="compound">AsmToken</ref> from the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="255" column="18" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="40" bodyend="42"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1aa4e7ba9b1dd10c4262ff498f9a7dd397">getLexer</references>
+        <references refid="classllvm_1_1_m_c_asm_lexer_1aacd3bad41979d112344478f44007a551" compoundref="_m_c_asm_lexer_8h" startline="106" endline="108">llvm::MCAsmLexer::getTok</references>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a189e6cc46ddc7ca69bddd7f1a757a736" compoundref="_m_c_asm_parser_8cpp" startline="116" endline="123">addErrorSuffix</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a3030316a1ebebb07ea5bfef630daa790" compoundref="_m_c_asm_parser_8cpp" startline="87" endline="89">check</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a252ed0bb8924351d3e4a6a6cd6dd938f" compoundref="_asm_parser_8cpp" startline="1084" endline="1091">anonymous_namespace{AsmParser.cpp}::AsmParser::checkForValidSection</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a10d982772a36fe8255164eced5dd71bf" compoundref="_masm_parser_8cpp" startline="1456" endline="1464">anonymous_namespace{MasmParser.cpp}::MasmParser::checkForValidSection</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1afe58695435b93e0599ed2f77e877a0aa" compoundref="_m_c_asm_parser_8cpp" startline="101" endline="114">Error</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1a4235d087dc899291be41be9db4d811a9" compoundref="_m_c_asm_parser_extension_8h" startline="86" endline="86">llvm::MCAsmParserExtension::getTok</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1af3d4af20be9f94cbdad904d45cafbefa" compoundref="_asm_parser_8cpp" startline="913" endline="945">anonymous_namespace{AsmParser.cpp}::AsmParser::Lex</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1afa801ffa70e7cd238829a01fa92d71c4" compoundref="_masm_parser_8cpp" startline="1227" endline="1288">anonymous_namespace{MasmParser.cpp}::MasmParser::Lex</referencedby>
+        <referencedby refid="namespacellvm_1_1_m_c_parser_utils_1a71d0c2aeb5e324a4a962bcfa85617f2c" compoundref="_asm_parser_8cpp" startline="6424" endline="6472">llvm::MCParserUtils::parseAssignmentExpression</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a7b442abcc8f942ce12304975367e1fa2" compoundref="_m_c_asm_parser_8cpp" startline="49" endline="54">parseEOL</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1adbf0064a97b1ecde598fee1ed3d8cf52" compoundref="_m_c_asm_parser_8cpp" startline="56" endline="61">parseEOL</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1ac7fc5af218d2f17280c5b443dbe20838" compoundref="_asm_parser_8cpp" startline="1500" endline="1536">anonymous_namespace{AsmParser.cpp}::AsmParser::parseExpression</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1ae70fbaacac6a12bfc3904b3e1af622bb" compoundref="_m_c_asm_parser_8cpp" startline="144" endline="161">parseGNUAttribute</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1aa91d3c1b093e3561b948794724961f4b" compoundref="_asm_parser_8cpp" startline="2989" endline="3027">anonymous_namespace{AsmParser.cpp}::AsmParser::parseIdentifier</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1af6dea9845d70ac952115bdbe378dbea1" compoundref="_masm_parser_8cpp" startline="3331" endline="3379">anonymous_namespace{MasmParser.cpp}::MasmParser::parseIdentifier</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a8d9acbc65c25f0330cd2d8d6baded980" compoundref="_m_c_asm_parser_8cpp" startline="72" endline="78">parseIntToken</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a7fe5bbdb7d87187478d77f3a1d5a2a93" compoundref="_m_c_asm_parser_8cpp" startline="80" endline="85">parseOptionalToken</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1c8f1c479ef06f41b1f2010afd80b43a" compoundref="_asm_parser_8cpp" startline="1543" endline="1561">anonymous_namespace{AsmParser.cpp}::AsmParser::parseParenExprOfDepth</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a61115ff1360e15d4f0eb3f12d757d7c1" compoundref="_masm_parser_8cpp" startline="1908" endline="1926">anonymous_namespace{MasmParser.cpp}::MasmParser::parseParenExprOfDepth</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a02bbdeea1375089f06a52747e919b4dc" compoundref="_asm_parser_8cpp" startline="1156" endline="1390">anonymous_namespace{AsmParser.cpp}::AsmParser::parsePrimaryExpr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a48e574342f9028f1077132c27267952b" compoundref="_masm_parser_8cpp" startline="1564" endline="1836">anonymous_namespace{MasmParser.cpp}::MasmParser::parsePrimaryExpr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1abdaa8ae9b3e01099946066f89a8e10ad" compoundref="_asm_parser_8cpp" startline="3271" endline="3311">anonymous_namespace{AsmParser.cpp}::AsmParser::parseRealValue</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a1c3ac00eab4ed0328bc8c8942957c83b" compoundref="_masm_parser_8cpp" startline="3813" endline="3873">anonymous_namespace{MasmParser.cpp}::MasmParser::parseRealValue</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a034b546ea133319ab2244f9bfa28ecae" compoundref="_asm_parser_8cpp" startline="1779" endline="2318">anonymous_namespace{AsmParser.cpp}::AsmParser::parseStatement</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_h_l_a_s_m_asm_parser_1a7ab8a603879e4abd860791912451799c" compoundref="_asm_parser_8cpp" startline="6361" endline="6419">anonymous_namespace{AsmParser.cpp}::HLASMAsmParser::parseStatement</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a137818cb489ba17770a17ee9eb6f269e" compoundref="_m_c_asm_parser_8cpp" startline="63" endline="70">parseToken</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1adfe743277c072b490a3f6bfc7dd593d1" compoundref="_m_c_asm_parser_8cpp" startline="44" endline="47">parseTokenLoc</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1f9777a39f525bf9f8a85ce9d52cccd9" compoundref="_asm_parser_8cpp" startline="964" endline="1082">anonymous_namespace{AsmParser.cpp}::AsmParser::Run</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a46449244c1f2d4e4b2022d1126e7c5ab" compoundref="_masm_parser_8cpp" startline="1336" endline="1454">anonymous_namespace{MasmParser.cpp}::MasmParser::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1aca3b32b0f673fcda41b604540f49a4f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::TokError</definition>
+        <argsstring>(const Twine &amp;Msg, SMRange Range=std::nullopt)</argsstring>
+        <name>TokError</name>
+        <qualifiedname>llvm::MCAsmParser::TokError</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_range" kindref="compound">SMRange</ref></type>
+          <declname>Range</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Report an error at the current lexer location. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="258" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="97" bodyend="99"/>
+        <references refid="namespacellvm_1ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd" compoundref="_with_color_8h" startline="34">llvm::Error</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1aa4e7ba9b1dd10c4262ff498f9a7dd397">getLexer</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <referencedby refid="namespacellvm_1_1_m_c_parser_utils_1a71d0c2aeb5e324a4a962bcfa85617f2c" compoundref="_asm_parser_8cpp" startline="6424" endline="6472">llvm::MCParserUtils::parseAssignmentExpression</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1ac7fc5af218d2f17280c5b443dbe20838" compoundref="_asm_parser_8cpp" startline="1500" endline="1536">anonymous_namespace{AsmParser.cpp}::AsmParser::parseExpression</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a8d9acbc65c25f0330cd2d8d6baded980" compoundref="_m_c_asm_parser_8cpp" startline="72" endline="78">parseIntToken</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a02bbdeea1375089f06a52747e919b4dc" compoundref="_asm_parser_8cpp" startline="1156" endline="1390">anonymous_namespace{AsmParser.cpp}::AsmParser::parsePrimaryExpr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a48e574342f9028f1077132c27267952b" compoundref="_masm_parser_8cpp" startline="1564" endline="1836">anonymous_namespace{MasmParser.cpp}::MasmParser::parsePrimaryExpr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1abdaa8ae9b3e01099946066f89a8e10ad" compoundref="_asm_parser_8cpp" startline="3271" endline="3311">anonymous_namespace{AsmParser.cpp}::AsmParser::parseRealValue</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a1c3ac00eab4ed0328bc8c8942957c83b" compoundref="_masm_parser_8cpp" startline="3813" endline="3873">anonymous_namespace{MasmParser.cpp}::MasmParser::parseRealValue</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a034b546ea133319ab2244f9bfa28ecae" compoundref="_asm_parser_8cpp" startline="1779" endline="2318">anonymous_namespace{AsmParser.cpp}::AsmParser::parseStatement</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" compoundref="_m_c_asm_parser_extension_8h" startline="81" endline="83">llvm::MCAsmParserExtension::TokError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1adfe743277c072b490a3f6bfc7dd593d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::parseTokenLoc</definition>
+        <argsstring>(SMLoc &amp;Loc)</argsstring>
+        <name>parseTokenLoc</name>
+        <qualifiedname>llvm::MCAsmParser::parseTokenLoc</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref> &amp;</type>
+          <declname>Loc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="260" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="44" bodyend="47"/>
+        <references refid="classllvm_1_1_asm_token_1a16611db1be4d04f03c570d9302504c04" compoundref="_m_c_asm_lexer_8cpp" startline="26" endline="28">llvm::AsmToken::getLoc</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" compoundref="_m_c_asm_parser_8cpp" startline="40" endline="42">getTok</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a137818cb489ba17770a17ee9eb6f269e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::parseToken</definition>
+        <argsstring>(AsmToken::TokenKind T, const Twine &amp;Msg=&quot;unexpected token&quot;)</argsstring>
+        <name>parseToken</name>
+        <qualifiedname>llvm::MCAsmParser::parseToken</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039" kindref="member">AsmToken::TokenKind</ref></type>
+          <declname>T</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+          <defval>&quot;unexpected token&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="261" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="63" bodyend="70"/>
+        <references refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ae10c5f59f330bfd15608e1dda213a98f" compoundref="_m_c_asm_macro_8h" startline="42">llvm::AsmToken::EndOfStatement</references>
+        <references refid="namespacellvm_1ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd" compoundref="_with_color_8h" startline="34">llvm::Error</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" compoundref="_m_c_asm_parser_8cpp" startline="40" endline="42">getTok</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a922370d34654382dd4ff2b8a1a9c50d6">Lex</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a7b442abcc8f942ce12304975367e1fa2" compoundref="_m_c_asm_parser_8cpp" startline="49" endline="54">parseEOL</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1ad264107ceef36c0f353085894c7c0c76" compoundref="_m_c_asm_parser_8h" startline="266" endline="266">parseComma</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a0796f036e832b4b5e10f6e31e77ca7c8" compoundref="_m_c_asm_parser_8cpp" startline="125" endline="137">parseMany</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a7fe5bbdb7d87187478d77f3a1d5a2a93" compoundref="_m_c_asm_parser_8cpp" startline="80" endline="85">parseOptionalToken</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a48e574342f9028f1077132c27267952b" compoundref="_masm_parser_8cpp" startline="1564" endline="1836">anonymous_namespace{MasmParser.cpp}::MasmParser::parsePrimaryExpr</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a709fe7ec3803940386b0588e9a1c6f02" compoundref="_m_c_asm_parser_8h" startline="267" endline="267">parseRParen</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1a554ce8cd5542f0ad063a7b0b1b68a140" compoundref="_m_c_asm_parser_extension_8h" startline="87" endline="90">llvm::MCAsmParserExtension::parseToken</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a7fe5bbdb7d87187478d77f3a1d5a2a93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::parseOptionalToken</definition>
+        <argsstring>(AsmToken::TokenKind T)</argsstring>
+        <name>parseOptionalToken</name>
+        <qualifiedname>llvm::MCAsmParser::parseOptionalToken</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039" kindref="member">AsmToken::TokenKind</ref></type>
+          <declname>T</declname>
+        </param>
+        <briefdescription>
+<para>Attempt to parse and consume token, returning true on success. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="264" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="80" bodyend="85"/>
+        <references refid="classllvm_1_1_asm_token_1a792392c4dfe6e57615554204b0c51a2e" compoundref="_m_c_asm_macro_8h" startline="81" endline="81">llvm::AsmToken::getKind</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" compoundref="_m_c_asm_parser_8cpp" startline="40" endline="42">getTok</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a137818cb489ba17770a17ee9eb6f269e" compoundref="_m_c_asm_parser_8cpp" startline="63" endline="70">parseToken</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1ac7fc5af218d2f17280c5b443dbe20838" compoundref="_asm_parser_8cpp" startline="1500" endline="1536">anonymous_namespace{AsmParser.cpp}::AsmParser::parseExpression</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a0796f036e832b4b5e10f6e31e77ca7c8" compoundref="_m_c_asm_parser_8cpp" startline="125" endline="137">parseMany</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1a0f14a9468b4224a3f7ab96eaef0b99ca" compoundref="_m_c_asm_parser_extension_8h" startline="97" endline="99">llvm::MCAsmParserExtension::parseOptionalToken</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1ad264107ceef36c0f353085894c7c0c76" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MCAsmParser::parseComma</definition>
+        <argsstring>()</argsstring>
+        <name>parseComma</name>
+        <qualifiedname>llvm::MCAsmParser::parseComma</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="266" column="8" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="266" bodyend="266"/>
+        <references refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ac4b2675d2cb80935b789d9f140092e25" compoundref="_m_c_asm_macro_8h" startline="49">llvm::AsmToken::Comma</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a137818cb489ba17770a17ee9eb6f269e" compoundref="_m_c_asm_parser_8cpp" startline="63" endline="70">parseToken</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a709fe7ec3803940386b0588e9a1c6f02" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MCAsmParser::parseRParen</definition>
+        <argsstring>()</argsstring>
+        <name>parseRParen</name>
+        <qualifiedname>llvm::MCAsmParser::parseRParen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="267" column="8" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="267" bodyend="267"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a137818cb489ba17770a17ee9eb6f269e" compoundref="_m_c_asm_parser_8cpp" startline="63" endline="70">parseToken</references>
+        <references refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a94d3b37c4d0fe4ca14de941b7c905322" compoundref="_m_c_asm_macro_8h" startline="48">llvm::AsmToken::RParen</references>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1c8f1c479ef06f41b1f2010afd80b43a" compoundref="_asm_parser_8cpp" startline="1543" endline="1561">anonymous_namespace{AsmParser.cpp}::AsmParser::parseParenExprOfDepth</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a61115ff1360e15d4f0eb3f12d757d7c1" compoundref="_masm_parser_8cpp" startline="1908" endline="1926">anonymous_namespace{MasmParser.cpp}::MasmParser::parseParenExprOfDepth</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a02bbdeea1375089f06a52747e919b4dc" compoundref="_asm_parser_8cpp" startline="1156" endline="1390">anonymous_namespace{AsmParser.cpp}::AsmParser::parsePrimaryExpr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a48e574342f9028f1077132c27267952b" compoundref="_masm_parser_8cpp" startline="1564" endline="1836">anonymous_namespace{MasmParser.cpp}::MasmParser::parsePrimaryExpr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a7b442abcc8f942ce12304975367e1fa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::parseEOL</definition>
+        <argsstring>()</argsstring>
+        <name>parseEOL</name>
+        <qualifiedname>llvm::MCAsmParser::parseEOL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="268" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="49" bodyend="54"/>
+        <references refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ae10c5f59f330bfd15608e1dda213a98f" compoundref="_m_c_asm_macro_8h" startline="42">llvm::AsmToken::EndOfStatement</references>
+        <references refid="namespacellvm_1ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd" compoundref="_with_color_8h" startline="34">llvm::Error</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" compoundref="_m_c_asm_parser_8cpp" startline="40" endline="42">getTok</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a922370d34654382dd4ff2b8a1a9c50d6">Lex</references>
+        <referencedby refid="namespacellvm_1_1_m_c_parser_utils_1a71d0c2aeb5e324a4a962bcfa85617f2c" compoundref="_asm_parser_8cpp" startline="6424" endline="6472">llvm::MCParserUtils::parseAssignmentExpression</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1a2c0ffc86a3d3e895b526e036cf1aa4d3" compoundref="_m_c_asm_parser_extension_8h" startline="91" endline="91">llvm::MCAsmParserExtension::parseEOL</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a137818cb489ba17770a17ee9eb6f269e" compoundref="_m_c_asm_parser_8cpp" startline="63" endline="70">parseToken</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1adbf0064a97b1ecde598fee1ed3d8cf52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::parseEOL</definition>
+        <argsstring>(const Twine &amp;ErrMsg)</argsstring>
+        <name>parseEOL</name>
+        <qualifiedname>llvm::MCAsmParser::parseEOL</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>ErrMsg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="269" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="56" bodyend="61"/>
+        <references refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ae10c5f59f330bfd15608e1dda213a98f" compoundref="_m_c_asm_macro_8h" startline="42">llvm::AsmToken::EndOfStatement</references>
+        <references refid="namespacellvm_1ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd" compoundref="_with_color_8h" startline="34">llvm::Error</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" compoundref="_m_c_asm_parser_8cpp" startline="40" endline="42">getTok</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a922370d34654382dd4ff2b8a1a9c50d6">Lex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a0796f036e832b4b5e10f6e31e77ca7c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::parseMany</definition>
+        <argsstring>(function_ref&lt; bool()&gt; parseOne, bool hasComma=true)</argsstring>
+        <name>parseMany</name>
+        <qualifiedname>llvm::MCAsmParser::parseMany</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; <ref refid="classbool" kindref="compound">bool</ref>()&gt;</type>
+          <declname>parseOne</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>hasComma</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="271" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="125" bodyend="137"/>
+        <references refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ac4b2675d2cb80935b789d9f140092e25" compoundref="_m_c_asm_macro_8h" startline="49">llvm::AsmToken::Comma</references>
+        <references refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ae10c5f59f330bfd15608e1dda213a98f" compoundref="_m_c_asm_macro_8h" startline="42">llvm::AsmToken::EndOfStatement</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a7fe5bbdb7d87187478d77f3a1d5a2a93" compoundref="_m_c_asm_parser_8cpp" startline="80" endline="85">parseOptionalToken</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a137818cb489ba17770a17ee9eb6f269e" compoundref="_m_c_asm_parser_8cpp" startline="63" endline="70">parseToken</references>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1a5114033053c722506e59e9899a62afe3" compoundref="_m_c_asm_parser_extension_8h" startline="93" endline="95">llvm::MCAsmParserExtension::parseMany</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a8d9acbc65c25f0330cd2d8d6baded980" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::parseIntToken</definition>
+        <argsstring>(int64_t &amp;V, const Twine &amp;ErrMsg)</argsstring>
+        <name>parseIntToken</name>
+        <qualifiedname>llvm::MCAsmParser::parseIntToken</qualifiedname>
+        <param>
+          <type><ref refid="classint64__t" kindref="compound">int64_t</ref> &amp;</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>ErrMsg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="273" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="72" bodyend="78"/>
+        <references refid="classllvm_1_1_asm_token_1a270e1171db01008f862ffbc34f8476fc" compoundref="_m_c_asm_macro_8h" startline="115" endline="118">llvm::AsmToken::getIntVal</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" compoundref="_m_c_asm_parser_8cpp" startline="40" endline="42">getTok</references>
+        <references refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a2369278b71442a32bd6a7f6a6f411033" compoundref="_m_c_asm_macro_8h" startline="32">llvm::AsmToken::Integer</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a922370d34654382dd4ff2b8a1a9c50d6">Lex</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1aca3b32b0f673fcda41b604540f49a4f9" compoundref="_m_c_asm_parser_8cpp" startline="97" endline="99">TokError</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a3030316a1ebebb07ea5bfef630daa790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::check</definition>
+        <argsstring>(bool P, const Twine &amp;Msg)</argsstring>
+        <name>check</name>
+        <qualifiedname>llvm::MCAsmParser::check</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>P</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="275" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="87" bodyend="89"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a3030316a1ebebb07ea5bfef630daa790" compoundref="_m_c_asm_parser_8cpp" startline="87" endline="89">check</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" compoundref="_m_c_asm_parser_8cpp" startline="40" endline="42">getTok</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a3030316a1ebebb07ea5bfef630daa790" compoundref="_m_c_asm_parser_8cpp" startline="87" endline="89">check</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1a9996e014bb8433cf33e137f0a3f21194" compoundref="_m_c_asm_parser_extension_8h" startline="103" endline="105">llvm::MCAsmParserExtension::check</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_extension_1ac5cfb11304bab346d56939a2de5f97bd" compoundref="_m_c_asm_parser_extension_8h" startline="107" endline="109">llvm::MCAsmParserExtension::check</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a6dc060fdfce77b45a20dbf3d6dd22129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::check</definition>
+        <argsstring>(bool P, SMLoc Loc, const Twine &amp;Msg)</argsstring>
+        <name>check</name>
+        <qualifiedname>llvm::MCAsmParser::check</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>P</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="276" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="91" bodyend="95"/>
+        <references refid="namespacellvm_1ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd" compoundref="_with_color_8h" startline="34">llvm::Error</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a6a9de5bc4280ee403d0f61304e5fe4fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::parseIdentifier</definition>
+        <argsstring>(StringRef &amp;Res)=0</argsstring>
+        <name>parseIdentifier</name>
+        <qualifiedname>llvm::MCAsmParser::parseIdentifier</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1aa91d3c1b093e3561b948794724961f4b">parseIdentifier</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1aa87c2b4cc4079362b8f826afacfd8231">parseIdentifier</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &amp;</type>
+          <declname>Res</declname>
+        </param>
+        <briefdescription>
+<para>Parse an identifier or string (as a quoted identifier) and set <computeroutput>Res</computeroutput> to the identifier contents. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="280" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a5530d71c3414b44f2205d3a3b3026d82" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>virtual StringRef llvm::MCAsmParser::parseStringToEndOfStatement</definition>
+        <argsstring>()=0</argsstring>
+        <name>parseStringToEndOfStatement</name>
+        <qualifiedname>llvm::MCAsmParser::parseStringToEndOfStatement</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1af927a042550c3a9220514a11b79b187d">parseStringToEndOfStatement</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a727c06165a9106a3b0759fb344e14bb5">parseStringToEndOfStatement</reimplementedby>
+        <briefdescription>
+<para>Parse up to the end of statement and return the contents from the current token until the end of the statement; the current token on exit will be either the EndOfStatement or EOF. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="285" column="21"/>
+        <referencedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a034b546ea133319ab2244f9bfa28ecae" compoundref="_asm_parser_8cpp" startline="1779" endline="2318">anonymous_namespace{AsmParser.cpp}::AsmParser::parseStatement</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a2d3280ac9b0dc7d25571a60d39a88db4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::parseEscapedString</definition>
+        <argsstring>(std::string &amp;Data)=0</argsstring>
+        <name>parseEscapedString</name>
+        <qualifiedname>llvm::MCAsmParser::parseEscapedString</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a515e58918a1422275c98640a07a93fb7">parseEscapedString</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a23756b1b8e93f17b4a152cb04a84b716">parseEscapedString</reimplementedby>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para>Parse the current token as a string which may include escaped characters and return the string contents. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="289" column="16"/>
+        <references refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" compoundref="_instr_prof_8h" startline="189">llvm::Data</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1abe40caf4aef5f3308433afaa025cfe34" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::parseAngleBracketString</definition>
+        <argsstring>(std::string &amp;Data)=0</argsstring>
+        <name>parseAngleBracketString</name>
+        <qualifiedname>llvm::MCAsmParser::parseAngleBracketString</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a5347cc04614e8c6adca091ab5a919b2d">parseAngleBracketString</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1ab072c67afc063ea45e6d55211ac97f56">parseAngleBracketString</reimplementedby>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para>Parse an angle-bracket delimited string at the current position if one is present, returning the string contents. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="293" column="16"/>
+        <references refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" compoundref="_instr_prof_8h" startline="189">llvm::Data</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a05b67ddc02c5708bb4654fc721b0658d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::MCAsmParser::eatToEndOfStatement</definition>
+        <argsstring>()=0</argsstring>
+        <name>eatToEndOfStatement</name>
+        <qualifiedname>llvm::MCAsmParser::eatToEndOfStatement</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1a464d658f065637fc039e0645a94d87">eatToEndOfStatement</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a19ecdddfce4d05cafad65fa385d17f77">eatToEndOfStatement</reimplementedby>
+        <briefdescription>
+<para>Skip to the end of the current statement, for error recovery. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="296" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a582bb95a08ad05ff3bd5de25a92edd4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::parseExpression</definition>
+        <argsstring>(const MCExpr *&amp;Res, SMLoc &amp;EndLoc)=0</argsstring>
+        <name>parseExpression</name>
+        <qualifiedname>llvm::MCAsmParser::parseExpression</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1ac7fc5af218d2f17280c5b443dbe20838">parseExpression</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a46e587fd477a44bb0b3c9e3689ff2f92">parseExpression</reimplementedby>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref> *&amp;</type>
+          <declname>Res</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref> &amp;</type>
+          <declname>EndLoc</declname>
+        </param>
+        <briefdescription>
+<para>Parse an arbitrary expression. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The value of the expression. The result is undefined on error. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>- False on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="303" column="16"/>
+        <referencedby refid="namespacellvm_1_1_m_c_parser_utils_1a71d0c2aeb5e324a4a962bcfa85617f2c" compoundref="_asm_parser_8cpp" startline="6424" endline="6472">llvm::MCParserUtils::parseAssignmentExpression</referencedby>
+        <referencedby refid="_a_m_d_kernel_code_t_utils_8cpp_1a7a374b13bc9d10c9298dd591ee50fc82" compoundref="_a_m_d_kernel_code_t_utils_8cpp" startline="323" endline="336">parseExpr</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_asm_parser_1a83b5779cb89b1af4150d7022b7f751c9" compoundref="_m_c_asm_parser_8cpp" startline="139" endline="142">parseExpression</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a83b5779cb89b1af4150d7022b7f751c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::parseExpression</definition>
+        <argsstring>(const MCExpr *&amp;Res)</argsstring>
+        <name>parseExpression</name>
+        <qualifiedname>llvm::MCAsmParser::parseExpression</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref> *&amp;</type>
+          <declname>Res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="304" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="139" bodyend="142"/>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a582bb95a08ad05ff3bd5de25a92edd4a">parseExpression</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a5e3a1b10f62aa9225cec49f8f6195282" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::parsePrimaryExpr</definition>
+        <argsstring>(const MCExpr *&amp;Res, SMLoc &amp;EndLoc, AsmTypeInfo *TypeInfo)=0</argsstring>
+        <name>parsePrimaryExpr</name>
+        <qualifiedname>llvm::MCAsmParser::parsePrimaryExpr</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a02bbdeea1375089f06a52747e919b4dc">parsePrimaryExpr</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a48e574342f9028f1077132c27267952b">parsePrimaryExpr</reimplementedby>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref> *&amp;</type>
+          <declname>Res</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref> &amp;</type>
+          <declname>EndLoc</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_asm_type_info" kindref="compound">AsmTypeInfo</ref> *</type>
+          <declname>TypeInfo</declname>
+        </param>
+        <briefdescription>
+<para>Parse a primary expression. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The value of the expression. The result is undefined on error. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>- False on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="311" column="16"/>
+        <referencedby refid="classllvm_1_1_m_c_target_asm_parser_1a482f6bc5e30d633bc6e911fa006434c1" compoundref="_m_c_target_asm_parser_8h" startline="414" endline="416">llvm::MCTargetAsmParser::parsePrimaryExpr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a7d85402d1158f9d97c9c35897b90d786" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::parseParenExpression</definition>
+        <argsstring>(const MCExpr *&amp;Res, SMLoc &amp;EndLoc)=0</argsstring>
+        <name>parseParenExpression</name>
+        <qualifiedname>llvm::MCAsmParser::parseParenExpression</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a35423377e62d2d83bec01c6cf269b9f3">parseParenExpression</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1aeb1bf86c7b80900c21e8f6777aa1cd7d">parseParenExpression</reimplementedby>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref> *&amp;</type>
+          <declname>Res</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref> &amp;</type>
+          <declname>EndLoc</declname>
+        </param>
+        <briefdescription>
+<para>Parse an arbitrary expression, assuming that an initial &apos;(&apos; has already been consumed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The value of the expression. The result is undefined on error. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>- False on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="320" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1ad8413e05e0522dff8eb604bcd891d0aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::parseAbsoluteExpression</definition>
+        <argsstring>(int64_t &amp;Res)=0</argsstring>
+        <name>parseAbsoluteExpression</name>
+        <qualifiedname>llvm::MCAsmParser::parseAbsoluteExpression</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1aec28069dca3f6f64e1e5e13477d62688">parseAbsoluteExpression</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a759ccd5c07709f9d7fd4e339af61f662">parseAbsoluteExpression</reimplementedby>
+        <param>
+          <type><ref refid="classint64__t" kindref="compound">int64_t</ref> &amp;</type>
+          <declname>Res</declname>
+        </param>
+        <briefdescription>
+<para>Parse an expression which must evaluate to an absolute value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The value of the absolute expression. The result is undefined on error. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>- False on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="327" column="16"/>
+        <referencedby refid="_a_m_d_kernel_code_t_utils_8cpp_1a6c0aead93728457ceebf342312b92807" compoundref="_a_m_d_kernel_code_t_utils_8cpp" startline="285" endline="299">expectAbsExpression</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a62ed88c59f6b7e53e099069e0b948db2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::checkForValidSection</definition>
+        <argsstring>()=0</argsstring>
+        <name>checkForValidSection</name>
+        <qualifiedname>llvm::MCAsmParser::checkForValidSection</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a252ed0bb8924351d3e4a6a6cd6dd938f">checkForValidSection</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a10d982772a36fe8255164eced5dd71bf">checkForValidSection</reimplementedby>
+        <briefdescription>
+<para>Ensure that we have a valid section set in the streamer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Otherwise, report an error and switch to .text. <simplesect kind="return"><para>- False on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="332" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1a93423cf3a4d1e6c6ab8e473305a44cd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::MCAsmParser::parseParenExprOfDepth</definition>
+        <argsstring>(unsigned ParenDepth, const MCExpr *&amp;Res, SMLoc &amp;EndLoc)=0</argsstring>
+        <name>parseParenExprOfDepth</name>
+        <qualifiedname>llvm::MCAsmParser::parseParenExprOfDepth</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser_1a1c8f1c479ef06f41b1f2010afd80b43a">parseParenExprOfDepth</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser_1a61115ff1360e15d4f0eb3f12d757d7c1">parseParenExprOfDepth</reimplementedby>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ParenDepth</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref> *&amp;</type>
+          <declname>Res</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref> &amp;</type>
+          <declname>EndLoc</declname>
+        </param>
+        <briefdescription>
+<para>Parse an arbitrary expression of a specified parenthesis depth, assuming that the initial &apos;(&apos; characters have already been consumed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ParenDepth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Specifies how many trailing expressions outside the current parentheses we have to parse. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The value of the expression. The result is undefined on error. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>- False on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="342" column="16"/>
+        <references refid="namespacellvm_1ac226f3d2b9ca090171a8e0a8cb92c343ac101058e7ea21bbbf2a5ac893088e90b" compoundref="_with_color_8h" startline="30">llvm::Tag</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_m_c_asm_parser_1ae70fbaacac6a12bfc3904b3e1af622bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MCAsmParser::parseGNUAttribute</definition>
+        <argsstring>(SMLoc L, int64_t &amp;Tag, int64_t &amp;IntegerValue)</argsstring>
+        <name>parseGNUAttribute</name>
+        <qualifiedname>llvm::MCAsmParser::parseGNUAttribute</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="classint64__t" kindref="compound">int64_t</ref> &amp;</type>
+          <declname>Tag</declname>
+        </param>
+        <param>
+          <type><ref refid="classint64__t" kindref="compound">int64_t</ref> &amp;</type>
+          <declname>IntegerValue</declname>
+        </param>
+        <briefdescription>
+<para>Parse a .gnu_attribute. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="346" column="8" bodyfile="lib/MC/MCParser/MCAsmParser.cpp" bodystart="144" bodyend="161"/>
+        <references refid="classllvm_1_1_asm_token_1a270e1171db01008f862ffbc34f8476fc" compoundref="_m_c_asm_macro_8h" startline="115" endline="118">llvm::AsmToken::getIntVal</references>
+        <references refid="classllvm_1_1_asm_token_1a16611db1be4d04f03c570d9302504c04" compoundref="_m_c_asm_lexer_8cpp" startline="26" endline="28">llvm::AsmToken::getLoc</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" compoundref="_m_c_asm_parser_8cpp" startline="40" endline="42">getTok</references>
+        <references refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a2369278b71442a32bd6a7f6a6f411033" compoundref="_m_c_asm_macro_8h" startline="32">llvm::AsmToken::Integer</references>
+        <references refid="classllvm_1_1_asm_token_1a2f492d3c8c226803c571528284a95d36" compoundref="_m_c_asm_macro_8h" startline="83" endline="83">llvm::AsmToken::isNot</references>
+        <references refid="classllvm_1_1_m_c_asm_parser_1a922370d34654382dd4ff2b8a1a9c50d6">Lex</references>
+        <references refid="namespacellvm_1ac226f3d2b9ca090171a8e0a8cb92c343ac101058e7ea21bbbf2a5ac893088e90b" compoundref="_with_color_8h" startline="30">llvm::Tag</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Generic assembler parser interface, for use by target specific assembly parsers. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>anonymous_namespace{AsmParser.cpp}::AsmParser</label>
+        <link refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_asm_parser"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>anonymous_namespace{AsmParser.cpp}::HLASMAsmParser</label>
+        <link refid="classanonymous__namespace_02_asm_parser_8cpp_03_1_1_h_l_a_s_m_asm_parser"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>anonymous_namespace{MasmParser.cpp}::MasmParser</label>
+        <link refid="classanonymous__namespace_02_masm_parser_8cpp_03_1_1_masm_parser"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::MCAsmParser</label>
+        <link refid="classllvm_1_1_m_c_asm_parser"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10">
+        <label>Size_T</label>
+      </node>
+      <node id="8">
+        <label>SmallVectorSizeType&lt; llvm::MCAsmParser::MCPendingError &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_m_c_asm_parser_1_1_m_c_pending_error_01_4"/>
+      </node>
+      <node id="13">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="19">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="1">
+        <label>llvm::MCAsmParser</label>
+        <link refid="classllvm_1_1_m_c_asm_parser"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>PendingErrors</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>HadError</edgelabel>
+          <edgelabel>ShowParsedOperands</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+        <childnode refid="23" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::SmallVector&lt; llvm::MCAsmParser::MCPendingError, 0 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="18" relation="private-inheritance">
+        </childnode>
+        <childnode refid="21" relation="template-instance">
+          <edgelabel>&lt; llvm::MCAsmParser::MCPendingError, 0 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="9" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::MCAsmParser::MCPendingError &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::MCAsmParser::MCPendingError &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::SmallVectorImpl&lt; llvm::MCAsmParser::MCPendingError &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; llvm::MCAsmParser::MCPendingError &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::SmallVectorStorage&lt; llvm::MCAsmParser::MCPendingError, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="template-instance">
+          <edgelabel>&lt; llvm::MCAsmParser::MCPendingError, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::MCAsmParser::MCPendingError &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="template-instance">
+          <edgelabel>&lt; llvm::MCAsmParser::MCPendingError &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::MCAsmParser::MCPendingError &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="template-instance">
+          <edgelabel>&lt; llvm::MCAsmParser::MCPendingError &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/MC/MCParser/MCAsmParser.h" line="123" column="1" bodyfile="include/llvm/MC/MCParser/MCAsmParser.h" bodystart="123" bodyend="347"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_m_c_asm_parser_1abd600bd726e3f0dc6745757b8ff99322" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>addAliasForDirective</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1afd887f0964a96c5e02314deac1ac584f" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>addDirectiveHandler</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a189e6cc46ddc7ca69bddd7f1a757a736" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>addErrorSuffix</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a3030316a1ebebb07ea5bfef630daa790" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>check</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a6dc060fdfce77b45a20dbf3d6dd22129" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>check</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a62ed88c59f6b7e53e099069e0b948db2" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>checkForValidSection</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a47420f87b1401934de51a165550a7481" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>clearPendingErrors</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a30603fa16428eeb671da88714c6ef874" prot="public" virt="virtual"><scope>llvm::MCAsmParser</scope><name>defineMacro</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1aa8ecac29af2004375ccba91a8527a251" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>DirectiveHandler</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a6fa72434836eef7654ebee54ca467945" prot="public" virt="virtual"><scope>llvm::MCAsmParser</scope><name>discardLTOSymbol</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a05b67ddc02c5708bb4654fc721b0658d" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>eatToEndOfStatement</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1afe58695435b93e0599ed2f77e877a0aa" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>Error</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a9ce3532c090e7b66928ff9a42dae508c" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>ExtensionDirectiveHandler</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a97e3b31312d2e3411622872cb2ac6109" prot="public" virt="virtual"><scope>llvm::MCAsmParser</scope><name>getAssemblerDialect</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1af5501a0543911b575ec50e456ee228ae" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>getContext</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1aa4e7ba9b1dd10c4262ff498f9a7dd397" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>getLexer</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1ace7ef596d65729ae610db919be806113" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>getLexer</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a6e4af5e4d650f5bec85b99dfe0fc4d04" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>getShowParsedOperands</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a592091f24541a576ac6294b097a4061d" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>getSourceManager</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a40ca835fddf3ca47f6b9a7bd43d929f0" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>getStreamer</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1afc6c7d84cb78a0d8586215b53b7bee33" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>getTargetParser</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a607ccd51956df621f1f5ea07c5d3b2c6" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>getTok</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1afad5b9aac74030a159903f3cf64c481c" prot="protected" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>HadError</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a4947313871f8935468ae02f6621260c8" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>hasPendingError</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a67ead6c5858726cf466bfa5ded2b5ab7" prot="public" virt="virtual"><scope>llvm::MCAsmParser</scope><name>isParsingMasm</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a81bd71316fbce01f2e8055dcc8fdb062" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>isParsingMSInlineAsm</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a922370d34654382dd4ff2b8a1a9c50d6" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>Lex</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1add0e53028d15679b96b8f66849b4e971" prot="public" virt="virtual"><scope>llvm::MCAsmParser</scope><name>lookUpField</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1ad75338a56ab81e83583aafaf2f2f1246" prot="public" virt="virtual"><scope>llvm::MCAsmParser</scope><name>lookUpField</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1ac9dea6fd0f51f338ae588d9cef3fa6e8" prot="public" virt="virtual"><scope>llvm::MCAsmParser</scope><name>lookUpType</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1af7b89d03df4325baa998c69d6ae8c95a" prot="protected" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>MCAsmParser</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a6cafc2281e28c0a263e484d4ed280d36" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>MCAsmParser</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a51860cb8160776d84628d48f53e26a62" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>Note</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a74666f4edd91bcb2d1d86e222d53ba23" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1ad8413e05e0522dff8eb604bcd891d0aa" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>parseAbsoluteExpression</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1abe40caf4aef5f3308433afaa025cfe34" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>parseAngleBracketString</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1ad264107ceef36c0f353085894c7c0c76" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>parseComma</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a7b442abcc8f942ce12304975367e1fa2" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>parseEOL</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1adbf0064a97b1ecde598fee1ed3d8cf52" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>parseEOL</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a2d3280ac9b0dc7d25571a60d39a88db4" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>parseEscapedString</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a582bb95a08ad05ff3bd5de25a92edd4a" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>parseExpression</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a83b5779cb89b1af4150d7022b7f751c9" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>parseExpression</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1ae70fbaacac6a12bfc3904b3e1af622bb" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>parseGNUAttribute</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a6a9de5bc4280ee403d0f61304e5fe4fa" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>parseIdentifier</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a8d9acbc65c25f0330cd2d8d6baded980" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>parseIntToken</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a0796f036e832b4b5e10f6e31e77ca7c8" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>parseMany</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1afc2a0f9ef9ceee382a5644dedf7e7d7d" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>parseMSInlineAsm</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a7fe5bbdb7d87187478d77f3a1d5a2a93" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>parseOptionalToken</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a7d85402d1158f9d97c9c35897b90d786" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>parseParenExpression</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a93423cf3a4d1e6c6ab8e473305a44cd5" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>parseParenExprOfDepth</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a5e3a1b10f62aa9225cec49f8f6195282" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>parsePrimaryExpr</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a709fe7ec3803940386b0588e9a1c6f02" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>parseRParen</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a5530d71c3414b44f2205d3a3b3026d82" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>parseStringToEndOfStatement</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a137818cb489ba17770a17ee9eb6f269e" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>parseToken</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1adfe743277c072b490a3f6bfc7dd593d1" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>parseTokenLoc</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a7cdbb86564e6641120ab773fac6a62d4" prot="protected" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>PendingErrors</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a198ec1b8458ce38de9ad18a6f483c278" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>printError</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a25158c234ca9e60f3976a36d7d6ef271" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>printPendingErrors</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1ab1b2fb0acb2550076d5dcab1039b2bb8" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>Run</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1af3cf81a517d41f1357dfbdaa6607940a" prot="public" virt="virtual"><scope>llvm::MCAsmParser</scope><name>setAssemblerDialect</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1af57aeac4a24de62226147e49b62f34b5" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>setParsingMSInlineAsm</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1aa3cdd92e164e2004543e4a56811cbb2b" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>setShowParsedOperands</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1af473082d59d84b25a63d18be49ecb271" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>setTargetParser</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1a256770fb45edae64541efa7f31ea1d18" prot="protected" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>ShowParsedOperands</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1ae53fc77de81f2e5b009b61c2b625f82d" prot="private" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>TargetParser</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1aca3b32b0f673fcda41b604540f49a4f9" prot="public" virt="non-virtual"><scope>llvm::MCAsmParser</scope><name>TokError</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1ab0573f4b31f141fba5ffffe9b0a53688" prot="public" virt="pure-virtual"><scope>llvm::MCAsmParser</scope><name>Warning</name></member>
+      <member refid="classllvm_1_1_m_c_asm_parser_1ac4ec749397fb66602fd7feadc0a444bf" prot="public" virt="virtual"><scope>llvm::MCAsmParser</scope><name>~MCAsmParser</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

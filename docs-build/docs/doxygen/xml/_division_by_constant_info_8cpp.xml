@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_division_by_constant_info_8cpp" kind="file" language="C++">
+    <compoundname>DivisionByConstantInfo.cpp</compoundname>
+    <includes refid="_division_by_constant_info_8h" local="yes">llvm/Support/DivisionByConstantInfo.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>llvm/ADT/APInt.h</label>
+        <link refid="_a_p_int_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm/ADT/bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm/Support/DivisionByConstantInfo.h</label>
+        <link refid="_division_by_constant_info_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm/Support/MathExtras.h</label>
+        <link refid="_math_extras_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm/Support/float128.h</label>
+        <link refid="float128_8h"/>
+      </node>
+      <node id="1">
+        <label>lib/Support/DivisionByConstantInfo.cpp</label>
+        <link refid="_division_by_constant_info_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>cassert</label>
+      </node>
+      <node id="15">
+        <label>climits</label>
+      </node>
+      <node id="9">
+        <label>cstdint</label>
+      </node>
+      <node id="12">
+        <label>cstring</label>
+      </node>
+      <node id="10">
+        <label>limits</label>
+      </node>
+      <node id="5">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="13">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="17">
+        <label>optional</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="11">
+        <label>type_traits</label>
+      </node>
+      <node id="18">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-----<sp/>DivisionByConstantInfo.cpp<sp/>-<sp/>division<sp/>by<sp/>constant<sp/>-*-<sp/>C++<sp/>-*----===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">///<sp/>This<sp/>file<sp/>implements<sp/>support<sp/>for<sp/>optimizing<sp/>divisions<sp/>by<sp/>a<sp/>constant</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_division_by_constant_info_8h" kindref="compound">llvm/Support/DivisionByConstantInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="17"><highlight class="comment">///<sp/>Calculate<sp/>the<sp/>magic<sp/>numbers<sp/>required<sp/>to<sp/>implement<sp/>a<sp/>signed<sp/>integer<sp/>division</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">///<sp/>by<sp/>a<sp/>constant<sp/>as<sp/>a<sp/>sequence<sp/>of<sp/>multiplies,<sp/>adds<sp/>and<sp/>shifts.<sp/><sp/>Requires<sp/>that</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">///<sp/>the<sp/>divisor<sp/>not<sp/>be<sp/>0,<sp/>1,<sp/>or<sp/>-1.<sp/><sp/>Taken<sp/>from<sp/>&quot;Hacker&apos;s<sp/>Delight&quot;,<sp/>Henry<sp/>S.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">///<sp/>Warren,<sp/>Jr.,<sp/>Chapter<sp/>10.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="structllvm_1_1_signed_division_by_constant_info_1affa10b6ac03585fea6d8f1832071ebd5" refkind="member"><highlight class="normal"><ref refid="structllvm_1_1_signed_division_by_constant_info" kindref="compound">SignedDivisionByConstantInfo</ref><sp/><ref refid="structllvm_1_1_signed_division_by_constant_info_1affa10b6ac03585fea6d8f1832071ebd5" kindref="member">SignedDivisionByConstantInfo::get</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>&amp;<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(!<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.isZero()<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Precondition<sp/>violation.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>We&apos;d<sp/>be<sp/>endlessly<sp/>stuck<sp/>in<sp/>the<sp/>loop.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth()<sp/>&gt;=<sp/>3<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Does<sp/>not<sp/>work<sp/>at<sp/>smaller<sp/>bitwidths.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>Delta;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>SignedMin<sp/>=<sp/><ref refid="classllvm_1_1_a_p_int_1a8f877403433892e14ff0c692cbe9efdf" kindref="member">APInt::getSignedMinValue</ref>(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth());</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structllvm_1_1_signed_division_by_constant_info" kindref="compound">SignedDivisionByConstantInfo</ref><sp/>Retval;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>AD<sp/>=<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.abs();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>=<sp/>SignedMin<sp/>+<sp/>(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.lshr(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth()<sp/>-<sp/>1));</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>ANC<sp/>=<sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>-<sp/>1<sp/>-<sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>.urem(AD);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>absolute<sp/>value<sp/>of<sp/>NC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>=<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth()<sp/>-<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>P</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>Q1,<sp/>R1,<sp/>Q2,<sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>Q1<sp/>=<sp/>2P/abs(NC);<sp/>R1<sp/>=<sp/>rem(2P,abs(NC))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int_1a0f0a665210e453bb16b4bf1861dbdd58" kindref="member">APInt::udivrem</ref>(SignedMin,<sp/>ANC,<sp/>Q1,<sp/>R1);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>Q2<sp/>=<sp/>2P/abs(D);<sp/>R2<sp/>=<sp/>rem(2P,abs(D))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int_1a0f0a665210e453bb16b4bf1861dbdd58" kindref="member">APInt::udivrem</ref>(SignedMin,<sp/>AD,<sp/>Q2,<sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>=<sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>Q1<sp/>&lt;&lt;=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>Q1<sp/>=<sp/>2P/abs(NC)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>R1<sp/>&lt;&lt;=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>R1<sp/>=<sp/>rem(2P/abs(NC))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(R1.<ref refid="classllvm_1_1_a_p_int_1af4b1ccc0b78f9da9f3f3944e06007f1d" kindref="member">uge</ref>(ANC))<sp/>{<sp/></highlight><highlight class="comment">//<sp/>must<sp/>be<sp/>unsigned<sp/>comparison</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>++Q1;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>R1<sp/>-=<sp/>ANC;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>Q2<sp/>&lt;&lt;=<sp/>1;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>Q2<sp/>=<sp/>2P/abs(D)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref><sp/>&lt;&lt;=<sp/>1;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>R2<sp/>=<sp/>rem(2P/abs(D))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref>.uge(AD))<sp/>{<sp/></highlight><highlight class="comment">//<sp/>must<sp/>be<sp/>unsigned<sp/>comparison</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>++Q2;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref><sp/>-=<sp/>AD;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Delta<sp/>=<sp/>AD<sp/>-<sp/>R2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>Delta<sp/>=<sp/>AD;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>Delta<sp/>-=<sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(Q1.<ref refid="classllvm_1_1_a_p_int_1a545e8d5dfa1688acea0d0e275b03682f" kindref="member">ult</ref>(Delta)<sp/>||<sp/>(Q1<sp/>==<sp/>Delta<sp/>&amp;&amp;<sp/>R1.<ref refid="classllvm_1_1_a_p_int_1a49cd5939942c6665aba4cae8c220dff1" kindref="member">isZero</ref>()));</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>Retval.<ref refid="structllvm_1_1_signed_division_by_constant_info_1aa54b0543973a6ef974f769d0e9383850" kindref="member">Magic</ref><sp/>=<sp/>std::move(Q2);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>++Retval.<ref refid="structllvm_1_1_signed_division_by_constant_info_1aa54b0543973a6ef974f769d0e9383850" kindref="member">Magic</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.isNegative())</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>Retval.<ref refid="structllvm_1_1_signed_division_by_constant_info_1aa54b0543973a6ef974f769d0e9383850" kindref="member">Magic</ref>.<ref refid="classllvm_1_1_a_p_int_1a8376734f311508662dd7e737752e5953" kindref="member">negate</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>resulting<sp/>magic<sp/>number</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>Retval.<ref refid="structllvm_1_1_signed_division_by_constant_info_1a4cfbfc736687e2b99cd2cc6cd2d208c4" kindref="member">ShiftAmount</ref><sp/>=<sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>-<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth();<sp/></highlight><highlight class="comment">//<sp/>resulting<sp/>shift</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Retval;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="67"><highlight class="comment">///<sp/>Calculate<sp/>the<sp/>magic<sp/>numbers<sp/>required<sp/>to<sp/>implement<sp/>an<sp/>unsigned<sp/>integer</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">///<sp/>division<sp/>by<sp/>a<sp/>constant<sp/>as<sp/>a<sp/>sequence<sp/>of<sp/>multiplies,<sp/>adds<sp/>and<sp/>shifts.</highlight></codeline>
+<codeline lineno="69"><highlight class="comment">///<sp/>Requires<sp/>that<sp/>the<sp/>divisor<sp/>not<sp/>be<sp/>0.<sp/><sp/>Taken<sp/>from<sp/>&quot;Hacker&apos;s<sp/>Delight&quot;,<sp/>Henry</highlight></codeline>
+<codeline lineno="70"><highlight class="comment">///<sp/>S.<sp/>Warren,<sp/>Jr.,<sp/>chapter<sp/>10.</highlight></codeline>
+<codeline lineno="71"><highlight class="comment">///<sp/>LeadingZeros<sp/>can<sp/>be<sp/>used<sp/>to<sp/>simplify<sp/>the<sp/>calculation<sp/>if<sp/>the<sp/>upper<sp/>bits</highlight></codeline>
+<codeline lineno="72"><highlight class="comment">///<sp/>of<sp/>the<sp/>divided<sp/>value<sp/>are<sp/>known<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="structllvm_1_1_unsigned_division_by_constant_info" kindref="compound">UnsignedDivisionByConstantInfo</ref></highlight></codeline>
+<codeline lineno="74" refid="structllvm_1_1_unsigned_division_by_constant_info_1a6a7ecd0f6bb250280a31e56173931e31" refkind="member"><highlight class="normal"><ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a6a7ecd0f6bb250280a31e56173931e31" kindref="member">UnsignedDivisionByConstantInfo::get</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>&amp;<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>LeadingZeros,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>AllowEvenDivisorOptimization)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(!<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.isZero()<sp/>&amp;&amp;<sp/>!<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.isOne()<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Precondition<sp/>violation.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth()<sp/>&gt;<sp/>1<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Does<sp/>not<sp/>work<sp/>at<sp/>smaller<sp/>bitwidths.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>Delta;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structllvm_1_1_unsigned_division_by_constant_info" kindref="compound">UnsignedDivisionByConstantInfo</ref><sp/>Retval;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1b8b2eee90075caf0407679fb780f5c9" kindref="member">IsAdd</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>&quot;add&quot;<sp/>indicator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/><ref refid="namespacellvm_1af14335020a68db7b9f722810e4a05180a421c6b20238e6e6585270538188f15b9" kindref="member">AllOnes</ref><sp/>=</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_a_p_int_1ad960e1ff48d25c382b6d28e7961f074e" kindref="member">APInt::getLowBitsSet</ref>(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth(),<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth()<sp/>-<sp/>LeadingZeros);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>SignedMin<sp/>=<sp/><ref refid="classllvm_1_1_a_p_int_1a8f877403433892e14ff0c692cbe9efdf" kindref="member">APInt::getSignedMinValue</ref>(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth());</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>SignedMax<sp/>=<sp/><ref refid="classllvm_1_1_a_p_int_1a562c9513409b74f02cb3a5c9bae672ea" kindref="member">APInt::getSignedMaxValue</ref>(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth());</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>NC,<sp/>the<sp/>largest<sp/>dividend<sp/>such<sp/>that<sp/>NC.urem(D)<sp/>==<sp/>D-1.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/><ref refid="regutils_8h_1a1fa2460e32327ade49189c95740bc1b5" kindref="member">NC</ref><sp/>=<sp/><ref refid="namespacellvm_1af14335020a68db7b9f722810e4a05180a421c6b20238e6e6585270538188f15b9" kindref="member">AllOnes</ref><sp/>-<sp/>(<ref refid="namespacellvm_1af14335020a68db7b9f722810e4a05180a421c6b20238e6e6585270538188f15b9" kindref="member">AllOnes</ref><sp/>+<sp/>1<sp/>-<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>).urem(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="regutils_8h_1a1fa2460e32327ade49189c95740bc1b5" kindref="member">NC</ref>.urem(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>)<sp/>==<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref><sp/>-<sp/>1<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Unexpected<sp/>NC<sp/>value&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>=<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth()<sp/>-<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>P</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>Q1,<sp/>R1,<sp/>Q2,<sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>Q1<sp/>=<sp/>2P/NC;<sp/>R1<sp/>=<sp/>rem(2P,NC)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int_1a0f0a665210e453bb16b4bf1861dbdd58" kindref="member">APInt::udivrem</ref>(SignedMin,<sp/><ref refid="regutils_8h_1a1fa2460e32327ade49189c95740bc1b5" kindref="member">NC</ref>,<sp/>Q1,<sp/>R1);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>Q2<sp/>=<sp/>(2P-1)/D;<sp/>R2<sp/>=<sp/>rem((2P-1),D)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_a_p_int_1a0f0a665210e453bb16b4bf1861dbdd58" kindref="member">APInt::udivrem</ref>(SignedMax,<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>,<sp/>Q2,<sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>=<sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(R1.<ref refid="classllvm_1_1_a_p_int_1af4b1ccc0b78f9da9f3f3944e06007f1d" kindref="member">uge</ref>(<ref refid="regutils_8h_1a1fa2460e32327ade49189c95740bc1b5" kindref="member">NC</ref><sp/>-<sp/>R1))<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>Q1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Q1<sp/>&lt;&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>++Q1;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>R1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>R1<sp/>&lt;&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>R1<sp/>-=<sp/><ref refid="regutils_8h_1a1fa2460e32327ade49189c95740bc1b5" kindref="member">NC</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Q1<sp/>&lt;&lt;=<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>update<sp/>Q1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>R1<sp/>&lt;&lt;=<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>update<sp/>R1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref><sp/>+<sp/>1).uge(<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref><sp/>-<sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Q2.<ref refid="classllvm_1_1_a_p_int_1af4b1ccc0b78f9da9f3f3944e06007f1d" kindref="member">uge</ref>(SignedMax))</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1b8b2eee90075caf0407679fb780f5c9" kindref="member">IsAdd</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>Q2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Q2<sp/>&lt;&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>++Q2;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>R2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref><sp/>&lt;&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref><sp/>-=<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Q2.<ref refid="classllvm_1_1_a_p_int_1af4b1ccc0b78f9da9f3f3944e06007f1d" kindref="member">uge</ref>(SignedMin))</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1b8b2eee90075caf0407679fb780f5c9" kindref="member">IsAdd</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>Q2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Q2<sp/>&lt;&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>R2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref><sp/>&lt;&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref>;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Delta<sp/>=<sp/>D<sp/>-<sp/>1<sp/>-<sp/>R2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>Delta<sp/>=<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>--Delta;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>Delta<sp/>-=<sp/><ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">R2</ref>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>&lt;<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth()<sp/>*<sp/>2<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(Q1.<ref refid="classllvm_1_1_a_p_int_1a545e8d5dfa1688acea0d0e275b03682f" kindref="member">ult</ref>(Delta)<sp/>||<sp/>(Q1<sp/>==<sp/>Delta<sp/>&amp;&amp;<sp/>R1.<ref refid="classllvm_1_1_a_p_int_1a49cd5939942c6665aba4cae8c220dff1" kindref="member">isZero</ref>())));</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1b8b2eee90075caf0407679fb780f5c9" kindref="member">IsAdd</ref><sp/>&amp;&amp;<sp/>!<ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>[0]<sp/>&amp;&amp;<sp/>AllowEvenDivisorOptimization)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1fe2f52cb1640befcb5c3da7d3e37c6d" kindref="member">PreShift</ref><sp/>=<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.countr_zero();</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref><sp/>ShiftedD<sp/>=<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.lshr(<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1fe2f52cb1640befcb5c3da7d3e37c6d" kindref="member">PreShift</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>Retval<sp/>=</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a6a7ecd0f6bb250280a31e56173931e31" kindref="member">UnsignedDivisionByConstantInfo::get</ref>(ShiftedD,<sp/>LeadingZeros<sp/>+<sp/><ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1fe2f52cb1640befcb5c3da7d3e37c6d" kindref="member">PreShift</ref>);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1b8b2eee90075caf0407679fb780f5c9" kindref="member">IsAdd</ref><sp/>==<sp/>0<sp/>&amp;&amp;<sp/>Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1fe2f52cb1640befcb5c3da7d3e37c6d" kindref="member">PreShift</ref><sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1fe2f52cb1640befcb5c3da7d3e37c6d" kindref="member">PreShift</ref><sp/>=<sp/><ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1fe2f52cb1640befcb5c3da7d3e37c6d" kindref="member">PreShift</ref>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Retval;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a890b63a18fc3e328809c691b17c776ed" kindref="member">Magic</ref><sp/>=<sp/>std::move(Q2);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>resulting<sp/>magic<sp/>number</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>++Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a890b63a18fc3e328809c691b17c776ed" kindref="member">Magic</ref>;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1aadab71767738ad10ccb7600fa732fd96" kindref="member">PostShift</ref><sp/>=<sp/><ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>-<sp/><ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref>.getBitWidth();<sp/></highlight><highlight class="comment">//<sp/>resulting<sp/>shift</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Reduce<sp/>shift<sp/>amount<sp/>for<sp/>IsAdd.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1b8b2eee90075caf0407679fb780f5c9" kindref="member">IsAdd</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1aadab71767738ad10ccb7600fa732fd96" kindref="member">PostShift</ref><sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Unexpected<sp/>shift&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1aadab71767738ad10ccb7600fa732fd96" kindref="member">PostShift</ref><sp/>-=<sp/>1;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>Retval.<ref refid="structllvm_1_1_unsigned_division_by_constant_info_1a1fe2f52cb1640befcb5c3da7d3e37c6d" kindref="member">PreShift</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Retval;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="lib/Support/DivisionByConstantInfo.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,682 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_live_reg_matrix" kind="class" language="C++" prot="public">
+    <compoundname>llvm::LiveRegMatrix</compoundname>
+    <includes refid="_live_reg_matrix_8h" local="yes">llvm/CodeGen/LiveRegMatrix.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>InterferenceKind</name>
+        <qualifiedname>llvm::LiveRegMatrix::InterferenceKind</qualifiedname>
+        <enumvalue id="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aa58056f4f8345af4ca8bd6e27f0ff8413" prot="public">
+          <name>IK_Free</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>No interference, go ahead and assign. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aa30186d61b40f517e8dc5d9e85076a91f" prot="public">
+          <name>IK_VirtReg</name>
+          <briefdescription>
+<para>Virtual register interference. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>There are interfering virtual registers assigned to PhysReg or its aliases. This interference could be resolved by unassigning those other virtual registers. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aa471b00a6595e7f400ef576512ccbcc31" prot="public">
+          <name>IK_RegUnit</name>
+          <briefdescription>
+<para><ref refid="classllvm_1_1_register" kindref="compound">Register</ref> unit interference. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>A fixed live range is in the way, typically argument registers for a call. This can&apos;t be resolved by unassigning other virtual registers. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aaa3c968c8898b0110e68e4933485c9042" prot="public">
+          <name>IK_RegMask</name>
+          <briefdescription>
+<para>RegMask interference. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The live range is crossing an instruction with a regmask operand that doesn&apos;t preserve PhysReg. This typically means VirtReg is live across a call, and PhysReg isn&apos;t call-preserved. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="84" column="3" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="84" bodyend="102"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_live_reg_matrix_1a4dde01d9f410b6669c368256c19b177c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class LiveRegMatrixWrapperLegacy</definition>
+        <argsstring></argsstring>
+        <name>LiveRegMatrixWrapperLegacy</name>
+        <qualifiedname>llvm::LiveRegMatrix::LiveRegMatrixWrapperLegacy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_reg_matrix_wrapper_legacy" kindref="compound">LiveRegMatrixWrapperLegacy</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="41" column="16" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="41" bodyend="-1"/>
+        <references refid="classllvm_1_1_live_reg_matrix_1a4dde01d9f410b6669c368256c19b177c" compoundref="_live_reg_matrix_8h" startline="41">LiveRegMatrixWrapperLegacy</references>
+        <referencedby refid="classllvm_1_1_live_reg_matrix_1a4dde01d9f410b6669c368256c19b177c" compoundref="_live_reg_matrix_8h" startline="41">LiveRegMatrixWrapperLegacy</referencedby>
+      </memberdef>
+      <memberdef kind="friend" id="classllvm_1_1_live_reg_matrix_1a60bef7f4a836cd97f9704940f259a6ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class LiveRegMatrixAnalysis</definition>
+        <argsstring></argsstring>
+        <name>LiveRegMatrixAnalysis</name>
+        <qualifiedname>llvm::LiveRegMatrix::LiveRegMatrixAnalysis</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_reg_matrix_analysis" kindref="compound">LiveRegMatrixAnalysis</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="42" column="16" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="42" bodyend="-1"/>
+        <references refid="_reg_alloc_basic_8cpp_1ad5d00e1d77644d95847b9bf8da12b759" compoundref="_reg_alloc_basic_8cpp" startline="146">Allocator</references>
+        <references refid="classllvm_1_1_live_reg_matrix_1a60bef7f4a836cd97f9704940f259a6ae" compoundref="_live_reg_matrix_8h" startline="42">LiveRegMatrixAnalysis</references>
+        <referencedby refid="classllvm_1_1_live_reg_matrix_1a60bef7f4a836cd97f9704940f259a6ae" compoundref="_live_reg_matrix_8h" startline="42">LiveRegMatrixAnalysis</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_live_reg_matrix_1a264a590cf9f5dd9119ede69866c5dcef" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+        <definition>const TargetRegisterInfo* llvm::LiveRegMatrix::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>llvm::LiveRegMatrix::TRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="43" column="28" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_reg_matrix_1a9d2cf4754429afb915cc267aaeb54078" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_live_intervals" kindref="compound">LiveIntervals</ref> *</type>
+        <definition>LiveIntervals* llvm::LiveRegMatrix::LIS</definition>
+        <argsstring></argsstring>
+        <name>LIS</name>
+        <qualifiedname>llvm::LiveRegMatrix::LIS</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="44" column="17" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_reg_matrix_1a750b07161a4c234887b5c5b828864dda" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_virt_reg_map" kindref="compound">VirtRegMap</ref> *</type>
+        <definition>VirtRegMap* llvm::LiveRegMatrix::VRM</definition>
+        <argsstring></argsstring>
+        <name>VRM</name>
+        <qualifiedname>llvm::LiveRegMatrix::VRM</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="45" column="14" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_reg_matrix_1aafa52dd8c45eeae467e627591e608733" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::LiveRegMatrix::UserTag</definition>
+        <argsstring></argsstring>
+        <name>UserTag</name>
+        <qualifiedname>llvm::LiveRegMatrix::UserTag</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="48" column="12" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_reg_matrix_1a3b55219113fc5b05c9aa60fe6e225ce3" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_live_interval_union_1aec9428cfe59ce0851615cef7e5527a01" kindref="member">LiveIntervalUnion::Allocator</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;LiveIntervalUnion::Allocator&gt; llvm::LiveRegMatrix::LIUAlloc</definition>
+        <argsstring></argsstring>
+        <name>LIUAlloc</name>
+        <qualifiedname>llvm::LiveRegMatrix::LIUAlloc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="51" column="19" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_reg_matrix_1ac6f66f13845ab19b6e4a4405d38d9e06" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_live_interval_union_1_1_array" kindref="compound">LiveIntervalUnion::Array</ref></type>
+        <definition>LiveIntervalUnion::Array llvm::LiveRegMatrix::Matrix</definition>
+        <argsstring></argsstring>
+        <name>Matrix</name>
+        <qualifiedname>llvm::LiveRegMatrix::Matrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="52" column="28" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_reg_matrix_1aa96aeb98f7787032f2ed15c447dea0b6" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_live_interval_union_1_1_query" kindref="compound">LiveIntervalUnion::Query</ref>[]&gt;</type>
+        <definition>std::unique_ptr&lt;LiveIntervalUnion::Query[]&gt; llvm::LiveRegMatrix::Queries</definition>
+        <argsstring></argsstring>
+        <name>Queries</name>
+        <qualifiedname>llvm::LiveRegMatrix::Queries</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="55" column="19" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_reg_matrix_1ac29d584ff17dc912c8f0e9ceb18b2ad1" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::LiveRegMatrix::RegMaskTag</definition>
+        <argsstring></argsstring>
+        <name>RegMaskTag</name>
+        <qualifiedname>llvm::LiveRegMatrix::RegMaskTag</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="58" column="12" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_reg_matrix_1a646918ffd3fbaa0d9343acd0d2af19ab" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::LiveRegMatrix::RegMaskVirtReg</definition>
+        <argsstring></argsstring>
+        <name>RegMaskVirtReg</name>
+        <qualifiedname>llvm::LiveRegMatrix::RegMaskVirtReg</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="59" column="12" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_live_reg_matrix_1aaecdef078e475b5b24673d6471576ab3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref></type>
+        <definition>BitVector llvm::LiveRegMatrix::RegMaskUsable</definition>
+        <argsstring></argsstring>
+        <name>RegMaskUsable</name>
+        <qualifiedname>llvm::LiveRegMatrix::RegMaskUsable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="60" column="13" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1a182b56e093854090d170ecdc7fee75cd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::LiveRegMatrix::LiveRegMatrix</definition>
+        <argsstring>()</argsstring>
+        <name>LiveRegMatrix</name>
+        <qualifiedname>llvm::LiveRegMatrix::LiveRegMatrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="62" column="3" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="62" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1a2c6decab5728e5fb4b1bfff4c45561de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveRegMatrix::releaseMemory</definition>
+        <argsstring>()</argsstring>
+        <name>releaseMemory</name>
+        <qualifiedname>llvm::LiveRegMatrix::releaseMemory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="64" column="8" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="77" bodyend="84"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1ad35570d655e9aa2f22134465c80a8c5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::LiveRegMatrix::LiveRegMatrix</definition>
+        <argsstring>(LiveRegMatrix &amp;&amp;Other)=default</argsstring>
+        <name>LiveRegMatrix</name>
+        <qualifiedname>llvm::LiveRegMatrix::LiveRegMatrix</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_reg_matrix" kindref="compound">LiveRegMatrix</ref> &amp;&amp;</type>
+          <declname>Other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="67" column="3"/>
+        <references refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387" compoundref="_mod_ref_8h" startline="65">llvm::Other</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1ac1907c90bcd96c06c880601406ce946c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveRegMatrix::init</definition>
+        <argsstring>(MachineFunction &amp;MF, LiveIntervals &amp;LIS, VirtRegMap &amp;VRM)</argsstring>
+        <name>init</name>
+        <qualifiedname>llvm::LiveRegMatrix::init</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_live_intervals" kindref="compound">LiveIntervals</ref> &amp;</type>
+          <declname>LIS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_virt_reg_map" kindref="compound">VirtRegMap</ref> &amp;</type>
+          <declname>VRM</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="69" column="8" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="60" bodyend="73"/>
+        <references refid="classllvm_1_1_target_subtarget_info_1a43c530c830206ecf5ad3359364634c75" compoundref="_target_subtarget_info_8h" startline="129" endline="129">llvm::TargetSubtargetInfo::getRegisterInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classllvm_1_1_virt_reg_map_1a1a06f2509b5f901646c6498e9a0e8d4f">llvm::VirtRegMap::init</references>
+        <references refid="classllvm_1_1_live_reg_matrix_1a448841a51094959c1ca24de1ae55435f" compoundref="_live_reg_matrix_8h" startline="82" endline="82">invalidateVirtRegs</references>
+        <referencedby refid="classllvm_1_1_live_reg_matrix_analysis_1a2b601beea6193fd88698584c85cdadcd" compoundref="_live_reg_matrix_8cpp" startline="295" endline="302">llvm::LiveRegMatrixAnalysis::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1a448841a51094959c1ca24de1ae55435f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::LiveRegMatrix::invalidateVirtRegs</definition>
+        <argsstring>()</argsstring>
+        <name>invalidateVirtRegs</name>
+        <qualifiedname>llvm::LiveRegMatrix::invalidateVirtRegs</qualifiedname>
+        <briefdescription>
+<para>Invalidate cached interference queries after modifying virtual register live ranges. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Interference checks may return stale information unless caches are invalidated. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="82" column="8" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="82" bodyend="82"/>
+        <referencedby refid="classllvm_1_1_live_reg_matrix_1ac1907c90bcd96c06c880601406ce946c" compoundref="_live_reg_matrix_8cpp" startline="60" endline="73">init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1ad064f1e4af82a7f4251434afde29b0b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635a" kindref="member">InterferenceKind</ref></type>
+        <definition>LiveRegMatrix::InterferenceKind LiveRegMatrix::checkInterference</definition>
+        <argsstring>(const LiveInterval &amp;VirtReg, MCRegister PhysReg)</argsstring>
+        <name>checkInterference</name>
+        <qualifiedname>llvm::LiveRegMatrix::checkInterference</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>VirtReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_register" kindref="compound">MCRegister</ref></type>
+          <declname>PhysReg</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> for interference before assigning VirtReg to PhysReg. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If this function returns IK_Free, it is legal to assign(VirtReg, PhysReg). When there is more than one kind of interference, the <ref refid="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635a" kindref="member">InterferenceKind</ref> with the highest enum value is returned. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="108" column="20" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="194" bodyend="216"/>
+        <references refid="classllvm_1_1_live_interval_union_1_1_query_1ab7eacb4ff3e11e61bbe97acaf46d47d8" compoundref="_live_interval_union_8h" startline="159" endline="159">llvm::LiveIntervalUnion::Query::checkInterference</references>
+        <references refid="classllvm_1_1_live_reg_matrix_1a0afff12e511e93ff630cada967573162" compoundref="_live_reg_matrix_8cpp" startline="153" endline="170">checkRegMaskInterference</references>
+        <references refid="classllvm_1_1_live_reg_matrix_1ad08d47c88b8af3c45df94d19ccc6e679" compoundref="_live_reg_matrix_8cpp" startline="172" endline="184">checkRegUnitInterference</references>
+        <references refid="classllvm_1_1_live_range_1a66ff664a97cd3c30de7e873335a0c075" compoundref="_live_interval_8h" startline="382" endline="382">llvm::LiveRange::empty</references>
+        <references refid="_live_reg_matrix_8cpp_1aab2ae433d483c154d92c727cf7282996" compoundref="_live_reg_matrix_8cpp" startline="87" endline="109">foreachUnit</references>
+        <references refid="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aa58056f4f8345af4ca8bd6e27f0ff8413" compoundref="_live_reg_matrix_8h" startline="86">IK_Free</references>
+        <references refid="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aaa3c968c8898b0110e68e4933485c9042" compoundref="_live_reg_matrix_8h" startline="101">IK_RegMask</references>
+        <references refid="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aa471b00a6595e7f400ef576512ccbcc31" compoundref="_live_reg_matrix_8h" startline="96">IK_RegUnit</references>
+        <references refid="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aa30186d61b40f517e8dc5d9e85076a91f" compoundref="_live_reg_matrix_8h" startline="91">IK_VirtReg</references>
+        <references refid="classllvm_1_1_live_reg_matrix_1a7c79a2c92779f3c549dee89406ccdfc1" compoundref="_live_reg_matrix_8cpp" startline="186" endline="191">query</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1ab9e855199959852351ae2761ae4302be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool LiveRegMatrix::checkInterference</definition>
+        <argsstring>(SlotIndex Start, SlotIndex End, MCRegister PhysReg)</argsstring>
+        <name>checkInterference</name>
+        <qualifiedname>llvm::LiveRegMatrix::checkInterference</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>Start</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>End</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_register" kindref="compound">MCRegister</ref></type>
+          <declname>PhysReg</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> for interference in the segment [Start, End) that may prevent assignment to PhysReg. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If this function returns true, there is interference in the segment [Start, End) of some other interval already assigned to PhysReg. If this function returns false, PhysReg is free at the segment [Start, End). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="116" column="8" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="218" bodyend="246"/>
+        <references refid="classllvm_1_1_live_range_1a0b73c8d5ae32ca13dd02ddde86ffd0a2" compoundref="_live_interval_8cpp" startline="533" endline="541">llvm::LiveRange::addSegment</references>
+        <references refid="classllvm_1_1_live_interval_union_1_1_query_1ab7eacb4ff3e11e61bbe97acaf46d47d8" compoundref="_live_interval_union_8h" startline="159" endline="159">llvm::LiveIntervalUnion::Query::checkInterference</references>
+        <references refid="classllvm_1_1_live_interval_union_1_1_query_1ae8729ee921fdf522087d928c9bb38af4" compoundref="_live_interval_union_8h" startline="137" endline="146">llvm::LiveIntervalUnion::Query::reset</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1afc6ed60b40c5c63149c23ba327a77c23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_lane_bitmask" kindref="compound">LaneBitmask</ref></type>
+        <definition>LaneBitmask LiveRegMatrix::checkInterferenceLanes</definition>
+        <argsstring>(SlotIndex Start, SlotIndex End, MCRegister PhysReg)</argsstring>
+        <name>checkInterferenceLanes</name>
+        <qualifiedname>llvm::LiveRegMatrix::checkInterferenceLanes</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>Start</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>End</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_register" kindref="compound">MCRegister</ref></type>
+          <declname>PhysReg</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> for interference in the segment [Start, End) that may prevent assignment to PhysReg, like checkInterference. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a lane mask of which lanes of the physical register interfere in the segment [Start, End) of some other interval already assigned to PhysReg.</para>
+<para>If this function returns <ref refid="structllvm_1_1_lane_bitmask_1a9082b6aa4021114645045d9c5628eb26" kindref="member">LaneBitmask::getNone()</ref>, PhysReg is completely free at the segment [Start, End). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="125" column="15" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="248" bodyend="281"/>
+        <references refid="classllvm_1_1_live_range_1a0b73c8d5ae32ca13dd02ddde86ffd0a2" compoundref="_live_interval_8cpp" startline="533" endline="541">llvm::LiveRange::addSegment</references>
+        <references refid="classllvm_1_1_live_interval_union_1_1_query_1ab7eacb4ff3e11e61bbe97acaf46d47d8" compoundref="_live_interval_union_8h" startline="159" endline="159">llvm::LiveIntervalUnion::Query::checkInterference</references>
+        <references refid="classllvm_1_1_m_c_reg_unit_mask_iterator_1a73b0d1192402b944dbc7aac0db77258d" compoundref="_m_c_register_info_8h" startline="694" endline="694">llvm::MCRegUnitMaskIterator::isValid</references>
+        <references refid="classllvm_1_1_live_interval_union_1_1_query_1ae8729ee921fdf522087d928c9bb38af4" compoundref="_live_interval_union_8h" startline="137" endline="146">llvm::LiveIntervalUnion::Query::reset</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1aca181a8107cd511dad6c6627fe9f6fae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveRegMatrix::assign</definition>
+        <argsstring>(const LiveInterval &amp;VirtReg, MCRegister PhysReg)</argsstring>
+        <name>assign</name>
+        <qualifiedname>llvm::LiveRegMatrix::assign</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>VirtReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_register" kindref="compound">MCRegister</ref></type>
+          <declname>PhysReg</declname>
+        </param>
+        <briefdescription>
+<para>Assign VirtReg to PhysReg. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This will mark VirtReg&apos;s live range as occupied in the <ref refid="classllvm_1_1_live_reg_matrix" kindref="compound">LiveRegMatrix</ref> and update <ref refid="classllvm_1_1_virt_reg_map" kindref="compound">VirtRegMap</ref>. The live range is expected to be available in PhysReg. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="131" column="8" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="111" bodyend="126"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_live_reg_matrix_8cpp_1aab2ae433d483c154d92c727cf7282996" compoundref="_live_reg_matrix_8cpp" startline="87" endline="109">foreachUnit</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1af085ea923a328b9fa6a1975f1a4ff987" compoundref="_target_register_info_8cpp" startline="107" endline="136">llvm::printReg</references>
+        <references refid="namespacellvm_1a34302b557354b8a09796c30b9f7408ab" compoundref="_target_register_info_8cpp" startline="138" endline="159">llvm::printRegUnit</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <references refid="classllvm_1_1_live_interval_1a14d46e70db7e417c8ed5bc66fb295185" compoundref="_live_interval_8h" startline="718" endline="718">llvm::LiveInterval::reg</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1a128d0b27fb99ba10fc96a8c526129157" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveRegMatrix::unassign</definition>
+        <argsstring>(const LiveInterval &amp;VirtReg)</argsstring>
+        <name>unassign</name>
+        <qualifiedname>llvm::LiveRegMatrix::unassign</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>VirtReg</declname>
+        </param>
+        <briefdescription>
+<para>Unassign VirtReg from its PhysReg. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assuming that VirtReg was previously assigned to a PhysReg, this undoes the assignment and updates <ref refid="classllvm_1_1_virt_reg_map" kindref="compound">VirtRegMap</ref> accordingly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="136" column="8" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="128" bodyend="143"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_live_reg_matrix_8cpp_1aab2ae433d483c154d92c727cf7282996" compoundref="_live_reg_matrix_8cpp" startline="87" endline="109">foreachUnit</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1af085ea923a328b9fa6a1975f1a4ff987" compoundref="_target_register_info_8cpp" startline="107" endline="136">llvm::printReg</references>
+        <references refid="namespacellvm_1a34302b557354b8a09796c30b9f7408ab" compoundref="_target_register_info_8cpp" startline="138" endline="159">llvm::printRegUnit</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <references refid="classllvm_1_1_live_interval_1a14d46e70db7e417c8ed5bc66fb295185" compoundref="_live_interval_8h" startline="718" endline="718">llvm::LiveInterval::reg</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1a28429b5d6afc4dc076b94527f2cb1de8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool LiveRegMatrix::isPhysRegUsed</definition>
+        <argsstring>(MCRegister PhysReg) const</argsstring>
+        <name>isPhysRegUsed</name>
+        <qualifiedname>llvm::LiveRegMatrix::isPhysRegUsed</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_register" kindref="compound">MCRegister</ref></type>
+          <declname>PhysReg</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if the given <computeroutput>PhysReg</computeroutput> has any live intervals assigned. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="139" column="8" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="145" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1a0afff12e511e93ff630cada967573162" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool LiveRegMatrix::checkRegMaskInterference</definition>
+        <argsstring>(const LiveInterval &amp;VirtReg, MCRegister PhysReg=MCRegister::NoRegister)</argsstring>
+        <name>checkRegMaskInterference</name>
+        <qualifiedname>llvm::LiveRegMatrix::checkRegMaskInterference</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>VirtReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_register" kindref="compound">MCRegister</ref></type>
+          <declname>PhysReg</declname>
+          <defval><ref refid="classllvm_1_1_m_c_register_1a4aa6aac0f36c1123df3686f7b4150d2c" kindref="member">MCRegister::NoRegister</ref></defval>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> for regmask interference only. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if VirtReg crosses a regmask operand that clobbers PhysReg. If PhysReg is null, check if VirtReg crosses any regmask operands. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="151" column="8" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="153" bodyend="170"/>
+        <references refid="classllvm_1_1_m_c_register_1af8403cc977c65b910e618ebcb6a12c32" compoundref="_m_c_register_8h" startline="83" endline="83">llvm::MCRegister::id</references>
+        <references refid="classllvm_1_1_live_interval_1a14d46e70db7e417c8ed5bc66fb295185" compoundref="_live_interval_8h" startline="718" endline="718">llvm::LiveInterval::reg</references>
+        <referencedby refid="classllvm_1_1_live_reg_matrix_1ad064f1e4af82a7f4251434afde29b0b5" compoundref="_live_reg_matrix_8cpp" startline="194" endline="216">checkInterference</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1ad08d47c88b8af3c45df94d19ccc6e679" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool LiveRegMatrix::checkRegUnitInterference</definition>
+        <argsstring>(const LiveInterval &amp;VirtReg, MCRegister PhysReg)</argsstring>
+        <name>checkRegUnitInterference</name>
+        <qualifiedname>llvm::LiveRegMatrix::checkRegUnitInterference</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>VirtReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_register" kindref="compound">MCRegister</ref></type>
+          <declname>PhysReg</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> for regunit interference only. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if VirtReg overlaps a fixed assignment of one of PhysRegs&apos;s register units. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="157" column="8" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="172" bodyend="184"/>
+        <references refid="classllvm_1_1_live_range_1a66ff664a97cd3c30de7e873335a0c075" compoundref="_live_interval_8h" startline="382" endline="382">llvm::LiveRange::empty</references>
+        <references refid="_live_reg_matrix_8cpp_1aab2ae433d483c154d92c727cf7282996" compoundref="_live_reg_matrix_8cpp" startline="87" endline="109">foreachUnit</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <references refid="classllvm_1_1_live_interval_1a14d46e70db7e417c8ed5bc66fb295185" compoundref="_live_interval_8h" startline="718" endline="718">llvm::LiveInterval::reg</references>
+        <referencedby refid="classllvm_1_1_live_reg_matrix_1ad064f1e4af82a7f4251434afde29b0b5" compoundref="_live_reg_matrix_8cpp" startline="194" endline="216">checkInterference</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1a7c79a2c92779f3c549dee89406ccdfc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_live_interval_union_1_1_query" kindref="compound">LiveIntervalUnion::Query</ref> &amp;</type>
+        <definition>LiveIntervalUnion::Query &amp; LiveRegMatrix::query</definition>
+        <argsstring>(const LiveRange &amp;LR, MCRegUnit RegUnit)</argsstring>
+        <name>query</name>
+        <qualifiedname>llvm::LiveRegMatrix::query</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>LR</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a8adc81fee7f9e66260dd2b626660c9c9" kindref="member">MCRegUnit</ref></type>
+          <declname>RegUnit</declname>
+        </param>
+        <briefdescription>
+<para>Query a line of the assigned virtual register matrix directly. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classllvm_1_1_use" kindref="compound">Use</ref> <ref refid="classllvm_1_1_m_c_reg_unit_iterator" kindref="compound">MCRegUnitIterator</ref> to enumerate all regunits in the desired PhysReg. This returns a reference to an internal Query data structure that is only valid until the next <ref refid="classllvm_1_1_live_reg_matrix_1a7c79a2c92779f3c549dee89406ccdfc1" kindref="member">query()</ref> call. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="164" column="28" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="186" bodyend="191"/>
+        <references refid="classllvm_1_1_live_interval_union_1_1_query_1a5a7f80461ba4f83724785b271058e0f1" compoundref="_live_interval_union_8h" startline="148" endline="156">llvm::LiveIntervalUnion::Query::init</references>
+        <referencedby refid="classllvm_1_1_live_reg_matrix_1ad064f1e4af82a7f4251434afde29b0b5" compoundref="_live_reg_matrix_8cpp" startline="194" endline="216">checkInterference</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1aee36714e41bf6584fb0eb5728ee55df5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_live_interval_union" kindref="compound">LiveIntervalUnion</ref> *</type>
+        <definition>LiveIntervalUnion * llvm::LiveRegMatrix::getLiveUnions</definition>
+        <argsstring>()</argsstring>
+        <name>getLiveUnions</name>
+        <qualifiedname>llvm::LiveRegMatrix::getLiveUnions</qualifiedname>
+        <briefdescription>
+<para>Directly access the live interval unions per regunit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns an array indexed by the regunit number. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="168" column="21" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="168" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_reg_matrix_1a59599eeb1c2ffa96071e18dfee6febc2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+        <definition>Register LiveRegMatrix::getOneVReg</definition>
+        <argsstring>(unsigned PhysReg) const</argsstring>
+        <name>getOneVReg</name>
+        <qualifiedname>llvm::LiveRegMatrix::getOneVReg</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>PhysReg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="170" column="12" bodyfile="lib/CodeGen/LiveRegMatrix.cpp" bodystart="283" bodyend="291"/>
+        <references refid="classllvm_1_1_live_reg_matrix_1a59599eeb1c2ffa96071e18dfee6febc2" compoundref="_live_reg_matrix_8cpp" startline="283" endline="291">getOneVReg</references>
+        <references refid="classllvm_1_1_m_c_register_1a4aa6aac0f36c1123df3686f7b4150d2c" compoundref="_m_c_register_8h" startline="52">llvm::MCRegister::NoRegister</references>
+        <references refid="classllvm_1_1_live_interval_1a14d46e70db7e417c8ed5bc66fb295185" compoundref="_live_interval_8h" startline="718" endline="718">llvm::LiveInterval::reg</references>
+        <referencedby refid="classllvm_1_1_live_reg_matrix_1a59599eeb1c2ffa96071e18dfee6febc2" compoundref="_live_reg_matrix_8cpp" startline="283" endline="291">getOneVReg</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/CodeGen/LiveRegMatrix.h" line="40" column="1" bodyfile="include/llvm/CodeGen/LiveRegMatrix.h" bodystart="40" bodyend="171"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_live_reg_matrix_1aca181a8107cd511dad6c6627fe9f6fae" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>assign</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ad064f1e4af82a7f4251434afde29b0b5" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>checkInterference</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ab9e855199959852351ae2761ae4302be" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>checkInterference</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1afc6ed60b40c5c63149c23ba327a77c23" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>checkInterferenceLanes</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a0afff12e511e93ff630cada967573162" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>checkRegMaskInterference</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ad08d47c88b8af3c45df94d19ccc6e679" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>checkRegUnitInterference</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1aee36714e41bf6584fb0eb5728ee55df5" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>getLiveUnions</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a59599eeb1c2ffa96071e18dfee6febc2" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>getOneVReg</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aa58056f4f8345af4ca8bd6e27f0ff8413" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>IK_Free</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aaa3c968c8898b0110e68e4933485c9042" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>IK_RegMask</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aa471b00a6595e7f400ef576512ccbcc31" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>IK_RegUnit</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635aa30186d61b40f517e8dc5d9e85076a91f" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>IK_VirtReg</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ac1907c90bcd96c06c880601406ce946c" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>init</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ab317b81a1c575049207d5d9348d8635a" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>InterferenceKind</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a448841a51094959c1ca24de1ae55435f" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>invalidateVirtRegs</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a28429b5d6afc4dc076b94527f2cb1de8" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>isPhysRegUsed</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a9d2cf4754429afb915cc267aaeb54078" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>LIS</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a3b55219113fc5b05c9aa60fe6e225ce3" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>LIUAlloc</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a182b56e093854090d170ecdc7fee75cd" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>LiveRegMatrix</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ad35570d655e9aa2f22134465c80a8c5d" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>LiveRegMatrix</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a60bef7f4a836cd97f9704940f259a6ae" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>LiveRegMatrixAnalysis</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a4dde01d9f410b6669c368256c19b177c" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>LiveRegMatrixWrapperLegacy</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ac6f66f13845ab19b6e4a4405d38d9e06" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>Matrix</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1aa96aeb98f7787032f2ed15c447dea0b6" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>Queries</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a7c79a2c92779f3c549dee89406ccdfc1" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>query</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1ac29d584ff17dc912c8f0e9ceb18b2ad1" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>RegMaskTag</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1aaecdef078e475b5b24673d6471576ab3" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>RegMaskUsable</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a646918ffd3fbaa0d9343acd0d2af19ab" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>RegMaskVirtReg</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a2c6decab5728e5fb4b1bfff4c45561de" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>releaseMemory</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a264a590cf9f5dd9119ede69866c5dcef" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>TRI</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a128d0b27fb99ba10fc96a8c526129157" prot="public" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>unassign</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1aafa52dd8c45eeae467e627591e608733" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>UserTag</name></member>
+      <member refid="classllvm_1_1_live_reg_matrix_1a750b07161a4c234887b5c5b828864dda" prot="private" virt="non-virtual"><scope>llvm::LiveRegMatrix</scope><name>VRM</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

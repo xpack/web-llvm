@@ -1,0 +1,787 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_bump_ptr_allocator_impl" kind="class" language="C++" prot="public">
+    <compoundname>llvm::BumpPtrAllocatorImpl</compoundname>
+    <basecompoundref refid="classllvm_1_1_allocator_base" prot="public" virt="non-virtual">llvm::AllocatorBase&lt; BumpPtrAllocatorImpl&lt; MallocAllocator, 4096, 4096, 128 &gt; &gt;</basecompoundref>
+    <basecompoundref refid="classllvm_1_1detail_1_1_allocator_holder" prot="private" virt="non-virtual">llvm::detail::AllocatorHolder&lt; MallocAllocator &gt;</basecompoundref>
+    <derivedcompoundref refid="classllvm_1_1_allocator_list" prot="private" virt="non-virtual">llvm::AllocatorList&lt; T, BumpPtrAllocator &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1detail_1_1_allocator_holder" prot="private" virt="non-virtual">llvm::detail::AllocatorHolder&lt; llvm::BumpPtrAllocatorImpl &gt;</derivedcompoundref>
+    <includes refid="_allocator_8h" local="yes">llvm/Support/Allocator.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename AllocatorT</type>
+        <defval><ref refid="classllvm_1_1_malloc_allocator" kindref="compound">MallocAllocator</ref></defval>
+      </param>
+      <param>
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <declname>SlabSize</declname>
+        <defname>SlabSize</defname>
+        <defval>4096</defval>
+      </param>
+      <param>
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <declname>SizeThreshold</declname>
+        <defname>SizeThreshold</defname>
+        <defval>SlabSize</defval>
+      </param>
+      <param>
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <declname>GrowthDelay</declname>
+        <defname>GrowthDelay</defname>
+        <defval>128</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_bump_ptr_allocator_impl_1a09cd650b95550c64b9062492b6e82bac" prot="private" static="no">
+        <type><ref refid="classllvm_1_1detail_1_1_allocator_holder" kindref="compound">detail::AllocatorHolder</ref>&lt; AllocatorT &gt;</type>
+        <definition>using llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::AllocTy =  detail::AllocatorHolder&lt;AllocatorT&gt;</definition>
+        <argsstring></argsstring>
+        <name>AllocTy</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::AllocTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="67" column="3" bodyfile="include/llvm/Support/Allocator.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_bump_ptr_allocator_impl_1ac1e513b44d8e4d928007f58e0d78a31c" prot="private" static="no" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>char* llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::CurPtr</definition>
+        <argsstring></argsstring>
+        <name>CurPtr</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::CurPtr</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>The current pointer into the current slab. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This points to the next free byte in the slab. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="312" column="8" bodyfile="include/llvm/Support/Allocator.h" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bump_ptr_allocator_impl_1a9738c4d4f84c1f57e2c7b1c615fc6465" prot="private" static="no" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>char* llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::End</definition>
+        <argsstring></argsstring>
+        <name>End</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::End</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>The end of the current slab. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="315" column="8" bodyfile="include/llvm/Support/Allocator.h" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bump_ptr_allocator_impl_1aa46e60cf122c4fb4e6b32aedb3d39568" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; void *, 4 &gt;</type>
+        <definition>SmallVector&lt;void *, 4&gt; llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::Slabs</definition>
+        <argsstring></argsstring>
+        <name>Slabs</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::Slabs</qualifiedname>
+        <briefdescription>
+<para>The slabs allocated so far. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="318" column="15" bodyfile="include/llvm/Support/Allocator.h" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bump_ptr_allocator_impl_1a1fcf06e30780f6ebf5b423e5de261287" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::pair&lt; void *, <ref refid="classsize__t" kindref="compound">size_t</ref> &gt;, 0 &gt;</type>
+        <definition>SmallVector&lt;std::pair&lt;void *, size_t&gt;, 0&gt; llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::CustomSizedSlabs</definition>
+        <argsstring></argsstring>
+        <name>CustomSizedSlabs</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::CustomSizedSlabs</qualifiedname>
+        <briefdescription>
+<para>Custom-sized slabs allocated for too-large allocation requests. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="321" column="15" bodyfile="include/llvm/Support/Allocator.h" bodystart="321" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bump_ptr_allocator_impl_1a083e7347626273c8dcd7f564a2724067" prot="private" static="no" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::BytesAllocated</definition>
+        <argsstring></argsstring>
+        <name>BytesAllocated</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::BytesAllocated</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>How many bytes we&apos;ve allocated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used so that we can compute how much space was wasted. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="326" column="10" bodyfile="include/llvm/Support/Allocator.h" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bump_ptr_allocator_impl_1ad5e779fef80d14de45c539b3ee18a98b" prot="private" static="no" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::RedZoneSize</definition>
+        <argsstring></argsstring>
+        <name>RedZoneSize</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::RedZoneSize</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>The number of bytes to put between allocations when running under a sanitizer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="330" column="10" bodyfile="include/llvm/Support/Allocator.h" bodystart="330" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_bump_ptr_allocator_impl_1a8c5ed7ab075c43b64daa213617d97dc9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type>class</type>
+        <definition>friend class SpecificBumpPtrAllocator</definition>
+        <argsstring></argsstring>
+        <name>SpecificBumpPtrAllocator</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::SpecificBumpPtrAllocator</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_specific_bump_ptr_allocator" kindref="compound">SpecificBumpPtrAllocator</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="377" column="28" bodyfile="include/llvm/Support/Allocator.h" bodystart="377" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a5c9184057954831f8428e7a7393947bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::BumpPtrAllocatorImpl</definition>
+        <argsstring>()=default</argsstring>
+        <name>BumpPtrAllocatorImpl</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::BumpPtrAllocatorImpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="78" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1aa97f1b8aea425f7d0284ae828a286e59" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::BumpPtrAllocatorImpl</definition>
+        <argsstring>(T &amp;&amp;Allocator)</argsstring>
+        <name>BumpPtrAllocatorImpl</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::BumpPtrAllocatorImpl</qualifiedname>
+        <param>
+          <type><ref refid="class_t" kindref="compound">T</ref> &amp;&amp;</type>
+          <declname>Allocator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="81" column="3" bodyfile="include/llvm/Support/Allocator.h" bodystart="81" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a60efd3795be57cbe166e03fb99784033" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::BumpPtrAllocatorImpl</definition>
+        <argsstring>(BumpPtrAllocatorImpl &amp;&amp;Old)</argsstring>
+        <name>BumpPtrAllocatorImpl</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::BumpPtrAllocatorImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_bump_ptr_allocator_impl" kindref="compound">BumpPtrAllocatorImpl</ref> &amp;&amp;</type>
+          <declname>Old</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="86" column="3" bodyfile="include/llvm/Support/Allocator.h" bodystart="86" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1acd85cdb8917cb6e029f9466faa6bef40" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::~BumpPtrAllocatorImpl</definition>
+        <argsstring>()</argsstring>
+        <name>~BumpPtrAllocatorImpl</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::~BumpPtrAllocatorImpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="97" column="3" bodyfile="include/llvm/Support/Allocator.h" bodystart="97" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1ac54189a6911cb2907ab72441831275b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_bump_ptr_allocator_impl" kindref="compound">BumpPtrAllocatorImpl</ref> &amp;</type>
+        <definition>BumpPtrAllocatorImpl &amp; llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::operator=</definition>
+        <argsstring>(BumpPtrAllocatorImpl &amp;&amp;RHS)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_bump_ptr_allocator_impl" kindref="compound">BumpPtrAllocatorImpl</ref> &amp;&amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="102" column="24" bodyfile="include/llvm/Support/Allocator.h" bodystart="102" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a977c94ac0ef5e305e5cf40726351d88a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::Reset</qualifiedname>
+        <briefdescription>
+<para>Deallocate all but the current slab and reset the current pointer to the beginning of it, freeing all memory allocated so far. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="123" column="8" bodyfile="include/llvm/Support/Allocator.h" bodystart="123" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a4054c3eefe873caf49c2290808d409ac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1acbae7c06e77fa64145cca176963b6863" kindref="member">LLVM_ATTRIBUTE_RETURNS_NONNULL</ref> void *</type>
+        <definition>LLVM_ATTRIBUTE_RETURNS_NONNULL void * llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::Allocate</definition>
+        <argsstring>(size_t Size, Align Alignment)</argsstring>
+        <name>Allocate</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::Allocate</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Size</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_align" kindref="compound">Align</ref></type>
+          <declname>Alignment</declname>
+        </param>
+        <briefdescription>
+<para>Allocate space at the specified alignment. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="148" column="39" bodyfile="include/llvm/Support/Allocator.h" bodystart="148" bodyend="179"/>
+        <referencedby refid="classllvm_1_1_bump_ptr_allocator_impl_1a2adb37af1eac8aa7fffd51ee4617e972" compoundref="_allocator_8h" startline="214" endline="217">llvm::BumpPtrAllocatorImpl&lt; MallocAllocator, 65536 &gt;::Allocate</referencedby>
+        <referencedby refid="classllvm_1_1_bits_init_1ad964d60acd20953d20b1e673a397d5e2" compoundref="_record_8cpp" startline="468" endline="484">llvm::BitsInit::get</referencedby>
+        <referencedby refid="classllvm_1_1_cond_op_init_1a181dad1cdd60a83a181108d90acd4738" compoundref="_record_8cpp" startline="2530" endline="2555">llvm::CondOpInit::get</referencedby>
+        <referencedby refid="classllvm_1_1_dag_init_1a8068bfe8ffd6450e61e72665e6887abc" compoundref="_record_8cpp" startline="2658" endline="2681">llvm::DagInit::get</referencedby>
+        <referencedby refid="classllvm_1_1_list_init_1a43379a4cffc2ed53c7bf95fe72e60454" compoundref="_record_8cpp" startline="697" endline="717">llvm::ListInit::get</referencedby>
+        <referencedby refid="classllvm_1_1_record_rec_ty_1af99419a971a2b329732cb2a89e6a004b" compoundref="_record_8cpp" startline="239" endline="276">llvm::RecordRecTy::get</referencedby>
+        <referencedby refid="classllvm_1_1_var_def_init_1a79b06bf58989430bbbad88e098ce32b6" compoundref="_record_8cpp" startline="2338" endline="2355">llvm::VarDefInit::get</referencedby>
+        <referencedby refid="_appending_type_table_builder_8cpp_1aa69f6dc0f79ddc38844c8585a439c2b1" compoundref="_appending_type_table_builder_8cpp" startline="69" endline="74">stabilize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1aef3aaf3bf7c0ec3ad8ad4941b14bb846" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1acbae7c06e77fa64145cca176963b6863" kindref="member">LLVM_ATTRIBUTE_RETURNS_NONNULL</ref> <ref refid="_compiler_8h_1ac6a5e0eb6a9944baf6ba14b640eab6e1" kindref="member">LLVM_ATTRIBUTE_NOINLINE</ref> void *</type>
+        <definition>LLVM_ATTRIBUTE_RETURNS_NONNULL LLVM_ATTRIBUTE_NOINLINE void * llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::AllocateSlow</definition>
+        <argsstring>(size_t Size, size_t SizeToAllocate, Align Alignment)</argsstring>
+        <name>AllocateSlow</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::AllocateSlow</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Size</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>SizeToAllocate</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_align" kindref="compound">Align</ref></type>
+          <declname>Alignment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="182" column="3" bodyfile="include/llvm/Support/Allocator.h" bodystart="182" bodyend="211"/>
+        <referencedby refid="classllvm_1_1_bump_ptr_allocator_impl_1a4054c3eefe873caf49c2290808d409ac" compoundref="_allocator_8h" startline="148" endline="179">llvm::BumpPtrAllocatorImpl&lt; MallocAllocator, 65536 &gt;::Allocate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a2adb37af1eac8aa7fffd51ee4617e972" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1acbae7c06e77fa64145cca176963b6863" kindref="member">LLVM_ATTRIBUTE_RETURNS_NONNULL</ref> void *</type>
+        <definition>LLVM_ATTRIBUTE_RETURNS_NONNULL void * llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::Allocate</definition>
+        <argsstring>(size_t Size, size_t Alignment)</argsstring>
+        <name>Allocate</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::Allocate</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Size</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Alignment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="214" column="3" bodyfile="include/llvm/Support/Allocator.h" bodystart="214" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1aa306ee4f02f1a5e8022576b65a7398af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::Deallocate</definition>
+        <argsstring>(const void *Ptr, size_t Size, size_t)</argsstring>
+        <name>Deallocate</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::Deallocate</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> void *</type>
+          <declname>Ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Size</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="225" column="8" bodyfile="include/llvm/Support/Allocator.h" bodystart="225" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a025ef2135bf2cb796d8868d0df71c081" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::GetNumSlabs</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNumSlabs</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::GetNumSlabs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="232" column="10" bodyfile="include/llvm/Support/Allocator.h" bodystart="232" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a37fb633e742bf184c02ea432d3b377f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref> &gt;</type>
+        <definition>std::optional&lt; int64_t &gt; llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::identifyObject</definition>
+        <argsstring>(const void *Ptr)</argsstring>
+        <name>identifyObject</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::identifyObject</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> void *</type>
+          <declname>Ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An index uniquely and reproducibly identifying an input pointer <computeroutput>Ptr</computeroutput> in the given allocator. The returned value is negative iff the object is inside a custom-size slab. Returns an empty optional if the pointer is not found in the allocator. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="239" column="17" bodyfile="include/llvm/Support/Allocator.h" bodystart="239" bodyend="259"/>
+        <referencedby refid="classllvm_1_1_bump_ptr_allocator_impl_1ae01786d2b3278d6cced61f9e1621ed9b" compoundref="_allocator_8h" startline="265" endline="269">llvm::BumpPtrAllocatorImpl&lt; MallocAllocator, 65536 &gt;::identifyKnownObject</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1ae01786d2b3278d6cced61f9e1621ed9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classint64__t" kindref="compound">int64_t</ref></type>
+        <definition>int64_t llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::identifyKnownObject</definition>
+        <argsstring>(const void *Ptr)</argsstring>
+        <name>identifyKnownObject</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::identifyKnownObject</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> void *</type>
+          <declname>Ptr</declname>
+        </param>
+        <briefdescription>
+<para>A wrapper around identifyObject that additionally asserts that the object is indeed within the allocator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An index uniquely and reproducibly identifying an input pointer <computeroutput>Ptr</computeroutput> in the given allocator. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="265" column="11" bodyfile="include/llvm/Support/Allocator.h" bodystart="265" bodyend="269"/>
+        <referencedby refid="classllvm_1_1_bump_ptr_allocator_impl_1a7473a4e7b2a9f87d91432add2af05cee" compoundref="_allocator_8h" startline="282" endline="286">llvm::BumpPtrAllocatorImpl&lt; MallocAllocator, 65536 &gt;::identifyKnownAlignedObject</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a7473a4e7b2a9f87d91432add2af05cee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classint64__t" kindref="compound">int64_t</ref></type>
+        <definition>int64_t llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::identifyKnownAlignedObject</definition>
+        <argsstring>(const void *Ptr)</argsstring>
+        <name>identifyKnownAlignedObject</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::identifyKnownAlignedObject</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> void *</type>
+          <declname>Ptr</declname>
+        </param>
+        <briefdescription>
+<para>A wrapper around identifyKnownObject. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Accepts type information about the object and produces a smaller identifier by relying on the alignment information. Note that sub-classes may have different alignment, so the most base class should be passed as template parameter in order to obtain correct results. For that reason automatic template parameter deduction is disabled. <simplesect kind="return"><para>An index uniquely and reproducibly identifying an input pointer <computeroutput>Ptr</computeroutput> in the given allocator. This identifier is different from the ones produced by identifyObject and identifyAlignedObject. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="282" column="11" bodyfile="include/llvm/Support/Allocator.h" bodystart="282" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1ab660226d33c184962339e80a7e7d4a6e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::getTotalMemory</definition>
+        <argsstring>() const</argsstring>
+        <name>getTotalMemory</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::getTotalMemory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="288" column="10" bodyfile="include/llvm/Support/Allocator.h" bodystart="288" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a81f8c869eeebd173c53552bf1a6f6e26" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::getBytesAllocated</definition>
+        <argsstring>() const</argsstring>
+        <name>getBytesAllocated</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::getBytesAllocated</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="297" column="10" bodyfile="include/llvm/Support/Allocator.h" bodystart="297" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a372470a41c7178bb2a5b67d022de2b3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::setRedZoneSize</definition>
+        <argsstring>(size_t NewSize)</argsstring>
+        <name>setRedZoneSize</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::setRedZoneSize</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>NewSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="299" column="8" bodyfile="include/llvm/Support/Allocator.h" bodystart="299" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a0bbab0d4a967c1e3280c5aa1c9856f6a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::PrintStats</definition>
+        <argsstring>() const</argsstring>
+        <name>PrintStats</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::PrintStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="303" column="8" bodyfile="include/llvm/Support/Allocator.h" bodystart="303" bodyend="306"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1ae4259d33a1748583e0e087d519417c2b" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>static size_t llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::computeSlabSize</definition>
+        <argsstring>(unsigned SlabIdx)</argsstring>
+        <name>computeSlabSize</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::computeSlabSize</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>SlabIdx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="332" column="17" bodyfile="include/llvm/Support/Allocator.h" bodystart="332" bodyend="339"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1aff57d74786db8f014b40cbd5df09036c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::StartNewSlab</definition>
+        <argsstring>()</argsstring>
+        <name>StartNewSlab</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::StartNewSlab</qualifiedname>
+        <briefdescription>
+<para>Allocate a new slab and move the bump pointers over into the new slab, modifying CurPtr and End. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="343" column="8" bodyfile="include/llvm/Support/Allocator.h" bodystart="343" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a37e9737e1cdc5072290229439a6d5fee" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::DeallocateSlabs</definition>
+        <argsstring>(SmallVectorImpl&lt; void * &gt;::iterator I, SmallVectorImpl&lt; void * &gt;::iterator E)</argsstring>
+        <name>DeallocateSlabs</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::DeallocateSlabs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; void * &gt;::iterator</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; void * &gt;::iterator</type>
+          <declname>E</declname>
+        </param>
+        <briefdescription>
+<para>Deallocate a sequence of slabs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="358" column="8" bodyfile="include/llvm/Support/Allocator.h" bodystart="358" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bump_ptr_allocator_impl_1a96ac7fb36dc13e72af11c77d4d7b8975" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;::DeallocateCustomSizedSlabs</definition>
+        <argsstring>()</argsstring>
+        <name>DeallocateCustomSizedSlabs</name>
+        <qualifiedname>llvm::BumpPtrAllocatorImpl::DeallocateCustomSizedSlabs</qualifiedname>
+        <briefdescription>
+<para>Deallocate all memory for custom sized slabs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Allocator.h" line="369" column="8" bodyfile="include/llvm/Support/Allocator.h" bodystart="369" bodyend="375"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Allocate memory in an ever growing pool, as if by bump-pointer. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This isn&apos;t strictly a bump-pointer allocator as it uses backing slabs of memory rather than relying on a boundless contiguous heap. However, it has bump-pointer semantics in that it is a monotonically growing pool of memory where every allocation is found by merely allocating the next N bytes in the slab, or the next N bytes in the next slab.</para>
+<para>Note that this also has a threshold for forcing allocations above a certain size into their own slab.</para>
+<para>The <ref refid="classllvm_1_1_bump_ptr_allocator_impl" kindref="compound">BumpPtrAllocatorImpl</ref> template defaults to using a <ref refid="classllvm_1_1_malloc_allocator" kindref="compound">MallocAllocator</ref> object, which wraps malloc, to allocate memory, but it can be changed to use a custom allocator.</para>
+<para>The GrowthDelay specifies after how many allocated slabs the allocator increases the size of the slabs. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="8">
+        <label>Alloc</label>
+      </node>
+      <node id="3">
+        <label>llvm::AllocatorBase&lt; DerivedT &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+      </node>
+      <node id="2">
+        <label>llvm::AllocatorBase&lt; BumpPtrAllocatorImpl&lt; MallocAllocator, 4096, 4096, 128 &gt; &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; BumpPtrAllocatorImpl&lt; MallocAllocator, 4096, 4096, 128 &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::AllocatorBase&lt; MallocAllocator &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; MallocAllocator &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::AllocatorList&lt; T, BumpPtrAllocator &gt;</label>
+        <link refid="classllvm_1_1_allocator_list"/>
+        <childnode refid="1" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::AllocatorList&lt; T, BumpPtrAllocator &gt;&lt; Token &gt;</label>
+        <link refid="classllvm_1_1_allocator_list"/>
+        <childnode refid="9" relation="template-instance">
+          <edgelabel>&lt; Token &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;</label>
+        <link refid="classllvm_1_1_bump_ptr_allocator_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm::BumpPtrAllocatorImpl&lt; MallocAllocator, 65536 &gt;</label>
+        <link refid="classllvm_1_1_bump_ptr_allocator_impl"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MallocAllocator, 65536 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::MallocAllocator</label>
+        <link refid="classllvm_1_1_malloc_allocator"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm::StringMap&lt; llvm::MDString, llvm::BumpPtrAllocatorImpl &gt;</label>
+        <link refid="classllvm_1_1_string_map"/>
+        <childnode refid="11" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::StringMap&lt; unsigned, llvm::BumpPtrAllocatorImpl &gt;</label>
+        <link refid="classllvm_1_1_string_map"/>
+        <childnode refid="11" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::detail::AllocatorHolder&lt; Alloc &gt;</label>
+        <link refid="classllvm_1_1detail_1_1_allocator_holder"/>
+        <childnode refid="8" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::detail::AllocatorHolder&lt; MallocAllocator &gt;</label>
+        <link refid="classllvm_1_1detail_1_1_allocator_holder"/>
+        <childnode refid="5" relation="private-inheritance">
+        </childnode>
+        <childnode refid="7" relation="template-instance">
+          <edgelabel>&lt; MallocAllocator &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::detail::AllocatorHolder&lt; llvm::BumpPtrAllocatorImpl &gt;</label>
+        <link refid="classllvm_1_1detail_1_1_allocator_holder"/>
+        <childnode refid="1" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>Alloc</label>
+      </node>
+      <node id="3">
+        <label>llvm::AllocatorBase&lt; DerivedT &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+      </node>
+      <node id="2">
+        <label>llvm::AllocatorBase&lt; BumpPtrAllocatorImpl&lt; MallocAllocator, 4096, 4096, 128 &gt; &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; BumpPtrAllocatorImpl&lt; MallocAllocator, 4096, 4096, 128 &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::AllocatorBase&lt; MallocAllocator &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; MallocAllocator &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::BumpPtrAllocatorImpl&lt; AllocatorT, SlabSize, SizeThreshold, GrowthDelay &gt;</label>
+        <link refid="classllvm_1_1_bump_ptr_allocator_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::MallocAllocator</label>
+        <link refid="classllvm_1_1_malloc_allocator"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::detail::AllocatorHolder&lt; Alloc &gt;</label>
+        <link refid="classllvm_1_1detail_1_1_allocator_holder"/>
+        <childnode refid="8" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::detail::AllocatorHolder&lt; MallocAllocator &gt;</label>
+        <link refid="classllvm_1_1detail_1_1_allocator_holder"/>
+        <childnode refid="5" relation="private-inheritance">
+        </childnode>
+        <childnode refid="7" relation="template-instance">
+          <edgelabel>&lt; MallocAllocator &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Support/Allocator.h" line="63" column="1" bodyfile="include/llvm/Support/Allocator.h" bodystart="66" bodyend="378"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a4054c3eefe873caf49c2290808d409ac" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>Allocate</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a2adb37af1eac8aa7fffd51ee4617e972" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>Allocate</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1aef3aaf3bf7c0ec3ad8ad4941b14bb846" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>AllocateSlow</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a09cd650b95550c64b9062492b6e82bac" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>AllocTy</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a5c9184057954831f8428e7a7393947bb" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>BumpPtrAllocatorImpl</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1aa97f1b8aea425f7d0284ae828a286e59" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>BumpPtrAllocatorImpl</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a60efd3795be57cbe166e03fb99784033" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>BumpPtrAllocatorImpl</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a083e7347626273c8dcd7f564a2724067" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>BytesAllocated</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1ae4259d33a1748583e0e087d519417c2b" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>computeSlabSize</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1ac1e513b44d8e4d928007f58e0d78a31c" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>CurPtr</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a1fcf06e30780f6ebf5b423e5de261287" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>CustomSizedSlabs</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1aa306ee4f02f1a5e8022576b65a7398af" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>Deallocate</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a96ac7fb36dc13e72af11c77d4d7b8975" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>DeallocateCustomSizedSlabs</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a37e9737e1cdc5072290229439a6d5fee" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>DeallocateSlabs</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a9738c4d4f84c1f57e2c7b1c615fc6465" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>End</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a81f8c869eeebd173c53552bf1a6f6e26" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>getBytesAllocated</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a025ef2135bf2cb796d8868d0df71c081" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>GetNumSlabs</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1ab660226d33c184962339e80a7e7d4a6e" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>getTotalMemory</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a7473a4e7b2a9f87d91432add2af05cee" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>identifyKnownAlignedObject</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1ae01786d2b3278d6cced61f9e1621ed9b" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>identifyKnownObject</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a37fb633e742bf184c02ea432d3b377f0" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>identifyObject</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1ac54189a6911cb2907ab72441831275b7" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a0bbab0d4a967c1e3280c5aa1c9856f6a" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>PrintStats</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1ad5e779fef80d14de45c539b3ee18a98b" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>RedZoneSize</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a977c94ac0ef5e305e5cf40726351d88a" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>Reset</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a372470a41c7178bb2a5b67d022de2b3b" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>setRedZoneSize</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1aa46e60cf122c4fb4e6b32aedb3d39568" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>Slabs</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1a8c5ed7ab075c43b64daa213617d97dc9" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>SpecificBumpPtrAllocator</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1aff57d74786db8f014b40cbd5df09036c" prot="private" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>StartNewSlab</name></member>
+      <member refid="classllvm_1_1_bump_ptr_allocator_impl_1acd85cdb8917cb6e029f9466faa6bef40" prot="public" virt="non-virtual"><scope>llvm::BumpPtrAllocatorImpl</scope><name>~BumpPtrAllocatorImpl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

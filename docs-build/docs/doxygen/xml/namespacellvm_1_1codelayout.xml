@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1codelayout" kind="namespace" language="C++">
+    <compoundname>llvm::codelayout</compoundname>
+    <innerclass refid="structllvm_1_1codelayout_1_1_c_d_sort_config" prot="public">llvm::codelayout::CDSortConfig</innerclass>
+    <innerclass refid="structllvm_1_1codelayout_1_1_edge_count" prot="public">llvm::codelayout::EdgeCount</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacellvm_1_1codelayout_1a90363531d13b5ad0853e7604759d3a12" prot="public" static="no">
+        <type>std::pair&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref>, <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>using llvm::codelayout::EdgeT =  std::pair&lt;uint64_t, uint64_t&gt;</definition>
+        <argsstring></argsstring>
+        <name>EdgeT</name>
+        <qualifiedname>llvm::codelayout::EdgeT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/CodeLayout.h" line="24" column="1" bodyfile="include/llvm/Transforms/Utils/CodeLayout.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1codelayout_1ab265fb35ca9607f01d99dae7a386ef77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>std::vector&lt; uint64_t &gt; llvm::codelayout::computeExtTspLayout</definition>
+        <argsstring>(ArrayRef&lt; uint64_t &gt; NodeSizes, ArrayRef&lt; uint64_t &gt; NodeCounts, ArrayRef&lt; EdgeCount &gt; EdgeCounts)</argsstring>
+        <name>computeExtTspLayout</name>
+        <qualifiedname>llvm::codelayout::computeExtTspLayout</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>NodeSizes</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>NodeCounts</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1codelayout_1_1_edge_count" kindref="compound">EdgeCount</ref> &gt;</type>
+          <declname>EdgeCounts</declname>
+        </param>
+        <briefdescription>
+<para>Find a layout of nodes (basic blocks) of a given CFG optimizing jump locality and thus processor I-cache utilization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is achieved via increasing the number of fall-through jumps and co-locating frequently executed nodes together. The nodes are assumed to be indexed by integers from [0, |V|) so that the current order is the identity permutation. <computeroutput>NodeSizes:</computeroutput> The sizes of the nodes (in bytes). <computeroutput>NodeCounts:</computeroutput> The execution counts of the nodes in the profile. <computeroutput>EdgeCounts:</computeroutput> The execution counts of every edge (jump) in the profile. The map also defines the edges in CFG and should include 0-count edges. <simplesect kind="return"><para>The best block order found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/CodeLayout.h" line="43" column="13" bodyfile="lib/Transforms/Utils/CodeLayout.cpp" bodystart="1411" bodyend="1426" declfile="include/llvm/Transforms/Utils/CodeLayout.h" declline="43" declcolumn="13"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classanonymous__namespace_02_code_layout_8cpp_03_1_1_ext_t_s_p_impl_1a47333daefb26df0fb055e84fc9a77d9d" compoundref="_code_layout_8cpp" startline="591" endline="595">anonymous_namespace{CodeLayout.cpp}::ExtTSPImpl::ExtTSPImpl</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1codelayout_1a70c3cab5f18ff0a00d4ad43ec3287021" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double llvm::codelayout::calcExtTspScore</definition>
+        <argsstring>(ArrayRef&lt; uint64_t &gt; Order, ArrayRef&lt; uint64_t &gt; NodeSizes, ArrayRef&lt; EdgeCount &gt; EdgeCounts)</argsstring>
+        <name>calcExtTspScore</name>
+        <qualifiedname>llvm::codelayout::calcExtTspScore</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>Order</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>NodeSizes</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1codelayout_1_1_edge_count" kindref="compound">EdgeCount</ref> &gt;</type>
+          <declname>EdgeCounts</declname>
+        </param>
+        <briefdescription>
+<para>Estimate the &quot;quality&quot; of a given node order in CFG. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The higher the score, the better the order is. The score is designed to reflect the locality of the given order, which is anti-correlated with the number of I-cache misses in a typical execution of the function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/CodeLayout.h" line="51" column="8" bodyfile="lib/Transforms/Utils/CodeLayout.cpp" bodystart="1428" bodyend="1447" declfile="include/llvm/Transforms/Utils/CodeLayout.h" declline="51" declcolumn="8"/>
+        <references refid="namespaceanonymous__namespace_02_code_layout_8cpp_03_1a70ace5af72b93aedcb782ef65032c4de" compoundref="_code_layout_8cpp" startline="153" endline="173">anonymous_namespace{CodeLayout.cpp}::extTSPScore</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+        <referencedby refid="namespacellvm_1_1codelayout_1ab9785654b9d9d59e9f47ceac3364de40" compoundref="_code_layout_8cpp" startline="1449" endline="1455">calcExtTspScore</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1codelayout_1ab9785654b9d9d59e9f47ceac3364de40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double llvm::codelayout::calcExtTspScore</definition>
+        <argsstring>(ArrayRef&lt; uint64_t &gt; NodeSizes, ArrayRef&lt; EdgeCount &gt; EdgeCounts)</argsstring>
+        <name>calcExtTspScore</name>
+        <qualifiedname>llvm::codelayout::calcExtTspScore</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>NodeSizes</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1codelayout_1_1_edge_count" kindref="compound">EdgeCount</ref> &gt;</type>
+          <declname>EdgeCounts</declname>
+        </param>
+        <briefdescription>
+<para>Estimate the &quot;quality&quot; of the current node order in CFG. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/CodeLayout.h" line="55" column="8" bodyfile="lib/Transforms/Utils/CodeLayout.cpp" bodystart="1449" bodyend="1455" declfile="include/llvm/Transforms/Utils/CodeLayout.h" declline="55" declcolumn="8"/>
+        <references refid="namespacellvm_1_1codelayout_1a70c3cab5f18ff0a00d4ad43ec3287021" compoundref="_code_layout_8cpp" startline="1428" endline="1447">calcExtTspScore</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1codelayout_1a40b559a61a165123bb62e26c941a223b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>std::vector&lt; uint64_t &gt; llvm::codelayout::computeCacheDirectedLayout</definition>
+        <argsstring>(ArrayRef&lt; uint64_t &gt; FuncSizes, ArrayRef&lt; uint64_t &gt; FuncCounts, ArrayRef&lt; EdgeCount &gt; CallCounts, ArrayRef&lt; uint64_t &gt; CallOffsets)</argsstring>
+        <name>computeCacheDirectedLayout</name>
+        <qualifiedname>llvm::codelayout::computeCacheDirectedLayout</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>FuncSizes</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>FuncCounts</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1codelayout_1_1_edge_count" kindref="compound">EdgeCount</ref> &gt;</type>
+          <declname>CallCounts</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>CallOffsets</declname>
+        </param>
+        <briefdescription>
+<para>Apply a Cache-Directed Sort for functions represented by a call graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The placement is done by optimizing the call locality by co-locating frequently executed functions. <computeroutput>FuncSizes:</computeroutput> The sizes of the nodes (in bytes). <computeroutput>FuncCounts:</computeroutput> The execution counts of the nodes in the profile. <computeroutput>CallCounts:</computeroutput> The execution counts of every edge (jump) in the profile. The map also defines the edges in CFG and should include 0-count edges. <computeroutput>CallOffsets:</computeroutput> The offsets of the calls from their source nodes. <simplesect kind="return"><para>The best function order found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/CodeLayout.h" line="82" column="13" bodyfile="lib/Transforms/Utils/CodeLayout.cpp" bodystart="1471" bodyend="1488" declfile="include/llvm/Transforms/Utils/CodeLayout.h" declline="82" declcolumn="13"/>
+        <references refid="_code_layout_8cpp_1af31ae8dde941bfd375efe1a73c3fe173">CacheEntries</references>
+        <references refid="structllvm_1_1codelayout_1_1_c_d_sort_config_1ad5722362bbe8b820f7171a89b500180e" compoundref="_code_layout_8h" startline="62">llvm::codelayout::CDSortConfig::CacheEntries</references>
+        <references refid="_code_layout_8cpp_1a26daa24afdae1ccc5c868908b7c09feb">CacheSize</references>
+        <references refid="structllvm_1_1codelayout_1_1_c_d_sort_config_1a9b3e2b25b382491b92cc2ec6d066dae9" compoundref="_code_layout_8h" startline="64">llvm::codelayout::CDSortConfig::CacheSize</references>
+        <references refid="_code_layout_8cpp_1aee880aaf36e616387690904c6cec9d51">CDMaxChainSize</references>
+        <references refid="namespacellvm_1_1codelayout_1a40b559a61a165123bb62e26c941a223b" compoundref="_code_layout_8cpp" startline="1471" endline="1488">computeCacheDirectedLayout</references>
+        <references refid="_code_layout_8cpp_1aaef85ddf5227bdda042d13ae0679dac3">DistancePower</references>
+        <references refid="structllvm_1_1codelayout_1_1_c_d_sort_config_1ab8843f638794cf74c8044107ae618200" compoundref="_code_layout_8h" startline="68">llvm::codelayout::CDSortConfig::DistancePower</references>
+        <references refid="_code_layout_8cpp_1a4cf66d46bbaf7f65eb485907e4ba3d77">FrequencyScale</references>
+        <references refid="structllvm_1_1codelayout_1_1_c_d_sort_config_1acf9844a48ea378fd1887b0a4146a7af3" compoundref="_code_layout_8h" startline="70">llvm::codelayout::CDSortConfig::FrequencyScale</references>
+        <references refid="structllvm_1_1codelayout_1_1_c_d_sort_config_1a7ca32aeb071c565b99935586655ac847" compoundref="_code_layout_8h" startline="66">llvm::codelayout::CDSortConfig::MaxChainSize</references>
+        <referencedby refid="namespacellvm_1_1codelayout_1a40b559a61a165123bb62e26c941a223b" compoundref="_code_layout_8cpp" startline="1471" endline="1488">computeCacheDirectedLayout</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1codelayout_1a73e7e6f4b8c90a37295178a56661de2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>std::vector&lt; uint64_t &gt; llvm::codelayout::computeCacheDirectedLayout</definition>
+        <argsstring>(const CDSortConfig &amp;Config, ArrayRef&lt; uint64_t &gt; FuncSizes, ArrayRef&lt; uint64_t &gt; FuncCounts, ArrayRef&lt; EdgeCount &gt; CallCounts, ArrayRef&lt; uint64_t &gt; CallOffsets)</argsstring>
+        <name>computeCacheDirectedLayout</name>
+        <qualifiedname>llvm::codelayout::computeCacheDirectedLayout</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1codelayout_1_1_c_d_sort_config" kindref="compound">CDSortConfig</ref> &amp;</type>
+          <declname>Config</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>FuncSizes</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>FuncCounts</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1codelayout_1_1_edge_count" kindref="compound">EdgeCount</ref> &gt;</type>
+          <declname>CallCounts</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>CallOffsets</declname>
+        </param>
+        <briefdescription>
+<para>Apply a Cache-Directed Sort with a custom config. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/CodeLayout.h" line="87" column="13" bodyfile="lib/Transforms/Utils/CodeLayout.cpp" bodystart="1457" bodyend="1469" declfile="include/llvm/Transforms/Utils/CodeLayout.h" declline="87" declcolumn="13"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classanonymous__namespace_02_code_layout_8cpp_03_1_1_c_d_sort_impl_1a68a9823d565755fe71d5a54fb0262947" compoundref="_code_layout_8cpp" startline="1039" endline="1044">anonymous_namespace{CodeLayout.cpp}::CDSortImpl::CDSortImpl</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/Utils/CodeLayout.h" line="22" column="1"/>
+  </compounddef>
+</doxygen>

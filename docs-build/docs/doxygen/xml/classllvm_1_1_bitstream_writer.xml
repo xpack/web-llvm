@@ -1,0 +1,1327 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_bitstream_writer" kind="class" language="C++" prot="public">
+    <compoundname>llvm::BitstreamWriter</compoundname>
+    <includes refid="_bitstream_writer_8h" local="yes">llvm/Bitstream/BitstreamWriter.h</includes>
+    <innerclass refid="structllvm_1_1_bitstream_writer_1_1_block" prot="private">llvm::BitstreamWriter::Block</innerclass>
+    <innerclass refid="structllvm_1_1_bitstream_writer_1_1_block_info" prot="private">llvm::BitstreamWriter::BlockInfo</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1a14aae74d5fd9e837b895fbdccfcf6470" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classchar" kindref="compound">char</ref>, 0 &gt;</type>
+        <definition>SmallVector&lt;char, 0&gt; llvm::BitstreamWriter::OwnBuffer</definition>
+        <argsstring></argsstring>
+        <name>OwnBuffer</name>
+        <qualifiedname>llvm::BitstreamWriter::OwnBuffer</qualifiedname>
+        <briefdescription>
+<para>Owned buffer, used to init Buffer if the provided stream doesn&apos;t happen to be a buffer itself. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="34" column="15" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1a8cf20fe6d1f21cc4812de07c62596cd2" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classchar" kindref="compound">char</ref> &gt; &amp;</type>
+        <definition>SmallVectorImpl&lt;char&gt;&amp; llvm::BitstreamWriter::Buffer</definition>
+        <argsstring></argsstring>
+        <name>Buffer</name>
+        <qualifiedname>llvm::BitstreamWriter::Buffer</qualifiedname>
+        <briefdescription>
+<para>Internal buffer for unflushed bytes (unless there is no stream to flush to, case in which these are &quot;the bytes&quot;). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The writer backpatches, so it is efficient to buffer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="38" column="19" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1ad396113421e9eea552c282d2cc4a23f1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> *<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref></type>
+        <definition>raw_ostream* const llvm::BitstreamWriter::FS</definition>
+        <argsstring></argsstring>
+        <name>FS</name>
+        <qualifiedname>llvm::BitstreamWriter::FS</qualifiedname>
+        <briefdescription>
+<para>FS - The file stream that Buffer flushes to. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If FS is a <ref refid="classllvm_1_1raw__fd__stream" kindref="compound">raw_fd_stream</ref>, the writer will incrementally flush at subblock boundaries. Otherwise flushing will happen at the end of <ref refid="classllvm_1_1_bitstream_writer" kindref="compound">BitstreamWriter</ref>&apos;s lifetime. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="43" column="21" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1afdcc5f2bdac2b9e7e35e9a002bb17b51" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>const uint64_t llvm::BitstreamWriter::FlushThreshold</definition>
+        <argsstring></argsstring>
+        <name>FlushThreshold</name>
+        <qualifiedname>llvm::BitstreamWriter::FlushThreshold</qualifiedname>
+        <briefdescription>
+<para>FlushThreshold - this is the threshold (unit B) to flush to FS, if FS is a <ref refid="classllvm_1_1raw__fd__stream" kindref="compound">raw_fd_stream</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="47" column="18" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1a4a50d2956097016e3e238292d1f0b08d" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BitstreamWriter::CurBit</definition>
+        <argsstring></argsstring>
+        <name>CurBit</name>
+        <qualifiedname>llvm::BitstreamWriter::CurBit</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>CurBit - Always between 0 and 31 inclusive, specifies the next bit to use. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="50" column="12" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1a91494138910feec0d1ce89fd19ab0b9b" prot="private" static="no" mutable="no">
+        <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t llvm::BitstreamWriter::CurValue</definition>
+        <argsstring></argsstring>
+        <name>CurValue</name>
+        <qualifiedname>llvm::BitstreamWriter::CurValue</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>CurValue - The current value. Only bits &lt; CurBit are valid. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="53" column="12" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1a698d15dd7fab2e68baade7bace4537c9" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BitstreamWriter::CurCodeSize</definition>
+        <argsstring></argsstring>
+        <name>CurCodeSize</name>
+        <qualifiedname>llvm::BitstreamWriter::CurCodeSize</qualifiedname>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>CurCodeSize - This is the declared size of code values used for the current block, in bits. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="57" column="12" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1aee5498cd81a59c8b001d6896c4d04f35" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BitstreamWriter::BlockInfoCurBID</definition>
+        <argsstring></argsstring>
+        <name>BlockInfoCurBID</name>
+        <qualifiedname>llvm::BitstreamWriter::BlockInfoCurBID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>BlockInfoCurBID - When emitting a BLOCKINFO_BLOCK, this is the currently selected BLOCK <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="61" column="12" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1a2067231e69bbf9b1133cce389a81d588" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classllvm_1_1_bit_code_abbrev" kindref="compound">BitCodeAbbrev</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;BitCodeAbbrev&gt; &gt; llvm::BitstreamWriter::CurAbbrevs</definition>
+        <argsstring></argsstring>
+        <name>CurAbbrevs</name>
+        <qualifiedname>llvm::BitstreamWriter::CurAbbrevs</qualifiedname>
+        <briefdescription>
+<para>CurAbbrevs - Abbrevs installed at in this block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="64" column="15" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1a83624eb7826c7d09b1bb9a47ecd4d194" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classsize__t" kindref="compound">size_t</ref> &gt;</type>
+        <definition>std::optional&lt;size_t&gt; llvm::BitstreamWriter::BlockFlushingStartPos</definition>
+        <argsstring></argsstring>
+        <name>BlockFlushingStartPos</name>
+        <qualifiedname>llvm::BitstreamWriter::BlockFlushingStartPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="68" column="17" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1a933414e414dc06e3aa0d9fdeb0fb24c9" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespacellvm_1a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2" kindref="member">Block</ref> &gt;</type>
+        <definition>std::vector&lt;Block&gt; llvm::BitstreamWriter::BlockScope</definition>
+        <argsstring></argsstring>
+        <name>BlockScope</name>
+        <qualifiedname>llvm::BitstreamWriter::BlockScope</qualifiedname>
+        <briefdescription>
+<para>BlockScope - This tracks the current blocks that we have entered. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="78" column="15" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_bitstream_writer_1a6b2d475674070a6c40a8582ab686633f" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; BlockInfo &gt;</type>
+        <definition>std::vector&lt;BlockInfo&gt; llvm::BitstreamWriter::BlockInfoRecords</definition>
+        <argsstring></argsstring>
+        <name>BlockInfoRecords</name>
+        <qualifiedname>llvm::BitstreamWriter::BlockInfoRecords</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="86" column="15" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a70783880da8a7556d0e92d0f89b6c47d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::WriteWord</definition>
+        <argsstring>(unsigned Value)</argsstring>
+        <name>WriteWord</name>
+        <qualifiedname>llvm::BitstreamWriter::WriteWord</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="88" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="88" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1afb0ad261dcbdb4a4227cbfabcd6c0fdb" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::BitstreamWriter::GetNumOfFlushedBytes</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNumOfFlushedBytes</name>
+        <qualifiedname>llvm::BitstreamWriter::GetNumOfFlushedBytes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="95" column="12" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="95" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1aeafca1048e303aa7eb6455ef59d842e2" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::BitstreamWriter::GetBufferOffset</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBufferOffset</name>
+        <qualifiedname>llvm::BitstreamWriter::GetBufferOffset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="99" column="10" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="99" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a87d3b03e4906ce3b8bfc3c37d11db034" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::BitstreamWriter::GetWordIndex</definition>
+        <argsstring>() const</argsstring>
+        <name>GetWordIndex</name>
+        <qualifiedname>llvm::BitstreamWriter::GetWordIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="103" column="10" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="103" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a5fb41acd1af04214cd799b9be19bfc3a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::flushAndClear</definition>
+        <argsstring>()</argsstring>
+        <name>flushAndClear</name>
+        <qualifiedname>llvm::BitstreamWriter::flushAndClear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="109" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="109" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a15d6f1a9a10e0e7cb39cc0cff8b2fbe5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::FlushToFile</definition>
+        <argsstring>(bool OnClosing=false)</argsstring>
+        <name>FlushToFile</name>
+        <qualifiedname>llvm::BitstreamWriter::FlushToFile</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>OnClosing</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>If the related file stream is a <ref refid="classllvm_1_1raw__fd__stream" kindref="compound">raw_fd_stream</ref>, flush the buffer if its size is above a threshold. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>OnClosing</computeroutput> is true, flushing happens regardless of thresholds. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="122" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="122" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a73f4b5500e66c3ad3fe993c7046dd3a7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1raw__fd__stream" kindref="compound">raw_fd_stream</ref> *</type>
+        <definition>raw_fd_stream * llvm::BitstreamWriter::fdStream</definition>
+        <argsstring>()</argsstring>
+        <name>fdStream</name>
+        <qualifiedname>llvm::BitstreamWriter::fdStream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="133" column="17" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="133" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a26feb2e509746dfd2031bc9e316d2b51" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1raw__fd__stream" kindref="compound">raw_fd_stream</ref> *</type>
+        <definition>const raw_fd_stream * llvm::BitstreamWriter::fdStream</definition>
+        <argsstring>() const</argsstring>
+        <name>fdStream</name>
+        <qualifiedname>llvm::BitstreamWriter::fdStream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="135" column="23" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="135" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a4d1b520088b8459f85b51d8f001f3a18" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classchar" kindref="compound">char</ref> &gt; &amp;</type>
+        <definition>SmallVectorImpl&lt; char &gt; &amp; llvm::BitstreamWriter::getInternalBufferFromStream</definition>
+        <argsstring>(raw_ostream &amp;OutStream)</argsstring>
+        <name>getInternalBufferFromStream</name>
+        <qualifiedname>llvm::BitstreamWriter::getInternalBufferFromStream</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OutStream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="139" column="19" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="139" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a5e80f04829f1010a860168717649779b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename uintty</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitAbbreviatedLiteral</definition>
+        <argsstring>(const BitCodeAbbrevOp &amp;Op, uintty V)</argsstring>
+        <name>EmitAbbreviatedLiteral</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitAbbreviatedLiteral</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_bit_code_abbrev_op" kindref="compound">BitCodeAbbrevOp</ref> &amp;</type>
+          <declname>Op</declname>
+        </param>
+        <param>
+          <type>uintty</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>EmitAbbreviatedLiteral - Emit a literal value according to its abbrev record. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a no-op, since the abbrev specifies the literal to use. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="421" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="421" bodyend="427"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a5d3eca41964e33be3c53683bc22d13d8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename uintty</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitAbbreviatedField</definition>
+        <argsstring>(const BitCodeAbbrevOp &amp;Op, uintty V)</argsstring>
+        <name>EmitAbbreviatedField</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitAbbreviatedField</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_bit_code_abbrev_op" kindref="compound">BitCodeAbbrevOp</ref> &amp;</type>
+          <declname>Op</declname>
+        </param>
+        <param>
+          <type>uintty</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>EmitAbbreviatedField - Emit a single scalar field value with the specified encoding. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="432" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="432" bodyend="450"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a43f7317873888110025bf0f2369d38d4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename uintty</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitRecordWithAbbrevImpl</definition>
+        <argsstring>(unsigned Abbrev, ArrayRef&lt; uintty &gt; Vals, StringRef Blob, std::optional&lt; unsigned &gt; Code)</argsstring>
+        <name>EmitRecordWithAbbrevImpl</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitRecordWithAbbrevImpl</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Abbrev</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; uintty &gt;</type>
+          <declname>Vals</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Blob</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+          <declname>Code</declname>
+        </param>
+        <briefdescription>
+<para>EmitRecordWithAbbrevImpl - This is the core implementation of the record emission code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If BlobData is non-null, then it specifies an array of data that should be emitted as part of the Blob or Array operand that is known to exist at the end of the record. If Code is specified, then it is the record code to emit before the Vals, which must not contain the code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="459" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="459" bodyend="542"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a9fea53b98f31666ed5294cf4bb4a1f26" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EncodeAbbrev</definition>
+        <argsstring>(const BitCodeAbbrev &amp;Abbv)</argsstring>
+        <name>EncodeAbbrev</name>
+        <qualifiedname>llvm::BitstreamWriter::EncodeAbbrev</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_bit_code_abbrev" kindref="compound">BitCodeAbbrev</ref> &amp;</type>
+          <declname>Abbv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="632" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="632" bodyend="647"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a5ddc20e767e065238be211b4a6b8fdf1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::SwitchToBlockID</definition>
+        <argsstring>(unsigned BlockID)</argsstring>
+        <name>SwitchToBlockID</name>
+        <qualifiedname>llvm::BitstreamWriter::SwitchToBlockID</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BlockID</declname>
+        </param>
+        <briefdescription>
+<para>SwitchToBlockID - If we aren&apos;t already talking about the specified block <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>, emit a BLOCKINFO_CODE_SETBID record. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="671" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="671" bodyend="677"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a5fe74e9d3cfee803da8b405bee658e96" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>BlockInfo &amp;</type>
+        <definition>BlockInfo &amp; llvm::BitstreamWriter::getOrCreateBlockInfo</definition>
+        <argsstring>(unsigned BlockID)</argsstring>
+        <name>getOrCreateBlockInfo</name>
+        <qualifiedname>llvm::BitstreamWriter::getOrCreateBlockInfo</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BlockID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="679" column="13" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="679" bodyend="687"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a5f6ee363763723bf98da451e95bb1d1c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BitstreamWriter::BitstreamWriter</definition>
+        <argsstring>(raw_ostream &amp;OutStream, uint32_t FlushThreshold=512)</argsstring>
+        <name>BitstreamWriter</name>
+        <qualifiedname>llvm::BitstreamWriter::BitstreamWriter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OutStream</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>FlushThreshold</declname>
+          <defval>512</defval>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="classllvm_1_1_bitstream_writer" kindref="compound">BitstreamWriter</ref> over a <ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> <computeroutput>OutStream</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>OutStream</computeroutput> is a <ref refid="classllvm_1_1raw__svector__ostream" kindref="compound">raw_svector_ostream</ref>, the <ref refid="classllvm_1_1_bitstream_writer" kindref="compound">BitstreamWriter</ref> will write directly to the latter&apos;s buffer. In all other cases, the <ref refid="classllvm_1_1_bitstream_writer" kindref="compound">BitstreamWriter</ref> will use an internal buffer and flush at the end of its lifetime.</para>
+<para>In addition, if <computeroutput>is</computeroutput> a <ref refid="classllvm_1_1raw__fd__stream" kindref="compound">raw_fd_stream</ref> supporting seek, tell, and read (besides write), the <ref refid="classllvm_1_1_bitstream_writer" kindref="compound">BitstreamWriter</ref> will also flush incrementally, when a subblock is finished, and if the FlushThreshold is passed.</para>
+<para>NOTE: <computeroutput>FlushThreshold&apos;s</computeroutput> unit is <ref refid="class_m_b" kindref="compound">MB</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="156" column="3" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="156" bodyend="159"/>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a3cbc68c0f33ec6c72b69a595c36d15c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BitstreamWriter::BitstreamWriter</definition>
+        <argsstring>(SmallVectorImpl&lt; char &gt; &amp;Buff)</argsstring>
+        <name>BitstreamWriter</name>
+        <qualifiedname>llvm::BitstreamWriter::BitstreamWriter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classchar" kindref="compound">char</ref> &gt; &amp;</type>
+          <declname>Buff</declname>
+        </param>
+        <briefdescription>
+<para>Convenience constructor for users that start with a vector - avoids needing to wrap it in a <ref refid="classllvm_1_1raw__svector__ostream" kindref="compound">raw_svector_ostream</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="163" column="3" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="163" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1abf7d55f3e39ce028c1594f34967d06b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BitstreamWriter::~BitstreamWriter</definition>
+        <argsstring>()</argsstring>
+        <name>~BitstreamWriter</name>
+        <qualifiedname>llvm::BitstreamWriter::~BitstreamWriter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="166" column="3" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="166" bodyend="170"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a87d4d8efe6bca7b041b0837d30add275" compoundref="_bitstream_writer_8h" startline="301" endline="307">FlushToWord</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a063bf32f685de649ee8239a8e54da868" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::markAndBlockFlushing</definition>
+        <argsstring>()</argsstring>
+        <name>markAndBlockFlushing</name>
+        <qualifiedname>llvm::BitstreamWriter::markAndBlockFlushing</qualifiedname>
+        <briefdescription>
+<para>For scenarios where the user wants to access a section of the stream to (for example) compute some checksum, disable flushing and remember the position in the internal buffer where that happened. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Must be paired with a call to getMarkedBufferAndResumeFlushing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="176" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="176" bodyend="179"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a1817d94003400d1a95d6a35a5efe574f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef llvm::BitstreamWriter::getMarkedBufferAndResumeFlushing</definition>
+        <argsstring>()</argsstring>
+        <name>getMarkedBufferAndResumeFlushing</name>
+        <qualifiedname>llvm::BitstreamWriter::getMarkedBufferAndResumeFlushing</qualifiedname>
+        <briefdescription>
+<para>resumes flushing, but does not flush, and returns the section in the internal buffer starting from the position marked with markAndBlockFlushing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The return should be processed before any additional calls to this object, because those may cause a flush and invalidate the return. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="186" column="13" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="186" bodyend="191"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1af6a2b975dd3ba4ab436c4de2199da5ee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::BitstreamWriter::GetCurrentBitNo</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentBitNo</name>
+        <qualifiedname>llvm::BitstreamWriter::GetCurrentBitNo</qualifiedname>
+        <briefdescription>
+<para>Retrieve the current position in the stream, in bits. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="194" column="12" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="194" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1af3254f4c3d4874089f1113157cb4494e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BitstreamWriter::GetAbbrevIDWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAbbrevIDWidth</name>
+        <qualifiedname>llvm::BitstreamWriter::GetAbbrevIDWidth</qualifiedname>
+        <briefdescription>
+<para>Retrieve the number of bits currently used to encode an abbrev <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="197" column="12" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="197" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a61b26222d7ecfe417406eec38edba698" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::BackpatchByte</definition>
+        <argsstring>(uint64_t BitNo, uint8_t NewByte)</argsstring>
+        <name>BackpatchByte</name>
+        <qualifiedname>llvm::BitstreamWriter::BackpatchByte</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>BitNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint8__t" kindref="compound">uint8_t</ref></type>
+          <declname>NewByte</declname>
+        </param>
+        <briefdescription>
+<para>Backpatch a byte in the output at the given bit offset with the specified value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="205" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="205" bodyend="265"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ae1e26e57357947b25e392fd18ab000dbaaae6635e044ac56046b2893a529b5114" compoundref="bit_8h" startline="72">llvm::little</references>
+        <references refid="namespacellvm_1_1support_1_1endian_1a6d9995bf8da2a0fed6fa31bce97aeebd" compoundref="_endian_8h" startline="127" endline="157">llvm::support::endian::readAtBitAlignment</references>
+        <references refid="namespacellvm_1_1support_1a92fe024386465eeb8aeb7c78371549d7af6b11e8bcea1b0b70051b197f2cb3f84" compoundref="_endian_8h" startline="29">llvm::support::unaligned</references>
+        <references refid="namespacellvm_1_1support_1_1endian_1a60b7cc9c00de00b23725cfa29e75ca3f" compoundref="_endian_8h" startline="162" endline="209">llvm::support::endian::writeAtBitAlignment</references>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1ae431728f61d5b52efa59fc13f834085f" compoundref="_bitstream_writer_8h" startline="267" endline="270">BackpatchHalfWord</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1ae431728f61d5b52efa59fc13f834085f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::BackpatchHalfWord</definition>
+        <argsstring>(uint64_t BitNo, uint16_t Val)</argsstring>
+        <name>BackpatchHalfWord</name>
+        <qualifiedname>llvm::BitstreamWriter::BackpatchHalfWord</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>BitNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="267" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="267" bodyend="270"/>
+        <references refid="classllvm_1_1_bitstream_writer_1a61b26222d7ecfe417406eec38edba698" compoundref="_bitstream_writer_8h" startline="205" endline="265">BackpatchByte</references>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a9e13da25204783390ddfc17dcf55a1c2" compoundref="_bitstream_writer_8h" startline="272" endline="275">BackpatchWord</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a9e13da25204783390ddfc17dcf55a1c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::BackpatchWord</definition>
+        <argsstring>(uint64_t BitNo, unsigned Val)</argsstring>
+        <name>BackpatchWord</name>
+        <qualifiedname>llvm::BitstreamWriter::BackpatchWord</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>BitNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="272" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="272" bodyend="275"/>
+        <references refid="classllvm_1_1_bitstream_writer_1ae431728f61d5b52efa59fc13f834085f" compoundref="_bitstream_writer_8h" startline="267" endline="270">BackpatchHalfWord</references>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1aa4ad7b052bd7dcf08ff26ad92351f1b5" compoundref="_bitstream_writer_8h" startline="277" endline="280">BackpatchWord64</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a5e8488041d80c56389002659004c6af7" compoundref="_bitstream_writer_8h" startline="390" endline="411">ExitBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1aa4ad7b052bd7dcf08ff26ad92351f1b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::BackpatchWord64</definition>
+        <argsstring>(uint64_t BitNo, uint64_t Val)</argsstring>
+        <name>BackpatchWord64</name>
+        <qualifiedname>llvm::BitstreamWriter::BackpatchWord64</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>BitNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="277" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="277" bodyend="280"/>
+        <references refid="classllvm_1_1_bitstream_writer_1a9e13da25204783390ddfc17dcf55a1c2" compoundref="_bitstream_writer_8h" startline="272" endline="275">BackpatchWord</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a40de93ba2d72dc6bccd7a1fdde996718" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::Emit</definition>
+        <argsstring>(uint32_t Val, unsigned NumBits)</argsstring>
+        <name>Emit</name>
+        <qualifiedname>llvm::BitstreamWriter::Emit</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Val</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="282" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="282" bodyend="299"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a47cd6c37f5dc6cee1e2337f909452c85" compoundref="_bitstream_writer_8h" startline="342" endline="344">EmitCode</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a9d3d121556c01aab6e6ebfc830e17dbb" compoundref="_bitstream_writer_8h" startline="309" endline="321">EmitVBR</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a765ce2a472e2eedad6b7ed02b6674a00" compoundref="_bitstream_writer_8h" startline="323" endline="339">EmitVBR64</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1ae6a40b4a5ea89bb8b5076c26e0d0b638" compoundref="_bitstream_writer_8h" startline="363" endline="388">EnterSubblock</referencedby>
+        <referencedby refid="_bitcode_writer_8cpp_1a90f3f0ae5027fb62fc0090c0b0722d0f" compoundref="_bitcode_writer_8cpp" startline="5256" endline="5264">writeBitcodeHeader</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a87d4d8efe6bca7b041b0837d30add275" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::FlushToWord</definition>
+        <argsstring>()</argsstring>
+        <name>FlushToWord</name>
+        <qualifiedname>llvm::BitstreamWriter::FlushToWord</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="301" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="301" bodyend="307"/>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a42a0cfa56ebe2de750170da9db67f927" compoundref="_bitstream_writer_8h" startline="547" endline="562">emitBlob</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1ae6a40b4a5ea89bb8b5076c26e0d0b638" compoundref="_bitstream_writer_8h" startline="363" endline="388">EnterSubblock</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a5e8488041d80c56389002659004c6af7" compoundref="_bitstream_writer_8h" startline="390" endline="411">ExitBlock</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1abf7d55f3e39ce028c1594f34967d06b3" compoundref="_bitstream_writer_8h" startline="166" endline="170">~BitstreamWriter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a9d3d121556c01aab6e6ebfc830e17dbb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitVBR</definition>
+        <argsstring>(uint32_t Val, unsigned NumBits)</argsstring>
+        <name>EmitVBR</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitVBR</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Val</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="309" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="309" bodyend="321"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a40de93ba2d72dc6bccd7a1fdde996718" compoundref="_bitstream_writer_8h" startline="282" endline="299">Emit</references>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a42a0cfa56ebe2de750170da9db67f927" compoundref="_bitstream_writer_8h" startline="547" endline="562">emitBlob</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a2a492ce167a19107e75ec372f68e8d7a" compoundref="_bitstream_writer_8h" startline="571" endline="585">EmitRecord</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a765ce2a472e2eedad6b7ed02b6674a00" compoundref="_bitstream_writer_8h" startline="323" endline="339">EmitVBR64</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1ae6a40b4a5ea89bb8b5076c26e0d0b638" compoundref="_bitstream_writer_8h" startline="363" endline="388">EnterSubblock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a765ce2a472e2eedad6b7ed02b6674a00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitVBR64</definition>
+        <argsstring>(uint64_t Val, unsigned NumBits)</argsstring>
+        <name>EmitVBR64</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitVBR64</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Val</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="323" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="323" bodyend="339"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a40de93ba2d72dc6bccd7a1fdde996718" compoundref="_bitstream_writer_8h" startline="282" endline="299">Emit</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a9d3d121556c01aab6e6ebfc830e17dbb" compoundref="_bitstream_writer_8h" startline="309" endline="321">EmitVBR</references>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a2a492ce167a19107e75ec372f68e8d7a" compoundref="_bitstream_writer_8h" startline="571" endline="585">EmitRecord</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a47cd6c37f5dc6cee1e2337f909452c85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitCode</definition>
+        <argsstring>(unsigned Val)</argsstring>
+        <name>EmitCode</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitCode</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+<para>EmitCode - Emit the specified code. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="342" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="342" bodyend="344"/>
+        <references refid="classllvm_1_1_bitstream_writer_1a40de93ba2d72dc6bccd7a1fdde996718" compoundref="_bitstream_writer_8h" startline="282" endline="299">Emit</references>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a2a492ce167a19107e75ec372f68e8d7a" compoundref="_bitstream_writer_8h" startline="571" endline="585">EmitRecord</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1ae6a40b4a5ea89bb8b5076c26e0d0b638" compoundref="_bitstream_writer_8h" startline="363" endline="388">EnterSubblock</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a5e8488041d80c56389002659004c6af7" compoundref="_bitstream_writer_8h" startline="390" endline="411">ExitBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a75bf3c7fbbde90c257abf2fb5a89badf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>BlockInfo *</type>
+        <definition>BlockInfo * llvm::BitstreamWriter::getBlockInfo</definition>
+        <argsstring>(unsigned BlockID)</argsstring>
+        <name>getBlockInfo</name>
+        <qualifiedname>llvm::BitstreamWriter::getBlockInfo</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BlockID</declname>
+        </param>
+        <briefdescription>
+<para>getBlockInfo - If there is block info for the specified <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>, return it, otherwise return null. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="352" column="13" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="352" bodyend="361"/>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1ae6a40b4a5ea89bb8b5076c26e0d0b638" compoundref="_bitstream_writer_8h" startline="363" endline="388">EnterSubblock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1ae6a40b4a5ea89bb8b5076c26e0d0b638" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EnterSubblock</definition>
+        <argsstring>(unsigned BlockID, unsigned CodeLen)</argsstring>
+        <name>EnterSubblock</name>
+        <qualifiedname>llvm::BitstreamWriter::EnterSubblock</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BlockID</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CodeLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="363" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="363" bodyend="388"/>
+        <references refid="namespacellvm_1a39d3d23a084c4544ee5903203db10e8a" compoundref="_s_t_l_extras_8h" startline="2115" endline="2117">llvm::append_range</references>
+        <references refid="namespacellvm_1_1bitc_1a9bbccfa3e710e59b93cc5a5bf8908cf9a4ae63f558586ca60ba786b672433ed5b" compoundref="_bit_code_enums_8h" startline="37">llvm::bitc::BlockIDWidth</references>
+        <references refid="namespacellvm_1_1bitc_1a9bbccfa3e710e59b93cc5a5bf8908cf9aa1212eb73e20141e515bcf2f6cba192b" compoundref="_bit_code_enums_8h" startline="39">llvm::bitc::BlockSizeWidth</references>
+        <references refid="namespacellvm_1_1bitc_1a9bbccfa3e710e59b93cc5a5bf8908cf9a81e88c5ec4ef96d2e57203df2ca9c7f8" compoundref="_bit_code_enums_8h" startline="38">llvm::bitc::CodeLenWidth</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a40de93ba2d72dc6bccd7a1fdde996718" compoundref="_bitstream_writer_8h" startline="282" endline="299">Emit</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a47cd6c37f5dc6cee1e2337f909452c85" compoundref="_bitstream_writer_8h" startline="342" endline="344">EmitCode</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a9d3d121556c01aab6e6ebfc830e17dbb" compoundref="_bitstream_writer_8h" startline="309" endline="321">EmitVBR</references>
+        <references refid="namespacellvm_1_1bitc_1ab7a76f80792b96a4291e2d1dd1403887a8ade579114e64f6e93e5c2335d9790b3" compoundref="_bit_code_enums_8h" startline="46">llvm::bitc::ENTER_SUBBLOCK</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a87d4d8efe6bca7b041b0837d30add275" compoundref="_bitstream_writer_8h" startline="301" endline="307">FlushToWord</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a75bf3c7fbbde90c257abf2fb5a89badf" compoundref="_bitstream_writer_8h" startline="352" endline="361">getBlockInfo</references>
+        <references refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" compoundref="_c_s_e_info_8cpp" startline="27">Info</references>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1a8d9f43e5e75f1cd3eac411cd4dc2c6a3" compoundref="_bitstream_writer_8h" startline="663" endline="667">EnterBlockInfoBlock</referencedby>
+        <referencedby refid="_bitcode_writer_8cpp_1a71e02e853cce26400683e76984e82529" compoundref="_bitcode_writer_8cpp" startline="5085" endline="5105">writeIdentificationBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a5e8488041d80c56389002659004c6af7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::ExitBlock</definition>
+        <argsstring>()</argsstring>
+        <name>ExitBlock</name>
+        <qualifiedname>llvm::BitstreamWriter::ExitBlock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="390" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="390" bodyend="411"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a9e13da25204783390ddfc17dcf55a1c2" compoundref="_bitstream_writer_8h" startline="272" endline="275">BackpatchWord</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a47cd6c37f5dc6cee1e2337f909452c85" compoundref="_bitstream_writer_8h" startline="342" endline="344">EmitCode</references>
+        <references refid="namespacellvm_1_1bitc_1ab7a76f80792b96a4291e2d1dd1403887aee620990aa08180f9ede6fd5c8440620" compoundref="_bit_code_enums_8h" startline="45">llvm::bitc::END_BLOCK</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a87d4d8efe6bca7b041b0837d30add275" compoundref="_bitstream_writer_8h" startline="301" endline="307">FlushToWord</references>
+        <referencedby refid="_bitcode_writer_8cpp_1a71e02e853cce26400683e76984e82529" compoundref="_bitcode_writer_8cpp" startline="5085" endline="5105">writeIdentificationBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a42a0cfa56ebe2de750170da9db67f927" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class UIntTy</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::emitBlob</definition>
+        <argsstring>(ArrayRef&lt; UIntTy &gt; Bytes, bool ShouldEmitSize=true)</argsstring>
+        <name>emitBlob</name>
+        <qualifiedname>llvm::BitstreamWriter::emitBlob</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; UIntTy &gt;</type>
+          <declname>Bytes</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ShouldEmitSize</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+<para>Emit a blob, including flushing before and tail-padding. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="547" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="547" bodyend="562"/>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_array_ref_1aab36927882fbfdcbb860d87fd9c30da8" compoundref="_array_ref_8h" startline="156" endline="156">llvm::ArrayRef&lt; T &gt;::begin</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a9d3d121556c01aab6e6ebfc830e17dbb" compoundref="_bitstream_writer_8h" startline="309" endline="321">EmitVBR</references>
+        <references refid="classllvm_1_1_array_ref_1a7ca5197533a9c1fb8a2bd30587fcec6b" compoundref="_array_ref_8h" startline="157" endline="157">llvm::ArrayRef&lt; T &gt;::end</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a87d4d8efe6bca7b041b0837d30add275" compoundref="_bitstream_writer_8h" startline="301" endline="307">FlushToWord</references>
+        <references refid="namespacellvm_1a87e65296f2a6d9570117a852af342764" compoundref="_math_extras_8h" startline="194" endline="207">llvm::isUInt</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+        <referencedby refid="classllvm_1_1_bitstream_writer_1ac7a72ed69b91577b81089ff1a7a57197" compoundref="_bitstream_writer_8h" startline="563" endline="566">emitBlob</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1ac7a72ed69b91577b81089ff1a7a57197" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::emitBlob</definition>
+        <argsstring>(StringRef Bytes, bool ShouldEmitSize=true)</argsstring>
+        <name>emitBlob</name>
+        <qualifiedname>llvm::BitstreamWriter::emitBlob</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Bytes</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ShouldEmitSize</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="563" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="563" bodyend="566"/>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+        <references refid="classllvm_1_1_string_ref_1a7b0fa1a82461032cdf16b7f6c59f0a6a" compoundref="_string_ref_8h" startline="144" endline="144">llvm::StringRef::data</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a42a0cfa56ebe2de750170da9db67f927" compoundref="_bitstream_writer_8h" startline="547" endline="562">emitBlob</references>
+        <references refid="classllvm_1_1_string_ref_1a5db9240c74644c67759dd0f901fc3c7d" compoundref="_string_ref_8h" startline="150" endline="150">llvm::StringRef::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a2a492ce167a19107e75ec372f68e8d7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Container</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitRecord</definition>
+        <argsstring>(unsigned Code, const Container &amp;Vals, unsigned Abbrev=0)</argsstring>
+        <name>EmitRecord</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitRecord</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Code</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Container &amp;</type>
+          <declname>Vals</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Abbrev</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>EmitRecord - Emit the specified record to the stream, using an abbrev if we have one to compress the output. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="571" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="571" bodyend="585"/>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+        <references refid="namespacellvm_1a845e08be4b0320d66901a66b0c0e9509" compoundref="_instr_prof_8h" startline="139">llvm::Count</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a47cd6c37f5dc6cee1e2337f909452c85" compoundref="_bitstream_writer_8h" startline="342" endline="344">EmitCode</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a9d3d121556c01aab6e6ebfc830e17dbb" compoundref="_bitstream_writer_8h" startline="309" endline="321">EmitVBR</references>
+        <references refid="classllvm_1_1_bitstream_writer_1a765ce2a472e2eedad6b7ed02b6674a00" compoundref="_bitstream_writer_8h" startline="323" endline="339">EmitVBR64</references>
+        <references refid="namespacellvm_1_1bitc_1ab7a76f80792b96a4291e2d1dd1403887a5436567dadf1048914764efde6bcc891" compoundref="_bit_code_enums_8h" startline="57">llvm::bitc::UNABBREV_RECORD</references>
+        <referencedby refid="_bitcode_writer_8cpp_1a0850c8a2472500d4a79b9f48495a1d2f" compoundref="_bitcode_writer_8cpp" startline="4252" endline="4334">writeFunctionHeapProfileRecords</referencedby>
+        <referencedby refid="_bitcode_writer_8cpp_1ac7e865e854ff6b0ba0eb2147e0ccb5cc" compoundref="_bitcode_writer_8cpp" startline="4049" endline="4121">writeFunctionTypeMetadataRecords</referencedby>
+        <referencedby refid="_bitcode_writer_8cpp_1a71e02e853cce26400683e76984e82529" compoundref="_bitcode_writer_8cpp" startline="5085" endline="5105">writeIdentificationBlock</referencedby>
+        <referencedby refid="_bitcode_writer_8cpp_1a6ddafba4af9c27c785a0d873fd3cb661" compoundref="_bitcode_writer_8cpp" startline="4236" endline="4250">writeMemoryProfileRadixTree</referencedby>
+        <referencedby refid="_bitcode_writer_8cpp_1ad375d674219d643fe0ba85db2b7f172a" compoundref="_bitcode_writer_8cpp" startline="700" endline="713">writeStringRecord</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1af948971b2d980eb419383bc379a757fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Container</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitRecordWithAbbrev</definition>
+        <argsstring>(unsigned Abbrev, const Container &amp;Vals)</argsstring>
+        <name>EmitRecordWithAbbrev</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitRecordWithAbbrev</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Abbrev</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Container &amp;</type>
+          <declname>Vals</declname>
+        </param>
+        <briefdescription>
+<para>EmitRecordWithAbbrev - Emit a record with the specified abbreviation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Unlike EmitRecord, the code for the record should be included in Vals as the first entry. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="591" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="591" bodyend="593"/>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+        <referencedby refid="classllvm_1_1detail_1_1_b_c_record_coding_3_01_b_c_array_3_01_element_ty_01_4_01_4_1af70bb0d684f2600b57a140823fb2b07c" compoundref="_bitcode_convenience_8h" startline="262" endline="271">llvm::detail::BCRecordCoding&lt; BCArray&lt; ElementTy &gt; &gt;::emit</referencedby>
+        <referencedby refid="classllvm_1_1detail_1_1_b_c_record_coding_3_01_b_c_array_3_01_element_ty_01_4_01_4_1a61bdddf1cd33672bac411390387451de" compoundref="_bitcode_convenience_8h" startline="281" endline="284">llvm::detail::BCRecordCoding&lt; BCArray&lt; ElementTy &gt; &gt;::emit</referencedby>
+        <referencedby refid="classllvm_1_1detail_1_1_b_c_record_coding_3_01_element_ty_01_4_1a7b37e8210c0732bf6de45a3216e1702e" compoundref="_bitcode_convenience_8h" startline="226" endline="233">llvm::detail::BCRecordCoding&lt; ElementTy &gt;::emit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a5f4f488b3478316b8d6bb3582b158673" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Container</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitRecordWithBlob</definition>
+        <argsstring>(unsigned Abbrev, const Container &amp;Vals, StringRef Blob)</argsstring>
+        <name>EmitRecordWithBlob</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitRecordWithBlob</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Abbrev</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Container &amp;</type>
+          <declname>Vals</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Blob</declname>
+        </param>
+        <briefdescription>
+<para>EmitRecordWithBlob - Emit the specified record to the stream, using an abbrev that includes a blob at the end. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The blob data to emit is specified by the pointer and length specified at the end. In contrast to EmitRecord, this routine expects that the first entry in Vals is the code of the record. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="601" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="601" bodyend="604"/>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+        <referencedby refid="classllvm_1_1detail_1_1_b_c_record_coding_3_01_b_c_blob_01_4_1a044776af18211267893a1a87eaff5c19" compoundref="_bitcode_convenience_8h" startline="310" endline="313">llvm::detail::BCRecordCoding&lt; BCBlob &gt;::emit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a4e635d4d3026cb830212fb071e2024a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Container</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitRecordWithBlob</definition>
+        <argsstring>(unsigned Abbrev, const Container &amp;Vals, const char *BlobData, unsigned BlobLen)</argsstring>
+        <name>EmitRecordWithBlob</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitRecordWithBlob</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Abbrev</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Container &amp;</type>
+          <declname>Vals</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>BlobData</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BlobLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="606" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="606" bodyend="610"/>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a78a7f3e3174bd721b9b3c268e621273c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Container</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitRecordWithArray</definition>
+        <argsstring>(unsigned Abbrev, const Container &amp;Vals, StringRef Array)</argsstring>
+        <name>EmitRecordWithArray</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitRecordWithArray</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Abbrev</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Container &amp;</type>
+          <declname>Vals</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Array</declname>
+        </param>
+        <briefdescription>
+<para>EmitRecordWithArray - Just like EmitRecordWithBlob, works with records that end with an array. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="615" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="615" bodyend="618"/>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+        <referencedby refid="classllvm_1_1detail_1_1_b_c_record_coding_3_01_b_c_array_3_01_element_ty_01_4_01_4_1a2d08ccaf46363d002d905b3f3beb50fb" compoundref="_bitcode_convenience_8h" startline="255" endline="259">llvm::detail::BCRecordCoding&lt; BCArray&lt; ElementTy &gt; &gt;::emit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a4f8ae2680f67165a8ab818db76e89967" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Container</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EmitRecordWithArray</definition>
+        <argsstring>(unsigned Abbrev, const Container &amp;Vals, const char *ArrayData, unsigned ArrayLen)</argsstring>
+        <name>EmitRecordWithArray</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitRecordWithArray</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Abbrev</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Container &amp;</type>
+          <declname>Vals</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>ArrayData</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ArrayLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="620" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="620" bodyend="624"/>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a032ac42ce93b41ccad6f2380a3efa207" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BitstreamWriter::EmitAbbrev</definition>
+        <argsstring>(std::shared_ptr&lt; BitCodeAbbrev &gt; Abbv)</argsstring>
+        <name>EmitAbbrev</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitAbbrev</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classllvm_1_1_bit_code_abbrev" kindref="compound">BitCodeAbbrev</ref> &gt;</type>
+          <declname>Abbv</declname>
+        </param>
+        <briefdescription>
+<para>Emits the abbreviation <computeroutput>Abbv</computeroutput> to the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="651" column="12" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="651" bodyend="656"/>
+        <references refid="namespacellvm_1_1bitc_1ab7a76f80792b96a4291e2d1dd1403887a81e1f263b022b7989aa71fb623b62be8" compoundref="_bit_code_enums_8h" startline="60">llvm::bitc::FIRST_APPLICATION_ABBREV</references>
+        <referencedby refid="_bitcode_writer_8cpp_1a71e02e853cce26400683e76984e82529" compoundref="_bitcode_writer_8cpp" startline="5085" endline="5105">writeIdentificationBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a8d9f43e5e75f1cd3eac411cd4dc2c6a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BitstreamWriter::EnterBlockInfoBlock</definition>
+        <argsstring>()</argsstring>
+        <name>EnterBlockInfoBlock</name>
+        <qualifiedname>llvm::BitstreamWriter::EnterBlockInfoBlock</qualifiedname>
+        <briefdescription>
+<para>EnterBlockInfoBlock - Start emitting the BLOCKINFO_BLOCK. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="663" column="8" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="663" bodyend="667"/>
+        <references refid="namespacellvm_1_1bitc_1a8cd4dd534ba6c31e93a88ca286c4f0e5a9c269366c4dc4af235c9bb24fa46f915" compoundref="_bit_code_enums_8h" startline="69">llvm::bitc::BLOCKINFO_BLOCK_ID</references>
+        <references refid="classllvm_1_1_bitstream_writer_1ae6a40b4a5ea89bb8b5076c26e0d0b638" compoundref="_bitstream_writer_8h" startline="363" endline="388">EnterSubblock</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_bitstream_writer_1a7507fea7693cf3d8124918eca60eef85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BitstreamWriter::EmitBlockInfoAbbrev</definition>
+        <argsstring>(unsigned BlockID, std::shared_ptr&lt; BitCodeAbbrev &gt; Abbv)</argsstring>
+        <name>EmitBlockInfoAbbrev</name>
+        <qualifiedname>llvm::BitstreamWriter::EmitBlockInfoAbbrev</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BlockID</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classllvm_1_1_bit_code_abbrev" kindref="compound">BitCodeAbbrev</ref> &gt;</type>
+          <declname>Abbv</declname>
+        </param>
+        <briefdescription>
+<para>EmitBlockInfoAbbrev - Emit a DEFINE_ABBREV record for the specified BlockID. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamWriter.h" line="693" column="12" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="693" bodyend="702"/>
+        <references refid="namespacellvm_1_1bitc_1ab7a76f80792b96a4291e2d1dd1403887a81e1f263b022b7989aa71fb623b62be8" compoundref="_bit_code_enums_8h" startline="60">llvm::bitc::FIRST_APPLICATION_ABBREV</references>
+        <references refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" compoundref="_c_s_e_info_8cpp" startline="27">Info</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Bitstream/BitstreamWriter.h" line="31" column="1" bodyfile="include/llvm/Bitstream/BitstreamWriter.h" bodystart="31" bodyend="703"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_bitstream_writer_1a61b26222d7ecfe417406eec38edba698" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>BackpatchByte</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1ae431728f61d5b52efa59fc13f834085f" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>BackpatchHalfWord</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a9e13da25204783390ddfc17dcf55a1c2" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>BackpatchWord</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1aa4ad7b052bd7dcf08ff26ad92351f1b5" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>BackpatchWord64</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a5f6ee363763723bf98da451e95bb1d1c" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>BitstreamWriter</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a3cbc68c0f33ec6c72b69a595c36d15c1" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>BitstreamWriter</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a83624eb7826c7d09b1bb9a47ecd4d194" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>BlockFlushingStartPos</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1aee5498cd81a59c8b001d6896c4d04f35" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>BlockInfoCurBID</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a6b2d475674070a6c40a8582ab686633f" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>BlockInfoRecords</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a933414e414dc06e3aa0d9fdeb0fb24c9" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>BlockScope</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a8cf20fe6d1f21cc4812de07c62596cd2" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>Buffer</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a2067231e69bbf9b1133cce389a81d588" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>CurAbbrevs</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a4a50d2956097016e3e238292d1f0b08d" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>CurBit</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a698d15dd7fab2e68baade7bace4537c9" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>CurCodeSize</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a91494138910feec0d1ce89fd19ab0b9b" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>CurValue</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a40de93ba2d72dc6bccd7a1fdde996718" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>Emit</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a032ac42ce93b41ccad6f2380a3efa207" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitAbbrev</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a5d3eca41964e33be3c53683bc22d13d8" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitAbbreviatedField</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a5e80f04829f1010a860168717649779b" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitAbbreviatedLiteral</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a42a0cfa56ebe2de750170da9db67f927" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>emitBlob</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1ac7a72ed69b91577b81089ff1a7a57197" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>emitBlob</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a7507fea7693cf3d8124918eca60eef85" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitBlockInfoAbbrev</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a47cd6c37f5dc6cee1e2337f909452c85" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitCode</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a2a492ce167a19107e75ec372f68e8d7a" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitRecord</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1af948971b2d980eb419383bc379a757fd" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitRecordWithAbbrev</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a43f7317873888110025bf0f2369d38d4" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitRecordWithAbbrevImpl</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a78a7f3e3174bd721b9b3c268e621273c" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitRecordWithArray</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a4f8ae2680f67165a8ab818db76e89967" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitRecordWithArray</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a5f4f488b3478316b8d6bb3582b158673" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitRecordWithBlob</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a4e635d4d3026cb830212fb071e2024a1" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitRecordWithBlob</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a9d3d121556c01aab6e6ebfc830e17dbb" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitVBR</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a765ce2a472e2eedad6b7ed02b6674a00" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EmitVBR64</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a9fea53b98f31666ed5294cf4bb4a1f26" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EncodeAbbrev</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a8d9f43e5e75f1cd3eac411cd4dc2c6a3" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EnterBlockInfoBlock</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1ae6a40b4a5ea89bb8b5076c26e0d0b638" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>EnterSubblock</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a5e8488041d80c56389002659004c6af7" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>ExitBlock</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a73f4b5500e66c3ad3fe993c7046dd3a7" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>fdStream</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a26feb2e509746dfd2031bc9e316d2b51" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>fdStream</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a5fb41acd1af04214cd799b9be19bfc3a" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>flushAndClear</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1afdcc5f2bdac2b9e7e35e9a002bb17b51" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>FlushThreshold</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a15d6f1a9a10e0e7cb39cc0cff8b2fbe5" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>FlushToFile</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a87d4d8efe6bca7b041b0837d30add275" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>FlushToWord</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1ad396113421e9eea552c282d2cc4a23f1" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>FS</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1af3254f4c3d4874089f1113157cb4494e" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>GetAbbrevIDWidth</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a75bf3c7fbbde90c257abf2fb5a89badf" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>getBlockInfo</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1aeafca1048e303aa7eb6455ef59d842e2" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>GetBufferOffset</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1af6a2b975dd3ba4ab436c4de2199da5ee" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>GetCurrentBitNo</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a4d1b520088b8459f85b51d8f001f3a18" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>getInternalBufferFromStream</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a1817d94003400d1a95d6a35a5efe574f" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>getMarkedBufferAndResumeFlushing</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1afb0ad261dcbdb4a4227cbfabcd6c0fdb" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>GetNumOfFlushedBytes</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a5fe74e9d3cfee803da8b405bee658e96" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>getOrCreateBlockInfo</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a87d3b03e4906ce3b8bfc3c37d11db034" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>GetWordIndex</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a063bf32f685de649ee8239a8e54da868" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>markAndBlockFlushing</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a14aae74d5fd9e837b895fbdccfcf6470" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>OwnBuffer</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a5ddc20e767e065238be211b4a6b8fdf1" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>SwitchToBlockID</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1a70783880da8a7556d0e92d0f89b6c47d" prot="private" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>WriteWord</name></member>
+      <member refid="classllvm_1_1_bitstream_writer_1abf7d55f3e39ce028c1594f34967d06b3" prot="public" virt="non-virtual"><scope>llvm::BitstreamWriter</scope><name>~BitstreamWriter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

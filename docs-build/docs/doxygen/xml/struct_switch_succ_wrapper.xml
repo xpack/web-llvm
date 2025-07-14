@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="struct_switch_succ_wrapper" kind="struct" language="C++" prot="public">
+    <compoundname>SwitchSuccWrapper</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_switch_succ_wrapper_1a0765647c64190b61909606646061c314" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+        <definition>BasicBlock* SwitchSuccWrapper::Dest</definition>
+        <argsstring></argsstring>
+        <name>Dest</name>
+        <qualifiedname>SwitchSuccWrapper::Dest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/SimplifyCFG.cpp" line="7501" column="14" bodyfile="lib/Transforms/Utils/SimplifyCFG.cpp" bodystart="7501" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_dense_map_info_3_01const_01_switch_succ_wrapper_01_5_01_4_1ade1da0b29f5e3cb310ac591da00699c3" compoundref="_simplify_c_f_g_8cpp" startline="7515" endline="7539">llvm::DenseMapInfo&lt; const SwitchSuccWrapper * &gt;::getHashValue</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_switch_succ_wrapper_1a0d0092e0f010e6f8831d0b4797f1a8d3" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *, <ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, 8 &gt; &gt; *</type>
+        <definition>DenseMap&lt;PHINode *, SmallDenseMap&lt;BasicBlock *, Value *, 8&gt; &gt;* SwitchSuccWrapper::PhiPredIVs</definition>
+        <argsstring></argsstring>
+        <name>PhiPredIVs</name>
+        <qualifiedname>SwitchSuccWrapper::PhiPredIVs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Utils/SimplifyCFG.cpp" line="7502" column="12" bodyfile="lib/Transforms/Utils/SimplifyCFG.cpp" bodystart="7502" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_dense_map_info_3_01const_01_switch_succ_wrapper_01_5_01_4_1ade1da0b29f5e3cb310ac591da00699c3" compoundref="_simplify_c_f_g_8cpp" startline="7515" endline="7539">llvm::DenseMapInfo&lt; const SwitchSuccWrapper * &gt;::getHashValue</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Checking whether two cases of <ref refid="namespacellvm_1_1_s_i" kindref="compound">SI</ref> are equal depends on the contents of the <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> and the incoming values of their successor PHINodes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classllvm_1_1_p_h_i_node_1ab2db7609ec72b1af2f91d47e40dc3722" kindref="member">PHINode::getIncomingValueForBlock</ref> is O(|Preds|), so we&apos;d like to avoid calling this function on each <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> every time isEqual is called, especially since the same <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> may be passed as an argument multiple times. To do this, we can precompute a map of <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> -&gt; Pred <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> -&gt; IncomingValue and add it in the Wrapper so isEqual can do O(1) checking of the incoming values. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="32">
+        <label>DenseMapBase&lt; DenseMap&lt; llvm::PHINode *, llvm::SmallDenseMap&lt; llvm::BasicBlock *, llvm::Value *, 8 &gt;, DenseMapInfo&lt;llvm::PHINode *&gt;, llvm::detail::DenseMapPair&lt;llvm::PHINode *, llvm::SmallDenseMap&lt; llvm::BasicBlock *, llvm::Value *, 8 &gt;&gt; &gt;, llvm::PHINode *, llvm::SmallDenseMap&lt; llvm::BasicBlock *, llvm::Value *, 8 &gt;, DenseMapInfo&lt;llvm::PHINode *&gt;, llvm::detail::DenseMapPair&lt;llvm::PHINode *, llvm::SmallDenseMap&lt; llvm::BasicBlock *, llvm::Value *, 8 &gt;&gt; &gt;</label>
+      </node>
+      <node id="19">
+        <label>OptionsT::node_base_type</label>
+      </node>
+      <node id="1">
+        <label>SwitchSuccWrapper</label>
+        <link refid="struct_switch_succ_wrapper"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Dest</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>PhiPredIVs</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="9">
+        <label>ilist_detail::compute_node_options&lt; BasicBlock, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::BasicBlock</label>
+        <link refid="classllvm_1_1_basic_block"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>IsNewDbgInfoFormat</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm::DebugEpochBase</label>
+        <link refid="classllvm_1_1_debug_epoch_base"/>
+      </node>
+      <node id="33">
+        <label>llvm::DenseMap&lt; KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::DenseMap&lt; llvm::PHINode *, llvm::SmallDenseMap&lt; llvm::BasicBlock *, llvm::Value *, 8 &gt; &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+        <childnode refid="33" relation="template-instance">
+          <edgelabel>&lt; llvm::PHINode *, llvm::SmallDenseMap&lt; llvm::BasicBlock *, llvm::Value *, 8 &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::Value</label>
+        <link refid="classllvm_1_1_value"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>HasDescriptor</edgelabel>
+          <edgelabel>HasHungOffUses</edgelabel>
+          <edgelabel>HasMetadata</edgelabel>
+          <edgelabel>HasName</edgelabel>
+          <edgelabel>IsUsedByMD</edgelabel>
+          <edgelabel>MaxAlignmentExponent</edgelabel>
+          <edgelabel>NumUserOperands</edgelabel>
+          <edgelabel>SubclassOptionalData</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>MaximumAlignment</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="11">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="14">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="13">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+        <childnode refid="14" relation="template-instance">
+          <edgelabel>&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="17">
+        <label>llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+      </node>
+      <node id="20">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="17" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; BasicBlock, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; BasicBlock, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="17" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; BasicBlock, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; BasicBlock, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="17" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="17" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>llvm::ilist_node&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::ilist_node&lt; BasicBlock, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="21" relation="template-instance">
+          <edgelabel>&lt; BasicBlock, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::ilist_node&lt; NodeTy, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+        <childnode refid="21" relation="template-instance">
+          <edgelabel>&lt; NodeTy, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm::ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::ilist_node_impl&lt; OptionsT &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="19" relation="private-inheritance">
+        </childnode>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; BasicBlock, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="9" relation="private-inheritance">
+        </childnode>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; BasicBlock, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="28" relation="private-inheritance">
+        </childnode>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="23" relation="private-inheritance">
+        </childnode>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::ilist_node_with_parent&lt; BasicBlock, Function &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="25" relation="template-instance">
+          <edgelabel>&lt; BasicBlock, Function &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>uint64_t</label>
+        <link refid="classuint64__t"/>
+      </node>
+      <node id="4">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Transforms/Utils/SimplifyCFG.cpp" line="7500" column="1" bodyfile="lib/Transforms/Utils/SimplifyCFG.cpp" bodystart="7500" bodyend="7503"/>
+    <listofallmembers>
+      <member refid="struct_switch_succ_wrapper_1a0765647c64190b61909606646061c314" prot="public" virt="non-virtual"><scope>SwitchSuccWrapper</scope><name>Dest</name></member>
+      <member refid="struct_switch_succ_wrapper_1a0d0092e0f010e6f8831d0b4797f1a8d3" prot="public" virt="non-virtual"><scope>SwitchSuccWrapper</scope><name>PhiPredIVs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

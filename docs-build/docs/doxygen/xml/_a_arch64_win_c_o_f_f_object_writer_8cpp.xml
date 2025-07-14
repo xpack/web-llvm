@@ -1,0 +1,1718 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_a_arch64_win_c_o_f_f_object_writer_8cpp" kind="file" language="C++">
+    <compoundname>AArch64WinCOFFObjectWriter.cpp</compoundname>
+    <includes refid="_a_arch64_m_c_target_desc_8h" local="yes">AArch64MCTargetDesc.h</includes>
+    <includes refid="_a_arch64_fixup_kinds_8h" local="yes">MCTargetDesc/AArch64FixupKinds.h</includes>
+    <includes refid="_a_arch64_m_c_expr_8h" local="yes">MCTargetDesc/AArch64MCExpr.h</includes>
+    <includes refid="_twine_8h" local="yes">llvm/ADT/Twine.h</includes>
+    <includes refid="_binary_format_2_c_o_f_f_8h" local="yes">llvm/BinaryFormat/COFF.h</includes>
+    <includes refid="_m_c_asm_backend_8h" local="yes">llvm/MC/MCAsmBackend.h</includes>
+    <includes refid="_m_c_context_8h" local="yes">llvm/MC/MCContext.h</includes>
+    <includes refid="_m_c_expr_8h" local="yes">llvm/MC/MCExpr.h</includes>
+    <includes refid="_m_c_fixup_8h" local="yes">llvm/MC/MCFixup.h</includes>
+    <includes refid="_m_c_fixup_kind_info_8h" local="yes">llvm/MC/MCFixupKindInfo.h</includes>
+    <includes refid="_m_c_object_writer_8h" local="yes">llvm/MC/MCObjectWriter.h</includes>
+    <includes refid="_m_c_value_8h" local="yes">llvm/MC/MCValue.h</includes>
+    <includes refid="_m_c_win_c_o_f_f_object_writer_8h" local="yes">llvm/MC/MCWinCOFFObjectWriter.h</includes>
+    <includes refid="_casting_8h" local="yes">llvm/Support/Casting.h</includes>
+    <includes refid="llvm_2_support_2_error_handling_8h" local="yes">llvm/Support/ErrorHandling.h</includes>
+    <includes local="no">cassert</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>llvm-c/Error.h</label>
+        <link refid="llvm-c_2_error_8h"/>
+        <childnode refid="105" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>llvm-c/ExternC.h</label>
+        <link refid="_extern_c_8h"/>
+      </node>
+      <node id="40">
+        <label>llvm/ADT/ADL.h</label>
+        <link refid="_a_d_l_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>llvm/ADT/APInt.h</label>
+        <link refid="_a_p_int_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm/ADT/ArrayRef.h</label>
+        <link refid="_array_ref_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>llvm/ADT/BitmaskEnum.h</label>
+        <link refid="_bitmask_enum_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>llvm/ADT/CachedHashString.h</label>
+        <link refid="_cached_hash_string_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>llvm/ADT/DenseMap.h</label>
+        <link refid="_dense_map_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm/ADT/DenseMapInfo.h</label>
+        <link refid="_dense_map_info_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>llvm/ADT/DenseSet.h</label>
+        <link refid="_dense_set_8h"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>llvm/ADT/EpochTracker.h</label>
+        <link refid="_epoch_tracker_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm/ADT/Hashing.h</label>
+        <link refid="_hashing_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>llvm/ADT/MapVector.h</label>
+        <link refid="_map_vector_8h"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>llvm/ADT/PointerIntPair.h</label>
+        <link refid="_pointer_int_pair_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>llvm/ADT/STLExtras.h</label>
+        <link refid="_s_t_l_extras_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>llvm/ADT/SetVector.h</label>
+        <link refid="_set_vector_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>llvm/ADT/SmallString.h</label>
+        <link refid="_small_string_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm/ADT/SmallVector.h</label>
+        <link refid="_small_vector_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>llvm/ADT/StringMap.h</label>
+        <link refid="_a_d_t_2_string_map_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>llvm/ADT/StringMapEntry.h</label>
+        <link refid="_a_d_t_2_string_map_entry_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>llvm/ADT/StringRef.h</label>
+        <link refid="_string_ref_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>llvm/ADT/StringSwitch.h</label>
+        <link refid="_string_switch_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>llvm/ADT/Twine.h</label>
+        <link refid="_twine_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm/ADT/bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>llvm/ADT/ilist_node.h</label>
+        <link refid="ilist__node_8h"/>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>llvm/ADT/ilist_node_base.h</label>
+        <link refid="ilist__node__base_8h"/>
+        <childnode refid="117" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>llvm/ADT/ilist_node_options.h</label>
+        <link refid="ilist__node__options_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>llvm/ADT/iterator.h</label>
+        <link refid="iterator_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm/ADT/iterator_range.h</label>
+        <link refid="iterator__range_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>llvm/BinaryFormat/COFF.h</label>
+        <link refid="_binary_format_2_c_o_f_f_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>llvm/BinaryFormat/Dwarf.h</label>
+        <link refid="_dwarf_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>llvm/BinaryFormat/XCOFF.h</label>
+        <link refid="_x_c_o_f_f_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>llvm/IR/PseudoProbe.h</label>
+        <link refid="_pseudo_probe_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>llvm/MC/MCAsmBackend.h</label>
+        <link refid="_m_c_asm_backend_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>llvm/MC/MCAsmMacro.h</label>
+        <link refid="_m_c_asm_macro_8h"/>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>llvm/MC/MCContext.h</label>
+        <link refid="_m_c_context_8h"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>llvm/MC/MCDirectives.h</label>
+        <link refid="_m_c_directives_8h"/>
+      </node>
+      <node id="98">
+        <label>llvm/MC/MCDwarf.h</label>
+        <link refid="_m_c_dwarf_8h"/>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>llvm/MC/MCExpr.h</label>
+        <link refid="_m_c_expr_8h"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>llvm/MC/MCFixup.h</label>
+        <link refid="_m_c_fixup_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>llvm/MC/MCFixupKindInfo.h</label>
+        <link refid="_m_c_fixup_kind_info_8h"/>
+      </node>
+      <node id="114">
+        <label>llvm/MC/MCFragment.h</label>
+        <link refid="_m_c_fragment_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="119">
+        <label>llvm/MC/MCInst.h</label>
+        <link refid="_m_c_inst_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm/MC/MCInstrDesc.h</label>
+        <link refid="_m_c_instr_desc_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>llvm/MC/MCObjectWriter.h</label>
+        <link refid="_m_c_object_writer_8h"/>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>llvm/MC/MCPseudoProbe.h</label>
+        <link refid="_m_c_pseudo_probe_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm/MC/MCRegister.h</label>
+        <link refid="_m_c_register_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>llvm/MC/MCSection.h</label>
+        <link refid="_m_c_section_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="125">
+        <label>llvm/MC/MCSymbol.h</label>
+        <link refid="_m_c_symbol_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>llvm/MC/MCSymbolTableEntry.h</label>
+        <link refid="_m_c_symbol_table_entry_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>llvm/MC/MCValue.h</label>
+        <link refid="_m_c_value_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="127">
+        <label>llvm/MC/MCWinCOFFObjectWriter.h</label>
+        <link refid="_m_c_win_c_o_f_f_object_writer_8h"/>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>llvm/MC/SectionKind.h</label>
+        <link refid="_section_kind_8h"/>
+      </node>
+      <node id="100">
+        <label>llvm/MC/StringTableBuilder.h</label>
+        <link refid="_string_table_builder_8h"/>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>llvm/Support/AlignOf.h</label>
+        <link refid="_align_of_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>llvm/Support/Alignment.h</label>
+        <link refid="_alignment_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>llvm/Support/Allocator.h</label>
+        <link refid="_allocator_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>llvm/Support/AllocatorBase.h</label>
+        <link refid="_allocator_base_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>llvm/Support/Casting.h</label>
+        <link refid="_casting_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm/Support/DataTypes.h</label>
+        <link refid="llvm_2_support_2_data_types_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>llvm/Support/Debug.h</label>
+        <link refid="_debug_8h"/>
+      </node>
+      <node id="76">
+        <label>llvm/Support/Endian.h</label>
+        <link refid="_endian_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>llvm/Support/Error.h</label>
+        <link refid="llvm_2_support_2_error_8h"/>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm/Support/ErrorHandling.h</label>
+        <link refid="llvm_2_support_2_error_handling_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>llvm/Support/ErrorOr.h</label>
+        <link refid="_error_or_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>llvm/Support/Format.h</label>
+        <link refid="_format_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>llvm/Support/FormatVariadicDetails.h</label>
+        <link refid="_format_variadic_details_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>llvm/Support/MD5.h</label>
+        <link refid="_m_d5_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>llvm/Support/MathExtras.h</label>
+        <link refid="_math_extras_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>llvm/Support/MemAlloc.h</label>
+        <link refid="_mem_alloc_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>llvm/Support/PointerLikeTypeTraits.h</label>
+        <link refid="_pointer_like_type_traits_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>llvm/Support/ReverseIteration.h</label>
+        <link refid="_reverse_iteration_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>llvm/Support/SMLoc.h</label>
+        <link refid="_s_m_loc_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>llvm/Support/StringSaver.h</label>
+        <link refid="_string_saver_8h"/>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm/Support/SwapByteOrder.h</label>
+        <link refid="_swap_byte_order_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>llvm/Support/VersionTuple.h</label>
+        <link refid="_version_tuple_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>llvm/Support/float128.h</label>
+        <link refid="float128_8h"/>
+      </node>
+      <node id="88">
+        <label>llvm/Support/raw_ostream.h</label>
+        <link refid="raw__ostream_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm/Support/type_traits.h</label>
+        <link refid="type__traits_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>llvm/TargetParser/SubtargetFeature.h</label>
+        <link refid="_subtarget_feature_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>llvm/TargetParser/Triple.h</label>
+        <link refid="_triple_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>MCTargetDesc/AArch64FixupKinds.h</label>
+        <link refid="_a_arch64_fixup_kinds_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>MCTargetDesc/AArch64MCExpr.h</label>
+        <link refid="_a_arch64_m_c_expr_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AArch64MCTargetDesc.h</label>
+        <link refid="_a_arch64_m_c_target_desc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>lib/Target/AArch64/MCTargetDesc/AArch64WinCOFFObjectWriter.cpp</label>
+        <link refid="_a_arch64_win_c_o_f_f_object_writer_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>Utils/AArch64BaseInfo.h</label>
+        <link refid="_a_arch64_base_info_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>AArch64GenInstrInfo.inc</label>
+      </node>
+      <node id="48">
+        <label>AArch64GenRegisterInfo.inc</label>
+      </node>
+      <node id="50">
+        <label>AArch64GenSubtargetInfo.inc</label>
+      </node>
+      <node id="63">
+        <label>AArch64GenSystemOperands.inc</label>
+      </node>
+      <node id="27">
+        <label>algorithm</label>
+      </node>
+      <node id="44">
+        <label>array</label>
+      </node>
+      <node id="28">
+        <label>cassert</label>
+      </node>
+      <node id="58">
+        <label>climits</label>
+      </node>
+      <node id="32">
+        <label>cstddef</label>
+      </node>
+      <node id="21">
+        <label>cstdint</label>
+      </node>
+      <node id="86">
+        <label>cstdio</label>
+      </node>
+      <node id="33">
+        <label>cstdlib</label>
+      </node>
+      <node id="23">
+        <label>cstring</label>
+      </node>
+      <node id="34">
+        <label>functional</label>
+      </node>
+      <node id="35">
+        <label>initializer_list</label>
+      </node>
+      <node id="9">
+        <label>inttypes.h</label>
+      </node>
+      <node id="36">
+        <label>iterator</label>
+      </node>
+      <node id="22">
+        <label>limits</label>
+      </node>
+      <node id="92">
+        <label>llvm/BinaryFormat/Dwarf.def</label>
+      </node>
+      <node id="6">
+        <label>llvm/Config/abi-breaking.h</label>
+      </node>
+      <node id="14">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="24">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="122">
+        <label>map</label>
+      </node>
+      <node id="37">
+        <label>memory</label>
+      </node>
+      <node id="38">
+        <label>new</label>
+      </node>
+      <node id="18">
+        <label>optional</label>
+      </node>
+      <node id="15">
+        <label>stddef.h</label>
+      </node>
+      <node id="10">
+        <label>stdint.h</label>
+      </node>
+      <node id="29">
+        <label>string</label>
+      </node>
+      <node id="61">
+        <label>string_view</label>
+      </node>
+      <node id="11">
+        <label>sys/types.h</label>
+      </node>
+      <node id="89">
+        <label>system_error</label>
+      </node>
+      <node id="30">
+        <label>tuple</label>
+      </node>
+      <node id="19">
+        <label>type_traits</label>
+      </node>
+      <node id="112">
+        <label>unordered_map</label>
+      </node>
+      <node id="26">
+        <label>utility</label>
+      </node>
+      <node id="45">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer" prot="public">anonymous_namespace{AArch64WinCOFFObjectWriter.cpp}::AArch64WinCOFFObjectWriter</innerclass>
+    <innernamespace refid="namespaceanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03">anonymous_namespace{AArch64WinCOFFObjectWriter.cpp}</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//=<sp/>AArch64WinCOFFObjectWriter.cpp<sp/>-<sp/>AArch64<sp/>Windows<sp/>COFF<sp/>Object<sp/>Writer<sp/>C++<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===---------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_arch64_m_c_target_desc_8h" kindref="compound">AArch64MCTargetDesc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_arch64_fixup_kinds_8h" kindref="compound">MCTargetDesc/AArch64FixupKinds.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_arch64_m_c_expr_8h" kindref="compound">MCTargetDesc/AArch64MCExpr.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_twine_8h" kindref="compound">llvm/ADT/Twine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_binary_format_2_c_o_f_f_8h" kindref="compound">llvm/BinaryFormat/COFF.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_asm_backend_8h" kindref="compound">llvm/MC/MCAsmBackend.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_context_8h" kindref="compound">llvm/MC/MCContext.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_expr_8h" kindref="compound">llvm/MC/MCExpr.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_fixup_8h" kindref="compound">llvm/MC/MCFixup.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_fixup_kind_info_8h" kindref="compound">llvm/MC/MCFixupKindInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_object_writer_8h" kindref="compound">llvm/MC/MCObjectWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_value_8h" kindref="compound">llvm/MC/MCValue.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_win_c_o_f_f_object_writer_8h" kindref="compound">llvm/MC/MCWinCOFFObjectWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_casting_8h" kindref="compound">llvm/Support/Casting.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="llvm_2_support_2_error_handling_8h" kindref="compound">llvm/Support/ErrorHandling.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="namespaceanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer_1af0589c9406d7f2f4fc3a1a0e34d9ac02" kindref="member">AArch64WinCOFFObjectWriter</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_win_c_o_f_f_object_target_writer_1a1a0a17e6c398aabca7cb280e753ca9de" kindref="member">MCWinCOFFObjectTargetWriter</ref><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32" refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer_1af0589c9406d7f2f4fc3a1a0e34d9ac02" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer_1af0589c9406d7f2f4fc3a1a0e34d9ac02" kindref="member">AArch64WinCOFFObjectWriter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_triple" kindref="compound">Triple</ref><sp/>&amp;TheTriple)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classllvm_1_1_m_c_win_c_o_f_f_object_target_writer_1a1a0a17e6c398aabca7cb280e753ca9de" kindref="member">MCWinCOFFObjectTargetWriter</ref>(TheTriple.isWindowsArm64EC()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/><ref refid="namespacellvm_1_1_c_o_f_f" kindref="compound">COFF</ref>::IMAGE_FILE_MACHINE_ARM64EC</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="namespacellvm_1_1_c_o_f_f" kindref="compound">COFF</ref>::IMAGE_FILE_MACHINE_ARM64)<sp/>{}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer_1a1ea9da5e7c4b94572f69b7dfd74cb64f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer_1a1ea9da5e7c4b94572f69b7dfd74cb64f" kindref="member">~AArch64WinCOFFObjectWriter</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer_1ac4bbe9cdad8b662d3467e8cb63d87b74" kindref="member">getRelocType</ref>(<ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;Ctx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref><sp/>&amp;<ref refid="classllvm_1_1_target" kindref="compound">Target</ref>,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsCrossSection,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend" kindref="compound">MCAsmBackend</ref><sp/>&amp;MAB)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer_1a432080a1f772c4079dba8c63432e30d8" kindref="member">recordRelocation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>anonymous<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer_1ac4bbe9cdad8b662d3467e8cb63d87b74" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer_1ac4bbe9cdad8b662d3467e8cb63d87b74" kindref="member">AArch64WinCOFFObjectWriter::getRelocType</ref>(</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;Ctx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref><sp/>&amp;<ref refid="classllvm_1_1_target" kindref="compound">Target</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsCrossSection,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend" kindref="compound">MCAsmBackend</ref><sp/>&amp;MAB)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a7d3d3a355228d2f64fa312abbd7abfbf" kindref="member">FixupKind</ref><sp/>=<sp/><ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>.getKind();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IsCrossSection)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IMAGE_REL_ARM64_REL64<sp/>does<sp/>not<sp/>exist.<sp/>We<sp/>treat<sp/>FK_Data_8<sp/>as<sp/>FK_PCRel_4<sp/>so</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>that<sp/>.xword<sp/>a-b<sp/>can<sp/>lower<sp/>to<sp/>IMAGE_REL_ARM64_REL32.<sp/>This<sp/>allows<sp/>generic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>instrumentation<sp/>to<sp/>not<sp/>bother<sp/>with<sp/>the<sp/>COFF<sp/>limitation.<sp/>A<sp/>negative<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>needs<sp/>attention.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1a7d3d3a355228d2f64fa312abbd7abfbf" kindref="member">FixupKind</ref><sp/>!=<sp/><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58a5d58ab615cde98af13deb16dbc09f42d" kindref="member">FK_Data_4</ref><sp/>&amp;&amp;<sp/><ref refid="namespacellvm_1a7d3d3a355228d2f64fa312abbd7abfbf" kindref="member">FixupKind</ref><sp/>!=<sp/><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58a3a9388f6478ca218e5d1996e4063c8fe" kindref="member">FK_Data_8</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Ctx.reportError(<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>.getLoc(),<sp/></highlight><highlight class="stringliteral">&quot;Cannot<sp/>represent<sp/>this<sp/>expression&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4ea5eef7fcc1ce4e904b4674667edcb05d1" kindref="member">COFF::IMAGE_REL_ARM64_ADDR32</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1a7d3d3a355228d2f64fa312abbd7abfbf" kindref="member">FixupKind</ref><sp/>=<sp/><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58a0f7a8485c2c761bc5e870fe2b6466372" kindref="member">FK_PCRel_4</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Modifier<sp/>=<sp/><ref refid="classllvm_1_1_target" kindref="compound">Target</ref>.isAbsolute()<sp/>?<sp/><ref refid="classllvm_1_1_m_c_symbol_ref_expr_1a5c463f6352570ee778c35c40949c4985a01bc6396c4d841a7ea268c3cbf62d3b3" kindref="member">MCSymbolRefExpr::VK_None</ref></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classllvm_1_1_target" kindref="compound">Target</ref>.getSymA()-&gt;getKind();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*Expr<sp/>=<sp/><ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>.getValue();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr" kindref="compound">AArch64MCExpr</ref><sp/>*A64E<sp/>=<sp/><ref refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" kindref="member">dyn_cast&lt;AArch64MCExpr&gt;</ref>(Expr))<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr_1abec9c1dd43489b968c9780860bad71bf" kindref="member">AArch64MCExpr::VariantKind</ref><sp/>RefKind<sp/>=<sp/>A64E-&gt;getKind();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_a_arch64_m_c_expr_1a07e3d0ae8a67b027d48dbb2a51ed6e9a" kindref="member">AArch64MCExpr::getSymbolLoc</ref>(RefKind))<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr_1abec9c1dd43489b968c9780860bad71bfa873476895e81395d69f2a8a5e9f298cf" kindref="member">AArch64MCExpr::VK_ABS</ref>:</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr_1abec9c1dd43489b968c9780860bad71bfaec64aa7810f0b31023d490a86d01d415" kindref="member">AArch64MCExpr::VK_SECREL</ref>:</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Supported</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Ctx.reportError(<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>.getLoc(),<sp/></highlight><highlight class="stringliteral">&quot;relocation<sp/>variant<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A64E-&gt;getVariantKindName()<sp/>+</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>unsupported<sp/>on<sp/>COFF<sp/>targets&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4eaaf8d91439b6c0c905ee9cd3eca3cea1c" kindref="member">COFF::IMAGE_REL_ARM64_ABSOLUTE</ref>;<sp/></highlight><highlight class="comment">//<sp/>Dummy<sp/>return<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1a7d3d3a355228d2f64fa312abbd7abfbf" kindref="member">FixupKind</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr" kindref="compound">AArch64MCExpr</ref><sp/>*A64E<sp/>=<sp/><ref refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" kindref="member">dyn_cast&lt;AArch64MCExpr&gt;</ref>(Expr))<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Ctx.reportError(<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>.getLoc(),<sp/></highlight><highlight class="stringliteral">&quot;relocation<sp/>type<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A64E-&gt;getVariantKindName()<sp/>+</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>unsupported<sp/>on<sp/>COFF<sp/>targets&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_m_c_fixup_kind_info" kindref="compound">MCFixupKindInfo</ref><sp/>&amp;Info<sp/>=<sp/>MAB.<ref refid="classllvm_1_1_m_c_asm_backend_1ad4777f004ef52f665e6ec6defc1cb32a" kindref="member">getFixupKindInfo</ref>(<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>.getKind());</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Ctx.reportError(<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>.getLoc(),<sp/><ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref>(</highlight><highlight class="stringliteral">&quot;relocation<sp/>type<sp/>&quot;</highlight><highlight class="normal">)<sp/>+<sp/>Info.Name<sp/>+</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>unsupported<sp/>on<sp/>COFF<sp/>targets&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4eaaf8d91439b6c0c905ee9cd3eca3cea1c" kindref="member">COFF::IMAGE_REL_ARM64_ABSOLUTE</ref>;<sp/></highlight><highlight class="comment">//<sp/>Dummy<sp/>return<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58a0f7a8485c2c761bc5e870fe2b6466372" kindref="member">FK_PCRel_4</ref>:</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4ea1dde8be4528eebd8bfb4962a11b91d36" kindref="member">COFF::IMAGE_REL_ARM64_REL32</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58a5d58ab615cde98af13deb16dbc09f42d" kindref="member">FK_Data_4</ref>:</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(Modifier)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4ea5eef7fcc1ce4e904b4674667edcb05d1" kindref="member">COFF::IMAGE_REL_ARM64_ADDR32</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_symbol_ref_expr_1a5c463f6352570ee778c35c40949c4985a61907d1fede3c9e9713b6b3a29d35b01" kindref="member">MCSymbolRefExpr::VK_COFF_IMGREL32</ref>:</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4eae2871250d400787e7f8ec6fd55f1ba40" kindref="member">COFF::IMAGE_REL_ARM64_ADDR32NB</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_symbol_ref_expr_1a5c463f6352570ee778c35c40949c4985a0cca43f5b196466926fb823727bd8902" kindref="member">MCSymbolRefExpr::VK_SECREL</ref>:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4ea079834a37edaf463583319d7578077fd" kindref="member">COFF::IMAGE_REL_ARM64_SECREL</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58a3a9388f6478ca218e5d1996e4063c8fe" kindref="member">FK_Data_8</ref>:</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4eafe178efa3ce63a8ff56cc587a18db82c" kindref="member">COFF::IMAGE_REL_ARM64_ADDR64</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58a128346d352fde2e704c07867f4d82eef" kindref="member">FK_SecRel_2</ref>:</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4ea6a6d329033fe824d392778107e5349a9" kindref="member">COFF::IMAGE_REL_ARM64_SECTION</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58a8b2acba82b6d0830ab47d67eb8f1ccf0" kindref="member">FK_SecRel_4</ref>:</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4ea079834a37edaf463583319d7578077fd" kindref="member">COFF::IMAGE_REL_ARM64_SECREL</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9ad535858a360e48fa51bd9c5ac0956162" kindref="member">AArch64::fixup_aarch64_add_imm12</ref>:</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr" kindref="compound">AArch64MCExpr</ref><sp/>*A64E<sp/>=<sp/><ref refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" kindref="member">dyn_cast&lt;AArch64MCExpr&gt;</ref>(Expr))<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr_1abec9c1dd43489b968c9780860bad71bf" kindref="member">AArch64MCExpr::VariantKind</ref><sp/>RefKind<sp/>=<sp/>A64E-&gt;getKind();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(RefKind<sp/>==<sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr_1abec9c1dd43489b968c9780860bad71bfaee5e353993b28f25d23e1b76e1b295a2" kindref="member">AArch64MCExpr::VK_SECREL_LO12</ref>)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4ea3ecf90c2cbc293af2d292546431cc58f" kindref="member">COFF::IMAGE_REL_ARM64_SECREL_LOW12A</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(RefKind<sp/>==<sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr_1abec9c1dd43489b968c9780860bad71bfad8bf44f54a45b38024a2cdc10226cb3a" kindref="member">AArch64MCExpr::VK_SECREL_HI12</ref>)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4ea87d81b3a2cd85bf5220240d7c9fa52bc" kindref="member">COFF::IMAGE_REL_ARM64_SECREL_HIGH12A</ref>;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4eaafd0e1b4a38680cf94e03fa4c1d29957" kindref="member">COFF::IMAGE_REL_ARM64_PAGEOFFSET_12A</ref>;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9ae794060e936aea9d09bdd85bb99dcf80" kindref="member">AArch64::fixup_aarch64_ldst_imm12_scale1</ref>:</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9aa7eca8a3014a1980664443a7d07edec5" kindref="member">AArch64::fixup_aarch64_ldst_imm12_scale2</ref>:</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9a1d9670f8c96a7890ee1396fc8596e5a4" kindref="member">AArch64::fixup_aarch64_ldst_imm12_scale4</ref>:</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9adaa9de7bb7ea352fc17fcb5adec2a9f5" kindref="member">AArch64::fixup_aarch64_ldst_imm12_scale8</ref>:</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9ac2e74dcdf3c97291d6ce9fc8032d2e4f" kindref="member">AArch64::fixup_aarch64_ldst_imm12_scale16</ref>:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr" kindref="compound">AArch64MCExpr</ref><sp/>*A64E<sp/>=<sp/><ref refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" kindref="member">dyn_cast&lt;AArch64MCExpr&gt;</ref>(Expr))<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr_1abec9c1dd43489b968c9780860bad71bf" kindref="member">AArch64MCExpr::VariantKind</ref><sp/>RefKind<sp/>=<sp/>A64E-&gt;getKind();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(RefKind<sp/>==<sp/><ref refid="classllvm_1_1_a_arch64_m_c_expr_1abec9c1dd43489b968c9780860bad71bfaee5e353993b28f25d23e1b76e1b295a2" kindref="member">AArch64MCExpr::VK_SECREL_LO12</ref>)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4ead15cb0dcf3d1616aba55b96a70dc0c6f" kindref="member">COFF::IMAGE_REL_ARM64_SECREL_LOW12L</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4eacb363e20befbd3ed6e3e871ddf982aa8" kindref="member">COFF::IMAGE_REL_ARM64_PAGEOFFSET_12L</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9a9a9d665cbb724cea9ad2aae20668e464" kindref="member">AArch64::fixup_aarch64_pcrel_adr_imm21</ref>:</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4eaf22de55fb18b610776fa84d8f4e956ca" kindref="member">COFF::IMAGE_REL_ARM64_REL21</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9ad31b24bfe1fb4471f899fbfa37d240f7" kindref="member">AArch64::fixup_aarch64_pcrel_adrp_imm21</ref>:</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4eaf208e10668d261aed713825f256f420d" kindref="member">COFF::IMAGE_REL_ARM64_PAGEBASE_REL21</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9a9cfa836f3def950d2b4a9cc69a5de67c" kindref="member">AArch64::fixup_aarch64_pcrel_branch14</ref>:</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4eac43ef804249b1c1f07711a9866299819" kindref="member">COFF::IMAGE_REL_ARM64_BRANCH14</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9a87e08dcaf47dcab2f388f1d348002f3f" kindref="member">AArch64::fixup_aarch64_pcrel_branch19</ref>:</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4ea097bfbb62502b9566c9e1985a04b5c6b" kindref="member">COFF::IMAGE_REL_ARM64_BRANCH19</ref>;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9a74a32a0e3d43c7e6b0ef010ebffa5f23" kindref="member">AArch64::fixup_aarch64_pcrel_branch26</ref>:</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_a_arch64_1a5c816ea23ece51a78a235f57ffb177a9a572647824895bc24ec60e6ed94fc2b05" kindref="member">AArch64::fixup_aarch64_pcrel_call26</ref>:</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4eac53ed10f9401665d19e5eefa59984bd9" kindref="member">COFF::IMAGE_REL_ARM64_BRANCH26</ref>;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer_1a432080a1f772c4079dba8c63432e30d8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_a_arch64_win_c_o_f_f_object_writer_8cpp_03_1_1_a_arch64_win_c_o_f_f_object_writer_1a432080a1f772c4079dba8c63432e30d8" kindref="member">AArch64WinCOFFObjectWriter::recordRelocation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal">std::unique_ptr&lt;MCObjectTargetWriter&gt;</highlight></codeline>
+<codeline lineno="164" refid="namespacellvm_1a2ad3d0f7e395395c734b484f4773ac31" refkind="member"><highlight class="normal"><ref refid="namespacellvm_1a2ad3d0f7e395395c734b484f4773ac31" kindref="member">llvm::createAArch64WinCOFFObjectWriter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_triple" kindref="compound">Triple</ref><sp/>&amp;TheTriple)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_unique&lt;AArch64WinCOFFObjectWriter&gt;(TheTriple);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="lib/Target/AArch64/MCTargetDesc/AArch64WinCOFFObjectWriter.cpp"/>
+  </compounddef>
+</doxygen>

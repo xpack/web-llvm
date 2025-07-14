@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1_file_check_diag" kind="struct" language="C++" prot="public">
+    <compoundname>llvm::FileCheckDiag</compoundname>
+    <includes refid="_file_check_8h" local="yes">llvm/FileCheck/FileCheck.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>MatchType</name>
+        <qualifiedname>llvm::FileCheckDiag::MatchType</qualifiedname>
+        <enumvalue id="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0adcf3e4ffa0433fb40711377d53b4baf1" prot="public">
+          <name>MatchFoundAndExpected</name>
+          <briefdescription>
+<para>Indicates a good match for an expected pattern. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0a66b95270a54c88af1ba70b794aa836f8" prot="public">
+          <name>MatchFoundButExcluded</name>
+          <briefdescription>
+<para>Indicates a match for an excluded pattern. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0a3f5c9c6115db2361e358de0c62d43bed" prot="public">
+          <name>MatchFoundButWrongLine</name>
+          <briefdescription>
+<para>Indicates a match for an expected pattern, but the match is on the wrong line. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0abf168517cbdcc053154c47b20986837b" prot="public">
+          <name>MatchFoundButDiscarded</name>
+          <briefdescription>
+<para>Indicates a discarded match for an expected pattern. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0ab7e91555667e7182c229428b8f3a6302" prot="public">
+          <name>MatchFoundErrorNote</name>
+          <briefdescription>
+<para>Indicates an error while processing a match after the match was found for an expected or excluded pattern. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The error is specified by <computeroutput>Note</computeroutput>, to which it should be appropriate to prepend &quot;error: &quot; later. The full match itself should be recorded in a preceding diagnostic of a different <computeroutput>MatchFound</computeroutput> match type. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0a4a92716c994d8a58dc2e6b158e2b2f3f" prot="public">
+          <name>MatchNoneAndExcluded</name>
+          <briefdescription>
+<para>Indicates no match for an excluded pattern. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0afc543db8ad6f068fab3eea06297e0ebc" prot="public">
+          <name>MatchNoneButExpected</name>
+          <briefdescription>
+<para>Indicates no match for an expected pattern, but this might follow good matches when multiple matches are expected for the pattern, or it might follow discarded matches for the pattern. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0ad139fc8ba0eace914c3d91f8c51c35b1" prot="public">
+          <name>MatchNoneForInvalidPattern</name>
+          <briefdescription>
+<para>Indicates no match due to an expected or excluded pattern that has proven to be invalid at match time. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The exact problems are usually reported in subsequent diagnostics of the same match type but with <computeroutput>Note</computeroutput> set. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0a6c8cff7a0ac871bde6a0e4e33a8e90d2" prot="public">
+          <name>MatchFuzzy</name>
+          <briefdescription>
+<para>Indicates a fuzzy match that serves as a suggestion for the next intended match for an expected pattern with too few or no good matches. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>What type of match result does this diagnostic describe? </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A directive&apos;s supplied pattern is said to be either expected or excluded depending on whether the pattern must have or must not have a match in order for the directive to succeed. For example, a CHECK directive&apos;s pattern is expected, and a CHECK-NOT directive&apos;s pattern is excluded.</para>
+<para>There might be more than one match result for a single pattern. For example, there might be several discarded matches (MatchFoundButDiscarded) before either a good match (MatchFoundAndExpected) or a failure to match (MatchNoneButExpected), and there might be a fuzzy match (MatchFuzzy) after the latter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/FileCheck/FileCheck.h" line="130" column="3" bodyfile="include/llvm/FileCheck/FileCheck.h" bodystart="130" bodyend="160"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structllvm_1_1_file_check_diag_1a86901e0196062903763ea40e149ae363" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_check_1_1_file_check_type" kindref="compound">Check::FileCheckType</ref></type>
+        <definition>Check::FileCheckType llvm::FileCheckDiag::CheckTy</definition>
+        <argsstring></argsstring>
+        <name>CheckTy</name>
+        <qualifiedname>llvm::FileCheckDiag::CheckTy</qualifiedname>
+        <briefdescription>
+<para>What is the <ref refid="classllvm_1_1_file_check" kindref="compound">FileCheck</ref> directive for this diagnostic? </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/FileCheck/FileCheck.h" line="115" column="24" bodyfile="include/llvm/FileCheck/FileCheck.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_file_check_diag_1a61b7d723c27bc645be803cb48a7f103f" compoundref="_file_check_8cpp" startline="1457" endline="1468">FileCheckDiag</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_file_check_diag_1af70d45da9cefd23e5f10aac0bf27b64b" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+        <definition>SMLoc llvm::FileCheckDiag::CheckLoc</definition>
+        <argsstring></argsstring>
+        <name>CheckLoc</name>
+        <qualifiedname>llvm::FileCheckDiag::CheckLoc</qualifiedname>
+        <briefdescription>
+<para>Where is the <ref refid="classllvm_1_1_file_check" kindref="compound">FileCheck</ref> directive for this diagnostic? </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/FileCheck/FileCheck.h" line="117" column="9" bodyfile="include/llvm/FileCheck/FileCheck.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_file_check_diag_1a61b7d723c27bc645be803cb48a7f103f" compoundref="_file_check_8cpp" startline="1457" endline="1468">FileCheckDiag</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_file_check_diag_1a2da50048c6a2c815f6e4219f9c259386" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0" kindref="member">llvm::FileCheckDiag::MatchType</ref></type>
+        <definition>enum llvm::FileCheckDiag::MatchType llvm::FileCheckDiag::MatchTy</definition>
+        <argsstring></argsstring>
+        <name>MatchTy</name>
+        <qualifiedname>llvm::FileCheckDiag::MatchTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/FileCheck/FileCheck.h" line="160" column="11"/>
+        <referencedby refid="structllvm_1_1_file_check_diag_1a61b7d723c27bc645be803cb48a7f103f" compoundref="_file_check_8cpp" startline="1457" endline="1468">FileCheckDiag</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_file_check_diag_1a3e2ffb9989d232f1741d82d11901ee55" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::FileCheckDiag::InputStartLine</definition>
+        <argsstring></argsstring>
+        <name>InputStartLine</name>
+        <qualifiedname>llvm::FileCheckDiag::InputStartLine</qualifiedname>
+        <briefdescription>
+<para>The search range if MatchTy starts with MatchNone, or the match range otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/FileCheck/FileCheck.h" line="163" column="12" bodyfile="include/llvm/FileCheck/FileCheck.h" bodystart="163" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_file_check_diag_1a61b7d723c27bc645be803cb48a7f103f" compoundref="_file_check_8cpp" startline="1457" endline="1468">FileCheckDiag</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_file_check_diag_1a2598d8229c3e2065b3ec2b99958876a4" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::FileCheckDiag::InputStartCol</definition>
+        <argsstring></argsstring>
+        <name>InputStartCol</name>
+        <qualifiedname>llvm::FileCheckDiag::InputStartCol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/FileCheck/FileCheck.h" line="164" column="12" bodyfile="include/llvm/FileCheck/FileCheck.h" bodystart="164" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_file_check_diag_1a61b7d723c27bc645be803cb48a7f103f" compoundref="_file_check_8cpp" startline="1457" endline="1468">FileCheckDiag</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_file_check_diag_1a431375a72a3d181911379890869b6bf6" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::FileCheckDiag::InputEndLine</definition>
+        <argsstring></argsstring>
+        <name>InputEndLine</name>
+        <qualifiedname>llvm::FileCheckDiag::InputEndLine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/FileCheck/FileCheck.h" line="165" column="12" bodyfile="include/llvm/FileCheck/FileCheck.h" bodystart="165" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_file_check_diag_1a61b7d723c27bc645be803cb48a7f103f" compoundref="_file_check_8cpp" startline="1457" endline="1468">FileCheckDiag</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_file_check_diag_1a9be546d093e6ba646781b3947c7eceec" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::FileCheckDiag::InputEndCol</definition>
+        <argsstring></argsstring>
+        <name>InputEndCol</name>
+        <qualifiedname>llvm::FileCheckDiag::InputEndCol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/FileCheck/FileCheck.h" line="166" column="12" bodyfile="include/llvm/FileCheck/FileCheck.h" bodystart="166" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_file_check_diag_1a61b7d723c27bc645be803cb48a7f103f" compoundref="_file_check_8cpp" startline="1457" endline="1468">FileCheckDiag</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_file_check_diag_1a02c0c1239a8b44a6ec3c83e9951c64af" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::FileCheckDiag::Note</definition>
+        <argsstring></argsstring>
+        <name>Note</name>
+        <qualifiedname>llvm::FileCheckDiag::Note</qualifiedname>
+        <briefdescription>
+<para>A note to replace the one normally indicated by MatchTy, or the empty string if none. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/FileCheck/FileCheck.h" line="169" column="15" bodyfile="include/llvm/FileCheck/FileCheck.h" bodystart="169" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_file_check_diag_1a61b7d723c27bc645be803cb48a7f103f" compoundref="_file_check_8cpp" startline="1457" endline="1468">FileCheckDiag</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structllvm_1_1_file_check_diag_1a61b7d723c27bc645be803cb48a7f103f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FileCheckDiag::FileCheckDiag</definition>
+        <argsstring>(const SourceMgr &amp;SM, const Check::FileCheckType &amp;CheckTy, SMLoc CheckLoc, MatchType MatchTy, SMRange InputRange, StringRef Note=&quot;&quot;)</argsstring>
+        <name>FileCheckDiag</name>
+        <qualifiedname>llvm::FileCheckDiag::FileCheckDiag</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_check_1_1_file_check_type" kindref="compound">Check::FileCheckType</ref> &amp;</type>
+          <declname>CheckTy</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>CheckLoc</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0" kindref="member">MatchType</ref></type>
+          <declname>MatchTy</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_range" kindref="compound">SMRange</ref></type>
+          <declname>InputRange</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Note</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/FileCheck/FileCheck.h" line="170" column="3" bodyfile="lib/FileCheck/FileCheck.cpp" bodystart="1457" bodyend="1468"/>
+        <references refid="structllvm_1_1_file_check_diag_1af70d45da9cefd23e5f10aac0bf27b64b" compoundref="_file_check_8h" startline="117">CheckLoc</references>
+        <references refid="structllvm_1_1_file_check_diag_1a86901e0196062903763ea40e149ae363" compoundref="_file_check_8h" startline="115">CheckTy</references>
+        <references refid="classllvm_1_1_s_m_range_1a971f74faff26ef837fb42b7b4b6e3066" compoundref="_s_m_loc_8h" startline="50">llvm::SMRange::End</references>
+        <references refid="classllvm_1_1_source_mgr_1a494d75fe0bc43f9c6b8821f983205649" compoundref="_source_mgr_8cpp" startline="192" endline="206">llvm::SourceMgr::getLineAndColumn</references>
+        <references refid="structllvm_1_1_file_check_diag_1a9be546d093e6ba646781b3947c7eceec" compoundref="_file_check_8h" startline="166">InputEndCol</references>
+        <references refid="structllvm_1_1_file_check_diag_1a431375a72a3d181911379890869b6bf6" compoundref="_file_check_8h" startline="165">InputEndLine</references>
+        <references refid="structllvm_1_1_file_check_diag_1a2598d8229c3e2065b3ec2b99958876a4" compoundref="_file_check_8h" startline="164">InputStartCol</references>
+        <references refid="structllvm_1_1_file_check_diag_1a3e2ffb9989d232f1741d82d11901ee55" compoundref="_file_check_8h" startline="163">InputStartLine</references>
+        <references refid="structllvm_1_1_file_check_diag_1a2da50048c6a2c815f6e4219f9c259386">MatchTy</references>
+        <references refid="structllvm_1_1_file_check_diag_1a02c0c1239a8b44a6ec3c83e9951c64af" compoundref="_file_check_8h" startline="169">Note</references>
+        <references refid="classllvm_1_1_s_m_range_1a95721f80bb5e9cfa8571695f8807881b" compoundref="_s_m_loc_8h" startline="50">llvm::SMRange::Start</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Summary of a <ref refid="classllvm_1_1_file_check" kindref="compound">FileCheck</ref> diagnostic. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>MatchType</label>
+      </node>
+      <node id="2">
+        <label>llvm::Check::FileCheckType</label>
+        <link refid="classllvm_1_1_check_1_1_file_check_type"/>
+      </node>
+      <node id="1">
+        <label>llvm::FileCheckDiag</label>
+        <link refid="structllvm_1_1_file_check_diag"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>CheckTy</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>CheckLoc</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>MatchTy</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>InputEndCol</edgelabel>
+          <edgelabel>InputEndLine</edgelabel>
+          <edgelabel>InputStartCol</edgelabel>
+          <edgelabel>InputStartLine</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>Note</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::SMLoc</label>
+        <link refid="classllvm_1_1_s_m_loc"/>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/FileCheck/FileCheck.h" line="113" column="1" bodyfile="include/llvm/FileCheck/FileCheck.h" bodystart="113" bodyend="173"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1_file_check_diag_1af70d45da9cefd23e5f10aac0bf27b64b" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>CheckLoc</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1a86901e0196062903763ea40e149ae363" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>CheckTy</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1a61b7d723c27bc645be803cb48a7f103f" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>FileCheckDiag</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1a9be546d093e6ba646781b3947c7eceec" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>InputEndCol</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1a431375a72a3d181911379890869b6bf6" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>InputEndLine</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1a2598d8229c3e2065b3ec2b99958876a4" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>InputStartCol</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1a3e2ffb9989d232f1741d82d11901ee55" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>InputStartLine</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0adcf3e4ffa0433fb40711377d53b4baf1" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>MatchFoundAndExpected</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0abf168517cbdcc053154c47b20986837b" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>MatchFoundButDiscarded</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0a66b95270a54c88af1ba70b794aa836f8" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>MatchFoundButExcluded</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0a3f5c9c6115db2361e358de0c62d43bed" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>MatchFoundButWrongLine</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0ab7e91555667e7182c229428b8f3a6302" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>MatchFoundErrorNote</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0a6c8cff7a0ac871bde6a0e4e33a8e90d2" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>MatchFuzzy</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0a4a92716c994d8a58dc2e6b158e2b2f3f" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>MatchNoneAndExcluded</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0afc543db8ad6f068fab3eea06297e0ebc" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>MatchNoneButExpected</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0ad139fc8ba0eace914c3d91f8c51c35b1" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>MatchNoneForInvalidPattern</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1a2da50048c6a2c815f6e4219f9c259386" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>MatchTy</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1ab33e9e639814daad35bb1a9dc84190c0" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>MatchType</name></member>
+      <member refid="structllvm_1_1_file_check_diag_1a02c0c1239a8b44a6ec3c83e9951c64af" prot="public" virt="non-virtual"><scope>llvm::FileCheckDiag</scope><name>Note</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

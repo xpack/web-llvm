@@ -1,0 +1,1102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a6def0c84146c2e22e6fbe0b057f8cdd4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_selection_d_a_g" kindref="compound">SelectionDAG</ref> &amp;</type>
+        <definition>SelectionDAG&amp; anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::DAG</definition>
+        <argsstring></argsstring>
+        <name>DAG</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::DAG</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="56" column="16" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a375c9a458397bb0e51b11cdfafdf1204" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_lowering" kindref="compound">TargetLowering</ref> &amp;</type>
+        <definition>const TargetLowering&amp; anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::TLI</definition>
+        <argsstring></argsstring>
+        <name>TLI</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::TLI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="57" column="24" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a3933c2293491a131dcbbf6dce51b0f8d" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::Changed</definition>
+        <argsstring></argsstring>
+        <name>Changed</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::Changed</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="58" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ac63f747ee8475b2702ceb0771cb8d133" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref>, <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref>, 64 &gt;</type>
+        <definition>SmallDenseMap&lt;SDValue, SDValue, 64&gt; anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::LegalizedNodes</definition>
+        <argsstring></argsstring>
+        <name>LegalizedNodes</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::LegalizedNodes</qualifiedname>
+        <briefdescription>
+<para>For nodes that are of legal width, and that have more than one use, this map indicates what regularized operand to use. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This allows us to avoid legalizing the same thing more than once. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="63" column="17" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ab3bd711fb198612b3f217a854c6987c9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::AddLegalizedOperand</definition>
+        <argsstring>(SDValue From, SDValue To)</argsstring>
+        <name>AddLegalizedOperand</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::AddLegalizedOperand</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+          <declname>From</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+          <declname>To</declname>
+        </param>
+        <briefdescription>
+<para>Adds a node to the translation cache. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="66" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="66" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a75ee7b55ead91f4b061d055b61a133a7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::LegalizeOp</definition>
+        <argsstring>(SDValue Op)</argsstring>
+        <name>LegalizeOp</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::LegalizeOp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+          <declname>Op</declname>
+        </param>
+        <briefdescription>
+<para>Legalizes the given node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="74" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="267" bodyend="577"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ad9f7ba7bd51759afc9616783918a4774" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::TranslateLegalizeResults</definition>
+        <argsstring>(SDValue Op, SDNode *Result)</argsstring>
+        <name>TranslateLegalizeResults</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::TranslateLegalizeResults</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+          <declname>Op</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+<para>Assuming the node is legal, &quot;legalize&quot; the results. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="77" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="244" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a0aa964dbf1d8e1f545d8abbf957f4890" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::RecursivelyLegalizeResults</definition>
+        <argsstring>(SDValue Op, MutableArrayRef&lt; SDValue &gt; Results)</argsstring>
+        <name>RecursivelyLegalizeResults</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::RecursivelyLegalizeResults</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+          <declname>Op</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_mutable_array_ref" kindref="compound">MutableArrayRef</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+<para>Make sure Results are legal and update the translation cache. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="80" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="254" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ab0bfaa11692f703bbe7db577d57c0c86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool VectorLegalizer::LowerOperationWrapper</definition>
+        <argsstring>(SDNode *N, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>LowerOperationWrapper</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::LowerOperationWrapper</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+<para>Wrapper to interface LowerOperation with a vector of Results. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns false if the target wants to use default expansion. Otherwise returns true. If return is true and the Results are empty, then the target wants to keep the input node as is. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="87" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="581" bodyend="608"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ae7e249d47be4ecc4b6d7b903c2253122" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::UnrollVSETCC</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>UnrollVSETCC</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::UnrollVSETCC</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>Implements unrolling a VSETCC. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="90" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="2282" bodyend="2307"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ab68ff3284bb0cb541c0a5a50c7c88cac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::Expand</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>Expand</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::Expand</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+<para>Implement expand-based legalization of vector operations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is just a high-level routine to dispatch to specific code paths for operations to legalize them. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="96" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="876" bodyend="1265"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aa16dbedad3f5c864ac633aebef24d38d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::ExpandFP_TO_UINT</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>ExpandFP_TO_UINT</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandFP_TO_UINT</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+<para>Implements expansion for FP_TO_UINT; falls back to UnrollVectorOp if FP_TO_SINT isn&apos;t legal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="100" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1743" bodyend="1761"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aae7c2c883dfa2673e8bd68e3169cd8f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::ExpandUINT_TO_FLOAT</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>ExpandUINT_TO_FLOAT</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandUINT_TO_FLOAT</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+<para>Implements expansion for UINT_TO_FLOAT; falls back to UnrollVectorOp if SINT_TO_FLOAT and SHR on vectors isn&apos;t legal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="104" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1763" bodyend="1873"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a1e87b1a7e949a39e858471d18f0fbd57" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandSEXTINREG</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandSEXTINREG</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandSEXTINREG</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>Implement expansion for SIGN_EXTEND_INREG using SRL and SRA. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="107" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1323" bodyend="1340"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ab977dc1c87120397c5b35b6336463bc2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandANY_EXTEND_VECTOR_INREG</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandANY_EXTEND_VECTOR_INREG</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandANY_EXTEND_VECTOR_INREG</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>Implement expansion for ANY_EXTEND_VECTOR_INREG. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Shuffles the low lanes of the operand into place and bitcasts to the proper type. The contents of the bits in the extended part of each element are undef. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="114" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1344" bodyend="1377"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a48474513ea98bdc42a6ad90bb7944876" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandSIGN_EXTEND_VECTOR_INREG</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandSIGN_EXTEND_VECTOR_INREG</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandSIGN_EXTEND_VECTOR_INREG</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>Implement expansion for SIGN_EXTEND_VECTOR_INREG. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Shuffles the low lanes of the operand into place, bitcasts to the proper type, then shifts left and arithmetic shifts right to introduce a sign extension. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="121" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1379" bodyend="1398"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a10fe9d6157bf8560eaff0cce1ba45643" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandZERO_EXTEND_VECTOR_INREG</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandZERO_EXTEND_VECTOR_INREG</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandZERO_EXTEND_VECTOR_INREG</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>Implement expansion for ZERO_EXTEND_VECTOR_INREG. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Shuffles the low lanes of the operand into place and blends zeros into the remaining lanes, finally bitcasting to the proper type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="127" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1403" bodyend="1437"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a5a9f95e687e0fd5a1a411c3b7d11ea2c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandBSWAP</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandBSWAP</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandBSWAP</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>Expand bswap of vectors into a shuffle if legal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="130" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1446" bodyend="1476"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a7c8de8c388f23f0984591711265c6661" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandVSELECT</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandVSELECT</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandVSELECT</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>Implement vselect in terms of XOR, AND, OR when blend is not supported by the target. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="134" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1526" bodyend="1574"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a2f0a29e9cd457dc354f5ed9002e8c12c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandVP_SELECT</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandVP_SELECT</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandVP_SELECT</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="135" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1576" bodyend="1605"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a56933cb802fc9c9a82fe4f6a34d5bf4c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandVP_MERGE</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandVP_MERGE</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandVP_MERGE</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="136" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1607" bodyend="1646"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a5dc57d630bee525742cafe3189fa97dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandVP_REM</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandVP_REM</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandVP_REM</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="137" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1648" bodyend="1670"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a603881b7f6240338bacb603661218f8c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandVP_FNEG</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandVP_FNEG</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandVP_FNEG</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="138" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1672" bodyend="1688"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a2008980527f65e9ee79e816f3975222e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandVP_FABS</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandVP_FABS</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandVP_FABS</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="139" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1690" bodyend="1707"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a93a74f2e3f0afcd20f32fc2b28d39489" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandVP_FCOPYSIGN</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandVP_FCOPYSIGN</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandVP_FCOPYSIGN</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="140" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1709" bodyend="1741"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aeb71ae780493f849f41a662928ba9fe9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandSELECT</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandSELECT</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandSELECT</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="141" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1267" bodyend="1321"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a57b016b84f4ca1635f9a0d4004fcd04b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref>, <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt;</type>
+        <definition>std::pair&lt; SDValue, SDValue &gt; VectorLegalizer::ExpandLoad</definition>
+        <argsstring>(SDNode *N)</argsstring>
+        <name>ExpandLoad</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandLoad</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="142" column="13" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="865" bodyend="868"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a7750e58756ec8f6deb6fd8b2c4d6ce2f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandStore</definition>
+        <argsstring>(SDNode *N)</argsstring>
+        <name>ExpandStore</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandStore</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="143" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="870" bodyend="874"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a8bc5ffe6e111eb328b3a16fca246a612" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandFNEG</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandFNEG</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandFNEG</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="144" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1875" bodyend="1893"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a53f8ed9425685f8d4ac9d24a928f5431" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandFABS</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandFABS</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandFABS</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="145" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1895" bodyend="1913"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a2d2e02e5f672027c3519ce3190259d8e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandFCOPYSIGN</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandFCOPYSIGN</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandFCOPYSIGN</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="146" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1915" bodyend="1945"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aa5cf67c7ba9b8b974bab99f69ed9af47" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::ExpandFSUB</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>ExpandFSUB</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandFSUB</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="147" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1947" bodyend="1964"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a5628a73bfa1ff873d26be45ed0ff3d36" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::ExpandSETCC</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>ExpandSETCC</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandSETCC</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="148" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1966" bodyend="2044"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aed97efdc3e83b6865d0a031d4451e22c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue VectorLegalizer::ExpandBITREVERSE</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>ExpandBITREVERSE</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandBITREVERSE</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="149" column="11" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="1478" bodyend="1524"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ad7454d05a8bcba674c67932faede7dc1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::ExpandUADDSUBO</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>ExpandUADDSUBO</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandUADDSUBO</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="150" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="2046" bodyend="2052"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aa78df95355579f753b3fe4b4f1ee75bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::ExpandSADDSUBO</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>ExpandSADDSUBO</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandSADDSUBO</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="151" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="2054" bodyend="2060"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aab7341704b6bf9655c8fda40caae4418" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::ExpandMULO</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>ExpandMULO</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandMULO</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="152" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="2062" bodyend="2070"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a700799d00eaeb4448bc05be78ad735dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::ExpandFixedPointDiv</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>ExpandFixedPointDiv</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandFixedPointDiv</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="153" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="2072" bodyend="2078"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1af1d0015036027f4542631404798228dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::ExpandStrictFPOp</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>ExpandStrictFPOp</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandStrictFPOp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="154" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="2080" bodyend="2098"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a0cd9d03983e6b0704dfcfd1b873c0113" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::ExpandREM</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>ExpandREM</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::ExpandREM</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="155" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="2100" bodyend="2109"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aa0b09e597a51406ce0d0d5ebd1a5f73f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool VectorLegalizer::tryExpandVecMathCall</definition>
+        <argsstring>(SDNode *Node, RTLIB::Libcall LC, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>tryExpandVecMathCall</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::tryExpandVecMathCall</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1_r_t_l_i_b_1a50a0bab21f1d14a86a1483ec283e4447" kindref="member">RTLIB::Libcall</ref></type>
+          <declname>LC</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="157" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="2117" bodyend="2205"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ae219a8cfaf5c87dba823f685fc2cf718" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool VectorLegalizer::tryExpandVecMathCall</definition>
+        <argsstring>(SDNode *Node, RTLIB::Libcall Call_F32, RTLIB::Libcall Call_F64, RTLIB::Libcall Call_F80, RTLIB::Libcall Call_F128, RTLIB::Libcall Call_PPCF128, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>tryExpandVecMathCall</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::tryExpandVecMathCall</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1_r_t_l_i_b_1a50a0bab21f1d14a86a1483ec283e4447" kindref="member">RTLIB::Libcall</ref></type>
+          <declname>Call_F32</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1_r_t_l_i_b_1a50a0bab21f1d14a86a1483ec283e4447" kindref="member">RTLIB::Libcall</ref></type>
+          <declname>Call_F64</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1_r_t_l_i_b_1a50a0bab21f1d14a86a1483ec283e4447" kindref="member">RTLIB::Libcall</ref></type>
+          <declname>Call_F80</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1_r_t_l_i_b_1a50a0bab21f1d14a86a1483ec283e4447" kindref="member">RTLIB::Libcall</ref></type>
+          <declname>Call_F128</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1_r_t_l_i_b_1a50a0bab21f1d14a86a1483ec283e4447" kindref="member">RTLIB::Libcall</ref></type>
+          <declname>Call_PPCF128</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+<para>Try to expand the node to a vector libcall based on the result type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="159" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="2208" bodyend="2220"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a14dcb4c9e8f36f1cc107d4ef3537be90" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::UnrollStrictFPOp</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>UnrollStrictFPOp</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::UnrollStrictFPOp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="165" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="2222" bodyend="2280"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a48132e71fc426c43814ed69230f4f27b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::Promote</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>Promote</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::Promote</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+<para>Implements vector promotion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is essentially just bitcasting the operands to a different type and bitcasting the result back to the original type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="171" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="676" bodyend="777"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a7dc89e1332ff1ede7be0aa46260d10e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::PromoteINT_TO_FP</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>PromoteINT_TO_FP</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::PromoteINT_TO_FP</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+<para>Implements [SU]INT_TO_FP vector promotion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a [zs]ext of the input operand to a larger integer type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="176" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="779" bodyend="814"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a3b07c6aca979c7a6b79acdf60732d0f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::PromoteFP_TO_INT</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>PromoteFP_TO_INT</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::PromoteFP_TO_INT</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+<para>Implements FP_TO_[SU]INT vector promotion of the result type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is promoted to a larger integer type. The result is then truncated back to the original type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="182" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="820" bodyend="863"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ad3d774d322a2f0e30d6aef1ff496c827" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::PromoteSETCC</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>PromoteSETCC</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::PromoteSETCC</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+<para>Implements vector setcc operation promotion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All vector operands are promoted to a vector type with larger element type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="188" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="610" bodyend="633"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a2934f64eb8b687aeca2405a9446d9305" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VectorLegalizer::PromoteSTRICT</definition>
+        <argsstring>(SDNode *Node, SmallVectorImpl&lt; SDValue &gt; &amp;Results)</argsstring>
+        <name>PromoteSTRICT</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::PromoteSTRICT</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt; &amp;</type>
+          <declname>Results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="190" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="635" bodyend="674"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ab3ce50c3e069741fd2cdb0216f66069b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::VectorLegalizer</definition>
+        <argsstring>(SelectionDAG &amp;dag)</argsstring>
+        <name>VectorLegalizer</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::VectorLegalizer</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_selection_d_a_g" kindref="compound">SelectionDAG</ref> &amp;</type>
+          <declname>dag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="193" column="3" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="193" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a45819d3524983de52fd325c7ebf6b801" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool VectorLegalizer::Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <qualifiedname>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer::Run</qualifiedname>
+        <briefdescription>
+<para>Begin legalizer the vector operations in the DAG. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="197" column="8" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="202" bodyend="242"/>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_a_arch64_i_sel_lowering_8cpp_1a51cb24bd3e700fcf2f93d1afbb555a16">SDValue</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" line="55" column="1" bodyfile="lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp" bodystart="55" bodyend="198"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ab3bd711fb198612b3f217a854c6987c9" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>AddLegalizedOperand</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a3933c2293491a131dcbbf6dce51b0f8d" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>Changed</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a6def0c84146c2e22e6fbe0b057f8cdd4" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>DAG</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ab68ff3284bb0cb541c0a5a50c7c88cac" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>Expand</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ab977dc1c87120397c5b35b6336463bc2" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandANY_EXTEND_VECTOR_INREG</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aed97efdc3e83b6865d0a031d4451e22c" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandBITREVERSE</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a5a9f95e687e0fd5a1a411c3b7d11ea2c" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandBSWAP</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a53f8ed9425685f8d4ac9d24a928f5431" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandFABS</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a2d2e02e5f672027c3519ce3190259d8e" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandFCOPYSIGN</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a700799d00eaeb4448bc05be78ad735dc" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandFixedPointDiv</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a8bc5ffe6e111eb328b3a16fca246a612" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandFNEG</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aa16dbedad3f5c864ac633aebef24d38d" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandFP_TO_UINT</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aa5cf67c7ba9b8b974bab99f69ed9af47" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandFSUB</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a57b016b84f4ca1635f9a0d4004fcd04b" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandLoad</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aab7341704b6bf9655c8fda40caae4418" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandMULO</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a0cd9d03983e6b0704dfcfd1b873c0113" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandREM</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aa78df95355579f753b3fe4b4f1ee75bd" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandSADDSUBO</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aeb71ae780493f849f41a662928ba9fe9" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandSELECT</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a5628a73bfa1ff873d26be45ed0ff3d36" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandSETCC</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a1e87b1a7e949a39e858471d18f0fbd57" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandSEXTINREG</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a48474513ea98bdc42a6ad90bb7944876" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandSIGN_EXTEND_VECTOR_INREG</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a7750e58756ec8f6deb6fd8b2c4d6ce2f" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandStore</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1af1d0015036027f4542631404798228dd" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandStrictFPOp</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ad7454d05a8bcba674c67932faede7dc1" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandUADDSUBO</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aae7c2c883dfa2673e8bd68e3169cd8f2" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandUINT_TO_FLOAT</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a2008980527f65e9ee79e816f3975222e" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandVP_FABS</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a93a74f2e3f0afcd20f32fc2b28d39489" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandVP_FCOPYSIGN</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a603881b7f6240338bacb603661218f8c" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandVP_FNEG</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a56933cb802fc9c9a82fe4f6a34d5bf4c" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandVP_MERGE</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a5dc57d630bee525742cafe3189fa97dd" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandVP_REM</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a2f0a29e9cd457dc354f5ed9002e8c12c" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandVP_SELECT</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a7c8de8c388f23f0984591711265c6661" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandVSELECT</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a10fe9d6157bf8560eaff0cce1ba45643" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>ExpandZERO_EXTEND_VECTOR_INREG</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ac63f747ee8475b2702ceb0771cb8d133" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>LegalizedNodes</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a75ee7b55ead91f4b061d055b61a133a7" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>LegalizeOp</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ab0bfaa11692f703bbe7db577d57c0c86" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>LowerOperationWrapper</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a48132e71fc426c43814ed69230f4f27b" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>Promote</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a3b07c6aca979c7a6b79acdf60732d0f1" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>PromoteFP_TO_INT</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a7dc89e1332ff1ede7be0aa46260d10e0" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>PromoteINT_TO_FP</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ad3d774d322a2f0e30d6aef1ff496c827" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>PromoteSETCC</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a2934f64eb8b687aeca2405a9446d9305" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>PromoteSTRICT</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a0aa964dbf1d8e1f545d8abbf957f4890" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>RecursivelyLegalizeResults</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a45819d3524983de52fd325c7ebf6b801" prot="public" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>Run</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a375c9a458397bb0e51b11cdfafdf1204" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>TLI</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ad9f7ba7bd51759afc9616783918a4774" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>TranslateLegalizeResults</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1aa0b09e597a51406ce0d0d5ebd1a5f73f" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>tryExpandVecMathCall</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ae219a8cfaf5c87dba823f685fc2cf718" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>tryExpandVecMathCall</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1a14dcb4c9e8f36f1cc107d4ef3537be90" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>UnrollStrictFPOp</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ae7e249d47be4ecc4b6d7b903c2253122" prot="private" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>UnrollVSETCC</name></member>
+      <member refid="classanonymous__namespace_02_legalize_vector_ops_8cpp_03_1_1_vector_legalizer_1ab3ce50c3e069741fd2cdb0216f66069b" prot="public" virt="non-virtual"><scope>anonymous_namespace{LegalizeVectorOps.cpp}::VectorLegalizer</scope><name>VectorLegalizer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

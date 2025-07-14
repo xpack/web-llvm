@@ -1,0 +1,1315 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_m_c_asm_backend_8h" kind="file" language="C++">
+    <compoundname>MCAsmBackend.h</compoundname>
+    <includes refid="_array_ref_8h" local="yes">llvm/ADT/ArrayRef.h</includes>
+    <includes refid="_m_c_directives_8h" local="yes">llvm/MC/MCDirectives.h</includes>
+    <includes refid="_m_c_fixup_8h" local="yes">llvm/MC/MCFixup.h</includes>
+    <includes refid="_endian_8h" local="yes">llvm/Support/Endian.h</includes>
+    <includes local="no">cstdint</includes>
+    <includedby refid="_m_c_d_x_container_streamer_8h" local="yes">include/llvm/MC/MCDXContainerStreamer.h</includedby>
+    <includedby refid="_m_c_s_p_i_r_v_streamer_8h" local="yes">include/llvm/MC/MCSPIRVStreamer.h</includedby>
+    <includedby refid="_m_c_wasm_streamer_8h" local="yes">include/llvm/MC/MCWasmStreamer.h</includedby>
+    <includedby refid="_code_emitter_8h" local="yes">include/llvm/MCA/CodeEmitter.h</includedby>
+    <includedby refid="_code_gen_target_machine_impl_8cpp" local="yes">lib/CodeGen/CodeGenTargetMachineImpl.cpp</includedby>
+    <includedby refid="_d_w_a_r_f_streamer_8cpp" local="yes">lib/DWARFLinker/Classic/DWARFStreamer.cpp</includedby>
+    <includedby refid="_d_w_a_r_f_emitter_impl_8cpp" local="yes">lib/DWARFLinker/Parallel/DWARFEmitterImpl.cpp</includedby>
+    <includedby refid="_e_l_f_object_writer_8cpp" local="yes">lib/MC/ELFObjectWriter.cpp</includedby>
+    <includedby refid="_m_c_asm_backend_8cpp" local="yes">lib/MC/MCAsmBackend.cpp</includedby>
+    <includedby refid="_m_c_asm_streamer_8cpp" local="yes">lib/MC/MCAsmStreamer.cpp</includedby>
+    <includedby refid="_m_c_assembler_8cpp" local="yes">lib/MC/MCAssembler.cpp</includedby>
+    <includedby refid="_m_c_e_l_f_streamer_8cpp" local="yes">lib/MC/MCELFStreamer.cpp</includedby>
+    <includedby refid="_m_c_expr_8cpp" local="yes">lib/MC/MCExpr.cpp</includedby>
+    <includedby refid="_m_c_g_o_f_f_streamer_8cpp" local="yes">lib/MC/MCGOFFStreamer.cpp</includedby>
+    <includedby refid="_m_c_mach_o_streamer_8cpp" local="yes">lib/MC/MCMachOStreamer.cpp</includedby>
+    <includedby refid="_m_c_object_streamer_8cpp" local="yes">lib/MC/MCObjectStreamer.cpp</includedby>
+    <includedby refid="_m_c_streamer_8cpp" local="yes">lib/MC/MCStreamer.cpp</includedby>
+    <includedby refid="_m_c_wasm_streamer_8cpp" local="yes">lib/MC/MCWasmStreamer.cpp</includedby>
+    <includedby refid="_m_c_win_c_o_f_f_streamer_8cpp" local="yes">lib/MC/MCWinCOFFStreamer.cpp</includedby>
+    <includedby refid="_m_c_x_c_o_f_f_streamer_8cpp" local="yes">lib/MC/MCXCOFFStreamer.cpp</includedby>
+    <includedby refid="_mach_object_writer_8cpp" local="yes">lib/MC/MachObjectWriter.cpp</includedby>
+    <includedby refid="_target_registry_8cpp" local="yes">lib/MC/TargetRegistry.cpp</includedby>
+    <includedby refid="_wasm_object_writer_8cpp" local="yes">lib/MC/WasmObjectWriter.cpp</includedby>
+    <includedby refid="_x_c_o_f_f_object_writer_8cpp" local="yes">lib/MC/XCOFFObjectWriter.cpp</includedby>
+    <includedby refid="_a_arch64_asm_backend_8cpp" local="yes">lib/Target/AArch64/MCTargetDesc/AArch64AsmBackend.cpp</includedby>
+    <includedby refid="_a_arch64_e_l_f_streamer_8cpp" local="yes">lib/Target/AArch64/MCTargetDesc/AArch64ELFStreamer.cpp</includedby>
+    <includedby refid="_a_arch64_m_c_target_desc_8cpp" local="yes">lib/Target/AArch64/MCTargetDesc/AArch64MCTargetDesc.cpp</includedby>
+    <includedby refid="_a_arch64_win_c_o_f_f_object_writer_8cpp" local="yes">lib/Target/AArch64/MCTargetDesc/AArch64WinCOFFObjectWriter.cpp</includedby>
+    <includedby refid="_a_arch64_win_c_o_f_f_streamer_8cpp" local="yes">lib/Target/AArch64/MCTargetDesc/AArch64WinCOFFStreamer.cpp</includedby>
+    <includedby refid="_a_m_d_g_p_u_asm_backend_8cpp" local="yes">lib/Target/AMDGPU/MCTargetDesc/AMDGPUAsmBackend.cpp</includedby>
+    <includedby refid="_a_m_d_g_p_u_e_l_f_streamer_8cpp" local="yes">lib/Target/AMDGPU/MCTargetDesc/AMDGPUELFStreamer.cpp</includedby>
+    <includedby refid="_a_m_d_g_p_u_m_c_target_desc_8cpp" local="yes">lib/Target/AMDGPU/MCTargetDesc/AMDGPUMCTargetDesc.cpp</includedby>
+    <includedby refid="_a_r_m_asm_backend_8cpp" local="yes">lib/Target/ARM/MCTargetDesc/ARMAsmBackend.cpp</includedby>
+    <includedby refid="_a_r_m_asm_backend_8h" local="yes">lib/Target/ARM/MCTargetDesc/ARMAsmBackend.h</includedby>
+    <includedby refid="_a_r_m_e_l_f_streamer_8cpp" local="yes">lib/Target/ARM/MCTargetDesc/ARMELFStreamer.cpp</includedby>
+    <includedby refid="_a_r_m_m_c_target_desc_8cpp" local="yes">lib/Target/ARM/MCTargetDesc/ARMMCTargetDesc.cpp</includedby>
+    <includedby refid="_a_r_m_win_c_o_f_f_object_writer_8cpp" local="yes">lib/Target/ARM/MCTargetDesc/ARMWinCOFFObjectWriter.cpp</includedby>
+    <includedby refid="_a_r_m_win_c_o_f_f_streamer_8cpp" local="yes">lib/Target/ARM/MCTargetDesc/ARMWinCOFFStreamer.cpp</includedby>
+    <includedby refid="_a_v_r_asm_backend_8cpp" local="yes">lib/Target/AVR/MCTargetDesc/AVRAsmBackend.cpp</includedby>
+    <includedby refid="_a_v_r_asm_backend_8h" local="yes">lib/Target/AVR/MCTargetDesc/AVRAsmBackend.h</includedby>
+    <includedby refid="_a_v_r_m_c_e_l_f_streamer_8h" local="yes">lib/Target/AVR/MCTargetDesc/AVRMCELFStreamer.h</includedby>
+    <includedby refid="_a_v_r_m_c_target_desc_8cpp" local="yes">lib/Target/AVR/MCTargetDesc/AVRMCTargetDesc.cpp</includedby>
+    <includedby refid="_b_p_f_asm_backend_8cpp" local="yes">lib/Target/BPF/MCTargetDesc/BPFAsmBackend.cpp</includedby>
+    <includedby refid="_c_s_k_y_asm_backend_8h" local="yes">lib/Target/CSKY/MCTargetDesc/CSKYAsmBackend.h</includedby>
+    <includedby refid="_direct_x_m_c_target_desc_8cpp" local="yes">lib/Target/DirectX/MCTargetDesc/DirectXMCTargetDesc.cpp</includedby>
+    <includedby refid="_hexagon_asm_backend_8cpp" local="yes">lib/Target/Hexagon/MCTargetDesc/HexagonAsmBackend.cpp</includedby>
+    <includedby refid="_hexagon_m_c_e_l_f_streamer_8cpp" local="yes">lib/Target/Hexagon/MCTargetDesc/HexagonMCELFStreamer.cpp</includedby>
+    <includedby refid="_hexagon_m_c_target_desc_8cpp" local="yes">lib/Target/Hexagon/MCTargetDesc/HexagonMCTargetDesc.cpp</includedby>
+    <includedby refid="_lanai_asm_backend_8cpp" local="yes">lib/Target/Lanai/MCTargetDesc/LanaiAsmBackend.cpp</includedby>
+    <includedby refid="_loong_arch_asm_backend_8h" local="yes">lib/Target/LoongArch/MCTargetDesc/LoongArchAsmBackend.h</includedby>
+    <includedby refid="_loong_arch_m_c_target_desc_8cpp" local="yes">lib/Target/LoongArch/MCTargetDesc/LoongArchMCTargetDesc.cpp</includedby>
+    <includedby refid="_m68k_asm_backend_8cpp" local="yes">lib/Target/M68k/MCTargetDesc/M68kAsmBackend.cpp</includedby>
+    <includedby refid="_m_s_p430_asm_backend_8cpp" local="yes">lib/Target/MSP430/MCTargetDesc/MSP430AsmBackend.cpp</includedby>
+    <includedby refid="_mips_asm_backend_8cpp" local="yes">lib/Target/Mips/MCTargetDesc/MipsAsmBackend.cpp</includedby>
+    <includedby refid="_mips_asm_backend_8h" local="yes">lib/Target/Mips/MCTargetDesc/MipsAsmBackend.h</includedby>
+    <includedby refid="_mips_e_l_f_streamer_8cpp" local="yes">lib/Target/Mips/MCTargetDesc/MipsELFStreamer.cpp</includedby>
+    <includedby refid="_mips_na_cl_e_l_f_streamer_8cpp" local="yes">lib/Target/Mips/MCTargetDesc/MipsNaClELFStreamer.cpp</includedby>
+    <includedby refid="_mips_win_c_o_f_f_streamer_8cpp" local="yes">lib/Target/Mips/MCTargetDesc/MipsWinCOFFStreamer.cpp</includedby>
+    <includedby refid="_p_p_c_asm_backend_8cpp" local="yes">lib/Target/PowerPC/MCTargetDesc/PPCAsmBackend.cpp</includedby>
+    <includedby refid="_p_p_c_e_l_f_streamer_8cpp" local="yes">lib/Target/PowerPC/MCTargetDesc/PPCELFStreamer.cpp</includedby>
+    <includedby refid="_p_p_c_m_c_target_desc_8cpp" local="yes">lib/Target/PowerPC/MCTargetDesc/PPCMCTargetDesc.cpp</includedby>
+    <includedby refid="_p_p_c_x_c_o_f_f_streamer_8cpp" local="yes">lib/Target/PowerPC/MCTargetDesc/PPCXCOFFStreamer.cpp</includedby>
+    <includedby refid="_r_i_s_c_v_asm_backend_8h" local="yes">lib/Target/RISCV/MCTargetDesc/RISCVAsmBackend.h</includedby>
+    <includedby refid="_r_i_s_c_v_e_l_f_streamer_8cpp" local="yes">lib/Target/RISCV/MCTargetDesc/RISCVELFStreamer.cpp</includedby>
+    <includedby refid="_r_i_s_c_v_m_c_target_desc_8cpp" local="yes">lib/Target/RISCV/MCTargetDesc/RISCVMCTargetDesc.cpp</includedby>
+    <includedby refid="_s_p_i_r_v_asm_backend_8cpp" local="yes">lib/Target/SPIRV/MCTargetDesc/SPIRVAsmBackend.cpp</includedby>
+    <includedby refid="_sparc_asm_backend_8cpp" local="yes">lib/Target/Sparc/MCTargetDesc/SparcAsmBackend.cpp</includedby>
+    <includedby refid="_system_z_m_c_asm_backend_8cpp" local="yes">lib/Target/SystemZ/MCTargetDesc/SystemZMCAsmBackend.cpp</includedby>
+    <includedby refid="_v_e_asm_backend_8cpp" local="yes">lib/Target/VE/MCTargetDesc/VEAsmBackend.cpp</includedby>
+    <includedby refid="_web_assembly_asm_backend_8cpp" local="yes">lib/Target/WebAssembly/MCTargetDesc/WebAssemblyAsmBackend.cpp</includedby>
+    <includedby refid="_web_assembly_wasm_object_writer_8cpp" local="yes">lib/Target/WebAssembly/MCTargetDesc/WebAssemblyWasmObjectWriter.cpp</includedby>
+    <includedby refid="_x86_asm_backend_8cpp" local="yes">lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp</includedby>
+    <includedby refid="_x86_win_c_o_f_f_streamer_8cpp" local="yes">lib/Target/X86/MCTargetDesc/X86WinCOFFStreamer.cpp</includedby>
+    <includedby refid="_xtensa_asm_backend_8cpp" local="yes">lib/Target/Xtensa/MCTargetDesc/XtensaAsmBackend.cpp</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm/ADT/ADL.h</label>
+        <link refid="_a_d_l_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm/ADT/ArrayRef.h</label>
+        <link refid="_array_ref_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm/ADT/Hashing.h</label>
+        <link refid="_hashing_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>llvm/ADT/STLExtras.h</label>
+        <link refid="_s_t_l_extras_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm/ADT/SmallVector.h</label>
+        <link refid="_small_vector_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm/ADT/bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm/ADT/iterator.h</label>
+        <link refid="iterator_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm/ADT/iterator_range.h</label>
+        <link refid="iterator__range_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/llvm/MC/MCAsmBackend.h</label>
+        <link refid="_m_c_asm_backend_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>llvm/MC/MCDirectives.h</label>
+        <link refid="_m_c_directives_8h"/>
+      </node>
+      <node id="45">
+        <label>llvm/MC/MCFixup.h</label>
+        <link refid="_m_c_fixup_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm/Support/DataTypes.h</label>
+        <link refid="llvm_2_support_2_data_types_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm/Support/Endian.h</label>
+        <link refid="_endian_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm/Support/ErrorHandling.h</label>
+        <link refid="llvm_2_support_2_error_handling_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm/Support/SMLoc.h</label>
+        <link refid="_s_m_loc_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm/Support/SwapByteOrder.h</label>
+        <link refid="_swap_byte_order_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm/Support/type_traits.h</label>
+        <link refid="type__traits_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>algorithm</label>
+      </node>
+      <node id="42">
+        <label>array</label>
+      </node>
+      <node id="26">
+        <label>cassert</label>
+      </node>
+      <node id="30">
+        <label>cstddef</label>
+      </node>
+      <node id="19">
+        <label>cstdint</label>
+      </node>
+      <node id="31">
+        <label>cstdlib</label>
+      </node>
+      <node id="21">
+        <label>cstring</label>
+      </node>
+      <node id="32">
+        <label>functional</label>
+      </node>
+      <node id="33">
+        <label>initializer_list</label>
+      </node>
+      <node id="7">
+        <label>inttypes.h</label>
+      </node>
+      <node id="34">
+        <label>iterator</label>
+      </node>
+      <node id="20">
+        <label>limits</label>
+      </node>
+      <node id="4">
+        <label>llvm/Config/abi-breaking.h</label>
+      </node>
+      <node id="12">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="22">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="35">
+        <label>memory</label>
+      </node>
+      <node id="36">
+        <label>new</label>
+      </node>
+      <node id="16">
+        <label>optional</label>
+      </node>
+      <node id="13">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="27">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>sys/types.h</label>
+      </node>
+      <node id="28">
+        <label>tuple</label>
+      </node>
+      <node id="17">
+        <label>type_traits</label>
+      </node>
+      <node id="24">
+        <label>utility</label>
+      </node>
+      <node id="43">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/MC/MCAsmBackend.h</label>
+        <link refid="_m_c_asm_backend_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/llvm/MC/MCDXContainerStreamer.h</label>
+        <link refid="_m_c_d_x_container_streamer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>include/llvm/MC/MCSPIRVStreamer.h</label>
+        <link refid="_m_c_s_p_i_r_v_streamer_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/llvm/MC/MCWasmStreamer.h</label>
+        <link refid="_m_c_wasm_streamer_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>include/llvm/MCA/CodeEmitter.h</label>
+        <link refid="_code_emitter_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>lib/CodeGen/CodeGenTargetMachineImpl.cpp</label>
+        <link refid="_code_gen_target_machine_impl_8cpp"/>
+      </node>
+      <node id="11">
+        <label>lib/DWARFLinker/Classic/DWARFStreamer.cpp</label>
+        <link refid="_d_w_a_r_f_streamer_8cpp"/>
+      </node>
+      <node id="12">
+        <label>lib/DWARFLinker/Parallel/DWARFEmitterImpl.cpp</label>
+        <link refid="_d_w_a_r_f_emitter_impl_8cpp"/>
+      </node>
+      <node id="13">
+        <label>lib/MC/ELFObjectWriter.cpp</label>
+        <link refid="_e_l_f_object_writer_8cpp"/>
+      </node>
+      <node id="14">
+        <label>lib/MC/MCAsmBackend.cpp</label>
+        <link refid="_m_c_asm_backend_8cpp"/>
+      </node>
+      <node id="15">
+        <label>lib/MC/MCAsmStreamer.cpp</label>
+        <link refid="_m_c_asm_streamer_8cpp"/>
+      </node>
+      <node id="16">
+        <label>lib/MC/MCAssembler.cpp</label>
+        <link refid="_m_c_assembler_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/MC/MCDXContainerStreamer.cpp</label>
+        <link refid="_m_c_d_x_container_streamer_8cpp"/>
+      </node>
+      <node id="17">
+        <label>lib/MC/MCELFStreamer.cpp</label>
+        <link refid="_m_c_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="18">
+        <label>lib/MC/MCExpr.cpp</label>
+        <link refid="_m_c_expr_8cpp"/>
+      </node>
+      <node id="19">
+        <label>lib/MC/MCGOFFStreamer.cpp</label>
+        <link refid="_m_c_g_o_f_f_streamer_8cpp"/>
+      </node>
+      <node id="20">
+        <label>lib/MC/MCMachOStreamer.cpp</label>
+        <link refid="_m_c_mach_o_streamer_8cpp"/>
+      </node>
+      <node id="21">
+        <label>lib/MC/MCObjectStreamer.cpp</label>
+        <link refid="_m_c_object_streamer_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/MC/MCSPIRVStreamer.cpp</label>
+        <link refid="_m_c_s_p_i_r_v_streamer_8cpp"/>
+      </node>
+      <node id="22">
+        <label>lib/MC/MCStreamer.cpp</label>
+        <link refid="_m_c_streamer_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/MC/MCWasmStreamer.cpp</label>
+        <link refid="_m_c_wasm_streamer_8cpp"/>
+      </node>
+      <node id="23">
+        <label>lib/MC/MCWinCOFFStreamer.cpp</label>
+        <link refid="_m_c_win_c_o_f_f_streamer_8cpp"/>
+      </node>
+      <node id="24">
+        <label>lib/MC/MCXCOFFStreamer.cpp</label>
+        <link refid="_m_c_x_c_o_f_f_streamer_8cpp"/>
+      </node>
+      <node id="25">
+        <label>lib/MC/MachObjectWriter.cpp</label>
+        <link refid="_mach_object_writer_8cpp"/>
+      </node>
+      <node id="26">
+        <label>lib/MC/TargetRegistry.cpp</label>
+        <link refid="_target_registry_8cpp"/>
+      </node>
+      <node id="27">
+        <label>lib/MC/WasmObjectWriter.cpp</label>
+        <link refid="_wasm_object_writer_8cpp"/>
+      </node>
+      <node id="28">
+        <label>lib/MC/XCOFFObjectWriter.cpp</label>
+        <link refid="_x_c_o_f_f_object_writer_8cpp"/>
+      </node>
+      <node id="9">
+        <label>lib/MCA/CodeEmitter.cpp</label>
+        <link refid="_code_emitter_8cpp"/>
+      </node>
+      <node id="29">
+        <label>lib/Target/AArch64/MCTargetDesc/AArch64AsmBackend.cpp</label>
+        <link refid="_a_arch64_asm_backend_8cpp"/>
+      </node>
+      <node id="30">
+        <label>lib/Target/AArch64/MCTargetDesc/AArch64ELFStreamer.cpp</label>
+        <link refid="_a_arch64_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="31">
+        <label>lib/Target/AArch64/MCTargetDesc/AArch64MCTargetDesc.cpp</label>
+        <link refid="_a_arch64_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="32">
+        <label>lib/Target/AArch64/MCTargetDesc/AArch64WinCOFFObjectWriter.cpp</label>
+        <link refid="_a_arch64_win_c_o_f_f_object_writer_8cpp"/>
+      </node>
+      <node id="33">
+        <label>lib/Target/AArch64/MCTargetDesc/AArch64WinCOFFStreamer.cpp</label>
+        <link refid="_a_arch64_win_c_o_f_f_streamer_8cpp"/>
+      </node>
+      <node id="34">
+        <label>lib/Target/AMDGPU/MCTargetDesc/AMDGPUAsmBackend.cpp</label>
+        <link refid="_a_m_d_g_p_u_asm_backend_8cpp"/>
+      </node>
+      <node id="35">
+        <label>lib/Target/AMDGPU/MCTargetDesc/AMDGPUELFStreamer.cpp</label>
+        <link refid="_a_m_d_g_p_u_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="36">
+        <label>lib/Target/AMDGPU/MCTargetDesc/AMDGPUMCTargetDesc.cpp</label>
+        <link refid="_a_m_d_g_p_u_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="37">
+        <label>lib/Target/ARM/MCTargetDesc/ARMAsmBackend.cpp</label>
+        <link refid="_a_r_m_asm_backend_8cpp"/>
+      </node>
+      <node id="38">
+        <label>lib/Target/ARM/MCTargetDesc/ARMAsmBackend.h</label>
+        <link refid="_a_r_m_asm_backend_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>lib/Target/ARM/MCTargetDesc/ARMAsmBackendDarwin.h</label>
+        <link refid="_a_r_m_asm_backend_darwin_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>lib/Target/ARM/MCTargetDesc/ARMAsmBackendELF.h</label>
+        <link refid="_a_r_m_asm_backend_e_l_f_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>lib/Target/ARM/MCTargetDesc/ARMAsmBackendWinCOFF.h</label>
+        <link refid="_a_r_m_asm_backend_win_c_o_f_f_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>lib/Target/ARM/MCTargetDesc/ARMELFStreamer.cpp</label>
+        <link refid="_a_r_m_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="43">
+        <label>lib/Target/ARM/MCTargetDesc/ARMMCTargetDesc.cpp</label>
+        <link refid="_a_r_m_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="44">
+        <label>lib/Target/ARM/MCTargetDesc/ARMWinCOFFObjectWriter.cpp</label>
+        <link refid="_a_r_m_win_c_o_f_f_object_writer_8cpp"/>
+      </node>
+      <node id="45">
+        <label>lib/Target/ARM/MCTargetDesc/ARMWinCOFFStreamer.cpp</label>
+        <link refid="_a_r_m_win_c_o_f_f_streamer_8cpp"/>
+      </node>
+      <node id="49">
+        <label>lib/Target/AVR/AsmParser/AVRAsmParser.cpp</label>
+        <link refid="_a_v_r_asm_parser_8cpp"/>
+      </node>
+      <node id="46">
+        <label>lib/Target/AVR/MCTargetDesc/AVRAsmBackend.cpp</label>
+        <link refid="_a_v_r_asm_backend_8cpp"/>
+      </node>
+      <node id="47">
+        <label>lib/Target/AVR/MCTargetDesc/AVRAsmBackend.h</label>
+        <link refid="_a_v_r_asm_backend_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>lib/Target/AVR/MCTargetDesc/AVRMCELFStreamer.cpp</label>
+        <link refid="_a_v_r_m_c_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="48">
+        <label>lib/Target/AVR/MCTargetDesc/AVRMCELFStreamer.h</label>
+        <link refid="_a_v_r_m_c_e_l_f_streamer_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>lib/Target/AVR/MCTargetDesc/AVRMCTargetDesc.cpp</label>
+        <link refid="_a_v_r_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="52">
+        <label>lib/Target/BPF/MCTargetDesc/BPFAsmBackend.cpp</label>
+        <link refid="_b_p_f_asm_backend_8cpp"/>
+      </node>
+      <node id="54">
+        <label>lib/Target/CSKY/MCTargetDesc/CSKYAsmBackend.cpp</label>
+        <link refid="_c_s_k_y_asm_backend_8cpp"/>
+      </node>
+      <node id="53">
+        <label>lib/Target/CSKY/MCTargetDesc/CSKYAsmBackend.h</label>
+        <link refid="_c_s_k_y_asm_backend_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>lib/Target/CSKY/MCTargetDesc/CSKYELFStreamer.cpp</label>
+        <link refid="_c_s_k_y_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="56">
+        <label>lib/Target/CSKY/MCTargetDesc/CSKYMCTargetDesc.cpp</label>
+        <link refid="_c_s_k_y_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="57">
+        <label>lib/Target/DirectX/MCTargetDesc/DirectXMCTargetDesc.cpp</label>
+        <link refid="_direct_x_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="58">
+        <label>lib/Target/Hexagon/MCTargetDesc/HexagonAsmBackend.cpp</label>
+        <link refid="_hexagon_asm_backend_8cpp"/>
+      </node>
+      <node id="59">
+        <label>lib/Target/Hexagon/MCTargetDesc/HexagonMCELFStreamer.cpp</label>
+        <link refid="_hexagon_m_c_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="60">
+        <label>lib/Target/Hexagon/MCTargetDesc/HexagonMCTargetDesc.cpp</label>
+        <link refid="_hexagon_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="61">
+        <label>lib/Target/Lanai/MCTargetDesc/LanaiAsmBackend.cpp</label>
+        <link refid="_lanai_asm_backend_8cpp"/>
+      </node>
+      <node id="63">
+        <label>lib/Target/LoongArch/MCTargetDesc/LoongArchAsmBackend.cpp</label>
+        <link refid="_loong_arch_asm_backend_8cpp"/>
+      </node>
+      <node id="62">
+        <label>lib/Target/LoongArch/MCTargetDesc/LoongArchAsmBackend.h</label>
+        <link refid="_loong_arch_asm_backend_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>lib/Target/LoongArch/MCTargetDesc/LoongArchELFStreamer.cpp</label>
+        <link refid="_loong_arch_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="65">
+        <label>lib/Target/LoongArch/MCTargetDesc/LoongArchMCExpr.cpp</label>
+        <link refid="_loong_arch_m_c_expr_8cpp"/>
+      </node>
+      <node id="66">
+        <label>lib/Target/LoongArch/MCTargetDesc/LoongArchMCTargetDesc.cpp</label>
+        <link refid="_loong_arch_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="67">
+        <label>lib/Target/M68k/MCTargetDesc/M68kAsmBackend.cpp</label>
+        <link refid="_m68k_asm_backend_8cpp"/>
+      </node>
+      <node id="68">
+        <label>lib/Target/MSP430/MCTargetDesc/MSP430AsmBackend.cpp</label>
+        <link refid="_m_s_p430_asm_backend_8cpp"/>
+      </node>
+      <node id="69">
+        <label>lib/Target/Mips/MCTargetDesc/MipsAsmBackend.cpp</label>
+        <link refid="_mips_asm_backend_8cpp"/>
+      </node>
+      <node id="70">
+        <label>lib/Target/Mips/MCTargetDesc/MipsAsmBackend.h</label>
+        <link refid="_mips_asm_backend_8h"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>lib/Target/Mips/MCTargetDesc/MipsELFStreamer.cpp</label>
+        <link refid="_mips_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="71">
+        <label>lib/Target/Mips/MCTargetDesc/MipsMCTargetDesc.cpp</label>
+        <link refid="_mips_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="73">
+        <label>lib/Target/Mips/MCTargetDesc/MipsNaClELFStreamer.cpp</label>
+        <link refid="_mips_na_cl_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="74">
+        <label>lib/Target/Mips/MCTargetDesc/MipsWinCOFFStreamer.cpp</label>
+        <link refid="_mips_win_c_o_f_f_streamer_8cpp"/>
+      </node>
+      <node id="75">
+        <label>lib/Target/PowerPC/MCTargetDesc/PPCAsmBackend.cpp</label>
+        <link refid="_p_p_c_asm_backend_8cpp"/>
+      </node>
+      <node id="76">
+        <label>lib/Target/PowerPC/MCTargetDesc/PPCELFStreamer.cpp</label>
+        <link refid="_p_p_c_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="77">
+        <label>lib/Target/PowerPC/MCTargetDesc/PPCMCTargetDesc.cpp</label>
+        <link refid="_p_p_c_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="78">
+        <label>lib/Target/PowerPC/MCTargetDesc/PPCXCOFFStreamer.cpp</label>
+        <link refid="_p_p_c_x_c_o_f_f_streamer_8cpp"/>
+      </node>
+      <node id="80">
+        <label>lib/Target/RISCV/AsmParser/RISCVAsmParser.cpp</label>
+        <link refid="_r_i_s_c_v_asm_parser_8cpp"/>
+      </node>
+      <node id="81">
+        <label>lib/Target/RISCV/MCTargetDesc/RISCVAsmBackend.cpp</label>
+        <link refid="_r_i_s_c_v_asm_backend_8cpp"/>
+      </node>
+      <node id="79">
+        <label>lib/Target/RISCV/MCTargetDesc/RISCVAsmBackend.h</label>
+        <link refid="_r_i_s_c_v_asm_backend_8h"/>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>lib/Target/RISCV/MCTargetDesc/RISCVELFStreamer.cpp</label>
+        <link refid="_r_i_s_c_v_e_l_f_streamer_8cpp"/>
+      </node>
+      <node id="83">
+        <label>lib/Target/RISCV/MCTargetDesc/RISCVMCExpr.cpp</label>
+        <link refid="_r_i_s_c_v_m_c_expr_8cpp"/>
+      </node>
+      <node id="84">
+        <label>lib/Target/RISCV/MCTargetDesc/RISCVMCTargetDesc.cpp</label>
+        <link refid="_r_i_s_c_v_m_c_target_desc_8cpp"/>
+      </node>
+      <node id="85">
+        <label>lib/Target/SPIRV/MCTargetDesc/SPIRVAsmBackend.cpp</label>
+        <link refid="_s_p_i_r_v_asm_backend_8cpp"/>
+      </node>
+      <node id="86">
+        <label>lib/Target/Sparc/MCTargetDesc/SparcAsmBackend.cpp</label>
+        <link refid="_sparc_asm_backend_8cpp"/>
+      </node>
+      <node id="87">
+        <label>lib/Target/SystemZ/MCTargetDesc/SystemZMCAsmBackend.cpp</label>
+        <link refid="_system_z_m_c_asm_backend_8cpp"/>
+      </node>
+      <node id="88">
+        <label>lib/Target/VE/MCTargetDesc/VEAsmBackend.cpp</label>
+        <link refid="_v_e_asm_backend_8cpp"/>
+      </node>
+      <node id="89">
+        <label>lib/Target/WebAssembly/MCTargetDesc/WebAssemblyAsmBackend.cpp</label>
+        <link refid="_web_assembly_asm_backend_8cpp"/>
+      </node>
+      <node id="90">
+        <label>lib/Target/WebAssembly/MCTargetDesc/WebAssemblyWasmObjectWriter.cpp</label>
+        <link refid="_web_assembly_wasm_object_writer_8cpp"/>
+      </node>
+      <node id="91">
+        <label>lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp</label>
+        <link refid="_x86_asm_backend_8cpp"/>
+      </node>
+      <node id="92">
+        <label>lib/Target/X86/MCTargetDesc/X86WinCOFFStreamer.cpp</label>
+        <link refid="_x86_win_c_o_f_f_streamer_8cpp"/>
+      </node>
+      <node id="93">
+        <label>lib/Target/Xtensa/MCTargetDesc/XtensaAsmBackend.cpp</label>
+        <link refid="_xtensa_asm_backend_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1_m_c_asm_backend" prot="public">llvm::MCAsmBackend</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>llvm/MC/MCAsmBackend.h<sp/>-<sp/>MC<sp/>Asm<sp/>Backend<sp/>------------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_MC_MCASMBACKEND_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_MC_MCASMBACKEND_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_array_ref_8h" kindref="compound">llvm/ADT/ArrayRef.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_directives_8h" kindref="compound">llvm/MC/MCDirectives.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_fixup_8h" kindref="compound">llvm/MC/MCFixup.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_endian_8h" kindref="compound">llvm/Support/Endian.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_align_fragment" kindref="compound">MCAlignFragment</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_dwarf_call_frame_fragment" kindref="compound">MCDwarfCallFrameFragment</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_dwarf_line_addr_fragment" kindref="compound">MCDwarfLineAddrFragment</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_fragment" kindref="compound">MCFragment</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_l_e_b_fragment" kindref="compound">MCLEBFragment</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_relaxable_fragment" kindref="compound">MCRelaxableFragment</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structllvm_1_1_m_c_dwarf_frame_info" kindref="compound">MCDwarfFrameInfo</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structllvm_1_1_m_c_fixup_kind_info" kindref="compound">MCFixupKindInfo</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_object_streamer" kindref="compound">MCObjectStreamer</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_object_target_writer" kindref="compound">MCObjectTargetWriter</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_object_writer" kindref="compound">MCObjectWriter</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1raw__pwrite__stream" kindref="compound">raw_pwrite_stream</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="41"><highlight class="comment">///<sp/>Generic<sp/>interface<sp/>to<sp/>target<sp/>specific<sp/>assembler<sp/>backends.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classllvm_1_1_m_c_asm_backend" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_asm_backend_1a3dd30d6980185ef34e42333191453867" kindref="member">MCAsmBackend</ref><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Can<sp/>only<sp/>create<sp/>subclasses.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a3dd30d6980185ef34e42333191453867" kindref="member">MCAsmBackend</ref>(<ref refid="namespacellvm_1ae1e26e57357947b25e392fd18ab000db" kindref="member">llvm::endianness</ref><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a071344506034666f000a89f98ec79768" kindref="member">Endian</ref>,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1acf9b295378da4cb1a821f6041fce4a1a" kindref="member">RelaxFixupKind</ref><sp/>=<sp/><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58a59a8b044cb17aa6a16dd766e02308afe" kindref="member">MaxFixupKind</ref>);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47" refid="classllvm_1_1_m_c_asm_backend_1a06f423bad9cb660b0eaaa4fb08ac66eb" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a06f423bad9cb660b0eaaa4fb08ac66eb" kindref="member">MCAsmBackend</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a3dd30d6980185ef34e42333191453867" kindref="member">MCAsmBackend</ref><sp/>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48" refid="classllvm_1_1_m_c_asm_backend_1a8a3aaef4eb54ac6c53a13ff5e5536d1c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a3dd30d6980185ef34e42333191453867" kindref="member">MCAsmBackend</ref><sp/>&amp;<ref refid="classllvm_1_1_m_c_asm_backend_1a8a3aaef4eb54ac6c53a13ff5e5536d1c" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a3dd30d6980185ef34e42333191453867" kindref="member">MCAsmBackend</ref><sp/>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49" refid="classllvm_1_1_m_c_asm_backend_1aef724e9aaff584baff8414228b370ebc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1aef724e9aaff584baff8414228b370ebc" kindref="member">~MCAsmBackend</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classllvm_1_1_m_c_asm_backend_1a071344506034666f000a89f98ec79768" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ae1e26e57357947b25e392fd18ab000db" kindref="member">llvm::endianness</ref><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a071344506034666f000a89f98ec79768" kindref="member">Endian</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/>///<sp/>Fixup<sp/>kind<sp/>used<sp/>for<sp/>linker<sp/>relaxation.<sp/>Currently<sp/>only<sp/>used<sp/>by<sp/>RISC-V</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/>///<sp/>and<sp/>LoongArch.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classllvm_1_1_m_c_asm_backend_1acf9b295378da4cb1a821f6041fce4a1a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1acf9b295378da4cb1a821f6041fce4a1a" kindref="member">RelaxFixupKind</ref>;</highlight></codeline>
+<codeline lineno="56" refid="classllvm_1_1_m_c_asm_backend_1aa115be36e10cfecbd91c04a2f93c25be" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1aa115be36e10cfecbd91c04a2f93c25be" kindref="member">allowLinkerRelaxation</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1acf9b295378da4cb1a821f6041fce4a1a" kindref="member">RelaxFixupKind</ref><sp/>!=<sp/><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58a59a8b044cb17aa6a16dd766e02308afe" kindref="member">MaxFixupKind</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/>///<sp/>Return<sp/>true<sp/>if<sp/>this<sp/>target<sp/>might<sp/>automatically<sp/>pad<sp/>instructions<sp/>and<sp/>thus</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/>///<sp/>need<sp/>to<sp/>emit<sp/>padding<sp/>enable/disable<sp/>directives<sp/>around<sp/>sensative<sp/>code.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classllvm_1_1_m_c_asm_backend_1ae73d9d817542f0f48fb14e17c4a7d9f9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1ae73d9d817542f0f48fb14e17c4a7d9f9" kindref="member">allowAutoPadding</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/>///<sp/>Return<sp/>true<sp/>if<sp/>this<sp/>target<sp/>allows<sp/>an<sp/>unrelaxable<sp/>instruction<sp/>to<sp/>be</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/>///<sp/>emitted<sp/>into<sp/>RelaxableFragment<sp/>and<sp/>then<sp/>we<sp/>can<sp/>increase<sp/>its<sp/>size<sp/>in<sp/>a</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/>///<sp/>tricky<sp/>way<sp/>for<sp/>optimization.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classllvm_1_1_m_c_asm_backend_1a26dfc499b54a06be6d2b0f3a06eeba75" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a26dfc499b54a06be6d2b0f3a06eeba75" kindref="member">allowEnhancedRelaxation</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/>///<sp/>lifetime<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classllvm_1_1_m_c_asm_backend_1ac0fe81b089903ff8c1d8593fee9a0156" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1ac0fe81b089903ff8c1d8593fee9a0156" kindref="member">reset</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/><sp/>///<sp/>Create<sp/>a<sp/>new<sp/>MCObjectWriter<sp/>instance<sp/>for<sp/>use<sp/>by<sp/>the<sp/>assembler<sp/>backend<sp/>to</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/>///<sp/>emit<sp/>the<sp/>final<sp/>object<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>std::unique_ptr&lt;MCObjectWriter&gt;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a02cf2dc89bc571d73da6a7eedc39580d" kindref="member">createObjectWriter</ref>(<ref refid="classllvm_1_1raw__pwrite__stream" kindref="compound">raw_pwrite_stream</ref><sp/>&amp;OS)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/>///<sp/>Create<sp/>an<sp/>MCObjectWriter<sp/>that<sp/>writes<sp/>two<sp/>object<sp/>files:<sp/>a<sp/>.o<sp/>file<sp/>which<sp/>is</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/>///<sp/>linked<sp/>into<sp/>the<sp/>final<sp/>program<sp/>and<sp/>a<sp/>.dwo<sp/>file<sp/>which<sp/>is<sp/>used<sp/>by<sp/>debuggers.</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/>///<sp/>This<sp/>function<sp/>is<sp/>only<sp/>supported<sp/>with<sp/>ELF<sp/>targets.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>std::unique_ptr&lt;MCObjectWriter&gt;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a033bda3eee6984414df94b7064c60fb1" kindref="member">createDwoObjectWriter</ref>(<ref refid="classllvm_1_1raw__pwrite__stream" kindref="compound">raw_pwrite_stream</ref><sp/>&amp;OS,<sp/><ref refid="classllvm_1_1raw__pwrite__stream" kindref="compound">raw_pwrite_stream</ref><sp/>&amp;DwoOS)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;MCObjectTargetWriter&gt;</highlight></codeline>
+<codeline lineno="81" refid="classllvm_1_1_m_c_asm_backend_1a9ac90667bedc56d1dcf8b8d84806f3e8" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a9ac90667bedc56d1dcf8b8d84806f3e8" kindref="member">createObjectTargetWriter</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/>///<sp/>\name<sp/>Target<sp/>Fixup<sp/>Interfaces</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/>///<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/>///<sp/>Get<sp/>the<sp/>number<sp/>of<sp/>target<sp/>specific<sp/>fixup<sp/>kinds.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classllvm_1_1_m_c_asm_backend_1ad0398a6cacfda2c1ac09b3cb71ee5654" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1ad0398a6cacfda2c1ac09b3cb71ee5654" kindref="member">getNumFixupKinds</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/>///<sp/>Map<sp/>a<sp/>relocation<sp/>name<sp/>used<sp/>in<sp/>.reloc<sp/>to<sp/>a<sp/>fixup<sp/>kind.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::optional&lt;MCFixupKind&gt;<sp/><ref refid="classllvm_1_1_m_c_asm_backend_1ad60ec34cc0289efdb2530fc622949f83" kindref="member">getFixupKind</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>Name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/>///<sp/>Get<sp/>information<sp/>on<sp/>a<sp/>fixup<sp/>kind.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_m_c_fixup_kind_info" kindref="compound">MCFixupKindInfo</ref><sp/>&amp;<ref refid="classllvm_1_1_m_c_asm_backend_1ad4777f004ef52f665e6ec6defc1cb32a" kindref="member">getFixupKindInfo</ref>(<ref refid="namespacellvm_1a84cef097f15848752272d38769011f58" kindref="member">MCFixupKind</ref><sp/>Kind)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/>///<sp/>Hook<sp/>to<sp/>check<sp/>if<sp/>a<sp/>relocation<sp/>is<sp/>needed<sp/>for<sp/>some<sp/>target<sp/>specific<sp/>reason.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classllvm_1_1_m_c_asm_backend_1a5adf8255bfcc9dc609a86ad7fc8b4b11" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a5adf8255bfcc9dc609a86ad7fc8b4b11" kindref="member">shouldForceRelocation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref><sp/>&amp;<ref refid="classllvm_1_1_target" kindref="compound">Target</ref>,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>*STI)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/>///<sp/>Hook<sp/>to<sp/>check<sp/>if<sp/>extra<sp/>nop<sp/>bytes<sp/>must<sp/>be<sp/>inserted<sp/>for<sp/>alignment<sp/>directive.</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/>///<sp/>For<sp/>some<sp/>targets<sp/>this<sp/>may<sp/>be<sp/>necessary<sp/>in<sp/>order<sp/>to<sp/>support<sp/>linker</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/>///<sp/>relaxation.<sp/>The<sp/>number<sp/>of<sp/>bytes<sp/>to<sp/>insert<sp/>are<sp/>returned<sp/>in<sp/>Size.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="classllvm_1_1_m_c_asm_backend_1a6a7610c1c2f759217e91b56975d56e80" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a6a7610c1c2f759217e91b56975d56e80" kindref="member">shouldInsertExtraNopBytesForCodeAlign</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_align_fragment" kindref="compound">MCAlignFragment</ref><sp/>&amp;AF,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>&amp;<ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/>///<sp/>Hook<sp/>which<sp/>indicates<sp/>if<sp/>the<sp/>target<sp/>requires<sp/>a<sp/>fixup<sp/>to<sp/>be<sp/>generated<sp/>when</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/>///<sp/>handling<sp/>an<sp/>align<sp/>directive<sp/>in<sp/>an<sp/>executable<sp/>section</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="classllvm_1_1_m_c_asm_backend_1a606075cd52290485c49341abf348f715" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a606075cd52290485c49341abf348f715" kindref="member">shouldInsertFixupForCodeAlign</ref>(<ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_align_fragment" kindref="compound">MCAlignFragment</ref><sp/>&amp;AF)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="classllvm_1_1_m_c_asm_backend_1ab3a34a70fe72eeb58c98a1e76dae9af4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1ab3a34a70fe72eeb58c98a1e76dae9af4" kindref="member">evaluateTargetFixup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fragment" kindref="compound">MCFragment</ref><sp/>*<ref refid="_debugify_8cpp_1a9e8fa29f7cb6a03aa586afae7591f6cc" kindref="member">DF</ref>,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref><sp/>&amp;<ref refid="classllvm_1_1_target" kindref="compound">Target</ref>,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>*STI,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>&amp;<ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;WasForced)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" kindref="member">llvm_unreachable</ref>(</highlight><highlight class="stringliteral">&quot;Need<sp/>to<sp/>implement<sp/>hook<sp/>if<sp/>target<sp/>has<sp/>custom<sp/>fixups&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="classllvm_1_1_m_c_asm_backend_1aa08889e0000751b3c1d39489bc4eaf48" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1aa08889e0000751b3c1d39489bc4eaf48" kindref="member">handleAddSubRelocations</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fragment" kindref="compound">MCFragment</ref><sp/>&amp;<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref><sp/>&amp;<ref refid="classllvm_1_1_target" kindref="compound">Target</ref>,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>&amp;FixedValue)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/>///<sp/>Apply<sp/>the<sp/>\p<sp/>Value<sp/>for<sp/>given<sp/>\p<sp/>Fixup<sp/>into<sp/>the<sp/>provided<sp/>data<sp/>fragment,<sp/>at</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/>///<sp/>the<sp/>offset<sp/>specified<sp/>by<sp/>the<sp/>fixup<sp/>and<sp/>following<sp/>the<sp/>fixup<sp/>kind<sp/>as</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/>///<sp/>appropriate.<sp/>Errors<sp/>(such<sp/>as<sp/>an<sp/>out<sp/>of<sp/>range<sp/>fixup<sp/>value)<sp/>should<sp/>be</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/>///<sp/>reported<sp/>via<sp/>\p<sp/>Ctx.</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/>///<sp/>The<sp/><sp/>\p<sp/>STI<sp/>is<sp/>present<sp/>only<sp/>for<sp/>fragments<sp/>of<sp/>type<sp/>MCRelaxableFragment<sp/>and</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/>///<sp/>MCDataFragment<sp/>with<sp/>hasInstructions()<sp/>==<sp/>true.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="classllvm_1_1_m_c_asm_backend_1ae38b6e0fdf26adde1fa4ac04e12931f7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1ae38b6e0fdf26adde1fa4ac04e12931f7" kindref="member">applyFixup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref><sp/>&amp;<ref refid="classllvm_1_1_target" kindref="compound">Target</ref>,<sp/><ref refid="classllvm_1_1_mutable_array_ref" kindref="compound">MutableArrayRef&lt;char&gt;</ref><sp/><ref refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" kindref="member">Data</ref>,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsResolved,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>*STI)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/>///<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/>///<sp/>\name<sp/>Target<sp/>Relaxation<sp/>Interfaces</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/>///<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/><sp/>///<sp/>Check<sp/>whether<sp/>the<sp/>given<sp/>instruction<sp/>may<sp/>need<sp/>relaxation.</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/>///</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/><sp/>///<sp/>\param<sp/>Inst<sp/>-<sp/>The<sp/>instruction<sp/>to<sp/>test.</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/><sp/>///<sp/>\param<sp/>STI<sp/>-<sp/>The<sp/>MCSubtargetInfo<sp/>in<sp/>effect<sp/>when<sp/>the<sp/>instruction<sp/>was</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/><sp/>///<sp/>encoded.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="classllvm_1_1_m_c_asm_backend_1a3f5ae9ff17fa120412760e6fb72704ef" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a3f5ae9ff17fa120412760e6fb72704ef" kindref="member">mayNeedRelaxation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;STI)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/><sp/>///<sp/>Target<sp/>specific<sp/>predicate<sp/>for<sp/>whether<sp/>a<sp/>given<sp/>fixup<sp/>requires<sp/>the</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/><sp/>///<sp/>associated<sp/>instruction<sp/>to<sp/>be<sp/>relaxed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a7512181881a347126c56fe3456e74f8f" kindref="member">fixupNeedsRelaxationAdvanced</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Resolved,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_relaxable_fragment" kindref="compound">MCRelaxableFragment</ref><sp/>*<ref refid="_debugify_8cpp_1a9e8fa29f7cb6a03aa586afae7591f6cc" kindref="member">DF</ref>,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>WasForced)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/><sp/>///<sp/>Simple<sp/>predicate<sp/>for<sp/>targets<sp/>where<sp/>!Resolved<sp/>implies<sp/>requiring<sp/>relaxation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="classllvm_1_1_m_c_asm_backend_1a7edeefd618df3232669834a7db552ac3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a7edeefd618df3232669834a7db552ac3" kindref="member">fixupNeedsRelaxation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref><sp/>&amp;<ref refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" kindref="member">Fixup</ref>,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" kindref="member">llvm_unreachable</ref>(</highlight><highlight class="stringliteral">&quot;Needed<sp/>if<sp/>mayNeedRelaxation<sp/>may<sp/>return<sp/>true&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/><sp/>///<sp/>Relax<sp/>the<sp/>instruction<sp/>in<sp/>the<sp/>given<sp/>fragment<sp/>to<sp/>the<sp/>next<sp/>wider<sp/>instruction.</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/><sp/>///</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/><sp/>///<sp/>\param<sp/>[out]<sp/>Inst<sp/>The<sp/>instruction<sp/>to<sp/>relax,<sp/>which<sp/>is<sp/>also<sp/>the<sp/>relaxed</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/><sp/>///<sp/>instruction.</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/><sp/>///<sp/>\param<sp/>STI<sp/>the<sp/>subtarget<sp/>information<sp/>for<sp/>the<sp/>associated<sp/>instruction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="classllvm_1_1_m_c_asm_backend_1a3bb3b0de6f308a4c37ec7b19def3a45d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a3bb3b0de6f308a4c37ec7b19def3a45d" kindref="member">relaxInstruction</ref>(<ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;STI)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{};</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="classllvm_1_1_m_c_asm_backend_1a91dc95acaf63f9b174ab71e5080835c2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a91dc95acaf63f9b174ab71e5080835c2" kindref="member">relaxDwarfLineAddr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_dwarf_line_addr_fragment" kindref="compound">MCDwarfLineAddrFragment</ref><sp/>&amp;<ref refid="_debugify_8cpp_1a9e8fa29f7cb6a03aa586afae7591f6cc" kindref="member">DF</ref>,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;WasRelaxed)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189" refid="classllvm_1_1_m_c_asm_backend_1a849bcec4f9b8950b6220a2db76e23b76" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a849bcec4f9b8950b6220a2db76e23b76" kindref="member">relaxDwarfCFA</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_dwarf_call_frame_fragment" kindref="compound">MCDwarfCallFrameFragment</ref><sp/>&amp;<ref refid="_debugify_8cpp_1a9e8fa29f7cb6a03aa586afae7591f6cc" kindref="member">DF</ref>,</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;WasRelaxed)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Defined<sp/>by<sp/>linker<sp/>relaxation<sp/>targets<sp/>to<sp/>possibly<sp/>emit<sp/>LEB128<sp/>relocations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>and<sp/>set<sp/>Value<sp/>at<sp/>the<sp/>relocated<sp/>location.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::pair&lt;bool,<sp/>bool&gt;</highlight></codeline>
+<codeline lineno="198" refid="classllvm_1_1_m_c_asm_backend_1adc38f583cd68d5edf04e4774a7dcdeef" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1adc38f583cd68d5edf04e4774a7dcdeef" kindref="member">relaxLEB128</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/>&amp;Asm,<sp/><ref refid="classllvm_1_1_m_c_l_e_b_fragment" kindref="compound">MCLEBFragment</ref><sp/>&amp;LF,<sp/><ref refid="classint64__t" kindref="compound">int64_t</ref><sp/>&amp;<ref refid="classllvm_1_1_value" kindref="compound">Value</ref>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_pair(</highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/><sp/>///<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/><sp/>///<sp/>Returns<sp/>the<sp/>minimum<sp/>size<sp/>of<sp/>a<sp/>nop<sp/>in<sp/>bytes<sp/>on<sp/>this<sp/>target.<sp/>The<sp/>assembler</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/><sp/>///<sp/>will<sp/>use<sp/>this<sp/>to<sp/>emit<sp/>excess<sp/>padding<sp/>in<sp/>situations<sp/>where<sp/>the<sp/>padding</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/><sp/>///<sp/>required<sp/>for<sp/>simple<sp/>alignment<sp/>would<sp/>be<sp/>less<sp/>than<sp/>the<sp/>minimum<sp/>nop<sp/>size.</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/><sp/>///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="classllvm_1_1_m_c_asm_backend_1a05bf49b025e064b920c48736eccfef6b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a05bf49b025e064b920c48736eccfef6b" kindref="member">getMinimumNopSize</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;<sp/>}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/><sp/>///<sp/>Returns<sp/>the<sp/>maximum<sp/>size<sp/>of<sp/>a<sp/>nop<sp/>in<sp/>bytes<sp/>on<sp/>this<sp/>target.</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"><sp/><sp/>///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="classllvm_1_1_m_c_asm_backend_1a2ddf58b4baf8ad29883c9a548b29f243" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a2ddf58b4baf8ad29883c9a548b29f243" kindref="member">getMaximumNopSize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;STI)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/><sp/>///<sp/>Write<sp/>an<sp/>(optimal)<sp/>nop<sp/>sequence<sp/>of<sp/>Count<sp/>bytes<sp/>to<sp/>the<sp/>given<sp/>output.<sp/>If<sp/>the</highlight></codeline>
+<codeline lineno="217"><highlight class="comment"><sp/><sp/>///<sp/>target<sp/>cannot<sp/>generate<sp/>such<sp/>a<sp/>sequence,<sp/>it<sp/>should<sp/>return<sp/>an<sp/>error.</highlight></codeline>
+<codeline lineno="218"><highlight class="comment"><sp/><sp/>///</highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/><sp/>///<sp/>\return<sp/>-<sp/>True<sp/>on<sp/>success.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="classllvm_1_1_m_c_asm_backend_1a3a5e3ef397b059f4cfe79a9a985e5358" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a3a5e3ef397b059f4cfe79a9a985e5358" kindref="member">writeNopData</ref>(<ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref><sp/>&amp;OS,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="namespacellvm_1a845e08be4b0320d66901a66b0c0e9509" kindref="member">Count</ref>,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>*STI)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/><sp/>///<sp/>Give<sp/>backend<sp/>an<sp/>opportunity<sp/>to<sp/>finish<sp/>layout<sp/>after<sp/>relaxation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="classllvm_1_1_m_c_asm_backend_1a9e36accae823c19517d056f083199f3f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a9e36accae823c19517d056f083199f3f" kindref="member">finishLayout</ref>(<ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;Asm)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/><sp/>///<sp/>Handle<sp/>any<sp/>target-specific<sp/>assembler<sp/>flags.<sp/>By<sp/>default,<sp/>do<sp/>nothing.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227" refid="classllvm_1_1_m_c_asm_backend_1a3745e4df8defc9a3eafb48786398f8e6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a3745e4df8defc9a3eafb48786398f8e6" kindref="member">handleAssemblerFlag</ref>(<ref refid="namespacellvm_1aa09571f0b44fd6bd8fae33d6ead290c1" kindref="member">MCAssemblerFlag</ref><sp/>Flag)<sp/>{}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/><sp/>///<sp/>Generate<sp/>the<sp/>compact<sp/>unwind<sp/>encoding<sp/>for<sp/>the<sp/>CFI<sp/>instructions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230" refid="classllvm_1_1_m_c_asm_backend_1af6776c07e68bae2bdd5e9da1b1a9db67" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1af6776c07e68bae2bdd5e9da1b1a9db67" kindref="member">generateCompactUnwindEncoding</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_m_c_dwarf_frame_info" kindref="compound">MCDwarfFrameInfo</ref><sp/>*FI,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>*Ctxt)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/><sp/>///<sp/>Check<sp/>whether<sp/>a<sp/>given<sp/>symbol<sp/>has<sp/>been<sp/>flagged<sp/>with<sp/>MICROMIPS<sp/>flag.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="classllvm_1_1_m_c_asm_backend_1a5dbfd338db18b983ea8af01c32cfc7e1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a5dbfd338db18b983ea8af01c32cfc7e1" kindref="member">isMicroMips</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref><sp/>*Sym)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_backend_1a919e61fbc03b7b8a1660337897db7094" kindref="member">isDarwinCanonicalPersonality</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref><sp/>*Sym)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_MC_MCASMBACKEND_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/MC/MCAsmBackend.h"/>
+  </compounddef>
+</doxygen>

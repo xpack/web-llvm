@@ -1,0 +1,830 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_crash_recovery_context_8cpp" kind="file" language="C++">
+    <compoundname>CrashRecoveryContext.cpp</compoundname>
+    <includes refid="_crash_recovery_context_8h" local="yes">llvm/Support/CrashRecoveryContext.h</includes>
+    <includes local="yes">llvm/Config/llvm-config.h</includes>
+    <includes refid="llvm_2_support_2_error_handling_8h" local="yes">llvm/Support/ErrorHandling.h</includes>
+    <includes refid="_exit_codes_8h" local="yes">llvm/Support/ExitCodes.h</includes>
+    <includes refid="_signals_8h" local="yes">llvm/Support/Signals.h</includes>
+    <includes refid="thread_8h" local="yes">llvm/Support/thread.h</includes>
+    <includes local="no">cassert</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">setjmp.h</includes>
+    <includes local="no">signal.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm/Support/CrashRecoveryContext.h</label>
+        <link refid="_crash_recovery_context_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm/Support/ErrorHandling.h</label>
+        <link refid="llvm_2_support_2_error_handling_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm/Support/ExitCodes.h</label>
+        <link refid="_exit_codes_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm/Support/Signals.h</label>
+        <link refid="_signals_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm/Support/thread.h</label>
+        <link refid="thread_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>lib/Support/CrashRecoveryContext.cpp</label>
+        <link refid="_crash_recovery_context_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>cassert</label>
+      </node>
+      <node id="10">
+        <label>cstdint</label>
+      </node>
+      <node id="8">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="18">
+        <label>mutex</label>
+      </node>
+      <node id="5">
+        <label>optional</label>
+      </node>
+      <node id="19">
+        <label>setjmp.h</label>
+      </node>
+      <node id="20">
+        <label>signal.h</label>
+      </node>
+      <node id="9">
+        <label>stddef.h</label>
+      </node>
+      <node id="15">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>type_traits</label>
+      </node>
+      <node id="11">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl" prot="public">anonymous_namespace{CrashRecoveryContext.cpp}::CrashRecoveryContextImpl</innerclass>
+    <innerclass refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_run_safely_on_thread_info" prot="public">anonymous_namespace{CrashRecoveryContext.cpp}::RunSafelyOnThreadInfo</innerclass>
+    <innernamespace refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03">anonymous_namespace{CrashRecoveryContext.cpp}</innernamespace>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="_crash_recovery_context_8cpp_1a610cf56a4e6ab035bbce5e4bd4b35491" prot="public" static="yes" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> int</type>
+        <definition>const int Signals[]</definition>
+        <argsstring>[]</argsstring>
+        <name>Signals</name>
+        <initializer>=
+    { SIGABRT, SIGBUS, SIGFPE, SIGILL, SIGSEGV, SIGTRAP }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/CrashRecoveryContext.cpp" line="347" column="18" bodyfile="lib/Support/CrashRecoveryContext.cpp" bodystart="347" bodyend="348"/>
+        <referencedby refid="_crash_recovery_context_8cpp_1afafe7a6e51a65dc858e161f5f0346eb7" compoundref="_crash_recovery_context_8cpp" startline="393" endline="403">installExceptionOrSignalHandlers</referencedby>
+        <referencedby refid="_crash_recovery_context_8cpp_1a72432dde4ac5721bf8d78d090a198dc6" compoundref="_crash_recovery_context_8cpp" startline="405" endline="409">uninstallExceptionOrSignalHandlers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_crash_recovery_context_8cpp_1a2c9e1adb1243628fba0a85d1679c5408" prot="public" static="yes" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>const unsigned NumSignals</definition>
+        <argsstring></argsstring>
+        <name>NumSignals</name>
+        <initializer>= <ref refid="_n_v_v_m_reflect_8cpp_1ac934769d93af95250952646a3829df4c" kindref="member">std::size</ref>(<ref refid="_crash_recovery_context_8cpp_1a610cf56a4e6ab035bbce5e4bd4b35491" kindref="member">Signals</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/CrashRecoveryContext.cpp" line="349" column="23" bodyfile="lib/Support/CrashRecoveryContext.cpp" bodystart="349" bodyend="-1"/>
+        <referencedby refid="_crash_recovery_context_8cpp_1afafe7a6e51a65dc858e161f5f0346eb7" compoundref="_crash_recovery_context_8cpp" startline="393" endline="403">installExceptionOrSignalHandlers</referencedby>
+        <referencedby refid="_crash_recovery_context_8cpp_1a72432dde4ac5721bf8d78d090a198dc6" compoundref="_crash_recovery_context_8cpp" startline="405" endline="409">uninstallExceptionOrSignalHandlers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_crash_recovery_context_8cpp_1a78ca6b94aa2c38681accbf6cfbd577e6" prot="public" static="yes" mutable="no">
+        <type>struct sigaction</type>
+        <definition>struct sigaction PrevActions[NumSignals]</definition>
+        <argsstring>[NumSignals]</argsstring>
+        <name>PrevActions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/CrashRecoveryContext.cpp" line="350" column="23" bodyfile="lib/Support/CrashRecoveryContext.cpp" bodystart="350" bodyend="-1"/>
+        <referencedby refid="_crash_recovery_context_8cpp_1afafe7a6e51a65dc858e161f5f0346eb7" compoundref="_crash_recovery_context_8cpp" startline="393" endline="403">installExceptionOrSignalHandlers</referencedby>
+        <referencedby refid="_crash_recovery_context_8cpp_1a72432dde4ac5721bf8d78d090a198dc6" compoundref="_crash_recovery_context_8cpp" startline="405" endline="409">uninstallExceptionOrSignalHandlers</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_crash_recovery_context_8cpp_1afafe7a6e51a65dc858e161f5f0346eb7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void installExceptionOrSignalHandlers</definition>
+        <argsstring>()</argsstring>
+        <name>installExceptionOrSignalHandlers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/CrashRecoveryContext.cpp" line="393" column="13" bodyfile="lib/Support/CrashRecoveryContext.cpp" bodystart="393" bodyend="403" declfile="lib/Support/CrashRecoveryContext.cpp" declline="95" declcolumn="13"/>
+        <references refid="_crash_recovery_context_8cpp_1a63942c4dec8efd06218370c042a12480" compoundref="_crash_recovery_context_8cpp" startline="352" endline="391">CrashRecoverySignalHandler</references>
+        <references refid="_crash_recovery_context_8cpp_1a2c9e1adb1243628fba0a85d1679c5408" compoundref="_crash_recovery_context_8cpp" startline="349">NumSignals</references>
+        <references refid="_crash_recovery_context_8cpp_1a78ca6b94aa2c38681accbf6cfbd577e6" compoundref="_crash_recovery_context_8cpp" startline="350">PrevActions</references>
+        <references refid="_crash_recovery_context_8cpp_1a610cf56a4e6ab035bbce5e4bd4b35491" compoundref="_crash_recovery_context_8cpp" startline="347" endline="348">Signals</references>
+        <referencedby refid="classllvm_1_1_crash_recovery_context_1a41167e1234529f6607af068e6c687ac0" compoundref="_crash_recovery_context_8cpp" startline="140" endline="147">llvm::CrashRecoveryContext::Enable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_crash_recovery_context_8cpp_1a72432dde4ac5721bf8d78d090a198dc6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void uninstallExceptionOrSignalHandlers</definition>
+        <argsstring>()</argsstring>
+        <name>uninstallExceptionOrSignalHandlers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/CrashRecoveryContext.cpp" line="405" column="13" bodyfile="lib/Support/CrashRecoveryContext.cpp" bodystart="405" bodyend="409" declfile="lib/Support/CrashRecoveryContext.cpp" declline="96" declcolumn="13"/>
+        <references refid="_crash_recovery_context_8cpp_1a2c9e1adb1243628fba0a85d1679c5408" compoundref="_crash_recovery_context_8cpp" startline="349">NumSignals</references>
+        <references refid="_crash_recovery_context_8cpp_1a78ca6b94aa2c38681accbf6cfbd577e6" compoundref="_crash_recovery_context_8cpp" startline="350">PrevActions</references>
+        <references refid="_crash_recovery_context_8cpp_1a610cf56a4e6ab035bbce5e4bd4b35491" compoundref="_crash_recovery_context_8cpp" startline="347" endline="348">Signals</references>
+        <referencedby refid="classllvm_1_1_crash_recovery_context_1a85c3b9e248b6ed94762938f8cac81a49" compoundref="_crash_recovery_context_8cpp" startline="149" endline="155">llvm::CrashRecoveryContext::Disable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_crash_recovery_context_8cpp_1a63942c4dec8efd06218370c042a12480" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CrashRecoverySignalHandler</definition>
+        <argsstring>(int Signal)</argsstring>
+        <name>CrashRecoverySignalHandler</name>
+        <param>
+          <type>int</type>
+          <declname>Signal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/CrashRecoveryContext.cpp" line="352" column="13" bodyfile="lib/Support/CrashRecoveryContext.cpp" bodystart="352" bodyend="391"/>
+        <references refid="classllvm_1_1_crash_recovery_context_1a85c3b9e248b6ed94762938f8cac81a49" compoundref="_crash_recovery_context_8cpp" startline="149" endline="155">llvm::CrashRecoveryContext::Disable</references>
+        <referencedby refid="_crash_recovery_context_8cpp_1afafe7a6e51a65dc858e161f5f0346eb7" compoundref="_crash_recovery_context_8cpp" startline="393" endline="403">installExceptionOrSignalHandlers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_crash_recovery_context_8cpp_1a6e17e622d5d0183f2ef9371caa9a06a7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void setThreadBackgroundPriority</definition>
+        <argsstring>()</argsstring>
+        <name>setThreadBackgroundPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/CrashRecoveryContext.cpp" line="480" column="13" bodyfile="lib/Support/CrashRecoveryContext.cpp" bodystart="480" bodyend="484"/>
+        <referencedby refid="_crash_recovery_context_8cpp_1a6741df1ae96240967c1fab2d6668d59a" compoundref="_crash_recovery_context_8cpp" startline="503" endline="511">RunSafelyOnThread_Dispatch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_crash_recovery_context_8cpp_1a2c4e05ef8e440fd1bed2772259584f6d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool hasThreadBackgroundPriority</definition>
+        <argsstring>()</argsstring>
+        <name>hasThreadBackgroundPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/CrashRecoveryContext.cpp" line="486" column="13" bodyfile="lib/Support/CrashRecoveryContext.cpp" bodystart="486" bodyend="492"/>
+        <referencedby refid="classllvm_1_1_crash_recovery_context_1afdaeace1ba646601aab05b0530f7f1db" compoundref="_crash_recovery_context_8cpp" startline="512" endline="525">llvm::CrashRecoveryContext::RunSafelyOnThread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_crash_recovery_context_8cpp_1a6741df1ae96240967c1fab2d6668d59a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RunSafelyOnThread_Dispatch</definition>
+        <argsstring>(void *UserData)</argsstring>
+        <name>RunSafelyOnThread_Dispatch</name>
+        <param>
+          <type>void *</type>
+          <declname>UserData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/CrashRecoveryContext.cpp" line="503" column="13" bodyfile="lib/Support/CrashRecoveryContext.cpp" bodystart="503" bodyend="511"/>
+        <references refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" compoundref="_c_s_e_info_8cpp" startline="27">Info</references>
+        <references refid="_crash_recovery_context_8cpp_1a6e17e622d5d0183f2ef9371caa9a06a7" compoundref="_crash_recovery_context_8cpp" startline="480" endline="484">setThreadBackgroundPriority</references>
+        <referencedby refid="classllvm_1_1_crash_recovery_context_1afdaeace1ba646601aab05b0530f7f1db" compoundref="_crash_recovery_context_8cpp" startline="512" endline="525">llvm::CrashRecoveryContext::RunSafelyOnThread</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===---<sp/>CrashRecoveryContext.cpp<sp/>-<sp/>Crash<sp/>Recovery<sp/>------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_crash_recovery_context_8h" kindref="compound">llvm/Support/CrashRecoveryContext.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;llvm/Config/llvm-config.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="llvm_2_support_2_error_handling_8h" kindref="compound">llvm/Support/ErrorHandling.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_exit_codes_8h" kindref="compound">llvm/Support/ExitCodes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_signals_8h" kindref="compound">llvm/Support/Signals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="thread_8h" kindref="compound">llvm/Support/thread.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;setjmp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl" kindref="compound">CrashRecoveryContextImpl</ref>;</highlight></codeline>
+<codeline lineno="24" refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a04bd06e1fbf71b7df3cc3b119d9309d1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_compiler_8h_1a793005af6ae802d5a2a2e8ceb4ac2135" kindref="member">LLVM_THREAD_LOCAL</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl" kindref="compound">CrashRecoveryContextImpl</ref><sp/>*<ref refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a04bd06e1fbf71b7df3cc3b119d9309d1" kindref="member">CurrentContext</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1869eda15bbfbe6a0cc0d58bfc4a81a0" kindref="member">CrashRecoveryContextImpl</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>When<sp/>threads<sp/>are<sp/>disabled,<sp/>this<sp/>links<sp/>up<sp/>all<sp/>active</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>CrashRecoveryContextImpls.<sp/><sp/>When<sp/>threads<sp/>are<sp/>enabled<sp/>there&apos;s<sp/>one<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>per<sp/>CrashRecoveryContext<sp/>and<sp/>CurrentContext<sp/>is<sp/>a<sp/>thread-local,<sp/>so<sp/>only<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>CrashRecoveryContextImpl<sp/>is<sp/>active<sp/>per<sp/>thread<sp/>and<sp/>this<sp/>is<sp/>always<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a94c0fd5a8b423857291b1ba6d49f41a8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1869eda15bbfbe6a0cc0d58bfc4a81a0" kindref="member">CrashRecoveryContextImpl</ref><sp/>*<ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a94c0fd5a8b423857291b1ba6d49f41a8" kindref="member">Next</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1fc9ad48d561ba2a8fb7c6eac1e26304" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_crash_recovery_context" kindref="compound">CrashRecoveryContext</ref><sp/>*<ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1fc9ad48d561ba2a8fb7c6eac1e26304" kindref="member">CRC</ref>;</highlight></codeline>
+<codeline lineno="34" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1ac05b69ddefb0a3d22a4146f23f4857a0" refkind="member"><highlight class="normal"><sp/><sp/>::jmp_buf<sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1ac05b69ddefb0a3d22a4146f23f4857a0" kindref="member">JumpBuffer</ref>;</highlight></codeline>
+<codeline lineno="35" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1afe3b2dc63d72670464e9e11c5a572281" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1afe3b2dc63d72670464e9e11c5a572281" kindref="member">Failed</ref><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="36" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a34ed1abd912873bd2cefec539f2ca343" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a34ed1abd912873bd2cefec539f2ca343" kindref="member">SwitchedThread</ref><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="37" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1aa5e5c79b37f5b8e3a2e936bf6ffe9ea3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1aa5e5c79b37f5b8e3a2e936bf6ffe9ea3" kindref="member">ValidJumpBuffer</ref><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1869eda15bbfbe6a0cc0d58bfc4a81a0" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1869eda15bbfbe6a0cc0d58bfc4a81a0" kindref="member">CrashRecoveryContextImpl</ref>(<ref refid="classllvm_1_1_crash_recovery_context" kindref="compound">CrashRecoveryContext</ref><sp/>*<ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1fc9ad48d561ba2a8fb7c6eac1e26304" kindref="member">CRC</ref>)<sp/>noexcept</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1fc9ad48d561ba2a8fb7c6eac1e26304" kindref="member">CRC</ref>(<ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1fc9ad48d561ba2a8fb7c6eac1e26304" kindref="member">CRC</ref>),<sp/><ref refid="namespacellvm_1a2cd7b2e49608a96ba42f59f642cf99ac" kindref="member">Failed</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">),<sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a34ed1abd912873bd2cefec539f2ca343" kindref="member">SwitchedThread</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">),<sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1aa5e5c79b37f5b8e3a2e936bf6ffe9ea3" kindref="member">ValidJumpBuffer</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a94c0fd5a8b423857291b1ba6d49f41a8" kindref="member">Next</ref><sp/>=<sp/><ref refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a04bd06e1fbf71b7df3cc3b119d9309d1" kindref="member">CurrentContext</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a04bd06e1fbf71b7df3cc3b119d9309d1" kindref="member">CurrentContext</ref><sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a4902594b0a34090bff9a747241935ad0" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a4902594b0a34090bff9a747241935ad0" kindref="member">~CrashRecoveryContextImpl</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a34ed1abd912873bd2cefec539f2ca343" kindref="member">SwitchedThread</ref>)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a04bd06e1fbf71b7df3cc3b119d9309d1" kindref="member">CurrentContext</ref><sp/>=<sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a94c0fd5a8b423857291b1ba6d49f41a8" kindref="member">Next</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/>///<sp/>Called<sp/>when<sp/>the<sp/>separate<sp/>crash-recovery<sp/>thread<sp/>was<sp/>finished,<sp/>to</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/>///<sp/>indicate<sp/>that<sp/>we<sp/>don&apos;t<sp/>need<sp/>to<sp/>clear<sp/>the<sp/>thread-local<sp/>CurrentContext.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a09c5e7dcb5555b5088bf3f86b3375672" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a09c5e7dcb5555b5088bf3f86b3375672" kindref="member">setSwitchedThread</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(LLVM_ENABLE_THREADS)<sp/>&amp;&amp;<sp/>LLVM_ENABLE_THREADS<sp/>!=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a34ed1abd912873bd2cefec539f2ca343" kindref="member">SwitchedThread</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>function<sp/>ran<sp/>by<sp/>the<sp/>CrashRecoveryContext<sp/>crashes<sp/>or<sp/>fails,<sp/>then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>&apos;RetCode&apos;<sp/>represents<sp/>the<sp/>returned<sp/>error<sp/>code,<sp/>as<sp/>if<sp/>it<sp/>was<sp/>returned<sp/>by<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>process.<sp/>&apos;Context&apos;<sp/>represents<sp/>the<sp/>signal<sp/>type<sp/>on<sp/>Unix;<sp/>on<sp/>Windows,<sp/>it<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>ExceptionContext.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a0f8515fbcec00f4cf6990321677ebdbd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a0f8515fbcec00f4cf6990321677ebdbd" kindref="member">HandleCrash</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>RetCode,<sp/>uintptr_t<sp/>Context)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Eliminate<sp/>the<sp/>current<sp/>context<sp/>entry,<sp/>to<sp/>avoid<sp/>re-entering<sp/>in<sp/>case<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>cleanup<sp/>code<sp/>crashes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a04bd06e1fbf71b7df3cc3b119d9309d1" kindref="member">CurrentContext</ref><sp/>=<sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a94c0fd5a8b423857291b1ba6d49f41a8" kindref="member">Next</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(!<ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1afe3b2dc63d72670464e9e11c5a572281" kindref="member">Failed</ref><sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Crash<sp/>recovery<sp/>context<sp/>already<sp/>failed!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1afe3b2dc63d72670464e9e11c5a572281" kindref="member">Failed</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1fc9ad48d561ba2a8fb7c6eac1e26304" kindref="member">CRC</ref>-&gt;DumpStackAndCleanupOnFailure)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1sys_1ad01be72a9c0cb2dc4c676aa0057a9b31" kindref="member">sys::CleanupOnSignal</ref>(Context);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1fc9ad48d561ba2a8fb7c6eac1e26304" kindref="member">CRC</ref>-&gt;RetCode<sp/>=<sp/>RetCode;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Jump<sp/>back<sp/>to<sp/>the<sp/>RunSafely<sp/>we<sp/>were<sp/>called<sp/>under.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1aa5e5c79b37f5b8e3a2e936bf6ffe9ea3" kindref="member">ValidJumpBuffer</ref>)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>longjmp(<ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1ac05b69ddefb0a3d22a4146f23f4857a0" kindref="member">JumpBuffer</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Otherwise<sp/>let<sp/>the<sp/>caller<sp/>decide<sp/>of<sp/>the<sp/>outcome<sp/>of<sp/>the<sp/>crash.<sp/>Currently</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>occurs<sp/>when<sp/>using<sp/>SEH<sp/>on<sp/>Windows<sp/>with<sp/>MSVC<sp/>or<sp/>clang-cl.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a69566229ae01d190f424f18be453175d" refkind="member"><highlight class="normal">std::mutex<sp/>&amp;<ref refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a69566229ae01d190f424f18be453175d" kindref="member">getCrashRecoveryContextMutex</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::mutex<sp/>CrashRecoveryContextMutex;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CrashRecoveryContextMutex;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1acac7a11d792efcc4ddb07a9b08cc55aa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1acac7a11d792efcc4ddb07a9b08cc55aa" kindref="member">gCrashRecoveryEnabled</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a91ee307a6601945fc93d1a66162326a7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_compiler_8h_1a793005af6ae802d5a2a2e8ceb4ac2135" kindref="member">LLVM_THREAD_LOCAL</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context" kindref="compound">CrashRecoveryContext</ref><sp/>*<ref refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a91ee307a6601945fc93d1a66162326a7" kindref="member">IsRecoveringFromCrash</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1afafe7a6e51a65dc858e161f5f0346eb7" kindref="member">installExceptionOrSignalHandlers</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1a72432dde4ac5721bf8d78d090a198dc6" kindref="member">uninstallExceptionOrSignalHandlers</ref>();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><ref refid="classllvm_1_1_crash_recovery_context_cleanup_1a3466b664ed096f33a6dd03180b6174aa" kindref="member">CrashRecoveryContextCleanup::~CrashRecoveryContextCleanup</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classllvm_1_1_crash_recovery_context_1af9b65412e2f06422a5500e533cb3982d" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1_crash_recovery_context_1af9b65412e2f06422a5500e533cb3982d" kindref="member">CrashRecoveryContext::CrashRecoveryContext</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>On<sp/>Windows,<sp/>if<sp/>abort()<sp/>was<sp/>previously<sp/>triggered<sp/>(and<sp/>caught<sp/>by<sp/>a<sp/>previous</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>CrashRecoveryContext)<sp/>the<sp/>Windows<sp/>CRT<sp/>removes<sp/>our<sp/>installed<sp/>signal<sp/>handler,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>we<sp/>need<sp/>to<sp/>install<sp/>it<sp/>again.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1_1sys_1a3dda14c3980f644b8796c1a51d7bf11b" kindref="member">sys::DisableSystemDialogsOnCrash</ref>();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="classllvm_1_1_crash_recovery_context_1a3f1b3ccc1138c2449277d1605297bd23" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1_crash_recovery_context_1a3f1b3ccc1138c2449277d1605297bd23" kindref="member">CrashRecoveryContext::~CrashRecoveryContext</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Reclaim<sp/>registered<sp/>resources.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_crash_recovery_context_cleanup" kindref="compound">CrashRecoveryContextCleanup</ref><sp/>*i<sp/>=<sp/>head;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1af9b65412e2f06422a5500e533cb3982d" kindref="member">CrashRecoveryContext</ref><sp/>*PC<sp/>=<sp/>IsRecoveringFromCrash;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>IsRecoveringFromCrash<sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(i)<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_crash_recovery_context_cleanup" kindref="compound">CrashRecoveryContextCleanup</ref><sp/>*tmp<sp/>=<sp/>i;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>tmp-&gt;next;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp-&gt;<ref refid="classllvm_1_1_crash_recovery_context_cleanup_1aca39a957a0440233d0cb1be95f18d6e0" kindref="member">cleanupFired</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp-&gt;<ref refid="classllvm_1_1_crash_recovery_context_cleanup_1a78fd4542f4d45c47c5a7c0110827e461" kindref="member">recoverResources</ref>();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>tmp;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>IsRecoveringFromCrash<sp/>=<sp/>PC;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>CrashRecoveryContextImpl<sp/>*CRCI<sp/>=<sp/>(CrashRecoveryContextImpl<sp/>*)<sp/>Impl;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>CRCI;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="classllvm_1_1_crash_recovery_context_1aa970a6de6e7146a147b195bb0609559c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1aa970a6de6e7146a147b195bb0609559c" kindref="member">CrashRecoveryContext::isRecoveringFromCrash</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IsRecoveringFromCrash<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="classllvm_1_1_crash_recovery_context_1a105fa65624c954b0a44d73615cbbeba1" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1_crash_recovery_context_1af9b65412e2f06422a5500e533cb3982d" kindref="member">CrashRecoveryContext</ref><sp/>*<ref refid="classllvm_1_1_crash_recovery_context_1a105fa65624c954b0a44d73615cbbeba1" kindref="member">CrashRecoveryContext::GetCurrent</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!gCrashRecoveryEnabled)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CrashRecoveryContextImpl<sp/>*CRCI<sp/>=<sp/>CurrentContext;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!CRCI)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CRCI-&gt;<ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a1fc9ad48d561ba2a8fb7c6eac1e26304" kindref="member">CRC</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="classllvm_1_1_crash_recovery_context_1a41167e1234529f6607af068e6c687ac0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1a41167e1234529f6607af068e6c687ac0" kindref="member">CrashRecoveryContext::Enable</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>L(getCrashRecoveryContextMutex());</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>FIXME:<sp/>Shouldn&apos;t<sp/>this<sp/>be<sp/>a<sp/>refcount<sp/>or<sp/>something?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gCrashRecoveryEnabled)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>gCrashRecoveryEnabled<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><ref refid="_crash_recovery_context_8cpp_1afafe7a6e51a65dc858e161f5f0346eb7" kindref="member">installExceptionOrSignalHandlers</ref>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="classllvm_1_1_crash_recovery_context_1a85c3b9e248b6ed94762938f8cac81a49" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1a85c3b9e248b6ed94762938f8cac81a49" kindref="member">CrashRecoveryContext::Disable</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>L(getCrashRecoveryContextMutex());</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!gCrashRecoveryEnabled)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>gCrashRecoveryEnabled<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><ref refid="_crash_recovery_context_8cpp_1a72432dde4ac5721bf8d78d090a198dc6" kindref="member">uninstallExceptionOrSignalHandlers</ref>();</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="classllvm_1_1_crash_recovery_context_1acfd8df959280984cf865bc8690aa1386" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1acfd8df959280984cf865bc8690aa1386" kindref="member">CrashRecoveryContext::registerCleanup</ref>(<ref refid="classllvm_1_1_crash_recovery_context_cleanup" kindref="compound">CrashRecoveryContextCleanup</ref><sp/>*<ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(head)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>head-&gt;prev<sp/>=<sp/><ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>-&gt;next<sp/>=<sp/>head;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>head<sp/>=<sp/><ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="classllvm_1_1_crash_recovery_context_1a79b3815988da0ba38acabefe15082e8a" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1_crash_recovery_context_1a79b3815988da0ba38acabefe15082e8a" kindref="member">CrashRecoveryContext::unregisterCleanup</ref>(<ref refid="classllvm_1_1_crash_recovery_context_cleanup" kindref="compound">CrashRecoveryContextCleanup</ref><sp/>*<ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref><sp/>==<sp/>head)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>head<sp/>=<sp/><ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>-&gt;next;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(head)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>head-&gt;prev<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>-&gt;prev-&gt;next<sp/>=<sp/><ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>-&gt;next;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>-&gt;next)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>-&gt;next-&gt;prev<sp/>=<sp/><ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>-&gt;prev;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="_block_frequency_info_impl_8cpp_1a3419f1e4b5a20b3ec28ae5f1f3c6f32b" kindref="member">cleanup</ref>;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_MSC_VER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>for<sp/>GetExceptionInformation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="comment">//<sp/>If<sp/>_MSC_VER<sp/>is<sp/>defined,<sp/>we<sp/>must<sp/>have<sp/>SEH.<sp/>Use<sp/>it<sp/>if<sp/>it&apos;s<sp/>available.<sp/>It&apos;s<sp/>way</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="comment">//<sp/>better<sp/>than<sp/>VEH.<sp/>Vectored<sp/>exception<sp/>handling<sp/>catches<sp/>all<sp/>exceptions<sp/>happening</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="comment">//<sp/>on<sp/>the<sp/>thread<sp/>with<sp/>installed<sp/>exception<sp/>handlers,<sp/>so<sp/>it<sp/>can<sp/>interfere<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="comment">//<sp/>internal<sp/>exception<sp/>handling<sp/>of<sp/>other<sp/>libraries<sp/>on<sp/>that<sp/>thread.<sp/>SEH<sp/>works</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="comment">//<sp/>exactly<sp/>as<sp/>you<sp/>would<sp/>expect<sp/>normal<sp/>exception<sp/>handling<sp/>to<sp/>work:<sp/>it<sp/>only</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment">//<sp/>catches<sp/>exceptions<sp/>if<sp/>they<sp/>would<sp/>bubble<sp/>out<sp/>from<sp/>the<sp/>stack<sp/>frame<sp/>with<sp/>__try<sp/>/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="comment">//<sp/>__except.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1afafe7a6e51a65dc858e161f5f0346eb7" kindref="member">installExceptionOrSignalHandlers</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1a72432dde4ac5721bf8d78d090a198dc6" kindref="member">uninstallExceptionOrSignalHandlers</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>need<sp/>this<sp/>function<sp/>because<sp/>the<sp/>call<sp/>to<sp/>GetExceptionInformation()<sp/>can<sp/>only</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="comment">//<sp/>occur<sp/>inside<sp/>the<sp/>__except<sp/>evaluation<sp/>block</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ExceptionFilter(_EXCEPTION_POINTERS<sp/>*Except)<sp/>{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Lookup<sp/>the<sp/>current<sp/>thread<sp/>local<sp/>recovery<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CrashRecoveryContextImpl<sp/>*CRCI<sp/>=<sp/><ref refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a04bd06e1fbf71b7df3cc3b119d9309d1" kindref="member">CurrentContext</ref>;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!CRCI)<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Something<sp/>has<sp/>gone<sp/>horribly<sp/>wrong,<sp/>so<sp/>let&apos;s<sp/>just<sp/>tell<sp/>everyone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>keep<sp/>searching</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_crash_recovery_context_1a85c3b9e248b6ed94762938f8cac81a49" kindref="member">CrashRecoveryContext::Disable</ref>();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXCEPTION_CONTINUE_SEARCH;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>RetCode<sp/>=<sp/>(int)Except-&gt;ExceptionRecord-&gt;ExceptionCode;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((RetCode<sp/>&amp;<sp/>0xF0000000)<sp/>==<sp/>0xE0000000)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>RetCode<sp/>&amp;=<sp/>~0xF0000000;<sp/></highlight><highlight class="comment">//<sp/>this<sp/>crash<sp/>was<sp/>generated<sp/>by<sp/>sys::Process::Exit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Handle<sp/>the<sp/>crash</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="normal">CrashRecoveryContextImpl<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(CRCI)-&gt;HandleCrash(</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>RetCode,<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">uintptr_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(Except));</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXCEPTION_EXECUTE_HANDLER;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__clang__)<sp/>&amp;&amp;<sp/>defined(_M_IX86)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Work<sp/>around<sp/>PR44697.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal">__attribute__((optnone))</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1a7a27e5f3ab2b30dd6b1ef4c8d7e9e5a4" kindref="member">CrashRecoveryContext::RunSafely</ref>(<ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/>Fn)<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!gCrashRecoveryEnabled)<sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>Fn();</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(!Impl<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Crash<sp/>recovery<sp/>context<sp/>already<sp/>initialized!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/>Impl<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CrashRecoveryContextImpl(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/>__try<sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>Fn();</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>}<sp/>__except<sp/>(ExceptionFilter(GetExceptionInformation()))<sp/>{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//<sp/>!_MSC_VER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>a<sp/>non-MSVC<sp/>compiler,<sp/>probably<sp/>mingw<sp/>gcc<sp/>or<sp/>clang<sp/>without</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-fms-extensions.<sp/>Use<sp/>vectored<sp/>exception<sp/>handling<sp/>(VEH).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="comment">//<sp/>On<sp/>Windows,<sp/>we<sp/>can<sp/>make<sp/>use<sp/>of<sp/>vectored<sp/>exception<sp/>handling<sp/>to<sp/>catch<sp/>most</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="comment">//<sp/>crashing<sp/>situations.<sp/><sp/>Note<sp/>that<sp/>this<sp/>does<sp/>mean<sp/>we<sp/>will<sp/>be<sp/>alerted<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="comment">//<sp/>exceptions<sp/>*before*<sp/>structured<sp/>exception<sp/>handling<sp/>has<sp/>the<sp/>opportunity<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="comment">//<sp/>catch<sp/>it.<sp/>Unfortunately,<sp/>this<sp/>causes<sp/>problems<sp/>in<sp/>practice<sp/>with<sp/>other<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment">//<sp/>running<sp/>on<sp/>threads<sp/>with<sp/>LLVM<sp/>crash<sp/>recovery<sp/>contexts,<sp/>so<sp/>we<sp/>would<sp/>like<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="comment">//<sp/>eventually<sp/>move<sp/>away<sp/>from<sp/>VEH.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Vectored<sp/>works<sp/>on<sp/>a<sp/>per-thread<sp/>basis,<sp/>which<sp/>is<sp/>an<sp/>advantage<sp/>over</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SetUnhandledExceptionFilter.<sp/>SetUnhandledExceptionFilter<sp/>also<sp/>doesn&apos;t<sp/>have</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="comment">//<sp/>any<sp/>native<sp/>support<sp/>for<sp/>chaining<sp/>exception<sp/>handlers,<sp/>but<sp/>VEH<sp/>allows<sp/>more<sp/>than</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="comment">//<sp/>one.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>vectored<sp/>exception<sp/>handler<sp/>functionality<sp/>was<sp/>added<sp/>in<sp/>Windows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="comment">//<sp/>XP,<sp/>so<sp/>if<sp/>support<sp/>for<sp/>older<sp/>versions<sp/>of<sp/>Windows<sp/>is<sp/>required,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="comment">//<sp/>it<sp/>will<sp/>have<sp/>to<sp/>be<sp/>added.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_windows_support_8h" kindref="compound">llvm/Support/Windows/WindowsSupport.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>LONG<sp/>CALLBACK<sp/>ExceptionHandler(PEXCEPTION_POINTERS<sp/>ExceptionInfo)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>DBG_PRINTEXCEPTION_WIDE_C<sp/>is<sp/>not<sp/>properly<sp/>defined<sp/>on<sp/>all<sp/>supported</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>compilers<sp/>and<sp/>platforms,<sp/>so<sp/>we<sp/>define<sp/>it<sp/>manually.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>ULONG<sp/>DbgPrintExceptionWideC<sp/>=<sp/>0x4001000AL;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(ExceptionInfo-&gt;ExceptionRecord-&gt;ExceptionCode)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DBG_PRINTEXCEPTION_C:</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DbgPrintExceptionWideC:</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0x406D1388:<sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>debugger<sp/>thread<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXCEPTION_CONTINUE_EXECUTION;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Lookup<sp/>the<sp/>current<sp/>thread<sp/>local<sp/>recovery<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CrashRecoveryContextImpl<sp/>*CRCI<sp/>=<sp/><ref refid="namespaceanonymous__namespace_02_crash_recovery_context_8cpp_03_1a04bd06e1fbf71b7df3cc3b119d9309d1" kindref="member">CurrentContext</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!CRCI)<sp/>{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Something<sp/>has<sp/>gone<sp/>horribly<sp/>wrong,<sp/>so<sp/>let&apos;s<sp/>just<sp/>tell<sp/>everyone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>keep<sp/>searching</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_crash_recovery_context_1a85c3b9e248b6ed94762938f8cac81a49" kindref="member">CrashRecoveryContext::Disable</ref>();</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXCEPTION_CONTINUE_SEARCH;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>We<sp/>can<sp/>capture<sp/>the<sp/>stack<sp/>backtrace<sp/>here<sp/>and<sp/>store<sp/>it<sp/>on<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>implementation<sp/>if<sp/>we<sp/>so<sp/>choose.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>RetCode<sp/>=<sp/>(int)ExceptionInfo-&gt;ExceptionRecord-&gt;ExceptionCode;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((RetCode<sp/>&amp;<sp/>0xF0000000)<sp/>==<sp/>0xE0000000)</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>RetCode<sp/>&amp;=<sp/>~0xF0000000;<sp/></highlight><highlight class="comment">//<sp/>this<sp/>crash<sp/>was<sp/>generated<sp/>by<sp/>sys::Process::Exit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Handle<sp/>the<sp/>crash</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="normal">CrashRecoveryContextImpl<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(CRCI)-&gt;HandleCrash(</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>RetCode,<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">uintptr_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ExceptionInfo));</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Note<sp/>that<sp/>we<sp/>don&apos;t<sp/>actually<sp/>get<sp/>here<sp/>because<sp/>HandleCrash<sp/>calls</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>longjmp,<sp/>which<sp/>means<sp/>the<sp/>HandleCrash<sp/>function<sp/>never<sp/>returns.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><ref refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" kindref="member">llvm_unreachable</ref>(</highlight><highlight class="stringliteral">&quot;Handled<sp/>the<sp/>crash,<sp/>should<sp/>have<sp/>longjmp&apos;ed<sp/>out<sp/>of<sp/>here&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Because<sp/>the<sp/>Enable<sp/>and<sp/>Disable<sp/>calls<sp/>are<sp/>static,<sp/>it<sp/>means<sp/>that</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="comment">//<sp/>there<sp/>may<sp/>not<sp/>actually<sp/>be<sp/>an<sp/>Impl<sp/>available,<sp/>or<sp/>even<sp/>a<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CrashRecoveryContext<sp/>at<sp/>all.<sp/><sp/>So<sp/>we<sp/>make<sp/>use<sp/>of<sp/>a<sp/>thread-local</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="comment">//<sp/>exception<sp/>table.<sp/><sp/>The<sp/>handles<sp/>contained<sp/>in<sp/>here<sp/>will<sp/>either<sp/>be</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="comment">//<sp/>non-NULL,<sp/>valid<sp/>VEH<sp/>handles,<sp/>or<sp/>NULL.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_compiler_8h_1a793005af6ae802d5a2a2e8ceb4ac2135" kindref="member">LLVM_THREAD_LOCAL</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>sCurrentExceptionHandle;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1afafe7a6e51a65dc858e161f5f0346eb7" kindref="member">installExceptionOrSignalHandlers</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>can<sp/>set<sp/>up<sp/>vectored<sp/>exception<sp/>handling<sp/>now.<sp/><sp/>We<sp/>will<sp/>install<sp/>our</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>handler<sp/>as<sp/>the<sp/>front<sp/>of<sp/>the<sp/>list,<sp/>though<sp/>there&apos;s<sp/>no<sp/>assurances<sp/>that</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>it<sp/>will<sp/>remain<sp/>at<sp/>the<sp/>front<sp/>(another<sp/>call<sp/>could<sp/>install<sp/>itself<sp/>before</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>our<sp/>handler).<sp/><sp/>This<sp/>1)<sp/>isn&apos;t<sp/>likely,<sp/>and<sp/>2)<sp/>shouldn&apos;t<sp/>cause<sp/>problems.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/>PVOID<sp/>handle<sp/>=<sp/>::AddVectoredExceptionHandler(1,<sp/>ExceptionHandler);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/>sCurrentExceptionHandle<sp/>=<sp/>handle;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1a72432dde4ac5721bf8d78d090a198dc6" kindref="member">uninstallExceptionOrSignalHandlers</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/>PVOID<sp/>currentHandle<sp/>=<sp/></highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="normal">PVOID</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(sCurrentExceptionHandle);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(currentHandle)<sp/>{</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>we<sp/>can<sp/>remove<sp/>the<sp/>vectored<sp/>exception<sp/>handler<sp/>from<sp/>the<sp/>chain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/>::RemoveVectoredExceptionHandler(currentHandle);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>the<sp/>handle<sp/>in<sp/>our<sp/>thread-local<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>sCurrentExceptionHandle<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//<sp/>!_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Generic<sp/>POSIX<sp/>implementation.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>implementation<sp/>relies<sp/>on<sp/>synchronous<sp/>signals<sp/>being<sp/>delivered<sp/>to<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight><highlight class="comment">//<sp/>current<sp/>thread.<sp/>We<sp/>use<sp/>a<sp/>thread<sp/>local<sp/>object<sp/>to<sp/>keep<sp/>track<sp/>of<sp/>the<sp/>active</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="comment">//<sp/>crash<sp/>recovery<sp/>context,<sp/>and<sp/>install<sp/>signal<sp/>handlers<sp/>to<sp/>invoke<sp/>HandleCrash<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight><highlight class="comment">//<sp/>the<sp/>active<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>implementation<sp/>does<sp/>not<sp/>attempt<sp/>to<sp/>chain<sp/>signal<sp/>handlers<sp/>in<sp/>any</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="comment">//<sp/>reliable<sp/>fashion<sp/>--<sp/>if<sp/>we<sp/>get<sp/>a<sp/>signal<sp/>outside<sp/>of<sp/>a<sp/>crash<sp/>recovery<sp/>context<sp/>we</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="comment">//<sp/>simply<sp/>disable<sp/>crash<sp/>recovery<sp/>and<sp/>raise<sp/>the<sp/>signal<sp/>again.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347" refid="_crash_recovery_context_8cpp_1a610cf56a4e6ab035bbce5e4bd4b35491" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1a610cf56a4e6ab035bbce5e4bd4b35491" kindref="member">Signals</ref>[]<sp/>=</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>SIGABRT,<sp/>SIGBUS,<sp/>SIGFPE,<sp/>SIGILL,<sp/>SIGSEGV,<sp/>SIGTRAP<sp/>};</highlight></codeline>
+<codeline lineno="349" refid="_crash_recovery_context_8cpp_1a2c9e1adb1243628fba0a85d1679c5408" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1a2c9e1adb1243628fba0a85d1679c5408" kindref="member">NumSignals</ref><sp/>=<sp/>std::size(<ref refid="_crash_recovery_context_8cpp_1a610cf56a4e6ab035bbce5e4bd4b35491" kindref="member">Signals</ref>);</highlight></codeline>
+<codeline lineno="350" refid="_crash_recovery_context_8cpp_1a78ca6b94aa2c38681accbf6cfbd577e6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sigaction<sp/><ref refid="_crash_recovery_context_8cpp_1a78ca6b94aa2c38681accbf6cfbd577e6" kindref="member">PrevActions</ref>[<ref refid="_crash_recovery_context_8cpp_1a2c9e1adb1243628fba0a85d1679c5408" kindref="member">NumSignals</ref>];</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352" refid="_crash_recovery_context_8cpp_1a63942c4dec8efd06218370c042a12480" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1a63942c4dec8efd06218370c042a12480" kindref="member">CrashRecoverySignalHandler</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Signal)<sp/>{</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Lookup<sp/>the<sp/>current<sp/>thread<sp/>local<sp/>recovery<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CrashRecoveryContextImpl<sp/>*CRCI<sp/>=<sp/>CurrentContext;</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!CRCI)<sp/>{</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>didn&apos;t<sp/>find<sp/>a<sp/>crash<sp/>recovery<sp/>context<sp/>--<sp/>this<sp/>means<sp/>either<sp/>we<sp/>got<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>signal<sp/>on<sp/>a<sp/>thread<sp/>we<sp/>didn&apos;t<sp/>expect<sp/>it<sp/>on,<sp/>the<sp/>application<sp/>got<sp/>a<sp/>signal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>outside<sp/>of<sp/>a<sp/>crash<sp/>recovery<sp/>context,<sp/>or<sp/>something<sp/>else<sp/>went<sp/>horribly</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wrong.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>crash<sp/>recovery<sp/>and<sp/>raise<sp/>the<sp/>signal<sp/>again.<sp/>The<sp/>assumption<sp/>here<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>that<sp/>the<sp/>enclosing<sp/>application<sp/>will<sp/>terminate<sp/>soon,<sp/>and<sp/>we<sp/>won&apos;t<sp/>want<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>attempt<sp/>crash<sp/>recovery<sp/>again.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>call<sp/>of<sp/>Disable<sp/>isn&apos;t<sp/>thread<sp/>safe,<sp/>but<sp/>it<sp/>doesn&apos;t<sp/>actually<sp/>matter.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_crash_recovery_context_1a85c3b9e248b6ed94762938f8cac81a49" kindref="member">CrashRecoveryContext::Disable</ref>();</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/>raise(Signal);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>signal<sp/>will<sp/>be<sp/>thrown<sp/>once<sp/>the<sp/>signal<sp/>mask<sp/>is<sp/>restored.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Unblock<sp/>the<sp/>signal<sp/>we<sp/>received.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/>sigset_t<sp/>SigMask;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/>sigemptyset(&amp;SigMask);</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/>sigaddset(&amp;SigMask,<sp/>Signal);</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/>sigprocmask(SIG_UNBLOCK,<sp/>&amp;SigMask,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>same<sp/>error<sp/>code<sp/>as<sp/>if<sp/>the<sp/>program<sp/>crashed,<sp/>as<sp/>mentioned<sp/>in<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>section<sp/>&quot;Exit<sp/>Status<sp/>for<sp/>Commands&quot;:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>https://pubs.opengroup.org/onlinepubs/9699919799/xrat/V4_xcu_chap02.html</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>RetCode<sp/>=<sp/>128<sp/>+<sp/>Signal;</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Don&apos;t<sp/>consider<sp/>a<sp/>broken<sp/>pipe<sp/>as<sp/>a<sp/>crash<sp/>(see<sp/>clang/lib/Driver/Driver.cpp)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Signal<sp/>==<sp/>SIGPIPE)</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/>RetCode<sp/>=<sp/>EX_IOERR;</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(CRCI)</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="normal">CrashRecoveryContextImpl<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(CRCI)-&gt;HandleCrash(RetCode,<sp/>Signal);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight></codeline>
+<codeline lineno="393" refid="_crash_recovery_context_8cpp_1afafe7a6e51a65dc858e161f5f0346eb7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1afafe7a6e51a65dc858e161f5f0346eb7" kindref="member">installExceptionOrSignalHandlers</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Setup<sp/>the<sp/>signal<sp/>handler.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sigaction<sp/>Handler;</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/>Handler.sa_handler<sp/>=<sp/><ref refid="_crash_recovery_context_8cpp_1a63942c4dec8efd06218370c042a12480" kindref="member">CrashRecoverySignalHandler</ref>;</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/>Handler.sa_flags<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/>sigemptyset(&amp;Handler.sa_mask);</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>!=<sp/><ref refid="_crash_recovery_context_8cpp_1a2c9e1adb1243628fba0a85d1679c5408" kindref="member">NumSignals</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/>sigaction(<ref refid="_crash_recovery_context_8cpp_1a610cf56a4e6ab035bbce5e4bd4b35491" kindref="member">Signals</ref>[i],<sp/>&amp;Handler,<sp/>&amp;<ref refid="_crash_recovery_context_8cpp_1a78ca6b94aa2c38681accbf6cfbd577e6" kindref="member">PrevActions</ref>[i]);</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="403"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight></codeline>
+<codeline lineno="405" refid="_crash_recovery_context_8cpp_1a72432dde4ac5721bf8d78d090a198dc6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1a72432dde4ac5721bf8d78d090a198dc6" kindref="member">uninstallExceptionOrSignalHandlers</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Restore<sp/>the<sp/>previous<sp/>signal<sp/>handlers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>!=<sp/><ref refid="_crash_recovery_context_8cpp_1a2c9e1adb1243628fba0a85d1679c5408" kindref="member">NumSignals</ref>;<sp/>++i)</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/>sigaction(<ref refid="_crash_recovery_context_8cpp_1a610cf56a4e6ab035bbce5e4bd4b35491" kindref="member">Signals</ref>[i],<sp/>&amp;<ref refid="_crash_recovery_context_8cpp_1a78ca6b94aa2c38681accbf6cfbd577e6" kindref="member">PrevActions</ref>[i],<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="409"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight></codeline>
+<codeline lineno="413" refid="classllvm_1_1_crash_recovery_context_1a7a27e5f3ab2b30dd6b1ef4c8d7e9e5a4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1a7a27e5f3ab2b30dd6b1ef4c8d7e9e5a4" kindref="member">CrashRecoveryContext::RunSafely</ref>(<ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/>Fn)<sp/>{</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>crash<sp/>recovery<sp/>is<sp/>disabled,<sp/>do<sp/>nothing.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gCrashRecoveryEnabled)<sp/>{</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(!Impl<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Crash<sp/>recovery<sp/>context<sp/>already<sp/>initialized!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/>CrashRecoveryContextImpl<sp/>*CRCI<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CrashRecoveryContextImpl(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl<sp/>=<sp/>CRCI;</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/>CRCI-&gt;ValidJumpBuffer<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(setjmp(CRCI-&gt;JumpBuffer)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/>Fn();</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="428"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"></highlight></codeline>
+<codeline lineno="430"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!_MSC_VER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="431"><highlight class="normal"></highlight></codeline>
+<codeline lineno="432" refid="classllvm_1_1_crash_recovery_context_1a37a76700bffd3d25b09e7828fa90277c" refkind="member"><highlight class="normal">[[noreturn]]<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1a37a76700bffd3d25b09e7828fa90277c" kindref="member">CrashRecoveryContext::HandleExit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1aa79c730e28c1406ada1243fae0e0358d" kindref="member">RetCode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Since<sp/>the<sp/>exception<sp/>code<sp/>is<sp/>actually<sp/>of<sp/>NTSTATUS<sp/>type,<sp/>we<sp/>use<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Microsoft-recommended<sp/>0xE<sp/>prefix,<sp/>to<sp/>signify<sp/>that<sp/>this<sp/>is<sp/>a<sp/>user<sp/>error.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>value<sp/>is<sp/>a<sp/>combination<sp/>of<sp/>the<sp/>customer<sp/>field<sp/>(bit<sp/>29)<sp/>and<sp/>severity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>field<sp/>(bits<sp/>30-31)<sp/>in<sp/>the<sp/>NTSTATUS<sp/>specification.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/>::RaiseException(0xE0000000<sp/>|<sp/><ref refid="classllvm_1_1_crash_recovery_context_1aa79c730e28c1406ada1243fae0e0358d" kindref="member">RetCode</ref>,<sp/>0,<sp/>0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>On<sp/>Unix<sp/>we<sp/>don&apos;t<sp/>need<sp/>to<sp/>raise<sp/>an<sp/>exception,<sp/>we<sp/>go<sp/>directly<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>HandleCrash(),<sp/>then<sp/>longjmp<sp/>will<sp/>unwind<sp/>the<sp/>stack<sp/>for<sp/>us.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/>CrashRecoveryContextImpl<sp/>*CRCI<sp/>=<sp/>(CrashRecoveryContextImpl<sp/>*)Impl;</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(CRCI<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Crash<sp/>recovery<sp/>context<sp/>never<sp/>initialized!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/>CRCI-&gt;HandleCrash(<ref refid="classllvm_1_1_crash_recovery_context_1aa79c730e28c1406ada1243fae0e0358d" kindref="member">RetCode</ref>,<sp/>0<sp/></highlight><highlight class="comment">/*no<sp/>sig<sp/>num*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><ref refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" kindref="member">llvm_unreachable</ref>(</highlight><highlight class="stringliteral">&quot;Most<sp/>likely<sp/>setjmp<sp/>wasn&apos;t<sp/>called!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="447"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"></highlight></codeline>
+<codeline lineno="449" refid="classllvm_1_1_crash_recovery_context_1a0cd4fbb22cd917e20bb699958b4339b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1a0cd4fbb22cd917e20bb699958b4339b2" kindref="member">CrashRecoveryContext::isCrash</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1aa79c730e28c1406ada1243fae0e0358d" kindref="member">RetCode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>On<sp/>Windows,<sp/>the<sp/>code<sp/>is<sp/>interpreted<sp/>as<sp/>NTSTATUS.<sp/>The<sp/>two<sp/>high<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>represent<sp/>the<sp/>severity.<sp/>Values<sp/>starting<sp/>with<sp/>0x80000000<sp/>are<sp/>reserved<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;warnings&quot;;<sp/>values<sp/>of<sp/>0xC0000000<sp/>and<sp/>up<sp/>are<sp/>for<sp/>&quot;errors&quot;.<sp/>In<sp/>practice,<sp/>both</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>are<sp/>interpreted<sp/>as<sp/>a<sp/>non-continuable<sp/>signal.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Code<sp/>=<sp/>((<ref refid="classunsigned" kindref="compound">unsigned</ref>)<ref refid="classllvm_1_1_crash_recovery_context_1aa79c730e28c1406ada1243fae0e0358d" kindref="member">RetCode</ref><sp/>&amp;<sp/>0xF0000000)<sp/>&gt;&gt;<sp/>28;</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Code<sp/>!=<sp/>0xC<sp/>&amp;&amp;<sp/>Code<sp/>!=<sp/>8)</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>On<sp/>Unix,<sp/>signals<sp/>are<sp/>represented<sp/>by<sp/>return<sp/>codes<sp/>of<sp/>128<sp/>or<sp/>higher.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Exit<sp/>code<sp/>128<sp/>is<sp/>a<sp/>reserved<sp/>value<sp/>and<sp/>should<sp/>not<sp/>be<sp/>raised<sp/>as<sp/>a<sp/>signal.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_crash_recovery_context_1aa79c730e28c1406ada1243fae0e0358d" kindref="member">RetCode</ref><sp/>&lt;=<sp/>128)</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="465"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"></highlight></codeline>
+<codeline lineno="467" refid="classllvm_1_1_crash_recovery_context_1abbecc705fe2dd65984b0839e756d1f9a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1abbecc705fe2dd65984b0839e756d1f9a" kindref="member">CrashRecoveryContext::throwIfCrash</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1aa79c730e28c1406ada1243fae0e0358d" kindref="member">RetCode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classllvm_1_1_crash_recovery_context_1a0cd4fbb22cd917e20bb699958b4339b2" kindref="member">isCrash</ref>(<ref refid="classllvm_1_1_crash_recovery_context_1aa79c730e28c1406ada1243fae0e0358d" kindref="member">RetCode</ref>))</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/>::RaiseException(<ref refid="classllvm_1_1_crash_recovery_context_1aa79c730e28c1406ada1243fae0e0358d" kindref="member">RetCode</ref>,<sp/>0,<sp/>0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1_1sys_1a80109dae9b24e661ea7fbff184ced3da" kindref="member">llvm::sys::unregisterHandlers</ref>();</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/>raise(<ref refid="classllvm_1_1_crash_recovery_context_1aa79c730e28c1406ada1243fae0e0358d" kindref="member">RetCode</ref><sp/>-<sp/>128);</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="477"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FIXME:<sp/>Portability.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="480" refid="_crash_recovery_context_8cpp_1a6e17e622d5d0183f2ef9371caa9a06a7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1a6e17e622d5d0183f2ef9371caa9a06a7" kindref="member">setThreadBackgroundPriority</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__APPLE__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/>setpriority(PRIO_DARWIN_THREAD,<sp/>0,<sp/>PRIO_DARWIN_BG);</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight></codeline>
+<codeline lineno="486" refid="_crash_recovery_context_8cpp_1a2c4e05ef8e440fd1bed2772259584f6d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1a2c4e05ef8e440fd1bed2772259584f6d" kindref="member">hasThreadBackgroundPriority</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__APPLE__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>getpriority(PRIO_DARWIN_THREAD,<sp/>0)<sp/>==<sp/>1;</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="495" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_run_safely_on_thread_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_run_safely_on_thread_info" kindref="compound">RunSafelyOnThreadInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="496" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_run_safely_on_thread_info_1acd33d770a91ba3836811aed7a8171bd2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;void()&gt;<sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_run_safely_on_thread_info_1acd33d770a91ba3836811aed7a8171bd2" kindref="member">Fn</ref>;</highlight></codeline>
+<codeline lineno="497" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_run_safely_on_thread_info_1a0981cfa56b508b36d7a0d7b7d1ea43ab" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_crash_recovery_context" kindref="compound">CrashRecoveryContext</ref><sp/>*<ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_run_safely_on_thread_info_1a0981cfa56b508b36d7a0d7b7d1ea43ab" kindref="member">CRC</ref>;</highlight></codeline>
+<codeline lineno="498" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_run_safely_on_thread_info_1a6829033828809586ad9b462fe99dbd1d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_run_safely_on_thread_info_1a6829033828809586ad9b462fe99dbd1d" kindref="member">UseBackgroundPriority</ref>;</highlight></codeline>
+<codeline lineno="499" refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_run_safely_on_thread_info_1a29f6ab62a26cacfbddc07ae06eea5f99" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_run_safely_on_thread_info_1a29f6ab62a26cacfbddc07ae06eea5f99" kindref="member">Result</ref>;</highlight></codeline>
+<codeline lineno="500"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="501"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"></highlight></codeline>
+<codeline lineno="503" refid="_crash_recovery_context_8cpp_1a6741df1ae96240967c1fab2d6668d59a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_crash_recovery_context_8cpp_1a6741df1ae96240967c1fab2d6668d59a" kindref="member">RunSafelyOnThread_Dispatch</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*UserData)<sp/>{</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/>RunSafelyOnThreadInfo<sp/>*<ref refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" kindref="member">Info</ref><sp/>=</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">RunSafelyOnThreadInfo*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(UserData);</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" kindref="member">Info</ref>-&gt;UseBackgroundPriority)</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_crash_recovery_context_8cpp_1a6e17e622d5d0183f2ef9371caa9a06a7" kindref="member">setThreadBackgroundPriority</ref>();</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"></highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><ref refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" kindref="member">Info</ref>-&gt;Result<sp/>=<sp/><ref refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" kindref="member">Info</ref>-&gt;CRC-&gt;RunSafely(<ref refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" kindref="member">Info</ref>-&gt;Fn);</highlight></codeline>
+<codeline lineno="511"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="512" refid="classllvm_1_1_crash_recovery_context_1afdaeace1ba646601aab05b0530f7f1db" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_crash_recovery_context_1afdaeace1ba646601aab05b0530f7f1db" kindref="member">CrashRecoveryContext::RunSafelyOnThread</ref>(<ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/>Fn,</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>RequestedStackSize)<sp/>{</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>UseBackgroundPriority<sp/>=<sp/><ref refid="_crash_recovery_context_8cpp_1a2c4e05ef8e440fd1bed2772259584f6d" kindref="member">hasThreadBackgroundPriority</ref>();</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/>RunSafelyOnThreadInfo<sp/>Info<sp/>=<sp/>{<sp/>Fn,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>UseBackgroundPriority,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1thread" kindref="compound">llvm::thread</ref><sp/>Thread(RequestedStackSize<sp/>==<sp/>0</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/>std::nullopt</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>std::optional&lt;unsigned&gt;(RequestedStackSize),</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_crash_recovery_context_8cpp_1a6741df1ae96240967c1fab2d6668d59a" kindref="member">RunSafelyOnThread_Dispatch</ref>,<sp/>&amp;Info);</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/>Thread.join();</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"></highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(CrashRecoveryContextImpl<sp/>*CRC<sp/>=<sp/>(CrashRecoveryContextImpl<sp/>*)Impl)</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/>CRC-&gt;setSwitchedThread();</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Info.Result;</highlight></codeline>
+<codeline lineno="525"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="lib/Support/CrashRecoveryContext.cpp"/>
+  </compounddef>
+</doxygen>

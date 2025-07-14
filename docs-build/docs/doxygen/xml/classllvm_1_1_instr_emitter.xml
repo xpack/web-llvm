@@ -1,0 +1,938 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_instr_emitter" kind="class" language="C++" prot="public">
+    <compoundname>llvm::InstrEmitter</compoundname>
+    <includes refid="_instr_emitter_8h" local="yes">CodeGen/SelectionDAG/InstrEmitter.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref>, <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, 16 &gt;</type>
+        <definition>using llvm::InstrEmitter::VRBaseMapType =  SmallDenseMap&lt;SDValue, Register, 16&gt;</definition>
+        <argsstring></argsstring>
+        <name>VRBaseMapType</name>
+        <qualifiedname>llvm::InstrEmitter::VRBaseMapType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="34" column="3" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_instr_emitter_1aadac083e7e3a330d09adefdc9cf1acc3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>MachineFunction* llvm::InstrEmitter::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>llvm::InstrEmitter::MF</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="37" column="19" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_instr_emitter_1a220419e7ebc6ae765ea90a8314effeab" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> *</type>
+        <definition>MachineRegisterInfo* llvm::InstrEmitter::MRI</definition>
+        <argsstring></argsstring>
+        <name>MRI</name>
+        <qualifiedname>llvm::InstrEmitter::MRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="38" column="23" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_instr_emitter_1ab63848b8e5c60adbfcfb6a061055ffcf" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> *</type>
+        <definition>const TargetInstrInfo* llvm::InstrEmitter::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>llvm::InstrEmitter::TII</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="39" column="25" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_instr_emitter_1a30e48cf9b8e666c9e183d8790cca0565" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+        <definition>const TargetRegisterInfo* llvm::InstrEmitter::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>llvm::InstrEmitter::TRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="40" column="28" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_instr_emitter_1a4113c91e0104b838cf9c80e9d9b1e01d" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_lowering" kindref="compound">TargetLowering</ref> *</type>
+        <definition>const TargetLowering* llvm::InstrEmitter::TLI</definition>
+        <argsstring></argsstring>
+        <name>TLI</name>
+        <qualifiedname>llvm::InstrEmitter::TLI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="41" column="24" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_instr_emitter_1ae8acac2462bbebbbea324bfce6c0e26e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock* llvm::InstrEmitter::MBB</definition>
+        <argsstring></argsstring>
+        <name>MBB</name>
+        <qualifiedname>llvm::InstrEmitter::MBB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="43" column="21" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_instr_emitter_1acc30d11e046df72272dd0aaa299174c1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+        <definition>MachineBasicBlock::iterator llvm::InstrEmitter::InsertPos</definition>
+        <argsstring></argsstring>
+        <name>InsertPos</name>
+        <qualifiedname>llvm::InstrEmitter::InsertPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="44" column="31" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_instr_emitter_1a884c46d90985bf4a787fb7aa8eb94d47" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstrEmitter::EmitDebugInstrRefs</definition>
+        <argsstring></argsstring>
+        <name>EmitDebugInstrRefs</name>
+        <qualifiedname>llvm::InstrEmitter::EmitDebugInstrRefs</qualifiedname>
+        <briefdescription>
+<para>Should we try to produce DBG_INSTR_REF instructions? </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="47" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1af0b746ea9f24626a502c5eaa833f8725" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstrEmitter::EmitCopyFromReg</definition>
+        <argsstring>(SDNode *Node, unsigned ResNo, bool IsClone, Register SrcReg, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>EmitCopyFromReg</name>
+        <qualifiedname>llvm::InstrEmitter::EmitCopyFromReg</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ResNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsClone</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>SrcReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+<para>EmitCopyFromReg - Generate machine code for an CopyFromReg node or an implicit physical register output. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="51" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="84" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a7679d3a15a3605085d1996878f6db58d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstrEmitter::CreateVirtualRegisters</definition>
+        <argsstring>(SDNode *Node, MachineInstrBuilder &amp;MIB, const MCInstrDesc &amp;II, bool IsClone, bool IsCloned, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>CreateVirtualRegisters</name>
+        <qualifiedname>llvm::InstrEmitter::CreateVirtualRegisters</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref> &amp;</type>
+          <declname>MIB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_instr_desc" kindref="compound">MCInstrDesc</ref> &amp;</type>
+          <declname>II</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsClone</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsCloned</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="54" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="185" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1aef6482872ab71ab91e5a52e877b48a08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+        <definition>Register InstrEmitter::getVR</definition>
+        <argsstring>(SDValue Op, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>getVR</name>
+        <qualifiedname>llvm::InstrEmitter::getVR</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+          <declname>Op</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+<para>getVR - Return the virtual register corresponding to the specified result of the specified node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="62" column="12" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="267" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a2245c61bad1e84803a28a4c53f884ac7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstrEmitter::AddRegisterOperand</definition>
+        <argsstring>(MachineInstrBuilder &amp;MIB, SDValue Op, unsigned IIOpNum, const MCInstrDesc *II, VRBaseMapType &amp;VRBaseMap, bool IsDebug, bool IsClone, bool IsCloned)</argsstring>
+        <name>AddRegisterOperand</name>
+        <qualifiedname>llvm::InstrEmitter::AddRegisterOperand</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref> &amp;</type>
+          <declname>MIB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+          <declname>Op</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>IIOpNum</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_instr_desc" kindref="compound">MCInstrDesc</ref> *</type>
+          <declname>II</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsDebug</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsClone</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsCloned</declname>
+        </param>
+        <briefdescription>
+<para>AddRegisterOperand - Add the specified register as an operand to the specified machine instr. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Insert register copies if the register is not in the required register class. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="67" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="315" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1ae315cb47b79eea2f22bf985f74525420" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstrEmitter::AddOperand</definition>
+        <argsstring>(MachineInstrBuilder &amp;MIB, SDValue Op, unsigned IIOpNum, const MCInstrDesc *II, VRBaseMapType &amp;VRBaseMap, bool IsDebug, bool IsClone, bool IsCloned)</argsstring>
+        <name>AddOperand</name>
+        <qualifiedname>llvm::InstrEmitter::AddOperand</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref> &amp;</type>
+          <declname>MIB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+          <declname>Op</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>IIOpNum</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_instr_desc" kindref="compound">MCInstrDesc</ref> *</type>
+          <declname>II</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsDebug</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsClone</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsCloned</declname>
+        </param>
+        <briefdescription>
+<para>AddOperand - Add the specified operand to the specified machine instr. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>II specifies the instruction information for the node, and IIOpNum is the operand number (in the II) that we are adding. IIOpNum and II are used for assertions only.</para>
+<para>II specifies the instruction information for the node, and IIOpNum is the operand number (in the II) that we are adding. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="78" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="397" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1af396a4cb47427505b9e4399c5bb360dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+        <definition>Register InstrEmitter::ConstrainForSubReg</definition>
+        <argsstring>(Register VReg, unsigned SubIdx, MVT VT, bool isDivergent, const DebugLoc &amp;DL)</argsstring>
+        <name>ConstrainForSubReg</name>
+        <qualifiedname>llvm::InstrEmitter::ConstrainForSubReg</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>VReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>SubIdx</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_v_t" kindref="compound">MVT</ref></type>
+          <declname>VT</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>isDivergent</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_debug_loc" kindref="compound">DebugLoc</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <briefdescription>
+<para>ConstrainForSubReg - Try to constrain VReg to a register class that supports SubIdx sub-registers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Emit a copy if that isn&apos;t possible. Return the virtual register to use. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="88" column="12" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="473" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a5cab15df803b40139736b9a573229b4f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstrEmitter::EmitSubregNode</definition>
+        <argsstring>(SDNode *Node, VRBaseMapType &amp;VRBaseMap, bool IsClone, bool IsCloned)</argsstring>
+        <name>EmitSubregNode</name>
+        <qualifiedname>llvm::InstrEmitter::EmitSubregNode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsClone</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsCloned</declname>
+        </param>
+        <briefdescription>
+<para>EmitSubregNode - Generate machine code for subreg nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="93" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="499" bodyend="625"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1afa94b554c580cd7ecdef4e79d86ee60d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstrEmitter::EmitCopyToRegClassNode</definition>
+        <argsstring>(SDNode *Node, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>EmitCopyToRegClassNode</name>
+        <qualifiedname>llvm::InstrEmitter::EmitCopyToRegClassNode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+<para>EmitCopyToRegClassNode - Generate machine code for COPY_TO_REGCLASS nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>COPY_TO_REGCLASS is just a normal copy, except that the destination register is constrained to be in a particular register class. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="100" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="632" bodyend="648"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a330c1314b252c4cc92900ebb77367291" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstrEmitter::EmitRegSequence</definition>
+        <argsstring>(SDNode *Node, VRBaseMapType &amp;VRBaseMap, bool IsClone, bool IsCloned)</argsstring>
+        <name>EmitRegSequence</name>
+        <qualifiedname>llvm::InstrEmitter::EmitRegSequence</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsClone</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsCloned</declname>
+        </param>
+        <briefdescription>
+<para>EmitRegSequence - Generate machine code for REG_SEQUENCE nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="104" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="652" bodyend="695"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a9d4b1a68135fdc9dd7fefa140e7d1919" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstrEmitter::EmitMachineNode</definition>
+        <argsstring>(SDNode *Node, bool IsClone, bool IsCloned, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>EmitMachineNode</name>
+        <qualifiedname>llvm::InstrEmitter::EmitMachineNode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsClone</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsCloned</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+<para>EmitMachineNode - Generate machine code for a target-specific node and needed dependencies. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="162" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="993" bodyend="1236"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a66b134de1aca52e26b0ef55c47ba4f41" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstrEmitter::EmitSpecialNode</definition>
+        <argsstring>(SDNode *Node, bool IsClone, bool IsCloned, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>EmitSpecialNode</name>
+        <qualifiedname>llvm::InstrEmitter::EmitSpecialNode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsClone</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsCloned</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+<para>EmitSpecialNode - Generate machine code for a target-independent node and needed dependencies. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="164" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="1241" bodyend="1447"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a6a91d391f3b91e549c1514468966f4e6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned InstrEmitter::CountResults</definition>
+        <argsstring>(SDNode *Node)</argsstring>
+        <name>CountResults</name>
+        <qualifiedname>llvm::InstrEmitter::CountResults</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>CountResults - The results of target nodes have register or immediate operands first, then an optional chain, and optional flag operands (which do not go into the machine instrs.) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>CountResults - The results of target nodes have register or immediate operands first, then an optional chain, and optional glue operands (which do not go into the resulting <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref>). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="111" column="19" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="43" bodyend="50"/>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1ade27a165903cbaaf156adfd59a7c684b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstrEmitter::AddDbgValueLocationOps</definition>
+        <argsstring>(MachineInstrBuilder &amp;MIB, const MCInstrDesc &amp;DbgValDesc, ArrayRef&lt; SDDbgOperand &gt; Locations, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>AddDbgValueLocationOps</name>
+        <qualifiedname>llvm::InstrEmitter::AddDbgValueLocationOps</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref> &amp;</type>
+          <declname>MIB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_instr_desc" kindref="compound">MCInstrDesc</ref> &amp;</type>
+          <declname>DbgValDesc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_s_d_dbg_operand" kindref="compound">SDDbgOperand</ref> &gt;</type>
+          <declname>Locations</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="113" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="750" bodyend="780"/>
+        <references refid="classllvm_1_1_machine_instr_builder_1a713eab58694282971c413a0d6de5975c" compoundref="_machine_instr_builder_8h" startline="226" endline="229">llvm::MachineInstrBuilder::add</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a86a93dd8ddbce120d8c3101c16bc3cc6" compoundref="_machine_instr_builder_8h" startline="154" endline="157">llvm::MachineInstrBuilder::addFrameIndex</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a927857fc69e4b4f0cde307f86f180df5" compoundref="_machine_instr_builder_8h" startline="99" endline="115">llvm::MachineInstrBuilder::addReg</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1aaca42b5103c6b7f2cb9a050b61fed709aae386012326afbc26eeecc3701f36134" compoundref="_s_d_node_dbg_value_8h" startline="35">llvm::SDDbgOperand::CONST</references>
+        <references refid="classllvm_1_1_dense_map_base_1a53408c95a7bfb5443b43fb2134c3eb23" compoundref="_dense_map_8h" startline="152" endline="154">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::count</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1aaca42b5103c6b7f2cb9a050b61fed709a8c6e740c1259b720ed9f87a05baf593b" compoundref="_s_d_node_dbg_value_8h" startline="36">llvm::SDDbgOperand::FRAMEIX</references>
+        <references refid="_instr_emitter_8cpp_1a6a69b6a63e9d670d0ce33ab39363ca07" compoundref="_instr_emitter_8cpp" startline="730" endline="748">GetMOForConstDbgOp</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1aaca42b5103c6b7f2cb9a050b61fed709aa35847085c9bc57f525640fa8ae5a15c" compoundref="_s_d_node_dbg_value_8h" startline="34">llvm::SDDbgOperand::SDNODE</references>
+        <references refid="_a_arch64_i_sel_lowering_8cpp_1a51cb24bd3e700fcf2f93d1afbb555a16">SDValue</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1aaca42b5103c6b7f2cb9a050b61fed709a18402f81e9528c3cc41c781786e533b8" compoundref="_s_d_node_dbg_value_8h" startline="37">llvm::SDDbgOperand::VREG</references>
+        <referencedby refid="classllvm_1_1_instr_emitter_1ae0fecac8378f609fa3740fe1fd51465e" compoundref="_instr_emitter_8cpp" startline="941" endline="973">EmitDbgValueFromSingleOp</referencedby>
+        <referencedby refid="classllvm_1_1_instr_emitter_1a71936ccaaca62faa835ddf1887cb2626" compoundref="_instr_emitter_8cpp" startline="925" endline="938">EmitDbgValueList</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a10bb6b0cc9a25c709e0009358b859d69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * InstrEmitter::EmitDbgValue</definition>
+        <argsstring>(SDDbgValue *SD, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>EmitDbgValue</name>
+        <qualifiedname>llvm::InstrEmitter::EmitDbgValue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_dbg_value" kindref="compound">SDDbgValue</ref> *</type>
+          <declname>SD</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+<para>EmitDbgValue - Generate machine instruction for a dbg_value node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="120" column="16" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="700" bodyend="728"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="classllvm_1_1_instr_emitter_1a1157b5306838143f5553c67c1c8489c5" compoundref="_instr_emitter_8cpp" startline="783" endline="910">EmitDbgInstrRef</references>
+        <references refid="classllvm_1_1_instr_emitter_1a63e197923d820bd6b000a5344adc92ea" compoundref="_instr_emitter_8cpp" startline="912" endline="922">EmitDbgNoLocation</references>
+        <references refid="classllvm_1_1_instr_emitter_1ae0fecac8378f609fa3740fe1fd51465e" compoundref="_instr_emitter_8cpp" startline="941" endline="973">EmitDbgValueFromSingleOp</references>
+        <references refid="classllvm_1_1_instr_emitter_1a71936ccaaca62faa835ddf1887cb2626" compoundref="_instr_emitter_8cpp" startline="925" endline="938">EmitDbgValueList</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1a1d23f6c5a21c459b913fa6e63cf75dc9" compoundref="_s_d_node_dbg_value_8h" startline="215" endline="215">llvm::SDDbgValue::getDebugLoc</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1aa6c31464e5393b719458fcb337369bdb" compoundref="_s_d_node_dbg_value_8h" startline="185" endline="187">llvm::SDDbgValue::getLocationOps</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1a3b54645b0192a0ed2af213eb528b2f80" compoundref="_s_d_node_dbg_value_8h" startline="180" endline="180">llvm::SDDbgValue::getVariable</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1aa041c9375782c6ab2d0b6c24fd986630" compoundref="_s_d_node_dbg_value_8h" startline="225" endline="225">llvm::SDDbgValue::isInvalidated</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1af439591059d973f85e23d248f63f3529" compoundref="_s_d_node_dbg_value_8h" startline="212" endline="212">llvm::SDDbgValue::isVariadic</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1ae77e165206b5171c2e43a90014006669" compoundref="_s_d_node_dbg_value_8h" startline="229" endline="229">llvm::SDDbgValue::setIsEmitted</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a1157b5306838143f5553c67c1c8489c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * InstrEmitter::EmitDbgInstrRef</definition>
+        <argsstring>(SDDbgValue *SD, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>EmitDbgInstrRef</name>
+        <qualifiedname>llvm::InstrEmitter::EmitDbgInstrRef</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_dbg_value" kindref="compound">SDDbgValue</ref> *</type>
+          <declname>SD</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+<para>Emit a dbg_value as a DBG_INSTR_REF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>May produce DBG_VALUE $noreg instead if there is no variable location; alternately a half-formed DBG_INSTR_REF that refers to a virtual register and is corrected later in isel. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="125" column="16" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="783" bodyend="910"/>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="classllvm_1_1_d_i_expression_1a15f4de7989cc83855e8f65792ae94bc4" compoundref="_debug_info_metadata_8cpp" startline="1948" endline="1970">llvm::DIExpression::append</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1aaca42b5103c6b7f2cb9a050b61fed709aae386012326afbc26eeecc3701f36134" compoundref="_s_d_node_dbg_value_8h" startline="35">llvm::SDDbgOperand::CONST</references>
+        <references refid="classllvm_1_1_d_i_expression_1a99560dec7123cee3a3e6bbc0d70befdd" compoundref="_debug_info_metadata_8cpp" startline="1611" endline="1621">llvm::DIExpression::convertToVariadicExpression</references>
+        <references refid="classllvm_1_1_machine_operand_1ab5cfdca0e0de9a0c79714b57b290e8a5" compoundref="_machine_operand_8h" startline="960" endline="965">llvm::MachineOperand::CreateDbgInstrRef</references>
+        <references refid="classllvm_1_1_machine_operand_1af2c351dad09a71aa08e1d85c67ae6e53" compoundref="_machine_operand_8h" startline="838" endline="862">llvm::MachineOperand::CreateReg</references>
+        <references refid="_a_arch64_expand_pseudo_insts_8cpp_1ad3ece0ac2421637044624c9b01c42466" compoundref="_a_arch64_expand_pseudo_insts_8cpp" startline="113">DefMI</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="classllvm_1_1_instr_emitter_1a63e197923d820bd6b000a5344adc92ea" compoundref="_instr_emitter_8cpp" startline="912" endline="922">EmitDbgNoLocation</references>
+        <references refid="classllvm_1_1_instr_emitter_1ae0fecac8378f609fa3740fe1fd51465e" compoundref="_instr_emitter_8cpp" startline="941" endline="973">EmitDbgValueFromSingleOp</references>
+        <references refid="classllvm_1_1_instr_emitter_1a71936ccaaca62faa835ddf1887cb2626" compoundref="_instr_emitter_8cpp" startline="925" endline="938">EmitDbgValueList</references>
+        <references refid="classllvm_1_1_dense_map_base_1a65520b9c67759099e313d0f4e7b5ff9e" compoundref="_dense_map_8h" startline="84" endline="86">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end</references>
+        <references refid="classllvm_1_1_dense_map_base_1a0c047f127ed4380a6f383d70bec4eb94" compoundref="_dense_map_8h" startline="156" endline="162">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::find</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1aaca42b5103c6b7f2cb9a050b61fed709a8c6e740c1259b720ed9f87a05baf593b" compoundref="_s_d_node_dbg_value_8h" startline="36">llvm::SDDbgOperand::FRAMEIX</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1a1d23f6c5a21c459b913fa6e63cf75dc9" compoundref="_s_d_node_dbg_value_8h" startline="215" endline="215">llvm::SDDbgValue::getDebugLoc</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1ac08d83b680a533ba07f644648545ab9c" compoundref="_s_d_node_dbg_value_8h" startline="183" endline="183">llvm::SDDbgValue::getExpression</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1af7673427faa10f98864b7e7b9b008ec8" compoundref="_s_d_node_dbg_value_8h" startline="39" endline="39">llvm::SDDbgOperand::getKind</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1aa6c31464e5393b719458fcb337369bdb" compoundref="_s_d_node_dbg_value_8h" startline="185" endline="187">llvm::SDDbgValue::getLocationOps</references>
+        <references refid="_instr_emitter_8cpp_1a6a69b6a63e9d670d0ce33ab39363ca07" compoundref="_instr_emitter_8cpp" startline="730" endline="748">GetMOForConstDbgOp</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1a343fd12fb0de39a8f7bdfe6acbb9a1bb" compoundref="_s_d_node_dbg_value_8h" startline="48" endline="51">llvm::SDDbgOperand::getResNo</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1a94d6e361d3359e291427734fcc364582" compoundref="_s_d_node_dbg_value_8h" startline="42" endline="45">llvm::SDDbgOperand::getSDNode</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1a3b54645b0192a0ed2af213eb528b2f80" compoundref="_s_d_node_dbg_value_8h" startline="180" endline="180">llvm::SDDbgValue::getVariable</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1a4639cbb2d8bdbb307d236cb2fc165011" compoundref="_s_d_node_dbg_value_8h" startline="66" endline="69">llvm::SDDbgOperand::getVReg</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1ae238ef844b7d208238cd654383931699" compoundref="_s_d_node_dbg_value_8h" startline="210" endline="210">llvm::SDDbgValue::isIndirect</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1af439591059d973f85e23d248f63f3529" compoundref="_s_d_node_dbg_value_8h" startline="212" endline="212">llvm::SDDbgValue::isVariadic</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1aaca42b5103c6b7f2cb9a050b61fed709aa35847085c9bc57f525640fa8ae5a15c" compoundref="_s_d_node_dbg_value_8h" startline="34">llvm::SDDbgOperand::SDNODE</references>
+        <references refid="_a_arch64_i_sel_lowering_8cpp_1a51cb24bd3e700fcf2f93d1afbb555a16">SDValue</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1aaca42b5103c6b7f2cb9a050b61fed709a18402f81e9528c3cc41c781786e533b8" compoundref="_s_d_node_dbg_value_8h" startline="37">llvm::SDDbgOperand::VREG</references>
+        <referencedby refid="classllvm_1_1_instr_emitter_1a10bb6b0cc9a25c709e0009358b859d69" compoundref="_instr_emitter_8cpp" startline="700" endline="728">EmitDbgValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a63e197923d820bd6b000a5344adc92ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * InstrEmitter::EmitDbgNoLocation</definition>
+        <argsstring>(SDDbgValue *SD)</argsstring>
+        <name>EmitDbgNoLocation</name>
+        <qualifiedname>llvm::InstrEmitter::EmitDbgNoLocation</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_dbg_value" kindref="compound">SDDbgValue</ref> *</type>
+          <declname>SD</declname>
+        </param>
+        <briefdescription>
+<para>Emit a DBG_VALUE $noreg, indicating a variable has no location. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="128" column="16" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="912" bodyend="922"/>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="classllvm_1_1_d_i_expression_1ab420b672954fd0fc80a22da36dd9cc52" compoundref="_debug_info_metadata_8cpp" startline="1601" endline="1608">llvm::DIExpression::convertToUndefExpression</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1a1d23f6c5a21c459b913fa6e63cf75dc9" compoundref="_s_d_node_dbg_value_8h" startline="215" endline="215">llvm::SDDbgValue::getDebugLoc</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1ac08d83b680a533ba07f644648545ab9c" compoundref="_s_d_node_dbg_value_8h" startline="183" endline="183">llvm::SDDbgValue::getExpression</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1a3b54645b0192a0ed2af213eb528b2f80" compoundref="_s_d_node_dbg_value_8h" startline="180" endline="180">llvm::SDDbgValue::getVariable</references>
+        <referencedby refid="classllvm_1_1_instr_emitter_1a1157b5306838143f5553c67c1c8489c5" compoundref="_instr_emitter_8cpp" startline="783" endline="910">EmitDbgInstrRef</referencedby>
+        <referencedby refid="classllvm_1_1_instr_emitter_1a10bb6b0cc9a25c709e0009358b859d69" compoundref="_instr_emitter_8cpp" startline="700" endline="728">EmitDbgValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a71936ccaaca62faa835ddf1887cb2626" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * InstrEmitter::EmitDbgValueList</definition>
+        <argsstring>(SDDbgValue *SD, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>EmitDbgValueList</name>
+        <qualifiedname>llvm::InstrEmitter::EmitDbgValueList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_dbg_value" kindref="compound">SDDbgValue</ref> *</type>
+          <declname>SD</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+<para>Emit a DBG_VALUE_LIST from the operands to <ref refid="classllvm_1_1_s_d_dbg_value" kindref="compound">SDDbgValue</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="131" column="16" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="925" bodyend="938"/>
+        <references refid="classllvm_1_1_instr_emitter_1ade27a165903cbaaf156adfd59a7c684b" compoundref="_instr_emitter_8cpp" startline="750" endline="780">AddDbgValueLocationOps</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a7f54f5772ba80cc1f7c4a92203f14e57" compoundref="_machine_instr_builder_8h" startline="238" endline="247">llvm::MachineInstrBuilder::addMetadata</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1a1d23f6c5a21c459b913fa6e63cf75dc9" compoundref="_s_d_node_dbg_value_8h" startline="215" endline="215">llvm::SDDbgValue::getDebugLoc</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1ac08d83b680a533ba07f644648545ab9c" compoundref="_s_d_node_dbg_value_8h" startline="183" endline="183">llvm::SDDbgValue::getExpression</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1aa6c31464e5393b719458fcb337369bdb" compoundref="_s_d_node_dbg_value_8h" startline="185" endline="187">llvm::SDDbgValue::getLocationOps</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1a3b54645b0192a0ed2af213eb528b2f80" compoundref="_s_d_node_dbg_value_8h" startline="180" endline="180">llvm::SDDbgValue::getVariable</references>
+        <referencedby refid="classllvm_1_1_instr_emitter_1a1157b5306838143f5553c67c1c8489c5" compoundref="_instr_emitter_8cpp" startline="783" endline="910">EmitDbgInstrRef</referencedby>
+        <referencedby refid="classllvm_1_1_instr_emitter_1a10bb6b0cc9a25c709e0009358b859d69" compoundref="_instr_emitter_8cpp" startline="700" endline="728">EmitDbgValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1ae0fecac8378f609fa3740fe1fd51465e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * InstrEmitter::EmitDbgValueFromSingleOp</definition>
+        <argsstring>(SDDbgValue *SD, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>EmitDbgValueFromSingleOp</name>
+        <qualifiedname>llvm::InstrEmitter::EmitDbgValueFromSingleOp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_dbg_value" kindref="compound">SDDbgValue</ref> *</type>
+          <declname>SD</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+<para>Emit a DBG_VALUE from the operands to <ref refid="classllvm_1_1_s_d_dbg_value" kindref="compound">SDDbgValue</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="134" column="16" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="941" bodyend="973"/>
+        <references refid="classllvm_1_1_instr_emitter_1ade27a165903cbaaf156adfd59a7c684b" compoundref="_instr_emitter_8cpp" startline="750" endline="780">AddDbgValueLocationOps</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a6c1f959947905135c7dd215b64957654" compoundref="_machine_instr_builder_8h" startline="133" endline="136">llvm::MachineInstrBuilder::addImm</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a7f54f5772ba80cc1f7c4a92203f14e57" compoundref="_machine_instr_builder_8h" startline="238" endline="247">llvm::MachineInstrBuilder::addMetadata</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a927857fc69e4b4f0cde307f86f180df5" compoundref="_machine_instr_builder_8h" startline="99" endline="115">llvm::MachineInstrBuilder::addReg</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1aaca42b5103c6b7f2cb9a050b61fed709aae386012326afbc26eeecc3701f36134" compoundref="_s_d_node_dbg_value_8h" startline="35">llvm::SDDbgOperand::CONST</references>
+        <references refid="classllvm_1_1_d_i_expression_1a8e4ee2a70091fe36640fda28c69580c6" compoundref="_debug_info_metadata_8cpp" startline="2168" endline="2204">llvm::DIExpression::constantFold</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_s_d_dbg_operand_1a839c3f734c6a978e745998e5d7904beb" compoundref="_s_d_node_dbg_value_8h" startline="80" endline="82">llvm::SDDbgOperand::fromConst</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1a1d23f6c5a21c459b913fa6e63cf75dc9" compoundref="_s_d_node_dbg_value_8h" startline="215" endline="215">llvm::SDDbgValue::getDebugLoc</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1ac08d83b680a533ba07f644648545ab9c" compoundref="_s_d_node_dbg_value_8h" startline="183" endline="183">llvm::SDDbgValue::getExpression</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1aa6c31464e5393b719458fcb337369bdb" compoundref="_s_d_node_dbg_value_8h" startline="185" endline="187">llvm::SDDbgValue::getLocationOps</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1a3b54645b0192a0ed2af213eb528b2f80" compoundref="_s_d_node_dbg_value_8h" startline="180" endline="180">llvm::SDDbgValue::getVariable</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1ac5804672fc0850438d63caec770647f8" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">II</references>
+        <references refid="classllvm_1_1_s_d_dbg_value_1ae238ef844b7d208238cd654383931699" compoundref="_s_d_node_dbg_value_8h" startline="210" endline="210">llvm::SDDbgValue::isIndirect</references>
+        <referencedby refid="classllvm_1_1_instr_emitter_1a1157b5306838143f5553c67c1c8489c5" compoundref="_instr_emitter_8cpp" startline="783" endline="910">EmitDbgInstrRef</referencedby>
+        <referencedby refid="classllvm_1_1_instr_emitter_1a10bb6b0cc9a25c709e0009358b859d69" compoundref="_instr_emitter_8cpp" startline="700" endline="728">EmitDbgValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a3ec97d2a9d814aa73cc7ede2fd0d617f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * InstrEmitter::EmitDbgLabel</definition>
+        <argsstring>(SDDbgLabel *SD)</argsstring>
+        <name>EmitDbgLabel</name>
+        <qualifiedname>llvm::InstrEmitter::EmitDbgLabel</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_dbg_label" kindref="compound">SDDbgLabel</ref> *</type>
+          <declname>SD</declname>
+        </param>
+        <briefdescription>
+<para>Generate machine instruction for a dbg_label node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="138" column="16" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="976" bodyend="987"/>
+        <references refid="classllvm_1_1_machine_instr_builder_1a7f54f5772ba80cc1f7c4a92203f14e57" compoundref="_machine_instr_builder_8h" startline="238" endline="247">llvm::MachineInstrBuilder::addMetadata</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="classllvm_1_1_s_d_dbg_label_1ab77a4c656d331c23dec5ef4ab74a03cf" compoundref="_s_d_node_dbg_value_8h" startline="255" endline="255">llvm::SDDbgLabel::getDebugLoc</references>
+        <references refid="classllvm_1_1_s_d_dbg_label_1a8659da19e958bf1163d1983066287378" compoundref="_s_d_node_dbg_value_8h" startline="252" endline="252">llvm::SDDbgLabel::getLabel</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1ac5804672fc0850438d63caec770647f8" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">II</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a461913029999dc961dbc0aff26365413" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::InstrEmitter::EmitNode</definition>
+        <argsstring>(SDNode *Node, bool IsClone, bool IsCloned, VRBaseMapType &amp;VRBaseMap)</argsstring>
+        <name>EmitNode</name>
+        <qualifiedname>llvm::InstrEmitter::EmitNode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsClone</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsCloned</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" kindref="member">VRBaseMapType</ref> &amp;</type>
+          <declname>VRBaseMap</declname>
+        </param>
+        <briefdescription>
+<para>EmitNode - Generate machine code for a node and needed dependencies. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="142" column="8" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="142" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1a0fb3d3bae06ab41b4da7ebbcd2dfc2ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * llvm::InstrEmitter::getBlock</definition>
+        <argsstring>()</argsstring>
+        <name>getBlock</name>
+        <qualifiedname>llvm::InstrEmitter::getBlock</qualifiedname>
+        <briefdescription>
+<para>getBlock - Return the current basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="151" column="21" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="151" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1ae6445e994c1787842504c3f6cab2a8e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+        <definition>MachineBasicBlock::iterator llvm::InstrEmitter::getInsertPos</definition>
+        <argsstring>()</argsstring>
+        <name>getInsertPos</name>
+        <qualifiedname>llvm::InstrEmitter::getInsertPos</qualifiedname>
+        <briefdescription>
+<para>getInsertPos - Return the current insertion position. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="154" column="31" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="154" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instr_emitter_1add888de4c361e3791a2aba0cb578aa53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>InstrEmitter::InstrEmitter</definition>
+        <argsstring>(const TargetMachine &amp;TM, MachineBasicBlock *mbb, MachineBasicBlock::iterator insertpos)</argsstring>
+        <name>InstrEmitter</name>
+        <qualifiedname>llvm::InstrEmitter::InstrEmitter</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_machine" kindref="compound">TargetMachine</ref> &amp;</type>
+          <declname>TM</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>mbb</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>insertpos</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_instr_emitter" kindref="compound">InstrEmitter</ref> - Construct an <ref refid="classllvm_1_1_instr_emitter" kindref="compound">InstrEmitter</ref> and set it to start inserting at the given position in the given block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="158" column="3" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.cpp" bodystart="1451" bodyend="1459"/>
+        <references refid="_basic_alias_analysis_8cpp_1a1b8850f1ed44c12bc3501175a71c251c" compoundref="_basic_alias_analysis_8cpp" startline="863" endline="874">getParent</references>
+        <references refid="classllvm_1_1_machine_basic_block_1acf6442108e21e7e5379feb8962de65b7" compoundref="_machine_basic_block_8h" startline="311" endline="311">llvm::MachineBasicBlock::getParent</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/SelectionDAG/InstrEmitter.h" line="32" column="1" bodyfile="lib/CodeGen/SelectionDAG/InstrEmitter.h" bodystart="32" bodyend="166"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_instr_emitter_1ade27a165903cbaaf156adfd59a7c684b" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>AddDbgValueLocationOps</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1ae315cb47b79eea2f22bf985f74525420" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>AddOperand</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a2245c61bad1e84803a28a4c53f884ac7" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>AddRegisterOperand</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1af396a4cb47427505b9e4399c5bb360dc" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>ConstrainForSubReg</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a6a91d391f3b91e549c1514468966f4e6" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>CountResults</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a7679d3a15a3605085d1996878f6db58d" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>CreateVirtualRegisters</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1af0b746ea9f24626a502c5eaa833f8725" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitCopyFromReg</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1afa94b554c580cd7ecdef4e79d86ee60d" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitCopyToRegClassNode</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a1157b5306838143f5553c67c1c8489c5" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitDbgInstrRef</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a3ec97d2a9d814aa73cc7ede2fd0d617f" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitDbgLabel</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a63e197923d820bd6b000a5344adc92ea" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitDbgNoLocation</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a10bb6b0cc9a25c709e0009358b859d69" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitDbgValue</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1ae0fecac8378f609fa3740fe1fd51465e" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitDbgValueFromSingleOp</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a71936ccaaca62faa835ddf1887cb2626" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitDbgValueList</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a884c46d90985bf4a787fb7aa8eb94d47" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitDebugInstrRefs</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a9d4b1a68135fdc9dd7fefa140e7d1919" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitMachineNode</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a461913029999dc961dbc0aff26365413" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitNode</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a330c1314b252c4cc92900ebb77367291" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitRegSequence</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a66b134de1aca52e26b0ef55c47ba4f41" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitSpecialNode</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a5cab15df803b40139736b9a573229b4f" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>EmitSubregNode</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a0fb3d3bae06ab41b4da7ebbcd2dfc2ee" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>getBlock</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1ae6445e994c1787842504c3f6cab2a8e1" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>getInsertPos</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1aef6482872ab71ab91e5a52e877b48a08" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>getVR</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1acc30d11e046df72272dd0aaa299174c1" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>InsertPos</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1add888de4c361e3791a2aba0cb578aa53" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>InstrEmitter</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1ae8acac2462bbebbbea324bfce6c0e26e" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>MBB</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1aadac083e7e3a330d09adefdc9cf1acc3" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>MF</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a220419e7ebc6ae765ea90a8314effeab" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1ab63848b8e5c60adbfcfb6a061055ffcf" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>TII</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a4113c91e0104b838cf9c80e9d9b1e01d" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>TLI</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a30e48cf9b8e666c9e183d8790cca0565" prot="private" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>TRI</name></member>
+      <member refid="classllvm_1_1_instr_emitter_1a1c0d5a36d3c86bc8252351ddea11efc2" prot="public" virt="non-virtual"><scope>llvm::InstrEmitter</scope><name>VRBaseMapType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

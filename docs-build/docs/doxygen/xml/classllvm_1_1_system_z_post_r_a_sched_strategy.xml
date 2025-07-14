@@ -1,0 +1,471 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_system_z_post_r_a_sched_strategy" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SystemZPostRASchedStrategy</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_sched_strategy" prot="public" virt="non-virtual">llvm::MachineSchedStrategy</basecompoundref>
+    <includes refid="_system_z_machine_scheduler_8h" local="yes">Target/SystemZ/SystemZMachineScheduler.h</includes>
+    <innerclass refid="structllvm_1_1_system_z_post_r_a_sched_strategy_1_1_candidate" prot="private">llvm::SystemZPostRASchedStrategy::Candidate</innerclass>
+    <innerclass refid="structllvm_1_1_system_z_post_r_a_sched_strategy_1_1_s_u_set" prot="private">llvm::SystemZPostRASchedStrategy::SUSet</innerclass>
+    <innerclass refid="structllvm_1_1_system_z_post_r_a_sched_strategy_1_1_s_u_sorter" prot="private">llvm::SystemZPostRASchedStrategy::SUSorter</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1a5eef8c4ed9d544b55904e9d37d55ac63" prot="private" static="no">
+        <type>std::map&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, <ref refid="classllvm_1_1_system_z_hazard_recognizer" kindref="compound">SystemZHazardRecognizer</ref> * &gt;</type>
+        <definition>typedef std::map&lt;MachineBasicBlock*, SystemZHazardRecognizer*&gt; llvm::SystemZPostRASchedStrategy::MBB2HazRec</definition>
+        <argsstring></argsstring>
+        <name>MBB2HazRec</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::MBB2HazRec</qualifiedname>
+        <briefdescription>
+<para>Maintain hazard recognizers for all blocks, so that the scheduler state can be maintained past BB boundaries when appropariate. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="101" column="20" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1ab1fd645edb614a6bb4c71d350ad2bbbb" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_loop_info" kindref="compound">MachineLoopInfo</ref> *</type>
+        <definition>const MachineLoopInfo* llvm::SystemZPostRASchedStrategy::MLI</definition>
+        <argsstring></argsstring>
+        <name>MLI</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::MLI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="30" column="25" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1aadc368ac0e5d0fc6daa6aeda8cfe1364" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_system_z_instr_info" kindref="compound">SystemZInstrInfo</ref> *</type>
+        <definition>const SystemZInstrInfo* llvm::SystemZPostRASchedStrategy::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::TII</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="31" column="26" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1ac470f49c1090e8b33dd5290fba30c272" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_target_sched_model" kindref="compound">TargetSchedModel</ref></type>
+        <definition>TargetSchedModel llvm::SystemZPostRASchedStrategy::SchedModel</definition>
+        <argsstring></argsstring>
+        <name>SchedModel</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::SchedModel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="36" column="20" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1ab3455a69960204e0b28d566e705c5270" prot="private" static="no" mutable="no">
+        <type>SUSet</type>
+        <definition>SUSet llvm::SystemZPostRASchedStrategy::Available</definition>
+        <argsstring></argsstring>
+        <name>Available</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::Available</qualifiedname>
+        <briefdescription>
+<para>The set of available SUs to schedule next. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="94" column="9" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1a278e83627d3b9adbf4192a762fcb3f6f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock* llvm::SystemZPostRASchedStrategy::MBB</definition>
+        <argsstring></argsstring>
+        <name>MBB</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::MBB</qualifiedname>
+        <briefdescription>
+<para>Current MBB. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="97" column="21" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1aaa4c87174015873c1751e671e79ae5e7" prot="private" static="no" mutable="no">
+        <type>MBB2HazRec</type>
+        <definition>MBB2HazRec llvm::SystemZPostRASchedStrategy::SchedStates</definition>
+        <argsstring></argsstring>
+        <name>SchedStates</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::SchedStates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="102" column="14" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1a8350c0c3ddcb1322ce2573895b6377a5" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_system_z_hazard_recognizer" kindref="compound">SystemZHazardRecognizer</ref> *</type>
+        <definition>SystemZHazardRecognizer* llvm::SystemZPostRASchedStrategy::HazardRec</definition>
+        <argsstring></argsstring>
+        <name>HazardRec</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::HazardRec</qualifiedname>
+        <briefdescription>
+<para>Pointer to the HazardRecognizer that tracks the scheduler state for the current region. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="106" column="27" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1ad971afa6f050bfaf3da785b9cbb1f756" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemZPostRASchedStrategy::advanceTo</definition>
+        <argsstring>(MachineBasicBlock::iterator NextBegin)</argsstring>
+        <name>advanceTo</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::advanceTo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>NextBegin</declname>
+        </param>
+        <briefdescription>
+<para>Update the scheduler state by emitting (non-scheduled) instructions up to, but not including, NextBegin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="110" column="8" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.cpp" bodystart="61" bodyend="72"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1ae7cf55944f14abe03fa718a60f2fafe1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemZPostRASchedStrategy::SystemZPostRASchedStrategy</definition>
+        <argsstring>(const MachineSchedContext *C)</argsstring>
+        <name>SystemZPostRASchedStrategy</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::SystemZPostRASchedStrategy</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_machine_sched_context" kindref="compound">MachineSchedContext</ref> *</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="113" column="3" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.cpp" bodystart="129" bodyend="136"/>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" compoundref="_a_arch64_promote_constant_8cpp" startline="230">const</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1ace31ed48b8ff510ab635bea47ee55e73" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>SystemZPostRASchedStrategy::~SystemZPostRASchedStrategy</definition>
+        <argsstring>()</argsstring>
+        <name>~SystemZPostRASchedStrategy</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::~SystemZPostRASchedStrategy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="114" column="11" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.cpp" bodystart="138" bodyend="144"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1a7a6e91fbf92378734b0dd9f1523bff19" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SystemZPostRASchedStrategy::initPolicy</definition>
+        <argsstring>(MachineBasicBlock::iterator Begin, MachineBasicBlock::iterator End, unsigned NumRegionInstrs) override</argsstring>
+        <name>initPolicy</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::initPolicy</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1ae3ec4fd225f0e252e6dfabc03d0903bf">initPolicy</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>Begin</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>End</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumRegionInstrs</declname>
+        </param>
+        <briefdescription>
+<para>Called for a region before scheduling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="117" column="8" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.cpp" bodystart="146" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1a00ffe74116346e7953817c0dcc730cad" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SystemZPostRASchedStrategy::shouldTrackPressure</definition>
+        <argsstring>() const override</argsstring>
+        <name>shouldTrackPressure</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::shouldTrackPressure</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1a0ee5c4dca10fa653801aa73cf1723f84">shouldTrackPressure</reimplements>
+        <briefdescription>
+<para>PostRA scheduling does not track pressure. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="122" column="8" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="122" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1ae70b4df15c9db45746e75427d9a73975" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SystemZPostRASchedStrategy::doMBBSchedRegionsTopDown</definition>
+        <argsstring>() const override</argsstring>
+        <name>doMBBSchedRegionsTopDown</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::doMBBSchedRegionsTopDown</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1a9b216890fb3108d84248b54044fe2670">doMBBSchedRegionsTopDown</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="126" column="8" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="126" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1aa527afd01941aa018dbb3edbad50e770" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SystemZPostRASchedStrategy::initialize</definition>
+        <argsstring>(ScheduleDAGMI *dag) override</argsstring>
+        <name>initialize</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::initialize</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1a42eed718d961aaef1f3715e91e3ccaf7">initialize</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_schedule_d_a_g_m_i" kindref="compound">ScheduleDAGMI</ref> *</type>
+          <declname>DAG</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the strategy after building the DAG for a new region. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="128" column="8" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.cpp" bodystart="74" bodyend="77"/>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1abb12e569451bee60098c4608b8ca8fa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SystemZPostRASchedStrategy::enterMBB</definition>
+        <argsstring>(MachineBasicBlock *NextMBB) override</argsstring>
+        <name>enterMBB</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::enterMBB</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1a2ecebd8a29fabb301a5799dc4d034667">enterMBB</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>NextMBB</declname>
+        </param>
+        <briefdescription>
+<para>Tell the strategy that MBB is about to be processed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Create a HazardRec for MBB, save it in SchedStates and set HazardRec to point to it.</para>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="131" column="8" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.cpp" bodystart="79" bodyend="118"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_loop_base_1a4a75755081e9a3803d2f4ccf6f0cb1f8" compoundref="_generic_loop_info_8h" startline="90" endline="90">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader</references>
+        <references refid="_system_z_machine_scheduler_8cpp_1a2ae98e15f35ee616bea08c594611d2d7" compoundref="_system_z_machine_scheduler_8cpp" startline="40" endline="58">getSingleSchedPred</references>
+        <references refid="_pass_builder_bindings_8cpp_1acdfbcf188e2d4a80837e89de2ccdffab" compoundref="_pass_builder_bindings_8cpp" startline="64" endline="71">if</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1a183188c809d901aa875645e4398eb1f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SystemZPostRASchedStrategy::leaveMBB</definition>
+        <argsstring>() override</argsstring>
+        <name>leaveMBB</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::leaveMBB</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1a1767939c59515562b576fc23075ef7df">leaveMBB</reimplements>
+        <briefdescription>
+<para>Tell the strategy that current MBB is done. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="134" column="8" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.cpp" bodystart="120" bodyend="126"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1a0e0a14434477222a57a6e5e09b1f0f2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * SystemZPostRASchedStrategy::pickNode</definition>
+        <argsstring>(bool &amp;IsTopNode) override</argsstring>
+        <name>pickNode</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::pickNode</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1ab8f81fac35fcedf80a58ef268409d328">pickNode</reimplements>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>IsTopNode</declname>
+        </param>
+        <briefdescription>
+<para>Pick the next node to schedule, or return NULL. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="137" column="9" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.cpp" bodystart="158" bodyend="198"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_s_unit_1a582da862b28b876ef2235781392cffa6" compoundref="_schedule_d_a_g_8h" startline="424" endline="428">llvm::SUnit::getHeight</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1a9ee4cac33c533fe9bc0b5b0147475c38" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SystemZPostRASchedStrategy::schedNode</definition>
+        <argsstring>(SUnit *SU, bool IsTopNode) override</argsstring>
+        <name>schedNode</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::schedNode</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1a3be6a6d3b879d048d8df6ae13c7b9698">schedNode</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsTopNode</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_schedule_d_a_g_m_i" kindref="compound">ScheduleDAGMI</ref> has scheduled an instruction - tell HazardRec about it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="141" column="8" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.cpp" bodystart="241" bodyend="249"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_pass_builder_bindings_8cpp_1acdfbcf188e2d4a80837e89de2ccdffab" compoundref="_pass_builder_bindings_8cpp" startline="64" endline="71">if</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_s_unit_1a3f708b119627541f144d703a1d183202" compoundref="_schedule_d_a_g_8h" startline="270">llvm::SUnit::NodeNum</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1afe13e1e8b6cdaa6f0cd3a91d16a302f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SystemZPostRASchedStrategy::releaseTopNode</definition>
+        <argsstring>(SUnit *SU) override</argsstring>
+        <name>releaseTopNode</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::releaseTopNode</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1a870625307391612fc91db410cf9820b0">releaseTopNode</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>SU has had all predecessor dependencies resolved. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Put it into Available. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="145" column="8" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.cpp" bodystart="251" bodyend="260"/>
+        <references refid="classllvm_1_1_s_unit_1a7faf5b0345dd1c2fd4b60d7f5108f3b5" compoundref="_schedule_d_a_g_8h" startline="297">llvm::SUnit::isScheduleHigh</references>
+        <references refid="classllvm_1_1_s_unit_1a4ac4d36cb59a4bbf5d93513dad0ff0e9" compoundref="_schedule_d_a_g_8h" startline="300">llvm::SUnit::isUnbuffered</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_post_r_a_sched_strategy_1a199a79c029d6fc9c4b1f338083539bd1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::SystemZPostRASchedStrategy::releaseBottomNode</definition>
+        <argsstring>(SUnit *SU) override</argsstring>
+        <name>releaseBottomNode</name>
+        <qualifiedname>llvm::SystemZPostRASchedStrategy::releaseBottomNode</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1aee56664b72ea174c22ef095dc828a0b5">releaseBottomNode</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>Currently only scheduling top-down, so this method is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="148" column="8" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="148" bodyend="148"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A <ref refid="classllvm_1_1_machine_sched_strategy" kindref="compound">MachineSchedStrategy</ref> implementation for <ref refid="namespacellvm_1_1_system_z" kindref="compound">SystemZ</ref> post RA scheduling. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::MachineSchedStrategy</label>
+        <link refid="classllvm_1_1_machine_sched_strategy"/>
+      </node>
+      <node id="1">
+        <label>llvm::SystemZPostRASchedStrategy</label>
+        <link refid="classllvm_1_1_system_z_post_r_a_sched_strategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>llvm::MachineSchedStrategy</label>
+        <link refid="classllvm_1_1_machine_sched_strategy"/>
+      </node>
+      <node id="1">
+        <label>llvm::SystemZPostRASchedStrategy</label>
+        <link refid="classllvm_1_1_system_z_post_r_a_sched_strategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/SystemZ/SystemZMachineScheduler.h" line="28" column="1" bodyfile="lib/Target/SystemZ/SystemZMachineScheduler.h" bodystart="28" bodyend="149"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1ad971afa6f050bfaf3da785b9cbb1f756" prot="private" virt="non-virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>advanceTo</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1ab3455a69960204e0b28d566e705c5270" prot="private" virt="non-virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>Available</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1ae70b4df15c9db45746e75427d9a73975" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>doMBBSchedRegionsTopDown</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a9671665fa833900c1b7d4dafe8f7c93e" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>dumpPolicy</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1abb12e569451bee60098c4608b8ca8fa5" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>enterMBB</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a4f4eb9938f16f954935e4cb393a78c23" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>getPolicy</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1a8350c0c3ddcb1322ce2573895b6377a5" prot="private" virt="non-virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>HazardRec</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1aa527afd01941aa018dbb3edbad50e770" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>initialize</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1a7a6e91fbf92378734b0dd9f1523bff19" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>initPolicy</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1a183188c809d901aa875645e4398eb1f9" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>leaveMBB</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1a278e83627d3b9adbf4192a762fcb3f6f" prot="private" virt="non-virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>MBB</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1a5eef8c4ed9d544b55904e9d37d55ac63" prot="private" virt="non-virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>MBB2HazRec</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1ab1fd645edb614a6bb4c71d350ad2bbbb" prot="private" virt="non-virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>MLI</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1a0e0a14434477222a57a6e5e09b1f0f2f" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>pickNode</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1af9b2f5ad8048d175fc88cbd6684ac720" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>registerRoots</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1a199a79c029d6fc9c4b1f338083539bd1" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>releaseBottomNode</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1afe13e1e8b6cdaa6f0cd3a91d16a302f8" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>releaseTopNode</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1ac470f49c1090e8b33dd5290fba30c272" prot="private" virt="non-virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>SchedModel</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1a9ee4cac33c533fe9bc0b5b0147475c38" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>schedNode</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1aaa4c87174015873c1751e671e79ae5e7" prot="private" virt="non-virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>SchedStates</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a3a8386beb0371134711bb85e91c5e616" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>scheduleTree</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1af1f5d487c749cd8b3fe868e48b80a84d" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>shouldTrackLaneMasks</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1a00ffe74116346e7953817c0dcc730cad" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>shouldTrackPressure</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1ae7cf55944f14abe03fa718a60f2fafe1" prot="public" virt="non-virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>SystemZPostRASchedStrategy</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1aadc368ac0e5d0fc6daa6aeda8cfe1364" prot="private" virt="non-virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>TII</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a3d07f24fe972db3fc65bd905a95a5bdb" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>~MachineSchedStrategy</name></member>
+      <member refid="classllvm_1_1_system_z_post_r_a_sched_strategy_1ace31ed48b8ff510ab635bea47ee55e73" prot="public" virt="virtual"><scope>llvm::SystemZPostRASchedStrategy</scope><name>~SystemZPostRASchedStrategy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

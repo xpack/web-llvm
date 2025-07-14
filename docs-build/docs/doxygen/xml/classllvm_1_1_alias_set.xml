@@ -1,0 +1,997 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_alias_set" kind="class" language="C++" prot="public">
+    <compoundname>llvm::AliasSet</compoundname>
+    <basecompoundref refid="classllvm_1_1ilist__node" prot="public" virt="non-virtual">llvm::ilist_node&lt; AliasSet &gt;</basecompoundref>
+    <includes refid="_alias_set_tracker_8h" local="yes">llvm/Analysis/AliasSetTracker.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1_alias_set_1a59b3d3c46e1f1eff571cc1280e8d846c" prot="private" static="no" strong="no">
+        <type></type>
+        <name>AccessLattice</name>
+        <qualifiedname>llvm::AliasSet::AccessLattice</qualifiedname>
+        <enumvalue id="classllvm_1_1_alias_set_1a59b3d3c46e1f1eff571cc1280e8d846ca5f02a99bf7858d28a29400ebad077262" prot="private">
+          <name>NoAccess</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_alias_set_1a59b3d3c46e1f1eff571cc1280e8d846ca02c2796b34b99e96c922125bf1336a6e" prot="private">
+          <name>RefAccess</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_alias_set_1a59b3d3c46e1f1eff571cc1280e8d846cac66ff35c63941bc9f4f5fdc0fa59e000" prot="private">
+          <name>ModAccess</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_alias_set_1a59b3d3c46e1f1eff571cc1280e8d846ca1aab30338607b154f3d0014d04cc9bc1" prot="private">
+          <name>ModRefAccess</name>
+          <initializer>= RefAccess | ModAccess</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The kinds of access this alias set models. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We keep track of whether this alias set merely refers to the locations of memory (and not any particular access), whether it modifies or references the memory, or whether it does both. The lattice goes from &quot;NoAccess&quot; to either RefAccess or ModAccess, then to ModRefAccess as necessary. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="74" column="3" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="74" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="enum" id="classllvm_1_1_alias_set_1a8ff56c3bddf5d44f3ef8b81d3abfc3a1" prot="private" static="no" strong="no">
+        <type></type>
+        <name>AliasLattice</name>
+        <qualifiedname>llvm::AliasSet::AliasLattice</qualifiedname>
+        <enumvalue id="classllvm_1_1_alias_set_1a8ff56c3bddf5d44f3ef8b81d3abfc3a1a34393e78cce09cfc47ed155aa248907d" prot="private">
+          <name>SetMustAlias</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_alias_set_1a8ff56c3bddf5d44f3ef8b81d3abfc3a1a321a124cf22e382448a55abe673fed32" prot="private">
+          <name>SetMayAlias</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The kind of alias relationship between pointers of the set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These represent conservatively correct alias results between any members of the set. We represent these independently of the values of alias results in order to pack it into a single bit. Lattice goes from MustAlias to MayAlias. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="88" column="3" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="88" bodyend="90"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_alias_set_1ae25e8625a1b15a17f4dec313e307d94e" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_memory_location" kindref="compound">MemoryLocation</ref> &gt;<ref refid="class_symbols_map_type_1_1const__iterator" kindref="compound">::const_iterator</ref></type>
+        <definition>using llvm::AliasSet::iterator =  SmallVectorImpl&lt;MemoryLocation&gt;::const_iterator</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <qualifiedname>llvm::AliasSet::iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="120" column="3" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_alias_set_1afcb94b0fc9baaddb4ae2a993a89cea50" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, 8 &gt;</type>
+        <definition>using llvm::AliasSet::PointerVector =  SmallVector&lt;const Value *, 8&gt;</definition>
+        <argsstring></argsstring>
+        <name>PointerVector</name>
+        <qualifiedname>llvm::AliasSet::PointerVector</qualifiedname>
+        <briefdescription>
+<para>Retrieve the pointer values for the memory locations in this alias set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The order matches that of the memory locations, but duplicate pointer values are omitted. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="129" column="3" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_alias_set_1ade1e5179be8a1dd2541693b3cdcdd6bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class AliasSetTracker</definition>
+        <argsstring></argsstring>
+        <name>AliasSetTracker</name>
+        <qualifiedname>llvm::AliasSet::AliasSetTracker</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_alias_set_tracker" kindref="compound">AliasSetTracker</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="49" column="16" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="49" bodyend="-1"/>
+        <references refid="classllvm_1_1_alias_set_1a403df35e26da78c05e53c5545fd3878d">AliasSet</references>
+        <references refid="classllvm_1_1_alias_set_1ade1e5179be8a1dd2541693b3cdcdd6bb" compoundref="_alias_set_tracker_8h" startline="49">AliasSetTracker</references>
+        <referencedby refid="classllvm_1_1_alias_set_1ade1e5179be8a1dd2541693b3cdcdd6bb" compoundref="_alias_set_tracker_8h" startline="49">AliasSetTracker</referencedby>
+        <referencedby refid="classllvm_1_1_alias_set_1a312b61f81f956eb27c86fa40ad60e3b3" compoundref="_alias_set_tracker_8cpp" startline="43" endline="87">mergeSetIn</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_alias_set_1aa18b95ab73e9e92dacc274d59164b744" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_alias_set" kindref="compound">AliasSet</ref> *</type>
+        <definition>AliasSet* llvm::AliasSet::Forward</definition>
+        <argsstring></argsstring>
+        <name>Forward</name>
+        <qualifiedname>llvm::AliasSet::Forward</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="52" column="12" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_alias_set_1ab07e9084a01009ad240985698867f624" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_memory_location" kindref="compound">MemoryLocation</ref>, 0 &gt;</type>
+        <definition>SmallVector&lt;MemoryLocation, 0&gt; llvm::AliasSet::MemoryLocs</definition>
+        <argsstring></argsstring>
+        <name>MemoryLocs</name>
+        <qualifiedname>llvm::AliasSet::MemoryLocs</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1sys_1_1_memory" kindref="compound">Memory</ref> locations in this alias set. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="55" column="15" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_alias_set_1ad7fbb82b66a0553081a79d155f5d827c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_asserting_v_h" kindref="compound">AssertingVH</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;AssertingVH&lt;Instruction&gt; &gt; llvm::AliasSet::UnknownInsts</definition>
+        <argsstring></argsstring>
+        <name>UnknownInsts</name>
+        <qualifiedname>llvm::AliasSet::UnknownInsts</qualifiedname>
+        <briefdescription>
+<para>All instructions without a specific address in this alias set. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="58" column="15" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_alias_set_1a95228893bbbda06ec8a5a1bb0191dcfb" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::AliasSet::RefCount</definition>
+        <argsstring></argsstring>
+        <name>RefCount</name>
+        <qualifiedname>llvm::AliasSet::RefCount</qualifiedname>
+        <bitfield> 27</bitfield>
+        <briefdescription>
+<para>Number of nodes pointing to this <ref refid="classllvm_1_1_alias_set" kindref="compound">AliasSet</ref> plus the number of AliasSets forwarding to it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="62" column="12" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_alias_set_1adc432162c4bbf937862af77c49038f2f" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::AliasSet::AliasAny</definition>
+        <argsstring></argsstring>
+        <name>AliasAny</name>
+        <qualifiedname>llvm::AliasSet::AliasAny</qualifiedname>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="66" column="12" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_alias_set_1ad8abf1560685662af78da5b97f9363a0" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::AliasSet::Access</definition>
+        <argsstring></argsstring>
+        <name>Access</name>
+        <qualifiedname>llvm::AliasSet::Access</qualifiedname>
+        <bitfield> 2</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="80" column="12" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_alias_set_1a0ab7db67908da19c0e9ac37355cc4f3b" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::AliasSet::Alias</definition>
+        <argsstring></argsstring>
+        <name>Alias</name>
+        <qualifiedname>llvm::AliasSet::Alias</qualifiedname>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="91" column="12" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1ab8715c4b87781b2e94e46b871d0bdfca" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::AliasSet::addRef</definition>
+        <argsstring>()</argsstring>
+        <name>addRef</name>
+        <qualifiedname>llvm::AliasSet::addRef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="93" column="8" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="93" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1a95bda87e3aa8d54d93547fb1e3631678" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::AliasSet::dropRef</definition>
+        <argsstring>(AliasSetTracker &amp;AST)</argsstring>
+        <name>dropRef</name>
+        <qualifiedname>llvm::AliasSet::dropRef</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_alias_set_tracker" kindref="compound">AliasSetTracker</ref> &amp;</type>
+          <declname>AST</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="95" column="8" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="95" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1ab3d24d9696057aeaa9f47c255dfcc8a2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::AliasSet::AliasSet</definition>
+        <argsstring>()</argsstring>
+        <name>AliasSet</name>
+        <qualifiedname>llvm::AliasSet::AliasSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="137" column="3" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="137" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1a19d5514daad0b7687383a792910f8cd6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AliasSet::removeFromTracker</definition>
+        <argsstring>(AliasSetTracker &amp;AST)</argsstring>
+        <name>removeFromTracker</name>
+        <qualifiedname>llvm::AliasSet::removeFromTracker</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_alias_set_tracker" kindref="compound">AliasSetTracker</ref> &amp;</type>
+          <declname>AST</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="140" column="8" bodyfile="lib/Analysis/AliasSetTracker.cpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1a1f19ed9236e4f38ad696989ea64b8ace" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AliasSet::addMemoryLocation</definition>
+        <argsstring>(AliasSetTracker &amp;AST, const MemoryLocation &amp;MemLoc, bool KnownMustAlias=false)</argsstring>
+        <name>addMemoryLocation</name>
+        <qualifiedname>llvm::AliasSet::addMemoryLocation</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_alias_set_tracker" kindref="compound">AliasSetTracker</ref> &amp;</type>
+          <declname>AST</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_location" kindref="compound">MemoryLocation</ref> &amp;</type>
+          <declname>MemLoc</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>KnownMustAlias</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="142" column="8" bodyfile="lib/Analysis/AliasSetTracker.cpp" bodystart="110" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1aa5d9efe6bb14fa53f0c8ca480c6e7df6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AliasSet::addUnknownInst</definition>
+        <argsstring>(Instruction *I, BatchAAResults &amp;AA)</argsstring>
+        <name>addUnknownInst</name>
+        <qualifiedname>llvm::AliasSet::addUnknownInst</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_batch_a_a_results" kindref="compound">BatchAAResults</ref> &amp;</type>
+          <declname>AA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="144" column="8" bodyfile="lib/Analysis/AliasSetTracker.cpp" bodystart="128" bodyend="147"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1a403df35e26da78c05e53c5545fd3878d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::AliasSet::AliasSet</definition>
+        <argsstring>(const AliasSet &amp;)=delete</argsstring>
+        <name>AliasSet</name>
+        <qualifiedname>llvm::AliasSet::AliasSet</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_alias_set" kindref="compound">AliasSet</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="102" column="3"/>
+        <references refid="classllvm_1_1_alias_set_1a403df35e26da78c05e53c5545fd3878d">AliasSet</references>
+        <referencedby refid="classllvm_1_1_alias_set_1a403df35e26da78c05e53c5545fd3878d">AliasSet</referencedby>
+        <referencedby refid="classllvm_1_1_alias_set_1ade1e5179be8a1dd2541693b3cdcdd6bb" compoundref="_alias_set_tracker_8h" startline="49">AliasSetTracker</referencedby>
+        <referencedby refid="classllvm_1_1_alias_set_1a312b61f81f956eb27c86fa40ad60e3b3" compoundref="_alias_set_tracker_8cpp" startline="43" endline="87">mergeSetIn</referencedby>
+        <referencedby refid="classllvm_1_1_alias_set_1aacbc7f689d74c11be349b227a5164dc4">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1aacbc7f689d74c11be349b227a5164dc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_alias_set" kindref="compound">AliasSet</ref> &amp;</type>
+        <definition>AliasSet &amp; llvm::AliasSet::operator=</definition>
+        <argsstring>(const AliasSet &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::AliasSet::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_alias_set" kindref="compound">AliasSet</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="103" column="12"/>
+        <references refid="classllvm_1_1_alias_set_1a403df35e26da78c05e53c5545fd3878d">AliasSet</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1af0b8afd4f867821d9cfdf7b86b1bf918" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AliasSet::isRef</definition>
+        <argsstring>() const</argsstring>
+        <name>isRef</name>
+        <qualifiedname>llvm::AliasSet::isRef</qualifiedname>
+        <briefdescription>
+<para>Accessors... </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="106" column="8" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="106" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1aef6d5bbd1c55369c6f118c24166f420b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AliasSet::isMod</definition>
+        <argsstring>() const</argsstring>
+        <name>isMod</name>
+        <qualifiedname>llvm::AliasSet::isMod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="107" column="8" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="107" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1ad5733f0c4d53485af3f9efb5ec719fdf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AliasSet::isMustAlias</definition>
+        <argsstring>() const</argsstring>
+        <name>isMustAlias</name>
+        <qualifiedname>llvm::AliasSet::isMustAlias</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="108" column="8" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="108" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1a51ecdc0fb7b8a986f841fbc35f675869" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AliasSet::isMayAlias</definition>
+        <argsstring>() const</argsstring>
+        <name>isMayAlias</name>
+        <qualifiedname>llvm::AliasSet::isMayAlias</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="109" column="8" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="109" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1a7f45b985ed05ab9fdb363f2f1f03a6dd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AliasSet::isForwardingAliasSet</definition>
+        <argsstring>() const</argsstring>
+        <name>isForwardingAliasSet</name>
+        <qualifiedname>llvm::AliasSet::isForwardingAliasSet</qualifiedname>
+        <briefdescription>
+<para>Return true if this alias set should be ignored as part of the <ref refid="classllvm_1_1_alias_set_tracker" kindref="compound">AliasSetTracker</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="113" column="8" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="113" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1a312b61f81f956eb27c86fa40ad60e3b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AliasSet::mergeSetIn</definition>
+        <argsstring>(AliasSet &amp;AS, AliasSetTracker &amp;AST, BatchAAResults &amp;BatchAA)</argsstring>
+        <name>mergeSetIn</name>
+        <qualifiedname>llvm::AliasSet::mergeSetIn</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_alias_set" kindref="compound">AliasSet</ref> &amp;</type>
+          <declname>AS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_alias_set_tracker" kindref="compound">AliasSetTracker</ref> &amp;</type>
+          <declname>AST</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_batch_a_a_results" kindref="compound">BatchAAResults</ref> &amp;</type>
+          <declname>BatchAA</declname>
+        </param>
+        <briefdescription>
+<para>Merge the specified alias set into this alias set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>mergeSetIn - Merge the specified alias set into this alias set. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="116" column="8" bodyfile="lib/Analysis/AliasSetTracker.cpp" bodystart="43" bodyend="87"/>
+        <references refid="classllvm_1_1_alias_set_1a403df35e26da78c05e53c5545fd3878d">AliasSet</references>
+        <references refid="classllvm_1_1_alias_set_1ade1e5179be8a1dd2541693b3cdcdd6bb" compoundref="_alias_set_tracker_8h" startline="49">AliasSetTracker</references>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="namespacellvm_1a39d3d23a084c4544ee5903203db10e8a" compoundref="_s_t_l_extras_8h" startline="2115" endline="2117">llvm::append_range</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacestd_1ab8424022895aee3e366fb9a32f2883cb" compoundref="_bit_vector_8h" startline="860" endline="860">std::swap</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1a2eec54fe2b10358ebf9cadbc7673c6e9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_alias_set_1ae25e8625a1b15a17f4dec313e307d94e" kindref="member">iterator</ref></type>
+        <definition>iterator llvm::AliasSet::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <qualifiedname>llvm::AliasSet::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="121" column="12" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1a4b3f0da473f4afc89474ccc44fad6646" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_alias_set_1ae25e8625a1b15a17f4dec313e307d94e" kindref="member">iterator</ref></type>
+        <definition>iterator llvm::AliasSet::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <qualifiedname>llvm::AliasSet::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="122" column="12" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="122" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1a164850a3e0dbe8966d540f9dd330cc07" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::AliasSet::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <qualifiedname>llvm::AliasSet::size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="124" column="12" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="124" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1af36ab8b8b78e18290f43d172c45d24c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_alias_set_1afcb94b0fc9baaddb4ae2a993a89cea50" kindref="member">PointerVector</ref></type>
+        <definition>AliasSet::PointerVector AliasSet::getPointers</definition>
+        <argsstring>() const</argsstring>
+        <name>getPointers</name>
+        <qualifiedname>llvm::AliasSet::getPointers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="130" column="17" bodyfile="lib/Analysis/AliasSetTracker.cpp" bodystart="202" bodyend="207"/>
+        <references refid="classllvm_1_1_set_vector_1af34eb71cc483e84d2eca80575cb9ccde" compoundref="_set_vector_8h" startline="162" endline="178">llvm::SetVector&lt; T, Vector, Set, N &gt;::insert</references>
+        <references refid="classllvm_1_1_memory_location_1a9550ce4a179e46db37f653ce28feca7a" compoundref="_memory_location_8h" startline="235">llvm::MemoryLocation::Ptr</references>
+        <references refid="classllvm_1_1_set_vector_1a7c36580f905b274ca0a1ade46ba06ae0" compoundref="_set_vector_8h" startline="87" endline="90">llvm::SetVector&lt; T, Vector, Set, N &gt;::takeVector</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1a402ffc8c32cbcbcf858f1188ce7a4c87" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AliasSet::print</definition>
+        <argsstring>(raw_ostream &amp;OS) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::AliasSet::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="132" column="8" bodyfile="lib/Analysis/AliasSetTracker.cpp" bodystart="512" bodyend="551"/>
+        <references refid="classllvm_1_1_location_size_1ac01c1aa625e97bf21d27474544c463e5" compoundref="_memory_location_8h" startline="131" endline="133">llvm::LocationSize::afterPointer</references>
+        <references refid="classllvm_1_1_location_size_1a837cf7f4d88580c0adb92afc6a3b08b0" compoundref="_memory_location_8h" startline="137" endline="139">llvm::LocationSize::beforeOrAfterPointer</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="classllvm_1_1_value_1a62213d5211c9d944e5ede1f0059a6ae2" compoundref="_asm_writer_8cpp" startline="5144" endline="5157">llvm::Value::printAsOperand</references>
+        <references refid="classllvm_1_1_memory_location_1a9550ce4a179e46db37f653ce28feca7a" compoundref="_memory_location_8h" startline="235">llvm::MemoryLocation::Ptr</references>
+        <references refid="classllvm_1_1_memory_location_1a39f7ff959874bf38f3e14aa0b2622da0" compoundref="_memory_location_8h" startline="244">llvm::MemoryLocation::Size</references>
+        <referencedby refid="classllvm_1_1_alias_set_1af940c8979b258033f9a1fbd65f6c073a" compoundref="_alias_set_tracker_8cpp" startline="564" endline="564">dump</referencedby>
+        <referencedby refid="namespacellvm_1adc933359fab560477e8dbf57a07b4bd3" compoundref="_alias_set_tracker_8h" startline="156" endline="159">llvm::operator&lt;&lt;</referencedby>
+        <referencedby refid="classllvm_1_1_alias_set_tracker_1a9b1d62bcca06f2c31c35c7f17965b008" compoundref="_alias_set_tracker_8cpp" startline="553" endline="561">llvm::AliasSetTracker::print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1af940c8979b258033f9a1fbd65f6c073a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void AliasSet::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::AliasSet::dump</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="133" column="8" bodyfile="lib/Analysis/AliasSetTracker.cpp" bodystart="564" bodyend="564"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" compoundref="_compiler_8h" startline="622">LLVM_DUMP_METHOD</references>
+        <references refid="classllvm_1_1_alias_set_1a402ffc8c32cbcbcf858f1188ce7a4c87" compoundref="_alias_set_tracker_8cpp" startline="512" endline="551">print</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1adabf31a1b7bde50ca3445357f680d370" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_alias_result" kindref="compound">AliasResult</ref></type>
+        <definition>AliasResult AliasSet::aliasesMemoryLocation</definition>
+        <argsstring>(const MemoryLocation &amp;MemLoc, BatchAAResults &amp;AA) const</argsstring>
+        <name>aliasesMemoryLocation</name>
+        <qualifiedname>llvm::AliasSet::aliasesMemoryLocation</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_location" kindref="compound">MemoryLocation</ref> &amp;</type>
+          <declname>MemLoc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_batch_a_a_results" kindref="compound">BatchAAResults</ref> &amp;</type>
+          <declname>AA</declname>
+        </param>
+        <briefdescription>
+<para>If the specified memory location &quot;may&quot; (or must) alias one of the members in the set return the appropriate <ref refid="classllvm_1_1_alias_result" kindref="compound">AliasResult</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>aliasesMemoryLocation - If the specified memory location &quot;may&quot; (or must) alias one of the members in the set return the appropriate <ref refid="classllvm_1_1_alias_result" kindref="compound">AliasResult</ref>.</para>
+<para>Otherwise return NoAlias. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="149" column="15" bodyfile="lib/Analysis/AliasSetTracker.cpp" bodystart="153" bodyend="171"/>
+        <references refid="namespacellvm_1a854abfc88bcd24e3878e2c9ab1f70fd3" compoundref="_mod_ref_8h" startline="42" endline="44">llvm::isModOrRefSet</references>
+        <references refid="classllvm_1_1_alias_result_1a8d3de277fb70fa515efac2db2cfe9d57a0916b614598c673c1e6a59c7312a1409" compoundref="_alias_analysis_8h" startline="98">llvm::AliasResult::MayAlias</references>
+        <references refid="classllvm_1_1_alias_result_1a8d3de277fb70fa515efac2db2cfe9d57a863ee317b92588eb2d6878af9fc98922" compoundref="_alias_analysis_8h" startline="95">llvm::AliasResult::NoAlias</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_alias_set_1accc010962179e64afb02e0340b40ce8b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1a9db8c44b250b90e3ab7e4d144e7c9c2e" kindref="member">ModRefInfo</ref></type>
+        <definition>ModRefInfo AliasSet::aliasesUnknownInst</definition>
+        <argsstring>(const Instruction *Inst, BatchAAResults &amp;AA) const</argsstring>
+        <name>aliasesUnknownInst</name>
+        <qualifiedname>llvm::AliasSet::aliasesUnknownInst</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_batch_a_a_results" kindref="compound">BatchAAResults</ref> &amp;</type>
+          <declname>AA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasSetTracker.h" line="152" column="14" bodyfile="lib/Analysis/AliasSetTracker.cpp" bodystart="173" bodyend="200"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="namespacellvm_1abe3f8cc6fbe8189cd90e3833b171bb59" compoundref="_mod_ref_8h" startline="45" endline="47">llvm::isModAndRefSet</references>
+        <references refid="namespacellvm_1a854abfc88bcd24e3878e2c9ab1f70fd3" compoundref="_mod_ref_8h" startline="42" endline="44">llvm::isModOrRefSet</references>
+        <references refid="classllvm_1_1_instruction_1a2d77b9d450543e86acb394ff6dda6b53" compoundref="_i_r_2_instruction_8h" startline="799" endline="801">llvm::Instruction::mayReadOrWriteMemory</references>
+        <references refid="namespacellvm_1a9db8c44b250b90e3ab7e4d144e7c9c2ea6524b183b5cd0850f2cff6d30d581af9" compoundref="_mod_ref_8h" startline="35">llvm::ModRef</references>
+        <references refid="namespacellvm_1a9db8c44b250b90e3ab7e4d144e7c9c2ead974636fce6d12e72054e61fb3c1e9a8" compoundref="_mod_ref_8h" startline="29">llvm::NoModRef</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="14">
+        <label>OptionsT::node_base_type</label>
+      </node>
+      <node id="4">
+        <label>ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::AliasSet</label>
+        <link refid="classllvm_1_1_alias_set"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="6">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="9">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="8">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+        <childnode refid="9" relation="template-instance">
+          <edgelabel>&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="12">
+        <label>llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+      </node>
+      <node id="15">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::ilist_node&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::ilist_node&lt; AliasSet &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; AliasSet &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::ilist_node_impl&lt; OptionsT &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="14" relation="private-inheritance">
+        </childnode>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="18" relation="private-inheritance">
+        </childnode>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="14">
+        <label>OptionsT::node_base_type</label>
+      </node>
+      <node id="4">
+        <label>ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::AliasSet</label>
+        <link refid="classllvm_1_1_alias_set"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="6">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="9">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="8">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+        <childnode refid="9" relation="template-instance">
+          <edgelabel>&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="12">
+        <label>llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+      </node>
+      <node id="15">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::ilist_node&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::ilist_node&lt; AliasSet &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; AliasSet &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::ilist_node_impl&lt; OptionsT &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="14" relation="private-inheritance">
+        </childnode>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; AliasSet, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="18" relation="private-inheritance">
+        </childnode>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Analysis/AliasSetTracker.h" line="48" column="1" bodyfile="include/llvm/Analysis/AliasSetTracker.h" bodystart="48" bodyend="154"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_alias_set_1ad8abf1560685662af78da5b97f9363a0" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>Access</name></member>
+      <member refid="classllvm_1_1_alias_set_1a59b3d3c46e1f1eff571cc1280e8d846c" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>AccessLattice</name></member>
+      <member refid="classllvm_1_1_alias_set_1a1f19ed9236e4f38ad696989ea64b8ace" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>addMemoryLocation</name></member>
+      <member refid="classllvm_1_1_alias_set_1ab8715c4b87781b2e94e46b871d0bdfca" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>addRef</name></member>
+      <member refid="classllvm_1_1_alias_set_1aa5d9efe6bb14fa53f0c8ca480c6e7df6" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>addUnknownInst</name></member>
+      <member refid="classllvm_1_1_alias_set_1a0ab7db67908da19c0e9ac37355cc4f3b" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>Alias</name></member>
+      <member refid="classllvm_1_1_alias_set_1adc432162c4bbf937862af77c49038f2f" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>AliasAny</name></member>
+      <member refid="classllvm_1_1_alias_set_1adabf31a1b7bde50ca3445357f680d370" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>aliasesMemoryLocation</name></member>
+      <member refid="classllvm_1_1_alias_set_1accc010962179e64afb02e0340b40ce8b" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>aliasesUnknownInst</name></member>
+      <member refid="classllvm_1_1_alias_set_1a8ff56c3bddf5d44f3ef8b81d3abfc3a1" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>AliasLattice</name></member>
+      <member refid="classllvm_1_1_alias_set_1a403df35e26da78c05e53c5545fd3878d" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>AliasSet</name></member>
+      <member refid="classllvm_1_1_alias_set_1ab3d24d9696057aeaa9f47c255dfcc8a2" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>AliasSet</name></member>
+      <member refid="classllvm_1_1_alias_set_1ade1e5179be8a1dd2541693b3cdcdd6bb" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>AliasSetTracker</name></member>
+      <member refid="classllvm_1_1_alias_set_1a2eec54fe2b10358ebf9cadbc7673c6e9" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>begin</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1a5d9f729fc5a6da4e689f24e7b28fc37e" prot="protected" virt="non-virtual"><scope>llvm::AliasSet</scope><name>const_reverse_self_iterator</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1a062ff5e5271611eab47e721ed04fb5e6" prot="protected" virt="non-virtual"><scope>llvm::AliasSet</scope><name>const_self_iterator</name></member>
+      <member refid="classllvm_1_1_alias_set_1a95bda87e3aa8d54d93547fb1e3631678" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>dropRef</name></member>
+      <member refid="classllvm_1_1_alias_set_1af940c8979b258033f9a1fbd65f6c073a" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_alias_set_1a4b3f0da473f4afc89474ccc44fad6646" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>end</name></member>
+      <member refid="classllvm_1_1_alias_set_1aa18b95ab73e9e92dacc274d59164b744" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>Forward</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>getIterator</name></member>
+      <member refid="classllvm_1_1ilist__detail_1_1node__parent__access_1a7e19e7508415378ad9523e0339b23e22" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>getParent</name></member>
+      <member refid="classllvm_1_1_alias_set_1af36ab8b8b78e18290f43d172c45d24c9" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>getPointers</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1ad4bb544993573a6677d97cf5413110c7" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>getReverseIterator</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1a01609a46da35cca87e8ada6f7de40d23" prot="protected" virt="non-virtual"><scope>llvm::AliasSet</scope><name>ilist_node_impl</name></member>
+      <member refid="classllvm_1_1_alias_set_1a7f45b985ed05ab9fdb363f2f1f03a6dd" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>isForwardingAliasSet</name></member>
+      <member refid="classllvm_1_1_alias_set_1a51ecdc0fb7b8a986f841fbc35f675869" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>isMayAlias</name></member>
+      <member refid="classllvm_1_1_alias_set_1aef6d5bbd1c55369c6f118c24166f420b" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>isMod</name></member>
+      <member refid="classllvm_1_1_alias_set_1ad5733f0c4d53485af3f9efb5ec719fdf" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>isMustAlias</name></member>
+      <member refid="classllvm_1_1_alias_set_1af0b8afd4f867821d9cfdf7b86b1bf918" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>isRef</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1a0570092282570244c4d7af86003f0aa9" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>isSentinel</name></member>
+      <member refid="classllvm_1_1_alias_set_1ae25e8625a1b15a17f4dec313e307d94e" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>iterator</name></member>
+      <member refid="classllvm_1_1_alias_set_1ab07e9084a01009ad240985698867f624" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>MemoryLocs</name></member>
+      <member refid="classllvm_1_1_alias_set_1a312b61f81f956eb27c86fa40ad60e3b3" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>mergeSetIn</name></member>
+      <member refid="classllvm_1_1_alias_set_1a59b3d3c46e1f1eff571cc1280e8d846cac66ff35c63941bc9f4f5fdc0fa59e000" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>ModAccess</name></member>
+      <member refid="classllvm_1_1_alias_set_1a59b3d3c46e1f1eff571cc1280e8d846ca1aab30338607b154f3d0014d04cc9bc1" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>ModRefAccess</name></member>
+      <member refid="classllvm_1_1_alias_set_1a59b3d3c46e1f1eff571cc1280e8d846ca5f02a99bf7858d28a29400ebad077262" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>NoAccess</name></member>
+      <member refid="classllvm_1_1_alias_set_1aacbc7f689d74c11be349b227a5164dc4" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_alias_set_1afcb94b0fc9baaddb4ae2a993a89cea50" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>PointerVector</name></member>
+      <member refid="classllvm_1_1_alias_set_1a402ffc8c32cbcbcf858f1188ce7a4c87" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>print</name></member>
+      <member refid="classllvm_1_1_alias_set_1a59b3d3c46e1f1eff571cc1280e8d846ca02c2796b34b99e96c922125bf1336a6e" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>RefAccess</name></member>
+      <member refid="classllvm_1_1_alias_set_1a95228893bbbda06ec8a5a1bb0191dcfb" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>RefCount</name></member>
+      <member refid="classllvm_1_1_alias_set_1a19d5514daad0b7687383a792910f8cd6" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>removeFromTracker</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1ad170cf283717735d286c0d6975a9ccfa" prot="protected" virt="non-virtual"><scope>llvm::AliasSet</scope><name>reverse_self_iterator</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1a69f57da2cbacc606919dd017badf7da1" prot="protected" virt="non-virtual"><scope>llvm::AliasSet</scope><name>self_iterator</name></member>
+      <member refid="classllvm_1_1_alias_set_1a8ff56c3bddf5d44f3ef8b81d3abfc3a1a321a124cf22e382448a55abe673fed32" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>SetMayAlias</name></member>
+      <member refid="classllvm_1_1_alias_set_1a8ff56c3bddf5d44f3ef8b81d3abfc3a1a34393e78cce09cfc47ed155aa248907d" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>SetMustAlias</name></member>
+      <member refid="classllvm_1_1ilist__detail_1_1node__parent__access_1ad4cf5562c8c361844baaeb6a8b5cfb7e" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>setParent</name></member>
+      <member refid="classllvm_1_1_alias_set_1a164850a3e0dbe8966d540f9dd330cc07" prot="public" virt="non-virtual"><scope>llvm::AliasSet</scope><name>size</name></member>
+      <member refid="classllvm_1_1_alias_set_1ad7fbb82b66a0553081a79d155f5d827c" prot="private" virt="non-virtual"><scope>llvm::AliasSet</scope><name>UnknownInsts</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

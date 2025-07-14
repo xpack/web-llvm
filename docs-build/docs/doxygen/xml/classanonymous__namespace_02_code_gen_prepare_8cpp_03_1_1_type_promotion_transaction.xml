@@ -1,0 +1,355 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</compoundname>
+    <innerclass refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1_1_insertion_handler" prot="private">anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::InsertionHandler</innerclass>
+    <innerclass refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1_1_instruction_move_before" prot="private">anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::InstructionMoveBefore</innerclass>
+    <innerclass refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1_1_instruction_remover" prot="private">anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::InstructionRemover</innerclass>
+    <innerclass refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1_1_operand_setter" prot="private">anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::OperandSetter</innerclass>
+    <innerclass refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1_1_operands_hider" prot="private">anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::OperandsHider</innerclass>
+    <innerclass refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1_1_s_ext_builder" prot="private">anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::SExtBuilder</innerclass>
+    <innerclass refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1_1_trunc_builder" prot="private">anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::TruncBuilder</innerclass>
+    <innerclass refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1_1_type_mutator" prot="private">anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::TypeMutator</innerclass>
+    <innerclass refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1_1_type_promotion_action" prot="private">anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::TypePromotionAction</innerclass>
+    <innerclass refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1_1_uses_replacer" prot="private">anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::UsesReplacer</innerclass>
+    <innerclass refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1_1_z_ext_builder" prot="private">anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::ZExtBuilder</innerclass>
+    <sectiondef kind="user-defined">
+      <header>API for IR modification with state keeping to support rollback.</header>
+      <description><para>Same as Instruction::setOperand. </para>
+</description>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1afb72d7bb23b2dae3af50c9f82f1f3859" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; std::unique_ptr&lt; TypePromotionAction &gt; &gt;<ref refid="classllvm_1_1iplist" kindref="compound">::iterator</ref></type>
+        <definition>using anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::CommitPt = 
+      SmallVectorImpl&lt;std::unique_ptr&lt;TypePromotionAction&gt;&gt;::iterator</definition>
+        <argsstring></argsstring>
+        <name>CommitPt</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::CommitPt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3663" column="3" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3663" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1af510ad8cdbad86335e6da17a210ca192" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::unique_ptr&lt; TypePromotionAction &gt;, 16 &gt;</type>
+        <definition>SmallVector&lt;std::unique_ptr&lt;TypePromotionAction&gt;, 16&gt; anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::Actions</definition>
+        <argsstring></argsstring>
+        <name>Actions</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::Actions</qualifiedname>
+        <briefdescription>
+<para>The ordered list of actions made so far. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3661" column="15" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3661" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a78f48b3d6373c7236e29a8a75b0fc88d" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceanonymous__namespace_02_code_gen_prepare_8cpp_03_1af2dad33e47a12a0b01b11d97d390f7ee" kindref="member">SetOfInstrs</ref> &amp;</type>
+        <definition>SetOfInstrs&amp; anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::RemovedInsts</definition>
+        <argsstring></argsstring>
+        <name>RemovedInsts</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::RemovedInsts</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3666" column="15" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3666" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a5a651fca694e060abd7d17d6cf34fe51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TypePromotionTransaction::setOperand</definition>
+        <argsstring>(Instruction *Inst, unsigned Idx, Value *NewVal)</argsstring>
+        <name>setOperand</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::setOperand</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>NewVal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3639" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3671" bodyend="3675"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a6057042016e6c71b9df4b820eed07a0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TypePromotionTransaction::eraseInstruction</definition>
+        <argsstring>(Instruction *Inst, Value *NewVal=nullptr)</argsstring>
+        <name>eraseInstruction</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::eraseInstruction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>NewVal</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classllvm_1_1_instruction_1a601ee49a4c4e0babf29bd1cf09036570" kindref="member">Instruction::eraseFromParent</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3642" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3677" bodyend="3682"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1ad7595fd2ce173a5034cbc5f2376978e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TypePromotionTransaction::replaceAllUsesWith</definition>
+        <argsstring>(Instruction *Inst, Value *New)</argsstring>
+        <name>replaceAllUsesWith</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::replaceAllUsesWith</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>New</declname>
+        </param>
+        <briefdescription>
+<para>Same as Value::replaceAllUsesWith. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3645" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3684" bodyend="3688"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a78fd7692f642fa4792119f0eabf67c12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TypePromotionTransaction::mutateType</definition>
+        <argsstring>(Instruction *Inst, Type *NewTy)</argsstring>
+        <name>mutateType</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::mutateType</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>NewTy</declname>
+        </param>
+        <briefdescription>
+<para>Same as Value::mutateType. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3648" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3690" bodyend="3693"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1aa69a48966533c3b656b4ac37819bdcca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * TypePromotionTransaction::createTrunc</definition>
+        <argsstring>(Instruction *Opnd, Type *Ty)</argsstring>
+        <name>createTrunc</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::createTrunc</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Opnd</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>Ty</declname>
+        </param>
+        <briefdescription>
+<para>Same as IRBuilder::createTrunc. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3651" column="9" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3695" bodyend="3700"/>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a377ef6bb6c1215b043f7835ac91f04c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * TypePromotionTransaction::createSExt</definition>
+        <argsstring>(Instruction *Inst, Value *Opnd, Type *Ty)</argsstring>
+        <name>createSExt</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::createSExt</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Opnd</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>Ty</declname>
+        </param>
+        <briefdescription>
+<para>Same as IRBuilder::createSExt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3654" column="9" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3702" bodyend="3708"/>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a40e7a7b00ec46903a6a39e28b30da046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * TypePromotionTransaction::createZExt</definition>
+        <argsstring>(Instruction *Inst, Value *Opnd, Type *Ty)</argsstring>
+        <name>createZExt</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::createZExt</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Opnd</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>Ty</declname>
+        </param>
+        <briefdescription>
+<para>Same as IRBuilder::createZExt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3657" column="9" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3710" bodyend="3716"/>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1ae9342a9ab343b347e3d043d1568aaff9" prot="public" static="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> TypePromotionAction *</type>
+        <definition>using anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::ConstRestorationPt =  const TypePromotionAction *</definition>
+        <argsstring></argsstring>
+        <name>ConstRestorationPt</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::ConstRestorationPt</qualifiedname>
+        <briefdescription>
+<para>Restoration point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The restoration point is a pointer to an action instead of an iterator because the iterator may be invalidated but not the pointer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3621" column="3" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3621" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a3f64f3705ad6de53221d46f95196acb7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::TypePromotionTransaction</definition>
+        <argsstring>(SetOfInstrs &amp;RemovedInsts)</argsstring>
+        <name>TypePromotionTransaction</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::TypePromotionTransaction</qualifiedname>
+        <param>
+          <type><ref refid="namespaceanonymous__namespace_02_code_gen_prepare_8cpp_03_1af2dad33e47a12a0b01b11d97d390f7ee" kindref="member">SetOfInstrs</ref> &amp;</type>
+          <declname>RemovedInsts</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3623" column="3" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3623" bodyend="3624"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a990fcc2525f7ebe5d3dae3aa10434fa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TypePromotionTransaction::commit</definition>
+        <argsstring>()</argsstring>
+        <name>commit</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::commit</qualifiedname>
+        <briefdescription>
+<para>Advocate every changes made in that transaction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if any change happen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3628" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3723" bodyend="3729"/>
+        <references refid="_loop_deletion_8cpp_1a0f1c83c3d08d80b12c424962a5e94ce8a35e0c8c0b180c95d4e122e55ed62cc64" compoundref="_loop_deletion_8cpp" startline="47">Modified</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a7bba09bd30b547542b3316d2c93a5647" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TypePromotionTransaction::rollback</definition>
+        <argsstring>(ConstRestorationPt Point)</argsstring>
+        <name>rollback</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::rollback</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1ae9342a9ab343b347e3d043d1568aaff9" kindref="member">ConstRestorationPt</ref></type>
+          <declname>Point</declname>
+        </param>
+        <briefdescription>
+<para>Undo all the changes made after the given point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3631" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3731" bodyend="3737"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a09325594fe227adf9958691601147da9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1ae9342a9ab343b347e3d043d1568aaff9" kindref="member">ConstRestorationPt</ref></type>
+        <definition>TypePromotionTransaction::ConstRestorationPt TypePromotionTransaction::getRestorationPoint</definition>
+        <argsstring>() const</argsstring>
+        <name>getRestorationPoint</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction::getRestorationPoint</qualifiedname>
+        <briefdescription>
+<para>Get the current restoration point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3634" column="22" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3719" bodyend="3721"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class provides transaction based operation on the IR. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Every change made through this class is recorded in the internal state and can be undone (rollback) until commit is called. CGP does not check if instructions could be speculatively executed when moved. Preserving the original location would pessimize the debugging experience, as well as negatively impact the quality of sample PGO. </para>
+    </detaileddescription>
+    <location file="lib/CodeGen/CodeGenPrepare.cpp" line="3239" column="1" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="3239" bodyend="3667"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1af510ad8cdbad86335e6da17a210ca192" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>Actions</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a990fcc2525f7ebe5d3dae3aa10434fa0" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>commit</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1afb72d7bb23b2dae3af50c9f82f1f3859" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>CommitPt</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1ae9342a9ab343b347e3d043d1568aaff9" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>ConstRestorationPt</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a377ef6bb6c1215b043f7835ac91f04c0" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>createSExt</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1aa69a48966533c3b656b4ac37819bdcca" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>createTrunc</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a40e7a7b00ec46903a6a39e28b30da046" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>createZExt</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a6057042016e6c71b9df4b820eed07a0a" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>eraseInstruction</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a09325594fe227adf9958691601147da9" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>getRestorationPoint</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a78fd7692f642fa4792119f0eabf67c12" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>mutateType</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a78f48b3d6373c7236e29a8a75b0fc88d" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>RemovedInsts</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1ad7595fd2ce173a5034cbc5f2376978e6" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>replaceAllUsesWith</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a7bba09bd30b547542b3316d2c93a5647" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>rollback</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a5a651fca694e060abd7d17d6cf34fe51" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>setOperand</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_type_promotion_transaction_1a3f64f3705ad6de53221d46f95196acb7" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::TypePromotionTransaction</scope><name>TypePromotionTransaction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

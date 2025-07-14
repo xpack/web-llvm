@@ -1,0 +1,1984 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_t_g_parser" kind="class" language="C++" prot="public">
+    <compoundname>llvm::TGParser</compoundname>
+    <includes refid="_t_g_parser_8h" local="yes">TableGen/TGParser.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1_t_g_parser_1aa3955833ae4b6607c50af4c2a66fae9d" prot="private" static="no" strong="no">
+        <type></type>
+        <name>IDParseMode</name>
+        <qualifiedname>llvm::TGParser::IDParseMode</qualifiedname>
+        <enumvalue id="classllvm_1_1_t_g_parser_1aa3955833ae4b6607c50af4c2a66fae9daeaeb9c2dbb58948a215e65798ddc947d" prot="private">
+          <name>ParseValueMode</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_t_g_parser_1aa3955833ae4b6607c50af4c2a66fae9da6afe37124596590c5edaa02486b1e4cd" prot="private">
+          <name>ParseNameMode</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="169" column="3" bodyfile="lib/TableGen/TGParser.h" bodystart="169" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_t_g_parser_1abfa5867e82549e21c22ec1e622f9da66" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> * &gt;, 8 &gt;</type>
+        <definition>using llvm::TGParser::SubstStack =  SmallVector&lt;std::pair&lt;const Init *, const Init *&gt;, 8&gt;</definition>
+        <argsstring></argsstring>
+        <name>SubstStack</name>
+        <qualifiedname>llvm::TGParser::SubstStack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="239" column="3" bodyfile="lib/TableGen/TGParser.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_t_g_parser_1ac8468db4f5ce9ce5baace61c48723396" prot="private" static="no">
+        <type>std::function&lt; void(<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *)&gt;</type>
+        <definition>using llvm::TGParser::ArgValueHandler =  std::function&lt;void(const Init *, const Init *)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ArgValueHandler</name>
+        <qualifiedname>llvm::TGParser::ArgValueHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="249" column="3" bodyfile="lib/TableGen/TGParser.h" bodystart="249" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_t_g_parser_1a51e7fc0e5fb61cfed1a0565740036dc0" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_t_g_lexer" kindref="compound">TGLexer</ref></type>
+        <definition>TGLexer llvm::TGParser::Lex</definition>
+        <argsstring></argsstring>
+        <name>Lex</name>
+        <qualifiedname>llvm::TGParser::Lex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="143" column="11" bodyfile="lib/TableGen/TGParser.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_t_g_parser_1aa58450cbc341985da347babf2104d04e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_let_record" kindref="compound">LetRecord</ref>, 4 &gt; &gt;</type>
+        <definition>std::vector&lt;SmallVector&lt;LetRecord, 4&gt; &gt; llvm::TGParser::LetStack</definition>
+        <argsstring></argsstring>
+        <name>LetStack</name>
+        <qualifiedname>llvm::TGParser::LetStack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="144" column="15" bodyfile="lib/TableGen/TGParser.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_t_g_parser_1a23dbce3fc1ab53434e85c7549619a8b1" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::unique_ptr&lt; <ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::unique_ptr&lt;MultiClass&gt; &gt; llvm::TGParser::MultiClasses</definition>
+        <argsstring></argsstring>
+        <name>MultiClasses</name>
+        <qualifiedname>llvm::TGParser::MultiClasses</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="145" column="12" bodyfile="lib/TableGen/TGParser.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_t_g_parser_1a368f995443a8cea7a7c7dffb3ae5a0da" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_rec_ty" kindref="compound">RecTy</ref> * &gt;</type>
+        <definition>std::map&lt;std::string, const RecTy *&gt; llvm::TGParser::TypeAliases</definition>
+        <argsstring></argsstring>
+        <name>TypeAliases</name>
+        <qualifiedname>llvm::TGParser::TypeAliases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="146" column="12" bodyfile="lib/TableGen/TGParser.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_t_g_parser_1a77d7f20345688bbe8ef048f553a75bad" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="structllvm_1_1_foreach_loop" kindref="compound">ForeachLoop</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;ForeachLoop&gt; &gt; llvm::TGParser::Loops</definition>
+        <argsstring></argsstring>
+        <name>Loops</name>
+        <qualifiedname>llvm::TGParser::Loops</qualifiedname>
+        <briefdescription>
+<para>Loops - Keep track of any foreach loops we are within. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="150" column="15" bodyfile="lib/TableGen/TGParser.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_t_g_parser_1ab4248da5d3d42838489af48e85fb0be3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_defset_record" kindref="compound">DefsetRecord</ref> *, 2 &gt;</type>
+        <definition>SmallVector&lt;DefsetRecord *, 2&gt; llvm::TGParser::Defsets</definition>
+        <argsstring></argsstring>
+        <name>Defsets</name>
+        <qualifiedname>llvm::TGParser::Defsets</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="152" column="15" bodyfile="lib/TableGen/TGParser.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_t_g_parser_1abc7d11ae304700336326c9d4af6dc6a7" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+        <definition>MultiClass* llvm::TGParser::CurMultiClass</definition>
+        <argsstring></argsstring>
+        <name>CurMultiClass</name>
+        <qualifiedname>llvm::TGParser::CurMultiClass</qualifiedname>
+        <briefdescription>
+<para>CurMultiClass - If we are parsing a &apos;multiclass&apos; definition, this is the current value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="156" column="14" bodyfile="lib/TableGen/TGParser.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_t_g_parser_1aad4db3e3d37d65f4dfa63fd02f9fd24f" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_t_g_var_scope" kindref="compound">TGVarScope</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TGVarScope&gt; llvm::TGParser::CurScope</definition>
+        <argsstring></argsstring>
+        <name>CurScope</name>
+        <qualifiedname>llvm::TGParser::CurScope</qualifiedname>
+        <briefdescription>
+<para>CurScope - Innermost of the current nested scopes for &apos;defvar&apos; variables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="159" column="19" bodyfile="lib/TableGen/TGParser.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_t_g_parser_1aa19b5bd44a5c9bdcdcfd4833a3137ae2" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_record_keeper" kindref="compound">RecordKeeper</ref> &amp;</type>
+        <definition>RecordKeeper&amp; llvm::TGParser::Records</definition>
+        <argsstring></argsstring>
+        <name>Records</name>
+        <qualifiedname>llvm::TGParser::Records</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="162" column="16" bodyfile="lib/TableGen/TGParser.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_t_g_parser_1a3acf859137eb0befaf381debc9c994c2" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TGParser::NoWarnOnUnusedTemplateArgs</definition>
+        <argsstring></argsstring>
+        <name>NoWarnOnUnusedTemplateArgs</name>
+        <qualifiedname>llvm::TGParser::NoWarnOnUnusedTemplateArgs</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="175" column="8" bodyfile="lib/TableGen/TGParser.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_t_g_parser_1a25e7d06bf91f49f61b9617bca898de04" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TGParser::TrackReferenceLocs</definition>
+        <argsstring></argsstring>
+        <name>TrackReferenceLocs</name>
+        <qualifiedname>llvm::TGParser::TrackReferenceLocs</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="176" column="8" bodyfile="lib/TableGen/TGParser.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1accb79a047abfe9f327a7595d58d04b61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::TGParser::TGParser</definition>
+        <argsstring>(SourceMgr &amp;SM, ArrayRef&lt; std::string &gt; Macros, RecordKeeper &amp;records, const bool NoWarnOnUnusedTemplateArgs=false, const bool TrackReferenceLocs=false)</argsstring>
+        <name>TGParser</name>
+        <qualifiedname>llvm::TGParser::TGParser</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SM</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::string &gt;</type>
+          <declname>Macros</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_record_keeper" kindref="compound">RecordKeeper</ref> &amp;</type>
+          <declname>records</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>NoWarnOnUnusedTemplateArgs</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>TrackReferenceLocs</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="179" column="3" bodyfile="lib/TableGen/TGParser.h" bodystart="179" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1adf2220b1390559e48081eb1187622748" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseFile</definition>
+        <argsstring>()</argsstring>
+        <name>ParseFile</name>
+        <qualifiedname>llvm::TGParser::ParseFile</qualifiedname>
+        <briefdescription>
+<para>ParseFile - Main entrypoint for parsing a tblgen file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These parser routines return true on error, or false on success. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="188" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="4405" bodyend="4417"/>
+        <references refid="namespacellvm_1_1tgtok_1abbc5259d649363016626e2529fabe0c5ad5504ffda0efa1de5ca3294f5ea86bbf" compoundref="_t_g_lexer_8h" startline="34">llvm::tgtok::Eof</references>
+        <references refid="classllvm_1_1_t_g_parser_1a050e3ccb0e5c0b55cb30615217398b52" compoundref="_t_g_parser_8h" startline="220" endline="224">PopScope</references>
+        <references refid="classllvm_1_1_t_g_parser_1af0c749c975468baeb15fb9757c58a48d" compoundref="_t_g_parser_8h" startline="201" endline="207">PushScope</references>
+        <references refid="classllvm_1_1_t_g_parser_1ab5db391a5f2cba3c4a78e69e1ddb3fd2" compoundref="_t_g_parser_8h" startline="194" endline="196">TokError</references>
+        <referencedby refid="namespacellvm_1a969d49f2536556ecd3442e9a8279fe15" compoundref="_main_8cpp" startline="99" endline="186">llvm::TableGenMain</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a88a8d625cb0f5b05c02959e439f9a3b6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TGParser::Error</definition>
+        <argsstring>(SMLoc L, const Twine &amp;Msg) const</argsstring>
+        <name>Error</name>
+        <qualifiedname>llvm::TGParser::Error</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="190" column="8" bodyfile="lib/TableGen/TGParser.h" bodystart="190" bodyend="193"/>
+        <references refid="namespacellvm_1a37310d4cb640733ed81281942c314d05" compoundref="_table_gen_2_error_8cpp" startline="104" endline="104">llvm::PrintError</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ab5db391a5f2cba3c4a78e69e1ddb3fd2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TGParser::TokError</definition>
+        <argsstring>(const Twine &amp;Msg) const</argsstring>
+        <name>TokError</name>
+        <qualifiedname>llvm::TGParser::TokError</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="194" column="8" bodyfile="lib/TableGen/TGParser.h" bodystart="194" bodyend="196"/>
+        <references refid="namespacellvm_1ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd" compoundref="_with_color_8h" startline="34">llvm::Error</references>
+        <referencedby refid="classllvm_1_1_t_g_parser_1adf2220b1390559e48081eb1187622748" compoundref="_t_g_parser_8cpp" startline="4405" endline="4417">ParseFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a58685cdd792796ad7d316a781ebd7089" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_t_g_lexer_1afaf6bde3c87f4217358a4b4b89df79e2" kindref="member">TGLexer::DependenciesSetTy</ref> &amp;</type>
+        <definition>const TGLexer::DependenciesSetTy &amp; llvm::TGParser::getDependencies</definition>
+        <argsstring>() const</argsstring>
+        <name>getDependencies</name>
+        <qualifiedname>llvm::TGParser::getDependencies</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="197" column="36" bodyfile="lib/TableGen/TGParser.h" bodystart="197" bodyend="199"/>
+        <referencedby refid="_main_8cpp_1a5cdb223afb9f4268a3716aaac56826bd" compoundref="_main_8cpp" startline="81" endline="97">createDependencyFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1af0c749c975468baeb15fb9757c58a48d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_t_g_var_scope" kindref="compound">TGVarScope</ref> *</type>
+        <definition>TGVarScope * llvm::TGParser::PushScope</definition>
+        <argsstring>()</argsstring>
+        <name>PushScope</name>
+        <qualifiedname>llvm::TGParser::PushScope</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="201" column="14" bodyfile="lib/TableGen/TGParser.h" bodystart="201" bodyend="207"/>
+        <referencedby refid="classllvm_1_1_t_g_parser_1adf2220b1390559e48081eb1187622748" compoundref="_t_g_parser_8cpp" startline="4405" endline="4417">ParseFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ab3100229bcd453690b137edb3871ee7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_t_g_var_scope" kindref="compound">TGVarScope</ref> *</type>
+        <definition>TGVarScope * llvm::TGParser::PushScope</definition>
+        <argsstring>(Record *Rec)</argsstring>
+        <name>PushScope</name>
+        <qualifiedname>llvm::TGParser::PushScope</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>Rec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="208" column="14" bodyfile="lib/TableGen/TGParser.h" bodystart="208" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a899a19e6bae243782e1ba66bee2c8994" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_t_g_var_scope" kindref="compound">TGVarScope</ref> *</type>
+        <definition>TGVarScope * llvm::TGParser::PushScope</definition>
+        <argsstring>(ForeachLoop *Loop)</argsstring>
+        <name>PushScope</name>
+        <qualifiedname>llvm::TGParser::PushScope</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_foreach_loop" kindref="compound">ForeachLoop</ref> *</type>
+          <declname>Loop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="212" column="14" bodyfile="lib/TableGen/TGParser.h" bodystart="212" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ad8e316b3eecce4817b10beaaf482151d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_t_g_var_scope" kindref="compound">TGVarScope</ref> *</type>
+        <definition>TGVarScope * llvm::TGParser::PushScope</definition>
+        <argsstring>(MultiClass *Multiclass)</argsstring>
+        <name>PushScope</name>
+        <qualifiedname>llvm::TGParser::PushScope</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>Multiclass</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="216" column="14" bodyfile="lib/TableGen/TGParser.h" bodystart="216" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a050e3ccb0e5c0b55cb30615217398b52" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::TGParser::PopScope</definition>
+        <argsstring>(TGVarScope *ExpectedStackTop)</argsstring>
+        <name>PopScope</name>
+        <qualifiedname>llvm::TGParser::PopScope</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_t_g_var_scope" kindref="compound">TGVarScope</ref> *</type>
+          <declname>ExpectedStackTop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="220" column="8" bodyfile="lib/TableGen/TGParser.h" bodystart="220" bodyend="224"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1_t_g_parser_1adf2220b1390559e48081eb1187622748" compoundref="_t_g_parser_8cpp" startline="4405" endline="4417">ParseFile</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ae1fd5cc67aa5c3839e40638ad75d739c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::AddValue</definition>
+        <argsstring>(Record *TheRec, SMLoc Loc, const RecordVal &amp;RV)</argsstring>
+        <name>AddValue</name>
+        <qualifiedname>llvm::TGParser::AddValue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>TheRec</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_record_val" kindref="compound">RecordVal</ref> &amp;</type>
+          <declname>RV</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="227" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="212" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a456129bcd80efa5e0d91ab03dcf06f1b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::SetValue</definition>
+        <argsstring>(Record *TheRec, SMLoc Loc, const Init *ValName, ArrayRef&lt; unsigned &gt; BitList, const Init *V, bool AllowSelfAssignment=false, bool OverrideDefLoc=true)</argsstring>
+        <name>SetValue</name>
+        <qualifiedname>llvm::TGParser::SetValue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>TheRec</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+          <declname>ValName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+          <declname>BitList</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>AllowSelfAssignment</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>OverrideDefLoc</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+<para>Set the value of a <ref refid="classllvm_1_1_record_val" kindref="compound">RecordVal</ref> within the given record. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>SetValue - Return true on error, false on success.</para>
+<para>If <computeroutput>OverrideDefLoc</computeroutput> is set, the provided location overrides any existing location of the <ref refid="classllvm_1_1_record_val" kindref="compound">RecordVal</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="231" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="231" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a1448223f3ed5019a9c551b6d4d116b57" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::AddSubClass</definition>
+        <argsstring>(Record *Rec, SubClassReference &amp;SubClass)</argsstring>
+        <name>AddSubClass</name>
+        <qualifiedname>llvm::TGParser::AddSubClass</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>Rec</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_sub_class_reference" kindref="compound">SubClassReference</ref> &amp;</type>
+          <declname>SubClass</declname>
+        </param>
+        <briefdescription>
+<para>AddSubClass - Add SubClass as a subclass to CurRec, resolving its template args as SubClass&apos;s template arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="234" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="302" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a0ef1eef57f74abd5a24099f4021acaa0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::AddSubClass</definition>
+        <argsstring>(RecordsEntry &amp;Entry, SubClassReference &amp;SubClass)</argsstring>
+        <name>AddSubClass</name>
+        <qualifiedname>llvm::TGParser::AddSubClass</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_records_entry" kindref="compound">RecordsEntry</ref> &amp;</type>
+          <declname>Entry</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_sub_class_reference" kindref="compound">SubClassReference</ref> &amp;</type>
+          <declname>SubClass</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="235" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="349" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1afe998559bb299a9ff0887369405e2ab6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::AddSubMultiClass</definition>
+        <argsstring>(MultiClass *CurMC, SubMultiClassReference &amp;SubMultiClass)</argsstring>
+        <name>AddSubMultiClass</name>
+        <qualifiedname>llvm::TGParser::AddSubMultiClass</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>CurMC</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_sub_multi_class_reference" kindref="compound">SubMultiClassReference</ref> &amp;</type>
+          <declname>SubMultiClass</declname>
+        </param>
+        <briefdescription>
+<para>AddSubMultiClass - Add SubMultiClass as a subclass to CurMC, resolving its template args as SubMultiClass&apos;s template arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="236" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="367" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a22264cec4b430a2c159717a9f566eb0c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::addEntry</definition>
+        <argsstring>(RecordsEntry E)</argsstring>
+        <name>addEntry</name>
+        <qualifiedname>llvm::TGParser::addEntry</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_records_entry" kindref="compound">RecordsEntry</ref></type>
+          <declname>E</declname>
+        </param>
+        <briefdescription>
+<para>Add a record, foreach loop, or assertion to the current context. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="241" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="384" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a6546bcd069ab87b015f188b0d148b9ef" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::resolve</definition>
+        <argsstring>(const ForeachLoop &amp;Loop, SubstStack &amp;Stack, bool Final, std::vector&lt; RecordsEntry &gt; *Dest, SMLoc *Loc=nullptr)</argsstring>
+        <name>resolve</name>
+        <qualifiedname>llvm::TGParser::resolve</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_foreach_loop" kindref="compound">ForeachLoop</ref> &amp;</type>
+          <declname>Loop</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SubstStack</ref> &amp;</type>
+          <declname>Stack</declname>
+          <defname>Substs</defname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Final</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="structllvm_1_1_records_entry" kindref="compound">RecordsEntry</ref> &gt; *</type>
+          <declname>Dest</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref> *</type>
+          <declname>Loc</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Resolve the entries in <computeroutput><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref></computeroutput>, going over inner loops recursively and making the given subsitutions of (name, value) pairs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The resulting records are stored in <computeroutput>Dest</computeroutput> if non-null. Otherwise, they are added to the global record keeper. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="242" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="427" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a3663ff20a8d2fe19503b42a580861767" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::resolve</definition>
+        <argsstring>(const std::vector&lt; RecordsEntry &gt; &amp;Source, SubstStack &amp;Substs, bool Final, std::vector&lt; RecordsEntry &gt; *Dest, SMLoc *Loc=nullptr)</argsstring>
+        <name>resolve</name>
+        <qualifiedname>llvm::TGParser::resolve</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; <ref refid="structllvm_1_1_records_entry" kindref="compound">RecordsEntry</ref> &gt; &amp;</type>
+          <declname>Source</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SubstStack</ref> &amp;</type>
+          <declname>Substs</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Final</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="structllvm_1_1_records_entry" kindref="compound">RecordsEntry</ref> &gt; *</type>
+          <declname>Dest</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref> *</type>
+          <declname>Loc</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Resolve the entries in <computeroutput>Source</computeroutput>, going over loops recursively and making the given substitutions of (name, value) pairs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The resulting records are stored in <computeroutput>Dest</computeroutput> if non-null. Otherwise, they are added to the global record keeper. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="244" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="491" bodyend="543"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ad09891ad31b97c85a8874755b9e592c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::addDefOne</definition>
+        <argsstring>(std::unique_ptr&lt; Record &gt; Rec)</argsstring>
+        <name>addDefOne</name>
+        <qualifiedname>llvm::TGParser::addDefOne</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_record" kindref="compound">Record</ref> &gt;</type>
+          <declname>Rec</declname>
+        </param>
+        <briefdescription>
+<para>Resolve the record fully and add it to the record keeper. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="247" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="546" bodyend="591"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a5b47b953c0ccc2b12e8ab77d5fcca5d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::resolveArguments</definition>
+        <argsstring>(const Record *Rec, ArrayRef&lt; const ArgumentInit * &gt; ArgValues, SMLoc Loc, ArgValueHandler ArgValueHandler=[](const Init *, const Init *) {})</argsstring>
+        <name>resolveArguments</name>
+        <qualifiedname>llvm::TGParser::resolveArguments</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>Rec</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_argument_init" kindref="compound">ArgumentInit</ref> * &gt;</type>
+          <declname>ArgValues</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type>ArgValueHandler</type>
+          <declname>ArgValueHandler</declname>
+          <defval>[](<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *) {}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="250" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="593" bodyend="633"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a972a3d6c67e123384dc7c4e5d3bb32ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::resolveArgumentsOfClass</definition>
+        <argsstring>(MapResolver &amp;R, const Record *Rec, ArrayRef&lt; const ArgumentInit * &gt; ArgValues, SMLoc Loc)</argsstring>
+        <name>resolveArgumentsOfClass</name>
+        <qualifiedname>llvm::TGParser::resolveArgumentsOfClass</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_map_resolver" kindref="compound">MapResolver</ref> &amp;</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>Rec</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_argument_init" kindref="compound">ArgumentInit</ref> * &gt;</type>
+          <declname>ArgValues</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <briefdescription>
+<para>Resolve the arguments of class and set them to <ref refid="classllvm_1_1_map_resolver" kindref="compound">MapResolver</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if failed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="253" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="637" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a0e8b587d5eeb43e576b218aa7fca8a2a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::resolveArgumentsOfMultiClass</definition>
+        <argsstring>(SubstStack &amp;Substs, MultiClass *MC, ArrayRef&lt; const ArgumentInit * &gt; ArgValues, const Init *DefmName, SMLoc Loc)</argsstring>
+        <name>resolveArgumentsOfMultiClass</name>
+        <qualifiedname>llvm::TGParser::resolveArgumentsOfMultiClass</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SubstStack</ref> &amp;</type>
+          <declname>Substs</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>MC</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_argument_init" kindref="compound">ArgumentInit</ref> * &gt;</type>
+          <declname>ArgValues</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+          <declname>DefmName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <briefdescription>
+<para>Resolve the arguments of multiclass and store them into SubstStack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if failed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="256" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="647" bodyend="656"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a25c0430438b38081597a768d5452de35" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::consume</definition>
+        <argsstring>(tgtok::TokKind K)</argsstring>
+        <name>consume</name>
+        <qualifiedname>llvm::TGParser::consume</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1tgtok_1abbc5259d649363016626e2529fabe0c5" kindref="member">tgtok::TokKind</ref></type>
+          <declname>K</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="261" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="662" bodyend="668"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a568150af076e5d2e698a96f19a72226b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseObjectList</definition>
+        <argsstring>(MultiClass *MC=nullptr)</argsstring>
+        <name>ParseObjectList</name>
+        <qualifiedname>llvm::TGParser::ParseObjectList</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>MC</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>ParseObjectList ObjectList :== Object*. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="262" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="4397" bodyend="4403"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a9b717f35699aded00ea02bf21cb6a50a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseObject</definition>
+        <argsstring>(MultiClass *MC)</argsstring>
+        <name>ParseObject</name>
+        <qualifiedname>llvm::TGParser::ParseObject</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>MC</declname>
+        </param>
+        <briefdescription>
+<para>ParseObject Object ::= ClassInst Object ::= DefInst Object ::= MultiClassInst Object ::= DefMInst Object ::= LETCommand &apos;{&apos; ObjectList &apos;}&apos; Object ::= LETCommand Object Object ::= Defset Object ::= Deftype Object ::= Defvar Object ::= Assert Object ::= Dump. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="263" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="4362" bodyend="4393"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a3894b83a9e85605f909a21cfb54bae09" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseClass</definition>
+        <argsstring>()</argsstring>
+        <name>ParseClass</name>
+        <qualifiedname>llvm::TGParser::ParseClass</qualifiedname>
+        <briefdescription>
+<para>ParseClass - Parse a tblgen class definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ClassInst ::= CLASS <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> TemplateArgList? ObjectBody </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="264" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3996" bodyend="4042"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a33db554af03479d5863f9d23ac839853" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseMultiClass</definition>
+        <argsstring>()</argsstring>
+        <name>ParseMultiClass</name>
+        <qualifiedname>llvm::TGParser::ParseMultiClass</qualifiedname>
+        <briefdescription>
+<para>ParseMultiClass - Parse a multiclass definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>MultiClassInst ::= MULTICLASS <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> TemplateArgList? &apos;:&apos; BaseMultiClassList &apos;{&apos; MultiClassObject+ &apos;}&apos; MultiClassObject ::= Assert MultiClassObject ::= DefInst MultiClassObject ::= DefMInst MultiClassObject ::= Defvar MultiClassObject ::= Foreach MultiClassObject ::= If MultiClassObject ::= LETCommand &apos;{&apos; ObjectList &apos;}&apos; MultiClassObject ::= LETCommand Object </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="265" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="4149" bodyend="4241"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a816a1546393b89a4cf7b132a4373ae79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseDefm</definition>
+        <argsstring>(MultiClass *CurMultiClass)</argsstring>
+        <name>ParseDefm</name>
+        <qualifiedname>llvm::TGParser::ParseDefm</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>CurMultiClass</declname>
+        </param>
+        <briefdescription>
+<para>ParseDefm - Parse the instantiation of a multiclass. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>DefMInst ::= DEFM <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> &apos;:&apos; DefmSubClassRef &apos;;&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="266" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="4247" bodyend="4348"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ad226db4ed50e913b4829e3583fd17e2d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseDef</definition>
+        <argsstring>(MultiClass *CurMultiClass)</argsstring>
+        <name>ParseDef</name>
+        <qualifiedname>llvm::TGParser::ParseDef</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>CurMultiClass</declname>
+        </param>
+        <briefdescription>
+<para>ParseDef - Parse and return a top level or multiclass record definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return false if okay, true if error.</para>
+<para>DefInst ::= DEF ObjectName ObjectBody </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="267" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3643" bodyend="3670"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a3dea9c175324f04154f7cbaa09ff2e4e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseDefset</definition>
+        <argsstring>()</argsstring>
+        <name>ParseDefset</name>
+        <qualifiedname>llvm::TGParser::ParseDefset</qualifiedname>
+        <briefdescription>
+<para>ParseDefset - Parse a defset statement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Defset ::= DEFSET <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> Id &apos;=&apos; &apos;{&apos; ObjectList &apos;}&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="268" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3676" bodyend="3716"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1aecbb529e8adfe38a61c3e69826fb1297" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseDeftype</definition>
+        <argsstring>()</argsstring>
+        <name>ParseDeftype</name>
+        <qualifiedname>llvm::TGParser::ParseDeftype</qualifiedname>
+        <briefdescription>
+<para>ParseDeftype - Parse a defvar statement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Deftype ::= DEFTYPE Id &apos;=&apos; <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> &apos;;&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="269" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3722" bodyend="3752"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a1248ddc95c5697be7a81fe2958afee3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseDefvar</definition>
+        <argsstring>(Record *CurRec=nullptr)</argsstring>
+        <name>ParseDefvar</name>
+        <qualifiedname>llvm::TGParser::ParseDefvar</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>ParseDefvar - Parse a defvar statement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Defvar ::= DEFVAR Id &apos;=&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;;&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="270" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3758" bodyend="3797"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a8e07706cd397714199f0c52836be824a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseDump</definition>
+        <argsstring>(MultiClass *CurMultiClass, Record *CurRec=nullptr)</argsstring>
+        <name>ParseDump</name>
+        <qualifiedname>llvm::TGParser::ParseDump</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>CurMultiClass</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="271" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="4490" bodyend="4520"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1aca24eab98dd4587c68b6c2f7db1852d8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseForeach</definition>
+        <argsstring>(MultiClass *CurMultiClass)</argsstring>
+        <name>ParseForeach</name>
+        <qualifiedname>llvm::TGParser::ParseForeach</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>CurMultiClass</declname>
+        </param>
+        <briefdescription>
+<para>ParseForeach - Parse a for statement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the record corresponding to it. This returns true on error.</para>
+<para>Foreach ::= FOREACH Declaration IN &apos;{ ObjectList &apos;}&apos; Foreach ::= FOREACH Declaration IN Object </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="272" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3805" bodyend="3852"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a8b2ac83afb70de9ec74c747209e34d2e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseIf</definition>
+        <argsstring>(MultiClass *CurMultiClass)</argsstring>
+        <name>ParseIf</name>
+        <qualifiedname>llvm::TGParser::ParseIf</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>CurMultiClass</declname>
+        </param>
+        <briefdescription>
+<para>ParseIf - Parse an if statement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If ::= IF <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> THEN IfBody If ::= IF <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> THEN IfBody ELSE IfBody </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="273" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3859" bodyend="3926"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ad207395a6a8d34598a8b9a6e9cdc7adc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseIfBody</definition>
+        <argsstring>(MultiClass *CurMultiClass, StringRef Kind)</argsstring>
+        <name>ParseIfBody</name>
+        <qualifiedname>llvm::TGParser::ParseIfBody</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>CurMultiClass</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <briefdescription>
+<para>ParseIfBody - Parse the then-clause or else-clause of an if statement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>IfBody ::= Object IfBody ::= &apos;{&apos; ObjectList &apos;}&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="274" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3933" bodyend="3958"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ac3a7dfeaf4a840a37b0ce604735a97fb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseAssert</definition>
+        <argsstring>(MultiClass *CurMultiClass, Record *CurRec=nullptr)</argsstring>
+        <name>ParseAssert</name>
+        <qualifiedname>llvm::TGParser::ParseAssert</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>CurMultiClass</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>ParseAssert - Parse an assert statement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assert ::= ASSERT condition , message ; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="275" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3963" bodyend="3990"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ab31750a4a9193f24692af53e7ea845e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseTopLevelLet</definition>
+        <argsstring>(MultiClass *CurMultiClass)</argsstring>
+        <name>ParseTopLevelLet</name>
+        <qualifiedname>llvm::TGParser::ParseTopLevelLet</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>CurMultiClass</declname>
+        </param>
+        <briefdescription>
+<para>ParseTopLevelLet - Parse a &apos;let&apos; at top level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be a couple of different related productions. This works inside multiclasses too.</para>
+<para>Object ::= LET LetList IN &apos;{&apos; ObjectList &apos;}&apos; Object ::= LET LetList IN Object </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="276" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="4093" bodyend="4134"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a574184346dbce246238e1c01069c08cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TGParser::ParseLetList</definition>
+        <argsstring>(SmallVectorImpl&lt; LetRecord &gt; &amp;Result)</argsstring>
+        <name>ParseLetList</name>
+        <qualifiedname>llvm::TGParser::ParseLetList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="structllvm_1_1_let_record" kindref="compound">LetRecord</ref> &gt; &amp;</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+<para>ParseLetList - Parse a non-empty list of assignment expressions into a list of LetRecords. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>LetList ::= LetItem (&apos;,&apos; LetItem)* LetItem ::= <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> OptionalRangeList &apos;=&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="277" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="4050" bodyend="4085"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1aaf98e35dec734091521872790473753c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseObjectBody</definition>
+        <argsstring>(Record *CurRec)</argsstring>
+        <name>ParseObjectBody</name>
+        <qualifiedname>llvm::TGParser::ParseObjectBody</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <briefdescription>
+<para>ParseObjectBody - Parse the body of a def or class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This consists of an optional ClassList followed by a Body. CurRec is the current def or class that is being parsed.</para>
+<para>ObjectBody ::= BaseClassList Body BaseClassList ::= /*empty*<zwj/>/ BaseClassList ::= &apos;:&apos; BaseClassListNE BaseClassListNE ::= SubClassRef (&apos;,&apos; SubClassRef)* </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="279" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3608" bodyend="3636"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a2d37ad634be013e9358c05ebf3cd28d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseBody</definition>
+        <argsstring>(Record *CurRec)</argsstring>
+        <name>ParseBody</name>
+        <qualifiedname>llvm::TGParser::ParseBody</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <briefdescription>
+<para>ParseBody - Read the body of a class or def. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true on error, false on success.</para>
+<para>Body ::= &apos;;&apos; Body ::= &apos;{&apos; BodyList &apos;}&apos; BodyList BodyItem* </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="280" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3543" bodyend="3566"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1aaf8a4bf2d2bdf87c69a04e7e0dbfa9ce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseBodyItem</definition>
+        <argsstring>(Record *CurRec)</argsstring>
+        <name>ParseBodyItem</name>
+        <qualifiedname>llvm::TGParser::ParseBodyItem</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <briefdescription>
+<para>ParseBodyItem - Parse a single item within the body of a def or class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>BodyItem ::= Declaration &apos;;&apos; BodyItem ::= LET <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> OptionalBitList &apos;=&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;;&apos; BodyItem ::= Defvar BodyItem ::= Dump BodyItem ::= Assert </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="281" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3481" bodyend="3534"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a5cfd6ea7690c0fd4b573519c0d6a0716" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseTemplateArgList</definition>
+        <argsstring>(Record *CurRec)</argsstring>
+        <name>ParseTemplateArgList</name>
+        <qualifiedname>llvm::TGParser::ParseTemplateArgList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <briefdescription>
+<para>ParseTemplateArgList - Read a template argument list, which is a non-empty sequence of template-declarations in &lt;&gt;&apos;s. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If CurRec is non-null, these are template args for a class. If null, these are the template args for a multiclass.</para>
+<para>TemplateArgList ::= &apos;&lt;&apos; Declaration (&apos;,&apos; Declaration)* &apos;&gt;&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="283" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3441" bodyend="3471"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a3e6e0ba477c95c6f61d5487d7481b791" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+        <definition>const Init * TGParser::ParseDeclaration</definition>
+        <argsstring>(Record *CurRec, bool ParsingTemplateArgs)</argsstring>
+        <name>ParseDeclaration</name>
+        <qualifiedname>llvm::TGParser::ParseDeclaration</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ParsingTemplateArgs</declname>
+        </param>
+        <briefdescription>
+<para>ParseDeclaration - Read a declaration, returning the name of field <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>, or an empty string on error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can happen in a number of different contexts, including within a def or in the template args for a class (in which case CurRec will be non-null) and within the template args for a multiclass (in which case CurRec will be null, but CurMultiClass will be set). This can also happen within a def that is within a multiclass, which will set both CurRec and CurMultiClass.</para>
+<para>Declaration ::= FIELD? <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> (&apos;=&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref>)? </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="284" column="14" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3286" bodyend="3350"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a6b6c82cafcfc76dcd8a2a7106820574c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_var_init" kindref="compound">VarInit</ref> *</type>
+        <definition>const VarInit * TGParser::ParseForeachDeclaration</definition>
+        <argsstring>(const Init *&amp;ForeachListValue)</argsstring>
+        <name>ParseForeachDeclaration</name>
+        <qualifiedname>llvm::TGParser::ParseForeachDeclaration</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *&amp;</type>
+          <declname>ForeachListValue</declname>
+        </param>
+        <briefdescription>
+<para>ParseForeachDeclaration - Read a foreach declaration, returning the name of the declared object or a NULL <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> on error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the name of the parsed initializer list through ForeachListName.</para>
+<para>ForeachDeclaration ::= <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> &apos;=&apos; &apos;{&apos; RangeList &apos;}&apos; ForeachDeclaration ::= <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> &apos;=&apos; RangePiece ForeachDeclaration ::= <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> &apos;=&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="285" column="17" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3361" bodyend="3432"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a24f8b1496893ebbe3a0f18f450cbd33f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_sub_class_reference" kindref="compound">SubClassReference</ref></type>
+        <definition>SubClassReference TGParser::ParseSubClassReference</definition>
+        <argsstring>(Record *CurRec, bool isDefm)</argsstring>
+        <name>ParseSubClassReference</name>
+        <qualifiedname>llvm::TGParser::ParseSubClassReference</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>isDefm</declname>
+        </param>
+        <briefdescription>
+<para>ParseSubClassReference - Parse a reference to a subclass or a multiclass. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns a SubClassRefTy with a null Record* on error.</para>
+<para>SubClassRef ::= ClassID SubClassRef ::= ClassID &apos;&lt;&apos; ArgValueList &apos;&gt;&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="287" column="21" bodyfile="lib/TableGen/TGParser.cpp" bodystart="763" bodyend="795"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ad4f5b479ebd3fe98f052bfa71231c5db" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_sub_multi_class_reference" kindref="compound">SubMultiClassReference</ref></type>
+        <definition>SubMultiClassReference TGParser::ParseSubMultiClassReference</definition>
+        <argsstring>(MultiClass *CurMC)</argsstring>
+        <name>ParseSubMultiClassReference</name>
+        <qualifiedname>llvm::TGParser::ParseSubMultiClassReference</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>CurMC</declname>
+        </param>
+        <briefdescription>
+<para>ParseSubMultiClassReference - Parse a reference to a subclass or to a templated submulticlass. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns a SubMultiClassRefTy with a null Record* on error.</para>
+<para>SubMultiClassRef ::= MultiClassID SubMultiClassRef ::= MultiClassID &apos;&lt;&apos; ArgValueList &apos;&gt;&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="288" column="26" bodyfile="lib/TableGen/TGParser.cpp" bodystart="805" bodyend="828"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a32a27e94136c592062c52d9eb192e5b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+        <definition>const Init * TGParser::ParseIDValue</definition>
+        <argsstring>(Record *CurRec, const StringInit *Name, SMRange NameLoc, IDParseMode Mode=ParseValueMode)</argsstring>
+        <name>ParseIDValue</name>
+        <qualifiedname>llvm::TGParser::ParseIDValue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_string_init" kindref="compound">StringInit</ref> *</type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_range" kindref="compound">SMRange</ref></type>
+          <declname>NameLoc</declname>
+        </param>
+        <param>
+          <type>IDParseMode</type>
+          <declname>Mode</declname>
+          <defval>ParseValueMode</defval>
+        </param>
+        <briefdescription>
+<para>ParseIDValue. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="290" column="14" bodyfile="lib/TableGen/TGParser.cpp" bodystart="1162" bodyend="1188"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a1e98cf0cae28a494bb33ebc83e9c7235" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+        <definition>const Init * TGParser::ParseSimpleValue</definition>
+        <argsstring>(Record *CurRec, const RecTy *ItemType=nullptr, IDParseMode Mode=ParseValueMode)</argsstring>
+        <name>ParseSimpleValue</name>
+        <qualifiedname>llvm::TGParser::ParseSimpleValue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_rec_ty" kindref="compound">RecTy</ref> *</type>
+          <declname>ItemType</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>IDParseMode</type>
+          <declname>Mode</declname>
+          <defval>ParseValueMode</defval>
+        </param>
+        <briefdescription>
+<para>ParseSimpleValue - Parse a tblgen value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns null on error.</para>
+<para>SimpleValue ::= IDValue SimpleValue ::= INTVAL SimpleValue ::= STRVAL+ SimpleValue ::= CODEFRAGMENT SimpleValue ::= &apos;?&apos; SimpleValue ::= &apos;{&apos; ValueList &apos;}&apos; SimpleValue ::= <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> &apos;&lt;&apos; ValueListNE &apos;&gt;&apos; SimpleValue ::= &apos;[&apos; ValueList &apos;]&apos; SimpleValue ::= &apos;(&apos; IDValue DagArgList &apos;)&apos; SimpleValue ::= CONCATTOK &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= ADDTOK &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= DIVTOK &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= SUBTOK &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= SHLTOK &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= SRATOK &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= SRLTOK &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= LISTCONCATTOK &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= LISTSPLATTOK &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= LISTREMOVETOK &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= RANGE &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= RANGE &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= RANGE &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= STRCONCATTOK &apos;(&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;)&apos; SimpleValue ::= COND &apos;(&apos; [<ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &apos;:&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,]+ &apos;)&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="292" column="14" bodyfile="lib/TableGen/TGParser.cpp" bodystart="2655" bodyend="2925"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a1d5a448d985bdcee64ad98c890989ca4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+        <definition>const Init * TGParser::ParseValue</definition>
+        <argsstring>(Record *CurRec, const RecTy *ItemType=nullptr, IDParseMode Mode=ParseValueMode)</argsstring>
+        <name>ParseValue</name>
+        <qualifiedname>llvm::TGParser::ParseValue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_rec_ty" kindref="compound">RecTy</ref> *</type>
+          <declname>ItemType</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>IDParseMode</type>
+          <declname>Mode</declname>
+          <defval>ParseValueMode</defval>
+        </param>
+        <briefdescription>
+<para>ParseValue - Parse a <ref refid="namespacellvm_1_1_table_gen" kindref="compound">TableGen</ref> value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns null on error.</para>
+<para><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> ::= SimpleValue ValueSuffix* ValueSuffix ::= &apos;{&apos; BitList &apos;}&apos; ValueSuffix ::= &apos;[&apos; SliceElements &apos;]&apos; ValueSuffix ::= &apos;.&apos; <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="294" column="14" bodyfile="lib/TableGen/TGParser.cpp" bodystart="2934" bodyend="3128"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a997b5c8dc94a1d6a514032a2b31851cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TGParser::ParseValueList</definition>
+        <argsstring>(SmallVectorImpl&lt; const Init * &gt; &amp;Result, Record *CurRec, const RecTy *ItemType=nullptr)</argsstring>
+        <name>ParseValueList</name>
+        <qualifiedname>llvm::TGParser::ParseValueList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> * &gt; &amp;</type>
+          <declname>Result</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_rec_ty" kindref="compound">RecTy</ref> *</type>
+          <declname>ItemType</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>ParseValueList - Parse a comma separated list of values, returning them in a vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that this always expects to be able to parse at least one value. It returns an empty list if this is not possible.</para>
+<para>ValueList ::= <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> (&apos;,&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref>) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="296" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3180" bodyend="3198"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ac6fdf045c211fe0a7195521bf1b8d5e1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseTemplateArgValueList</definition>
+        <argsstring>(SmallVectorImpl&lt; const ArgumentInit * &gt; &amp;Result, SmallVectorImpl&lt; SMLoc &gt; &amp;ArgLocs, Record *CurRec, const Record *ArgsRec)</argsstring>
+        <name>ParseTemplateArgValueList</name>
+        <qualifiedname>llvm::TGParser::ParseTemplateArgValueList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_argument_init" kindref="compound">ArgumentInit</ref> * &gt; &amp;</type>
+          <declname>Result</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref> &gt; &amp;</type>
+          <declname>ArgLocs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>ArgsRec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="298" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3208" bodyend="3274"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a1d49e0617f1c5c41e68fcab6553c5c47" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TGParser::ParseDagArgList</definition>
+        <argsstring>(SmallVectorImpl&lt; std::pair&lt; const Init *, const StringInit * &gt; &gt; &amp;Result, Record *CurRec)</argsstring>
+        <name>ParseDagArgList</name>
+        <qualifiedname>llvm::TGParser::ParseDagArgList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_string_init" kindref="compound">StringInit</ref> * &gt; &gt; &amp;</type>
+          <declname>Result</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <briefdescription>
+<para>ParseDagArgList - Parse the argument list for a dag literal expression. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>DagArg ::= <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> (&apos;:&apos; VARNAME)? DagArg ::= VARNAME DagArgList ::= DagArg DagArgList ::= DagArgList &apos;,&apos; DagArg </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="301" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3136" bodyend="3172"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a05be8fbcdce3652a0acf26b10a11e898" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseOptionalRangeList</definition>
+        <argsstring>(SmallVectorImpl&lt; unsigned &gt; &amp;Ranges)</argsstring>
+        <name>ParseOptionalRangeList</name>
+        <qualifiedname>llvm::TGParser::ParseOptionalRangeList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <declname>Ranges</declname>
+        </param>
+        <briefdescription>
+<para>ParseOptionalRangeList - Parse either a range list in &lt;&gt;&apos;s or nothing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>OptionalRangeList ::= &apos;&lt;&apos; RangeList &apos;&gt;&apos; OptionalRangeList ::= /*empty*<zwj/>/ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="304" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="1053" bodyend="1067"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a89432356ae298c4cf16ed7cfaf873aa3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseOptionalBitList</definition>
+        <argsstring>(SmallVectorImpl&lt; unsigned &gt; &amp;Ranges)</argsstring>
+        <name>ParseOptionalBitList</name>
+        <qualifiedname>llvm::TGParser::ParseOptionalBitList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <declname>Ranges</declname>
+        </param>
+        <briefdescription>
+<para>ParseOptionalBitList - Parse either a bit list in {}&apos;s or nothing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>OptionalBitList ::= &apos;{&apos; RangeList &apos;}&apos; OptionalBitList ::= /*empty*<zwj/>/ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="305" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="1072" bodyend="1086"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a81fb74c8c6762039d467d4c4bad545d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_typed_init" kindref="compound">TypedInit</ref> *</type>
+        <definition>const TypedInit * TGParser::ParseSliceElement</definition>
+        <argsstring>(Record *CurRec)</argsstring>
+        <name>ParseSliceElement</name>
+        <qualifiedname>llvm::TGParser::ParseSliceElement</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <briefdescription>
+<para>ParseSliceElement - Parse subscript or range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>SliceElement ::= <ref refid="classllvm_1_1_value" kindref="compound">Value&lt;list&lt;int&gt;&gt;</ref> SliceElement ::= <ref refid="classllvm_1_1_value" kindref="compound">Value&lt;int&gt;</ref> SliceElement ::= <ref refid="classllvm_1_1_value" kindref="compound">Value&lt;int&gt;</ref> &apos;...&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value&lt;int&gt;</ref> SliceElement ::= <ref refid="classllvm_1_1_value" kindref="compound">Value&lt;int&gt;</ref> &apos;-&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value&lt;int&gt;</ref> (deprecated) SliceElement ::= <ref refid="classllvm_1_1_value" kindref="compound">Value&lt;int&gt;</ref> INTVAL(Negative; deprecated)</para>
+<para>SliceElement is either <ref refid="classllvm_1_1_int_rec_ty" kindref="compound">IntRecTy</ref>, <ref refid="classllvm_1_1_list_rec_ty" kindref="compound">ListRecTy</ref>, or nullptr </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="306" column="19" bodyfile="lib/TableGen/TGParser.cpp" bodystart="840" bodyend="891"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ab7a8743b7a8e4826958d4174f078e405" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_typed_init" kindref="compound">TypedInit</ref> *</type>
+        <definition>const TypedInit * TGParser::ParseSliceElements</definition>
+        <argsstring>(Record *CurRec, bool Single=false)</argsstring>
+        <name>ParseSliceElements</name>
+        <qualifiedname>llvm::TGParser::ParseSliceElements</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Single</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>ParseSliceElements - Parse subscripts in square brackets. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>SliceElements ::= ( SliceElement &apos;,&apos; )* SliceElement &apos;,&apos;?</para>
+<para>SliceElement is either <ref refid="classllvm_1_1_int_rec_ty" kindref="compound">IntRecTy</ref>, <ref refid="classllvm_1_1_list_rec_ty" kindref="compound">ListRecTy</ref>, or nullptr</para>
+<para>Returns <ref refid="classllvm_1_1_list_rec_ty" kindref="compound">ListRecTy</ref> by defaut. Returns <ref refid="classllvm_1_1_int_rec_ty" kindref="compound">IntRecTy</ref> if;<itemizedlist>
+<listitem><para>Single=true</para>
+</listitem><listitem><para>SliceElements is <ref refid="classllvm_1_1_value" kindref="compound">Value&lt;int&gt;</ref> w/o trailing comma </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="307" column="19" bodyfile="lib/TableGen/TGParser.cpp" bodystart="904" bodyend="970"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a35d067a4c56fc746a3e3cd27f1071ea2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TGParser::ParseRangeList</definition>
+        <argsstring>(SmallVectorImpl&lt; unsigned &gt; &amp;Result)</argsstring>
+        <name>ParseRangeList</name>
+        <qualifiedname>llvm::TGParser::ParseRangeList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+<para>ParseRangeList - Parse a list of scalars and ranges into scalar values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>RangeList ::= RangePiece (&apos;,&apos; RangePiece)* </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="308" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="1036" bodyend="1048"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ac4e943773b15626c21acd8bf74d8ff01" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ParseRangePiece</definition>
+        <argsstring>(SmallVectorImpl&lt; unsigned &gt; &amp;Ranges, const TypedInit *FirstItem=nullptr)</argsstring>
+        <name>ParseRangePiece</name>
+        <qualifiedname>llvm::TGParser::ParseRangePiece</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <declname>Ranges</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_typed_init" kindref="compound">TypedInit</ref> *</type>
+          <declname>FirstItem</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>ParseRangePiece - Parse a bit/value range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>RangePiece ::= INTVAL RangePiece ::= INTVAL &apos;...&apos; INTVAL RangePiece ::= INTVAL &apos;-&apos; INTVAL RangePiece ::= INTVAL INTVAL </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="309" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="978" bodyend="1030"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a41e9585b6815b422bad1e16466979130" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_rec_ty" kindref="compound">RecTy</ref> *</type>
+        <definition>const RecTy * TGParser::ParseType</definition>
+        <argsstring>()</argsstring>
+        <name>ParseType</name>
+        <qualifiedname>llvm::TGParser::ParseType</qualifiedname>
+        <briefdescription>
+<para>ParseType - Parse and return a tblgen type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns null on error.</para>
+<para><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> ::= STRING // string type <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> ::= CODE // code type <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> ::= BIT // bit type <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> ::= BITS &apos;&lt;&apos; INTVAL &apos;&gt;&apos; // bits&lt;x&gt; type <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> ::= INT // int type <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> ::= LIST &apos;&lt;&apos; <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> &apos;&gt;&apos; // list&lt;x&gt; type <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> ::= DAG // dag type <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> ::= ClassID // <ref refid="classllvm_1_1_record" kindref="compound">Record</ref> <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="311" column="15" bodyfile="lib/TableGen/TGParser.cpp" bodystart="1099" bodyend="1159"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a67d2b5babe1381cedd82163ee56f18c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+        <definition>const Init * TGParser::ParseOperation</definition>
+        <argsstring>(Record *CurRec, const RecTy *ItemType)</argsstring>
+        <name>ParseOperation</name>
+        <qualifiedname>llvm::TGParser::ParseOperation</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_rec_ty" kindref="compound">RecTy</ref> *</type>
+          <declname>ItemType</declname>
+        </param>
+        <briefdescription>
+<para>ParseOperation - Parse an operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns null on error.</para>
+<para>Operation ::= XOperator [&apos;&lt;&apos; <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> &apos;&gt;&apos;] &apos;(&apos; Args &apos;)&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="312" column="14" bodyfile="lib/TableGen/TGParser.cpp" bodystart="1194" bodyend="2209"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a25113a91699d31ffd8b0e7bf4e7f1435" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+        <definition>const Init * TGParser::ParseOperationSubstr</definition>
+        <argsstring>(Record *CurRec, const RecTy *ItemType)</argsstring>
+        <name>ParseOperationSubstr</name>
+        <qualifiedname>llvm::TGParser::ParseOperationSubstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_rec_ty" kindref="compound">RecTy</ref> *</type>
+          <declname>ItemType</declname>
+        </param>
+        <briefdescription>
+<para>Parse the !substr operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return null on error.</para>
+<para>Substr ::= !substr(string, start-int [, length-int]) =&gt; string </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="313" column="14" bodyfile="lib/TableGen/TGParser.cpp" bodystart="2245" bodyend="2329"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a7f7628b19468c6bb3c05095927a53b4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+        <definition>const Init * TGParser::ParseOperationFind</definition>
+        <argsstring>(Record *CurRec, const RecTy *ItemType)</argsstring>
+        <name>ParseOperationFind</name>
+        <qualifiedname>llvm::TGParser::ParseOperationFind</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_rec_ty" kindref="compound">RecTy</ref> *</type>
+          <declname>ItemType</declname>
+        </param>
+        <briefdescription>
+<para>Parse the !find operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return null on error.</para>
+<para>Substr ::= !find(string, string [, start-int]) =&gt; int </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="314" column="14" bodyfile="lib/TableGen/TGParser.cpp" bodystart="2334" bodyend="2418"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ad882e62920391e22bc688fecbc266b29" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+        <definition>const Init * TGParser::ParseOperationForEachFilter</definition>
+        <argsstring>(Record *CurRec, const RecTy *ItemType)</argsstring>
+        <name>ParseOperationForEachFilter</name>
+        <qualifiedname>llvm::TGParser::ParseOperationForEachFilter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_rec_ty" kindref="compound">RecTy</ref> *</type>
+          <declname>ItemType</declname>
+        </param>
+        <briefdescription>
+<para>Parse the !foreach and !filter operations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return null on error.</para>
+<para>ForEach ::= !foreach(<ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>, list-or-dag, expr) =&gt; list&lt;expr type&gt; Filter ::= !foreach(<ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>, list, predicate) ==&gt; list&lt;list type&gt; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="315" column="14" bodyfile="lib/TableGen/TGParser.cpp" bodystart="2424" bodyend="2547"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a789830d566836e8fd06c2903852e1c84" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+        <definition>const Init * TGParser::ParseOperationCond</definition>
+        <argsstring>(Record *CurRec, const RecTy *ItemType)</argsstring>
+        <name>ParseOperationCond</name>
+        <qualifiedname>llvm::TGParser::ParseOperationCond</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_rec_ty" kindref="compound">RecTy</ref> *</type>
+          <declname>ItemType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="317" column="14" bodyfile="lib/TableGen/TGParser.cpp" bodystart="2549" bodyend="2626"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a57e2a4bcea2de05519d668e65c1df816" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_rec_ty" kindref="compound">RecTy</ref> *</type>
+        <definition>const RecTy * TGParser::ParseOperatorType</definition>
+        <argsstring>()</argsstring>
+        <name>ParseOperatorType</name>
+        <qualifiedname>llvm::TGParser::ParseOperatorType</qualifiedname>
+        <briefdescription>
+<para>ParseOperatorType - Parse a type for an operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns null on error.</para>
+<para>OperatorType ::= &apos;&lt;&apos; <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> &apos;&gt;&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="318" column="15" bodyfile="lib/TableGen/TGParser.cpp" bodystart="2216" bodyend="2240"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1ace6684e3d0842870094f569b2d29bb8a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_init" kindref="compound">Init</ref> *</type>
+        <definition>const Init * TGParser::ParseObjectName</definition>
+        <argsstring>(MultiClass *CurMultiClass)</argsstring>
+        <name>ParseObjectName</name>
+        <qualifiedname>llvm::TGParser::ParseObjectName</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+          <declname>CurMultiClass</declname>
+        </param>
+        <briefdescription>
+<para>ParseObjectName - If a valid object name is specified, return it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If no name is specified, return the unset initializer. Return nullptr on parse error. ObjectName ::= <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> [ &apos;#&apos; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> ]* ObjectName ::= /*empty*<zwj/>/ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="319" column="14" bodyfile="lib/TableGen/TGParser.cpp" bodystart="676" bodyend="708"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a988bf9b6a4fcd2ee27bb9a2d2db1102f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+        <definition>const Record * TGParser::ParseClassID</definition>
+        <argsstring>()</argsstring>
+        <name>ParseClassID</name>
+        <qualifiedname>llvm::TGParser::ParseClassID</qualifiedname>
+        <briefdescription>
+<para>ParseClassID - Parse and resolve a reference to a class name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns null on error.</para>
+<para>ClassID ::= <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="320" column="16" bodyfile="lib/TableGen/TGParser.cpp" bodystart="715" bodyend="735"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a4d97963ed3c3db3bb9d6b362c6a9af43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_multi_class" kindref="compound">MultiClass</ref> *</type>
+        <definition>MultiClass * TGParser::ParseMultiClassID</definition>
+        <argsstring>()</argsstring>
+        <name>ParseMultiClassID</name>
+        <qualifiedname>llvm::TGParser::ParseMultiClassID</qualifiedname>
+        <briefdescription>
+<para>ParseMultiClassID - Parse and resolve a reference to a multiclass name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns null on error.</para>
+<para>MultiClassID ::= <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="321" column="14" bodyfile="lib/TableGen/TGParser.cpp" bodystart="742" bodyend="754"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a1955a971f39df77d3c263e878e5177c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ApplyLetStack</definition>
+        <argsstring>(Record *CurRec)</argsstring>
+        <name>ApplyLetStack</name>
+        <qualifiedname>llvm::TGParser::ApplyLetStack</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>CurRec</declname>
+        </param>
+        <briefdescription>
+<para>Apply the current let bindings to <emphasis>CurRec</emphasis>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true on error, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="322" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3570" bodyend="3576"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a1077c51a265e32dcb9663aa1c8c8bbca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::ApplyLetStack</definition>
+        <argsstring>(RecordsEntry &amp;Entry)</argsstring>
+        <name>ApplyLetStack</name>
+        <qualifiedname>llvm::TGParser::ApplyLetStack</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_records_entry" kindref="compound">RecordsEntry</ref> &amp;</type>
+          <declname>Entry</declname>
+        </param>
+        <briefdescription>
+<para>Apply the current let bindings to the <ref refid="structllvm_1_1_records_entry" kindref="compound">RecordsEntry</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="323" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="3579" bodyend="3597"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_t_g_parser_1a799a00ae9c67002d49fe0ed5eaac64d0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TGParser::CheckTemplateArgValues</definition>
+        <argsstring>(SmallVectorImpl&lt; const ArgumentInit * &gt; &amp;Values, ArrayRef&lt; SMLoc &gt; ValuesLocs, const Record *ArgsRec)</argsstring>
+        <name>CheckTemplateArgValues</name>
+        <qualifiedname>llvm::TGParser::CheckTemplateArgValues</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_argument_init" kindref="compound">ArgumentInit</ref> * &gt; &amp;</type>
+          <declname>Values</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref> &gt;</type>
+          <declname>ValuesLocs</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_record" kindref="compound">Record</ref> *</type>
+          <declname>ArgsRec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TableGen/TGParser.h" line="324" column="8" bodyfile="lib/TableGen/TGParser.cpp" bodystart="4423" bodyend="4460"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/TableGen/TGParser.h" line="142" column="1" bodyfile="lib/TableGen/TGParser.h" bodystart="142" bodyend="327"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_t_g_parser_1ad09891ad31b97c85a8874755b9e592c5" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>addDefOne</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a22264cec4b430a2c159717a9f566eb0c" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>addEntry</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a1448223f3ed5019a9c551b6d4d116b57" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>AddSubClass</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a0ef1eef57f74abd5a24099f4021acaa0" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>AddSubClass</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1afe998559bb299a9ff0887369405e2ab6" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>AddSubMultiClass</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ae1fd5cc67aa5c3839e40638ad75d739c" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>AddValue</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a1955a971f39df77d3c263e878e5177c8" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ApplyLetStack</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a1077c51a265e32dcb9663aa1c8c8bbca" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ApplyLetStack</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ac8468db4f5ce9ce5baace61c48723396" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ArgValueHandler</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a799a00ae9c67002d49fe0ed5eaac64d0" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>CheckTemplateArgValues</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a25c0430438b38081597a768d5452de35" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>consume</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1abc7d11ae304700336326c9d4af6dc6a7" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>CurMultiClass</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1aad4db3e3d37d65f4dfa63fd02f9fd24f" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>CurScope</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ab4248da5d3d42838489af48e85fb0be3" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>Defsets</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a88a8d625cb0f5b05c02959e439f9a3b6" prot="public" virt="non-virtual"><scope>llvm::TGParser</scope><name>Error</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a58685cdd792796ad7d316a781ebd7089" prot="public" virt="non-virtual"><scope>llvm::TGParser</scope><name>getDependencies</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1aa3955833ae4b6607c50af4c2a66fae9d" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>IDParseMode</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1aa58450cbc341985da347babf2104d04e" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>LetStack</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a51e7fc0e5fb61cfed1a0565740036dc0" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>Lex</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a77d7f20345688bbe8ef048f553a75bad" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>Loops</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a23dbce3fc1ab53434e85c7549619a8b1" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>MultiClasses</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a3acf859137eb0befaf381debc9c994c2" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>NoWarnOnUnusedTemplateArgs</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ac3a7dfeaf4a840a37b0ce604735a97fb" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseAssert</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a2d37ad634be013e9358c05ebf3cd28d7" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseBody</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1aaf8a4bf2d2bdf87c69a04e7e0dbfa9ce" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseBodyItem</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a3894b83a9e85605f909a21cfb54bae09" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseClass</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a988bf9b6a4fcd2ee27bb9a2d2db1102f" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseClassID</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a1d49e0617f1c5c41e68fcab6553c5c47" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseDagArgList</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a3e6e0ba477c95c6f61d5487d7481b791" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseDeclaration</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ad226db4ed50e913b4829e3583fd17e2d" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseDef</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a816a1546393b89a4cf7b132a4373ae79" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseDefm</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a3dea9c175324f04154f7cbaa09ff2e4e" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseDefset</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1aecbb529e8adfe38a61c3e69826fb1297" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseDeftype</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a1248ddc95c5697be7a81fe2958afee3b" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseDefvar</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a8e07706cd397714199f0c52836be824a" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseDump</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1adf2220b1390559e48081eb1187622748" prot="public" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseFile</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1aca24eab98dd4587c68b6c2f7db1852d8" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseForeach</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a6b6c82cafcfc76dcd8a2a7106820574c" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseForeachDeclaration</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a32a27e94136c592062c52d9eb192e5b9" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseIDValue</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a8b2ac83afb70de9ec74c747209e34d2e" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseIf</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ad207395a6a8d34598a8b9a6e9cdc7adc" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseIfBody</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a574184346dbce246238e1c01069c08cc" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseLetList</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a33db554af03479d5863f9d23ac839853" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseMultiClass</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a4d97963ed3c3db3bb9d6b362c6a9af43" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseMultiClassID</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1aa3955833ae4b6607c50af4c2a66fae9da6afe37124596590c5edaa02486b1e4cd" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseNameMode</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a9b717f35699aded00ea02bf21cb6a50a" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseObject</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1aaf98e35dec734091521872790473753c" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseObjectBody</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a568150af076e5d2e698a96f19a72226b" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseObjectList</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ace6684e3d0842870094f569b2d29bb8a" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseObjectName</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a67d2b5babe1381cedd82163ee56f18c6" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseOperation</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a789830d566836e8fd06c2903852e1c84" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseOperationCond</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a7f7628b19468c6bb3c05095927a53b4b" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseOperationFind</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ad882e62920391e22bc688fecbc266b29" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseOperationForEachFilter</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a25113a91699d31ffd8b0e7bf4e7f1435" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseOperationSubstr</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a57e2a4bcea2de05519d668e65c1df816" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseOperatorType</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a89432356ae298c4cf16ed7cfaf873aa3" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseOptionalBitList</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a05be8fbcdce3652a0acf26b10a11e898" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseOptionalRangeList</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a35d067a4c56fc746a3e3cd27f1071ea2" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseRangeList</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ac4e943773b15626c21acd8bf74d8ff01" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseRangePiece</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a1e98cf0cae28a494bb33ebc83e9c7235" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseSimpleValue</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a81fb74c8c6762039d467d4c4bad545d7" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseSliceElement</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ab7a8743b7a8e4826958d4174f078e405" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseSliceElements</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a24f8b1496893ebbe3a0f18f450cbd33f" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseSubClassReference</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ad4f5b479ebd3fe98f052bfa71231c5db" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseSubMultiClassReference</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a5cfd6ea7690c0fd4b573519c0d6a0716" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseTemplateArgList</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ac6fdf045c211fe0a7195521bf1b8d5e1" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseTemplateArgValueList</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ab31750a4a9193f24692af53e7ea845e6" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseTopLevelLet</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a41e9585b6815b422bad1e16466979130" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseType</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a1d5a448d985bdcee64ad98c890989ca4" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseValue</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a997b5c8dc94a1d6a514032a2b31851cc" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseValueList</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1aa3955833ae4b6607c50af4c2a66fae9daeaeb9c2dbb58948a215e65798ddc947d" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>ParseValueMode</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a050e3ccb0e5c0b55cb30615217398b52" prot="public" virt="non-virtual"><scope>llvm::TGParser</scope><name>PopScope</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1af0c749c975468baeb15fb9757c58a48d" prot="public" virt="non-virtual"><scope>llvm::TGParser</scope><name>PushScope</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ab3100229bcd453690b137edb3871ee7d" prot="public" virt="non-virtual"><scope>llvm::TGParser</scope><name>PushScope</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a899a19e6bae243782e1ba66bee2c8994" prot="public" virt="non-virtual"><scope>llvm::TGParser</scope><name>PushScope</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ad8e316b3eecce4817b10beaaf482151d" prot="public" virt="non-virtual"><scope>llvm::TGParser</scope><name>PushScope</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1aa19b5bd44a5c9bdcdcfd4833a3137ae2" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>Records</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a6546bcd069ab87b015f188b0d148b9ef" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>resolve</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a3663ff20a8d2fe19503b42a580861767" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>resolve</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a5b47b953c0ccc2b12e8ab77d5fcca5d1" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>resolveArguments</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a972a3d6c67e123384dc7c4e5d3bb32ae" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>resolveArgumentsOfClass</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a0e8b587d5eeb43e576b218aa7fca8a2a" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>resolveArgumentsOfMultiClass</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a456129bcd80efa5e0d91ab03dcf06f1b" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>SetValue</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1abfa5867e82549e21c22ec1e622f9da66" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>SubstStack</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1accb79a047abfe9f327a7595d58d04b61" prot="public" virt="non-virtual"><scope>llvm::TGParser</scope><name>TGParser</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1ab5db391a5f2cba3c4a78e69e1ddb3fd2" prot="public" virt="non-virtual"><scope>llvm::TGParser</scope><name>TokError</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a25e7d06bf91f49f61b9617bca898de04" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>TrackReferenceLocs</name></member>
+      <member refid="classllvm_1_1_t_g_parser_1a368f995443a8cea7a7c7dffb3ae5a0da" prot="private" virt="non-virtual"><scope>llvm::TGParser</scope><name>TypeAliases</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

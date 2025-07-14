@@ -1,0 +1,1215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1orc_1_1_mach_o_platform" kind="class" language="C++" prot="public">
+    <compoundname>llvm::orc::MachOPlatform</compoundname>
+    <basecompoundref refid="classllvm_1_1orc_1_1_platform" prot="public" virt="non-virtual">llvm::orc::Platform</basecompoundref>
+    <includes refid="_mach_o_platform_8h" local="yes">llvm/ExecutionEngine/Orc/MachOPlatform.h</includes>
+    <innerclass refid="structllvm_1_1orc_1_1_mach_o_platform_1_1_bootstrap_info" prot="private">llvm::orc::MachOPlatform::BootstrapInfo</innerclass>
+    <innerclass refid="structllvm_1_1orc_1_1_mach_o_platform_1_1_header_options" prot="public">llvm::orc::MachOPlatform::HeaderOptions</innerclass>
+    <innerclass refid="structllvm_1_1orc_1_1_mach_o_platform_1_1_mach_o_j_i_t_dylib_dep_info" prot="public">llvm::orc::MachOPlatform::MachOJITDylibDepInfo</innerclass>
+    <innerclass refid="classllvm_1_1orc_1_1_mach_o_platform_1_1_mach_o_platform_plugin" prot="private">llvm::orc::MachOPlatform::MachOPlatformPlugin</innerclass>
+    <innerclass refid="structllvm_1_1orc_1_1_mach_o_platform_1_1_runtime_function" prot="private">llvm::orc::MachOPlatform::RuntimeFunction</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1orc_1_1_mach_o_platform_1a0fd90f53b4f2a866cffe1bbd54be93ba" prot="public" static="no" strong="yes">
+        <type><ref refid="classuint8__t" kindref="compound">uint8_t</ref></type>
+        <name>MachOExecutorSymbolFlags</name>
+        <qualifiedname>llvm::orc::MachOPlatform::MachOExecutorSymbolFlags</qualifiedname>
+        <enumvalue id="classllvm_1_1orc_1_1_mach_o_platform_1a0fd90f53b4f2a866cffe1bbd54be93baa6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1orc_1_1_mach_o_platform_1a0fd90f53b4f2a866cffe1bbd54be93baa7324e3727807d95037eb19d304fd91ec" prot="public">
+          <name>Weak</name>
+          <initializer>= 1U &lt;&lt; 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1orc_1_1_mach_o_platform_1a0fd90f53b4f2a866cffe1bbd54be93baa79ace5b2a7206c5d0aa286a5b33385f8" prot="public">
+          <name>Callable</name>
+          <initializer>= 1U &lt;&lt; 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="43" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="43" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1orc_1_1_mach_o_platform_1a770d73acb401c9ed0ed6b16272aa4050" prot="public" static="no">
+        <type>std::vector&lt; std::pair&lt; <ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref>, <ref refid="structllvm_1_1orc_1_1_mach_o_platform_1_1_mach_o_j_i_t_dylib_dep_info" kindref="compound">MachOJITDylibDepInfo</ref> &gt; &gt;</type>
+        <definition>using llvm::orc::MachOPlatform::MachOJITDylibDepInfoMap = 
+      std::vector&lt;std::pair&lt;ExecutorAddr, MachOJITDylibDepInfo&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>MachOJITDylibDepInfoMap</name>
+        <qualifiedname>llvm::orc::MachOPlatform::MachOJITDylibDepInfoMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="39" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1orc_1_1_mach_o_platform_1a93b754ab1a755ecf25e98f2bea459d8d" prot="public" static="no">
+        <type><ref refid="classllvm_1_1unique__function" kindref="compound">unique_function</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_materialization_unit" kindref="compound">MaterializationUnit</ref> &gt;(<ref refid="classllvm_1_1orc_1_1_mach_o_platform" kindref="compound">MachOPlatform</ref> &amp;MOP, <ref refid="structllvm_1_1orc_1_1_mach_o_platform_1_1_header_options" kindref="compound">HeaderOptions</ref> Opts)&gt;</type>
+        <definition>using llvm::orc::MachOPlatform::MachOHeaderMUBuilder = 
+      unique_function&lt;std::unique_ptr&lt;MaterializationUnit&gt;(MachOPlatform &amp;MOP,
+                                                           HeaderOptions Opts)&gt;</definition>
+        <argsstring></argsstring>
+        <name>MachOHeaderMUBuilder</name>
+        <qualifiedname>llvm::orc::MachOPlatform::MachOHeaderMUBuilder</qualifiedname>
+        <briefdescription>
+<para>Used by setupJITDylib to create <ref refid="namespacellvm_1_1_mach_o" kindref="compound">MachO</ref> header MaterializationUnits for JITDylibs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="89" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1orc_1_1_mach_o_platform_1a6f940849fa868c06ae19d660ddc29f00" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::tuple&lt; <ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref>, <ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref>, <ref refid="classllvm_1_1orc_1_1_mach_o_platform_1a0fd90f53b4f2a866cffe1bbd54be93ba" kindref="member">MachOExecutorSymbolFlags</ref> &gt; &gt;</type>
+        <definition>using llvm::orc::MachOPlatform::SymbolTableVector =  SmallVector&lt;
+      std::tuple&lt;ExecutorAddr, ExecutorAddr, MachOExecutorSymbolFlags&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>SymbolTableVector</name>
+        <qualifiedname>llvm::orc::MachOPlatform::SymbolTableVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="185" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1orc_1_1_mach_o_platform_1a031eb0731dbdc11f0819c99ca5a224ed" prot="private" static="no">
+        <type><ref refid="classllvm_1_1unique__function" kindref="compound">unique_function</ref>&lt; void(<ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref> &gt;)&gt;</type>
+        <definition>using llvm::orc::MachOPlatform::GetJITDylibHeaderSendResultFn = 
+      unique_function&lt;void(Expected&lt;ExecutorAddr&gt;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>GetJITDylibHeaderSendResultFn</name>
+        <qualifiedname>llvm::orc::MachOPlatform::GetJITDylibHeaderSendResultFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="285" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1orc_1_1_mach_o_platform_1acb4e0fede6431746ef387cce55174e4b" prot="private" static="no">
+        <type><ref refid="classllvm_1_1unique__function" kindref="compound">unique_function</ref>&lt; void(<ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;)&gt;</type>
+        <definition>using llvm::orc::MachOPlatform::GetJITDylibNameSendResultFn = 
+      unique_function&lt;void(Expected&lt;StringRef&gt;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>GetJITDylibNameSendResultFn</name>
+        <qualifiedname>llvm::orc::MachOPlatform::GetJITDylibNameSendResultFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="287" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="287" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1orc_1_1_mach_o_platform_1a049d88db8b8c6139a2b6e22b25a446a5" prot="private" static="no">
+        <type><ref refid="classllvm_1_1unique__function" kindref="compound">unique_function</ref>&lt; void(<ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1orc_1_1_mach_o_platform_1a770d73acb401c9ed0ed6b16272aa4050" kindref="member">MachOJITDylibDepInfoMap</ref> &gt;)&gt;</type>
+        <definition>using llvm::orc::MachOPlatform::PushInitializersSendResultFn = 
+      unique_function&lt;void(Expected&lt;MachOJITDylibDepInfoMap&gt;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>PushInitializersSendResultFn</name>
+        <qualifiedname>llvm::orc::MachOPlatform::PushInitializersSendResultFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="289" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1orc_1_1_mach_o_platform_1a3827ef14f27e73ba0230b0070aa155fb" prot="private" static="no">
+        <type><ref refid="classllvm_1_1unique__function" kindref="compound">unique_function</ref>&lt; void(<ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref> &gt;)&gt;</type>
+        <definition>using llvm::orc::MachOPlatform::SendSymbolAddressFn =  unique_function&lt;void(Expected&lt;ExecutorAddr&gt;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>SendSymbolAddressFn</name>
+        <qualifiedname>llvm::orc::MachOPlatform::SendSymbolAddressFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="291" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1orc_1_1_mach_o_platform_1ac8694415b66355a2fff841e6a3399c1d" prot="private" static="no">
+        <type><ref refid="classllvm_1_1unique__function" kindref="compound">unique_function</ref>&lt; void(<ref refid="classllvm_1_1_error" kindref="compound">Error</ref>)&gt;</type>
+        <definition>using llvm::orc::MachOPlatform::PushSymbolsInSendResultFn =  unique_function&lt;void(Error)&gt;</definition>
+        <argsstring></argsstring>
+        <name>PushSymbolsInSendResultFn</name>
+        <qualifiedname>llvm::orc::MachOPlatform::PushSymbolsInSendResultFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="292" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="292" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1ab39a0edd4fcacc2ebcfd36ba0edd753b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1orc_1_1_execution_session" kindref="compound">ExecutionSession</ref> &amp;</type>
+        <definition>ExecutionSession&amp; llvm::orc::MachOPlatform::ES</definition>
+        <argsstring></argsstring>
+        <name>ES</name>
+        <qualifiedname>llvm::orc::MachOPlatform::ES</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="328" column="20" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a48694a6b455662fdecac8bd1b6137826" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> &amp;</type>
+        <definition>JITDylib&amp; llvm::orc::MachOPlatform::PlatformJD</definition>
+        <argsstring></argsstring>
+        <name>PlatformJD</name>
+        <qualifiedname>llvm::orc::MachOPlatform::PlatformJD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="329" column="12" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a917039f581ceb3c620ac061caf670439" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1orc_1_1_object_linking_layer" kindref="compound">ObjectLinkingLayer</ref> &amp;</type>
+        <definition>ObjectLinkingLayer&amp; llvm::orc::MachOPlatform::ObjLinkingLayer</definition>
+        <argsstring></argsstring>
+        <name>ObjLinkingLayer</name>
+        <qualifiedname>llvm::orc::MachOPlatform::ObjLinkingLayer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="330" column="22" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a8039d4b520fbf64f6e46ff35a9257151" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1orc_1_1_mach_o_platform_1a93b754ab1a755ecf25e98f2bea459d8d" kindref="member">MachOHeaderMUBuilder</ref></type>
+        <definition>MachOHeaderMUBuilder llvm::orc::MachOPlatform::BuildMachOHeaderMU</definition>
+        <argsstring></argsstring>
+        <name>BuildMachOHeaderMU</name>
+        <qualifiedname>llvm::orc::MachOPlatform::BuildMachOHeaderMU</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="331" column="24" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a72b7e37fa5425894e9922653a6197689" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1orc_1_1_symbol_string_ptr" kindref="compound">SymbolStringPtr</ref></type>
+        <definition>SymbolStringPtr llvm::orc::MachOPlatform::MachOHeaderStartSymbol</definition>
+        <argsstring></argsstring>
+        <name>MachOHeaderStartSymbol</name>
+        <qualifiedname>llvm::orc::MachOPlatform::MachOHeaderStartSymbol</qualifiedname>
+        <initializer>= ES.intern(&quot;___dso_handle&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="333" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="333" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1aafedf866d8c9272604ee8efb1c21e808" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::PlatformBootstrap</definition>
+        <argsstring></argsstring>
+        <name>PlatformBootstrap</name>
+        <qualifiedname>llvm::orc::MachOPlatform::PlatformBootstrap</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_platform_bootstrap&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="341" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="341" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a5c1711fa7d5a92381f88d3a2e78fcff3" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::PlatformShutdown</definition>
+        <argsstring></argsstring>
+        <name>PlatformShutdown</name>
+        <qualifiedname>llvm::orc::MachOPlatform::PlatformShutdown</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_platform_shutdown&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="343" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="343" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1ac5c7627613e80f4d73ef1b30a3096f45" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::RegisterEHFrameSection</definition>
+        <argsstring></argsstring>
+        <name>RegisterEHFrameSection</name>
+        <qualifiedname>llvm::orc::MachOPlatform::RegisterEHFrameSection</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_register_ehframe_section&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="345" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="345" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a4c9c00d88289a6245270d5b6c787d79d" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::DeregisterEHFrameSection</definition>
+        <argsstring></argsstring>
+        <name>DeregisterEHFrameSection</name>
+        <qualifiedname>llvm::orc::MachOPlatform::DeregisterEHFrameSection</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_deregister_ehframe_section&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="347" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="347" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1afe45e15a78759534c64d693e2d3e1dfc" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::RegisterJITDylib</definition>
+        <argsstring></argsstring>
+        <name>RegisterJITDylib</name>
+        <qualifiedname>llvm::orc::MachOPlatform::RegisterJITDylib</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_register_jitdylib&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="349" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="349" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a414795804483258cb2c6fac97dd7325c" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::DeregisterJITDylib</definition>
+        <argsstring></argsstring>
+        <name>DeregisterJITDylib</name>
+        <qualifiedname>llvm::orc::MachOPlatform::DeregisterJITDylib</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_deregister_jitdylib&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="351" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="351" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1aa22203c97eb1b4b5963b119c17f80f01" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::RegisterObjectSymbolTable</definition>
+        <argsstring></argsstring>
+        <name>RegisterObjectSymbolTable</name>
+        <qualifiedname>llvm::orc::MachOPlatform::RegisterObjectSymbolTable</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_register_object_symbol_table&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="353" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="353" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a444581fce3271fab8f2f79994f222c9b" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::DeregisterObjectSymbolTable</definition>
+        <argsstring></argsstring>
+        <name>DeregisterObjectSymbolTable</name>
+        <qualifiedname>llvm::orc::MachOPlatform::DeregisterObjectSymbolTable</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_deregister_object_symbol_table&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="355" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="355" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a3bdb5572b0ba558c8b8e58056130188d" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::RegisterObjectPlatformSections</definition>
+        <argsstring></argsstring>
+        <name>RegisterObjectPlatformSections</name>
+        <qualifiedname>llvm::orc::MachOPlatform::RegisterObjectPlatformSections</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_register_object_platform_sections&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="357" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="357" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a9a9bdf7ca13bd87781a302c09b3aec37" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::DeregisterObjectPlatformSections</definition>
+        <argsstring></argsstring>
+        <name>DeregisterObjectPlatformSections</name>
+        <qualifiedname>llvm::orc::MachOPlatform::DeregisterObjectPlatformSections</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_deregister_object_platform_sections&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="359" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="359" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a83542a9b15f4858faf09fb212b92e5f6" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::CreatePThreadKey</definition>
+        <argsstring></argsstring>
+        <name>CreatePThreadKey</name>
+        <qualifiedname>llvm::orc::MachOPlatform::CreatePThreadKey</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_create_pthread_key&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="361" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="361" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a9b7383aad0063bb463ed9c287b33259d" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::RegisterObjCRuntimeObject</definition>
+        <argsstring></argsstring>
+        <name>RegisterObjCRuntimeObject</name>
+        <qualifiedname>llvm::orc::MachOPlatform::RegisterObjCRuntimeObject</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_register_objc_runtime_object&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="363" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="363" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a94f567a49e0f8c1ab2c48d4941c19722" prot="private" static="no" mutable="no">
+        <type>RuntimeFunction</type>
+        <definition>RuntimeFunction llvm::orc::MachOPlatform::DeregisterObjCRuntimeObject</definition>
+        <argsstring></argsstring>
+        <name>DeregisterObjCRuntimeObject</name>
+        <qualifiedname>llvm::orc::MachOPlatform::DeregisterObjCRuntimeObject</qualifiedname>
+        <initializer>{
+      ES.intern(&quot;___orc_rt_macho_deregister_objc_runtime_object&quot;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="365" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="365" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1ad19d903a51c897944c3b7be83ac434b0" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> *, <ref refid="classllvm_1_1orc_1_1_symbol_lookup_set" kindref="compound">SymbolLookupSet</ref> &gt;</type>
+        <definition>DenseMap&lt;JITDylib *, SymbolLookupSet&gt; llvm::orc::MachOPlatform::RegisteredInitSymbols</definition>
+        <argsstring></argsstring>
+        <name>RegisteredInitSymbols</name>
+        <qualifiedname>llvm::orc::MachOPlatform::RegisteredInitSymbols</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="368" column="12" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="368" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1ac1cbe24b81a9791070732dfd9d2c87ea" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex llvm::orc::MachOPlatform::PlatformMutex</definition>
+        <argsstring></argsstring>
+        <name>PlatformMutex</name>
+        <qualifiedname>llvm::orc::MachOPlatform::PlatformMutex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="370" column="14" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="370" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a40d506be0d455e57f1f895fc1eb28ce2" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::orc::MachOPlatform::ForceEHFrames</definition>
+        <argsstring></argsstring>
+        <name>ForceEHFrames</name>
+        <qualifiedname>llvm::orc::MachOPlatform::ForceEHFrames</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="371" column="8" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="371" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a48e9d9194bc57222fa6b9960973e084a" prot="private" static="no" mutable="no">
+        <type>BootstrapInfo *</type>
+        <definition>BootstrapInfo* llvm::orc::MachOPlatform::Bootstrap</definition>
+        <argsstring></argsstring>
+        <name>Bootstrap</name>
+        <qualifiedname>llvm::orc::MachOPlatform::Bootstrap</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="372" column="17" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="372" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1aba8b1e73aceb71252adac1510f61fa41" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> *, <ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref> &gt;</type>
+        <definition>DenseMap&lt;JITDylib *, ExecutorAddr&gt; llvm::orc::MachOPlatform::JITDylibToHeaderAddr</definition>
+        <argsstring></argsstring>
+        <name>JITDylibToHeaderAddr</name>
+        <qualifiedname>llvm::orc::MachOPlatform::JITDylibToHeaderAddr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="373" column="12" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="373" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1abd44c5d6cecb38ecc95ad4d70f39b157" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref>, <ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> * &gt;</type>
+        <definition>DenseMap&lt;ExecutorAddr, JITDylib *&gt; llvm::orc::MachOPlatform::HeaderAddrToJITDylib</definition>
+        <argsstring></argsstring>
+        <name>HeaderAddrToJITDylib</name>
+        <qualifiedname>llvm::orc::MachOPlatform::HeaderAddrToJITDylib</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="374" column="12" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="374" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_mach_o_platform_1a2e16344024bad553941930ee5ef5bda3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> *, <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>DenseMap&lt;JITDylib *, uint64_t&gt; llvm::orc::MachOPlatform::JITDylibToPThreadKey</definition>
+        <argsstring></argsstring>
+        <name>JITDylibToPThreadKey</name>
+        <qualifiedname>llvm::orc::MachOPlatform::JITDylibToPThreadKey</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="375" column="12" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="375" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a49136cf1b05dde0d5cea41910deb238e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_materialization_unit" kindref="compound">MaterializationUnit</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; MaterializationUnit &gt; llvm::orc::MachOPlatform::buildSimpleMachOHeaderMU</definition>
+        <argsstring>(MachOPlatform &amp;MOP, HeaderOptions Opts)</argsstring>
+        <name>buildSimpleMachOHeaderMU</name>
+        <qualifiedname>llvm::orc::MachOPlatform::buildSimpleMachOHeaderMU</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_mach_o_platform" kindref="compound">MachOPlatform</ref> &amp;</type>
+          <declname>MOP</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1orc_1_1_mach_o_platform_1_1_header_options" kindref="compound">HeaderOptions</ref></type>
+          <declname>Opts</declname>
+        </param>
+        <briefdescription>
+<para>Simple <ref refid="namespacellvm_1_1_mach_o" kindref="compound">MachO</ref> header graph builder. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="95" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="412" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1ad166f5736231229286c93cd8c6aa8b6d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_mach_o_platform" kindref="compound">MachOPlatform</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; MachOPlatform &gt; &gt; llvm::orc::MachOPlatform::Create</definition>
+        <argsstring>(ObjectLinkingLayer &amp;ObjLinkingLayer, JITDylib &amp;PlatformJD, std::unique_ptr&lt; DefinitionGenerator &gt; OrcRuntime, HeaderOptions PlatformJDOpts={}, MachOHeaderMUBuilder BuildMachOHeaderMU=buildSimpleMachOHeaderMU, std::optional&lt; SymbolAliasMap &gt; RuntimeAliases=std::nullopt)</argsstring>
+        <name>Create</name>
+        <qualifiedname>llvm::orc::MachOPlatform::Create</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_object_linking_layer" kindref="compound">ObjectLinkingLayer</ref> &amp;</type>
+          <declname>ObjLinkingLayer</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> &amp;</type>
+          <declname>PlatformJD</declname>
+        </param>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_definition_generator" kindref="compound">DefinitionGenerator</ref> &gt;</type>
+          <declname>OrcRuntime</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1orc_1_1_mach_o_platform_1_1_header_options" kindref="compound">HeaderOptions</ref></type>
+          <declname>PlatformJDOpts</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_mach_o_platform_1a93b754ab1a755ecf25e98f2bea459d8d" kindref="member">MachOHeaderMUBuilder</ref></type>
+          <declname>BuildMachOHeaderMU</declname>
+          <defval><ref refid="classllvm_1_1orc_1_1_mach_o_platform_1a49136cf1b05dde0d5cea41910deb238e" kindref="member">buildSimpleMachOHeaderMU</ref></defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="namespacellvm_1_1orc_1adfa7bcc2544e48c4531ebfe74ae622b2" kindref="member">SymbolAliasMap</ref> &gt;</type>
+          <declname>RuntimeAliases</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Try to create a <ref refid="classllvm_1_1orc_1_1_mach_o_platform" kindref="compound">MachOPlatform</ref> instance, adding the ORC runtime to the given <ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The ORC runtime requires access to a number of symbols in libc++, and requires access to symbols in libobjc, and libswiftCore to support Objective-C and Swift code. It is up to the caller to ensure that the required symbols can be referenced by code added to PlatformJD. The standard way to achieve this is to first attach dynamic library search generators for either the given process, or for the specific required libraries, to PlatformJD, then to create the platform instance:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;PlatformJD<sp/>=<sp/>ES.createBareJITDylib(</highlight><highlight class="stringliteral">&quot;stdlib&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">PlatformJD.addGenerator(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>ExitOnErr(EPCDynamicLibrarySearchGenerator</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::GetForTargetProcess(EPC)));</highlight></codeline>
+<codeline><highlight class="normal">ES.setPlatform(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>ExitOnErr(<ref refid="classllvm_1_1orc_1_1_mach_o_platform_1ad166f5736231229286c93cd8c6aa8b6d" kindref="member">MachOPlatform::Create</ref>(ES,<sp/>ObjLayer,<sp/>EPC,<sp/>PlatformJD,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;/path/to/orc/runtime&quot;</highlight><highlight class="normal">)));</highlight></codeline>
+</programlisting></para>
+<para>Alternatively, these symbols could be added to another <ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> that PlatformJD links against.</para>
+<para>Clients are also responsible for ensuring that any JIT&apos;d code that depends on runtime functions (including any code using TLV or static destructors) can reference the runtime symbols. This is usually achieved by linking any JITDylibs containing regular code against PlatformJD.</para>
+<para>By default, <ref refid="classllvm_1_1orc_1_1_mach_o_platform" kindref="compound">MachOPlatform</ref> will add the set of aliases returned by the standardPlatformAliases function. This includes both required aliases (e.g. __cxa_atexit -&gt; __orc_rt_macho_cxa_atexit for static destructor support), and optional aliases that provide JIT versions of common functions (e.g. dlopen -&gt; __orc_rt_macho_jit_dlopen). Clients can override these defaults by passing a non-None value for the RuntimeAliases function, in which case the client is responsible for setting up all aliases (including the required ones). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="136" column="3" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="280" bodyend="322"/>
+        <references refid="namespacellvm_1_1orc_1a3a6ca0ed8ac3267e0579452013a2e82d" compoundref="_absolute_symbols_8h" startline="52" endline="55">llvm::orc::absoluteSymbols</references>
+        <references refid="classllvm_1_1_j_i_t_symbol_flags_1ad509c6d010720c4f71aeac1fba93f8cbaeb59403a31ee3f63734a411e9e42ddd8" compoundref="_j_i_t_symbol_8h" startline="85">llvm::JITSymbolFlags::Exported</references>
+        <references refid="namespacellvm_1a2b43c21951d0948b34bcf7019949032d" compoundref="_testing_2_support_2_error_8cpp" startline="98" endline="101">llvm::inconvertibleErrorCode</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="classllvm_1_1orc_1_1_mach_o_platform_1ab2b75dd698cda0452b5e84199248ca8a" compoundref="_mach_o_platform_8cpp" startline="396" endline="402">standardPlatformAliases</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="namespacellvm_1_1orc_1a2c212cdbe134087fcaa385aad1bc8a9e" compoundref="llvm_2_execution_engine_2_orc_2_core_8h" startline="745" endline="748">llvm::orc::symbolAliases</references>
+        <referencedby refid="classllvm_1_1orc_1_1_mach_o_platform_1a1d471ce68684309b46d6afa43f8ec0a9" compoundref="_mach_o_platform_8cpp" startline="325" endline="340">Create</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_executor_native_platform_1aa1bd92add845031ceeaab24c2c25c275" compoundref="_l_l_j_i_t_8cpp" startline="1128" endline="1208">llvm::orc::ExecutorNativePlatform::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a1d471ce68684309b46d6afa43f8ec0a9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_mach_o_platform" kindref="compound">MachOPlatform</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; MachOPlatform &gt; &gt; llvm::orc::MachOPlatform::Create</definition>
+        <argsstring>(ObjectLinkingLayer &amp;ObjLinkingLayer, JITDylib &amp;PlatformJD, const char *OrcRuntimePath, HeaderOptions PlatformJDOpts={}, MachOHeaderMUBuilder BuildMachOHeaderMU=buildSimpleMachOHeaderMU, std::optional&lt; SymbolAliasMap &gt; RuntimeAliases=std::nullopt)</argsstring>
+        <name>Create</name>
+        <qualifiedname>llvm::orc::MachOPlatform::Create</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_object_linking_layer" kindref="compound">ObjectLinkingLayer</ref> &amp;</type>
+          <declname>ObjLinkingLayer</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> &amp;</type>
+          <declname>PlatformJD</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>OrcRuntimePath</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1orc_1_1_mach_o_platform_1_1_header_options" kindref="compound">HeaderOptions</ref></type>
+          <declname>PlatformJDOpts</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_mach_o_platform_1a93b754ab1a755ecf25e98f2bea459d8d" kindref="member">MachOHeaderMUBuilder</ref></type>
+          <declname>BuildMachOHeaderMU</declname>
+          <defval><ref refid="classllvm_1_1orc_1_1_mach_o_platform_1a49136cf1b05dde0d5cea41910deb238e" kindref="member">buildSimpleMachOHeaderMU</ref></defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="namespacellvm_1_1orc_1adfa7bcc2544e48c4531ebfe74ae622b2" kindref="member">SymbolAliasMap</ref> &gt;</type>
+          <declname>RuntimeAliases</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Construct using a path to the ORC runtime. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="144" column="3" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="325" bodyend="340"/>
+        <references refid="classllvm_1_1orc_1_1_mach_o_platform_1ad166f5736231229286c93cd8c6aa8b6d" compoundref="_mach_o_platform_8cpp" startline="280" endline="322">Create</references>
+        <references refid="classllvm_1_1orc_1_1_static_library_definition_generator_1a703cd8845907b2859b4ebdd00c206bc1" compoundref="_execution_utils_8cpp" startline="293" endline="304">llvm::orc::StaticLibraryDefinitionGenerator::Load</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1ab2b75dd698cda0452b5e84199248ca8a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1orc_1adfa7bcc2544e48c4531ebfe74ae622b2" kindref="member">SymbolAliasMap</ref></type>
+        <definition>SymbolAliasMap llvm::orc::MachOPlatform::standardPlatformAliases</definition>
+        <argsstring>(ExecutionSession &amp;ES)</argsstring>
+        <name>standardPlatformAliases</name>
+        <qualifiedname>llvm::orc::MachOPlatform::standardPlatformAliases</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_execution_session" kindref="compound">ExecutionSession</ref> &amp;</type>
+          <declname>ES</declname>
+        </param>
+        <briefdescription>
+<para>Returns an AliasMap containing the default aliases for the <ref refid="classllvm_1_1orc_1_1_mach_o_platform" kindref="compound">MachOPlatform</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be modified by clients when constructing the platform to add or remove aliases. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="170" column="25" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="396" bodyend="402"/>
+        <references refid="namespacellvm_1_1orc_1a82f74a53afe9225468960223f8d96c46" compoundref="_c_o_f_f_platform_8cpp" startline="249" endline="257">llvm::orc::addAliases</references>
+        <references refid="classllvm_1_1orc_1_1_mach_o_platform_1afa832afa22d43b07518adfe5bae7c816" compoundref="_mach_o_platform_8cpp" startline="405" endline="410">requiredCXXAliases</references>
+        <references refid="classllvm_1_1orc_1_1_mach_o_platform_1a25ec836178bfbac963e0945c6e0cdb75" compoundref="_mach_o_platform_8cpp" startline="429" endline="437">standardLazyCompilationAliases</references>
+        <references refid="classllvm_1_1orc_1_1_mach_o_platform_1a5033eefe5c3bcf123e9d3070884f38f5" compoundref="_mach_o_platform_8cpp" startline="413" endline="426">standardRuntimeUtilityAliases</references>
+        <referencedby refid="classllvm_1_1orc_1_1_mach_o_platform_1ad166f5736231229286c93cd8c6aa8b6d" compoundref="_mach_o_platform_8cpp" startline="280" endline="322">Create</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1afa832afa22d43b07518adfe5bae7c816" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> * &gt; &gt;</type>
+        <definition>ArrayRef&lt; std::pair&lt; const char *, const char * &gt; &gt; llvm::orc::MachOPlatform::requiredCXXAliases</definition>
+        <argsstring>()</argsstring>
+        <name>requiredCXXAliases</name>
+        <qualifiedname>llvm::orc::MachOPlatform::requiredCXXAliases</qualifiedname>
+        <briefdescription>
+<para>Returns the array of required CXX aliases. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="173" column="19" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="405" bodyend="410"/>
+        <referencedby refid="classllvm_1_1orc_1_1_mach_o_platform_1ab2b75dd698cda0452b5e84199248ca8a" compoundref="_mach_o_platform_8cpp" startline="396" endline="402">standardPlatformAliases</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a5033eefe5c3bcf123e9d3070884f38f5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> * &gt; &gt;</type>
+        <definition>ArrayRef&lt; std::pair&lt; const char *, const char * &gt; &gt; llvm::orc::MachOPlatform::standardRuntimeUtilityAliases</definition>
+        <argsstring>()</argsstring>
+        <name>standardRuntimeUtilityAliases</name>
+        <qualifiedname>llvm::orc::MachOPlatform::standardRuntimeUtilityAliases</qualifiedname>
+        <briefdescription>
+<para>Returns the array of standard runtime utility aliases for <ref refid="namespacellvm_1_1_mach_o" kindref="compound">MachO</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="177" column="3" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="413" bodyend="426"/>
+        <referencedby refid="classllvm_1_1orc_1_1_mach_o_platform_1ab2b75dd698cda0452b5e84199248ca8a" compoundref="_mach_o_platform_8cpp" startline="396" endline="402">standardPlatformAliases</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a25ec836178bfbac963e0945c6e0cdb75" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> * &gt; &gt;</type>
+        <definition>ArrayRef&lt; std::pair&lt; const char *, const char * &gt; &gt; llvm::orc::MachOPlatform::standardLazyCompilationAliases</definition>
+        <argsstring>()</argsstring>
+        <name>standardLazyCompilationAliases</name>
+        <qualifiedname>llvm::orc::MachOPlatform::standardLazyCompilationAliases</qualifiedname>
+        <briefdescription>
+<para>Returns a list of aliases required to enable lazy compilation via the ORC runtime. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="182" column="3" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="429" bodyend="437"/>
+        <referencedby refid="classllvm_1_1orc_1_1_mach_o_platform_1ab2b75dd698cda0452b5e84199248ca8a" compoundref="_mach_o_platform_8cpp" startline="396" endline="402">standardPlatformAliases</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1ab2d022e73bf8373d324c1b989c57074f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1orc_1_1_execution_session" kindref="compound">ExecutionSession</ref> &amp;</type>
+        <definition>ExecutionSession &amp; llvm::orc::MachOPlatform::getExecutionSession</definition>
+        <argsstring>() const</argsstring>
+        <name>getExecutionSession</name>
+        <qualifiedname>llvm::orc::MachOPlatform::getExecutionSession</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="149" column="20" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="149" bodyend="149"/>
+        <referencedby refid="namespacellvm_1_1orc_1ab3b175f40b07ac581cc42fc835420d25" compoundref="_mach_o_platform_8cpp" startline="1743" endline="1776">llvm::orc::createHeaderBlock</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_mach_o_platform_8cpp_03_1aef4e166e503c258a5488943077a4239c" compoundref="_mach_o_platform_8cpp" startline="96" endline="102">anonymous_namespace{MachOPlatform.cpp}::createPlatformGraph</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a0b6c5f7bc389c9247771b1642410352e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1orc_1_1_object_linking_layer" kindref="compound">ObjectLinkingLayer</ref> &amp;</type>
+        <definition>ObjectLinkingLayer &amp; llvm::orc::MachOPlatform::getObjectLinkingLayer</definition>
+        <argsstring>() const</argsstring>
+        <name>getObjectLinkingLayer</name>
+        <qualifiedname>llvm::orc::MachOPlatform::getObjectLinkingLayer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="150" column="22" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="150" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a1e54bdbfb200dbbd195008fa638d154a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1orc_1_1_non_owning_symbol_string_ptr" kindref="compound">NonOwningSymbolStringPtr</ref></type>
+        <definition>NonOwningSymbolStringPtr llvm::orc::MachOPlatform::getMachOHeaderStartSymbol</definition>
+        <argsstring>() const</argsstring>
+        <name>getMachOHeaderStartSymbol</name>
+        <qualifiedname>llvm::orc::MachOPlatform::getMachOHeaderStartSymbol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="152" column="28" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="152" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a45fd41e11f6881253372745d7927cd52" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::MachOPlatform::setupJITDylib</definition>
+        <argsstring>(JITDylib &amp;JD) override</argsstring>
+        <name>setupJITDylib</name>
+        <qualifiedname>llvm::orc::MachOPlatform::setupJITDylib</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_platform_1af83795e97281d33db2882a003b2c7545">setupJITDylib</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> &amp;</type>
+          <declname>JD</declname>
+        </param>
+        <briefdescription>
+<para>This method will be called outside the session lock each time a <ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> is created (unless it is created with EmptyJITDylib set) to allow the <ref refid="classllvm_1_1orc_1_1_platform" kindref="compound">Platform</ref> to install any <ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> specific standard symbols (e.g __dso_handle). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="156" column="9" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="342" bodyend="344"/>
+        <references refid="classllvm_1_1orc_1_1_mach_o_platform_1a45fd41e11f6881253372745d7927cd52" compoundref="_mach_o_platform_8cpp" startline="342" endline="344">setupJITDylib</references>
+        <referencedby refid="classllvm_1_1orc_1_1_mach_o_platform_1a45fd41e11f6881253372745d7927cd52" compoundref="_mach_o_platform_8cpp" startline="342" endline="344">setupJITDylib</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a8be40bff13ac5d492bc1e7179ce12046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::MachOPlatform::setupJITDylib</definition>
+        <argsstring>(JITDylib &amp;JD, HeaderOptions Opts)</argsstring>
+        <name>setupJITDylib</name>
+        <qualifiedname>llvm::orc::MachOPlatform::setupJITDylib</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> &amp;</type>
+          <declname>JD</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1orc_1_1_mach_o_platform_1_1_header_options" kindref="compound">HeaderOptions</ref></type>
+          <declname>Opts</declname>
+        </param>
+        <briefdescription>
+<para>Install any platform-specific symbols (e.g. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>__dso_handle</computeroutput>) and create a mach-o header based on the given options. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="160" column="9" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="346" bodyend="351"/>
+        <references refid="classllvm_1_1orc_1_1_j_i_t_dylib_1a5ec8631eb0c37168d6f85c4ecad77747" compoundref="llvm_2_execution_engine_2_orc_2_core_8h" startline="1852" endline="1892">llvm::orc::JITDylib::define</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a2410f51d9f312b025f9a3307f63c7f6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::MachOPlatform::teardownJITDylib</definition>
+        <argsstring>(JITDylib &amp;JD) override</argsstring>
+        <name>teardownJITDylib</name>
+        <qualifiedname>llvm::orc::MachOPlatform::teardownJITDylib</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_platform_1a25b277d11a256288949d3f148177fe56">teardownJITDylib</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> &amp;</type>
+          <declname>JD</declname>
+        </param>
+        <briefdescription>
+<para>This method will be called outside the session lock each time a <ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> is removed to allow the <ref refid="classllvm_1_1orc_1_1_platform" kindref="compound">Platform</ref> to remove any JITDylib-specific data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="162" column="9" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="353" bodyend="364"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a9933be5a0082912958e7328de0ca90e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::MachOPlatform::notifyAdding</definition>
+        <argsstring>(ResourceTracker &amp;RT, const MaterializationUnit &amp;MU) override</argsstring>
+        <name>notifyAdding</name>
+        <qualifiedname>llvm::orc::MachOPlatform::notifyAdding</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_platform_1ae2d49fb91e31820cfe77c57771e604ef">notifyAdding</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_resource_tracker" kindref="compound">ResourceTracker</ref> &amp;</type>
+          <declname>RT</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1orc_1_1_materialization_unit" kindref="compound">MaterializationUnit</ref> &amp;</type>
+          <declname>MU</declname>
+        </param>
+        <briefdescription>
+<para>This method will be called under the <ref refid="classllvm_1_1orc_1_1_execution_session" kindref="compound">ExecutionSession</ref> lock each time a <ref refid="classllvm_1_1orc_1_1_materialization_unit" kindref="compound">MaterializationUnit</ref> is added to a <ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="163" column="9" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="366" bodyend="380"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1orc_1_1_materialization_unit_1a99d1933cb59ec5527b4c025ae7027216" compoundref="_materialization_unit_8h" startline="65" endline="65">llvm::orc::MaterializationUnit::getInitializerSymbol</references>
+        <references refid="classllvm_1_1orc_1_1_resource_tracker_1a19b2c478815e45a7c78615959f5450a2" compoundref="llvm_2_execution_engine_2_orc_2_core_8h" startline="92" endline="95">llvm::orc::ResourceTracker::getJITDylib</references>
+        <references refid="classllvm_1_1orc_1_1_materialization_unit_1a1c2e2986d77d9e3cc3d1c64e6e8f35ad">llvm::orc::MaterializationUnit::getName</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="namespacellvm_1_1orc_1a69e9511c04540297d2cff38f4645a9aba26a03cdefe35519715a4b6d564c9c9c7" compoundref="llvm_2_execution_engine_2_orc_2_core_8h" startline="156">llvm::orc::WeaklyReferencedSymbol</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1ab3516e13e87d0b4a374fad5b5ff22b05" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::MachOPlatform::notifyRemoving</definition>
+        <argsstring>(ResourceTracker &amp;RT) override</argsstring>
+        <name>notifyRemoving</name>
+        <qualifiedname>llvm::orc::MachOPlatform::notifyRemoving</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_platform_1ac65bbed2d0a758c928e12750885dbbd9">notifyRemoving</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_resource_tracker" kindref="compound">ResourceTracker</ref> &amp;</type>
+          <declname>RT</declname>
+        </param>
+        <briefdescription>
+<para>This method will be called under the <ref refid="classllvm_1_1orc_1_1_execution_session" kindref="compound">ExecutionSession</ref> lock when a <ref refid="classllvm_1_1orc_1_1_resource_tracker" kindref="compound">ResourceTracker</ref> is removed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="165" column="9" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="382" bodyend="384"/>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1afc346fc9cb8bf6dd068a52409381ff46" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::orc::MachOPlatform::supportedTarget</definition>
+        <argsstring>(const Triple &amp;TT)</argsstring>
+        <name>supportedTarget</name>
+        <qualifiedname>llvm::orc::MachOPlatform::supportedTarget</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_triple" kindref="compound">Triple</ref> &amp;</type>
+          <declname>TT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="294" column="15" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="439" bodyend="447"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a2de04c95b174adde918039416aab6716" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_edge_1af18145da213e6c4033b368d657e80baa" kindref="member">jitlink::Edge::Kind</ref></type>
+        <definition>jitlink::Edge::Kind llvm::orc::MachOPlatform::getPointerEdgeKind</definition>
+        <argsstring>(jitlink::LinkGraph &amp;G)</argsstring>
+        <name>getPointerEdgeKind</name>
+        <qualifiedname>llvm::orc::MachOPlatform::getPointerEdgeKind</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">jitlink::LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="296" column="30" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="449" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1ace8d0e493303fca2cbb2548b6add121d" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1orc_1_1_mach_o_platform_1a0fd90f53b4f2a866cffe1bbd54be93ba" kindref="member">MachOExecutorSymbolFlags</ref></type>
+        <definition>MachOPlatform::MachOExecutorSymbolFlags llvm::orc::MachOPlatform::flagsForSymbol</definition>
+        <argsstring>(jitlink::Symbol &amp;Sym)</argsstring>
+        <name>flagsForSymbol</name>
+        <qualifiedname>llvm::orc::MachOPlatform::flagsForSymbol</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">jitlink::Symbol</ref> &amp;</type>
+          <declname>Sym</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="298" column="35" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="461" bodyend="470"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a4297b32d58300729e5b0b21de250e415" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::orc::MachOPlatform::MachOPlatform</definition>
+        <argsstring>(ObjectLinkingLayer &amp;ObjLinkingLayer, JITDylib &amp;PlatformJD, std::unique_ptr&lt; DefinitionGenerator &gt; OrcRuntimeGenerator, HeaderOptions PlatformJDOpts, MachOHeaderMUBuilder BuildMachOHeaderMU, Error &amp;Err)</argsstring>
+        <name>MachOPlatform</name>
+        <qualifiedname>llvm::orc::MachOPlatform::MachOPlatform</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_object_linking_layer" kindref="compound">ObjectLinkingLayer</ref> &amp;</type>
+          <declname>ObjLinkingLayer</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_j_i_t_dylib" kindref="compound">JITDylib</ref> &amp;</type>
+          <declname>PlatformJD</declname>
+        </param>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_definition_generator" kindref="compound">DefinitionGenerator</ref> &gt;</type>
+          <declname>OrcRuntimeGenerator</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1orc_1_1_mach_o_platform_1_1_header_options" kindref="compound">HeaderOptions</ref></type>
+          <declname>PlatformJDOpts</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_mach_o_platform_1a93b754ab1a755ecf25e98f2bea459d8d" kindref="member">MachOHeaderMUBuilder</ref></type>
+          <declname>BuildMachOHeaderMU</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref> &amp;</type>
+          <declname>Err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="300" column="3" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="472" bodyend="604"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a18de895712b320493315a686ee523cdc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::MachOPlatform::associateRuntimeSupportFunctions</definition>
+        <argsstring>()</argsstring>
+        <name>associateRuntimeSupportFunctions</name>
+        <qualifiedname>llvm::orc::MachOPlatform::associateRuntimeSupportFunctions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="306" column="9" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="606" bodyend="622"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1aaef0a534624b9da460a9c5f5e3e33bc0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::orc::MachOPlatform::pushInitializersLoop</definition>
+        <argsstring>(PushInitializersSendResultFn SendResult, JITDylibSP JD)</argsstring>
+        <name>pushInitializersLoop</name>
+        <qualifiedname>llvm::orc::MachOPlatform::pushInitializersLoop</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1unique__function" kindref="compound">PushInitializersSendResultFn</ref></type>
+          <declname>SendResult</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1orc_1a1baadbec01aced37be13a1b86c76397e" kindref="member">JITDylibSP</ref></type>
+          <declname>JD</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="311" column="8" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="624" bodyend="710"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1ab13c0cccbb9a329f1ff11caffae1faef" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::orc::MachOPlatform::rt_pushInitializers</definition>
+        <argsstring>(PushInitializersSendResultFn SendResult, ExecutorAddr JDHeaderAddr)</argsstring>
+        <name>rt_pushInitializers</name>
+        <qualifiedname>llvm::orc::MachOPlatform::rt_pushInitializers</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1unique__function" kindref="compound">PushInitializersSendResultFn</ref></type>
+          <declname>SendResult</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+          <declname>JDHeaderAddr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="315" column="8" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="712" bodyend="738"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1acc7532ba128265dc45bdfdf3e51ee613" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::orc::MachOPlatform::rt_pushSymbols</definition>
+        <argsstring>(PushSymbolsInSendResultFn SendResult, ExecutorAddr Handle, const std::vector&lt; std::pair&lt; StringRef, bool &gt; &gt; &amp;Symbols)</argsstring>
+        <name>rt_pushSymbols</name>
+        <qualifiedname>llvm::orc::MachOPlatform::rt_pushSymbols</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1unique__function" kindref="compound">PushSymbolsInSendResultFn</ref></type>
+          <declname>SendResult</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+          <declname>Handle</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; std::pair&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>, <ref refid="classbool" kindref="compound">bool</ref> &gt; &gt; &amp;</type>
+          <declname>Symbols</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="322" column="8" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="740" bodyend="783"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_mach_o_platform_1a5b1f2a231d4623bfd2d51f182d42dfb9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>Expected&lt; uint64_t &gt; llvm::orc::MachOPlatform::createPThreadKey</definition>
+        <argsstring>()</argsstring>
+        <name>createPThreadKey</name>
+        <qualifiedname>llvm::orc::MachOPlatform::createPThreadKey</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="326" column="12" bodyfile="lib/ExecutionEngine/Orc/MachOPlatform.cpp" bodystart="785" bodyend="797"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Mediates between <ref refid="namespacellvm_1_1_mach_o" kindref="compound">MachO</ref> initialization and <ref refid="classllvm_1_1orc_1_1_execution_session" kindref="compound">ExecutionSession</ref> state. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::orc::MachOPlatform</label>
+        <link refid="classllvm_1_1orc_1_1_mach_o_platform"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::orc::Platform</label>
+        <link refid="classllvm_1_1orc_1_1_platform"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::orc::MachOPlatform</label>
+        <link refid="classllvm_1_1orc_1_1_mach_o_platform"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::orc::Platform</label>
+        <link refid="classllvm_1_1orc_1_1_platform"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" line="30" column="1" bodyfile="include/llvm/ExecutionEngine/Orc/MachOPlatform.h" bodystart="30" bodyend="376"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a18de895712b320493315a686ee523cdc" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>associateRuntimeSupportFunctions</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a48e9d9194bc57222fa6b9960973e084a" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>Bootstrap</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a8039d4b520fbf64f6e46ff35a9257151" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>BuildMachOHeaderMU</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a49136cf1b05dde0d5cea41910deb238e" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>buildSimpleMachOHeaderMU</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1ad166f5736231229286c93cd8c6aa8b6d" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>Create</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a1d471ce68684309b46d6afa43f8ec0a9" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>Create</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a83542a9b15f4858faf09fb212b92e5f6" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>CreatePThreadKey</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a5b1f2a231d4623bfd2d51f182d42dfb9" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>createPThreadKey</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a4c9c00d88289a6245270d5b6c787d79d" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>DeregisterEHFrameSection</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a414795804483258cb2c6fac97dd7325c" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>DeregisterJITDylib</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a94f567a49e0f8c1ab2c48d4941c19722" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>DeregisterObjCRuntimeObject</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a9a9bdf7ca13bd87781a302c09b3aec37" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>DeregisterObjectPlatformSections</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a444581fce3271fab8f2f79994f222c9b" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>DeregisterObjectSymbolTable</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1ab39a0edd4fcacc2ebcfd36ba0edd753b" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>ES</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1ace8d0e493303fca2cbb2548b6add121d" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>flagsForSymbol</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a40d506be0d455e57f1f895fc1eb28ce2" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>ForceEHFrames</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1ab2d022e73bf8373d324c1b989c57074f" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>getExecutionSession</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a031eb0731dbdc11f0819c99ca5a224ed" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>GetJITDylibHeaderSendResultFn</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1acb4e0fede6431746ef387cce55174e4b" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>GetJITDylibNameSendResultFn</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a1e54bdbfb200dbbd195008fa638d154a" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>getMachOHeaderStartSymbol</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a0b6c5f7bc389c9247771b1642410352e" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>getObjectLinkingLayer</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a2de04c95b174adde918039416aab6716" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>getPointerEdgeKind</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1abd44c5d6cecb38ecc95ad4d70f39b157" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>HeaderAddrToJITDylib</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1aba8b1e73aceb71252adac1510f61fa41" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>JITDylibToHeaderAddr</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a2e16344024bad553941930ee5ef5bda3" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>JITDylibToPThreadKey</name></member>
+      <member refid="classllvm_1_1orc_1_1_platform_1aded9cbc2f7fa64fbbdf4f5ce8f826dd5" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>lookupInitSymbols</name></member>
+      <member refid="classllvm_1_1orc_1_1_platform_1a5f5de33429dae751bbf618940ff67e01" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>lookupInitSymbolsAsync</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a0fd90f53b4f2a866cffe1bbd54be93ba" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>MachOExecutorSymbolFlags</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a93b754ab1a755ecf25e98f2bea459d8d" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>MachOHeaderMUBuilder</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a72b7e37fa5425894e9922653a6197689" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>MachOHeaderStartSymbol</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a770d73acb401c9ed0ed6b16272aa4050" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>MachOJITDylibDepInfoMap</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a4297b32d58300729e5b0b21de250e415" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>MachOPlatform</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a9933be5a0082912958e7328de0ca90e1" prot="public" virt="virtual"><scope>llvm::orc::MachOPlatform</scope><name>notifyAdding</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1ab3516e13e87d0b4a374fad5b5ff22b05" prot="public" virt="virtual"><scope>llvm::orc::MachOPlatform</scope><name>notifyRemoving</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a917039f581ceb3c620ac061caf670439" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>ObjLinkingLayer</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1aafedf866d8c9272604ee8efb1c21e808" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>PlatformBootstrap</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a48694a6b455662fdecac8bd1b6137826" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>PlatformJD</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1ac1cbe24b81a9791070732dfd9d2c87ea" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>PlatformMutex</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a5c1711fa7d5a92381f88d3a2e78fcff3" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>PlatformShutdown</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1aaef0a534624b9da460a9c5f5e3e33bc0" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>pushInitializersLoop</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a049d88db8b8c6139a2b6e22b25a446a5" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>PushInitializersSendResultFn</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1ac8694415b66355a2fff841e6a3399c1d" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>PushSymbolsInSendResultFn</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1ad19d903a51c897944c3b7be83ac434b0" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>RegisteredInitSymbols</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1ac5c7627613e80f4d73ef1b30a3096f45" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>RegisterEHFrameSection</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1afe45e15a78759534c64d693e2d3e1dfc" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>RegisterJITDylib</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a9b7383aad0063bb463ed9c287b33259d" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>RegisterObjCRuntimeObject</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a3bdb5572b0ba558c8b8e58056130188d" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>RegisterObjectPlatformSections</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1aa22203c97eb1b4b5963b119c17f80f01" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>RegisterObjectSymbolTable</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1afa832afa22d43b07518adfe5bae7c816" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>requiredCXXAliases</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1ab13c0cccbb9a329f1ff11caffae1faef" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>rt_pushInitializers</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1acc7532ba128265dc45bdfdf3e51ee613" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>rt_pushSymbols</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a3827ef14f27e73ba0230b0070aa155fb" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>SendSymbolAddressFn</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a45fd41e11f6881253372745d7927cd52" prot="public" virt="virtual"><scope>llvm::orc::MachOPlatform</scope><name>setupJITDylib</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a8be40bff13ac5d492bc1e7179ce12046" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>setupJITDylib</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a25ec836178bfbac963e0945c6e0cdb75" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>standardLazyCompilationAliases</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1ab2b75dd698cda0452b5e84199248ca8a" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>standardPlatformAliases</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a5033eefe5c3bcf123e9d3070884f38f5" prot="public" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>standardRuntimeUtilityAliases</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1afc346fc9cb8bf6dd068a52409381ff46" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>supportedTarget</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a6f940849fa868c06ae19d660ddc29f00" prot="private" virt="non-virtual"><scope>llvm::orc::MachOPlatform</scope><name>SymbolTableVector</name></member>
+      <member refid="classllvm_1_1orc_1_1_mach_o_platform_1a2410f51d9f312b025f9a3307f63c7f6e" prot="public" virt="virtual"><scope>llvm::orc::MachOPlatform</scope><name>teardownJITDylib</name></member>
+      <member refid="classllvm_1_1orc_1_1_platform_1a286e7d55134fe69c2fe87e2da062bdd2" prot="public" virt="virtual"><scope>llvm::orc::MachOPlatform</scope><name>~Platform</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

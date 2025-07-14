@@ -1,0 +1,521 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_section_memory_manager" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SectionMemoryManager</compoundname>
+    <basecompoundref refid="classllvm_1_1_r_t_dyld_memory_manager" prot="public" virt="non-virtual">llvm::RTDyldMemoryManager</basecompoundref>
+    <includes refid="_section_memory_manager_8h" local="yes">llvm/ExecutionEngine/SectionMemoryManager.h</includes>
+    <innerclass refid="structllvm_1_1_section_memory_manager_1_1_free_mem_block" prot="private">llvm::SectionMemoryManager::FreeMemBlock</innerclass>
+    <innerclass refid="structllvm_1_1_section_memory_manager_1_1_memory_group" prot="private">llvm::SectionMemoryManager::MemoryGroup</innerclass>
+    <innerclass refid="classllvm_1_1_section_memory_manager_1_1_memory_mapper" prot="public">llvm::SectionMemoryManager::MemoryMapper</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_section_memory_manager_1a0cdbe52ddf56f7c9188174848e9423a4" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>AllocationPurpose</name>
+        <qualifiedname>llvm::SectionMemoryManager::AllocationPurpose</qualifiedname>
+        <enumvalue id="classllvm_1_1_section_memory_manager_1a0cdbe52ddf56f7c9188174848e9423a4aca0dbad92a874b2f69b549293387925e" prot="public">
+          <name>Code</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_section_memory_manager_1a0cdbe52ddf56f7c9188174848e9423a4a38ff86a50131b388742b542528d67ac7" prot="public">
+          <name>ROData</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_section_memory_manager_1a0cdbe52ddf56f7c9188174848e9423a4a93131f8e50abc73a8e6bf07701a3633c" prot="public">
+          <name>RWData</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum describes the various reasons to allocate pages from allocateMappedMemory. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="43" column="3" bodyfile="include/llvm/ExecutionEngine/SectionMemoryManager.h" bodystart="43" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_section_memory_manager_1a37c90b584f4921926d2f91baec417de9" prot="private" static="no" mutable="no">
+        <type>MemoryGroup</type>
+        <definition>MemoryGroup llvm::SectionMemoryManager::CodeMem</definition>
+        <argsstring></argsstring>
+        <name>CodeMem</name>
+        <qualifiedname>llvm::SectionMemoryManager::CodeMem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="185" column="15" bodyfile="include/llvm/ExecutionEngine/SectionMemoryManager.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_section_memory_manager_1ae26c34dc8ed8bd7458866dd7db9fbe41" prot="private" static="no" mutable="no">
+        <type>MemoryGroup</type>
+        <definition>MemoryGroup llvm::SectionMemoryManager::RWDataMem</definition>
+        <argsstring></argsstring>
+        <name>RWDataMem</name>
+        <qualifiedname>llvm::SectionMemoryManager::RWDataMem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="186" column="15" bodyfile="include/llvm/ExecutionEngine/SectionMemoryManager.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_section_memory_manager_1a53c2fc3df5d5ab5a6651517137269621" prot="private" static="no" mutable="no">
+        <type>MemoryGroup</type>
+        <definition>MemoryGroup llvm::SectionMemoryManager::RODataMem</definition>
+        <argsstring></argsstring>
+        <name>RODataMem</name>
+        <qualifiedname>llvm::SectionMemoryManager::RODataMem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="187" column="15" bodyfile="include/llvm/ExecutionEngine/SectionMemoryManager.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_section_memory_manager_1ac11efffdfc513a919954956c7529fc68" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_section_memory_manager_1_1_memory_mapper" kindref="compound">MemoryMapper</ref> *</type>
+        <definition>MemoryMapper* llvm::SectionMemoryManager::MMapper</definition>
+        <argsstring></argsstring>
+        <name>MMapper</name>
+        <qualifiedname>llvm::SectionMemoryManager::MMapper</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="188" column="16" bodyfile="include/llvm/ExecutionEngine/SectionMemoryManager.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_section_memory_manager_1ae1ab84c209cf054d1cb9cf804b05cf60" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_section_memory_manager_1_1_memory_mapper" kindref="compound">MemoryMapper</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MemoryMapper&gt; llvm::SectionMemoryManager::OwnedMMapper</definition>
+        <argsstring></argsstring>
+        <name>OwnedMMapper</name>
+        <qualifiedname>llvm::SectionMemoryManager::OwnedMMapper</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="189" column="19" bodyfile="include/llvm/ExecutionEngine/SectionMemoryManager.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1a3238490fd7e79eeb59559c5a9c57adb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SectionMemoryManager::SectionMemoryManager</definition>
+        <argsstring>(MemoryMapper *MM=nullptr)</argsstring>
+        <name>SectionMemoryManager</name>
+        <qualifiedname>llvm::SectionMemoryManager::SectionMemoryManager</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_section_memory_manager_1_1_memory_mapper" kindref="compound">MemoryMapper</ref> *</type>
+          <declname>MM</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classllvm_1_1_section_memory_manager" kindref="compound">SectionMemoryManager</ref> instance with <computeroutput>MM</computeroutput> as the associated memory mapper. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>MM</computeroutput> is nullptr then a default memory mapper is used that directly calls into the operating system. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="107" column="3" bodyfile="lib/ExecutionEngine/SectionMemoryManager.cpp" bodystart="267" bodyend="273"/>
+        <referencedby refid="classllvm_1_1_section_memory_manager_1a9d3af0bc08da43e2c91b20edccca6ceb">operator=</referencedby>
+        <referencedby refid="classllvm_1_1_section_memory_manager_1ad7b4628d82be8aec032d1b3198040d55">SectionMemoryManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1ad7b4628d82be8aec032d1b3198040d55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SectionMemoryManager::SectionMemoryManager</definition>
+        <argsstring>(const SectionMemoryManager &amp;)=delete</argsstring>
+        <name>SectionMemoryManager</name>
+        <qualifiedname>llvm::SectionMemoryManager::SectionMemoryManager</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_section_memory_manager" kindref="compound">SectionMemoryManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="108" column="3"/>
+        <references refid="classllvm_1_1_section_memory_manager_1a3238490fd7e79eeb59559c5a9c57adb8" compoundref="_section_memory_manager_8cpp" startline="267" endline="273">SectionMemoryManager</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1a9d3af0bc08da43e2c91b20edccca6ceb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SectionMemoryManager::operator=</definition>
+        <argsstring>(const SectionMemoryManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::SectionMemoryManager::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_section_memory_manager" kindref="compound">SectionMemoryManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="109" column="8"/>
+        <references refid="namespacellvm_1a264176188c0aadccd3ca5b6929b5a2e1ab24ce0cd392a5b0b8dedc66c25213594" compoundref="_attributes_8h" startline="53">llvm::Free</references>
+        <references refid="classllvm_1_1_section_memory_manager_1a3238490fd7e79eeb59559c5a9c57adb8" compoundref="_section_memory_manager_8cpp" startline="267" endline="273">SectionMemoryManager</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1a709a05abb7e82c5c8fefcc7ee16a3252" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SectionMemoryManager::~SectionMemoryManager</definition>
+        <argsstring>() override</argsstring>
+        <name>~SectionMemoryManager</name>
+        <qualifiedname>llvm::SectionMemoryManager::~SectionMemoryManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="110" column="3" bodyfile="lib/ExecutionEngine/SectionMemoryManager.cpp" bodystart="233" bodyend="238"/>
+        <references refid="namespacellvm_1a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2" compoundref="_pseudo_probe_8h" startline="29">llvm::Block</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1acfcf22eac937cf698005e9cc378cad73" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classuint8__t" kindref="compound">uint8_t</ref> *</type>
+        <definition>uint8_t * llvm::SectionMemoryManager::allocateCodeSection</definition>
+        <argsstring>(uintptr_t Size, unsigned Alignment, unsigned SectionID, StringRef SectionName) override</argsstring>
+        <name>allocateCodeSection</name>
+        <qualifiedname>llvm::SectionMemoryManager::allocateCodeSection</qualifiedname>
+        <reimplements refid="classllvm_1_1_runtime_dyld_1_1_memory_manager_1aaaa63dd49bc491d2da811c84dd9b4c0e">allocateCodeSection</reimplements>
+        <param>
+          <type>uintptr_t</type>
+          <declname>Size</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Alignment</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>SectionID</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>SectionName</declname>
+        </param>
+        <briefdescription>
+<para>Allocates a memory block of (at least) the given size suitable for executable code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The value of <computeroutput>Alignment</computeroutput> must be a power of two. If <computeroutput>Alignment</computeroutput> is zero a default alignment of 16 will be used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="117" column="11" bodyfile="lib/ExecutionEngine/SectionMemoryManager.cpp" bodystart="32" bodyend="38"/>
+        <references refid="classllvm_1_1_section_memory_manager_1a0cdbe52ddf56f7c9188174848e9423a4aca0dbad92a874b2f69b549293387925e" compoundref="_section_memory_manager_8h" startline="44">Code</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1ac4eeaddc4bbbe555cb2abc159b96492c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classuint8__t" kindref="compound">uint8_t</ref> *</type>
+        <definition>uint8_t * llvm::SectionMemoryManager::allocateDataSection</definition>
+        <argsstring>(uintptr_t Size, unsigned Alignment, unsigned SectionID, StringRef SectionName, bool isReadOnly) override</argsstring>
+        <name>allocateDataSection</name>
+        <qualifiedname>llvm::SectionMemoryManager::allocateDataSection</qualifiedname>
+        <reimplements refid="classllvm_1_1_runtime_dyld_1_1_memory_manager_1a762c2ef812ed069620da3bba0e65bba5">allocateDataSection</reimplements>
+        <param>
+          <type>uintptr_t</type>
+          <declname>Size</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Alignment</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>SectionID</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>SectionName</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>isReadOnly</declname>
+        </param>
+        <briefdescription>
+<para>Allocates a memory block of (at least) the given size suitable for executable code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The value of <computeroutput>Alignment</computeroutput> must be a power of two. If <computeroutput>Alignment</computeroutput> is zero a default alignment of 16 will be used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="126" column="11" bodyfile="lib/ExecutionEngine/SectionMemoryManager.cpp" bodystart="20" bodyend="30"/>
+        <references refid="classllvm_1_1_section_memory_manager_1a0cdbe52ddf56f7c9188174848e9423a4a38ff86a50131b388742b542528d67ac7" compoundref="_section_memory_manager_8h" startline="45">ROData</references>
+        <references refid="classllvm_1_1_section_memory_manager_1a0cdbe52ddf56f7c9188174848e9423a4a93131f8e50abc73a8e6bf07701a3633c" compoundref="_section_memory_manager_8h" startline="46">RWData</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1af06d61d7c637095c5b7270b34224c5dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SectionMemoryManager::finalizeMemory</definition>
+        <argsstring>(std::string *ErrMsg=nullptr) override</argsstring>
+        <name>finalizeMemory</name>
+        <qualifiedname>llvm::SectionMemoryManager::finalizeMemory</qualifiedname>
+        <reimplements refid="classllvm_1_1_runtime_dyld_1_1_memory_manager_1abd33e61ef93ebdd7c7b40c62f43f71b3">finalizeMemory</reimplements>
+        <param>
+          <type>std::string *</type>
+          <declname>ErrMsg</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Update section-specific memory permissions and other attributes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is called when object loading is complete and section page permissions can be applied. It is up to the memory manager implementation to decide whether or not to act on this method. The memory manager will typically allocate all sections as read-write and then apply specific permissions when this method is called. Code sections cannot be executed until this function has been called. In addition, any cache coherency operations needed to reliably use the memory are also performed.</para>
+<para><simplesect kind="return"><para>true if an error occurred, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="141" column="8" bodyfile="lib/ExecutionEngine/SectionMemoryManager.cpp" bodystart="148" bodyend="179"/>
+        <references refid="classllvm_1_1_section_memory_manager_1a64835973f93c4f018aa377870e15ee97" compoundref="_section_memory_manager_8cpp" startline="227" endline="231">invalidateInstructionCache</references>
+        <references refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a72200d7026f0978efe86fc34f4cba76e" compoundref="_memory_8h" startline="58">llvm::sys::Memory::MF_EXEC</references>
+        <references refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417" compoundref="_memory_8h" startline="56">llvm::sys::Memory::MF_READ</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1a64835973f93c4f018aa377870e15ee97" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::SectionMemoryManager::invalidateInstructionCache</definition>
+        <argsstring>()</argsstring>
+        <name>invalidateInstructionCache</name>
+        <qualifiedname>llvm::SectionMemoryManager::invalidateInstructionCache</qualifiedname>
+        <briefdescription>
+<para>Invalidate instruction cache for code sections. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Some platforms with separate data cache and instruction cache require explicit cache flush, otherwise JIT code manipulations (like resolved relocations) will get to the data cache but not to the instruction cache.</para>
+<para>This method is called from finalizeMemory. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="150" column="16" bodyfile="lib/ExecutionEngine/SectionMemoryManager.cpp" bodystart="227" bodyend="231"/>
+        <references refid="namespacellvm_1a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2" compoundref="_pseudo_probe_8h" startline="29">llvm::Block</references>
+        <references refid="classllvm_1_1sys_1_1_memory_1a5cfd4d2a8227a3f9ca0667f42f05f20b">llvm::sys::Memory::InvalidateInstructionCache</references>
+        <referencedby refid="classllvm_1_1_section_memory_manager_1af06d61d7c637095c5b7270b34224c5dd" compoundref="_section_memory_manager_8cpp" startline="148" endline="179">finalizeMemory</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1a70f713822091779839fb0697890b44fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classuint8__t" kindref="compound">uint8_t</ref> *</type>
+        <definition>uint8_t * llvm::SectionMemoryManager::allocateSection</definition>
+        <argsstring>(AllocationPurpose Purpose, uintptr_t Size, unsigned Alignment)</argsstring>
+        <name>allocateSection</name>
+        <qualifiedname>llvm::SectionMemoryManager::allocateSection</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_section_memory_manager_1a0cdbe52ddf56f7c9188174848e9423a4" kindref="member">AllocationPurpose</ref></type>
+          <declname>Purpose</declname>
+        </param>
+        <param>
+          <type>uintptr_t</type>
+          <declname>Size</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Alignment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="177" column="11" bodyfile="lib/ExecutionEngine/SectionMemoryManager.cpp" bodystart="40" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1abeadc4a435040725ef277d0854e8231f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code llvm::SectionMemoryManager::applyMemoryGroupPermissions</definition>
+        <argsstring>(MemoryGroup &amp;MemGroup, unsigned Permissions)</argsstring>
+        <name>applyMemoryGroupPermissions</name>
+        <qualifiedname>llvm::SectionMemoryManager::applyMemoryGroupPermissions</qualifiedname>
+        <param>
+          <type>MemoryGroup &amp;</type>
+          <declname>MemGroup</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Permissions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="180" column="19" bodyfile="lib/ExecutionEngine/SectionMemoryManager.cpp" bodystart="203" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1a9daa5533bf122c58ff0c1876063ff953" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::SectionMemoryManager::anchor</definition>
+        <argsstring>() override</argsstring>
+        <name>anchor</name>
+        <qualifiedname>llvm::SectionMemoryManager::anchor</qualifiedname>
+        <reimplements refid="classllvm_1_1_r_t_dyld_memory_manager_1aea1e4fa7ac6ec18bebfa1795a76ee08d">anchor</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="183" column="8" bodyfile="lib/ExecutionEngine/SectionMemoryManager.cpp" bodystart="242" bodyend="242"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This is a simple memory manager which implements the methods called by the <ref refid="classllvm_1_1_runtime_dyld" kindref="compound">RuntimeDyld</ref> class to allocate memory for section-based loading of objects, usually those generated by the <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> execution engine. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This memory manager allocates all section memory as read-write. The <ref refid="classllvm_1_1_runtime_dyld" kindref="compound">RuntimeDyld</ref> will copy JITed section memory into these allocated blocks and perform any necessary linking and relocations.</para>
+<para><ref refid="classllvm_1_1_any" kindref="compound">Any</ref> client using this memory manager MUST ensure that section-specific page permissions have been applied before attempting to execute functions in the JITed object. Permissions can be applied either by calling <ref refid="classllvm_1_1_m_c_j_i_t_1a46de6cc1d24bff3fd2ae2006c8b35456" kindref="member">MCJIT::finalizeObject</ref> or by calling <ref refid="classllvm_1_1_section_memory_manager_1af06d61d7c637095c5b7270b34224c5dd" kindref="member">SectionMemoryManager::finalizeMemory</ref> directly. Clients of <ref refid="classllvm_1_1_m_c_j_i_t" kindref="compound">MCJIT</ref> should call <ref refid="classllvm_1_1_m_c_j_i_t_1a46de6cc1d24bff3fd2ae2006c8b35456" kindref="member">MCJIT::finalizeObject</ref>. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="6">
+        <label>llvm::JITSymbolResolver</label>
+        <link refid="classllvm_1_1_j_i_t_symbol_resolver"/>
+      </node>
+      <node id="5">
+        <label>llvm::LegacyJITSymbolResolver</label>
+        <link refid="classllvm_1_1_legacy_j_i_t_symbol_resolver"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::MCJITMemoryManager</label>
+        <link refid="classllvm_1_1_m_c_j_i_t_memory_manager"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::RTDyldMemoryManager</label>
+        <link refid="classllvm_1_1_r_t_dyld_memory_manager"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::RuntimeDyld::MemoryManager</label>
+        <link refid="classllvm_1_1_runtime_dyld_1_1_memory_manager"/>
+      </node>
+      <node id="1">
+        <label>llvm::SectionMemoryManager</label>
+        <link refid="classllvm_1_1_section_memory_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>llvm::JITSymbolResolver</label>
+        <link refid="classllvm_1_1_j_i_t_symbol_resolver"/>
+      </node>
+      <node id="5">
+        <label>llvm::LegacyJITSymbolResolver</label>
+        <link refid="classllvm_1_1_legacy_j_i_t_symbol_resolver"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::MCJITMemoryManager</label>
+        <link refid="classllvm_1_1_m_c_j_i_t_memory_manager"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::RTDyldMemoryManager</label>
+        <link refid="classllvm_1_1_r_t_dyld_memory_manager"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>EHFrames</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::RuntimeDyld::MemoryManager</label>
+        <link refid="classllvm_1_1_runtime_dyld_1_1_memory_manager"/>
+      </node>
+      <node id="1">
+        <label>llvm::SectionMemoryManager</label>
+        <link refid="classllvm_1_1_section_memory_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>vector&lt; EHFrame &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="39" column="1" bodyfile="include/llvm/ExecutionEngine/SectionMemoryManager.h" bodystart="39" bodyend="190"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_section_memory_manager_1acfcf22eac937cf698005e9cc378cad73" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>allocateCodeSection</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1ac4eeaddc4bbbe555cb2abc159b96492c" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>allocateDataSection</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1a70f713822091779839fb0697890b44fc" prot="private" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>allocateSection</name></member>
+      <member refid="classllvm_1_1_runtime_dyld_1_1_memory_manager_1a912b68c8deb0c59194e0e1c99f3d3438" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>allocateTLSSection</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1a0cdbe52ddf56f7c9188174848e9423a4" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>AllocationPurpose</name></member>
+      <member refid="classllvm_1_1_runtime_dyld_1_1_memory_manager_1ae51ee7c626f5408381f946809f534313" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>allowStubAllocation</name></member>
+      <member refid="classllvm_1_1_j_i_t_symbol_resolver_1a338af39f9777578922ab4764ac5502f5" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>allowsZeroSymbols</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1a9daa5533bf122c58ff0c1876063ff953" prot="private" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>anchor</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1abeadc4a435040725ef277d0854e8231f" prot="private" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>applyMemoryGroupPermissions</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1a37c90b584f4921926d2f91baec417de9" prot="private" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>CodeMem</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1ad0eeea7300381c326cc3bd5e93fbcbf0" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>deregisterEHFrames</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a1139b71b9b451e2e0417dcd25350827c" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>deregisterEHFramesInProcess</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1afef7b6b491070bc84282122902b38fa0" prot="protected" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>EHFrameInfos</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a30fa2ff7609ea9b2e5490eb1ea79ff02" prot="protected" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>EHFrames</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1af06d61d7c637095c5b7270b34224c5dd" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>finalizeMemory</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a8306f5406b637ac0257f674839a58859" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>findSymbol</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a2f54c196c4be75015b4edb4f4ac1a92d" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>findSymbolInLogicalDylib</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a4e5d745e695dc62ebaec15f537af9fed" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>getPointerToNamedFunction</name></member>
+      <member refid="classllvm_1_1_legacy_j_i_t_symbol_resolver_1a70654ce07c092ce4e460bb98d10319f6" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>getResponsibilitySet</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a5275cacbaa1ca16fc934fb65171e8fe2" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>getSymbolAddress</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1abb87ff0ecf55f84ec9306f54bfb25241" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>getSymbolAddressInLogicalDylib</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a5fee247bdc0c5af393b66bfd73a0a347" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>getSymbolAddressInProcess</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1a64835973f93c4f018aa377870e15ee97" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>invalidateInstructionCache</name></member>
+      <member refid="classllvm_1_1_legacy_j_i_t_symbol_resolver_1aadf85c83250f0a519c4e6c498dd91a15" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>lookup</name></member>
+      <member refid="classllvm_1_1_j_i_t_symbol_resolver_1a40474784a8f731d0ad49f39774a11a2a" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>LookupResult</name></member>
+      <member refid="classllvm_1_1_j_i_t_symbol_resolver_1a487abfdc466598f156d5398ae986c6f9" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>LookupSet</name></member>
+      <member refid="classllvm_1_1_runtime_dyld_1_1_memory_manager_1a11fcc23e1236167e9335a635772fa9c1" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>MemoryManager</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1ac11efffdfc513a919954956c7529fc68" prot="private" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>MMapper</name></member>
+      <member refid="classllvm_1_1_runtime_dyld_1_1_memory_manager_1a141903e7bb948a4214fc0f74f94eb231" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>needsToReserveAllocationSpace</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_memory_manager_1a20044c6b32c19b606470dba740867e18" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>notifyObjectLoaded</name></member>
+      <member refid="classllvm_1_1_m_c_j_i_t_memory_manager_1a756f07a293e917107262ff4ee2bb64e0" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>notifyObjectLoaded</name></member>
+      <member refid="classllvm_1_1_j_i_t_symbol_resolver_1a01f534cbe65344148ec2986691ff632a" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>OnResolvedFunction</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1a9d3af0bc08da43e2c91b20edccca6ceb" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a4e1b00fbf0137aa4204f1bb70093dace" prot="public" virt="non-virtual" ambiguityscope="llvm::RTDyldMemoryManager::"><scope>llvm::SectionMemoryManager</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1ae1ab84c209cf054d1cb9cf804b05cf60" prot="private" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>OwnedMMapper</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a34aa575afca6c18d934c5fd87da71043" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>registerEHFrames</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a8ac6930aa3a1623791ffe9853ba9bc3b" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>registerEHFramesInProcess</name></member>
+      <member refid="classllvm_1_1_runtime_dyld_1_1_memory_manager_1a10401be6f4a60bfb003221c8976049ce" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>reserveAllocationSpace</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1a53c2fc3df5d5ab5a6651517137269621" prot="private" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>RODataMem</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a741baee07db1228a893824c9f6e5c683" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>RTDyldMemoryManager</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1af5b16c0df8d0b491a2894d1def776f03" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>RTDyldMemoryManager</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1ae26c34dc8ed8bd7458866dd7db9fbe41" prot="private" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>RWDataMem</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1a3238490fd7e79eeb59559c5a9c57adb8" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>SectionMemoryManager</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1ad7b4628d82be8aec032d1b3198040d55" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>SectionMemoryManager</name></member>
+      <member refid="classllvm_1_1_j_i_t_symbol_resolver_1a23b07bed0b5e0fec6e9dfee153e899a3" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>~JITSymbolResolver</name></member>
+      <member refid="classllvm_1_1_runtime_dyld_1_1_memory_manager_1a926f7c6e1cd73838fc19eecf5e169348" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager</scope><name>~MemoryManager</name></member>
+      <member refid="classllvm_1_1_r_t_dyld_memory_manager_1a9949eb6347bb952afdc191a477653f68" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>~RTDyldMemoryManager</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1a709a05abb7e82c5c8fefcc7ee16a3252" prot="public" virt="non-virtual"><scope>llvm::SectionMemoryManager</scope><name>~SectionMemoryManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

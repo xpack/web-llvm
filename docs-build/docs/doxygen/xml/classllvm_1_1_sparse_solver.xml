@@ -1,0 +1,504 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_sparse_solver" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SparseSolver</compoundname>
+    <includes refid="_sparse_propagation_8h" local="yes">llvm/Analysis/SparsePropagation.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class LatticeKey</type>
+      </param>
+      <param>
+        <type>class LatticeVal</type>
+      </param>
+      <param>
+        <type>class KeyInfo</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_solver_1a15e8c499a59a44de48eaf87b65e88ff4" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt;</type>
+        <definition>using llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::Edge =  std::pair&lt;BasicBlock *, BasicBlock *&gt;</definition>
+        <argsstring></argsstring>
+        <name>Edge</name>
+        <qualifiedname>llvm::SparseSolver::Edge</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="130" column="3" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_sparse_solver_1ac956edf626ad23eaad7fbe412a530f94" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_abstract_lattice_function" kindref="compound">AbstractLatticeFunction</ref>&lt; LatticeKey, LatticeVal &gt; *</type>
+        <definition>AbstractLatticeFunction&lt;LatticeKey, LatticeVal&gt;* llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::LatticeFunc</definition>
+        <argsstring></argsstring>
+        <name>LatticeFunc</name>
+        <qualifiedname>llvm::SparseSolver::LatticeFunc</qualifiedname>
+        <briefdescription>
+<para>LatticeFunc - This is the object that knows the lattice and how to compute transfer functions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="116" column="27" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_sparse_solver_1a5f8724f9ded030c79c6981414c4c86f1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; LatticeKey, LatticeVal &gt;</type>
+        <definition>DenseMap&lt;LatticeKey, LatticeVal&gt; llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::ValueState</definition>
+        <argsstring></argsstring>
+        <name>ValueState</name>
+        <qualifiedname>llvm::SparseSolver::ValueState</qualifiedname>
+        <briefdescription>
+<para>ValueState - Holds the LatticeVals associated with LatticeKeys. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="119" column="12" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_sparse_solver_1a53e1bd78db029a0ba6a342cd97ec379e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, 16 &gt;</type>
+        <definition>SmallPtrSet&lt;BasicBlock *, 16&gt; llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::BBExecutable</definition>
+        <argsstring></argsstring>
+        <name>BBExecutable</name>
+        <qualifiedname>llvm::SparseSolver::BBExecutable</qualifiedname>
+        <briefdescription>
+<para>BBExecutable - Holds the basic blocks that are executable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="122" column="15" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_sparse_solver_1a987276e2a5c6802dbd6a61aca5bb7ec2" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, 64 &gt;</type>
+        <definition>SmallVector&lt;Value *, 64&gt; llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::ValueWorkList</definition>
+        <argsstring></argsstring>
+        <name>ValueWorkList</name>
+        <qualifiedname>llvm::SparseSolver::ValueWorkList</qualifiedname>
+        <briefdescription>
+<para>ValueWorkList - Holds values that should be processed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="125" column="15" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_sparse_solver_1a3f6225291b92b8b27de8f4d01c589801" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, 64 &gt;</type>
+        <definition>SmallVector&lt;BasicBlock *, 64&gt; llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::BBWorkList</definition>
+        <argsstring></argsstring>
+        <name>BBWorkList</name>
+        <qualifiedname>llvm::SparseSolver::BBWorkList</qualifiedname>
+        <briefdescription>
+<para>BBWorkList - Holds basic blocks that should be processed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="128" column="15" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_sparse_solver_1a241ae22e0e3e35a6d1649c316c404056" prot="private" static="no" mutable="no">
+        <type>std::set&lt; Edge &gt;</type>
+        <definition>std::set&lt;Edge&gt; llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::KnownFeasibleEdges</definition>
+        <argsstring></argsstring>
+        <name>KnownFeasibleEdges</name>
+        <qualifiedname>llvm::SparseSolver::KnownFeasibleEdges</qualifiedname>
+        <briefdescription>
+<para>KnownFeasibleEdges - Entries in this set are edges which have already had PHI nodes retriggered. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="134" column="12" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1a6ad05861f146f8ab1ea52ca0aaabaabf" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::SparseSolver</definition>
+        <argsstring>(AbstractLatticeFunction&lt; LatticeKey, LatticeVal &gt; *Lattice)</argsstring>
+        <name>SparseSolver</name>
+        <qualifiedname>llvm::SparseSolver::SparseSolver</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_abstract_lattice_function" kindref="compound">AbstractLatticeFunction</ref>&lt; LatticeKey, LatticeVal &gt; *</type>
+          <declname>Lattice</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="137" column="12" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="137" bodyend="139"/>
+        <referencedby refid="classllvm_1_1_sparse_solver_1affad563926f1cd72aa0a82131acde1aa">llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::operator=</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_solver_1a989b2553015ac1465f058f2868390899">llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::SparseSolver</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1a989b2553015ac1465f058f2868390899" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::SparseSolver</definition>
+        <argsstring>(const SparseSolver &amp;)=delete</argsstring>
+        <name>SparseSolver</name>
+        <qualifiedname>llvm::SparseSolver::SparseSolver</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_sparse_solver" kindref="compound">SparseSolver</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="140" column="3"/>
+        <references refid="classllvm_1_1_sparse_solver_1a6ad05861f146f8ab1ea52ca0aaabaabf" compoundref="_sparse_propagation_8h" startline="137" endline="139">llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::SparseSolver</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1affad563926f1cd72aa0a82131acde1aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_solver" kindref="compound">SparseSolver</ref> &amp;</type>
+        <definition>SparseSolver &amp; llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::operator=</definition>
+        <argsstring>(const SparseSolver &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::SparseSolver::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_sparse_solver" kindref="compound">SparseSolver</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="141" column="16"/>
+        <references refid="classllvm_1_1_sparse_solver_1a6ad05861f146f8ab1ea52ca0aaabaabf" compoundref="_sparse_propagation_8h" startline="137" endline="139">llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::SparseSolver</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1ab2eb802e84c2b0f592aee41ad6c2b729" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::Solve</definition>
+        <argsstring>()</argsstring>
+        <name>Solve</name>
+        <qualifiedname>llvm::SparseSolver::Solve</qualifiedname>
+        <briefdescription>
+<para>Solve - Solve for constants and executable blocks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="144" column="8" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="469" bodyend="498"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_value_1a411cf3e3932f209ce3374cb31adc1da6" compoundref="_i_r_2_value_8h" startline="421" endline="424">llvm::Value::users</references>
+        <referencedby refid="_called_value_propagation_8cpp_1a1d2bce545ae26cccf351c2c0d35d64e4" compoundref="_called_value_propagation_8cpp" startline="375" endline="405">runCVP</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1a2612f81117eb06225641ddae1b87e2c1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::Print</definition>
+        <argsstring>(raw_ostream &amp;OS) const</argsstring>
+        <name>Print</name>
+        <qualifiedname>llvm::SparseSolver::Print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="146" column="8" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="501" bodyend="520"/>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1abb4cb9c22c6fdf8bfd36864c92d5449c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>LatticeVal</type>
+        <definition>LatticeVal llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::getExistingValueState</definition>
+        <argsstring>(LatticeKey Key) const</argsstring>
+        <name>getExistingValueState</name>
+        <qualifiedname>llvm::SparseSolver::getExistingValueState</qualifiedname>
+        <param>
+          <type>LatticeKey</type>
+          <declname>Key</declname>
+        </param>
+        <briefdescription>
+<para>getExistingValueState - Return the LatticeVal object corresponding to the given value from the ValueState map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the value is not in the map, UntrackedVal is returned, unlike the getValueState method. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="151" column="14" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="151" bodyend="154"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+        <referencedby refid="_called_value_propagation_8cpp_1a1d2bce545ae26cccf351c2c0d35d64e4" compoundref="_called_value_propagation_8cpp" startline="375" endline="405">runCVP</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1a69bc8945664fac27ca7fdb09b5a8b304" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LatticeVal</type>
+        <definition>LatticeVal llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::getValueState</definition>
+        <argsstring>(LatticeKey Key)</argsstring>
+        <name>getValueState</name>
+        <qualifiedname>llvm::SparseSolver::getValueState</qualifiedname>
+        <param>
+          <type>LatticeKey</type>
+          <declname>Key</declname>
+        </param>
+        <briefdescription>
+<para>getValueState - Return the LatticeVal object corresponding to the given value from the ValueState map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the value is not in the map, its state is initialized. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="159" column="14" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="229" bodyend="242"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1a19fefaa90777f772a3db9ce94e5209ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::isEdgeFeasible</definition>
+        <argsstring>(BasicBlock *From, BasicBlock *To, bool AggressiveUndef=false)</argsstring>
+        <name>isEdgeFeasible</name>
+        <qualifiedname>llvm::SparseSolver::isEdgeFeasible</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>From</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>To</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>AggressiveUndef</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>isEdgeFeasible - Return true if the control flow edge from the &apos;From&apos; basic block to the &apos;To&apos; basic block is currently feasible. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If AggressiveUndef is true, then this treats values with unknown lattice values as undefined. This is generally only useful when solving the lattice, not when querying it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="166" column="8" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="370" bodyend="381"/>
+        <references refid="classllvm_1_1_instruction_1a3287172f2d13af086e6d66364e8c6de3" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="1272" endline="1282">llvm::Instruction::getNumSuccessors</references>
+        <references refid="classllvm_1_1_instruction_1a6e5d2e18c81baaeec7dadc81a0dea993" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="1284" endline="1294">llvm::Instruction::getSuccessor</references>
+        <references refid="classllvm_1_1_basic_block_1aef9e9fcf4c5dfce90276ca16d91b8e46" compoundref="_i_r_2_basic_block_8h" startline="240" endline="244">llvm::BasicBlock::getTerminator</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1afcf67f79559e865139801c554ecc35cd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::isBlockExecutable</definition>
+        <argsstring>(BasicBlock *BB) const</argsstring>
+        <name>isBlockExecutable</name>
+        <qualifiedname>llvm::SparseSolver::isBlockExecutable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>isBlockExecutable - Return true if there are any known feasible edges into the basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is generally only useful when querying the lattice. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="172" column="8" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="172" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1aa957a217201ee36323b4cd3c5d4c939a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::MarkBlockExecutable</definition>
+        <argsstring>(BasicBlock *BB)</argsstring>
+        <name>MarkBlockExecutable</name>
+        <qualifiedname>llvm::SparseSolver::MarkBlockExecutable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>MarkBlockExecutable - This method can be used by clients to mark all of the blocks that are known to be intrinsically live in the processed unit. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="178" column="8" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="259" bodyend="265"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_value_1adb5c319f5905c1d3ca9eb5df546388c5" compoundref="_sandbox_i_r_2_value_8cpp" startline="309" endline="316">llvm::Value::getName</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <referencedby refid="_called_value_propagation_8cpp_1a1d2bce545ae26cccf351c2c0d35d64e4" compoundref="_called_value_propagation_8cpp" startline="375" endline="405">runCVP</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1a1b14f368a7c8d73d179556c419c7e9ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::UpdateState</definition>
+        <argsstring>(LatticeKey Key, LatticeVal LV)</argsstring>
+        <name>UpdateState</name>
+        <qualifiedname>llvm::SparseSolver::UpdateState</qualifiedname>
+        <param>
+          <type>LatticeKey</type>
+          <declname>Key</declname>
+        </param>
+        <param>
+          <type>LatticeVal</type>
+          <declname>LV</declname>
+        </param>
+        <briefdescription>
+<para>UpdateState - When the state of some LatticeKey is potentially updated to the given LatticeVal, this function notices and adds the LLVM value corresponding the key to the work list, if needed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="184" column="8" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="245" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1a866705333f04b8ec7cef9dabe82e9a7b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::markEdgeExecutable</definition>
+        <argsstring>(BasicBlock *Source, BasicBlock *Dest)</argsstring>
+        <name>markEdgeExecutable</name>
+        <qualifiedname>llvm::SparseSolver::markEdgeExecutable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Source</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Dest</declname>
+        </param>
+        <briefdescription>
+<para>markEdgeExecutable - Mark a basic block as executable, adding it to the BB work list if it is not already executable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="188" column="8" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="268" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1adb97f20d189c386d91e183dfd2419187" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::getFeasibleSuccessors</definition>
+        <argsstring>(Instruction &amp;TI, SmallVectorImpl&lt; bool &gt; &amp;Succs, bool AggressiveUndef)</argsstring>
+        <name>getFeasibleSuccessors</name>
+        <qualifiedname>llvm::SparseSolver::getFeasibleSuccessors</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>TI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classbool" kindref="compound">bool</ref> &gt; &amp;</type>
+          <declname>Succs</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>AggressiveUndef</declname>
+        </param>
+        <briefdescription>
+<para>getFeasibleSuccessors - Return a vector of booleans to indicate which successors are reachable from a given terminator instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="192" column="8" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="288" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1ade4eb61c10754bbed9a69b7bbf3f93e3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::visitInst</definition>
+        <argsstring>(Instruction &amp;I)</argsstring>
+        <name>visitInst</name>
+        <qualifiedname>llvm::SparseSolver::visitInst</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="195" column="8" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="450" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1a38c833ccb21975556a1afcc4ad5d509d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::visitPHINode</definition>
+        <argsstring>(PHINode &amp;I)</argsstring>
+        <name>visitPHINode</name>
+        <qualifiedname>llvm::SparseSolver::visitPHINode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="196" column="8" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="398" bodyend="447"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_solver_1a69bc1bbe3cd7330f25f1114c289bd6a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::visitTerminator</definition>
+        <argsstring>(Instruction &amp;TI)</argsstring>
+        <name>visitTerminator</name>
+        <qualifiedname>llvm::SparseSolver::visitTerminator</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>TI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/SparsePropagation.h" line="197" column="8" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="384" bodyend="395"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1_sparse_solver" kindref="compound">SparseSolver</ref> - This class is a general purpose solver for Sparse Conditional Propagation with a programmable lattice function. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Analysis/SparsePropagation.h" line="112" column="1" bodyfile="include/llvm/Analysis/SparsePropagation.h" bodystart="112" bodyend="198"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_sparse_solver_1a53e1bd78db029a0ba6a342cd97ec379e" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>BBExecutable</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a3f6225291b92b8b27de8f4d01c589801" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>BBWorkList</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a15e8c499a59a44de48eaf87b65e88ff4" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>Edge</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1abb4cb9c22c6fdf8bfd36864c92d5449c" prot="public" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>getExistingValueState</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1adb97f20d189c386d91e183dfd2419187" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>getFeasibleSuccessors</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a69bc8945664fac27ca7fdb09b5a8b304" prot="public" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>getValueState</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1afcf67f79559e865139801c554ecc35cd" prot="public" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>isBlockExecutable</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a19fefaa90777f772a3db9ce94e5209ab" prot="public" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>isEdgeFeasible</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a241ae22e0e3e35a6d1649c316c404056" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>KnownFeasibleEdges</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1ac956edf626ad23eaad7fbe412a530f94" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>LatticeFunc</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1aa957a217201ee36323b4cd3c5d4c939a" prot="public" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>MarkBlockExecutable</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a866705333f04b8ec7cef9dabe82e9a7b" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>markEdgeExecutable</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1affad563926f1cd72aa0a82131acde1aa" prot="public" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a2612f81117eb06225641ddae1b87e2c1" prot="public" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>Print</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1ab2eb802e84c2b0f592aee41ad6c2b729" prot="public" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>Solve</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a6ad05861f146f8ab1ea52ca0aaabaabf" prot="public" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>SparseSolver</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a989b2553015ac1465f058f2868390899" prot="public" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>SparseSolver</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a1b14f368a7c8d73d179556c419c7e9ca" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>UpdateState</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a5f8724f9ded030c79c6981414c4c86f1" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>ValueState</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a987276e2a5c6802dbd6a61aca5bb7ec2" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>ValueWorkList</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1ade4eb61c10754bbed9a69b7bbf3f93e3" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>visitInst</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a38c833ccb21975556a1afcc4ad5d509d" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>visitPHINode</name></member>
+      <member refid="classllvm_1_1_sparse_solver_1a69bc1bbe3cd7330f25f1114c289bd6a6" prot="private" virt="non-virtual"><scope>llvm::SparseSolver</scope><name>visitTerminator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

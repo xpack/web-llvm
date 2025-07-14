@@ -1,0 +1,823 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_function_1_1_delegate" prot="private" virt="non-virtual">llvm::MachineFunction::Delegate</basecompoundref>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ac9b69446f99357cc880c06d10601bffa" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="_machine_sink_8cpp_1a16005492b382a6a76abae848b4af2b83" kindref="member">RegSubRegPair</ref>, <ref refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_value_tracker_result" kindref="compound">ValueTrackerResult</ref> &gt;</type>
+        <definition>using anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::RewriteMapTy =  SmallDenseMap&lt;RegSubRegPair, ValueTrackerResult&gt;</definition>
+        <argsstring></argsstring>
+        <name>RewriteMapTy</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::RewriteMapTy</qualifiedname>
+        <briefdescription>
+<para>Track Def -&gt; <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> info used for rewriting copies. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="459" column="3" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="459" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a8a5134539212cd0d2a1bd7a4806136db" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_recurrence_instr" kindref="compound">RecurrenceInstr</ref>, 4 &gt;</type>
+        <definition>using anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::RecurrenceCycle =  SmallVector&lt;RecurrenceInstr, 4&gt;</definition>
+        <argsstring></argsstring>
+        <name>RecurrenceCycle</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::RecurrenceCycle</qualifiedname>
+        <briefdescription>
+<para>Sequence of instructions that formulate recurrence cycle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="462" column="3" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="462" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a992e7b8a53401bf807de9fb2ecc072eb" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> *</type>
+        <definition>const TargetInstrInfo* anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::TII</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="447" column="25" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="447" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ac09a0c1e8668332f135dd6f203c4e21a" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+        <definition>const TargetRegisterInfo* anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::TRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="448" column="28" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="448" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a0f89b4c05fd054597384befceebea943" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> *</type>
+        <definition>MachineRegisterInfo* anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::MRI</definition>
+        <argsstring></argsstring>
+        <name>MRI</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::MRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="449" column="23" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="449" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a36c6e26ed2e2a2ab268efc742e64820a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> *</type>
+        <definition>MachineDominatorTree* anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::DT</definition>
+        <argsstring></argsstring>
+        <name>DT</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::DT</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="450" column="24" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="450" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ab0f209a7e905906e02e85ec1811b0792" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_loop_info" kindref="compound">MachineLoopInfo</ref> *</type>
+        <definition>MachineLoopInfo* anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::MLI</definition>
+        <argsstring></argsstring>
+        <name>MLI</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::MLI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="451" column="19" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="451" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1aa658c8231ae3741ec483c4c71478c7ab" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_machine_sink_8cpp_1a16005492b382a6a76abae848b4af2b83" kindref="member">RegSubRegPair</ref>, <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt;</type>
+        <definition>DenseMap&lt;RegSubRegPair, MachineInstr *&gt; anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::CopySrcMIs</definition>
+        <argsstring></argsstring>
+        <name>CopySrcMIs</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::CopySrcMIs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="537" column="12" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="537" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a76599c40632271f6625e2b6694982279" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::PeepholeOptimizer</definition>
+        <argsstring>(MachineDominatorTree *DT, MachineLoopInfo *MLI)</argsstring>
+        <name>PeepholeOptimizer</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::PeepholeOptimizer</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> *</type>
+          <declname>DT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_loop_info" kindref="compound">MachineLoopInfo</ref> *</type>
+          <declname>MLI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="454" column="3" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="454" bodyend="455"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ae6c94cc4b29dfbcc1cc39b73e871ec2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::run</definition>
+        <argsstring>(MachineFunction &amp;MF)</argsstring>
+        <name>run</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::run</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="457" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1676" bodyend="1891"/>
+        <references refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2373">Changed</references>
+        <references refid="classllvm_1_1_dense_map_base_1adf4e7878fc0b3b8dcde545178564190d" compoundref="_dense_map_8h" startline="110" endline="144">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::clear</references>
+        <references refid="classllvm_1_1_small_set_1a76b3fc7c102561fb5210d5151531e409" compoundref="_small_set_8h" startline="204" endline="207">llvm::SmallSet&lt; T, N, C &gt;::clear</references>
+        <references refid="classllvm_1_1_machine_operand_1ae4ecf5483b94e2bb72967b80cc2008d2" compoundref="_machine_operand_8h" startline="646" endline="651">llvm::MachineOperand::clobbersPhysReg</references>
+        <references refid="classllvm_1_1_small_set_1a2a98f19750ba941ce791b75ca6d77e48" compoundref="_small_set_8h" startline="175" endline="175">llvm::SmallSet&lt; T, N, C &gt;::count</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_a_arch64_expand_pseudo_insts_8cpp_1ad3ece0ac2421637044624c9b01c42466" compoundref="_a_arch64_expand_pseudo_insts_8cpp" startline="113">DefMI</references>
+        <references refid="_loop_deletion_8cpp_1a0f1c83c3d08d80b12c424962a5e94ce8a5fe6005bf6e415c950c011fb65f12b8f" compoundref="_loop_deletion_8cpp" startline="48">Deleted</references>
+        <references refid="_peephole_optimizer_8cpp_1a38f26360b0923a0fcaa2de80d2bb78cd">DisablePeephole</references>
+        <references refid="classllvm_1_1_small_set_1a34384400167eb6ebf71fa89d98ba03bc" compoundref="_small_set_8h" startline="168" endline="168">llvm::SmallSet&lt; T, N, C &gt;::empty</references>
+        <references refid="classllvm_1_1_dense_map_base_1a65520b9c67759099e313d0f4e7b5ff9e" compoundref="_dense_map_8h" startline="84" endline="86">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end</references>
+        <references refid="classllvm_1_1_dense_map_base_1a1eb8504bab5f794778d82db6ac829923" compoundref="_dense_map_8h" startline="321" endline="331">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::erase</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a11045c7973ab24a8d6315b61fa337d4e" compoundref="_small_ptr_set_8h" startline="401" endline="403">llvm::SmallPtrSetImpl&lt; PtrType &gt;::erase</references>
+        <references refid="classllvm_1_1_small_set_1a75a2d2ad3b3dce6702750d570ee8f343" compoundref="_small_set_8h" startline="193" endline="202">llvm::SmallSet&lt; T, N, C &gt;::erase</references>
+        <references refid="classllvm_1_1_dense_map_base_1a0c047f127ed4380a6f383d70bec4eb94" compoundref="_dense_map_8h" startline="156" endline="162">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::find</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1acd858ed72f11db9444617740c3622608" compoundref="_target_subtarget_info_8h" startline="97" endline="97">llvm::TargetSubtargetInfo::getInstrInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3d142c9e7c066059e15232c56dec9e2e" compoundref="_machine_function_8cpp" startline="645" endline="647">llvm::MachineFunction::getName</references>
+        <references refid="classllvm_1_1_m_c_instr_desc_1a3496944fcc473dfe584e6615503a7a76" compoundref="_m_c_instr_desc_8h" startline="248" endline="248">llvm::MCInstrDesc::getNumDefs</references>
+        <references refid="classllvm_1_1_machine_operand_1ac0035d7c1c860501c877c20e6e93297b" compoundref="_machine_operand_8h" startline="369" endline="372">llvm::MachineOperand::getReg</references>
+        <references refid="classllvm_1_1_machine_function_1a810234b6b3d223b7c74a4253fcc5ea5e" compoundref="_machine_function_8h" startline="743" endline="743">llvm::MachineFunction::getRegInfo</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1a43c530c830206ecf5ad3359364634c75" compoundref="_target_subtarget_info_8h" startline="129" endline="129">llvm::TargetSubtargetInfo::getRegisterInfo</references>
+        <references refid="classllvm_1_1_machine_operand_1ae6876d59aeec5bc210b359fbdcf6c1ad" compoundref="_machine_operand_8h" startline="660" endline="663">llvm::MachineOperand::getRegMask</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="classllvm_1_1_machine_operand_1a75eb135014670ce946e78739cdc9b51b" compoundref="_machine_operand_8h" startline="384" endline="387">llvm::MachineOperand::isDef</references>
+        <references refid="classllvm_1_1_machine_operand_1a4c9594c955fec80c73ddd964b5efd554" compoundref="_machine_operand_8h" startline="329" endline="329">llvm::MachineOperand::isReg</references>
+        <references refid="classllvm_1_1_machine_operand_1a55fdcb2a9df9a69067eed1bc17a0b927" compoundref="_machine_operand_8h" startline="353" endline="353">llvm::MachineOperand::isRegMask</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_machine_function_1a9765555577efbe393893a6ec54e9e1af" compoundref="_machine_function_8h" startline="670" endline="674">llvm::MachineFunction::resetDelegate</references>
+        <references refid="classllvm_1_1_machine_function_1ac6fe5a029e019b80371ef6cf22c7fc07" compoundref="_machine_function_8h" startline="678" endline="684">llvm::MachineFunction::setDelegate</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a416e002b5776024b699ed633e780f757" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::optimizeCmpInstr</definition>
+        <argsstring>(MachineInstr &amp;MI)</argsstring>
+        <name>optimizeCmpInstr</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::optimizeCmpInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>If the instruction is a compare and the previous instruction it&apos;s comparing against already sets (or could be modified to set) the same flag as the compare, then we can remove the comparison and use the flag from the previous instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="465" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="959" bodyend="977"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1add814eb1bdad7814fa3bca9f169cbdc8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>Peephole false bool PeepholeOptimizer::optimizeExtInstr</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineBasicBlock &amp;MBB, SmallPtrSetImpl&lt; MachineInstr * &gt; &amp;LocalMIs)</argsstring>
+        <name>optimizeExtInstr</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::optimizeExtInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>LocalMIs</declname>
+        </param>
+        <briefdescription>
+<para>If instruction is a copy-like instruction, i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>it reads a single register and writes a single register and it does not modify the source, and if the source value is preserved as a sub-register of the result, then replace all reachable uses of the source with the subreg of the result.</para>
+<para>Do not generate an EXTRACT that is used only in a debug use, as this changes the code. Since this code does not currently share EXTRACTs, just ignore all debug uses. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="466" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="795" bodyend="953"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a63ce8874033db1b2e54c2a23d232384e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::optimizeSelect</definition>
+        <argsstring>(MachineInstr &amp;MI, SmallPtrSetImpl&lt; MachineInstr * &gt; &amp;LocalMIs)</argsstring>
+        <name>optimizeSelect</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::optimizeSelect</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>LocalMIs</declname>
+        </param>
+        <briefdescription>
+<para>Optimize a select instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="468" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="980" bodyend="996"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a64dc79975d619fac4410305fc343ff64" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::optimizeCondBranch</definition>
+        <argsstring>(MachineInstr &amp;MI)</argsstring>
+        <name>optimizeCondBranch</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::optimizeCondBranch</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Check if a simpler conditional branch can be generated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="470" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="999" bodyend="1001"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a631113ff6e562fcb2ab9d4c2565204f4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::optimizeCoalescableCopyImpl</definition>
+        <argsstring>(Rewriter &amp;&amp;CpyRewriter)</argsstring>
+        <name>optimizeCoalescableCopyImpl</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::optimizeCoalescableCopyImpl</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter" kindref="compound">Rewriter</ref> &amp;&amp;</type>
+          <declname>CpyRewriter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="472" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1190" bodyend="1226"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1aee3a7d60e7362713a610b044277590b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::optimizeCoalescableCopy</definition>
+        <argsstring>(MachineInstr &amp;MI)</argsstring>
+        <name>optimizeCoalescableCopy</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::optimizeCoalescableCopy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Optimize generic copy instructions to avoid cross register bank copy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The optimization looks through a chain of copies and tries to find a source that has a compatible register class. Two register classes are considered to be compatible if they share the same register bank. New copies issued by this optimization are register allocator friendly. This optimization does not remove any copy as it may overconstrain the register allocator, but replaces some operands when possible. <simplesect kind="pre"><para>isCoalescableCopy(*MI) is true. </para>
+</simplesect>
+<simplesect kind="return"><para>True, when <computeroutput>MI</computeroutput> has been rewritten. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="473" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1239" bodyend="1264"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a772a5cf97bcf08021653e9a485d5fb0c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::optimizeUncoalescableCopy</definition>
+        <argsstring>(MachineInstr &amp;MI, SmallPtrSetImpl&lt; MachineInstr * &gt; &amp;LocalMIs)</argsstring>
+        <name>optimizeUncoalescableCopy</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::optimizeUncoalescableCopy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>LocalMIs</declname>
+        </param>
+        <briefdescription>
+<para>Optimize copy-like instructions to create register coalescer friendly instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The optimization tries to kill-off the <computeroutput>MI</computeroutput> by looking through a chain of copies to find a source that has a compatible register class. If such a source is found, it replace <computeroutput>MI</computeroutput> by a generic COPY operation. <simplesect kind="pre"><para>isUncoalescableCopy(*MI) is true. </para>
+</simplesect>
+<simplesect kind="return"><para>True, when <computeroutput>MI</computeroutput> has been optimized. In that case, <computeroutput>MI</computeroutput> has been removed from its parent. All COPY instructions created, are inserted in <computeroutput>LocalMIs</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="474" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1317" bodyend="1355"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1affd7f2762e5fe7c930cbb0a72d11f283" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::optimizeRecurrence</definition>
+        <argsstring>(MachineInstr &amp;PHI)</argsstring>
+        <name>optimizeRecurrence</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::optimizeRecurrence</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>PHI</declname>
+        </param>
+        <briefdescription>
+<para>Phi instructions will eventually be lowered to copy instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If phi is in a loop header, a recurrence may formulated around the source and destination of the phi. For such case commuting operands of the instructions in the recurrence may enable coalescing of the copy instruction generated from the phi. For example, if there is a recurrence of</para>
+<para>LoopHeader: %1 = phi(%0, %100) LoopLatch: %0&lt;def, tied1&gt; = ADD %2&lt;def, tied0&gt;, %1</para>
+<para>, the fact that %0 and %2 are in the same tied operands set makes the coalescing of copy instruction generated from the phi in LoopHeader(i.e. %1 = COPY %0) impossible, because %1 and %2 have overlapping live range. This introduces additional move instruction to the final assembly. However, if we commute %2 and %1 of ADD instruction, the redundant move instruction can be avoided. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="476" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1617" bodyend="1644"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ad5604b1c6c75b2486de340dadc4ecebe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::findNextSource</definition>
+        <argsstring>(RegSubRegPair RegSubReg, RewriteMapTy &amp;RewriteMap)</argsstring>
+        <name>findNextSource</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::findNextSource</qualifiedname>
+        <param>
+          <type><ref refid="_machine_sink_8cpp_1a16005492b382a6a76abae848b4af2b83" kindref="member">RegSubRegPair</ref></type>
+          <declname>RegSubReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ac9b69446f99357cc880c06d10601bffa" kindref="member">RewriteMapTy</ref> &amp;</type>
+          <declname>RewriteMap</declname>
+        </param>
+        <briefdescription>
+<para>Try to find the next source that share the same register file for the value defined by <computeroutput>Reg</computeroutput> and <computeroutput>SubReg</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When true is returned, the <computeroutput>RewriteMap</computeroutput> can be used by the client to retrieve all Def -&gt; <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> along the way up to the next source. <ref refid="classllvm_1_1_any" kindref="compound">Any</ref> found <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> that is not itself a key for another entry, is the next source to use. During the search for the next source, multiple sources can be found given multiple incoming sources of a PHI instruction. In this case, we look in each PHI source for the next source; all found next sources must share the same register file as <computeroutput>Reg</computeroutput> and <computeroutput>SubReg</computeroutput>. The client should then be capable to rewrite all intermediate PHIs to get the next source. <simplesect kind="return"><para>False if no alternative sources are available. True otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="477" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1014" bodyend="1102"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ab2b07fd3cc32534ecb3895abef92141d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::isMoveImmediate</definition>
+        <argsstring>(MachineInstr &amp;MI, SmallSet&lt; Register, 4 &gt; &amp;ImmDefRegs, DenseMap&lt; Register, MachineInstr * &gt; &amp;ImmDefMIs)</argsstring>
+        <name>isMoveImmediate</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::isMoveImmediate</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_set" kindref="compound">SmallSet</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, 4 &gt; &amp;</type>
+          <declname>ImmDefRegs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>ImmDefMIs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="478" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1380" bodyend="1397"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a9b93d9241cadd10ca266b2a5b78f412b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::foldImmediate</definition>
+        <argsstring>(MachineInstr &amp;MI, SmallSet&lt; Register, 4 &gt; &amp;ImmDefRegs, DenseMap&lt; Register, MachineInstr * &gt; &amp;ImmDefMIs, bool &amp;Deleted)</argsstring>
+        <name>foldImmediate</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::foldImmediate</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_set" kindref="compound">SmallSet</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, 4 &gt; &amp;</type>
+          <declname>ImmDefRegs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>ImmDefMIs</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>Deleted</declname>
+        </param>
+        <briefdescription>
+<para>Try folding register operands that are defined by move immediate instructions, i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>a trivial constant folding optimization, if and only if the def and use are in the same BB. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="480" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1402" bodyend="1436"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1acce24ead2438e23d301e2c1d387243ec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::findTargetRecurrence</definition>
+        <argsstring>(Register Reg, const SmallSet&lt; Register, 2 &gt; &amp;TargetReg, RecurrenceCycle &amp;RC)</argsstring>
+        <name>findTargetRecurrence</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::findTargetRecurrence</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set" kindref="compound">SmallSet</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, 2 &gt; &amp;</type>
+          <declname>TargetReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a8a5134539212cd0d2a1bd7a4806136db" kindref="member">RecurrenceCycle</ref> &amp;</type>
+          <declname>RC</declname>
+        </param>
+        <briefdescription>
+<para>Finds recurrence cycles, but only ones that formulated around a def operand and a use operand that are tied. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If there is a use operand commutable with the tied use operand, find recurrence cycle along that operand as well. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="488" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1546" bodyend="1597"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a02af52fb9b876f44f0696dcaa78c562e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::foldRedundantCopy</definition>
+        <argsstring>(MachineInstr &amp;MI)</argsstring>
+        <name>foldRedundantCopy</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::foldRedundantCopy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>If copy instruction <computeroutput>MI</computeroutput> is a virtual register copy or a copy of a constant physical register to a virtual register, track it in the set CopySrcMIs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If this virtual register was previously seen as a copy, replace the uses of this copy with the previously seen copy&apos;s destination register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="497" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1452" bodyend="1487"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a1fea3499f56751d54969e10fa9aaf381" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::isNAPhysCopy</definition>
+        <argsstring>(Register Reg)</argsstring>
+        <name>isNAPhysCopy</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::isNAPhysCopy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Is the register <computeroutput>Reg</computeroutput> a non-allocatable physical register? </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="500" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1489" bodyend="1491"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a00115c69fc65079625fa4ef682d7c464" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::foldRedundantNAPhysCopy</definition>
+        <argsstring>(MachineInstr &amp;MI, DenseMap&lt; Register, MachineInstr * &gt; &amp;NAPhysToVirtMIs)</argsstring>
+        <name>foldRedundantNAPhysCopy</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::foldRedundantNAPhysCopy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>NAPhysToVirtMIs</declname>
+        </param>
+        <briefdescription>
+<para>If copy instruction <computeroutput>MI</computeroutput> is a non-allocatable virtual&lt;-&gt;physical register copy, track it in the <computeroutput>NAPhysToVirtMIs</computeroutput> map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If this non-allocatable physical register was previously copied to a virtual registered and hasn&apos;t been clobbered, the virt-&gt;phys copy can be deleted. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="508" column="3" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1493" bodyend="1539"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a063e979b58614abc00f3bc6434f6177e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PeepholeOptimizer::isLoadFoldable</definition>
+        <argsstring>(MachineInstr &amp;MI, SmallSet&lt; Register, 16 &gt; &amp;FoldAsLoadDefCandidates)</argsstring>
+        <name>isLoadFoldable</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::isLoadFoldable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_set" kindref="compound">SmallSet</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, 16 &gt; &amp;</type>
+          <declname>FoldAsLoadDefCandidates</declname>
+        </param>
+        <briefdescription>
+<para>Check whether MI is a candidate for folding into a later instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We only fold loads to virtual registers and the virtual register defined has a single user. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="511" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1360" bodyend="1378"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a12491bf71b6ff506e1a88bef70dac88a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::isCoalescableCopy</definition>
+        <argsstring>(const MachineInstr &amp;MI)</argsstring>
+        <name>isCoalescableCopy</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::isCoalescableCopy</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Check whether <computeroutput>MI</computeroutput> is understood by the register coalescer but may require some rewriting. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="516" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="516" bodyend="522"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1adb310ba649423384d4538d77d12152e0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::isUncoalescableCopy</definition>
+        <argsstring>(const MachineInstr &amp;MI)</argsstring>
+        <name>isUncoalescableCopy</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::isUncoalescableCopy</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Check whether <computeroutput>MI</computeroutput> is a copy like instruction that is not recognized by the register coalescer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="526" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="526" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a49deef120df4a47dd50c0a18976a0cc1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+        <definition>MachineInstr &amp; PeepholeOptimizer::rewriteSource</definition>
+        <argsstring>(MachineInstr &amp;CopyLike, RegSubRegPair Def, RewriteMapTy &amp;RewriteMap)</argsstring>
+        <name>rewriteSource</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::rewriteSource</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>CopyLike</declname>
+        </param>
+        <param>
+          <type><ref refid="_machine_sink_8cpp_1a16005492b382a6a76abae848b4af2b83" kindref="member">RegSubRegPair</ref></type>
+          <declname>Def</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ac9b69446f99357cc880c06d10601bffa" kindref="member">RewriteMapTy</ref> &amp;</type>
+          <declname>RewriteMap</declname>
+        </param>
+        <briefdescription>
+<para>Rewrite the source found through <computeroutput>Def</computeroutput>, by using the <computeroutput>RewriteMap</computeroutput> and create a new COPY instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>More info about RewriteMap in PeepholeOptimizer::findNextSource. Right now this is only used to handle Uncoalescable copies, since they are copy like instructions that aren&apos;t recognized by the register allocator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="532" column="16" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="1271" bodyend="1304"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ad38117df45c73b756050e8ca5668ff5c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::MF_HandleInsertion</definition>
+        <argsstring>(MachineInstr &amp;MI) override</argsstring>
+        <name>MF_HandleInsertion</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::MF_HandleInsertion</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_1_1_delegate_1a408c71983f31c7ec08f1394cd8245acd">MF_HandleInsertion</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Callback after an insertion. This should not modify the MI directly. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="540" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="540" bodyend="540"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ac61e6b3d58ef6558816bd00f910e44e8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::getCopySrc</definition>
+        <argsstring>(MachineInstr &amp;MI, RegSubRegPair &amp;SrcPair)</argsstring>
+        <name>getCopySrc</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::getCopySrc</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="_machine_sink_8cpp_1a16005492b382a6a76abae848b4af2b83" kindref="member">RegSubRegPair</ref> &amp;</type>
+          <declname>SrcPair</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="542" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="542" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a4047d888feaba6fe0e3404efe24995f4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::deleteChangedCopy</definition>
+        <argsstring>(MachineInstr &amp;MI)</argsstring>
+        <name>deleteChangedCopy</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::deleteChangedCopy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="557" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="557" bodyend="565"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a92fda5956ca68c55e0583f5ae440ae5d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::MF_HandleRemoval</definition>
+        <argsstring>(MachineInstr &amp;MI) override</argsstring>
+        <name>MF_HandleRemoval</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::MF_HandleRemoval</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_1_1_delegate_1a3d5beb659b1f9dc758fc80d38f73a83c">MF_HandleRemoval</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Callback before a removal. This should not modify the MI directly. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="567" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="567" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ab4b15748b40a669ddc80d8b1a9b6a804" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::MF_HandleChangeDesc</definition>
+        <argsstring>(MachineInstr &amp;MI, const MCInstrDesc &amp;TID) override</argsstring>
+        <name>MF_HandleChangeDesc</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer::MF_HandleChangeDesc</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_1_1_delegate_1a1bc1e8669383873a26fb67a157137e86">MF_HandleChangeDesc</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_instr_desc" kindref="compound">MCInstrDesc</ref> &amp;</type>
+          <declname>TID</declname>
+        </param>
+        <briefdescription>
+<para>Callback before changing MCInstrDesc. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This should not modify the MI directly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="569" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="569" bodyend="571"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</label>
+        <link refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunction::Delegate</label>
+        <link refid="classllvm_1_1_machine_function_1_1_delegate"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</label>
+        <link refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunction::Delegate</label>
+        <link refid="classllvm_1_1_machine_function_1_1_delegate"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="446" column="1" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="446" bodyend="572"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1aa658c8231ae3741ec483c4c71478c7ab" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>CopySrcMIs</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a4047d888feaba6fe0e3404efe24995f4" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>deleteChangedCopy</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a36c6e26ed2e2a2ab268efc742e64820a" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>DT</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ad5604b1c6c75b2486de340dadc4ecebe" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>findNextSource</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1acce24ead2438e23d301e2c1d387243ec" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>findTargetRecurrence</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a9b93d9241cadd10ca266b2a5b78f412b" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>foldImmediate</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a02af52fb9b876f44f0696dcaa78c562e" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>foldRedundantCopy</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a00115c69fc65079625fa4ef682d7c464" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>foldRedundantNAPhysCopy</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ac61e6b3d58ef6558816bd00f910e44e8" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>getCopySrc</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a12491bf71b6ff506e1a88bef70dac88a" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>isCoalescableCopy</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a063e979b58614abc00f3bc6434f6177e" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>isLoadFoldable</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ab2b07fd3cc32534ecb3895abef92141d" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>isMoveImmediate</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a1fea3499f56751d54969e10fa9aaf381" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>isNAPhysCopy</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1adb310ba649423384d4538d77d12152e0" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>isUncoalescableCopy</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ab4b15748b40a669ddc80d8b1a9b6a804" prot="private" virt="virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>MF_HandleChangeDesc</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ad38117df45c73b756050e8ca5668ff5c" prot="private" virt="virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>MF_HandleInsertion</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a92fda5956ca68c55e0583f5ae440ae5d" prot="private" virt="virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>MF_HandleRemoval</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ab0f209a7e905906e02e85ec1811b0792" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>MLI</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a0f89b4c05fd054597384befceebea943" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>MRI</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a416e002b5776024b699ed633e780f757" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>optimizeCmpInstr</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1aee3a7d60e7362713a610b044277590b9" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>optimizeCoalescableCopy</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a631113ff6e562fcb2ab9d4c2565204f4" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>optimizeCoalescableCopyImpl</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a64dc79975d619fac4410305fc343ff64" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>optimizeCondBranch</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1add814eb1bdad7814fa3bca9f169cbdc8" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>optimizeExtInstr</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1affd7f2762e5fe7c930cbb0a72d11f283" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>optimizeRecurrence</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a63ce8874033db1b2e54c2a23d232384e" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>optimizeSelect</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a772a5cf97bcf08021653e9a485d5fb0c" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>optimizeUncoalescableCopy</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a76599c40632271f6625e2b6694982279" prot="public" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>PeepholeOptimizer</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a8a5134539212cd0d2a1bd7a4806136db" prot="public" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>RecurrenceCycle</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ac9b69446f99357cc880c06d10601bffa" prot="public" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>RewriteMapTy</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a49deef120df4a47dd50c0a18976a0cc1" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>rewriteSource</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ae6c94cc4b29dfbcc1cc39b73e871ec2a" prot="public" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>run</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1a992e7b8a53401bf807de9fb2ecc072eb" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>TII</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_peephole_optimizer_1ac09a0c1e8668332f135dd6f203c4e21a" prot="private" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</scope><name>TRI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

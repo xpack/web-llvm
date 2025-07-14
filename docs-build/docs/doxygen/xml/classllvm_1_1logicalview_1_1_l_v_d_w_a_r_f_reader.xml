@@ -1,0 +1,1429 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>llvm::logicalview::LVDWARFReader</compoundname>
+    <basecompoundref refid="classllvm_1_1logicalview_1_1_l_v_binary_reader" prot="public" virt="non-virtual">llvm::logicalview::LVBinaryReader</basecompoundref>
+    <includes refid="_l_v_d_w_a_r_f_reader_8h" local="yes">llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h</includes>
+    <innerclass refid="structllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1_1_l_v_element_entry" prot="private">llvm::logicalview::LVDWARFReader::LVElementEntry</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ae075f001bcf7871ad2e06adf432ed03c" prot="private" static="no">
+        <type>std::unordered_set&lt; <ref refid="classllvm_1_1logicalview_1_1_l_v_element" kindref="compound">LVElement</ref> * &gt;</type>
+        <definition>using llvm::logicalview::LVDWARFReader::LVElementSet =  std::unordered_set&lt;LVElement *&gt;</definition>
+        <argsstring></argsstring>
+        <name>LVElementSet</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::LVElementSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="71" column="3" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a05bf1445244febbbfef513fab898f347" prot="private" static="no">
+        <type>std::unordered_map&lt; <ref refid="namespacellvm_1_1logicalview_1a1ca9dca8309d4665c7172a966c3223c3" kindref="member">LVOffset</ref>, LVElementEntry &gt;</type>
+        <definition>using llvm::logicalview::LVDWARFReader::LVElementReference =  std::unordered_map&lt;LVOffset, LVElementEntry&gt;</definition>
+        <argsstring></argsstring>
+        <name>LVElementReference</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::LVElementReference</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="78" column="3" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4354f519e5c954670323fd1078782050" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1object_1_1_object_file" kindref="compound">object::ObjectFile</ref> &amp;</type>
+        <definition>object::ObjectFile&amp; llvm::logicalview::LVDWARFReader::Obj</definition>
+        <argsstring></argsstring>
+        <name>Obj</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::Obj</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="34" column="22" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a612113f087fc6b33ffec3c970db9e201" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::logicalview::LVDWARFReader::RangesDataAvailable</definition>
+        <argsstring></argsstring>
+        <name>RangesDataAvailable</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::RangesDataAvailable</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="38" column="8" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a3f908d615d19ea5cea872e3fe0d1a9d4" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1_1logicalview_1ad3a6cc0dd7aa2e5bf8b5d0ee648e6850" kindref="member">LVAddress</ref></type>
+        <definition>LVAddress llvm::logicalview::LVDWARFReader::CUBaseAddress</definition>
+        <argsstring></argsstring>
+        <name>CUBaseAddress</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::CUBaseAddress</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="39" column="13" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a8fc2c7eaf0a543fd20e256eda0df314d" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1_1logicalview_1ad3a6cc0dd7aa2e5bf8b5d0ee648e6850" kindref="member">LVAddress</ref></type>
+        <definition>LVAddress llvm::logicalview::LVDWARFReader::CUHighAddress</definition>
+        <argsstring></argsstring>
+        <name>CUHighAddress</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::CUHighAddress</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="40" column="13" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a6290edf02483be4299a67a769eafe997" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1logicalview_1_1_l_v_element" kindref="compound">LVElement</ref> *</type>
+        <definition>LVElement* llvm::logicalview::LVDWARFReader::CurrentElement</definition>
+        <argsstring></argsstring>
+        <name>CurrentElement</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::CurrentElement</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="43" column="13" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a12a01593b44c91ba44a7b64e21e83572" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1logicalview_1_1_l_v_scope" kindref="compound">LVScope</ref> *</type>
+        <definition>LVScope* llvm::logicalview::LVDWARFReader::CurrentScope</definition>
+        <argsstring></argsstring>
+        <name>CurrentScope</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::CurrentScope</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="44" column="11" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ac622023d5ef74c038f582f42984c2194" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1logicalview_1_1_l_v_symbol" kindref="compound">LVSymbol</ref> *</type>
+        <definition>LVSymbol* llvm::logicalview::LVDWARFReader::CurrentSymbol</definition>
+        <argsstring></argsstring>
+        <name>CurrentSymbol</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::CurrentSymbol</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="45" column="12" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1acf278291961f5516e228e709151ce15c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1logicalview_1_1_l_v_type" kindref="compound">LVType</ref> *</type>
+        <definition>LVType* llvm::logicalview::LVDWARFReader::CurrentType</definition>
+        <argsstring></argsstring>
+        <name>CurrentType</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::CurrentType</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="46" column="10" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ac019a0c9cecba4eb4592e88b58c92293" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1_1logicalview_1a1ca9dca8309d4665c7172a966c3223c3" kindref="member">LVOffset</ref></type>
+        <definition>LVOffset llvm::logicalview::LVDWARFReader::CurrentOffset</definition>
+        <argsstring></argsstring>
+        <name>CurrentOffset</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::CurrentOffset</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="47" column="12" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ab33884c49860ff7cfcdf5a11dcec7a3d" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1_1logicalview_1a1ca9dca8309d4665c7172a966c3223c3" kindref="member">LVOffset</ref></type>
+        <definition>LVOffset llvm::logicalview::LVDWARFReader::CurrentEndOffset</definition>
+        <argsstring></argsstring>
+        <name>CurrentEndOffset</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::CurrentEndOffset</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="48" column="12" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a0dac109845e14a79a964fbaf60a7e7fc" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::logicalview::LVDWARFReader::IncrementFileIndex</definition>
+        <argsstring></argsstring>
+        <name>IncrementFileIndex</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::IncrementFileIndex</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="53" column="8" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a2a61300e772a9f29b26ba8616f448785" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespacellvm_1_1logicalview_1a99ddaf1fd8ebfcd4d85a4fee93792b00" kindref="member">LVAddressRange</ref> &gt;</type>
+        <definition>std::vector&lt;LVAddressRange&gt; llvm::logicalview::LVDWARFReader::CurrentRanges</definition>
+        <argsstring></argsstring>
+        <name>CurrentRanges</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::CurrentRanges</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="56" column="15" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4eb53c9f86b435cb740ecf3d7c142106" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1_1logicalview_1a86d76ed6f92c1d16716bd39fadc6de5d" kindref="member">LVSymbols</ref></type>
+        <definition>LVSymbols llvm::logicalview::LVDWARFReader::SymbolsWithLocations</definition>
+        <argsstring></argsstring>
+        <name>SymbolsWithLocations</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::SymbolsWithLocations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="59" column="13" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ae4e6f0ab2810432b2cd3e6374ce59ecf" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1_1logicalview_1a1cce95edff2a5b59810cdf0f3b2567eb" kindref="member">LVOffsetElementMap</ref></type>
+        <definition>LVOffsetElementMap llvm::logicalview::LVDWARFReader::GlobalOffsets</definition>
+        <argsstring></argsstring>
+        <name>GlobalOffsets</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::GlobalOffsets</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="62" column="22" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ac3bf8e54e61216b257b1ccf0b51a7056" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1_1logicalview_1ad3a6cc0dd7aa2e5bf8b5d0ee648e6850" kindref="member">LVAddress</ref></type>
+        <definition>LVAddress llvm::logicalview::LVDWARFReader::CurrentLowPC</definition>
+        <argsstring></argsstring>
+        <name>CurrentLowPC</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::CurrentLowPC</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="65" column="13" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ae4456a11271e3e0df0522126d7f4f556" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1_1logicalview_1ad3a6cc0dd7aa2e5bf8b5d0ee648e6850" kindref="member">LVAddress</ref></type>
+        <definition>LVAddress llvm::logicalview::LVDWARFReader::CurrentHighPC</definition>
+        <argsstring></argsstring>
+        <name>CurrentHighPC</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::CurrentHighPC</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="66" column="13" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4e60d1c04a9eeb106e7224e1f5f96428" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::logicalview::LVDWARFReader::FoundLowPC</definition>
+        <argsstring></argsstring>
+        <name>FoundLowPC</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::FoundLowPC</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="67" column="8" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1afb391495c23894805fc726515bb233df" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::logicalview::LVDWARFReader::FoundHighPC</definition>
+        <argsstring></argsstring>
+        <name>FoundHighPC</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::FoundHighPC</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="68" column="8" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ab02290e36e2105de138a640dbf407df3" prot="private" static="no" mutable="no">
+        <type>LVElementReference</type>
+        <definition>LVElementReference llvm::logicalview::LVDWARFReader::ElementTable</definition>
+        <argsstring></argsstring>
+        <name>ElementTable</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::ElementTable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="79" column="22" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1aaa931d02c8c129215334279dc0b43cb2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error LVDWARFReader::loadTargetInfo</definition>
+        <argsstring>(const object::ObjectFile &amp;Obj)</argsstring>
+        <name>loadTargetInfo</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::loadTargetInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1object_1_1_object_file" kindref="compound">object::ObjectFile</ref> &amp;</type>
+          <declname>Obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="81" column="9" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="1159" bodyend="1176"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a6e30794db3ce743267061b832e054c84" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LVDWARFReader::mapRangeAddress</definition>
+        <argsstring>(const object::ObjectFile &amp;Obj) override</argsstring>
+        <name>mapRangeAddress</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::mapRangeAddress</qualifiedname>
+        <reimplements refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a822b011606e4750a28584ab46d14462e">mapRangeAddress</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1object_1_1_object_file" kindref="compound">object::ObjectFile</ref> &amp;</type>
+          <declname>Obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="83" column="8" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="1178" bodyend="1252"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1aeaa917880fcf72d87b9989604fc91351" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1logicalview_1_1_l_v_element" kindref="compound">LVElement</ref> *</type>
+        <definition>LVElement * LVDWARFReader::createElement</definition>
+        <argsstring>(dwarf::Tag Tag)</argsstring>
+        <name>createElement</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::createElement</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1dwarf_1ac94a19fc8c57bf0350fc4e9f45897828" kindref="member">dwarf::Tag</ref></type>
+          <declname>Tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="85" column="13" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="31" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a413a68b5168ded503c92eaf49d6fbe75" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LVDWARFReader::traverseDieAndChildren</definition>
+        <argsstring>(DWARFDie &amp;DIE, LVScope *Parent, DWARFDie &amp;SkeletonDie)</argsstring>
+        <name>traverseDieAndChildren</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::traverseDieAndChildren</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> &amp;</type>
+          <declname>DIE</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1logicalview_1_1_l_v_scope" kindref="compound">LVScope</ref> *</type>
+          <declname>Parent</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> &amp;</type>
+          <declname>SkeletonDie</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="86" column="8" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="698" bodyend="717"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a18649cbb30fab3fe558c8b3f1d06209f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1logicalview_1_1_l_v_scope" kindref="compound">LVScope</ref> *</type>
+        <definition>LVScope * LVDWARFReader::processOneDie</definition>
+        <argsstring>(const DWARFDie &amp;InputDIE, LVScope *Parent, DWARFDie &amp;SkeletonDie)</argsstring>
+        <name>processOneDie</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::processOneDie</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> &amp;</type>
+          <declname>InputDIE</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1logicalview_1_1_l_v_scope" kindref="compound">LVScope</ref> *</type>
+          <declname>Parent</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> &amp;</type>
+          <declname>SkeletonDie</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="89" column="11" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="525" bodyend="696"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a096e290254d040e17fde777a6164a199" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LVDWARFReader::processOneAttribute</definition>
+        <argsstring>(const DWARFDie &amp;Die, LVOffset *OffsetPtr, const AttributeSpec &amp;AttrSpec)</argsstring>
+        <name>processOneAttribute</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::processOneAttribute</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> &amp;</type>
+          <declname>Die</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1logicalview_1a1ca9dca8309d4665c7172a966c3223c3" kindref="member">LVOffset</ref> *</type>
+          <declname>OffsetPtr</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1logicalview_1ac187988134954b96f055f1a2c9be0aee" kindref="member">AttributeSpec</ref> &amp;</type>
+          <declname>AttrSpec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="91" column="8" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="245" bodyend="523"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a72316b681ad4c4b2cac8d20903d78e9e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LVDWARFReader::createLineAndFileRecords</definition>
+        <argsstring>(const DWARFDebugLine::LineTable *Lines)</argsstring>
+        <name>createLineAndFileRecords</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::createLineAndFileRecords</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_d_w_a_r_f_debug_line_1_1_line_table" kindref="compound">DWARFDebugLine::LineTable</ref> *</type>
+          <declname>Lines</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="93" column="8" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="725" bodyend="780"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a04fe0e2b5c50efb87d0562d531d9f817" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LVDWARFReader::processLocationGaps</definition>
+        <argsstring>()</argsstring>
+        <name>processLocationGaps</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::processLocationGaps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="94" column="8" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="719" bodyend="723"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a241c84880df8f719f2eaace041d4b14e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::logicalview::LVDWARFReader::addGlobalOffset</definition>
+        <argsstring>(LVOffset Offset)</argsstring>
+        <name>addGlobalOffset</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::addGlobalOffset</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1logicalview_1a1ca9dca8309d4665c7172a966c3223c3" kindref="member">LVOffset</ref></type>
+          <declname>Offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="97" column="8" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="97" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4367bda0e4c13a7d8b600c5e65b28c92" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::logicalview::LVDWARFReader::removeGlobalOffset</definition>
+        <argsstring>(LVOffset Offset)</argsstring>
+        <name>removeGlobalOffset</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::removeGlobalOffset</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1logicalview_1a1ca9dca8309d4665c7172a966c3223c3" kindref="member">LVOffset</ref></type>
+          <declname>Offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="105" column="8" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="105" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a46621bf981f3427563b6c80b2abc2b78" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LVDWARFReader::processLocationMember</definition>
+        <argsstring>(dwarf::Attribute Attr, const DWARFFormValue &amp;FormValue, const DWARFDie &amp;Die, uint64_t OffsetOnEntry)</argsstring>
+        <name>processLocationMember</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::processLocationMember</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1dwarf_1a1424c28b6a65587442fbd9d87726c2c7" kindref="member">dwarf::Attribute</ref></type>
+          <declname>Attr</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_form_value" kindref="compound">DWARFFormValue</ref> &amp;</type>
+          <declname>FormValue</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> &amp;</type>
+          <declname>Die</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>OffsetOnEntry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="112" column="8" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="1071" bodyend="1083"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a6a7f17efdf50d4310ea927bc6f7c3ab0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LVDWARFReader::processLocationList</definition>
+        <argsstring>(dwarf::Attribute Attr, const DWARFFormValue &amp;FormValue, const DWARFDie &amp;Die, uint64_t OffsetOnEntry, bool CallSiteLocation=false)</argsstring>
+        <name>processLocationList</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::processLocationList</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1dwarf_1a1424c28b6a65587442fbd9d87726c2c7" kindref="member">dwarf::Attribute</ref></type>
+          <declname>Attr</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_form_value" kindref="compound">DWARFFormValue</ref> &amp;</type>
+          <declname>FormValue</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> &amp;</type>
+          <declname>Die</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>OffsetOnEntry</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>CallSiteLocation</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="115" column="8" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="990" bodyend="1069"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a30a4884ad12ec0cf64f127b2f0c45203" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LVDWARFReader::updateReference</definition>
+        <argsstring>(dwarf::Attribute Attr, const DWARFFormValue &amp;FormValue)</argsstring>
+        <name>updateReference</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::updateReference</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1dwarf_1a1424c28b6a65587442fbd9d87726c2c7" kindref="member">dwarf::Attribute</ref></type>
+          <declname>Attr</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_form_value" kindref="compound">DWARFFormValue</ref> &amp;</type>
+          <declname>FormValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="119" column="8" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="1086" bodyend="1143"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ac4f2b304e3c0896cce1bf12e61df0f8c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1logicalview_1_1_l_v_element" kindref="compound">LVElement</ref> *</type>
+        <definition>LVElement * LVDWARFReader::getElementForOffset</definition>
+        <argsstring>(LVOffset offset, LVElement *Element, bool IsType)</argsstring>
+        <name>getElementForOffset</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::getElementForOffset</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1logicalview_1a1ca9dca8309d4665c7172a966c3223c3" kindref="member">LVOffset</ref></type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1logicalview_1_1_l_v_element" kindref="compound">LVElement</ref> *</type>
+          <declname>Element</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="122" column="13" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="1146" bodyend="1157"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1abf565023d8f6916f29adcd9ac264400e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error LVDWARFReader::createScopes</definition>
+        <argsstring>() override</argsstring>
+        <name>createScopes</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::createScopes</qualifiedname>
+        <reimplements refid="classllvm_1_1logicalview_1_1_l_v_reader_1af75cb2856d2563990ed489c38b63a5c3">createScopes</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="126" column="9" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="810" bodyend="987"/>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1ad95ed9d1449a665ba1c71c5251e34ab7" compoundref="_l_v_binary_reader_8cpp" startline="370" endline="374">llvm::logicalview::LVBinaryReader::addSectionRange</references>
+        <references refid="namespacellvm_1a2e3d3da964f7eb14ef2eabf0c4a08ba5" compoundref="_windows_support_8h" startline="194" endline="198">llvm::c_str</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_range_1a44733b38b12755c4ab176ab0642fc5fd" compoundref="_l_v_range_8h" startline="76" endline="80">llvm::logicalview::LVRange::clear</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_reader_1aabd8bf25dbcb16ca9fa57ef73d062006" compoundref="_l_v_reader_8h" startline="130">llvm::logicalview::LVReader::CompileUnit</references>
+        <references refid="classllvm_1_1_d_w_a_r_f_context_1ad6f9fa82bb8b6a5dae98b9d9d346d913" compoundref="_d_w_a_r_f_context_8cpp" startline="2442" endline="2455">llvm::DWARFContext::create</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_reader_1a53b8fdf818581607c61a5b0bdd3bf5ed" compoundref="_l_v_reader_8h" startline="155" endline="164">llvm::logicalview::LVReader::createAlternativePath</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1adf2a6238adfb3ada928de5340d5298b6" compoundref="_l_v_binary_reader_8cpp" startline="541" endline="577">llvm::logicalview::LVBinaryReader::createInstructions</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_reader_1af75cb2856d2563990ed489c38b63a5c3" compoundref="_l_v_reader_8h" startline="141" endline="147">llvm::logicalview::LVReader::createScopes</references>
+        <references refid="namespacellvm_1a4d2fd926089a58d482fb67a362e11bad" compoundref="llvm_2_support_2_error_8h" startline="1291" endline="1296">llvm::createStringError</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a7f70da07f056e7436d80fcddcc760164" compoundref="_l_v_binary_reader_8h" startline="115">llvm::logicalview::LVBinaryReader::CULines</references>
+        <references refid="structllvm_1_1_d_w_a_r_f_debug_line_1_1_file_name_entry_1ac0c5fbd2279527ccfc0c0ef76c19ddce" compoundref="_d_w_a_r_f_debug_line_8h" startline="34">llvm::DWARFDebugLine::FileNameEntry::DirIdx</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_reader_1a30c36ab397c2a31a605e88a0a476ee9c" compoundref="_l_v_reader_8h" startline="127">llvm::logicalview::LVReader::FileFormatName</references>
+        <references refid="classllvm_1_1_d_w_a_r_f_die_1a315f90678bfa85d85d71a9dd12d5457a" compoundref="_d_w_a_r_f_die_8cpp" startline="249" endline="256">llvm::DWARFDie::find</references>
+        <references refid="classllvm_1_1_d_w_a_r_f_die_1a4030d97efbcfaf77b80c112cd27c4214" compoundref="_d_w_a_r_f_die_8h" startline="54" endline="54">llvm::DWARFDie::getDwarfUnit</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_reader_1a9cfe13a99c14005ccbf4e6b653713f0e" compoundref="_l_v_reader_8h" startline="236" endline="236">llvm::logicalview::LVReader::getFilename</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a23627e0b6a1a860f08078cffc221b4b6" compoundref="_l_v_binary_reader_8h" startline="228" endline="231">llvm::logicalview::LVBinaryReader::getSectionIndex</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1abb616341561b2b08f925cccf1c7481ee" compoundref="_l_v_binary_reader_8cpp" startline="383" endline="392">llvm::logicalview::LVBinaryReader::getSectionRanges</references>
+        <references refid="namespacellvm_1a59739a4f15fb2ec57a6b7fcfe938546bae55d43eabeefe5a8271b4a3c898bd18f" compoundref="_errc_8h" startline="56">llvm::invalid_argument</references>
+        <references refid="classllvm_1_1_d_w_a_r_f_unit_1afd5def6886f14df2575567385872bd04" compoundref="include_2llvm_2_debug_info_2_d_w_a_r_f_2_d_w_a_r_f_unit_8h" startline="318" endline="318">llvm::DWARFUnit::isDWOUnit</references>
+        <references refid="classllvm_1_1_d_w_a_r_f_die_1ae970d60ab52d996448bb030b4a0b67bc" compoundref="_d_w_a_r_f_die_8h" startline="51" endline="51">llvm::DWARFDie::isValid</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a8f648767e6fee704685f85355aa7fa64" compoundref="_l_v_binary_reader_8cpp" startline="147" endline="220">llvm::logicalview::LVBinaryReader::mapVirtualAddress</references>
+        <references refid="namespacellvm_1_1codeview_1a4e60e0c351f13aade28b451480c44e5aa6adf97f83acf6453d4a6a4b1070f3754" compoundref="_code_view_8h" startline="214">llvm::codeview::None</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a873cd38481c3ed6a7e21bc016ec10ae2" compoundref="_l_v_binary_reader_8cpp" startline="789" endline="889">llvm::logicalview::LVBinaryReader::processLines</references>
+        <references refid="structllvm_1_1_d_i_line_info_specifier_1a4d01b170267924ab4225e3c93ad666c3a420b00d155d9b18204d9a7afd76dabb5" compoundref="_d_i_context_8h" startline="151">llvm::DILineInfoSpecifier::RawValue</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_reader_1aca8db53bfaede35c8940fceb72b495aa" compoundref="_l_v_reader_8h" startline="125">llvm::logicalview::LVReader::Root</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_range_1aa3cc825b5d1adfdd7029668cab4ad9a3" compoundref="_l_v_range_8cpp" startline="127" endline="143">llvm::logicalview::LVRange::sort</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="namespacellvm_1_1dwarf_1a39a67e6dc97585d609932dc2fb04a377" compoundref="_d_w_a_r_f_form_value_8h" startline="177" endline="186">llvm::dwarf::toString</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_reader_1a05c1edcb51769b9ed74087532906b12e" compoundref="_l_v_reader_8h" startline="128">llvm::logicalview::LVReader::W</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a920a403e93a285632b45dc6a4e91218c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LVDWARFReader::sortScopes</definition>
+        <argsstring>() override</argsstring>
+        <name>sortScopes</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::sortScopes</qualifiedname>
+        <reimplements refid="classllvm_1_1logicalview_1_1_l_v_reader_1a064991d6ccde27d6f57caa0edd5b8377">sortScopes</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="127" column="8" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="1254" bodyend="1254"/>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_reader_1aca8db53bfaede35c8940fceb72b495aa" compoundref="_l_v_reader_8h" startline="125">llvm::logicalview::LVReader::Root</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4eeccb0c42d994c7983021e929bc6e96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::logicalview::LVDWARFReader::LVDWARFReader</definition>
+        <argsstring>()=delete</argsstring>
+        <name>LVDWARFReader</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::LVDWARFReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="130" column="3"/>
+        <referencedby refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a194c5bdcd83c3806641808b42df41b42">LVDWARFReader</referencedby>
+        <referencedby refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a61a09d509675eff595e8028e1ec65024">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1aa5c941357b1a4565c7001065a68fb538" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::logicalview::LVDWARFReader::LVDWARFReader</definition>
+        <argsstring>(StringRef Filename, StringRef FileFormatName, object::ObjectFile &amp;Obj, ScopedPrinter &amp;W)</argsstring>
+        <name>LVDWARFReader</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::LVDWARFReader</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Filename</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>FileFormatName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1object_1_1_object_file" kindref="compound">object::ObjectFile</ref> &amp;</type>
+          <declname>Obj</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_scoped_printer" kindref="compound">ScopedPrinter</ref> &amp;</type>
+          <declname>W</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="131" column="3" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="131" bodyend="134"/>
+        <references refid="namespacellvm_1_1logicalview_1a68bf3a0b21ddaa5e5dd4700790af833cab61b2d6c6fa62903b882aaa53452c111" compoundref="_l_v_object_8h" startline="88">llvm::logicalview::ELF</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_reader_1a30c36ab397c2a31a605e88a0a476ee9c" compoundref="_l_v_reader_8h" startline="127">llvm::logicalview::LVReader::FileFormatName</references>
+        <references refid="namespacellvm_1_1logicalview_1a9696bc411b0a7022c2cc78bff5173cefa1351017ac6423911223bc19a8cb7c653" compoundref="_l_v_options_8h" startline="104">llvm::logicalview::Filename</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a77d562b41fb3c6d478f38b73cfa44ab3">llvm::logicalview::LVBinaryReader::LVBinaryReader</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_reader_1a05c1edcb51769b9ed74087532906b12e" compoundref="_l_v_reader_8h" startline="128">llvm::logicalview::LVReader::W</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a194c5bdcd83c3806641808b42df41b42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::logicalview::LVDWARFReader::LVDWARFReader</definition>
+        <argsstring>(const LVDWARFReader &amp;)=delete</argsstring>
+        <name>LVDWARFReader</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::LVDWARFReader</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader" kindref="compound">LVDWARFReader</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="135" column="3"/>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4eeccb0c42d994c7983021e929bc6e96">LVDWARFReader</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a61a09d509675eff595e8028e1ec65024" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader" kindref="compound">LVDWARFReader</ref> &amp;</type>
+        <definition>LVDWARFReader &amp; llvm::logicalview::LVDWARFReader::operator=</definition>
+        <argsstring>(const LVDWARFReader &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader" kindref="compound">LVDWARFReader</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="136" column="17"/>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4eeccb0c42d994c7983021e929bc6e96">LVDWARFReader</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ae1c90329b38a75958e5845601938dcbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::logicalview::LVDWARFReader::~LVDWARFReader</definition>
+        <argsstring>()=default</argsstring>
+        <name>~LVDWARFReader</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::~LVDWARFReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="137" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a96de4e6c3b42c520dea251ae6b319154" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1logicalview_1ad3a6cc0dd7aa2e5bf8b5d0ee648e6850" kindref="member">LVAddress</ref></type>
+        <definition>LVAddress llvm::logicalview::LVDWARFReader::getCUBaseAddress</definition>
+        <argsstring>() const</argsstring>
+        <name>getCUBaseAddress</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::getCUBaseAddress</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="139" column="13" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="139" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a9717d00700092350b8140dbf35d51a16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::logicalview::LVDWARFReader::setCUBaseAddress</definition>
+        <argsstring>(LVAddress Address)</argsstring>
+        <name>setCUBaseAddress</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::setCUBaseAddress</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1logicalview_1ad3a6cc0dd7aa2e5bf8b5d0ee648e6850" kindref="member">LVAddress</ref></type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="140" column="8" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="140" bodyend="140"/>
+        <references refid="namespacellvm_1a8e02bbea14c70bab55fbc1384e1472d9add7bf230fde8d4836917806aff6a6b27" compoundref="_mod_ref_8h" startline="280">llvm::Address</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1aa37cdc45da9773b10244ecfe6f208f8a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1logicalview_1ad3a6cc0dd7aa2e5bf8b5d0ee648e6850" kindref="member">LVAddress</ref></type>
+        <definition>LVAddress llvm::logicalview::LVDWARFReader::getCUHighAddress</definition>
+        <argsstring>() const</argsstring>
+        <name>getCUHighAddress</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::getCUHighAddress</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="141" column="13" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="141" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4396a18ffb10402dbc7d1b3a3dab3f82" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::logicalview::LVDWARFReader::setCUHighAddress</definition>
+        <argsstring>(LVAddress Address)</argsstring>
+        <name>setCUHighAddress</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::setCUHighAddress</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1logicalview_1ad3a6cc0dd7aa2e5bf8b5d0ee648e6850" kindref="member">LVAddress</ref></type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="142" column="8" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="142" bodyend="142"/>
+        <references refid="namespacellvm_1a8e02bbea14c70bab55fbc1384e1472d9add7bf230fde8d4836917806aff6a6b27" compoundref="_mod_ref_8h" startline="280">llvm::Address</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1af20bd2faf4c331898263910653d54ae7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1logicalview_1a86d76ed6f92c1d16716bd39fadc6de5d" kindref="member">LVSymbols</ref> &amp;</type>
+        <definition>const LVSymbols &amp; llvm::logicalview::LVDWARFReader::GetSymbolsWithLocations</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSymbolsWithLocations</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::GetSymbolsWithLocations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="144" column="19" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="144" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a6e3d7579887f71bf2b4cf7def5a3d77b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string LVDWARFReader::getRegisterName</definition>
+        <argsstring>(LVSmall Opcode, ArrayRef&lt; uint64_t &gt; Operands) override</argsstring>
+        <name>getRegisterName</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::getRegisterName</qualifiedname>
+        <reimplements refid="classllvm_1_1logicalview_1_1_l_v_reader_1a4ba7d69a179758cfe95b692774eb95ab">getRegisterName</reimplements>
+        <param>
+          <type><ref refid="namespacellvm_1_1logicalview_1ab9502425858a198bcbe9227a823f8aea" kindref="member">LVSmall</ref></type>
+          <declname>Opcode</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>Operands</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="148" column="15" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="782" bodyend="808"/>
+        <references refid="structllvm_1_1_d_i_dump_options_1abcc02a97a7033bc1db45cd841ed4fc4e" compoundref="_d_i_context_8h" startline="214">llvm::DIDumpOptions::GetNameForDWARFReg</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1ab2018d81dede6424ed445ad0c80083d2" compoundref="_l_v_binary_reader_8h" startline="117">llvm::logicalview::LVBinaryReader::MRI</references>
+        <references refid="_m_i_r_namer_pass_8cpp_1a05e4be4ec3e2c3587dda0e376bb6822c" compoundref="_m_i_r_namer_pass_8cpp" startline="74">Operands</references>
+        <references refid="classllvm_1_1_d_w_a_r_f_expression_1aeb9094ce3f495cf3f81c2c7aa6a975f5" compoundref="_debug_info_2_d_w_a_r_f_2_dwarf_expression_8cpp" startline="262" endline="294">llvm::DWARFExpression::prettyPrintRegisterOp</references>
+        <references refid="_l_v_l_gen_8cpp_1a0a198e38a5def54ba58bebc655eda8e7">RegName</references>
+        <references refid="classllvm_1_1raw__string__ostream_1a6732e8d3ff8100a662ce73634840b990" compoundref="raw__ostream_8h" startline="679" endline="679">llvm::raw_string_ostream::str</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a6085b16b5d9f99d6baafde6585f7ee89" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LVDWARFReader::print</definition>
+        <argsstring>(raw_ostream &amp;OS) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="151" column="8" bodyfile="lib/DebugInfo/LogicalView/Readers/LVDWARFReader.cpp" bodystart="1256" bodyend="1259"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_reader_1ae3b66787d42fd33ae1c2fe2c5fd7225c" compoundref="_l_v_reader_8h" startline="129">llvm::logicalview::LVReader::OS</references>
+        <referencedby refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1afc2654c1aa1162ecd859c2a9e301a33c" compoundref="_l_v_d_w_a_r_f_reader_8h" startline="154" endline="154">dump</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1afc2654c1aa1162ecd859c2a9e301a33c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::logicalview::LVDWARFReader::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::logicalview::LVDWARFReader::dump</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="154" column="8" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="154" bodyend="154"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a6085b16b5d9f99d6baafde6585f7ee89" compoundref="_l_v_d_w_a_r_f_reader_8cpp" startline="1256" endline="1259">print</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::logicalview::LVBinaryReader</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_binary_reader"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::logicalview::LVDWARFReader</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::logicalview::LVReader</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_reader"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="32">
+        <label>Size_T</label>
+      </node>
+      <node id="33">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="35">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="9">
+        <label>Attribute</label>
+      </node>
+      <node id="8">
+        <label>Tag</label>
+      </node>
+      <node id="19">
+        <label>llvm::ScopedPrinter</label>
+        <link refid="classllvm_1_1_scoped_printer"/>
+      </node>
+      <node id="36">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+        <childnode refid="38" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::SmallVector&lt; LVLine *, 8 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+        <childnode refid="34" relation="private-inheritance">
+        </childnode>
+        <childnode refid="36" relation="template-instance">
+          <edgelabel>&lt; LVLine *, 8 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="31" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="30" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="35" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="35" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::logicalview::LVBinaryReader</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_binary_reader"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>CULines</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>MRI</edgelabel>
+        </childnode>
+        <childnode refid="40" relation="usage">
+          <edgelabel>MAI</edgelabel>
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>STI</edgelabel>
+        </childnode>
+        <childnode refid="42" relation="usage">
+          <edgelabel>MII</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>MD</edgelabel>
+        </childnode>
+        <childnode refid="44" relation="usage">
+          <edgelabel>MC</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>MIP</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>WasmCodeSectionOffset</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::logicalview::LVDWARFReader</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::logicalview::LVElement</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_element"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>ElementType</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::logicalview::LVObject</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_object"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>Tag</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>Attr</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>Opcode</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>Element</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>Scope</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>Symbol</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::logicalview::LVReader</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_reader"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Root</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>FileFormatName</edgelabel>
+          <edgelabel>InputFilename</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>W</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>OS</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>CompileUnit</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>DotTextSectionIndex</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::logicalview::LVScope</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_scope"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>Types</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>Symbols</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>Scopes</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>Lines</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>Ranges</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>Children</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::logicalview::LVScopeCompileUnit</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_scope_compile_unit"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>NameNone</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::logicalview::LVScopeRoot</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_scope_root"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::logicalview::LVSymbol</label>
+        <link refid="classllvm_1_1logicalview_1_1_l_v_symbol"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::raw_ostream</label>
+        <link refid="classllvm_1_1raw__ostream"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>BLACK</edgelabel>
+          <edgelabel>BLUE</edgelabel>
+          <edgelabel>BRIGHT_BLACK</edgelabel>
+          <edgelabel>BRIGHT_BLUE</edgelabel>
+          <edgelabel>BRIGHT_CYAN</edgelabel>
+          <edgelabel>BRIGHT_GREEN</edgelabel>
+          <edgelabel>BRIGHT_MAGENTA</edgelabel>
+          <edgelabel>BRIGHT_RED</edgelabel>
+          <edgelabel>BRIGHT_WHITE</edgelabel>
+          <edgelabel>BRIGHT_YELLOW</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>static constexpr Colors</label>
+      </node>
+      <node id="23">
+        <label>pair&lt; LVAddress, uint64_t &gt;</label>
+      </node>
+      <node id="18">
+        <label>string</label>
+      </node>
+      <node id="40">
+        <label>unique_ptr&lt; const llvm::MCAsmInfo &gt;</label>
+      </node>
+      <node id="43">
+        <label>unique_ptr&lt; const llvm::MCDisassembler &gt;</label>
+      </node>
+      <node id="42">
+        <label>unique_ptr&lt; const llvm::MCInstrInfo &gt;</label>
+      </node>
+      <node id="39">
+        <label>unique_ptr&lt; const llvm::MCRegisterInfo &gt;</label>
+      </node>
+      <node id="41">
+        <label>unique_ptr&lt; const llvm::MCSubtargetInfo &gt;</label>
+      </node>
+      <node id="44">
+        <label>unique_ptr&lt; llvm::MCContext &gt;</label>
+      </node>
+      <node id="45">
+        <label>unique_ptr&lt; llvm::MCInstPrinter &gt;</label>
+      </node>
+      <node id="17">
+        <label>unique_ptr&lt; llvm::SmallVector&lt; LVElement *, 8 &gt; &gt;</label>
+      </node>
+      <node id="15">
+        <label>unique_ptr&lt; llvm::SmallVector&lt; LVLine *, 8 &gt; &gt;</label>
+      </node>
+      <node id="16">
+        <label>unique_ptr&lt; llvm::SmallVector&lt; LVLocation *, 8 &gt; &gt;</label>
+      </node>
+      <node id="14">
+        <label>unique_ptr&lt; llvm::SmallVector&lt; LVScope *, 8 &gt; &gt;</label>
+      </node>
+      <node id="13">
+        <label>unique_ptr&lt; llvm::SmallVector&lt; LVSymbol *, 8 &gt; &gt;</label>
+      </node>
+      <node id="12">
+        <label>unique_ptr&lt; llvm::SmallVector&lt; LVType *, 8 &gt; &gt;</label>
+      </node>
+      <node id="24">
+        <label>uint64_t</label>
+        <link refid="classuint64__t"/>
+      </node>
+      <node id="10">
+        <label>uint8_t</label>
+        <link refid="classuint8__t"/>
+      </node>
+      <node id="31">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" line="33" column="1" bodyfile="include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h" bodystart="33" bodyend="156"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a1a41c1ff211e463932557ac5aa62f22d" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>addCompileUnitOffset</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a241c84880df8f719f2eaace041d4b14e" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>addGlobalOffset</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a43a6a2cd9de149501903770466ab75b4" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>addInlineeLines</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1ad95ed9d1449a665ba1c71c5251e34ab7" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>addSectionRange</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a529ceb2a8c2325e195bd8a1819891889" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>addSectionRange</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a7f98cb63bfe0a4c10282bbe286bde33a" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>addToSymbolTable</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a33636e75d54396bb47b2a88360ea14a3" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>addToSymbolTable</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1aabd8bf25dbcb16ca9fa57ef73d062006" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CompileUnit</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a53b8fdf818581607c61a5b0bdd3bf5ed" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>createAlternativePath</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1aeaa917880fcf72d87b9989604fc91351" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>createElement</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1adf2a6238adfb3ada928de5340d5298b6" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>createInstructions</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1ac378e86f9979cde149105568f10ee404" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>createInstructions</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a6e3f70a5f3d1222550716fb9db632c6a" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>createInstructions</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a72316b681ad4c4b2cac8d20903d78e9e" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>createLineAndFileRecords</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1ad06aaf2479ae6fe75fa6343470c9a8b3" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>createOperation</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1abf565023d8f6916f29adcd9ac264400e" prot="protected" virt="virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>createScopes</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a3f908d615d19ea5cea872e3fe0d1a9d4" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CUBaseAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a8fc2c7eaf0a543fd20e256eda0df314d" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CUHighAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a7f70da07f056e7436d80fcddcc760164" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CULines</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a6290edf02483be4299a67a769eafe997" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CurrentElement</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ab33884c49860ff7cfcdf5a11dcec7a3d" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CurrentEndOffset</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ae4456a11271e3e0df0522126d7f4f556" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CurrentHighPC</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ac3bf8e54e61216b257b1ccf0b51a7056" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CurrentLowPC</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ac019a0c9cecba4eb4592e88b58c92293" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CurrentOffset</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a2a61300e772a9f29b26ba8616f448785" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CurrentRanges</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a12a01593b44c91ba44a7b64e21e83572" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CurrentScope</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ac622023d5ef74c038f582f42984c2194" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CurrentSymbol</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1acf278291961f5516e228e709151ce15c" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>CurrentType</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a8a15ec2eff468d1dc1137a8a8f20f525" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>doLoad</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1ab6198458ec732d8dff12eb1a80049ded" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>doPrint</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a1d1f13f69ec0826e1aa53f5707b7b4b4" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>doPrintLine</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a8b83ee7be20688c81f85d26e950fa189" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>doPrintLocation</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1af959c06dc7fdb452d6e01fda5a8bdb87" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>doPrintScope</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a6c00de0cb165c2b1614beed2ba93b0a6" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>doPrintSymbol</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1ad3a7055afc23cbe06ef5b9275bb3241d" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>doPrintType</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1ac33e886406f67bcea7a9e84d0e648bf3" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>DotTextSectionIndex</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1afc2654c1aa1162ecd859c2a9e301a33c" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>dump</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ab02290e36e2105de138a640dbf407df3" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>ElementTable</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a30c36ab397c2a31a605e88a0a476ee9c" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>FileFormatName</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1afb391495c23894805fc726515bb233df" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>FoundHighPC</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4e60d1c04a9eeb106e7224e1f5f96428" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>FoundLowPC</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1ab63da9e640f8c75ac3ecdd69f5973958" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getCompileUnit</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a4dd83f4a260a18452465d5b20bde0f5e" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getCompileUnitCPUType</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a96de4e6c3b42c520dea251ae6b319154" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getCUBaseAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1aa37cdc45da9773b10244ecfe6f208f8a" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getCUHighAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a79e79d328c2a1364382c050f1edc3b9f" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getDotTextSectionIndex</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ac4f2b304e3c0896cce1bf12e61df0f8c" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getElementForOffset</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a173b2c02cb716c1a72a382299247be61" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getFileFormatName</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a6646a556e7732c3d1037047b4bb4ee7e" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getFilename</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a9cfe13a99c14005ccbf4e6b653713f0e" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getFilename</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1aa7f00af39c0390ab78b03370eb251266" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getInstance</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a564c678b9c1f6e695345ada025a66fb2" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getLines</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a6e3d7579887f71bf2b4cf7def5a3d77b" prot="public" virt="virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getRegisterName</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1aaa02580d86cd6da9d4053e8c149d8bb8" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getScopes</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1ababa74ea6d8e9a9ce3088ab57c0c05ec" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getScopesRoot</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a0c1ac3b9ee5a622c81ce24639725d83a" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getSection</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a23627e0b6a1a860f08078cffc221b4b6" prot="public" virt="virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getSectionIndex</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1abb616341561b2b08f925cccf1c7481ee" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getSectionRanges</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a8fb7fc2d1f1a253a711802569b1eb8d6" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getSplitContext</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a4bd721fd42c94e71fd18cc56f69c23f3" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getSymbols</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1af20bd2faf4c331898263910653d54ae7" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>GetSymbolsWithLocations</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a67fafc62a64832e5a445da37a06fb7be" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getSymbolTableAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a037e91a15a304677121ba36b89f75827" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getSymbolTableEntry</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a9eb05d655c3b4abdb2c2ef3b7b553e1b" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getSymbolTableIndex</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1aad6d1cd3aa62f8b56e0e2b976a47e399" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getSymbolTableIsComdat</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a304580d8cb7b13766ace495f2b06b669" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>getTypes</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ae4e6f0ab2810432b2cd3e6374ce59ecf" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>GlobalOffsets</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a2f647a3f5093cbe2bc5ff3e9e295289d" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>includeInlineeLines</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a0dac109845e14a79a964fbaf60a7e7fc" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>IncrementFileIndex</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a8f89d9798f252c035000d6a03cb86300" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>InputFilename</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a73c06cb3a2d9d61ca64f3b6d1f21da50" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>isBinaryTypeCOFF</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a9820ed153363430133ad612fcc12ba24" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>isBinaryTypeELF</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a74ecb9e315e671cd9a27fbe0ff16aa60" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>isBinaryTypeNone</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a8d96f20ae76f4b4a0de2b0712d5fdfb6" prot="public" virt="virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>isSystemEntry</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a7ad68ac39542686af057c65d315c24ba" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>linearAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1ad1c77f840dadc1ffb03432c9e688e4c6" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>loadGenericTargetInfo</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1aaa931d02c8c129215334279dc0b43cb2" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>loadTargetInfo</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a77d562b41fb3c6d478f38b73cfa44ab3" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>LVBinaryReader</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1ab90487a134bc2d94772898fa50e09896" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>LVBinaryReader</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a4c1189b7bf00d12e735f6634427e5caf" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>LVBinaryReader</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4eeccb0c42d994c7983021e929bc6e96" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>LVDWARFReader</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1aa5c941357b1a4565c7001065a68fb538" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>LVDWARFReader</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a194c5bdcd83c3806641808b42df41b42" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>LVDWARFReader</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a05bf1445244febbbfef513fab898f347" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>LVElementReference</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ae075f001bcf7871ad2e06adf432ed03c" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>LVElementSet</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a3e8126edb83953e3574e3219f2699441" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>LVReader</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1ab51b8f4c5562374eaa5c78328fb06866" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>LVReader</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a6780a33f3a5ba4d163b2197418ec48ea" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>LVReader</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a9c5bd27217843e17f7dc34493ee2a7c3" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>MAI</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a6e30794db3ce743267061b832e054c84" prot="private" virt="virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>mapRangeAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1aabfa7e2ea8284709b02dad428cc3efb1" prot="protected" virt="virtual" ambiguityscope="llvm::logicalview::LVBinaryReader::"><scope>llvm::logicalview::LVDWARFReader</scope><name>mapRangeAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a8f648767e6fee704685f85355aa7fa64" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>mapVirtualAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a50b4341d651ea41cb74546557170ebaa" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>mapVirtualAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a269427268a7c733324ef40f3c6f8a974" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>MC</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1ab92d4edd35a110d7f835e5ab051db5d0" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>MD</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a34358eaff90c8c985f8da3089bbd1d95" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>MII</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1ae61933462a970b04a39d29b0391eae0b" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>MIP</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1ab2018d81dede6424ed445ad0c80083d2" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a47afac89aa48ca6a5c668780c2f1875d" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>notifyAddedElement</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1afb09fcfc3a072a252db0ec57b633567a" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>notifyAddedElement</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a4c4b49aa764ec9304ac9477baf23534b" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>notifyAddedElement</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a3a08d2b0039c19cc3c2c60d03bc648b5" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>notifyAddedElement</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4354f519e5c954670323fd1078782050" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>Obj</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a61a09d509675eff595e8028e1ec65024" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a9f87113ad0fdf1bb0e84377519cfa327" prot="public" virt="non-virtual" ambiguityscope="llvm::logicalview::LVBinaryReader::"><scope>llvm::logicalview::LVDWARFReader</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a8936c821e1cbf6a17a9734e33dc3c464" prot="public" virt="non-virtual" ambiguityscope="llvm::logicalview::LVReader::"><scope>llvm::logicalview::LVDWARFReader</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1ae3b66787d42fd33ae1c2fe2c5fd7225c" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>OS</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a4d0e7c1f6f2d4eebe51c777d93e32994" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>outputStream</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a6085b16b5d9f99d6baafde6585f7ee89" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>print</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1adaab12708cd80462767f21e03dae228f" prot="protected" virt="virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>printMatchedElements</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1afc0b147052132b017bbe8e90566947ab" prot="public" virt="virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>printRecords</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1ae8f1aeb4ef8575cbc64f67508effbbb2" prot="protected" virt="virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>printScopes</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a873cd38481c3ed6a7e21bc016ec10ae2" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>processLines</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a65eee5509cce98dcc69693ea13bb9220" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>processLines</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a04fe0e2b5c50efb87d0562d531d9f817" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>processLocationGaps</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a6a7f17efdf50d4310ea927bc6f7c3ab0" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>processLocationList</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a46621bf981f3427563b6c80b2abc2b78" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>processLocationMember</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a096e290254d040e17fde777a6164a199" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>processOneAttribute</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a18649cbb30fab3fe558c8b3f1d06209f" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>processOneDie</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a612113f087fc6b33ffec3c970db9e201" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>RangesDataAvailable</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4367bda0e4c13a7d8b600c5e65b28c92" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>removeGlobalOffset</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1aca8db53bfaede35c8940fceb72b495aa" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>Root</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1acfef57e1f937ca038c926e972ffd0cef" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>setCompileUnit</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a81ca29eae6fd36123cdbbfe24f3f3bba" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>setCompileUnitCPUType</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a9717d00700092350b8140dbf35d51a16" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>setCUBaseAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4396a18ffb10402dbc7d1b3a3dab3f82" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>setCUHighAddress</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a716192d66503b8a150d3733eff9bed90" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>setFilename</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1ab170f24e5d76fee6ae66e469f43564f3" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>setInstance</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a920a403e93a285632b45dc6a4e91218c" prot="protected" virt="virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>sortScopes</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a79ab8004d321f3e4d61b5b128b571285" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>STI</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a4eb53c9f86b435cb740ecf3d7c142106" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>SymbolsWithLocations</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a413a68b5168ded503c92eaf49d6fbe75" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>traverseDieAndChildren</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1a30a4884ad12ec0cf64f127b2f0c45203" prot="private" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>updateReference</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a0735018d9f77fda1d3ac1ef26d5d55c2" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>updateSymbolTable</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a05c1edcb51769b9ed74087532906b12e" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>W</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1aec94a149e209340a7464f9b9c1788e1b" prot="protected" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>WasmCodeSectionOffset</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_binary_reader_1a2e80e1062d9ac983e1e5ecc558aee97c" prot="public" virt="virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>~LVBinaryReader</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_d_w_a_r_f_reader_1ae1c90329b38a75958e5845601938dcbd" prot="public" virt="non-virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>~LVDWARFReader</name></member>
+      <member refid="classllvm_1_1logicalview_1_1_l_v_reader_1a9979d510ae1d37d0e20c81f303d8b382" prot="public" virt="virtual"><scope>llvm::logicalview::LVDWARFReader</scope><name>~LVReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

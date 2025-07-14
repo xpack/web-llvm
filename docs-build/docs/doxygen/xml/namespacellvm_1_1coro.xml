@@ -1,0 +1,761 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1coro" kind="namespace" language="C++">
+    <compoundname>llvm::coro</compoundname>
+    <innerclass refid="structllvm_1_1coro_1_1_alloca_info" prot="public">llvm::coro::AllocaInfo</innerclass>
+    <innerclass refid="classllvm_1_1coro_1_1_any_retcon_a_b_i" prot="public">llvm::coro::AnyRetconABI</innerclass>
+    <innerclass refid="classllvm_1_1coro_1_1_async_a_b_i" prot="public">llvm::coro::AsyncABI</innerclass>
+    <innerclass refid="classllvm_1_1coro_1_1_base_a_b_i" prot="public">llvm::coro::BaseABI</innerclass>
+    <innerclass refid="classllvm_1_1coro_1_1_base_cloner" prot="public">llvm::coro::BaseCloner</innerclass>
+    <innerclass refid="structllvm_1_1coro_1_1_lowerer_base" prot="public">llvm::coro::LowererBase</innerclass>
+    <innerclass refid="structllvm_1_1coro_1_1_shape" prot="public">llvm::coro::Shape</innerclass>
+    <innerclass refid="classllvm_1_1coro_1_1_switch_a_b_i" prot="public">llvm::coro::SwitchABI</innerclass>
+    <innerclass refid="classllvm_1_1coro_1_1_switch_cloner" prot="public">llvm::coro::SwitchCloner</innerclass>
+    <innernamespace refid="namespacellvm_1_1coro_1_1anonymous__namespace_02_spill_utils_8cpp_03">llvm::coro::anonymous_namespace{SpillUtils.cpp}</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacellvm_1_1coro_1a36a5e731a6e92a83c26e5fee63d12380" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ABI</name>
+        <qualifiedname>llvm::coro::ABI</qualifiedname>
+        <enumvalue id="namespacellvm_1_1coro_1a36a5e731a6e92a83c26e5fee63d12380abbc155fb2b111bf61c4f5ff892915e6b" prot="public">
+          <name>Switch</name>
+          <briefdescription>
+<para>The &quot;resume-switch&quot; lowering, where there are separate resume and destroy functions that are shared between all suspend points. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The coroutine frame implicitly stores the resume and destroy functions, the current index, and any promise value. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1coro_1a36a5e731a6e92a83c26e5fee63d12380aad9d7f07127e321d1358b695c8720166" prot="public">
+          <name>Retcon</name>
+          <briefdescription>
+<para>The &quot;returned-continuation&quot; lowering, where each suspend point creates a single continuation function that is used for both resuming and destroying. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Does not support promises. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1coro_1a36a5e731a6e92a83c26e5fee63d12380a6ec6c15fe79ec2274d2c3e79ae4bcc41" prot="public">
+          <name>RetconOnce</name>
+          <briefdescription>
+<para>The &quot;unique returned-continuation&quot; lowering, where each suspend point creates a single continuation function that is used for both resuming and destroying. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Does not support promises. The function is known to suspend at most once during its execution, and the return value of the continuation is void. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1coro_1a36a5e731a6e92a83c26e5fee63d12380a24aa4117da86c41684ad25742832dfa6" prot="public">
+          <name>Async</name>
+          <briefdescription>
+<para>The &quot;async continuation&quot; lowering, where each suspend point creates a single continuation function. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The continuation function is available as an intrinsic. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Coroutines/CoroShape.h" line="25" column="1" bodyfile="include/llvm/Transforms/Coroutines/CoroShape.h" bodystart="25" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacellvm_1_1coro_1ad5c7ebab0ec481424c33db8902c652f4" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>CloneKind</name>
+        <qualifiedname>llvm::coro::CloneKind</qualifiedname>
+        <enumvalue id="namespacellvm_1_1coro_1ad5c7ebab0ec481424c33db8902c652f4ae58f565eb9e7a17b331c3eda53da8fc2" prot="public">
+          <name>SwitchResume</name>
+          <briefdescription>
+<para>The shared resume function for a switch lowering. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1coro_1ad5c7ebab0ec481424c33db8902c652f4af04bd27f8437836c71e2e1504acc18c8" prot="public">
+          <name>SwitchUnwind</name>
+          <briefdescription>
+<para>The shared unwind function for a switch lowering. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1coro_1ad5c7ebab0ec481424c33db8902c652f4a2c249a520c88badf6f400e74f26ce424" prot="public">
+          <name>SwitchCleanup</name>
+          <briefdescription>
+<para>The shared cleanup function for a switch lowering. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1coro_1ad5c7ebab0ec481424c33db8902c652f4af11580a0250ef12842e64f487810cc70" prot="public">
+          <name>Continuation</name>
+          <briefdescription>
+<para>An individual continuation function. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1coro_1ad5c7ebab0ec481424c33db8902c652f4a24aa4117da86c41684ad25742832dfa6" prot="public">
+          <name>Async</name>
+          <briefdescription>
+<para>An async resume function. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroCloner.h" line="26" column="1" bodyfile="lib/Transforms/Coroutines/CoroCloner.h" bodystart="26" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacellvm_1_1coro_1a35a3966816510601e97cb071765f1ed0" prot="public" static="no">
+        <type><ref refid="structllvm_1_1_small_map_vector" kindref="compound">SmallMapVector</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, 2 &gt;, 8 &gt;</type>
+        <definition>using llvm::coro::SpillInfo =  SmallMapVector&lt;Value *, SmallVector&lt;Instruction *, 2&gt;, 8&gt;</definition>
+        <argsstring></argsstring>
+        <name>SpillInfo</name>
+        <qualifiedname>llvm::coro::SpillInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Coroutines/SpillUtils.h" line="20" column="1" bodyfile="include/llvm/Transforms/Coroutines/SpillUtils.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1coro_1ad2ae5b6314d4de7db633c2181e707132" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::coro::isTriviallyMaterializable</definition>
+        <argsstring>(Instruction &amp;I)</argsstring>
+        <name>isTriviallyMaterializable</name>
+        <qualifiedname>llvm::coro::isTriviallyMaterializable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Coroutines/MaterializationUtils.h" line="19" column="6" bodyfile="lib/Transforms/Coroutines/MaterializationUtils.cpp" bodystart="240" bodyend="242" declfile="include/llvm/Transforms/Coroutines/MaterializationUtils.h" declline="19" declcolumn="6"/>
+        <references refid="namespacellvm_1_1coro_1a53b686b78ff6f0eedd7d4d5a6bdd22bb" compoundref="_materialization_utils_8cpp" startline="235" endline="238">defaultMaterializable</references>
+        <referencedby refid="structllvm_1_1_coro_split_pass_1a5f0bac32eb02663f4b3c2cc0adc0b41f" compoundref="_coro_split_8cpp" startline="2175" endline="2182">llvm::CoroSplitPass::CoroSplitPass</referencedby>
+        <referencedby refid="structllvm_1_1_coro_split_pass_1afa5e75aeef01520a39012a69184b317d" compoundref="_coro_split_8cpp" startline="2184" endline="2192">llvm::CoroSplitPass::CoroSplitPass</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1ad3bf571f4743d886275638484d6a3389" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::coro::doRematerializations</definition>
+        <argsstring>(Function &amp;F, SuspendCrossingInfo &amp;Checker, std::function&lt; bool(Instruction &amp;)&gt; IsMaterializable)</argsstring>
+        <name>doRematerializations</name>
+        <qualifiedname>llvm::coro::doRematerializations</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_suspend_crossing_info" kindref="compound">SuspendCrossingInfo</ref> &amp;</type>
+          <declname>Checker</declname>
+        </param>
+        <param>
+          <type>std::function&lt; <ref refid="classbool" kindref="compound">bool</ref>(<ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;)&gt;</type>
+          <declname>IsMaterializable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Coroutines/MaterializationUtils.h" line="22" column="6" bodyfile="lib/Transforms/Coroutines/MaterializationUtils.cpp" bodystart="256" bodyend="316" declfile="include/llvm/Transforms/Coroutines/MaterializationUtils.h" declline="22" declcolumn="6"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_map_vector_1a041e60c6f5f9841f3dc74921ea87bec2" compoundref="_map_vector_8h" startline="165" endline="165">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::count</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_materialization_utils_8cpp_1ae401556a84636b6bd31d124b7836082b" compoundref="_materialization_utils_8cpp" startline="245" endline="253">dumpRemats</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_atomic_expand_pass_8cpp_1a1bcc06b1cb86bd0ea08f33323190bdaa" compoundref="_atomic_expand_pass_8cpp" startline="172">instructions</references>
+        <references refid="classllvm_1_1_suspend_crossing_info_1a184a65eb9ac1cd8093ea44d3490b3e70" compoundref="_suspend_crossing_info_8h" startline="119" endline="139">llvm::SuspendCrossingInfo::isDefinitionAcrossSuspend</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_materialization_utils_8cpp_1aba618c16a34739af0506ba1082d209a3" compoundref="_materialization_utils_8cpp" startline="156" endline="230">rewriteMaterializableInstructions</references>
+        <referencedby refid="classllvm_1_1coro_1_1_base_a_b_i_1ab47fb8dadd631b1c67a285b16607e4c5" compoundref="_coro_frame_8cpp" startline="2069" endline="2110">llvm::coro::BaseABI::buildCoroutineFrame</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1aee11dcf213f8b5c3fecab6894b0b6517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::coro::collectSpillsFromArgs</definition>
+        <argsstring>(SpillInfo &amp;Spills, Function &amp;F, const SuspendCrossingInfo &amp;Checker)</argsstring>
+        <name>collectSpillsFromArgs</name>
+        <qualifiedname>llvm::coro::collectSpillsFromArgs</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1coro_1a35a3966816510601e97cb071765f1ed0" kindref="member">SpillInfo</ref> &amp;</type>
+          <declname>Spills</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_suspend_crossing_info" kindref="compound">SuspendCrossingInfo</ref> &amp;</type>
+          <declname>Checker</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/SpillUtils.cpp" line="452" column="6" bodyfile="lib/Transforms/Coroutines/SpillUtils.cpp" bodystart="452" bodyend="459" declfile="include/llvm/Transforms/Coroutines/SpillUtils.h" declline="33" declcolumn="6"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_suspend_crossing_info_1a184a65eb9ac1cd8093ea44d3490b3e70" compoundref="_suspend_crossing_info_8h" startline="119" endline="139">llvm::SuspendCrossingInfo::isDefinitionAcrossSuspend</references>
+        <referencedby refid="classllvm_1_1coro_1_1_base_a_b_i_1ab47fb8dadd631b1c67a285b16607e4c5" compoundref="_coro_frame_8cpp" startline="2069" endline="2110">llvm::coro::BaseABI::buildCoroutineFrame</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1afee39cae7ff99ef86d9f4ed0ee4282f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::coro::collectSpillsAndAllocasFromInsts</definition>
+        <argsstring>(SpillInfo &amp;Spills, SmallVector&lt; AllocaInfo, 8 &gt; &amp;Allocas, SmallVector&lt; Instruction *, 4 &gt; &amp;DeadInstructions, SmallVector&lt; CoroAllocaAllocInst *, 4 &gt; &amp;LocalAllocas, Function &amp;F, const SuspendCrossingInfo &amp;Checker, const DominatorTree &amp;DT, const coro::Shape &amp;Shape)</argsstring>
+        <name>collectSpillsAndAllocasFromInsts</name>
+        <qualifiedname>llvm::coro::collectSpillsAndAllocasFromInsts</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1coro_1a35a3966816510601e97cb071765f1ed0" kindref="member">SpillInfo</ref> &amp;</type>
+          <declname>Spills</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1coro_1_1_alloca_info" kindref="compound">AllocaInfo</ref>, 8 &gt; &amp;</type>
+          <declname>Allocas</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, 4 &gt; &amp;</type>
+          <declname>DeadInstructions</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_coro_alloca_alloc_inst" kindref="compound">CoroAllocaAllocInst</ref> *, 4 &gt; &amp;</type>
+          <declname>LocalAllocas</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_suspend_crossing_info" kindref="compound">SuspendCrossingInfo</ref> &amp;</type>
+          <declname>Checker</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+          <declname>DT</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1coro_1_1_shape" kindref="compound">coro::Shape</ref> &amp;</type>
+          <declname>Shape</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/SpillUtils.cpp" line="461" column="6" bodyfile="lib/Transforms/Coroutines/SpillUtils.cpp" bodystart="461" bodyend="514" declfile="include/llvm/Transforms/Coroutines/SpillUtils.h" declline="35" declcolumn="6"/>
+        <references refid="namespacellvm_1a264176188c0aadccd3ca5b6929b5a2e1aea571dc00aef155a16d4e7e1861e1682" compoundref="_attributes_8h" startline="51">llvm::Alloc</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="structllvm_1_1coro_1_1_shape_1abfb56acef5d60fefb2edc417f0bfbda0" compoundref="_coro_shape_8h" startline="53">llvm::coro::Shape::CoroBegin</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_atomic_expand_pass_8cpp_1a1bcc06b1cb86bd0ea08f33323190bdaa" compoundref="_atomic_expand_pass_8cpp" startline="172">instructions</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1_suspend_crossing_info_1a184a65eb9ac1cd8093ea44d3490b3e70" compoundref="_suspend_crossing_info_8h" startline="119" endline="139">llvm::SuspendCrossingInfo::isDefinitionAcrossSuspend</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <referencedby refid="classllvm_1_1coro_1_1_base_a_b_i_1ab47fb8dadd631b1c67a285b16607e4c5" compoundref="_coro_frame_8cpp" startline="2069" endline="2110">llvm::coro::BaseABI::buildCoroutineFrame</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1af6a9c51da634a8036f03c22a6036caaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::coro::collectSpillsFromDbgInfo</definition>
+        <argsstring>(SpillInfo &amp;Spills, Function &amp;F, const SuspendCrossingInfo &amp;Checker)</argsstring>
+        <name>collectSpillsFromDbgInfo</name>
+        <qualifiedname>llvm::coro::collectSpillsFromDbgInfo</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1coro_1a35a3966816510601e97cb071765f1ed0" kindref="member">SpillInfo</ref> &amp;</type>
+          <declname>Spills</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_suspend_crossing_info" kindref="compound">SuspendCrossingInfo</ref> &amp;</type>
+          <declname>Checker</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/SpillUtils.cpp" line="516" column="6" bodyfile="lib/Transforms/Coroutines/SpillUtils.cpp" bodystart="516" bodyend="535" declfile="include/llvm/Transforms/Coroutines/SpillUtils.h" declline="41" declcolumn="6"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="namespacellvm_1a4d7448a42ae4db532d3ba40e250ec825" compoundref="_debug_info_8cpp" startline="155" endline="160">llvm::findDbgValues</references>
+        <references refid="classllvm_1_1_suspend_crossing_info_1a184a65eb9ac1cd8093ea44d3490b3e70" compoundref="_suspend_crossing_info_8h" startline="119" endline="139">llvm::SuspendCrossingInfo::isDefinitionAcrossSuspend</references>
+        <referencedby refid="classllvm_1_1coro_1_1_base_a_b_i_1ab47fb8dadd631b1c67a285b16607e4c5" compoundref="_coro_frame_8cpp" startline="2069" endline="2110">llvm::coro::BaseABI::buildCoroutineFrame</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1aa725413bc28036ce9c795a24503f654b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::coro::sinkSpillUsesAfterCoroBegin</definition>
+        <argsstring>(const DominatorTree &amp;DT, CoroBeginInst *CoroBegin, coro::SpillInfo &amp;Spills, SmallVectorImpl&lt; coro::AllocaInfo &gt; &amp;Allocas)</argsstring>
+        <name>sinkSpillUsesAfterCoroBegin</name>
+        <qualifiedname>llvm::coro::sinkSpillUsesAfterCoroBegin</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+          <declname>DT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_coro_begin_inst" kindref="compound">CoroBeginInst</ref> *</type>
+          <declname>CoroBegin</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1coro_1a35a3966816510601e97cb071765f1ed0" kindref="member">coro::SpillInfo</ref> &amp;</type>
+          <declname>Spills</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="structllvm_1_1coro_1_1_alloca_info" kindref="compound">coro::AllocaInfo</ref> &gt; &amp;</type>
+          <declname>Allocas</declname>
+        </param>
+        <briefdescription>
+<para>Async and Retcon{Once} conventions assume that all spill uses can be sunk after the coro.begin intrinsic. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/SpillUtils.cpp" line="539" column="6" bodyfile="lib/Transforms/Coroutines/SpillUtils.cpp" bodystart="539" bodyend="584" declfile="include/llvm/Transforms/Coroutines/SpillUtils.h" declline="46" declcolumn="6"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_map_vector_1aa610cab7ee61e36a6d1d122fc252c278" compoundref="_map_vector_8h" startline="69" endline="69">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::begin</references>
+        <references refid="classllvm_1_1_set_vector_1ad0bf95396cec46a41371341460d14a1c" compoundref="_set_vector_8h" startline="103" endline="105">llvm::SetVector&lt; T, Vector, Set, N &gt;::begin</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a8a045d250952c0867382a9840ee18fdf" compoundref="_small_vector_8h" startline="267" endline="267">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::begin</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_dominator_tree_1a5c69311e8d44898dac36a155c3d8691d" compoundref="_dominators_8cpp" startline="122" endline="130">llvm::DominatorTree::dominates</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_map_vector_1a0881334358ff6ff7ff8cea5562c7988e" compoundref="_map_vector_8h" startline="71" endline="71">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::end</references>
+        <references refid="classllvm_1_1_set_vector_1a889cc0df630d4b01e12d359517e26670" compoundref="_set_vector_8h" startline="113" endline="115">llvm::SetVector&lt; T, Vector, Set, N &gt;::end</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a075e34e98605d0e7c289763a104869ac" compoundref="_small_vector_8h" startline="269" endline="269">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::end</references>
+        <references refid="classllvm_1_1ilist__node__with__parent_1a62ee7ece4986606d41363bc1f70d5ab2" compoundref="ilist__node_8h" startline="353" endline="359">llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;::getNextNode</references>
+        <references refid="classllvm_1_1ilist__detail_1_1node__parent__access_1a7e19e7508415378ad9523e0339b23e22" compoundref="ilist__node_8h" startline="32" endline="34">llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;::getParent</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_set_vector_1af34eb71cc483e84d2eca80575cb9ccde" compoundref="_set_vector_8h" startline="162" endline="178">llvm::SetVector&lt; T, Vector, Set, N &gt;::insert</references>
+        <references refid="classllvm_1_1_instruction_1af67d1f3a518964d80a109bb3d9d5cf1e" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="175" endline="177">llvm::Instruction::moveBefore</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a0c8ffe664a36e30d49c84d0aded2fe08" compoundref="_small_vector_8h" startline="673" endline="677">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="namespacellvm_1a74cdbd1e4f731e7d7cd83461b8b1de0b" compoundref="_s_t_l_extras_8h" startline="1664" endline="1675">llvm::sort</references>
+        <referencedby refid="classllvm_1_1coro_1_1_base_a_b_i_1ab47fb8dadd631b1c67a285b16607e4c5" compoundref="_coro_frame_8cpp" startline="2069" endline="2110">llvm::coro::BaseABI::buildCoroutineFrame</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1a58bcd428c0ca38b723b8ef938868ec4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+        <definition>BasicBlock::iterator llvm::coro::getSpillInsertionPt</definition>
+        <argsstring>(const coro::Shape &amp;, Value *Def, const DominatorTree &amp;DT)</argsstring>
+        <name>getSpillInsertionPt</name>
+        <qualifiedname>llvm::coro::getSpillInsertionPt</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1coro_1_1_shape" kindref="compound">coro::Shape</ref> &amp;</type>
+          <defname>Shape</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Def</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+          <declname>DT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/SpillUtils.cpp" line="586" column="22" bodyfile="lib/Transforms/Coroutines/SpillUtils.cpp" bodystart="586" bodyend="628" declfile="include/llvm/Transforms/Coroutines/SpillUtils.h" declline="52" declcolumn="22"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="structllvm_1_1coro_1_1_shape_1abfb56acef5d60fefb2edc417f0bfbda0" compoundref="_coro_shape_8h" startline="53">llvm::coro::Shape::CoroBegin</references>
+        <references refid="classllvm_1_1_dominator_tree_1a5c69311e8d44898dac36a155c3d8691d" compoundref="_dominators_8cpp" startline="122" endline="130">llvm::DominatorTree::dominates</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_basic_block_1a161fd4e9fa5367f64c2a4c9e921c3ad3" compoundref="_sandbox_i_r_2_basic_block_8cpp" startline="437" endline="448">llvm::BasicBlock::getFirstInsertionPt</references>
+        <references refid="structllvm_1_1coro_1_1_shape_1ac406c2b5a7e2d11174becab5cb27765d" compoundref="_coro_shape_8h" startline="245" endline="252">llvm::coro::Shape::getInsertPtAfterFramePtr</references>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_basic_block_1aef9e9fcf4c5dfce90276ca16d91b8e46" compoundref="_i_r_2_basic_block_8h" startline="240" endline="244">llvm::BasicBlock::getTerminator</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1ac5804672fc0850438d63caec770647f8" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">II</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="namespacellvm_1adf83581f514774264d616eef5706cf6e" compoundref="_basic_block_utils_8cpp" startline="762" endline="798">llvm::SplitEdge</references>
+        <referencedby refid="_coro_frame_8cpp_1af0885df5b78cc732639a9d52a87d040e" compoundref="_coro_frame_8cpp" startline="1004" endline="1313">insertSpills</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1a64f8e14ffe5fb52d552fcb9058286ad3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::coro::isSuspendBlock</definition>
+        <argsstring>(BasicBlock *BB)</argsstring>
+        <name>isSuspendBlock</name>
+        <qualifiedname>llvm::coro::isSuspendBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroInternal.h" line="25" column="6" bodyfile="lib/Transforms/Coroutines/Coroutines.cpp" bodystart="106" bodyend="108" declfile="lib/Transforms/Coroutines/CoroInternal.h" declline="25" declcolumn="6"/>
+        <references refid="classllvm_1_1_basic_block_1a63cfb2a0dae69153fd961eb335949caa" compoundref="_i_r_2_basic_block_8h" startline="484" endline="484">llvm::BasicBlock::front</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <referencedby refid="namespacellvm_1_1coro_1_1anonymous__namespace_02_spill_utils_8cpp_03_1a77a9d2c7b181232afcc8b318215640d0" compoundref="_spill_utils_8cpp" startline="36" endline="55">llvm::coro::anonymous_namespace{SpillUtils.cpp}::isSuspendReachableFrom</referencedby>
+        <referencedby refid="_coro_frame_8cpp_1abb3297c94836debc08248e7ae3f47582" compoundref="_coro_frame_8cpp" startline="1775" endline="1852">sinkLifetimeStartMarkers</referencedby>
+        <referencedby refid="_coro_frame_8cpp_1a711449044c2aef3a8aba56149e421b60" compoundref="_coro_frame_8cpp" startline="1537" endline="1555">willLeaveFunctionImmediatelyAfter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1a54712266347f5cc2d33ad2c375426e45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::coro::declaresAnyIntrinsic</definition>
+        <argsstring>(const Module &amp;M)</argsstring>
+        <name>declaresAnyIntrinsic</name>
+        <qualifiedname>llvm::coro::declaresAnyIntrinsic</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroInternal.h" line="26" column="6" bodyfile="lib/Transforms/Coroutines/Coroutines.cpp" bodystart="110" bodyend="117" declfile="lib/Transforms/Coroutines/CoroInternal.h" declline="26" declcolumn="6"/>
+        <references refid="_coroutines_8cpp_1ad4028404ed3e36c37bdf99be6b1e1567" compoundref="_coroutines_8cpp" startline="65" endline="98">CoroIntrinsics</references>
+        <referencedby refid="structllvm_1_1_coro_conditional_wrapper_1a393e9909fb7adb8a1effe8ac4fe745d3" compoundref="_coro_conditional_wrapper_8cpp" startline="18" endline="24">llvm::CoroConditionalWrapper::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1a6e95f844cc43fa4786df11ea5a1a3f10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::coro::declaresIntrinsics</definition>
+        <argsstring>(const Module &amp;M, const std::initializer_list&lt; StringRef &gt;)</argsstring>
+        <name>declaresIntrinsics</name>
+        <qualifiedname>llvm::coro::declaresIntrinsics</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::initializer_list&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+          <defname>List</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroInternal.h" line="27" column="6" bodyfile="lib/Transforms/Coroutines/Coroutines.cpp" bodystart="121" bodyend="130" declfile="lib/Transforms/Coroutines/CoroInternal.h" declline="27" declcolumn="6"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_coroutines_8cpp_1a0a443a03b6dcdb9171ffb81ed2ad4429" compoundref="_coroutines_8cpp" startline="101" endline="103">isCoroutineIntrinsicName</references>
+        <references refid="namespacellvm_1acefe92adee8725ad904c7c43649790e8a4ee29ca12c7d126654bd0e5275de6135" compoundref="_target_options_8h" startline="64">llvm::List</references>
+        <referencedby refid="_coro_cleanup_8cpp_1a4c0bbb99be8908796d7ea70ddcf96e16" compoundref="_coro_cleanup_8cpp" startline="111" endline="118">declaresCoroCleanupIntrinsics</referencedby>
+        <referencedby refid="_coro_early_8cpp_1ae8560e611bdea32222f39de7af110536" compoundref="_coro_early_8cpp" startline="246" endline="253">declaresCoroEarlyIntrinsics</referencedby>
+        <referencedby refid="structllvm_1_1_coro_elide_pass_1a6dfdc223099c4ca952c8b0369027e34d" compoundref="_coro_elide_8cpp" startline="467" endline="488">llvm::CoroElidePass::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1abf799de7147065c0e7f525e1b6009dde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::coro::replaceCoroFree</definition>
+        <argsstring>(CoroIdInst *CoroId, bool Elide)</argsstring>
+        <name>replaceCoroFree</name>
+        <qualifiedname>llvm::coro::replaceCoroFree</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_coro_id_inst" kindref="compound">CoroIdInst</ref> *</type>
+          <declname>CoroId</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Elide</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroInternal.h" line="29" column="6" bodyfile="lib/Transforms/Coroutines/Coroutines.cpp" bodystart="134" bodyend="152" declfile="lib/Transforms/Coroutines/CoroInternal.h" declline="29" declcolumn="6"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a58dc840fc84420b7f0b773794b8101c1" compoundref="_small_vector_8h" startline="299" endline="302">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::front</references>
+        <references refid="classllvm_1_1_constant_pointer_null_1a96f5c85e4022e369266541b2db3fda69" compoundref="_constants_8cpp" startline="1826" endline="1833">llvm::ConstantPointerNull::get</references>
+        <references refid="classllvm_1_1_pointer_type_1a8d7f800be5fd53dcfcdcbdc6fd9ccfe3">llvm::PointerType::get</references>
+        <references refid="classllvm_1_1_value_1ab3fc0225d8aaf8434026c3573f961f2c" compoundref="_sandbox_i_r_2_value_8cpp" startline="1075" endline="1075">llvm::Value::getContext</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1_value_1a411cf3e3932f209ce3374cb31adc1da6" compoundref="_i_r_2_value_8h" startline="421" endline="424">llvm::Value::users</references>
+        <referencedby refid="classanonymous__namespace_02_coro_elide_8cpp_03_1_1_coro_id_elider_1ab170ffc9dea0395ef981c715778778a5" compoundref="_coro_elide_8cpp" startline="402" endline="465">anonymous_namespace{CoroElide.cpp}::CoroIdElider::attemptElide</referencedby>
+        <referencedby refid="classllvm_1_1coro_1_1_switch_cloner_1a402d5de6c6250d90988f455ada737600" compoundref="_coro_split_8cpp" startline="1127" endline="1139">llvm::coro::SwitchCloner::create</referencedby>
+        <referencedby refid="structanonymous__namespace_02_coro_split_8cpp_03_1_1_switch_coroutine_splitter_1af0793991541abccfec5c0d8831612b7b" compoundref="_coro_split_8cpp" startline="1454" endline="1514">anonymous_namespace{CoroSplit.cpp}::SwitchCoroutineSplitter::createNoAllocVariant</referencedby>
+        <referencedby refid="_coro_split_8cpp_1ab7881567f602c3a94d11e2817f4464e0" compoundref="_coro_split_8cpp" startline="1202" endline="1231">handleNoSuspendCoroutine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1a7223c62dc4b1db59861cb3a7e225a387" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::coro::suppressCoroAllocs</definition>
+        <argsstring>(CoroIdInst *CoroId)</argsstring>
+        <name>suppressCoroAllocs</name>
+        <qualifiedname>llvm::coro::suppressCoroAllocs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_coro_id_inst" kindref="compound">CoroIdInst</ref> *</type>
+          <declname>CoroId</declname>
+        </param>
+        <briefdescription>
+<para>Replaces all @llvm.coro.alloc intrinsics calls associated with a given call @llvm.coro.id instruction with boolean value false. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroInternal.h" line="33" column="6" bodyfile="lib/Transforms/Coroutines/Coroutines.cpp" bodystart="154" bodyend="164" declfile="lib/Transforms/Coroutines/CoroInternal.h" declline="33" declcolumn="6"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_value_1ab3fc0225d8aaf8434026c3573f961f2c" compoundref="_sandbox_i_r_2_value_8cpp" startline="1075" endline="1075">llvm::Value::getContext</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="namespacellvm_1_1coro_1a7223c62dc4b1db59861cb3a7e225a387" compoundref="_coroutines_8cpp" startline="154" endline="164">suppressCoroAllocs</references>
+        <references refid="classllvm_1_1_value_1a411cf3e3932f209ce3374cb31adc1da6" compoundref="_i_r_2_value_8h" startline="421" endline="424">llvm::Value::users</references>
+        <referencedby refid="structanonymous__namespace_02_coro_split_8cpp_03_1_1_switch_coroutine_splitter_1af0793991541abccfec5c0d8831612b7b" compoundref="_coro_split_8cpp" startline="1454" endline="1514">anonymous_namespace{CoroSplit.cpp}::SwitchCoroutineSplitter::createNoAllocVariant</referencedby>
+        <referencedby refid="namespacellvm_1_1coro_1a7223c62dc4b1db59861cb3a7e225a387" compoundref="_coroutines_8cpp" startline="154" endline="164">suppressCoroAllocs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1abc724030415d9996e863c29668a27d35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::coro::suppressCoroAllocs</definition>
+        <argsstring>(LLVMContext &amp;Context, ArrayRef&lt; CoroAllocInst * &gt; CoroAllocs)</argsstring>
+        <name>suppressCoroAllocs</name>
+        <qualifiedname>llvm::coro::suppressCoroAllocs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_l_l_v_m_context" kindref="compound">LLVMContext</ref> &amp;</type>
+          <declname>Context</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_coro_alloc_inst" kindref="compound">CoroAllocInst</ref> * &gt;</type>
+          <declname>CoroAllocs</declname>
+        </param>
+        <briefdescription>
+<para>Replaces CoroAllocs with boolean value false. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroInternal.h" line="35" column="6" bodyfile="lib/Transforms/Coroutines/Coroutines.cpp" bodystart="172" bodyend="179" declfile="lib/Transforms/Coroutines/CoroInternal.h" declline="35" declcolumn="6"/>
+        <references refid="classllvm_1_1_constant_int_1aa7cce62ac5cc6df09cce0535874336b7" compoundref="_constants_8cpp" startline="873" endline="878">llvm::ConstantInt::getFalse</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1a14553297713bc2c6012758ee13a2b917" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::coro::salvageDebugInfo</definition>
+        <argsstring>(SmallDenseMap&lt; Argument *, AllocaInst *, 4 &gt; &amp;ArgToAllocaMap, DbgVariableIntrinsic &amp;DVI, bool IsEntryPoint)</argsstring>
+        <name>salvageDebugInfo</name>
+        <qualifiedname>llvm::coro::salvageDebugInfo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="classllvm_1_1_argument" kindref="compound">Argument</ref> *, <ref refid="classllvm_1_1_alloca_inst" kindref="compound">AllocaInst</ref> *, 4 &gt; &amp;</type>
+          <declname>ArgToAllocaMap</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dbg_variable_intrinsic" kindref="compound">DbgVariableIntrinsic</ref> &amp;</type>
+          <declname>DVI</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsEntryPoint</declname>
+        </param>
+        <briefdescription>
+<para>Attempts to rewrite the location operand of debug intrinsics in terms of the coroutine frame pointer, folding pointer offsets into the <ref refid="classllvm_1_1_d_i_expression" kindref="compound">DIExpression</ref> of the intrinsic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the frame pointer is an <ref refid="classllvm_1_1_argument" kindref="compound">Argument</ref>, store it into an alloca to enhance the debugability. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroInternal.h" line="43" column="6" bodyfile="lib/Transforms/Coroutines/CoroFrame.cpp" bodystart="1933" bodyend="1973" declfile="lib/Transforms/Coroutines/CoroInternal.h" declline="43" declcolumn="6"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_instruction_1a4b8faae4ff9e7434a1d226d03d15dcd2" compoundref="_i_r_2_instruction_8h" startline="511" endline="511">llvm::Instruction::getDebugLoc</references>
+        <references refid="classllvm_1_1_dbg_variable_intrinsic_1ad1707c1c1ab1f3278424f265893c87fb" compoundref="_i_r_2_intrinsic_inst_8h" startline="375" endline="377">llvm::DbgVariableIntrinsic::getExpression</references>
+        <references refid="classllvm_1_1_instruction_1a6a66ebb3aa12757479a3c88de77d78f8" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="72" endline="74">llvm::Instruction::getFunction</references>
+        <references refid="classllvm_1_1_dbg_variable_intrinsic_1a5702a1d09ac6ee86196a38b3f682a570" compoundref="_intrinsic_inst_8cpp" startline="95" endline="97">llvm::DbgVariableIntrinsic::getVariableLocationOp</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1_instruction_1af67d1f3a518964d80a109bb3d9d5cf1e" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="175" endline="177">llvm::Instruction::moveBefore</references>
+        <references refid="classllvm_1_1_dbg_variable_intrinsic_1a3d995a069d73ebebbd6a4aace342ef76" compoundref="_intrinsic_inst_8cpp" startline="121" endline="161">llvm::DbgVariableIntrinsic::replaceVariableLocationOp</references>
+        <references refid="namespacellvm_1a99356c6b92999b95181b5d79c03868ee" compoundref="_transforms_2_utils_2_local_8cpp" startline="2606" endline="2652">llvm::salvageDebugInfoImpl</references>
+        <references refid="classllvm_1_1_instruction_1ae8f5bf5cc06f696b52c709677df00fbf" compoundref="_i_r_2_instruction_8h" startline="508" endline="508">llvm::Instruction::setDebugLoc</references>
+        <references refid="classllvm_1_1_dbg_variable_intrinsic_1a71808acf992f787300ec18d5700f09cc" compoundref="_i_r_2_intrinsic_inst_8h" startline="330" endline="332">llvm::DbgVariableIntrinsic::setExpression</references>
+        <referencedby refid="classllvm_1_1coro_1_1_base_cloner_1acfb266590cdac3ed6480244efcd5899c" compoundref="_coro_split_8cpp" startline="897" endline="1125">llvm::coro::BaseCloner::create</referencedby>
+        <referencedby refid="_coro_split_8cpp_1a8bf580168c7138b15f7bfdd080416bec" compoundref="_coro_split_8cpp" startline="2005" endline="2053">doSplitCoroutine</referencedby>
+        <referencedby refid="_coro_frame_8cpp_1af0885df5b78cc732639a9d52a87d040e" compoundref="_coro_frame_8cpp" startline="1004" endline="1313">insertSpills</referencedby>
+        <referencedby refid="classllvm_1_1coro_1_1_base_cloner_1a1d6e16608b64f29f9a4d1483507317b5" compoundref="_coro_split_8cpp" startline="657" endline="692">llvm::coro::BaseCloner::salvageDebugInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1afa1f83e099867326b23c359030bbb103" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::coro::salvageDebugInfo</definition>
+        <argsstring>(SmallDenseMap&lt; Argument *, AllocaInst *, 4 &gt; &amp;ArgToAllocaMap, DbgVariableRecord &amp;DVR, bool UseEntryValue)</argsstring>
+        <name>salvageDebugInfo</name>
+        <qualifiedname>llvm::coro::salvageDebugInfo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="classllvm_1_1_argument" kindref="compound">Argument</ref> *, <ref refid="classllvm_1_1_alloca_inst" kindref="compound">AllocaInst</ref> *, 4 &gt; &amp;</type>
+          <declname>ArgToAllocaMap</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dbg_variable_record" kindref="compound">DbgVariableRecord</ref> &amp;</type>
+          <declname>DVR</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>UseEntryValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroInternal.h" line="46" column="6" bodyfile="lib/Transforms/Coroutines/CoroFrame.cpp" bodystart="1975" bodyend="2017" declfile="lib/Transforms/Coroutines/CoroInternal.h" declline="46" declcolumn="6"/>
+        <references refid="classllvm_1_1_dbg_variable_record_1ae2c3391c27b9fa4f64f9ed1bdbbdea4ca2709046ed364cc54b91f908e85e512ed" compoundref="_debug_program_instruction_8h" startline="275">llvm::DbgVariableRecord::Declare</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_dbg_record_1a3a0f4e00c3f6345c52c6acd178b3fca3" compoundref="_debug_program_instruction_8h" startline="208" endline="208">llvm::DbgRecord::getDebugLoc</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1a8ec5a479378113fc24b647afa2f06ee5" compoundref="_debug_program_instruction_8h" startline="453" endline="453">llvm::DbgVariableRecord::getExpression</references>
+        <references refid="classllvm_1_1_dbg_record_1a0c770bec150810f68fb4a4eacceec263" compoundref="_debug_program_instruction_8cpp" startline="517" endline="517">llvm::DbgRecord::getFunction</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1a1adb590f8f0ceed777898888ed5db7ac" compoundref="_debug_program_instruction_8h" startline="443" endline="443">llvm::DbgVariableRecord::getType</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1a99dac64e3a954ffbcbf1fc6726a743a2" compoundref="_debug_program_instruction_8cpp" startline="263" endline="278">llvm::DbgVariableRecord::getVariableLocationOp</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1ac1678dcac1aa0255429f8dcee4ffabd2" compoundref="_debug_program_instruction_8h" startline="409" endline="409">llvm::DbgVariableRecord::isDbgDeclare</references>
+        <references refid="classllvm_1_1_dbg_record_1a04a8b2dc4d72db72e1f87bdec4074973" compoundref="_debug_program_instruction_8cpp" startline="674" endline="677">llvm::DbgRecord::removeFromParent</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1ae0ac412244054beacd97e316ded0fed3" compoundref="_debug_program_instruction_8cpp" startline="286" endline="318">llvm::DbgVariableRecord::replaceVariableLocationOp</references>
+        <references refid="namespacellvm_1a99356c6b92999b95181b5d79c03868ee" compoundref="_transforms_2_utils_2_local_8cpp" startline="2606" endline="2652">llvm::salvageDebugInfoImpl</references>
+        <references refid="classllvm_1_1_dbg_record_1a8c0c4e84ab4014447f294a22100126db" compoundref="_debug_program_instruction_8h" startline="209" endline="209">llvm::DbgRecord::setDebugLoc</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1a8e803431f2ec29d9982f5cd7815712ee" compoundref="_debug_program_instruction_8h" startline="452" endline="452">llvm::DbgVariableRecord::setExpression</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1a53b686b78ff6f0eedd7d4d5a6bdd22bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::coro::defaultMaterializable</definition>
+        <argsstring>(Instruction &amp;V)</argsstring>
+        <name>defaultMaterializable</name>
+        <qualifiedname>llvm::coro::defaultMaterializable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Default materializable callback. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroInternal.h" line="62" column="6" bodyfile="lib/Transforms/Coroutines/MaterializationUtils.cpp" bodystart="235" bodyend="238" declfile="lib/Transforms/Coroutines/CoroInternal.h" declline="62" declcolumn="6"/>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <referencedby refid="namespacellvm_1_1coro_1ad2ae5b6314d4de7db633c2181e707132" compoundref="_materialization_utils_8cpp" startline="240" endline="242">isTriviallyMaterializable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1a8bd87bda26e6aac77644f79dbd06c340" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::coro::normalizeCoroutine</definition>
+        <argsstring>(Function &amp;F, coro::Shape &amp;Shape, TargetTransformInfo &amp;TTI)</argsstring>
+        <name>normalizeCoroutine</name>
+        <qualifiedname>llvm::coro::normalizeCoroutine</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1coro_1_1_shape" kindref="compound">coro::Shape</ref> &amp;</type>
+          <declname>Shape</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> &amp;</type>
+          <declname>TTI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroInternal.h" line="63" column="6" bodyfile="lib/Transforms/Coroutines/CoroFrame.cpp" bodystart="2019" bodyend="2067" declfile="lib/Transforms/Coroutines/CoroInternal.h" declline="63" declcolumn="6"/>
+        <references refid="structllvm_1_1coro_1_1_shape_1a4e554c60419835fc3c74b91b28ca31c8" compoundref="_coro_shape_8h" startline="107">llvm::coro::Shape::ABI</references>
+        <references refid="_a_m_d_g_p_u_lower_kernel_arguments_8cpp_1a1161e5a4e753384aaba3a8e4533c4261" compoundref="_a_m_d_g_p_u_lower_kernel_arguments_8cpp" startline="504">Arguments</references>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+        <references refid="namespacellvm_1_1coro_1a36a5e731a6e92a83c26e5fee63d12380a24aa4117da86c41684ad25742832dfa6" compoundref="_coro_shape_8h" startline="47">Async</references>
+        <references refid="group___a_r_c_opt_1ga9c9cf6ad55eb23d77d083a184e416c09" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2363">Call</references>
+        <references refid="_coro_frame_8cpp_1a03cdd58b24dc91b4e3819e218a399cbf" compoundref="_coro_frame_8cpp" startline="1410" endline="1425">cleanupSinglePredPHIs</references>
+        <references refid="classllvm_1_1_coro_id_inst_1ab330f042033636da90859626bc4dc542" compoundref="_coro_instr_8h" startline="158" endline="174">llvm::CoroIdInst::clearPromise</references>
+        <references refid="structllvm_1_1coro_1_1_shape_1adc470e92d3cd5fb8d54d7b9179841463" compoundref="_coro_shape_8h" startline="54">llvm::coro::Shape::CoroEnds</references>
+        <references refid="structllvm_1_1coro_1_1_shape_1a5fd0aa934908c837c6d78097a2fd667b" compoundref="_coro_shape_8h" startline="57">llvm::coro::Shape::CoroSuspends</references>
+        <references refid="namespacellvm_1_1coro_1aa0d499612ac66539c8daf29c8eb142a5" compoundref="_coro_split_8cpp" startline="1705" endline="1723">createMustTailCall</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_coro_frame_8cpp_1a311a80924f5342813ae67daa5e5ff444" compoundref="_coro_frame_8cpp" startline="1740" endline="1769">eliminateSwiftError</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="structllvm_1_1coro_1_1_shape_1a3660324b8035c8b52afd23e54623ddf8" compoundref="_coro_shape_8h" startline="153" endline="156">llvm::coro::Shape::getSwitchCoroId</references>
+        <references refid="structllvm_1_1coro_1_1_shape_1_1_switch_lowering_storage_1a6af0b7b0e5d0e8f4b8b4f4199a885204" compoundref="_coro_shape_8h" startline="117">llvm::coro::Shape::SwitchLoweringStorage::PromiseAlloca</references>
+        <references refid="_coro_frame_8cpp_1a5a93b5fcf433128b2fd9d563792eb4cd" compoundref="_coro_frame_8cpp" startline="1427" endline="1501">rewritePHIs</references>
+        <references refid="_coro_frame_8cpp_1a54c76b23c53f62a58c09936547b2842d" compoundref="_coro_frame_8cpp" startline="1530" endline="1533">splitAround</references>
+        <references refid="namespacellvm_1_1coro_1a36a5e731a6e92a83c26e5fee63d12380abbc155fb2b111bf61c4f5ff892915e6b" compoundref="_coro_shape_8h" startline="30">Switch</references>
+        <references refid="structllvm_1_1coro_1_1_shape_1abe8f7906a8618f90e2a75109a778054a" compoundref="_coro_shape_8h" startline="148">llvm::coro::Shape::SwitchLowering</references>
+        <referencedby refid="_coro_split_8cpp_1a8bf580168c7138b15f7bfdd080416bec" compoundref="_coro_split_8cpp" startline="2005" endline="2053">doSplitCoroutine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1coro_1aa0d499612ac66539c8daf29c8eb142a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_call_inst" kindref="compound">CallInst</ref> *</type>
+        <definition>CallInst * llvm::coro::createMustTailCall</definition>
+        <argsstring>(DebugLoc Loc, Function *MustTailCallFn, TargetTransformInfo &amp;TTI, ArrayRef&lt; Value * &gt; Arguments, IRBuilder&lt;&gt; &amp;)</argsstring>
+        <name>createMustTailCall</name>
+        <qualifiedname>llvm::coro::createMustTailCall</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_debug_loc" kindref="compound">DebugLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>MustTailCallFn</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> &amp;</type>
+          <declname>TTI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt;</type>
+          <declname>Arguments</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_i_r_builder" kindref="compound">IRBuilder</ref>&lt;&gt; &amp;</type>
+          <defname>Builder</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Coroutines/CoroInternal.h" line="65" column="10" bodyfile="lib/Transforms/Coroutines/CoroSplit.cpp" bodystart="1705" bodyend="1723" declfile="lib/Transforms/Coroutines/CoroInternal.h" declline="65" declcolumn="10"/>
+        <references refid="_a_m_d_g_p_u_lower_kernel_arguments_8cpp_1a1161e5a4e753384aaba3a8e4533c4261" compoundref="_a_m_d_g_p_u_lower_kernel_arguments_8cpp" startline="504">Arguments</references>
+        <references refid="_coro_split_8cpp_1ab349dce775a8c8dcd72c24059e8357a2" compoundref="_coro_split_8cpp" startline="1690" endline="1703">coerceArguments</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1ab086c5b9f9563eda0cdd703f454e041e" compoundref="_i_r_builder_8h" startline="2449" endline="2458">llvm::IRBuilderBase::CreateCall</references>
+        <references refid="classllvm_1_1_function_1a5f494edc0a569c7fc9ff4181243be1ed" compoundref="_i_r_2_function_8h" startline="277" endline="280">llvm::Function::getCallingConv</references>
+        <references refid="classllvm_1_1_function_1a21075305f0e463b24aafc2fb99514ace" compoundref="_i_r_2_function_8h" startline="216" endline="218">llvm::Function::getFunctionType</references>
+        <references refid="classllvm_1_1_call_inst_1ad682514c13f12f1a8d759d422fce6aefa2c3fc2c37f5db1dd777fad4e0d33ec7e" compoundref="_instructions_8h" startline="1575">llvm::CallInst::TCK_MustTail</references>
+        <referencedby refid="namespacellvm_1_1coro_1a8bd87bda26e6aac77644f79dbd06c340" compoundref="_coro_frame_8cpp" startline="2019" endline="2067">normalizeCoroutine</referencedby>
+        <referencedby refid="classllvm_1_1coro_1_1_async_a_b_i_1ae51f7f2d35223ec01d09e205c757a4df" compoundref="_coro_split_8cpp" startline="1725" endline="1822">llvm::coro::AsyncABI::splitCoroutine</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/Coroutines/ABI.h" line="27" column="1"/>
+  </compounddef>
+</doxygen>

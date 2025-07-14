@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_value_lattice_utils_8h" kind="file" language="C++">
+    <compoundname>ValueLatticeUtils.h</compoundname>
+    <includedby refid="_value_lattice_utils_8cpp" local="yes">lib/Analysis/ValueLatticeUtils.cpp</includedby>
+    <includedby refid="_called_value_propagation_8cpp" local="yes">lib/Transforms/IPO/CalledValuePropagation.cpp</includedby>
+    <includedby refid="_function_specialization_8cpp" local="yes">lib/Transforms/IPO/FunctionSpecialization.cpp</includedby>
+    <includedby refid="_i_p_o_2_s_c_c_p_8cpp" local="yes">lib/Transforms/IPO/SCCP.cpp</includedby>
+    <includedby refid="_scalar_2_s_c_c_p_8cpp" local="yes">lib/Transforms/Scalar/SCCP.cpp</includedby>
+    <includedby refid="_s_c_c_p_solver_8cpp" local="yes">lib/Transforms/Utils/SCCPSolver.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Analysis/ValueLatticeUtils.h</label>
+        <link refid="_value_lattice_utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Analysis/ValueLatticeUtils.cpp</label>
+        <link refid="_value_lattice_utils_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Transforms/IPO/CalledValuePropagation.cpp</label>
+        <link refid="_called_value_propagation_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Transforms/IPO/FunctionSpecialization.cpp</label>
+        <link refid="_function_specialization_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/Transforms/IPO/SCCP.cpp</label>
+        <link refid="_i_p_o_2_s_c_c_p_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/Transforms/Scalar/SCCP.cpp</label>
+        <link refid="_scalar_2_s_c_c_p_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/Transforms/Utils/SCCPSolver.cpp</label>
+        <link refid="_s_c_c_p_solver_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===--<sp/>ValueLatticeUtils.h<sp/>-<sp/>Utils<sp/>for<sp/>solving<sp/>lattices<sp/>--------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>declares<sp/>common<sp/>functions<sp/>useful<sp/>for<sp/>performing<sp/>data-flow<sp/>analyses</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>that<sp/>propagate<sp/>values<sp/>across<sp/>function<sp/>boundaries.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_ANALYSIS_VALUELATTICEUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_ANALYSIS_VALUELATTICEUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_function" kindref="compound">Function</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">///<sp/>Determine<sp/>if<sp/>the<sp/>values<sp/>of<sp/>the<sp/>given<sp/>function&apos;s<sp/>arguments<sp/>can<sp/>be<sp/>tracked</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">///<sp/>interprocedurally.<sp/>The<sp/>value<sp/>of<sp/>an<sp/>argument<sp/>can<sp/>be<sp/>tracked<sp/>if<sp/>the<sp/>function</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">///<sp/>has<sp/>local<sp/>linkage<sp/>and<sp/>its<sp/>address<sp/>is<sp/>not<sp/>taken.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1af1d3deadf8d348b2329f4e7fa5386e5b" kindref="member">canTrackArgumentsInterprocedurally</ref>(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>*<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="27"><highlight class="comment">///<sp/>Determine<sp/>if<sp/>the<sp/>values<sp/>of<sp/>the<sp/>given<sp/>function&apos;s<sp/>returns<sp/>can<sp/>be<sp/>tracked</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">///<sp/>interprocedurally.<sp/>Return<sp/>values<sp/>can<sp/>be<sp/>tracked<sp/>if<sp/>the<sp/>function<sp/>has<sp/>an</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">///<sp/>exact<sp/>definition<sp/>and<sp/>it<sp/>doesn&apos;t<sp/>have<sp/>the<sp/>&quot;naked&quot;<sp/>attribute.<sp/>Naked<sp/>functions</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">///<sp/>may<sp/>contain<sp/>assembly<sp/>code<sp/>that<sp/>returns<sp/>untrackable<sp/>values.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1abea1c899c9779be14155ce717136ebe4" kindref="member">canTrackReturnsInterprocedurally</ref>(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>*<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="33"><highlight class="comment">///<sp/>Determine<sp/>if<sp/>the<sp/>value<sp/>maintained<sp/>in<sp/>the<sp/>given<sp/>global<sp/>variable<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">///<sp/>tracked<sp/>interprocedurally.<sp/>A<sp/>value<sp/>can<sp/>be<sp/>tracked<sp/>if<sp/>the<sp/>global<sp/>variable</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">///<sp/>has<sp/>local<sp/>linkage<sp/>and<sp/>is<sp/>only<sp/>used<sp/>by<sp/>non-volatile<sp/>loads<sp/>and<sp/>stores.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a7414a7c636bc5a30b0e8478019a1bcd4" kindref="member">canTrackGlobalVariableInterprocedurally</ref>(<ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref><sp/>*GV);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_ANALYSIS_VALUELATTICEUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Analysis/ValueLatticeUtils.h"/>
+  </compounddef>
+</doxygen>

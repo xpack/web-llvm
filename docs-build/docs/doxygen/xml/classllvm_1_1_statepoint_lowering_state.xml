@@ -1,0 +1,325 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_statepoint_lowering_state" kind="class" language="C++" prot="public">
+    <compoundname>llvm::StatepointLoweringState</compoundname>
+    <includes refid="_statepoint_lowering_8h" local="yes">CodeGen/SelectionDAG/StatepointLowering.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_statepoint_lowering_state_1a97d73a8a957ed8696abd0efb0577e8a0" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref>, <ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref> &gt;</type>
+        <definition>DenseMap&lt;SDValue, SDValue&gt; llvm::StatepointLoweringState::Locations</definition>
+        <argsstring></argsstring>
+        <name>Locations</name>
+        <qualifiedname>llvm::StatepointLoweringState::Locations</qualifiedname>
+        <briefdescription>
+<para>Maps pre-relocation value (gc pointer directly incoming into statepoint) into it&apos;s location (currently only stack slots) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="109" column="12" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_statepoint_lowering_state_1adca0c79e524599f46eab04985c5b7d4b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_bit_vector" kindref="compound">SmallBitVector</ref></type>
+        <definition>SmallBitVector llvm::StatepointLoweringState::AllocatedStackSlots</definition>
+        <argsstring></argsstring>
+        <name>AllocatedStackSlots</name>
+        <qualifiedname>llvm::StatepointLoweringState::AllocatedStackSlots</qualifiedname>
+        <briefdescription>
+<para>A boolean indicator for each slot listed in the FunctionInfo as to whether it has been used in the current statepoint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Since we try to preserve stack slots across safepoints, there can be gaps in which slots have been allocated. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="115" column="18" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_statepoint_lowering_state_1a9a47c85c320f0cccd6a55df9be2a4073" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::StatepointLoweringState::NextSlotToAllocate</definition>
+        <argsstring></argsstring>
+        <name>NextSlotToAllocate</name>
+        <qualifiedname>llvm::StatepointLoweringState::NextSlotToAllocate</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Points just beyond the last slot known to have been allocated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="118" column="12" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_statepoint_lowering_state_1a30715955ec04d3c70b96ec7298e28e79" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_g_c_relocate_inst" kindref="compound">GCRelocateInst</ref> *, 10 &gt;</type>
+        <definition>SmallVector&lt;const GCRelocateInst *, 10&gt; llvm::StatepointLoweringState::PendingGCRelocateCalls</definition>
+        <argsstring></argsstring>
+        <name>PendingGCRelocateCalls</name>
+        <qualifiedname>llvm::StatepointLoweringState::PendingGCRelocateCalls</qualifiedname>
+        <briefdescription>
+<para>Keep track of pending gcrelocate calls for consistency check. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="121" column="15" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_statepoint_lowering_state_1ad3c0b60902d9e4efd8a83fd806c1bb5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::StatepointLoweringState::StatepointLoweringState</definition>
+        <argsstring>()=default</argsstring>
+        <name>StatepointLoweringState</name>
+        <qualifiedname>llvm::StatepointLoweringState::StatepointLoweringState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="35" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_statepoint_lowering_state_1aeb4b5a7ad5a49f17f8a34890eb6efefe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StatepointLoweringState::startNewStatepoint</definition>
+        <argsstring>(SelectionDAGBuilder &amp;Builder)</argsstring>
+        <name>startNewStatepoint</name>
+        <qualifiedname>llvm::StatepointLoweringState::startNewStatepoint</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_selection_d_a_g_builder" kindref="compound">SelectionDAGBuilder</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <briefdescription>
+<para>Reset all state tracking for a newly encountered safepoint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Also performs some consistency checking. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="39" column="8" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.cpp" bodystart="86" bodyend="97"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_selection_d_a_g_builder_1ad10e64e191507974af84a4ea069a9e36" compoundref="_selection_d_a_g_builder_8h" startline="260">llvm::SelectionDAGBuilder::FuncInfo</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <references refid="classllvm_1_1_function_lowering_info_1a9691f14813e0540e6a1c90cfdad39df3" compoundref="_function_lowering_info_8h" startline="155">llvm::FunctionLoweringInfo::StatepointStackSlots</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_statepoint_lowering_state_1a2651c31aeb22030422cc4e9ef6c21e22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StatepointLoweringState::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::StatepointLoweringState::clear</qualifiedname>
+        <briefdescription>
+<para>Clear the memory usage of this object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is called from <ref refid="classllvm_1_1_selection_d_a_g_builder_1a2c224fcb5175ab1e842dd2a1371eb3d8" kindref="member">SelectionDAGBuilder::clear</ref>. We require this is never called in the midst of processing a statepoint sequence. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="44" column="8" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.cpp" bodystart="99" bodyend="104"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_statepoint_lowering_state_1a2e2d4007205a6b163daaf00e3aba04bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue llvm::StatepointLoweringState::getLocation</definition>
+        <argsstring>(SDValue Val)</argsstring>
+        <name>getLocation</name>
+        <qualifiedname>llvm::StatepointLoweringState::getLocation</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+<para>Returns the spill location of a value incoming to the current statepoint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Will return <ref refid="_a_arch64_i_sel_lowering_8cpp_1a51cb24bd3e700fcf2f93d1afbb555a16" kindref="member">SDValue()</ref> if this value hasn&apos;t been spilled. Otherwise, the value has already been spilled and no further action is required by the caller. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="50" column="11" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.h" bodystart="50" bodyend="55"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_a_arch64_i_sel_lowering_8cpp_1a51cb24bd3e700fcf2f93d1afbb555a16">SDValue</references>
+        <referencedby refid="_statepoint_lowering_8cpp_1adec63d991d7eb048d87fa3888099c848" compoundref="_statepoint_lowering_8cpp" startline="268" endline="313">reservePreviousStackSlotForValue</referencedby>
+        <referencedby refid="_statepoint_lowering_8cpp_1afb9b4b3ff97e290070f42849b51a13a5" compoundref="_statepoint_lowering_8cpp" startline="376" endline="418">spillIncomingStatepointValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_statepoint_lowering_state_1a83f9edf0427d9c6d437318242326e331" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::StatepointLoweringState::setLocation</definition>
+        <argsstring>(SDValue Val, SDValue Location)</argsstring>
+        <name>setLocation</name>
+        <qualifiedname>llvm::StatepointLoweringState::setLocation</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+          <declname>Val</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+          <declname>Location</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="57" column="8" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.h" bodystart="57" bodyend="61"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="_statepoint_lowering_8cpp_1adec63d991d7eb048d87fa3888099c848" compoundref="_statepoint_lowering_8cpp" startline="268" endline="313">reservePreviousStackSlotForValue</referencedby>
+        <referencedby refid="_statepoint_lowering_8cpp_1afb9b4b3ff97e290070f42849b51a13a5" compoundref="_statepoint_lowering_8cpp" startline="376" endline="418">spillIncomingStatepointValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_statepoint_lowering_state_1a619173b034be1462e5179788c6656c0e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::StatepointLoweringState::scheduleRelocCall</definition>
+        <argsstring>(const GCRelocateInst &amp;RelocCall)</argsstring>
+        <name>scheduleRelocCall</name>
+        <qualifiedname>llvm::StatepointLoweringState::scheduleRelocCall</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_g_c_relocate_inst" kindref="compound">GCRelocateInst</ref> &amp;</type>
+          <declname>RelocCall</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> the fact that we expect to encounter a given gc_relocate before the next statepoint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If we don&apos;t see it, we&apos;ll report an assertion. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="66" column="8" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.h" bodystart="66" bodyend="70"/>
+        <references refid="classllvm_1_1_value_1a9d7de807ebdfe1819df3ff6cb0f16158" compoundref="_i_r_2_value_8h" startline="344" endline="347">llvm::Value::use_empty</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_statepoint_lowering_state_1adc17801011bc699f45494d07c83a2ddd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::StatepointLoweringState::relocCallVisited</definition>
+        <argsstring>(const GCRelocateInst &amp;RelocCall)</argsstring>
+        <name>relocCallVisited</name>
+        <qualifiedname>llvm::StatepointLoweringState::relocCallVisited</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_g_c_relocate_inst" kindref="compound">GCRelocateInst</ref> &amp;</type>
+          <declname>RelocCall</declname>
+        </param>
+        <briefdescription>
+<para>Remove this gc_relocate from the list we&apos;re expecting to see before the next statepoint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If we weren&apos;t expecting to see it, we&apos;ll report an assertion. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="75" column="8" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.h" bodystart="75" bodyend="83"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a086e9fbdb06276db7753101a08a63adf" compoundref="_s_t_l_extras_8h" startline="1759" endline="1761">llvm::find</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_value_1a9d7de807ebdfe1819df3ff6cb0f16158" compoundref="_i_r_2_value_8h" startline="344" endline="347">llvm::Value::use_empty</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_statepoint_lowering_state_1a4841be2489ba10321338a1874b53f249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_d_value" kindref="compound">SDValue</ref></type>
+        <definition>SDValue StatepointLoweringState::allocateStackSlot</definition>
+        <argsstring>(EVT ValueType, SelectionDAGBuilder &amp;Builder)</argsstring>
+        <name>allocateStackSlot</name>
+        <qualifiedname>llvm::StatepointLoweringState::allocateStackSlot</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_e_v_t" kindref="compound">EVT</ref></type>
+          <declname>ValueType</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_selection_d_a_g_builder" kindref="compound">SelectionDAGBuilder</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <briefdescription>
+<para>Get a stack slot we can use to store an value of type <ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This will hopefully be a recylced slot from another statepoint. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="90" column="11" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.cpp" bodystart="107" bodyend="155"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_selection_d_a_g_1ae83b3d8e9a944b5d818e80524a5003e2" compoundref="_selection_d_a_g_8cpp" startline="2779" endline="2790">llvm::SelectionDAG::CreateStackTemporary</references>
+        <references refid="classllvm_1_1_selection_d_a_g_builder_1ad997f08bfd4680a697130632badf740e" compoundref="_selection_d_a_g_builder_8h" startline="227">llvm::SelectionDAGBuilder::DAG</references>
+        <references refid="classllvm_1_1_selection_d_a_g_builder_1ad10e64e191507974af84a4ea069a9e36" compoundref="_selection_d_a_g_builder_8h" startline="260">llvm::SelectionDAGBuilder::FuncInfo</references>
+        <references refid="classllvm_1_1_selection_d_a_g_1acb59cbd8f4a8c1cf820b2b540aebdac1" compoundref="_selection_d_a_g_8cpp" startline="1925" endline="1939">llvm::SelectionDAG::getFrameIndex</references>
+        <references refid="classllvm_1_1_machine_function_1a54f334a9c8ca6d105eae383ae87e4524" compoundref="_machine_function_8h" startline="749" endline="749">llvm::MachineFunction::getFrameInfo</references>
+        <references refid="classllvm_1_1_selection_d_a_g_1ac64ec73b0617befef1fb2eae78d12b5f" compoundref="_selection_d_a_g_8h" startline="492" endline="492">llvm::SelectionDAG::getMachineFunction</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a9284fd53296d2a2f8ae654d000971000" compoundref="_machine_frame_info_8h" startline="472" endline="476">llvm::MachineFrameInfo::getObjectSize</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a477686b0d65454f32799cb86f406104c" compoundref="_machine_frame_info_8h" startline="778" endline="783">llvm::MachineFrameInfo::markAsStatepointSpillSlotObjectIndex</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <references refid="classllvm_1_1_function_lowering_info_1a9691f14813e0540e6a1c90cfdad39df3" compoundref="_function_lowering_info_8h" startline="155">llvm::FunctionLoweringInfo::StatepointStackSlots</references>
+        <referencedby refid="_statepoint_lowering_8cpp_1afb9b4b3ff97e290070f42849b51a13a5" compoundref="_statepoint_lowering_8cpp" startline="376" endline="418">spillIncomingStatepointValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_statepoint_lowering_state_1af93bbb466651e3e6abdf9e35c0a34b30" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::StatepointLoweringState::reserveStackSlot</definition>
+        <argsstring>(int Offset)</argsstring>
+        <name>reserveStackSlot</name>
+        <qualifiedname>llvm::StatepointLoweringState::reserveStackSlot</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>Offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="92" column="8" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.h" bodystart="92" bodyend="98"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <referencedby refid="_statepoint_lowering_8cpp_1adec63d991d7eb048d87fa3888099c848" compoundref="_statepoint_lowering_8cpp" startline="268" endline="313">reservePreviousStackSlotForValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_statepoint_lowering_state_1a6cdb26e5268cc05eb7f9726a140f1ae2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::StatepointLoweringState::isStackSlotAllocated</definition>
+        <argsstring>(int Offset)</argsstring>
+        <name>isStackSlotAllocated</name>
+        <qualifiedname>llvm::StatepointLoweringState::isStackSlotAllocated</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>Offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="100" column="8" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.h" bodystart="100" bodyend="104"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <referencedby refid="_statepoint_lowering_8cpp_1adec63d991d7eb048d87fa3888099c848" compoundref="_statepoint_lowering_8cpp" startline="268" endline="313">reservePreviousStackSlotForValue</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class tracks both per-statepoint and per-selectiondag information. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>For each statepoint it tracks locations of it&apos;s gc valuess (incoming and relocated) and list of gcreloc calls scheduled for visiting (this is used for a debug mode consistency check only). The spill slot tracking works in concert with information in <ref refid="classllvm_1_1_function_lowering_info" kindref="compound">FunctionLoweringInfo</ref>. </para>
+    </detaileddescription>
+    <location file="lib/CodeGen/SelectionDAG/StatepointLowering.h" line="33" column="1" bodyfile="lib/CodeGen/SelectionDAG/StatepointLowering.h" bodystart="33" bodyend="122"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1adca0c79e524599f46eab04985c5b7d4b" prot="private" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>AllocatedStackSlots</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1a4841be2489ba10321338a1874b53f249" prot="public" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>allocateStackSlot</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1a2651c31aeb22030422cc4e9ef6c21e22" prot="public" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>clear</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1a2e2d4007205a6b163daaf00e3aba04bd" prot="public" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>getLocation</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1a6cdb26e5268cc05eb7f9726a140f1ae2" prot="public" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>isStackSlotAllocated</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1a97d73a8a957ed8696abd0efb0577e8a0" prot="private" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>Locations</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1a9a47c85c320f0cccd6a55df9be2a4073" prot="private" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>NextSlotToAllocate</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1a30715955ec04d3c70b96ec7298e28e79" prot="private" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>PendingGCRelocateCalls</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1adc17801011bc699f45494d07c83a2ddd" prot="public" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>relocCallVisited</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1af93bbb466651e3e6abdf9e35c0a34b30" prot="public" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>reserveStackSlot</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1a619173b034be1462e5179788c6656c0e" prot="public" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>scheduleRelocCall</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1a83f9edf0427d9c6d437318242326e331" prot="public" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>setLocation</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1aeb4b5a7ad5a49f17f8a34890eb6efefe" prot="public" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>startNewStatepoint</name></member>
+      <member refid="classllvm_1_1_statepoint_lowering_state_1ad3c0b60902d9e4efd8a83fd806c1bb5e" prot="public" virt="non-virtual"><scope>llvm::StatepointLoweringState</scope><name>StatepointLoweringState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

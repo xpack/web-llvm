@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_x86_shuffle_decode_8h" kind="file" language="C++">
+    <compoundname>X86ShuffleDecode.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includedby refid="_x86_inst_comments_8cpp" local="yes">lib/Target/X86/MCTargetDesc/X86InstComments.cpp</includedby>
+    <includedby refid="_x86_shuffle_decode_8cpp" local="yes">lib/Target/X86/MCTargetDesc/X86ShuffleDecode.cpp</includedby>
+    <includedby refid="_x86_i_sel_lowering_8cpp" local="yes">lib/Target/X86/X86ISelLowering.cpp</includedby>
+    <includedby refid="_x86_m_c_inst_lower_8cpp" local="yes">lib/Target/X86/X86MCInstLower.cpp</includedby>
+    <includedby refid="_x86_shuffle_decode_constant_pool_8cpp" local="yes">lib/Target/X86/X86ShuffleDecodeConstantPool.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>lib/Target/X86/MCTargetDesc/X86ShuffleDecode.h</label>
+        <link refid="_x86_shuffle_decode_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>lib/Target/X86/MCTargetDesc/X86InstComments.cpp</label>
+        <link refid="_x86_inst_comments_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Target/X86/MCTargetDesc/X86ShuffleDecode.cpp</label>
+        <link refid="_x86_shuffle_decode_8cpp"/>
+      </node>
+      <node id="1">
+        <label>lib/Target/X86/MCTargetDesc/X86ShuffleDecode.h</label>
+        <link refid="_x86_shuffle_decode_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>lib/Target/X86/X86ISelLowering.cpp</label>
+        <link refid="_x86_i_sel_lowering_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/Target/X86/X86MCInstLower.cpp</label>
+        <link refid="_x86_m_c_inst_lower_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/Target/X86/X86ShuffleDecodeConstantPool.cpp</label>
+        <link refid="_x86_shuffle_decode_constant_pool_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===--<sp/>X86ShuffleDecode.h<sp/>-<sp/>X86<sp/>shuffle<sp/>decode<sp/>logic<sp/>-----------*-C++-*---===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Define<sp/>several<sp/>functions<sp/>to<sp/>decode<sp/>x86<sp/>specific<sp/>shuffle<sp/>semantics<sp/>into<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>generic<sp/>vector<sp/>mask.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_LIB_TARGET_X86_UTILS_X86SHUFFLEDECODE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_LIB_TARGET_X86_UTILS_X86SHUFFLEDECODE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Vector<sp/>Mask<sp/>Decoding</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="namespacellvm_1afaddf811d44f58e7d0e16ca3266b8689a3f112d168d45b1ab58a80c2b9f7e6cb4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{<sp/><ref refid="namespacellvm_1afaddf811d44f58e7d0e16ca3266b8689a3f112d168d45b1ab58a80c2b9f7e6cb4" kindref="member">SM_SentinelUndef</ref><sp/>=<sp/>-1,<sp/><ref refid="namespacellvm_1afaddf811d44f58e7d0e16ca3266b8689ac131901c70cd3380fd61a47415b58740" kindref="member">SM_SentinelZero</ref><sp/>=<sp/>-2<sp/>};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="30"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>128-bit<sp/>INSERTPS<sp/>instruction<sp/>as<sp/>a<sp/>v4f32<sp/>shuffle<sp/>mask.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a54d9df5550cc72e33765a9213af3a081" kindref="member">DecodeINSERTPSMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,<sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>SrcIsMem);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Insert<sp/>the<sp/>bottom<sp/>Len<sp/>elements<sp/>from<sp/>a<sp/>second<sp/>source<sp/>into<sp/>a<sp/>vector<sp/>starting<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>element<sp/>Idx.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a13a4f002f67e507023190d6e72a7c738" kindref="member">DecodeInsertElementMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Idx,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Len,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="39"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>MOVHLPS<sp/>instruction<sp/>as<sp/>a<sp/>v2f64/v4f32<sp/>shuffle<sp/>mask.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">///<sp/>i.e.<sp/>&lt;3,1&gt;<sp/>or<sp/>&lt;6,7,2,3&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a06757c13e2255f68dcc264f90e297866" kindref="member">DecodeMOVHLPSMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NElts,<sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="43"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>MOVLHPS<sp/>instruction<sp/>as<sp/>a<sp/>v2f64/v4f32<sp/>shuffle<sp/>mask.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">///<sp/>i.e.<sp/>&lt;0,2&gt;<sp/>or<sp/>&lt;0,1,4,5&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a623ed11af9d5d9d002106a261964a616" kindref="member">DecodeMOVLHPSMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NElts,<sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ab771db4c5e178de23b77b6e30fb582c0" kindref="member">DecodeMOVSLDUPMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1aee8aa7777eedc7487661fee12bf3e7c6" kindref="member">DecodeMOVSHDUPMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1adcedbc2538f7e9666fa49dcc0a61375e" kindref="member">DecodeMOVDDUPMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1abfe6c00814a6a08dcd4a68cbd2a934e4" kindref="member">DecodePSLLDQMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a4b5002b835149198532fc6ef6685e0b2" kindref="member">DecodePSRLDQMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ab489acbbe8913e85a72c328360e7b80b" kindref="member">DecodePALIGNRMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1aa5190b9dbb3777bd0cbe9b17c1713a4b" kindref="member">DecodeVALIGNMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="65"><highlight class="comment">///<sp/>Decodes<sp/>the<sp/>shuffle<sp/>masks<sp/>for<sp/>pshufd/pshufw/vpermilpd/vpermilps.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ad9d7820c2d1fb15b4454f215980469c5" kindref="member">DecodePSHUFMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>ScalarBits,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="69"><highlight class="comment">///<sp/>Decodes<sp/>the<sp/>shuffle<sp/>masks<sp/>for<sp/>pshufhw.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ae6980ab306f3c6b311d1f4bd0153dcd6" kindref="member">DecodePSHUFHWMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="73"><highlight class="comment">///<sp/>Decodes<sp/>the<sp/>shuffle<sp/>masks<sp/>for<sp/>pshuflw.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a1ea81707249d1e52ad3605e971edbcd9" kindref="member">DecodePSHUFLWMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="77"><highlight class="comment">///<sp/>Decodes<sp/>a<sp/>PSWAPD<sp/>3DNow!<sp/>instruction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a7e3f414df2509b831cd510b0269fcd81" kindref="member">DecodePSWAPMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="80"><highlight class="comment">///<sp/>Decodes<sp/>the<sp/>shuffle<sp/>masks<sp/>for<sp/>shufp*.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ae6865b2aae273b40d7284034769da3d8" kindref="member">DecodeSHUFPMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>ScalarBits,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="84"><highlight class="comment">///<sp/>Decodes<sp/>the<sp/>shuffle<sp/>masks<sp/>for<sp/>unpckhps/unpckhpd<sp/>and<sp/>punpckh*.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ac3e2417cd0c0945eb8ea230132174859" kindref="member">DecodeUNPCKHMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>ScalarBits,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="88"><highlight class="comment">///<sp/>Decodes<sp/>the<sp/>shuffle<sp/>masks<sp/>for<sp/>unpcklps/unpcklpd<sp/>and<sp/>punpckl*.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1abfba7ac64ff238335b6db60849e2fb74" kindref="member">DecodeUNPCKLMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>ScalarBits,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="92"><highlight class="comment">///<sp/>Decodes<sp/>a<sp/>broadcast<sp/>of<sp/>the<sp/>first<sp/>element<sp/>of<sp/>a<sp/>vector.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ae1c21c2047c2672172c2b469f4801bdf" kindref="member">DecodeVectorBroadcast</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="95"><highlight class="comment">///<sp/>Decodes<sp/>a<sp/>broadcast<sp/>of<sp/>a<sp/>subvector<sp/>to<sp/>a<sp/>larger<sp/>vector<sp/>type.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1abd0284b76f8abda19007d5c30d460fc2" kindref="member">DecodeSubVectorBroadcast</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>DstNumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>SrcNumElts,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="99"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>PSHUFB<sp/>mask<sp/>from<sp/>a<sp/>raw<sp/>array<sp/>of<sp/>constants<sp/>such<sp/>as<sp/>from</highlight></codeline>
+<codeline lineno="100"><highlight class="comment">///<sp/>BUILD_VECTOR.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1afb680fe35fd4d397b7d0674c45861008" kindref="member">DecodePSHUFBMask</ref>(ArrayRef&lt;uint64_t&gt;<sp/>RawMask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>APInt<sp/>&amp;UndefElts,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="104"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>BLEND<sp/>immediate<sp/>mask<sp/>into<sp/>a<sp/>shuffle<sp/>mask.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a3d97ec8d51a9f56c4a2cff1f7a567b4e" kindref="member">DecodeBLENDMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a56561a06c5e189905d213a05a0ab9273" kindref="member">DecodeVPERM2X128Mask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="111"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>shuffle<sp/>packed<sp/>values<sp/>at<sp/>128-bit<sp/>granularity</highlight></codeline>
+<codeline lineno="112"><highlight class="comment">///<sp/>(SHUFF32x4/SHUFF64x2/SHUFI32x4/SHUFI64x2)</highlight></codeline>
+<codeline lineno="113"><highlight class="comment">///<sp/>immediate<sp/>mask<sp/>into<sp/>a<sp/>shuffle<sp/>mask.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a3df0419215a6ed24a6c29f8cf25aa4e5" kindref="member">decodeVSHUF64x2FamilyMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>ScalarSize,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,<sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="117"><highlight class="comment">///<sp/>Decodes<sp/>the<sp/>shuffle<sp/>masks<sp/>for<sp/>VPERMQ/VPERMPD.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a3e3f786bc082e1485e1a863aab736513" kindref="member">DecodeVPERMMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Imm,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="121"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>VPPERM<sp/>mask<sp/>from<sp/>a<sp/>raw<sp/>array<sp/>of<sp/>constants<sp/>such<sp/>as<sp/>from</highlight></codeline>
+<codeline lineno="122"><highlight class="comment">///<sp/>BUILD_VECTOR.</highlight></codeline>
+<codeline lineno="123"><highlight class="comment">///<sp/>This<sp/>can<sp/>only<sp/>basic<sp/>masks<sp/>(permutes<sp/>+<sp/>zeros),<sp/>not<sp/>any<sp/>of<sp/>the<sp/>other</highlight></codeline>
+<codeline lineno="124"><highlight class="comment">///<sp/>operations<sp/>that<sp/>VPPERM<sp/>can<sp/>perform.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ab2ea0deda81eb9adf593b817b901fc1e" kindref="member">DecodeVPPERMMask</ref>(ArrayRef&lt;uint64_t&gt;<sp/>RawMask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>APInt<sp/>&amp;UndefElts,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="128"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>zero<sp/>extension<sp/>instruction<sp/>as<sp/>a<sp/>shuffle<sp/>mask.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a01ddb8ea0c52fea9a3e87e46a10d00d8" kindref="member">DecodeZeroExtendMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>SrcScalarBits,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>DstScalarBits,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumDstElts,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsAnyExtend,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="133"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>move<sp/>lower<sp/>and<sp/>zero<sp/>upper<sp/>instruction<sp/>as<sp/>a<sp/>shuffle<sp/>mask.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a117aeb7b7429c5d944a693fbb4d1ac19" kindref="member">DecodeZeroMoveLowMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="136"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>scalar<sp/>float<sp/>move<sp/>instruction<sp/>as<sp/>a<sp/>shuffle<sp/>mask.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1aaf783c4560c5874f3a0faa0036b2f00e" kindref="member">DecodeScalarMoveMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsLoad,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="140"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>SSE4A<sp/>EXTRQ<sp/>instruction<sp/>as<sp/>a<sp/>shuffle<sp/>mask.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a3f561be3774824a1538c872d6b111718" kindref="member">DecodeEXTRQIMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>EltSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Len,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Idx,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="144"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>SSE4A<sp/>INSERTQ<sp/>instruction<sp/>as<sp/>a<sp/>shuffle<sp/>mask.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a853d1016b3f70fa9b00fbac31da2cc70" kindref="member">DecodeINSERTQIMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>EltSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Len,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Idx,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="148"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>VPERMILPD/VPERMILPS<sp/>variable<sp/>mask<sp/>from<sp/>a<sp/>raw<sp/>array<sp/>of<sp/>constants.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a19ed1906d1fc3026d1bf29313dfcfa68" kindref="member">DecodeVPERMILPMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>ScalarBits,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ArrayRef&lt;uint64_t&gt;<sp/>RawMask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>APInt<sp/>&amp;UndefElts,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="153"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>VPERMIL2PD/VPERMIL2PS<sp/>variable<sp/>mask<sp/>from<sp/>a<sp/>raw<sp/>array<sp/>of<sp/>constants.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a5fb0db87ada1b48888e070c009007845" kindref="member">DecodeVPERMIL2PMask</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumElts,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>ScalarBits,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>M2Z,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ArrayRef&lt;uint64_t&gt;<sp/>RawMask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>APInt<sp/>&amp;UndefElts,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="158"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>VPERM<sp/>W/D/Q/PS/PD<sp/>mask<sp/>from<sp/>a<sp/>raw<sp/>array<sp/>of<sp/>constants.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a9b736243d275dddeb7c434f0b03841bf" kindref="member">DecodeVPERMVMask</ref>(ArrayRef&lt;uint64_t&gt;<sp/>RawMask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>APInt<sp/>&amp;UndefElts,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="162"><highlight class="comment">///<sp/>Decode<sp/>a<sp/>VPERMT2<sp/>W/D/Q/PS/PD<sp/>mask<sp/>from<sp/>a<sp/>raw<sp/>array<sp/>of<sp/>constants.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a33cfdeaaf372a893845f4283d8b38721" kindref="member">DecodeVPERMV3Mask</ref>(ArrayRef&lt;uint64_t&gt;<sp/>RawMask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>APInt<sp/>&amp;UndefElts,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SmallVectorImpl&lt;int&gt;<sp/>&amp;ShuffleMask);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>llvm<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="lib/Target/X86/MCTargetDesc/X86ShuffleDecode.h"/>
+  </compounddef>
+</doxygen>

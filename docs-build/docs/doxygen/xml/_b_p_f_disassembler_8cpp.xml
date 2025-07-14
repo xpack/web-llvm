@@ -1,0 +1,2016 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_b_p_f_disassembler_8cpp" kind="file" language="C++">
+    <compoundname>BPFDisassembler.cpp</compoundname>
+    <includes refid="_b_p_f_m_c_target_desc_8h" local="yes">MCTargetDesc/BPFMCTargetDesc.h</includes>
+    <includes refid="_b_p_f_target_info_8h" local="yes">TargetInfo/BPFTargetInfo.h</includes>
+    <includes refid="_array_ref_8h" local="yes">llvm/ADT/ArrayRef.h</includes>
+    <includes refid="_m_c_asm_info_8h" local="yes">llvm/MC/MCAsmInfo.h</includes>
+    <includes refid="_m_c_context_8h" local="yes">llvm/MC/MCContext.h</includes>
+    <includes refid="_m_c_decoder_ops_8h" local="yes">llvm/MC/MCDecoderOps.h</includes>
+    <includes refid="_m_c_disassembler_8h" local="yes">llvm/MC/MCDisassembler/MCDisassembler.h</includes>
+    <includes refid="_m_c_inst_8h" local="yes">llvm/MC/MCInst.h</includes>
+    <includes refid="_target_registry_8h" local="yes">llvm/MC/TargetRegistry.h</includes>
+    <includes refid="_math_extras_8h" local="yes">llvm/Support/MathExtras.h</includes>
+    <includes refid="_subtarget_feature_8h" local="yes">llvm/TargetParser/SubtargetFeature.h</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="yes">BPFGenDisassemblerTables.inc</includes>
+    <incdepgraph>
+      <node id="31">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>llvm-c/DisassemblerTypes.h</label>
+        <link refid="_disassembler_types_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>llvm-c/Error.h</label>
+        <link refid="llvm-c_2_error_8h"/>
+        <childnode refid="87" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>llvm-c/ExternC.h</label>
+        <link refid="_extern_c_8h"/>
+      </node>
+      <node id="51">
+        <label>llvm/ADT/ADL.h</label>
+        <link refid="_a_d_l_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>llvm/ADT/APInt.h</label>
+        <link refid="_a_p_int_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm/ADT/ArrayRef.h</label>
+        <link refid="_array_ref_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>llvm/ADT/CachedHashString.h</label>
+        <link refid="_cached_hash_string_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm/ADT/DenseMap.h</label>
+        <link refid="_dense_map_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm/ADT/DenseMapInfo.h</label>
+        <link refid="_dense_map_info_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>llvm/ADT/DenseSet.h</label>
+        <link refid="_dense_set_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm/ADT/EpochTracker.h</label>
+        <link refid="_epoch_tracker_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>llvm/ADT/Hashing.h</label>
+        <link refid="_hashing_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>llvm/ADT/MapVector.h</label>
+        <link refid="_map_vector_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>llvm/ADT/PointerIntPair.h</label>
+        <link refid="_pointer_int_pair_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>llvm/ADT/STLExtras.h</label>
+        <link refid="_s_t_l_extras_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm/ADT/SetVector.h</label>
+        <link refid="_set_vector_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>llvm/ADT/SmallString.h</label>
+        <link refid="_small_string_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm/ADT/SmallVector.h</label>
+        <link refid="_small_vector_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>llvm/ADT/StringMap.h</label>
+        <link refid="_a_d_t_2_string_map_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>llvm/ADT/StringMapEntry.h</label>
+        <link refid="_a_d_t_2_string_map_entry_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>llvm/ADT/StringRef.h</label>
+        <link refid="_string_ref_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>llvm/ADT/Twine.h</label>
+        <link refid="_twine_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm/ADT/bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>llvm/ADT/ilist_node.h</label>
+        <link refid="ilist__node_8h"/>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>llvm/ADT/ilist_node_base.h</label>
+        <link refid="ilist__node__base_8h"/>
+        <childnode refid="100" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>llvm/ADT/ilist_node_options.h</label>
+        <link refid="ilist__node__options_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>llvm/ADT/iterator.h</label>
+        <link refid="iterator_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>llvm/ADT/iterator_range.h</label>
+        <link refid="iterator__range_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>llvm/BinaryFormat/Dwarf.h</label>
+        <link refid="_dwarf_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>llvm/BinaryFormat/Swift.h</label>
+        <link refid="_swift_8h"/>
+        <childnode refid="124" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>llvm/BinaryFormat/XCOFF.h</label>
+        <link refid="_x_c_o_f_f_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>llvm/IR/PseudoProbe.h</label>
+        <link refid="_pseudo_probe_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>llvm/MC/MCAsmInfo.h</label>
+        <link refid="_m_c_asm_info_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>llvm/MC/MCAsmMacro.h</label>
+        <link refid="_m_c_asm_macro_8h"/>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm/MC/MCContext.h</label>
+        <link refid="_m_c_context_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>llvm/MC/MCDecoderOps.h</label>
+        <link refid="_m_c_decoder_ops_8h"/>
+      </node>
+      <node id="113">
+        <label>llvm/MC/MCDirectives.h</label>
+        <link refid="_m_c_directives_8h"/>
+      </node>
+      <node id="117">
+        <label>llvm/MC/MCDisassembler/MCDisassembler.h</label>
+        <link refid="_m_c_disassembler_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="119">
+        <label>llvm/MC/MCDisassembler/MCRelocationInfo.h</label>
+        <link refid="_m_c_relocation_info_8h"/>
+      </node>
+      <node id="118">
+        <label>llvm/MC/MCDisassembler/MCSymbolizer.h</label>
+        <link refid="_m_c_symbolizer_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>llvm/MC/MCDwarf.h</label>
+        <link refid="_m_c_dwarf_8h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>llvm/MC/MCFixup.h</label>
+        <link refid="_m_c_fixup_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>llvm/MC/MCFragment.h</label>
+        <link refid="_m_c_fragment_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>llvm/MC/MCInst.h</label>
+        <link refid="_m_c_inst_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="122">
+        <label>llvm/MC/MCObjectFileInfo.h</label>
+        <link refid="_m_c_object_file_info_8h"/>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>llvm/MC/MCPseudoProbe.h</label>
+        <link refid="_m_c_pseudo_probe_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>llvm/MC/MCRegister.h</label>
+        <link refid="_m_c_register_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>llvm/MC/MCSection.h</label>
+        <link refid="_m_c_section_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>llvm/MC/MCSymbolTableEntry.h</label>
+        <link refid="_m_c_symbol_table_entry_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>llvm/MC/MCTargetOptions.h</label>
+        <link refid="_m_c_target_options_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>llvm/MC/SectionKind.h</label>
+        <link refid="_section_kind_8h"/>
+      </node>
+      <node id="82">
+        <label>llvm/MC/StringTableBuilder.h</label>
+        <link refid="_string_table_builder_8h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>llvm/MC/TargetRegistry.h</label>
+        <link refid="_target_registry_8h"/>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm/Support/AlignOf.h</label>
+        <link refid="_align_of_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>llvm/Support/Alignment.h</label>
+        <link refid="_alignment_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>llvm/Support/Allocator.h</label>
+        <link refid="_allocator_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>llvm/Support/AllocatorBase.h</label>
+        <link refid="_allocator_base_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="125">
+        <label>llvm/Support/CodeGen.h</label>
+        <link refid="_code_gen_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>llvm/Support/Compression.h</label>
+        <link refid="_compression_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm/Support/DataTypes.h</label>
+        <link refid="llvm_2_support_2_data_types_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>llvm/Support/Debug.h</label>
+        <link refid="_debug_8h"/>
+      </node>
+      <node id="90">
+        <label>llvm/Support/Endian.h</label>
+        <link refid="_endian_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>llvm/Support/Error.h</label>
+        <link refid="llvm_2_support_2_error_8h"/>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm/Support/ErrorHandling.h</label>
+        <link refid="llvm_2_support_2_error_handling_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>llvm/Support/ErrorOr.h</label>
+        <link refid="_error_or_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>llvm/Support/Format.h</label>
+        <link refid="_format_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>llvm/Support/FormatVariadicDetails.h</label>
+        <link refid="_format_variadic_details_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>llvm/Support/FormattedStream.h</label>
+        <link refid="_formatted_stream_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>llvm/Support/MD5.h</label>
+        <link refid="_m_d5_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm/Support/MathExtras.h</label>
+        <link refid="_math_extras_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm/Support/MemAlloc.h</label>
+        <link refid="_mem_alloc_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm/Support/PointerLikeTypeTraits.h</label>
+        <link refid="_pointer_like_type_traits_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm/Support/ReverseIteration.h</label>
+        <link refid="_reverse_iteration_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>llvm/Support/SMLoc.h</label>
+        <link refid="_s_m_loc_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>llvm/Support/StringSaver.h</label>
+        <link refid="_string_saver_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm/Support/SwapByteOrder.h</label>
+        <link refid="_swap_byte_order_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>llvm/Support/VersionTuple.h</label>
+        <link refid="_version_tuple_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>llvm/Support/float128.h</label>
+        <link refid="float128_8h"/>
+      </node>
+      <node id="69">
+        <label>llvm/Support/raw_ostream.h</label>
+        <link refid="raw__ostream_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm/Support/type_traits.h</label>
+        <link refid="type__traits_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="127">
+        <label>llvm/TargetParser/SubtargetFeature.h</label>
+        <link refid="_subtarget_feature_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>llvm/TargetParser/Triple.h</label>
+        <link refid="_triple_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>lib/Target/BPF/Disassembler/BPFDisassembler.cpp</label>
+        <link refid="_b_p_f_disassembler_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MCTargetDesc/BPFMCTargetDesc.h</label>
+        <link refid="_b_p_f_m_c_target_desc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>TargetInfo/BPFTargetInfo.h</label>
+        <link refid="_b_p_f_target_info_8h"/>
+      </node>
+      <node id="128">
+        <label>BPFGenDisassemblerTables.inc</label>
+      </node>
+      <node id="109">
+        <label>BPFGenInstrInfo.inc</label>
+      </node>
+      <node id="108">
+        <label>BPFGenRegisterInfo.inc</label>
+      </node>
+      <node id="110">
+        <label>BPFGenSubtargetInfo.inc</label>
+      </node>
+      <node id="36">
+        <label>algorithm</label>
+      </node>
+      <node id="55">
+        <label>array</label>
+      </node>
+      <node id="7">
+        <label>cassert</label>
+      </node>
+      <node id="24">
+        <label>climits</label>
+      </node>
+      <node id="8">
+        <label>cstddef</label>
+      </node>
+      <node id="9">
+        <label>cstdint</label>
+      </node>
+      <node id="67">
+        <label>cstdio</label>
+      </node>
+      <node id="27">
+        <label>cstdlib</label>
+      </node>
+      <node id="22">
+        <label>cstring</label>
+      </node>
+      <node id="48">
+        <label>functional</label>
+      </node>
+      <node id="37">
+        <label>initializer_list</label>
+      </node>
+      <node id="32">
+        <label>inttypes.h</label>
+      </node>
+      <node id="38">
+        <label>iterator</label>
+      </node>
+      <node id="21">
+        <label>limits</label>
+      </node>
+      <node id="73">
+        <label>llvm/BinaryFormat/Dwarf.def</label>
+      </node>
+      <node id="124">
+        <label>llvm/BinaryFormat/Swift.def</label>
+      </node>
+      <node id="14">
+        <label>llvm/Config/abi-breaking.h</label>
+      </node>
+      <node id="3">
+        <label>llvm/Config/config.h</label>
+      </node>
+      <node id="17">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="23">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="107">
+        <label>map</label>
+      </node>
+      <node id="49">
+        <label>memory</label>
+      </node>
+      <node id="39">
+        <label>new</label>
+      </node>
+      <node id="45">
+        <label>optional</label>
+      </node>
+      <node id="18">
+        <label>stddef.h</label>
+      </node>
+      <node id="33">
+        <label>stdint.h</label>
+      </node>
+      <node id="46">
+        <label>string</label>
+      </node>
+      <node id="60">
+        <label>string_view</label>
+      </node>
+      <node id="34">
+        <label>sys/types.h</label>
+      </node>
+      <node id="70">
+        <label>system_error</label>
+      </node>
+      <node id="10">
+        <label>tuple</label>
+      </node>
+      <node id="11">
+        <label>type_traits</label>
+      </node>
+      <node id="95">
+        <label>unordered_map</label>
+      </node>
+      <node id="12">
+        <label>utility</label>
+      </node>
+      <node id="56">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler" prot="public">anonymous_namespace{BPFDisassembler.cpp}::BPFDisassembler</innerclass>
+    <innernamespace refid="namespaceanonymous__namespace_02_b_p_f_disassembler_8cpp_03">anonymous_namespace{BPFDisassembler.cpp}</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="_b_p_f_disassembler_8cpp_1ad78e062f62e0d6e453941fb4ca843e4d" prot="public" static="no">
+        <name>DEBUG_TYPE</name>
+        <initializer>&quot;bpf-disassembler&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" line="28" column="9" bodyfile="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_b_p_f_disassembler_8cpp_1a76bfd0cf8775a787756198b1b3b28cce" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6a" kindref="member">DecodeStatus</ref>(*</type>
+        <definition>typedef DecodeStatus(* DecodeFunc) (MCInst &amp;MI, unsigned insn, uint64_t Address, const MCDisassembler *Decoder)</definition>
+        <argsstring>)(MCInst &amp;MI, unsigned insn, uint64_t Address, const MCDisassembler *Decoder)</argsstring>
+        <name>DecodeFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" line="223" column="9" bodyfile="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" bodystart="223" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="_b_p_f_disassembler_8cpp_1aa75fc3faf03e3a13ace595d7428accd7" prot="public" static="yes" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>const unsigned GPRDecoderTable[]</definition>
+        <argsstring>[]</argsstring>
+        <name>GPRDecoderTable</name>
+        <initializer>= {
+    BPF::R0,  BPF::R1,  <ref refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02" kindref="member">BPF::R2</ref>,  BPF::R3,  <ref refid="_math_extras_8h_1a166646d6a4037a236119b6e156051d90" kindref="member">BPF::R4</ref>,  BPF::R5,
+    <ref refid="_math_extras_8h_1ace331bebb5bd2780b8dfb7e6e97db7dd" kindref="member">BPF::R6</ref>,  BPF::R7,  BPF::R8,  BPF::R9,  BPF::R10, BPF::R11}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" line="96" column="23" bodyfile="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="variable" id="_b_p_f_disassembler_8cpp_1a8f008b6eee2b37b1cf6f684e34342427" prot="public" static="yes" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>const unsigned GPR32DecoderTable[]</definition>
+        <argsstring>[]</argsstring>
+        <name>GPR32DecoderTable</name>
+        <initializer>= {
+    BPF::W0,  BPF::W1,  BPF::W2,  BPF::W3,  BPF::W4,  BPF::W5,
+    BPF::W6,  BPF::W7,  BPF::W8,  BPF::W9,  BPF::W10, BPF::W11}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" line="111" column="23" bodyfile="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" bodystart="111" bodyend="113"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_b_p_f_disassembler_8cpp_1aecf7dc4f4aa8a0a72b876c3ff27114dc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_m_c_disassembler" kindref="compound">MCDisassembler</ref> *</type>
+        <definition>static MCDisassembler * createBPFDisassembler</definition>
+        <argsstring>(const Target &amp;T, const MCSubtargetInfo &amp;STI, MCContext &amp;Ctx)</argsstring>
+        <name>createBPFDisassembler</name>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> &amp;</type>
+          <declname>T</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref> &amp;</type>
+          <declname>STI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref> &amp;</type>
+          <declname>Ctx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" line="79" column="23" bodyfile="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" bodystart="79" bodyend="83"/>
+        <references refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a99697c0528d06f60b89b8a9af1f19649" compoundref="_b_p_f_disassembler_8cpp" startline="64" endline="65">anonymous_namespace{BPFDisassembler.cpp}::BPFDisassembler::BPFDisassembler</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+        <referencedby refid="_b_p_f_disassembler_8cpp_1a68b7b81c8452fef2a2c55374b2c1020d" compoundref="_b_p_f_disassembler_8cpp" startline="86" endline="94">LLVMInitializeBPFDisassembler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_b_p_f_disassembler_8cpp_1a68b7b81c8452fef2a2c55374b2c1020d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1adeb6f14d9f377993d79fae2efb34ecac" kindref="member">LLVM_EXTERNAL_VISIBILITY</ref> void</type>
+        <definition>LLVM_EXTERNAL_VISIBILITY void LLVMInitializeBPFDisassembler</definition>
+        <argsstring>()</argsstring>
+        <name>LLVMInitializeBPFDisassembler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" line="86" column="42" bodyfile="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" bodystart="86" bodyend="94"/>
+        <references refid="_b_p_f_disassembler_8cpp_1aecf7dc4f4aa8a0a72b876c3ff27114dc" compoundref="_b_p_f_disassembler_8cpp" startline="79" endline="83">createBPFDisassembler</references>
+        <references refid="namespacellvm_1a6bfd4d08fdf27bc4d6e1e5fdca839db0" compoundref="_b_p_f_target_info_8cpp" startline="18" endline="21">llvm::getTheBPFbeTarget</references>
+        <references refid="namespacellvm_1a333df675c40e4b58704caf59fe513a50" compoundref="_b_p_f_target_info_8cpp" startline="14" endline="17">llvm::getTheBPFleTarget</references>
+        <references refid="namespacellvm_1a84e34f6b63eabf0d06c3d8a0c907047b" compoundref="_b_p_f_target_info_8cpp" startline="22" endline="25">llvm::getTheBPFTarget</references>
+        <references refid="_compiler_8h_1adeb6f14d9f377993d79fae2efb34ecac" compoundref="_compiler_8h" startline="128">LLVM_EXTERNAL_VISIBILITY</references>
+        <references refid="structllvm_1_1_target_registry_1a8d3c3e977776517a7c1a82060b16da9f" compoundref="_target_registry_8h" startline="878" endline="881">llvm::TargetRegistry::RegisterMCDisassembler</references>
+      </memberdef>
+      <memberdef kind="function" id="_b_p_f_disassembler_8cpp_1af7b9010056da73f57af323bbbdb484cd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6a" kindref="member">DecodeStatus</ref></type>
+        <definition>static DecodeStatus DecodeGPRRegisterClass</definition>
+        <argsstring>(MCInst &amp;Inst, unsigned RegNo, uint64_t, const MCDisassembler *)</argsstring>
+        <name>DecodeGPRRegisterClass</name>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> &amp;</type>
+          <declname>Inst</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>RegNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_disassembler" kindref="compound">MCDisassembler</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" line="100" column="21" bodyfile="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" bodystart="100" bodyend="109"/>
+        <references refid="classllvm_1_1_m_c_inst_1ad5a79c04398dc86a3acfe7f8713216eb" compoundref="_m_c_inst_8h" startline="211" endline="211">llvm::MCInst::addOperand</references>
+        <references refid="classllvm_1_1_m_c_operand_1a46271d9f83558334670c19539bceb965" compoundref="_m_c_inst_8h" startline="135" endline="140">llvm::MCOperand::createReg</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" compoundref="_m_c_disassembler_8h" startline="109">llvm::MCDisassembler::Fail</references>
+        <references refid="_a_r_m_disassembler_8cpp_1aa9aa04e932b61f34924d905034aeae9e" compoundref="_a_r_m_disassembler_8cpp" startline="1283" endline="1288">GPRDecoderTable</references>
+        <references refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" compoundref="_machine_sink_8cpp" startline="2028">Reg</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aaabe09036b442fff9aa63ce1e844fdf60" compoundref="_m_c_disassembler_8h" startline="111">llvm::MCDisassembler::Success</references>
+      </memberdef>
+      <memberdef kind="function" id="_b_p_f_disassembler_8cpp_1ad5c79fab583fc33e74dccc9bbbbd4d33" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6a" kindref="member">DecodeStatus</ref></type>
+        <definition>static DecodeStatus DecodeGPR32RegisterClass</definition>
+        <argsstring>(MCInst &amp;Inst, unsigned RegNo, uint64_t, const MCDisassembler *)</argsstring>
+        <name>DecodeGPR32RegisterClass</name>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> &amp;</type>
+          <declname>Inst</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>RegNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_disassembler" kindref="compound">MCDisassembler</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" line="116" column="1" bodyfile="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" bodystart="116" bodyend="124"/>
+        <references refid="classllvm_1_1_m_c_inst_1ad5a79c04398dc86a3acfe7f8713216eb" compoundref="_m_c_inst_8h" startline="211" endline="211">llvm::MCInst::addOperand</references>
+        <references refid="classllvm_1_1_m_c_operand_1a46271d9f83558334670c19539bceb965" compoundref="_m_c_inst_8h" startline="135" endline="140">llvm::MCOperand::createReg</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" compoundref="_m_c_disassembler_8h" startline="109">llvm::MCDisassembler::Fail</references>
+        <references refid="_a_r_c_disassembler_8cpp_1add638d686c2786f42f08b7ad619fc6e9" compoundref="_a_r_c_disassembler_8cpp" startline="124" endline="129">GPR32DecoderTable</references>
+        <references refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" compoundref="_machine_sink_8cpp" startline="2028">Reg</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aaabe09036b442fff9aa63ce1e844fdf60" compoundref="_m_c_disassembler_8h" startline="111">llvm::MCDisassembler::Success</references>
+      </memberdef>
+      <memberdef kind="function" id="_b_p_f_disassembler_8cpp_1a337776342a5c26b5f50cb4186114622b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6a" kindref="member">DecodeStatus</ref></type>
+        <definition>static DecodeStatus decodeMemoryOpValue</definition>
+        <argsstring>(MCInst &amp;Inst, unsigned Insn, uint64_t Address, const MCDisassembler *Decoder)</argsstring>
+        <name>decodeMemoryOpValue</name>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> &amp;</type>
+          <declname>Inst</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Insn</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_disassembler" kindref="compound">MCDisassembler</ref> *</type>
+          <declname>Decoder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" line="126" column="21" bodyfile="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" bodystart="126" bodyend="138"/>
+        <references refid="classllvm_1_1_m_c_inst_1ad5a79c04398dc86a3acfe7f8713216eb" compoundref="_m_c_inst_8h" startline="211" endline="211">llvm::MCInst::addOperand</references>
+        <references refid="_s_p_i_r_v_emit_non_semantic_d_i_8cpp_1ac168ee0c965117536e841dd35a716d36a43f2a8aab5cba317e9ad9fe8589df00a" compoundref="_s_p_i_r_v_emit_non_semantic_d_i_8cpp" startline="68">Address</references>
+        <references refid="classllvm_1_1_m_c_operand_1a595e70d3c4ee2ed95ece67a1957167a4" compoundref="_m_c_inst_8h" startline="142" endline="147">llvm::MCOperand::createImm</references>
+        <references refid="classllvm_1_1_m_c_operand_1a46271d9f83558334670c19539bceb965" compoundref="_m_c_inst_8h" startline="135" endline="140">llvm::MCOperand::createReg</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" compoundref="_m_c_disassembler_8h" startline="109">llvm::MCDisassembler::Fail</references>
+        <references refid="_a_r_m_disassembler_8cpp_1aa9aa04e932b61f34924d905034aeae9e" compoundref="_a_r_m_disassembler_8cpp" startline="1283" endline="1288">GPRDecoderTable</references>
+        <references refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" compoundref="_a_arch64_m_i_peephole_opt_8cpp" startline="167">Insn</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <references refid="namespacellvm_1abd6925150e1774fabfaff17efd3f9b9e" compoundref="_math_extras_8h" startline="564" endline="569">llvm::SignExtend32</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aaabe09036b442fff9aa63ce1e844fdf60" compoundref="_m_c_disassembler_8h" startline="111">llvm::MCDisassembler::Success</references>
+      </memberdef>
+      <memberdef kind="function" id="_b_p_f_disassembler_8cpp_1a3fcc2328b16aab5f5620750b7e9b4c41" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6a" kindref="member">DecodeStatus</ref></type>
+        <definition>static DecodeStatus readInstruction64</definition>
+        <argsstring>(ArrayRef&lt; uint8_t &gt; Bytes, uint64_t Address, uint64_t &amp;Size, uint64_t &amp;Insn, bool IsLittleEndian)</argsstring>
+        <name>readInstruction64</name>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt;</type>
+          <declname>Bytes</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref> &amp;</type>
+          <declname>Size</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref> &amp;</type>
+          <declname>Insn</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsLittleEndian</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" line="141" column="21" bodyfile="lib/Target/BPF/Disassembler/BPFDisassembler.cpp" bodystart="141" bodyend="163"/>
+        <references refid="_s_p_i_r_v_emit_non_semantic_d_i_8cpp_1ac168ee0c965117536e841dd35a716d36a43f2a8aab5cba317e9ad9fe8589df00a" compoundref="_s_p_i_r_v_emit_non_semantic_d_i_8cpp" startline="68">Address</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" compoundref="_m_c_disassembler_8h" startline="109">llvm::MCDisassembler::Fail</references>
+        <references refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2bac1a5298f939e87e8f962a5edfc206918" compoundref="_v_e_custom_d_a_g_8h" startline="132">llvm::Hi</references>
+        <references refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" compoundref="_a_arch64_m_i_peephole_opt_8cpp" startline="167">Insn</references>
+        <references refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2baff50b4aa1c9cc2197ef898436641c911" compoundref="_v_e_custom_d_a_g_8h" startline="131">llvm::Lo</references>
+        <references refid="namespacellvm_1af54e0572ecf26033ac3fe4513016dfbe" compoundref="_math_extras_8h" startline="165" endline="167">llvm::Make_64</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aaabe09036b442fff9aa63ce1e844fdf60" compoundref="_m_c_disassembler_8h" startline="111">llvm::MCDisassembler::Success</references>
+        <referencedby refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a5046a0024e7712f11848e29914c387b6" compoundref="_b_p_f_disassembler_8cpp" startline="165" endline="221">anonymous_namespace{BPFDisassembler.cpp}::BPFDisassembler::getInstruction</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>BPFDisassembler.cpp<sp/>-<sp/>Disassembler<sp/>for<sp/>BPF<sp/>---------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>BPF<sp/>Disassembler.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_b_p_f_m_c_target_desc_8h" kindref="compound">MCTargetDesc/BPFMCTargetDesc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_b_p_f_target_info_8h" kindref="compound">TargetInfo/BPFTargetInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_array_ref_8h" kindref="compound">llvm/ADT/ArrayRef.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_asm_info_8h" kindref="compound">llvm/MC/MCAsmInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_context_8h" kindref="compound">llvm/MC/MCContext.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_decoder_ops_8h" kindref="compound">llvm/MC/MCDecoderOps.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_disassembler_8h" kindref="compound">llvm/MC/MCDisassembler/MCDisassembler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_inst_8h" kindref="compound">llvm/MC/MCInst.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_target_registry_8h" kindref="compound">llvm/MC/TargetRegistry.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_math_extras_8h" kindref="compound">llvm/Support/MathExtras.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_subtarget_feature_8h" kindref="compound">llvm/TargetParser/SubtargetFeature.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="_b_p_f_disassembler_8cpp_1ad78e062f62e0d6e453941fb4ca843e4d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBUG_TYPE<sp/>&quot;bpf-disassembler&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6a" kindref="member">MCDisassembler::DecodeStatus</ref><sp/><ref refid="_a_arch64_disassembler_8cpp_1ab422e450405f43d1acfe4fa8a2de18c1" kindref="member">DecodeStatus</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="namespaceanonymous__namespace_02_b_p_f_disassembler_8cpp_03" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="34"><highlight class="comment">///<sp/>A<sp/>disassembler<sp/>class<sp/>for<sp/>BPF.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a99697c0528d06f60b89b8a9af1f19649" kindref="member">BPFDisassembler</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a07639073d0bfe2f90b94ced7f2944596" kindref="member">MCDisassembler</ref><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288" kindref="member">BPF_CLASS</ref><sp/>{</highlight></codeline>
+<codeline lineno="38" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288acc2e4c8eebf112283d138102f1d86683" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288acc2e4c8eebf112283d138102f1d86683" kindref="member">BPF_LD</ref><sp/>=<sp/>0x0,</highlight></codeline>
+<codeline lineno="39" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288a1709c49a11e35bff7338bf1d699f4893" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288a1709c49a11e35bff7338bf1d699f4893" kindref="member">BPF_LDX</ref><sp/>=<sp/>0x1,</highlight></codeline>
+<codeline lineno="40" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288ada170cc690d8fbd5f25d3824f1cb9814" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288ada170cc690d8fbd5f25d3824f1cb9814" kindref="member">BPF_ST</ref><sp/>=<sp/>0x2,</highlight></codeline>
+<codeline lineno="41" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288a68dc8a7c8f3585fd014f97d18f79832d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288a68dc8a7c8f3585fd014f97d18f79832d" kindref="member">BPF_STX</ref><sp/>=<sp/>0x3,</highlight></codeline>
+<codeline lineno="42" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288a2d67b4010abcefa8d3e1f833f17742c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288a2d67b4010abcefa8d3e1f833f17742c5" kindref="member">BPF_ALU</ref><sp/>=<sp/>0x4,</highlight></codeline>
+<codeline lineno="43" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288ac9a1e272948ec13af12bab1ac1868fdc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288ac9a1e272948ec13af12bab1ac1868fdc" kindref="member">BPF_JMP</ref><sp/>=<sp/>0x5,</highlight></codeline>
+<codeline lineno="44" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288ad9a08cb48af6bbe8c0379d503d3e53bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288ad9a08cb48af6bbe8c0379d503d3e53bd" kindref="member">BPF_JMP32</ref><sp/>=<sp/>0x6,</highlight></codeline>
+<codeline lineno="45" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288a9c984fbf01ee664860700d8998844e1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288a9c984fbf01ee664860700d8998844e1e" kindref="member">BPF_ALU64</ref><sp/>=<sp/>0x7</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1ade936963c6f83779f0ba64bba6c66ebf" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1ade936963c6f83779f0ba64bba6c66ebf" kindref="member">BPF_SIZE</ref><sp/>{</highlight></codeline>
+<codeline lineno="49" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1ade936963c6f83779f0ba64bba6c66ebfa1e5c469a38db3fba1ead759ba48735da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1ade936963c6f83779f0ba64bba6c66ebfa1e5c469a38db3fba1ead759ba48735da" kindref="member">BPF_W</ref><sp/>=<sp/>0x0,</highlight></codeline>
+<codeline lineno="50" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1ade936963c6f83779f0ba64bba6c66ebfa67c8d3e43cc241cad5cae905aa528b85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1ade936963c6f83779f0ba64bba6c66ebfa67c8d3e43cc241cad5cae905aa528b85" kindref="member">BPF_H</ref><sp/>=<sp/>0x1,</highlight></codeline>
+<codeline lineno="51" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1ade936963c6f83779f0ba64bba6c66ebfacb38a958e048055e1b7189ec99956ad5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1ade936963c6f83779f0ba64bba6c66ebfacb38a958e048055e1b7189ec99956ad5" kindref="member">BPF_B</ref><sp/>=<sp/>0x2,</highlight></codeline>
+<codeline lineno="52" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1ade936963c6f83779f0ba64bba6c66ebfac564088e591d8b34354ebdd61a41e2be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1ade936963c6f83779f0ba64bba6c66ebfac564088e591d8b34354ebdd61a41e2be" kindref="member">BPF_DW</ref><sp/>=<sp/>0x3</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796" kindref="member">BPF_MODE</ref><sp/>{</highlight></codeline>
+<codeline lineno="56" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796a02627b423d542a8039c5a071b4bfba27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796a02627b423d542a8039c5a071b4bfba27" kindref="member">BPF_IMM</ref><sp/>=<sp/>0x0,</highlight></codeline>
+<codeline lineno="57" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796a0bebdd745d3936b594a2ab1c33a17237" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796a0bebdd745d3936b594a2ab1c33a17237" kindref="member">BPF_ABS</ref><sp/>=<sp/>0x1,</highlight></codeline>
+<codeline lineno="58" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796ab0d45b037dc97e6a5c676e5def2e07a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796ab0d45b037dc97e6a5c676e5def2e07a4" kindref="member">BPF_IND</ref><sp/>=<sp/>0x2,</highlight></codeline>
+<codeline lineno="59" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796a94d6fe26f0fbbc68b58a4ae57bbb5bf7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796a94d6fe26f0fbbc68b58a4ae57bbb5bf7" kindref="member">BPF_MEM</ref><sp/>=<sp/>0x3,</highlight></codeline>
+<codeline lineno="60" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796aa7a91c254ee8375455308ef950880d30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796aa7a91c254ee8375455308ef950880d30" kindref="member">BPF_MEMSX</ref><sp/>=<sp/>0x4,</highlight></codeline>
+<codeline lineno="61" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796adc3f003bcdcfeccbfd82d1a22ae4ca24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796adc3f003bcdcfeccbfd82d1a22ae4ca24" kindref="member">BPF_ATOMIC</ref><sp/>=<sp/>0x6</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a99697c0528d06f60b89b8a9af1f19649" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a99697c0528d06f60b89b8a9af1f19649" kindref="member">BPFDisassembler</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;<ref refid="classllvm_1_1_m_c_disassembler_1a67d53a6acc509ff577f17d00ddeac34d" kindref="member">STI</ref>,<sp/><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;Ctx)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classllvm_1_1_m_c_disassembler_1a07639073d0bfe2f90b94ced7f2944596" kindref="member">MCDisassembler</ref>(<ref refid="classllvm_1_1_m_c_disassembler_1a67d53a6acc509ff577f17d00ddeac34d" kindref="member">STI</ref>,<sp/>Ctx)<sp/>{}</highlight></codeline>
+<codeline lineno="66" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a57749a04c6ead98dcf39cd39aca7751d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a57749a04c6ead98dcf39cd39aca7751d" kindref="member">~BPFDisassembler</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6a" kindref="member">DecodeStatus</ref><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a5046a0024e7712f11848e29914c387b6" kindref="member">getInstruction</ref>(<ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Instr,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>&amp;<ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;uint8_t&gt;</ref><sp/>Bytes,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="_s_p_i_r_v_emit_non_semantic_d_i_8cpp_1ac168ee0c965117536e841dd35a716d36a43f2a8aab5cba317e9ad9fe8589df00a" kindref="member">Address</ref>,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref><sp/>&amp;CStream)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a07829738e89f5065c695eef49947982e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a07829738e89f5065c695eef49947982e" kindref="member">getInstClass</ref>(<ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>Inst)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(Inst<sp/>&gt;&gt;<sp/>56)<sp/>&amp;<sp/>0x7;<sp/>};</highlight></codeline>
+<codeline lineno="73" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1aa4fe77ef690cd2a6b861b720d0e8ca2c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1aa4fe77ef690cd2a6b861b720d0e8ca2c" kindref="member">getInstSize</ref>(<ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>Inst)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(Inst<sp/>&gt;&gt;<sp/>59)<sp/>&amp;<sp/>0x3;<sp/>};</highlight></codeline>
+<codeline lineno="74" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a1e965ada822d3594809ce2c122235e3d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a1e965ada822d3594809ce2c122235e3d" kindref="member">getInstMode</ref>(<ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>Inst)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(Inst<sp/>&gt;&gt;<sp/>61)<sp/>&amp;<sp/>0x7;<sp/>};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>anonymous<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="_b_p_f_disassembler_8cpp_1aecf7dc4f4aa8a0a72b876c3ff27114dc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler" kindref="compound">MCDisassembler</ref><sp/>*<ref refid="_b_p_f_disassembler_8cpp_1aecf7dc4f4aa8a0a72b876c3ff27114dc" kindref="member">createBPFDisassembler</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_target" kindref="compound">Target</ref><sp/>&amp;<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref>,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;STI,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;Ctx)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a99697c0528d06f60b89b8a9af1f19649" kindref="member">BPFDisassembler</ref>(STI,<sp/>Ctx);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="_b_p_f_disassembler_8cpp_1a68b7b81c8452fef2a2c55374b2c1020d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/><ref refid="_compiler_8h_1adeb6f14d9f377993d79fae2efb34ecac" kindref="member">LLVM_EXTERNAL_VISIBILITY</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_b_p_f_disassembler_8cpp_1a68b7b81c8452fef2a2c55374b2c1020d" kindref="member">LLVMInitializeBPFDisassembler</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Register<sp/>the<sp/>disassembler.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1_target_registry_1a8d3c3e977776517a7c1a82060b16da9f" kindref="member">TargetRegistry::RegisterMCDisassembler</ref>(<ref refid="namespacellvm_1a84e34f6b63eabf0d06c3d8a0c907047b" kindref="member">getTheBPFTarget</ref>(),</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_b_p_f_disassembler_8cpp_1aecf7dc4f4aa8a0a72b876c3ff27114dc" kindref="member">createBPFDisassembler</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1_target_registry_1a8d3c3e977776517a7c1a82060b16da9f" kindref="member">TargetRegistry::RegisterMCDisassembler</ref>(<ref refid="namespacellvm_1a333df675c40e4b58704caf59fe513a50" kindref="member">getTheBPFleTarget</ref>(),</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_b_p_f_disassembler_8cpp_1aecf7dc4f4aa8a0a72b876c3ff27114dc" kindref="member">createBPFDisassembler</ref>);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><ref refid="structllvm_1_1_target_registry_1a8d3c3e977776517a7c1a82060b16da9f" kindref="member">TargetRegistry::RegisterMCDisassembler</ref>(<ref refid="namespacellvm_1a6bfd4d08fdf27bc4d6e1e5fdca839db0" kindref="member">getTheBPFbeTarget</ref>(),</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_b_p_f_disassembler_8cpp_1aecf7dc4f4aa8a0a72b876c3ff27114dc" kindref="member">createBPFDisassembler</ref>);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="_b_p_f_disassembler_8cpp_1aa75fc3faf03e3a13ace595d7428accd7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="_a_r_m_disassembler_8cpp_1aa9aa04e932b61f34924d905034aeae9e" kindref="member">GPRDecoderTable</ref>[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>BPF::R0,<sp/><sp/>BPF::R1,<sp/><sp/>BPF::R2,<sp/><sp/>BPF::R3,<sp/><sp/>BPF::R4,<sp/><sp/>BPF::R5,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>BPF::R6,<sp/><sp/>BPF::R7,<sp/><sp/>BPF::R8,<sp/><sp/>BPF::R9,<sp/><sp/>BPF::R10,<sp/>BPF::R11};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="_b_p_f_disassembler_8cpp_1af7b9010056da73f57af323bbbdb484cd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_a_arch64_disassembler_8cpp_1ab422e450405f43d1acfe4fa8a2de18c1" kindref="member">DecodeStatus</ref><sp/><ref refid="_b_p_f_disassembler_8cpp_1af7b9010056da73f57af323bbbdb484cd" kindref="member">DecodeGPRRegisterClass</ref>(<ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>RegNo,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/></highlight><highlight class="comment">/*Address*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler" kindref="compound">MCDisassembler</ref><sp/>*<sp/></highlight><highlight class="comment">/*Decoder*/</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(RegNo<sp/>&gt;<sp/>11)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" kindref="member">MCDisassembler::Fail</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref><sp/>=<sp/><ref refid="_a_r_m_disassembler_8cpp_1aa9aa04e932b61f34924d905034aeae9e" kindref="member">GPRDecoderTable</ref>[RegNo];</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1ad5a79c04398dc86a3acfe7f8713216eb" kindref="member">addOperand</ref>(<ref refid="classllvm_1_1_m_c_operand_1a46271d9f83558334670c19539bceb965" kindref="member">MCOperand::createReg</ref>(<ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref>));</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aaabe09036b442fff9aa63ce1e844fdf60" kindref="member">MCDisassembler::Success</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="_b_p_f_disassembler_8cpp_1a8f008b6eee2b37b1cf6f684e34342427" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="_a_r_c_disassembler_8cpp_1add638d686c2786f42f08b7ad619fc6e9" kindref="member">GPR32DecoderTable</ref>[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>BPF::W0,<sp/><sp/>BPF::W1,<sp/><sp/>BPF::W2,<sp/><sp/>BPF::W3,<sp/><sp/>BPF::W4,<sp/><sp/>BPF::W5,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>BPF::W6,<sp/><sp/>BPF::W7,<sp/><sp/>BPF::W8,<sp/><sp/>BPF::W9,<sp/><sp/>BPF::W10,<sp/>BPF::W11};</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_a_arch64_disassembler_8cpp_1ab422e450405f43d1acfe4fa8a2de18c1" kindref="member">DecodeStatus</ref></highlight></codeline>
+<codeline lineno="116" refid="_b_p_f_disassembler_8cpp_1ad5c79fab583fc33e74dccc9bbbbd4d33" refkind="member"><highlight class="normal"><ref refid="_b_p_f_disassembler_8cpp_1ad5c79fab583fc33e74dccc9bbbbd4d33" kindref="member">DecodeGPR32RegisterClass</ref>(<ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>RegNo,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/></highlight><highlight class="comment">/*Address*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler" kindref="compound">MCDisassembler</ref><sp/>*<sp/></highlight><highlight class="comment">/*Decoder*/</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(RegNo<sp/>&gt;<sp/>11)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" kindref="member">MCDisassembler::Fail</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref><sp/>=<sp/><ref refid="_a_r_c_disassembler_8cpp_1add638d686c2786f42f08b7ad619fc6e9" kindref="member">GPR32DecoderTable</ref>[RegNo];</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1ad5a79c04398dc86a3acfe7f8713216eb" kindref="member">addOperand</ref>(<ref refid="classllvm_1_1_m_c_operand_1a46271d9f83558334670c19539bceb965" kindref="member">MCOperand::createReg</ref>(<ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref>));</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aaabe09036b442fff9aa63ce1e844fdf60" kindref="member">MCDisassembler::Success</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="_b_p_f_disassembler_8cpp_1a337776342a5c26b5f50cb4186114622b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_a_arch64_disassembler_8cpp_1ab422e450405f43d1acfe4fa8a2de18c1" kindref="member">DecodeStatus</ref><sp/><ref refid="_b_p_f_disassembler_8cpp_1a337776342a5c26b5f50cb4186114622b" kindref="member">decodeMemoryOpValue</ref>(<ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref>,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="_s_p_i_r_v_emit_non_semantic_d_i_8cpp_1ac168ee0c965117536e841dd35a716d36a43f2a8aab5cba317e9ad9fe8589df00a" kindref="member">Address</ref>,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler" kindref="compound">MCDisassembler</ref><sp/>*Decoder)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_register" kindref="compound">Register</ref><sp/>=<sp/>(<ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref><sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xf;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_register" kindref="compound">Register</ref><sp/>&gt;<sp/>11)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" kindref="member">MCDisassembler::Fail</ref>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1ad5a79c04398dc86a3acfe7f8713216eb" kindref="member">addOperand</ref>(<ref refid="classllvm_1_1_m_c_operand_1a46271d9f83558334670c19539bceb965" kindref="member">MCOperand::createReg</ref>(<ref refid="_a_r_m_disassembler_8cpp_1aa9aa04e932b61f34924d905034aeae9e" kindref="member">GPRDecoderTable</ref>[<ref refid="classllvm_1_1_register" kindref="compound">Register</ref>]));</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" kindref="member">Offset</ref><sp/>=<sp/>(<ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref><sp/>&amp;<sp/>0xffff);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1ad5a79c04398dc86a3acfe7f8713216eb" kindref="member">addOperand</ref>(<ref refid="classllvm_1_1_m_c_operand_1a595e70d3c4ee2ed95ece67a1957167a4" kindref="member">MCOperand::createImm</ref>(<ref refid="namespacellvm_1abd6925150e1774fabfaff17efd3f9b9e" kindref="member">SignExtend32&lt;16&gt;</ref>(<ref refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" kindref="member">Offset</ref>)));</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aaabe09036b442fff9aa63ce1e844fdf60" kindref="member">MCDisassembler::Success</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BPFGenDisassemblerTables.inc&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="_b_p_f_disassembler_8cpp_1a3fcc2328b16aab5f5620750b7e9b4c41" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_a_arch64_disassembler_8cpp_1ab422e450405f43d1acfe4fa8a2de18c1" kindref="member">DecodeStatus</ref><sp/><ref refid="_b_p_f_disassembler_8cpp_1a3fcc2328b16aab5f5620750b7e9b4c41" kindref="member">readInstruction64</ref>(<ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;uint8_t&gt;</ref><sp/>Bytes,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="_s_p_i_r_v_emit_non_semantic_d_i_8cpp_1ac168ee0c965117536e841dd35a716d36a43f2a8aab5cba317e9ad9fe8589df00a" kindref="member">Address</ref>,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>&amp;<ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>&amp;<ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref>,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsLittleEndian)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2baff50b4aa1c9cc2197ef898436641c911" kindref="member">Lo</ref>,<sp/><ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2bac1a5298f939e87e8f962a5edfc206918" kindref="member">Hi</ref>;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Bytes.<ref refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" kindref="member">size</ref>()<sp/>&lt;<sp/>8)<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" kindref="member">MCDisassembler::Fail</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IsLittleEndian)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2bac1a5298f939e87e8f962a5edfc206918" kindref="member">Hi</ref><sp/>=<sp/>(Bytes[0]<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/>(Bytes[1]<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(Bytes[2]<sp/>&lt;&lt;<sp/>0)<sp/>|<sp/>(Bytes[3]<sp/>&lt;&lt;<sp/>8);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2baff50b4aa1c9cc2197ef898436641c911" kindref="member">Lo</ref><sp/>=<sp/>(Bytes[4]<sp/>&lt;&lt;<sp/>0)<sp/>|<sp/>(Bytes[5]<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>(Bytes[6]<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(Bytes[7]<sp/>&lt;&lt;<sp/>24);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2bac1a5298f939e87e8f962a5edfc206918" kindref="member">Hi</ref><sp/>=<sp/>(Bytes[0]<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/>((Bytes[1]<sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>20)<sp/>|<sp/>((Bytes[1]<sp/>&amp;<sp/>0xF0)<sp/>&lt;&lt;<sp/>12)<sp/>|</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(Bytes[2]<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>(Bytes[3]<sp/>&lt;&lt;<sp/>0);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2baff50b4aa1c9cc2197ef898436641c911" kindref="member">Lo</ref><sp/>=<sp/>(Bytes[4]<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/>(Bytes[5]<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(Bytes[6]<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>(Bytes[7]<sp/>&lt;&lt;<sp/>0);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref><sp/>=<sp/><ref refid="namespacellvm_1af54e0572ecf26033ac3fe4513016dfbe" kindref="member">Make_64</ref>(<ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2bac1a5298f939e87e8f962a5edfc206918" kindref="member">Hi</ref>,<sp/><ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2baff50b4aa1c9cc2197ef898436641c911" kindref="member">Lo</ref>);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aaabe09036b442fff9aa63ce1e844fdf60" kindref="member">MCDisassembler::Success</ref>;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a5046a0024e7712f11848e29914c387b6" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6a" kindref="member">DecodeStatus</ref><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a5046a0024e7712f11848e29914c387b6" kindref="member">BPFDisassembler::getInstruction</ref>(<ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Instr,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>&amp;<ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;uint8_t&gt;</ref><sp/>Bytes,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="_s_p_i_r_v_emit_non_semantic_d_i_8cpp_1ac168ee0c965117536e841dd35a716d36a43f2a8aab5cba317e9ad9fe8589df00a" kindref="member">Address</ref>,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref><sp/>&amp;CStream)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsLittleEndian<sp/>=<sp/><ref refid="classllvm_1_1_m_c_disassembler_1a3faa10cafd0be721018fc1b9bc2c5488" kindref="member">getContext</ref>().getAsmInfo()-&gt;isLittleEndian();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref>,<sp/><ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2bac1a5298f939e87e8f962a5edfc206918" kindref="member">Hi</ref>;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6a" kindref="member">DecodeStatus</ref><sp/>Result;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>Result<sp/>=<sp/><ref refid="_b_p_f_disassembler_8cpp_1a3fcc2328b16aab5f5620750b7e9b4c41" kindref="member">readInstruction64</ref>(Bytes,<sp/><ref refid="_s_p_i_r_v_emit_non_semantic_d_i_8cpp_1ac168ee0c965117536e841dd35a716d36a43f2a8aab5cba317e9ad9fe8589df00a" kindref="member">Address</ref>,<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>,<sp/><ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref>,<sp/>IsLittleEndian);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Result<sp/>==<sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" kindref="member">MCDisassembler::Fail</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" kindref="member">MCDisassembler::Fail</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>InstClass<sp/>=<sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a07829738e89f5065c695eef49947982e" kindref="member">getInstClass</ref>(<ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref>);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>InstMode<sp/>=<sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a1e965ada822d3594809ce2c122235e3d" kindref="member">getInstMode</ref>(<ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref>);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((InstClass<sp/>==<sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288a1709c49a11e35bff7338bf1d699f4893" kindref="member">BPF_LDX</ref><sp/>||<sp/>InstClass<sp/>==<sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1a514b7a2eccf1a2eaf5bc4e5beefb4288a68dc8a7c8f3585fd014f97d18f79832d" kindref="member">BPF_STX</ref>)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1aa4fe77ef690cd2a6b861b720d0e8ca2c" kindref="member">getInstSize</ref>(<ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref>)<sp/>!=<sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1ade936963c6f83779f0ba64bba6c66ebfac564088e591d8b34354ebdd61a41e2be" kindref="member">BPF_DW</ref><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(InstMode<sp/>==<sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796a94d6fe26f0fbbc68b58a4ae57bbb5bf7" kindref="member">BPF_MEM</ref><sp/>||<sp/>InstMode<sp/>==<sp/><ref refid="classanonymous__namespace_02_b_p_f_disassembler_8cpp_03_1_1_b_p_f_disassembler_1abe794c19752bc3465ee44ec936482796adc3f003bcdcfeccbfd82d1a22ae4ca24" kindref="member">BPF_ATOMIC</ref>)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a67d53a6acc509ff577f17d00ddeac34d" kindref="member">STI</ref>.hasFeature(BPF::ALU32))</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>Result<sp/>=<sp/>decodeInstruction(DecoderTableBPFALU3264,<sp/>Instr,<sp/><ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref>,<sp/><ref refid="_s_p_i_r_v_emit_non_semantic_d_i_8cpp_1ac168ee0c965117536e841dd35a716d36a43f2a8aab5cba317e9ad9fe8589df00a" kindref="member">Address</ref>,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_m_c_disassembler_1a67d53a6acc509ff577f17d00ddeac34d" kindref="member">STI</ref>);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>Result<sp/>=<sp/>decodeInstruction(DecoderTableBPF64,<sp/>Instr,<sp/><ref refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" kindref="member">Insn</ref>,<sp/><ref refid="_s_p_i_r_v_emit_non_semantic_d_i_8cpp_1ac168ee0c965117536e841dd35a716d36a43f2a8aab5cba317e9ad9fe8589df00a" kindref="member">Address</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a67d53a6acc509ff577f17d00ddeac34d" kindref="member">STI</ref>);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Result<sp/>==<sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" kindref="member">MCDisassembler::Fail</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" kindref="member">MCDisassembler::Fail</ref>;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(Instr.getOpcode())<sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>BPF::LD_imm64:</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>BPF::LD_pseudo:<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Bytes.<ref refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" kindref="member">size</ref>()<sp/>&lt;<sp/>16)<sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" kindref="member">MCDisassembler::Fail</ref>;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>=<sp/>16;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IsLittleEndian)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2bac1a5298f939e87e8f962a5edfc206918" kindref="member">Hi</ref><sp/>=<sp/>(Bytes[12]<sp/>&lt;&lt;<sp/>0)<sp/>|<sp/>(Bytes[13]<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>(Bytes[14]<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(Bytes[15]<sp/>&lt;&lt;<sp/>24);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2bac1a5298f939e87e8f962a5edfc206918" kindref="member">Hi</ref><sp/>=<sp/>(Bytes[12]<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/>(Bytes[13]<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(Bytes[14]<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>(Bytes[15]<sp/>&lt;&lt;<sp/>0);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref><sp/>=<sp/>Instr.getOperand(1);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref>.setImm(<ref refid="namespacellvm_1af54e0572ecf26033ac3fe4513016dfbe" kindref="member">Make_64</ref>(<ref refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2bac1a5298f939e87e8f962a5edfc206918" kindref="member">Hi</ref>,<sp/><ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref>.getImm()));</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>BPF::LD_ABS_B:</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>BPF::LD_ABS_H:</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>BPF::LD_ABS_W:</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>BPF::LD_IND_B:</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>BPF::LD_IND_H:</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>BPF::LD_IND_W:<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref><sp/>=<sp/>Instr.getOperand(0);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>Instr.clear();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>Instr.addOperand(<ref refid="classllvm_1_1_m_c_operand_1a46271d9f83558334670c19539bceb965" kindref="member">MCOperand::createReg</ref>(BPF::R6));</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>Instr.addOperand(<ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref>);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Result;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223" refid="_b_p_f_disassembler_8cpp_1a76bfd0cf8775a787756198b1b3b28cce" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="_a_arch64_disassembler_8cpp_1ab422e450405f43d1acfe4fa8a2de18c1" kindref="member">DecodeStatus</ref><sp/>(*<ref refid="_a_v_r_disassembler_8cpp_1a76bfd0cf8775a787756198b1b3b28cce" kindref="member">DecodeFunc</ref>)(<ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>insn,<sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="_s_p_i_r_v_emit_non_semantic_d_i_8cpp_1ac168ee0c965117536e841dd35a716d36a43f2a8aab5cba317e9ad9fe8589df00a" kindref="member">Address</ref>,</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_disassembler" kindref="compound">MCDisassembler</ref><sp/>*Decoder);</highlight></codeline>
+    </programlisting>
+    <location file="lib/Target/BPF/Disassembler/BPFDisassembler.cpp"/>
+  </compounddef>
+</doxygen>

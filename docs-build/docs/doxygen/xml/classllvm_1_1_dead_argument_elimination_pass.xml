@@ -1,0 +1,648 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_dead_argument_elimination_pass" kind="class" language="C++" prot="public">
+    <compoundname>llvm::DeadArgumentEliminationPass</compoundname>
+    <basecompoundref refid="structllvm_1_1_pass_info_mixin" prot="public" virt="non-virtual">llvm::PassInfoMixin&lt; DeadArgumentEliminationPass &gt;</basecompoundref>
+    <includes refid="_dead_argument_elimination_8h" local="yes">llvm/Transforms/IPO/DeadArgumentElimination.h</includes>
+    <innerclass refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" prot="public">llvm::DeadArgumentEliminationPass::RetOrArg</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_dead_argument_elimination_pass_1a3dee2ca18ff5275c99041264099fd964" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Liveness</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::Liveness</qualifiedname>
+        <enumvalue id="classllvm_1_1_dead_argument_elimination_pass_1a3dee2ca18ff5275c99041264099fd964a8cb9173f3fd92152f18401c8bf8ba21b" prot="public">
+          <name>Live</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_dead_argument_elimination_pass_1a3dee2ca18ff5275c99041264099fd964af29a24ceeaaae7277109ac9c7a52d958" prot="public">
+          <name>MaybeLive</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>During our initial pass over the program, we determine that things are either alive or maybe alive. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We don&apos;t mark anything explicitly dead (even if we know they are), since anything not alive with no registered uses (in Uses) will never be marked alive and will thus become dead in the end. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="73" column="3" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_dead_argument_elimination_pass_1a9cbc5f82a665596b0ff5d374dcf9d01c" prot="public" static="no">
+        <type>std::multimap&lt; <ref refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" kindref="compound">RetOrArg</ref>, <ref refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" kindref="compound">RetOrArg</ref> &gt;</type>
+        <definition>using llvm::DeadArgumentEliminationPass::UseMap =  std::multimap&lt;RetOrArg, RetOrArg&gt;</definition>
+        <argsstring></argsstring>
+        <name>UseMap</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::UseMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="90" column="3" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_dead_argument_elimination_pass_1adccc69f6d0152bec28db15a70cf05587" prot="public" static="no">
+        <type>std::set&lt; <ref refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" kindref="compound">RetOrArg</ref> &gt;</type>
+        <definition>using llvm::DeadArgumentEliminationPass::LiveSet =  std::set&lt;RetOrArg&gt;</definition>
+        <argsstring></argsstring>
+        <name>LiveSet</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::LiveSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="108" column="3" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_dead_argument_elimination_pass_1a1eb5a2eac80c369977d7c8747be838ba" prot="public" static="no">
+        <type>std::set&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> * &gt;</type>
+        <definition>using llvm::DeadArgumentEliminationPass::LiveFuncSet =  std::set&lt;const Function *&gt;</definition>
+        <argsstring></argsstring>
+        <name>LiveFuncSet</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::LiveFuncSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="109" column="3" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_dead_argument_elimination_pass_1a0fc4b7b5727b4a936d7c1c23320a8b12" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" kindref="compound">RetOrArg</ref>, 5 &gt;</type>
+        <definition>using llvm::DeadArgumentEliminationPass::UseVector =  SmallVector&lt;RetOrArg, 5&gt;</definition>
+        <argsstring></argsstring>
+        <name>UseVector</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::UseVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="117" column="3" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_dead_argument_elimination_pass_1afb15aeeba5e11ad17b03524730d51b7d" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dead_argument_elimination_pass_1a9cbc5f82a665596b0ff5d374dcf9d01c" kindref="member">UseMap</ref></type>
+        <definition>UseMap llvm::DeadArgumentEliminationPass::Uses</definition>
+        <argsstring></argsstring>
+        <name>Uses</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::Uses</qualifiedname>
+        <briefdescription>
+<para>This maps a return value or argument to any MaybeLive return values or arguments it uses. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This allows the MaybeLive values to be marked live when any of its users is marked live. For example (indices are left out for clarity):<itemizedlist>
+<listitem><para>Uses[ret F] = ret G This means that F calls G, and F returns the value returned by G.</para>
+</listitem><listitem><para>Uses[arg F] = ret G This means that some function calls G and passes its result as an argument to F.</para>
+</listitem><listitem><para>Uses[ret F] = arg F This means that F returns one of its own arguments.</para>
+</listitem><listitem><para>Uses[arg F] = arg G This means that G calls F and passes one of its own (G&apos;s) arguments directly to F. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="106" column="10" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_dead_argument_elimination_pass_1a404cb9e3e1fb3992697a27bd58e44a68" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dead_argument_elimination_pass_1adccc69f6d0152bec28db15a70cf05587" kindref="member">LiveSet</ref></type>
+        <definition>LiveSet llvm::DeadArgumentEliminationPass::LiveValues</definition>
+        <argsstring></argsstring>
+        <name>LiveValues</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::LiveValues</qualifiedname>
+        <briefdescription>
+<para>This set contains all values that have been determined to be live. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="112" column="11" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_dead_argument_elimination_pass_1aa1991a5019f642f03694439d95fa1b20" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dead_argument_elimination_pass_1a1eb5a2eac80c369977d7c8747be838ba" kindref="member">LiveFuncSet</ref></type>
+        <definition>LiveFuncSet llvm::DeadArgumentEliminationPass::LiveFunctions</definition>
+        <argsstring></argsstring>
+        <name>LiveFunctions</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::LiveFunctions</qualifiedname>
+        <briefdescription>
+<para>This set contains all values that are cannot be changed in any way. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="115" column="15" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_dead_argument_elimination_pass_1a997b16dfcd40407daf7b4e5b27dbcecf" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::DeadArgumentEliminationPass::ShouldHackArguments</definition>
+        <argsstring></argsstring>
+        <name>ShouldHackArguments</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::ShouldHackArguments</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>This allows this pass to do double-duty as the dead arg hacking pass (used only by bugpoint). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="121" column="8" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_dead_argument_elimination_pass_1aac009d77b6fca714db3d7b9f11618ac9" compoundref="_dead_argument_elimination_8h" startline="75" endline="76">DeadArgumentEliminationPass</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1aac009d77b6fca714db3d7b9f11618ac9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::DeadArgumentEliminationPass::DeadArgumentEliminationPass</definition>
+        <argsstring>(bool ShouldHackArguments=false)</argsstring>
+        <name>DeadArgumentEliminationPass</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::DeadArgumentEliminationPass</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ShouldHackArguments</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="75" column="3" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="75" bodyend="76"/>
+        <references refid="classllvm_1_1_dead_argument_elimination_pass_1a997b16dfcd40407daf7b4e5b27dbcecf" compoundref="_dead_argument_elimination_8h" startline="121">ShouldHackArguments</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1a29ba94ac3af7390af4fa3209e6647732" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_preserved_analyses" kindref="compound">PreservedAnalyses</ref></type>
+        <definition>PreservedAnalyses DeadArgumentEliminationPass::run</definition>
+        <argsstring>(Module &amp;M, ModuleAnalysisManager &amp;)</argsstring>
+        <name>run</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::run</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1af9c9208365fd9ce11392b4d79485e259" kindref="member">ModuleAnalysisManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="78" column="21" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="1132" bodyend="1168"/>
+        <references refid="classllvm_1_1_preserved_analyses_1a1258a1ff55557c27684010ebd7283712" compoundref="llvm_2_i_r_2_analysis_8h" startline="117" endline="121">llvm::PreservedAnalyses::all</references>
+        <references refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2373">Changed</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1a3d2cdc4a0db233678e7141c9d6ea3419" compoundref="_s_t_l_extras_8h" startline="657" endline="662">llvm::make_early_inc_range</references>
+        <references refid="classllvm_1_1_preserved_analyses_1a03797a73044a81cbc6a3409d6c72ee8f" compoundref="llvm_2_i_r_2_analysis_8h" startline="114" endline="114">llvm::PreservedAnalyses::none</references>
+        <referencedby refid="classanonymous__namespace_02_dead_argument_elimination_8cpp_03_1_1_d_a_e_1aad73a45cb4228e4fdff6c69e56d4d1a6" compoundref="_dead_argument_elimination_8cpp" startline="78" endline="85">anonymous_namespace{DeadArgumentElimination.cpp}::DAE::runOnModule</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1a5852130d218f4c275e8194510a9e31dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" kindref="compound">RetOrArg</ref></type>
+        <definition>RetOrArg llvm::DeadArgumentEliminationPass::createRet</definition>
+        <argsstring>(const Function *F, unsigned Idx)</argsstring>
+        <name>createRet</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::createRet</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <briefdescription>
+<para>Convenience wrapper. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="81" column="12" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="81" bodyend="83"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1a9536f679d7b90e4dc0db3510ab67dce2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" kindref="compound">RetOrArg</ref></type>
+        <definition>RetOrArg llvm::DeadArgumentEliminationPass::createArg</definition>
+        <argsstring>(const Function *F, unsigned Idx)</argsstring>
+        <name>createArg</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::createArg</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <briefdescription>
+<para>Convenience wrapper. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="86" column="12" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="86" bodyend="88"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1adf0f5b61fd3c855d9628922a79216b3e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_dead_argument_elimination_pass_1a3dee2ca18ff5275c99041264099fd964" kindref="member">Liveness</ref></type>
+        <definition>DeadArgumentEliminationPass::Liveness DeadArgumentEliminationPass::markIfNotLive</definition>
+        <argsstring>(RetOrArg Use, UseVector &amp;MaybeLiveUses)</argsstring>
+        <name>markIfNotLive</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::markIfNotLive</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" kindref="compound">RetOrArg</ref></type>
+          <declname>Use</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dead_argument_elimination_pass_1a0fc4b7b5727b4a936d7c1c23320a8b12" kindref="member">UseVector</ref> &amp;</type>
+          <declname>MaybeLiveUses</declname>
+        </param>
+        <briefdescription>
+<para>Checks <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> for liveness in LiveValues. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> is not live, it adds <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> to the MaybeLiveUses argument. Returns the determined liveness of <ref refid="classllvm_1_1_use" kindref="compound">Use</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="124" column="12" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="367" bodyend="377"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1a9b24eade63288a140f8e867dd018ad88" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_dead_argument_elimination_pass_1a3dee2ca18ff5275c99041264099fd964" kindref="member">Liveness</ref></type>
+        <definition>DeadArgumentEliminationPass::Liveness DeadArgumentEliminationPass::surveyUse</definition>
+        <argsstring>(const Use *U, UseVector &amp;MaybeLiveUses, unsigned RetValNum=-1U)</argsstring>
+        <name>surveyUse</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::surveyUse</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> *</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dead_argument_elimination_pass_1a0fc4b7b5727b4a936d7c1c23320a8b12" kindref="member">UseVector</ref> &amp;</type>
+          <declname>MaybeLiveUses</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>RetValNum</declname>
+          <defval>-1U</defval>
+        </param>
+        <briefdescription>
+<para>Looks at a single use of an argument or return value and determines if it should be alive or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds this use to MaybeLiveUses if it causes the used value to become MaybeLive.</para>
+<para>RetValNum is the return value number to use when this use is used in a return instruction. This is used in the recursion, you should always leave it at 0. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="125" column="12" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="387" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1a61f8aeca066956a480df0f6960832b2e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_dead_argument_elimination_pass_1a3dee2ca18ff5275c99041264099fd964" kindref="member">Liveness</ref></type>
+        <definition>DeadArgumentEliminationPass::Liveness DeadArgumentEliminationPass::surveyUses</definition>
+        <argsstring>(const Value *V, UseVector &amp;MaybeLiveUses)</argsstring>
+        <name>surveyUses</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::surveyUses</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dead_argument_elimination_pass_1a0fc4b7b5727b4a936d7c1c23320a8b12" kindref="member">UseVector</ref> &amp;</type>
+          <declname>MaybeLiveUses</declname>
+        </param>
+        <briefdescription>
+<para>Looks at all the uses of the given value Returns the <ref refid="classllvm_1_1_dead_argument_elimination_pass_1a3dee2ca18ff5275c99041264099fd964" kindref="member">Liveness</ref> deduced from the uses of this value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds all uses that cause the result to be MaybeLive to MaybeLiveRetUses. If the result is Live, MaybeLiveUses might be modified but its content should be ignored (since it might not be complete). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="127" column="12" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="475" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1a1da52400f8fb3077bc591f79149890c7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DeadArgumentEliminationPass::surveyFunction</definition>
+        <argsstring>(const Function &amp;F)</argsstring>
+        <name>surveyFunction</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::surveyFunction</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Performs the initial survey of the specified function, checking out whether it uses any of its incoming arguments or whether any callers use the return value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This fills in the LiveValues set and Uses map.</para>
+<para>We consider arguments of non-internal functions to be intrinsically alive as well as arguments to functions which have their &quot;address taken&quot;. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="129" column="8" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="494" bodyend="656"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1ad36fe62495d85ca76be9eb8dd1a8125d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DeadArgumentEliminationPass::isLive</definition>
+        <argsstring>(const RetOrArg &amp;RA)</argsstring>
+        <name>isLive</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::isLive</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" kindref="compound">RetOrArg</ref> &amp;</type>
+          <declname>RA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="130" column="8" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="712" bodyend="714"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1a32ffe897f911cd4fcff899217c1731c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DeadArgumentEliminationPass::markValue</definition>
+        <argsstring>(const RetOrArg &amp;RA, Liveness L, const UseVector &amp;MaybeLiveUses)</argsstring>
+        <name>markValue</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::markValue</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" kindref="compound">RetOrArg</ref> &amp;</type>
+          <declname>RA</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dead_argument_elimination_pass_1a3dee2ca18ff5275c99041264099fd964" kindref="member">Liveness</ref></type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dead_argument_elimination_pass_1a0fc4b7b5727b4a936d7c1c23320a8b12" kindref="member">UseVector</ref> &amp;</type>
+          <declname>MaybeLiveUses</declname>
+        </param>
+        <briefdescription>
+<para>Marks the liveness of RA depending on L. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If L is MaybeLive, it also takes all uses in MaybeLiveUses and records them in Uses, such that RA will be marked live if any use in MaybeLiveUses gets marked live later on. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="131" column="8" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="661" bodyend="681"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1ac585884e30c28f7046c2b046fb8b5c06" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DeadArgumentEliminationPass::markLive</definition>
+        <argsstring>(const RetOrArg &amp;RA)</argsstring>
+        <name>markLive</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::markLive</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" kindref="compound">RetOrArg</ref> &amp;</type>
+          <declname>RA</declname>
+        </param>
+        <briefdescription>
+<para>Mark the given return value or argument as live. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Additionally, mark any values that are used by this value (according to Uses) live as well. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="133" column="8" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="701" bodyend="710"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1ab2e08655e55ad2ff50fcb32d12912868" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DeadArgumentEliminationPass::markLive</definition>
+        <argsstring>(const Function &amp;F)</argsstring>
+        <name>markLive</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::markLive</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Mark the given <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> as alive, meaning that it cannot be changed in any way. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Additionally, mark any values that are used as this function&apos;s parameters or by its return values (according to Uses) live as well. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="134" column="8" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="686" bodyend="697"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1abe910acb239df3fc4a3482537eea037b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DeadArgumentEliminationPass::propagateLiveness</definition>
+        <argsstring>(const RetOrArg &amp;RA)</argsstring>
+        <name>propagateLiveness</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::propagateLiveness</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_dead_argument_elimination_pass_1_1_ret_or_arg" kindref="compound">RetOrArg</ref> &amp;</type>
+          <declname>RA</declname>
+        </param>
+        <briefdescription>
+<para>Given that RA is a live value, propagate it&apos;s liveness to any other values it uses (according to Uses). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="135" column="8" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="718" bodyend="731"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1aaee3a451a88969091f337efe37ef22c7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DeadArgumentEliminationPass::removeDeadStuffFromFunction</definition>
+        <argsstring>(Function *F)</argsstring>
+        <name>removeDeadStuffFromFunction</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::removeDeadStuffFromFunction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Remove any arguments and return values from F that are not in LiveValues. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Transform the function and all the callees of the function to not have these arguments and return values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="136" column="8" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="736" bodyend="1110"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1a4c6bc96f6df3d5e145ac8366c6de73da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DeadArgumentEliminationPass::deleteDeadVarargs</definition>
+        <argsstring>(Function &amp;F)</argsstring>
+        <name>deleteDeadVarargs</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::deleteDeadVarargs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>If this is an function that takes a ... list, and if llvm.vastart is never called, the varargs list is dead for the function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="137" column="8" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="129" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1a661190f7e0254349eda29ce8ca4ea06b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DeadArgumentEliminationPass::removeDeadArgumentsFromCallers</definition>
+        <argsstring>(Function &amp;F)</argsstring>
+        <name>removeDeadArgumentsFromCallers</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::removeDeadArgumentsFromCallers</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the given function has any arguments that are unused, and changes the caller parameters to be poison instead. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="138" column="8" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="264" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dead_argument_elimination_pass_1ae055a96d2f264f27e75029f4684a75cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DeadArgumentEliminationPass::propagateVirtMustcallLiveness</definition>
+        <argsstring>(const Module &amp;M)</argsstring>
+        <name>propagateVirtMustcallLiveness</name>
+        <qualifiedname>llvm::DeadArgumentEliminationPass::propagateVirtMustcallLiveness</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="139" column="8" bodyfile="lib/Transforms/IPO/DeadArgumentElimination.cpp" bodystart="1112" bodyend="1130"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Eliminate dead arguments (and return values) from functions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::DeadArgumentEliminationPass</label>
+        <link refid="classllvm_1_1_dead_argument_elimination_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::PassInfoMixin&lt; DerivedT &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+      </node>
+      <node id="2">
+        <label>llvm::PassInfoMixin&lt; DeadArgumentEliminationPass &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; DeadArgumentEliminationPass &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="1">
+        <label>llvm::DeadArgumentEliminationPass</label>
+        <link refid="classllvm_1_1_dead_argument_elimination_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Uses</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>LiveValues</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>LiveFunctions</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>ShouldHackArguments</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::PassInfoMixin&lt; DerivedT &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+      </node>
+      <node id="2">
+        <label>llvm::PassInfoMixin&lt; DeadArgumentEliminationPass &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; DeadArgumentEliminationPass &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>multimap&lt; RetOrArg, RetOrArg &gt;</label>
+      </node>
+      <node id="5">
+        <label>set&lt; RetOrArg &gt;</label>
+      </node>
+      <node id="6">
+        <label>set&lt; const Function * &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Transforms/IPO/DeadArgumentElimination.h" line="38" column="1" bodyfile="include/llvm/Transforms/IPO/DeadArgumentElimination.h" bodystart="39" bodyend="140"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a9536f679d7b90e4dc0db3510ab67dce2" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>createArg</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a5852130d218f4c275e8194510a9e31dd" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>createRet</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1aac009d77b6fca714db3d7b9f11618ac9" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>DeadArgumentEliminationPass</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a4c6bc96f6df3d5e145ac8366c6de73da" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>deleteDeadVarargs</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1ad36fe62495d85ca76be9eb8dd1a8125d" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>isLive</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a3dee2ca18ff5275c99041264099fd964a8cb9173f3fd92152f18401c8bf8ba21b" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>Live</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a1eb5a2eac80c369977d7c8747be838ba" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>LiveFuncSet</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1aa1991a5019f642f03694439d95fa1b20" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>LiveFunctions</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a3dee2ca18ff5275c99041264099fd964" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>Liveness</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1adccc69f6d0152bec28db15a70cf05587" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>LiveSet</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a404cb9e3e1fb3992697a27bd58e44a68" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>LiveValues</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1adf0f5b61fd3c855d9628922a79216b3e" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>markIfNotLive</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1ac585884e30c28f7046c2b046fb8b5c06" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>markLive</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1ab2e08655e55ad2ff50fcb32d12912868" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>markLive</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a32ffe897f911cd4fcff899217c1731c0" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>markValue</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a3dee2ca18ff5275c99041264099fd964af29a24ceeaaae7277109ac9c7a52d958" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>MaybeLive</name></member>
+      <member refid="structllvm_1_1_pass_info_mixin_1a630e2eac0694bcbcfed653c6a7f616e3" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>name</name></member>
+      <member refid="structllvm_1_1_pass_info_mixin_1aa4cc9f41bee4680f8bc4dce320d8f7c7" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>printPipeline</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1abe910acb239df3fc4a3482537eea037b" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>propagateLiveness</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1ae055a96d2f264f27e75029f4684a75cc" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>propagateVirtMustcallLiveness</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a661190f7e0254349eda29ce8ca4ea06b" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>removeDeadArgumentsFromCallers</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1aaee3a451a88969091f337efe37ef22c7" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>removeDeadStuffFromFunction</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a29ba94ac3af7390af4fa3209e6647732" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>run</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a997b16dfcd40407daf7b4e5b27dbcecf" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>ShouldHackArguments</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a1da52400f8fb3077bc591f79149890c7" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>surveyFunction</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a9b24eade63288a140f8e867dd018ad88" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>surveyUse</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a61f8aeca066956a480df0f6960832b2e" prot="private" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>surveyUses</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a9cbc5f82a665596b0ff5d374dcf9d01c" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>UseMap</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1afb15aeeba5e11ad17b03524730d51b7d" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>Uses</name></member>
+      <member refid="classllvm_1_1_dead_argument_elimination_pass_1a0fc4b7b5727b4a936d7c1c23320a8b12" prot="public" virt="non-virtual"><scope>llvm::DeadArgumentEliminationPass</scope><name>UseVector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_function_importer" kind="class" language="C++" prot="public">
+    <compoundname>llvm::FunctionImporter</compoundname>
+    <includes refid="_function_import_8h" local="yes">llvm/Transforms/IPO/FunctionImport.h</includes>
+    <innerclass refid="structllvm_1_1_function_importer_1_1_import_failure_info" prot="public">llvm::FunctionImporter::ImportFailureInfo</innerclass>
+    <innerclass refid="classllvm_1_1_function_importer_1_1_import_i_d_table" prot="public">llvm::FunctionImporter::ImportIDTable</innerclass>
+    <innerclass refid="classllvm_1_1_function_importer_1_1_import_lists_ty" prot="public">llvm::FunctionImporter::ImportListsTy</innerclass>
+    <innerclass refid="classllvm_1_1_function_importer_1_1_import_map_ty" prot="public">llvm::FunctionImporter::ImportMapTy</innerclass>
+    <innerclass refid="classllvm_1_1_function_importer_1_1_sorted_import_list" prot="public">llvm::FunctionImporter::SortedImportList</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_function_importer_1acbdbb2a799833253c9b3ec9e8e1e5a29" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ImportFailureReason</name>
+        <qualifiedname>llvm::FunctionImporter::ImportFailureReason</qualifiedname>
+        <enumvalue id="classllvm_1_1_function_importer_1acbdbb2a799833253c9b3ec9e8e1e5a29a6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_function_importer_1acbdbb2a799833253c9b3ec9e8e1e5a29ab00ca28f640c35e4add68ec4f671b614" prot="public">
+          <name>GlobalVar</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_function_importer_1acbdbb2a799833253c9b3ec9e8e1e5a29a8b4579095ad9db0fd7f8a9ac46d8207d" prot="public">
+          <name>NotLive</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_function_importer_1acbdbb2a799833253c9b3ec9e8e1e5a29a853d33bc5e409941bed899b913647310" prot="public">
+          <name>TooLarge</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_function_importer_1acbdbb2a799833253c9b3ec9e8e1e5a29ab56c6368422115c295458dbe410c2b2b" prot="public">
+          <name>InterposableLinkage</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_function_importer_1acbdbb2a799833253c9b3ec9e8e1e5a29a80994c7d2e02f08efe90b214b3ab2485" prot="public">
+          <name>LocalLinkageNotInModule</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_function_importer_1acbdbb2a799833253c9b3ec9e8e1e5a29a916ec32bed391fc1def53a8e263ec400" prot="public">
+          <name>NotEligible</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_function_importer_1acbdbb2a799833253c9b3ec9e8e1e5a29a3ad1a997f7605fc9ca9ca50845348e89" prot="public">
+          <name>NoInline</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The different reasons selectCallee will chose not to import a candidate. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/FunctionImport.h" line="34" column="3" bodyfile="include/llvm/Transforms/IPO/FunctionImport.h" bodystart="34" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_function_importer_1a3422e72809280a158153b5eecdefe02a" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_global_value_1a3af0428ec6e48cb2f05c199b7b9f7e07" kindref="member">GlobalValue::GUID</ref>, std::tuple&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_global_value_summary" kindref="compound">GlobalValueSummary</ref> *, std::unique_ptr&lt; <ref refid="structllvm_1_1_function_importer_1_1_import_failure_info" kindref="compound">ImportFailureInfo</ref> &gt; &gt; &gt;</type>
+        <definition>using llvm::FunctionImporter::ImportThresholdsTy = 
+      DenseMap&lt;GlobalValue::GUID,
+               std::tuple&lt;unsigned, const GlobalValueSummary *,
+                          std::unique_ptr&lt;ImportFailureInfo&gt;&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>ImportThresholdsTy</name>
+        <qualifiedname>llvm::FunctionImporter::ImportThresholdsTy</qualifiedname>
+        <briefdescription>
+<para>Map of callee GUID considered for import into a given module to a pair consisting of the largest threshold applied when deciding whether to import it and, if we decided to import, a pointer to the summary instance imported. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If we decided not to import, the summary will be nullptr. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/FunctionImport.h" line="83" column="3" bodyfile="include/llvm/Transforms/IPO/FunctionImport.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_function_importer_1acd58852b94e5cce68ad66dc3045f72f0" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="structllvm_1_1_value_info" kindref="compound">ValueInfo</ref> &gt;</type>
+        <definition>using llvm::FunctionImporter::ExportSetTy =  DenseSet&lt;ValueInfo&gt;</definition>
+        <argsstring></argsstring>
+        <name>ExportSetTy</name>
+        <qualifiedname>llvm::FunctionImporter::ExportSetTy</qualifiedname>
+        <briefdescription>
+<para>The set contains an entry for every global value that the module exports. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Depending on the user context, this container is allowed to contain definitions, declarations or a mix of both. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/FunctionImport.h" line="302" column="3" bodyfile="include/llvm/Transforms/IPO/FunctionImport.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_function_importer_1afc8016164479ac6c73bb41b80931dba6" prot="public" static="no">
+        <type>std::function&lt; <ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &gt; &gt;(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> Identifier)&gt;</type>
+        <definition>using llvm::FunctionImporter::ModuleLoaderTy = 
+      std::function&lt;Expected&lt;std::unique_ptr&lt;Module&gt;&gt;(StringRef Identifier)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ModuleLoaderTy</name>
+        <qualifiedname>llvm::FunctionImporter::ModuleLoaderTy</qualifiedname>
+        <briefdescription>
+<para>A function of this type is used to load modules referenced by the index. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/FunctionImport.h" line="305" column="3" bodyfile="include/llvm/Transforms/IPO/FunctionImport.h" bodystart="305" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_function_importer_1a64f73baccc5345aa7365d78f49c46ca4" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_module_summary_index" kindref="compound">ModuleSummaryIndex</ref> &amp;</type>
+        <definition>const ModuleSummaryIndex&amp; llvm::FunctionImporter::Index</definition>
+        <argsstring></argsstring>
+        <name>Index</name>
+        <qualifiedname>llvm::FunctionImporter::Index</qualifiedname>
+        <briefdescription>
+<para>The summaries index used to trigger importing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/FunctionImport.h" line="319" column="28" bodyfile="include/llvm/Transforms/IPO/FunctionImport.h" bodystart="319" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_function_importer_1a14d6a18ba26fb8322d7ba2f383cddf0e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_importer_1afc8016164479ac6c73bb41b80931dba6" kindref="member">ModuleLoaderTy</ref></type>
+        <definition>ModuleLoaderTy llvm::FunctionImporter::ModuleLoader</definition>
+        <argsstring></argsstring>
+        <name>ModuleLoader</name>
+        <qualifiedname>llvm::FunctionImporter::ModuleLoader</qualifiedname>
+        <briefdescription>
+<para>Factory function to load a <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> for a given identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/FunctionImport.h" line="322" column="18" bodyfile="include/llvm/Transforms/IPO/FunctionImport.h" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_function_importer_1a355628ae2c4c3aae18af5d6671c00e45" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::FunctionImporter::ClearDSOLocalOnDeclarations</definition>
+        <argsstring></argsstring>
+        <name>ClearDSOLocalOnDeclarations</name>
+        <qualifiedname>llvm::FunctionImporter::ClearDSOLocalOnDeclarations</qualifiedname>
+        <briefdescription>
+<para>See the comment of ClearDSOLocalOnDeclarations in <ref refid="_function_import_utils_8h" kindref="compound">Utils/FunctionImportUtils.h</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/FunctionImport.h" line="326" column="8" bodyfile="include/llvm/Transforms/IPO/FunctionImport.h" bodystart="326" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_function_importer_1aa67db42dec69ff549faa0928794d1fb7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::FunctionImporter::FunctionImporter</definition>
+        <argsstring>(const ModuleSummaryIndex &amp;Index, ModuleLoaderTy ModuleLoader, bool ClearDSOLocalOnDeclarations)</argsstring>
+        <name>FunctionImporter</name>
+        <qualifiedname>llvm::FunctionImporter::FunctionImporter</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_module_summary_index" kindref="compound">ModuleSummaryIndex</ref> &amp;</type>
+          <declname>Index</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function_importer_1afc8016164479ac6c73bb41b80931dba6" kindref="member">ModuleLoaderTy</ref></type>
+          <declname>ModuleLoader</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ClearDSOLocalOnDeclarations</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> Importer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/FunctionImport.h" line="309" column="3" bodyfile="include/llvm/Transforms/IPO/FunctionImport.h" bodystart="309" bodyend="312"/>
+        <references refid="namespacellvm_1abfc9c7ecf70f66901e439f7c04ef3dbb" compoundref="_s_t_l_extras_8h" startline="1873" endline="1875">llvm::move</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_function_importer_1a293aab6abe312ff6dbe227a3bcde838c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+        <definition>Expected&lt; bool &gt; FunctionImporter::importFunctions</definition>
+        <argsstring>(Module &amp;M, const ImportMapTy &amp;ImportList)</argsstring>
+        <name>importFunctions</name>
+        <qualifiedname>llvm::FunctionImporter::importFunctions</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function_importer_1_1_import_map_ty" kindref="compound">ImportMapTy</ref> &amp;</type>
+          <declname>ImportList</declname>
+        </param>
+        <briefdescription>
+<para>Import functions in <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> <computeroutput>M</computeroutput> based on the supplied import list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/FunctionImport.h" line="315" column="12" bodyfile="lib/Transforms/IPO/FunctionImport.cpp" bodystart="1818" bodyend="1986"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a4d2fd926089a58d482fb67a362e11bad" compoundref="llvm_2_support_2_error_8h" startline="1291" endline="1296">llvm::createStringError</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_global_value_summary_1a04e3abfb7aee7a96d3d56a99c9f0b737acb646dd0be0c28c71a939dc87ab59340" compoundref="_module_summary_index_8h" startline="474">llvm::GlobalValueSummary::Definition</references>
+        <references refid="_function_import_8cpp_1a0bb10e723f69af99f6257b77f7f854b2">EnableImportMetadata</references>
+        <references refid="namespacellvm_1aa7e093749a47a0dd581e5b2bb37e53fa" compoundref="_pass_builder_pipelines_8cpp" startline="311">llvm::EnableMemProfContextDisambiguation</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_m_d_node_1a7d10a7b9b7f40b04d27ed97c38ea1950" compoundref="_metadata_8h" startline="1549" endline="1551">llvm::MDNode::get</references>
+        <references refid="classllvm_1_1_global_value_1a788ede5201dc9b44e419e9fd2fbb38bf" compoundref="_globals_8cpp" startline="400" endline="403">llvm::GlobalValue::getAliaseeObject</references>
+        <references refid="classllvm_1_1_set_vector_1a0c7d0dae14eb8a5916fff9f72d8b46d2" compoundref="_set_vector_8h" startline="84" endline="84">llvm::SetVector&lt; T, Vector, Set, N &gt;::getArrayRef</references>
+        <references refid="classllvm_1_1_module_1a0beddb53641a541e2238617c5fac4be7" compoundref="_i_r_2_module_8h" startline="302" endline="302">llvm::Module::getContext</references>
+        <references refid="classllvm_1_1_global_value_1a6811428caf500217f319c74e80900c14" compoundref="_globals_8cpp" startline="75" endline="77">llvm::GlobalValue::getGUID</references>
+        <references refid="classllvm_1_1_function_importer_1_1_import_map_ty_1a7d29b2803cb1da68e09e4990312e3f40" compoundref="_function_import_8cpp" startline="370" endline="380">llvm::FunctionImporter::ImportMapTy::getImportType</references>
+        <references refid="classllvm_1_1_module_1a9a4fa55f19f0d5bb47d1fe6802e18d1a" compoundref="_i_r_2_module_8h" startline="268" endline="268">llvm::Module::getModuleIdentifier</references>
+        <references refid="classllvm_1_1_value_1adb5c319f5905c1d3ca9eb5df546388c5" compoundref="_sandbox_i_r_2_value_8cpp" startline="309" endline="316">llvm::Value::getName</references>
+        <references refid="classllvm_1_1_module_1a4fb981ce623b68eea5cd781ee0ae8ddf" compoundref="_i_r_2_module_8h" startline="279" endline="279">llvm::Module::getSourceFileName</references>
+        <references refid="classllvm_1_1_function_importer_1_1_import_map_ty_1a6d1b4c4b47fa034bd423ab12d1806960" compoundref="_function_import_8cpp" startline="360" endline="367">llvm::FunctionImporter::ImportMapTy::getSourceModules</references>
+        <references refid="classllvm_1_1_set_vector_1af34eb71cc483e84d2eca80575cb9ccde" compoundref="_set_vector_8h" startline="162" endline="178">llvm::SetVector&lt; T, Vector, Set, N &gt;::insert</references>
+        <references refid="_function_import_8cpp_1a82b2bae54059511efe7441d4213e4add" compoundref="_function_import_8cpp" startline="1806" endline="1814">internalizeGVsAfterImport</references>
+        <references refid="namespacellvm_1a59739a4f15fb2ec57a6b7fcfe938546bae55d43eabeefe5a8271b4a3c898bd18f" compoundref="_errc_8h" startline="56">llvm::invalid_argument</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_global_value_1ac1b5643f40dd3c7b92a548027eb13de0" compoundref="_globals_8cpp" startline="48" endline="48">llvm::GlobalValue::materialize</references>
+        <references refid="classllvm_1_1_i_r_mover_1a2dc5bdd64e84f396f958cd168e6e89e2" compoundref="_i_r_mover_8cpp" startline="1763" endline="1772">llvm::IRMover::move</references>
+        <references refid="_function_import_8cpp_1a8486e3756d8a29a80d281808828ce392">PrintImports</references>
+        <references refid="namespacellvm_1a46122434c47e17760d4c6709878a0dd6" compoundref="_function_import_utils_8cpp" startline="336" endline="342">llvm::renameModuleForThinLTO</references>
+        <references refid="_function_import_8cpp_1ac926ba61257c2262ebca3deca2cc8c76" compoundref="_function_import_8cpp" startline="1790" endline="1802">replaceAliasWithAliasee</references>
+        <references refid="classllvm_1_1_set_vector_1a1a42c1ba878bd637f374197d05f0a97f" compoundref="_set_vector_8h" startline="98" endline="100">llvm::SetVector&lt; T, Vector, Set, N &gt;::size</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+        <references refid="namespacellvm_1aba83a013c55b19255697393a10d9165e" compoundref="_string_extras_8h" startline="342" endline="349">llvm::toString</references>
+        <references refid="namespacellvm_1ad3c29183c5faa7f5a352807af8aca268" compoundref="_auto_upgrade_8cpp" startline="4977" endline="5020">llvm::UpgradeDebugInfo</references>
+        <referencedby refid="_thin_l_t_o_code_generator_8cpp_1a0386198cbc9986aa5b45f21b24b0902d" compoundref="_thin_l_t_o_code_generator_8cpp" startline="213" endline="235">crossImportIntoModule</referencedby>
+        <referencedby refid="_function_import_8cpp_1a2cdcb957bdfaac04b4bb110298fa7625" compoundref="_function_import_8cpp" startline="1988" endline="2047">doImportingForModuleForTest</referencedby>
+        <referencedby refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" compoundref="_l_t_o_backend_8cpp" startline="587" endline="716">llvm::lto::thinBackend</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The function importer is automatically importing function from other modules based on the provided summary informations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/IPO/FunctionImport.h" line="30" column="1" bodyfile="include/llvm/Transforms/IPO/FunctionImport.h" bodystart="30" bodyend="327"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_function_importer_1a355628ae2c4c3aae18af5d6671c00e45" prot="private" virt="non-virtual"><scope>llvm::FunctionImporter</scope><name>ClearDSOLocalOnDeclarations</name></member>
+      <member refid="classllvm_1_1_function_importer_1acd58852b94e5cce68ad66dc3045f72f0" prot="public" virt="non-virtual"><scope>llvm::FunctionImporter</scope><name>ExportSetTy</name></member>
+      <member refid="classllvm_1_1_function_importer_1aa67db42dec69ff549faa0928794d1fb7" prot="public" virt="non-virtual"><scope>llvm::FunctionImporter</scope><name>FunctionImporter</name></member>
+      <member refid="classllvm_1_1_function_importer_1acbdbb2a799833253c9b3ec9e8e1e5a29" prot="public" virt="non-virtual"><scope>llvm::FunctionImporter</scope><name>ImportFailureReason</name></member>
+      <member refid="classllvm_1_1_function_importer_1a293aab6abe312ff6dbe227a3bcde838c" prot="public" virt="non-virtual"><scope>llvm::FunctionImporter</scope><name>importFunctions</name></member>
+      <member refid="classllvm_1_1_function_importer_1a3422e72809280a158153b5eecdefe02a" prot="public" virt="non-virtual"><scope>llvm::FunctionImporter</scope><name>ImportThresholdsTy</name></member>
+      <member refid="classllvm_1_1_function_importer_1a64f73baccc5345aa7365d78f49c46ca4" prot="private" virt="non-virtual"><scope>llvm::FunctionImporter</scope><name>Index</name></member>
+      <member refid="classllvm_1_1_function_importer_1a14d6a18ba26fb8322d7ba2f383cddf0e" prot="private" virt="non-virtual"><scope>llvm::FunctionImporter</scope><name>ModuleLoader</name></member>
+      <member refid="classllvm_1_1_function_importer_1afc8016164479ac6c73bb41b80931dba6" prot="public" virt="non-virtual"><scope>llvm::FunctionImporter</scope><name>ModuleLoaderTy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

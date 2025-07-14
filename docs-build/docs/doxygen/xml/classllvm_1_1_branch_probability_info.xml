@@ -1,0 +1,1202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_branch_probability_info" kind="class" language="C++" prot="public">
+    <compoundname>llvm::BranchProbabilityInfo</compoundname>
+    <includes refid="_branch_probability_info_8h" local="yes">llvm/Analysis/BranchProbabilityInfo.h</includes>
+    <innerclass refid="classllvm_1_1_branch_probability_info_1_1_basic_block_callback_v_h" prot="private">llvm::BranchProbabilityInfo::BasicBlockCallbackVH</innerclass>
+    <innerclass refid="classllvm_1_1_branch_probability_info_1_1_loop_block" prot="private">llvm::BranchProbabilityInfo::LoopBlock</innerclass>
+    <innerclass refid="classllvm_1_1_branch_probability_info_1_1_scc_info" prot="public">llvm::BranchProbabilityInfo::SccInfo</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_branch_probability_info_1ae64e605abe55b103bc98301b4ea5c62d" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *, int &gt;</type>
+        <definition>using llvm::BranchProbabilityInfo::LoopData =  std::pair&lt;Loop *, int&gt;</definition>
+        <argsstring></argsstring>
+        <name>LoopData</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::LoopData</qualifiedname>
+        <briefdescription>
+<para>Pair of <ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> and SCC <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used to unify handling of normal and SCC based loop representations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="296" column="3" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_branch_probability_info_1a2ffe9a9398d5a7bfdad5be7e2b8c7693" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopBlock &amp;, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopBlock &amp; &gt;</type>
+        <definition>using llvm::BranchProbabilityInfo::LoopEdge =  std::pair&lt;const LoopBlock &amp;, const LoopBlock &amp;&gt;</definition>
+        <argsstring></argsstring>
+        <name>LoopEdge</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::LoopEdge</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="321" column="3" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="321" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_branch_probability_info_1a66831d8af0b5131f093589c10f8f6c84" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using llvm::BranchProbabilityInfo::Edge =  std::pair&lt;const BasicBlock *, unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>Edge</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::Edge</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="327" column="3" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="327" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_branch_probability_info_1a0c4ccdbd0181c89d5ac411263724fb8f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; BasicBlockCallbackVH, <ref refid="structllvm_1_1_dense_map_info" kindref="compound">DenseMapInfo</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &gt;</type>
+        <definition>DenseSet&lt;BasicBlockCallbackVH, DenseMapInfo&lt;Value*&gt; &gt; llvm::BranchProbabilityInfo::Handles</definition>
+        <argsstring></argsstring>
+        <name>Handles</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::Handles</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="323" column="12" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_branch_probability_info_1ada0c2cfcd81dc805fe460b627a1898ac" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; Edge, <ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref> &gt;</type>
+        <definition>DenseMap&lt;Edge, BranchProbability&gt; llvm::BranchProbabilityInfo::Probs</definition>
+        <argsstring></argsstring>
+        <name>Probs</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::Probs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="329" column="12" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_branch_probability_info_1abb5c13da8fc36f4d9d4ab1fe9d1a0c56" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+        <definition>const Function* llvm::BranchProbabilityInfo::LastF</definition>
+        <argsstring></argsstring>
+        <name>LastF</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::LastF</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Track the last function we run over for printing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="332" column="18" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="332" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_branch_probability_info_1a23300e04a69aae997531ae840c7d7fa3" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> *</type>
+        <definition>const LoopInfo* llvm::BranchProbabilityInfo::LI</definition>
+        <argsstring></argsstring>
+        <name>LI</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::LI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="334" column="18" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="334" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_branch_probability_info_1afe8c96b0c73d9ee35da359a7e09f5939" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_branch_probability_info_1_1_scc_info" kindref="compound">SccInfo</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;const SccInfo&gt; llvm::BranchProbabilityInfo::SccI</definition>
+        <argsstring></argsstring>
+        <name>SccI</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::SccI</qualifiedname>
+        <briefdescription>
+<para>Keeps information about all SCCs in a function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="337" column="19" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_branch_probability_info_1a297bbfee1fbb7a2b23a0a7093b1882c3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>SmallDenseMap&lt;const BasicBlock *, uint32_t&gt; llvm::BranchProbabilityInfo::EstimatedBlockWeight</definition>
+        <argsstring></argsstring>
+        <name>EstimatedBlockWeight</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::EstimatedBlockWeight</qualifiedname>
+        <briefdescription>
+<para>Keeps mapping of a basic block to its estimated weight. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="340" column="17" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="340" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_branch_probability_info_1a707afcbd637b0c9d886a3978aec6b719" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; LoopData, <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>SmallDenseMap&lt;LoopData, uint32_t&gt; llvm::BranchProbabilityInfo::EstimatedLoopWeight</definition>
+        <argsstring></argsstring>
+        <name>EstimatedLoopWeight</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::EstimatedLoopWeight</qualifiedname>
+        <briefdescription>
+<para>Keeps mapping of a loop to estimated weight to enter the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="343" column="17" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="343" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a771cb111ac312594590e53c1f3699fda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BranchProbabilityInfo::BranchProbabilityInfo</definition>
+        <argsstring>()=default</argsstring>
+        <name>BranchProbabilityInfo</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::BranchProbabilityInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="114" column="3"/>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1ab030c39bf198b14c4420c1c5e6c16114" compoundref="_branch_probability_info_8h" startline="123" endline="129">BranchProbabilityInfo</referencedby>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1a3e4567e9936d8106c79d2323c859f5ba">BranchProbabilityInfo</referencedby>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1a55cc2c7c13985c330a592f921db5e926" compoundref="_branch_probability_info_8h" startline="134" endline="142">operator=</referencedby>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1ad96150e5ef2b3f2c2a27e3e5782b1c4c">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1ad18bab54d5bb7925300874713924714b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BranchProbabilityInfo::BranchProbabilityInfo</definition>
+        <argsstring>(const Function &amp;F, const LoopInfo &amp;LI, const TargetLibraryInfo *TLI=nullptr, DominatorTree *DT=nullptr, PostDominatorTree *PDT=nullptr)</argsstring>
+        <name>BranchProbabilityInfo</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::BranchProbabilityInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> &amp;</type>
+          <declname>LI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+          <declname>TLI</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+          <declname>DT</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref> *</type>
+          <declname>PDT</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="116" column="3" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="116" bodyend="121"/>
+        <references refid="classllvm_1_1_branch_probability_info_1a54c3911cf4abbcd272fa99a303823942" compoundref="_branch_probability_info_8cpp" startline="1224" endline="1281">calculate</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1ab030c39bf198b14c4420c1c5e6c16114" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BranchProbabilityInfo::BranchProbabilityInfo</definition>
+        <argsstring>(BranchProbabilityInfo &amp;&amp;Arg)</argsstring>
+        <name>BranchProbabilityInfo</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::BranchProbabilityInfo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_branch_probability_info" kindref="compound">BranchProbabilityInfo</ref> &amp;&amp;</type>
+          <declname>Arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="123" column="3" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="123" bodyend="129"/>
+        <references refid="classllvm_1_1_branch_probability_info_1a771cb111ac312594590e53c1f3699fda">BranchProbabilityInfo</references>
+        <references refid="namespacellvm_1abfc9c7ecf70f66901e439f7c04ef3dbb" compoundref="_s_t_l_extras_8h" startline="1873" endline="1875">llvm::move</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a3e4567e9936d8106c79d2323c859f5ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BranchProbabilityInfo::BranchProbabilityInfo</definition>
+        <argsstring>(const BranchProbabilityInfo &amp;)=delete</argsstring>
+        <name>BranchProbabilityInfo</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::BranchProbabilityInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_branch_probability_info" kindref="compound">BranchProbabilityInfo</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="131" column="3"/>
+        <references refid="classllvm_1_1_branch_probability_info_1a771cb111ac312594590e53c1f3699fda">BranchProbabilityInfo</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1ad96150e5ef2b3f2c2a27e3e5782b1c4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_branch_probability_info" kindref="compound">BranchProbabilityInfo</ref> &amp;</type>
+        <definition>BranchProbabilityInfo &amp; llvm::BranchProbabilityInfo::operator=</definition>
+        <argsstring>(const BranchProbabilityInfo &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_branch_probability_info" kindref="compound">BranchProbabilityInfo</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="132" column="25"/>
+        <references refid="classllvm_1_1_branch_probability_info_1a771cb111ac312594590e53c1f3699fda">BranchProbabilityInfo</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a55cc2c7c13985c330a592f921db5e926" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_branch_probability_info" kindref="compound">BranchProbabilityInfo</ref> &amp;</type>
+        <definition>BranchProbabilityInfo &amp; llvm::BranchProbabilityInfo::operator=</definition>
+        <argsstring>(BranchProbabilityInfo &amp;&amp;RHS)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_branch_probability_info" kindref="compound">BranchProbabilityInfo</ref> &amp;&amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="134" column="25" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="134" bodyend="142"/>
+        <references refid="classllvm_1_1_branch_probability_info_1a771cb111ac312594590e53c1f3699fda">BranchProbabilityInfo</references>
+        <references refid="classllvm_1_1_branch_probability_info_1a884b41d94b6ffea3302b48b3ab14fd58" compoundref="_branch_probability_info_8cpp" startline="1057" endline="1060">releaseMemory</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a41951a9cbc849c4e0f2930f594c08847" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::invalidate</definition>
+        <argsstring>(Function &amp;, const PreservedAnalyses &amp;PA, FunctionAnalysisManager::Invalidator &amp;)</argsstring>
+        <name>invalidate</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::invalidate</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_preserved_analyses" kindref="compound">PreservedAnalyses</ref> &amp;</type>
+          <declname>PA</declname>
+        </param>
+        <param>
+          <type>FunctionAnalysisManager::Invalidator &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="144" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1062" bodyend="1069"/>
+        <references refid="classllvm_1_1_preserved_analyses_1aa7a1b769f9c57010cc41d9c3bb9d39c6" compoundref="llvm_2_i_r_2_analysis_8h" startline="264" endline="266">llvm::PreservedAnalyses::getChecker</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a884b41d94b6ffea3302b48b3ab14fd58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchProbabilityInfo::releaseMemory</definition>
+        <argsstring>()</argsstring>
+        <name>releaseMemory</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::releaseMemory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="147" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1057" bodyend="1060"/>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1a55cc2c7c13985c330a592f921db5e926" compoundref="_branch_probability_info_8h" startline="134" endline="142">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1acea510110989b4372eae3d2e68fcf04d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchProbabilityInfo::print</definition>
+        <argsstring>(raw_ostream &amp;OS) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="149" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1071" bodyend="1080"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_branch_probability_info_1ae13ac2ed5c40e40fff6ace158e7c0cf3" compoundref="_branch_probability_info_8cpp" startline="1188" endline="1200">printEdgeProbability</references>
+        <references refid="namespacellvm_1a26e2a938b431eaa6eca2beaa96410c9d" compoundref="_machine_basic_block_8h" startline="1385" endline="1385">llvm::successors</references>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1a54c3911cf4abbcd272fa99a303823942" compoundref="_branch_probability_info_8cpp" startline="1224" endline="1281">calculate</referencedby>
+        <referencedby refid="classllvm_1_1_branch_probability_printer_pass_1af8bbfa323a4917223612dff12067110b" compoundref="_branch_probability_info_8cpp" startline="1327" endline="1332">llvm::BranchProbabilityPrinterPass::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a46502d648608aa13cb485ed4af447d88" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref></type>
+        <definition>BranchProbability BranchProbabilityInfo::getEdgeProbability</definition>
+        <argsstring>(const BasicBlock *Src, unsigned IndexInSuccessors) const</argsstring>
+        <name>getEdgeProbability</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getEdgeProbability</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Src</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>IndexInSuccessors</declname>
+        </param>
+        <briefdescription>
+<para>Get an edge&apos;s probability, relative to other out-edges of the Src. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the raw edge probability for the edge.</para>
+<para>This routine provides access to the fractional probability between zero (0%) and one (100%) of this edge executing, relative to other edges leaving the &apos;Src&apos; block. The returned probability is never zero, and can only be one if the source block has only one successor.</para>
+<para>If can&apos;t find it, return a default probability 1/N where N is the number of successors. Here an edge is specified using PredBlock and an index to the successors. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="157" column="21" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1094" bodyend="1106"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a85da2bdebeeed0bf7fdccfdfc5f1b92c" compoundref="_machine_basic_block_8h" startline="1389" endline="1389">llvm::succ_size</references>
+        <referencedby refid="classanonymous__namespace_02_inductive_range_check_elimination_8cpp_03_1_1_inductive_range_check_1a715a08cb04246d426e200c8196ecf0ea" compoundref="_inductive_range_check_elimination_8cpp" startline="519" endline="569">anonymous_namespace{InductiveRangeCheckElimination.cpp}::InductiveRangeCheck::extractRangeChecksFromBranch</referencedby>
+        <referencedby refid="_selection_d_a_g_builder_8cpp_1a6289e8af46c9783382b346baa020087c" compoundref="_selection_d_a_g_builder_8cpp" startline="2094" endline="2147">findUnwindDestinations</referencedby>
+        <referencedby refid="structllvm_1_1_d_o_t_graph_traits_3_01_d_o_t_func_info_01_5_01_4_1a02f466eae018c75689a0189cb5f29524" compoundref="_c_f_g_printer_8h" startline="266" endline="319">llvm::DOTGraphTraits&lt; DOTFuncInfo * &gt;::getEdgeAttributes</referencedby>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1a4c75ce4a52aef066547edde4b012e6e2" compoundref="_branch_probability_info_8cpp" startline="1109" endline="1112">getEdgeProbability</referencedby>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1aa2da8547348736e285afd8af9093a83d" compoundref="_branch_probability_info_8cpp" startline="1083" endline="1087">isEdgeHot</referencedby>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1ae13ac2ed5c40e40fff6ace158e7c0cf3" compoundref="_branch_probability_info_8cpp" startline="1188" endline="1200">printEdgeProbability</referencedby>
+        <referencedby refid="namespacellvm_1a502009030bffff8a6992f4e4eb9380f5" compoundref="_break_critical_edges_8cpp" startline="338" endline="463">llvm::SplitIndirectBrCriticalEdges</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a8b76388f3768d895c2c1029d3356481a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref></type>
+        <definition>BranchProbability BranchProbabilityInfo::getEdgeProbability</definition>
+        <argsstring>(const BasicBlock *Src, const BasicBlock *Dst) const</argsstring>
+        <name>getEdgeProbability</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getEdgeProbability</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Src</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Dst</declname>
+        </param>
+        <briefdescription>
+<para>Get the probability of going from Src to Dst. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the raw edge probability calculated for the block pair.</para>
+<para>It returns the sum of all probabilities for edges from Src to Dst.</para>
+<para>This returns the sum of all raw edge probabilities from Src to Dst. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="163" column="21" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1117" bodyend="1128"/>
+        <references refid="namespacellvm_1ab1772fd431decccb7926d484ea223db7" compoundref="_s_t_l_extras_8h" startline="1938" endline="1940">llvm::count</references>
+        <references refid="classllvm_1_1_branch_probability_1afd00958cba7080048a84cccfcef55d71" compoundref="_branch_probability_8h" startline="49" endline="49">llvm::BranchProbability::getZero</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a9aa408bc83db2292cc1a57a3e6b206c2" compoundref="_region_iterator_8h" startline="249" endline="251">llvm::succ_begin</references>
+        <references refid="namespacellvm_1aa5684e4976198c1b64b694d3972ddf78" compoundref="_region_iterator_8h" startline="254" endline="256">llvm::succ_end</references>
+        <references refid="namespacellvm_1a85da2bdebeeed0bf7fdccfdfc5f1b92c" compoundref="_machine_basic_block_8h" startline="1389" endline="1389">llvm::succ_size</references>
+        <references refid="namespacellvm_1a26e2a938b431eaa6eca2beaa96410c9d" compoundref="_machine_basic_block_8h" startline="1385" endline="1385">llvm::successors</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a4c75ce4a52aef066547edde4b012e6e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref></type>
+        <definition>BranchProbability BranchProbabilityInfo::getEdgeProbability</definition>
+        <argsstring>(const BasicBlock *Src, const_succ_iterator Dst) const</argsstring>
+        <name>getEdgeProbability</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getEdgeProbability</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Src</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1ae21e08e18fe951a73ef0942064ef841c" kindref="member">const_succ_iterator</ref></type>
+          <declname>Dst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="166" column="21" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1109" bodyend="1112"/>
+        <references refid="classllvm_1_1_branch_probability_info_1a46502d648608aa13cb485ed4af447d88" compoundref="_branch_probability_info_8cpp" startline="1094" endline="1106">getEdgeProbability</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1aa2da8547348736e285afd8af9093a83d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::isEdgeHot</definition>
+        <argsstring>(const BasicBlock *Src, const BasicBlock *Dst) const</argsstring>
+        <name>isEdgeHot</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::isEdgeHot</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Src</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Dst</declname>
+        </param>
+        <briefdescription>
+<para>Test if an edge is hot relative to other out-edges of the Src. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> whether this edge out of the source block is &apos;hot&apos;. We define hot as having a relative probability &gt; 80%. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="173" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1083" bodyend="1087"/>
+        <references refid="classllvm_1_1_branch_probability_info_1a46502d648608aa13cb485ed4af447d88" compoundref="_branch_probability_info_8cpp" startline="1094" endline="1106">getEdgeProbability</references>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1ae13ac2ed5c40e40fff6ace158e7c0cf3" compoundref="_branch_probability_info_8cpp" startline="1188" endline="1200">printEdgeProbability</referencedby>
+        <referencedby refid="classllvm_1_1_selection_d_a_g_builder_1a732bd4cf41862afa6092c1648c02e256" compoundref="_selection_d_a_g_builder_8cpp" startline="2512" endline="2624">llvm::SelectionDAGBuilder::shouldKeepJumpConditionsTogether</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1ae13ac2ed5c40e40fff6ace158e7c0cf3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+        <definition>raw_ostream &amp; BranchProbabilityInfo::printEdgeProbability</definition>
+        <argsstring>(raw_ostream &amp;OS, const BasicBlock *Src, const BasicBlock *Dst) const</argsstring>
+        <name>printEdgeProbability</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::printEdgeProbability</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Src</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Dst</declname>
+        </param>
+        <briefdescription>
+<para>Print an edge&apos;s probability. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves an edge&apos;s probability similarly to <simplesect kind="see"><para><ref refid="classllvm_1_1_branch_probability_info_1a46502d648608aa13cb485ed4af447d88" kindref="member">getEdgeProbability</ref>, but then prints that probability to the provided stream. That stream is then returned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="180" column="15" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1188" bodyend="1200"/>
+        <references refid="classllvm_1_1_branch_probability_info_1a46502d648608aa13cb485ed4af447d88" compoundref="_branch_probability_info_8cpp" startline="1094" endline="1106">getEdgeProbability</references>
+        <references refid="classllvm_1_1_branch_probability_info_1aa2da8547348736e285afd8af9093a83d" compoundref="_branch_probability_info_8cpp" startline="1083" endline="1087">isEdgeHot</references>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1acea510110989b4372eae3d2e68fcf04d" compoundref="_branch_probability_info_8cpp" startline="1071" endline="1080">print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a145edc209aa2f628c73c9cf860eeeb5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchProbabilityInfo::setEdgeProbability</definition>
+        <argsstring>(const BasicBlock *Src, const SmallVectorImpl&lt; BranchProbability &gt; &amp;Probs)</argsstring>
+        <name>setEdgeProbability</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::setEdgeProbability</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Src</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref> &gt; &amp;</type>
+          <declname>Probs</declname>
+        </param>
+        <briefdescription>
+<para>Set the raw probabilities for all edges from the given block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the edge probability for all edges at once.</para>
+<para>This allows a pass to explicitly set edge probabilities for a block. It can be used when updating the CFG to update the branch probability information. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="189" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1131" bodyend="1156"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_branch_probability_info_1a0afb8520349ae7dc725ebfbb0532dbb1" compoundref="_branch_probability_info_8cpp" startline="1202" endline="1222">eraseBlock</references>
+        <references refid="classllvm_1_1_branch_probability_1a19c752227e02f7cb26fb47fdb36dc349" compoundref="_branch_probability_8h" startline="66" endline="66">llvm::BranchProbability::getDenominator</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <referencedby refid="namespacellvm_1a502009030bffff8a6992f4e4eb9380f5" compoundref="_break_critical_edges_8cpp" startline="338" endline="463">llvm::SplitIndirectBrCriticalEdges</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1af095c82360c397be730c08feb78264e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchProbabilityInfo::copyEdgeProbabilities</definition>
+        <argsstring>(BasicBlock *Src, BasicBlock *Dst)</argsstring>
+        <name>copyEdgeProbabilities</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::copyEdgeProbabilities</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Src</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Dst</declname>
+        </param>
+        <briefdescription>
+<para>Copy outgoing edge probabilities from <computeroutput>Src</computeroutput> to <computeroutput>Dst</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This allows to keep probabilities unset for the destination if they were unset for source. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="196" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1158" bodyend="1175"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_branch_probability_info_1a0afb8520349ae7dc725ebfbb0532dbb1" compoundref="_branch_probability_info_8cpp" startline="1202" endline="1222">eraseBlock</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1aa4f2ab60e1bb687cc5d9999ca97d57c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchProbabilityInfo::swapSuccEdgesProbabilities</definition>
+        <argsstring>(const BasicBlock *Src)</argsstring>
+        <name>swapSuccEdgesProbabilities</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::swapSuccEdgesProbabilities</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Src</declname>
+        </param>
+        <briefdescription>
+<para>Swap outgoing edges probabilities for <computeroutput>Src</computeroutput> with branch terminator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="199" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1177" bodyend="1185"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacestd_1ab8424022895aee3e366fb9a32f2883cb" compoundref="_bit_vector_8h" startline="860" endline="860">std::swap</references>
+        <referencedby refid="classanonymous__namespace_02_inductive_range_check_elimination_8cpp_03_1_1_inductive_range_check_1a715a08cb04246d426e200c8196ecf0ea" compoundref="_inductive_range_check_elimination_8cpp" startline="519" endline="569">anonymous_namespace{InductiveRangeCheckElimination.cpp}::InductiveRangeCheck::extractRangeChecksFromBranch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a54c3911cf4abbcd272fa99a303823942" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchProbabilityInfo::calculate</definition>
+        <argsstring>(const Function &amp;F, const LoopInfo &amp;LI, const TargetLibraryInfo *TLI, DominatorTree *DT, PostDominatorTree *PDT)</argsstring>
+        <name>calculate</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::calculate</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> &amp;</type>
+          <declname>LI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+          <declname>TLI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+          <declname>DT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref> *</type>
+          <declname>PDT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="206" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1224" bodyend="1281"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_value_1adb5c319f5905c1d3ca9eb5df546388c5" compoundref="_sandbox_i_r_2_value_8cpp" startline="309" endline="316">llvm::Value::getName</references>
+        <references refid="classllvm_1_1_instruction_1a3287172f2d13af086e6d66364e8c6de3" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="1272" endline="1282">llvm::Instruction::getNumSuccessors</references>
+        <references refid="classllvm_1_1_basic_block_1aef9e9fcf4c5dfce90276ca16d91b8e46" compoundref="_i_r_2_basic_block_8h" startline="240" endline="244">llvm::BasicBlock::getTerminator</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1a41c4916e8090ce40598db1a8dd2a5d5d" compoundref="_post_order_iterator_8h" startline="197" endline="199">llvm::post_order</references>
+        <references refid="classllvm_1_1_branch_probability_info_1acea510110989b4372eae3d2e68fcf04d" compoundref="_branch_probability_info_8cpp" startline="1071" endline="1080">print</references>
+        <references refid="_branch_probability_info_8cpp_1af17aeb0484c720fb1e197adf768961c7">PrintBranchProb</references>
+        <references refid="_branch_probability_info_8cpp_1ae4ed89c6d8e92b055e0561a615dcbaf6">PrintBranchProbFuncName</references>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1ad18bab54d5bb7925300874713924714b" compoundref="_branch_probability_info_8h" startline="116" endline="121">BranchProbabilityInfo</referencedby>
+        <referencedby refid="classllvm_1_1_branch_probability_analysis_1a16f8c5851cffc6f908a232089fc71de6" compoundref="_branch_probability_info_8cpp" startline="1316" endline="1324">llvm::BranchProbabilityAnalysis::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a0afb8520349ae7dc725ebfbb0532dbb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchProbabilityInfo::eraseBlock</definition>
+        <argsstring>(const BasicBlock *BB)</argsstring>
+        <name>eraseBlock</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::eraseBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Forget analysis results for the given basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="211" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1202" bodyend="1222"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_value_1adb5c319f5905c1d3ca9eb5df546388c5" compoundref="_sandbox_i_r_2_value_8cpp" startline="309" endline="316">llvm::Value::getName</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1af095c82360c397be730c08feb78264e9" compoundref="_branch_probability_info_8cpp" startline="1158" endline="1175">copyEdgeProbabilities</referencedby>
+        <referencedby refid="classllvm_1_1_branch_probability_info_1a145edc209aa2f628c73c9cf860eeeb5c" compoundref="_branch_probability_info_8cpp" startline="1131" endline="1156">setEdgeProbability</referencedby>
+        <referencedby refid="namespacellvm_1a502009030bffff8a6992f4e4eb9380f5" compoundref="_break_critical_edges_8cpp" startline="338" endline="463">llvm::SplitIndirectBrCriticalEdges</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a4e4a47209688ad8c4359d4bf0f020f14" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref></type>
+        <definition>static BranchProbability llvm::BranchProbabilityInfo::getBranchProbStackProtector</definition>
+        <argsstring>(bool IsLikely)</argsstring>
+        <name>getBranchProbStackProtector</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getBranchProbStackProtector</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsLikely</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="201" column="28" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="201" bodyend="204"/>
+        <references refid="classllvm_1_1_branch_probability_1aaee6034264d5d0782e5d1489360730d9" compoundref="_branch_probability_8h" startline="69" endline="69">llvm::BranchProbability::getCompl</references>
+        <referencedby refid="_stack_protector_8cpp_1a2e130f575ee6cbddeb0d62b295dee036" compoundref="_stack_protector_8cpp" startline="547" endline="691">InsertStackProtectors</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a6ca755b59fa2df435452505f3dcae1f8" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>LoopBlock</type>
+        <definition>LoopBlock llvm::BranchProbabilityInfo::getLoopBlock</definition>
+        <argsstring>(const BasicBlock *BB) const</argsstring>
+        <name>getLoopBlock</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getLoopBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Helper to construct LoopBlock for <computeroutput>BB</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="346" column="13" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="346" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a017780ee735d0b759c1b8530593eabf7" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::isLoopEnteringEdge</definition>
+        <argsstring>(const LoopEdge &amp;Edge) const</argsstring>
+        <name>isLoopEnteringEdge</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::isLoopEnteringEdge</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopEdge &amp;</type>
+          <declname>Edge</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if destination block belongs to some loop and source block is either doesn&apos;t belong to any loop or belongs to a loop which is not inner relative to the destination block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="353" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="324" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1afe6bbca341cf397870210c81158d115f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::isLoopExitingEdge</definition>
+        <argsstring>(const LoopEdge &amp;Edge) const</argsstring>
+        <name>isLoopExitingEdge</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::isLoopExitingEdge</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopEdge &amp;</type>
+          <declname>Edge</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if source block belongs to some loop and destination block is either doesn&apos;t belong to any loop or belongs to a loop which is not inner relative to the source block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="357" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="334" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a658ce3c0572288413fcf1b42ff2a0743" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::isLoopEnteringExitingEdge</definition>
+        <argsstring>(const LoopEdge &amp;Edge) const</argsstring>
+        <name>isLoopEnteringExitingEdge</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::isLoopEnteringExitingEdge</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopEdge &amp;</type>
+          <declname>Edge</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if <computeroutput><ref refid="class_edge" kindref="compound">Edge</ref></computeroutput> is either enters to or exits from some loop, false in all other cases. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="360" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="338" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a5929134366416c3b2824423d3d300ee1" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::isLoopBackEdge</definition>
+        <argsstring>(const LoopEdge &amp;Edge) const</argsstring>
+        <name>isLoopBackEdge</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::isLoopBackEdge</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopEdge &amp;</type>
+          <declname>Edge</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if source and destination blocks belongs to the same loop and destination block is loop header. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="363" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="343" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a6cc2645eb64f8b7a7b1dd0af923e3f3e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchProbabilityInfo::getLoopEnterBlocks</definition>
+        <argsstring>(const LoopBlock &amp;LB, SmallVectorImpl&lt; BasicBlock * &gt; &amp;Enters) const</argsstring>
+        <name>getLoopEnterBlocks</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getLoopEnterBlocks</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopBlock &amp;</type>
+          <declname>LB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt; &amp;</type>
+          <declname>Enters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="365" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="353" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1acd31bed756c01c430a6b05ac16490d0d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchProbabilityInfo::getLoopExitBlocks</definition>
+        <argsstring>(const LoopBlock &amp;LB, SmallVectorImpl&lt; BasicBlock * &gt; &amp;Exits) const</argsstring>
+        <name>getLoopExitBlocks</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getLoopExitBlocks</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopBlock &amp;</type>
+          <declname>LB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt; &amp;</type>
+          <declname>Exits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="368" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="364" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1ab812769371c960e95ea5ef11785b5ba8" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>std::optional&lt; uint32_t &gt; BranchProbabilityInfo::getEstimatedBlockWeight</definition>
+        <argsstring>(const BasicBlock *BB) const</argsstring>
+        <name>getEstimatedBlockWeight</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getEstimatedBlockWeight</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Returns estimated weight for <computeroutput>BB</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>std::nullopt if <computeroutput>BB</computeroutput> has no estimated weight. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="373" column="17" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="645" bodyend="650"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a4a3598bdb59d6d992198c3a4adc33e16" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>std::optional&lt; uint32_t &gt; BranchProbabilityInfo::getEstimatedLoopWeight</definition>
+        <argsstring>(const LoopData &amp;L) const</argsstring>
+        <name>getEstimatedLoopWeight</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getEstimatedLoopWeight</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopData &amp;</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Returns estimated weight to enter <computeroutput>L</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In other words it is weight of loop&apos;s header block not scaled by trip count. Returns std::nullopt if <computeroutput>L</computeroutput> has no no estimated weight. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="378" column="17" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="653" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1aad49400fea6f31ece3e185f20a505f8b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>std::optional&lt; uint32_t &gt; BranchProbabilityInfo::getEstimatedEdgeWeight</definition>
+        <argsstring>(const LoopEdge &amp;Edge) const</argsstring>
+        <name>getEstimatedEdgeWeight</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getEstimatedEdgeWeight</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopEdge &amp;</type>
+          <declname>Edge</declname>
+        </param>
+        <briefdescription>
+<para>Return estimated weight for <computeroutput><ref refid="class_edge" kindref="compound">Edge</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns std::nullopt if estimated weight is unknown. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="382" column="17" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="661" bodyend="667"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a83f5d11cd2252ec5710f8cbd13dfdd77" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class IterT</type>
+          </param>
+        </templateparamlist>
+        <type>std::optional&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>std::optional&lt; uint32_t &gt; BranchProbabilityInfo::getMaxEstimatedEdgeWeight</definition>
+        <argsstring>(const LoopBlock &amp;SrcBB, iterator_range&lt; IterT &gt; Successors) const</argsstring>
+        <name>getMaxEstimatedEdgeWeight</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getMaxEstimatedEdgeWeight</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopBlock &amp;</type>
+          <declname>SrcBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; IterT &gt;</type>
+          <declname>Successors</declname>
+        </param>
+        <briefdescription>
+<para>Iterates over all edges leading from <computeroutput>SrcBB</computeroutput> to <computeroutput>Successors</computeroutput> and returns maximum of all estimated weights. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If at least one edge has unknown estimated weight std::nullopt is returned. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="389" column="3" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="670" bodyend="686"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1aef09d0c16ec287690b611c2b6ed7abaa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::updateEstimatedBlockWeight</definition>
+        <argsstring>(LoopBlock &amp;LoopBB, uint32_t BBWeight, SmallVectorImpl&lt; BasicBlock * &gt; &amp;BlockWorkList, SmallVectorImpl&lt; LoopBlock &gt; &amp;LoopWorkList)</argsstring>
+        <name>updateEstimatedBlockWeight</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::updateEstimatedBlockWeight</qualifiedname>
+        <param>
+          <type>LoopBlock &amp;</type>
+          <declname>LoopBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>BBWeight</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt; &amp;</type>
+          <declname>BlockWorkList</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; LoopBlock &gt; &amp;</type>
+          <declname>LoopWorkList</declname>
+        </param>
+        <briefdescription>
+<para>If <computeroutput>LoopBB</computeroutput> has no estimated weight then set it to <computeroutput>BBWeight</computeroutput> and return true. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Otherwise <computeroutput>BB&apos;s</computeroutput> weight remains unchanged and false is returned. In addition all blocks/loops that might need their weight to be re-estimated are put into BlockWorkList/LoopWorkList. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="396" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="693" bodyend="717"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1ac8d8b3049d21861f1e3bd85094e831ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchProbabilityInfo::propagateEstimatedBlockWeight</definition>
+        <argsstring>(const LoopBlock &amp;LoopBB, DominatorTree *DT, PostDominatorTree *PDT, uint32_t BBWeight, SmallVectorImpl&lt; BasicBlock * &gt; &amp;WorkList, SmallVectorImpl&lt; LoopBlock &gt; &amp;LoopWorkList)</argsstring>
+        <name>propagateEstimatedBlockWeight</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::propagateEstimatedBlockWeight</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> LoopBlock &amp;</type>
+          <declname>LoopBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+          <declname>DT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref> *</type>
+          <declname>PDT</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>BBWeight</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt; &amp;</type>
+          <declname>WorkList</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; LoopBlock &gt; &amp;</type>
+          <declname>LoopWorkList</declname>
+        </param>
+        <briefdescription>
+<para>Starting from <computeroutput>LoopBB</computeroutput> (including <computeroutput>LoopBB</computeroutput> itself) propagate <computeroutput>BBWeight</computeroutput> up the domination tree. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="402" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="731" bodyend="762"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a5713672d2a5bd673c4889c5fd20bed08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>std::optional&lt; uint32_t &gt; BranchProbabilityInfo::getInitialEstimatedBlockWeight</definition>
+        <argsstring>(const BasicBlock *BB)</argsstring>
+        <name>getInitialEstimatedBlockWeight</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::getInitialEstimatedBlockWeight</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Returns block&apos;s weight encoded in the IR. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="408" column="17" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="765" bodyend="800"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1aff7339f713a00a22f68bf56973399945" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchProbabilityInfo::computeEestimateBlockWeight</definition>
+        <argsstring>(const Function &amp;F, DominatorTree *DT, PostDominatorTree *PDT)</argsstring>
+        <name>computeEestimateBlockWeight</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::computeEestimateBlockWeight</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+          <declname>DT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref> *</type>
+          <declname>PDT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="411" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="805" bodyend="870"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1adc9ae7d9f89c23d6edf49e320a519ed8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::calcEstimatedHeuristics</definition>
+        <argsstring>(const BasicBlock *BB)</argsstring>
+        <name>calcEstimatedHeuristics</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::calcEstimatedHeuristics</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Based on computed weights by <computeroutput>computeEstimatedBlockWeight</computeroutput> set probabilities on branches. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="416" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="875" bodyend="960"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a18f6661bc9a7ba6ab4e37c4f5cd23237" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::calcMetadataWeights</definition>
+        <argsstring>(const BasicBlock *BB)</argsstring>
+        <name>calcMetadataWeights</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::calcMetadataWeights</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="417" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="378" bodyend="510"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a73b29c1aa15d8372a273377f01d82230" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::calcPointerHeuristics</definition>
+        <argsstring>(const BasicBlock *BB)</argsstring>
+        <name>calcPointerHeuristics</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::calcPointerHeuristics</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="418" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="514" bodyend="536"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a287b9de9dbecd10c727217300a115cfb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::calcZeroHeuristics</definition>
+        <argsstring>(const BasicBlock *BB, const TargetLibraryInfo *TLI)</argsstring>
+        <name>calcZeroHeuristics</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::calcZeroHeuristics</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+          <declname>TLI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="419" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="962" bodyend="1027"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_probability_info_1a647e365e2b5e994ee5b3c5f2781d37c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool BranchProbabilityInfo::calcFloatingPointHeuristics</definition>
+        <argsstring>(const BasicBlock *BB)</argsstring>
+        <name>calcFloatingPointHeuristics</name>
+        <qualifiedname>llvm::BranchProbabilityInfo::calcFloatingPointHeuristics</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="420" column="8" bodyfile="lib/Analysis/BranchProbabilityInfo.cpp" bodystart="1029" bodyend="1055"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Analysis providing branch probability information. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This is a function analysis which provides information on the relative probabilities of each &quot;edge&quot; in the function&apos;s CFG where such an edge is defined by a pair (PredBlock and an index in the successors). The probability of an edge from one block is always relative to the probabilities of other edges from the block. The probabilites of all edges from a block sum to exactly one (100%). We use a pair (PredBlock and an index in the successors) to uniquely identify an edge, since we can have multiple edges from Src to Dst. As an example, we can have a switch which jumps to Dst with value 0 and value 10.</para>
+<para><ref refid="classllvm_1_1sys_1_1_process" kindref="compound">Process</ref> of computing branch probabilities can be logically viewed as three step process:</para>
+<para>First, if there is a profile information associated with the branch then it is trivially translated to branch probabilities. There is one exception from this rule though. Probabilities for edges leading to &quot;unreachable&quot; blocks (blocks with the estimated weight not greater than UNREACHABLE_WEIGHT) are evaluated according to static estimation and override profile information. If no branch probabilities were calculated on this step then take the next one.</para>
+<para>Second, estimate absolute execution weights for each block based on statically known information. Roots of such information are &quot;cold&quot;, &quot;unreachable&quot;, &quot;noreturn&quot; and &quot;unwind&quot; blocks. Those blocks get their weights set to <ref refid="_branch_probability_info_8cpp_1a0bab6cbda2c6f1e9dd352004a6b9f393a3f7ff4daa99912d1b0c8c64340edb9fb" kindref="member">BlockExecWeight::COLD</ref>, <ref refid="_branch_probability_info_8cpp_1a0bab6cbda2c6f1e9dd352004a6b9f393a58fd3b3b1f27606728077423eb21d8d6" kindref="member">BlockExecWeight::UNREACHABLE</ref>, <ref refid="_branch_probability_info_8cpp_1a0bab6cbda2c6f1e9dd352004a6b9f393a25c263e3b7486f9453d37151d62ff7d1" kindref="member">BlockExecWeight::NORETURN</ref> and <ref refid="_branch_probability_info_8cpp_1a0bab6cbda2c6f1e9dd352004a6b9f393a37b88a87188456429fa6e6c31a6d2301" kindref="member">BlockExecWeight::UNWIND</ref> respectively. Then the weights are propagated to the other blocks up the domination line. In addition, if all successors have estimated weights set then maximum of these weights assigned to the block itself (while this is not ideal heuristic in theory it&apos;s simple and works reasonably well in most cases) and the process repeats. Once the process of weights propagation converges branch probabilities are set for all such branches that have at least one successor with the weight set. Default execution weight (<ref refid="_branch_probability_info_8cpp_1a0bab6cbda2c6f1e9dd352004a6b9f393a5b39c8b553c821e7cddc6da64b5bd2ee" kindref="member">BlockExecWeight::DEFAULT</ref>) is used for any successors which doesn&apos;t have its weight set. For loop back branches we use their weights scaled by loop trip count equal to &apos;LBH_TAKEN_WEIGHT/LBH_NOTTAKEN_WEIGHT&apos;.</para>
+<para>Here is a simple example demonstrating how the described algorithm works. <verbatim>     BB1
+    /   \
+   v     v
+ BB2     BB3
+/   \
+</verbatim> v v ColdBB UnreachBB</para>
+<para>Initially, ColdBB is associated with COLD_WEIGHT and UnreachBB with UNREACHABLE_WEIGHT. COLD_WEIGHT is set to BB2 as maximum between its successors. BB1 and BB3 has no explicit estimated weights and assumed to have DEFAULT_WEIGHT. Based on assigned weights branches will have the following probabilities: P(BB1-&gt;BB2) = COLD_WEIGHT/(COLD_WEIGHT + DEFAULT_WEIGHT) = 0xffff / (0xffff + 0xfffff) = 0.0588(5.9%) P(BB1-&gt;BB3) = DEFAULT_WEIGHT_WEIGHT/(COLD_WEIGHT + DEFAULT_WEIGHT) = 0xfffff / (0xffff + 0xfffff) = 0.941(94.1%) P(BB2-&gt;ColdBB) = COLD_WEIGHT/(COLD_WEIGHT + UNREACHABLE_WEIGHT) = 1(100%) P(BB2-&gt;UnreachBB) = UNREACHABLE_WEIGHT/(COLD_WEIGHT+UNREACHABLE_WEIGHT) = 0(0%)</para>
+<para>If no branch probabilities were calculated on this step then take the next one.</para>
+<para>Third, apply different kinds of local heuristics for each individual branch until first match. For example probability of a pointer to be null is estimated as PH_TAKEN_WEIGHT/(PH_TAKEN_WEIGHT + PH_NONTAKEN_WEIGHT). If no local heuristic has been matched then branch is left with no explicit probability set and assumed to have default probability. </para>
+    </detaileddescription>
+    <location file="include/llvm/Analysis/BranchProbabilityInfo.h" line="112" column="1" bodyfile="include/llvm/Analysis/BranchProbabilityInfo.h" bodystart="112" bodyend="421"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_branch_probability_info_1a771cb111ac312594590e53c1f3699fda" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>BranchProbabilityInfo</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1ad18bab54d5bb7925300874713924714b" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>BranchProbabilityInfo</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1ab030c39bf198b14c4420c1c5e6c16114" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>BranchProbabilityInfo</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a3e4567e9936d8106c79d2323c859f5ba" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>BranchProbabilityInfo</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1adc9ae7d9f89c23d6edf49e320a519ed8" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>calcEstimatedHeuristics</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a647e365e2b5e994ee5b3c5f2781d37c5" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>calcFloatingPointHeuristics</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a18f6661bc9a7ba6ab4e37c4f5cd23237" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>calcMetadataWeights</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a73b29c1aa15d8372a273377f01d82230" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>calcPointerHeuristics</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a54c3911cf4abbcd272fa99a303823942" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>calculate</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a287b9de9dbecd10c727217300a115cfb" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>calcZeroHeuristics</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1aff7339f713a00a22f68bf56973399945" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>computeEestimateBlockWeight</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1af095c82360c397be730c08feb78264e9" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>copyEdgeProbabilities</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a66831d8af0b5131f093589c10f8f6c84" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>Edge</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a0afb8520349ae7dc725ebfbb0532dbb1" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>eraseBlock</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a297bbfee1fbb7a2b23a0a7093b1882c3" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>EstimatedBlockWeight</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a707afcbd637b0c9d886a3978aec6b719" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>EstimatedLoopWeight</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a4e4a47209688ad8c4359d4bf0f020f14" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getBranchProbStackProtector</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a46502d648608aa13cb485ed4af447d88" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getEdgeProbability</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a8b76388f3768d895c2c1029d3356481a" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getEdgeProbability</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a4c75ce4a52aef066547edde4b012e6e2" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getEdgeProbability</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1ab812769371c960e95ea5ef11785b5ba8" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getEstimatedBlockWeight</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1aad49400fea6f31ece3e185f20a505f8b" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getEstimatedEdgeWeight</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a4a3598bdb59d6d992198c3a4adc33e16" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getEstimatedLoopWeight</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a5713672d2a5bd673c4889c5fd20bed08" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getInitialEstimatedBlockWeight</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a6ca755b59fa2df435452505f3dcae1f8" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getLoopBlock</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a6cc2645eb64f8b7a7b1dd0af923e3f3e" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getLoopEnterBlocks</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1acd31bed756c01c430a6b05ac16490d0d" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getLoopExitBlocks</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a83f5d11cd2252ec5710f8cbd13dfdd77" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>getMaxEstimatedEdgeWeight</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a0c4ccdbd0181c89d5ac411263724fb8f" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>Handles</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a41951a9cbc849c4e0f2930f594c08847" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>invalidate</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1aa2da8547348736e285afd8af9093a83d" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>isEdgeHot</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a5929134366416c3b2824423d3d300ee1" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>isLoopBackEdge</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a017780ee735d0b759c1b8530593eabf7" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>isLoopEnteringEdge</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a658ce3c0572288413fcf1b42ff2a0743" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>isLoopEnteringExitingEdge</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1afe6bbca341cf397870210c81158d115f" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>isLoopExitingEdge</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1abb5c13da8fc36f4d9d4ab1fe9d1a0c56" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>LastF</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a23300e04a69aae997531ae840c7d7fa3" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>LI</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1ae64e605abe55b103bc98301b4ea5c62d" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>LoopData</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a2ffe9a9398d5a7bfdad5be7e2b8c7693" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>LoopEdge</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1ad96150e5ef2b3f2c2a27e3e5782b1c4c" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a55cc2c7c13985c330a592f921db5e926" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1acea510110989b4372eae3d2e68fcf04d" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>print</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1ae13ac2ed5c40e40fff6ace158e7c0cf3" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>printEdgeProbability</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1ada0c2cfcd81dc805fe460b627a1898ac" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>Probs</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1ac8d8b3049d21861f1e3bd85094e831ee" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>propagateEstimatedBlockWeight</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a884b41d94b6ffea3302b48b3ab14fd58" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>releaseMemory</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1afe8c96b0c73d9ee35da359a7e09f5939" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>SccI</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1a145edc209aa2f628c73c9cf860eeeb5c" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>setEdgeProbability</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1aa4f2ab60e1bb687cc5d9999ca97d57c2" prot="public" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>swapSuccEdgesProbabilities</name></member>
+      <member refid="classllvm_1_1_branch_probability_info_1aef09d0c16ec287690b611c2b6ed7abaa" prot="private" virt="non-virtual"><scope>llvm::BranchProbabilityInfo</scope><name>updateEstimatedBlockWeight</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

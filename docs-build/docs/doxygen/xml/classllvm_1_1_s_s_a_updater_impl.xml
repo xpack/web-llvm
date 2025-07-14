@@ -1,0 +1,551 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_s_s_a_updater_impl" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SSAUpdaterImpl</compoundname>
+    <includes refid="_s_s_a_updater_impl_8h" local="yes">llvm/Transforms/Utils/SSAUpdaterImpl.h</includes>
+    <innerclass refid="classllvm_1_1_s_s_a_updater_impl_1_1_b_b_info" prot="private">llvm::SSAUpdaterImpl::BBInfo</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename UpdaterT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_s_s_a_updater_impl_1a5c02d9afff1fb1b35cd113bf2a9ba908" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_s_s_a_updater_traits" kindref="compound">SSAUpdaterTraits</ref>&lt; UpdaterT &gt;</type>
+        <definition>using llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::Traits =  SSAUpdaterTraits&lt;UpdaterT&gt;</definition>
+        <argsstring></argsstring>
+        <name>Traits</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::Traits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="35" column="3" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_s_s_a_updater_impl_1a2ea9f05f9ff6796eb824ece16eb60708" prot="private" static="no">
+        <type>typename Traits::BlkT</type>
+        <definition>using llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::BlkT =  typename Traits::BlkT</definition>
+        <argsstring></argsstring>
+        <name>BlkT</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::BlkT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="36" column="3" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_s_s_a_updater_impl_1a490100ebb370235ce8d04a6b4afa16c5" prot="private" static="no">
+        <type>typename Traits::ValT</type>
+        <definition>using llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::ValT =  typename Traits::ValT</definition>
+        <argsstring></argsstring>
+        <name>ValT</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::ValT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="37" column="3" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_s_s_a_updater_impl_1a20e90f8e9ad4744b4d77b9534a4d9dec" prot="private" static="no">
+        <type>typename Traits::PhiT</type>
+        <definition>using llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::PhiT =  typename Traits::PhiT</definition>
+        <argsstring></argsstring>
+        <name>PhiT</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::PhiT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="38" column="3" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_s_s_a_updater_impl_1aef0766f16cb5480636bbd6a6087a75b4" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; BlkT *, ValT &gt;</type>
+        <definition>using llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::AvailableValsTy =  DenseMap&lt;BlkT *, ValT&gt;</definition>
+        <argsstring></argsstring>
+        <name>AvailableValsTy</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::AvailableValsTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="73" column="3" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_s_s_a_updater_impl_1a8e2fa5790ddd0984480af9f42d00f2d0" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; BBInfo * &gt;</type>
+        <definition>using llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::BlockListTy =  SmallVectorImpl&lt;BBInfo *&gt;</definition>
+        <argsstring></argsstring>
+        <name>BlockListTy</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::BlockListTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="79" column="3" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_s_s_a_updater_impl_1aba873fefc1e81e5db13366acab06fa47" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; BlkT *, BBInfo * &gt;</type>
+        <definition>using llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::BBMapTy =  DenseMap&lt;BlkT *, BBInfo *&gt;</definition>
+        <argsstring></argsstring>
+        <name>BBMapTy</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::BBMapTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="80" column="3" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_s_s_a_updater_impl_1add38d53c84dc3df0119ec856ab2051bc" prot="private" static="no" mutable="no">
+        <type>UpdaterT *</type>
+        <definition>UpdaterT* llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::Updater</definition>
+        <argsstring></argsstring>
+        <name>Updater</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::Updater</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="33" column="12" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_s_s_a_updater_impl_1a1c336acd8a51ac8367ed5716e9b5959c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">AvailableValsTy</ref> *</type>
+        <definition>AvailableValsTy* llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::AvailableVals</definition>
+        <argsstring></argsstring>
+        <name>AvailableVals</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::AvailableVals</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="75" column="19" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_s_s_a_updater_impl_1a70e48f9d3b9167dc97edd893b3a3c5a8" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; PhiT * &gt; *</type>
+        <definition>SmallVectorImpl&lt;PhiT *&gt;* llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::InsertedPHIs</definition>
+        <argsstring></argsstring>
+        <name>InsertedPHIs</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::InsertedPHIs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="77" column="19" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_s_s_a_updater_impl_1a46bd0cf95a415ac35a359555ebc8deb8" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">BBMapTy</ref></type>
+        <definition>BBMapTy llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::BBMap</definition>
+        <argsstring></argsstring>
+        <name>BBMap</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::BBMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="82" column="11" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_s_s_a_updater_impl_1a59dc15a0c906fab271863a88f8c86a43" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1a8e612822d4ba7bb36c9c79582a567108" kindref="member">BumpPtrAllocator</ref></type>
+        <definition>BumpPtrAllocator llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::Allocator</definition>
+        <argsstring></argsstring>
+        <name>Allocator</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::Allocator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="83" column="20" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1a5f421457a35ee1520ac43e4f7def256d" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::SSAUpdaterImpl</definition>
+        <argsstring>(UpdaterT *U, AvailableValsTy *A, SmallVectorImpl&lt; PhiT * &gt; *Ins)</argsstring>
+        <name>SSAUpdaterImpl</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::SSAUpdaterImpl</qualifiedname>
+        <param>
+          <type>UpdaterT *</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">AvailableValsTy</ref> *</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; PhiT * &gt; *</type>
+          <declname>Ins</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="86" column="12" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="86" bodyend="88"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1a4f6c8ac18caa1b4beaf0d4d88b82cef9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ValT</type>
+        <definition>ValT llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::GetValue</definition>
+        <argsstring>(BlkT *BB)</argsstring>
+        <name>GetValue</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::GetValue</qualifiedname>
+        <param>
+          <type>BlkT *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>GetValue - <ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> to see if AvailableVals has an entry for the specified BB and if so, return it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If not, construct SSA form by first calculating the required placement of PHIs and then inserting new PHIs where needed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="94" column="8" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="94" bodyend="110"/>
+        <references refid="classllvm_1_1_s_s_a_updater_impl_1a85cbdd891f1cd43d6c79f7d68a2caf46" compoundref="_s_s_a_updater_impl_8h" startline="116" endline="208">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::BuildBlockList</references>
+        <references refid="classllvm_1_1_s_s_a_updater_impl_1a3d50f3f3bb104fb854ac8de326c5bb64" compoundref="_s_s_a_updater_impl_8h" startline="353" endline="411">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindAvailableVals</references>
+        <references refid="classllvm_1_1_s_s_a_updater_impl_1a0ab1c1435c29eea38d7a8dd64f064b84" compoundref="_s_s_a_updater_impl_8h" startline="240" endline="276">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindDominators</references>
+        <references refid="classllvm_1_1_s_s_a_updater_impl_1aad5016c6fea77df1d3f4af224e1472db" compoundref="_s_s_a_updater_impl_8h" startline="294" endline="324">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindPHIPlacement</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1a85cbdd891f1cd43d6c79f7d68a2caf46" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>BBInfo *</type>
+        <definition>BBInfo * llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::BuildBlockList</definition>
+        <argsstring>(BlkT *BB, BlockListTy *BlockList)</argsstring>
+        <name>BuildBlockList</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::BuildBlockList</qualifiedname>
+        <param>
+          <type>BlkT *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">BlockListTy</ref> *</type>
+          <declname>BlockList</declname>
+        </param>
+        <briefdescription>
+<para>BuildBlockList - Starting from the specified basic block, traverse back through its predecessors until reaching blocks with known values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Create BBInfo structures for the blocks and append them to the block list. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="116" column="10" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="116" bodyend="208"/>
+        <references refid="classllvm_1_1_small_vector_template_common_1acd9e771a3296c6b24146955754620557" compoundref="_small_vector_8h" startline="308" endline="311">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::back</references>
+        <references refid="classllvm_1_1_small_vector_impl_1aac0ea55010b7b1a301e65a0baea057aa" compoundref="_small_vector_8h" startline="610" endline="613">llvm::SmallVectorImpl&lt; T &gt;::clear</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" compoundref="_c_s_e_info_8cpp" startline="27">Info</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1ad97688dfe9cd802e2a0691cbe620218a" compoundref="_small_vector_8h" startline="425" endline="428">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::pop_back</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a0c8ffe664a36e30d49c84d0aded2fe08" compoundref="_small_vector_8h" startline="673" endline="677">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <referencedby refid="classllvm_1_1_s_s_a_updater_impl_1a4f6c8ac18caa1b4beaf0d4d88b82cef9" compoundref="_s_s_a_updater_impl_8h" startline="94" endline="110">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::GetValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1ad25fe079e293e33582cbb5f3bf494bf5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>BBInfo *</type>
+        <definition>BBInfo * llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::IntersectDominators</definition>
+        <argsstring>(BBInfo *Blk1, BBInfo *Blk2)</argsstring>
+        <name>IntersectDominators</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::IntersectDominators</qualifiedname>
+        <param>
+          <type>BBInfo *</type>
+          <declname>Blk1</declname>
+        </param>
+        <param>
+          <type>BBInfo *</type>
+          <declname>Blk2</declname>
+        </param>
+        <briefdescription>
+<para>IntersectDominators - This is the dataflow lattice &quot;meet&quot; operation for finding dominators. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Given two basic blocks, it walks up the dominator tree until it finds a common dominator of both. It uses the postorder number of the blocks to determine how to do that. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="214" column="10" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="214" bodyend="228"/>
+        <referencedby refid="classllvm_1_1_s_s_a_updater_impl_1a0ab1c1435c29eea38d7a8dd64f064b84" compoundref="_s_s_a_updater_impl_8h" startline="240" endline="276">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindDominators</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1a0ab1c1435c29eea38d7a8dd64f064b84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindDominators</definition>
+        <argsstring>(BlockListTy *BlockList, BBInfo *PseudoEntry)</argsstring>
+        <name>FindDominators</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::FindDominators</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">BlockListTy</ref> *</type>
+          <declname>BlockList</declname>
+        </param>
+        <param>
+          <type>BBInfo *</type>
+          <declname>PseudoEntry</declname>
+        </param>
+        <briefdescription>
+<para>FindDominators - Calculate the dominator tree for the subset of the CFG corresponding to the basic blocks on the BlockList. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This uses the algorithm from: &quot;A Simple, Fast Dominance Algorithm&quot; by Cooper, Harvey and Kennedy, published in Software<ndash/>Practice and Experience, 2001, 4:1-10. Because the CFG subset does not include any edges leading into blocks that define the value, the results are not the usual dominator tree. The CFG subset has a single pseudo-entry node with edges to a set of root nodes for blocks that define the value. The dominators for this subset CFG are not the standard dominators but they are adequate for placing PHIs within the subset CFG. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="240" column="8" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="240" bodyend="276"/>
+        <references refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2373">Changed</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" compoundref="_c_s_e_info_8cpp" startline="27">Info</references>
+        <references refid="classllvm_1_1_s_s_a_updater_impl_1ad25fe079e293e33582cbb5f3bf494bf5" compoundref="_s_s_a_updater_impl_8h" startline="214" endline="228">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::IntersectDominators</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a23aab542398091e1fcfd46b6006d64ac" compoundref="_small_vector_8h" startline="273" endline="273">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::rbegin</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad696953257cf1c4e5bd12d02146e7287" compoundref="_small_vector_8h" startline="275" endline="275">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::rend</references>
+        <referencedby refid="classllvm_1_1_s_s_a_updater_impl_1a4f6c8ac18caa1b4beaf0d4d88b82cef9" compoundref="_s_s_a_updater_impl_8h" startline="94" endline="110">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::GetValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1a42e6b449c6b8fe1fa8d10f2f300f7e9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::IsDefInDomFrontier</definition>
+        <argsstring>(const BBInfo *Pred, const BBInfo *IDom)</argsstring>
+        <name>IsDefInDomFrontier</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::IsDefInDomFrontier</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> BBInfo *</type>
+          <declname>Pred</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> BBInfo *</type>
+          <declname>IDom</declname>
+        </param>
+        <briefdescription>
+<para>IsDefInDomFrontier - Search up the dominator tree from Pred to IDom for any blocks containing definitions of the value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If one is found, then the successor of Pred is in the dominance frontier for the definition, and this function returns true. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="282" column="8" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="282" bodyend="288"/>
+        <referencedby refid="classllvm_1_1_s_s_a_updater_impl_1aad5016c6fea77df1d3f4af224e1472db" compoundref="_s_s_a_updater_impl_8h" startline="294" endline="324">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindPHIPlacement</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1aad5016c6fea77df1d3f4af224e1472db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindPHIPlacement</definition>
+        <argsstring>(BlockListTy *BlockList)</argsstring>
+        <name>FindPHIPlacement</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::FindPHIPlacement</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">BlockListTy</ref> *</type>
+          <declname>BlockList</declname>
+        </param>
+        <briefdescription>
+<para>FindPHIPlacement - PHIs are needed in the iterated dominance frontiers of the known definitions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Iteratively add PHIs in the dom frontiers until nothing changes. Along the way, keep track of the nearest dominating definitions for non-PHI blocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="294" column="8" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="294" bodyend="324"/>
+        <references refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2373">Changed</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" compoundref="_c_s_e_info_8cpp" startline="27">Info</references>
+        <references refid="classllvm_1_1_s_s_a_updater_impl_1a42e6b449c6b8fe1fa8d10f2f300f7e9b" compoundref="_s_s_a_updater_impl_8h" startline="282" endline="288">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::IsDefInDomFrontier</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a23aab542398091e1fcfd46b6006d64ac" compoundref="_small_vector_8h" startline="273" endline="273">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::rbegin</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad696953257cf1c4e5bd12d02146e7287" compoundref="_small_vector_8h" startline="275" endline="275">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::rend</references>
+        <referencedby refid="classllvm_1_1_s_s_a_updater_impl_1a4f6c8ac18caa1b4beaf0d4d88b82cef9" compoundref="_s_s_a_updater_impl_8h" startline="94" endline="110">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::GetValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1aa2056655c5376accdc268fe15b0683c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindSingularVal</definition>
+        <argsstring>(BBInfo *Info)</argsstring>
+        <name>FindSingularVal</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::FindSingularVal</qualifiedname>
+        <param>
+          <type>BBInfo *</type>
+          <declname>Info</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> all predecessors and if all of them have the same AvailableVal use it as value for block represented by Info. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if singluar value is found. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="329" column="8" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="329" bodyend="346"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" compoundref="_c_s_e_info_8cpp" startline="27">Info</references>
+        <referencedby refid="classllvm_1_1_s_s_a_updater_impl_1a3d50f3f3bb104fb854ac8de326c5bb64" compoundref="_s_s_a_updater_impl_8h" startline="353" endline="411">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindAvailableVals</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1a3d50f3f3bb104fb854ac8de326c5bb64" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindAvailableVals</definition>
+        <argsstring>(BlockListTy *BlockList)</argsstring>
+        <name>FindAvailableVals</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::FindAvailableVals</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">BlockListTy</ref> *</type>
+          <declname>BlockList</declname>
+        </param>
+        <briefdescription>
+<para>FindAvailableVal - If this block requires a PHI, first check if an existing PHI matches the PHI placement and reaching definitions computed earlier, and if not, create a new PHI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Visit all the block&apos;s predecessors to calculate the available value for each one and fill in the incoming values for a new PHI. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="353" column="8" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="353" bodyend="411"/>
+        <references refid="classllvm_1_1_small_vector_template_common_1a8a045d250952c0867382a9840ee18fdf" compoundref="_small_vector_8h" startline="267" endline="267">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::begin</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a075e34e98605d0e7c289763a104869ac" compoundref="_small_vector_8h" startline="269" endline="269">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::end</references>
+        <references refid="classllvm_1_1_s_s_a_updater_impl_1a8c85661eda0e37ef407c2620c78a4186" compoundref="_s_s_a_updater_impl_8h" startline="415" endline="423">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindExistingPHI</references>
+        <references refid="classllvm_1_1_s_s_a_updater_impl_1aa2056655c5376accdc268fe15b0683c3" compoundref="_s_s_a_updater_impl_8h" startline="329" endline="346">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindSingularVal</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_c_s_e_info_8cpp_1a75f8a8519c2c9b30e7c06dc5e256fffa" compoundref="_c_s_e_info_8cpp" startline="27">Info</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_a_m_d_g_p_u_rewrite_undef_for_p_h_i_8cpp_1a2e83cb1bc3f5e8986cbd14575755a134" compoundref="_a_m_d_g_p_u_rewrite_undef_for_p_h_i_8cpp" startline="100">PHI</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a23aab542398091e1fcfd46b6006d64ac" compoundref="_small_vector_8h" startline="273" endline="273">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::rbegin</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad696953257cf1c4e5bd12d02146e7287" compoundref="_small_vector_8h" startline="275" endline="275">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::rend</references>
+        <referencedby refid="classllvm_1_1_s_s_a_updater_impl_1a4f6c8ac18caa1b4beaf0d4d88b82cef9" compoundref="_s_s_a_updater_impl_8h" startline="94" endline="110">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::GetValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1a8c85661eda0e37ef407c2620c78a4186" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindExistingPHI</definition>
+        <argsstring>(BlkT *BB, BlockListTy *BlockList)</argsstring>
+        <name>FindExistingPHI</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::FindExistingPHI</qualifiedname>
+        <param>
+          <type>BlkT *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">BlockListTy</ref> *</type>
+          <declname>BlockList</declname>
+        </param>
+        <briefdescription>
+<para>FindExistingPHI - Look through the PHI nodes in a block to see if any of them match what is needed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="415" column="8" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="415" bodyend="423"/>
+        <references refid="classllvm_1_1_s_s_a_updater_impl_1a361f4564a774bbb16b4a27667256c5ad" compoundref="_s_s_a_updater_impl_8h" startline="427" endline="483">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::CheckIfPHIMatches</references>
+        <references refid="classllvm_1_1_s_s_a_updater_impl_1a15993d541998ac409f0fe09abfef6fe8" compoundref="_s_s_a_updater_impl_8h" startline="487" endline="496">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::RecordMatchingPHIs</references>
+        <referencedby refid="classllvm_1_1_s_s_a_updater_impl_1a3d50f3f3bb104fb854ac8de326c5bb64" compoundref="_s_s_a_updater_impl_8h" startline="353" endline="411">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindAvailableVals</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1a361f4564a774bbb16b4a27667256c5ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::CheckIfPHIMatches</definition>
+        <argsstring>(PhiT *PHI, SmallVectorImpl&lt; BBInfo * &gt; &amp;TaggedBlocks)</argsstring>
+        <name>CheckIfPHIMatches</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::CheckIfPHIMatches</qualifiedname>
+        <param>
+          <type>PhiT *</type>
+          <declname>PHI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; BBInfo * &gt; &amp;</type>
+          <declname>TaggedBlocks</declname>
+        </param>
+        <briefdescription>
+<para>CheckIfPHIMatches - <ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if a PHI node matches the placement and values in the BBMap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="427" column="8" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="427" bodyend="483"/>
+        <references refid="_h_t_t_p_client_8cpp_1a0b91b2b50d54e38aa1e8e31e56c31357" compoundref="_h_t_t_p_client_8cpp" startline="42">Cleanup</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a1af45c4dc83c083c5ae914d96fd3ce96" compoundref="_scope_exit_8h" startline="59" endline="61">llvm::make_scope_exit</references>
+        <references refid="_a_m_d_g_p_u_rewrite_undef_for_p_h_i_8cpp_1a2e83cb1bc3f5e8986cbd14575755a134" compoundref="_a_m_d_g_p_u_rewrite_undef_for_p_h_i_8cpp" startline="100">PHI</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <referencedby refid="classllvm_1_1_s_s_a_updater_impl_1a8c85661eda0e37ef407c2620c78a4186" compoundref="_s_s_a_updater_impl_8h" startline="415" endline="423">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindExistingPHI</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_s_a_updater_impl_1a15993d541998ac409f0fe09abfef6fe8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::RecordMatchingPHIs</definition>
+        <argsstring>(BlockListTy *BlockList)</argsstring>
+        <name>RecordMatchingPHIs</name>
+        <qualifiedname>llvm::SSAUpdaterImpl::RecordMatchingPHIs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">BlockListTy</ref> *</type>
+          <declname>BlockList</declname>
+        </param>
+        <briefdescription>
+<para>RecordMatchingPHIs - For each PHI node that matches, record it in both the BBMap and the AvailableVals mapping. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="487" column="8" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="487" bodyend="496"/>
+        <references refid="classllvm_1_1_small_vector_template_common_1a8a045d250952c0867382a9840ee18fdf" compoundref="_small_vector_8h" startline="267" endline="267">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::begin</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a075e34e98605d0e7c289763a104869ac" compoundref="_small_vector_8h" startline="269" endline="269">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::end</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_a_m_d_g_p_u_rewrite_undef_for_p_h_i_8cpp_1a2e83cb1bc3f5e8986cbd14575755a134" compoundref="_a_m_d_g_p_u_rewrite_undef_for_p_h_i_8cpp" startline="100">PHI</references>
+        <referencedby refid="classllvm_1_1_s_s_a_updater_impl_1a8c85661eda0e37ef407c2620c78a4186" compoundref="_s_s_a_updater_impl_8h" startline="415" endline="423">llvm::SSAUpdaterImpl&lt; UpdaterT &gt;::FindExistingPHI</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" line="31" column="1" bodyfile="include/llvm/Transforms/Utils/SSAUpdaterImpl.h" bodystart="31" bodyend="497"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a59dc15a0c906fab271863a88f8c86a43" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>Allocator</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a1c336acd8a51ac8367ed5716e9b5959c" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>AvailableVals</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1aef0766f16cb5480636bbd6a6087a75b4" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>AvailableValsTy</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a46bd0cf95a415ac35a359555ebc8deb8" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>BBMap</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1aba873fefc1e81e5db13366acab06fa47" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>BBMapTy</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a2ea9f05f9ff6796eb824ece16eb60708" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>BlkT</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a8e2fa5790ddd0984480af9f42d00f2d0" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>BlockListTy</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a85cbdd891f1cd43d6c79f7d68a2caf46" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>BuildBlockList</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a361f4564a774bbb16b4a27667256c5ad" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>CheckIfPHIMatches</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a3d50f3f3bb104fb854ac8de326c5bb64" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>FindAvailableVals</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a0ab1c1435c29eea38d7a8dd64f064b84" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>FindDominators</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a8c85661eda0e37ef407c2620c78a4186" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>FindExistingPHI</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1aad5016c6fea77df1d3f4af224e1472db" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>FindPHIPlacement</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1aa2056655c5376accdc268fe15b0683c3" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>FindSingularVal</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a4f6c8ac18caa1b4beaf0d4d88b82cef9" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>GetValue</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a70e48f9d3b9167dc97edd893b3a3c5a8" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>InsertedPHIs</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1ad25fe079e293e33582cbb5f3bf494bf5" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>IntersectDominators</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a42e6b449c6b8fe1fa8d10f2f300f7e9b" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>IsDefInDomFrontier</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a20e90f8e9ad4744b4d77b9534a4d9dec" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>PhiT</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a15993d541998ac409f0fe09abfef6fe8" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>RecordMatchingPHIs</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a5f421457a35ee1520ac43e4f7def256d" prot="public" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>SSAUpdaterImpl</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a5c02d9afff1fb1b35cd113bf2a9ba908" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>Traits</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1add38d53c84dc3df0119ec856ab2051bc" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>Updater</name></member>
+      <member refid="classllvm_1_1_s_s_a_updater_impl_1a490100ebb370235ce8d04a6b4afa16c5" prot="private" virt="non-virtual"><scope>llvm::SSAUpdaterImpl</scope><name>ValT</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

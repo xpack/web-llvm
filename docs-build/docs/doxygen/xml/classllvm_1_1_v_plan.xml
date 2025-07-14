@@ -1,0 +1,1585 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_v_plan" kind="class" language="C++" prot="public">
+    <compoundname>llvm::VPlan</compoundname>
+    <includes refid="_v_plan_8h" local="yes">Transforms/Vectorize/VPlan.h</includes>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_v_plan_1a49f9947d030a2675aa107469350c5d72" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class VPlanPrinter</definition>
+        <argsstring></argsstring>
+        <name>VPlanPrinter</name>
+        <qualifiedname>llvm::VPlan::VPlanPrinter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_v_plan_printer" kindref="compound">VPlanPrinter</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3816" column="16" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3816" bodyend="-1"/>
+        <references refid="classllvm_1_1_v_plan_1a49f9947d030a2675aa107469350c5d72" compoundref="_v_plan_8h" startline="3816">VPlanPrinter</references>
+        <referencedby refid="classllvm_1_1_v_plan_1a064c339f401589b34437e61d8108d8d8" compoundref="_v_plan_8cpp" startline="1144" endline="1147">printDOT</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a49f9947d030a2675aa107469350c5d72" compoundref="_v_plan_8h" startline="3816">VPlanPrinter</referencedby>
+      </memberdef>
+      <memberdef kind="friend" id="classllvm_1_1_v_plan_1a12ceea61a3de5b2f0ff70850f66c5fdc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class VPSlotTracker</definition>
+        <argsstring></argsstring>
+        <name>VPSlotTracker</name>
+        <qualifiedname>llvm::VPlan::VPSlotTracker</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_slot_tracker" kindref="compound">VPSlotTracker</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3817" column="16" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3817" bodyend="-1"/>
+        <references refid="classllvm_1_1_v_plan_1a12ceea61a3de5b2f0ff70850f66c5fdc" compoundref="_v_plan_8h" startline="3817">VPSlotTracker</references>
+        <referencedby refid="classllvm_1_1_v_plan_1adef61e4746c6f7f0e2e75da307e77c42" compoundref="_v_plan_8cpp" startline="1103" endline="1118">print</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1aec866dc063fd3bc550e853938c4b5010" compoundref="_v_plan_8cpp" startline="1067" endline="1100">printLiveIns</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a12ceea61a3de5b2f0ff70850f66c5fdc" compoundref="_v_plan_8h" startline="3817">VPSlotTracker</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1ad1b90fb992672520a22270f8f6bd32f0" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+        <definition>VPBasicBlock* llvm::VPlan::Entry</definition>
+        <argsstring></argsstring>
+        <name>Entry</name>
+        <qualifiedname>llvm::VPlan::Entry</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> corresponding to the original preheader. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used to place VPExpandSCEV recipes for expressions used during skeleton creation and the rest of <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> execution. When this <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> is used for the epilogue vector loop, the entry will be replaced by a new entry block created during skeleton creation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3824" column="16" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3824" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1a020c90524f3268cadfb0cb03a6f350d8" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_v_p_i_r_basic_block" kindref="compound">VPIRBasicBlock</ref> *</type>
+        <definition>VPIRBasicBlock* llvm::VPlan::ScalarHeader</definition>
+        <argsstring></argsstring>
+        <name>ScalarHeader</name>
+        <qualifiedname>llvm::VPlan::ScalarHeader</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_v_p_i_r_basic_block" kindref="compound">VPIRBasicBlock</ref> wrapping the header of the original scalar loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3827" column="18" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3827" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1acb43d7cfe07bcc38eb2638da45a15f49" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">SmallSetVector</ref>&lt; <ref refid="classllvm_1_1_element_count" kindref="compound">ElementCount</ref>, 2 &gt;</type>
+        <definition>SmallSetVector&lt;ElementCount, 2&gt; llvm::VPlan::VFs</definition>
+        <argsstring></argsstring>
+        <name>VFs</name>
+        <qualifiedname>llvm::VPlan::VFs</qualifiedname>
+        <briefdescription>
+<para>Holds the VFs applicable to this <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3830" column="18" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3830" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1a7eccac4ed0bb4c551e6e4ee286906a3e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">SmallSetVector</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, 2 &gt;</type>
+        <definition>SmallSetVector&lt;unsigned, 2&gt; llvm::VPlan::UFs</definition>
+        <argsstring></argsstring>
+        <name>UFs</name>
+        <qualifiedname>llvm::VPlan::UFs</qualifiedname>
+        <briefdescription>
+<para>Holds the UFs applicable to this <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If empty, the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> is valid for any UF. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3834" column="18" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3834" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1a9b587f308f99954318dea76f0500dc8d" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::VPlan::Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <qualifiedname>llvm::VPlan::Name</qualifiedname>
+        <briefdescription>
+<para>Holds the name of the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>, for printing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3837" column="15" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3837" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1a49cbc66e734c87ec1f94a6edf9a999c4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+        <definition>VPValue* llvm::VPlan::TripCount</definition>
+        <argsstring></argsstring>
+        <name>TripCount</name>
+        <qualifiedname>llvm::VPlan::TripCount</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Represents the trip count of the original loop, for folding the tail. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3841" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3841" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1a4fb86f44bcdcd192ea29e209e0f1ea3f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+        <definition>VPValue* llvm::VPlan::BackedgeTakenCount</definition>
+        <argsstring></argsstring>
+        <name>BackedgeTakenCount</name>
+        <qualifiedname>llvm::VPlan::BackedgeTakenCount</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Represents the backedge taken count of the original loop, for folding the tail. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It equals TripCount - 1. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3845" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3845" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1a55c4ae680bbb7c5b8dad14af25216b0b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref></type>
+        <definition>VPValue llvm::VPlan::VectorTripCount</definition>
+        <argsstring></argsstring>
+        <name>VectorTripCount</name>
+        <qualifiedname>llvm::VPlan::VectorTripCount</qualifiedname>
+        <briefdescription>
+<para>Represents the vector trip count. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3848" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3848" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1a228158d5895f46519fb926cfc83b8a4f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref></type>
+        <definition>VPValue llvm::VPlan::VF</definition>
+        <argsstring></argsstring>
+        <name>VF</name>
+        <qualifiedname>llvm::VPlan::VF</qualifiedname>
+        <briefdescription>
+<para>Represents the vectorization factor of the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3851" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3851" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1a51d3cce8183338e863e6ef269bd0f07d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref></type>
+        <definition>VPValue llvm::VPlan::VFxUF</definition>
+        <argsstring></argsstring>
+        <name>VFxUF</name>
+        <qualifiedname>llvm::VPlan::VFxUF</qualifiedname>
+        <briefdescription>
+<para>Represents the loop-invariant VF * UF of the vector loop region. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3854" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3854" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1ae8fc3cd5cfbe2026cef38440206951a1" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1acec45693cb551d5e3f8714d496cf4fee" kindref="member">Value2VPValueTy</ref></type>
+        <definition>Value2VPValueTy llvm::VPlan::Value2VPValue</definition>
+        <argsstring></argsstring>
+        <name>Value2VPValue</name>
+        <qualifiedname>llvm::VPlan::Value2VPValue</qualifiedname>
+        <briefdescription>
+<para>Holds a mapping between Values and their corresponding <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> inside <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3858" column="19" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3858" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1a5304850697f98f8a42826b4bca29fe03" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *, 16 &gt;</type>
+        <definition>SmallVector&lt;VPValue *, 16&gt; llvm::VPlan::VPLiveInsToFree</definition>
+        <argsstring></argsstring>
+        <name>VPLiveInsToFree</name>
+        <qualifiedname>llvm::VPlan::VPLiveInsToFree</qualifiedname>
+        <briefdescription>
+<para>Contains all the external definitions created for this <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>External definitions are VPValues that hold a pointer to their underlying IR. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3862" column="15" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3862" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1ad157763ed381d7b447be5e4f784485df" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *, <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+        <definition>DenseMap&lt;const SCEV *, VPValue *&gt; llvm::VPlan::SCEVToExpansion</definition>
+        <argsstring></argsstring>
+        <name>SCEVToExpansion</name>
+        <qualifiedname>llvm::VPlan::SCEVToExpansion</qualifiedname>
+        <briefdescription>
+<para>Mapping from SCEVs to the VPValues representing their expansions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>NOTE: This mapping is temporary and will be removed once all users have been modeled in <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> directly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3867" column="12" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3867" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_plan_1a49319e5fea946cbfe7371e9abe389d40" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_v_p_block_base" kindref="compound">VPBlockBase</ref> * &gt;</type>
+        <definition>SmallVector&lt;VPBlockBase *&gt; llvm::VPlan::CreatedBlocks</definition>
+        <argsstring></argsstring>
+        <name>CreatedBlocks</name>
+        <qualifiedname>llvm::VPlan::CreatedBlocks</qualifiedname>
+        <briefdescription>
+<para>Blocks allocated and owned by the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>They will be deleted once the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3871" column="15" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3871" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a6c7a498b8f88b2c448c1b88e1e2c4f75" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::VPlan::VPlan</definition>
+        <argsstring>(VPBasicBlock *Entry, VPIRBasicBlock *ScalarHeader)</argsstring>
+        <name>VPlan</name>
+        <qualifiedname>llvm::VPlan::VPlan</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+          <declname>Entry</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_i_r_basic_block" kindref="compound">VPIRBasicBlock</ref> *</type>
+          <declname>ScalarHeader</declname>
+        </param>
+        <briefdescription>
+<para>Construct a <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> with <computeroutput>Entry</computeroutput> to the plan and with <computeroutput>ScalarHeader</computeroutput> wrapping the original header of the scalar loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3875" column="3" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3875" bodyend="3880"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a9e5cbede99134e89b34efded77cd3c4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VPlan::VPlan</definition>
+        <argsstring>(Loop *L)</argsstring>
+        <name>VPlan</name>
+        <qualifiedname>llvm::VPlan::VPlan</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Construct a <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> for <computeroutput>L</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This will create VPIRBasicBlocks wrapping the original preheader and scalar header of <computeroutput>L</computeroutput>, to be used as entry and scalar header blocks of the new <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3886" column="3" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="816" bodyend="819"/>
+        <references refid="classllvm_1_1_v_plan_1aa12c0d3acb3f625ee09d2919907d4067" compoundref="_v_plan_8cpp" startline="1251" endline="1257">createVPIRBasicBlock</references>
+        <references refid="classllvm_1_1_v_plan_1a9f311a1a101ba9ebbdafb31a67942b69" compoundref="_v_plan_8h" startline="3898" endline="3901">setEntry</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a3c68cb3d20000fcb178a8f0eb6454cfc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::VPlan::VPlan</definition>
+        <argsstring>(BasicBlock *ScalarHeaderBB, VPValue *TC)</argsstring>
+        <name>VPlan</name>
+        <qualifiedname>llvm::VPlan::VPlan</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>ScalarHeaderBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+          <declname>TC</declname>
+        </param>
+        <briefdescription>
+<para>Construct a <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> with a new <ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> as entry, a <ref refid="classllvm_1_1_v_p_i_r_basic_block" kindref="compound">VPIRBasicBlock</ref> wrapping <computeroutput>ScalarHeaderBB</computeroutput> and a trip count of <computeroutput>TC</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3890" column="3" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3890" bodyend="3894"/>
+        <references refid="classllvm_1_1_v_plan_1aa1202b66a60b632b7adbdee13a20ad7e" compoundref="_v_plan_8h" startline="4098" endline="4103">createVPBasicBlock</references>
+        <references refid="classllvm_1_1_v_plan_1aa12c0d3acb3f625ee09d2919907d4067" compoundref="_v_plan_8cpp" startline="1251" endline="1257">createVPIRBasicBlock</references>
+        <references refid="classllvm_1_1_v_plan_1a9f311a1a101ba9ebbdafb31a67942b69" compoundref="_v_plan_8h" startline="3898" endline="3901">setEntry</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a433f41155026be9f8f6fa880554286a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VPlan::~VPlan</definition>
+        <argsstring>()</argsstring>
+        <name>~VPlan</name>
+        <qualifiedname>llvm::VPlan::~VPlan</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3896" column="3" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="821" bodyend="842"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a9f311a1a101ba9ebbdafb31a67942b69" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::VPlan::setEntry</definition>
+        <argsstring>(VPBasicBlock *VPBB)</argsstring>
+        <name>setEntry</name>
+        <qualifiedname>llvm::VPlan::setEntry</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+          <declname>VPBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3898" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3898" bodyend="3901"/>
+        <references refid="classllvm_1_1_v_p_block_base_1a961946cf5fda7331e31bf343c79da2c3" compoundref="_v_plan_8cpp" startline="172" endline="175">llvm::VPBlockBase::setPlan</references>
+        <referencedby refid="classllvm_1_1_v_plan_1a3c68cb3d20000fcb178a8f0eb6454cfc" compoundref="_v_plan_8h" startline="3890" endline="3894">VPlan</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a9e5cbede99134e89b34efded77cd3c4e" compoundref="_v_plan_8cpp" startline="816" endline="819">VPlan</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a143bc5faeb35f7363570e97bccf76e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VPlan::prepareToExecute</definition>
+        <argsstring>(Value *TripCount, Value *VectorTripCount, VPTransformState &amp;State)</argsstring>
+        <name>prepareToExecute</name>
+        <qualifiedname>llvm::VPlan::prepareToExecute</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>TripCount</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>VectorTripCount</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_v_p_transform_state" kindref="compound">VPTransformState</ref> &amp;</type>
+          <declname>State</declname>
+        </param>
+        <briefdescription>
+<para>Prepare the plan for execution, setting up the required live-in values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3919" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="923" bodyend="950"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="structllvm_1_1_v_p_transform_state_1aa8a293d9d0bf609e45f591ce4bd55bb3" compoundref="_v_plan_8h" startline="364">llvm::VPTransformState::Builder</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1aecd40f9a16dc0ef1e0bc416599f89277" compoundref="_i_r_builder_8h" startline="1404" endline="1411">llvm::IRBuilderBase::CreateMul</references>
+        <references refid="namespacellvm_1ac4156fb8bcc6a7e29ee021b01d22551e" compoundref="_loop_vectorize_8cpp" startline="876" endline="880">llvm::createStepForVF</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1a92c83e803f2cf22906da0aaec44ff6d7" compoundref="_i_r_builder_8h" startline="1387" endline="1394">llvm::IRBuilderBase::CreateSub</references>
+        <references refid="namespacellvm_1a2f777e2b1044ba7971766097fdd56579" compoundref="_loop_vectorize_8cpp" startline="883" endline="885">llvm::getRuntimeVF</references>
+        <references refid="classllvm_1_1_value_1a0344a49526443edf90cc0aef3abd3337" compoundref="_i_r_2_value_8h" startline="255" endline="255">llvm::Value::getType</references>
+        <references refid="classllvm_1_1_v_plan_1a532045d23e6f3efd21732fd342f99f09" compoundref="_v_plan_8h" startline="4021" endline="4024">getUF</references>
+        <references refid="classllvm_1_1_v_plan_1a89f94c49b2cb5daaa93d19c89307c307" compoundref="_v_plan_8cpp" startline="1051" endline="1057">getVectorLoopRegion</references>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1ad80b94848142a7c633976aff96d4c408" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VPlan::execute</definition>
+        <argsstring>(VPTransformState *State)</argsstring>
+        <name>execute</name>
+        <qualifiedname>llvm::VPlan::execute</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_v_p_transform_state" kindref="compound">VPTransformState</ref> *</type>
+          <declname>State</declname>
+        </param>
+        <briefdescription>
+<para>Generate the IR code for this <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate the code inside the preheader and body of the vectorized loop.</para>
+<para>Assumes a single pre-header basic-block was created for this. Introduce additional basic-blocks as needed, and fill them all. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3923" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="955" bodyend="1043"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2" compoundref="_pseudo_probe_8h" startline="29">llvm::Block</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_dominator_tree_base_1a71c91cbbfc1c0ecf9a69e10ccf739bd7" compoundref="_generic_dom_tree_8h" startline="253">llvm::DominatorTreeBase&lt; BasicBlock, false &gt;::Delete</references>
+        <references refid="namespacellvm_1a03503773241005f01b090b9862aad304" compoundref="_sparse_bit_vector_8h" startline="877" endline="889">llvm::dump</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_instruction_1a601ee49a4c4e0babf29bd1cf09036570" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="94" endline="97">llvm::Instruction::eraseFromParent</references>
+        <references refid="_hexagon_common_g_e_p_8cpp_1ad532e8710e50302e0a376b61c91fa91d" compoundref="_hexagon_common_g_e_p_8cpp" startline="170">GEP</references>
+        <references refid="classllvm_1_1_basic_block_1aa286a0f7f5d38488d593bb7ef0ba183e" compoundref="_sandbox_i_r_2_basic_block_8cpp" startline="168" endline="170">llvm::BasicBlock::getContext</references>
+        <references refid="classllvm_1_1_v_p_block_base_1ad928235da3a32b50ba65140da09daf5d" compoundref="_v_plan_8cpp" startline="158" endline="163">llvm::VPBlockBase::getEntryBasicBlock</references>
+        <references refid="classllvm_1_1_v_p_block_base_1a28da654f916bf44da5513b6f1788835c" compoundref="_v_plan_8cpp" startline="178" endline="183">llvm::VPBlockBase::getExitingBasicBlock</references>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_basic_block_1a79c007dcf9fff57e1569e778d7885b5e" compoundref="_sandbox_i_r_2_basic_block_8cpp" startline="511" endline="517">llvm::BasicBlock::getSingleSuccessor</references>
+        <references refid="classllvm_1_1_basic_block_1aef9e9fcf4c5dfce90276ca16d91b8e46" compoundref="_i_r_2_basic_block_8h" startline="240" endline="244">llvm::BasicBlock::getTerminator</references>
+        <references refid="classllvm_1_1_v_plan_1a532045d23e6f3efd21732fd342f99f09" compoundref="_v_plan_8h" startline="4021" endline="4024">getUF</references>
+        <references refid="classllvm_1_1_v_plan_1a89f94c49b2cb5daaa93d19c89307c307" compoundref="_v_plan_8cpp" startline="1051" endline="1057">getVectorLoopRegion</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="blake3__impl_8h_1a78823051d1dad34b9b3d8120112e674d" compoundref="blake3__impl_8h" startline="78" endline="80">IV</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_instruction_1af67d1f3a518964d80a109bb3d9d5cf1e" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="175" endline="177">llvm::Instruction::moveBefore</references>
+        <references refid="classllvm_1_1_v_plan_1a242fb01fcd9fab0be0f487b67fd94a0a" compoundref="_v_plan_8h" startline="4035" endline="4035">setName</references>
+        <references refid="classllvm_1_1_user_1a5fa9b8e1842b354f64c1ba6be0a4a17f" compoundref="_i_r_2_user_8h" startline="233" endline="239">llvm::User::setOperand</references>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a8d2ce995a1feaa7a65ff40f77f073db3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref></type>
+        <definition>InstructionCost VPlan::cost</definition>
+        <argsstring>(ElementCount VF, VPCostContext &amp;Ctx)</argsstring>
+        <name>cost</name>
+        <qualifiedname>llvm::VPlan::cost</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_element_count" kindref="compound">ElementCount</ref></type>
+          <declname>VF</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_v_p_cost_context" kindref="compound">VPCostContext</ref> &amp;</type>
+          <declname>Ctx</declname>
+        </param>
+        <briefdescription>
+<para>Return the cost of this plan. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3926" column="19" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="1045" bodyend="1049"/>
+        <references refid="classllvm_1_1_v_plan_1a89f94c49b2cb5daaa93d19c89307c307" compoundref="_v_plan_8cpp" startline="1051" endline="1057">getVectorLoopRegion</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a1c868dfd250ff9592c06dd61a7fb0bcf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+        <definition>VPBasicBlock * llvm::VPlan::getEntry</definition>
+        <argsstring>()</argsstring>
+        <name>getEntry</name>
+        <qualifiedname>llvm::VPlan::getEntry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3928" column="16" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3928" bodyend="3928"/>
+        <referencedby refid="_v_plan_transforms_8cpp_1a6e46200e5b228c903356e02904987051" compoundref="_v_plan_transforms_8cpp" startline="344" endline="368">addReplicateRegions</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1a63e564d621011fac5978d18138121e5c" compoundref="_v_plan_transforms_8cpp" startline="2046" endline="2063">llvm::VPlanTransforms::convertToConcreteRecipes</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" compoundref="_v_plan_8cpp" startline="844" endline="921">createInitialVPlan</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1aa0f143b8d4693978b984f0639c90e508" compoundref="_v_plan_transforms_8cpp" startline="1873" endline="1968">llvm::VPlanTransforms::dropPoisonGeneratingRecipes</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+        <referencedby refid="structllvm_1_1_dom_tree_node_traits_3_01_v_p_block_base_01_4_1a558c601f9ba5f1cb3bcdf5955984a79c" compoundref="_v_plan_dominator_tree_8h" startline="31" endline="31">llvm::DomTreeNodeTraits&lt; VPBlockBase &gt;::getEntryNode</referencedby>
+        <referencedby refid="namespacellvm_1_1vputils_1a064976a6c7458b10c24021b7334cec2a" compoundref="_v_plan_utils_8cpp" startline="26" endline="48">llvm::vputils::getOrCreateVPValueForSCEVExpr</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a89f94c49b2cb5daaa93d19c89307c307" compoundref="_v_plan_8cpp" startline="1051" endline="1057">getVectorLoopRegion</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1af19b220ce9ea956afca867699a0581df" compoundref="_v_plan_8cpp" startline="1059" endline="1064">getVectorLoopRegion</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a528aff11b730581c8d7cfae0e5fb6254" compoundref="_v_plan_transforms_8cpp" startline="372" endline="404">mergeBlocksIntoPredecessors</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a4b251734aba716917922f4ab216436c1" compoundref="_v_plan_transforms_8cpp" startline="219" endline="301">mergeReplicateRegionsIntoSuccessors</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1aae23f7e6fc37b0f1bb756f938023512c" compoundref="_loop_vectorize_8cpp" startline="10210" endline="10325">preparePlanForEpilogueVectorLoop</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1adef61e4746c6f7f0e2e75da307e77c42" compoundref="_v_plan_8cpp" startline="1103" endline="1118">print</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1aaca9dd97d4c523d8c65274654abe4eb9" compoundref="_v_plan_transforms_8cpp" startline="512" endline="524">llvm::VPlanTransforms::removeDeadRecipes</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a8a0202a443a527ba17fcd111497feb7d" compoundref="_v_plan_transforms_8cpp" startline="797" endline="812">removeRedundantExpandSCEVRecipes</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_block_base_1a961946cf5fda7331e31bf343c79da2c3" compoundref="_v_plan_8cpp" startline="172" endline="175">llvm::VPBlockBase::setPlan</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a74cb3294789bc24526bcadbf6b466714" compoundref="_v_plan_transforms_8cpp" startline="967" endline="976">simplifyRecipes</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a1536feae2abb3570ac032768a53ddd00" compoundref="_v_plan_transforms_8cpp" startline="109" endline="183">sinkScalarOperands</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1a7a1cca51bb9bce4efad1063dcf158967" compoundref="_v_plan_unroll_8cpp" startline="391" endline="446">llvm::VPlanTransforms::unrollByUF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_v_plan_verifier_8cpp_03_1_1_v_plan_verifier_1a4140274aee97c60c4a26d1ecd4234a78" compoundref="_v_plan_verifier_8cpp" startline="367" endline="414">anonymous_namespace{VPlanVerifier.cpp}::VPlanVerifier::verify</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a479b833fd70361a9b1bb9cb9f8a2e3ad" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+        <definition>const VPBasicBlock * llvm::VPlan::getEntry</definition>
+        <argsstring>() const</argsstring>
+        <name>getEntry</name>
+        <qualifiedname>llvm::VPlan::getEntry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3929" column="22" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3929" bodyend="3929"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1aee894572833ce02ad06c067d44f65b48" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+        <definition>VPBasicBlock * llvm::VPlan::getVectorPreheader</definition>
+        <argsstring>()</argsstring>
+        <name>getVectorPreheader</name>
+        <qualifiedname>llvm::VPlan::getVectorPreheader</qualifiedname>
+        <briefdescription>
+<para>Returns the preheader of the vector loop region, if one exists, or null otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3933" column="16" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3933" bodyend="3938"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_v_p_block_base_1aa1bb4808c7a5db9f8ed3f479c78c4b5e" compoundref="_v_plan_8h" startline="526" endline="528">llvm::VPBlockBase::getSinglePredecessor</references>
+        <references refid="classllvm_1_1_v_plan_1a89f94c49b2cb5daaa93d19c89307c307" compoundref="_v_plan_8cpp" startline="1051" endline="1057">getVectorLoopRegion</references>
+        <referencedby refid="_v_plan_transforms_8cpp_1a5a9cb34d61fa4930ff585649d1d5b2ed" compoundref="_v_plan_transforms_8cpp" startline="1490" endline="1559">addVPLaneMaskPhiAndUpdateExitBranch</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1afd081c92500bd333555e7bd6102b4d3e" compoundref="_v_plan_transforms_8cpp" startline="1275" endline="1306">licm</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ae61793492431f138869f097a5f31bd32" compoundref="_v_plan_transforms_8cpp" startline="1308" endline="1439">llvm::VPlanTransforms::truncateToMinimalBitwidths</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a89f94c49b2cb5daaa93d19c89307c307" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_region_block" kindref="compound">VPRegionBlock</ref> *</type>
+        <definition>VPRegionBlock * VPlan::getVectorLoopRegion</definition>
+        <argsstring>()</argsstring>
+        <name>getVectorLoopRegion</name>
+        <qualifiedname>llvm::VPlan::getVectorLoopRegion</qualifiedname>
+        <briefdescription>
+<para>Returns the <ref refid="classllvm_1_1_v_p_region_block" kindref="compound">VPRegionBlock</ref> of the vector loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3941" column="17" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="1051" bodyend="1057"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_v_plan_1a1c868dfd250ff9592c06dd61a7fb0bcf" compoundref="_v_plan_8h" startline="3928" endline="3928">getEntry</references>
+        <references refid="namespacellvm_1a4474bfb1e0ca062e5bfe2a35980e7d19" compoundref="_v_plan_c_f_g_8h" startline="215" endline="217">llvm::vp_depth_first_shallow</references>
+        <referencedby refid="_loop_vectorize_8cpp_1a4d2a943e39c98ccce6fd53e8df9c5c2b" compoundref="_loop_vectorize_8cpp" startline="8930" endline="8951">addCanonicalIVRecipes</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a453563e4ed7e249a7f3e92b98b9052df" compoundref="_loop_vectorize_8cpp" startline="9112" endline="9210">addExitUsersForFirstOrderRecurrences</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a02106664ead4e0c4e755457dbac7f7b3" compoundref="_loop_vectorize_8cpp" startline="8994" endline="9050">addScalarResumePhis</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a5a9cb34d61fa4930ff585649d1d5b2ed" compoundref="_v_plan_transforms_8cpp" startline="1490" endline="1559">addVPLaneMaskPhiAndUpdateExitBranch</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ae64d6953a1334207d9e7d9cd2587ee9f" compoundref="_v_plan_transforms_8cpp" startline="1208" endline="1254">llvm::VPlanTransforms::adjustFixedOrderRecurrences</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1a36d6728b8c3cfca0a9bd02c3f0273477" compoundref="_v_plan_8cpp" startline="1624" endline="1637">llvm::LoopVectorizationPlanner::buildVPlans</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ace9e1e6e7295914973dec18350b382ca" compoundref="_v_plan_transforms_8cpp" startline="1256" endline="1272">llvm::VPlanTransforms::clearReductionWrapFlags</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a8d0c6052d21638f0a385e226db3bd92f" compoundref="_v_plan_transforms_8cpp" startline="1565" endline="1604">collectAllHeaderMasks</referencedby>
+        <referencedby refid="namespacellvm_1a62219a4c97e27d64593245e4e9187cd1" compoundref="_v_plan_analysis_8cpp" startline="274" endline="308">llvm::collectEphemeralRecipesForVPlan</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a8d2ce995a1feaa7a65ff40f77f073db3" compoundref="_v_plan_8cpp" startline="1045" endline="1049">cost</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a3c91ec836b0d1e340e17bff8eec31390" compoundref="_v_plan_transforms_8cpp" startline="527" endline="563">createScalarIVSteps</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1ad80b94848142a7c633976aff96d4c408" compoundref="_v_plan_8cpp" startline="955" endline="1043">execute</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1ad9053d6ed9627166c144b8895d1c1010" compoundref="_v_plan_8h" startline="4073" endline="4080">getCanonicalIV</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a85800ca7a821f540ad2d6d4d3c2d4208" compoundref="_v_plan_c_f_g_8h" startline="310" endline="318">getExitBlocks</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1aee894572833ce02ad06c067d44f65b48" compoundref="_v_plan_8h" startline="3933" endline="3938">getVectorPreheader</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ac2fcd61c17c94d7e9d10b24b718c812e" compoundref="_v_plan_transforms_8cpp" startline="2065" endline="2148">llvm::VPlanTransforms::handleUncountableEarlyExit</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a6bc9d4e47e8a41e60f4bedae712f0c03" compoundref="_v_plan_transforms_8cpp" startline="589" endline="668">legalizeAndOptimizeInductions</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1afd081c92500bd333555e7bd6102b4d3e" compoundref="_v_plan_transforms_8cpp" startline="1275" endline="1306">licm</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1af25d938764b8634e70e95ff3f0c35129" compoundref="_v_plan_transforms_8cpp" startline="978" endline="1051">llvm::VPlanTransforms::optimizeForVFAndUF</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a696283c30308704d020a9d86065aa3ae" compoundref="_loop_vectorize_8cpp" startline="7409" endline="7454">planContainsAdditionalSimplifications</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1aae23f7e6fc37b0f1bb756f938023512c" compoundref="_loop_vectorize_8cpp" startline="10210" endline="10325">preparePlanForEpilogueVectorLoop</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a13368acf4fbb5816c3d82099b11519b1" compoundref="_loop_vectorize_8cpp" startline="10159" endline="10205">preparePlanForMainVectorLoop</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a143bc5faeb35f7363570e97bccf76e53" compoundref="_v_plan_8cpp" startline="923" endline="950">prepareToExecute</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1aefd03ef5fc77c520e27fe794e8ec93e9" compoundref="_v_plan_transforms_8cpp" startline="457" endline="490">removeRedundantCanonicalIVs</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a2ff7a57c84a06ee83b0a28763db85c3f" compoundref="_v_plan_transforms_8cpp" startline="424" endline="453">removeRedundantInductionCasts</referencedby>
+        <referencedby refid="classllvm_1_1_inner_loop_vectorizer_1a4690286163882c35068b1908f4d752fd" compoundref="_loop_vectorize_8cpp" startline="2349" endline="2405">llvm::InnerLoopVectorizer::scalarizeInstruction</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ae61793492431f138869f097a5f31bd32" compoundref="_v_plan_transforms_8cpp" startline="1308" endline="1439">llvm::VPlanTransforms::truncateToMinimalBitwidths</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ad16bff9364e25351de81704fe81fd229" compoundref="_v_plan_transforms_8cpp" startline="1812" endline="1871">llvm::VPlanTransforms::tryAddExplicitVectorLength</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1a7a1cca51bb9bce4efad1063dcf158967" compoundref="_v_plan_unroll_8cpp" startline="391" endline="446">llvm::VPlanTransforms::unrollByUF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_v_plan_verifier_8cpp_03_1_1_v_plan_verifier_1a4140274aee97c60c4a26d1ecd4234a78" compoundref="_v_plan_verifier_8cpp" startline="367" endline="414">anonymous_namespace{VPlanVerifier.cpp}::VPlanVerifier::verify</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_interleaved_access_info_1a24f3316a0caf6117d7447bda1023823f" compoundref="_v_plan_8cpp" startline="1508" endline="1512">llvm::VPInterleavedAccessInfo::VPInterleavedAccessInfo</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1af378bb1e037306d9cfd4bb0b49ba55f9" compoundref="_loop_vectorize_8cpp" startline="4439" endline="4533">willGenerateVectors</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1af19b220ce9ea956afca867699a0581df" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_v_p_region_block" kindref="compound">VPRegionBlock</ref> *</type>
+        <definition>const VPRegionBlock * VPlan::getVectorLoopRegion</definition>
+        <argsstring>() const</argsstring>
+        <name>getVectorLoopRegion</name>
+        <qualifiedname>llvm::VPlan::getVectorLoopRegion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3942" column="23" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="1059" bodyend="1064"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_v_plan_1a1c868dfd250ff9592c06dd61a7fb0bcf" compoundref="_v_plan_8h" startline="3928" endline="3928">getEntry</references>
+        <references refid="namespacellvm_1a4474bfb1e0ca062e5bfe2a35980e7d19" compoundref="_v_plan_c_f_g_8h" startline="215" endline="217">llvm::vp_depth_first_shallow</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a995b2a034ffc26dcd2f3a679f9d2feea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+        <definition>const VPBasicBlock * llvm::VPlan::getMiddleBlock</definition>
+        <argsstring>() const</argsstring>
+        <name>getMiddleBlock</name>
+        <qualifiedname>llvm::VPlan::getMiddleBlock</qualifiedname>
+        <briefdescription>
+<para>Returns the &apos;middle&apos; block of the plan, that is the block that selects whether to execute the scalar tail loop or the exit block from the loop latch. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3947" column="22" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3947" bodyend="3949"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_v_plan_1ad5f29ccf71b0494fc179323427eb1e11" compoundref="_v_plan_8h" startline="3955" endline="3957">getScalarPreheader</references>
+        <referencedby refid="_loop_vectorize_8cpp_1a453563e4ed7e249a7f3e92b98b9052df" compoundref="_loop_vectorize_8cpp" startline="9112" endline="9210">addExitUsersForFirstOrderRecurrences</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a02106664ead4e0c4e755457dbac7f7b3" compoundref="_loop_vectorize_8cpp" startline="8994" endline="9050">addScalarResumePhis</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1af34d746d08a380c672cae45176f9df87" compoundref="_loop_vectorize_8cpp" startline="9089" endline="9106">addUsersInExitBlocks</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a435b95efad7ea03299bd527b55b4708a" compoundref="_loop_vectorize_8cpp" startline="9055" endline="9084">collectUsersInExitBlocks</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ac2fcd61c17c94d7e9d10b24b718c812e" compoundref="_v_plan_transforms_8cpp" startline="2065" endline="2148">llvm::VPlanTransforms::handleUncountableEarlyExit</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1a3a573419fed83f23b6bf70ac6731dbfa" compoundref="_v_plan_transforms_8cpp" startline="731" endline="793">llvm::VPlanTransforms::optimizeInductionExitUsers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a9cbce97074fc9cc4c7bc027adcf560af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+        <definition>VPBasicBlock * llvm::VPlan::getMiddleBlock</definition>
+        <argsstring>()</argsstring>
+        <name>getMiddleBlock</name>
+        <qualifiedname>llvm::VPlan::getMiddleBlock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3950" column="16" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3950" bodyend="3952"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_v_plan_1ad5f29ccf71b0494fc179323427eb1e11" compoundref="_v_plan_8h" startline="3955" endline="3957">getScalarPreheader</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1ad5f29ccf71b0494fc179323427eb1e11" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+        <definition>VPBasicBlock * llvm::VPlan::getScalarPreheader</definition>
+        <argsstring>() const</argsstring>
+        <name>getScalarPreheader</name>
+        <qualifiedname>llvm::VPlan::getScalarPreheader</qualifiedname>
+        <briefdescription>
+<para>Return the <ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> for the preheader of the scalar loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3955" column="16" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3955" bodyend="3957"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_v_plan_1ae56a6505c6bfa319e686fc23acd52495" compoundref="_v_plan_8h" startline="3960" endline="3960">getScalarHeader</references>
+        <referencedby refid="_loop_vectorize_8cpp_1a453563e4ed7e249a7f3e92b98b9052df" compoundref="_loop_vectorize_8cpp" startline="9112" endline="9210">addExitUsersForFirstOrderRecurrences</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a02106664ead4e0c4e755457dbac7f7b3" compoundref="_loop_vectorize_8cpp" startline="8994" endline="9050">addScalarResumePhis</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a9cbce97074fc9cc4c7bc027adcf560af" compoundref="_v_plan_8h" startline="3950" endline="3952">getMiddleBlock</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a995b2a034ffc26dcd2f3a679f9d2feea" compoundref="_v_plan_8h" startline="3947" endline="3949">getMiddleBlock</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a13368acf4fbb5816c3d82099b11519b1" compoundref="_loop_vectorize_8cpp" startline="10159" endline="10205">preparePlanForMainVectorLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1ae56a6505c6bfa319e686fc23acd52495" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_i_r_basic_block" kindref="compound">VPIRBasicBlock</ref> *</type>
+        <definition>VPIRBasicBlock * llvm::VPlan::getScalarHeader</definition>
+        <argsstring>() const</argsstring>
+        <name>getScalarHeader</name>
+        <qualifiedname>llvm::VPlan::getScalarHeader</qualifiedname>
+        <briefdescription>
+<para>Return the <ref refid="classllvm_1_1_v_p_i_r_basic_block" kindref="compound">VPIRBasicBlock</ref> wrapping the header of the scalar loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3960" column="18" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3960" bodyend="3960"/>
+        <referencedby refid="_loop_vectorize_8cpp_1a02106664ead4e0c4e755457dbac7f7b3" compoundref="_loop_vectorize_8cpp" startline="8994" endline="9050">addScalarResumePhis</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" compoundref="_v_plan_8cpp" startline="844" endline="921">createInitialVPlan</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1afadf7ae5a5fad2c0bde13e8b72bf7a71" compoundref="_v_plan_8cpp" startline="1191" endline="1243">duplicate</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a85800ca7a821f540ad2d6d4d3c2d4208" compoundref="_v_plan_c_f_g_8h" startline="310" endline="318">getExitBlocks</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1ad5f29ccf71b0494fc179323427eb1e11" compoundref="_v_plan_8h" startline="3955" endline="3957">getScalarPreheader</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a13368acf4fbb5816c3d82099b11519b1" compoundref="_loop_vectorize_8cpp" startline="10159" endline="10205">preparePlanForMainVectorLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a85800ca7a821f540ad2d6d4d3c2d4208" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto llvm::VPlan::getExitBlocks</definition>
+        <argsstring>()</argsstring>
+        <name>getExitBlocks</name>
+        <qualifiedname>llvm::VPlan::getExitBlocks</qualifiedname>
+        <briefdescription>
+<para>Return an iterator range over the <ref refid="classllvm_1_1_v_p_i_r_basic_block" kindref="compound">VPIRBasicBlock</ref> wrapping the exit blocks of the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>, that is leaf nodes except the scalar header. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Defined in VPlanHCFG, as the definition of the type needs access to the definitions of <ref refid="classllvm_1_1_v_p_block_shallow_traversal_wrapper" kindref="compound">VPBlockShallowTraversalWrapper</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3966" column="8" bodyfile="lib/Transforms/Vectorize/VPlanCFG.h" bodystart="310" bodyend="318"/>
+        <references refid="classllvm_1_1_v_p_block_utils_1a0360eea6cebcb1470f84b11f7ba51f16" compoundref="_v_plan_utils_8h" startline="183" endline="197">llvm::VPBlockUtils::blocksOnly</references>
+        <references refid="classllvm_1_1_v_p_block_base_1a2c13ffed8c55e1b8dd38fedc7e71e7a8" compoundref="_v_plan_8h" startline="530" endline="530">llvm::VPBlockBase::getNumSuccessors</references>
+        <references refid="classllvm_1_1_v_plan_1ae56a6505c6bfa319e686fc23acd52495" compoundref="_v_plan_8h" startline="3960" endline="3960">getScalarHeader</references>
+        <references refid="classllvm_1_1_v_plan_1a89f94c49b2cb5daaa93d19c89307c307" compoundref="_v_plan_8cpp" startline="1051" endline="1057">getVectorLoopRegion</references>
+        <references refid="namespacellvm_1a898e9304cf2baf908f4e9b8e32a5f6c3" compoundref="_s_t_l_extras_8h" startline="573" endline="581">llvm::make_filter_range</references>
+        <references refid="namespacellvm_1a4474bfb1e0ca062e5bfe2a35980e7d19" compoundref="_v_plan_c_f_g_8h" startline="215" endline="217">llvm::vp_depth_first_shallow</references>
+        <referencedby refid="_loop_vectorize_8cpp_1a435b95efad7ea03299bd527b55b4708a" compoundref="_loop_vectorize_8cpp" startline="9055" endline="9084">collectUsersInExitBlocks</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1a3a573419fed83f23b6bf70ac6731dbfa" compoundref="_v_plan_transforms_8cpp" startline="731" endline="793">llvm::VPlanTransforms::optimizeInductionExitUsers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a2f5fc19caa67daeca8a1316c7e055e3c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+        <definition>VPValue * llvm::VPlan::getTripCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getTripCount</name>
+        <qualifiedname>llvm::VPlan::getTripCount</qualifiedname>
+        <briefdescription>
+<para>The trip count of the original loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3969" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3969" bodyend="3972"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ae1d2d60cd9edd9f7ca98c50789747c95" compoundref="_v_plan_transforms_8cpp" startline="1606" endline="1637">llvm::VPlanTransforms::addActiveLaneMask</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a5a9cb34d61fa4930ff585649d1d5b2ed" compoundref="_v_plan_transforms_8cpp" startline="1490" endline="1559">addVPLaneMaskPhiAndUpdateExitBranch</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" compoundref="_v_plan_8cpp" startline="844" endline="921">createInitialVPlan</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+        <referencedby refid="namespacellvm_1_1vputils_1a96c706ef30193e00ac057bf24cf5719d" compoundref="_v_plan_utils_8cpp" startline="50" endline="70">llvm::vputils::isHeaderMask</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1af25d938764b8634e70e95ff3f0c35129" compoundref="_v_plan_transforms_8cpp" startline="978" endline="1051">llvm::VPlanTransforms::optimizeForVFAndUF</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1aae23f7e6fc37b0f1bb756f938023512c" compoundref="_loop_vectorize_8cpp" startline="10210" endline="10325">preparePlanForEpilogueVectorLoop</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1a0b6b1ae088cb8ca3aa4f26c4098daa3d" compoundref="_loop_vectorize_8cpp" startline="4676" endline="4783">llvm::LoopVectorizationPlanner::selectEpilogueVectorizationFactor</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ad16bff9364e25351de81704fe81fd229" compoundref="_v_plan_transforms_8cpp" startline="1812" endline="1871">llvm::VPlanTransforms::tryAddExplicitVectorLength</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a9bb77d906fd1ae7e241f0c95dcba094b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::VPlan::resetTripCount</definition>
+        <argsstring>(VPValue *NewTripCount)</argsstring>
+        <name>resetTripCount</name>
+        <qualifiedname>llvm::VPlan::resetTripCount</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+          <declname>NewTripCount</declname>
+        </param>
+        <briefdescription>
+<para>Resets the trip count for the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The caller must make sure all uses of the original trip count have been replaced. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3976" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3976" bodyend="3980"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_v_p_value_1ac3acda1aa682fbb8f8b95b0816eea879" compoundref="_v_plan_value_8h" startline="117" endline="117">llvm::VPValue::getNumUsers</references>
+        <referencedby refid="_loop_vectorize_8cpp_1aae23f7e6fc37b0f1bb756f938023512c" compoundref="_loop_vectorize_8cpp" startline="10210" endline="10325">preparePlanForEpilogueVectorLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a3732ef393569af17c44c36f4e22f2854" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+        <definition>VPValue * llvm::VPlan::getOrCreateBackedgeTakenCount</definition>
+        <argsstring>()</argsstring>
+        <name>getOrCreateBackedgeTakenCount</name>
+        <qualifiedname>llvm::VPlan::getOrCreateBackedgeTakenCount</qualifiedname>
+        <briefdescription>
+<para>The backedge taken count of the original loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3983" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3983" bodyend="3987"/>
+        <referencedby refid="namespacellvm_1_1vputils_1a96c706ef30193e00ac057bf24cf5719d" compoundref="_v_plan_utils_8cpp" startline="50" endline="70">llvm::vputils::isHeaderMask</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a233848f0bf7aef1aca22e6172e5d900d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> &amp;</type>
+        <definition>VPValue &amp; llvm::VPlan::getVectorTripCount</definition>
+        <argsstring>()</argsstring>
+        <name>getVectorTripCount</name>
+        <qualifiedname>llvm::VPlan::getVectorTripCount</qualifiedname>
+        <briefdescription>
+<para>The vector trip count. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3990" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3990" bodyend="3990"/>
+        <referencedby refid="_loop_vectorize_8cpp_1a4d2a943e39c98ccce6fd53e8df9c5c2b" compoundref="_loop_vectorize_8cpp" startline="8930" endline="8951">addCanonicalIVRecipes</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a02106664ead4e0c4e755457dbac7f7b3" compoundref="_loop_vectorize_8cpp" startline="8994" endline="9050">addScalarResumePhis</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" compoundref="_v_plan_8cpp" startline="844" endline="921">createInitialVPlan</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a13368acf4fbb5816c3d82099b11519b1" compoundref="_loop_vectorize_8cpp" startline="10159" endline="10205">preparePlanForMainVectorLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a2dffed680cc551f7ac6d92b3cd365d11" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> &amp;</type>
+        <definition>VPValue &amp; llvm::VPlan::getVF</definition>
+        <argsstring>()</argsstring>
+        <name>getVF</name>
+        <qualifiedname>llvm::VPlan::getVF</qualifiedname>
+        <briefdescription>
+<para>Returns the VF of the vector loop region. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3993" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3993" bodyend="3993"/>
+        <referencedby refid="_loop_vectorize_8cpp_1a9336eb7b4fbcee561dbb8c52d9eabe64" compoundref="_loop_vectorize_8cpp" startline="8317" endline="8335">createWidenInductionRecipes</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a5f39858b5d6d72b92c138916c64c90ba" compoundref="_v_plan_transforms_8cpp" startline="1726" endline="1771">transformRecipestoEVLRecipes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a2d53ff30dd2a706e91c30d4f50982e3d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> &amp;</type>
+        <definition>VPValue &amp; llvm::VPlan::getVFxUF</definition>
+        <argsstring>()</argsstring>
+        <name>getVFxUF</name>
+        <qualifiedname>llvm::VPlan::getVFxUF</qualifiedname>
+        <briefdescription>
+<para>Returns VF * UF of the vector loop region. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3996" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3996" bodyend="3996"/>
+        <referencedby refid="_loop_vectorize_8cpp_1a4d2a943e39c98ccce6fd53e8df9c5c2b" compoundref="_loop_vectorize_8cpp" startline="8930" endline="8951">addCanonicalIVRecipes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1ae2c6a16b2209e1709ee483b22b260849" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::VPlan::addVF</definition>
+        <argsstring>(ElementCount VF)</argsstring>
+        <name>addVF</name>
+        <qualifiedname>llvm::VPlan::addVF</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_element_count" kindref="compound">ElementCount</ref></type>
+          <declname>VF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3998" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3998" bodyend="3998"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a7ee6ab8541efab3e456a38d6c1fa1be2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::VPlan::setVF</definition>
+        <argsstring>(ElementCount VF)</argsstring>
+        <name>setVF</name>
+        <qualifiedname>llvm::VPlan::setVF</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_element_count" kindref="compound">ElementCount</ref></type>
+          <declname>VF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4000" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4000" bodyend="4004"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_v_plan_1a633dd97e642c10e8aa1dff2bd2874edb" compoundref="_v_plan_8h" startline="4006" endline="4006">hasVF</references>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1af25d938764b8634e70e95ff3f0c35129" compoundref="_v_plan_transforms_8cpp" startline="978" endline="1051">llvm::VPlanTransforms::optimizeForVFAndUF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a633dd97e642c10e8aa1dff2bd2874edb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::VPlan::hasVF</definition>
+        <argsstring>(ElementCount VF)</argsstring>
+        <name>hasVF</name>
+        <qualifiedname>llvm::VPlan::hasVF</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_element_count" kindref="compound">ElementCount</ref></type>
+          <declname>VF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4006" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4006" bodyend="4006"/>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1a10f355c5a55dd7e98d31c2f7e0b590aa" compoundref="_v_plan_8cpp" startline="1639" endline="1650">llvm::LoopVectorizationPlanner::getPlanFor</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a6bc9d4e47e8a41e60f4bedae712f0c03" compoundref="_v_plan_transforms_8cpp" startline="589" endline="668">legalizeAndOptimizeInductions</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1af25d938764b8634e70e95ff3f0c35129" compoundref="_v_plan_transforms_8cpp" startline="978" endline="1051">llvm::VPlanTransforms::optimizeForVFAndUF</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a7ee6ab8541efab3e456a38d6c1fa1be2" compoundref="_v_plan_8h" startline="4000" endline="4004">setVF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a18b96ac619241bd2248a355af718a192" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::VPlan::hasScalableVF</definition>
+        <argsstring>()</argsstring>
+        <name>hasScalableVF</name>
+        <qualifiedname>llvm::VPlan::hasScalableVF</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4007" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4007" bodyend="4009"/>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <referencedby refid="_v_plan_transforms_8cpp_1a6bc9d4e47e8a41e60f4bedae712f0c03" compoundref="_v_plan_transforms_8cpp" startline="589" endline="668">legalizeAndOptimizeInductions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a3aac2593ea2eaac537de30053e8e05fd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; <ref refid="classllvm_1_1_small_set_vector" kindref="compound">SmallSetVector</ref>&lt; <ref refid="classllvm_1_1_element_count" kindref="compound">ElementCount</ref>, 2 &gt;::iterator &gt;</type>
+        <definition>iterator_range&lt; SmallSetVector&lt; ElementCount, 2 &gt;::iterator &gt; llvm::VPlan::vectorFactors</definition>
+        <argsstring>() const</argsstring>
+        <name>vectorFactors</name>
+        <qualifiedname>llvm::VPlan::vectorFactors</qualifiedname>
+        <briefdescription>
+<para>Returns an iterator range over all VFs of the plan. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4013" column="3" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4013" bodyend="4015"/>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1a4adc69fc8f74164e990cce6afc1e061b" compoundref="_loop_vectorize_8cpp" startline="7457" endline="7543">llvm::LoopVectorizationPlanner::computeBestVF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1ad30bf062f18fd6e56e36bfecefbbb386" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::VPlan::hasScalarVFOnly</definition>
+        <argsstring>() const</argsstring>
+        <name>hasScalarVFOnly</name>
+        <qualifiedname>llvm::VPlan::hasScalarVFOnly</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4017" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4017" bodyend="4017"/>
+        <referencedby refid="_v_plan_transforms_8cpp_1a1536feae2abb3570ac032768a53ddd00" compoundref="_v_plan_transforms_8cpp" startline="109" endline="183">sinkScalarOperands</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a6e9c2a69cd9bc0e46626f5302a03d3da" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::VPlan::hasUF</definition>
+        <argsstring>(unsigned UF) const</argsstring>
+        <name>hasUF</name>
+        <qualifiedname>llvm::VPlan::hasUF</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4019" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4019" bodyend="4019"/>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1af25d938764b8634e70e95ff3f0c35129" compoundref="_v_plan_transforms_8cpp" startline="978" endline="1051">llvm::VPlanTransforms::optimizeForVFAndUF</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1af1d539e508015e09e4b9fdb7d020da0e" compoundref="_v_plan_8h" startline="4026" endline="4030">setUF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a532045d23e6f3efd21732fd342f99f09" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::VPlan::getUF</definition>
+        <argsstring>() const</argsstring>
+        <name>getUF</name>
+        <qualifiedname>llvm::VPlan::getUF</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4021" column="12" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4021" bodyend="4024"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1_v_plan_1ad80b94848142a7c633976aff96d4c408" compoundref="_v_plan_8cpp" startline="955" endline="1043">execute</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_widen_pointer_induction_recipe_1ac53a5d033ba641288b6e15344d880186" compoundref="_v_plan_recipes_8cpp" startline="3235" endline="3315">llvm::VPWidenPointerInductionRecipe::execute</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a143bc5faeb35f7363570e97bccf76e53" compoundref="_v_plan_8cpp" startline="923" endline="950">prepareToExecute</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1af1d539e508015e09e4b9fdb7d020da0e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::VPlan::setUF</definition>
+        <argsstring>(unsigned UF)</argsstring>
+        <name>setUF</name>
+        <qualifiedname>llvm::VPlan::setUF</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4026" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4026" bodyend="4030"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_v_plan_1a6e9c2a69cd9bc0e46626f5302a03d3da" compoundref="_v_plan_8h" startline="4019" endline="4019">hasUF</references>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1af25d938764b8634e70e95ff3f0c35129" compoundref="_v_plan_transforms_8cpp" startline="978" endline="1051">llvm::VPlanTransforms::optimizeForVFAndUF</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ad16bff9364e25351de81704fe81fd229" compoundref="_v_plan_transforms_8cpp" startline="1812" endline="1871">llvm::VPlanTransforms::tryAddExplicitVectorLength</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1a7a1cca51bb9bce4efad1063dcf158967" compoundref="_v_plan_unroll_8cpp" startline="391" endline="446">llvm::VPlanTransforms::unrollByUF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a13c80757c166e2959462fa447ed39649" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string VPlan::getName</definition>
+        <argsstring>() const</argsstring>
+        <name>getName</name>
+        <qualifiedname>llvm::VPlan::getName</qualifiedname>
+        <briefdescription>
+<para>Return a string with the name of the plan and the applicable VFs and UFs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4033" column="15" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="1120" bodyend="1141"/>
+        <references refid="namespacellvm_1a02981de53fb6ffd384d39addc4d25f37" compoundref="_s_t_l_extras_8h" startline="329" endline="332">llvm::drop_begin</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a242fb01fcd9fab0be0f487b67fd94a0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::VPlan::setName</definition>
+        <argsstring>(const Twine &amp;newName)</argsstring>
+        <name>setName</name>
+        <qualifiedname>llvm::VPlan::setName</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>newName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4035" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4035" bodyend="4035"/>
+        <references refid="classllvm_1_1_twine_1a4c1c1093a7749409c70838678514cc7c" compoundref="_twine_8cpp" startline="17" endline="30">llvm::Twine::str</references>
+        <referencedby refid="classllvm_1_1_v_plan_1ad80b94848142a7c633976aff96d4c408" compoundref="_v_plan_8cpp" startline="955" endline="1043">execute</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1ac38d49d70b5f78779e83abdf4dcb4be0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+        <definition>VPValue * llvm::VPlan::getOrAddLiveIn</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>getOrAddLiveIn</name>
+        <qualifiedname>llvm::VPlan::getOrAddLiveIn</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Gets the live-in <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> for <computeroutput>V</computeroutput> or adds a new live-in (if none exists yet) for <computeroutput>V</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4039" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4039" bodyend="4053"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_v_p_value_1add6179d3564ac5ea4736366b93d23829" compoundref="_v_plan_value_8h" startline="173" endline="173">llvm::VPValue::isLiveIn</references>
+        <referencedby refid="_loop_vectorize_8cpp_1a4d2a943e39c98ccce6fd53e8df9c5c2b" compoundref="_loop_vectorize_8cpp" startline="8930" endline="8951">addCanonicalIVRecipes</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a453563e4ed7e249a7f3e92b98b9052df" compoundref="_loop_vectorize_8cpp" startline="9112" endline="9210">addExitUsersForFirstOrderRecurrences</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a02106664ead4e0c4e755457dbac7f7b3" compoundref="_loop_vectorize_8cpp" startline="8994" endline="9050">addScalarResumePhis</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" compoundref="_v_plan_8cpp" startline="844" endline="921">createInitialVPlan</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1aa88371693bc18186386b04e8c45a30e4" compoundref="_v_plan_transforms_8cpp" startline="1970" endline="2044">llvm::VPlanTransforms::createInterleaveGroups</referencedby>
+        <referencedby refid="namespacellvm_1_1vputils_1a064976a6c7458b10c24021b7334cec2a" compoundref="_v_plan_utils_8cpp" startline="26" endline="48">llvm::vputils::getOrCreateVPValueForSCEVExpr</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a6bc9d4e47e8a41e60f4bedae712f0c03" compoundref="_v_plan_transforms_8cpp" startline="589" endline="668">legalizeAndOptimizeInductions</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1af25d938764b8634e70e95ff3f0c35129" compoundref="_v_plan_transforms_8cpp" startline="978" endline="1051">llvm::VPlanTransforms::optimizeForVFAndUF</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1a3a573419fed83f23b6bf70ac6731dbfa" compoundref="_v_plan_transforms_8cpp" startline="731" endline="793">llvm::VPlanTransforms::optimizeInductionExitUsers</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1aae23f7e6fc37b0f1bb756f938023512c" compoundref="_loop_vectorize_8cpp" startline="10210" endline="10325">preparePlanForEpilogueVectorLoop</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a5f39858b5d6d72b92c138916c64c90ba" compoundref="_v_plan_transforms_8cpp" startline="1726" endline="1771">transformRecipestoEVLRecipes</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ad16bff9364e25351de81704fe81fd229" compoundref="_v_plan_transforms_8cpp" startline="1812" endline="1871">llvm::VPlanTransforms::tryAddExplicitVectorLength</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1ae955de4cebaa654363ab0188e24ec19d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+        <definition>VPValue * llvm::VPlan::getLiveIn</definition>
+        <argsstring>(Value *V) const</argsstring>
+        <name>getLiveIn</name>
+        <qualifiedname>llvm::VPlan::getLiveIn</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Return the live-in <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> for <computeroutput>V</computeroutput>, if there is one or nullptr otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4056" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4056" bodyend="4056"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1aec866dc063fd3bc550e853938c4b5010" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VPlan::printLiveIns</definition>
+        <argsstring>(raw_ostream &amp;O) const</argsstring>
+        <name>printLiveIns</name>
+        <qualifiedname>llvm::VPlan::printLiveIns</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+<para>Print the live-ins of this <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> to <computeroutput>O</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4060" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="1067" bodyend="1100"/>
+        <references refid="classllvm_1_1_v_plan_1a12ceea61a3de5b2f0ff70850f66c5fdc" compoundref="_v_plan_8h" startline="3817">VPSlotTracker</references>
+        <referencedby refid="classllvm_1_1_v_plan_1adef61e4746c6f7f0e2e75da307e77c42" compoundref="_v_plan_8cpp" startline="1103" endline="1118">print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1adef61e4746c6f7f0e2e75da307e77c42" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void VPlan::print</definition>
+        <argsstring>(raw_ostream &amp;O) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::VPlan::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+<para>Print this <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> to <computeroutput>O</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4063" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="1103" bodyend="1118"/>
+        <references refid="namespacellvm_1a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2" compoundref="_pseudo_probe_8h" startline="29">llvm::Block</references>
+        <references refid="classllvm_1_1_v_plan_1a1c868dfd250ff9592c06dd61a7fb0bcf" compoundref="_v_plan_8h" startline="3928" endline="3928">getEntry</references>
+        <references refid="_provenance_analysis_evaluator_8cpp_1a2ee79648e8bce3ddbb26358ff10e3e82" compoundref="_provenance_analysis_evaluator_8cpp" startline="20" endline="25">getName</references>
+        <references refid="classllvm_1_1_v_plan_1aec866dc063fd3bc550e853938c4b5010" compoundref="_v_plan_8cpp" startline="1067" endline="1100">printLiveIns</references>
+        <references refid="classllvm_1_1_v_plan_1a12ceea61a3de5b2f0ff70850f66c5fdc" compoundref="_v_plan_8h" startline="3817">VPSlotTracker</references>
+        <referencedby refid="namespacellvm_1a8d7ecb4fa061e6d1b2e7448530e4c795" compoundref="_v_plan_8h" startline="4202" endline="4205">llvm::operator&lt;&lt;</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1ac3a6a342405e61ad992020460a530dc4" compoundref="_v_plan_8cpp" startline="1653" endline="1663">llvm::LoopVectorizationPlanner::printPlans</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a064c339f401589b34437e61d8108d8d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void VPlan::printDOT</definition>
+        <argsstring>(raw_ostream &amp;O) const</argsstring>
+        <name>printDOT</name>
+        <qualifiedname>llvm::VPlan::printDOT</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+<para>Print this <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> in <ref refid="namespacellvm_1_1_d_o_t" kindref="compound">DOT</ref> format to <computeroutput>O</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4066" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="1144" bodyend="1147"/>
+        <references refid="_d_x_i_l_pretty_printer_8cpp_1aa60cf1897c36e79b878a6f3c6300cfba" compoundref="_d_x_i_l_pretty_printer_8cpp" startline="305">Printer</references>
+        <references refid="classllvm_1_1_v_plan_1a49f9947d030a2675aa107469350c5d72" compoundref="_v_plan_8h" startline="3816">VPlanPrinter</references>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1ac3a6a342405e61ad992020460a530dc4" compoundref="_v_plan_8cpp" startline="1653" endline="1663">llvm::LoopVectorizationPlanner::printPlans</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1acfa2ca2843601cd7a5f758e5d4014f84" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" kindref="member">LLVM_DUMP_METHOD</ref> void</type>
+        <definition>LLVM_DUMP_METHOD void VPlan::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::VPlan::dump</qualifiedname>
+        <briefdescription>
+<para>Dump the plan to stderr (for debugging). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4069" column="25" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="1150" bodyend="1150"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1a50bf746ca1858c0e272e3a802fc27942" compoundref="_g_c_n_reg_pressure_8cpp" startline="227" endline="244">llvm::print</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1ad9053d6ed9627166c144b8895d1c1010" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_canonical_i_v_p_h_i_recipe" kindref="compound">VPCanonicalIVPHIRecipe</ref> *</type>
+        <definition>VPCanonicalIVPHIRecipe * llvm::VPlan::getCanonicalIV</definition>
+        <argsstring>()</argsstring>
+        <name>getCanonicalIV</name>
+        <qualifiedname>llvm::VPlan::getCanonicalIV</qualifiedname>
+        <briefdescription>
+<para>Returns the canonical induction recipe of the vector loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4073" column="26" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4073" bodyend="4080"/>
+        <references refid="classllvm_1_1_v_p_basic_block_1a4e30ea9d413dd86c802fee94aa8b5805" compoundref="_v_plan_8h" startline="3574" endline="3574">llvm::VPBasicBlock::begin</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_v_p_basic_block_1aeb3dd295f833ecc508d7586df94a76f3" compoundref="_v_plan_8h" startline="3585" endline="3585">llvm::VPBasicBlock::empty</references>
+        <references refid="classllvm_1_1_v_p_block_base_1ad928235da3a32b50ba65140da09daf5d" compoundref="_v_plan_8cpp" startline="158" endline="163">llvm::VPBlockBase::getEntryBasicBlock</references>
+        <references refid="classllvm_1_1_v_p_block_base_1aebc0e1a3379ed4fd614889e24b8ea48c" compoundref="_v_plan_8h" startline="520" endline="522">llvm::VPBlockBase::getSingleSuccessor</references>
+        <references refid="classllvm_1_1_v_plan_1a89f94c49b2cb5daaa93d19c89307c307" compoundref="_v_plan_8cpp" startline="1051" endline="1057">getVectorLoopRegion</references>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ae1d2d60cd9edd9f7ca98c50789747c95" compoundref="_v_plan_transforms_8cpp" startline="1606" endline="1637">llvm::VPlanTransforms::addActiveLaneMask</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a453563e4ed7e249a7f3e92b98b9052df" compoundref="_loop_vectorize_8cpp" startline="9112" endline="9210">addExitUsersForFirstOrderRecurrences</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a02106664ead4e0c4e755457dbac7f7b3" compoundref="_loop_vectorize_8cpp" startline="8994" endline="9050">addScalarResumePhis</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a5a9cb34d61fa4930ff585649d1d5b2ed" compoundref="_v_plan_transforms_8cpp" startline="1490" endline="1559">addVPLaneMaskPhiAndUpdateExitBranch</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a8d0c6052d21638f0a385e226db3bd92f" compoundref="_v_plan_transforms_8cpp" startline="1565" endline="1604">collectAllHeaderMasks</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a3c91ec836b0d1e340e17bff8eec31390" compoundref="_v_plan_transforms_8cpp" startline="527" endline="563">createScalarIVSteps</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ae3449b993cd1c459995c2fe13ef50892" compoundref="_v_plan_transforms_8cpp" startline="1441" endline="1455">llvm::VPlanTransforms::optimize</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1af25d938764b8634e70e95ff3f0c35129" compoundref="_v_plan_transforms_8cpp" startline="978" endline="1051">llvm::VPlanTransforms::optimizeForVFAndUF</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1a3a573419fed83f23b6bf70ac6731dbfa" compoundref="_v_plan_transforms_8cpp" startline="731" endline="793">llvm::VPlanTransforms::optimizeInductionExitUsers</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a13368acf4fbb5816c3d82099b11519b1" compoundref="_loop_vectorize_8cpp" startline="10159" endline="10205">preparePlanForMainVectorLoop</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1aefd03ef5fc77c520e27fe794e8ec93e9" compoundref="_v_plan_transforms_8cpp" startline="457" endline="490">removeRedundantCanonicalIVs</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1a5f39858b5d6d72b92c138916c64c90ba" compoundref="_v_plan_transforms_8cpp" startline="1726" endline="1771">transformRecipestoEVLRecipes</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ae61793492431f138869f097a5f31bd32" compoundref="_v_plan_transforms_8cpp" startline="1308" endline="1439">llvm::VPlanTransforms::truncateToMinimalBitwidths</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ad16bff9364e25351de81704fe81fd229" compoundref="_v_plan_transforms_8cpp" startline="1812" endline="1871">llvm::VPlanTransforms::tryAddExplicitVectorLength</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1af378bb1e037306d9cfd4bb0b49ba55f9" compoundref="_loop_vectorize_8cpp" startline="4439" endline="4533">willGenerateVectors</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1aea17e1d416f9187542a9f87745c48e0a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+        <definition>VPValue * llvm::VPlan::getSCEVExpansion</definition>
+        <argsstring>(const SCEV *S) const</argsstring>
+        <name>getSCEVExpansion</name>
+        <qualifiedname>llvm::VPlan::getSCEVExpansion</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4082" column="11" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4082" bodyend="4084"/>
+        <referencedby refid="namespacellvm_1_1vputils_1a064976a6c7458b10c24021b7334cec2a" compoundref="_v_plan_utils_8cpp" startline="26" endline="48">llvm::vputils::getOrCreateVPValueForSCEVExpr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a65719da7ecac78c4b751d3dbb9f9f2a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::VPlan::addSCEVExpansion</definition>
+        <argsstring>(const SCEV *S, VPValue *V)</argsstring>
+        <name>addSCEVExpansion</name>
+        <qualifiedname>llvm::VPlan::addSCEVExpansion</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *</type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4086" column="8" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4086" bodyend="4089"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="namespacellvm_1_1vputils_1a064976a6c7458b10c24021b7334cec2a" compoundref="_v_plan_utils_8cpp" startline="26" endline="48">llvm::vputils::getOrCreateVPValueForSCEVExpr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1afadf7ae5a5fad2c0bde13e8b72bf7a71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> *</type>
+        <definition>VPlan * VPlan::duplicate</definition>
+        <argsstring>()</argsstring>
+        <name>duplicate</name>
+        <qualifiedname>llvm::VPlan::duplicate</qualifiedname>
+        <briefdescription>
+<para>Clone the current <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>, update all VPValues of the new <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> and cloned recipes to refer to the clones, and return it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4093" column="9" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="1191" bodyend="1243"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="_v_plan_8cpp_1ac1ac18b9f807acbc9846d923ea874524" compoundref="_v_plan_8cpp" startline="651" endline="699">cloneFrom</references>
+        <references refid="classllvm_1_1_dense_map_base_1a836d9cba6deced0bb1fa7333ce5afd3a" compoundref="_dense_map_8h" startline="147" endline="149">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::contains</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="namespacellvm_1ac78c09ae232b2ce188ff590d51e3c268" compoundref="_s_t_l_extras_8h" startline="1766" endline="1768">llvm::find_if</references>
+        <references refid="classllvm_1_1_v_plan_1ae56a6505c6bfa319e686fc23acd52495" compoundref="_v_plan_8h" startline="3960" endline="3960">getScalarHeader</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_v_plan_8cpp_1aaa122781f91b3e8bc730b2c5b7c07a05" compoundref="_v_plan_8cpp" startline="1153" endline="1189">remapOperands</references>
+        <references refid="namespacellvm_1adc4eb8be6f7a12ede962987fb9cabb47" compoundref="_sequence_8h" startline="305" endline="307">llvm::seq</references>
+        <references refid="classllvm_1_1_dense_map_base_1a3d95cc2d359b8d9ed5bd9504b44930b5" compoundref="_dense_map_8h" startline="99" endline="99">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::size</references>
+        <references refid="namespacellvm_1a4474bfb1e0ca062e5bfe2a35980e7d19" compoundref="_v_plan_c_f_g_8h" startline="215" endline="217">llvm::vp_depth_first_shallow</references>
+        <referencedby refid="structllvm_1_1_loop_vectorize_pass_1a160afa01e95095aa0c8115b6e0e6f4a6" compoundref="_loop_vectorize_8cpp" startline="10327" endline="10756">llvm::LoopVectorizePass::processLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1aa1202b66a60b632b7adbdee13a20ad7e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+        <definition>VPBasicBlock * llvm::VPlan::createVPBasicBlock</definition>
+        <argsstring>(const Twine &amp;Name, VPRecipeBase *Recipe=nullptr)</argsstring>
+        <name>createVPBasicBlock</name>
+        <qualifiedname>llvm::VPlan::createVPBasicBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_recipe_base" kindref="compound">VPRecipeBase</ref> *</type>
+          <declname>Recipe</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> with <computeroutput>Name</computeroutput> and containing <computeroutput>Recipe</computeroutput> if present. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned block is owned by the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> and deleted once the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4098" column="16" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4098" bodyend="4103"/>
+        <referencedby refid="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" compoundref="_v_plan_8cpp" startline="844" endline="921">createInitialVPlan</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1ac967ad551e77554a15e20cac14877ac7" compoundref="_v_plan_transforms_8cpp" startline="303" endline="342">createReplicateRegion</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ac2fcd61c17c94d7e9d10b24b718c812e" compoundref="_v_plan_transforms_8cpp" startline="2065" endline="2148">llvm::VPlanTransforms::handleUncountableEarlyExit</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a3c68cb3d20000fcb178a8f0eb6454cfc" compoundref="_v_plan_8h" startline="3890" endline="3894">VPlan</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a229a878bb15506314b99639e3d6dca41" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_region_block" kindref="compound">VPRegionBlock</ref> *</type>
+        <definition>VPRegionBlock * llvm::VPlan::createVPRegionBlock</definition>
+        <argsstring>(VPBlockBase *Entry, VPBlockBase *Exiting, const std::string &amp;Name=&quot;&quot;, bool IsReplicator=false)</argsstring>
+        <name>createVPRegionBlock</name>
+        <qualifiedname>llvm::VPlan::createVPRegionBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_block_base" kindref="compound">VPBlockBase</ref> *</type>
+          <declname>Entry</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_block_base" kindref="compound">VPBlockBase</ref> *</type>
+          <declname>Exiting</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Name</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsReplicator</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="classllvm_1_1_v_p_region_block" kindref="compound">VPRegionBlock</ref> with <computeroutput>Entry</computeroutput>, <computeroutput>Exiting</computeroutput> and <computeroutput>Name</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>IsReplicator</computeroutput> is true, the region is a replicate region. The returned block is owned by the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> and deleted once the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4108" column="17" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4108" bodyend="4114"/>
+        <referencedby refid="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" compoundref="_v_plan_8cpp" startline="844" endline="921">createInitialVPlan</referencedby>
+        <referencedby refid="_v_plan_transforms_8cpp_1ac967ad551e77554a15e20cac14877ac7" compoundref="_v_plan_transforms_8cpp" startline="303" endline="342">createReplicateRegion</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a7fff60ced31e949142816827e969220b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_region_block" kindref="compound">VPRegionBlock</ref> *</type>
+        <definition>VPRegionBlock * llvm::VPlan::createVPRegionBlock</definition>
+        <argsstring>(const std::string &amp;Name=&quot;&quot;, bool IsReplicator=false)</argsstring>
+        <name>createVPRegionBlock</name>
+        <qualifiedname>llvm::VPlan::createVPRegionBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Name</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsReplicator</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="classllvm_1_1_v_p_region_block" kindref="compound">VPRegionBlock</ref> with <computeroutput>Name</computeroutput> and entry and exiting blocks set to nullptr. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>IsReplicator</computeroutput> is true, the region is a replicate region. The returned block is owned by the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> and deleted once the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4120" column="17" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="4120" bodyend="4125"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a624ea79a08dc5db0333a1f8dd0075936" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_i_r_basic_block" kindref="compound">VPIRBasicBlock</ref> *</type>
+        <definition>VPIRBasicBlock * VPlan::createEmptyVPIRBasicBlock</definition>
+        <argsstring>(BasicBlock *IRBB)</argsstring>
+        <name>createEmptyVPIRBasicBlock</name>
+        <qualifiedname>llvm::VPlan::createEmptyVPIRBasicBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>IRBB</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="classllvm_1_1_v_p_i_r_basic_block" kindref="compound">VPIRBasicBlock</ref> wrapping <computeroutput>IRBB</computeroutput>, but do not create VPIRInstructions wrapping the instructions in t<computeroutput>IRBB</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned block is owned by the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> and deleted once the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4130" column="18" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="1245" bodyend="1249"/>
+        <referencedby refid="classllvm_1_1_v_plan_1aa12c0d3acb3f625ee09d2919907d4067" compoundref="_v_plan_8cpp" startline="1251" endline="1257">createVPIRBasicBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1aa12c0d3acb3f625ee09d2919907d4067" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_i_r_basic_block" kindref="compound">VPIRBasicBlock</ref> *</type>
+        <definition>VPIRBasicBlock * VPlan::createVPIRBasicBlock</definition>
+        <argsstring>(BasicBlock *IRBB)</argsstring>
+        <name>createVPIRBasicBlock</name>
+        <qualifiedname>llvm::VPlan::createVPIRBasicBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>IRBB</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="classllvm_1_1_v_p_i_r_basic_block" kindref="compound">VPIRBasicBlock</ref> from <computeroutput>IRBB</computeroutput> containing VPIRInstructions for all instructions in <computeroutput>IRBB</computeroutput>, except its terminator which is managed by the successors of the block in <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned block is owned by the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> and deleted once the <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="4136" column="18" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="1251" bodyend="1257"/>
+        <references refid="classllvm_1_1_basic_block_1a0ed5f3ab3c2e4196ee0cffffa080c062" compoundref="_i_r_2_basic_block_8h" startline="461" endline="468">llvm::BasicBlock::begin</references>
+        <references refid="classllvm_1_1_v_plan_1a624ea79a08dc5db0333a1f8dd0075936" compoundref="_v_plan_8cpp" startline="1245" endline="1249">createEmptyVPIRBasicBlock</references>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_basic_block_1aef9e9fcf4c5dfce90276ca16d91b8e46" compoundref="_i_r_2_basic_block_8h" startline="240" endline="244">llvm::BasicBlock::getTerminator</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a341215803e83773a3e97860dc291f121" compoundref="iterator__range_8h" startline="77" endline="79">llvm::make_range</references>
+        <referencedby refid="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" compoundref="_v_plan_8cpp" startline="844" endline="921">createInitialVPlan</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ac2fcd61c17c94d7e9d10b24b718c812e" compoundref="_v_plan_transforms_8cpp" startline="2065" endline="2148">llvm::VPlanTransforms::handleUncountableEarlyExit</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a3a8743a69fac5e7fa9c2b02604b2cf2f" compoundref="_loop_vectorize_8cpp" startline="2617" endline="2626">replaceVPBBWithIRVPBB</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a3c68cb3d20000fcb178a8f0eb6454cfc" compoundref="_v_plan_8h" startline="3890" endline="3894">VPlan</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a9e5cbede99134e89b34efded77cd3c4e" compoundref="_v_plan_8cpp" startline="816" endline="819">VPlan</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1aefc42f3cefc5a839ca925b4cb3ae4a7b" kindref="member">VPlanPtr</ref></type>
+        <definition>VPlanPtr VPlan::createInitialVPlan</definition>
+        <argsstring>(Type *InductionTy, PredicatedScalarEvolution &amp;PSE, bool RequiresScalarEpilogueCheck, bool TailFolded, Loop *TheLoop)</argsstring>
+        <name>createInitialVPlan</name>
+        <qualifiedname>llvm::VPlan::createInitialVPlan</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>InductionTy</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_predicated_scalar_evolution" kindref="compound">PredicatedScalarEvolution</ref> &amp;</type>
+          <declname>PSE</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>RequiresScalarEpilogueCheck</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>TailFolded</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+          <declname>TheLoop</declname>
+        </param>
+        <briefdescription>
+<para>Create initial <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>, having an &quot;entry&quot; <ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> (wrapping original scalar pre-header) which contains <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expansions that need to happen before the CFG is modified (when executing a <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> for the epilogue vector loop, the original entry needs to be replaced by a new one); a <ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> for the vector pre-header, followed by a region for the vector loop, followed by the middle <ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If a check is needed to guard executing the scalar epilogue loop, it will be added to the middle block, together with VPBasicBlocks for the scalar preheader and exit blocks. <computeroutput>InductionTy</computeroutput> is the type of the canonical induction and used for related values, like the trip count expression. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPlan.h" line="3913" column="19" bodyfile="lib/Transforms/Vectorize/VPlan.cpp" bodystart="844" bodyend="921"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_v_p_instruction_1a507f9482c01673384c0c203530dad6f2a0062eccdb4956531f7b6a3cf71c3320c" compoundref="_v_plan_8h" startline="1213">llvm::VPInstruction::BranchOnCond</references>
+        <references refid="structllvm_1_1_v_p_transform_state_1aa8a293d9d0bf609e45f591ce4bd55bb3" compoundref="_v_plan_8h" startline="364">llvm::VPTransformState::Builder</references>
+        <references refid="classllvm_1_1_v_p_block_utils_1a40bc7fec35d7093efcdbadf566d6b5ee" compoundref="_v_plan_utils_8h" startline="142" endline="157">llvm::VPBlockUtils::connectBlocks</references>
+        <references refid="classllvm_1_1_v_plan_1aa1202b66a60b632b7adbdee13a20ad7e" compoundref="_v_plan_8h" startline="4098" endline="4103">createVPBasicBlock</references>
+        <references refid="classllvm_1_1_v_plan_1aa12c0d3acb3f625ee09d2919907d4067" compoundref="_v_plan_8cpp" startline="1251" endline="1257">createVPIRBasicBlock</references>
+        <references refid="classllvm_1_1_v_plan_1a229a878bb15506314b99639e3d6dca41" compoundref="_v_plan_8h" startline="4108" endline="4114">createVPRegionBlock</references>
+        <references refid="classllvm_1_1_v_plan_1a1c868dfd250ff9592c06dd61a7fb0bcf" compoundref="_v_plan_8h" startline="3928" endline="3928">getEntry</references>
+        <references refid="classllvm_1_1_type_1aa75984a442f2379de0c66018201fa628" compoundref="_sandbox_i_r_2_type_8cpp" startline="284" endline="284">llvm::Type::getInt1Ty</references>
+        <references refid="classllvm_1_1_loop_base_1a1230fd674d2609b96527fe65eaf40b1b" compoundref="_generic_loop_info_impl_8h" startline="256" endline="269">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopLatch</references>
+        <references refid="classllvm_1_1_v_plan_1ac38d49d70b5f78779e83abdf4dcb4be0" compoundref="_v_plan_8h" startline="4039" endline="4053">getOrAddLiveIn</references>
+        <references refid="namespacellvm_1_1vputils_1a064976a6c7458b10c24021b7334cec2a" compoundref="_v_plan_utils_8cpp" startline="26" endline="48">llvm::vputils::getOrCreateVPValueForSCEVExpr</references>
+        <references refid="classllvm_1_1_v_plan_1ae56a6505c6bfa319e686fc23acd52495" compoundref="_v_plan_8h" startline="3960" endline="3960">getScalarHeader</references>
+        <references refid="classllvm_1_1_predicated_scalar_evolution_1a10ca5eacc61b5669880de2f8b0cff33c" compoundref="_scalar_evolution_8h" startline="2422" endline="2422">llvm::PredicatedScalarEvolution::getSE</references>
+        <references refid="classllvm_1_1_predicated_scalar_evolution_1adbabf05e94f95f775d59497b6b1004d8" compoundref="_scalar_evolution_8cpp" startline="15145" endline="15154">llvm::PredicatedScalarEvolution::getSymbolicMaxBackedgeTakenCount</references>
+        <references refid="classllvm_1_1_basic_block_1aef9e9fcf4c5dfce90276ca16d91b8e46" compoundref="_i_r_2_basic_block_8h" startline="240" endline="244">llvm::BasicBlock::getTerminator</references>
+        <references refid="classllvm_1_1_v_plan_1a2f5fc19caa67daeca8a1316c7e055e3c" compoundref="_v_plan_8h" startline="3969" endline="3972">getTripCount</references>
+        <references refid="classllvm_1_1_scalar_evolution_1a3e3935d45c4b79b85a117b47cc1d2e61" compoundref="_scalar_evolution_8cpp" startline="8180" endline="8189">llvm::ScalarEvolution::getTripCountFromExitCount</references>
+        <references refid="classllvm_1_1_constant_int_1a82dbbd8e3688b0bc1eedb338864d0d0c" compoundref="_constants_8cpp" startline="866" endline="871">llvm::ConstantInt::getTrue</references>
+        <references refid="classllvm_1_1_loop_base_1a462e59069cb22aa0abd869033bb546fb" compoundref="_generic_loop_info_impl_8h" startline="163" endline="171">llvm::LoopBase&lt; BlockT, LoopT &gt;::getUniqueLatchExitBlock</references>
+        <references refid="classllvm_1_1_v_plan_1a233848f0bf7aef1aca22e6172e5d900d" compoundref="_v_plan_8h" startline="3990" endline="3990">getVectorTripCount</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78baa719225e2de4059f93fd3209e1f48218" compoundref="_instr_types_8h" startline="694">llvm::CmpInst::ICMP_EQ</references>
+        <references refid="classllvm_1_1_v_p_block_utils_1a1f625b90be26a131061ab1e43740cc81" compoundref="_v_plan_utils_8h" startline="88" endline="99">llvm::VPBlockUtils::insertBlockAfter</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="structllvm_1_1_v_p_transform_state_1ac0b363a134c3bfac25ba209704ef3ee3" compoundref="_v_plan_8h" startline="370">llvm::VPTransformState::Plan</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> models a candidate for vectorization, encoding various decisions take to produce efficient output IR, including which branches, basic-blocks and output IR instructions to generate, and their cost. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> holds a Hierarchical-CFG of VPBasicBlocks and VPRegionBlocks rooted at an Entry <ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref>. </para>
+    </detaileddescription>
+    <location file="lib/Transforms/Vectorize/VPlan.h" line="3815" column="1" bodyfile="lib/Transforms/Vectorize/VPlan.h" bodystart="3815" bodyend="4137"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_v_plan_1a65719da7ecac78c4b751d3dbb9f9f2a4" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>addSCEVExpansion</name></member>
+      <member refid="classllvm_1_1_v_plan_1ae2c6a16b2209e1709ee483b22b260849" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>addVF</name></member>
+      <member refid="classllvm_1_1_v_plan_1a4fb86f44bcdcd192ea29e209e0f1ea3f" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>BackedgeTakenCount</name></member>
+      <member refid="classllvm_1_1_v_plan_1a8d2ce995a1feaa7a65ff40f77f073db3" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>cost</name></member>
+      <member refid="classllvm_1_1_v_plan_1a49319e5fea946cbfe7371e9abe389d40" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>CreatedBlocks</name></member>
+      <member refid="classllvm_1_1_v_plan_1a624ea79a08dc5db0333a1f8dd0075936" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>createEmptyVPIRBasicBlock</name></member>
+      <member refid="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>createInitialVPlan</name></member>
+      <member refid="classllvm_1_1_v_plan_1aa1202b66a60b632b7adbdee13a20ad7e" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>createVPBasicBlock</name></member>
+      <member refid="classllvm_1_1_v_plan_1aa12c0d3acb3f625ee09d2919907d4067" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>createVPIRBasicBlock</name></member>
+      <member refid="classllvm_1_1_v_plan_1a229a878bb15506314b99639e3d6dca41" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>createVPRegionBlock</name></member>
+      <member refid="classllvm_1_1_v_plan_1a7fff60ced31e949142816827e969220b" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>createVPRegionBlock</name></member>
+      <member refid="classllvm_1_1_v_plan_1acfa2ca2843601cd7a5f758e5d4014f84" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_v_plan_1afadf7ae5a5fad2c0bde13e8b72bf7a71" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>duplicate</name></member>
+      <member refid="classllvm_1_1_v_plan_1ad1b90fb992672520a22270f8f6bd32f0" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>Entry</name></member>
+      <member refid="classllvm_1_1_v_plan_1ad80b94848142a7c633976aff96d4c408" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>execute</name></member>
+      <member refid="classllvm_1_1_v_plan_1ad9053d6ed9627166c144b8895d1c1010" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getCanonicalIV</name></member>
+      <member refid="classllvm_1_1_v_plan_1a1c868dfd250ff9592c06dd61a7fb0bcf" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getEntry</name></member>
+      <member refid="classllvm_1_1_v_plan_1a479b833fd70361a9b1bb9cb9f8a2e3ad" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getEntry</name></member>
+      <member refid="classllvm_1_1_v_plan_1a85800ca7a821f540ad2d6d4d3c2d4208" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getExitBlocks</name></member>
+      <member refid="classllvm_1_1_v_plan_1ae955de4cebaa654363ab0188e24ec19d" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getLiveIn</name></member>
+      <member refid="classllvm_1_1_v_plan_1a995b2a034ffc26dcd2f3a679f9d2feea" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getMiddleBlock</name></member>
+      <member refid="classllvm_1_1_v_plan_1a9cbce97074fc9cc4c7bc027adcf560af" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getMiddleBlock</name></member>
+      <member refid="classllvm_1_1_v_plan_1a13c80757c166e2959462fa447ed39649" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getName</name></member>
+      <member refid="classllvm_1_1_v_plan_1ac38d49d70b5f78779e83abdf4dcb4be0" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getOrAddLiveIn</name></member>
+      <member refid="classllvm_1_1_v_plan_1a3732ef393569af17c44c36f4e22f2854" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getOrCreateBackedgeTakenCount</name></member>
+      <member refid="classllvm_1_1_v_plan_1ae56a6505c6bfa319e686fc23acd52495" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getScalarHeader</name></member>
+      <member refid="classllvm_1_1_v_plan_1ad5f29ccf71b0494fc179323427eb1e11" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getScalarPreheader</name></member>
+      <member refid="classllvm_1_1_v_plan_1aea17e1d416f9187542a9f87745c48e0a" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getSCEVExpansion</name></member>
+      <member refid="classllvm_1_1_v_plan_1a2f5fc19caa67daeca8a1316c7e055e3c" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getTripCount</name></member>
+      <member refid="classllvm_1_1_v_plan_1a532045d23e6f3efd21732fd342f99f09" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getUF</name></member>
+      <member refid="classllvm_1_1_v_plan_1a89f94c49b2cb5daaa93d19c89307c307" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getVectorLoopRegion</name></member>
+      <member refid="classllvm_1_1_v_plan_1af19b220ce9ea956afca867699a0581df" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getVectorLoopRegion</name></member>
+      <member refid="classllvm_1_1_v_plan_1aee894572833ce02ad06c067d44f65b48" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getVectorPreheader</name></member>
+      <member refid="classllvm_1_1_v_plan_1a233848f0bf7aef1aca22e6172e5d900d" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getVectorTripCount</name></member>
+      <member refid="classllvm_1_1_v_plan_1a2dffed680cc551f7ac6d92b3cd365d11" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getVF</name></member>
+      <member refid="classllvm_1_1_v_plan_1a2d53ff30dd2a706e91c30d4f50982e3d" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>getVFxUF</name></member>
+      <member refid="classllvm_1_1_v_plan_1a18b96ac619241bd2248a355af718a192" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>hasScalableVF</name></member>
+      <member refid="classllvm_1_1_v_plan_1ad30bf062f18fd6e56e36bfecefbbb386" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>hasScalarVFOnly</name></member>
+      <member refid="classllvm_1_1_v_plan_1a6e9c2a69cd9bc0e46626f5302a03d3da" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>hasUF</name></member>
+      <member refid="classllvm_1_1_v_plan_1a633dd97e642c10e8aa1dff2bd2874edb" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>hasVF</name></member>
+      <member refid="classllvm_1_1_v_plan_1a9b587f308f99954318dea76f0500dc8d" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>Name</name></member>
+      <member refid="classllvm_1_1_v_plan_1a143bc5faeb35f7363570e97bccf76e53" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>prepareToExecute</name></member>
+      <member refid="classllvm_1_1_v_plan_1adef61e4746c6f7f0e2e75da307e77c42" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>print</name></member>
+      <member refid="classllvm_1_1_v_plan_1a064c339f401589b34437e61d8108d8d8" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>printDOT</name></member>
+      <member refid="classllvm_1_1_v_plan_1aec866dc063fd3bc550e853938c4b5010" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>printLiveIns</name></member>
+      <member refid="classllvm_1_1_v_plan_1a9bb77d906fd1ae7e241f0c95dcba094b" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>resetTripCount</name></member>
+      <member refid="classllvm_1_1_v_plan_1a020c90524f3268cadfb0cb03a6f350d8" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>ScalarHeader</name></member>
+      <member refid="classllvm_1_1_v_plan_1ad157763ed381d7b447be5e4f784485df" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>SCEVToExpansion</name></member>
+      <member refid="classllvm_1_1_v_plan_1a9f311a1a101ba9ebbdafb31a67942b69" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>setEntry</name></member>
+      <member refid="classllvm_1_1_v_plan_1a242fb01fcd9fab0be0f487b67fd94a0a" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>setName</name></member>
+      <member refid="classllvm_1_1_v_plan_1af1d539e508015e09e4b9fdb7d020da0e" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>setUF</name></member>
+      <member refid="classllvm_1_1_v_plan_1a7ee6ab8541efab3e456a38d6c1fa1be2" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>setVF</name></member>
+      <member refid="classllvm_1_1_v_plan_1a49cbc66e734c87ec1f94a6edf9a999c4" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>TripCount</name></member>
+      <member refid="classllvm_1_1_v_plan_1a7eccac4ed0bb4c551e6e4ee286906a3e" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>UFs</name></member>
+      <member refid="classllvm_1_1_v_plan_1ae8fc3cd5cfbe2026cef38440206951a1" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>Value2VPValue</name></member>
+      <member refid="classllvm_1_1_v_plan_1a3aac2593ea2eaac537de30053e8e05fd" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>vectorFactors</name></member>
+      <member refid="classllvm_1_1_v_plan_1a55c4ae680bbb7c5b8dad14af25216b0b" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>VectorTripCount</name></member>
+      <member refid="classllvm_1_1_v_plan_1a228158d5895f46519fb926cfc83b8a4f" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>VF</name></member>
+      <member refid="classllvm_1_1_v_plan_1acb43d7cfe07bcc38eb2638da45a15f49" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>VFs</name></member>
+      <member refid="classllvm_1_1_v_plan_1a51d3cce8183338e863e6ef269bd0f07d" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>VFxUF</name></member>
+      <member refid="classllvm_1_1_v_plan_1a6c7a498b8f88b2c448c1b88e1e2c4f75" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>VPlan</name></member>
+      <member refid="classllvm_1_1_v_plan_1a9e5cbede99134e89b34efded77cd3c4e" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>VPlan</name></member>
+      <member refid="classllvm_1_1_v_plan_1a3c68cb3d20000fcb178a8f0eb6454cfc" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>VPlan</name></member>
+      <member refid="classllvm_1_1_v_plan_1a49f9947d030a2675aa107469350c5d72" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>VPlanPrinter</name></member>
+      <member refid="classllvm_1_1_v_plan_1a5304850697f98f8a42826b4bca29fe03" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>VPLiveInsToFree</name></member>
+      <member refid="classllvm_1_1_v_plan_1a12ceea61a3de5b2f0ff70850f66c5fdc" prot="private" virt="non-virtual"><scope>llvm::VPlan</scope><name>VPSlotTracker</name></member>
+      <member refid="classllvm_1_1_v_plan_1a433f41155026be9f8f6fa880554286a9" prot="public" virt="non-virtual"><scope>llvm::VPlan</scope><name>~VPlan</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

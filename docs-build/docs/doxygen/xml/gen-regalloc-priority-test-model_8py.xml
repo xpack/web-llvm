@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="gen-regalloc-priority-test-model_8py" kind="file" language="Python">
+    <compoundname>gen-regalloc-priority-test-model.py</compoundname>
+    <innernamespace refid="namespacegen-regalloc-priority-test-model">gen-regalloc-priority-test-model</innernamespace>
+    <innernamespace refid="namespacegen">gen</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacegen-regalloc-priority-test-model" refkind="compound"><highlight class="stringliteral">&quot;&quot;&quot;Generate<sp/>a<sp/>mock<sp/>model<sp/>for<sp/>LLVM<sp/>tests<sp/>for<sp/>Register<sp/>Allocation.</highlight></codeline>
+<codeline lineno="2"><highlight class="stringliteral">The<sp/>generated<sp/>model<sp/>is<sp/>not<sp/>a<sp/>neural<sp/>net<sp/>-<sp/>it<sp/>is<sp/>just<sp/>a<sp/>tf.function<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral">correct<sp/>input<sp/>and<sp/>output<sp/>parameters.<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">##<sp/>By<sp/>construction,<sp/>the<sp/>mock<sp/>model<sp/>will<sp/>always<sp/>output<sp/>the<sp/>first<sp/>liverange<sp/>that<sp/>can<sp/>be<sp/>evicted.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>tensorflow<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>tf</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="namespacegen-regalloc-priority-test-model_1a013e7478bf599fe4b96a962bfc656a1d" refkind="member"><highlight class="normal">POLICY_DECISION_LABEL<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;priority&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="namespacegen-regalloc-priority-test-model_1a9212c0c53418b17068763a3e7beb66e3" refkind="member"><highlight class="normal">POLICY_OUTPUT_SPEC<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral">[</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;logging_name&quot;:<sp/>&quot;priority&quot;,<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;tensor_spec&quot;:<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;name&quot;:<sp/>&quot;StatefulPartitionedCall&quot;,<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;port&quot;:<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;type&quot;:<sp/>&quot;float&quot;,<sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;shape&quot;:<sp/>[</highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral">]</highlight></codeline>
+<codeline lineno="26"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="namespacegen-regalloc-priority-test-model_1ac17e919b04f6044acd563c93991c19ff" refkind="member"><highlight class="normal">PER_LIVEINTERVAL_INT64_FEATURE_LIST<sp/>=<sp/>[</highlight><highlight class="stringliteral">&quot;li_size&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;stage&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="28" refid="namespacegen-regalloc-priority-test-model_1a9934195622fd809524abfbe93bf5faee" refkind="member"><highlight class="normal">PER_LIVEINTERVAL_FLOAT32_FEATURE_LIST<sp/>=<sp/>[</highlight><highlight class="stringliteral">&quot;weight&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="29" refid="namespacegen-regalloc-priority-test-model_1a484b69dd6735864fc8f89993883431e8" refkind="member"><highlight class="normal">PER_LIVEINTERVAL_FEATURE_LIST<sp/>=<sp/>(</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>PER_LIVEINTERVAL_FLOAT32_FEATURE_LIST<sp/>+<sp/>PER_LIVEINTERVAL_INT64_FEATURE_LIST</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">)</highlight></codeline>
+<codeline lineno="32" refid="namespacegen-regalloc-priority-test-model_1a945813d1ef45da09c326405ae455f571" refkind="member"><highlight class="normal">CONTEXT_FEATURE_LIST<sp/>=<sp/>(</highlight><highlight class="stringliteral">&quot;discount&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;reward&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;step_type&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="namespacegen-regalloc-priority-test-model_1aafe3441287e2c0478b27e00e108e7e73" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacegen-regalloc-priority-test-model_1aafe3441287e2c0478b27e00e108e7e73" kindref="member">get_input_signature</ref>():</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Returns<sp/>(time_step_spec,<sp/>action_spec)<sp/>for<sp/>LLVM<sp/>register<sp/>allocation.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>inputs<sp/>=<sp/>dict(</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(key,<sp/>tf.TensorSpec(dtype=tf.int64,<sp/>shape=(),<sp/>name=key))</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>key<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>PER_LIVEINTERVAL_INT64_FEATURE_LIST</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>inputs.update(</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dict(</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(key,<sp/>tf.TensorSpec(dtype=tf.float32,<sp/>shape=(),<sp/>name=key))</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>key<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>PER_LIVEINTERVAL_FLOAT32_FEATURE_LIST</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>inputs.update(</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dict(</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(key,<sp/>tf.TensorSpec(dtype=tf.float32,<sp/>shape=(),<sp/>name=key))</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>key<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;discount&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;reward&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>inputs.update(</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dict(</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(key,<sp/>tf.TensorSpec(dtype=tf.int32,<sp/>shape=(),<sp/>name=key))</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>key<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;step_type&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>inputs</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="namespacegen-regalloc-priority-test-model_1af9f86ff91dd892299687a66bffac9530" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacegen-regalloc-priority-test-model_1af9f86ff91dd892299687a66bffac9530" kindref="member">get_output_spec_path</ref>(path):</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os.path.join(path,<sp/></highlight><highlight class="stringliteral">&quot;output_spec.json&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="namespacegen-regalloc-priority-test-model_1a897c3b991053cb02691cf49f5b7b1cc3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacegen-regalloc-priority-test-model_1a897c3b991053cb02691cf49f5b7b1cc3" kindref="member">build_mock_model</ref>(path):</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Build<sp/>and<sp/>save<sp/>the<sp/>mock<sp/>model<sp/>with<sp/>the<sp/>given<sp/>signature.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>module<sp/>=<sp/>tf.Module()</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>We<sp/>have<sp/>to<sp/>set<sp/>this<sp/>useless<sp/>variable<sp/>in<sp/>order<sp/>for<sp/>the<sp/>TF<sp/>C<sp/>API<sp/>to<sp/>correctly</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>intake<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>module.var<sp/>=<sp/>tf.Variable(0,<sp/>dtype=tf.float32)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">action(*inputs):</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1<sp/>=<sp/>tf.reduce_sum(</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tf.cast(inputs[0][key],<sp/>tf.float32)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>key<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>PER_LIVEINTERVAL_FEATURE_LIST</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>],</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>axis=0,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s2<sp/>=<sp/>tf.reduce_sum(</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[tf.cast(inputs[0][key],<sp/>tf.float32)<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>key<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>CONTEXT_FEATURE_LIST]</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Add<sp/>a<sp/>large<sp/>number<sp/>so<sp/>s<sp/>won&apos;t<sp/>be<sp/>0.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s<sp/>=<sp/>s1<sp/>+<sp/>s2</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>s<sp/>+<sp/>module.var</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{POLICY_DECISION_LABEL:<sp/>result}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>module.action<sp/>=<sp/>tf.function()(action)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>action<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;action&quot;</highlight><highlight class="normal">:<sp/>module.action.get_concrete_function(<ref refid="namespacegen-regalloc-priority-test-model_1aafe3441287e2c0478b27e00e108e7e73" kindref="member">get_input_signature</ref>())}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>tf.saved_model.save(module,<sp/>path,<sp/>signatures=action)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>output_spec_path<sp/>=<sp/><ref refid="namespacegen-regalloc-priority-test-model_1af9f86ff91dd892299687a66bffac9530" kindref="member">get_output_spec_path</ref>(path)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">with</highlight><highlight class="normal"><sp/>open(output_spec_path,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>f:</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_archive_writer_8cpp_1aa9f638c7ae7fdd206a6c60e26bef9751" kindref="member">print</ref>(f</highlight><highlight class="stringliteral">&quot;Writing<sp/>output<sp/>spec<sp/>to<sp/>{output_spec_path}.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f.write(POLICY_OUTPUT_SPEC)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="namespacegen-regalloc-priority-test-model_1a7e6eedaf5bab1391345fc4dc8826d4f2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacegen-regalloc-priority-test-model_1a7e6eedaf5bab1391345fc4dc8826d4f2" kindref="member">main</ref>(argv):</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>len(argv)<sp/>==<sp/>2</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>model_path<sp/>=<sp/>argv[1]</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacegen-regalloc-priority-test-model_1a897c3b991053cb02691cf49f5b7b1cc3" kindref="member">build_mock_model</ref>(model_path)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacegen-regalloc-priority-test-model_1a7e6eedaf5bab1391345fc4dc8826d4f2" kindref="member">main</ref>(sys.argv)</highlight></codeline>
+    </programlisting>
+    <location file="lib/Analysis/models/gen-regalloc-priority-test-model.py"/>
+  </compounddef>
+</doxygen>

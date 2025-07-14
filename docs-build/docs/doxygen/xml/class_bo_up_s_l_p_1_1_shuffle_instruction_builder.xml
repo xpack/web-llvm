@@ -1,0 +1,557 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>BoUpSLP::ShuffleInstructionBuilder</compoundname>
+    <basecompoundref refid="class_base_shuffle_analysis" prot="public" virt="non-virtual">BaseShuffleAnalysis</basecompoundref>
+    <innerclass refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1_1_shuffle_i_r_builder" prot="private">BoUpSLP::ShuffleInstructionBuilder::ShuffleIRBuilder</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a87e85e68d0f5adefad3fcbb04002d026" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::IsFinalized</definition>
+        <argsstring></argsstring>
+        <name>IsFinalized</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::IsFinalized</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14111" column="8" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a7547c8ede0840500ac317ec2d7c1cb18" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; int &gt;</type>
+        <definition>SmallVector&lt;int&gt; llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::CommonMask</definition>
+        <argsstring></argsstring>
+        <name>CommonMask</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::CommonMask</qualifiedname>
+        <briefdescription>
+<para>Combined mask for all applied operands and masks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is built during analysis and actual emission of shuffle vector instructions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14114" column="15" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1af958e11397dedffa2c10fb88a4c02464" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, 2 &gt;</type>
+        <definition>SmallVector&lt;Value *, 2&gt; llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::InVectors</definition>
+        <argsstring></argsstring>
+        <name>InVectors</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::InVectors</qualifiedname>
+        <briefdescription>
+<para>List of operands for the shuffle vector instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It hold at max 2 operands, if the 3rd is going to be added, the first 2 are combined into shuffle with <computeroutput>CommonMask</computeroutput> mask, the first operand sets to be the resulting shuffle and the second operand sets to be the newly added operand. The <computeroutput>CommonMask</computeroutput> is transformed in the proper way after that. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14120" column="15" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a80c9422bf06b37c1231bae1a84dd8262" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_i_r_builder_base" kindref="compound">IRBuilderBase</ref> &amp;</type>
+        <definition>IRBuilderBase&amp; llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::Builder</definition>
+        <argsstring></argsstring>
+        <name>Builder</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::Builder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14121" column="17" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a95c272552b1cec0e5e3642f7170b5c45" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1slpvectorizer_1_1_bo_up_s_l_p" kindref="compound">BoUpSLP</ref> &amp;</type>
+        <definition>BoUpSLP&amp; llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::R</definition>
+        <argsstring></argsstring>
+        <name>R</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::R</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14122" column="11" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14122" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a905fbdd0d791cb14829c7abe26e5d5ea" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::createShuffle</definition>
+        <argsstring>(Value *V1, Value *V2, ArrayRef&lt; int &gt; Mask)</argsstring>
+        <name>createShuffle</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::createShuffle</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V1</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V2</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; int &gt;</type>
+          <declname>Mask</declname>
+        </param>
+        <briefdescription>
+<para>Smart shuffle instruction emission, walks through shuffles trees and tries to find the best matching vector for the actual shuffle instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14214" column="9" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14214" bodyend="14220"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a233dc20c2458649e53eb35ad1b51f11d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::castToScalarTyElem</definition>
+        <argsstring>(Value *V, std::optional&lt; bool &gt; IsSigned=std::nullopt)</argsstring>
+        <name>castToScalarTyElem</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::castToScalarTyElem</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+          <declname>IsSigned</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Cast value <computeroutput>V</computeroutput> to the vector type with the same number of elements, but the base type <computeroutput>ScalarTy</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14224" column="9" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14224" bodyend="14233"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1ab191e4dcc36fced04070c777d9787496" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::ShuffleInstructionBuilder</definition>
+        <argsstring>(Type *ScalarTy, IRBuilderBase &amp;Builder, BoUpSLP &amp;R)</argsstring>
+        <name>ShuffleInstructionBuilder</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::ShuffleInstructionBuilder</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>ScalarTy</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_i_r_builder_base" kindref="compound">IRBuilderBase</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1slpvectorizer_1_1_bo_up_s_l_p" kindref="compound">BoUpSLP</ref> &amp;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14236" column="3" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14236" bodyend="14237"/>
+        <references refid="classllvm_1_1slpvectorizer_1_1_bo_up_s_l_p_1a8f40b270f64be7a9b63bc9cfb3b2977a" compoundref="_s_l_p_vectorizer_8cpp" startline="1358" endline="1383">llvm::slpvectorizer::BoUpSLP::BoUpSLP</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1ad60d13f7863772bd84f52feda244e894" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::adjustExtracts</definition>
+        <argsstring>(const TreeEntry *E, MutableArrayRef&lt; int &gt; Mask, ArrayRef&lt; std::optional&lt; TTI::ShuffleKind &gt; &gt; ShuffleKinds, unsigned NumParts, bool &amp;UseVecBaseAsInput)</argsstring>
+        <name>adjustExtracts</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::adjustExtracts</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> TreeEntry *</type>
+          <declname>E</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_mutable_array_ref" kindref="compound">MutableArrayRef</ref>&lt; int &gt;</type>
+          <declname>Mask</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::optional&lt; <ref refid="classllvm_1_1_target_transform_info_1af46433d0e36d3f80afc3a8c67b5c53ec" kindref="member">TTI::ShuffleKind</ref> &gt; &gt;</type>
+          <declname>ShuffleKinds</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumParts</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>UseVecBaseAsInput</declname>
+        </param>
+        <briefdescription>
+<para>Adjusts extractelements after reusing them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14240" column="9" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14240" bodyend="14372"/>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1ab1772fd431decccb7926d484ea223db7" compoundref="_s_t_l_extras_8h" startline="1938" endline="1940">llvm::count</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="namespacellvm_1a9965a6249be879ba3d336a75a4f3efa7" compoundref="_instructions_8h" startline="1889">llvm::PoisonMaskElem</references>
+        <references refid="namespacellvm_1a14c12bda1f5a9beed612b00f3f98b888" compoundref="_s_l_p_vectorizer_8cpp" startline="1239" endline="1248">llvm::reorderScalars</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a4055f1bab55c76c243c3bf42c1a7e45a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt;</type>
+        <definition>std::optional&lt; Value * &gt; llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::needToDelay</definition>
+        <argsstring>(const TreeEntry *E, ArrayRef&lt; SmallVector&lt; const TreeEntry * &gt; &gt; Deps) const</argsstring>
+        <name>needToDelay</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::needToDelay</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> TreeEntry *</type>
+          <declname>E</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> TreeEntry * &gt; &gt;</type>
+          <declname>Deps</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the specified entry <computeroutput>E</computeroutput> needs to be delayed because of its dependency nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14376" column="3" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14376" bodyend="14391"/>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="classllvm_1_1_poison_value_1a1bf08613fb664a2e377a9a72c59a6b66" compoundref="_constants_8cpp" startline="1878" endline="1884">llvm::PoisonValue::get</references>
+        <references refid="classllvm_1_1_type_1a909eca4ba9e5eefc203c8e3770bdab25" compoundref="_i_r_2_type_8h" startline="128" endline="128">llvm::Type::getContext</references>
+        <references refid="classllvm_1_1_pointer_type_1af8a1dbdbfd89aa4899b3c0d39495d0dd" compoundref="_derived_types_8h" startline="686" endline="688">llvm::PointerType::getUnqual</references>
+        <references refid="_s_l_p_vectorizer_8cpp_1a065bd87e0b855701cd8ca61aa05d4c50" compoundref="_s_l_p_vectorizer_8cpp" startline="263" endline="266">getWidenedType</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1ac9d11e9f66eb3617827801cb7f0f6619" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</definition>
+        <argsstring>(const TreeEntry &amp;E1, const TreeEntry &amp;E2, ArrayRef&lt; int &gt; Mask)</argsstring>
+        <name>add</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> TreeEntry &amp;</type>
+          <declname>E1</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> TreeEntry &amp;</type>
+          <declname>E2</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; int &gt;</type>
+          <declname>Mask</declname>
+        </param>
+        <briefdescription>
+<para>Adds 2 input vectors (in form of tree entries) and the mask for their shuffling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14394" column="8" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14394" bodyend="14412"/>
+        <references refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1ac9d11e9f66eb3617827801cb7f0f6619" compoundref="_s_l_p_vectorizer_8cpp" startline="14394" endline="14412">llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</references>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="classllvm_1_1_value_1a0344a49526443edf90cc0aef3abd3337" compoundref="_i_r_2_value_8h" startline="255" endline="255">llvm::Value::getType</references>
+        <references refid="classllvm_1_1_type_1a34ee40bb2f4f5ece47ef19e5f1f57e3c" compoundref="_i_r_2_type_8h" startline="243" endline="243">llvm::Type::isIntOrIntVectorTy</references>
+        <referencedby refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a42662469b6d20c41b3ed64e9f215b041" compoundref="_s_l_p_vectorizer_8cpp" startline="14415" endline="14425">llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</referencedby>
+        <referencedby refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1ac9d11e9f66eb3617827801cb7f0f6619" compoundref="_s_l_p_vectorizer_8cpp" startline="14394" endline="14412">llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</referencedby>
+        <referencedby refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a34c3ba98fb3849595c565342c8c3b78b" compoundref="_s_l_p_vectorizer_8cpp" startline="14516" endline="14520">llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::addOrdered</referencedby>
+        <referencedby refid="classllvm_1_1slpvectorizer_1_1_bo_up_s_l_p_1a99b79343fdc586cce804ebabf3d419e2" compoundref="_s_l_p_vectorizer_8cpp" startline="16320" endline="16968">llvm::slpvectorizer::BoUpSLP::vectorizeTree</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a42662469b6d20c41b3ed64e9f215b041" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</definition>
+        <argsstring>(const TreeEntry &amp;E1, ArrayRef&lt; int &gt; Mask)</argsstring>
+        <name>add</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> TreeEntry &amp;</type>
+          <declname>E1</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; int &gt;</type>
+          <declname>Mask</declname>
+        </param>
+        <briefdescription>
+<para>Adds single input vector (in form of tree entry) and the mask for its shuffling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14415" column="8" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14415" bodyend="14425"/>
+        <references refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1ac9d11e9f66eb3617827801cb7f0f6619" compoundref="_s_l_p_vectorizer_8cpp" startline="14394" endline="14412">llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</references>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="classllvm_1_1_value_1a0344a49526443edf90cc0aef3abd3337" compoundref="_i_r_2_value_8h" startline="255" endline="255">llvm::Value::getType</references>
+        <references refid="classllvm_1_1_type_1a34ee40bb2f4f5ece47ef19e5f1f57e3c" compoundref="_i_r_2_type_8h" startline="243" endline="243">llvm::Type::isIntOrIntVectorTy</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a71ce471fff7e2bde83cdbdeb6bd506d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</definition>
+        <argsstring>(Value *V1, Value *V2, ArrayRef&lt; int &gt; Mask)</argsstring>
+        <name>add</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V1</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V2</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; int &gt;</type>
+          <declname>Mask</declname>
+        </param>
+        <briefdescription>
+<para>Adds 2 input vectors and the mask for their shuffling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14427" column="8" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14427" bodyend="14459"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_value_1a0344a49526443edf90cc0aef3abd3337" compoundref="_i_r_2_value_8h" startline="255" endline="255">llvm::Value::getType</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="namespacellvm_1a9965a6249be879ba3d336a75a4f3efa7" compoundref="_instructions_8h" startline="1889">llvm::PoisonMaskElem</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a10d4c86d6600a1727f3d3bd9e8f39314" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</definition>
+        <argsstring>(Value *V1, ArrayRef&lt; int &gt; Mask, bool=false)</argsstring>
+        <name>add</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V1</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; int &gt;</type>
+          <declname>Mask</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Adds another one input vector and the mask for the shuffling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14461" column="8" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14461" bodyend="14514"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1a086e9fbdb06276db7753101a08a63adf" compoundref="_s_t_l_extras_8h" startline="1759" endline="1761">llvm::find</references>
+        <references refid="classllvm_1_1_value_1a0344a49526443edf90cc0aef3abd3337" compoundref="_i_r_2_value_8h" startline="255" endline="255">llvm::Value::getType</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="namespacellvm_1a9965a6249be879ba3d336a75a4f3efa7" compoundref="_instructions_8h" startline="1889">llvm::PoisonMaskElem</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a34c3ba98fb3849595c565342c8c3b78b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::addOrdered</definition>
+        <argsstring>(Value *V1, ArrayRef&lt; unsigned &gt; Order)</argsstring>
+        <name>addOrdered</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::addOrdered</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V1</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+          <declname>Order</declname>
+        </param>
+        <briefdescription>
+<para>Adds another one input vector and the mask for the shuffling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14516" column="8" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14516" bodyend="14520"/>
+        <references refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1ac9d11e9f66eb3617827801cb7f0f6619" compoundref="_s_l_p_vectorizer_8cpp" startline="14394" endline="14412">llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::add</references>
+        <references refid="namespacellvm_1a6f0917bf2ae18fac81fea6bf7e887115" compoundref="_s_l_p_vectorizer_8cpp" startline="1229" endline="1236">llvm::inversePermutation</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a5db3e3478b2d1b08f12c1960f1a92af1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::gather</definition>
+        <argsstring>(ArrayRef&lt; Value * &gt; VL, unsigned MaskVF=0, Value *Root=nullptr)</argsstring>
+        <name>gather</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::gather</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt;</type>
+          <declname>VL</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>MaskVF</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Root</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14521" column="9" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14521" bodyend="14527"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a9a4f4eb21e4820281bd94386fe524395" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::createFreeze</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>createFreeze</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::createFreeze</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14528" column="9" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14528" bodyend="14528"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1adedeebdfb49d04e53d9c73abfa8a429f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::finalize</definition>
+        <argsstring>(ArrayRef&lt; int &gt; ExtMask, ArrayRef&lt; std::pair&lt; const TreeEntry *, unsigned &gt; &gt; SubVectors, ArrayRef&lt; int &gt; SubVectorsMask, unsigned VF=0, function_ref&lt; void(Value *&amp;, SmallVectorImpl&lt; int &gt; &amp;)&gt; Action={})</argsstring>
+        <name>finalize</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::finalize</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; int &gt;</type>
+          <declname>ExtMask</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> TreeEntry *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt;</type>
+          <declname>SubVectors</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; int &gt;</type>
+          <declname>SubVectorsMask</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>VF</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; void(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *&amp;, <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; int &gt; &amp;)&gt;</type>
+          <declname>Action</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Finalize emission of the shuffles. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the action (if any) to be performed before final applying of the <computeroutput>ExtMask</computeroutput> mask. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14533" column="3" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14533" bodyend="14630"/>
+        <referencedby refid="classllvm_1_1slpvectorizer_1_1_bo_up_s_l_p_1a99b79343fdc586cce804ebabf3d419e2" compoundref="_s_l_p_vectorizer_8cpp" startline="16320" endline="16968">llvm::slpvectorizer::BoUpSLP::vectorizeTree</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1aed02f405909dc40a81d537066ae87f4e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::~ShuffleInstructionBuilder</definition>
+        <argsstring>()</argsstring>
+        <name>~ShuffleInstructionBuilder</name>
+        <qualifiedname>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder::~ShuffleInstructionBuilder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14632" column="3" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14632" bodyend="14635"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Merges shuffle masks and emits final shuffle instruction, if required. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It supports shuffling of 2 input vectors. It implements lazy shuffles emission, when the actual shuffle instruction is generated only if this is actually required. Otherwise, the shuffle instruction emission is delayed till the end of the process, to reduce the number of emitted instructions and further analysis/transformations. The class also will look through the previously emitted shuffle instructions and properly mark indices in mask as undef. For example, given the code <programlisting><codeline><highlight class="normal">%s1<sp/>=<sp/>shufflevector<sp/>&lt;2<sp/>x<sp/>ty&gt;<sp/>%0,<sp/>poison,<sp/>&lt;1,<sp/>0&gt;</highlight></codeline>
+<codeline><highlight class="normal">%s2<sp/>=<sp/>shufflevector<sp/>&lt;2<sp/>x<sp/>ty&gt;<sp/>%1,<sp/>poison,<sp/>&lt;1,<sp/>0&gt;</highlight></codeline>
+</programlisting> and if need to emit shuffle of s1 and s2 with mask &lt;1, 0, 3, 2&gt;, it will look through s1 and s2 and emit <programlisting><codeline><highlight class="normal">%res<sp/>=<sp/>shufflevector<sp/>&lt;2<sp/>x<sp/>ty&gt;<sp/>%0,<sp/>%1,<sp/>&lt;0,<sp/>1,<sp/>2,<sp/>3&gt;</highlight></codeline>
+</programlisting> instead. If 2 operands are of different size, the smallest one will be resized and the mask recalculated properly. For example, given the code <programlisting><codeline><highlight class="normal">%s1<sp/>=<sp/>shufflevector<sp/>&lt;2<sp/>x<sp/>ty&gt;<sp/>%0,<sp/>poison,<sp/>&lt;1,<sp/>0,<sp/>1,<sp/>0&gt;</highlight></codeline>
+<codeline><highlight class="normal">%s2<sp/>=<sp/>shufflevector<sp/>&lt;2<sp/>x<sp/>ty&gt;<sp/>%1,<sp/>poison,<sp/>&lt;1,<sp/>0,<sp/>1,<sp/>0&gt;</highlight></codeline>
+</programlisting> and if need to emit shuffle of s1 and s2 with mask &lt;1, 0, 5, 4&gt;, it will look through s1 and s2 and emit <programlisting><codeline><highlight class="normal">%res<sp/>=<sp/>shufflevector<sp/>&lt;2<sp/>x<sp/>ty&gt;<sp/>%0,<sp/>%1,<sp/>&lt;0,<sp/>1,<sp/>2,<sp/>3&gt;</highlight></codeline>
+</programlisting> instead. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BaseShuffleAnalysis</label>
+        <link refid="class_base_shuffle_analysis"/>
+      </node>
+      <node id="1">
+        <label>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder</label>
+        <link refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BaseShuffleAnalysis</label>
+        <link refid="class_base_shuffle_analysis"/>
+      </node>
+      <node id="1">
+        <label>llvm::slpvectorizer::BoUpSLP::ShuffleInstructionBuilder</label>
+        <link refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Transforms/Vectorize/SLPVectorizer.cpp" line="14110" column="1" bodyfile="lib/Transforms/Vectorize/SLPVectorizer.cpp" bodystart="14110" bodyend="14636"/>
+    <listofallmembers>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1ac9d11e9f66eb3617827801cb7f0f6619" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>add</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a42662469b6d20c41b3ed64e9f215b041" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>add</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a71ce471fff7e2bde83cdbdeb6bd506d8" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>add</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a10d4c86d6600a1727f3d3bd9e8f39314" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>add</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a34c3ba98fb3849595c565342c8c3b78b" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>addOrdered</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1ad60d13f7863772bd84f52feda244e894" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>adjustExtracts</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a80c9422bf06b37c1231bae1a84dd8262" prot="private" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>Builder</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a233dc20c2458649e53eb35ad1b51f11d" prot="private" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>castToScalarTyElem</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a7547c8ede0840500ac317ec2d7c1cb18" prot="private" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>CommonMask</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a9a4f4eb21e4820281bd94386fe524395" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>createFreeze</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a905fbdd0d791cb14829c7abe26e5d5ea" prot="private" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>createShuffle</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1adedeebdfb49d04e53d9c73abfa8a429f" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>finalize</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a5db3e3478b2d1b08f12c1960f1a92af1" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>gather</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1af958e11397dedffa2c10fb88a4c02464" prot="private" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>InVectors</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a87e85e68d0f5adefad3fcbb04002d026" prot="private" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>IsFinalized</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a4055f1bab55c76c243c3bf42c1a7e45a" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>needToDelay</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1a95c272552b1cec0e5e3642f7170b5c45" prot="private" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>R</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1ab191e4dcc36fced04070c777d9787496" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>ShuffleInstructionBuilder</name></member>
+      <member refid="class_bo_up_s_l_p_1_1_shuffle_instruction_builder_1aed02f405909dc40a81d537066ae87f4e" prot="public" virt="non-virtual"><scope>BoUpSLP::ShuffleInstructionBuilder</scope><name>~ShuffleInstructionBuilder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

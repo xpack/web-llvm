@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_single_thread_executor" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SingleThreadExecutor</compoundname>
+    <basecompoundref refid="classllvm_1_1_thread_pool_interface" prot="public" virt="non-virtual">llvm::ThreadPoolInterface</basecompoundref>
+    <includes refid="_thread_pool_8h" local="yes">llvm/Support/ThreadPool.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_single_thread_executor_1af9adf8bf7fd2be7f9ba55fcd1dd68c38" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; std::pair&lt; std::function&lt; void()&gt;, <ref refid="classllvm_1_1_thread_pool_task_group" kindref="compound">ThreadPoolTaskGroup</ref> * &gt; &gt;</type>
+        <definition>std::deque&lt;std::pair&lt;std::function&lt;void()&gt;, ThreadPoolTaskGroup *&gt; &gt; llvm::SingleThreadExecutor::Tasks</definition>
+        <argsstring></argsstring>
+        <name>Tasks</name>
+        <qualifiedname>llvm::SingleThreadExecutor::Tasks</qualifiedname>
+        <briefdescription>
+<para>Tasks waiting for execution in the pool. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="251" column="14" bodyfile="include/llvm/Support/ThreadPool.h" bodystart="251" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_single_thread_executor_1a3a0e760e0380aa0023a27372d5ffd4dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SingleThreadExecutor::SingleThreadExecutor</definition>
+        <argsstring>(ThreadPoolStrategy ignored={})</argsstring>
+        <name>SingleThreadExecutor</name>
+        <qualifiedname>llvm::SingleThreadExecutor::SingleThreadExecutor</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_pool_strategy" kindref="compound">ThreadPoolStrategy</ref></type>
+          <declname>ignored</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Construct a non-threaded pool, ignoring using the hardware strategy. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="221" column="3" bodyfile="lib/Support/ThreadPool.cpp" bodystart="193" bodyend="199"/>
+        <references refid="classllvm_1_1_thread_pool_strategy_1ac128c3b3bd0420224f86d2c385f3af99" compoundref="_threading_8cpp" startline="41" endline="44">llvm::ThreadPoolStrategy::compute_thread_count</references>
+        <references refid="namespacellvm_1a9a7b5c68c90f85baaedaa854cc5002cc" compoundref="raw__ostream_8cpp" startline="907" endline="915">llvm::errs</references>
+        <references refid="_thin_l_t_o_code_generator_8cpp_1ac93a706f78069d5f23b6084d9a1fc015">ThreadCount</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_single_thread_executor_1a551b6b62422a531ea1b88f57071afca1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SingleThreadExecutor::~SingleThreadExecutor</definition>
+        <argsstring>() override</argsstring>
+        <name>~SingleThreadExecutor</name>
+        <qualifiedname>llvm::SingleThreadExecutor::~SingleThreadExecutor</qualifiedname>
+        <briefdescription>
+<para>Blocking destructor: the pool will first execute the pending tasks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="224" column="3" bodyfile="lib/Support/ThreadPool.cpp" bodystart="220" bodyend="220"/>
+        <references refid="classllvm_1_1_single_thread_executor_1a4a9fc38bb7d9ff3f944e25971330cb42" compoundref="_thread_pool_8cpp" startline="201" endline="208">wait</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_single_thread_executor_1a4a9fc38bb7d9ff3f944e25971330cb42" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SingleThreadExecutor::wait</definition>
+        <argsstring>() override</argsstring>
+        <name>wait</name>
+        <qualifiedname>llvm::SingleThreadExecutor::wait</qualifiedname>
+        <reimplements refid="classllvm_1_1_thread_pool_interface_1a0ea46b29f97f4f535c563a68a38185a4">wait</reimplements>
+        <briefdescription>
+<para>Blocking wait for all the tasks to execute first. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="227" column="8" bodyfile="lib/Support/ThreadPool.cpp" bodystart="201" bodyend="208"/>
+        <referencedby refid="classllvm_1_1gsym_1_1_dwarf_transformer_1ab014307b03ade42770de6ed2f827630b" compoundref="_dwarf_transformer_8cpp" startline="618" endline="693">llvm::gsym::DwarfTransformer::convert</referencedby>
+        <referencedby refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1af6caebcd7dc40dea28562fde4f260414" compoundref="_classic_2_d_w_a_r_f_linker_8cpp" startline="2730" endline="3029">llvm::dwarf_linker::classic::DWARFLinker::link</referencedby>
+        <referencedby refid="classllvm_1_1dwarf__linker_1_1parallel_1_1_d_w_a_r_f_linker_impl_1a42302ab883ef8ec7e51b00701d626ce4" compoundref="_d_w_a_r_f_linker_impl_8cpp" startline="90" endline="223">llvm::dwarf_linker::parallel::DWARFLinkerImpl::link</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1a2fad224b57541514de4fb5be6eb2e7f1" compoundref="_l_t_o_backend_8cpp" startline="460" endline="513">splitCodeGen</referencedby>
+        <referencedby refid="classllvm_1_1_single_thread_executor_1a49af26efe3b94237c38fc28a166f3386" compoundref="_thread_pool_8cpp" startline="210" endline="214">wait</referencedby>
+        <referencedby refid="classllvm_1_1_single_thread_executor_1a551b6b62422a531ea1b88f57071afca1" compoundref="_thread_pool_8cpp" startline="220" endline="220">~SingleThreadExecutor</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_single_thread_executor_1a49af26efe3b94237c38fc28a166f3386" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SingleThreadExecutor::wait</definition>
+        <argsstring>(ThreadPoolTaskGroup &amp;Group) override</argsstring>
+        <name>wait</name>
+        <qualifiedname>llvm::SingleThreadExecutor::wait</qualifiedname>
+        <reimplements refid="classllvm_1_1_thread_pool_interface_1ad4dbcf0b0e80230eb3f28d30672eff19">wait</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_pool_task_group" kindref="compound">ThreadPoolTaskGroup</ref> &amp;</type>
+          <declname>Group</declname>
+        </param>
+        <briefdescription>
+<para>Blocking wait for only all the tasks in the given group to complete. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="230" column="8" bodyfile="lib/Support/ThreadPool.cpp" bodystart="210" bodyend="214"/>
+        <references refid="classllvm_1_1_single_thread_executor_1a4a9fc38bb7d9ff3f944e25971330cb42" compoundref="_thread_pool_8cpp" startline="201" endline="208">wait</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_single_thread_executor_1ac7bf90e52e4cf7b2190d1d976527b025" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SingleThreadExecutor::getMaxConcurrency</definition>
+        <argsstring>() const override</argsstring>
+        <name>getMaxConcurrency</name>
+        <qualifiedname>llvm::SingleThreadExecutor::getMaxConcurrency</qualifiedname>
+        <reimplements refid="classllvm_1_1_thread_pool_interface_1a6ec7a595fe1af1fa5204286641a356fc">getMaxConcurrency</reimplements>
+        <briefdescription>
+<para>Returns always 1: there is no concurrency. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="233" column="12" bodyfile="include/llvm/Support/ThreadPool.h" bodystart="233" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_single_thread_executor_1a671af7165066753366fd0dcde0d560c9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SingleThreadExecutor::getThreadCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getThreadCount</name>
+        <qualifiedname>llvm::SingleThreadExecutor::getThreadCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="237" column="12" bodyfile="include/llvm/Support/ThreadPool.h" bodystart="237" bodyend="237"/>
+        <references refid="classllvm_1_1_single_thread_executor_1a671af7165066753366fd0dcde0d560c9" compoundref="_thread_pool_8h" startline="237" endline="237">getThreadCount</references>
+        <referencedby refid="classllvm_1_1_single_thread_executor_1a671af7165066753366fd0dcde0d560c9" compoundref="_thread_pool_8h" startline="237" endline="237">getThreadCount</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_single_thread_executor_1ac4f1263cc6c0e4c711a1936736d61db6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SingleThreadExecutor::isWorkerThread</definition>
+        <argsstring>() const</argsstring>
+        <name>isWorkerThread</name>
+        <qualifiedname>llvm::SingleThreadExecutor::isWorkerThread</qualifiedname>
+        <briefdescription>
+<para>Returns true if the current thread is a worker thread of this thread pool. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="240" column="8" bodyfile="lib/Support/ThreadPool.cpp" bodystart="216" bodyend="218"/>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_single_thread_executor_1a9acfa809163ab2fcd803aec68d59a4ce" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::SingleThreadExecutor::asyncEnqueue</definition>
+        <argsstring>(std::function&lt; void()&gt; Task, ThreadPoolTaskGroup *Group) override</argsstring>
+        <name>asyncEnqueue</name>
+        <qualifiedname>llvm::SingleThreadExecutor::asyncEnqueue</qualifiedname>
+        <reimplements refid="classllvm_1_1_thread_pool_interface_1a7d2ed24366ea0eaa572d4273f9ff2fd6">asyncEnqueue</reimplements>
+        <param>
+          <type>std::function&lt; void()&gt;</type>
+          <declname>Task</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_pool_task_group" kindref="compound">ThreadPoolTaskGroup</ref> *</type>
+          <declname>Group</declname>
+        </param>
+        <briefdescription>
+<para>Asynchronous submission of a task to the pool. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned future can be used to wait for the task to finish and is <emphasis>non-blocking</emphasis> on destruction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="245" column="8" bodyfile="include/llvm/Support/ThreadPool.h" bodystart="245" bodyend="248"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A non-threaded implementation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::SingleThreadExecutor</label>
+        <link refid="classllvm_1_1_single_thread_executor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::ThreadPoolInterface</label>
+        <link refid="classllvm_1_1_thread_pool_interface"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::SingleThreadExecutor</label>
+        <link refid="classllvm_1_1_single_thread_executor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::ThreadPoolInterface</label>
+        <link refid="classllvm_1_1_thread_pool_interface"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Support/ThreadPool.h" line="218" column="1" bodyfile="include/llvm/Support/ThreadPool.h" bodystart="218" bodyend="252"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_thread_pool_interface_1ad43d0052f680e6ac08426d8821df178d" prot="public" virt="non-virtual"><scope>llvm::SingleThreadExecutor</scope><name>async</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1a0c671f2f05014107ee55248f18f88dea" prot="public" virt="non-virtual"><scope>llvm::SingleThreadExecutor</scope><name>async</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1a7397950f434c9dff4b594c980e5d518d" prot="public" virt="non-virtual"><scope>llvm::SingleThreadExecutor</scope><name>async</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1a671aff841cc82b9c2f39b1d7272c6174" prot="public" virt="non-virtual"><scope>llvm::SingleThreadExecutor</scope><name>async</name></member>
+      <member refid="classllvm_1_1_single_thread_executor_1a9acfa809163ab2fcd803aec68d59a4ce" prot="private" virt="virtual"><scope>llvm::SingleThreadExecutor</scope><name>asyncEnqueue</name></member>
+      <member refid="classllvm_1_1_single_thread_executor_1ac7bf90e52e4cf7b2190d1d976527b025" prot="public" virt="virtual"><scope>llvm::SingleThreadExecutor</scope><name>getMaxConcurrency</name></member>
+      <member refid="classllvm_1_1_single_thread_executor_1a671af7165066753366fd0dcde0d560c9" prot="public" virt="non-virtual"><scope>llvm::SingleThreadExecutor</scope><name>getThreadCount</name></member>
+      <member refid="classllvm_1_1_single_thread_executor_1ac4f1263cc6c0e4c711a1936736d61db6" prot="public" virt="non-virtual"><scope>llvm::SingleThreadExecutor</scope><name>isWorkerThread</name></member>
+      <member refid="classllvm_1_1_single_thread_executor_1a3a0e760e0380aa0023a27372d5ffd4dc" prot="public" virt="non-virtual"><scope>llvm::SingleThreadExecutor</scope><name>SingleThreadExecutor</name></member>
+      <member refid="classllvm_1_1_single_thread_executor_1af9adf8bf7fd2be7f9ba55fcd1dd68c38" prot="private" virt="non-virtual"><scope>llvm::SingleThreadExecutor</scope><name>Tasks</name></member>
+      <member refid="classllvm_1_1_single_thread_executor_1a4a9fc38bb7d9ff3f944e25971330cb42" prot="public" virt="virtual"><scope>llvm::SingleThreadExecutor</scope><name>wait</name></member>
+      <member refid="classllvm_1_1_single_thread_executor_1a49af26efe3b94237c38fc28a166f3386" prot="public" virt="virtual"><scope>llvm::SingleThreadExecutor</scope><name>wait</name></member>
+      <member refid="classllvm_1_1_single_thread_executor_1a551b6b62422a531ea1b88f57071afca1" prot="public" virt="non-virtual"><scope>llvm::SingleThreadExecutor</scope><name>~SingleThreadExecutor</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1abe20bbefd5e591081ad9ac5c19eedb5a" prot="public" virt="virtual"><scope>llvm::SingleThreadExecutor</scope><name>~ThreadPoolInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

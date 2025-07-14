@@ -1,0 +1,1965 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_wasm_asm_parser_8cpp" kind="file" language="C++">
+    <compoundname>WasmAsmParser.cpp</compoundname>
+    <includes refid="_string_extras_8h" local="yes">llvm/ADT/StringExtras.h</includes>
+    <includes refid="_binary_format_2_wasm_8h" local="yes">llvm/BinaryFormat/Wasm.h</includes>
+    <includes refid="_m_c_context_8h" local="yes">llvm/MC/MCContext.h</includes>
+    <includes refid="_m_c_object_file_info_8h" local="yes">llvm/MC/MCObjectFileInfo.h</includes>
+    <includes refid="_m_c_asm_lexer_8h" local="yes">llvm/MC/MCParser/MCAsmLexer.h</includes>
+    <includes refid="_m_c_asm_parser_8h" local="yes">llvm/MC/MCParser/MCAsmParser.h</includes>
+    <includes refid="_m_c_asm_parser_extension_8h" local="yes">llvm/MC/MCParser/MCAsmParserExtension.h</includes>
+    <includes refid="_m_c_section_wasm_8h" local="yes">llvm/MC/MCSectionWasm.h</includes>
+    <includes refid="_m_c_streamer_8h" local="yes">llvm/MC/MCStreamer.h</includes>
+    <includes refid="_m_c_symbol_wasm_8h" local="yes">llvm/MC/MCSymbolWasm.h</includes>
+    <includes refid="_casting_8h" local="yes">llvm/Support/Casting.h</includes>
+    <includes local="no">optional</includes>
+    <incdepgraph>
+      <node id="24">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>llvm-c/Error.h</label>
+        <link refid="llvm-c_2_error_8h"/>
+        <childnode refid="89" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>llvm-c/ExternC.h</label>
+        <link refid="_extern_c_8h"/>
+      </node>
+      <node id="44">
+        <label>llvm/ADT/ADL.h</label>
+        <link refid="_a_d_l_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm/ADT/APInt.h</label>
+        <link refid="_a_p_int_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm/ADT/APSInt.h</label>
+        <link refid="_a_p_s_int_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm/ADT/ArrayRef.h</label>
+        <link refid="_array_ref_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>llvm/ADT/CachedHashString.h</label>
+        <link refid="_cached_hash_string_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>llvm/ADT/DenseMap.h</label>
+        <link refid="_dense_map_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>llvm/ADT/DenseMapInfo.h</label>
+        <link refid="_dense_map_info_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>llvm/ADT/DenseSet.h</label>
+        <link refid="_dense_set_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>llvm/ADT/EpochTracker.h</label>
+        <link refid="_epoch_tracker_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>llvm/ADT/Hashing.h</label>
+        <link refid="_hashing_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>llvm/ADT/MapVector.h</label>
+        <link refid="_map_vector_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>llvm/ADT/PointerIntPair.h</label>
+        <link refid="_pointer_int_pair_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm/ADT/STLExtras.h</label>
+        <link refid="_s_t_l_extras_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>llvm/ADT/SetVector.h</label>
+        <link refid="_set_vector_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>llvm/ADT/SmallString.h</label>
+        <link refid="_small_string_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm/ADT/SmallVector.h</label>
+        <link refid="_small_vector_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm/ADT/StringExtras.h</label>
+        <link refid="_string_extras_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>llvm/ADT/StringMap.h</label>
+        <link refid="_a_d_t_2_string_map_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>llvm/ADT/StringMapEntry.h</label>
+        <link refid="_a_d_t_2_string_map_entry_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>llvm/ADT/StringRef.h</label>
+        <link refid="_string_ref_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>llvm/ADT/StringSwitch.h</label>
+        <link refid="_string_switch_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>llvm/ADT/Twine.h</label>
+        <link refid="_twine_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm/ADT/bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>llvm/ADT/ilist_node.h</label>
+        <link refid="ilist__node_8h"/>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>llvm/ADT/ilist_node_base.h</label>
+        <link refid="ilist__node__base_8h"/>
+        <childnode refid="102" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>llvm/ADT/ilist_node_options.h</label>
+        <link refid="ilist__node__options_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm/ADT/iterator.h</label>
+        <link refid="iterator_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm/ADT/iterator_range.h</label>
+        <link refid="iterator__range_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>llvm/BinaryFormat/Dwarf.h</label>
+        <link refid="_dwarf_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>llvm/BinaryFormat/Swift.h</label>
+        <link refid="_swift_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>llvm/BinaryFormat/Wasm.h</label>
+        <link refid="_binary_format_2_wasm_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>llvm/BinaryFormat/XCOFF.h</label>
+        <link refid="_x_c_o_f_f_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>llvm/IR/PseudoProbe.h</label>
+        <link refid="_pseudo_probe_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>llvm/MC/MCAsmMacro.h</label>
+        <link refid="_m_c_asm_macro_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>llvm/MC/MCContext.h</label>
+        <link refid="_m_c_context_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>llvm/MC/MCDirectives.h</label>
+        <link refid="_m_c_directives_8h"/>
+      </node>
+      <node id="82">
+        <label>llvm/MC/MCDwarf.h</label>
+        <link refid="_m_c_dwarf_8h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>llvm/MC/MCExpr.h</label>
+        <link refid="_m_c_expr_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>llvm/MC/MCFixup.h</label>
+        <link refid="_m_c_fixup_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>llvm/MC/MCFragment.h</label>
+        <link refid="_m_c_fragment_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>llvm/MC/MCInst.h</label>
+        <link refid="_m_c_inst_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="119">
+        <label>llvm/MC/MCLinkerOptimizationHint.h</label>
+        <link refid="_m_c_linker_optimization_hint_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>llvm/MC/MCObjectFileInfo.h</label>
+        <link refid="_m_c_object_file_info_8h"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>llvm/MC/MCParser/MCAsmLexer.h</label>
+        <link refid="_m_c_asm_lexer_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>llvm/MC/MCParser/MCAsmParser.h</label>
+        <link refid="_m_c_asm_parser_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>llvm/MC/MCParser/MCAsmParserExtension.h</label>
+        <link refid="_m_c_asm_parser_extension_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>llvm/MC/MCPseudoProbe.h</label>
+        <link refid="_m_c_pseudo_probe_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>llvm/MC/MCRegister.h</label>
+        <link refid="_m_c_register_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>llvm/MC/MCSection.h</label>
+        <link refid="_m_c_section_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>llvm/MC/MCSectionWasm.h</label>
+        <link refid="_m_c_section_wasm_8h"/>
+        <childnode refid="98" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>llvm/MC/MCStreamer.h</label>
+        <link refid="_m_c_streamer_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="129">
+        <label>llvm/MC/MCSymbol.h</label>
+        <link refid="_m_c_symbol_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>llvm/MC/MCSymbolTableEntry.h</label>
+        <link refid="_m_c_symbol_table_entry_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="128">
+        <label>llvm/MC/MCSymbolWasm.h</label>
+        <link refid="_m_c_symbol_wasm_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>llvm/MC/MCWinEH.h</label>
+        <link refid="_m_c_win_e_h_8h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>llvm/MC/SectionKind.h</label>
+        <link refid="_section_kind_8h"/>
+      </node>
+      <node id="84">
+        <label>llvm/MC/StringTableBuilder.h</label>
+        <link refid="_string_table_builder_8h"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>llvm/Support/ARMBuildAttributes.h</label>
+        <link refid="_a_r_m_build_attributes_8h"/>
+        <childnode refid="124" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>llvm/Support/AlignOf.h</label>
+        <link refid="_align_of_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>llvm/Support/Alignment.h</label>
+        <link refid="_alignment_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>llvm/Support/Allocator.h</label>
+        <link refid="_allocator_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>llvm/Support/AllocatorBase.h</label>
+        <link refid="_allocator_base_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>llvm/Support/Casting.h</label>
+        <link refid="_casting_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm/Support/DataTypes.h</label>
+        <link refid="llvm_2_support_2_data_types_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>llvm/Support/Debug.h</label>
+        <link refid="_debug_8h"/>
+      </node>
+      <node id="124">
+        <label>llvm/Support/ELFAttributes.h</label>
+        <link refid="_e_l_f_attributes_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>llvm/Support/Endian.h</label>
+        <link refid="_endian_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>llvm/Support/Error.h</label>
+        <link refid="llvm_2_support_2_error_8h"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm/Support/ErrorHandling.h</label>
+        <link refid="llvm_2_support_2_error_handling_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>llvm/Support/ErrorOr.h</label>
+        <link refid="_error_or_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>llvm/Support/Format.h</label>
+        <link refid="_format_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>llvm/Support/FormatVariadicDetails.h</label>
+        <link refid="_format_variadic_details_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>llvm/Support/MD5.h</label>
+        <link refid="_m_d5_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm/Support/MathExtras.h</label>
+        <link refid="_math_extras_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>llvm/Support/MemAlloc.h</label>
+        <link refid="_mem_alloc_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>llvm/Support/PointerLikeTypeTraits.h</label>
+        <link refid="_pointer_like_type_traits_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>llvm/Support/ReverseIteration.h</label>
+        <link refid="_reverse_iteration_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>llvm/Support/SMLoc.h</label>
+        <link refid="_s_m_loc_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>llvm/Support/StringSaver.h</label>
+        <link refid="_string_saver_8h"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm/Support/SwapByteOrder.h</label>
+        <link refid="_swap_byte_order_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>llvm/Support/VersionTuple.h</label>
+        <link refid="_version_tuple_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm/Support/float128.h</label>
+        <link refid="float128_8h"/>
+      </node>
+      <node id="73">
+        <label>llvm/Support/raw_ostream.h</label>
+        <link refid="raw__ostream_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm/Support/type_traits.h</label>
+        <link refid="type__traits_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="122">
+        <label>llvm/TargetParser/ARMTargetParser.h</label>
+        <link refid="_a_r_m_target_parser_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+      </node>
+      <node id="125">
+        <label>llvm/TargetParser/ARMTargetParserCommon.h</label>
+        <link refid="_a_r_m_target_parser_common_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>llvm/TargetParser/Triple.h</label>
+        <link refid="_triple_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>lib/MC/MCParser/WasmAsmParser.cpp</label>
+        <link refid="_wasm_asm_parser_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>ARMTargetParser.def</label>
+      </node>
+      <node id="56">
+        <label>WasmRelocs.def</label>
+      </node>
+      <node id="32">
+        <label>algorithm</label>
+      </node>
+      <node id="48">
+        <label>array</label>
+      </node>
+      <node id="15">
+        <label>cassert</label>
+      </node>
+      <node id="16">
+        <label>climits</label>
+      </node>
+      <node id="36">
+        <label>cstddef</label>
+      </node>
+      <node id="10">
+        <label>cstdint</label>
+      </node>
+      <node id="71">
+        <label>cstdio</label>
+      </node>
+      <node id="37">
+        <label>cstdlib</label>
+      </node>
+      <node id="13">
+        <label>cstring</label>
+      </node>
+      <node id="38">
+        <label>functional</label>
+      </node>
+      <node id="39">
+        <label>initializer_list</label>
+      </node>
+      <node id="25">
+        <label>inttypes.h</label>
+      </node>
+      <node id="40">
+        <label>iterator</label>
+      </node>
+      <node id="11">
+        <label>limits</label>
+      </node>
+      <node id="77">
+        <label>llvm/BinaryFormat/Dwarf.def</label>
+      </node>
+      <node id="112">
+        <label>llvm/BinaryFormat/Swift.def</label>
+      </node>
+      <node id="22">
+        <label>llvm/Config/abi-breaking.h</label>
+      </node>
+      <node id="6">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="127">
+        <label>llvm/TargetParser/ARMTargetParser.def</label>
+      </node>
+      <node id="14">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="109">
+        <label>map</label>
+      </node>
+      <node id="41">
+        <label>memory</label>
+      </node>
+      <node id="42">
+        <label>new</label>
+      </node>
+      <node id="18">
+        <label>optional</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="26">
+        <label>stdint.h</label>
+      </node>
+      <node id="33">
+        <label>string</label>
+      </node>
+      <node id="53">
+        <label>string_view</label>
+      </node>
+      <node id="27">
+        <label>sys/types.h</label>
+      </node>
+      <node id="74">
+        <label>system_error</label>
+      </node>
+      <node id="34">
+        <label>tuple</label>
+      </node>
+      <node id="12">
+        <label>type_traits</label>
+      </node>
+      <node id="97">
+        <label>unordered_map</label>
+      </node>
+      <node id="19">
+        <label>utility</label>
+      </node>
+      <node id="49">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser" prot="public">anonymous_namespace{WasmAsmParser.cpp}::WasmAsmParser</innerclass>
+    <innernamespace refid="namespaceanonymous__namespace_02_wasm_asm_parser_8cpp_03">anonymous_namespace{WasmAsmParser.cpp}</innernamespace>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>WasmAsmParser.cpp<sp/>-<sp/>Wasm<sp/>Assembly<sp/>Parser<sp/>-----------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>--</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Note,<sp/>this<sp/>is<sp/>for<sp/>wasm,<sp/>the<sp/>binary<sp/>format<sp/>(analogous<sp/>to<sp/>ELF),<sp/>not<sp/>wasm,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>the<sp/>instruction<sp/>set<sp/>(analogous<sp/>to<sp/>x86),<sp/>for<sp/>which<sp/>parsing<sp/>code<sp/>lives<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WebAssemblyAsmParser.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>contains<sp/>processing<sp/>for<sp/>generic<sp/>directives<sp/>implemented<sp/>using</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>MCTargetStreamer,<sp/>the<sp/>ones<sp/>that<sp/>depend<sp/>on<sp/>WebAssemblyTargetStreamer<sp/>are<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WebAssemblyAsmParser.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_string_extras_8h" kindref="compound">llvm/ADT/StringExtras.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_binary_format_2_wasm_8h" kindref="compound">llvm/BinaryFormat/Wasm.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_context_8h" kindref="compound">llvm/MC/MCContext.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_object_file_info_8h" kindref="compound">llvm/MC/MCObjectFileInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_asm_lexer_8h" kindref="compound">llvm/MC/MCParser/MCAsmLexer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_asm_parser_8h" kindref="compound">llvm/MC/MCParser/MCAsmParser.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_asm_parser_extension_8h" kindref="compound">llvm/MC/MCParser/MCAsmParserExtension.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_section_wasm_8h" kindref="compound">llvm/MC/MCSectionWasm.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_streamer_8h" kindref="compound">llvm/MC/MCStreamer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_symbol_wasm_8h" kindref="compound">llvm/MC/MCSymbolWasm.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_casting_8h" kindref="compound">llvm/Support/Casting.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="namespaceanonymous__namespace_02_wasm_asm_parser_8cpp_03" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1aacc287040a6e692b0e14c5645c2c39c9" kindref="member">WasmAsmParser</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1aab3bf5b24dd10d157225bc28bb555f30" kindref="member">MCAsmParserExtension</ref><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser" kindref="compound">MCAsmParser</ref><sp/>*Parser<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_lexer" kindref="compound">MCAsmLexer</ref><sp/>*Lexer<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>(WasmAsmParser::*HandlerMethod)(StringRef,<sp/>SMLoc)&gt;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addDirectiveHandler(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/><ref refid="classllvm_1_1_directive" kindref="compound">Directive</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_1a9ce3532c090e7b66928ff9a42dae508c" kindref="member">MCAsmParser::ExtensionDirectiveHandler</ref><sp/>Handler<sp/>=<sp/>std::make_pair(</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a24a2ab7728459aab10f7550b978f7b84" kindref="member">HandleDirective&lt;WasmAsmParser, HandlerMethod&gt;</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1aef625855ca29806691daef93804afba0" kindref="member">getParser</ref>().addDirectiveHandler(<ref refid="classllvm_1_1_directive" kindref="compound">Directive</ref>,<sp/>Handler);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="49" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1aacc287040a6e692b0e14c5645c2c39c9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1aacc287040a6e692b0e14c5645c2c39c9" kindref="member">WasmAsmParser</ref>()<sp/>{<sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1acd467ad40163cfdcb2e73ac13f83d8f2" kindref="member">BracketExpressionsSupported</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a085a5187a4b031b79ac68057f023b1a7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a085a5187a4b031b79ac68057f023b1a7" kindref="member">Initialize</ref>(<ref refid="classllvm_1_1_m_c_asm_parser" kindref="compound">MCAsmParser</ref><sp/>&amp;<ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref>)</highlight><highlight class="keyword"><sp/>override<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>Parser<sp/>=<sp/>&amp;<ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>Lexer<sp/>=<sp/>&amp;Parser-&gt;getLexer();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Call<sp/>the<sp/>base<sp/>implementation.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classllvm_1_1_m_c_asm_parser_extension_1a77a335167c72ea8bc771501825f81696" kindref="member">MCAsmParserExtension::Initialize</ref>(*Parser);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>addDirectiveHandler&lt;&amp;WasmAsmParser::parseSectionDirectiveText&gt;(</highlight><highlight class="stringliteral">&quot;.text&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>addDirectiveHandler&lt;&amp;WasmAsmParser::parseSectionDirectiveData&gt;(</highlight><highlight class="stringliteral">&quot;.data&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>addDirectiveHandler&lt;&amp;WasmAsmParser::parseSectionDirective&gt;(</highlight><highlight class="stringliteral">&quot;.section&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>addDirectiveHandler&lt;&amp;WasmAsmParser::parseDirectiveSize&gt;(</highlight><highlight class="stringliteral">&quot;.size&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>addDirectiveHandler&lt;&amp;WasmAsmParser::parseDirectiveType&gt;(</highlight><highlight class="stringliteral">&quot;.type&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>addDirectiveHandler&lt;&amp;WasmAsmParser::ParseDirectiveIdent&gt;(</highlight><highlight class="stringliteral">&quot;.ident&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>addDirectiveHandler&lt;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1adca7252d5d5b7cb17458ac9e482e8bde" kindref="member">WasmAsmParser::ParseDirectiveSymbolAttribute</ref>&gt;(</highlight><highlight class="stringliteral">&quot;.weak&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>addDirectiveHandler&lt;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1adca7252d5d5b7cb17458ac9e482e8bde" kindref="member">WasmAsmParser::ParseDirectiveSymbolAttribute</ref>&gt;(</highlight><highlight class="stringliteral">&quot;.local&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>addDirectiveHandler&lt;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1adca7252d5d5b7cb17458ac9e482e8bde" kindref="member">WasmAsmParser::ParseDirectiveSymbolAttribute</ref>&gt;(</highlight><highlight class="stringliteral">&quot;.internal&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>addDirectiveHandler&lt;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1adca7252d5d5b7cb17458ac9e482e8bde" kindref="member">WasmAsmParser::ParseDirectiveSymbolAttribute</ref>&gt;(</highlight><highlight class="stringliteral">&quot;.hidden&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1aaad2cdef1825867940a59ecba856e9db" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1aaad2cdef1825867940a59ecba856e9db" kindref="member">error</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>&amp;Msg,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_asm_token" kindref="compound">AsmToken</ref><sp/>&amp;Tok)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Parser-&gt;Error(Tok.<ref refid="classllvm_1_1_asm_token_1a16611db1be4d04f03c570d9302504c04" kindref="member">getLoc</ref>(),<sp/>Msg<sp/>+<sp/>Tok.<ref refid="classllvm_1_1_asm_token_1a3168618a19701d0fb78aefb4d4e664de" kindref="member">getString</ref>());</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a780b52a3fee0fbef40e19fc2bdeca545" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a780b52a3fee0fbef40e19fc2bdeca545" kindref="member">isNext</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039" kindref="member">AsmToken::TokenKind</ref><sp/>Kind)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Ok<sp/>=<sp/>Lexer-&gt;is(Kind);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Ok)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" kindref="member">Lex</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Ok;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a92e0bbe12bdf67cbb1ad0ffe83ec982c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a92e0bbe12bdf67cbb1ad0ffe83ec982c" kindref="member">expect</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039" kindref="member">AsmToken::TokenKind</ref><sp/>Kind,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*KindName)<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a780b52a3fee0fbef40e19fc2bdeca545" kindref="member">isNext</ref>(Kind))</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_symbol_record_mapping_8cpp_1a9cdf893c7d17e47fa1ed8bebf92a5da4" kindref="member">error</ref>(std::string(</highlight><highlight class="stringliteral">&quot;Expected<sp/>&quot;</highlight><highlight class="normal">)<sp/>+<sp/>KindName<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>instead<sp/>got:<sp/>&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lexer-&gt;getTok());</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1aed6ed4423bb21832a430e64f06bbca58" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1aed6ed4423bb21832a430e64f06bbca58" kindref="member">parseSectionDirectiveText</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>,<sp/><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>FIXME:<sp/>.text<sp/>currently<sp/>no-op.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a7fcd787c88df34674d7c5f7ba82b206c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a7fcd787c88df34674d7c5f7ba82b206c" kindref="member">parseSectionDirectiveData</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>,<sp/><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*S<sp/>=<sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1aa7399d73f97fdf5bcf6b19f760264848" kindref="member">getContext</ref>().getObjectFileInfo()-&gt;getDataSection();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1ad4802c6230c2d4e9ddf64155b05344a9" kindref="member">getStreamer</ref>().switchSection(S);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1ac678fd162ac05f1a3a64645c2cba0835" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1ac678fd162ac05f1a3a64645c2cba0835" kindref="member">parseSectionFlags</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>FlagStr,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;Passive,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;Group)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/>flags<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" kindref="member">C</ref><sp/>:<sp/>FlagStr)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" kindref="member">C</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;p&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Passive<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;G&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Group<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;T&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags<sp/>|=<sp/><ref refid="namespacellvm_1_1wasm_1ab59521677a1bb67738764d89f9cb0429a829d95d74beace7ff3449f6715cbaec7" kindref="member">wasm::WASM_SEG_FLAG_TLS</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;S&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags<sp/>|=<sp/><ref refid="namespacellvm_1_1wasm_1ab59521677a1bb67738764d89f9cb0429ac340817f607f61c4413f9e89b0acab03" kindref="member">wasm::WASM_SEG_FLAG_STRINGS</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;R&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags<sp/>|=<sp/><ref refid="namespacellvm_1_1wasm_1ab59521677a1bb67738764d89f9cb0429a05cd6cd324ddab7f919b11f3422ec610" kindref="member">wasm::WASM_SEG_FLAG_RETAIN</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1U;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>flags;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a9ab59320c7db131ff538fb41d4b7968e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a9ab59320c7db131ff538fb41d4b7968e" kindref="member">parseGroup</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>&amp;GroupName)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Lexer-&gt;isNot(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ac4b2675d2cb80935b789d9f140092e25" kindref="member">AsmToken::Comma</ref>))</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" kindref="member">TokError</ref>(</highlight><highlight class="stringliteral">&quot;expected<sp/>group<sp/>name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" kindref="member">Lex</ref>();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Lexer-&gt;is(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a2369278b71442a32bd6a7f6a6f411033" kindref="member">AsmToken::Integer</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>GroupName<sp/>=<sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a4235d087dc899291be41be9db4d811a9" kindref="member">getTok</ref>().getString();</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" kindref="member">Lex</ref>();</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Parser-&gt;parseIdentifier(GroupName))<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" kindref="member">TokError</ref>(</highlight><highlight class="stringliteral">&quot;invalid<sp/>group<sp/>name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Lexer-&gt;is(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ac4b2675d2cb80935b789d9f140092e25" kindref="member">AsmToken::Comma</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" kindref="member">Lex</ref>();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>Linkage;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Parser-&gt;parseIdentifier(Linkage))</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" kindref="member">TokError</ref>(</highlight><highlight class="stringliteral">&quot;invalid<sp/>linkage&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Linkage<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;comdat&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" kindref="member">TokError</ref>(</highlight><highlight class="stringliteral">&quot;Linkage<sp/>must<sp/>be<sp/>&apos;comdat&apos;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1ae0649c94bd0699e12841f9abe89b3548" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1ae0649c94bd0699e12841f9abe89b3548" kindref="member">parseSectionDirective</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>,<sp/><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref><sp/>loc)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>Name;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Parser-&gt;parseIdentifier(Name))</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" kindref="member">TokError</ref>(</highlight><highlight class="stringliteral">&quot;expected<sp/>identifier<sp/>in<sp/>directive&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a92e0bbe12bdf67cbb1ad0ffe83ec982c" kindref="member">expect</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ac4b2675d2cb80935b789d9f140092e25" kindref="member">AsmToken::Comma</ref>,<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Lexer-&gt;isNot(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a18d693ac4253b089ce44aa602246fe58" kindref="member">AsmToken::String</ref>))</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_symbol_record_mapping_8cpp_1a9cdf893c7d17e47fa1ed8bebf92a5da4" kindref="member">error</ref>(</highlight><highlight class="stringliteral">&quot;expected<sp/>string<sp/>in<sp/>directive,<sp/>instead<sp/>got:<sp/>&quot;</highlight><highlight class="normal">,<sp/>Lexer-&gt;getTok());</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Kind<sp/>=<sp/><ref refid="classllvm_1_1_string_switch" kindref="compound">StringSwitch&lt;std::optional&lt;SectionKind&gt;</ref>&gt;(Name)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.StartsWith(</highlight><highlight class="stringliteral">&quot;.data&quot;</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_section_kind_1a587678b6051996e25d2bd6ebce323c9c" kindref="member">SectionKind::getData</ref>())</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a88e653a89d15149cc7a68f88be360303" kindref="member">StartsWith</ref>(</highlight><highlight class="stringliteral">&quot;.tdata&quot;</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_section_kind_1a047ddbdfed14ef00dfd7d11718be4cc1" kindref="member">SectionKind::getThreadData</ref>())</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a88e653a89d15149cc7a68f88be360303" kindref="member">StartsWith</ref>(</highlight><highlight class="stringliteral">&quot;.tbss&quot;</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_section_kind_1a9ca4fd7df1d9dc2cf7c4a1046d5b6957" kindref="member">SectionKind::getThreadBSS</ref>())</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a88e653a89d15149cc7a68f88be360303" kindref="member">StartsWith</ref>(</highlight><highlight class="stringliteral">&quot;.rodata&quot;</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_section_kind_1af4b0b8bc19062c7b0195fc7239c4dbea" kindref="member">SectionKind::getReadOnly</ref>())</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a88e653a89d15149cc7a68f88be360303" kindref="member">StartsWith</ref>(</highlight><highlight class="stringliteral">&quot;.text&quot;</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_section_kind_1a36d55da4fb88dbef3b548a7e25c99dd7" kindref="member">SectionKind::getText</ref>())</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a88e653a89d15149cc7a68f88be360303" kindref="member">StartsWith</ref>(</highlight><highlight class="stringliteral">&quot;.custom_section&quot;</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_section_kind_1a13a2c76a48665ee3f4782fba7ddd72e1" kindref="member">SectionKind::getMetadata</ref>())</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a88e653a89d15149cc7a68f88be360303" kindref="member">StartsWith</ref>(</highlight><highlight class="stringliteral">&quot;.bss&quot;</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_section_kind_1a97d95412f17878de8c47a9d13fd91871" kindref="member">SectionKind::getBSS</ref>())</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>See<sp/>use<sp/>of<sp/>.init_array<sp/>in<sp/>WasmObjectWriter<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TargetLoweringObjectFileWasm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a88e653a89d15149cc7a68f88be360303" kindref="member">StartsWith</ref>(</highlight><highlight class="stringliteral">&quot;.init_array&quot;</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_section_kind_1a587678b6051996e25d2bd6ebce323c9c" kindref="member">SectionKind::getData</ref>())</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a88e653a89d15149cc7a68f88be360303" kindref="member">StartsWith</ref>(</highlight><highlight class="stringliteral">&quot;.debug_&quot;</highlight><highlight class="normal">,<sp/><ref refid="classllvm_1_1_section_kind_1a13a2c76a48665ee3f4782fba7ddd72e1" kindref="member">SectionKind::getMetadata</ref>())</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a7f0e82e8a818ca43926fceb49be81661" kindref="member">Default</ref>(<ref refid="classllvm_1_1_section_kind_1a587678b6051996e25d2bd6ebce323c9c" kindref="member">SectionKind::getData</ref>());</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Update<sp/>section<sp/>flags<sp/>if<sp/>present<sp/>in<sp/>this<sp/>.section<sp/>directive</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Passive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Group<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/>Flags<sp/>=</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_e_l_f_asm_parser_8cpp_1aca08eb38e47de9b8bacac06543256178" kindref="member">parseSectionFlags</ref>(<ref refid="classllvm_1_1_m_c_asm_parser_extension_1a4235d087dc899291be41be9db4d811a9" kindref="member">getTok</ref>().getStringContents(),<sp/>Passive,<sp/>Group);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Flags<sp/>==<sp/>-1U)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" kindref="member">TokError</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>flag&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" kindref="member">Lex</ref>();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a92e0bbe12bdf67cbb1ad0ffe83ec982c" kindref="member">expect</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ac4b2675d2cb80935b789d9f140092e25" kindref="member">AsmToken::Comma</ref>,<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">)<sp/>||<sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a92e0bbe12bdf67cbb1ad0ffe83ec982c" kindref="member">expect</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a4aeb4b633eccde6dcae9b02af09c8302" kindref="member">AsmToken::At</ref>,<sp/></highlight><highlight class="stringliteral">&quot;@&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>GroupName;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Group<sp/>&amp;&amp;<sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a9ab59320c7db131ff538fb41d4b7968e" kindref="member">parseGroup</ref>(GroupName))</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a92e0bbe12bdf67cbb1ad0ffe83ec982c" kindref="member">expect</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ae10c5f59f330bfd15608e1dda213a98f" kindref="member">AsmToken::EndOfStatement</ref>,<sp/></highlight><highlight class="stringliteral">&quot;eol&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Parse<sp/>UniqueID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_section_wasm" kindref="compound">MCSectionWasm</ref><sp/>*WS<sp/>=<sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1aa7399d73f97fdf5bcf6b19f760264848" kindref="member">getContext</ref>().getWasmSection(</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Name,<sp/>*Kind,<sp/>Flags,<sp/>GroupName,<sp/><ref refid="classllvm_1_1_m_c_context_1aa96980c44bc03ccd7b7b1fde53bc1f7da62fb23a196d73b6c068b55048cc02008" kindref="member">MCContext::GenericSectionID</ref>);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(WS-&gt;<ref refid="classllvm_1_1_m_c_section_wasm_1abf60308a9d094e4948df7c8c899e9472" kindref="member">getSegmentFlags</ref>()<sp/>!=<sp/>Flags)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Parser-&gt;Error(loc,<sp/></highlight><highlight class="stringliteral">&quot;changed<sp/>section<sp/>flags<sp/>for<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>Name<sp/>+</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;,<sp/>expected:<sp/>0x&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1a3beda524b0772ca36035db4399a6a571" kindref="member">utohexstr</ref>(WS-&gt;<ref refid="classllvm_1_1_m_c_section_wasm_1abf60308a9d094e4948df7c8c899e9472" kindref="member">getSegmentFlags</ref>()));</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Passive)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!WS-&gt;<ref refid="classllvm_1_1_m_c_section_wasm_1aae13c85610bc6d0b6d95160e28bae031" kindref="member">isWasmData</ref>())</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Parser-&gt;Error(loc,<sp/></highlight><highlight class="stringliteral">&quot;Only<sp/>data<sp/>sections<sp/>can<sp/>be<sp/>passive&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>WS-&gt;<ref refid="classllvm_1_1_m_c_section_wasm_1a77d3472542d498b80be3fd3870ab3a47" kindref="member">setPassive</ref>();</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1ad4802c6230c2d4e9ddf64155b05344a9" kindref="member">getStreamer</ref>().switchSection(WS);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>This<sp/>function<sp/>is<sp/>almost<sp/>the<sp/>same<sp/>as<sp/>ELFAsmParser::ParseDirectiveSize</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>maybe<sp/>could<sp/>be<sp/>shared<sp/>somehow.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a95fea375d44bfa75331d72c32b7a1b57" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a95fea375d44bfa75331d72c32b7a1b57" kindref="member">parseDirectiveSize</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>,<sp/><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref><sp/><ref refid="namespacellvm_1_1_loc" kindref="compound">Loc</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>Name;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Parser-&gt;parseIdentifier(Name))</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" kindref="member">TokError</ref>(</highlight><highlight class="stringliteral">&quot;expected<sp/>identifier<sp/>in<sp/>directive&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Sym<sp/>=<sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1aa7399d73f97fdf5bcf6b19f760264848" kindref="member">getContext</ref>().getOrCreateSymbol(Name);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a92e0bbe12bdf67cbb1ad0ffe83ec982c" kindref="member">expect</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ac4b2675d2cb80935b789d9f140092e25" kindref="member">AsmToken::Comma</ref>,<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*Expr;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Parser-&gt;parseExpression(Expr))</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a92e0bbe12bdf67cbb1ad0ffe83ec982c" kindref="member">expect</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ae10c5f59f330bfd15608e1dda213a98f" kindref="member">AsmToken::EndOfStatement</ref>,<sp/></highlight><highlight class="stringliteral">&quot;eol&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>WasmSym<sp/>=<sp/><ref refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" kindref="member">cast&lt;MCSymbolWasm&gt;</ref>(Sym);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(WasmSym-&gt;isFunction())<sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ignore<sp/>.size<sp/>directives<sp/>for<sp/>function<sp/>symbols.<sp/><sp/>They<sp/>get<sp/>their<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>automatically<sp/>based<sp/>on<sp/>their<sp/>content.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1ac226f3d2b9ca090171a8e0a8cb92c343a0eaadb4fcb48a0a0ed7bc9868be9fbaa" kindref="member">Warning</ref>(<ref refid="namespacellvm_1_1_loc" kindref="compound">Loc</ref>,<sp/></highlight><highlight class="stringliteral">&quot;.size<sp/>directive<sp/>ignored<sp/>for<sp/>function<sp/>symbols&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1ad4802c6230c2d4e9ddf64155b05344a9" kindref="member">getStreamer</ref>().emitELFSize(Sym,<sp/>Expr);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1ade676363a04db5e47aa6745312ca1ac6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1ade676363a04db5e47aa6745312ca1ac6" kindref="member">parseDirectiveType</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>,<sp/><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>could<sp/>be<sp/>the<sp/>start<sp/>of<sp/>a<sp/>function,<sp/>check<sp/>if<sp/>followed<sp/>by</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;label,@function&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!Lexer-&gt;is(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a806fe218bb80f0671afdad4cec36569b" kindref="member">AsmToken::Identifier</ref>))</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_symbol_record_mapping_8cpp_1a9cdf893c7d17e47fa1ed8bebf92a5da4" kindref="member">error</ref>(</highlight><highlight class="stringliteral">&quot;Expected<sp/>label<sp/>after<sp/>.type<sp/>directive,<sp/>got:<sp/>&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lexer-&gt;getTok());</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>WasmSym<sp/>=<sp/><ref refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" kindref="member">cast&lt;MCSymbolWasm&gt;</ref>(</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1ad4802c6230c2d4e9ddf64155b05344a9" kindref="member">getStreamer</ref>().<ref refid="classllvm_1_1_m_c_asm_parser_extension_1aa7399d73f97fdf5bcf6b19f760264848" kindref="member">getContext</ref>().getOrCreateSymbol(</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lexer-&gt;getTok().getString()));</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" kindref="member">Lex</ref>();</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(<ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a780b52a3fee0fbef40e19fc2bdeca545" kindref="member">isNext</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ac4b2675d2cb80935b789d9f140092e25" kindref="member">AsmToken::Comma</ref>)<sp/>&amp;&amp;<sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a780b52a3fee0fbef40e19fc2bdeca545" kindref="member">isNext</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a4aeb4b633eccde6dcae9b02af09c8302" kindref="member">AsmToken::At</ref>)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lexer-&gt;is(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a806fe218bb80f0671afdad4cec36569b" kindref="member">AsmToken::Identifier</ref>)))</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_symbol_record_mapping_8cpp_1a9cdf893c7d17e47fa1ed8bebf92a5da4" kindref="member">error</ref>(</highlight><highlight class="stringliteral">&quot;Expected<sp/>label,@type<sp/>declaration,<sp/>got:<sp/>&quot;</highlight><highlight class="normal">,<sp/>Lexer-&gt;getTok());</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>TypeName<sp/>=<sp/>Lexer-&gt;getTok().getString();</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(TypeName<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;function&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>WasmSym-&gt;setType(<ref refid="namespacellvm_1_1wasm_1a6ee7ebc24e11c434031e9653d7f00529ae2d3246e8f9451c96b200707078c83d9" kindref="member">wasm::WASM_SYMBOL_TYPE_FUNCTION</ref>);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*Current<sp/>=</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" kindref="member">cast&lt;MCSectionWasm&gt;</ref>(<ref refid="classllvm_1_1_m_c_asm_parser_extension_1ad4802c6230c2d4e9ddf64155b05344a9" kindref="member">getStreamer</ref>().getCurrentSectionOnly());</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Current-&gt;getGroup())</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WasmSym-&gt;setComdat(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(TypeName<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;global&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>WasmSym-&gt;setType(<ref refid="namespacellvm_1_1wasm_1a6ee7ebc24e11c434031e9653d7f00529a36f3d68b8025222c9f73a586aee5932f" kindref="member">wasm::WASM_SYMBOL_TYPE_GLOBAL</ref>);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(TypeName<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;object&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>WasmSym-&gt;setType(<ref refid="namespacellvm_1_1wasm_1a6ee7ebc24e11c434031e9653d7f00529a3bf8c7186acf1ffbf50c1f7c915554bb" kindref="member">wasm::WASM_SYMBOL_TYPE_DATA</ref>);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_symbol_record_mapping_8cpp_1a9cdf893c7d17e47fa1ed8bebf92a5da4" kindref="member">error</ref>(</highlight><highlight class="stringliteral">&quot;Unknown<sp/>WASM<sp/>symbol<sp/>type:<sp/>&quot;</highlight><highlight class="normal">,<sp/>Lexer-&gt;getTok());</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" kindref="member">Lex</ref>();</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a92e0bbe12bdf67cbb1ad0ffe83ec982c" kindref="member">expect</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ae10c5f59f330bfd15608e1dda213a98f" kindref="member">AsmToken::EndOfStatement</ref>,<sp/></highlight><highlight class="stringliteral">&quot;EOL&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>FIXME:<sp/>Shared<sp/>with<sp/>ELF.</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="269"><highlight class="comment"><sp/><sp/>///<sp/>ParseDirectiveIdent</highlight></codeline>
+<codeline lineno="270"><highlight class="comment"><sp/><sp/>///<sp/><sp/>::=<sp/>.ident<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a83962858abc75bcaf9f4fb6c2390bd64" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1a83962858abc75bcaf9f4fb6c2390bd64" kindref="member">ParseDirectiveIdent</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>,<sp/><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_m_c_asm_parser_extension_1afba734fed57c0c0343c2f8e096ce3c16" kindref="member">getLexer</ref>().<ref refid="_a_m_d_g_p_u_legalizer_info_8cpp_1accff22ec9fbd872b5976a4a2dc20ef56" kindref="member">isNot</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039a18d693ac4253b089ce44aa602246fe58" kindref="member">AsmToken::String</ref>))</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" kindref="member">TokError</ref>(</highlight><highlight class="stringliteral">&quot;unexpected<sp/>token<sp/>in<sp/>&apos;.ident&apos;<sp/>directive&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/><ref refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" kindref="member">Data</ref><sp/>=<sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a4235d087dc899291be41be9db4d811a9" kindref="member">getTok</ref>().getIdentifier();</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" kindref="member">Lex</ref>();</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_m_c_asm_parser_extension_1afba734fed57c0c0343c2f8e096ce3c16" kindref="member">getLexer</ref>().<ref refid="_a_m_d_g_p_u_legalizer_info_8cpp_1accff22ec9fbd872b5976a4a2dc20ef56" kindref="member">isNot</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ae10c5f59f330bfd15608e1dda213a98f" kindref="member">AsmToken::EndOfStatement</ref>))</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" kindref="member">TokError</ref>(</highlight><highlight class="stringliteral">&quot;unexpected<sp/>token<sp/>in<sp/>&apos;.ident&apos;<sp/>directive&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" kindref="member">Lex</ref>();</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1ad4802c6230c2d4e9ddf64155b05344a9" kindref="member">getStreamer</ref>().emitIdent(<ref refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" kindref="member">Data</ref>);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>FIXME:<sp/>Shared<sp/>with<sp/>ELF.</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="284"><highlight class="comment"><sp/><sp/>///<sp/>ParseDirectiveSymbolAttribute</highlight></codeline>
+<codeline lineno="285"><highlight class="comment"><sp/><sp/>///<sp/><sp/>::=<sp/>{<sp/>&quot;.local&quot;,<sp/>&quot;.weak&quot;,<sp/>...<sp/>}<sp/>[<sp/>identifier<sp/>(<sp/>,<sp/>identifier<sp/>)*<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286" refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1adca7252d5d5b7cb17458ac9e482e8bde" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classanonymous__namespace_02_wasm_asm_parser_8cpp_03_1_1_wasm_asm_parser_1adca7252d5d5b7cb17458ac9e482e8bde" kindref="member">ParseDirectiveSymbolAttribute</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/><ref refid="classllvm_1_1_directive" kindref="compound">Directive</ref>,<sp/><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1af74c787f7a33e251485729416d260243" kindref="member">MCSymbolAttr</ref><sp/>Attr<sp/>=<sp/><ref refid="classllvm_1_1_string_switch" kindref="compound">StringSwitch&lt;MCSymbolAttr&gt;</ref>(<ref refid="classllvm_1_1_directive" kindref="compound">Directive</ref>)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a3de12858bdbbd0b3da179d508ff2be75" kindref="member">Case</ref>(</highlight><highlight class="stringliteral">&quot;.weak&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacellvm_1af74c787f7a33e251485729416d260243a83df6138e7dba38c0c80380486544ea0" kindref="member">MCSA_Weak</ref>)</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a3de12858bdbbd0b3da179d508ff2be75" kindref="member">Case</ref>(</highlight><highlight class="stringliteral">&quot;.local&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacellvm_1af74c787f7a33e251485729416d260243a02f22ce66e6bacb5fbaba644ec799653" kindref="member">MCSA_Local</ref>)</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a3de12858bdbbd0b3da179d508ff2be75" kindref="member">Case</ref>(</highlight><highlight class="stringliteral">&quot;.hidden&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacellvm_1af74c787f7a33e251485729416d260243ae472359b991bb5235c8f6714f4cacb6a" kindref="member">MCSA_Hidden</ref>)</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a3de12858bdbbd0b3da179d508ff2be75" kindref="member">Case</ref>(</highlight><highlight class="stringliteral">&quot;.internal&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacellvm_1af74c787f7a33e251485729416d260243a3b2ee46211db7e561d0b732b5ae4fe5e" kindref="member">MCSA_Internal</ref>)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a3de12858bdbbd0b3da179d508ff2be75" kindref="member">Case</ref>(</highlight><highlight class="stringliteral">&quot;.protected&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacellvm_1af74c787f7a33e251485729416d260243a1f47433b83f2818076a3cf55b500233a" kindref="member">MCSA_Protected</ref>)</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classllvm_1_1_string_switch_1a7f0e82e8a818ca43926fceb49be81661" kindref="member">Default</ref>(<ref refid="namespacellvm_1af74c787f7a33e251485729416d260243af3367f8319e21bf0779da14146221c55" kindref="member">MCSA_Invalid</ref>);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Attr<sp/>!=<sp/><ref refid="namespacellvm_1af74c787f7a33e251485729416d260243af3367f8319e21bf0779da14146221c55" kindref="member">MCSA_Invalid</ref><sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;unexpected<sp/>symbol<sp/>attribute<sp/>directive!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_m_c_asm_parser_extension_1afba734fed57c0c0343c2f8e096ce3c16" kindref="member">getLexer</ref>().<ref refid="_a_m_d_g_p_u_legalizer_info_8cpp_1accff22ec9fbd872b5976a4a2dc20ef56" kindref="member">isNot</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ae10c5f59f330bfd15608e1dda213a98f" kindref="member">AsmToken::EndOfStatement</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>Name;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_m_c_asm_parser_extension_1aef625855ca29806691daef93804afba0" kindref="member">getParser</ref>().parseIdentifier(Name))</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" kindref="member">TokError</ref>(</highlight><highlight class="stringliteral">&quot;expected<sp/>identifier<sp/>in<sp/>directive&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref><sp/>*Sym<sp/>=<sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1aa7399d73f97fdf5bcf6b19f760264848" kindref="member">getContext</ref>().getOrCreateSymbol(Name);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1ad4802c6230c2d4e9ddf64155b05344a9" kindref="member">getStreamer</ref>().emitSymbolAttribute(Sym,<sp/>Attr);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_m_c_asm_parser_extension_1afba734fed57c0c0343c2f8e096ce3c16" kindref="member">getLexer</ref>().is(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ae10c5f59f330bfd15608e1dda213a98f" kindref="member">AsmToken::EndOfStatement</ref>))</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_m_c_asm_parser_extension_1afba734fed57c0c0343c2f8e096ce3c16" kindref="member">getLexer</ref>().<ref refid="_a_m_d_g_p_u_legalizer_info_8cpp_1accff22ec9fbd872b5976a4a2dc20ef56" kindref="member">isNot</ref>(<ref refid="classllvm_1_1_asm_token_1ab4316e41520ea53f789582c25bbec039ac4b2675d2cb80935b789d9f140092e25" kindref="member">AsmToken::Comma</ref>))</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a939005612707a0dd8c6cee10d302748f" kindref="member">TokError</ref>(</highlight><highlight class="stringliteral">&quot;unexpected<sp/>token<sp/>in<sp/>directive&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" kindref="member">Lex</ref>();</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_asm_parser_extension_1a38ed901577d3ad8c434939bb49fbf342" kindref="member">Lex</ref>();</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="312"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>anonymous<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318" refid="namespacellvm_1a8266d58163a5e58e8402a098442a53f0" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1_m_c_asm_parser_extension" kindref="compound">MCAsmParserExtension</ref><sp/>*<ref refid="namespacellvm_1a8266d58163a5e58e8402a098442a53f0" kindref="member">createWasmAsmParser</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>WasmAsmParser;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/MC/MCParser/WasmAsmParser.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_addr_label_map" kind="class" language="C++" prot="public">
+    <compoundname>llvm::AddrLabelMap</compoundname>
+    <innerclass refid="structllvm_1_1_addr_label_map_1_1_addr_label_sym_entry" prot="private">llvm::AddrLabelMap::AddrLabelSymEntry</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_addr_label_map_1af76528fc67fa1207ce1502b668e3b457" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref> &amp;</type>
+        <definition>MCContext&amp; llvm::AddrLabelMap::Context</definition>
+        <argsstring></argsstring>
+        <name>Context</name>
+        <qualifiedname>llvm::AddrLabelMap::Context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" line="207" column="13" bodyfile="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_addr_label_map_1a7c5829419f50df80069b3033d942224b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_asserting_v_h" kindref="compound">AssertingVH</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> &gt;, AddrLabelSymEntry &gt;</type>
+        <definition>DenseMap&lt;AssertingVH&lt;BasicBlock&gt;, AddrLabelSymEntry&gt; llvm::AddrLabelMap::AddrLabelSymbols</definition>
+        <argsstring></argsstring>
+        <name>AddrLabelSymbols</name>
+        <qualifiedname>llvm::AddrLabelMap::AddrLabelSymbols</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" line="216" column="12" bodyfile="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_addr_label_map_1a6726097447f29f9c780cd2781a08ecf7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; AddrLabelMapCallbackPtr &gt;</type>
+        <definition>std::vector&lt;AddrLabelMapCallbackPtr&gt; llvm::AddrLabelMap::BBCallbacks</definition>
+        <argsstring></argsstring>
+        <name>BBCallbacks</name>
+        <qualifiedname>llvm::AddrLabelMap::BBCallbacks</qualifiedname>
+        <briefdescription>
+<para>Callbacks for the <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref>&apos;s that we have entries for. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We use this so we get notified if a block is deleted or RAUWd. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" line="220" column="15" bodyfile="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_addr_label_map_1a5569c64e0b01ae64bf4328610c56ccd4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_asserting_v_h" kindref="compound">AssertingVH</ref>&lt; <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &gt;, std::vector&lt; <ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> * &gt; &gt;</type>
+        <definition>DenseMap&lt;AssertingVH&lt;Function&gt;, std::vector&lt;MCSymbol *&gt; &gt; llvm::AddrLabelMap::DeletedAddrLabelsNeedingEmission</definition>
+        <argsstring></argsstring>
+        <name>DeletedAddrLabelsNeedingEmission</name>
+        <qualifiedname>llvm::AddrLabelMap::DeletedAddrLabelsNeedingEmission</qualifiedname>
+        <briefdescription>
+<para>This is a per-function list of symbols whose corresponding <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> got deleted. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These symbols need to be emitted at some point in the file, so <ref refid="classllvm_1_1_asm_printer" kindref="compound">AsmPrinter</ref> emits them after the function body. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" line="226" column="7" bodyfile="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" bodystart="226" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_addr_label_map_1a8e7125dc36f3bc3ffed2a7cf9eede088" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::AddrLabelMap::AddrLabelMap</definition>
+        <argsstring>(MCContext &amp;context)</argsstring>
+        <name>AddrLabelMap</name>
+        <qualifiedname>llvm::AddrLabelMap::AddrLabelMap</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref> &amp;</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" line="229" column="3" bodyfile="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" bodystart="229" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_addr_label_map_1a8f18a638fb304c1641b88b56d0481c2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::AddrLabelMap::~AddrLabelMap</definition>
+        <argsstring>()</argsstring>
+        <name>~AddrLabelMap</name>
+        <qualifiedname>llvm::AddrLabelMap::~AddrLabelMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" line="231" column="3" bodyfile="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" bodystart="231" bodyend="234"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_addr_label_map_1acbb53aac904b80dad6df38f882e319f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> * &gt;</type>
+        <definition>ArrayRef&lt; MCSymbol * &gt; AddrLabelMap::getAddrLabelSymbolToEmit</definition>
+        <argsstring>(BasicBlock *BB)</argsstring>
+        <name>getAddrLabelSymbolToEmit</name>
+        <qualifiedname>llvm::AddrLabelMap::getAddrLabelSymbolToEmit</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" line="236" column="12" bodyfile="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" bodystart="245" bodyend="266"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_basic_block_1a1b4bf7c97cdc8159fd73d48063f0b250" compoundref="_i_r_2_basic_block_8h" startline="220" endline="220">llvm::BasicBlock::getParent</references>
+        <references refid="classllvm_1_1_basic_block_1a315f26c899f5ea8a780db4740ba95ef4" compoundref="_i_r_2_basic_block_8h" startline="671" endline="673">llvm::BasicBlock::hasAddressTaken</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_addr_label_map_1ab0c9d3065597e04b863b7b0d659aef8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AddrLabelMap::takeDeletedSymbolsForFunction</definition>
+        <argsstring>(Function *F, std::vector&lt; MCSymbol * &gt; &amp;Result)</argsstring>
+        <name>takeDeletedSymbolsForFunction</name>
+        <qualifiedname>llvm::AddrLabelMap::takeDeletedSymbolsForFunction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> * &gt; &amp;</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+<para>If we have any deleted symbols for F, return them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" line="238" column="8" bodyfile="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" bodystart="269" bodyend="281"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacestd_1ab8424022895aee3e366fb9a32f2883cb" compoundref="_bit_vector_8h" startline="860" endline="860">std::swap</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_addr_label_map_1aba3d880d5b4c6f123a2c50923e78c46a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AddrLabelMap::UpdateForDeletedBlock</definition>
+        <argsstring>(BasicBlock *BB)</argsstring>
+        <name>UpdateForDeletedBlock</name>
+        <qualifiedname>llvm::AddrLabelMap::UpdateForDeletedBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" line="241" column="8" bodyfile="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" bodystart="303" bodyend="328"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_basic_block_1a1b4bf7c97cdc8159fd73d48063f0b250" compoundref="_i_r_2_basic_block_8h" startline="220" endline="220">llvm::BasicBlock::getParent</references>
+        <references refid="classllvm_1_1_m_c_symbol_1a2899e74730516967f04d81966bb4f881" compoundref="_m_c_symbol_8h" startline="250" endline="250">llvm::MCSymbol::isDefined</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_addr_label_map_1a92dddb4b181a5d60d12b88f7bfe994e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AddrLabelMap::UpdateForRAUWBlock</definition>
+        <argsstring>(BasicBlock *Old, BasicBlock *New)</argsstring>
+        <name>UpdateForRAUWBlock</name>
+        <qualifiedname>llvm::AddrLabelMap::UpdateForRAUWBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Old</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>New</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" line="242" column="8" bodyfile="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" bodystart="330" bodyend="349"/>
+        <references refid="namespacellvm_1a39d3d23a084c4544ee5903203db10e8a" compoundref="_s_t_l_extras_8h" startline="2115" endline="2117">llvm::append_range</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" line="206" column="1" bodyfile="lib/CodeGen/AsmPrinter/AsmPrinter.cpp" bodystart="206" bodyend="243"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_addr_label_map_1a8e7125dc36f3bc3ffed2a7cf9eede088" prot="public" virt="non-virtual"><scope>llvm::AddrLabelMap</scope><name>AddrLabelMap</name></member>
+      <member refid="classllvm_1_1_addr_label_map_1a7c5829419f50df80069b3033d942224b" prot="private" virt="non-virtual"><scope>llvm::AddrLabelMap</scope><name>AddrLabelSymbols</name></member>
+      <member refid="classllvm_1_1_addr_label_map_1a6726097447f29f9c780cd2781a08ecf7" prot="private" virt="non-virtual"><scope>llvm::AddrLabelMap</scope><name>BBCallbacks</name></member>
+      <member refid="classllvm_1_1_addr_label_map_1af76528fc67fa1207ce1502b668e3b457" prot="private" virt="non-virtual"><scope>llvm::AddrLabelMap</scope><name>Context</name></member>
+      <member refid="classllvm_1_1_addr_label_map_1a5569c64e0b01ae64bf4328610c56ccd4" prot="private" virt="non-virtual"><scope>llvm::AddrLabelMap</scope><name>DeletedAddrLabelsNeedingEmission</name></member>
+      <member refid="classllvm_1_1_addr_label_map_1acbb53aac904b80dad6df38f882e319f3" prot="public" virt="non-virtual"><scope>llvm::AddrLabelMap</scope><name>getAddrLabelSymbolToEmit</name></member>
+      <member refid="classllvm_1_1_addr_label_map_1ab0c9d3065597e04b863b7b0d659aef8f" prot="public" virt="non-virtual"><scope>llvm::AddrLabelMap</scope><name>takeDeletedSymbolsForFunction</name></member>
+      <member refid="classllvm_1_1_addr_label_map_1aba3d880d5b4c6f123a2c50923e78c46a" prot="public" virt="non-virtual"><scope>llvm::AddrLabelMap</scope><name>UpdateForDeletedBlock</name></member>
+      <member refid="classllvm_1_1_addr_label_map_1a92dddb4b181a5d60d12b88f7bfe994e0" prot="public" virt="non-virtual"><scope>llvm::AddrLabelMap</scope><name>UpdateForRAUWBlock</name></member>
+      <member refid="classllvm_1_1_addr_label_map_1a8f18a638fb304c1641b88b56d0481c2e" prot="public" virt="non-virtual"><scope>llvm::AddrLabelMap</scope><name>~AddrLabelMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

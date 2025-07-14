@@ -1,0 +1,601 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences" kind="struct" language="C++" prot="public">
+    <compoundname>llvm::TargetTransformInfo::UnrollingPreferences</compoundname>
+    <includes refid="_target_transform_info_8h" local="yes">llvm/Analysis/TargetTransformInfo.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a21e7febf468c370793f606da5cd0e6fe" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::Threshold</definition>
+        <argsstring></argsstring>
+        <name>Threshold</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::Threshold</qualifiedname>
+        <briefdescription>
+<para>The cost threshold for the unrolled loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Should be relative to the getInstructionCost values returned by this API, and the expectation is that the unrolled loop&apos;s instructions when run through that interface should not exceed this cost. However, this is only an estimate. Also, specific loops may be unrolled even with a cost above this threshold if deemed profitable. Set this to UINT_MAX to disable the loop body cost restriction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="544" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="544" bodyend="-1"/>
+        <referencedby refid="_o_m_p_i_r_builder_8cpp_1a946282957319b8c23ab9f169abb504c4" compoundref="_o_m_p_i_r_builder_8cpp" startline="5484" endline="5610">computeHeuristicUnrollFactor</referencedby>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a3f16b49acc2669722d78d71f3163bbe6" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="150" endline="275">computeUnrollAndJamCount</referencedby>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_t_t_i_impl_1a99fc6c25163b324f8642658b54e77687" compoundref="_a_m_d_g_p_u_target_transform_info_8cpp" startline="110" endline="270">llvm::AMDGPUTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_n_v_p_t_x_t_t_i_impl_1a71ea7d50adb4500b9ca52778c045e4fc" compoundref="_n_v_p_t_x_target_transform_info_8cpp" startline="515" endline="526">llvm::NVPTXTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a76ff47379fde965c509112d7a0c5c5bd" compoundref="_loop_unroll_pass_8cpp" startline="838" endline="866">shouldFullUnroll</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1aa34e1c78e0b01952be32ffe53cbabe27" compoundref="_loop_unroll_pass_8cpp" startline="798" endline="836">shouldPragmaUnroll</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a63a7a13b9f772e6c656e94fb7e251d46" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::MaxPercentThresholdBoost</definition>
+        <argsstring></argsstring>
+        <name>MaxPercentThresholdBoost</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::MaxPercentThresholdBoost</qualifiedname>
+        <briefdescription>
+<para>If complete unrolling will reduce the cost of the loop, we will boost the Threshold by a certain percent to allow more aggressive complete unrolling. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This value provides the maximum boost percentage that we can apply to Threshold (The value should be no less than 100). BoostedThreshold = Threshold * min(RolledCost / UnrolledCost, MaxPercentThresholdBoost / 100) E.g. if complete unrolling reduces the loop execution time by 50% then we boost the threshold by the factor of 2x. If unrolling is not expected to reduce the running time, then we do not increase the threshold. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="555" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="555" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a76ff47379fde965c509112d7a0c5c5bd" compoundref="_loop_unroll_pass_8cpp" startline="838" endline="866">shouldFullUnroll</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1af9a7105299bd43b8b61c803f26e4a31b" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::OptSizeThreshold</definition>
+        <argsstring></argsstring>
+        <name>OptSizeThreshold</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::OptSizeThreshold</qualifiedname>
+        <briefdescription>
+<para>The cost threshold for the unrolled loop when optimizing for size (set to UINT_MAX to disable). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="558" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="558" bodyend="-1"/>
+        <referencedby refid="_o_m_p_i_r_builder_8cpp_1a946282957319b8c23ab9f169abb504c4" compoundref="_o_m_p_i_r_builder_8cpp" startline="5484" endline="5610">computeHeuristicUnrollFactor</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a6c22989c03e43928e4b09cfa60a804f5" compoundref="_a_r_m_target_transform_info_8cpp" startline="2501" endline="2629">llvm::ARMTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a1017f6873c8e5d75aa472aa3f06b48e3" compoundref="_basic_t_t_i_impl_8h" startline="622" endline="692">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_t_t_i_impl_1a978825baa870839107dcb64531311bca" compoundref="_r_i_s_c_v_target_transform_info_8cpp" startline="2276" endline="2351">llvm::RISCVTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_web_assembly_t_t_i_impl_1acaa381079caefe69853af81f25e67928" compoundref="_web_assembly_target_transform_info_8cpp" startline="107" endline="132">llvm::WebAssemblyTTIImpl::getUnrollingPreferences</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1ae28e05c1aac288aa7e4a49d858b35c46" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::PartialThreshold</definition>
+        <argsstring></argsstring>
+        <name>PartialThreshold</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::PartialThreshold</qualifiedname>
+        <briefdescription>
+<para>The cost threshold for the unrolled loop, like Threshold, but used for partial/runtime unrolling (set to UINT_MAX to disable). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="561" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="561" bodyend="-1"/>
+        <referencedby refid="_o_m_p_i_r_builder_8cpp_1a946282957319b8c23ab9f169abb504c4" compoundref="_o_m_p_i_r_builder_8cpp" startline="5484" endline="5610">computeHeuristicUnrollFactor</referencedby>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1acfeb0fc40745a019c14fcfd5aadd9e70" compoundref="_a_arch64_target_transform_info_8cpp" startline="4219" endline="4285">llvm::AArch64TTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_t_t_i_impl_1a99fc6c25163b324f8642658b54e77687" compoundref="_a_m_d_g_p_u_target_transform_info_8cpp" startline="110" endline="270">llvm::AMDGPUTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a1017f6873c8e5d75aa472aa3f06b48e3" compoundref="_basic_t_t_i_impl_8h" startline="622" endline="692">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_n_v_p_t_x_t_t_i_impl_1a71ea7d50adb4500b9ca52778c045e4fc" compoundref="_n_v_p_t_x_target_transform_info_8cpp" startline="515" endline="526">llvm::NVPTXTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_t_t_i_impl_1a99733e87982c752be1218b2d87e592b9" compoundref="_system_z_target_transform_info_8cpp" startline="364" endline="418">llvm::SystemZTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_web_assembly_t_t_i_impl_1acaa381079caefe69853af81f25e67928" compoundref="_web_assembly_target_transform_info_8cpp" startline="107" endline="132">llvm::WebAssemblyTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a8ee3ddc86c52a6b3ae82ccf0dcdd023d" compoundref="_loop_unroll_pass_8cpp" startline="869" endline="915">shouldPartialUnroll</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a54b17420c467d2bb9edd2f79e54d2b6f" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::PartialOptSizeThreshold</definition>
+        <argsstring></argsstring>
+        <name>PartialOptSizeThreshold</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::PartialOptSizeThreshold</qualifiedname>
+        <briefdescription>
+<para>The cost threshold for the unrolled loop when optimizing for size, like OptSizeThreshold, but used for partial/runtime unrolling (set to UINT_MAX to disable). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="565" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="565" bodyend="-1"/>
+        <referencedby refid="_o_m_p_i_r_builder_8cpp_1a946282957319b8c23ab9f169abb504c4" compoundref="_o_m_p_i_r_builder_8cpp" startline="5484" endline="5610">computeHeuristicUnrollFactor</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1acfeb0fc40745a019c14fcfd5aadd9e70" compoundref="_a_arch64_target_transform_info_8cpp" startline="4219" endline="4285">llvm::AArch64TTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a6c22989c03e43928e4b09cfa60a804f5" compoundref="_a_r_m_target_transform_info_8cpp" startline="2501" endline="2629">llvm::ARMTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a1017f6873c8e5d75aa472aa3f06b48e3" compoundref="_basic_t_t_i_impl_8h" startline="622" endline="692">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_t_t_i_impl_1a978825baa870839107dcb64531311bca" compoundref="_r_i_s_c_v_target_transform_info_8cpp" startline="2276" endline="2351">llvm::RISCVTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_web_assembly_t_t_i_impl_1acaa381079caefe69853af81f25e67928" compoundref="_web_assembly_target_transform_info_8cpp" startline="107" endline="132">llvm::WebAssemblyTTIImpl::getUnrollingPreferences</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a19cc5df79c699ab1e137118b8c472a9e" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::Count</definition>
+        <argsstring></argsstring>
+        <name>Count</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::Count</qualifiedname>
+        <briefdescription>
+<para>A forced unrolling factor (the number of concatenated bodies of the original loop in the unrolled loop body). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When set to 0, the unrolling transformation will select an unrolling factor based on the current cost threshold and other factors. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="570" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="570" bodyend="-1"/>
+        <referencedby refid="_o_m_p_i_r_builder_8cpp_1a946282957319b8c23ab9f169abb504c4" compoundref="_o_m_p_i_r_builder_8cpp" startline="5484" endline="5610">computeHeuristicUnrollFactor</referencedby>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a3f16b49acc2669722d78d71f3163bbe6" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="150" endline="275">computeUnrollAndJamCount</referencedby>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a4c7ad5d6975830f45286fdee3adf7bd5" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="142" endline="146">getUnrollAndJammedLoopSize</referencedby>
+        <referencedby refid="classllvm_1_1_unroll_cost_estimator_1a5518251657ad8fecd98181257aab6e35" compoundref="_loop_unroll_pass_8cpp" startline="729" endline="738">llvm::UnrollCostEstimator::getUnrolledLoopSize</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a8ee3ddc86c52a6b3ae82ccf0dcdd023d" compoundref="_loop_unroll_pass_8cpp" startline="869" endline="915">shouldPartialUnroll</referencedby>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a671b52d0f3cddc29dcd1f5acfcd1e664" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="278" endline="421">tryToUnrollAndJamLoop</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a5ebdb0ee911db5f4304bc6b92b0fed98" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::DefaultUnrollRuntimeCount</definition>
+        <argsstring></argsstring>
+        <name>DefaultUnrollRuntimeCount</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::DefaultUnrollRuntimeCount</qualifiedname>
+        <briefdescription>
+<para>Default unroll count for loops with run-time trip count. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="572" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="572" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="_a_arch64_target_transform_info_8cpp_1a78171da3a30a449d469ccebbff57760e" compoundref="_a_arch64_target_transform_info_8cpp" startline="4101" endline="4217">getAppleRuntimeUnrollPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1acfeb0fc40745a019c14fcfd5aadd9e70" compoundref="_a_arch64_target_transform_info_8cpp" startline="4219" endline="4285">llvm::AArch64TTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a6c22989c03e43928e4b09cfa60a804f5" compoundref="_a_r_m_target_transform_info_8cpp" startline="2501" endline="2629">llvm::ARMTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_t_t_i_impl_1a99733e87982c752be1218b2d87e592b9" compoundref="_system_z_target_transform_info_8cpp" startline="364" endline="418">llvm::SystemZTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a8ee3ddc86c52a6b3ae82ccf0dcdd023d" compoundref="_loop_unroll_pass_8cpp" startline="869" endline="915">shouldPartialUnroll</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a0e3eba5cd35140f30d54eb8ef1fb0215" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::MaxCount</definition>
+        <argsstring></argsstring>
+        <name>MaxCount</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::MaxCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="577" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="577" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="_a_arch64_target_transform_info_8cpp_1a0ef183a0f2f6e678cc5f7223aca82535" compoundref="_a_arch64_target_transform_info_8cpp" startline="4051" endline="4096">getFalkorUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_t_t_i_impl_1a99fc6c25163b324f8642658b54e77687" compoundref="_a_m_d_g_p_u_target_transform_info_8cpp" startline="110" endline="270">llvm::AMDGPUTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_t_t_i_impl_1a99733e87982c752be1218b2d87e592b9" compoundref="_system_z_target_transform_info_8cpp" startline="364" endline="418">llvm::SystemZTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a8ee3ddc86c52a6b3ae82ccf0dcdd023d" compoundref="_loop_unroll_pass_8cpp" startline="869" endline="915">shouldPartialUnroll</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1afc0d01a3d1fda6a5702b045b4bcfa56c" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::MaxUpperBound</definition>
+        <argsstring></argsstring>
+        <name>MaxUpperBound</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::MaxUpperBound</qualifiedname>
+        <briefdescription>
+<para>Set the maximum upper bound of trip count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allowing the MaxUpperBound to be overrided by a target gives more flexiblity on certain cases. By default, MaxUpperBound uses UnrollMaxUpperBound which value is 8. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="581" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="581" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1aa34e1c78e0b01952be32ffe53cbabe27" compoundref="_loop_unroll_pass_8cpp" startline="798" endline="836">shouldPragmaUnroll</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1ac9d35cceaeac03c999997e0b4d3ebcb6" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::FullUnrollMaxCount</definition>
+        <argsstring></argsstring>
+        <name>FullUnrollMaxCount</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::FullUnrollMaxCount</qualifiedname>
+        <briefdescription>
+<para>Set the maximum unrolling factor for full unrolling. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Like MaxCount, but applies even if full unrolling is selected. This allows a target to fall back to Partial unrolling if full unrolling is above FullUnrollMaxCount. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="585" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="585" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_t_t_i_impl_1a99733e87982c752be1218b2d87e592b9" compoundref="_system_z_target_transform_info_8cpp" startline="364" endline="418">llvm::SystemZTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a76ff47379fde965c509112d7a0c5c5bd" compoundref="_loop_unroll_pass_8cpp" startline="838" endline="866">shouldFullUnroll</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1acc2a7ecc1c0355035c91448ed850390f" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::BEInsns</definition>
+        <argsstring></argsstring>
+        <name>BEInsns</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::BEInsns</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="590" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="590" bodyend="-1"/>
+        <referencedby refid="_o_m_p_i_r_builder_8cpp_1a946282957319b8c23ab9f169abb504c4" compoundref="_o_m_p_i_r_builder_8cpp" startline="5484" endline="5610">computeHeuristicUnrollFactor</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a4c7ad5d6975830f45286fdee3adf7bd5" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="142" endline="146">getUnrollAndJammedLoopSize</referencedby>
+        <referencedby refid="classllvm_1_1_unroll_cost_estimator_1a5518251657ad8fecd98181257aab6e35" compoundref="_loop_unroll_pass_8cpp" startline="729" endline="738">llvm::UnrollCostEstimator::getUnrolledLoopSize</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_t_t_i_impl_1a99fc6c25163b324f8642658b54e77687" compoundref="_a_m_d_g_p_u_target_transform_info_8cpp" startline="110" endline="270">llvm::AMDGPUTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a1017f6873c8e5d75aa472aa3f06b48e3" compoundref="_basic_t_t_i_impl_8h" startline="622" endline="692">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_web_assembly_t_t_i_impl_1acaa381079caefe69853af81f25e67928" compoundref="_web_assembly_target_transform_info_8cpp" startline="107" endline="132">llvm::WebAssemblyTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a8ee3ddc86c52a6b3ae82ccf0dcdd023d" compoundref="_loop_unroll_pass_8cpp" startline="869" endline="915">shouldPartialUnroll</referencedby>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a671b52d0f3cddc29dcd1f5acfcd1e664" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="278" endline="421">tryToUnrollAndJamLoop</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1af01349dac5ea8d7fc1d5bedcc82a17b8" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TargetTransformInfo::UnrollingPreferences::Partial</definition>
+        <argsstring></argsstring>
+        <name>Partial</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::Partial</qualifiedname>
+        <briefdescription>
+<para>Allow partial unrolling (unrolling of loops to expand the size of the loop body, not only to eliminate small constant-trip-count loops). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="593" column="10" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="593" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1acfeb0fc40745a019c14fcfd5aadd9e70" compoundref="_a_arch64_target_transform_info_8cpp" startline="4219" endline="4285">llvm::AArch64TTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_t_t_i_impl_1a99fc6c25163b324f8642658b54e77687" compoundref="_a_m_d_g_p_u_target_transform_info_8cpp" startline="110" endline="270">llvm::AMDGPUTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a6c22989c03e43928e4b09cfa60a804f5" compoundref="_a_r_m_target_transform_info_8cpp" startline="2501" endline="2629">llvm::ARMTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a1017f6873c8e5d75aa472aa3f06b48e3" compoundref="_basic_t_t_i_impl_8h" startline="622" endline="692">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_hexagon_t_t_i_impl_1a2b6140cc716c4bf1dc53ea56de9ec18e" compoundref="_hexagon_target_transform_info_8cpp" startline="81" endline="85">llvm::HexagonTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_n_v_p_t_x_t_t_i_impl_1a71ea7d50adb4500b9ca52778c045e4fc" compoundref="_n_v_p_t_x_target_transform_info_8cpp" startline="515" endline="526">llvm::NVPTXTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a6801a1b19bf8856a09f270d85fe25e9b" compoundref="_p_p_c_target_transform_info_8cpp" startline="398" endline="412">llvm::PPCTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_t_t_i_impl_1a978825baa870839107dcb64531311bca" compoundref="_r_i_s_c_v_target_transform_info_8cpp" startline="2276" endline="2351">llvm::RISCVTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_t_t_i_impl_1a99733e87982c752be1218b2d87e592b9" compoundref="_system_z_target_transform_info_8cpp" startline="364" endline="418">llvm::SystemZTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_web_assembly_t_t_i_impl_1acaa381079caefe69853af81f25e67928" compoundref="_web_assembly_target_transform_info_8cpp" startline="107" endline="132">llvm::WebAssemblyTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a8ee3ddc86c52a6b3ae82ccf0dcdd023d" compoundref="_loop_unroll_pass_8cpp" startline="869" endline="915">shouldPartialUnroll</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1ae31307b4efc5ce5311752041e7ff7cdc" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TargetTransformInfo::UnrollingPreferences::Runtime</definition>
+        <argsstring></argsstring>
+        <name>Runtime</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::Runtime</qualifiedname>
+        <briefdescription>
+<para>Allow runtime unrolling (unrolling of loops to expand the size of the loop body even when the number of loop iterations is not known at compile time). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="597" column="10" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="597" bodyend="-1"/>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a3f16b49acc2669722d78d71f3163bbe6" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="150" endline="275">computeUnrollAndJamCount</referencedby>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="_a_arch64_target_transform_info_8cpp_1a78171da3a30a449d469ccebbff57760e" compoundref="_a_arch64_target_transform_info_8cpp" startline="4101" endline="4217">getAppleRuntimeUnrollPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1acfeb0fc40745a019c14fcfd5aadd9e70" compoundref="_a_arch64_target_transform_info_8cpp" startline="4219" endline="4285">llvm::AArch64TTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_t_t_i_impl_1a99fc6c25163b324f8642658b54e77687" compoundref="_a_m_d_g_p_u_target_transform_info_8cpp" startline="110" endline="270">llvm::AMDGPUTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a6c22989c03e43928e4b09cfa60a804f5" compoundref="_a_r_m_target_transform_info_8cpp" startline="2501" endline="2629">llvm::ARMTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a1017f6873c8e5d75aa472aa3f06b48e3" compoundref="_basic_t_t_i_impl_8h" startline="622" endline="692">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_hexagon_t_t_i_impl_1a2b6140cc716c4bf1dc53ea56de9ec18e" compoundref="_hexagon_target_transform_info_8cpp" startline="81" endline="85">llvm::HexagonTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_n_v_p_t_x_t_t_i_impl_1a71ea7d50adb4500b9ca52778c045e4fc" compoundref="_n_v_p_t_x_target_transform_info_8cpp" startline="515" endline="526">llvm::NVPTXTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a6801a1b19bf8856a09f270d85fe25e9b" compoundref="_p_p_c_target_transform_info_8cpp" startline="398" endline="412">llvm::PPCTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_t_t_i_impl_1a978825baa870839107dcb64531311bca" compoundref="_r_i_s_c_v_target_transform_info_8cpp" startline="2276" endline="2351">llvm::RISCVTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_t_t_i_impl_1a99733e87982c752be1218b2d87e592b9" compoundref="_system_z_target_transform_info_8cpp" startline="364" endline="418">llvm::SystemZTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_web_assembly_t_t_i_impl_1acaa381079caefe69853af81f25e67928" compoundref="_web_assembly_target_transform_info_8cpp" startline="107" endline="132">llvm::WebAssemblyTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1abb51de50739e767745339e9bb2aa31a4" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TargetTransformInfo::UnrollingPreferences::AllowRemainder</definition>
+        <argsstring></argsstring>
+        <name>AllowRemainder</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::AllowRemainder</qualifiedname>
+        <briefdescription>
+<para>Allow generation of a loop remainder (extra iterations after unroll). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="599" column="10" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="599" bodyend="-1"/>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a3f16b49acc2669722d78d71f3163bbe6" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="150" endline="275">computeUnrollAndJamCount</referencedby>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a8ee3ddc86c52a6b3ae82ccf0dcdd023d" compoundref="_loop_unroll_pass_8cpp" startline="869" endline="915">shouldPartialUnroll</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1aa34e1c78e0b01952be32ffe53cbabe27" compoundref="_loop_unroll_pass_8cpp" startline="798" endline="836">shouldPragmaUnroll</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1afaa4eb31d0f39aa8c7ac8d081a39fec5" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TargetTransformInfo::UnrollingPreferences::AllowExpensiveTripCount</definition>
+        <argsstring></argsstring>
+        <name>AllowExpensiveTripCount</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::AllowExpensiveTripCount</qualifiedname>
+        <briefdescription>
+<para>Allow emitting expensive instructions (such as divisions) when computing the trip count of a loop for runtime unrolling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="602" column="10" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="602" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a6801a1b19bf8856a09f270d85fe25e9b" compoundref="_p_p_c_target_transform_info_8cpp" startline="398" endline="412">llvm::PPCTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_t_t_i_impl_1a99733e87982c752be1218b2d87e592b9" compoundref="_system_z_target_transform_info_8cpp" startline="364" endline="418">llvm::SystemZTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a4217ba2e3d1295f8e9e6b49cef2a8b76" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TargetTransformInfo::UnrollingPreferences::Force</definition>
+        <argsstring></argsstring>
+        <name>Force</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::Force</qualifiedname>
+        <briefdescription>
+<para>Apply loop unroll on any kind of loop (mainly to loops that fail runtime unrolling). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="605" column="10" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="605" bodyend="-1"/>
+        <referencedby refid="_o_m_p_i_r_builder_8cpp_1a946282957319b8c23ab9f169abb504c4" compoundref="_o_m_p_i_r_builder_8cpp" startline="5484" endline="5610">computeHeuristicUnrollFactor</referencedby>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a3f16b49acc2669722d78d71f3163bbe6" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="150" endline="275">computeUnrollAndJamCount</referencedby>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a6c22989c03e43928e4b09cfa60a804f5" compoundref="_a_r_m_target_transform_info_8cpp" startline="2501" endline="2629">llvm::ARMTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_t_t_i_impl_1a978825baa870839107dcb64531311bca" compoundref="_r_i_s_c_v_target_transform_info_8cpp" startline="2276" endline="2351">llvm::RISCVTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_t_t_i_impl_1a99733e87982c752be1218b2d87e592b9" compoundref="_system_z_target_transform_info_8cpp" startline="364" endline="418">llvm::SystemZTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a20a872a70cd97f4915f64fb9470c32d0" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TargetTransformInfo::UnrollingPreferences::UpperBound</definition>
+        <argsstring></argsstring>
+        <name>UpperBound</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::UpperBound</qualifiedname>
+        <briefdescription>
+<para>Allow using trip count upper bound to unroll loops. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="607" column="10" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="607" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1a921421142b15c9fb9196fc4b0d7b77cb" compoundref="_loop_unroll_pass_8cpp" startline="924" endline="1155">llvm::computeUnrollCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1acfeb0fc40745a019c14fcfd5aadd9e70" compoundref="_a_arch64_target_transform_info_8cpp" startline="4219" endline="4285">llvm::AArch64TTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a6c22989c03e43928e4b09cfa60a804f5" compoundref="_a_r_m_target_transform_info_8cpp" startline="2501" endline="2629">llvm::ARMTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a1017f6873c8e5d75aa472aa3f06b48e3" compoundref="_basic_t_t_i_impl_8h" startline="622" endline="692">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_t_t_i_impl_1a978825baa870839107dcb64531311bca" compoundref="_r_i_s_c_v_target_transform_info_8cpp" startline="2276" endline="2351">llvm::RISCVTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_web_assembly_t_t_i_impl_1acaa381079caefe69853af81f25e67928" compoundref="_web_assembly_target_transform_info_8cpp" startline="107" endline="132">llvm::WebAssemblyTTIImpl::getUnrollingPreferences</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1ac0713be3d080bf7e023ddb524f6eabe7" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TargetTransformInfo::UnrollingPreferences::UnrollRemainder</definition>
+        <argsstring></argsstring>
+        <name>UnrollRemainder</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::UnrollRemainder</qualifiedname>
+        <briefdescription>
+<para>Allow unrolling of all the iterations of the runtime loop remainder. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="609" column="10" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="609" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1acfeb0fc40745a019c14fcfd5aadd9e70" compoundref="_a_arch64_target_transform_info_8cpp" startline="4219" endline="4285">llvm::AArch64TTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a6c22989c03e43928e4b09cfa60a804f5" compoundref="_a_r_m_target_transform_info_8cpp" startline="2501" endline="2629">llvm::ARMTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_t_t_i_impl_1a978825baa870839107dcb64531311bca" compoundref="_r_i_s_c_v_target_transform_info_8cpp" startline="2276" endline="2351">llvm::RISCVTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a671b52d0f3cddc29dcd1f5acfcd1e664" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="278" endline="421">tryToUnrollAndJamLoop</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1abbdf27d466fda1df8f9ce6f256026cce" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TargetTransformInfo::UnrollingPreferences::UnrollAndJam</definition>
+        <argsstring></argsstring>
+        <name>UnrollAndJam</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::UnrollAndJam</qualifiedname>
+        <briefdescription>
+<para>Allow unroll and jam. Used to enable unroll and jam for the target. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="611" column="10" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="611" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1acfeb0fc40745a019c14fcfd5aadd9e70" compoundref="_a_arch64_target_transform_info_8cpp" startline="4219" endline="4285">llvm::AArch64TTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a6c22989c03e43928e4b09cfa60a804f5" compoundref="_a_r_m_target_transform_info_8cpp" startline="2501" endline="2629">llvm::ARMTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_t_t_i_impl_1a978825baa870839107dcb64531311bca" compoundref="_r_i_s_c_v_target_transform_info_8cpp" startline="2276" endline="2351">llvm::RISCVTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a671b52d0f3cddc29dcd1f5acfcd1e664" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="278" endline="421">tryToUnrollAndJamLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a83395d28f9c1d9063aa6d9eb40dd2e7a" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::UnrollAndJamInnerLoopThreshold</definition>
+        <argsstring></argsstring>
+        <name>UnrollAndJamInnerLoopThreshold</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::UnrollAndJamInnerLoopThreshold</qualifiedname>
+        <briefdescription>
+<para>Threshold for unroll and jam, for inner loop size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The &apos;Threshold&apos; value above is used during unroll and jam for the outer loop size. This value is used in the same manner to limit the size of the inner loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="616" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="616" bodyend="-1"/>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a3f16b49acc2669722d78d71f3163bbe6" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="150" endline="275">computeUnrollAndJamCount</referencedby>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1acfeb0fc40745a019c14fcfd5aadd9e70" compoundref="_a_arch64_target_transform_info_8cpp" startline="4219" endline="4285">llvm::AArch64TTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1a6c22989c03e43928e4b09cfa60a804f5" compoundref="_a_r_m_target_transform_info_8cpp" startline="2501" endline="2629">llvm::ARMTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_and_jam_pass_8cpp_1a671b52d0f3cddc29dcd1f5acfcd1e664" compoundref="_loop_unroll_and_jam_pass_8cpp" startline="278" endline="421">tryToUnrollAndJamLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1ab826709c552acec43be43f958b750105" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::MaxIterationsCountToAnalyze</definition>
+        <argsstring></argsstring>
+        <name>MaxIterationsCountToAnalyze</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::MaxIterationsCountToAnalyze</qualifiedname>
+        <briefdescription>
+<para>Don&apos;t allow loop unrolling to simulate more than this number of iterations when checking full unroll profitability. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="619" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="619" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_t_t_i_impl_1a99fc6c25163b324f8642658b54e77687" compoundref="_a_m_d_g_p_u_target_transform_info_8cpp" startline="110" endline="270">llvm::AMDGPUTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a76ff47379fde965c509112d7a0c5c5bd" compoundref="_loop_unroll_pass_8cpp" startline="838" endline="866">shouldFullUnroll</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a5d4cb9fb552657b2138b925b44315d21" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TargetTransformInfo::UnrollingPreferences::UnrollVectorizedLoop</definition>
+        <argsstring></argsstring>
+        <name>UnrollVectorizedLoop</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::UnrollVectorizedLoop</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Don&apos;t disable runtime unroll for the loops which were vectorized. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="621" column="10" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="621" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1acbe2feb9e960936a43c845a1fa8eaba4" compoundref="_loop_vectorize_8cpp" startline="7639" endline="7794">llvm::LoopVectorizationPlanner::executePlan</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_t_t_i_impl_1a99fc6c25163b324f8642658b54e77687" compoundref="_a_m_d_g_p_u_target_transform_info_8cpp" startline="110" endline="270">llvm::AMDGPUTTIImpl::getUnrollingPreferences</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a7b1e34c2a72a2036de22e33ab5e88627" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::TargetTransformInfo::UnrollingPreferences::SCEVExpansionBudget</definition>
+        <argsstring></argsstring>
+        <name>SCEVExpansionBudget</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::SCEVExpansionBudget</qualifiedname>
+        <briefdescription>
+<para>Don&apos;t allow runtime unrolling if expanding the trip count takes more than SCEVExpansionBudget. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="624" column="14" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="624" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="_a_arch64_target_transform_info_8cpp_1a78171da3a30a449d469ccebbff57760e" compoundref="_a_arch64_target_transform_info_8cpp" startline="4101" endline="4217">getAppleRuntimeUnrollPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a75cdb3cba77995d63d624a2d632ed2e3" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TargetTransformInfo::UnrollingPreferences::RuntimeUnrollMultiExit</definition>
+        <argsstring></argsstring>
+        <name>RuntimeUnrollMultiExit</name>
+        <qualifiedname>llvm::TargetTransformInfo::UnrollingPreferences::RuntimeUnrollMultiExit</qualifiedname>
+        <briefdescription>
+<para>Allow runtime unrolling multi-exit loops. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Should only be set if the target determined that multi-exit unrolling is profitable for the loop. Fall back to the generic logic to determine whether multi-exit unrolling is profitable if set to false. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/TargetTransformInfo.h" line="629" column="10" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="629" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1abd642fa74effc122158e6fb11da78600" compoundref="_loop_unroll_pass_8cpp" startline="189" endline="283">llvm::gatherUnrollingPreferences</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1ab6df82212b20d28e61ff9417744420ff" compoundref="_loop_unroll_pass_8cpp" startline="1158" endline="1389">tryToUnrollLoop</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Parameters that control the generic loop unrolling transformation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="1">
+        <label>llvm::TargetTransformInfo::UnrollingPreferences</label>
+        <link refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>BEInsns</edgelabel>
+          <edgelabel>Count</edgelabel>
+          <edgelabel>DefaultUnrollRuntimeCount</edgelabel>
+          <edgelabel>FullUnrollMaxCount</edgelabel>
+          <edgelabel>MaxCount</edgelabel>
+          <edgelabel>MaxIterationsCountToAnalyze</edgelabel>
+          <edgelabel>MaxPercentThresholdBoost</edgelabel>
+          <edgelabel>MaxUpperBound</edgelabel>
+          <edgelabel>OptSizeThreshold</edgelabel>
+          <edgelabel>PartialOptSizeThreshold</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>AllowExpensiveTripCount</edgelabel>
+          <edgelabel>AllowRemainder</edgelabel>
+          <edgelabel>Force</edgelabel>
+          <edgelabel>Partial</edgelabel>
+          <edgelabel>Runtime</edgelabel>
+          <edgelabel>RuntimeUnrollMultiExit</edgelabel>
+          <edgelabel>UnrollAndJam</edgelabel>
+          <edgelabel>UnrollRemainder</edgelabel>
+          <edgelabel>UnrollVectorizedLoop</edgelabel>
+          <edgelabel>UpperBound</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Analysis/TargetTransformInfo.h" line="536" column="3" bodyfile="include/llvm/Analysis/TargetTransformInfo.h" bodystart="536" bodyend="630"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1afaa4eb31d0f39aa8c7ac8d081a39fec5" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>AllowExpensiveTripCount</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1abb51de50739e767745339e9bb2aa31a4" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>AllowRemainder</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1acc2a7ecc1c0355035c91448ed850390f" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>BEInsns</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a19cc5df79c699ab1e137118b8c472a9e" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>Count</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a5ebdb0ee911db5f4304bc6b92b0fed98" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>DefaultUnrollRuntimeCount</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a4217ba2e3d1295f8e9e6b49cef2a8b76" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>Force</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1ac9d35cceaeac03c999997e0b4d3ebcb6" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>FullUnrollMaxCount</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a0e3eba5cd35140f30d54eb8ef1fb0215" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>MaxCount</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1ab826709c552acec43be43f958b750105" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>MaxIterationsCountToAnalyze</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a63a7a13b9f772e6c656e94fb7e251d46" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>MaxPercentThresholdBoost</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1afc0d01a3d1fda6a5702b045b4bcfa56c" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>MaxUpperBound</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1af9a7105299bd43b8b61c803f26e4a31b" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>OptSizeThreshold</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1af01349dac5ea8d7fc1d5bedcc82a17b8" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>Partial</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a54b17420c467d2bb9edd2f79e54d2b6f" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>PartialOptSizeThreshold</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1ae28e05c1aac288aa7e4a49d858b35c46" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>PartialThreshold</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1ae31307b4efc5ce5311752041e7ff7cdc" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>Runtime</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a75cdb3cba77995d63d624a2d632ed2e3" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>RuntimeUnrollMultiExit</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a7b1e34c2a72a2036de22e33ab5e88627" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>SCEVExpansionBudget</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a21e7febf468c370793f606da5cd0e6fe" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>Threshold</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1abbdf27d466fda1df8f9ce6f256026cce" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>UnrollAndJam</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a83395d28f9c1d9063aa6d9eb40dd2e7a" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>UnrollAndJamInnerLoopThreshold</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1ac0713be3d080bf7e023ddb524f6eabe7" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>UnrollRemainder</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a5d4cb9fb552657b2138b925b44315d21" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>UnrollVectorizedLoop</name></member>
+      <member refid="structllvm_1_1_target_transform_info_1_1_unrolling_preferences_1a20a872a70cd97f4915f64fb9470c32d0" prot="public" virt="non-virtual"><scope>llvm::TargetTransformInfo::UnrollingPreferences</scope><name>UpperBound</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

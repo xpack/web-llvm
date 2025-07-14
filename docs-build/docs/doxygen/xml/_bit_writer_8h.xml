@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_bit_writer_8h" kind="file" language="C++">
+    <compoundname>BitWriter.h</compoundname>
+    <includes refid="_extern_c_8h" local="yes">llvm-c/ExternC.h</includes>
+    <includes refid="_types_8h" local="yes">llvm-c/Types.h</includes>
+    <includedby refid="_bit_writer_8cpp" local="yes">lib/Bitcode/Writer/BitWriter.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm-c/BitWriter.h</label>
+        <link refid="_bit_writer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm-c/ExternC.h</label>
+        <link refid="_extern_c_8h"/>
+      </node>
+      <node id="3">
+        <label>llvm-c/Types.h</label>
+        <link refid="_types_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>inttypes.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="7">
+        <label>sys/types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm-c/BitWriter.h</label>
+        <link refid="_bit_writer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Bitcode/Writer/BitWriter.cpp</label>
+        <link refid="_bit_writer_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <member refid="group___l_l_v_m_c_bit_writer_1ga10b86ad44bcad46fcf80cc525949703d" kind="function"><name>LLVMWriteBitcodeToFile</name></member>
+      <member refid="group___l_l_v_m_c_bit_writer_1ga75ab6d85381957cd9c487b4bd1069bce" kind="function"><name>LLVMWriteBitcodeToFD</name></member>
+      <member refid="group___l_l_v_m_c_bit_writer_1ga265dfc97cc8af15a31cf876a107fb7d0" kind="function"><name>LLVMWriteBitcodeToFileHandle</name></member>
+      <member refid="group___l_l_v_m_c_bit_writer_1ga43cccd6ab4fe5c042fc59d972430c97f" kind="function"><name>LLVMWriteBitcodeToMemoryBuffer</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*===--<sp/>llvm-c/BitWriter.h<sp/>-<sp/>BitWriter<sp/>Library<sp/>C<sp/>Interface<sp/>------*-<sp/>C++<sp/>-*-===*\</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">|*<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">|*<sp/>Exceptions.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">|*<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">|*<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">|*===----------------------------------------------------------------------===*|</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">|*<sp/>This<sp/>header<sp/>declares<sp/>the<sp/>C<sp/>interface<sp/>to<sp/>libLLVMBitWriter.a,<sp/>which<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">|*<sp/>implements<sp/>output<sp/>of<sp/>the<sp/>LLVM<sp/>bitcode<sp/>format.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">|*<sp/>Many<sp/>exotic<sp/>languages<sp/>can<sp/>interoperate<sp/>with<sp/>C<sp/>code<sp/>but<sp/>have<sp/>a<sp/>harder<sp/>time<sp/><sp/>*|</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">|*<sp/>with<sp/>C++<sp/>due<sp/>to<sp/>name<sp/>mangling.<sp/>So<sp/>in<sp/>addition<sp/>to<sp/>C,<sp/>this<sp/>interface<sp/>enables<sp/>*|</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">|*<sp/>tools<sp/>written<sp/>in<sp/>such<sp/>languages.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">\*===----------------------------------------------------------------------===*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_C_BITWRITER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_C_BITWRITER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_extern_c_8h" kindref="compound">llvm-c/ExternC.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_types_8h" kindref="compound">llvm-c/Types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="_extern_c_8h_1a4789aaabaa5bf3b7a549171b47cc4d4a" kindref="member">LLVM_C_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="27"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>@defgroup<sp/>LLVMCBitWriter<sp/>Bit<sp/>Writer</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>@ingroup<sp/>LLVMC</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>@{</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*===--<sp/>Operations<sp/>on<sp/>modules<sp/>---------------------------------------------===*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="36"><highlight class="comment">/**<sp/>Writes<sp/>a<sp/>module<sp/>to<sp/>the<sp/>specified<sp/>path.<sp/>Returns<sp/>0<sp/>on<sp/>success.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group___l_l_v_m_c_bit_writer_1ga10b86ad44bcad46fcf80cc525949703d" kindref="member">LLVMWriteBitcodeToFile</ref>(<ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>M,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*Path);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="39"><highlight class="comment">/**<sp/>Writes<sp/>a<sp/>module<sp/>to<sp/>an<sp/>open<sp/>file<sp/>descriptor.<sp/>Returns<sp/>0<sp/>on<sp/>success.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group___l_l_v_m_c_bit_writer_1ga75ab6d85381957cd9c487b4bd1069bce" kindref="member">LLVMWriteBitcodeToFD</ref>(<ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>M,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FD,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ShouldClose,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Unbuffered);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="43"><highlight class="comment">/**<sp/>Deprecated<sp/>for<sp/>LLVMWriteBitcodeToFD.<sp/>Writes<sp/>a<sp/>module<sp/>to<sp/>an<sp/>open<sp/>file</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/><sp/>descriptor.<sp/>Returns<sp/>0<sp/>on<sp/>success.<sp/>Closes<sp/>the<sp/>Handle.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group___l_l_v_m_c_bit_writer_1ga265dfc97cc8af15a31cf876a107fb7d0" kindref="member">LLVMWriteBitcodeToFileHandle</ref>(<ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>M,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Handle);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="47"><highlight class="comment">/**<sp/>Writes<sp/>a<sp/>module<sp/>to<sp/>a<sp/>new<sp/>memory<sp/>buffer<sp/>and<sp/>returns<sp/>it.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="group___l_l_v_m_c_support_types_1ga9867eaa7b17ba17405cdf2539bedb108" kindref="member">LLVMMemoryBufferRef</ref><sp/><ref refid="group___l_l_v_m_c_bit_writer_1ga43cccd6ab4fe5c042fc59d972430c97f" kindref="member">LLVMWriteBitcodeToMemoryBuffer</ref>(<ref refid="group___l_l_v_m_c_support_types_1gad1d1bb5f901c903a0cf09c5a053c9c56" kindref="member">LLVMModuleRef</ref><sp/>M);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>@}</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="_extern_c_8h_1ae016a3733553fe3990c8dfcec10d9d3a" kindref="member">LLVM_C_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm-c/BitWriter.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,719 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group___l_l_v_m_c_disassembler" kind="group">
+    <compoundname>LLVMCDisassembler</compoundname>
+    <title>Disassembler</title>
+    <innerclass refid="struct_l_l_v_m_op_info_symbol1" prot="public">LLVMOpInfoSymbol1</innerclass>
+    <innerclass refid="struct_l_l_v_m_op_info1" prot="public">LLVMOpInfo1</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group___l_l_v_m_c_disassembler_1gae903996143e88ff186c738f81122094e" prot="public" static="no">
+        <type>void *</type>
+        <definition>typedef void* LLVMDisasmContextRef</definition>
+        <argsstring></argsstring>
+        <name>LLVMDisasmContextRef</name>
+        <briefdescription>
+<para>An opaque reference to a disassembler context. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="29" column="14" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___l_l_v_m_c_disassembler_1gaa8eb7ea1e53fd6e7a11b6aa4749c6e60" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(* LLVMOpInfoCallback) (void *DisInfo, uint64_t PC, uint64_t Offset, uint64_t OpSize, uint64_t InstSize, int TagType, void *TagBuf)</definition>
+        <argsstring>)(void *DisInfo, uint64_t PC, uint64_t Offset, uint64_t OpSize, uint64_t InstSize, int TagType, void *TagBuf)</argsstring>
+        <name>LLVMOpInfoCallback</name>
+        <briefdescription>
+<para>The type for the operand information call back function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is called to get the symbolic information for an operand of an instruction. Typically this is from the relocation information, symbol table, etc. That block of information is saved when the disassembler context is created and passed to the call back in the DisInfo parameter. The instruction containing operand is at the PC parameter. For some instruction sets, there can be more than one operand with symbolic information. To determine the symbolic operand information for each operand, the bytes for the specific operand in the instruction are specified by the Offset parameter and its byte widith is the OpSize parameter. For instructions sets with fixed widths and one symbolic operand per instruction, the Offset parameter will be zero and InstSize parameter will be the instruction width. The information is returned in TagBuf and is Triple specific with its specific information defined by the value of TagType for that Triple. If symbolic information is returned the function * returns 1, otherwise it returns 0. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="48" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___l_l_v_m_c_disassembler_1ga05ffa603beb390898904a06b14ee5537" prot="public" static="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *(*</type>
+        <definition>typedef const char *(* LLVMSymbolLookupCallback) (void *DisInfo, uint64_t ReferenceValue, uint64_t *ReferenceType, uint64_t ReferencePC, const char **ReferenceName)</definition>
+        <argsstring>)(void *DisInfo, uint64_t ReferenceValue, uint64_t *ReferenceType, uint64_t ReferencePC, const char **ReferenceName)</argsstring>
+        <name>LLVMSymbolLookupCallback</name>
+        <briefdescription>
+<para>The type for the symbol lookup function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This may be called by the disassembler for things like adding a comment for a PC plus a constant offset load instruction to use a symbol name instead of a load address value. It is passed the block information is saved when the disassembler context is created and the ReferenceValue to look up as a symbol. If no symbol is found for the ReferenceValue NULL is returned. The <ref refid="class_reference_type" kindref="compound">ReferenceType</ref> of the instruction is passed indirectly as is the PC of the instruction in ReferencePC. If the output reference can be determined its type is returned indirectly in <ref refid="class_reference_type" kindref="compound">ReferenceType</ref> along with ReferenceName if any, or that is set to NULL. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="118" column="15" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_l_v_m_c_disassembler_1gab2235be6ece819e49dbde7cd52c3a2d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_extern_c_8h_1a4789aaabaa5bf3b7a549171b47cc4d4a" kindref="member">LLVM_C_EXTERN_C_BEGIN</ref> <ref refid="group___l_l_v_m_c_disassembler_1gae903996143e88ff186c738f81122094e" kindref="member">LLVMDisasmContextRef</ref></type>
+        <definition>LLVM_C_EXTERN_C_BEGIN LLVMDisasmContextRef LLVMCreateDisasm</definition>
+        <argsstring>(const char *TripleName, void *DisInfo, int TagType, LLVMOpInfoCallback GetOpInfo, LLVMSymbolLookupCallback SymbolLookUp)</argsstring>
+        <name>LLVMCreateDisasm</name>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>TripleName</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>DisInfo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>TagType</declname>
+        </param>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_disassembler_1gaa8eb7ea1e53fd6e7a11b6aa4749c6e60" kindref="member">LLVMOpInfoCallback</ref></type>
+          <declname>GetOpInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_disassembler_1ga05ffa603beb390898904a06b14ee5537" kindref="member">LLVMSymbolLookupCallback</ref></type>
+          <declname>SymbolLookUp</declname>
+        </param>
+        <briefdescription>
+<para>Create a disassembler for the TripleName. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Symbolic disassembly is supported by passing a block of information in the DisInfo parameter and specifying the TagType and callback functions as described above. These can all be passed as NULL. If successful, this returns a disassembler context. If not, it returns NULL. This function is equivalent to calling <ref refid="group___l_l_v_m_c_disassembler_1ga0ed319f9f853493c0b38e551ec2adfc5" kindref="member">LLVMCreateDisasmCPUFeatures()</ref> with an empty CPU name and feature set. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="38" column="22" bodyfile="lib/MC/MCDisassembler/Disassembler.cpp" bodystart="121" bodyend="126" declfile="include/llvm-c/Disassembler.h" declline="38" declcolumn="22"/>
+        <references refid="group___l_l_v_m_c_disassembler_1ga0ed319f9f853493c0b38e551ec2adfc5" compoundref="_disassembler_8cpp" startline="44" endline="111">LLVMCreateDisasmCPUFeatures</references>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_disassembler_1ga906d56cff22d17c94cae0c91fa36f6e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___l_l_v_m_c_disassembler_1gae903996143e88ff186c738f81122094e" kindref="member">LLVMDisasmContextRef</ref></type>
+        <definition>LLVMDisasmContextRef LLVMCreateDisasmCPU</definition>
+        <argsstring>(const char *Triple, const char *CPU, void *DisInfo, int TagType, LLVMOpInfoCallback GetOpInfo, LLVMSymbolLookupCallback SymbolLookUp)</argsstring>
+        <name>LLVMCreateDisasmCPU</name>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Triple</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>CPU</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>DisInfo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>TagType</declname>
+        </param>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_disassembler_1gaa8eb7ea1e53fd6e7a11b6aa4749c6e60" kindref="member">LLVMOpInfoCallback</ref></type>
+          <declname>GetOpInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_disassembler_1ga05ffa603beb390898904a06b14ee5537" kindref="member">LLVMSymbolLookupCallback</ref></type>
+          <declname>SymbolLookUp</declname>
+        </param>
+        <briefdescription>
+<para>Create a disassembler for the TripleName and a specific CPU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Symbolic disassembly is supported by passing a block of information in the DisInfo parameter and specifying the TagType and callback functions as described above. These can all be passed * as NULL. If successful, this returns a disassembler context. If not, it returns NULL. This function is equivalent to calling <ref refid="group___l_l_v_m_c_disassembler_1ga0ed319f9f853493c0b38e551ec2adfc5" kindref="member">LLVMCreateDisasmCPUFeatures()</ref> with an empty feature set. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="50" column="22" bodyfile="lib/MC/MCDisassembler/Disassembler.cpp" bodystart="114" bodyend="119" declfile="include/llvm-c/Disassembler.h" declline="50" declcolumn="22"/>
+        <references refid="group___l_l_v_m_c_disassembler_1ga0ed319f9f853493c0b38e551ec2adfc5" compoundref="_disassembler_8cpp" startline="44" endline="111">LLVMCreateDisasmCPUFeatures</references>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_disassembler_1ga0ed319f9f853493c0b38e551ec2adfc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___l_l_v_m_c_disassembler_1gae903996143e88ff186c738f81122094e" kindref="member">LLVMDisasmContextRef</ref></type>
+        <definition>LLVMDisasmContextRef LLVMCreateDisasmCPUFeatures</definition>
+        <argsstring>(const char *Triple, const char *CPU, const char *Features, void *DisInfo, int TagType, LLVMOpInfoCallback GetOpInfo, LLVMSymbolLookupCallback SymbolLookUp)</argsstring>
+        <name>LLVMCreateDisasmCPUFeatures</name>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Triple</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>CPU</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Features</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>DisInfo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>TagType</declname>
+        </param>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_disassembler_1gaa8eb7ea1e53fd6e7a11b6aa4749c6e60" kindref="member">LLVMOpInfoCallback</ref></type>
+          <declname>GetOpInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_disassembler_1ga05ffa603beb390898904a06b14ee5537" kindref="member">LLVMSymbolLookupCallback</ref></type>
+          <declname>SymbolLookUp</declname>
+        </param>
+        <briefdescription>
+<para>Create a disassembler for the TripleName, a specific CPU and specific feature string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Symbolic disassembly is supported by passing a block of information in the DisInfo parameter and specifying the TagType and callback functions as described above. These can all be passed * as NULL. If successful, this returns a disassembler context. If not, it returns NULL. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="63" column="1" bodyfile="lib/MC/MCDisassembler/Disassembler.cpp" bodystart="44" bodyend="111" declfile="include/llvm-c/Disassembler.h" declline="63" declcolumn="1"/>
+        <references refid="classllvm_1_1_target_1a9a65dcb8a1d47b55360f95a575dedb62" compoundref="_target_registry_8h" startline="388" endline="393">llvm::Target::createMCAsmInfo</references>
+        <references refid="classllvm_1_1_target_1a9453c999bd3483858dec967aa3b8fca2" compoundref="_target_registry_8h" startline="497" endline="502">llvm::Target::createMCDisassembler</references>
+        <references refid="classllvm_1_1_target_1a9aecbb4df7336a0a60255508e24e93d3" compoundref="_target_registry_8h" startline="504" endline="511">llvm::Target::createMCInstPrinter</references>
+        <references refid="classllvm_1_1_target_1afbeb195717f888bfc2ba9f54e9623bae" compoundref="_target_registry_8h" startline="410" endline="414">llvm::Target::createMCInstrInfo</references>
+        <references refid="classllvm_1_1_target_1a7291082412f4df3356f434aac4685911" compoundref="_target_registry_8h" startline="426" endline="430">llvm::Target::createMCRegInfo</references>
+        <references refid="classllvm_1_1_target_1a6130eb3698f30c46e09f6f1b826c8e50" compoundref="_target_registry_8h" startline="577" endline="582">llvm::Target::createMCRelocationInfo</references>
+        <references refid="classllvm_1_1_target_1a3b11020c76ae0245d4aee684528e8a73" compoundref="_target_registry_8h" startline="441" endline="446">llvm::Target::createMCSubtargetInfo</references>
+        <references refid="classllvm_1_1_target_1a41d5b78272429261ccbbc0581e7e5a97" compoundref="_target_registry_8h" startline="597" endline="605">llvm::Target::createMCSymbolizer</references>
+        <references refid="structllvm_1_1_target_registry_1a85a69009ec328d5835241f56fb62cc6d" compoundref="_target_registry_8cpp" startline="153" endline="177">llvm::TargetRegistry::lookupTarget</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1a043768d184e14c6c14e4db9389e6218a" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="119" endline="119">llvm::LLVMDisasmContext::setCPU</references>
+        <referencedby refid="group___l_l_v_m_c_disassembler_1gab2235be6ece819e49dbde7cd52c3a2d8" compoundref="_disassembler_8cpp" startline="121" endline="126">LLVMCreateDisasm</referencedby>
+        <referencedby refid="group___l_l_v_m_c_disassembler_1ga906d56cff22d17c94cae0c91fa36f6e2" compoundref="_disassembler_8cpp" startline="114" endline="119">LLVMCreateDisasmCPU</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_disassembler_1gad1cbbd5aa7b51f04687926e8f9e4aebb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LLVMSetDisasmOptions</definition>
+        <argsstring>(LLVMDisasmContextRef DC, uint64_t Options)</argsstring>
+        <name>LLVMSetDisasmOptions</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_disassembler_1gae903996143e88ff186c738f81122094e" kindref="member">LLVMDisasmContextRef</ref></type>
+          <declname>DC</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Options</declname>
+        </param>
+        <briefdescription>
+<para>Set the disassembler&apos;s options. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns 1 if it can set the Options and 0 otherwise. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="72" column="5" bodyfile="lib/MC/MCDisassembler/Disassembler.cpp" bodystart="247" bodyend="296" declfile="include/llvm-c/Disassembler.h" declline="72" declcolumn="5"/>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1a242ff66f07dcc065b46e07959edf6e4d" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="117" endline="117">llvm::LLVMDisasmContext::addOptions</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1a26ae4b99e4c6cd8620f8603354572a33" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="83">llvm::LLVMDisasmContext::CommentStream</references>
+        <references refid="classllvm_1_1_target_1a9aecbb4df7336a0a60255508e24e93d3" compoundref="_target_registry_8h" startline="504" endline="511">llvm::Target::createMCInstPrinter</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1a4aaa235a27bfb38f0a782db0e5945176" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="110" endline="110">llvm::LLVMDisasmContext::getAsmInfo</references>
+        <references refid="classllvm_1_1_m_c_asm_info_1a403352e1bd073ad5ea775fa48b598d60" compoundref="_m_c_asm_info_8h" startline="567" endline="567">llvm::MCAsmInfo::getAssemblerDialect</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1ad1b025fe9218ff51f65b8d0be826e3db" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="111" endline="111">llvm::LLVMDisasmContext::getInstrInfo</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1acd7a5e2ee33e79a76e07153242061fc3" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="114" endline="114">llvm::LLVMDisasmContext::getIP</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1aa6a4fae6275aca4dfeb6d0e2618482ba" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="112" endline="112">llvm::LLVMDisasmContext::getRegisterInfo</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1aebf9ddd5b499d9fe5c3a5e8374ec6a73" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="108" endline="108">llvm::LLVMDisasmContext::getTarget</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1af6472ad3902ecbb48480e46eb60217b9" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="101" endline="101">llvm::LLVMDisasmContext::getTripleName</references>
+        <references refid="group___l_l_v_m_c_disassembler_1gae0ce9f25acf18f03656aebcd8b99f807" compoundref="include_2llvm-c_2_disassembler_8h" startline="79">LLVMDisassembler_Option_AsmPrinterVariant</references>
+        <references refid="group___l_l_v_m_c_disassembler_1gaa21f8b4663cd086facd275f6286138e3" compoundref="include_2llvm-c_2_disassembler_8h" startline="85">LLVMDisassembler_Option_Color</references>
+        <references refid="group___l_l_v_m_c_disassembler_1ga17abcf26af53ca0ef4d8902e9abdfbdf" compoundref="include_2llvm-c_2_disassembler_8h" startline="77">LLVMDisassembler_Option_PrintImmHex</references>
+        <references refid="group___l_l_v_m_c_disassembler_1ga51495370fd44cea5cb0c7696139457d9" compoundref="include_2llvm-c_2_disassembler_8h" startline="83">LLVMDisassembler_Option_PrintLatency</references>
+        <references refid="group___l_l_v_m_c_disassembler_1ga7da58a469e24dca8c6cd1b644f57e5d7" compoundref="include_2llvm-c_2_disassembler_8h" startline="81">LLVMDisassembler_Option_SetInstrComments</references>
+        <references refid="group___l_l_v_m_c_disassembler_1ga2e77b3aa2a7502be2350e34cfdbbe957" compoundref="include_2llvm-c_2_disassembler_8h" startline="75">LLVMDisassembler_Option_UseMarkup</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="_l_v_options_8cpp_1ab4088b7a11f3cbc38ac16a6e9c72494e" compoundref="_l_v_options_8cpp" startline="25">Options</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1a3216205cbe92e7720a22058cf2d57676" compoundref="_m_c_inst_printer_8h" startline="130" endline="130">llvm::MCInstPrinter::setCommentStream</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1a36eaceae57946055f0f9439da556700c" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="115" endline="115">llvm::LLVMDisasmContext::setIP</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1a5315ee213d2bb70bfb0d581369c8bd47" compoundref="_m_c_inst_printer_8h" startline="163" endline="163">llvm::MCInstPrinter::setPrintImmHex</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1a93ea46134ac48f273fb38c88c4edde07" compoundref="_m_c_inst_printer_8h" startline="155" endline="155">llvm::MCInstPrinter::setUseMarkup</references>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_disassembler_1ga15b630b4a386bee86ad5a10ff7592af0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LLVMDisasmDispose</definition>
+        <argsstring>(LLVMDisasmContextRef DC)</argsstring>
+        <name>LLVMDisasmDispose</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_disassembler_1gae903996143e88ff186c738f81122094e" kindref="member">LLVMDisasmContextRef</ref></type>
+          <declname>DC</declname>
+        </param>
+        <briefdescription>
+<para>Dispose of a disassembler context. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="90" column="6" bodyfile="lib/MC/MCDisassembler/Disassembler.cpp" bodystart="131" bodyend="134" declfile="include/llvm-c/Disassembler.h" declline="90" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_disassembler_1ga4ab4dad1fdcb9e651fa60f6059ab09b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t LLVMDisasmInstruction</definition>
+        <argsstring>(LLVMDisasmContextRef DC, uint8_t *Bytes, uint64_t BytesSize, uint64_t PC, char *OutString, size_t OutStringSize)</argsstring>
+        <name>LLVMDisasmInstruction</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_disassembler_1gae903996143e88ff186c738f81122094e" kindref="member">LLVMDisasmContextRef</ref></type>
+          <declname>DC</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint8__t" kindref="compound">uint8_t</ref> *</type>
+          <declname>Bytes</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>BytesSize</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>PC</declname>
+        </param>
+        <param>
+          <type><ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>OutString</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>OutStringSize</declname>
+        </param>
+        <briefdescription>
+<para>Disassemble a single instruction using the disassembler context specified in the parameter DC. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The bytes of the instruction are specified in the parameter Bytes, and contains at least BytesSize number of bytes. The instruction is at the address specified by the PC parameter. If a valid instruction can be disassembled, its string is returned indirectly in OutString whose size is specified in the parameter OutStringSize. This function returns the number of bytes in the instruction or zero if there was no valid instruction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="102" column="8" bodyfile="lib/MC/MCDisassembler/Disassembler.cpp" bodystart="191" bodyend="241" declfile="include/llvm-c/Disassembler.h" declline="102" declcolumn="8"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" compoundref="_instr_prof_8h" startline="189">llvm::Data</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a7b68be12c974b6b70bc86062f221a344" compoundref="_small_vector_8h" startline="286" endline="286">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::data</references>
+        <references refid="_disassembler_8cpp_1a0e50dc982f01eab3eeb5eef624e25f03" compoundref="_disassembler_8cpp" startline="138" endline="162">emitComments</references>
+        <references refid="_disassembler_8cpp_1ad7331753737602bb545def2c960c209d" compoundref="_disassembler_8cpp" startline="166" endline="177">emitLatency</references>
+        <references refid="classllvm_1_1raw__ostream_1abb9477fc02ae36079df14aa77d8789c3" compoundref="raw__ostream_8h" startline="355" endline="355">llvm::raw_ostream::enable_colors</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa537a26dac8694f2000c729a35e2ead30" compoundref="_m_c_disassembler_8h" startline="109">llvm::MCDisassembler::Fail</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1a025b4cae7b0009c9b81088eec80d4bdd" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="109" endline="109">llvm::LLVMDisasmContext::getDisAsm</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a938eec53ce08249709acf1b3ec7f4035">llvm::MCDisassembler::getInstruction</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1acd7a5e2ee33e79a76e07153242061fc3" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="114" endline="114">llvm::LLVMDisasmContext::getIP</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1a8cf18895a5ca03704be21ce808e03c83" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="116" endline="116">llvm::LLVMDisasmContext::getOptions</references>
+        <references refid="classllvm_1_1_l_l_v_m_disasm_context_1a38cda99e294483fa025f4eb57f6544b9" compoundref="lib_2_m_c_2_m_c_disassembler_2_disassembler_8h" startline="113" endline="113">llvm::LLVMDisasmContext::getSubtargetInfo</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="group___l_l_v_m_c_disassembler_1gaa21f8b4663cd086facd275f6286138e3" compoundref="include_2llvm-c_2_disassembler_8h" startline="85">LLVMDisassembler_Option_Color</references>
+        <references refid="group___l_l_v_m_c_disassembler_1ga51495370fd44cea5cb0c7696139457d9" compoundref="include_2llvm-c_2_disassembler_8h" startline="83">LLVMDisassembler_Option_PrintLatency</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1ac297f3bc74269d7fe98eaf7300cba9fa">llvm::MCInstPrinter::printInst</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1a3aa0680085158cfb0c14163a07ce9515" compoundref="_m_c_inst_printer_8h" startline="158" endline="158">llvm::MCInstPrinter::setUseColor</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aa9d693b8e530a7fa3457dece6f8951e6c" compoundref="_m_c_disassembler_8h" startline="110">llvm::MCDisassembler::SoftFail</references>
+        <references refid="classllvm_1_1_m_c_disassembler_1a8eb822283e8f3200ca4b2a1ba0174e6aaabe09036b442fff9aa63ce1e844fdf60" compoundref="_m_c_disassembler_8h" startline="111">llvm::MCDisassembler::Success</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga2e77b3aa2a7502be2350e34cfdbbe957" prot="public" static="no">
+        <name>LLVMDisassembler_Option_UseMarkup</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="75" column="9" bodyfile="include/llvm-c/Disassembler.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="group___l_l_v_m_c_disassembler_1gad1cbbd5aa7b51f04687926e8f9e4aebb" compoundref="_disassembler_8cpp" startline="247" endline="296">LLVMSetDisasmOptions</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga17abcf26af53ca0ef4d8902e9abdfbdf" prot="public" static="no">
+        <name>LLVMDisassembler_Option_PrintImmHex</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="77" column="9" bodyfile="include/llvm-c/Disassembler.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="group___l_l_v_m_c_disassembler_1gad1cbbd5aa7b51f04687926e8f9e4aebb" compoundref="_disassembler_8cpp" startline="247" endline="296">LLVMSetDisasmOptions</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gae0ce9f25acf18f03656aebcd8b99f807" prot="public" static="no">
+        <name>LLVMDisassembler_Option_AsmPrinterVariant</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="79" column="9" bodyfile="include/llvm-c/Disassembler.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="group___l_l_v_m_c_disassembler_1gad1cbbd5aa7b51f04687926e8f9e4aebb" compoundref="_disassembler_8cpp" startline="247" endline="296">LLVMSetDisasmOptions</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga7da58a469e24dca8c6cd1b644f57e5d7" prot="public" static="no">
+        <name>LLVMDisassembler_Option_SetInstrComments</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="81" column="9" bodyfile="include/llvm-c/Disassembler.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="group___l_l_v_m_c_disassembler_1gad1cbbd5aa7b51f04687926e8f9e4aebb" compoundref="_disassembler_8cpp" startline="247" endline="296">LLVMSetDisasmOptions</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga51495370fd44cea5cb0c7696139457d9" prot="public" static="no">
+        <name>LLVMDisassembler_Option_PrintLatency</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="83" column="9" bodyfile="include/llvm-c/Disassembler.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="group___l_l_v_m_c_disassembler_1ga4ab4dad1fdcb9e651fa60f6059ab09b4" compoundref="_disassembler_8cpp" startline="191" endline="241">LLVMDisasmInstruction</referencedby>
+        <referencedby refid="group___l_l_v_m_c_disassembler_1gad1cbbd5aa7b51f04687926e8f9e4aebb" compoundref="_disassembler_8cpp" startline="247" endline="296">LLVMSetDisasmOptions</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gaa21f8b4663cd086facd275f6286138e3" prot="public" static="no">
+        <name>LLVMDisassembler_Option_Color</name>
+        <initializer>32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Disassembler.h" line="85" column="9" bodyfile="include/llvm-c/Disassembler.h" bodystart="85" bodyend="-1"/>
+        <referencedby refid="group___l_l_v_m_c_disassembler_1ga4ab4dad1fdcb9e651fa60f6059ab09b4" compoundref="_disassembler_8cpp" startline="191" endline="241">LLVMDisasmInstruction</referencedby>
+        <referencedby refid="group___l_l_v_m_c_disassembler_1gad1cbbd5aa7b51f04687926e8f9e4aebb" compoundref="_disassembler_8cpp" startline="247" endline="296">LLVMSetDisasmOptions</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gaeb7b3311097fd803536f89c1fd8a5f15" prot="public" static="no">
+        <name>LLVMDisassembler_VariantKind_None</name>
+        <initializer>0 /* all targets */</initializer>
+        <briefdescription>
+<para>The operand VariantKinds for symbolic disassembly. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="88" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_relocation_info_1a4636659aa6c1ac582dedcdd046795f98" compoundref="_m_c_relocation_info_8cpp" startline="20" endline="25">llvm::MCRelocationInfo::createExprForCAPIVariantKind</referencedby>
+        <referencedby refid="_a_arch64_external_symbolizer_8cpp_1a514d7e297481327255217939292ae114" compoundref="_a_arch64_external_symbolizer_8cpp" startline="23" endline="42">getVariant</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga18c0e1aa1f200a0154c9301841a4d7ba" prot="public" static="no">
+        <name>LLVMDisassembler_VariantKind_ARM_HI16</name>
+        <initializer>1 /* :upper16: */</initializer>
+        <briefdescription>
+<para>The ARM target VariantKinds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="93" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_a_r_m_mach_o_relocation_info_8cpp_03_1_1_a_r_m_mach_o_relocation_info_1acf3e0563ec30bb753fe338dc8be818b6" compoundref="_a_r_m_mach_o_relocation_info_8cpp" startline="23" endline="34">anonymous_namespace{ARMMachORelocationInfo.cpp}::ARMMachORelocationInfo::createExprForCAPIVariantKind</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga518d82ae8838203f9aa0f8566a5ca51c" prot="public" static="no">
+        <name>LLVMDisassembler_VariantKind_ARM_LO16</name>
+        <initializer>2 /* :lower16: */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="94" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_a_r_m_mach_o_relocation_info_8cpp_03_1_1_a_r_m_mach_o_relocation_info_1acf3e0563ec30bb753fe338dc8be818b6" compoundref="_a_r_m_mach_o_relocation_info_8cpp" startline="23" endline="34">anonymous_namespace{ARMMachORelocationInfo.cpp}::ARMMachORelocationInfo::createExprForCAPIVariantKind</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gaac17762c72a25f63faf21df57e16176e" prot="public" static="no">
+        <name>LLVMDisassembler_VariantKind_ARM64_PAGE</name>
+        <initializer>1 /* @page */</initializer>
+        <briefdescription>
+<para>The ARM64 target VariantKinds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="99" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="_a_arch64_external_symbolizer_8cpp_1a514d7e297481327255217939292ae114" compoundref="_a_arch64_external_symbolizer_8cpp" startline="23" endline="42">getVariant</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gacd4b54131faf848e92ea232693077151" prot="public" static="no">
+        <name>LLVMDisassembler_VariantKind_ARM64_PAGEOFF</name>
+        <initializer>2 /* @pageoff */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="100" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="_a_arch64_external_symbolizer_8cpp_1a514d7e297481327255217939292ae114" compoundref="_a_arch64_external_symbolizer_8cpp" startline="23" endline="42">getVariant</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gad25fcaca7790acb9f3678686219daecc" prot="public" static="no">
+        <name>LLVMDisassembler_VariantKind_ARM64_GOTPAGE</name>
+        <initializer>3 /* @gotpage */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="101" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="_a_arch64_external_symbolizer_8cpp_1a514d7e297481327255217939292ae114" compoundref="_a_arch64_external_symbolizer_8cpp" startline="23" endline="42">getVariant</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga1babeeed365fdc3d716a52ebf3d5b315" prot="public" static="no">
+        <name>LLVMDisassembler_VariantKind_ARM64_GOTPAGEOFF</name>
+        <initializer>4 /* @gotpageoff */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="102" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="_a_arch64_external_symbolizer_8cpp_1a514d7e297481327255217939292ae114" compoundref="_a_arch64_external_symbolizer_8cpp" startline="23" endline="42">getVariant</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga34ffa9d914aa8d4d7f0c70f409ff0d2f" prot="public" static="no">
+        <name>LLVMDisassembler_VariantKind_ARM64_TLVP</name>
+        <initializer>5 /* @tvlppage */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="103" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="_a_arch64_external_symbolizer_8cpp_1a514d7e297481327255217939292ae114" compoundref="_a_arch64_external_symbolizer_8cpp" startline="23" endline="42">getVariant</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga0c26f64bd2eaca9d9d4c21e14ea93f93" prot="public" static="no">
+        <name>LLVMDisassembler_VariantKind_ARM64_TLVOFF</name>
+        <initializer>6 /* @tvlppageoff */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="104" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="_a_arch64_external_symbolizer_8cpp_1a514d7e297481327255217939292ae114" compoundref="_a_arch64_external_symbolizer_8cpp" startline="23" endline="42">getVariant</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gaa6b926b61f2d59191c806d31bb94c894" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_InOut_None</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>The reference types on input and output. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="127" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="127" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1aa4807aa3571299368e6d9b5c3d39893a" compoundref="_m_c_external_symbolizer_8cpp" startline="35" endline="141">llvm::MCExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga82fca9d886616e829b203276c80afabf" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_In_Branch</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="130" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="130" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1aa4807aa3571299368e6d9b5c3d39893a" compoundref="_m_c_external_symbolizer_8cpp" startline="35" endline="141">llvm::MCExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga4d14397b83038d9f432101b60d28afcd" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_In_PCrel_Load</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="132" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="132" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1a932da00ce99b1018afdbc02579239ff1" compoundref="_m_c_external_symbolizer_8cpp" startline="153" endline="184">llvm::MCExternalSymbolizer::tryAddingPcLoadReferenceComment</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga73395d6a90fefa202ec94dd103440106" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_In_ARM64_ADRP</name>
+        <initializer>0x100000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="135" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="135" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga3e62ce52a54791ea0b2098eb8adc840f" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_In_ARM64_ADDXri</name>
+        <initializer>0x100000002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="137" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="137" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gaf7375fccf8efe1277a941cb3cff28966" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_In_ARM64_LDRXui</name>
+        <initializer>0x100000003</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="139" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="139" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gad81c0ae2e8ee538e833bb6e6c2ac0676" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_In_ARM64_LDRXl</name>
+        <initializer>0x100000004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="141" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="141" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga1141f7abd5221b48b97c927b57234e33" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_In_ARM64_ADR</name>
+        <initializer>0x100000005</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="143" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="143" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga43cc63fe7d58d8379d06b31cf92d620b" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_Out_SymbolStub</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="146" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="146" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1aa4807aa3571299368e6d9b5c3d39893a" compoundref="_m_c_external_symbolizer_8cpp" startline="35" endline="141">llvm::MCExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga9ddf8b97918a69a6a513225d2f26c91f" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_Out_LitPool_SymAddr</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="148" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="148" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1a932da00ce99b1018afdbc02579239ff1" compoundref="_m_c_external_symbolizer_8cpp" startline="153" endline="184">llvm::MCExternalSymbolizer::tryAddingPcLoadReferenceComment</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga81e5011868131b85e2fe428b5de9165b" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_Out_LitPool_CstrAddr</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="150" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="150" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1a932da00ce99b1018afdbc02579239ff1" compoundref="_m_c_external_symbolizer_8cpp" startline="153" endline="184">llvm::MCExternalSymbolizer::tryAddingPcLoadReferenceComment</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga4e7df42625f59e6870f6aaa04fd8e112" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_Out_Objc_CFString_Ref</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="153" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="153" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1a932da00ce99b1018afdbc02579239ff1" compoundref="_m_c_external_symbolizer_8cpp" startline="153" endline="184">llvm::MCExternalSymbolizer::tryAddingPcLoadReferenceComment</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gaa07c4db36282f91d8f9da2f1c74ffc4c" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_Out_Objc_Message</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="155" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="155" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1a932da00ce99b1018afdbc02579239ff1" compoundref="_m_c_external_symbolizer_8cpp" startline="153" endline="184">llvm::MCExternalSymbolizer::tryAddingPcLoadReferenceComment</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1aa4807aa3571299368e6d9b5c3d39893a" compoundref="_m_c_external_symbolizer_8cpp" startline="35" endline="141">llvm::MCExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gaceddd31c06c7ca91bb4747dd008a7bfb" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_Out_Objc_Message_Ref</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="157" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="157" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1a932da00ce99b1018afdbc02579239ff1" compoundref="_m_c_external_symbolizer_8cpp" startline="153" endline="184">llvm::MCExternalSymbolizer::tryAddingPcLoadReferenceComment</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gab234f9f0c243edf081dcbee6400c320a" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_Out_Objc_Selector_Ref</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="159" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="159" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1a932da00ce99b1018afdbc02579239ff1" compoundref="_m_c_external_symbolizer_8cpp" startline="153" endline="184">llvm::MCExternalSymbolizer::tryAddingPcLoadReferenceComment</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1ga32181431bb3d71b1218b596eb3252b3f" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_Out_Objc_Class_Ref</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="161" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="161" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1a932da00ce99b1018afdbc02579239ff1" compoundref="_m_c_external_symbolizer_8cpp" startline="153" endline="184">llvm::MCExternalSymbolizer::tryAddingPcLoadReferenceComment</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_external_symbolizer_1aadc518cf2b179163c8eca58f17e333b2" compoundref="_a_arch64_external_symbolizer_8cpp" startline="60" endline="224">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___l_l_v_m_c_disassembler_1gae11bd2845e00fc1aed8223da0793bf4b" prot="public" static="no">
+        <name>LLVMDisassembler_ReferenceType_DeMangled_Name</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/DisassemblerTypes.h" line="164" column="9" bodyfile="include/llvm-c/DisassemblerTypes.h" bodystart="164" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_m_c_external_symbolizer_1aa4807aa3571299368e6d9b5c3d39893a" compoundref="_m_c_external_symbolizer_8cpp" startline="35" endline="141">llvm::MCExternalSymbolizer::tryAddingSymbolicOperand</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

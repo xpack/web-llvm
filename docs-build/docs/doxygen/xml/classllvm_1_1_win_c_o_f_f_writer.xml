@@ -1,0 +1,923 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_win_c_o_f_f_writer" kind="class" language="C++" prot="public">
+    <compoundname>llvm::WinCOFFWriter</compoundname>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>DwoMode</name>
+        <qualifiedname>llvm::WinCOFFWriter::DwoMode</qualifiedname>
+        <enumvalue id="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6bad185352167b8d3ebb701cf3049a5fd33" prot="public">
+          <name>AllSections</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6ba864d13ebc3fed2ac2558685d8f59a45d" prot="public">
+          <name>NonDwoOnly</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6ba4303c2b002aa619418165a36a6b7c5b5" prot="public">
+          <name>DwoOnly</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="151" column="3" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="151" bodyend="155"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_win_c_o_f_f_writer_1a873cddead8cb24f63c3f760b64636f5a" prot="private" static="no">
+        <type>std::vector&lt; std::unique_ptr&lt; COFFSymbol &gt; &gt;</type>
+        <definition>using llvm::WinCOFFWriter::symbols =  std::vector&lt;std::unique_ptr&lt;COFFSymbol&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>symbols</name>
+        <qualifiedname>llvm::WinCOFFWriter::symbols</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="127" column="3" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_win_c_o_f_f_writer_1a7b57e72a6aaf9071484114a4b5bf6e08" prot="private" static="no">
+        <type>std::vector&lt; std::unique_ptr&lt; COFFSection &gt; &gt;</type>
+        <definition>using llvm::WinCOFFWriter::sections =  std::vector&lt;std::unique_ptr&lt;COFFSection&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>sections</name>
+        <qualifiedname>llvm::WinCOFFWriter::sections</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="128" column="3" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_win_c_o_f_f_writer_1a9d31551d47e74edbcb3995d349da2c27" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> *, COFFSymbol * &gt;</type>
+        <definition>using llvm::WinCOFFWriter::symbol_map =  DenseMap&lt;MCSymbol const *, COFFSymbol *&gt;</definition>
+        <argsstring></argsstring>
+        <name>symbol_map</name>
+        <qualifiedname>llvm::WinCOFFWriter::symbol_map</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="130" column="3" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_win_c_o_f_f_writer_1a005b9e4e4cea3cd3802cda04bb7f9910" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_m_c_section" kindref="compound">MCSection</ref> <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> *, COFFSection * &gt;</type>
+        <definition>using llvm::WinCOFFWriter::section_map =  DenseMap&lt;MCSection const *, COFFSection *&gt;</definition>
+        <argsstring></argsstring>
+        <name>section_map</name>
+        <qualifiedname>llvm::WinCOFFWriter::section_map</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="131" column="3" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_win_c_o_f_f_writer_1ab331e7bf0d8b74ebd740b8a0f342f00c" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; COFFSymbol * &gt;</type>
+        <definition>using llvm::WinCOFFWriter::symbol_list =  DenseSet&lt;COFFSymbol *&gt;</definition>
+        <argsstring></argsstring>
+        <name>symbol_list</name>
+        <qualifiedname>llvm::WinCOFFWriter::symbol_list</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="133" column="3" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1a07020e5970f6cd969ef207f11670e1ef" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_win_c_o_f_f_object_writer" kindref="compound">WinCOFFObjectWriter</ref> &amp;</type>
+        <definition>WinCOFFObjectWriter&amp; llvm::WinCOFFWriter::OWriter</definition>
+        <argsstring></argsstring>
+        <name>OWriter</name>
+        <qualifiedname>llvm::WinCOFFWriter::OWriter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="124" column="23" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1a0b0513d06010ea2a3c937edb181b397f" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1support_1_1endian_1_1_writer" kindref="compound">support::endian::Writer</ref></type>
+        <definition>support::endian::Writer llvm::WinCOFFWriter::W</definition>
+        <argsstring></argsstring>
+        <name>W</name>
+        <qualifiedname>llvm::WinCOFFWriter::W</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="125" column="27" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1ae09c1e1846ab4e62df390f43b7c62ce4" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1_c_o_f_f_1_1header" kindref="compound">COFF::header</ref></type>
+        <definition>COFF::header llvm::WinCOFFWriter::Header</definition>
+        <argsstring></argsstring>
+        <name>Header</name>
+        <qualifiedname>llvm::WinCOFFWriter::Header</qualifiedname>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="136" column="16" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="136" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1a34a331e246d12fa5ce9e7d1fea9063fc" prot="private" static="no" mutable="no">
+        <type><ref refid="_basic_block_sections_8cpp_1ad9bfff4f6c093ce614da964288d832c9" kindref="member">sections</ref></type>
+        <definition>sections llvm::WinCOFFWriter::Sections</definition>
+        <argsstring></argsstring>
+        <name>Sections</name>
+        <qualifiedname>llvm::WinCOFFWriter::Sections</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="137" column="12" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1a27d166e80ed61324a2876d0409400169" prot="private" static="no" mutable="no">
+        <type>symbols</type>
+        <definition>symbols llvm::WinCOFFWriter::Symbols</definition>
+        <argsstring></argsstring>
+        <name>Symbols</name>
+        <qualifiedname>llvm::WinCOFFWriter::Symbols</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="138" column="11" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1a94b5d6454b7dc20ae1f84ce09502a140" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_table_builder" kindref="compound">StringTableBuilder</ref></type>
+        <definition>StringTableBuilder llvm::WinCOFFWriter::Strings</definition>
+        <argsstring></argsstring>
+        <name>Strings</name>
+        <qualifiedname>llvm::WinCOFFWriter::Strings</qualifiedname>
+        <initializer>{<ref refid="classllvm_1_1_string_table_builder_1a58c8b5f09afd8827aed05c9a1804e73aa3b433aad0b57e92f9970815c495fad4d" kindref="member">StringTableBuilder::WinCOFF</ref>}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="139" column="22" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="139" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1aeec5f6259fc377ae962d528ee15a1dd8" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">section_map</ref></type>
+        <definition>section_map llvm::WinCOFFWriter::SectionMap</definition>
+        <argsstring></argsstring>
+        <name>SectionMap</name>
+        <qualifiedname>llvm::WinCOFFWriter::SectionMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="142" column="15" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1ab4275e6adce6518b27507c502e10f66e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">symbol_map</ref></type>
+        <definition>symbol_map llvm::WinCOFFWriter::SymbolMap</definition>
+        <argsstring></argsstring>
+        <name>SymbolMap</name>
+        <qualifiedname>llvm::WinCOFFWriter::SymbolMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="143" column="14" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1aea528803c1580ce4e2434e320fd15ef4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">symbol_list</ref></type>
+        <definition>symbol_list llvm::WinCOFFWriter::WeakDefaults</definition>
+        <argsstring></argsstring>
+        <name>WeakDefaults</name>
+        <qualifiedname>llvm::WinCOFFWriter::WeakDefaults</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="145" column="15" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1a1664939e6fb3e3ecd124a27e743a73ca" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::WinCOFFWriter::UseBigObj</definition>
+        <argsstring></argsstring>
+        <name>UseBigObj</name>
+        <qualifiedname>llvm::WinCOFFWriter::UseBigObj</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="147" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1a9691b4ce40f1b624639dcab97745094f" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::WinCOFFWriter::UseOffsetLabels</definition>
+        <argsstring></argsstring>
+        <name>UseOffsetLabels</name>
+        <qualifiedname>llvm::WinCOFFWriter::UseOffsetLabels</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="148" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_win_c_o_f_f_writer_1a661e3352259002a2c79043cf6cf8922c" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6b" kindref="member">llvm::WinCOFFWriter::DwoMode</ref></type>
+        <definition>enum llvm::WinCOFFWriter::DwoMode llvm::WinCOFFWriter::Mode</definition>
+        <argsstring></argsstring>
+        <name>Mode</name>
+        <qualifiedname>llvm::WinCOFFWriter::Mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="155" column="8"/>
+        <referencedby refid="classllvm_1_1_win_c_o_f_f_writer_1aeeb14ab0bcb74e040f599ece0ea8de54" compoundref="_win_c_o_f_f_object_writer_8cpp" startline="809" endline="834">executePostLayoutBinding</referencedby>
+        <referencedby refid="classllvm_1_1_win_c_o_f_f_writer_1a62cc3a814dc53171f32886aaa2ba8318" compoundref="_win_c_o_f_f_object_writer_8cpp" startline="230" endline="239">WinCOFFWriter</referencedby>
+        <referencedby refid="classllvm_1_1_win_c_o_f_f_writer_1a204d14337c246adfd274aac0837c6045" compoundref="_win_c_o_f_f_object_writer_8cpp" startline="1003" endline="1158">writeObject</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a62cc3a814dc53171f32886aaa2ba8318" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WinCOFFWriter::WinCOFFWriter</definition>
+        <argsstring>(WinCOFFObjectWriter &amp;OWriter, raw_pwrite_stream &amp;OS, DwoMode Mode)</argsstring>
+        <name>WinCOFFWriter</name>
+        <qualifiedname>llvm::WinCOFFWriter::WinCOFFWriter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_win_c_o_f_f_object_writer" kindref="compound">WinCOFFObjectWriter</ref> &amp;</type>
+          <declname>OWriter</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__pwrite__stream" kindref="compound">raw_pwrite_stream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6b" kindref="member">DwoMode</ref></type>
+          <declname>Mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="157" column="3" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="230" bodyend="239"/>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a4cdd8d73d6aba93a5790daaa2d767553" compoundref="_binary_format_2_c_o_f_f_8h" startline="129" endline="131">llvm::COFF::isAnyArm64</references>
+        <references refid="namespacellvm_1ae1e26e57357947b25e392fd18ab000dbaaae6635e044ac56046b2893a529b5114" compoundref="bit_8h" startline="72">llvm::little</references>
+        <references refid="classllvm_1_1_win_c_o_f_f_writer_1a661e3352259002a2c79043cf6cf8922c">Mode</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a6e77c3f43a0acf7bdad25ee6308d3812" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>llvm::WinCOFFWriter::reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="160" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="798" bodyend="807"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1aeeb14ab0bcb74e040f599ece0ea8de54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::executePostLayoutBinding</definition>
+        <argsstring>(MCAssembler &amp;Asm)</argsstring>
+        <name>executePostLayoutBinding</name>
+        <qualifiedname>llvm::WinCOFFWriter::executePostLayoutBinding</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref> &amp;</type>
+          <declname>Asm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="161" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="809" bodyend="834"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6ba4303c2b002aa619418165a36a6b7c5b5" compoundref="_win_c_o_f_f_object_writer_8cpp" startline="154">DwoOnly</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a906c310d62ec1ae55afe3295a4fc2115afc617a23fd5e4cce7f2adfc7c2966e1c" compoundref="_binary_format_2_c_o_f_f_8h" startline="224">llvm::COFF::IMAGE_SYM_CLASS_STATIC</references>
+        <references refid="_win_c_o_f_f_object_writer_8cpp_1a7ae7754aaf6513bc0ea0bd5f457fe7cc" compoundref="_win_c_o_f_f_object_writer_8cpp" startline="212" endline="214">isDwoSection</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1ad3097c5eaf4198579c34562fd89a240e" compoundref="_binary_format_2_c_o_f_f_8h" startline="32">llvm::COFF::MaxNumberOfSections16</references>
+        <references refid="classllvm_1_1_win_c_o_f_f_writer_1a661e3352259002a2c79043cf6cf8922c">Mode</references>
+        <references refid="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6ba864d13ebc3fed2ac2558685d8f59a45d" compoundref="_win_c_o_f_f_object_writer_8cpp" startline="153">NonDwoOnly</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1ae083e4782d3a3ca6e98fbaacbb8d3f8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::recordRelocation</definition>
+        <argsstring>(MCAssembler &amp;Asm, const MCFragment *Fragment, const MCFixup &amp;Fixup, MCValue Target, uint64_t &amp;FixedValue)</argsstring>
+        <name>recordRelocation</name>
+        <qualifiedname>llvm::WinCOFFWriter::recordRelocation</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref> &amp;</type>
+          <declname>Asm</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_fragment" kindref="compound">MCFragment</ref> *</type>
+          <declname>Fragment</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_fixup" kindref="compound">MCFixup</ref> &amp;</type>
+          <declname>Fixup</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_value" kindref="compound">MCValue</ref></type>
+          <declname>Target</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref> &amp;</type>
+          <declname>FixedValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="162" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="836" bodyend="994"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_p_p_c_t_l_s_dynamic_call_8cpp_1a4a235aedca5bbfc39934045b6cbf9c70" compoundref="_p_p_c_t_l_s_dynamic_call_8cpp" startline="339">Fixup</references>
+        <references refid="namespacellvm_1a84cef097f15848752272d38769011f58a128346d352fde2e704c07867f4d82eef" compoundref="_m_c_fixup_8h" startline="41">llvm::FK_SecRel_2</references>
+        <references refid="classllvm_1_1_m_c_fragment_1a7b98ffc5ede97acf84a20b7476d3ffff" compoundref="_m_c_fragment_8h" startline="99" endline="99">llvm::MCFragment::getParent</references>
+        <references refid="classllvm_1_1_m_c_symbol_ref_expr_1a048f077746d95f142d02e56586862bf2" compoundref="_m_c_expr_8h" startline="411" endline="411">llvm::MCSymbolRefExpr::getSymbol</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a38731f9b23370e15ad002c2a712d89a8a57211898d4494ccede1f9e90b92ebad4" compoundref="_binary_format_2_c_o_f_f_8h" startline="97">llvm::COFF::IMAGE_FILE_MACHINE_AMD64</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a38731f9b23370e15ad002c2a712d89a8af90ffbdda9ed6facec414824d70f9de2" compoundref="_binary_format_2_c_o_f_f_8h" startline="99">llvm::COFF::IMAGE_FILE_MACHINE_ARMNT</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a38731f9b23370e15ad002c2a712d89a8ab9b603eafcb824ebeb03f246cff0b4d4" compoundref="_binary_format_2_c_o_f_f_8h" startline="104">llvm::COFF::IMAGE_FILE_MACHINE_I386</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a38731f9b23370e15ad002c2a712d89a8a8ead7683d6849408053cae7a90851c97" compoundref="_binary_format_2_c_o_f_f_8h" startline="112">llvm::COFF::IMAGE_FILE_MACHINE_R4000</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a7d8b48e10ac507c952d8d53a1ed68125a1376dddaf4ade08fe5429571a06c6249" compoundref="_binary_format_2_c_o_f_f_8h" startline="364">llvm::COFF::IMAGE_REL_AMD64_REL32</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a6712271e6979f7eb2d4922c87c520d4ea1dde8be4528eebd8bfb4962a11b91d36" compoundref="_binary_format_2_c_o_f_f_8h" startline="417">llvm::COFF::IMAGE_REL_ARM64_REL32</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a905028c6320edfd212e3cffd365e6cf4" compoundref="_binary_format_2_c_o_f_f_8h" startline="380">llvm::COFF::IMAGE_REL_ARM_ABSOLUTE</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a746d514c28aa512d8ddd56dc058e8faf" compoundref="_binary_format_2_c_o_f_f_8h" startline="381">llvm::COFF::IMAGE_REL_ARM_ADDR32</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a4674ff1d84292a919b54e9ebd3d5fd46" compoundref="_binary_format_2_c_o_f_f_8h" startline="382">llvm::COFF::IMAGE_REL_ARM_ADDR32NB</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5ae23715c442b7fccbcc70e3490ec6a9f1" compoundref="_binary_format_2_c_o_f_f_8h" startline="387">llvm::COFF::IMAGE_REL_ARM_BLX11</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a99ba87de124124cda61beaeeef90e547" compoundref="_binary_format_2_c_o_f_f_8h" startline="395">llvm::COFF::IMAGE_REL_ARM_BLX23T</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a55f505d72b7fc170f5f9328d90b30cae" compoundref="_binary_format_2_c_o_f_f_8h" startline="386">llvm::COFF::IMAGE_REL_ARM_BLX24</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a495a4c1060316f2d53806aaca9993bcc" compoundref="_binary_format_2_c_o_f_f_8h" startline="384">llvm::COFF::IMAGE_REL_ARM_BRANCH11</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a3ebd5ea614167c6fccba3b326dd215be" compoundref="_binary_format_2_c_o_f_f_8h" startline="393">llvm::COFF::IMAGE_REL_ARM_BRANCH20T</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a3fa5b356a43456262a6a3a100f20fa33" compoundref="_binary_format_2_c_o_f_f_8h" startline="383">llvm::COFF::IMAGE_REL_ARM_BRANCH24</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a8898d58c6174b9ced49e3092764a27b5" compoundref="_binary_format_2_c_o_f_f_8h" startline="394">llvm::COFF::IMAGE_REL_ARM_BRANCH24T</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a0715521bb7874a6e8d9964b5493f4b45" compoundref="_binary_format_2_c_o_f_f_8h" startline="391">llvm::COFF::IMAGE_REL_ARM_MOV32A</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a865cc9cadbef2c0b2034ed1f7d49a8d3" compoundref="_binary_format_2_c_o_f_f_8h" startline="392">llvm::COFF::IMAGE_REL_ARM_MOV32T</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5a966485b6e6aca96a28c699566244f1a5" compoundref="_binary_format_2_c_o_f_f_8h" startline="388">llvm::COFF::IMAGE_REL_ARM_REL32</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5aa3675a902af589d1fe8239cb229e834c" compoundref="_binary_format_2_c_o_f_f_8h" startline="390">llvm::COFF::IMAGE_REL_ARM_SECREL</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5aa99263a4ddef9c6522025169308d6d80" compoundref="_binary_format_2_c_o_f_f_8h" startline="389">llvm::COFF::IMAGE_REL_ARM_SECTION</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1acc90ecc867e5f7f9b59008a4f097ced5afdfb7f85dbcb8abb448c59c38cc76ee3" compoundref="_binary_format_2_c_o_f_f_8h" startline="385">llvm::COFF::IMAGE_REL_ARM_TOKEN</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1adb84e9917e2d3804c02e45f01918cc2da32627d83f2285f6f55acdf638a21284d" compoundref="_binary_format_2_c_o_f_f_8h" startline="356">llvm::COFF::IMAGE_REL_I386_REL32</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a2a5fd940ffde686f89fd39f338cb8e7ba23af8b37dbbc8a5ad5026bb6a217fe6d" compoundref="_binary_format_2_c_o_f_f_8h" startline="435">llvm::COFF::IMAGE_REL_MIPS_PAIR</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a2a5fd940ffde686f89fd39f338cb8e7ba4a1fb04b4071332202dbb31dec920001" compoundref="_binary_format_2_c_o_f_f_8h" startline="425">llvm::COFF::IMAGE_REL_MIPS_REFHI</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a2a5fd940ffde686f89fd39f338cb8e7ba6a40fa1912993d06f8154528f27ff721" compoundref="_binary_format_2_c_o_f_f_8h" startline="432">llvm::COFF::IMAGE_REL_MIPS_SECRELHI</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a4cdd8d73d6aba93a5790daaa2d767553" compoundref="_binary_format_2_c_o_f_f_8h" startline="129" endline="131">llvm::COFF::isAnyArm64</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a204d14337c246adfd274aac0837c6045" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t WinCOFFWriter::writeObject</definition>
+        <argsstring>(MCAssembler &amp;Asm)</argsstring>
+        <name>writeObject</name>
+        <qualifiedname>llvm::WinCOFFWriter::writeObject</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref> &amp;</type>
+          <declname>Asm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="165" column="12" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="1003" bodyend="1158"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6ba4303c2b002aa619418165a36a6b7c5b5" compoundref="_win_c_o_f_f_object_writer_8cpp" startline="154">DwoOnly</references>
+        <references refid="namespacellvm_1ad0f8c0e82cde3bb0849fc59e3510f05a" compoundref="_l_e_b128_8h" startline="80" endline="100">llvm::encodeULEB128</references>
+        <references refid="classllvm_1_1_m_c_section_c_o_f_f_1a7a79ac08bf9d69bf371f9048385a11e0" compoundref="_m_c_section_c_o_f_f_8h" startline="70" endline="70">llvm::MCSectionCOFF::getCOMDATSymbol</references>
+        <references refid="classllvm_1_1_m_c_symbol_1aab8c6e58e0fb2534a0b6289f30b1d25d" compoundref="_m_c_symbol_8h" startline="316" endline="318">llvm::MCSymbol::getIndex</references>
+        <references refid="classllvm_1_1_m_c_section_1aac4366cca0c8d3cd472a02a71f4aa34c" compoundref="_m_c_section_8h" startline="130" endline="130">llvm::MCSection::getName</references>
+        <references refid="classllvm_1_1_m_c_symbol_1a57c7b2b9784361914262eeb0a6f0b18d" compoundref="_m_c_symbol_8h" startline="205" endline="210">llvm::MCSymbol::getName</references>
+        <references refid="classllvm_1_1_m_c_symbol_1ab7d669d1338ce8b4ddf910da10c51607" compoundref="_m_c_symbol_8h" startline="269" endline="272">llvm::MCSymbol::getSection</references>
+        <references refid="_win_c_o_f_f_object_writer_8cpp_1a84a5158eaadf6a13eba52886d751b6c5" compoundref="_win_c_o_f_f_object_writer_8cpp" startline="996" endline="1001">getTime</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1abb2a5b3cc2301597c2ffed2e4b04f45ea85161daa9965cdbe86d035f42c2c65ed" compoundref="_binary_format_2_c_o_f_f_8h" startline="458">llvm::COFF::IMAGE_COMDAT_SELECT_ASSOCIATIVE</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a45c610228e069b0b3efbcbc1d5577f5aa24ac1300caa85825d3526b8baaec159f" compoundref="_binary_format_2_c_o_f_f_8h" startline="307">llvm::COFF::IMAGE_SCN_LNK_REMOVE</references>
+        <references refid="_win_c_o_f_f_object_writer_8cpp_1a7ae7754aaf6513bc0ea0bd5f457fe7cc" compoundref="_win_c_o_f_f_object_writer_8cpp" startline="212" endline="214">isDwoSection</references>
+        <references refid="classllvm_1_1_m_c_symbol_1a3214f95c05e3d2af5e3e56667dc54239" compoundref="_m_c_symbol_8h" startline="254" endline="256">llvm::MCSymbol::isInSection</references>
+        <references refid="classllvm_1_1_m_c_symbol_1a9cc0bd5c7cfcb87bc65c90ec1423f958" compoundref="_m_c_symbol_8h" startline="212" endline="212">llvm::MCSymbol::isRegistered</references>
+        <references refid="classllvm_1_1_m_c_symbol_1acb1c818c7e94eb25afce63fc2f91c0e2" compoundref="_m_c_symbol_8h" startline="222" endline="222">llvm::MCSymbol::isTemporary</references>
+        <references refid="classllvm_1_1_win_c_o_f_f_writer_1a661e3352259002a2c79043cf6cf8922c">Mode</references>
+        <references refid="structllvm_1_1_c_o_f_f_1_1section_1ae3f859e92e664e6b19ce1d65c3d4577e" compoundref="_binary_format_2_c_o_f_f_8h" startline="285">llvm::COFF::section::Name</references>
+        <references refid="namespacellvm_1_1_c_o_f_f_1a008162b24bc184867edc5c39bd3969bda084ca1f72ecd10e22d3d8867548e0f61" compoundref="_binary_format_2_c_o_f_f_8h" startline="57">llvm::COFF::NameSize</references>
+        <references refid="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6ba864d13ebc3fed2ac2558685d8f59a45d" compoundref="_win_c_o_f_f_object_writer_8cpp" startline="153">NonDwoOnly</references>
+        <references refid="namespacellvm_1_1support_1_1endian_1add1f2d1d972957d22186f4ec92f985f6" compoundref="_endian_8h" startline="92" endline="97">llvm::support::endian::write</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1ae23544385415140fac111e6d513de04d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int WinCOFFWriter::getSectionNumber</definition>
+        <argsstring>(const MCSection &amp;Section) const</argsstring>
+        <name>getSectionNumber</name>
+        <qualifiedname>llvm::WinCOFFWriter::getSectionNumber</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_section" kindref="compound">MCSection</ref> &amp;</type>
+          <declname>Section</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="166" column="7" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="1160" bodyend="1162"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a239a97f08170291a953b108aa733ac1d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>COFFSymbol *</type>
+        <definition>COFFSymbol * WinCOFFWriter::createSymbol</definition>
+        <argsstring>(StringRef Name)</argsstring>
+        <name>createSymbol</name>
+        <qualifiedname>llvm::WinCOFFWriter::createSymbol</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="169" column="14" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="241" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a5da1595bbf1dbb2d26fc4e3218a46e9c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>COFFSymbol *</type>
+        <definition>COFFSymbol * WinCOFFWriter::GetOrCreateCOFFSymbol</definition>
+        <argsstring>(const MCSymbol *Symbol)</argsstring>
+        <name>GetOrCreateCOFFSymbol</name>
+        <qualifiedname>llvm::WinCOFFWriter::GetOrCreateCOFFSymbol</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> *</type>
+          <declname>Symbol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="170" column="14" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="246" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a8d99d1a1036350e8fbcb68bc440f6f70" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>COFFSection *</type>
+        <definition>COFFSection * WinCOFFWriter::createSection</definition>
+        <argsstring>(StringRef Name)</argsstring>
+        <name>createSection</name>
+        <qualifiedname>llvm::WinCOFFWriter::createSection</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="171" column="15" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="253" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1aec85adf6e48706efa781021674c859f9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::defineSection</definition>
+        <argsstring>(const MCAssembler &amp;Asm, MCSectionCOFF const &amp;Sec)</argsstring>
+        <name>defineSection</name>
+        <qualifiedname>llvm::WinCOFFWriter::defineSection</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref> &amp;</type>
+          <declname>Asm</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_section_c_o_f_f" kindref="compound">MCSectionCOFF</ref> <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+<para>This function takes a section data object from the assembler and creates the associated <ref refid="namespacellvm_1_1_c_o_f_f" kindref="compound">COFF</ref> section staging object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="173" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="294" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1aa5c78efab4e4b7ece8f1a665f6f16489" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>COFFSymbol *</type>
+        <definition>COFFSymbol * WinCOFFWriter::getLinkedSymbol</definition>
+        <argsstring>(const MCSymbol &amp;Symbol)</argsstring>
+        <name>getLinkedSymbol</name>
+        <qualifiedname>llvm::WinCOFFWriter::getLinkedSymbol</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> &amp;</type>
+          <declname>Symbol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="175" column="14" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="353" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a2f758971f2c678319b2789af1377ef11" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::defineSymbol</definition>
+        <argsstring>(const MCAssembler &amp;Asm, const MCSymbol &amp;Symbol)</argsstring>
+        <name>defineSymbol</name>
+        <qualifiedname>llvm::WinCOFFWriter::defineSymbol</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref> &amp;</type>
+          <declname>Asm</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> &amp;</type>
+          <declname>Symbol</declname>
+        </param>
+        <briefdescription>
+<para>This function takes a symbol data object from the assembler and creates the associated <ref refid="namespacellvm_1_1_c_o_f_f" kindref="compound">COFF</ref> symbol staging object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="176" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="371" bodyend="437"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a7f2b43a1818c41d1587433ce5eea4f7b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::SetSymbolName</definition>
+        <argsstring>(COFFSymbol &amp;S)</argsstring>
+        <name>SetSymbolName</name>
+        <qualifiedname>llvm::WinCOFFWriter::SetSymbolName</qualifiedname>
+        <param>
+          <type>COFFSymbol &amp;</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="178" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="450" bodyend="455"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1accd42824aabe6dfabad203313ddf4204" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::SetSectionName</definition>
+        <argsstring>(COFFSection &amp;S)</argsstring>
+        <name>SetSectionName</name>
+        <qualifiedname>llvm::WinCOFFWriter::SetSectionName</qualifiedname>
+        <param>
+          <type>COFFSection &amp;</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="179" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="439" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a6ef1fb6936522e20599aafd74a643791" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool WinCOFFWriter::IsPhysicalSection</definition>
+        <argsstring>(COFFSection *S)</argsstring>
+        <name>IsPhysicalSection</name>
+        <qualifiedname>llvm::WinCOFFWriter::IsPhysicalSection</qualifiedname>
+        <param>
+          <type>COFFSection *</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="181" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="457" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a85ef1308f61c882e886d08000e7e3579" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::WriteFileHeader</definition>
+        <argsstring>(const COFF::header &amp;Header)</argsstring>
+        <name>WriteFileHeader</name>
+        <qualifiedname>llvm::WinCOFFWriter::WriteFileHeader</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_c_o_f_f_1_1header" kindref="compound">COFF::header</ref> &amp;</type>
+          <declname>Header</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="184" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="465" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a41b5550413e4a4c84ba38a5076be3f0f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::WriteSymbol</definition>
+        <argsstring>(const COFFSymbol &amp;S)</argsstring>
+        <name>WriteSymbol</name>
+        <qualifiedname>llvm::WinCOFFWriter::WriteSymbol</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> COFFSymbol &amp;</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="185" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="491" bodyend="502"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a9029633258d769dfd0ecdaa00161d92e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::WriteAuxiliarySymbols</definition>
+        <argsstring>(const COFFSymbol::AuxiliarySymbols &amp;S)</argsstring>
+        <name>WriteAuxiliarySymbols</name>
+        <qualifiedname>llvm::WinCOFFWriter::WriteAuxiliarySymbols</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_win_c_o_f_f_object_writer_8cpp_03_1_1_c_o_f_f_symbol_1a0925eb82674816976ebf9e8d67708ea9" kindref="member">COFFSymbol::AuxiliarySymbols</ref> &amp;</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="186" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="504" bodyend="534"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1ae9988734d6386f6f5262ff66e514a096" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::writeSectionHeaders</definition>
+        <argsstring>()</argsstring>
+        <name>writeSectionHeaders</name>
+        <qualifiedname>llvm::WinCOFFWriter::writeSectionHeaders</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="187" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="537" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a9c3c967272f5c81c0dd48d74cdfabb0c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::WriteRelocation</definition>
+        <argsstring>(const COFF::relocation &amp;R)</argsstring>
+        <name>WriteRelocation</name>
+        <qualifiedname>llvm::WinCOFFWriter::WriteRelocation</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_c_o_f_f_1_1relocation" kindref="compound">COFF::relocation</ref> &amp;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="188" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="568" bodyend="572"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a592cd4d86477a23144ca2061580e7947" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t WinCOFFWriter::writeSectionContents</definition>
+        <argsstring>(MCAssembler &amp;Asm, const MCSection &amp;MCSec)</argsstring>
+        <name>writeSectionContents</name>
+        <qualifiedname>llvm::WinCOFFWriter::writeSectionContents</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref> &amp;</type>
+          <declname>Asm</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_section" kindref="compound">MCSection</ref> &amp;</type>
+          <declname>MCSec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="189" column="12" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="577" bodyend="593"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1ab80717d4400917607319f2a2c74b5ab3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::writeSection</definition>
+        <argsstring>(MCAssembler &amp;Asm, const COFFSection &amp;Sec)</argsstring>
+        <name>writeSection</name>
+        <qualifiedname>llvm::WinCOFFWriter::writeSection</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref> &amp;</type>
+          <declname>Asm</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> COFFSection &amp;</type>
+          <declname>Sec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="190" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="595" bodyend="635"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a9523f3d5edc2316625926fd93681b8bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::createFileSymbols</definition>
+        <argsstring>(MCAssembler &amp;Asm)</argsstring>
+        <name>createFileSymbols</name>
+        <qualifiedname>llvm::WinCOFFWriter::createFileSymbols</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref> &amp;</type>
+          <declname>Asm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="192" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="638" bodyend="667"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a77e96657cd4a6674dad71e86d977895c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::setWeakDefaultNames</definition>
+        <argsstring>()</argsstring>
+        <name>setWeakDefaultNames</name>
+        <qualifiedname>llvm::WinCOFFWriter::setWeakDefaultNames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="193" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="669" bodyend="708"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1a9459491cef8ebb5ae049e8a4bf23ffc5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::assignSectionNumbers</definition>
+        <argsstring>()</argsstring>
+        <name>assignSectionNumbers</name>
+        <qualifiedname>llvm::WinCOFFWriter::assignSectionNumbers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="194" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="715" bodyend="733"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_win_c_o_f_f_writer_1aaae5d99c89d00ab87fcb1045f9b30a55" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WinCOFFWriter::assignFileOffsets</definition>
+        <argsstring>(MCAssembler &amp;Asm)</argsstring>
+        <name>assignFileOffsets</name>
+        <qualifiedname>llvm::WinCOFFWriter::assignFileOffsets</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_assembler" kindref="compound">MCAssembler</ref> &amp;</type>
+          <declname>Asm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/MC/WinCOFFObjectWriter.cpp" line="195" column="8" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="736" bodyend="796"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>DwoMode</label>
+      </node>
+      <node id="1">
+        <label>llvm::WinCOFFWriter</label>
+        <link refid="classllvm_1_1_win_c_o_f_f_writer"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Mode</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib/MC/WinCOFFObjectWriter.cpp" line="123" column="1" bodyfile="lib/MC/WinCOFFObjectWriter.cpp" bodystart="123" bodyend="196"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6bad185352167b8d3ebb701cf3049a5fd33" prot="public" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>AllSections</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1aaae5d99c89d00ab87fcb1045f9b30a55" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>assignFileOffsets</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a9459491cef8ebb5ae049e8a4bf23ffc5" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>assignSectionNumbers</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a9523f3d5edc2316625926fd93681b8bf" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>createFileSymbols</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a8d99d1a1036350e8fbcb68bc440f6f70" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>createSection</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a239a97f08170291a953b108aa733ac1d" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>createSymbol</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1aec85adf6e48706efa781021674c859f9" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>defineSection</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a2f758971f2c678319b2789af1377ef11" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>defineSymbol</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6b" prot="public" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>DwoMode</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6ba4303c2b002aa619418165a36a6b7c5b5" prot="public" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>DwoOnly</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1aeeb14ab0bcb74e040f599ece0ea8de54" prot="public" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>executePostLayoutBinding</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1aa5c78efab4e4b7ece8f1a665f6f16489" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>getLinkedSymbol</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a5da1595bbf1dbb2d26fc4e3218a46e9c" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>GetOrCreateCOFFSymbol</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1ae23544385415140fac111e6d513de04d" prot="public" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>getSectionNumber</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1ae09c1e1846ab4e62df390f43b7c62ce4" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>Header</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a6ef1fb6936522e20599aafd74a643791" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>IsPhysicalSection</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a661e3352259002a2c79043cf6cf8922c" prot="public" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>Mode</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1adb7920f406fa5aedf5f43f8e5ea74c6ba864d13ebc3fed2ac2558685d8f59a45d" prot="public" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>NonDwoOnly</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a07020e5970f6cd969ef207f11670e1ef" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>OWriter</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1ae083e4782d3a3ca6e98fbaacbb8d3f8f" prot="public" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>recordRelocation</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a6e77c3f43a0acf7bdad25ee6308d3812" prot="public" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>reset</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a005b9e4e4cea3cd3802cda04bb7f9910" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>section_map</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1aeec5f6259fc377ae962d528ee15a1dd8" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>SectionMap</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a34a331e246d12fa5ce9e7d1fea9063fc" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>Sections</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a7b57e72a6aaf9071484114a4b5bf6e08" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>sections</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1accd42824aabe6dfabad203313ddf4204" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>SetSectionName</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a7f2b43a1818c41d1587433ce5eea4f7b" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>SetSymbolName</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a77e96657cd4a6674dad71e86d977895c" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>setWeakDefaultNames</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a94b5d6454b7dc20ae1f84ce09502a140" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>Strings</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1ab331e7bf0d8b74ebd740b8a0f342f00c" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>symbol_list</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a9d31551d47e74edbcb3995d349da2c27" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>symbol_map</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1ab4275e6adce6518b27507c502e10f66e" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>SymbolMap</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a27d166e80ed61324a2876d0409400169" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>Symbols</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a873cddead8cb24f63c3f760b64636f5a" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>symbols</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a1664939e6fb3e3ecd124a27e743a73ca" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>UseBigObj</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a9691b4ce40f1b624639dcab97745094f" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>UseOffsetLabels</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a0b0513d06010ea2a3c937edb181b397f" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>W</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1aea528803c1580ce4e2434e320fd15ef4" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>WeakDefaults</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a62cc3a814dc53171f32886aaa2ba8318" prot="public" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>WinCOFFWriter</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a9029633258d769dfd0ecdaa00161d92e" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>WriteAuxiliarySymbols</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a85ef1308f61c882e886d08000e7e3579" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>WriteFileHeader</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a204d14337c246adfd274aac0837c6045" prot="public" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>writeObject</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a9c3c967272f5c81c0dd48d74cdfabb0c" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>WriteRelocation</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1ab80717d4400917607319f2a2c74b5ab3" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>writeSection</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a592cd4d86477a23144ca2061580e7947" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>writeSectionContents</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1ae9988734d6386f6f5262ff66e514a096" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>writeSectionHeaders</name></member>
+      <member refid="classllvm_1_1_win_c_o_f_f_writer_1a41b5550413e4a4c84ba38a5076be3f0f" prot="private" virt="non-virtual"><scope>llvm::WinCOFFWriter</scope><name>WriteSymbol</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

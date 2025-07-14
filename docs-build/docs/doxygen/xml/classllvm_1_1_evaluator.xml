@@ -1,0 +1,449 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_evaluator" kind="class" language="C++" prot="public">
+    <compoundname>llvm::Evaluator</compoundname>
+    <includes refid="_evaluator_8h" local="yes">llvm/Transforms/Utils/Evaluator.h</includes>
+    <innerclass refid="structllvm_1_1_evaluator_1_1_mutable_aggregate" prot="private">llvm::Evaluator::MutableAggregate</innerclass>
+    <innerclass refid="classllvm_1_1_evaluator_1_1_mutable_value" prot="private">llvm::Evaluator::MutableValue</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_evaluator_1ad22579def00e85bded7c488b1bf2dca6" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> * &gt; &gt;</type>
+        <definition>std::deque&lt;DenseMap&lt;Value*, Constant*&gt; &gt; llvm::Evaluator::ValueStack</definition>
+        <argsstring></argsstring>
+        <name>ValueStack</name>
+        <qualifiedname>llvm::Evaluator::ValueStack</qualifiedname>
+        <briefdescription>
+<para>As we compute SSA register values, we store their contents here. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The back of the deque contains the current function and the stack contains the values in the calling frames. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="144" column="14" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_evaluator_1ae8d047bd13669c2be48d2d0dd4d935db" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *, 4 &gt;</type>
+        <definition>SmallVector&lt;Function*, 4&gt; llvm::Evaluator::CallStack</definition>
+        <argsstring></argsstring>
+        <name>CallStack</name>
+        <qualifiedname>llvm::Evaluator::CallStack</qualifiedname>
+        <briefdescription>
+<para>This is used to detect recursion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In pathological situations we could hit exponential behavior, but at least there is nothing unbounded. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="148" column="15" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_evaluator_1a8d5c99417bea0871158771d8edc53179" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref> *, MutableValue &gt;</type>
+        <definition>DenseMap&lt;GlobalVariable *, MutableValue&gt; llvm::Evaluator::MutatedMemory</definition>
+        <argsstring></argsstring>
+        <name>MutatedMemory</name>
+        <qualifiedname>llvm::Evaluator::MutatedMemory</qualifiedname>
+        <briefdescription>
+<para>For each store we execute, we update this map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads check this to get the most up-to-date value. If evaluation is successful, this state is committed to the process. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="153" column="12" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_evaluator_1a4ecc9abb3893c078b52a38a02bbc89ec" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref> &gt;, 32 &gt;</type>
+        <definition>SmallVector&lt;std::unique_ptr&lt;GlobalVariable&gt;, 32&gt; llvm::Evaluator::AllocaTmps</definition>
+        <argsstring></argsstring>
+        <name>AllocaTmps</name>
+        <qualifiedname>llvm::Evaluator::AllocaTmps</qualifiedname>
+        <briefdescription>
+<para>To &apos;execute&apos; an alloca, we create a temporary global variable to represent its body. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This vector is needed so we can delete the temporary globals when we are done. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="158" column="15" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_evaluator_1a97405bcb3df302911109a020c03e1cf1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref> *, 8 &gt;</type>
+        <definition>SmallPtrSet&lt;GlobalVariable*, 8&gt; llvm::Evaluator::Invariants</definition>
+        <argsstring></argsstring>
+        <name>Invariants</name>
+        <qualifiedname>llvm::Evaluator::Invariants</qualifiedname>
+        <briefdescription>
+<para>These global variables have been marked invariant by the static constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="162" column="15" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_evaluator_1ade8fd5ca21fee42283727b7d7a26b0cc" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *, 8 &gt;</type>
+        <definition>SmallPtrSet&lt;Constant*, 8&gt; llvm::Evaluator::SimpleConstants</definition>
+        <argsstring></argsstring>
+        <name>SimpleConstants</name>
+        <qualifiedname>llvm::Evaluator::SimpleConstants</qualifiedname>
+        <briefdescription>
+<para>These are constants we have checked and know to be simple enough to live in a static initializer of a global. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="166" column="15" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_evaluator_1ac26e9e4813f12cda0021e9295bc9df89" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+        <definition>const DataLayout&amp; llvm::Evaluator::DL</definition>
+        <argsstring></argsstring>
+        <name>DL</name>
+        <qualifiedname>llvm::Evaluator::DL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="168" column="20" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_evaluator_1a9c6a0c93afa787eab56f42a471d7ebe2" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+        <definition>const TargetLibraryInfo* llvm::Evaluator::TLI</definition>
+        <argsstring></argsstring>
+        <name>TLI</name>
+        <qualifiedname>llvm::Evaluator::TLI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="169" column="27" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1afbd0baac1d20f5c48a97298fcfd50b45" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::Evaluator::Evaluator</definition>
+        <argsstring>(const DataLayout &amp;DL, const TargetLibraryInfo *TLI)</argsstring>
+        <name>Evaluator</name>
+        <qualifiedname>llvm::Evaluator::Evaluator</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+          <declname>TLI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="82" column="3" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1af4d431d84dba96db2c8359cf0deb5b09" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::Evaluator::~Evaluator</definition>
+        <argsstring>()</argsstring>
+        <name>~Evaluator</name>
+        <qualifiedname>llvm::Evaluator::~Evaluator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="87" column="3" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="87" bodyend="94"/>
+        <references refid="classllvm_1_1_constant_1aa6574d526b3e38a28f688a7bb4325c2c" compoundref="_constants_8cpp" startline="373" endline="401">llvm::Constant::getNullValue</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1aac9fd94c18d93885c8d947121ab9721e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool Evaluator::EvaluateFunction</definition>
+        <argsstring>(Function *F, Constant *&amp;RetVal, const SmallVectorImpl&lt; Constant * &gt; &amp;ActualArgs)</argsstring>
+        <name>EvaluateFunction</name>
+        <qualifiedname>llvm::Evaluator::EvaluateFunction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *&amp;</type>
+          <declname>RetVal</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> * &gt; &amp;</type>
+          <declname>ActualArgs</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate a call to function F, returning true if successful, false if we can&apos;t evaluate it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ActualArgs contains the formal arguments for the function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="99" column="8" bodyfile="lib/Transforms/Utils/Evaluator.cpp" bodystart="600" bodyend="671"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_basic_block_1a0ed5f3ab3c2e4196ee0cffffa080c062" compoundref="_i_r_2_basic_block_8h" startline="461" endline="468">llvm::BasicBlock::begin</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="namespacellvm_1a206e2134ddd2312c3488d0632d98f554" compoundref="_s_t_l_extras_8h" startline="2448" endline="2461">llvm::enumerate</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_p_h_i_node_1ab2db7609ec72b1af2f91d47e40dc3722" compoundref="_instructions_8h" startline="2775" endline="2779">llvm::PHINode::getIncomingValueForBlock</references>
+        <references refid="classllvm_1_1_user_1addec638786f763d967811b45cb662f1f" compoundref="_i_r_2_user_8h" startline="250" endline="250">llvm::User::getNumOperands</references>
+        <references refid="classllvm_1_1_user_1aa0a2cb1582d1cec317bd205085469ca1" compoundref="_i_r_2_user_8h" startline="228" endline="231">llvm::User::getOperand</references>
+        <references refid="classllvm_1_1_return_inst_1a6c2dee0852138a5cb8a4fef5883db9ec" compoundref="_instructions_8h" startline="2980" endline="2982">llvm::ReturnInst::getReturnValue</references>
+        <references refid="classllvm_1_1_basic_block_1aef9e9fcf4c5dfce90276ca16d91b8e46" compoundref="_i_r_2_basic_block_8h" startline="240" endline="244">llvm::BasicBlock::getTerminator</references>
+        <references refid="classllvm_1_1_value_1a0344a49526443edf90cc0aef3abd3337" compoundref="_i_r_2_value_8h" startline="255" endline="255">llvm::Value::getType</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="namespacellvm_1acd1cd968cb420c82d70926920fcdc7d7" compoundref="_s_t_l_extras_8h" startline="1903" endline="1911">llvm::is_contained</references>
+        <references refid="classllvm_1_1_type_1ae8eaa0b4eeac52a2b2282cb1bfd981ae" compoundref="_i_r_2_type_8h" startline="139" endline="139">llvm::Type::isVoidTy</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <referencedby refid="_global_opt_8cpp_1abf4eceb96c86c97477d4bcf8eec661e5" compoundref="_global_opt_8cpp" startline="2243" endline="2269">EvaluateStaticConstructor</referencedby>
+        <referencedby refid="structanonymous__namespace_02_whole_program_devirt_8cpp_03_1_1_devirt_module_1a37fe954e0b01502acccf9b29943e9164" compoundref="_whole_program_devirt_8cpp" startline="1579" endline="1614">anonymous_namespace{WholeProgramDevirt.cpp}::DevirtModule::tryEvaluateFunctionsWithArgs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1a7453e86423554598c4bc680679ad6287" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref> *, <ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> * &gt;</type>
+        <definition>DenseMap&lt; GlobalVariable *, Constant * &gt; llvm::Evaluator::getMutatedInitializers</definition>
+        <argsstring>() const</argsstring>
+        <name>getMutatedInitializers</name>
+        <qualifiedname>llvm::Evaluator::getMutatedInitializers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="102" column="12" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="102" bodyend="107"/>
+        <referencedby refid="_global_opt_8cpp_1abf4eceb96c86c97477d4bcf8eec661e5" compoundref="_global_opt_8cpp" startline="2243" endline="2269">EvaluateStaticConstructor</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1adb90b074529faf1b1a1e29b7845aecd5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref> * &gt; &amp;</type>
+        <definition>const SmallPtrSetImpl&lt; GlobalVariable * &gt; &amp; llvm::Evaluator::getInvariants</definition>
+        <argsstring>() const</argsstring>
+        <name>getInvariants</name>
+        <qualifiedname>llvm::Evaluator::getInvariants</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="109" column="25" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="109" bodyend="111"/>
+        <referencedby refid="_global_opt_8cpp_1abf4eceb96c86c97477d4bcf8eec661e5" compoundref="_global_opt_8cpp" startline="2243" endline="2269">EvaluateStaticConstructor</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1a0ff865cf80810ece1fc1ac6b6f441d0f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool Evaluator::EvaluateBlock</definition>
+        <argsstring>(BasicBlock::iterator CurInst, BasicBlock *&amp;NextBB, bool &amp;StrippedPointerCastsForAliasAnalysis)</argsstring>
+        <name>EvaluateBlock</name>
+        <qualifiedname>llvm::Evaluator::EvaluateBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>CurInst</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *&amp;</type>
+          <declname>NextBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>StrippedPointerCastsForAliasAnalysis</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate all instructions in block BB, returning true if successful, false if we can&apos;t evaluate it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>NewBB returns the next BB that control flows into, or null upon return. StrippedPointerCastsForAliasAnalysis is set to true if we looked through pointer casts to evaluate something. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="114" column="8" bodyfile="lib/Transforms/Utils/Evaluator.cpp" bodystart="271" bodyend="595"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1a270a530536c18d468985de32c0748efa" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *</type>
+        <definition>Constant * llvm::Evaluator::getVal</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>getVal</name>
+        <qualifiedname>llvm::Evaluator::getVal</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="117" column="12" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="117" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1af36b45b1bb516b407f8935aa3a759976" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::Evaluator::setVal</definition>
+        <argsstring>(Value *V, Constant *C)</argsstring>
+        <name>setVal</name>
+        <qualifiedname>llvm::Evaluator::setVal</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="124" column="8" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="124" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1ae87731d4165211697a455c22bf578f41" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+        <definition>Function * Evaluator::getCalleeWithFormalArgs</definition>
+        <argsstring>(CallBase &amp;CB, SmallVectorImpl&lt; Constant * &gt; &amp;Formals)</argsstring>
+        <name>getCalleeWithFormalArgs</name>
+        <qualifiedname>llvm::Evaluator::getCalleeWithFormalArgs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref> &amp;</type>
+          <declname>CB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> * &gt; &amp;</type>
+          <declname>Formals</declname>
+        </param>
+        <briefdescription>
+<para>Given call site return callee and list of its formal arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="129" column="12" bodyfile="lib/Transforms/Utils/Evaluator.cpp" bodystart="246" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1a9732e8bd22ba7697913478e5c4e0a1e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool Evaluator::getFormalParams</definition>
+        <argsstring>(CallBase &amp;CB, Function *F, SmallVectorImpl&lt; Constant * &gt; &amp;Formals)</argsstring>
+        <name>getFormalParams</name>
+        <qualifiedname>llvm::Evaluator::getFormalParams</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref> &amp;</type>
+          <declname>CB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> * &gt; &amp;</type>
+          <declname>Formals</declname>
+        </param>
+        <briefdescription>
+<para>Given call site and callee returns list of callee formal argument values converting them when necessary. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="134" column="8" bodyfile="lib/Transforms/Utils/Evaluator.cpp" bodystart="254" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1a630d36e0e7914f76fb50ffea270c0f17" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *</type>
+        <definition>Constant * Evaluator::ComputeLoadResult</definition>
+        <argsstring>(Constant *P, Type *Ty)</argsstring>
+        <name>ComputeLoadResult</name>
+        <qualifiedname>llvm::Evaluator::ComputeLoadResult</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *</type>
+          <declname>P</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>Ty</declname>
+        </param>
+        <briefdescription>
+<para>Return the value that would be computed by a load from P after the stores reflected by &apos;memory&apos; have been performed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If we can&apos;t decide, return null. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="137" column="12" bodyfile="lib/Transforms/Utils/Evaluator.cpp" bodystart="214" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_evaluator_1a8523de4461819020570b63841f49e285" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *</type>
+        <definition>Constant * Evaluator::ComputeLoadResult</definition>
+        <argsstring>(GlobalVariable *GV, Type *Ty, const APInt &amp;Offset)</argsstring>
+        <name>ComputeLoadResult</name>
+        <qualifiedname>llvm::Evaluator::ComputeLoadResult</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref> *</type>
+          <declname>GV</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>Ty</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref> &amp;</type>
+          <declname>Offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/Evaluator.h" line="138" column="12" bodyfile="lib/Transforms/Utils/Evaluator.cpp" bodystart="224" bodyend="233"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class evaluates LLVM IR, producing the <ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> representing each SSA instruction. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Changes to global variables are stored in a mapping that can be iterated over after the evaluation is complete. Once an evaluation call fails, the evaluation object should not be reused. </para>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/Utils/Evaluator.h" line="37" column="1" bodyfile="include/llvm/Transforms/Utils/Evaluator.h" bodystart="37" bodyend="170"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_evaluator_1a4ecc9abb3893c078b52a38a02bbc89ec" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>AllocaTmps</name></member>
+      <member refid="classllvm_1_1_evaluator_1ae8d047bd13669c2be48d2d0dd4d935db" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>CallStack</name></member>
+      <member refid="classllvm_1_1_evaluator_1a630d36e0e7914f76fb50ffea270c0f17" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>ComputeLoadResult</name></member>
+      <member refid="classllvm_1_1_evaluator_1a8523de4461819020570b63841f49e285" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>ComputeLoadResult</name></member>
+      <member refid="classllvm_1_1_evaluator_1ac26e9e4813f12cda0021e9295bc9df89" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>DL</name></member>
+      <member refid="classllvm_1_1_evaluator_1a0ff865cf80810ece1fc1ac6b6f441d0f" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>EvaluateBlock</name></member>
+      <member refid="classllvm_1_1_evaluator_1aac9fd94c18d93885c8d947121ab9721e" prot="public" virt="non-virtual"><scope>llvm::Evaluator</scope><name>EvaluateFunction</name></member>
+      <member refid="classllvm_1_1_evaluator_1afbd0baac1d20f5c48a97298fcfd50b45" prot="public" virt="non-virtual"><scope>llvm::Evaluator</scope><name>Evaluator</name></member>
+      <member refid="classllvm_1_1_evaluator_1ae87731d4165211697a455c22bf578f41" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>getCalleeWithFormalArgs</name></member>
+      <member refid="classllvm_1_1_evaluator_1a9732e8bd22ba7697913478e5c4e0a1e6" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>getFormalParams</name></member>
+      <member refid="classllvm_1_1_evaluator_1adb90b074529faf1b1a1e29b7845aecd5" prot="public" virt="non-virtual"><scope>llvm::Evaluator</scope><name>getInvariants</name></member>
+      <member refid="classllvm_1_1_evaluator_1a7453e86423554598c4bc680679ad6287" prot="public" virt="non-virtual"><scope>llvm::Evaluator</scope><name>getMutatedInitializers</name></member>
+      <member refid="classllvm_1_1_evaluator_1a270a530536c18d468985de32c0748efa" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>getVal</name></member>
+      <member refid="classllvm_1_1_evaluator_1a97405bcb3df302911109a020c03e1cf1" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>Invariants</name></member>
+      <member refid="classllvm_1_1_evaluator_1a8d5c99417bea0871158771d8edc53179" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>MutatedMemory</name></member>
+      <member refid="classllvm_1_1_evaluator_1af36b45b1bb516b407f8935aa3a759976" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>setVal</name></member>
+      <member refid="classllvm_1_1_evaluator_1ade8fd5ca21fee42283727b7d7a26b0cc" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>SimpleConstants</name></member>
+      <member refid="classllvm_1_1_evaluator_1a9c6a0c93afa787eab56f42a471d7ebe2" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>TLI</name></member>
+      <member refid="classllvm_1_1_evaluator_1ad22579def00e85bded7c488b1bf2dca6" prot="private" virt="non-virtual"><scope>llvm::Evaluator</scope><name>ValueStack</name></member>
+      <member refid="classllvm_1_1_evaluator_1af4d431d84dba96db2c8359cf0deb5b09" prot="public" virt="non-virtual"><scope>llvm::Evaluator</scope><name>~Evaluator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_v_n_coercion_8h" kind="file" language="C++">
+    <compoundname>VNCoercion.h</compoundname>
+    <includedby refid="_g_v_n_8cpp" local="yes">lib/Transforms/Scalar/GVN.cpp</includedby>
+    <includedby refid="_new_g_v_n_8cpp" local="yes">lib/Transforms/Scalar/NewGVN.cpp</includedby>
+    <includedby refid="_v_n_coercion_8cpp" local="yes">lib/Transforms/Utils/VNCoercion.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Transforms/Utils/VNCoercion.h</label>
+        <link refid="_v_n_coercion_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Transforms/Scalar/GVN.cpp</label>
+        <link refid="_g_v_n_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Transforms/Scalar/NewGVN.cpp</label>
+        <link refid="_new_g_v_n_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Transforms/Utils/VNCoercion.cpp</label>
+        <link refid="_v_n_coercion_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <innernamespace refid="namespacellvm_1_1_v_n_coercion">llvm::VNCoercion</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>VNCoercion.h<sp/>-<sp/>Value<sp/>Numbering<sp/>Coercion<sp/>Utilities<sp/>--------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment">///<sp/>\file<sp/>/<sp/>This<sp/>file<sp/>provides<sp/>routines<sp/>used<sp/>by<sp/>LLVM&apos;s<sp/>value<sp/>numbering<sp/>passes<sp/>to</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">///<sp/>perform<sp/>various<sp/>forms<sp/>of<sp/>value<sp/>extraction<sp/>from<sp/>memory<sp/>when<sp/>the<sp/>types<sp/>are<sp/>not</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">///<sp/>identical.<sp/><sp/>For<sp/>example,<sp/>given</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">///<sp/>store<sp/>i32<sp/>8,<sp/>i32<sp/>*%foo</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">///<sp/>%a<sp/>=<sp/>bitcast<sp/>i32<sp/>*%foo<sp/>to<sp/>i16</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">///<sp/>%val<sp/>=<sp/>load<sp/>i16,<sp/>i16<sp/>*%a</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">///<sp/>It<sp/>possible<sp/>to<sp/>extract<sp/>the<sp/>value<sp/>of<sp/>the<sp/>load<sp/>of<sp/>%a<sp/>from<sp/>the<sp/>store<sp/>to<sp/>%foo.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">///<sp/>These<sp/>routines<sp/>know<sp/>how<sp/>to<sp/>tell<sp/>whether<sp/>they<sp/>can<sp/>do<sp/>that<sp/>(the<sp/>analyze*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">///<sp/>routines),<sp/>and<sp/>can<sp/>also<sp/>insert<sp/>the<sp/>necessary<sp/>IR<sp/>to<sp/>do<sp/>it<sp/>(the<sp/>get*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">///<sp/>routines).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_TRANSFORMS_UTILS_VNCOERCION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_TRANSFORMS_UTILS_VNCOERCION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_store_inst" kindref="compound">StoreInst</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_mem_intrinsic" kindref="compound">MemIntrinsic</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_i_r_builder_base" kindref="compound">IRBuilderBase</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_type" kindref="compound">Type</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref>;</highlight></codeline>
+<codeline lineno="34" refid="namespacellvm_1_1_v_n_coercion" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm_1_1_v_n_coercion" kindref="compound">VNCoercion</ref><sp/>{</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="35"><highlight class="comment">///<sp/>Return<sp/>true<sp/>if<sp/>CoerceAvailableValueToLoadType<sp/>would<sp/>succeed<sp/>if<sp/>it<sp/>was</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">///<sp/>called.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_v_n_coercion_1af10eb6aece68a8127f273e6a2dc0fc79" kindref="member">canCoerceMustAliasedValueToLoad</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*StoredVal,<sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*LoadTy,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" kindref="member">DL</ref>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="40"><highlight class="comment">///<sp/>If<sp/>we<sp/>saw<sp/>a<sp/>store<sp/>of<sp/>a<sp/>value<sp/>to<sp/>memory,<sp/>and<sp/>then<sp/>a<sp/>load<sp/>from<sp/>a<sp/>must-aliased</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">///<sp/>pointer<sp/>of<sp/>a<sp/>different<sp/>type,<sp/>try<sp/>to<sp/>coerce<sp/>the<sp/>stored<sp/>value<sp/>to<sp/>the<sp/>loaded</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">///<sp/>type.<sp/><sp/>LoadedTy<sp/>is<sp/>the<sp/>type<sp/>of<sp/>the<sp/>load<sp/>we<sp/>want<sp/>to<sp/>replace.<sp/><sp/>IRB<sp/>is</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">///<sp/>IRBuilder<sp/>used<sp/>to<sp/>insert<sp/>new<sp/>instructions.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="45"><highlight class="comment">///<sp/>If<sp/>we<sp/>can&apos;t<sp/>do<sp/>it,<sp/>return<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1_1_v_n_coercion_1a351251756a2dcf559089f626d9241131" kindref="member">coerceAvailableValueToLoadType</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*StoredVal,<sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*LoadedTy,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_i_r_builder_base" kindref="compound">IRBuilderBase</ref><sp/>&amp;IRB,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" kindref="member">DL</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="49"><highlight class="comment">///<sp/>This<sp/>function<sp/>determines<sp/>whether<sp/>a<sp/>value<sp/>for<sp/>the<sp/>pointer<sp/>LoadPtr<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="50"><highlight class="comment">///<sp/>extracted<sp/>from<sp/>the<sp/>store<sp/>at<sp/>DepSI.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="52"><highlight class="comment">///<sp/>On<sp/>success,<sp/>it<sp/>returns<sp/>the<sp/>offset<sp/>into<sp/>DepSI<sp/>that<sp/>extraction<sp/>would<sp/>start.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment">///<sp/>On<sp/>failure,<sp/>it<sp/>returns<sp/>-1.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_v_n_coercion_1a54e6f143ee9c14b9498e4f43b97c2525" kindref="member">analyzeLoadFromClobberingStore</ref>(<ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*LoadTy,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*LoadPtr,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_store_inst" kindref="compound">StoreInst</ref><sp/>*DepSI,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" kindref="member">DL</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="57"><highlight class="comment">///<sp/>This<sp/>function<sp/>determines<sp/>whether<sp/>a<sp/>value<sp/>for<sp/>the<sp/>pointer<sp/>LoadPtr<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="58"><highlight class="comment">///<sp/>extracted<sp/>from<sp/>the<sp/>load<sp/>at<sp/>DepLI.</highlight></codeline>
+<codeline lineno="59"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="60"><highlight class="comment">///<sp/>On<sp/>success,<sp/>it<sp/>returns<sp/>the<sp/>offset<sp/>into<sp/>DepLI<sp/>that<sp/>extraction<sp/>would<sp/>start.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment">///<sp/>On<sp/>failure,<sp/>it<sp/>returns<sp/>-1.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_v_n_coercion_1a9534d3bff0727cc904e6bbc1064d2e2f" kindref="member">analyzeLoadFromClobberingLoad</ref>(<ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*LoadTy,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*LoadPtr,<sp/><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref><sp/>*DepLI,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" kindref="member">DL</ref>);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="65"><highlight class="comment">///<sp/>This<sp/>function<sp/>determines<sp/>whether<sp/>a<sp/>value<sp/>for<sp/>the<sp/>pointer<sp/>LoadPtr<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="66"><highlight class="comment">///<sp/>extracted<sp/>from<sp/>the<sp/>memory<sp/>intrinsic<sp/>at<sp/>DepMI.</highlight></codeline>
+<codeline lineno="67"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">///<sp/>On<sp/>success,<sp/>it<sp/>returns<sp/>the<sp/>offset<sp/>into<sp/>DepMI<sp/>that<sp/>extraction<sp/>would<sp/>start.</highlight></codeline>
+<codeline lineno="69"><highlight class="comment">///<sp/>On<sp/>failure,<sp/>it<sp/>returns<sp/>-1.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_v_n_coercion_1ab7c3af18d8706c2d91fd7e2f88424336" kindref="member">analyzeLoadFromClobberingMemInst</ref>(<ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*LoadTy,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*LoadPtr,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_mem_intrinsic" kindref="compound">MemIntrinsic</ref><sp/>*DepMI,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" kindref="member">DL</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="73"><highlight class="comment">///<sp/>If<sp/>analyzeLoadFromClobberingStore/Load<sp/>returned<sp/>an<sp/>offset,<sp/>this<sp/>function</highlight></codeline>
+<codeline lineno="74"><highlight class="comment">///<sp/>can<sp/>be<sp/>used<sp/>to<sp/>actually<sp/>perform<sp/>the<sp/>extraction<sp/>of<sp/>the<sp/>bits<sp/>from<sp/>the<sp/>store.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment">///<sp/>It<sp/>inserts<sp/>instructions<sp/>to<sp/>do<sp/>so<sp/>at<sp/>InsertPt,<sp/>and<sp/>returns<sp/>the<sp/>extracted</highlight></codeline>
+<codeline lineno="76"><highlight class="comment">///<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1_1_v_n_coercion_1a0786ad18996fdeb6bb0e33c3bfa4ce82" kindref="member">getValueForLoad</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*SrcVal,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" kindref="member">Offset</ref>,<sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*LoadTy,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref><sp/>*InsertPt,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" kindref="member">DL</ref>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>the<sp/>same<sp/>as<sp/>getValueForLoad,<sp/>except<sp/>it<sp/>performs<sp/>no<sp/>insertion.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">//<sp/>It<sp/>only<sp/>allows<sp/>constant<sp/>inputs.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref><sp/>*<ref refid="namespacellvm_1_1_v_n_coercion_1a79e8ff1687364a4f9ac11f6dc1c4ce2d" kindref="member">getConstantValueForLoad</ref>(<ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref><sp/>*SrcVal,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" kindref="member">Offset</ref>,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*LoadTy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" kindref="member">DL</ref>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="84"><highlight class="comment">///<sp/>If<sp/>analyzeLoadFromClobberingMemInst<sp/>returned<sp/>an<sp/>offset,<sp/>this<sp/>function<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="85"><highlight class="comment">///<sp/>used<sp/>to<sp/>actually<sp/>perform<sp/>the<sp/>extraction<sp/>of<sp/>the<sp/>bits<sp/>from<sp/>the<sp/>memory</highlight></codeline>
+<codeline lineno="86"><highlight class="comment">///<sp/>intrinsic.<sp/><sp/>It<sp/>inserts<sp/>instructions<sp/>to<sp/>do<sp/>so<sp/>at<sp/>InsertPt,<sp/>and<sp/>returns<sp/>the</highlight></codeline>
+<codeline lineno="87"><highlight class="comment">///<sp/>extracted<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1_1_v_n_coercion_1a6b72d403292d9dddd1ef1ce3e8bc394c" kindref="member">getMemInstValueForLoad</ref>(<ref refid="classllvm_1_1_mem_intrinsic" kindref="compound">MemIntrinsic</ref><sp/>*SrcInst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" kindref="member">Offset</ref>,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*LoadTy,<sp/><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref><sp/>*InsertPt,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" kindref="member">DL</ref>);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>the<sp/>same<sp/>as<sp/>getStoreValueForLoad,<sp/>except<sp/>it<sp/>performs<sp/>no<sp/>insertion.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment">//<sp/>It<sp/>returns<sp/>nullptr<sp/>if<sp/>it<sp/>cannot<sp/>produce<sp/>a<sp/>constant.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref><sp/>*<ref refid="namespacellvm_1_1_v_n_coercion_1aa4b66161f15587adee19725b89fec713" kindref="member">getConstantMemInstValueForLoad</ref>(<ref refid="classllvm_1_1_mem_intrinsic" kindref="compound">MemIntrinsic</ref><sp/>*SrcInst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" kindref="member">Offset</ref>,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_type" kindref="compound">Type</ref><sp/>*LoadTy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref><sp/>&amp;<ref refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" kindref="member">DL</ref>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Transforms/Utils/VNCoercion.h"/>
+  </compounddef>
+</doxygen>

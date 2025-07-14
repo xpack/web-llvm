@@ -1,0 +1,464 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_s_c_e_v_wrap_predicate" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>llvm::SCEVWrapPredicate</compoundname>
+    <basecompoundref refid="classllvm_1_1_s_c_e_v_predicate" prot="public" virt="non-virtual">llvm::SCEVPredicate</basecompoundref>
+    <includes refid="_scalar_evolution_8h" local="yes">llvm/Analysis/ScalarEvolution.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" prot="public" static="no" strong="no">
+        <type></type>
+        <name>IncrementWrapFlags</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::IncrementWrapFlags</qualifiedname>
+        <enumvalue id="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a11c850531be360193c9473b4fe240c1d" prot="public">
+          <name>IncrementAnyWrap</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a17e825823d4b6a92c1b221c4460c91a3" prot="public">
+          <name>IncrementNUSW</name>
+          <initializer>= (1 &lt;&lt; 0)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70aa4c321f736f542d50b81bb06351f7fce" prot="public">
+          <name>IncrementNSSW</name>
+          <initializer>= (1 &lt;&lt; 1)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a230598aea93080d7f8204727504352e7" prot="public">
+          <name>IncrementNoWrapMask</name>
+          <initializer>= (1 &lt;&lt; 2) - 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Similar to <ref refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6f" kindref="member">SCEV::NoWrapFlags</ref>, but with slightly different semantics for FlagNUSW. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The increment is considered to be signed, and a + b (where b is the increment) is considered to wrap if: zext(a + b) != zext(a) + sext(b)</para>
+<para>If Signed is a function that takes an n-bit tuple and maps to the integer domain as the tuples value interpreted as twos complement, and Unsigned a function that takes an n-bit tuple and maps to the integer domain as the base two value of input tuple, then a + b has IncrementNUSW iff:</para>
+<para>0 &lt;= <ref refid="_n_v_p_t_x_i_sel_lowering_8cpp_1ae1a90b5d85643644483b2ca70da4d13fac837bff23a12c3735d463020f37979de" kindref="member">Unsigned(a)</ref> + <ref refid="_n_v_p_t_x_i_sel_lowering_8cpp_1ae1a90b5d85643644483b2ca70da4d13faed3fa7a5efe80dad3ea3d86cc14be246" kindref="member">Signed(b)</ref> &lt; 2^n</para>
+<para>The IncrementNSSW flag has identical semantics with <ref refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6fa2f7a8775a783f7ea3ad24b3f9cb5d949" kindref="member">SCEV::FlagNSW</ref>.</para>
+<para>Note that the IncrementNUSW flag is not commutative: if base + inc has IncrementNUSW, then inc + base doesn&apos;t neccessarily have this property. The reason for this is that this is used for sign/zero extending affine AddRec <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expressions when a <ref refid="classllvm_1_1_s_c_e_v_wrap_predicate" kindref="compound">SCEVWrapPredicate</ref> is assumed. A {base,+,inc} expression is already non-commutative with regards to base and inc, since it is interpreted as: (((base + inc) + inc) + inc) ... </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="341" column="3" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="341" bodyend="347"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_s_c_e_v_wrap_predicate_1afe15431c61eb6e43dafd635afc9d42b4" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v_add_rec_expr" kindref="compound">SCEVAddRecExpr</ref> *</type>
+        <definition>const SCEVAddRecExpr* llvm::SCEVWrapPredicate::AR</definition>
+        <argsstring></argsstring>
+        <name>AR</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::AR</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="383" column="24" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="383" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_s_c_e_v_wrap_predicate_1a43cd4e72320a52b35e6b98b4ae7f1204" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">IncrementWrapFlags</ref></type>
+        <definition>IncrementWrapFlags llvm::SCEVWrapPredicate::Flags</definition>
+        <argsstring></argsstring>
+        <name>Flags</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::Flags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="384" column="22" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="384" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_wrap_predicate_1a6075abe0816f373cb741561866f3eefa" prot="public" static="yes" nodiscard="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref></type>
+        <definition>static SCEVWrapPredicate::IncrementWrapFlags llvm::SCEVWrapPredicate::clearFlags</definition>
+        <argsstring>(SCEVWrapPredicate::IncrementWrapFlags Flags, SCEVWrapPredicate::IncrementWrapFlags OffFlags)</argsstring>
+        <name>clearFlags</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::clearFlags</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref></type>
+          <declname>OffFlags</declname>
+        </param>
+        <briefdescription>
+<para>Convenient <ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">IncrementWrapFlags</ref> manipulation methods. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="351" column="3" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="351" bodyend="357"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a230598aea93080d7f8204727504352e7" compoundref="_scalar_evolution_8h" startline="346">IncrementNoWrapMask</references>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1a6fb96c9b4d017d69818db581dae5bd96" compoundref="_scalar_evolution_8cpp" startline="15206" endline="15220">llvm::PredicatedScalarEvolution::hasNoOverflow</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a55e760ed817efd182374bddd96c0725d" compoundref="_scalar_evolution_8cpp" startline="15007" endline="15015">isAlwaysTrue</referencedby>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1a757ce31dd838b17c024287ce9d17c4c2" compoundref="_scalar_evolution_8cpp" startline="15190" endline="15204">llvm::PredicatedScalarEvolution::setNoOverflow</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_wrap_predicate_1af2cce06456a0642612f73e03dfc3af23" prot="public" static="yes" nodiscard="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref></type>
+        <definition>static SCEVWrapPredicate::IncrementWrapFlags llvm::SCEVWrapPredicate::maskFlags</definition>
+        <argsstring>(SCEVWrapPredicate::IncrementWrapFlags Flags, int Mask)</argsstring>
+        <name>maskFlags</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::maskFlags</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>Mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="360" column="3" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="360" bodyend="365"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a230598aea93080d7f8204727504352e7" compoundref="_scalar_evolution_8h" startline="346">IncrementNoWrapMask</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_wrap_predicate_1a3db937ba78ab75aa91d72c8678a28b78" prot="public" static="yes" nodiscard="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref></type>
+        <definition>static SCEVWrapPredicate::IncrementWrapFlags llvm::SCEVWrapPredicate::setFlags</definition>
+        <argsstring>(SCEVWrapPredicate::IncrementWrapFlags Flags, SCEVWrapPredicate::IncrementWrapFlags OnFlags)</argsstring>
+        <name>setFlags</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::setFlags</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref></type>
+          <declname>OnFlags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="368" column="3" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="368" bodyend="375"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a230598aea93080d7f8204727504352e7" compoundref="_scalar_evolution_8h" startline="346">IncrementNoWrapMask</references>
+        <referencedby refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a76a888bd97f7b7bb6b43eb4bdb9dc3bc" compoundref="_scalar_evolution_8cpp" startline="15027" endline="15045">getImpliedFlags</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a1bb4ca5c2810fc70f58fcf2581fa5bca" compoundref="_scalar_evolution_8cpp" startline="14968" endline="15005">implies</referencedby>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1a757ce31dd838b17c024287ce9d17c4c2" compoundref="_scalar_evolution_8cpp" startline="15190" endline="15204">llvm::PredicatedScalarEvolution::setNoOverflow</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_wrap_predicate_1a76a888bd97f7b7bb6b43eb4bdb9dc3bc" prot="public" static="yes" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref></type>
+        <definition>SCEVWrapPredicate::IncrementWrapFlags SCEVWrapPredicate::getImpliedFlags</definition>
+        <argsstring>(const SCEVAddRecExpr *AR, ScalarEvolution &amp;SE)</argsstring>
+        <name>getImpliedFlags</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::getImpliedFlags</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v_add_rec_expr" kindref="compound">SCEVAddRecExpr</ref> *</type>
+          <declname>AR</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> &amp;</type>
+          <declname>SE</declname>
+        </param>
+        <briefdescription>
+<para>Returns the set of <ref refid="classllvm_1_1_s_c_e_v_wrap_predicate" kindref="compound">SCEVWrapPredicate</ref> no wrap flags implied by a <ref refid="classllvm_1_1_s_c_e_v_add_rec_expr" kindref="compound">SCEVAddRecExpr</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="380" column="3" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15027" bodyend="15045"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6fa2f7a8775a783f7ea3ad24b3f9cb5d949" compoundref="_scalar_evolution_8h" startline="130">llvm::SCEV::FlagNSW</references>
+        <references refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6faafb62cd6afdc004ef6e8a1f6288eb382" compoundref="_scalar_evolution_8h" startline="129">llvm::SCEV::FlagNUW</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a11c850531be360193c9473b4fe240c1d" compoundref="_scalar_evolution_8h" startline="342">IncrementAnyWrap</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70aa4c321f736f542d50b81bb06351f7fce" compoundref="_scalar_evolution_8h" startline="344">IncrementNSSW</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a17e825823d4b6a92c1b221c4460c91a3" compoundref="_scalar_evolution_8h" startline="343">IncrementNUSW</references>
+        <references refid="classllvm_1_1_scalar_evolution_1a8fed3b807739f2ff6942c12407ab00fa" compoundref="_scalar_evolution_8h" startline="471" endline="474">llvm::ScalarEvolution::setFlags</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a3db937ba78ab75aa91d72c8678a28b78" compoundref="_scalar_evolution_8h" startline="368" endline="375">setFlags</references>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1a6fb96c9b4d017d69818db581dae5bd96" compoundref="_scalar_evolution_8cpp" startline="15206" endline="15220">llvm::PredicatedScalarEvolution::hasNoOverflow</referencedby>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1a757ce31dd838b17c024287ce9d17c4c2" compoundref="_scalar_evolution_8cpp" startline="15190" endline="15204">llvm::PredicatedScalarEvolution::setNoOverflow</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_wrap_predicate_1a6348b250afd77c2b910448605b06f309" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::SCEVWrapPredicate::classof</definition>
+        <argsstring>(const SCEVPredicate *P)</argsstring>
+        <name>classof</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::classof</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v_predicate" kindref="compound">SCEVPredicate</ref> *</type>
+          <declname>P</declname>
+        </param>
+        <briefdescription>
+<para>Methods for support type inquiry through isa, cast, and dyn_cast: </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="401" column="15" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="401" bodyend="403"/>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="classllvm_1_1_s_c_e_v_predicate_1a75f4943e861ac0b6d41439c7d5c07adbaac3069eca0cb48a03eaa7d95fb84829c" compoundref="_scalar_evolution_8h" startline="222">llvm::SCEVPredicate::P_Wrap</references>
+        <references refid="classllvm_1_1_s_c_e_v_predicate_1a6d2a13cb997f4164ed8d17c16b50acf1">llvm::SCEVPredicate::SCEVPredicate</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_wrap_predicate_1a1434e18d5ff272c4b7bfb27e519dee42" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SCEVWrapPredicate::SCEVWrapPredicate</definition>
+        <argsstring>(const FoldingSetNodeIDRef ID, const SCEVAddRecExpr *AR, IncrementWrapFlags Flags)</argsstring>
+        <name>SCEVWrapPredicate</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::SCEVWrapPredicate</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_folding_set_node_i_d_ref" kindref="compound">FoldingSetNodeIDRef</ref></type>
+          <declname>ID</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v_add_rec_expr" kindref="compound">SCEVAddRecExpr</ref> *</type>
+          <declname>AR</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">IncrementWrapFlags</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="387" column="12" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="14961" bodyend="14964"/>
+        <references refid="classllvm_1_1_s_c_e_v_predicate_1a75f4943e861ac0b6d41439c7d5c07adbaac3069eca0cb48a03eaa7d95fb84829c" compoundref="_scalar_evolution_8h" startline="222">llvm::SCEVPredicate::P_Wrap</references>
+        <references refid="classllvm_1_1_s_c_e_v_predicate_1a6d2a13cb997f4164ed8d17c16b50acf1">llvm::SCEVPredicate::SCEVPredicate</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_wrap_predicate_1abd0469a627ab55aaa6789c3d6dec0fa9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">IncrementWrapFlags</ref></type>
+        <definition>IncrementWrapFlags llvm::SCEVWrapPredicate::getFlags</definition>
+        <argsstring>() const</argsstring>
+        <name>getFlags</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::getFlags</qualifiedname>
+        <briefdescription>
+<para>Returns the set assumed no overflow flags. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="392" column="22" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="392" bodyend="392"/>
+        <referencedby refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a42276b9ddf5e782e18683908a626466a" compoundref="_scalar_evolution_8cpp" startline="15017" endline="15024">print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_wrap_predicate_1a5fadcc50dcb3839af0bfcb62d2cb20b9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v_add_rec_expr" kindref="compound">SCEVAddRecExpr</ref> *</type>
+        <definition>const SCEVAddRecExpr * SCEVWrapPredicate::getExpr</definition>
+        <argsstring>() const</argsstring>
+        <name>getExpr</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::getExpr</qualifiedname>
+        <briefdescription>
+<para>Implementation of the <ref refid="classllvm_1_1_s_c_e_v_predicate" kindref="compound">SCEVPredicate</ref> interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="395" column="24" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="14966" bodyend="14966"/>
+        <referencedby refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a42276b9ddf5e782e18683908a626466a" compoundref="_scalar_evolution_8cpp" startline="15017" endline="15024">print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_wrap_predicate_1a1bb4ca5c2810fc70f58fcf2581fa5bca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SCEVWrapPredicate::implies</definition>
+        <argsstring>(const SCEVPredicate *N, ScalarEvolution &amp;SE) const override</argsstring>
+        <name>implies</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::implies</qualifiedname>
+        <reimplements refid="classllvm_1_1_s_c_e_v_predicate_1a917cb28715479ee3f2bc44d4149e13ef">implies</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v_predicate" kindref="compound">SCEVPredicate</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> &amp;</type>
+          <declname>SE</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if this predicate implies <computeroutput>N</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="396" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="14968" bodyend="15005"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_scalar_evolution_1a38c440751f1bf5f19bc12b95f8f0f2a6" compoundref="_scalar_evolution_8cpp" startline="4742" endline="4751">llvm::ScalarEvolution::getNoopOrSignExtend</references>
+        <references refid="classllvm_1_1_scalar_evolution_1a933eb87303a6ce51c8894e431fbc389b" compoundref="_scalar_evolution_8cpp" startline="4730" endline="4739">llvm::ScalarEvolution::getNoopOrZeroExtend</references>
+        <references refid="classllvm_1_1_s_c_e_v_1aefeda9454a5e8dfcec3deb106964832a" compoundref="_scalar_evolution_8cpp" startline="386" endline="418">llvm::SCEV::getType</references>
+        <references refid="classllvm_1_1_scalar_evolution_1a10cde7087f90dc664b6799814aa28584" compoundref="_scalar_evolution_8cpp" startline="4469" endline="4471">llvm::ScalarEvolution::getWiderType</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba2751d6136a2819749dcef65dc19a4246" compoundref="_instr_types_8h" startline="703">llvm::CmpInst::ICMP_SLE</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78bad92f160316221fd4090520bb2b3cefc5" compoundref="_instr_types_8h" startline="699">llvm::CmpInst::ICMP_ULE</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70aa4c321f736f542d50b81bb06351f7fce" compoundref="_scalar_evolution_8h" startline="344">IncrementNSSW</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a17e825823d4b6a92c1b221c4460c91a3" compoundref="_scalar_evolution_8h" startline="343">IncrementNUSW</references>
+        <references refid="classllvm_1_1_scalar_evolution_1a5a672708a81ae8da8fb56e32638ca9b3" compoundref="_scalar_evolution_8cpp" startline="10947" endline="10949">llvm::ScalarEvolution::isKnownPositive</references>
+        <references refid="classllvm_1_1_scalar_evolution_1af74112dae88db73eb5484821b6f0fccd" compoundref="_scalar_evolution_8cpp" startline="11049" endline="11062">llvm::ScalarEvolution::isKnownPredicate</references>
+        <references refid="classllvm_1_1_type_1a3b996fbf8458aafffc86cb98a68d0a47" compoundref="_i_r_2_type_8h" startline="264" endline="264">llvm::Type::isPointerTy</references>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="classllvm_1_1_s_c_e_v_predicate_1a6d2a13cb997f4164ed8d17c16b50acf1">llvm::SCEVPredicate::SCEVPredicate</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a3db937ba78ab75aa91d72c8678a28b78" compoundref="_scalar_evolution_8h" startline="368" endline="375">setFlags</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_wrap_predicate_1a42276b9ddf5e782e18683908a626466a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SCEVWrapPredicate::print</definition>
+        <argsstring>(raw_ostream &amp;OS, unsigned Depth=0) const override</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::print</qualifiedname>
+        <reimplements refid="classllvm_1_1_s_c_e_v_predicate_1aad1f00f5fd2e1d44f4d4693b021fae20">print</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Depth</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Prints a textual representation of this predicate with an indentation of <computeroutput>Depth</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="397" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15017" bodyend="15024"/>
+        <references refid="namespacellvm_1a1eb5609345b906d024fbf9e4bc1adc06afe578efb7ca235af77fb0eef7edcf639" compoundref="_s_i_machine_scheduler_8h" startline="36">llvm::Depth</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a5fadcc50dcb3839af0bfcb62d2cb20b9" compoundref="_scalar_evolution_8cpp" startline="14966" endline="14966">getExpr</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1abd0469a627ab55aaa6789c3d6dec0fa9" compoundref="_scalar_evolution_8h" startline="392" endline="392">getFlags</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70aa4c321f736f542d50b81bb06351f7fce" compoundref="_scalar_evolution_8h" startline="344">IncrementNSSW</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a17e825823d4b6a92c1b221c4460c91a3" compoundref="_scalar_evolution_8h" startline="343">IncrementNUSW</references>
+        <references refid="classllvm_1_1raw__ostream_1a8fdf5cdf041c8aded7e3308c1c3efacc" compoundref="raw__ostream_8cpp" startline="495" endline="497">llvm::raw_ostream::indent</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_s_c_e_v_wrap_predicate_1a55e760ed817efd182374bddd96c0725d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SCEVWrapPredicate::isAlwaysTrue</definition>
+        <argsstring>() const override</argsstring>
+        <name>isAlwaysTrue</name>
+        <qualifiedname>llvm::SCEVWrapPredicate::isAlwaysTrue</qualifiedname>
+        <reimplements refid="classllvm_1_1_s_c_e_v_predicate_1ac43f5102232a1e1819b0763536f2937a">isAlwaysTrue</reimplements>
+        <briefdescription>
+<para>Returns true if the predicate is always true. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This means that no assumptions were made and nothing needs to be checked at run-time. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="398" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15007" bodyend="15015"/>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a6075abe0816f373cb741561866f3eefa" compoundref="_scalar_evolution_8h" startline="351" endline="357">clearFlags</references>
+        <references refid="classllvm_1_1_s_c_e_v_1af43000d4dcb7d6d63cb6e36933ed3f6fa2f7a8775a783f7ea3ad24b3f9cb5d949" compoundref="_scalar_evolution_8h" startline="130">llvm::SCEV::FlagNSW</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a11c850531be360193c9473b4fe240c1d" compoundref="_scalar_evolution_8h" startline="342">IncrementAnyWrap</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70aa4c321f736f542d50b81bb06351f7fce" compoundref="_scalar_evolution_8h" startline="344">IncrementNSSW</references>
+        <references refid="classllvm_1_1_scalar_evolution_1a8fed3b807739f2ff6942c12407ab00fa" compoundref="_scalar_evolution_8h" startline="471" endline="474">llvm::ScalarEvolution::setFlags</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class represents an assumption made on an AddRec expression. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Given an affine AddRec expression {a,+,b}, we assume that it has the nssw or nusw flags (defined below) in the first X iterations of the loop, where X is a <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expression returned by getPredicatedBackedgeTakenCount).</para>
+<para>Note that this does not imply that X is equal to the backedge taken count. This means that if we have a nusw predicate for i32 {0,+,1} with a predicated backedge taken count of X, we only guarantee that {0,+,1} has nusw in the first X iterations. {0,+,1} may still wrap in the loop if we have more than X iterations. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>FoldingSetNode</label>
+        <link refid="classllvm_1_1_folding_set_base_1_1_node"/>
+      </node>
+      <node id="2">
+        <label>llvm::SCEVPredicate</label>
+        <link refid="classllvm_1_1_s_c_e_v_predicate"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::SCEVWrapPredicate</label>
+        <link refid="classllvm_1_1_s_c_e_v_wrap_predicate"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>FoldingSetNode</label>
+        <link refid="classllvm_1_1_folding_set_base_1_1_node"/>
+      </node>
+      <node id="4">
+        <label>SCEVPredicateKind</label>
+      </node>
+      <node id="2">
+        <label>llvm::SCEVPredicate</label>
+        <link refid="classllvm_1_1_s_c_e_v_predicate"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Kind</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::SCEVWrapPredicate</label>
+        <link refid="classllvm_1_1_s_c_e_v_wrap_predicate"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Analysis/ScalarEvolution.h" line="317" column="1" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="317" bodyend="404"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1afe15431c61eb6e43dafd635afc9d42b4" prot="private" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>AR</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a6348b250afd77c2b910448605b06f309" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>classof</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a6075abe0816f373cb741561866f3eefa" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>clearFlags</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a43cd4e72320a52b35e6b98b4ae7f1204" prot="private" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>Flags</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_predicate_1a4e26ec305e394c496dd3f2a16c6d58e5" prot="public" virt="virtual"><scope>llvm::SCEVWrapPredicate</scope><name>getComplexity</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a5fadcc50dcb3839af0bfcb62d2cb20b9" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>getExpr</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1abd0469a627ab55aaa6789c3d6dec0fa9" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>getFlags</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a76a888bd97f7b7bb6b43eb4bdb9dc3bc" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>getImpliedFlags</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_predicate_1a3e106ba376047526339549604302902a" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>getKind</name></member>
+      <member refid="classllvm_1_1_folding_set_base_1_1_node_1a15cf5b457269c092dd96871e8a49d59c" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>getNextInBucket</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a1bb4ca5c2810fc70f58fcf2581fa5bca" prot="public" virt="virtual"><scope>llvm::SCEVWrapPredicate</scope><name>implies</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a11c850531be360193c9473b4fe240c1d" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>IncrementAnyWrap</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a230598aea93080d7f8204727504352e7" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>IncrementNoWrapMask</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70aa4c321f736f542d50b81bb06351f7fce" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>IncrementNSSW</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a17e825823d4b6a92c1b221c4460c91a3" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>IncrementNUSW</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>IncrementWrapFlags</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a55e760ed817efd182374bddd96c0725d" prot="public" virt="virtual"><scope>llvm::SCEVWrapPredicate</scope><name>isAlwaysTrue</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_predicate_1ad853ec63160621fcd8583ba04d75e987" prot="protected" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>Kind</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1af2cce06456a0642612f73e03dfc3af23" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>maskFlags</name></member>
+      <member refid="classllvm_1_1_folding_set_base_1_1_node_1afa5afed4884694da5a79d61c7b7492a4" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>Node</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_predicate_1a4ed14cd9d8e80c749747101c82b2413e" prot="protected" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_predicate_1a75f4943e861ac0b6d41439c7d5c07adba319b527f8f84903a6c37695faf0bc2c8" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>P_Compare</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_predicate_1a75f4943e861ac0b6d41439c7d5c07adba8905d2b2d2eed2135c4c6cc4af11e311" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>P_Union</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_predicate_1a75f4943e861ac0b6d41439c7d5c07adbaac3069eca0cb48a03eaa7d95fb84829c" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>P_Wrap</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a42276b9ddf5e782e18683908a626466a" prot="public" virt="virtual"><scope>llvm::SCEVWrapPredicate</scope><name>print</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_predicate_1a6d2a13cb997f4164ed8d17c16b50acf1" prot="protected" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>SCEVPredicate</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_predicate_1af97132991d152fce890196285895e74d" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>SCEVPredicate</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_predicate_1a75f4943e861ac0b6d41439c7d5c07adb" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>SCEVPredicateKind</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a1434e18d5ff272c4b7bfb27e519dee42" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>SCEVWrapPredicate</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a3db937ba78ab75aa91d72c8678a28b78" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>setFlags</name></member>
+      <member refid="classllvm_1_1_folding_set_base_1_1_node_1a5e89537cd2bf241c821568a8790cba6a" prot="public" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>SetNextInBucket</name></member>
+      <member refid="classllvm_1_1_s_c_e_v_predicate_1abe8b6645e2dcfc8f24f99111cd7e09f9" prot="protected" virt="non-virtual"><scope>llvm::SCEVWrapPredicate</scope><name>~SCEVPredicate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

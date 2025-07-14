@@ -1,0 +1,518 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_simple_bitstream_cursor" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SimpleBitstreamCursor</compoundname>
+    <derivedcompoundref refid="classllvm_1_1_bitstream_cursor" prot="private" virt="non-virtual">llvm::BitstreamCursor</derivedcompoundref>
+    <includes refid="_bitstream_reader_8h" local="yes">llvm/Bitstream/BitstreamReader.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_simple_bitstream_cursor_1a844fc5e45f6ac94e7da1f7f5a94dc604" prot="public" static="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>using llvm::SimpleBitstreamCursor::word_t =  size_t</definition>
+        <argsstring></argsstring>
+        <name>word_t</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::word_t</qualifiedname>
+        <briefdescription>
+<para>This is the current data we have pulled from the stream but have not returned to the client. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is specifically and intentionally defined to follow the word size of the host machine for efficiency. We use <ref refid="classllvm_1_1_simple_bitstream_cursor_1a844fc5e45f6ac94e7da1f7f5a94dc604" kindref="member">word_t</ref> in places that are aware of this to make it perfectly explicit what is going on. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="89" column="3" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_simple_bitstream_cursor_1aba820c8c2bb50e854f4a86477a72d2cf" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt;</type>
+        <definition>ArrayRef&lt;uint8_t&gt; llvm::SimpleBitstreamCursor::BitcodeBytes</definition>
+        <argsstring></argsstring>
+        <name>BitcodeBytes</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::BitcodeBytes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="80" column="12" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_simple_bitstream_cursor_1a5880d8b3ca655da01311d1d4fe0adbbc" prot="private" static="no" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::SimpleBitstreamCursor::NextChar</definition>
+        <argsstring></argsstring>
+        <name>NextChar</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::NextChar</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="81" column="10" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_simple_bitstream_cursor_1abf43a750f7d6b277e695ab5c9dd6bec1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_simple_bitstream_cursor_1a844fc5e45f6ac94e7da1f7f5a94dc604" kindref="member">word_t</ref></type>
+        <definition>word_t llvm::SimpleBitstreamCursor::CurWord</definition>
+        <argsstring></argsstring>
+        <name>CurWord</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::CurWord</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="92" column="10" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_simple_bitstream_cursor_1a5915e0fb546d008f2e9a42d4aaf477e8" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SimpleBitstreamCursor::BitsInCurWord</definition>
+        <argsstring></argsstring>
+        <name>BitsInCurWord</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::BitsInCurWord</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>This is the number of bits in CurWord that are valid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is always from [0...bits_of(size_t)-1] inclusive. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="96" column="12" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a25f3276dea5a6789ed5c341a4708564c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SimpleBitstreamCursor::SimpleBitstreamCursor</definition>
+        <argsstring>()=default</argsstring>
+        <name>SimpleBitstreamCursor</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::SimpleBitstreamCursor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="99" column="3"/>
+        <referencedby refid="classllvm_1_1_bitstream_cursor_1a9577a4c24ce4600953feae25628bbc8c" compoundref="_bitstream_reader_8h" startline="381" endline="382">llvm::BitstreamCursor::BitstreamCursor</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_cursor_1a51ab610e54cb1561ae658ae2afbd0372" compoundref="_bitstream_reader_8h" startline="385" endline="386">llvm::BitstreamCursor::BitstreamCursor</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_cursor_1a02e4fe0b4a8bc9480c0590675fd10190" compoundref="_bitstream_reader_8h" startline="383" endline="384">llvm::BitstreamCursor::BitstreamCursor</referencedby>
+        <referencedby refid="classllvm_1_1_simple_bitstream_cursor_1a70b52e898803ad5b8400e34f4a6b7f79" compoundref="_bitstream_reader_8h" startline="104" endline="105">SimpleBitstreamCursor</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a6e65886dac1f860c0b589819a6080453" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SimpleBitstreamCursor::SimpleBitstreamCursor</definition>
+        <argsstring>(ArrayRef&lt; uint8_t &gt; BitcodeBytes)</argsstring>
+        <name>SimpleBitstreamCursor</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::SimpleBitstreamCursor</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt;</type>
+          <declname>BitcodeBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="100" column="12" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="100" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a66b0bfdfb976141f86f8af3a384c84c4" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SimpleBitstreamCursor::SimpleBitstreamCursor</definition>
+        <argsstring>(StringRef BitcodeBytes)</argsstring>
+        <name>SimpleBitstreamCursor</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::SimpleBitstreamCursor</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>BitcodeBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="102" column="12" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="102" bodyend="103"/>
+        <references refid="namespacellvm_1a1b144823e66f38f789fb4909c29b8bec" compoundref="_string_extras_8h" startline="67" endline="74">llvm::arrayRefFromStringRef</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a70b52e898803ad5b8400e34f4a6b7f79" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SimpleBitstreamCursor::SimpleBitstreamCursor</definition>
+        <argsstring>(MemoryBufferRef BitcodeBytes)</argsstring>
+        <name>SimpleBitstreamCursor</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::SimpleBitstreamCursor</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_buffer_ref" kindref="compound">MemoryBufferRef</ref></type>
+          <declname>BitcodeBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="104" column="12" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="104" bodyend="105"/>
+        <references refid="classllvm_1_1_simple_bitstream_cursor_1a25f3276dea5a6789ed5c341a4708564c">SimpleBitstreamCursor</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1af93d0598951039581a9c4700247d5ee7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SimpleBitstreamCursor::canSkipToPos</definition>
+        <argsstring>(size_t pos) const</argsstring>
+        <name>canSkipToPos</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::canSkipToPos</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="107" column="8" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="107" bodyend="110"/>
+        <referencedby refid="classllvm_1_1_simple_bitstream_cursor_1a003287dcd6e4d73526b117b2709e2347" compoundref="_bitstream_reader_8h" startline="127" endline="145">JumpToBit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a0b2540236df88a84a8b8ea3f7158ae47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SimpleBitstreamCursor::AtEndOfStream</definition>
+        <argsstring>()</argsstring>
+        <name>AtEndOfStream</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::AtEndOfStream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="112" column="8" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="112" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a1dfc6241f79207e8c0a44d6c2ffb0801" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::SimpleBitstreamCursor::GetCurrentBitNo</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentBitNo</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::GetCurrentBitNo</qualifiedname>
+        <briefdescription>
+<para>Return the bit # of the bit we are reading. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="117" column="12" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="117" bodyend="119"/>
+        <referencedby refid="classllvm_1_1_simple_bitstream_cursor_1a98307e99cc128407dc5fb370e17d8ed0" compoundref="_bitstream_reader_8h" startline="122" endline="122">getCurrentByteNo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a98307e99cc128407dc5fb370e17d8ed0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::SimpleBitstreamCursor::getCurrentByteNo</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentByteNo</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::getCurrentByteNo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="122" column="12" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="122" bodyend="122"/>
+        <references refid="classllvm_1_1_simple_bitstream_cursor_1a1dfc6241f79207e8c0a44d6c2ffb0801" compoundref="_bitstream_reader_8h" startline="117" endline="119">GetCurrentBitNo</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a3c1e5edb0f7b3cf4e57e2a4c3933d641" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt;</type>
+        <definition>ArrayRef&lt; uint8_t &gt; llvm::SimpleBitstreamCursor::getBitcodeBytes</definition>
+        <argsstring>() const</argsstring>
+        <name>getBitcodeBytes</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::getBitcodeBytes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="124" column="12" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="124" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a003287dcd6e4d73526b117b2709e2347" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::SimpleBitstreamCursor::JumpToBit</definition>
+        <argsstring>(uint64_t BitNo)</argsstring>
+        <name>JumpToBit</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::JumpToBit</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>BitNo</declname>
+        </param>
+        <briefdescription>
+<para>Reset the stream to the specified bit number. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="127" column="9" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="127" bodyend="145"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_simple_bitstream_cursor_1af93d0598951039581a9c4700247d5ee7" compoundref="_bitstream_reader_8h" startline="107" endline="110">canSkipToPos</references>
+        <references refid="namespacellvm_1a171c000a87a56f9b4c9b4e3f43c5facfa33af1aad55fa136e2ab54409f4b4891f" compoundref="_code_gen_data_8h" startline="107">llvm::Read</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a66592b9b07a6394cc085a39c1b5c3d0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint8__t" kindref="compound">uint8_t</ref> *</type>
+        <definition>const uint8_t * llvm::SimpleBitstreamCursor::getPointerToByte</definition>
+        <argsstring>(uint64_t ByteNo, uint64_t NumBytes)</argsstring>
+        <name>getPointerToByte</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::getPointerToByte</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>ByteNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>NumBytes</declname>
+        </param>
+        <briefdescription>
+<para>Get a pointer into the bitstream at the specified byte offset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="148" column="17" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="148" bodyend="150"/>
+        <referencedby refid="classllvm_1_1_simple_bitstream_cursor_1a131119f53d5ea7341390cf63ca0fcdee" compoundref="_bitstream_reader_8h" startline="155" endline="158">getPointerToBit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a131119f53d5ea7341390cf63ca0fcdee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint8__t" kindref="compound">uint8_t</ref> *</type>
+        <definition>const uint8_t * llvm::SimpleBitstreamCursor::getPointerToBit</definition>
+        <argsstring>(uint64_t BitNo, uint64_t NumBytes)</argsstring>
+        <name>getPointerToBit</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::getPointerToBit</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>BitNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>NumBytes</declname>
+        </param>
+        <briefdescription>
+<para>Get a pointer into the bitstream at the specified bit offset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The bit offset must be on a byte boundary. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="155" column="17" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="155" bodyend="158"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_simple_bitstream_cursor_1a66592b9b07a6394cc085a39c1b5c3d0d" compoundref="_bitstream_reader_8h" startline="148" endline="150">getPointerToByte</references>
+        <referencedby refid="classllvm_1_1_bitstream_cursor_1a677592abe148dbc3de1ec00f3d9904c5" compoundref="_bitstream_reader_8cpp" startline="214" endline="362">llvm::BitstreamCursor::readRecord</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1ae3b93b659d4c4f5aeaaedc892916d1bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::SimpleBitstreamCursor::fillCurWord</definition>
+        <argsstring>()</argsstring>
+        <name>fillCurWord</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::fillCurWord</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="160" column="9" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="160" bodyend="183"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1a4d2fd926089a58d482fb67a362e11bad" compoundref="llvm_2_support_2_error_8h" startline="1291" endline="1296">llvm::createStringError</references>
+        <references refid="namespacellvm_1_1support_1_1endian_1acfdf941f45bc58470ed8423b98862486" compoundref="_endian_8h" startline="58" endline="66">llvm::support::endian::read</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <referencedby refid="classllvm_1_1_simple_bitstream_cursor_1a455d3003d7f58d83850c9f33c259d3bf" compoundref="_bitstream_reader_8h" startline="185" endline="226">Read</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a455d3003d7f58d83850c9f33c259d3bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_simple_bitstream_cursor_1a844fc5e45f6ac94e7da1f7f5a94dc604" kindref="member">word_t</ref> &gt;</type>
+        <definition>Expected&lt; word_t &gt; llvm::SimpleBitstreamCursor::Read</definition>
+        <argsstring>(unsigned NumBits)</argsstring>
+        <name>Read</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::Read</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="185" column="12" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="185" bodyend="226"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a4d2fd926089a58d482fb67a362e11bad" compoundref="llvm_2_support_2_error_8h" startline="1291" endline="1296">llvm::createStringError</references>
+        <references refid="classllvm_1_1_simple_bitstream_cursor_1ae3b93b659d4c4f5aeaaedc892916d1bf" compoundref="_bitstream_reader_8h" startline="160" endline="183">fillCurWord</references>
+        <references refid="_math_extras_8h_1a9211f62d8e1e6de999eaa63ec0f6ae02">R2</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1ae4203a4bfd3d7e5cc1a1e43a76dc4188" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>Expected&lt; uint32_t &gt; llvm::SimpleBitstreamCursor::ReadVBR</definition>
+        <argsstring>(const unsigned NumBits)</argsstring>
+        <name>ReadVBR</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::ReadVBR</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="228" column="12" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="228" bodyend="259"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a4d2fd926089a58d482fb67a362e11bad" compoundref="llvm_2_support_2_error_8h" startline="1291" endline="1296">llvm::createStringError</references>
+        <references refid="classllvm_1_1_expected_1ad26ecbb6920f4ea55f5ed4f64e52342d" compoundref="llvm_2_support_2_error_8h" startline="578" endline="581">llvm::Expected&lt; T &gt;::get</references>
+        <references refid="namespacellvm_1a171c000a87a56f9b4c9b4e3f43c5facfa33af1aad55fa136e2ab54409f4b4891f" compoundref="_code_gen_data_8h" startline="107">llvm::Read</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a24cc6d3ef39604b4b923083583efe349" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>Expected&lt; uint64_t &gt; llvm::SimpleBitstreamCursor::ReadVBR64</definition>
+        <argsstring>(const unsigned NumBits)</argsstring>
+        <name>ReadVBR64</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::ReadVBR64</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="263" column="12" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="263" bodyend="293"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a4d2fd926089a58d482fb67a362e11bad" compoundref="llvm_2_support_2_error_8h" startline="1291" endline="1296">llvm::createStringError</references>
+        <references refid="classllvm_1_1_expected_1ad26ecbb6920f4ea55f5ed4f64e52342d" compoundref="llvm_2_support_2_error_8h" startline="578" endline="581">llvm::Expected&lt; T &gt;::get</references>
+        <references refid="namespacellvm_1a171c000a87a56f9b4c9b4e3f43c5facfa33af1aad55fa136e2ab54409f4b4891f" compoundref="_code_gen_data_8h" startline="107">llvm::Read</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a930bfa038e1487c6c2c88488fea17d6a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SimpleBitstreamCursor::SkipToFourByteBoundary</definition>
+        <argsstring>()</argsstring>
+        <name>SkipToFourByteBoundary</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::SkipToFourByteBoundary</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="295" column="8" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="295" bodyend="306"/>
+        <referencedby refid="classllvm_1_1_bitstream_cursor_1a6ced3cd5539e8a620f270f3dbb0c48ab" compoundref="_bitstream_reader_8cpp" startline="26" endline="69">llvm::BitstreamCursor::EnterSubBlock</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_cursor_1a9cb0eff2f0f34b18550402964cdb0b3b" compoundref="_bitstream_reader_8h" startline="517" endline="526">llvm::BitstreamCursor::ReadBlockEnd</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_cursor_1a677592abe148dbc3de1ec00f3d9904c5" compoundref="_bitstream_reader_8cpp" startline="214" endline="362">llvm::BitstreamCursor::readRecord</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_cursor_1a73257c6f5ab8032f22e06c1da0bc109f" compoundref="_bitstream_reader_8h" startline="483" endline="512">llvm::BitstreamCursor::SkipBlock</referencedby>
+        <referencedby refid="classllvm_1_1_bitstream_cursor_1a8b13d5acaf9ffcc5a0f9969888a7db33" compoundref="_bitstream_reader_8cpp" startline="96" endline="212">llvm::BitstreamCursor::skipRecord</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1a25f9ab880898c32f17c238fb8b7fe2b3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::SimpleBitstreamCursor::SizeInBytes</definition>
+        <argsstring>() const</argsstring>
+        <name>SizeInBytes</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::SizeInBytes</qualifiedname>
+        <briefdescription>
+<para>Return the size of the stream in bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="309" column="10" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="309" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1abf41858523e5da924205475408bac982" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SimpleBitstreamCursor::skipToEnd</definition>
+        <argsstring>()</argsstring>
+        <name>skipToEnd</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::skipToEnd</qualifiedname>
+        <briefdescription>
+<para>Skip to the end of the file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="312" column="8" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="312" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_simple_bitstream_cursor_1ab17fb6242cdd9d2b2f580c0b309bec3f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SimpleBitstreamCursor::isSizePlausible</definition>
+        <argsstring>(size_t Size) const</argsstring>
+        <name>isSizePlausible</name>
+        <qualifiedname>llvm::SimpleBitstreamCursor::isSizePlausible</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Size</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> whether a reservation of Size elements is plausible. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Bitstream/BitstreamReader.h" line="315" column="8" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="315" bodyend="319"/>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <referencedby refid="classllvm_1_1_bitstream_cursor_1a677592abe148dbc3de1ec00f3d9904c5" compoundref="_bitstream_reader_8cpp" startline="214" endline="362">llvm::BitstreamCursor::readRecord</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This represents a position within a bitstream. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>There may be multiple independent cursors reading within one bitstream, each maintaining their own local state. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::BitstreamCursor</label>
+        <link refid="classllvm_1_1_bitstream_cursor"/>
+        <childnode refid="1" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::SimpleBitstreamCursor</label>
+        <link refid="classllvm_1_1_simple_bitstream_cursor"/>
+      </node>
+    </inheritancegraph>
+    <location file="include/llvm/Bitstream/BitstreamReader.h" line="79" column="1" bodyfile="include/llvm/Bitstream/BitstreamReader.h" bodystart="79" bodyend="320"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a0b2540236df88a84a8b8ea3f7158ae47" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>AtEndOfStream</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1aba820c8c2bb50e854f4a86477a72d2cf" prot="private" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>BitcodeBytes</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a5915e0fb546d008f2e9a42d4aaf477e8" prot="private" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>BitsInCurWord</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1af93d0598951039581a9c4700247d5ee7" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>canSkipToPos</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1abf43a750f7d6b277e695ab5c9dd6bec1" prot="private" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>CurWord</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1ae3b93b659d4c4f5aeaaedc892916d1bf" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>fillCurWord</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a3c1e5edb0f7b3cf4e57e2a4c3933d641" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>getBitcodeBytes</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a1dfc6241f79207e8c0a44d6c2ffb0801" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>GetCurrentBitNo</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a98307e99cc128407dc5fb370e17d8ed0" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>getCurrentByteNo</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a131119f53d5ea7341390cf63ca0fcdee" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>getPointerToBit</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a66592b9b07a6394cc085a39c1b5c3d0d" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>getPointerToByte</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1ab17fb6242cdd9d2b2f580c0b309bec3f" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>isSizePlausible</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a003287dcd6e4d73526b117b2709e2347" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>JumpToBit</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a5880d8b3ca655da01311d1d4fe0adbbc" prot="private" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>NextChar</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a455d3003d7f58d83850c9f33c259d3bf" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>Read</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1ae4203a4bfd3d7e5cc1a1e43a76dc4188" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>ReadVBR</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a24cc6d3ef39604b4b923083583efe349" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>ReadVBR64</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a25f3276dea5a6789ed5c341a4708564c" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>SimpleBitstreamCursor</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a6e65886dac1f860c0b589819a6080453" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>SimpleBitstreamCursor</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a66b0bfdfb976141f86f8af3a384c84c4" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>SimpleBitstreamCursor</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a70b52e898803ad5b8400e34f4a6b7f79" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>SimpleBitstreamCursor</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a25f9ab880898c32f17c238fb8b7fe2b3" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>SizeInBytes</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1abf41858523e5da924205475408bac982" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>skipToEnd</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a930bfa038e1487c6c2c88488fea17d6a" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>SkipToFourByteBoundary</name></member>
+      <member refid="classllvm_1_1_simple_bitstream_cursor_1a844fc5e45f6ac94e7da1f7f5a94dc604" prot="public" virt="non-virtual"><scope>llvm::SimpleBitstreamCursor</scope><name>word_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

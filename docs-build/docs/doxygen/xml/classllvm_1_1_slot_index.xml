@@ -1,0 +1,924 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_slot_index" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SlotIndex</compoundname>
+    <includes refid="_slot_indexes_8h" local="yes">llvm/CodeGen/SlotIndexes.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242" prot="private" static="no" strong="no">
+        <type></type>
+        <name>Slot</name>
+        <qualifiedname>llvm::SlotIndex::Slot</qualifiedname>
+        <enumvalue id="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242a64f6aad23c1f0351884c083881d799e8" prot="private">
+          <name>Slot_Block</name>
+          <briefdescription>
+<para>Basic block boundary. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Used for live ranges entering and leaving a block without being live in the layout neighbor. Also used as the def slot of PHI-defs. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242ad9cccac29906a4fe96c423bcc99dcc70" prot="private">
+          <name>Slot_EarlyClobber</name>
+          <briefdescription>
+<para>Early-clobber register use/def slot. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>A live range defined at Slot_EarlyClobber interferes with normal live ranges killed at Slot_Register. Also used as the kill slot for live ranges tied to an early-clobber def. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242ad081484b9f0fb628c623e177230ab090" prot="private">
+          <name>Slot_Register</name>
+          <briefdescription>
+<para>Normal register use/def slot. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Normal instructions kill and define register live ranges at this slot. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242aebcd131d687f6240340671f8b1a9c91f" prot="private">
+          <name>Slot_Dead</name>
+          <briefdescription>
+<para>Dead def kill point. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Kill slot for a live range that is defined by the same instruction (Slot_Register or Slot_EarlyClobber), but isn&apos;t used anywhere. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242a99055533ea66205027893354b0a56be7" prot="private">
+          <name>Slot_Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="68" column="5" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="68" bodyend="90"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_slot_index_1a5b8b6416308ea52c3b8712b32764c9fe" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <qualifiedname>llvm::SlotIndex</qualifiedname>
+        <enumvalue id="classllvm_1_1_slot_index_1a5b8b6416308ea52c3b8712b32764c9fea0d0c291488b64cffb191fda8a4e90ef0" prot="public">
+          <name>InstrDist</name>
+          <initializer>= 4 * Slot_Count</initializer>
+          <briefdescription>
+<para>The default distance between instructions as returned by <ref refid="classllvm_1_1_slot_index_1a3dd5f1d73bfabd16cd66faed5108534c" kindref="member">distance()</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This may vary as instructions are inserted and removed. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="109" column="5" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="109" bodyend="113"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_slot_index_1ae49565c8ae048ab5c0c3fc0a3ae91e83" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class SlotIndexes</definition>
+        <argsstring></argsstring>
+        <name>SlotIndexes</name>
+        <qualifiedname>llvm::SlotIndex::SlotIndexes</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_indexes" kindref="compound">SlotIndexes</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="66" column="18" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="66" bodyend="-1"/>
+        <references refid="classllvm_1_1_slot_index_1ae49565c8ae048ab5c0c3fc0a3ae91e83" compoundref="_slot_indexes_8h" startline="66">SlotIndexes</references>
+        <referencedby refid="classllvm_1_1_slot_index_1ae49565c8ae048ab5c0c3fc0a3ae91e83" compoundref="_slot_indexes_8h" startline="66">SlotIndexes</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_slot_index_1a3ce9557ba0cd82a6643ee27f486e2ee8" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_pointer_int_pair" kindref="compound">PointerIntPair</ref>&lt; <ref refid="classllvm_1_1_index_list_entry" kindref="compound">IndexListEntry</ref> *, 2, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>PointerIntPair&lt;IndexListEntry*, 2, unsigned&gt; llvm::SlotIndex::lie</definition>
+        <argsstring></argsstring>
+        <name>lie</name>
+        <qualifiedname>llvm::SlotIndex::lie</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="92" column="20" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1ad335a48f9056ac08dfb964a0df4244b4" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_index_list_entry" kindref="compound">IndexListEntry</ref> *</type>
+        <definition>IndexListEntry * llvm::SlotIndex::listEntry</definition>
+        <argsstring>() const</argsstring>
+        <name>listEntry</name>
+        <qualifiedname>llvm::SlotIndex::listEntry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="94" column="20" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1aa4cacbbfe0ee0e7b8aa6a2b8d6de2628" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SlotIndex::getIndex</definition>
+        <argsstring>() const</argsstring>
+        <name>getIndex</name>
+        <qualifiedname>llvm::SlotIndex::getIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="99" column="14" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="99" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1af5fd86f6f63d94906c0dcf5fab077da1" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Slot</type>
+        <definition>Slot llvm::SlotIndex::getSlot</definition>
+        <argsstring>() const</argsstring>
+        <name>getSlot</name>
+        <qualifiedname>llvm::SlotIndex::getSlot</qualifiedname>
+        <briefdescription>
+<para>Returns the slot for this <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="104" column="10" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="104" bodyend="106"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SlotIndex::SlotIndex</definition>
+        <argsstring>()=default</argsstring>
+        <name>SlotIndex</name>
+        <qualifiedname>llvm::SlotIndex::SlotIndex</qualifiedname>
+        <briefdescription>
+<para>Construct an invalid index. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="116" column="5"/>
+        <referencedby refid="classllvm_1_1_slot_index_1a3dd5f1d73bfabd16cd66faed5108534c" compoundref="_slot_indexes_8h" startline="193" endline="195">distance</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1addead5fcbbc3d5611ee3b43c184d99b0" compoundref="_slot_indexes_8h" startline="203" endline="206">getApproxInstrDistance</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1aa94e57689dd16c1c4de909511f1b2ea8" compoundref="_slot_indexes_8h" startline="224" endline="226">getBaseIndex</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1a9ee9e2030e830feecf0a2c27c6f3c09f" compoundref="_slot_indexes_8h" startline="231" endline="233">getBoundaryIndex</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1a11bad3e34d11ffb7b0412de6bbd294b3" compoundref="_slot_indexes_8h" startline="242" endline="244">getDeadSlot</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1a10ffbec8bd7a2d9bc3c995e572ddc430" compoundref="_slot_indexes_8h" startline="262" endline="264">getNextIndex</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1ac3782d262b2a58da44d43c6d995aef9d" compoundref="_slot_indexes_8h" startline="252" endline="258">getNextSlot</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1ac0e7a3dd45019c076653747e34bbb9f2" compoundref="_slot_indexes_8h" startline="282" endline="284">getPrevIndex</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1ac832da130f4d71a4533a69d98315fb19" compoundref="_slot_indexes_8h" startline="272" endline="278">getPrevSlot</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1ae3b98982e2036f3d26806de5ed5e02d0" compoundref="_slot_indexes_8h" startline="237" endline="239">getRegSlot</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1a9a3b4f5099b0b155a28643224061e584" compoundref="_slot_indexes_8h" startline="188" endline="190">isEarlierEqualInstr</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1a19695ead28a0fbdcea66c6253aebc44f" compoundref="_slot_indexes_8h" startline="182" endline="184">isEarlierInstr</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1a0b73244049319d841fd11a238f35b5d1" compoundref="_slot_indexes_8h" startline="176" endline="178">isSameInstr</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1a677d37bf8b400b37552f591b17ab106f" compoundref="_slot_indexes_8h" startline="148" endline="150">operator!=</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1ac8a0846cc4715efd19857f99311056d3" compoundref="_slot_indexes_8h" startline="154" endline="156">operator&lt;</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1ad04bf5ce18c35ca53edccfa1fa808e48" compoundref="_slot_indexes_8h" startline="159" endline="161">operator&lt;=</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1ae9f05ed2def49c28220e2ead957d73b1" compoundref="_slot_indexes_8h" startline="144" endline="146">operator==</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1a4902ee3930133969696312262c56168e" compoundref="_slot_indexes_8h" startline="165" endline="167">operator&gt;</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1a3844144e89644d3432c982179cb53923" compoundref="_slot_indexes_8h" startline="171" endline="173">operator&gt;=</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1abb3d97e2d9f073146030b31551485066" compoundref="_slot_indexes_8h" startline="124" endline="126">SlotIndex</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1aaf7f562d018e75d82f89068e056acf19" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SlotIndex::SlotIndex</definition>
+        <argsstring>(IndexListEntry *entry, unsigned slot)</argsstring>
+        <name>SlotIndex</name>
+        <qualifiedname>llvm::SlotIndex::SlotIndex</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_index_list_entry" kindref="compound">IndexListEntry</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>slot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="121" column="5" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1abb3d97e2d9f073146030b31551485066" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SlotIndex::SlotIndex</definition>
+        <argsstring>(const SlotIndex &amp;li, Slot s)</argsstring>
+        <name>SlotIndex</name>
+        <qualifiedname>llvm::SlotIndex::SlotIndex</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> &amp;</type>
+          <declname>li</declname>
+        </param>
+        <param>
+          <type>Slot</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="124" column="5" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="124" bodyend="126"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_slot_index_1a5bcdd85778add4287db384472cde8acd" compoundref="_slot_indexes_8h" startline="130" endline="132">isValid</references>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a5bcdd85778add4287db384472cde8acd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SlotIndex::isValid</definition>
+        <argsstring>() const</argsstring>
+        <name>isValid</name>
+        <qualifiedname>llvm::SlotIndex::isValid</qualifiedname>
+        <briefdescription>
+<para>Returns true if this is a valid index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Invalid indices do not point into an index table, and cannot be compared. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="130" column="10" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="130" bodyend="132"/>
+        <referencedby refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_join_vals_1a1659a196eabbdd653b9a5d529ccfcb6e" compoundref="_register_coalescer_8cpp" startline="3474" endline="3566">anonymous_namespace{RegisterCoalescer.cpp}::JoinVals::eraseInstrs</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_register_info_1a96cdbab4e65a936880975a58e0dde922" compoundref="_s_i_register_info_8cpp" startline="3745" endline="3796">llvm::SIRegisterInfo::findReachingDef</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1acc9918789f16e2162e4c21c237519e35" compoundref="_slot_indexes_8h" startline="135" endline="135">operator bool</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1ac2683f7e08d14ae4a3509d8c55d83bb6" compoundref="_slot_indexes_8cpp" startline="277" endline="282">print</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1abb3d97e2d9f073146030b31551485066" compoundref="_slot_indexes_8h" startline="124" endline="126">SlotIndex</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1acc9918789f16e2162e4c21c237519e35" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SlotIndex::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <qualifiedname>llvm::SlotIndex::operator bool</qualifiedname>
+        <briefdescription>
+<para>Return true for a valid index. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="135" column="14" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="135" bodyend="135"/>
+        <references refid="classllvm_1_1_slot_index_1a5bcdd85778add4287db384472cde8acd" compoundref="_slot_indexes_8h" startline="130" endline="132">isValid</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1ac2683f7e08d14ae4a3509d8c55d83bb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SlotIndex::print</definition>
+        <argsstring>(raw_ostream &amp;os) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::SlotIndex::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+<para>Print this index to the given <ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="138" column="10" bodyfile="lib/CodeGen/SlotIndexes.cpp" bodystart="277" bodyend="282"/>
+        <references refid="classllvm_1_1_slot_index_1a5bcdd85778add4287db384472cde8acd" compoundref="_slot_indexes_8h" startline="130" endline="132">isValid</references>
+        <referencedby refid="classllvm_1_1_slot_index_1ab4592056c4ff0764824d139d4c65116f" compoundref="_slot_indexes_8cpp" startline="286" endline="289">dump</referencedby>
+        <referencedby refid="namespacellvm_1a5f358149a70d9298ac0730c96f346a20" compoundref="_slot_indexes_8h" startline="287" endline="290">llvm::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1ab4592056c4ff0764824d139d4c65116f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void SlotIndex::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::SlotIndex::dump</qualifiedname>
+        <briefdescription>
+<para>Dump this index to stderr. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="141" column="10" bodyfile="lib/CodeGen/SlotIndexes.cpp" bodystart="286" bodyend="289"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" compoundref="_compiler_8h" startline="622">LLVM_DUMP_METHOD</references>
+        <references refid="classllvm_1_1_slot_index_1ac2683f7e08d14ae4a3509d8c55d83bb6" compoundref="_slot_indexes_8cpp" startline="277" endline="282">print</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1ae9f05ed2def49c28220e2ead957d73b1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SlotIndex::operator==</definition>
+        <argsstring>(SlotIndex other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>llvm::SlotIndex::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Compare two <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> objects for equality. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="144" column="10" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="144" bodyend="146"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a677d37bf8b400b37552f591b17ab106f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SlotIndex::operator!=</definition>
+        <argsstring>(SlotIndex other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>llvm::SlotIndex::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Compare two <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> objects for inequality. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="148" column="10" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="148" bodyend="150"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1ac8a0846cc4715efd19857f99311056d3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SlotIndex::operator&lt;</definition>
+        <argsstring>(SlotIndex other) const</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>llvm::SlotIndex::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Compare two <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if the first index is strictly lower than the second. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="154" column="5" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="154" bodyend="156"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1ad04bf5ce18c35ca53edccfa1fa808e48" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SlotIndex::operator&lt;=</definition>
+        <argsstring>(SlotIndex other) const</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>llvm::SlotIndex::operator&lt;=</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Compare two <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if the first index is lower than, or equal to, the second. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="159" column="5" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="159" bodyend="161"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a4902ee3930133969696312262c56168e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SlotIndex::operator&gt;</definition>
+        <argsstring>(SlotIndex other) const</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>llvm::SlotIndex::operator&gt;</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Compare two <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if the first index is greater than the second. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="165" column="10" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="165" bodyend="167"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a3844144e89644d3432c982179cb53923" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SlotIndex::operator&gt;=</definition>
+        <argsstring>(SlotIndex other) const</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>llvm::SlotIndex::operator&gt;=</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Compare two <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if the first index is greater than, or equal to, the second. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="171" column="10" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="171" bodyend="173"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a3dd5f1d73bfabd16cd66faed5108534c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::SlotIndex::distance</definition>
+        <argsstring>(SlotIndex other) const</argsstring>
+        <name>distance</name>
+        <qualifiedname>llvm::SlotIndex::distance</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Return the distance from this index to the given one. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="193" column="9" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="193" bodyend="195"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1addead5fcbbc3d5611ee3b43c184d99b0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::SlotIndex::getApproxInstrDistance</definition>
+        <argsstring>(SlotIndex other) const</argsstring>
+        <name>getApproxInstrDistance</name>
+        <qualifiedname>llvm::SlotIndex::getApproxInstrDistance</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Return the scaled distance from this index to the given one, where all slots on the same instruction have zero distance, assuming that the slot indices are packed as densely as possible. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There are normally gaps between instructions, so this assumption often doesn&apos;t hold. This results in this function often returning a value greater than the actual instruction distance. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="203" column="9" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="203" bodyend="206"/>
+        <references refid="classllvm_1_1_index_list_entry_1ae2ed101cb3163db1db35700e3a62d2bd" compoundref="_slot_indexes_8h" startline="58" endline="58">llvm::IndexListEntry::getIndex</references>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a0c74422518b3479395817926489e9eec" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SlotIndex::isBlock</definition>
+        <argsstring>() const</argsstring>
+        <name>isBlock</name>
+        <qualifiedname>llvm::SlotIndex::isBlock</qualifiedname>
+        <briefdescription>
+<para>isBlock - Returns true if this is a block boundary slot. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="209" column="10" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="209" bodyend="209"/>
+        <referencedby refid="classllvm_1_1_live_intervals_1abc913cf0bab81b94548cd3c8eeb33117" compoundref="_live_intervals_8cpp" startline="860" endline="883">llvm::LiveIntervals::intervalIsInOneMBB</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_m_d_g_p_u_mark_last_scratch_load_8cpp_03_1_1_a_m_d_g_p_u_mark_last_scratch_load_1adb457e87e019538757ec91bec7a7e5f0" compoundref="_a_m_d_g_p_u_mark_last_scratch_load_8cpp" startline="59" endline="131">anonymous_namespace{AMDGPUMarkLastScratchLoad.cpp}::AMDGPUMarkLastScratchLoad::runOnMachineFunction</referencedby>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1abc440c9fad640641c26ddae8c08dce82" compoundref="_machine_verifier_8cpp" startline="3643" endline="3869">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::verifyLiveRangeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a305ac7d0553ef0ce21d461f5eabfe71c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SlotIndex::isEarlyClobber</definition>
+        <argsstring>() const</argsstring>
+        <name>isEarlyClobber</name>
+        <qualifiedname>llvm::SlotIndex::isEarlyClobber</qualifiedname>
+        <briefdescription>
+<para>isEarlyClobber - Returns true if this is an early-clobber slot. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="212" column="10" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="212" bodyend="212"/>
+        <referencedby refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_join_vals_1add7c3bdd8428904f63f53569807b8df6" compoundref="_register_coalescer_8cpp" startline="3180" endline="3246">anonymous_namespace{RegisterCoalescer.cpp}::JoinVals::resolveConflicts</referencedby>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1abc440c9fad640641c26ddae8c08dce82" compoundref="_machine_verifier_8cpp" startline="3643" endline="3869">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::verifyLiveRangeSegment</referencedby>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1a38cfbca05868eacdc315641e8ed182d4" compoundref="_machine_verifier_8cpp" startline="3552" endline="3641">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::verifyLiveRangeValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a5e861d6342e1d7e2bc9d2002d70a4567" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SlotIndex::isRegister</definition>
+        <argsstring>() const</argsstring>
+        <name>isRegister</name>
+        <qualifiedname>llvm::SlotIndex::isRegister</qualifiedname>
+        <briefdescription>
+<para>isRegister - Returns true if this is a normal register use/def slot. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that early-clobber slots may also be used for uses and defs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="216" column="10" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="216" bodyend="216"/>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1a4d40a357c884c36942205713e7bf3244" compoundref="_machine_verifier_8cpp" startline="2875" endline="2938">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::checkLivenessAtDef</referencedby>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1a38cfbca05868eacdc315641e8ed182d4" compoundref="_machine_verifier_8cpp" startline="3552" endline="3641">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::verifyLiveRangeValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1af7b521cd03cfcb1115186e877d0e820d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SlotIndex::isDead</definition>
+        <argsstring>() const</argsstring>
+        <name>isDead</name>
+        <qualifiedname>llvm::SlotIndex::isDead</qualifiedname>
+        <briefdescription>
+<para>isDead - Returns true if this is a dead def kill slot. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="219" column="10" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="219" bodyend="219"/>
+        <referencedby refid="_register_coalescer_8cpp_1a61eeba1f176225faf4761e4d9b25cc43" compoundref="_register_coalescer_8cpp" startline="786" endline="808">addSegmentsWithValNo</referencedby>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1abc440c9fad640641c26ddae8c08dce82" compoundref="_machine_verifier_8cpp" startline="3643" endline="3869">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::verifyLiveRangeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1aa94e57689dd16c1c4de909511f1b2ea8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+        <definition>SlotIndex llvm::SlotIndex::getBaseIndex</definition>
+        <argsstring>() const</argsstring>
+        <name>getBaseIndex</name>
+        <qualifiedname>llvm::SlotIndex::getBaseIndex</qualifiedname>
+        <briefdescription>
+<para>Returns the base index for associated with this index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The base index is the one associated with the Slot_Block slot for the instruction pointed to by this index. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="224" column="15" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="224" bodyend="226"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+        <referencedby refid="classllvm_1_1_register_operands_1a8affa4b2a934ff08aa04e63253a00126" compoundref="_register_pressure_8cpp" startline="596" endline="634">llvm::RegisterOperands::adjustLaneLiveness</referencedby>
+        <referencedby refid="classllvm_1_1_x86_instr_info_1acf40b35a88eb365bc4f4047a03bb1ece" compoundref="_x86_instr_info_8cpp" startline="1159" endline="1221">llvm::X86InstrInfo::classifyLEAReg</referencedby>
+        <referencedby refid="_g_c_n_reg_pressure_8cpp_1a08414c5d48fed44354cf4c4ea6ca464c" compoundref="_g_c_n_reg_pressure_8cpp" startline="259" endline="297">collectVirtualRegUses</referencedby>
+        <referencedby refid="classllvm_1_1_split_editor_1a88924909b2d83abe8eb4ba2ac84eec6c" compoundref="_split_kit_8cpp" startline="663" endline="678">llvm::SplitEditor::enterIntvBefore</referencedby>
+        <referencedby refid="_live_debug_variables_8cpp_1a73c2c11c6c943efa25ec3a0802c4ac52" compoundref="_live_debug_variables_8cpp" startline="1637" endline="1679">findInsertLocation</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_r_p_tracker_1abbe36a4a2c040ff3e4a6040a900b0997" compoundref="_g_c_n_reg_pressure_8cpp" startline="423" endline="431">llvm::GCNRPTracker::getLastUsedLanes</referencedby>
+        <referencedby refid="classllvm_1_1_reg_pressure_tracker_1acba0d5ed53c0ebfa11cc3310e6aef4b1" compoundref="_register_pressure_8cpp" startline="1246" endline="1255">llvm::RegPressureTracker::getLastUsedLanes</referencedby>
+        <referencedby refid="namespacellvm_1adb88334dcf6976de300fb1e3667430d7" compoundref="_g_c_n_reg_pressure_8h" startline="380" endline="384">llvm::getLiveRegsBefore</referencedby>
+        <referencedby refid="classllvm_1_1_live_range_1a61f530037a29a00a48799b14104a68d1" compoundref="_live_interval_8h" startline="587" endline="593">llvm::LiveRange::isZeroLength</referencedby>
+        <referencedby refid="classllvm_1_1_split_editor_1a9899a3945a73e70c7bb2800ef3865017" compoundref="_split_kit_8cpp" startline="777" endline="794">llvm::SplitEditor::leaveIntvBefore</referencedby>
+        <referencedby refid="classllvm_1_1_live_range_1a6eb0e49d283729a5f8b99d4efa1be7c1" compoundref="_live_interval_8h" startline="542" endline="579">llvm::LiveRange::Query</referencedby>
+        <referencedby refid="classllvm_1_1_live_intervals_1ac332ca27d85adc8d21edd708be55dfe3" compoundref="_live_intervals_8cpp" startline="1784" endline="1800">llvm::LiveIntervals::removeVRegDefAt</referencedby>
+        <referencedby refid="classllvm_1_1_split_editor_1ab181eb57b4d30c914d782ad60b8d913f" compoundref="_split_kit_8cpp" startline="1633" endline="1734">llvm::SplitEditor::splitLiveThroughBlock</referencedby>
+        <referencedby refid="classllvm_1_1_split_editor_1a8534c37f85077c1dd9fc3468f70d4618" compoundref="_split_kit_8cpp" startline="1829" endline="1889">llvm::SplitEditor::splitRegOutBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a9ee9e2030e830feecf0a2c27c6f3c09f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+        <definition>SlotIndex llvm::SlotIndex::getBoundaryIndex</definition>
+        <argsstring>() const</argsstring>
+        <name>getBoundaryIndex</name>
+        <qualifiedname>llvm::SlotIndex::getBoundaryIndex</qualifiedname>
+        <briefdescription>
+<para>Returns the boundary index for associated with this index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The boundary index is the one associated with the Slot_Block slot for the instruction pointed to by this index. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="231" column="15" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="231" bodyend="233"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+        <referencedby refid="classllvm_1_1_split_editor_1a8808112c59febd729a9964ac6509d7d4" compoundref="_split_kit_8cpp" startline="680" endline="696">llvm::SplitEditor::enterIntvAfter</referencedby>
+        <referencedby refid="classllvm_1_1_live_range_1ae17e7d305505cddb57d8093ee934c387" compoundref="_live_interval_8h" startline="518" endline="521">llvm::LiveRange::isLocal</referencedby>
+        <referencedby refid="classllvm_1_1_split_editor_1a8ab989120222d67308b4e03b2772fb6a" compoundref="_split_kit_8cpp" startline="746" endline="775">llvm::SplitEditor::leaveIntvAfter</referencedby>
+        <referencedby refid="classllvm_1_1_split_editor_1ab181eb57b4d30c914d782ad60b8d913f" compoundref="_split_kit_8cpp" startline="1633" endline="1734">llvm::SplitEditor::splitLiveThroughBlock</referencedby>
+        <referencedby refid="classllvm_1_1_split_editor_1a9d2296ecca42f33ce641b7341fde67d9" compoundref="_split_kit_8cpp" startline="1736" endline="1827">llvm::SplitEditor::splitRegInBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1ae3b98982e2036f3d26806de5ed5e02d0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+        <definition>SlotIndex llvm::SlotIndex::getRegSlot</definition>
+        <argsstring>(bool EC=false) const</argsstring>
+        <name>getRegSlot</name>
+        <qualifiedname>llvm::SlotIndex::getRegSlot</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>EC</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Returns the register use/def slot in the current instruction for a normal or early-clobber def. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="237" column="15" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="237" bodyend="239"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+        <referencedby refid="classanonymous__namespace_02_live_debug_variables_8cpp_03_1_1_user_value_1ac0a0c1bb8dc69992e326ead7f5faf286" compoundref="_live_debug_variables_8cpp" startline="1026" endline="1113">anonymous_namespace{LiveDebugVariables.cpp}::UserValue::addDefsFromCopies</referencedby>
+        <referencedby refid="classanonymous__namespace_02_inline_spiller_8cpp_03_1_1_hoist_spill_helper_1a802b241b8cfc1f00f85b1d4da7eeed73" compoundref="_inline_spiller_8cpp" startline="1317" endline="1332">anonymous_namespace{InlineSpiller.cpp}::HoistSpillHelper::addToMergeableSpills</referencedby>
+        <referencedby refid="classllvm_1_1_live_range_edit_1ad930b47a8263b4fcc37e6209e387b897" compoundref="_live_range_edit_8cpp" startline="106" endline="156">llvm::LiveRangeEdit::allUsesAvailableAt</referencedby>
+        <referencedby refid="classllvm_1_1_reg_pressure_tracker_1a2b8b6196a7458b6a84480f03e2f1355d" compoundref="_register_pressure_8cpp" startline="1275" endline="1321">llvm::RegPressureTracker::bumpDownwardPressure</referencedby>
+        <referencedby refid="classllvm_1_1_reg_pressure_tracker_1ab0885ecf357ddad3594c9a2a5a9527f2" compoundref="_register_pressure_8cpp" startline="1031" endline="1070">llvm::RegPressureTracker::bumpUpwardPressure</referencedby>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1aa2b8ab3df737c2492c7967447e7abac9" compoundref="_machine_verifier_8cpp" startline="2940" endline="3113">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::checkLiveness</referencedby>
+        <referencedby refid="classllvm_1_1_x86_instr_info_1acf40b35a88eb365bc4f4047a03bb1ece" compoundref="_x86_instr_info_8cpp" startline="1159" endline="1221">llvm::X86InstrInfo::classifyLEAReg</referencedby>
+        <referencedby refid="classllvm_1_1_live_interval_1af4a07ae5c460ac08439a1a71d15e0166" compoundref="_live_interval_8cpp" startline="965" endline="987">llvm::LiveInterval::computeSubRangeUndefs</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_instr_info_1a061f47e0bf17eed5f4fb190668a20858" compoundref="_r_i_s_c_v_instr_info_8cpp" startline="3757" endline="3855">llvm::RISCVInstrInfo::convertToThreeAddress</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_instr_info_1ad4445a2ce5876c120e2a6e6796edaf5c" compoundref="_s_i_instr_info_8cpp" startline="3896" endline="4153">llvm::SIInstrInfo::convertToThreeAddress</referencedby>
+        <referencedby refid="_live_interval_calc_8cpp_1a70e2de8376b84c468e8a5762fda4c419" compoundref="_live_interval_calc_8cpp" startline="31" endline="39">createDeadDef</referencedby>
+        <referencedby refid="_inline_spiller_8cpp_1a3a62b5d1e83ec172369441613b538fce" compoundref="_inline_spiller_8cpp" startline="847" endline="876">dumpMachineInstrRangeWithSlotIndex</referencedby>
+        <referencedby refid="_register_pressure_8cpp_1ac9883c9ec5baeee39d4215b9af8e0a70" compoundref="_register_pressure_8cpp" startline="1215" endline="1234">findUseBetween</referencedby>
+        <referencedby refid="_g_c_n_reg_pressure_8cpp_1ab457e04adca93e5cb81989a2414b1a49" compoundref="_g_c_n_reg_pressure_8cpp" startline="331" endline="354">findUseBetween</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_instr_info_1af3524773747ed9e90b586d5e6752e1c2" compoundref="_system_z_instr_info_8cpp" startline="1191" endline="1519">llvm::SystemZInstrInfo::foldMemoryOperandImpl</referencedby>
+        <referencedby refid="classllvm_1_1_reg_pressure_tracker_1ad8b14ec0777ac642d3403470e0753533" compoundref="_register_pressure_8cpp" startline="1257" endline="1267">llvm::RegPressureTracker::getLiveThroughAt</referencedby>
+        <referencedby refid="_web_assembly_reg_stackify_8cpp_1a881b49c730ea9d71536df2bf6847f4d0" compoundref="_web_assembly_reg_stackify_8cpp" startline="281" endline="304">hasOneNonDBGUse</referencedby>
+        <referencedby refid="_s_i_optimize_exec_masking_pre_r_a_8cpp_1aa0224ce6f8dd63f7674a2a1f032e23ae" compoundref="_s_i_optimize_exec_masking_pre_r_a_8cpp" startline="90" endline="105">isDefBetween</referencedby>
+        <referencedby refid="_s_i_machine_scheduler_8cpp_1a9dbfc6f968f0d6cbfd77760b62a9b552" compoundref="_s_i_machine_scheduler_8cpp" startline="287" endline="301">isDefBetween</referencedby>
+        <referencedby refid="_web_assembly_reg_stackify_8cpp_1ad7ed3a1e19bd5b3c4ea5a74413371900" compoundref="_web_assembly_reg_stackify_8cpp" startline="633" endline="684">moveAndTeeForMultiUse</referencedby>
+        <referencedby refid="_web_assembly_reg_stackify_8cpp_1a9317ef8571eae8a49591ed8912c4d102" compoundref="_web_assembly_reg_stackify_8cpp" startline="521" endline="559">moveForSingleUse</referencedby>
+        <referencedby refid="structanonymous__namespace_02_p_p_c_v_s_x_f_m_a_mutate_8cpp_03_1_1_p_p_c_v_s_x_f_m_a_mutate_1acd5cf076b2f9e98086a68b9d7e0f8710" compoundref="_p_p_c_v_s_x_f_m_a_mutate_8cpp" startline="66" endline="323">anonymous_namespace{PPCVSXFMAMutate.cpp}::PPCVSXFMAMutate::processBlock</referencedby>
+        <referencedby refid="classllvm_1_1_reg_pressure_tracker_1a126f33e8085746e4f69b4411b61102dc" compoundref="_register_pressure_8cpp" startline="754" endline="839">llvm::RegPressureTracker::recede</referencedby>
+        <referencedby refid="classllvm_1_1_reg_pressure_tracker_1a20a8136fbbb55939ae03e734232ce942" compoundref="_register_pressure_8cpp" startline="862" endline="882">llvm::RegPressureTracker::recede</referencedby>
+        <referencedby refid="classllvm_1_1_reg_pressure_tracker_1a354c230443b1586633f5697aec0bcd8e" compoundref="_register_pressure_8cpp" startline="841" endline="860">llvm::RegPressureTracker::recedeSkipDebugValues</referencedby>
+        <referencedby refid="_web_assembly_reg_stackify_8cpp_1a2281004fe6686c5e3700682448b77f90" compoundref="_web_assembly_reg_stackify_8cpp" startline="570" endline="611">rematerializeCheapDef</referencedby>
+        <referencedby refid="_web_assembly_mem_intrinsic_results_8cpp_1abd14b1720a6213a3a1251afdbd671c62" compoundref="_web_assembly_mem_intrinsic_results_8cpp" startline="84" endline="146">replaceDominatedUses</referencedby>
+        <referencedby refid="classanonymous__namespace_02_inline_spiller_8cpp_03_1_1_hoist_spill_helper_1a4bed72d6ec635da0c0a6c57442012e6e" compoundref="_inline_spiller_8cpp" startline="1336" endline="1345">anonymous_namespace{InlineSpiller.cpp}::HoistSpillHelper::rmFromMergeableSpills</referencedby>
+        <referencedby refid="classanonymous__namespace_02_two_address_instruction_pass_8cpp_03_1_1_two_address_instruction_impl_1a7bc0a5064c340800de9ce752c881316d" compoundref="_two_address_instruction_pass_8cpp" startline="1828" endline="1971">anonymous_namespace{TwoAddressInstructionPass.cpp}::TwoAddressInstructionImpl::run</referencedby>
+        <referencedby refid="classllvm_1_1_live_intervals_1ac7446b2819c44bf459763351b5bcc29b" compoundref="_live_intervals_8cpp" startline="485" endline="541">llvm::LiveIntervals::shrinkToUses</referencedby>
+        <referencedby refid="classllvm_1_1_live_intervals_1a42083019e0bdb164e55da49ab9f4d717" compoundref="_live_intervals_8cpp" startline="587" endline="654">llvm::LiveIntervals::shrinkToUses</referencedby>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1a16957e467c8bf1aa4c3c8614d7315709" compoundref="_machine_verifier_8cpp" startline="2508" endline="2838">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::visitMachineOperand</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a11bad3e34d11ffb7b0412de6bbd294b3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+        <definition>SlotIndex llvm::SlotIndex::getDeadSlot</definition>
+        <argsstring>() const</argsstring>
+        <name>getDeadSlot</name>
+        <qualifiedname>llvm::SlotIndex::getDeadSlot</qualifiedname>
+        <briefdescription>
+<para>Returns the dead def kill slot for the current instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="242" column="15" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="242" bodyend="244"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+        <referencedby refid="classllvm_1_1_register_operands_1a8affa4b2a934ff08aa04e63253a00126" compoundref="_register_pressure_8cpp" startline="596" endline="634">llvm::RegisterOperands::adjustLaneLiveness</referencedby>
+        <referencedby refid="namespacellvm_1a62c28bacc64f2e1f9c9296f9314d6c75" compoundref="_g_c_n_reg_pressure_8h" startline="374" endline="378">llvm::getLiveRegsAfter</referencedby>
+        <referencedby refid="classllvm_1_1_reg_pressure_tracker_1ad8b14ec0777ac642d3403470e0753533" compoundref="_register_pressure_8cpp" startline="1257" endline="1267">llvm::RegPressureTracker::getLiveThroughAt</referencedby>
+        <referencedby refid="_web_assembly_reg_stackify_8cpp_1a2281004fe6686c5e3700682448b77f90" compoundref="_web_assembly_reg_stackify_8cpp" startline="570" endline="611">rematerializeCheapDef</referencedby>
+        <referencedby refid="_web_assembly_mem_intrinsic_results_8cpp_1abd14b1720a6213a3a1251afdbd671c62" compoundref="_web_assembly_mem_intrinsic_results_8cpp" startline="84" endline="146">replaceDominatedUses</referencedby>
+        <referencedby refid="classllvm_1_1_live_intervals_1a42083019e0bdb164e55da49ab9f4d717" compoundref="_live_intervals_8cpp" startline="587" endline="654">llvm::LiveIntervals::shrinkToUses</referencedby>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1abc440c9fad640641c26ddae8c08dce82" compoundref="_machine_verifier_8cpp" startline="3643" endline="3869">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::verifyLiveRangeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1ac3782d262b2a58da44d43c6d995aef9d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+        <definition>SlotIndex llvm::SlotIndex::getNextSlot</definition>
+        <argsstring>() const</argsstring>
+        <name>getNextSlot</name>
+        <qualifiedname>llvm::SlotIndex::getNextSlot</qualifiedname>
+        <briefdescription>
+<para>Returns the next slot in the index list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This could be either the next slot for the instruction pointed to by this index or, if this index is a STORE, the first slot for the next instruction. WARNING: This method is considerably more expensive than the methods that return specific slots (getUseIndex(), etc). If you can - please use one of those methods. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="252" column="15" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="252" bodyend="258"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+        <referencedby refid="classanonymous__namespace_02_live_debug_variables_8cpp_03_1_1_user_value_1a2f56e0c8e37796630334366257d1b7e3" compoundref="_live_debug_variables_8cpp" startline="418" endline="431">anonymous_namespace{LiveDebugVariables.cpp}::UserValue::addDef</referencedby>
+        <referencedby refid="classanonymous__namespace_02_live_debug_variables_8cpp_03_1_1_user_value_1ac0a0c1bb8dc69992e326ead7f5faf286" compoundref="_live_debug_variables_8cpp" startline="1026" endline="1113">anonymous_namespace{LiveDebugVariables.cpp}::UserValue::addDefsFromCopies</referencedby>
+        <referencedby refid="classllvm_1_1_split_editor_1a8ab989120222d67308b4e03b2772fb6a" compoundref="_split_kit_8cpp" startline="746" endline="775">llvm::SplitEditor::leaveIntvAfter</referencedby>
+        <referencedby refid="classllvm_1_1_split_editor_1a9899a3945a73e70c7bb2800ef3865017" compoundref="_split_kit_8cpp" startline="777" endline="794">llvm::SplitEditor::leaveIntvBefore</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a10ffbec8bd7a2d9bc3c995e572ddc430" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+        <definition>SlotIndex llvm::SlotIndex::getNextIndex</definition>
+        <argsstring>() const</argsstring>
+        <name>getNextIndex</name>
+        <qualifiedname>llvm::SlotIndex::getNextIndex</qualifiedname>
+        <briefdescription>
+<para>Returns the next index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the index corresponding to the this index&apos;s slot, but for the next instruction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="262" column="15" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="262" bodyend="264"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+        <referencedby refid="classanonymous__namespace_02_live_debug_variables_8cpp_03_1_1_user_value_1a5addc8b01ca0cce0a572d5fe3ef86654" compoundref="_live_debug_variables_8cpp" startline="1115" endline="1263">anonymous_namespace{LiveDebugVariables.cpp}::UserValue::computeIntervals</referencedby>
+        <referencedby refid="namespacellvm_1a47832d6753036cd8ce039993854b3162" compoundref="_m_l_reg_alloc_evict_advisor_8cpp" startline="994" endline="1109">llvm::extractInstructionFeatures</referencedby>
+        <referencedby refid="classanonymous__namespace_02_s_i_form_memory_clauses_8cpp_03_1_1_s_i_form_memory_clauses_1a3b412b093194b8e66d1d42d1cc79d692" compoundref="_s_i_form_memory_clauses_8cpp" startline="255" endline="418">anonymous_namespace{SIFormMemoryClauses.cpp}::SIFormMemoryClauses::runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1ac832da130f4d71a4533a69d98315fb19" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+        <definition>SlotIndex llvm::SlotIndex::getPrevSlot</definition>
+        <argsstring>() const</argsstring>
+        <name>getPrevSlot</name>
+        <qualifiedname>llvm::SlotIndex::getPrevSlot</qualifiedname>
+        <briefdescription>
+<para>Returns the previous slot in the index list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This could be either the previous slot for the instruction pointed to by this index or, if this index is a Slot_Block, the last slot for the previous instruction. WARNING: This method is considerably more expensive than the methods that return specific slots (getUseIndex(), etc). If you can - please use one of those methods. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="272" column="15" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="272" bodyend="278"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+        <referencedby refid="classllvm_1_1_split_editor_1a94fd41d857393a092523f88b19d1bef3" compoundref="_split_kit_8cpp" startline="698" endline="732">llvm::SplitEditor::enterIntvAtEnd</referencedby>
+        <referencedby refid="classllvm_1_1_live_range_1a7e1ec6260b229b2f5913405b758bc146" compoundref="_live_interval_8h" startline="429" endline="432">llvm::LiveRange::getVNInfoBefore</referencedby>
+        <referencedby refid="classllvm_1_1_live_intervals_1a0d7e0d23a0453390a4c1e9a61afccdca" compoundref="_live_intervals_8cpp" startline="1700" endline="1774">llvm::LiveIntervals::repairIntervalsInRange</referencedby>
+        <referencedby refid="classllvm_1_1_machine_basic_block_1aa80aaa82844ab5560ece045eee7b34ac" compoundref="_machine_basic_block_8cpp" startline="1149" endline="1382">llvm::MachineBasicBlock::SplitCriticalEdge</referencedby>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1abc440c9fad640641c26ddae8c08dce82" compoundref="_machine_verifier_8cpp" startline="3643" endline="3869">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::verifyLiveRangeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1ac0e7a3dd45019c076653747e34bbb9f2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+        <definition>SlotIndex llvm::SlotIndex::getPrevIndex</definition>
+        <argsstring>() const</argsstring>
+        <name>getPrevIndex</name>
+        <qualifiedname>llvm::SlotIndex::getPrevIndex</qualifiedname>
+        <briefdescription>
+<para>Returns the previous index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the index corresponding to this index&apos;s slot, but for the previous instruction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="282" column="15" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="282" bodyend="284"/>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+        <referencedby refid="_live_debug_variables_8cpp_1a73c2c11c6c943efa25ec3a0802c4ac52" compoundref="_live_debug_variables_8cpp" startline="1637" endline="1679">findInsertLocation</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a0b73244049319d841fd11a238f35b5d1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::SlotIndex::isSameInstr</definition>
+        <argsstring>(SlotIndex A, SlotIndex B)</argsstring>
+        <name>isSameInstr</name>
+        <qualifiedname>llvm::SlotIndex::isSameInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+<para>isSameInstr - Return true if A and B refer to the same instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="176" column="17" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="176" bodyend="178"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+        <referencedby refid="classllvm_1_1_live_range_edit_1ad930b47a8263b4fcc37e6209e387b897" compoundref="_live_range_edit_8cpp" startline="106" endline="156">llvm::LiveRangeEdit::allUsesAvailableAt</referencedby>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1a4d40a357c884c36942205713e7bf3244" compoundref="_machine_verifier_8cpp" startline="2875" endline="2938">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::checkLivenessAtDef</referencedby>
+        <referencedby refid="classanonymous__namespace_02_machine_scheduler_8cpp_03_1_1_copy_constrain_1aee8fb987217bee89c0f2059168e834ec" compoundref="_machine_scheduler_8cpp" startline="2078" endline="2198">anonymous_namespace{MachineScheduler.cpp}::CopyConstrain::constrainLocalCopy</referencedby>
+        <referencedby refid="classanonymous__namespace_02_live_interval_8cpp_03_1_1_calc_live_range_util_base_1acc30e10385342c3caf14a3bf391bc72b" compoundref="_live_interval_8cpp" startline="87" endline="118">anonymous_namespace{LiveInterval.cpp}::CalcLiveRangeUtilBase&lt; CalcLiveRangeUtilVector, LiveRange::iterator, LiveRange::Segments &gt;::createDeadDef</referencedby>
+        <referencedby refid="structllvm_1_1_split_analysis_1_1_block_info_1a5a04f02eff679552af69729e22e8f1a2" compoundref="_split_kit_8h" startline="131" endline="133">llvm::SplitAnalysis::BlockInfo::isOneInstr</referencedby>
+        <referencedby refid="classllvm_1_1_split_editor_1a8ab989120222d67308b4e03b2772fb6a" compoundref="_split_kit_8cpp" startline="746" endline="775">llvm::SplitEditor::leaveIntvAfter</referencedby>
+        <referencedby refid="classllvm_1_1_live_range_1a6eb0e49d283729a5f8b99d4efa1be7c1" compoundref="_live_interval_8h" startline="542" endline="579">llvm::LiveRange::Query</referencedby>
+        <referencedby refid="classanonymous__namespace_02_register_coalescer_8cpp_03_1_1_join_vals_1add7c3bdd8428904f63f53569807b8df6" compoundref="_register_coalescer_8cpp" startline="3180" endline="3246">anonymous_namespace{RegisterCoalescer.cpp}::JoinVals::resolveConflicts</referencedby>
+        <referencedby refid="structanonymous__namespace_02_machine_verifier_8cpp_03_1_1_machine_verifier_1abc440c9fad640641c26ddae8c08dce82" compoundref="_machine_verifier_8cpp" startline="3643" endline="3869">anonymous_namespace{MachineVerifier.cpp}::MachineVerifier::verifyLiveRangeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a19695ead28a0fbdcea66c6253aebc44f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::SlotIndex::isEarlierInstr</definition>
+        <argsstring>(SlotIndex A, SlotIndex B)</argsstring>
+        <name>isEarlierInstr</name>
+        <qualifiedname>llvm::SlotIndex::isEarlierInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+<para>isEarlierInstr - Return true if A refers to an instruction earlier than B. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is equivalent to A &lt; B &amp;&amp; !isSameInstr(A, B). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="182" column="17" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="182" bodyend="184"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+        <referencedby refid="classanonymous__namespace_02_live_interval_8cpp_03_1_1_calc_live_range_util_base_1acc30e10385342c3caf14a3bf391bc72b" compoundref="_live_interval_8cpp" startline="87" endline="118">anonymous_namespace{LiveInterval.cpp}::CalcLiveRangeUtilBase&lt; CalcLiveRangeUtilVector, LiveRange::iterator, LiveRange::Segments &gt;::createDeadDef</referencedby>
+        <referencedby refid="classllvm_1_1_slot_index_1a9a3b4f5099b0b155a28643224061e584" compoundref="_slot_indexes_8h" startline="188" endline="190">isEarlierEqualInstr</referencedby>
+        <referencedby refid="classllvm_1_1_live_range_1a6eb0e49d283729a5f8b99d4efa1be7c1" compoundref="_live_interval_8h" startline="542" endline="579">llvm::LiveRange::Query</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_slot_index_1a9a3b4f5099b0b155a28643224061e584" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::SlotIndex::isEarlierEqualInstr</definition>
+        <argsstring>(SlotIndex A, SlotIndex B)</argsstring>
+        <name>isEarlierEqualInstr</name>
+        <qualifiedname>llvm::SlotIndex::isEarlierEqualInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref></type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+<para>Return true if A refers to the same instruction as B or an earlier one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is equivalent to !isEarlierInstr(B, A). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SlotIndexes.h" line="188" column="17" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="188" bodyend="190"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_slot_index_1a19695ead28a0fbdcea66c6253aebc44f" compoundref="_slot_indexes_8h" startline="182" endline="184">isEarlierInstr</references>
+        <references refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b">SlotIndex</references>
+        <referencedby refid="_live_debug_variables_8cpp_1a8b1a8fc118e74550d4d11d8740ae10eb" compoundref="_live_debug_variables_8cpp" startline="1684" endline="1707">findNextInsertLocation</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> - An opaque wrapper around machine indexes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/CodeGen/SlotIndexes.h" line="65" column="3" bodyfile="include/llvm/CodeGen/SlotIndexes.h" bodystart="65" bodyend="285"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_slot_index_1a3dd5f1d73bfabd16cd66faed5108534c" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>distance</name></member>
+      <member refid="classllvm_1_1_slot_index_1ab4592056c4ff0764824d139d4c65116f" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_slot_index_1addead5fcbbc3d5611ee3b43c184d99b0" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>getApproxInstrDistance</name></member>
+      <member refid="classllvm_1_1_slot_index_1aa94e57689dd16c1c4de909511f1b2ea8" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>getBaseIndex</name></member>
+      <member refid="classllvm_1_1_slot_index_1a9ee9e2030e830feecf0a2c27c6f3c09f" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>getBoundaryIndex</name></member>
+      <member refid="classllvm_1_1_slot_index_1a11bad3e34d11ffb7b0412de6bbd294b3" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>getDeadSlot</name></member>
+      <member refid="classllvm_1_1_slot_index_1aa4cacbbfe0ee0e7b8aa6a2b8d6de2628" prot="private" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>getIndex</name></member>
+      <member refid="classllvm_1_1_slot_index_1a10ffbec8bd7a2d9bc3c995e572ddc430" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>getNextIndex</name></member>
+      <member refid="classllvm_1_1_slot_index_1ac3782d262b2a58da44d43c6d995aef9d" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>getNextSlot</name></member>
+      <member refid="classllvm_1_1_slot_index_1ac0e7a3dd45019c076653747e34bbb9f2" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>getPrevIndex</name></member>
+      <member refid="classllvm_1_1_slot_index_1ac832da130f4d71a4533a69d98315fb19" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>getPrevSlot</name></member>
+      <member refid="classllvm_1_1_slot_index_1ae3b98982e2036f3d26806de5ed5e02d0" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>getRegSlot</name></member>
+      <member refid="classllvm_1_1_slot_index_1af5fd86f6f63d94906c0dcf5fab077da1" prot="private" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>getSlot</name></member>
+      <member refid="classllvm_1_1_slot_index_1a5b8b6416308ea52c3b8712b32764c9fea0d0c291488b64cffb191fda8a4e90ef0" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>InstrDist</name></member>
+      <member refid="classllvm_1_1_slot_index_1a0c74422518b3479395817926489e9eec" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>isBlock</name></member>
+      <member refid="classllvm_1_1_slot_index_1af7b521cd03cfcb1115186e877d0e820d" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>isDead</name></member>
+      <member refid="classllvm_1_1_slot_index_1a9a3b4f5099b0b155a28643224061e584" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>isEarlierEqualInstr</name></member>
+      <member refid="classllvm_1_1_slot_index_1a19695ead28a0fbdcea66c6253aebc44f" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>isEarlierInstr</name></member>
+      <member refid="classllvm_1_1_slot_index_1a305ac7d0553ef0ce21d461f5eabfe71c" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>isEarlyClobber</name></member>
+      <member refid="classllvm_1_1_slot_index_1a5e861d6342e1d7e2bc9d2002d70a4567" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>isRegister</name></member>
+      <member refid="classllvm_1_1_slot_index_1a0b73244049319d841fd11a238f35b5d1" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>isSameInstr</name></member>
+      <member refid="classllvm_1_1_slot_index_1a5bcdd85778add4287db384472cde8acd" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>isValid</name></member>
+      <member refid="classllvm_1_1_slot_index_1a3ce9557ba0cd82a6643ee27f486e2ee8" prot="private" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>lie</name></member>
+      <member refid="classllvm_1_1_slot_index_1ad335a48f9056ac08dfb964a0df4244b4" prot="private" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>listEntry</name></member>
+      <member refid="classllvm_1_1_slot_index_1acc9918789f16e2162e4c21c237519e35" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>operator bool</name></member>
+      <member refid="classllvm_1_1_slot_index_1a677d37bf8b400b37552f591b17ab106f" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>operator!=</name></member>
+      <member refid="classllvm_1_1_slot_index_1ac8a0846cc4715efd19857f99311056d3" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>operator&lt;</name></member>
+      <member refid="classllvm_1_1_slot_index_1ad04bf5ce18c35ca53edccfa1fa808e48" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>operator&lt;=</name></member>
+      <member refid="classllvm_1_1_slot_index_1ae9f05ed2def49c28220e2ead957d73b1" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>operator==</name></member>
+      <member refid="classllvm_1_1_slot_index_1a4902ee3930133969696312262c56168e" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>operator&gt;</name></member>
+      <member refid="classllvm_1_1_slot_index_1a3844144e89644d3432c982179cb53923" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>operator&gt;=</name></member>
+      <member refid="classllvm_1_1_slot_index_1ac2683f7e08d14ae4a3509d8c55d83bb6" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>print</name></member>
+      <member refid="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242" prot="private" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>Slot</name></member>
+      <member refid="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242a64f6aad23c1f0351884c083881d799e8" prot="private" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>Slot_Block</name></member>
+      <member refid="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242a99055533ea66205027893354b0a56be7" prot="private" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>Slot_Count</name></member>
+      <member refid="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242aebcd131d687f6240340671f8b1a9c91f" prot="private" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>Slot_Dead</name></member>
+      <member refid="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242ad9cccac29906a4fe96c423bcc99dcc70" prot="private" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>Slot_EarlyClobber</name></member>
+      <member refid="classllvm_1_1_slot_index_1a625931951b2fd15a4f704feb89c28242ad081484b9f0fb628c623e177230ab090" prot="private" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>Slot_Register</name></member>
+      <member refid="classllvm_1_1_slot_index_1a2603859284443a0eb8b167ea6c41094b" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>SlotIndex</name></member>
+      <member refid="classllvm_1_1_slot_index_1aaf7f562d018e75d82f89068e056acf19" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>SlotIndex</name></member>
+      <member refid="classllvm_1_1_slot_index_1abb3d97e2d9f073146030b31551485066" prot="public" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>SlotIndex</name></member>
+      <member refid="classllvm_1_1_slot_index_1ae49565c8ae048ab5c0c3fc0a3ae91e83" prot="private" virt="non-virtual"><scope>llvm::SlotIndex</scope><name>SlotIndexes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

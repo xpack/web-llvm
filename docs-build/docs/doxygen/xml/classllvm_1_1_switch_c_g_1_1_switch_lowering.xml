@@ -1,0 +1,544 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_switch_c_g_1_1_switch_lowering" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>llvm::SwitchCG::SwitchLowering</compoundname>
+    <derivedcompoundref refid="classllvm_1_1_selection_d_a_g_builder_1_1_s_d_a_g_switch_lowering" prot="public" virt="non-virtual">llvm::SelectionDAGBuilder::SDAGSwitchLowering</derivedcompoundref>
+    <includes refid="_switch_lowering_utils_8h" local="yes">llvm/CodeGen/SwitchLoweringUtils.h</includes>
+    <innerclass refid="structllvm_1_1_switch_c_g_1_1_switch_lowering_1_1_split_work_item_info" prot="public">llvm::SwitchCG::SwitchLowering::SplitWorkItemInfo</innerclass>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a286ec7b16992d5c9afbc8a634f264184" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structllvm_1_1_switch_c_g_1_1_case_block" kindref="compound">CaseBlock</ref> &gt;</type>
+        <definition>std::vector&lt;CaseBlock&gt; llvm::SwitchCG::SwitchLowering::SwitchCases</definition>
+        <argsstring></argsstring>
+        <name>SwitchCases</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::SwitchCases</qualifiedname>
+        <briefdescription>
+<para>Vector of <ref refid="structllvm_1_1_switch_c_g_1_1_case_block" kindref="compound">CaseBlock</ref> structures used to communicate <ref refid="classllvm_1_1_switch_inst" kindref="compound">SwitchInst</ref> code generation information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="271" column="15" bodyfile="include/llvm/CodeGen/SwitchLoweringUtils.h" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1af121412e6c04aaf607464f572a737a36" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespacellvm_1_1_switch_c_g_1a09bb92997495ee27f5689b48fabdb4c1" kindref="member">JumpTableBlock</ref> &gt;</type>
+        <definition>std::vector&lt;JumpTableBlock&gt; llvm::SwitchCG::SwitchLowering::JTCases</definition>
+        <argsstring></argsstring>
+        <name>JTCases</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::JTCases</qualifiedname>
+        <briefdescription>
+<para>Vector of <ref refid="structllvm_1_1_switch_c_g_1_1_jump_table" kindref="compound">JumpTable</ref> structures used to communicate <ref refid="classllvm_1_1_switch_inst" kindref="compound">SwitchInst</ref> code generation information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="275" column="15" bodyfile="include/llvm/CodeGen/SwitchLoweringUtils.h" bodystart="275" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ae706b72bcadad3acf12a239b257aabc6" compoundref="_switch_lowering_utils_8cpp" startline="192" endline="266">buildJumpTable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ad0b623b9a9376f177c19057bbe8452f0" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structllvm_1_1_switch_c_g_1_1_bit_test_block" kindref="compound">BitTestBlock</ref> &gt;</type>
+        <definition>std::vector&lt;BitTestBlock&gt; llvm::SwitchCG::SwitchLowering::BitTestCases</definition>
+        <argsstring></argsstring>
+        <name>BitTestCases</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::BitTestCases</qualifiedname>
+        <briefdescription>
+<para>Vector of <ref refid="structllvm_1_1_switch_c_g_1_1_bit_test_block" kindref="compound">BitTestBlock</ref> structures used to communicate <ref refid="classllvm_1_1_switch_inst" kindref="compound">SwitchInst</ref> code generation information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="279" column="15" bodyfile="include/llvm/CodeGen/SwitchLoweringUtils.h" bodystart="279" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a225bed9cd6803933d859e79619abc590" compoundref="_switch_lowering_utils_8cpp" startline="367" endline="465">buildBitTests</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ae1b4e7026ee414d2864f4f9bb80bebe6" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_lowering" kindref="compound">TargetLowering</ref> *</type>
+        <definition>const TargetLowering* llvm::SwitchCG::SwitchLowering::TLI</definition>
+        <argsstring></argsstring>
+        <name>TLI</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::TLI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="320" column="24" bodyfile="include/llvm/CodeGen/SwitchLoweringUtils.h" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a6b0f1989ff38afeca0fbe6d3199a9fbd" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_machine" kindref="compound">TargetMachine</ref> *</type>
+        <definition>const TargetMachine* llvm::SwitchCG::SwitchLowering::TM</definition>
+        <argsstring></argsstring>
+        <name>TM</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::TM</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="321" column="23" bodyfile="include/llvm/CodeGen/SwitchLoweringUtils.h" bodystart="321" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a653b0ef051399651c1d5f890f76e90b7" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> *</type>
+        <definition>const DataLayout* llvm::SwitchCG::SwitchLowering::DL</definition>
+        <argsstring></argsstring>
+        <name>DL</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::DL</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="322" column="20" bodyfile="include/llvm/CodeGen/SwitchLoweringUtils.h" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1aa5d2399671a0c517fb48adb7c0d4d403" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_lowering_info" kindref="compound">FunctionLoweringInfo</ref> &amp;</type>
+        <definition>FunctionLoweringInfo&amp; llvm::SwitchCG::SwitchLowering::FuncInfo</definition>
+        <argsstring></argsstring>
+        <name>FuncInfo</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::FuncInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="323" column="24" bodyfile="include/llvm/CodeGen/SwitchLoweringUtils.h" bodystart="323" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1aea060a45dbec9e1066e5af56efb6d419" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SwitchCG::SwitchLowering::SwitchLowering</definition>
+        <argsstring>(FunctionLoweringInfo &amp;funcinfo)</argsstring>
+        <name>SwitchLowering</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::SwitchLowering</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function_lowering_info" kindref="compound">FunctionLoweringInfo</ref> &amp;</type>
+          <declname>funcinfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="260" column="3" bodyfile="include/llvm/CodeGen/SwitchLoweringUtils.h" bodystart="260" bodyend="260"/>
+        <referencedby refid="classllvm_1_1_selection_d_a_g_builder_1_1_s_d_a_g_switch_lowering_1a4eded23b59e955c010b3f0c50fef239a" compoundref="_selection_d_a_g_builder_8h" startline="234" endline="235">llvm::SelectionDAGBuilder::SDAGSwitchLowering::SDAGSwitchLowering</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ad2206b9896f6a294438739b86357af9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SwitchCG::SwitchLowering::init</definition>
+        <argsstring>(const TargetLowering &amp;tli, const TargetMachine &amp;tm, const DataLayout &amp;dl)</argsstring>
+        <name>init</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::init</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_lowering" kindref="compound">TargetLowering</ref> &amp;</type>
+          <declname>tli</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_machine" kindref="compound">TargetMachine</ref> &amp;</type>
+          <declname>tm</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>dl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="262" column="8" bodyfile="include/llvm/CodeGen/SwitchLoweringUtils.h" bodystart="262" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a41add37692675e7e74358acc1483f168" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwitchCG::SwitchLowering::findJumpTables</definition>
+        <argsstring>(CaseClusterVector &amp;Clusters, const SwitchInst *SI, std::optional&lt; SDLoc &gt; SL, MachineBasicBlock *DefaultMBB, ProfileSummaryInfo *PSI, BlockFrequencyInfo *BFI)</argsstring>
+        <name>findJumpTables</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::findJumpTables</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1_switch_c_g_1a79baa30810b267c49d14b070a5a99110" kindref="member">CaseClusterVector</ref> &amp;</type>
+          <declname>Clusters</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_switch_inst" kindref="compound">SwitchInst</ref> *</type>
+          <declname>SI</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classllvm_1_1_s_d_loc" kindref="compound">SDLoc</ref> &gt;</type>
+          <declname>SL</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>DefaultMBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+          <declname>PSI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_block_frequency_info" kindref="compound">BlockFrequencyInfo</ref> *</type>
+          <declname>BFI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="281" column="8" bodyfile="lib/CodeGen/SwitchLoweringUtils.cpp" bodystart="46" bodyend="190"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ae706b72bcadad3acf12a239b257aabc6" compoundref="_switch_lowering_utils_8cpp" startline="192" endline="266">buildJumpTable</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="namespacellvm_1_1_switch_c_g_1af4eb499895466e3a26f105b4c11d20daa5e6475cb2937c0cc4aabbaa8c2aac459" compoundref="_switch_lowering_utils_8h" startline="34">llvm::SwitchCG::CC_Range</references>
+        <references refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04" compoundref="_mod_ref_8h" startline="68">llvm::First</references>
+        <references refid="namespacellvm_1_1_switch_c_g_1a588f02bacd83a10b0ed821aaccc5610f" compoundref="_switch_lowering_utils_8cpp" startline="37" endline="44">llvm::SwitchCG::getJumpTableNumCases</references>
+        <references refid="namespacellvm_1_1_switch_c_g_1ab401f0019413b136ec7484fcb6236f68" compoundref="_switch_lowering_utils_8cpp" startline="23" endline="34">llvm::SwitchCG::getJumpTableRange</references>
+        <references refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2bac1a5298f939e87e8f962a5edfc206918" compoundref="_v_e_custom_d_a_g_8h" startline="132">llvm::Hi</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a7df34dbf636f2fbbb00f2b86eccdb1eb" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">High</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b" compoundref="_pseudo_probe_8h" startline="27">llvm::Last</references>
+        <references refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2baff50b4aa1c9cc2197ef898436641c911" compoundref="_v_e_custom_d_a_g_8h" startline="131">llvm::Lo</references>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="namespacellvm_1a8ec1bf8d7b792ca9fac56f8514db18d2a6adf97f83acf6453d4a6a4b1070f3754" compoundref="_code_gen_8h" startline="55">llvm::None</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <references refid="llvm-c_2_data_types_8h_1a30654b4b67d97c42ca3f9b6052dda916" compoundref="llvm-c_2_data_types_8h" startline="77">UINT64_MAX</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ae706b72bcadad3acf12a239b257aabc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SwitchCG::SwitchLowering::buildJumpTable</definition>
+        <argsstring>(const CaseClusterVector &amp;Clusters, unsigned First, unsigned Last, const SwitchInst *SI, const std::optional&lt; SDLoc &gt; &amp;SL, MachineBasicBlock *DefaultMBB, CaseCluster &amp;JTCluster)</argsstring>
+        <name>buildJumpTable</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::buildJumpTable</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1_switch_c_g_1a79baa30810b267c49d14b070a5a99110" kindref="member">CaseClusterVector</ref> &amp;</type>
+          <declname>Clusters</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>First</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Last</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_switch_inst" kindref="compound">SwitchInst</ref> *</type>
+          <declname>SI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::optional&lt; <ref refid="classllvm_1_1_s_d_loc" kindref="compound">SDLoc</ref> &gt; &amp;</type>
+          <declname>SL</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>DefaultMBB</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_switch_c_g_1_1_case_cluster" kindref="compound">CaseCluster</ref> &amp;</type>
+          <declname>JTCluster</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="285" column="8" bodyfile="lib/CodeGen/SwitchLoweringUtils.cpp" bodystart="192" bodyend="266"/>
+        <references refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ab4222a54657e712a02c19875dd7e0d60">addSuccessorWithProb</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1_switch_c_g_1af4eb499895466e3a26f105b4c11d20daa5e6475cb2937c0cc4aabbaa8c2aac459" compoundref="_switch_lowering_utils_8h" startline="34">llvm::SwitchCG::CC_Range</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1a5a48ea8ae9371565b98b24668016e5ef" compoundref="_machine_function_8cpp" startline="1361" endline="1366">llvm::MachineJumpTableInfo::createJumpTableIndex</references>
+        <references refid="classllvm_1_1_machine_function_1adfc62ee16549afaac5bde30156ddc989" compoundref="_machine_function_8cpp" startline="499" endline="510">llvm::MachineFunction::CreateMachineBasicBlock</references>
+        <references refid="namespacellvm_1a233737223c9a3dba810df5b91bc91d1fabbb9957d8adae962b153273c16bce571" compoundref="_threading_8h" startline="60">llvm::Done</references>
+        <references refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04" compoundref="_mod_ref_8h" startline="68">llvm::First</references>
+        <references refid="classllvm_1_1_machine_function_1a3c6ee10aa5e2d19af3872a019e2b9375" compoundref="_machine_function_8cpp" startline="316" endline="322">llvm::MachineFunction::getOrCreateJumpTableInfo</references>
+        <references refid="classllvm_1_1_branch_probability_1afd00958cba7080048a84cccfcef55d71" compoundref="_branch_probability_8h" startline="49" endline="49">llvm::BranchProbability::getZero</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a7df34dbf636f2fbbb00f2b86eccdb1eb" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">High</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1af121412e6c04aaf607464f572a737a36" compoundref="_switch_lowering_utils_8h" startline="275">JTCases</references>
+        <references refid="structllvm_1_1_switch_c_g_1_1_case_cluster_1a7c12a1bbc0e27cc6e267de5a551aa4c9" compoundref="_switch_lowering_utils_8h" startline="63" endline="72">llvm::SwitchCG::CaseCluster::jumpTable</references>
+        <references refid="namespacellvm_1ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b" compoundref="_pseudo_probe_8h" startline="27">llvm::Last</references>
+        <references refid="namespacellvm_1a05609d049bfe3c5c2f64711566131a86a28d0edd045e05cf5af64e35ae0c4c6ef" compoundref="_threading_8h" startline="261">llvm::Low</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a0c54da24de983d197068425e718fb607" compoundref="_machine_basic_block_8h" startline="773" endline="775">llvm::MachineBasicBlock::normalizeSuccProbs</references>
+        <references refid="_mem2_reg_8cpp_1a6fde3eb6ca09ddf2fd76432176d817bb" compoundref="_mem2_reg_8cpp" startline="110">Register</references>
+        <references refid="classllvm_1_1_dense_map_base_1a3d95cc2d359b8d9ed5bd9504b44930b5" compoundref="_dense_map_8h" startline="99" endline="99">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::size</references>
+        <references refid="classllvm_1_1_a_p_int_1adafa9575780f9246d1df0b7e2a619356" compoundref="_a_p_int_8h" startline="1130" endline="1130">llvm::APInt::slt</references>
+        <referencedby refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a41add37692675e7e74358acc1483f168" compoundref="_switch_lowering_utils_8cpp" startline="46" endline="190">findJumpTables</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ab5de88dc9568b784876478e316042ba6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwitchCG::SwitchLowering::findBitTestClusters</definition>
+        <argsstring>(CaseClusterVector &amp;Clusters, const SwitchInst *SI)</argsstring>
+        <name>findBitTestClusters</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::findBitTestClusters</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1_switch_c_g_1a79baa30810b267c49d14b070a5a99110" kindref="member">CaseClusterVector</ref> &amp;</type>
+          <declname>Clusters</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_switch_inst" kindref="compound">SwitchInst</ref> *</type>
+          <declname>SI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="290" column="8" bodyfile="lib/CodeGen/SwitchLoweringUtils.cpp" bodystart="268" bodyend="365"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1abee0df5f7f703bb4462aba260ba0a60f" compoundref="_bitmask_enum_8h" startline="217">llvm::BitWidth</references>
+        <references refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a225bed9cd6803933d859e79619abc590" compoundref="_switch_lowering_utils_8cpp" startline="367" endline="465">buildBitTests</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="namespacellvm_1_1_switch_c_g_1af4eb499895466e3a26f105b4c11d20daa8618d970d3b70f103de8d0eab7e6a5eb" compoundref="_switch_lowering_utils_8h" startline="36">llvm::SwitchCG::CC_JumpTable</references>
+        <references refid="namespacellvm_1_1_switch_c_g_1af4eb499895466e3a26f105b4c11d20daa5e6475cb2937c0cc4aabbaa8c2aac459" compoundref="_switch_lowering_utils_8h" startline="34">llvm::SwitchCG::CC_Range</references>
+        <references refid="classllvm_1_1_bit_vector_1a568ff706b8c5991bd299c8c00b803897" compoundref="_bit_vector_8h" startline="162" endline="167">llvm::BitVector::count</references>
+        <references refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04" compoundref="_mod_ref_8h" startline="68">llvm::First</references>
+        <references refid="structllvm_1_1_e_v_t_1a45e76d44a189e456d52e37ba3dda0fce" compoundref="_value_types_8h" startline="368" endline="372">llvm::EVT::getSizeInBits</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a7df34dbf636f2fbbb00f2b86eccdb1eb" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">High</references>
+        <references refid="namespacellvm_1ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b" compoundref="_pseudo_probe_8h" startline="27">llvm::Last</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="namespacellvm_1a8ec1bf8d7b792ca9fac56f8514db18d2a6adf97f83acf6453d4a6a4b1070f3754" compoundref="_code_gen_8h" startline="55">llvm::None</references>
+        <references refid="classllvm_1_1_bit_vector_1a62237ebe27691377a942abe7446332ec" compoundref="_bit_vector_8h" startline="351" endline="355">llvm::BitVector::set</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a8cc94e03dea594863073a02f5bb94997" compoundref="_i_s_d_opcodes_8h" startline="735">llvm::ISD::SHL</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a225bed9cd6803933d859e79619abc590" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SwitchCG::SwitchLowering::buildBitTests</definition>
+        <argsstring>(CaseClusterVector &amp;Clusters, unsigned First, unsigned Last, const SwitchInst *SI, CaseCluster &amp;BTCluster)</argsstring>
+        <name>buildBitTests</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::buildBitTests</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1_switch_c_g_1a79baa30810b267c49d14b070a5a99110" kindref="member">CaseClusterVector</ref> &amp;</type>
+          <declname>Clusters</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>First</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Last</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_switch_inst" kindref="compound">SwitchInst</ref> *</type>
+          <declname>SI</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_switch_c_g_1_1_case_cluster" kindref="compound">CaseCluster</ref> &amp;</type>
+          <declname>BTCluster</declname>
+        </param>
+        <briefdescription>
+<para>Build a bit test cluster from Clusters[First..Last]. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns false if it decides it&apos;s not a good idea. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="294" column="8" bodyfile="lib/CodeGen/SwitchLoweringUtils.cpp" bodystart="367" bodyend="465"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="structllvm_1_1_switch_c_g_1_1_case_bits_1aa020a40bff8b253b6ea6e481105a38fe" compoundref="_switch_lowering_utils_8h" startline="95">llvm::SwitchCG::CaseBits::Bits</references>
+        <references refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ad0b623b9a9376f177c19057bbe8452f0" compoundref="_switch_lowering_utils_8h" startline="279">BitTestCases</references>
+        <references refid="structllvm_1_1_switch_c_g_1_1_case_cluster_1af136623e6876cb81bf58483924ba9695" compoundref="_switch_lowering_utils_8h" startline="74" endline="83">llvm::SwitchCG::CaseCluster::bitTests</references>
+        <references refid="namespacellvm_1abee0df5f7f703bb4462aba260ba0a60f" compoundref="_bitmask_enum_8h" startline="217">llvm::BitWidth</references>
+        <references refid="namespacellvm_1_1_switch_c_g_1af4eb499895466e3a26f105b4c11d20daa5e6475cb2937c0cc4aabbaa8c2aac459" compoundref="_switch_lowering_utils_8h" startline="34">llvm::SwitchCG::CC_Range</references>
+        <references refid="classllvm_1_1_bit_vector_1a568ff706b8c5991bd299c8c00b803897" compoundref="_bit_vector_8h" startline="162" endline="167">llvm::BitVector::count</references>
+        <references refid="structllvm_1_1_switch_c_g_1_1_case_bits_1aefa39b697623aa50b628c932356b223d" compoundref="_switch_lowering_utils_8h" startline="96">llvm::SwitchCG::CaseBits::ExtraProb</references>
+        <references refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04" compoundref="_mod_ref_8h" startline="68">llvm::First</references>
+        <references refid="classllvm_1_1_a_p_int_1add4e37b60ea64faafbc9a5bf3e27280f" compoundref="_a_p_int_8h" startline="200" endline="200">llvm::APInt::getZero</references>
+        <references refid="classllvm_1_1_branch_probability_1afd00958cba7080048a84cccfcef55d71" compoundref="_branch_probability_8h" startline="49" endline="49">llvm::BranchProbability::getZero</references>
+        <references refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2bac1a5298f939e87e8f962a5edfc206918" compoundref="_v_e_custom_d_a_g_8h" startline="132">llvm::Hi</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a7df34dbf636f2fbbb00f2b86eccdb1eb" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">High</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b" compoundref="_pseudo_probe_8h" startline="27">llvm::Last</references>
+        <references refid="namespacellvm_1a9ac8e4e13ad96a39c3f8db9ed633ad2baff50b4aa1c9cc2197ef898436641c911" compoundref="_v_e_custom_d_a_g_8h" startline="131">llvm::Lo</references>
+        <references refid="namespacellvm_1a05609d049bfe3c5c2f64711566131a86a28d0edd045e05cf5af64e35ae0c4c6ef" compoundref="_threading_8h" startline="261">llvm::Low</references>
+        <references refid="structllvm_1_1_switch_c_g_1_1_case_bits_1a417ce45122cef3bf2f5a38076590a650" compoundref="_switch_lowering_utils_8h" startline="93">llvm::SwitchCG::CaseBits::Mask</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1_bit_vector_1a62237ebe27691377a942abe7446332ec" compoundref="_bit_vector_8h" startline="351" endline="355">llvm::BitVector::set</references>
+        <references refid="namespacellvm_1a74cdbd1e4f731e7d7cd83461b8b1de0b" compoundref="_s_t_l_extras_8h" startline="1664" endline="1675">llvm::sort</references>
+        <referencedby refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ab5de88dc9568b784876478e316042ba6" compoundref="_switch_lowering_utils_8cpp" startline="268" endline="365">findBitTestClusters</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ab4222a54657e712a02c19875dd7e0d60" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::SwitchCG::SwitchLowering::addSuccessorWithProb</definition>
+        <argsstring>(MachineBasicBlock *Src, MachineBasicBlock *Dst, BranchProbability Prob=BranchProbability::getUnknown())=0</argsstring>
+        <name>addSuccessorWithProb</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::addSuccessorWithProb</qualifiedname>
+        <reimplementedby refid="classllvm_1_1_selection_d_a_g_builder_1_1_s_d_a_g_switch_lowering_1ae0cd053e514114e2e727249dd983d61c">addSuccessorWithProb</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Src</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Dst</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref></type>
+          <declname>Prob</declname>
+          <defval><ref refid="classllvm_1_1_branch_probability_1a76e4454abb329dee28e8f525ddd1a210" kindref="member">BranchProbability::getUnknown</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="297" column="16"/>
+        <references refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a77c69067ae8279bc00ab8757731e90d7" compoundref="_r_i_s_c_v_redundant_copy_elimination_8cpp" startline="79">CC</references>
+        <references refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04" compoundref="_mod_ref_8h" startline="68">llvm::First</references>
+        <references refid="classllvm_1_1_branch_probability_1a76e4454abb329dee28e8f525ddd1a210" compoundref="_branch_probability_8h" startline="51" endline="51">llvm::BranchProbability::getUnknown</references>
+        <references refid="namespacellvm_1ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b" compoundref="_pseudo_probe_8h" startline="27">llvm::Last</references>
+        <referencedby refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ae706b72bcadad3acf12a239b257aabc6" compoundref="_switch_lowering_utils_8cpp" startline="192" endline="266">buildJumpTable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a350ee9bc2296e756148f478ba9e850e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned SwitchCG::SwitchLowering::caseClusterRank</definition>
+        <argsstring>(const CaseCluster &amp;CC, CaseClusterIt First, CaseClusterIt Last)</argsstring>
+        <name>caseClusterRank</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::caseClusterRank</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_switch_c_g_1_1_case_cluster" kindref="compound">CaseCluster</ref> &amp;</type>
+          <declname>CC</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1_switch_c_g_1afb58db00e426c2a6c09111c7cea5a743" kindref="member">CaseClusterIt</ref></type>
+          <declname>First</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1_switch_c_g_1afb58db00e426c2a6c09111c7cea5a743" kindref="member">CaseClusterIt</ref></type>
+          <declname>Last</declname>
+        </param>
+        <briefdescription>
+<para>Determine the rank by weight of CC in [First,Last]. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If CC has more weight than each cluster in the range, its rank is 0. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="303" column="12" bodyfile="lib/CodeGen/SwitchLoweringUtils.cpp" bodystart="499" bodyend="509"/>
+        <references refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a77c69067ae8279bc00ab8757731e90d7" compoundref="_r_i_s_c_v_redundant_copy_elimination_8cpp" startline="79">CC</references>
+        <references refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04" compoundref="_mod_ref_8h" startline="68">llvm::First</references>
+        <references refid="namespacellvm_1ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b" compoundref="_pseudo_probe_8h" startline="27">llvm::Last</references>
+        <references refid="_table_gen_backend_skeleton_8cpp_1ab60f28d7a141ac46ccc200176a1bca8b">X</references>
+        <referencedby refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ae23d9053e6c1acf31ff8244efba6e44b" compoundref="_switch_lowering_utils_8cpp" startline="512" endline="578">computeSplitWorkItemInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ae23d9053e6c1acf31ff8244efba6e44b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_switch_c_g_1_1_switch_lowering_1_1_split_work_item_info" kindref="compound">SplitWorkItemInfo</ref></type>
+        <definition>llvm::SwitchCG::SwitchLowering::SplitWorkItemInfo SwitchCG::SwitchLowering::computeSplitWorkItemInfo</definition>
+        <argsstring>(const SwitchWorkListItem &amp;W)</argsstring>
+        <name>computeSplitWorkItemInfo</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::computeSplitWorkItemInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_switch_c_g_1_1_switch_work_list_item" kindref="compound">SwitchWorkListItem</ref> &amp;</type>
+          <declname>W</declname>
+        </param>
+        <briefdescription>
+<para>Compute information to balance the tree based on branch probabilities to create a near-optimal (in terms of search time given key frequency) binary search tree. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See e.g. Kurt Mehlhorn &quot;Nearly Optimal Binary Search Trees&quot; (1975). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="316" column="21" bodyfile="lib/CodeGen/SwitchLoweringUtils.cpp" bodystart="512" bodyend="578"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a350ee9bc2296e756148f478ba9e850e0" compoundref="_switch_lowering_utils_8cpp" startline="499" endline="509">caseClusterRank</references>
+        <references refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a77c69067ae8279bc00ab8757731e90d7" compoundref="_r_i_s_c_v_redundant_copy_elimination_8cpp" startline="79">CC</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a0d041eb1a9bb170de682e9b028a0bd58" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual llvm::SwitchCG::SwitchLowering::~SwitchLowering</definition>
+        <argsstring>()=default</argsstring>
+        <name>~SwitchLowering</name>
+        <qualifiedname>llvm::SwitchCG::SwitchLowering::~SwitchLowering</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="317" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::SelectionDAGBuilder::SDAGSwitchLowering</label>
+        <link refid="classllvm_1_1_selection_d_a_g_builder_1_1_s_d_a_g_switch_lowering"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::SwitchCG::SwitchLowering</label>
+        <link refid="classllvm_1_1_switch_c_g_1_1_switch_lowering"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::SwitchCG::SwitchLowering</label>
+        <link refid="classllvm_1_1_switch_c_g_1_1_switch_lowering"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>SwitchCases</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>JTCases</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>BitTestCases</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>vector&lt; JumpTableBlock &gt;</label>
+      </node>
+      <node id="4">
+        <label>vector&lt; llvm::SwitchCG::BitTestBlock &gt;</label>
+      </node>
+      <node id="2">
+        <label>vector&lt; llvm::SwitchCG::CaseBlock &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/CodeGen/SwitchLoweringUtils.h" line="258" column="1" bodyfile="include/llvm/CodeGen/SwitchLoweringUtils.h" bodystart="258" bodyend="324"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ab4222a54657e712a02c19875dd7e0d60" prot="public" virt="pure-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>addSuccessorWithProb</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ad0b623b9a9376f177c19057bbe8452f0" prot="public" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>BitTestCases</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a225bed9cd6803933d859e79619abc590" prot="public" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>buildBitTests</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ae706b72bcadad3acf12a239b257aabc6" prot="public" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>buildJumpTable</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a350ee9bc2296e756148f478ba9e850e0" prot="public" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>caseClusterRank</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ae23d9053e6c1acf31ff8244efba6e44b" prot="public" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>computeSplitWorkItemInfo</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a653b0ef051399651c1d5f890f76e90b7" prot="private" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>DL</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ab5de88dc9568b784876478e316042ba6" prot="public" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>findBitTestClusters</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a41add37692675e7e74358acc1483f168" prot="public" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>findJumpTables</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1aa5d2399671a0c517fb48adb7c0d4d403" prot="private" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>FuncInfo</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ad2206b9896f6a294438739b86357af9c" prot="public" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>init</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1af121412e6c04aaf607464f572a737a36" prot="public" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>JTCases</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a286ec7b16992d5c9afbc8a634f264184" prot="public" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>SwitchCases</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1aea060a45dbec9e1066e5af56efb6d419" prot="public" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>SwitchLowering</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ae1b4e7026ee414d2864f4f9bb80bebe6" prot="private" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>TLI</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a6b0f1989ff38afeca0fbe6d3199a9fbd" prot="private" virt="non-virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>TM</name></member>
+      <member refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1a0d041eb1a9bb170de682e9b028a0bd58" prot="public" virt="virtual"><scope>llvm::SwitchCG::SwitchLowering</scope><name>~SwitchLowering</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_v_plan_verifier_8h" kind="file" language="C++">
+    <compoundname>VPlanVerifier.h</compoundname>
+    <includedby refid="_loop_vectorize_8cpp" local="yes">lib/Transforms/Vectorize/LoopVectorize.cpp</includedby>
+    <includedby refid="_v_plan_verifier_8cpp" local="yes">lib/Transforms/Vectorize/VPlanVerifier.cpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>lib/Transforms/Vectorize/LoopVectorize.cpp</label>
+        <link refid="_loop_vectorize_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Transforms/Vectorize/VPlanVerifier.cpp</label>
+        <link refid="_v_plan_verifier_8cpp"/>
+      </node>
+      <node id="1">
+        <label>lib/Transforms/Vectorize/VPlanVerifier.h</label>
+        <link refid="_v_plan_verifier_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+<para>This file declares the class VPlanVerifier, which contains utility functions to check the consistency of a VPlan. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This includes the following kinds of invariants:</para>
+<para><orderedlist>
+<listitem><para>Region/Block invariants:<itemizedlist>
+<listitem><para>Region&apos;s entry/exit block must have no predecessors/successors, respectively.</para>
+</listitem><listitem><para>Block&apos;s parent must be the region immediately containing the block.</para>
+</listitem><listitem><para>Linked blocks must have a bi-directional link (successor/predecessor).</para>
+</listitem><listitem><para>All predecessors/successors of a block must belong to the same region.</para>
+</listitem><listitem><para>Blocks must have no duplicated successor/predecessor. </para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===--<sp/>VPlanVerifier.h<sp/>-----------------------------------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">///<sp/>\file</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">///<sp/>This<sp/>file<sp/>declares<sp/>the<sp/>class<sp/>VPlanVerifier,<sp/>which<sp/>contains<sp/>utility<sp/>functions</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">///<sp/>to<sp/>check<sp/>the<sp/>consistency<sp/>of<sp/>a<sp/>VPlan.<sp/>This<sp/>includes<sp/>the<sp/>following<sp/>kinds<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">///<sp/>invariants:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">///<sp/>1.<sp/>Region/Block<sp/>invariants:</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">///<sp/><sp/><sp/>-<sp/>Region&apos;s<sp/>entry/exit<sp/>block<sp/>must<sp/>have<sp/>no<sp/>predecessors/successors,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">///<sp/><sp/><sp/><sp/><sp/>respectively.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">///<sp/><sp/><sp/>-<sp/>Block&apos;s<sp/>parent<sp/>must<sp/>be<sp/>the<sp/>region<sp/>immediately<sp/>containing<sp/>the<sp/>block.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">///<sp/><sp/><sp/>-<sp/>Linked<sp/>blocks<sp/>must<sp/>have<sp/>a<sp/>bi-directional<sp/>link<sp/>(successor/predecessor).</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">///<sp/><sp/><sp/>-<sp/>All<sp/>predecessors/successors<sp/>of<sp/>a<sp/>block<sp/>must<sp/>belong<sp/>to<sp/>the<sp/>same<sp/>region.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">///<sp/><sp/><sp/>-<sp/>Blocks<sp/>must<sp/>have<sp/>no<sp/>duplicated<sp/>successor/predecessor.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_TRANSFORMS_VECTORIZE_VPLANVERIFIER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_TRANSFORMS_VECTORIZE_VPLANVERIFIER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="30"><highlight class="comment">///<sp/>Verify<sp/>invariants<sp/>for<sp/>general<sp/>VPlans.<sp/>Currently<sp/>it<sp/>checks<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">///<sp/>1.<sp/>Region/Block<sp/>verification:<sp/>Check<sp/>the<sp/>Region/Block<sp/>verification</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">///<sp/>invariants<sp/>for<sp/>every<sp/>region<sp/>in<sp/>the<sp/>H-CFG.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">///<sp/>2.<sp/>all<sp/>phi-like<sp/>recipes<sp/>must<sp/>be<sp/>at<sp/>the<sp/>beginning<sp/>of<sp/>a<sp/>block,<sp/>with<sp/>no<sp/>other</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">///<sp/>recipes<sp/>in<sp/>between.<sp/>Note<sp/>that<sp/>currently<sp/>there<sp/>is<sp/>still<sp/>an<sp/>exception<sp/>for</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">///<sp/>VPBlendRecipes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1af5f1d1b7df16dee92c5b56c26e322b89" kindref="member">verifyVPlanIsValid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref><sp/>&amp;Plan);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//LLVM_TRANSFORMS_VECTORIZE_VPLANVERIFIER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/Transforms/Vectorize/VPlanVerifier.h"/>
+  </compounddef>
+</doxygen>

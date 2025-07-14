@@ -1,0 +1,1000 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_v_p_recipe_builder" kind="class" language="C++" prot="public">
+    <compoundname>llvm::VPRecipeBuilder</compoundname>
+    <includes refid="_v_p_recipe_builder_8h" local="yes">Transforms/Vectorize/VPRecipeBuilder.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_v_p_recipe_builder_1acd211a51adf7aef33cfa49ee55d62a41" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; std::pair&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt;, <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+        <definition>using llvm::VPRecipeBuilder::EdgeMaskCacheTy = 
+      DenseMap&lt;std::pair&lt;BasicBlock *, BasicBlock *&gt;, VPValue *&gt;</definition>
+        <argsstring></argsstring>
+        <name>EdgeMaskCacheTy</name>
+        <qualifiedname>llvm::VPRecipeBuilder::EdgeMaskCacheTy</qualifiedname>
+        <briefdescription>
+<para>When we if-convert we need to create edge masks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We have to cache values so that we don&apos;t end up with exponential recursion/IR. Note that if-conversion currently takes place during VPlan-construction, so these caches are only used at that stage. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="74" column="3" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_v_p_recipe_builder_1af471aecea0d388416897d4986f36fcf9" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+        <definition>using llvm::VPRecipeBuilder::BlockMaskCacheTy =  DenseMap&lt;BasicBlock *, VPValue *&gt;</definition>
+        <argsstring></argsstring>
+        <name>BlockMaskCacheTy</name>
+        <qualifiedname>llvm::VPRecipeBuilder::BlockMaskCacheTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="76" column="3" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1a838aff225f3387d5114d02f1abe6572e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> &amp;</type>
+        <definition>VPlan&amp; llvm::VPRecipeBuilder::Plan</definition>
+        <argsstring></argsstring>
+        <name>Plan</name>
+        <qualifiedname>llvm::VPRecipeBuilder::Plan</qualifiedname>
+        <briefdescription>
+<para>The <ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> new recipes are added to. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="49" column="9" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1ac241dea3c4680ba644d04ca9e70819e5" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+        <definition>Loop* llvm::VPRecipeBuilder::OrigLoop</definition>
+        <argsstring></argsstring>
+        <name>OrigLoop</name>
+        <qualifiedname>llvm::VPRecipeBuilder::OrigLoop</qualifiedname>
+        <briefdescription>
+<para>The loop that we evaluate. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="52" column="8" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1a3af8bcea18d89c9c14df6dea75f957ca" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+        <definition>const TargetLibraryInfo* llvm::VPRecipeBuilder::TLI</definition>
+        <argsstring></argsstring>
+        <name>TLI</name>
+        <qualifiedname>llvm::VPRecipeBuilder::TLI</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_target" kindref="compound">Target</ref> Library Info. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="55" column="27" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1ace71e7cb485479d694e3d73ff93301e1" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+        <definition>const TargetTransformInfo* llvm::VPRecipeBuilder::TTI</definition>
+        <argsstring></argsstring>
+        <name>TTI</name>
+        <qualifiedname>llvm::VPRecipeBuilder::TTI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="58" column="29" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1ac87f0430d9c153ab92c2a257b665614e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_vectorization_legality" kindref="compound">LoopVectorizationLegality</ref> *</type>
+        <definition>LoopVectorizationLegality* llvm::VPRecipeBuilder::Legal</definition>
+        <argsstring></argsstring>
+        <name>Legal</name>
+        <qualifiedname>llvm::VPRecipeBuilder::Legal</qualifiedname>
+        <briefdescription>
+<para>The legality analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="61" column="29" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1a34d121710314af4c0efa458406d22cc2" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_vectorization_cost_model" kindref="compound">LoopVectorizationCostModel</ref> &amp;</type>
+        <definition>LoopVectorizationCostModel&amp; llvm::VPRecipeBuilder::CM</definition>
+        <argsstring></argsstring>
+        <name>CM</name>
+        <qualifiedname>llvm::VPRecipeBuilder::CM</qualifiedname>
+        <briefdescription>
+<para>The profitablity analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="64" column="30" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1ae939f954b2016e9d62df4f2440a477d7" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_predicated_scalar_evolution" kindref="compound">PredicatedScalarEvolution</ref> &amp;</type>
+        <definition>PredicatedScalarEvolution&amp; llvm::VPRecipeBuilder::PSE</definition>
+        <argsstring></argsstring>
+        <name>PSE</name>
+        <qualifiedname>llvm::VPRecipeBuilder::PSE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="66" column="29" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1ad727e271392ae366439e1818994fe688" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_v_p_builder" kindref="compound">VPBuilder</ref> &amp;</type>
+        <definition>VPBuilder&amp; llvm::VPRecipeBuilder::Builder</definition>
+        <argsstring></argsstring>
+        <name>Builder</name>
+        <qualifiedname>llvm::VPRecipeBuilder::Builder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="68" column="13" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1a9f147aaa8c5afa2b18247658215e502f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">EdgeMaskCacheTy</ref></type>
+        <definition>EdgeMaskCacheTy llvm::VPRecipeBuilder::EdgeMaskCache</definition>
+        <argsstring></argsstring>
+        <name>EdgeMaskCache</name>
+        <qualifiedname>llvm::VPRecipeBuilder::EdgeMaskCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="77" column="19" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1af63b932ee669cd63f00ef3c08f4da7d1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">BlockMaskCacheTy</ref></type>
+        <definition>BlockMaskCacheTy llvm::VPRecipeBuilder::BlockMaskCache</definition>
+        <argsstring></argsstring>
+        <name>BlockMaskCache</name>
+        <qualifiedname>llvm::VPRecipeBuilder::BlockMaskCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="78" column="20" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1af8bae54b55bc54c0c645495e64d81393" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, <ref refid="classllvm_1_1_v_p_recipe_base" kindref="compound">VPRecipeBase</ref> * &gt;</type>
+        <definition>DenseMap&lt;Instruction *, VPRecipeBase *&gt; llvm::VPRecipeBuilder::Ingredient2Recipe</definition>
+        <argsstring></argsstring>
+        <name>Ingredient2Recipe</name>
+        <qualifiedname>llvm::VPRecipeBuilder::Ingredient2Recipe</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="82" column="12" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1a281254c3022de84d28191f7474089baa" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_v_p_header_p_h_i_recipe" kindref="compound">VPHeaderPHIRecipe</ref> *, 4 &gt;</type>
+        <definition>SmallVector&lt;VPHeaderPHIRecipe *, 4&gt; llvm::VPRecipeBuilder::PhisToFix</definition>
+        <argsstring></argsstring>
+        <name>PhisToFix</name>
+        <qualifiedname>llvm::VPRecipeBuilder::PhisToFix</qualifiedname>
+        <briefdescription>
+<para>Cross-iteration reduction &amp; first-order recurrence phis for which we need to add the incoming value from the backedge after all recipes have been created. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="87" column="15" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_v_p_recipe_builder_1a1ec506f08e07913840094222ce898bdd" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>DenseMap&lt;const Instruction *, unsigned&gt; llvm::VPRecipeBuilder::ScaledReductionMap</definition>
+        <argsstring></argsstring>
+        <name>ScaledReductionMap</name>
+        <qualifiedname>llvm::VPRecipeBuilder::ScaledReductionMap</qualifiedname>
+        <briefdescription>
+<para>A mapping of partial reduction exit instructions to their scaling factor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="90" column="12" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1aea89a3a2a84acc89687e9538fea93436" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool VPRecipeBuilder::shouldWiden</definition>
+        <argsstring>(Instruction *I, VFRange &amp;Range) const</argsstring>
+        <name>shouldWiden</name>
+        <qualifiedname>llvm::VPRecipeBuilder::shouldWiden</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_v_f_range" kindref="compound">VFRange</ref> &amp;</type>
+          <declname>Range</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if <computeroutput>I</computeroutput> can be widened at the start of <computeroutput>Range</computeroutput> and possibly decrease the range such that the returned value holds for the entire <computeroutput>Range</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The function should not be called for memory instructions or calls. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="95" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8506" bodyend="8518"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1ae81657b7392dfe7784c06e6d19d8aeb0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_widen_memory_recipe" kindref="compound">VPWidenMemoryRecipe</ref> *</type>
+        <definition>VPWidenMemoryRecipe * VPRecipeBuilder::tryToWidenMemory</definition>
+        <argsstring>(Instruction *I, ArrayRef&lt; VPValue * &gt; Operands, VFRange &amp;Range)</argsstring>
+        <name>tryToWidenMemory</name>
+        <qualifiedname>llvm::VPRecipeBuilder::tryToWidenMemory</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+          <declname>Operands</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_v_f_range" kindref="compound">VFRange</ref> &amp;</type>
+          <declname>Range</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if the load or store instruction <computeroutput>I</computeroutput> should widened for <computeroutput>Range.Start</computeroutput> and potentially masked. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Such instructions are handled by a recipe that takes an additional <ref refid="classllvm_1_1_v_p_instruction" kindref="compound">VPInstruction</ref> for the mask. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="100" column="23" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8248" bodyend="8312"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1ac0a173d4291530cbbf7756fc10d17570" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_header_p_h_i_recipe" kindref="compound">VPHeaderPHIRecipe</ref> *</type>
+        <definition>VPHeaderPHIRecipe * VPRecipeBuilder::tryToOptimizeInductionPHI</definition>
+        <argsstring>(PHINode *Phi, ArrayRef&lt; VPValue * &gt; Operands, VFRange &amp;Range)</argsstring>
+        <name>tryToOptimizeInductionPHI</name>
+        <qualifiedname>llvm::VPRecipeBuilder::tryToOptimizeInductionPHI</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *</type>
+          <declname>Phi</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+          <declname>Operands</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_v_f_range" kindref="compound">VFRange</ref> &amp;</type>
+          <declname>Range</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if an induction recipe should be constructed for <computeroutput>Phi</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If so build and return it. If not, return null. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="106" column="21" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8337" bodyend="8360"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a5604ea1499455510762c5132ba979515" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_widen_int_or_fp_induction_recipe" kindref="compound">VPWidenIntOrFpInductionRecipe</ref> *</type>
+        <definition>VPWidenIntOrFpInductionRecipe * VPRecipeBuilder::tryToOptimizeInductionTruncate</definition>
+        <argsstring>(TruncInst *I, ArrayRef&lt; VPValue * &gt; Operands, VFRange &amp;Range)</argsstring>
+        <name>tryToOptimizeInductionTruncate</name>
+        <qualifiedname>llvm::VPRecipeBuilder::tryToOptimizeInductionTruncate</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_trunc_inst" kindref="compound">TruncInst</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+          <declname>Operands</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_v_f_range" kindref="compound">VFRange</ref> &amp;</type>
+          <declname>Range</declname>
+        </param>
+        <briefdescription>
+<para>Optimize the special case where the operand of <computeroutput>I</computeroutput> is a constant integer induction variable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="113" column="3" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8362" bodyend="8388"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a9a2d4313651e2bd8795377b7bfed74d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_blend_recipe" kindref="compound">VPBlendRecipe</ref> *</type>
+        <definition>VPBlendRecipe * VPRecipeBuilder::tryToBlend</definition>
+        <argsstring>(PHINode *Phi, ArrayRef&lt; VPValue * &gt; Operands)</argsstring>
+        <name>tryToBlend</name>
+        <qualifiedname>llvm::VPRecipeBuilder::tryToBlend</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *</type>
+          <declname>Phi</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+          <declname>Operands</declname>
+        </param>
+        <briefdescription>
+<para>Handle non-loop phi nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return a new <ref refid="classllvm_1_1_v_p_blend_recipe" kindref="compound">VPBlendRecipe</ref> otherwise. Currently all such phi nodes are turned into a sequence of select instructions as the vectorizer currently performs full if-conversion. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="119" column="17" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8390" bodyend="8414"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a48d8b59c620cdc640d6ead4681386042" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_single_def_recipe" kindref="compound">VPSingleDefRecipe</ref> *</type>
+        <definition>VPSingleDefRecipe * VPRecipeBuilder::tryToWidenCall</definition>
+        <argsstring>(CallInst *CI, ArrayRef&lt; VPValue * &gt; Operands, VFRange &amp;Range)</argsstring>
+        <name>tryToWidenCall</name>
+        <qualifiedname>llvm::VPRecipeBuilder::tryToWidenCall</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_call_inst" kindref="compound">CallInst</ref> *</type>
+          <declname>CI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+          <declname>Operands</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_v_f_range" kindref="compound">VFRange</ref> &amp;</type>
+          <declname>Range</declname>
+        </param>
+        <briefdescription>
+<para>Handle call instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>CI</computeroutput> can be widened for <computeroutput>Range.Start</computeroutput>, return a new <ref refid="classllvm_1_1_v_p_widen_call_recipe" kindref="compound">VPWidenCallRecipe</ref> or <ref refid="classllvm_1_1_v_p_widen_intrinsic_recipe" kindref="compound">VPWidenIntrinsicRecipe</ref>. Range.End may be decreased to ensure same decision from <computeroutput>Range.Start</computeroutput> to <computeroutput>Range.End</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="124" column="21" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8416" bodyend="8504"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a1a2c0611ceeca50ba03f8a0b69e6a489" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_widen_recipe" kindref="compound">VPWidenRecipe</ref> *</type>
+        <definition>VPWidenRecipe * VPRecipeBuilder::tryToWiden</definition>
+        <argsstring>(Instruction *I, ArrayRef&lt; VPValue * &gt; Operands, VPBasicBlock *VPBB)</argsstring>
+        <name>tryToWiden</name>
+        <qualifiedname>llvm::VPRecipeBuilder::tryToWiden</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+          <declname>Operands</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+          <declname>VPBB</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if <computeroutput>I</computeroutput> has an opcode that can be widened and return a <ref refid="classllvm_1_1_v_p_widen_recipe" kindref="compound">VPWidenRecipe</ref> if it can. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The function should only be called if the cost-model indicates that widening should be performed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="130" column="17" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8520" bodyend="8587"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a496f0ec22c8acf89cd2a76c569625716" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_histogram_recipe" kindref="compound">VPHistogramRecipe</ref> *</type>
+        <definition>VPHistogramRecipe * VPRecipeBuilder::tryToWidenHistogram</definition>
+        <argsstring>(const HistogramInfo *HI, ArrayRef&lt; VPValue * &gt; Operands)</argsstring>
+        <name>tryToWidenHistogram</name>
+        <qualifiedname>llvm::VPRecipeBuilder::tryToWidenHistogram</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_histogram_info" kindref="compound">HistogramInfo</ref> *</type>
+          <declname>HI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+          <declname>Operands</declname>
+        </param>
+        <briefdescription>
+<para>Makes Histogram count operations safe for vectorization, by emitting a llvm.experimental.vector.histogram.add intrinsic in place of the Load + Add|Sub + Store operations that perform the histogram in the original scalar loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="137" column="21" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8590" bodyend="8611"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a9eb3573da98ef0f60a92872c0d4ea578" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool VPRecipeBuilder::getScaledReductions</definition>
+        <argsstring>(Instruction *PHI, Instruction *RdxExitInstr, VFRange &amp;Range, SmallVectorImpl&lt; std::pair&lt; PartialReductionChain, unsigned &gt; &gt; &amp;Chains)</argsstring>
+        <name>getScaledReductions</name>
+        <qualifiedname>llvm::VPRecipeBuilder::getScaledReductions</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>PHI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>RdxExitInstr</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_v_f_range" kindref="compound">VFRange</ref> &amp;</type>
+          <declname>Range</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; std::pair&lt; <ref refid="structllvm_1_1_partial_reduction_chain" kindref="compound">PartialReductionChain</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt; &amp;</type>
+          <declname>Chains</declname>
+        </param>
+        <briefdescription>
+<para>Examines reduction operations to see if the target can use a cheaper operation with a wider per-iteration input VF and narrower PHI VF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each element within Chains is a pair with a struct containing reduction information and the scaling factor between the number of elements in the input and output. Recursively calls itself to identify chained scaled reductions. Returns true if this invocation added an entry to Chains, otherwise false. i.e. returns false in the case that a subcall adds an entry to Chains, but the top-level call does not. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="149" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8722" bodyend="8799"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1afc4659f1aee78e49f4e81af4eacaad23" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::VPRecipeBuilder::VPRecipeBuilder</definition>
+        <argsstring>(VPlan &amp;Plan, Loop *OrigLoop, const TargetLibraryInfo *TLI, const TargetTransformInfo *TTI, LoopVectorizationLegality *Legal, LoopVectorizationCostModel &amp;CM, PredicatedScalarEvolution &amp;PSE, VPBuilder &amp;Builder)</argsstring>
+        <name>VPRecipeBuilder</name>
+        <qualifiedname>llvm::VPRecipeBuilder::VPRecipeBuilder</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_v_plan" kindref="compound">VPlan</ref> &amp;</type>
+          <declname>Plan</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+          <declname>OrigLoop</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+          <declname>TLI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+          <declname>TTI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_loop_vectorization_legality" kindref="compound">LoopVectorizationLegality</ref> *</type>
+          <declname>Legal</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_loop_vectorization_cost_model" kindref="compound">LoopVectorizationCostModel</ref> &amp;</type>
+          <declname>CM</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_predicated_scalar_evolution" kindref="compound">PredicatedScalarEvolution</ref> &amp;</type>
+          <declname>PSE</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_builder" kindref="compound">VPBuilder</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="154" column="3" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="154" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a830fac639095604081943918ff84f703" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::optional&lt; unsigned &gt; llvm::VPRecipeBuilder::getScalingForReduction</definition>
+        <argsstring>(const Instruction *ExitInst)</argsstring>
+        <name>getScalingForReduction</name>
+        <qualifiedname>llvm::VPRecipeBuilder::getScalingForReduction</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>ExitInst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="162" column="17" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="162" bodyend="166"/>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a760fb390c24b907500c0a181fada9590" compoundref="_loop_vectorize_8cpp" startline="8802" endline="8884">tryToCreateWidenRecipe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a8dc41af84f49f4b418bddf15547755af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VPRecipeBuilder::collectScaledReductions</definition>
+        <argsstring>(VFRange &amp;Range)</argsstring>
+        <name>collectScaledReductions</name>
+        <qualifiedname>llvm::VPRecipeBuilder::collectScaledReductions</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_v_f_range" kindref="compound">VFRange</ref> &amp;</type>
+          <declname>Range</declname>
+        </param>
+        <briefdescription>
+<para>Find all possible partial reductions in the loop and track all of those that are valid so recipes can be formed later. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="170" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8687" bodyend="8720"/>
+        <references refid="_hexagon_m_c_code_emitter_8cpp_1ae4dfd7b0d66121016d6466d2ff10e8ba" compoundref="_hexagon_m_c_code_emitter_8cpp" startline="46">_</references>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="classllvm_1_1_small_set_1afcadfef2cf37c3e6dbdbc9cd7bea50a0" compoundref="_small_set_8h" startline="181" endline="181">llvm::SmallSet&lt; T, N, C &gt;::insert</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a94d23373106467003722f7d6c17b1528" compoundref="_small_vector_8h" startline="805" endline="807">llvm::SmallVectorImpl&lt; T &gt;::insert</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a760fb390c24b907500c0a181fada9590" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_recipe_base" kindref="compound">VPRecipeBase</ref> *</type>
+        <definition>VPRecipeBase * VPRecipeBuilder::tryToCreateWidenRecipe</definition>
+        <argsstring>(Instruction *Instr, ArrayRef&lt; VPValue * &gt; Operands, VFRange &amp;Range, VPBasicBlock *VPBB)</argsstring>
+        <name>tryToCreateWidenRecipe</name>
+        <qualifiedname>llvm::VPRecipeBuilder::tryToCreateWidenRecipe</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Instr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+          <declname>Operands</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_v_f_range" kindref="compound">VFRange</ref> &amp;</type>
+          <declname>Range</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_basic_block" kindref="compound">VPBasicBlock</ref> *</type>
+          <declname>VPBB</declname>
+        </param>
+        <briefdescription>
+<para>Create and return a widened recipe for <computeroutput>I</computeroutput> if one can be created within the given VF <computeroutput>Range</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="174" column="16" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8802" bodyend="8884"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_hexagon_common_g_e_p_8cpp_1ad532e8710e50302e0a376b61c91fa91d" compoundref="_hexagon_common_g_e_p_8cpp" startline="170">GEP</references>
+        <references refid="classllvm_1_1_loop_vectorization_planner_1abe3531f2a6e2a86c1d35958794805785" compoundref="_v_plan_8cpp" startline="1605" endline="1617">llvm::LoopVectorizationPlanner::getDecisionAndClampRange</references>
+        <references refid="classllvm_1_1_recurrence_descriptor_1a2b34d6e86d376d6857ccf7dd75d7dcf2" compoundref="_i_v_descriptors_8h" startline="218" endline="218">llvm::RecurrenceDescriptor::getLoopExitInstr</references>
+        <references refid="classllvm_1_1_instruction_1ab4e05d690df389b8b1477c90387b575f" compoundref="_i_r_2_instruction_8h" startline="310" endline="310">llvm::Instruction::getOpcode</references>
+        <references refid="classllvm_1_1_recurrence_descriptor_1a61351428b7eb226cbad866ccf2382817" compoundref="_i_v_descriptors_8h" startline="216" endline="216">llvm::RecurrenceDescriptor::getRecurrenceStartValue</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a830fac639095604081943918ff84f703" compoundref="_v_p_recipe_builder_8h" startline="162" endline="166">getScalingForReduction</references>
+        <references refid="classllvm_1_1_value_1a0344a49526443edf90cc0aef3abd3337" compoundref="_i_r_2_value_8h" startline="255" endline="255">llvm::Value::getType</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1_element_count_1a991f269cde2e7fbcb254ef371efc8d1a" compoundref="_type_size_8h" startline="322" endline="324">llvm::ElementCount::isScalar</references>
+        <references refid="namespacellvm_1a341215803e83773a3e97860dc291f121" compoundref="iterator__range_8h" startline="77" endline="79">llvm::make_range</references>
+        <references refid="_m_i_r_namer_pass_8cpp_1a05e4be4ec3e2c3587dda0e376bb6822c" compoundref="_m_i_r_namer_pass_8cpp" startline="74">Operands</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a06a097fb3e3b640d70709b4770408024" compoundref="_loop_vectorize_8cpp" startline="8887" endline="8901">tryToCreatePartialReduction</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a06a097fb3e3b640d70709b4770408024" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_recipe_base" kindref="compound">VPRecipeBase</ref> *</type>
+        <definition>VPRecipeBase * VPRecipeBuilder::tryToCreatePartialReduction</definition>
+        <argsstring>(Instruction *Reduction, ArrayRef&lt; VPValue * &gt; Operands)</argsstring>
+        <name>tryToCreatePartialReduction</name>
+        <qualifiedname>llvm::VPRecipeBuilder::tryToCreatePartialReduction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Reduction</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> * &gt;</type>
+          <declname>Operands</declname>
+        </param>
+        <briefdescription>
+<para>Create and return a partial reduction recipe for a reduction instruction along with binary operation and reduction phi operands. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="180" column="16" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8887" bodyend="8901"/>
+        <references refid="_a_arch64_instr_info_8cpp_1abb0a82cf9ab3cf0c256918c17512f987aa66d3974b6f2e3a542f896da144cd297" compoundref="_a_arch64_instr_info_8cpp" startline="7097">Accumulator</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="_m_i_r_namer_pass_8cpp_1a05e4be4ec3e2c3587dda0e376bb6822c" compoundref="_m_i_r_namer_pass_8cpp" startline="74">Operands</references>
+        <references refid="_loop_strength_reduce_8cpp_1a175f1f53cc9c3619505ffbd13aca087f" compoundref="_loop_strength_reduce_8cpp" startline="7191">Reduction</references>
+        <references refid="namespacestd_1ab8424022895aee3e366fb9a32f2883cb" compoundref="_bit_vector_8h" startline="860" endline="860">std::swap</references>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a760fb390c24b907500c0a181fada9590" compoundref="_loop_vectorize_8cpp" startline="8802" endline="8884">tryToCreateWidenRecipe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a919404e870cee5ce3eea6e0cfb4238d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::VPRecipeBuilder::setRecipe</definition>
+        <argsstring>(Instruction *I, VPRecipeBase *R)</argsstring>
+        <name>setRecipe</name>
+        <qualifiedname>llvm::VPRecipeBuilder::setRecipe</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_v_p_recipe_base" kindref="compound">VPRecipeBase</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+<para>Set the recipe created for given ingredient. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="184" column="8" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="184" bodyend="188"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a826173bded23a3839e30074a98ad34a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VPRecipeBuilder::createHeaderMask</definition>
+        <argsstring>()</argsstring>
+        <name>createHeaderMask</name>
+        <qualifiedname>llvm::VPRecipeBuilder::createHeaderMask</qualifiedname>
+        <briefdescription>
+<para>Create the mask for the vector loop header block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="191" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8183" bodyend="8208"/>
+        <references refid="classllvm_1_1_v_p_block_base_1ad928235da3a32b50ba65140da09daf5d" compoundref="_v_plan_8cpp" startline="158" endline="163">llvm::VPBlockBase::getEntryBasicBlock</references>
+        <references refid="classllvm_1_1_v_p_basic_block_1a72533c6b54501809628b9daee79b9d18" compoundref="_v_plan_8cpp" startline="208" endline="213">llvm::VPBasicBlock::getFirstNonPhi</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78bad92f160316221fd4090520bb2b3cefc5" compoundref="_instr_types_8h" startline="699">llvm::CmpInst::ICMP_ULE</references>
+        <references refid="classllvm_1_1_v_p_basic_block_1adfdd504b078cce3b90e7c5cf1f5164db" compoundref="_v_plan_8h" startline="3605" endline="3610">llvm::VPBasicBlock::insert</references>
+        <references refid="blake3__impl_8h_1a78823051d1dad34b9b3d8120112e674d" compoundref="blake3__impl_8h" startline="78" endline="80">IV</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a8a4bd8661b898e837b18df553e937311" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VPRecipeBuilder::createBlockInMask</definition>
+        <argsstring>(BasicBlock *BB)</argsstring>
+        <name>createBlockInMask</name>
+        <qualifiedname>llvm::VPRecipeBuilder::createBlockInMask</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>A helper function that computes the predicate of the block BB, assuming that the header block of the loop is set to True or the loop mask when tail folding. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="196" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8218" bodyend="8245"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a0775987674a0fc922481db1966a5fdf5" compoundref="_loop_vectorize_8cpp" startline="8124" endline="8170">createEdgeMask</references>
+        <references refid="namespacellvm_1ac3e549d97549636a7f08779d5cd98540" compoundref="_machine_basic_block_8h" startline="1392" endline="1392">llvm::pred_begin</references>
+        <references refid="namespacellvm_1a2103c335fa6ab933312c3871c82b0106" compoundref="_machine_basic_block_8h" startline="1394" endline="1394">llvm::pred_end</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a38a607d72d35cad5060b4cd7b5934bb5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+        <definition>VPValue * VPRecipeBuilder::getBlockInMask</definition>
+        <argsstring>(BasicBlock *BB) const</argsstring>
+        <name>getBlockInMask</name>
+        <qualifiedname>llvm::VPRecipeBuilder::getBlockInMask</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Returns the <emphasis>entry</emphasis> mask for the block <computeroutput>BB</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="199" column="11" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8210" bodyend="8216"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a0775987674a0fc922481db1966a5fdf5" compoundref="_loop_vectorize_8cpp" startline="8124" endline="8170">createEdgeMask</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a2e7e2adb0e2bd1c35df6aee471fc1db7" compoundref="_loop_vectorize_8cpp" startline="8068" endline="8122">createSwitchEdgeMasks</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a2c36c7d44a38145e7c72340d1b0e34d8" compoundref="_loop_vectorize_8cpp" startline="8623" endline="8683">handleReplication</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ac2fcd61c17c94d7e9d10b24b718c812e" compoundref="_v_plan_transforms_8cpp" startline="2065" endline="2148">llvm::VPlanTransforms::handleUncountableEarlyExit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a2e7e2adb0e2bd1c35df6aee471fc1db7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VPRecipeBuilder::createSwitchEdgeMasks</definition>
+        <argsstring>(SwitchInst *SI)</argsstring>
+        <name>createSwitchEdgeMasks</name>
+        <qualifiedname>llvm::VPRecipeBuilder::createSwitchEdgeMasks</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_switch_inst" kindref="compound">SwitchInst</ref> *</type>
+          <declname>SI</declname>
+        </param>
+        <briefdescription>
+<para>Create an edge mask for every destination of cases and/or default. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="202" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8068" bodyend="8122"/>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a193847098793cdbab306803186676899" compoundref="_r_i_s_c_v_redundant_copy_elimination_8cpp" startline="75">Cond</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a38a607d72d35cad5060b4cd7b5934bb5" compoundref="_loop_vectorize_8cpp" startline="8210" endline="8216">getBlockInMask</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a7951985b28c0786b4ca50f061172ff22" compoundref="_v_p_recipe_builder_8h" startline="235" endline="241">getVPValueOrAddLiveIn</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78baa719225e2de4059f93fd3209e1f48218" compoundref="_instr_types_8h" startline="694">llvm::CmpInst::ICMP_EQ</references>
+        <references refid="namespacellvm_1a26e2a938b431eaa6eca2beaa96410c9d" compoundref="_machine_basic_block_8h" startline="1385" endline="1385">llvm::successors</references>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a0775987674a0fc922481db1966a5fdf5" compoundref="_loop_vectorize_8cpp" startline="8124" endline="8170">createEdgeMask</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a0775987674a0fc922481db1966a5fdf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+        <definition>VPValue * VPRecipeBuilder::createEdgeMask</definition>
+        <argsstring>(BasicBlock *Src, BasicBlock *Dst)</argsstring>
+        <name>createEdgeMask</name>
+        <qualifiedname>llvm::VPRecipeBuilder::createEdgeMask</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Src</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Dst</declname>
+        </param>
+        <briefdescription>
+<para>A helper function that computes the predicate of the edge between SRC and DST. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="206" column="11" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8124" bodyend="8170"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a2e7e2adb0e2bd1c35df6aee471fc1db7" compoundref="_loop_vectorize_8cpp" startline="8068" endline="8122">createSwitchEdgeMasks</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a38a607d72d35cad5060b4cd7b5934bb5" compoundref="_loop_vectorize_8cpp" startline="8210" endline="8216">getBlockInMask</references>
+        <references refid="classllvm_1_1_branch_inst_1aebd4af5642453ce3169094f08dd3d7b8" compoundref="_instructions_8h" startline="3092" endline="3095">llvm::BranchInst::getCondition</references>
+        <references refid="classllvm_1_1_instruction_1a4b8faae4ff9e7434a1d226d03d15dcd2" compoundref="_i_r_2_instruction_8h" startline="511" endline="511">llvm::Instruction::getDebugLoc</references>
+        <references refid="classllvm_1_1_branch_inst_1aa05da2b94b366573d1651d5b163c521e" compoundref="_instructions_8h" startline="3104" endline="3107">llvm::BranchInst::getSuccessor</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a7951985b28c0786b4ca50f061172ff22" compoundref="_v_p_recipe_builder_8h" startline="235" endline="241">getVPValueOrAddLiveIn</references>
+        <references refid="namespacellvm_1acd1cd968cb420c82d70926920fcdc7d7" compoundref="_s_t_l_extras_8h" startline="1903" endline="1911">llvm::is_contained</references>
+        <references refid="classllvm_1_1_branch_inst_1a7e4be8b16fbd68c9045a388904044e01" compoundref="_instructions_8h" startline="3090" endline="3090">llvm::BranchInst::isConditional</references>
+        <references refid="namespacellvm_1acb22fb04083152eee862457e42e8dc31" compoundref="_machine_basic_block_8h" startline="1386" endline="1388">llvm::predecessors</references>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a8a4bd8661b898e837b18df553e937311" compoundref="_loop_vectorize_8cpp" startline="8218" endline="8245">createBlockInMask</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a4a24061cba79c1c33396b71076a7379e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+        <definition>VPValue * VPRecipeBuilder::getEdgeMask</definition>
+        <argsstring>(BasicBlock *Src, BasicBlock *Dst) const</argsstring>
+        <name>getEdgeMask</name>
+        <qualifiedname>llvm::VPRecipeBuilder::getEdgeMask</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Src</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Dst</declname>
+        </param>
+        <briefdescription>
+<para>A helper that returns the previously computed predicate of the edge between SRC and DST. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="210" column="11" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8172" bodyend="8181"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1acd1cd968cb420c82d70926920fcdc7d7" compoundref="_s_t_l_extras_8h" startline="1903" endline="1911">llvm::is_contained</references>
+        <references refid="namespacellvm_1acb22fb04083152eee862457e42e8dc31" compoundref="_machine_basic_block_8h" startline="1386" endline="1388">llvm::predecessors</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1af5f874dc688e86699e648825bfcbf495" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_recipe_base" kindref="compound">VPRecipeBase</ref> *</type>
+        <definition>VPRecipeBase * llvm::VPRecipeBuilder::getRecipe</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>getRecipe</name>
+        <qualifiedname>llvm::VPRecipeBuilder::getRecipe</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Return the recipe created for given ingredient. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="213" column="16" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="213" bodyend="219"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="_loop_vectorize_8cpp_1a02106664ead4e0c4e755457dbac7f7b3" compoundref="_loop_vectorize_8cpp" startline="8994" endline="9050">addScalarResumePhis</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1aa88371693bc18186386b04e8c45a30e4" compoundref="_v_plan_transforms_8cpp" startline="1970" endline="2044">llvm::VPlanTransforms::createInterleaveGroups</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a6d8fbabf45554d7d598dc8eb4eca41cf" compoundref="_loop_vectorize_8cpp" startline="8613" endline="8621">fixHeaderPhis</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a2c36c7d44a38145e7c72340d1b0e34d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_replicate_recipe" kindref="compound">VPReplicateRecipe</ref> *</type>
+        <definition>VPReplicateRecipe * VPRecipeBuilder::handleReplication</definition>
+        <argsstring>(Instruction *I, VFRange &amp;Range)</argsstring>
+        <name>handleReplication</name>
+        <qualifiedname>llvm::VPRecipeBuilder::handleReplication</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_v_f_range" kindref="compound">VFRange</ref> &amp;</type>
+          <declname>Range</declname>
+        </param>
+        <briefdescription>
+<para>Build a VPReplicationRecipe for <computeroutput>I</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If it is predicated, add the mask as last operand. Range.End may be decreased to ensure same recipe behavior from <computeroutput>Range.Start</computeroutput> to <computeroutput>Range.End</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="224" column="21" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8623" bodyend="8683"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a38a607d72d35cad5060b4cd7b5934bb5" compoundref="_loop_vectorize_8cpp" startline="8210" endline="8216">getBlockInMask</references>
+        <references refid="classllvm_1_1_loop_vectorization_planner_1abe3531f2a6e2a86c1d35958794805785" compoundref="_v_plan_8cpp" startline="1605" endline="1617">llvm::LoopVectorizationPlanner::getDecisionAndClampRange</references>
+        <references refid="_a_arch64_i_sel_lowering_8cpp_1a62766c75f88612ffa652342472e755f6" compoundref="_a_arch64_i_sel_lowering_8cpp" startline="7715" endline="7727">getIntrinsicID</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a537d8b3b5160caeb94b20a21a9f6dcff" compoundref="_loop_vectorize_8cpp" startline="8061" endline="8066">mapToVPValues</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a6d8fbabf45554d7d598dc8eb4eca41cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VPRecipeBuilder::fixHeaderPhis</definition>
+        <argsstring>()</argsstring>
+        <name>fixHeaderPhis</name>
+        <qualifiedname>llvm::VPRecipeBuilder::fixHeaderPhis</qualifiedname>
+        <briefdescription>
+<para>Add the incoming values from the backedge to reduction &amp; first-order recurrence cross-iteration phis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="228" column="8" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8613" bodyend="8621"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1af5f874dc688e86699e648825bfcbf495" compoundref="_v_p_recipe_builder_8h" startline="213" endline="219">getRecipe</references>
+        <references refid="classllvm_1_1_v_p_def_1a76a983b694720483a3dd9fe57314e39b" compoundref="_v_plan_value_8h" startline="394" endline="398">llvm::VPDef::getVPSingleValue</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a537d8b3b5160caeb94b20a21a9f6dcff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; <ref refid="classllvm_1_1mapped__iterator" kindref="compound">mapped_iterator</ref>&lt; <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> *, std::function&lt; <ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *)&gt; &gt; &gt;</type>
+        <definition>iterator_range&lt; mapped_iterator&lt; Use *, std::function&lt; VPValue *(Value *)&gt; &gt; &gt; VPRecipeBuilder::mapToVPValues</definition>
+        <argsstring>(User::op_range Operands)</argsstring>
+        <name>mapToVPValues</name>
+        <qualifiedname>llvm::VPRecipeBuilder::mapToVPValues</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_user_1a917548288129e24325af275795e4622f" kindref="member">User::op_range</ref></type>
+          <declname>Operands</declname>
+        </param>
+        <briefdescription>
+<para>Returns a range mapping the values of the range <computeroutput>Operands</computeroutput> to their corresponding VPValues. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="233" column="3" bodyfile="lib/Transforms/Vectorize/LoopVectorize.cpp" bodystart="8061" bodyend="8066"/>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a7951985b28c0786b4ca50f061172ff22" compoundref="_v_p_recipe_builder_8h" startline="235" endline="241">getVPValueOrAddLiveIn</references>
+        <references refid="namespacellvm_1a51c7cbd21e1104ee6841c18d7daa6edb" compoundref="_s_t_l_extras_8h" startline="377" endline="380">llvm::map_range</references>
+        <references refid="classllvm_1_1_v_p_recipe_builder_1a537d8b3b5160caeb94b20a21a9f6dcff" compoundref="_loop_vectorize_8cpp" startline="8061" endline="8066">mapToVPValues</references>
+        <references refid="_m_i_r_namer_pass_8cpp_1a05e4be4ec3e2c3587dda0e376bb6822c" compoundref="_m_i_r_namer_pass_8cpp" startline="74">Operands</references>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a2c36c7d44a38145e7c72340d1b0e34d8" compoundref="_loop_vectorize_8cpp" startline="8623" endline="8683">handleReplication</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a537d8b3b5160caeb94b20a21a9f6dcff" compoundref="_loop_vectorize_8cpp" startline="8061" endline="8066">mapToVPValues</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_v_p_recipe_builder_1a7951985b28c0786b4ca50f061172ff22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_v_p_value" kindref="compound">VPValue</ref> *</type>
+        <definition>VPValue * llvm::VPRecipeBuilder::getVPValueOrAddLiveIn</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>getVPValueOrAddLiveIn</name>
+        <qualifiedname>llvm::VPRecipeBuilder::getVPValueOrAddLiveIn</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="235" column="11" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="235" bodyend="241"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="_loop_vectorize_8cpp_1a435b95efad7ea03299bd527b55b4708a" compoundref="_loop_vectorize_8cpp" startline="9055" endline="9084">collectUsersInExitBlocks</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a0775987674a0fc922481db1966a5fdf5" compoundref="_loop_vectorize_8cpp" startline="8124" endline="8170">createEdgeMask</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a2e7e2adb0e2bd1c35df6aee471fc1db7" compoundref="_loop_vectorize_8cpp" startline="8068" endline="8122">createSwitchEdgeMasks</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1ac2fcd61c17c94d7e9d10b24b718c812e" compoundref="_v_plan_transforms_8cpp" startline="2065" endline="2148">llvm::VPlanTransforms::handleUncountableEarlyExit</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a537d8b3b5160caeb94b20a21a9f6dcff" compoundref="_loop_vectorize_8cpp" startline="8061" endline="8066">mapToVPValues</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper class to create VPRecipies from IR instructions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/Transforms/Vectorize/VPRecipeBuilder.h" line="47" column="1" bodyfile="lib/Transforms/Vectorize/VPRecipeBuilder.h" bodystart="47" bodyend="242"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1af63b932ee669cd63f00ef3c08f4da7d1" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>BlockMaskCache</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1af471aecea0d388416897d4986f36fcf9" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>BlockMaskCacheTy</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1ad727e271392ae366439e1818994fe688" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>Builder</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a34d121710314af4c0efa458406d22cc2" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>CM</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a8dc41af84f49f4b418bddf15547755af" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>collectScaledReductions</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a8a4bd8661b898e837b18df553e937311" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>createBlockInMask</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a0775987674a0fc922481db1966a5fdf5" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>createEdgeMask</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a826173bded23a3839e30074a98ad34a1" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>createHeaderMask</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a2e7e2adb0e2bd1c35df6aee471fc1db7" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>createSwitchEdgeMasks</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a9f147aaa8c5afa2b18247658215e502f" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>EdgeMaskCache</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1acd211a51adf7aef33cfa49ee55d62a41" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>EdgeMaskCacheTy</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a6d8fbabf45554d7d598dc8eb4eca41cf" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>fixHeaderPhis</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a38a607d72d35cad5060b4cd7b5934bb5" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>getBlockInMask</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a4a24061cba79c1c33396b71076a7379e" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>getEdgeMask</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1af5f874dc688e86699e648825bfcbf495" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>getRecipe</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a9eb3573da98ef0f60a92872c0d4ea578" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>getScaledReductions</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a830fac639095604081943918ff84f703" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>getScalingForReduction</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a7951985b28c0786b4ca50f061172ff22" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>getVPValueOrAddLiveIn</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a2c36c7d44a38145e7c72340d1b0e34d8" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>handleReplication</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1af8bae54b55bc54c0c645495e64d81393" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>Ingredient2Recipe</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1ac87f0430d9c153ab92c2a257b665614e" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>Legal</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a537d8b3b5160caeb94b20a21a9f6dcff" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>mapToVPValues</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1ac241dea3c4680ba644d04ca9e70819e5" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>OrigLoop</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a281254c3022de84d28191f7474089baa" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>PhisToFix</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a838aff225f3387d5114d02f1abe6572e" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>Plan</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1ae939f954b2016e9d62df4f2440a477d7" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>PSE</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a1ec506f08e07913840094222ce898bdd" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>ScaledReductionMap</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a919404e870cee5ce3eea6e0cfb4238d4" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>setRecipe</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1aea89a3a2a84acc89687e9538fea93436" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>shouldWiden</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a3af8bcea18d89c9c14df6dea75f957ca" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>TLI</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a9a2d4313651e2bd8795377b7bfed74d9" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>tryToBlend</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a06a097fb3e3b640d70709b4770408024" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>tryToCreatePartialReduction</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a760fb390c24b907500c0a181fada9590" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>tryToCreateWidenRecipe</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1ac0a173d4291530cbbf7756fc10d17570" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>tryToOptimizeInductionPHI</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a5604ea1499455510762c5132ba979515" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>tryToOptimizeInductionTruncate</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a1a2c0611ceeca50ba03f8a0b69e6a489" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>tryToWiden</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a48d8b59c620cdc640d6ead4681386042" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>tryToWidenCall</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1a496f0ec22c8acf89cd2a76c569625716" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>tryToWidenHistogram</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1ae81657b7392dfe7784c06e6d19d8aeb0" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>tryToWidenMemory</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1ace71e7cb485479d694e3d73ff93301e1" prot="private" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>TTI</name></member>
+      <member refid="classllvm_1_1_v_p_recipe_builder_1afc4659f1aee78e49f4e81af4eacaad23" prot="public" virt="non-virtual"><scope>llvm::VPRecipeBuilder</scope><name>VPRecipeBuilder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

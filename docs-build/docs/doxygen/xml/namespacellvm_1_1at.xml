@@ -1,0 +1,559 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1at" kind="namespace" language="C++">
+    <compoundname>llvm::at</compoundname>
+    <innerclass refid="structllvm_1_1at_1_1_assignment_info" prot="public">llvm::at::AssignmentInfo</innerclass>
+    <innerclass refid="classllvm_1_1at_1_1_dbg_assign_it" prot="public">llvm::at::DbgAssignIt</innerclass>
+    <innerclass refid="structllvm_1_1at_1_1_var_record" prot="public">llvm::at::VarRecord</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacellvm_1_1at_1a2a9623a09605e579132b9170a901f89b" prot="public" static="no">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> * &gt;::iterator &gt;</type>
+        <definition>using llvm::at::AssignmentInstRange = 
+    iterator_range&lt;SmallVectorImpl&lt;Instruction *&gt;::iterator&gt;</definition>
+        <argsstring></argsstring>
+        <name>AssignmentInstRange</name>
+        <qualifiedname>llvm::at::AssignmentInstRange</qualifiedname>
+        <briefdescription>
+<para>A range of instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="186" column="1" bodyfile="include/llvm/IR/DebugInfo.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1at_1ae1680d2e0043e57465ff89a3dd463c66" prot="public" static="no">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; <ref refid="classllvm_1_1at_1_1_dbg_assign_it" kindref="compound">DbgAssignIt</ref> &gt;</type>
+        <definition>using llvm::at::AssignmentMarkerRange =  iterator_range&lt;DbgAssignIt&gt;</definition>
+        <argsstring></argsstring>
+        <name>AssignmentMarkerRange</name>
+        <qualifiedname>llvm::at::AssignmentMarkerRange</qualifiedname>
+        <briefdescription>
+<para>A range of llvm.dbg.assign intrinsics. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="225" column="1" bodyfile="include/llvm/IR/DebugInfo.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1at_1ae216cdb7393c1e862a61c8da9c1508ed" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_alloca_inst" kindref="compound">AllocaInst</ref> *, <ref refid="classllvm_1_1_small_set_vector" kindref="compound">SmallSetVector</ref>&lt; <ref refid="structllvm_1_1at_1_1_var_record" kindref="compound">VarRecord</ref>, 2 &gt; &gt;</type>
+        <definition>using llvm::at::StorageToVarsMap = 
+    DenseMap&lt;const AllocaInst *, SmallSetVector&lt;VarRecord, 2&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>StorageToVarsMap</name>
+        <qualifiedname>llvm::at::StorageToVarsMap</qualifiedname>
+        <briefdescription>
+<para>Map of backing storage to a set of variables that are stored to it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>TODO: Backing storage shouldn&apos;t be limited to allocas only. Some local variables have their storage allocated by the calling function (addresses passed in with sret &amp; byval parameters). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="327" column="1" bodyfile="include/llvm/IR/DebugInfo.h" bodystart="327" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1at_1a12eb3d832354ce03752e78d9a5df50dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1at_1a2a9623a09605e579132b9170a901f89b" kindref="member">AssignmentInstRange</ref></type>
+        <definition>AssignmentInstRange llvm::at::getAssignmentInsts</definition>
+        <argsstring>(DIAssignID *ID)</argsstring>
+        <name>getAssignmentInsts</name>
+        <qualifiedname>llvm::at::getAssignmentInsts</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> *</type>
+          <declname>ID</declname>
+        </param>
+        <briefdescription>
+<para>Return a range of instructions (typically just one) that have <computeroutput><ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref></computeroutput> as an attachment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Iterators invalidated by adding or removing <ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> metadata to/from any instruction (including by deleting or cloning instructions). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="192" column="21" bodyfile="lib/IR/DebugInfo.cpp" bodystart="1864" bodyend="1874" declfile="include/llvm/IR/DebugInfo.h" declline="192" declcolumn="21"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a341215803e83773a3e97860dc291f121" compoundref="iterator__range_8h" startline="77" endline="79">llvm::make_range</references>
+        <referencedby refid="_basic_block_utils_8cpp_1ac10429a8c82694552d49e1aba0b85491" compoundref="_basic_block_utils_8cpp" startline="386" endline="439">DbgVariableRecordsRemoveRedundantDbgInstrsUsingBackwardScan</referencedby>
+        <referencedby refid="_basic_block_utils_8cpp_1a961e2695793920fc477be3d95e20babe" compoundref="_basic_block_utils_8cpp" startline="503" endline="543">DbgVariableRecordsRemoveRedundantDbgInstrsUsingForwardScan</referencedby>
+        <referencedby refid="_basic_block_utils_8cpp_1aa1970a96b57d122e4bb765d0f82e96e6" compoundref="_basic_block_utils_8cpp" startline="546" endline="580">DbgVariableRecordsRemoveUndefDbgAssignsFromEntryBlock</referencedby>
+        <referencedby refid="namespacellvm_1_1at_1ab90d9147100854fef19dc8d4493d163e" compoundref="llvm_2_i_r_2_debug_info_8h" startline="197" endline="199">getAssignmentInsts</referencedby>
+        <referencedby refid="namespacellvm_1_1at_1a60ab87620971c02839693ee99009033d" compoundref="llvm_2_i_r_2_debug_info_8h" startline="201" endline="205">getAssignmentInsts</referencedby>
+        <referencedby refid="namespacellvm_1_1at_1aea377383f26585e0da2e86da8e4dfe53" compoundref="_debug_info_8cpp" startline="1902" endline="1913">RAUW</referencedby>
+        <referencedby refid="_basic_block_utils_8cpp_1a2373ebe62ac37c5f7d838e9ca92a7f2e" compoundref="_basic_block_utils_8cpp" startline="441" endline="481">removeRedundantDbgInstrsUsingBackwardScan</referencedby>
+        <referencedby refid="_basic_block_utils_8cpp_1aceb315f70b8f69369df84d79274ef420" compoundref="_basic_block_utils_8cpp" startline="582" endline="626">removeRedundantDbgInstrsUsingForwardScan</referencedby>
+        <referencedby refid="_basic_block_utils_8cpp_1a579e878e02e34bf9699e3d82da2bc070" compoundref="_basic_block_utils_8cpp" startline="647" endline="683">removeUndefDbgAssignsFromEntryBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1ab90d9147100854fef19dc8d4493d163e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1at_1a2a9623a09605e579132b9170a901f89b" kindref="member">AssignmentInstRange</ref></type>
+        <definition>AssignmentInstRange llvm::at::getAssignmentInsts</definition>
+        <argsstring>(const DbgAssignIntrinsic *DAI)</argsstring>
+        <name>getAssignmentInsts</name>
+        <qualifiedname>llvm::at::getAssignmentInsts</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dbg_assign_intrinsic" kindref="compound">DbgAssignIntrinsic</ref> *</type>
+          <declname>DAI</declname>
+        </param>
+        <briefdescription>
+<para>Return a range of instructions (typically just one) that perform the assignment that <computeroutput>DAI</computeroutput> encodes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Iterators invalidated by adding or removing <ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> metadata to/from any instruction (including by deleting or cloning instructions). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="197" column="28" bodyfile="include/llvm/IR/DebugInfo.h" bodystart="197" bodyend="199"/>
+        <references refid="classllvm_1_1_dbg_assign_intrinsic_1a02edd19c26d06e2178aefca138a245bf" compoundref="_i_r_2_intrinsic_inst_8h" startline="510" endline="510">llvm::DbgAssignIntrinsic::getAssignID</references>
+        <references refid="namespacellvm_1_1at_1a12eb3d832354ce03752e78d9a5df50dd" compoundref="_debug_info_8cpp" startline="1864" endline="1874">getAssignmentInsts</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1a60ab87620971c02839693ee99009033d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1at_1a2a9623a09605e579132b9170a901f89b" kindref="member">AssignmentInstRange</ref></type>
+        <definition>AssignmentInstRange llvm::at::getAssignmentInsts</definition>
+        <argsstring>(const DbgVariableRecord *DVR)</argsstring>
+        <name>getAssignmentInsts</name>
+        <qualifiedname>llvm::at::getAssignmentInsts</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dbg_variable_record" kindref="compound">DbgVariableRecord</ref> *</type>
+          <declname>DVR</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="201" column="28" bodyfile="include/llvm/IR/DebugInfo.h" bodystart="201" bodyend="205"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1a4df534a195fe4df5fc7c2eaf2a96bd97" compoundref="_debug_program_instruction_8cpp" startline="485" endline="487">llvm::DbgVariableRecord::getAssignID</references>
+        <references refid="namespacellvm_1_1at_1a12eb3d832354ce03752e78d9a5df50dd" compoundref="_debug_info_8cpp" startline="1864" endline="1874">getAssignmentInsts</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1a8e44c4d5de5d1134497e3ca3b922c535" compoundref="_debug_program_instruction_8h" startline="506" endline="506">llvm::DbgVariableRecord::isDbgAssign</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1a3c90899e8f022656e511630de42b916c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1at_1ae1680d2e0043e57465ff89a3dd463c66" kindref="member">AssignmentMarkerRange</ref></type>
+        <definition>AssignmentMarkerRange llvm::at::getAssignmentMarkers</definition>
+        <argsstring>(DIAssignID *ID)</argsstring>
+        <name>getAssignmentMarkers</name>
+        <qualifiedname>llvm::at::getAssignmentMarkers</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> *</type>
+          <declname>ID</declname>
+        </param>
+        <briefdescription>
+<para>Return a range of dbg.assign intrinsics which use \ID as an operand. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Iterators invalidated by deleting an intrinsic contained in this range. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="228" column="23" bodyfile="lib/IR/DebugInfo.cpp" bodystart="1876" bodyend="1888" declfile="include/llvm/IR/DebugInfo.h" declline="228" declcolumn="23"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_metadata_as_value_1a43da96a342731ffba21f83523a9c787a" compoundref="_metadata_8cpp" startline="111" endline="116">llvm::MetadataAsValue::getIfExists</references>
+        <references refid="namespacellvm_1a341215803e83773a3e97860dc291f121" compoundref="iterator__range_8h" startline="77" endline="79">llvm::make_range</references>
+        <referencedby refid="_assignment_tracking_analysis_8cpp_1a4ad92667dcad9ad33a52a2e1c505a03a" compoundref="_assignment_tracking_analysis_8cpp" startline="2152" endline="2281">buildOverlapMapAndRecordDeclares</referencedby>
+        <referencedby refid="_inline_function_8cpp_1a2ebf7459caf9252729048bd9c5231f6c" compoundref="_inline_function_8cpp" startline="1933" endline="1981">collectEscapedLocals</referencedby>
+        <referencedby refid="namespacellvm_1_1at_1acac0a0a393ce41aadc29e623549b6bfa" compoundref="_debug_info_8cpp" startline="1890" endline="1900">deleteAssignmentMarkers</referencedby>
+        <referencedby refid="_assignment_tracking_analysis_8cpp_1a15c139830d442796a30fbd35e8bfa270" compoundref="_assignment_tracking_analysis_8cpp" startline="2748" endline="2766">findVarsWithStackSlot</referencedby>
+        <referencedby refid="namespacellvm_1_1at_1af30af67184fc4c122edfcdd3a405d28a" compoundref="llvm_2_i_r_2_debug_info_8h" startline="232" endline="237">getAssignmentMarkers</referencedby>
+        <referencedby refid="classanonymous__namespace_02_promote_memory_to_register_8cpp_03_1_1_assignment_tracking_info_1ab80aaa2bd158207080b9e7345a12fce3" compoundref="_promote_memory_to_register_8cpp" startline="135" endline="145">anonymous_namespace{PromoteMemoryToRegister.cpp}::AssignmentTrackingInfo::init</referencedby>
+        <referencedby refid="_s_r_o_a_8cpp_1a0346c3f86c714b9ae84f5566a95e90ac" compoundref="_s_r_o_a_8cpp" startline="353" endline="491">migrateDebugInfo</referencedby>
+        <referencedby refid="_dead_store_elimination_8cpp_1a1321465508b2b54862b90ca404386e06" compoundref="_dead_store_elimination_8cpp" startline="489" endline="564">shortenAssignment</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a557f3c41bf651bbd713f9220c59f0b1a" compoundref="_inst_combine_calls_8cpp" startline="217" endline="287">llvm::InstCombinerImpl::SimplifyAnyMemSet</referencedby>
+        <referencedby refid="classanonymous__namespace_02_promote_memory_to_register_8cpp_03_1_1_assignment_tracking_info_1a92fba2b8745329ee14995b36cf720f68" compoundref="_promote_memory_to_register_8cpp" startline="149" endline="192">anonymous_namespace{PromoteMemoryToRegister.cpp}::AssignmentTrackingInfo::updateForDeletedStore</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_m_d_g_p_u_lower_buffer_fat_pointers_8cpp_03_1_1_store_fat_ptrs_as_ints_visitor_1a8c364caa7bdd20ff435e0fdcb5ec686b" compoundref="_a_m_d_g_p_u_lower_buffer_fat_pointers_8cpp" startline="584" endline="598">anonymous_namespace{AMDGPULowerBufferFatPointers.cpp}::StoreFatPtrsAsIntsVisitor::visitStoreInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1af30af67184fc4c122edfcdd3a405d28a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1at_1ae1680d2e0043e57465ff89a3dd463c66" kindref="member">AssignmentMarkerRange</ref></type>
+        <definition>AssignmentMarkerRange llvm::at::getAssignmentMarkers</definition>
+        <argsstring>(const Instruction *Inst)</argsstring>
+        <name>getAssignmentMarkers</name>
+        <qualifiedname>llvm::at::getAssignmentMarkers</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <briefdescription>
+<para>Return a range of dbg.assign intrinsics for which <computeroutput>Inst</computeroutput> performs the assignment they encode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Iterators invalidated by deleting an intrinsic contained in this range. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="232" column="30" bodyfile="include/llvm/IR/DebugInfo.h" bodystart="232" bodyend="237"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1_1at_1a3c90899e8f022656e511630de42b916c" compoundref="_debug_info_8cpp" startline="1876" endline="1888">getAssignmentMarkers</references>
+        <references refid="classllvm_1_1_instruction_1a6c09737e146b2d816c911a047ac67ba4" compoundref="_i_r_2_instruction_8h" startline="426" endline="431">llvm::Instruction::getMetadata</references>
+        <references refid="namespacellvm_1a341215803e83773a3e97860dc291f121" compoundref="iterator__range_8h" startline="77" endline="79">llvm::make_range</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1aa992dd7420a71df6149dd3437c949245" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_dbg_variable_record" kindref="compound">DbgVariableRecord</ref> * &gt;</type>
+        <definition>SmallVector&lt; DbgVariableRecord * &gt; llvm::at::getDVRAssignmentMarkers</definition>
+        <argsstring>(const Instruction *Inst)</argsstring>
+        <name>getDVRAssignmentMarkers</name>
+        <qualifiedname>llvm::at::getDVRAssignmentMarkers</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="240" column="1" bodyfile="include/llvm/IR/DebugInfo.h" bodystart="240" bodyend="244"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_instruction_1a6c09737e146b2d816c911a047ac67ba4" compoundref="_i_r_2_instruction_8h" startline="426" endline="431">llvm::Instruction::getMetadata</references>
+        <referencedby refid="_assignment_tracking_analysis_8cpp_1a4ad92667dcad9ad33a52a2e1c505a03a" compoundref="_assignment_tracking_analysis_8cpp" startline="2152" endline="2281">buildOverlapMapAndRecordDeclares</referencedby>
+        <referencedby refid="_inline_function_8cpp_1a2ebf7459caf9252729048bd9c5231f6c" compoundref="_inline_function_8cpp" startline="1933" endline="1981">collectEscapedLocals</referencedby>
+        <referencedby refid="namespacellvm_1_1at_1acac0a0a393ce41aadc29e623549b6bfa" compoundref="_debug_info_8cpp" startline="1890" endline="1900">deleteAssignmentMarkers</referencedby>
+        <referencedby refid="_assignment_tracking_analysis_8cpp_1a15c139830d442796a30fbd35e8bfa270" compoundref="_assignment_tracking_analysis_8cpp" startline="2748" endline="2766">findVarsWithStackSlot</referencedby>
+        <referencedby refid="classanonymous__namespace_02_promote_memory_to_register_8cpp_03_1_1_assignment_tracking_info_1ab80aaa2bd158207080b9e7345a12fce3" compoundref="_promote_memory_to_register_8cpp" startline="135" endline="145">anonymous_namespace{PromoteMemoryToRegister.cpp}::AssignmentTrackingInfo::init</referencedby>
+        <referencedby refid="_s_r_o_a_8cpp_1a0346c3f86c714b9ae84f5566a95e90ac" compoundref="_s_r_o_a_8cpp" startline="353" endline="491">migrateDebugInfo</referencedby>
+        <referencedby refid="_dead_store_elimination_8cpp_1a1321465508b2b54862b90ca404386e06" compoundref="_dead_store_elimination_8cpp" startline="489" endline="564">shortenAssignment</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a557f3c41bf651bbd713f9220c59f0b1a" compoundref="_inst_combine_calls_8cpp" startline="217" endline="287">llvm::InstCombinerImpl::SimplifyAnyMemSet</referencedby>
+        <referencedby refid="classanonymous__namespace_02_promote_memory_to_register_8cpp_03_1_1_assignment_tracking_info_1a92fba2b8745329ee14995b36cf720f68" compoundref="_promote_memory_to_register_8cpp" startline="149" endline="192">anonymous_namespace{PromoteMemoryToRegister.cpp}::AssignmentTrackingInfo::updateForDeletedStore</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1acac0a0a393ce41aadc29e623549b6bfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::at::deleteAssignmentMarkers</definition>
+        <argsstring>(const Instruction *Inst)</argsstring>
+        <name>deleteAssignmentMarkers</name>
+        <qualifiedname>llvm::at::deleteAssignmentMarkers</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <briefdescription>
+<para>Delete the llvm.dbg.assign intrinsics linked to <computeroutput>Inst</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="247" column="6" bodyfile="lib/IR/DebugInfo.cpp" bodystart="1890" bodyend="1900" declfile="include/llvm/IR/DebugInfo.h" declline="247" declcolumn="6"/>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="namespacellvm_1_1at_1a3c90899e8f022656e511630de42b916c" compoundref="_debug_info_8cpp" startline="1876" endline="1888">getAssignmentMarkers</references>
+        <references refid="namespacellvm_1_1at_1aa992dd7420a71df6149dd3437c949245" compoundref="llvm_2_i_r_2_debug_info_8h" startline="240" endline="244">getDVRAssignmentMarkers</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ab99310a04afb6c28186b1a6428eb75b0" compoundref="_simplify_c_f_g_8cpp" startline="1671" endline="1755">hoistConditionalLoadsStores</referencedby>
+        <referencedby refid="_promote_memory_to_register_8cpp_1a6952450f0726bd9c26d303743522e227" compoundref="_promote_memory_to_register_8cpp" startline="641" endline="742">promoteSingleBlockAlloca</referencedby>
+        <referencedby refid="_promote_memory_to_register_8cpp_1aa231a7e6d411bd4797afdd6f0a1f8d6a" compoundref="_promote_memory_to_register_8cpp" startline="522" endline="622">rewriteSingleStoreAlloca</referencedby>
+        <referencedby refid="structanonymous__namespace_02_promote_memory_to_register_8cpp_03_1_1_promote_mem2_reg_1a31d32412508ee492e69d8695f88e6dcf" compoundref="_promote_memory_to_register_8cpp" startline="744" endline="991">anonymous_namespace{PromoteMemoryToRegister.cpp}::PromoteMem2Reg::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1aea377383f26585e0da2e86da8e4dfe53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::at::RAUW</definition>
+        <argsstring>(DIAssignID *Old, DIAssignID *New)</argsstring>
+        <name>RAUW</name>
+        <qualifiedname>llvm::at::RAUW</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> *</type>
+          <declname>Old</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> *</type>
+          <declname>New</declname>
+        </param>
+        <briefdescription>
+<para>Replace all uses (and attachments) of <computeroutput>Old</computeroutput> with <computeroutput>New</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="250" column="6" bodyfile="lib/IR/DebugInfo.cpp" bodystart="1902" bodyend="1913" declfile="include/llvm/IR/DebugInfo.h" declline="250" declcolumn="6"/>
+        <references refid="classllvm_1_1iterator__range_1af5a020bd9dd7bc8487dd53ce443fdd8f" compoundref="iterator__range_8h" startline="64" endline="64">llvm::iterator_range&lt; IteratorT &gt;::begin</references>
+        <references refid="classllvm_1_1iterator__range_1aa0344673da91896d39f1b35755ee5d4e" compoundref="iterator__range_8h" startline="65" endline="65">llvm::iterator_range&lt; IteratorT &gt;::end</references>
+        <references refid="namespacellvm_1_1at_1a12eb3d832354ce03752e78d9a5df50dd" compoundref="_debug_info_8cpp" startline="1864" endline="1874">getAssignmentInsts</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_m_d_node_1a2e9fe39301fbac7276c8d9f3e1884dc2" compoundref="_metadata_8h" startline="1270" endline="1274">llvm::MDNode::replaceAllUsesWith</references>
+        <referencedby refid="classllvm_1_1_instruction_1a2711d3bc7c6c769a8f34c7fc3937169d" compoundref="_debug_info_8cpp" startline="953" endline="980">llvm::Instruction::mergeDIAssignID</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1a11e115c0bc63e73df009e5117821d230" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::at::deleteAll</definition>
+        <argsstring>(Function *F)</argsstring>
+        <name>deleteAll</name>
+        <qualifiedname>llvm::at::deleteAll</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Remove all Assignment Tracking related intrinsics and metadata from <computeroutput>F</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="253" column="6" bodyfile="lib/IR/DebugInfo.cpp" bodystart="1915" bodyend="1933" declfile="include/llvm/IR/DebugInfo.h" declline="253" declcolumn="6"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="namespacellvm_1ae876eb96b89c1afcc3e9cd285cc3f08c" compoundref="_debug_program_instruction_8h" startline="555" endline="560">llvm::filterDbgVars</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <referencedby refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a9db16f6b49d380b76183877d54b42c5c" compoundref="_assignment_tracking_analysis_8cpp" startline="2283" endline="2451">anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1ad7b73b4fea9ae261dfe1d0141e34d55c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::at::calculateFragmentIntersect</definition>
+        <argsstring>(const DataLayout &amp;DL, const Value *Dest, uint64_t SliceOffsetInBits, uint64_t SliceSizeInBits, const DbgAssignIntrinsic *DbgAssign, std::optional&lt; DIExpression::FragmentInfo &gt; &amp;Result)</argsstring>
+        <name>calculateFragmentIntersect</name>
+        <qualifiedname>llvm::at::calculateFragmentIntersect</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Dest</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>SliceOffsetInBits</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>SliceSizeInBits</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dbg_assign_intrinsic" kindref="compound">DbgAssignIntrinsic</ref> *</type>
+          <declname>DbgAssign</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classllvm_1_1_d_i_expression_1a2a09e6caba71ab15519f9e55ceb4d10d" kindref="member">DIExpression::FragmentInfo</ref> &gt; &amp;</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+<para>Calculate the fragment of the variable in <computeroutput>DAI</computeroutput> covered from (Dest + SliceOffsetInBits) to to (Dest + SliceOffsetInBits + SliceSizeInBits) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>FIXME: Remove this wrapper function and call <ref refid="classllvm_1_1_d_i_expression_1a4ea8623be899e029827af260965c860d" kindref="member">DIExpression::calculateFragmentIntersect</ref> directly.</para>
+<para>Return false if it can&apos;t be calculated for any reason. Result is set to nullopt if the intersect equals the variable fragment (or variable size) in DAI.</para>
+<para>Result contains a zero-sized fragment if there&apos;s no intersect. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="264" column="6" bodyfile="lib/IR/DebugInfo.cpp" bodystart="1971" bodyend="1977" declfile="include/llvm/IR/DebugInfo.h" declline="264" declcolumn="6"/>
+        <references refid="_debug_info_8cpp_1a619cfadc608f78f1b1ac61c885ea2bbc" compoundref="_debug_info_8cpp" startline="1938" endline="1967">calculateFragmentIntersectImpl</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <referencedby refid="_assignment_tracking_analysis_8cpp_1a4ad92667dcad9ad33a52a2e1c505a03a" compoundref="_assignment_tracking_analysis_8cpp" startline="2152" endline="2281">buildOverlapMapAndRecordDeclares</referencedby>
+        <referencedby refid="_dead_store_elimination_8cpp_1a1321465508b2b54862b90ca404386e06" compoundref="_dead_store_elimination_8cpp" startline="489" endline="564">shortenAssignment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1aee2965aa3f042ce827de5849929bae91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::at::calculateFragmentIntersect</definition>
+        <argsstring>(const DataLayout &amp;DL, const Value *Dest, uint64_t SliceOffsetInBits, uint64_t SliceSizeInBits, const DbgVariableRecord *DVRAssign, std::optional&lt; DIExpression::FragmentInfo &gt; &amp;Result)</argsstring>
+        <name>calculateFragmentIntersect</name>
+        <qualifiedname>llvm::at::calculateFragmentIntersect</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Dest</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>SliceOffsetInBits</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>SliceSizeInBits</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dbg_variable_record" kindref="compound">DbgVariableRecord</ref> *</type>
+          <declname>DVRAssign</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classllvm_1_1_d_i_expression_1a2a09e6caba71ab15519f9e55ceb4d10d" kindref="member">DIExpression::FragmentInfo</ref> &gt; &amp;</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+<para>FIXME: Remove this wrapper function and call <ref refid="classllvm_1_1_d_i_expression_1a4ea8623be899e029827af260965c860d" kindref="member">DIExpression::calculateFragmentIntersect</ref> directly. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="268" column="6" bodyfile="lib/IR/DebugInfo.cpp" bodystart="1981" bodyend="1987" declfile="include/llvm/IR/DebugInfo.h" declline="268" declcolumn="6"/>
+        <references refid="_debug_info_8cpp_1a619cfadc608f78f1b1ac61c885ea2bbc" compoundref="_debug_info_8cpp" startline="1938" endline="1967">calculateFragmentIntersectImpl</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1a64974d467d808a48c21d2b455ce3ecdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::at::remapAssignID</definition>
+        <argsstring>(DenseMap&lt; DIAssignID *, DIAssignID * &gt; &amp;Map, Instruction &amp;I)</argsstring>
+        <name>remapAssignID</name>
+        <qualifiedname>llvm::at::remapAssignID</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> *, <ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> * &gt; &amp;</type>
+          <declname>Map</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Replace <ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> uses and attachments with IDs from <computeroutput>Map</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Update inlined instructions&apos; <ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> metadata.</para>
+<para>If an <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> is unmapped a new <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> is generated and added to <computeroutput>Map</computeroutput>.</para>
+<para>We need to do this otherwise a function inlined more than once into the same function will cause <ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> to be shared by many instructions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="275" column="6" bodyfile="lib/IR/DebugInfo.cpp" bodystart="1992" bodyend="2011" declfile="include/llvm/IR/DebugInfo.h" declline="275" declcolumn="6"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="namespacellvm_1ae876eb96b89c1afcc3e9cd285cc3f08c" compoundref="_debug_program_instruction_8h" startline="555" endline="560">llvm::filterDbgVars</references>
+        <references refid="classllvm_1_1_m_d_node_1ad2fecba192de6da1578bdcb78d524169" compoundref="_metadata_8h" startline="1237" endline="1237">llvm::MDNode::getContext</references>
+        <references refid="classllvm_1_1_d_i_assign_i_d_1aa1a51f00d72f783f9da056877b8fe632" compoundref="_debug_info_metadata_8h" startline="331" endline="333">llvm::DIAssignID::getDistinct</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="_inline_function_8cpp_1ac6ad5b09bf38c4fc9d0c8a5b598fde3c" compoundref="_inline_function_8cpp" startline="1995" endline="2003">fixupAssignments</referencedby>
+        <referencedby refid="_code_extractor_8cpp_1aa1461454928a2518e7f3eea698b3a1da" compoundref="_code_extractor_8cpp" startline="1229" endline="1392">fixupDebugInfoPostExtraction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1a5c4090098e3eaedb61973431af4898b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::at::trackAssignments</definition>
+        <argsstring>(Function::iterator Start, Function::iterator End, const StorageToVarsMap &amp;Vars, const DataLayout &amp;DL, bool DebugPrints=false)</argsstring>
+        <name>trackAssignments</name>
+        <qualifiedname>llvm::at::trackAssignments</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function_1a19595c245bd2e3eefa93ce22db5ad15f" kindref="member">Function::iterator</ref></type>
+          <declname>Start</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function_1a19595c245bd2e3eefa93ce22db5ad15f" kindref="member">Function::iterator</ref></type>
+          <declname>End</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1at_1ae216cdb7393c1e862a61c8da9c1508ed" kindref="member">StorageToVarsMap</ref> &amp;</type>
+          <declname>Vars</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>DebugPrints</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Track assignments to <computeroutput>Vars</computeroutput> between <computeroutput>Start</computeroutput> and <computeroutput>End</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="332" column="6" bodyfile="lib/IR/DebugInfo.cpp" bodystart="2122" bodyend="2207" declfile="include/llvm/IR/DebugInfo.h" declline="332" declcolumn="6"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a3e627c32543ca70720c4270a8b11da3f" compoundref="_casting_8h" startline="720" endline="722">llvm::cast_or_null</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_debug_info_8cpp_1a9b051a25ba281897b4dc62df58312b7e" compoundref="_debug_info_8cpp" startline="2062" endline="2117">emitDbgAssign</references>
+        <references refid="namespacellvm_1a9a7b5c68c90f85baaedaa854cc5002cc" compoundref="raw__ostream_8cpp" startline="907" endline="915">llvm::errs</references>
+        <references refid="classllvm_1_1_undef_value_1a4ae5ff22b700a42bcc5d889233721335" compoundref="_constants_8cpp" startline="1859" endline="1865">llvm::UndefValue::get</references>
+        <references refid="namespacellvm_1_1at_1acba9ed42400327fd80c5ec86803ca1f0" compoundref="_debug_info_8cpp" startline="2037" endline="2047">getAssignmentInfo</references>
+        <references refid="classllvm_1_1_d_i_assign_i_d_1aa1a51f00d72f783f9da056877b8fe632" compoundref="_debug_info_metadata_8h" startline="331" endline="333">llvm::DIAssignID::getDistinct</references>
+        <references refid="classllvm_1_1_type_1aa75984a442f2379de0c66018201fa628" compoundref="_sandbox_i_r_2_type_8cpp" startline="284" endline="284">llvm::Type::getInt1Ty</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="_inline_function_8cpp_1ae71573dba191b26eda0d5ea27b81ef62" compoundref="_inline_function_8cpp" startline="1983" endline="1990">trackInlinedStores</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1acba9ed42400327fd80c5ec86803ca1f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structllvm_1_1at_1_1_assignment_info" kindref="compound">AssignmentInfo</ref> &gt;</type>
+        <definition>std::optional&lt; AssignmentInfo &gt; llvm::at::getAssignmentInfo</definition>
+        <argsstring>(const DataLayout &amp;DL, const MemIntrinsic *I)</argsstring>
+        <name>getAssignmentInfo</name>
+        <qualifiedname>llvm::at::getAssignmentInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_mem_intrinsic" kindref="compound">MemIntrinsic</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="352" column="15" bodyfile="lib/IR/DebugInfo.cpp" bodystart="2037" bodyend="2047" declfile="include/llvm/IR/DebugInfo.h" declline="352" declcolumn="15"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_debug_info_8cpp_1afb6a2b1b5242599e12b7fe897140eda3" compoundref="_debug_info_8cpp" startline="2017" endline="2035">getAssignmentInfoImpl</references>
+        <references refid="classllvm_1_1_type_size_1a003b4369b4130e669dc9139798e0193c" compoundref="_type_size_8h" startline="345" endline="347">llvm::TypeSize::getFixed</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="_assignment_tracking_analysis_8cpp_1a4613ca285a8a0e95d35816a83b302a91" compoundref="_assignment_tracking_analysis_8cpp" startline="2114" endline="2124">getUntaggedStoreAssignmentInfo</referencedby>
+        <referencedby refid="namespacellvm_1_1at_1a5c4090098e3eaedb61973431af4898b1" compoundref="_debug_info_8cpp" startline="2122" endline="2207">trackAssignments</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1a2d0eb3e7683f09ea28cc50f670b2d0e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structllvm_1_1at_1_1_assignment_info" kindref="compound">AssignmentInfo</ref> &gt;</type>
+        <definition>std::optional&lt; AssignmentInfo &gt; llvm::at::getAssignmentInfo</definition>
+        <argsstring>(const DataLayout &amp;DL, const StoreInst *SI)</argsstring>
+        <name>getAssignmentInfo</name>
+        <qualifiedname>llvm::at::getAssignmentInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_store_inst" kindref="compound">StoreInst</ref> *</type>
+          <declname>SI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="354" column="15" bodyfile="lib/IR/DebugInfo.cpp" bodystart="2049" bodyend="2053" declfile="include/llvm/IR/DebugInfo.h" declline="354" declcolumn="15"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="_debug_info_8cpp_1afb6a2b1b5242599e12b7fe897140eda3" compoundref="_debug_info_8cpp" startline="2017" endline="2035">getAssignmentInfoImpl</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1at_1ae56d26e266b1d9f9e3e8abef9cd76d2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structllvm_1_1at_1_1_assignment_info" kindref="compound">AssignmentInfo</ref> &gt;</type>
+        <definition>std::optional&lt; AssignmentInfo &gt; llvm::at::getAssignmentInfo</definition>
+        <argsstring>(const DataLayout &amp;DL, const AllocaInst *AI)</argsstring>
+        <name>getAssignmentInfo</name>
+        <qualifiedname>llvm::at::getAssignmentInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_alloca_inst" kindref="compound">AllocaInst</ref> *</type>
+          <declname>AI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/DebugInfo.h" line="356" column="15" bodyfile="lib/IR/DebugInfo.cpp" bodystart="2055" bodyend="2059" declfile="include/llvm/IR/DebugInfo.h" declline="356" declcolumn="15"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="classllvm_1_1_alloca_inst_1a9b5ec84ea363eca9e35ddca20a5313af" compoundref="_instructions_8h" startline="117" endline="117">llvm::AllocaInst::getAllocatedType</references>
+        <references refid="_debug_info_8cpp_1afb6a2b1b5242599e12b7fe897140eda3" compoundref="_debug_info_8cpp" startline="2017" endline="2035">getAssignmentInfoImpl</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Assignment Tracking (at). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/IR/DebugInfo.h" line="181" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1588 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_g_i_match_table_executor" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>llvm::GIMatchTableExecutor</compoundname>
+    <derivedcompoundref refid="classllvm_1_1_combiner" prot="public" virt="non-virtual">llvm::Combiner</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_instruction_selector" prot="public" virt="non-virtual">llvm::InstructionSelector</derivedcompoundref>
+    <includes refid="_g_i_match_table_executor_8h" local="yes">llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h</includes>
+    <innerclass refid="structllvm_1_1_g_i_match_table_executor_1_1_exec_info_ty" prot="public">llvm::GIMatchTableExecutor::ExecInfoTy</innerclass>
+    <innerclass refid="structllvm_1_1_g_i_match_table_executor_1_1_matcher_state" prot="protected">llvm::GIMatchTableExecutor::MatcherState</innerclass>
+    <sectiondef kind="protected-type">
+      <memberdef kind="typedef" id="classllvm_1_1_g_i_match_table_executor_1a86de393f150025719e982512eb086b2a" prot="protected" static="no">
+        <type>std::optional&lt; <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::function&lt; void(<ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref> &amp;)&gt;, 4 &gt; &gt;</type>
+        <definition>using llvm::GIMatchTableExecutor::ComplexRendererFns = 
+      std::optional&lt;SmallVector&lt;std::function&lt;void(MachineInstrBuilder &amp;)&gt;, 4&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>ComplexRendererFns</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::ComplexRendererFns</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="615" column="3" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="615" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_g_i_match_table_executor_1a8af184f677d5c7d4eaae692428df99c9" prot="protected" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, 4 &gt;</type>
+        <definition>using llvm::GIMatchTableExecutor::RecordedMIVector =  SmallVector&lt;MachineInstr *, 4&gt;</definition>
+        <argsstring></argsstring>
+        <name>RecordedMIVector</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::RecordedMIVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="617" column="3" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="617" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_g_i_match_table_executor_1a6ac0ddf7ea380f085ca48f45fa6035a5" prot="protected" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref>, 4 &gt;</type>
+        <definition>using llvm::GIMatchTableExecutor::NewMIVector =  SmallVector&lt;MachineInstrBuilder, 4&gt;</definition>
+        <argsstring></argsstring>
+        <name>NewMIVector</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::NewMIVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="618" column="3" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="618" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_g_i_match_table_executor_1ae5900cfb710c3c8b5f5d2a5b0cadabf9" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_code_gen_coverage" kindref="compound">CodeGenCoverage</ref> *</type>
+        <definition>CodeGenCoverage* llvm::GIMatchTableExecutor::CoverageInfo</definition>
+        <argsstring></argsstring>
+        <name>CoverageInfo</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::CoverageInfo</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="590" column="19" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="590" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1a31d8f3539028d6af3bbcd78745ea50bf">llvm::AMDGPUInstructionSelector::getName</referencedby>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a54a74ca0c82840e37a9a92890385eee6">GIMatchTableExecutor</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_arch64_instruction_selector_8cpp_03_1_1_a_arch64_instruction_selector_1acf1575bd51e7b6b91a92904410f268aa" compoundref="_a_arch64_instruction_selector_8cpp" startline="2560" endline="3683">anonymous_namespace{AArch64InstructionSelector.cpp}::AArch64InstructionSelector::select</referencedby>
+        <referencedby refid="classanonymous__namespace_02_p_p_c_instruction_selector_8cpp_03_1_1_p_p_c_instruction_selector_1a051c8a2638fc5f95b9ccd5e82a7a8559" compoundref="_p_p_c_instruction_selector_8cpp" startline="708" endline="780">anonymous_namespace{PPCInstructionSelector.cpp}::PPCInstructionSelector::select</referencedby>
+        <referencedby refid="classanonymous__namespace_02_r_i_s_c_v_instruction_selector_8cpp_03_1_1_r_i_s_c_v_instruction_selector_1a285142054aed60907906550e49ed07e2" compoundref="_r_i_s_c_v_instruction_selector_8cpp" startline="594" endline="739">anonymous_namespace{RISCVInstructionSelector.cpp}::RISCVInstructionSelector::select</referencedby>
+        <referencedby refid="classanonymous__namespace_02_s_p_i_r_v_instruction_selector_8cpp_03_1_1_s_p_i_r_v_instruction_selector_1a4a8b881c0637c6f85c3eb6891abcfab4" compoundref="_s_p_i_r_v_instruction_selector_8cpp" startline="438" endline="508">anonymous_namespace{SPIRVInstructionSelector.cpp}::SPIRVInstructionSelector::select</referencedby>
+        <referencedby refid="classanonymous__namespace_02_x86_instruction_selector_8cpp_03_1_1_x86_instruction_selector_1a2f9fb38133cb5844e49ed1ad78588b2a" compoundref="_x86_instruction_selector_8cpp" startline="353" endline="446">anonymous_namespace{X86InstructionSelector.cpp}::X86InstructionSelector::select</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1a978498ac91a6e163a70f06bf1259e224" compoundref="_a_m_d_g_p_u_instruction_selector_8cpp" startline="3956" endline="4111">llvm::AMDGPUInstructionSelector::select</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_arch64_instruction_selector_8cpp_03_1_1_a_arch64_instruction_selector_1a83151fce4b310c403a42a444660e030b" compoundref="_a_arch64_instruction_selector_8cpp" startline="78" endline="91">anonymous_namespace{AArch64InstructionSelector.cpp}::AArch64InstructionSelector::setupMF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_r_i_s_c_v_instruction_selector_8cpp_03_1_1_r_i_s_c_v_instruction_selector_1a5e1cc9de768ed92633aa0391a00234f7" compoundref="_r_i_s_c_v_instruction_selector_8cpp" startline="47" endline="52">anonymous_namespace{RISCVInstructionSelector.cpp}::RISCVInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_s_p_i_r_v_instruction_selector_8cpp_03_1_1_s_p_i_r_v_instruction_selector_1a8fc4d11927fc993885c41ace2b887447">anonymous_namespace{SPIRVInstructionSelector.cpp}::SPIRVInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1aaa901c06b2f29c59d5afab0e47e83962" compoundref="_a_m_d_g_p_u_instruction_selector_8cpp" startline="59" endline="67">llvm::AMDGPUInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1abc092c61ef888b461f955c86b994511c" compoundref="_g_i_match_table_executor_8h" startline="601" endline="612">setupMF</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_i_match_table_executor_1a42689945d570c32ab32defb5469ca47b" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_g_i_sel_known_bits" kindref="compound">GISelKnownBits</ref> *</type>
+        <definition>GISelKnownBits* llvm::GIMatchTableExecutor::KB</definition>
+        <argsstring></argsstring>
+        <name>KB</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::KB</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="591" column="18" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="591" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1a31d8f3539028d6af3bbcd78745ea50bf">llvm::AMDGPUInstructionSelector::getName</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_arch64_instruction_selector_8cpp_03_1_1_a_arch64_instruction_selector_1a83151fce4b310c403a42a444660e030b" compoundref="_a_arch64_instruction_selector_8cpp" startline="78" endline="91">anonymous_namespace{AArch64InstructionSelector.cpp}::AArch64InstructionSelector::setupMF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_r_i_s_c_v_instruction_selector_8cpp_03_1_1_r_i_s_c_v_instruction_selector_1a5e1cc9de768ed92633aa0391a00234f7" compoundref="_r_i_s_c_v_instruction_selector_8cpp" startline="47" endline="52">anonymous_namespace{RISCVInstructionSelector.cpp}::RISCVInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_s_p_i_r_v_instruction_selector_8cpp_03_1_1_s_p_i_r_v_instruction_selector_1a8fc4d11927fc993885c41ace2b887447">anonymous_namespace{SPIRVInstructionSelector.cpp}::SPIRVInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1aaa901c06b2f29c59d5afab0e47e83962" compoundref="_a_m_d_g_p_u_instruction_selector_8cpp" startline="59" endline="67">llvm::AMDGPUInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1abc092c61ef888b461f955c86b994511c" compoundref="_g_i_match_table_executor_8h" startline="601" endline="612">setupMF</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_i_match_table_executor_1a52fb4682a4be0321cf8eec99c1f76f93" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>MachineFunction* llvm::GIMatchTableExecutor::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::MF</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="592" column="19" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="592" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1a31d8f3539028d6af3bbcd78745ea50bf">llvm::AMDGPUInstructionSelector::getName</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_arch64_instruction_selector_8cpp_03_1_1_a_arch64_instruction_selector_1acf1575bd51e7b6b91a92904410f268aa" compoundref="_a_arch64_instruction_selector_8cpp" startline="2560" endline="3683">anonymous_namespace{AArch64InstructionSelector.cpp}::AArch64InstructionSelector::select</referencedby>
+        <referencedby refid="classanonymous__namespace_02_p_p_c_instruction_selector_8cpp_03_1_1_p_p_c_instruction_selector_1a051c8a2638fc5f95b9ccd5e82a7a8559" compoundref="_p_p_c_instruction_selector_8cpp" startline="708" endline="780">anonymous_namespace{PPCInstructionSelector.cpp}::PPCInstructionSelector::select</referencedby>
+        <referencedby refid="classanonymous__namespace_02_x86_instruction_selector_8cpp_03_1_1_x86_instruction_selector_1a2f9fb38133cb5844e49ed1ad78588b2a" compoundref="_x86_instruction_selector_8cpp" startline="353" endline="446">anonymous_namespace{X86InstructionSelector.cpp}::X86InstructionSelector::select</referencedby>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1af441511571ed4ad4bc6b719b42934d96">setupGeneratedPerFunctionState</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_arch64_instruction_selector_8cpp_03_1_1_a_arch64_instruction_selector_1a83151fce4b310c403a42a444660e030b" compoundref="_a_arch64_instruction_selector_8cpp" startline="78" endline="91">anonymous_namespace{AArch64InstructionSelector.cpp}::AArch64InstructionSelector::setupMF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_r_i_s_c_v_instruction_selector_8cpp_03_1_1_r_i_s_c_v_instruction_selector_1a5e1cc9de768ed92633aa0391a00234f7" compoundref="_r_i_s_c_v_instruction_selector_8cpp" startline="47" endline="52">anonymous_namespace{RISCVInstructionSelector.cpp}::RISCVInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_s_p_i_r_v_instruction_selector_8cpp_03_1_1_s_p_i_r_v_instruction_selector_1a8fc4d11927fc993885c41ace2b887447">anonymous_namespace{SPIRVInstructionSelector.cpp}::SPIRVInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1aaa901c06b2f29c59d5afab0e47e83962" compoundref="_a_m_d_g_p_u_instruction_selector_8cpp" startline="59" endline="67">llvm::AMDGPUInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1abc092c61ef888b461f955c86b994511c" compoundref="_g_i_match_table_executor_8h" startline="601" endline="612">setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a9554b6a1531cc435fc2508a89a9748e0" compoundref="_g_i_match_table_executor_8h" startline="637" endline="645">shouldOptForSize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_i_match_table_executor_1aa2ed5c2002db167510960436bf654fc2" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+        <definition>ProfileSummaryInfo* llvm::GIMatchTableExecutor::PSI</definition>
+        <argsstring></argsstring>
+        <name>PSI</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::PSI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="593" column="22" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="593" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1a31d8f3539028d6af3bbcd78745ea50bf">llvm::AMDGPUInstructionSelector::getName</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_arch64_instruction_selector_8cpp_03_1_1_a_arch64_instruction_selector_1a83151fce4b310c403a42a444660e030b" compoundref="_a_arch64_instruction_selector_8cpp" startline="78" endline="91">anonymous_namespace{AArch64InstructionSelector.cpp}::AArch64InstructionSelector::setupMF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_r_i_s_c_v_instruction_selector_8cpp_03_1_1_r_i_s_c_v_instruction_selector_1a5e1cc9de768ed92633aa0391a00234f7" compoundref="_r_i_s_c_v_instruction_selector_8cpp" startline="47" endline="52">anonymous_namespace{RISCVInstructionSelector.cpp}::RISCVInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_s_p_i_r_v_instruction_selector_8cpp_03_1_1_s_p_i_r_v_instruction_selector_1a8fc4d11927fc993885c41ace2b887447">anonymous_namespace{SPIRVInstructionSelector.cpp}::SPIRVInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1aaa901c06b2f29c59d5afab0e47e83962" compoundref="_a_m_d_g_p_u_instruction_selector_8cpp" startline="59" endline="67">llvm::AMDGPUInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1abc092c61ef888b461f955c86b994511c" compoundref="_g_i_match_table_executor_8h" startline="601" endline="612">setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a9554b6a1531cc435fc2508a89a9748e0" compoundref="_g_i_match_table_executor_8h" startline="637" endline="645">shouldOptForSize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_i_match_table_executor_1a224495037f6eee0b6970aa0c30fffb74" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_block_frequency_info" kindref="compound">BlockFrequencyInfo</ref> *</type>
+        <definition>BlockFrequencyInfo* llvm::GIMatchTableExecutor::BFI</definition>
+        <argsstring></argsstring>
+        <name>BFI</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::BFI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="594" column="22" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="594" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1a31d8f3539028d6af3bbcd78745ea50bf">llvm::AMDGPUInstructionSelector::getName</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_arch64_instruction_selector_8cpp_03_1_1_a_arch64_instruction_selector_1a83151fce4b310c403a42a444660e030b" compoundref="_a_arch64_instruction_selector_8cpp" startline="78" endline="91">anonymous_namespace{AArch64InstructionSelector.cpp}::AArch64InstructionSelector::setupMF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_r_i_s_c_v_instruction_selector_8cpp_03_1_1_r_i_s_c_v_instruction_selector_1a5e1cc9de768ed92633aa0391a00234f7" compoundref="_r_i_s_c_v_instruction_selector_8cpp" startline="47" endline="52">anonymous_namespace{RISCVInstructionSelector.cpp}::RISCVInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_s_p_i_r_v_instruction_selector_8cpp_03_1_1_s_p_i_r_v_instruction_selector_1a8fc4d11927fc993885c41ace2b887447">anonymous_namespace{SPIRVInstructionSelector.cpp}::SPIRVInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1aaa901c06b2f29c59d5afab0e47e83962" compoundref="_a_m_d_g_p_u_instruction_selector_8cpp" startline="59" endline="67">llvm::AMDGPUInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1abc092c61ef888b461f955c86b994511c" compoundref="_g_i_match_table_executor_8h" startline="601" endline="612">setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a9554b6a1531cc435fc2508a89a9748e0" compoundref="_g_i_match_table_executor_8h" startline="637" endline="645">shouldOptForSize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_i_match_table_executor_1a2000833f7ae5727959f4058707e206f7" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock* llvm::GIMatchTableExecutor::CurMBB</definition>
+        <argsstring></argsstring>
+        <name>CurMBB</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::CurMBB</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="596" column="21" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="596" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1abc092c61ef888b461f955c86b994511c" compoundref="_g_i_match_table_executor_8h" startline="601" endline="612">setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a9554b6a1531cc435fc2508a89a9748e0" compoundref="_g_i_match_table_executor_8h" startline="637" endline="645">shouldOptForSize</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1ab96d74d3dc284435fdeaee475c7c85cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual llvm::GIMatchTableExecutor::~GIMatchTableExecutor</definition>
+        <argsstring>()=default</argsstring>
+        <name>~GIMatchTableExecutor</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::~GIMatchTableExecutor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="588" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1af441511571ed4ad4bc6b719b42934d96" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::GIMatchTableExecutor::setupGeneratedPerFunctionState</definition>
+        <argsstring>(MachineFunction &amp;MF)=0</argsstring>
+        <name>setupGeneratedPerFunctionState</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::setupGeneratedPerFunctionState</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_mips_pre_legalizer_combiner_8cpp_03_1_1_mips_pre_legalizer_combiner_impl_1a0c21015cf9c4f7be59b961eb05877f32">setupGeneratedPerFunctionState</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="598" column="16"/>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a52fb4682a4be0321cf8eec99c1f76f93" compoundref="_g_i_match_table_executor_8h" startline="592">MF</references>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1abc092c61ef888b461f955c86b994511c" compoundref="_g_i_match_table_executor_8h" startline="601" endline="612">setupMF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1abc092c61ef888b461f955c86b994511c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void llvm::GIMatchTableExecutor::setupMF</definition>
+        <argsstring>(MachineFunction &amp;mf, GISelKnownBits *kb, CodeGenCoverage *covinfo=nullptr, ProfileSummaryInfo *psi=nullptr, BlockFrequencyInfo *bfi=nullptr)</argsstring>
+        <name>setupMF</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::setupMF</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_a_arch64_instruction_selector_8cpp_03_1_1_a_arch64_instruction_selector_1a83151fce4b310c403a42a444660e030b">setupMF</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_r_i_s_c_v_instruction_selector_8cpp_03_1_1_r_i_s_c_v_instruction_selector_1a5e1cc9de768ed92633aa0391a00234f7">setupMF</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_s_p_i_r_v_instruction_selector_8cpp_03_1_1_s_p_i_r_v_instruction_selector_1a8fc4d11927fc993885c41ace2b887447">setupMF</reimplementedby>
+        <reimplementedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1aaa901c06b2f29c59d5afab0e47e83962">setupMF</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_known_bits" kindref="compound">GISelKnownBits</ref> *</type>
+          <declname>kb</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_code_gen_coverage" kindref="compound">CodeGenCoverage</ref> *</type>
+          <declname>covinfo</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+          <declname>psi</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_block_frequency_info" kindref="compound">BlockFrequencyInfo</ref> *</type>
+          <declname>bfi</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Setup per-MF executor state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="601" column="16" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="601" bodyend="612"/>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a224495037f6eee0b6970aa0c30fffb74" compoundref="_g_i_match_table_executor_8h" startline="594">BFI</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1ae5900cfb710c3c8b5f5d2a5b0cadabf9" compoundref="_g_i_match_table_executor_8h" startline="590">CoverageInfo</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a2000833f7ae5727959f4058707e206f7" compoundref="_g_i_match_table_executor_8h" startline="596">CurMBB</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a42689945d570c32ab32defb5469ca47b" compoundref="_g_i_match_table_executor_8h" startline="591">KB</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a52fb4682a4be0321cf8eec99c1f76f93" compoundref="_g_i_match_table_executor_8h" startline="592">MF</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1aa2ed5c2002db167510960436bf654fc2" compoundref="_g_i_match_table_executor_8h" startline="593">PSI</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1af441511571ed4ad4bc6b719b42934d96">setupGeneratedPerFunctionState</references>
+        <referencedby refid="classllvm_1_1_combiner_1a4a3a16e02e0d2cbe78acd2dcab7dd388" compoundref="_combiner_8cpp" startline="255" endline="355">llvm::Combiner::combineMachineInstrs</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_arch64_instruction_selector_8cpp_03_1_1_a_arch64_instruction_selector_1a83151fce4b310c403a42a444660e030b" compoundref="_a_arch64_instruction_selector_8cpp" startline="78" endline="91">anonymous_namespace{AArch64InstructionSelector.cpp}::AArch64InstructionSelector::setupMF</referencedby>
+        <referencedby refid="classanonymous__namespace_02_r_i_s_c_v_instruction_selector_8cpp_03_1_1_r_i_s_c_v_instruction_selector_1a5e1cc9de768ed92633aa0391a00234f7" compoundref="_r_i_s_c_v_instruction_selector_8cpp" startline="47" endline="52">anonymous_namespace{RISCVInstructionSelector.cpp}::RISCVInstructionSelector::setupMF</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector_1aaa901c06b2f29c59d5afab0e47e83962" compoundref="_a_m_d_g_p_u_instruction_selector_8cpp" startline="59" endline="67">llvm::AMDGPUInstructionSelector::setupMF</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1a9554b6a1531cc435fc2508a89a9748e0" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GIMatchTableExecutor::shouldOptForSize</definition>
+        <argsstring>(const MachineFunction *MF) const</argsstring>
+        <name>shouldOptForSize</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::shouldOptForSize</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="637" column="8" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="637" bodyend="645"/>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a224495037f6eee0b6970aa0c30fffb74" compoundref="_g_i_match_table_executor_8h" startline="594">BFI</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a2000833f7ae5727959f4058707e206f7" compoundref="_g_i_match_table_executor_8h" startline="596">CurMBB</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a52fb4682a4be0321cf8eec99c1f76f93" compoundref="_g_i_match_table_executor_8h" startline="592">MF</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1aa2ed5c2002db167510960436bf654fc2" compoundref="_g_i_match_table_executor_8h" startline="593">PSI</references>
+        <references refid="namespacellvm_1a3af72f14ea20f2c762c751d2d49e5ea3" compoundref="_machine_size_opts_8cpp" startline="27" endline="34">llvm::shouldOptimizeForSize</references>
+        <referencedby refid="classanonymous__namespace_02_a_arch64_instruction_selector_8cpp_03_1_1_a_arch64_instruction_selector_1acf1575bd51e7b6b91a92904410f268aa" compoundref="_a_arch64_instruction_selector_8cpp" startline="2560" endline="3683">anonymous_namespace{AArch64InstructionSelector.cpp}::AArch64InstructionSelector::select</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1a54a74ca0c82840e37a9a92890385eee6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GIMatchTableExecutor::GIMatchTableExecutor</definition>
+        <argsstring>()</argsstring>
+        <name>GIMatchTableExecutor</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::GIMatchTableExecutor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="671" column="3"/>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1ae5900cfb710c3c8b5f5d2a5b0cadabf9" compoundref="_g_i_match_table_executor_8h" startline="590">CoverageInfo</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="_hexagon_copy_to_combine_8cpp_1a1d40004718218dbdf06b496766299101" compoundref="_hexagon_copy_to_combine_8cpp" startline="125">TII</references>
+        <references refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" compoundref="_machine_sink_8cpp" startline="2029">TRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class TgtExecutor</type>
+          </param>
+          <param>
+            <type>class PredicateBitset</type>
+          </param>
+          <param>
+            <type>class ComplexMatcherMemFn</type>
+          </param>
+          <param>
+            <type>class CustomRendererFn</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GIMatchTableExecutor::executeMatchTable</definition>
+        <argsstring>(TgtExecutor &amp;Exec, MatcherState &amp;State, const ExecInfoTy&lt; PredicateBitset, ComplexMatcherMemFn, CustomRendererFn &gt; &amp;ExecInfo, MachineIRBuilder &amp;Builder, const uint8_t *MatchTable, const TargetInstrInfo &amp;TII, MachineRegisterInfo &amp;MRI, const TargetRegisterInfo &amp;TRI, const RegisterBankInfo &amp;RBI, const PredicateBitset &amp;AvailableFeatures, CodeGenCoverage *CoverageInfo) const</argsstring>
+        <name>executeMatchTable</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::executeMatchTable</qualifiedname>
+        <param>
+          <type>TgtExecutor &amp;</type>
+          <declname>Exec</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_g_i_match_table_executor_1_1_matcher_state" kindref="compound">MatcherState</ref> &amp;</type>
+          <declname>State</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_g_i_match_table_executor_1_1_exec_info_ty" kindref="compound">ExecInfoTy</ref>&lt; PredicateBitset, ComplexMatcherMemFn, CustomRendererFn &gt; &amp;</type>
+          <declname>ExecInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint8__t" kindref="compound">uint8_t</ref> *</type>
+          <declname>MatchTable</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> &amp;</type>
+          <declname>TII</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> &amp;</type>
+          <declname>TRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_register_bank_info" kindref="compound">RegisterBankInfo</ref> &amp;</type>
+          <declname>RBI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> PredicateBitset &amp;</type>
+          <declname>AvailableFeatures</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_code_gen_coverage" kindref="compound">CodeGenCoverage</ref> *</type>
+          <declname>CoverageInfo</declname>
+        </param>
+        <briefdescription>
+<para>Execute a given matcher table and return true if the match was successful and false otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="677" column="8" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutorImpl.h" bodystart="46" bodyend="1558"/>
+        <references refid="_itanium_demangle_8h_1a536e22898d28a9340a4204407a75ad5d" compoundref="_itanium_demangle_8h" startline="3433">AbstractManglingParser&lt; Derived, Alloc &gt;::NumOps</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a713eab58694282971c413a0d6de5975c" compoundref="_machine_instr_builder_8h" startline="226" endline="229">llvm::MachineInstrBuilder::add</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1af751c28a69e1d07e19dad11e4e26a70d" compoundref="_machine_i_r_builder_8cpp" startline="317" endline="339">llvm::MachineIRBuilder::buildConstant</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a8bc92b8a902afb7675480ecc729a66d4" compoundref="_machine_i_r_builder_8h" startline="417" endline="419">llvm::MachineIRBuilder::buildInstr</references>
+        <references refid="namespacellvm_1a708b9606a37961be41adad607c81c532" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="201" endline="220">llvm::canReplaceReg</references>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1a45a05a932f80f51023592ff5131d56a5">llvm::GISelChangeObserver::changedInstr</references>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1ae260ef07f27a4b7f76496d9929bbb317" compoundref="_g_i_sel_change_observer_8cpp" startline="18" endline="24">llvm::GISelChangeObserver::changingAllUsesOfReg</references>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1a1f637715070a99aa4140444e12697f9a">llvm::GISelChangeObserver::changingInstr</references>
+        <references refid="structllvm_1_1_g_i_match_table_executor_1_1_exec_info_ty_1aa0441f44fd3b7133723f769c0da5bc10" compoundref="_g_i_match_table_executor_8h" startline="664">llvm::GIMatchTableExecutor::ExecInfoTy&lt; PredicateBitset, ComplexMatcherMemFn, CustomRendererFn &gt;::ComplexPredicates</references>
+        <references refid="namespacellvm_1a0de00f38864016881b1182ebac4b7b30" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="56" endline="106">llvm::constrainOperandRegClass</references>
+        <references refid="namespacellvm_1a2a0be879cebaa17d623212f729b1d4b1" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="155" endline="199">llvm::constrainSelectedInstRegOperands</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1ae5900cfb710c3c8b5f5d2a5b0cadabf9" compoundref="_g_i_match_table_executor_8h" startline="590">CoverageInfo</references>
+        <references refid="structllvm_1_1_g_i_match_table_executor_1_1_exec_info_ty_1a85c636b7f99842fe3e0756bccd52a6e5" compoundref="_g_i_match_table_executor_8h" startline="665">llvm::GIMatchTableExecutor::ExecInfoTy&lt; PredicateBitset, ComplexMatcherMemFn, CustomRendererFn &gt;::CustomRenderers</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_debug_8h_1a3fcdc9f30e5e8b9ea4da99868a8ae4a9" compoundref="_debug_8h" startline="64" endline="69">DEBUG_WITH_TYPE</references>
+        <references refid="namespacellvm_1ae58c751054b01f206f9b9e34e461d25fa7a1920d61156abc05a60135aefe8bc67" compoundref="_uniformity_8h" startline="20">llvm::Default</references>
+        <references refid="namespacellvm_1a02981de53fb6ffd384d39addc4d25f37" compoundref="_s_t_l_extras_8h" startline="329" endline="332">llvm::drop_begin</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_constant_int_1ae2863695d9b93a15492fa489f4f85e09" compoundref="_constants_8h" startline="183" endline="183">llvm::ConstantInt::equalsInt</references>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1adbcc821688d1687f0b5faf9ba83bd902">llvm::GISelChangeObserver::erasingInstr</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1aa284de70c1521913d9eda75728495b36" compoundref="_g_i_match_table_executor_8h" startline="752" endline="765">fastDecodeULEB128</references>
+        <references refid="structllvm_1_1_g_i_match_table_executor_1_1_exec_info_ty_1adfaf0a5cc6cb9b94145c30553caeace4" compoundref="_g_i_match_table_executor_8h" startline="663">llvm::GIMatchTableExecutor::ExecInfoTy&lt; PredicateBitset, ComplexMatcherMemFn, CustomRendererFn &gt;::FeatureBitsets</references>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1a274ff6e49f7c082a254920495943be57" compoundref="_g_i_sel_change_observer_8cpp" startline="26" endline="30">llvm::GISelChangeObserver::finishedChangingAllUsesOfReg</references>
+        <references refid="classllvm_1_1_integer_type_1a14f7b4f1aed38192fb6b7772eb506bdb" compoundref="_sandbox_i_r_2_type_8cpp" startline="311" endline="333">llvm::IntegerType::get</references>
+        <references refid="classllvm_1_1_machine_mem_operand_1a3f583e2bb417139560bde043214d064a" compoundref="_machine_mem_operand_8h" startline="233" endline="233">llvm::MachineMemOperand::getAddrSpace</references>
+        <references refid="classllvm_1_1_machine_mem_operand_1abc15369ab4cc583332950b913e2ef1dd" compoundref="_machine_operand_8cpp" startline="1146" endline="1148">llvm::MachineMemOperand::getAlign</references>
+        <references refid="classllvm_1_1_machine_operand_1a29e05cd075864928ae65e1751fdc346e" compoundref="_machine_operand_8h" startline="561" endline="564">llvm::MachineOperand::getCImm</references>
+        <references refid="namespacellvm_1a4b2430ab5e686b82f8cd6fd588d6de6f" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="486" endline="491">llvm::getDefIgnoringCopies</references>
+        <references refid="classllvm_1_1_machine_operand_1a38b28a85f818b49d8806c150b8a5b4f7" compoundref="_machine_operand_8h" startline="556" endline="559">llvm::MachineOperand::getImm</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a430daa77692b7b25f93a72d83e51964f" compoundref="_machine_i_r_builder_8h" startline="333" endline="333">llvm::MachineIRBuilder::getInsertPt</references>
+        <references refid="classllvm_1_1_machine_operand_1ad21d94ca6aa512e357a993e0e85a921e" compoundref="_machine_operand_8h" startline="612" endline="615">llvm::MachineOperand::getIntrinsicID</references>
+        <references refid="classllvm_1_1_machine_instr_1ab05719438bdf4b46871e5ecd9730caeb" compoundref="_machine_instr_8cpp" startline="753" endline="755">llvm::MachineInstr::getMF</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a035ff811981517c4885338606c70d928" compoundref="_machine_i_r_builder_8h" startline="385" endline="385">llvm::MachineIRBuilder::getObserver</references>
+        <references refid="classllvm_1_1_machine_operand_1af0d32d967ac31c4e6149c2adb89aa947" compoundref="_machine_operand_8h" startline="617" endline="620">llvm::MachineOperand::getPredicate</references>
+        <references refid="classllvm_1_1_machine_operand_1ac0035d7c1c860501c877c20e6e93297b" compoundref="_machine_operand_8h" startline="369" endline="372">llvm::MachineOperand::getReg</references>
+        <references refid="classllvm_1_1_register_bank_info_1a7b7ace4016fc342a5535307a10198daa" compoundref="_register_bank_info_8h" startline="440" endline="443">llvm::RegisterBankInfo::getRegBank</references>
+        <references refid="classllvm_1_1_register_bank_info_1a9a3a4079fc2830c334da4406288bce24" compoundref="_register_bank_info_8h" startline="623" endline="625">llvm::RegisterBankInfo::getRegBankFromRegClass</references>
+        <references refid="classllvm_1_1_l_l_t_1a32472b5afd0ae6edb4a233a25056a6aa" compoundref="_low_level_type_8h" startline="264" endline="268">llvm::LLT::getScalarSizeInBits</references>
+        <references refid="classllvm_1_1_machine_mem_operand_1a0ffa31699dee0349f9b9ae1d3ccb21f1" compoundref="_machine_mem_operand_8h" startline="240" endline="244">llvm::MachineMemOperand::getSize</references>
+        <references refid="classllvm_1_1_machine_mem_operand_1abcceb535a4bb1e23c320e7628476bd5d" compoundref="_machine_mem_operand_8h" startline="247" endline="251">llvm::MachineMemOperand::getSizeInBits</references>
+        <references refid="namespacellvm_1adb39eef3d8e7cf19a9145c51a5e46253" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="493" endline="498">llvm::getSrcRegIgnoringCopies</references>
+        <references refid="classllvm_1_1_location_size_1a935a116f6c8690449f4eddd56a99504b" compoundref="_memory_location_8h" startline="170" endline="175">llvm::LocationSize::getValue</references>
+        <references refid="namespacellvm_1ae6fd15e2e0832c90a220aec452a36396a0d78a7d38e0e6d17ce2235491dc2b3cf" compoundref="_g_i_match_table_executor_8h" startline="57">llvm::GICXXCustomAction_Invalid</references>
+        <references refid="namespacellvm_1ae6fd15e2e0832c90a220aec452a36396a85bfd2a214922aec43fefa8b70c2249c" compoundref="_g_i_match_table_executor_8h" startline="56">llvm::GICXXPred_Invalid</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a65143d43d5603f9dba69a2d0004bc70d" compoundref="_g_i_match_table_executor_8h" startline="156">llvm::GIM_CheckAPFloatImmPredicate</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a2a2cd395c22be85a98d02e5e29660c5f" compoundref="_g_i_match_table_executor_8h" startline="152">llvm::GIM_CheckAPIntImmPredicate</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84acd2d9eb57c5ea30b572047573c647b24" compoundref="_g_i_match_table_executor_8h" startline="166">llvm::GIM_CheckAtomicOrdering</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a5490bd4d588069dab3dd706356683363" compoundref="_g_i_match_table_executor_8h" startline="167">llvm::GIM_CheckAtomicOrderingOrStrongerThan</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aed6cd1559f0cead69469c6d48527e44a" compoundref="_g_i_match_table_executor_8h" startline="168">llvm::GIM_CheckAtomicOrderingWeakerThan</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ac7f6cf201c898042205c3d82a907d6d6" compoundref="_g_i_match_table_executor_8h" startline="321">llvm::GIM_CheckCanReplaceReg</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ad20dca4409f7590197f954cd1f033481" compoundref="_g_i_match_table_executor_8h" startline="286">llvm::GIM_CheckCmpPredicate</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a39f09a67024023fbca53f2e125f3bbdb" compoundref="_g_i_match_table_executor_8h" startline="255">llvm::GIM_CheckComplexPattern</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84af3a7ce7120cbfd6fa9ef64823a7de06c" compoundref="_g_i_match_table_executor_8h" startline="261">llvm::GIM_CheckConstantInt</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ad1d09f02146c2c60dfcaf62b15474586" compoundref="_g_i_match_table_executor_8h" startline="267">llvm::GIM_CheckConstantInt8</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84afdf8e26b1fc5d330aa6d6e8fb4360813" compoundref="_g_i_match_table_executor_8h" startline="218">llvm::GIM_CheckCxxInsnPredicate</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ac683a59968221140f5dd06fe97e85ec4" compoundref="_g_i_match_table_executor_8h" startline="120">llvm::GIM_CheckFeatures</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a2b858a0624f463213b98796b9d584e7d" compoundref="_g_i_match_table_executor_8h" startline="222">llvm::GIM_CheckHasNoUse</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ab43de658e6c5353b04d507de6bfb6a1f" compoundref="_g_i_match_table_executor_8h" startline="226">llvm::GIM_CheckHasOneUse</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a28ae25d9f6f40f340ca4e605d449f938" compoundref="_g_i_match_table_executor_8h" startline="148">llvm::GIM_CheckI64ImmPredicate</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aecf89db6e41b1f144368611325331037" compoundref="_g_i_match_table_executor_8h" startline="161">llvm::GIM_CheckImmOperandPredicate</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84af1e8acff65a95651ca919b09f7d18819" compoundref="_g_i_match_table_executor_8h" startline="280">llvm::GIM_CheckIntrinsicID</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a1cd0d7a1845188d7c5d17d4563ca8013" compoundref="_g_i_match_table_executor_8h" startline="206">llvm::GIM_CheckIsBuildVectorAllOnes</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a50aa64435de5b0c19a73ffc63320bac9" compoundref="_g_i_match_table_executor_8h" startline="207">llvm::GIM_CheckIsBuildVectorAllZeros</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ac15b17108c1cdd3f05023f9a5747afe4" compoundref="_g_i_match_table_executor_8h" startline="296">llvm::GIM_CheckIsImm</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aa1eeb5bfb18be904fcb94e3e97772f7f" compoundref="_g_i_match_table_executor_8h" startline="291">llvm::GIM_CheckIsMBB</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a5acb32c66d14688efea083bd3ceaa8cc" compoundref="_g_i_match_table_executor_8h" startline="301">llvm::GIM_CheckIsSafeToFold</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a98058684db37c8d2064041023dcc9d6f" compoundref="_g_i_match_table_executor_8h" startline="311">llvm::GIM_CheckIsSameOperand</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aa12c661e93d40f79d899e7e7a824d4d2" compoundref="_g_i_match_table_executor_8h" startline="312">llvm::GIM_CheckIsSameOperandIgnoreCopies</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aad83fa18e37413d9dffbcffa0511446b" compoundref="_g_i_match_table_executor_8h" startline="274">llvm::GIM_CheckLiteralInt</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84acc19f364ec183a47e3a26d89470afa66" compoundref="_g_i_match_table_executor_8h" startline="183">llvm::GIM_CheckMemoryAddressSpace</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a97fed2b9d2087a9ded7f8073ca157967" compoundref="_g_i_match_table_executor_8h" startline="190">llvm::GIM_CheckMemoryAlignment</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a101c7a7ac7d86b18d2a14b3463fdc7b4" compoundref="_g_i_match_table_executor_8h" startline="174">llvm::GIM_CheckMemorySizeEqualTo</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a341048dafbddd227ccef983523fed2c7" compoundref="_g_i_match_table_executor_8h" startline="197">llvm::GIM_CheckMemorySizeEqualToLLT</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aa6e5bf3ced72bf15c5ef7fc7b66042c4" compoundref="_g_i_match_table_executor_8h" startline="199">llvm::GIM_CheckMemorySizeGreaterThanLLT</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ab015e1251cc68953520f5ed4202b4005" compoundref="_g_i_match_table_executor_8h" startline="198">llvm::GIM_CheckMemorySizeLessThanLLT</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a1fda933c7880a753a885156b6566ce21" compoundref="_g_i_match_table_executor_8h" startline="137">llvm::GIM_CheckNumOperands</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aa8e97db139042149f947763970c7d79e" compoundref="_g_i_match_table_executor_8h" startline="143">llvm::GIM_CheckNumOperandsGE</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aa386181095f9c4c5ae579bf5f0794e51" compoundref="_g_i_match_table_executor_8h" startline="142">llvm::GIM_CheckNumOperandsLE</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a5f5cf67489f8dc8c9a40848dd8bd82b0" compoundref="_g_i_match_table_executor_8h" startline="125">llvm::GIM_CheckOpcode</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ad372783f9a2bc4bfa0b7ffb608aa9bc3" compoundref="_g_i_match_table_executor_8h" startline="132">llvm::GIM_CheckOpcodeIsEither</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a314906da59dd2fb152e80972018df750" compoundref="_g_i_match_table_executor_8h" startline="240">llvm::GIM_CheckPointerToAny</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aa740bcae35c784e560877c554c639820" compoundref="_g_i_match_table_executor_8h" startline="246">llvm::GIM_CheckRegBankForClass</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84afea63447ca29f127d6cec5406254b8e9" compoundref="_g_i_match_table_executor_8h" startline="213">llvm::GIM_CheckSimplePredicate</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ace7723c2e6766e0a3d7443ec141d39fb" compoundref="_g_i_match_table_executor_8h" startline="232">llvm::GIM_CheckType</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a92df516d8a5a58b3b396308a804dfbb8" compoundref="_g_i_match_table_executor_8h" startline="327">llvm::GIM_MIFlags</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a5cec1c5190fb61ac734ded11054eb555" compoundref="_g_i_match_table_executor_8h" startline="328">llvm::GIM_MIFlagsNot</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ac10fd8c318f59bec57af6c68f6ff06c0" compoundref="_g_i_match_table_executor_8h" startline="115">llvm::GIM_RecordInsn</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84af7baa2963d4273ad4781e1886f29ea6a" compoundref="_g_i_match_table_executor_8h" startline="116">llvm::GIM_RecordInsnIgnoreCopies</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a182c9e6f8c94e6977212337e065594dd" compoundref="_g_i_match_table_executor_8h" startline="337">llvm::GIM_RecordNamedOperand</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ab2e7dcae37feb424f8a3dbad0a6aca85" compoundref="_g_i_match_table_executor_8h" startline="343">llvm::GIM_RecordRegType</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a668d91c9831986ecaf1e507aacc9b9f6" compoundref="_g_i_match_table_executor_8h" startline="347">llvm::GIM_Reject</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a1611f07ba815c7298c4a5b6c25695114" compoundref="_g_i_match_table_executor_8h" startline="248">llvm::GIM_RootCheckRegBankForClass</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a12d15f287e3cefccf1081ce1af2c08a2" compoundref="_g_i_match_table_executor_8h" startline="234">llvm::GIM_RootCheckType</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a63790ce46cd26b20d97c461c22326253" compoundref="_g_i_match_table_executor_8h" startline="99">llvm::GIM_SwitchOpcode</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a438b8acf8a4b992c4264a83d20d627a4" compoundref="_g_i_match_table_executor_8h" startline="108">llvm::GIM_SwitchType</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a1b38cae4864b83c6662d70ed7755c732" compoundref="_g_i_match_table_executor_8h" startline="91">llvm::GIM_Try</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a223e240a3183b4e28d5369073514db0a" compoundref="_g_i_match_table_executor_8h" startline="472">llvm::GIR_AddCImm</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a83900c90d5d6cf501158ca949378bd3a" compoundref="_g_i_match_table_executor_8h" startline="461">llvm::GIR_AddImm</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aa07680b50a3e485cb1e03a4b8fbf6196" compoundref="_g_i_match_table_executor_8h" startline="466">llvm::GIR_AddImm8</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a2974301dab2ecd88d750b9cfd6dc0bf0" compoundref="_g_i_match_table_executor_8h" startline="402">llvm::GIR_AddImplicitDef</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ae83b298a9f209ea0cc61ba30d9fbe644" compoundref="_g_i_match_table_executor_8h" startline="406">llvm::GIR_AddImplicitUse</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a0266c15934fc11c769bcd3fc3962c8f7" compoundref="_g_i_match_table_executor_8h" startline="416">llvm::GIR_AddIntrinsicID</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a57917e0d53f81522ab9bf380c4a6d584" compoundref="_g_i_match_table_executor_8h" startline="411">llvm::GIR_AddRegister</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a745183663ffac02b717a70b059c5fea3" compoundref="_g_i_match_table_executor_8h" startline="449">llvm::GIR_AddSimpleTempRegister</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a7a9328345c0c175b82874eca0f0d2303" compoundref="_g_i_match_table_executor_8h" startline="443">llvm::GIR_AddTempRegister</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a57cc1d3d879b036fc687d761492cec6b" compoundref="_g_i_match_table_executor_8h" startline="456">llvm::GIR_AddTempSubRegister</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84add5e6b57a70e3a67b67b6bf4487cdace" compoundref="_g_i_match_table_executor_8h" startline="367">llvm::GIR_BuildConstant</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84abf86dd527136097e4ef50098b47a0369" compoundref="_g_i_match_table_executor_8h" startline="360">llvm::GIR_BuildMI</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ac3a1fb0682facc726804a2551ff860c5" compoundref="_g_i_match_table_executor_8h" startline="362">llvm::GIR_BuildRootMI</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a02fbdb2ad737aab648cbdda74b286b0c" compoundref="_g_i_match_table_executor_8h" startline="477">llvm::GIR_ComplexRenderer</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a05213d636af3b07e608ef474d15a6f65" compoundref="_g_i_match_table_executor_8h" startline="482">llvm::GIR_ComplexSubOperandRenderer</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84af7703ea27d7537f9cdcfc0f13ba9ad45" compoundref="_g_i_match_table_executor_8h" startline="489">llvm::GIR_ComplexSubOperandSubRegRenderer</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a2848ba22f180a28fbbbe26b7e1d2a7cd" compoundref="_g_i_match_table_executor_8h" startline="529">llvm::GIR_ConstrainOperandRC</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84afc79d662cc596d338cb5a83d8d536ef2" compoundref="_g_i_match_table_executor_8h" startline="534">llvm::GIR_ConstrainSelectedInstOperands</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a7aff73c32862ac27c8814471b0014987" compoundref="_g_i_match_table_executor_8h" startline="373">llvm::GIR_Copy</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a3f4f5e97276ad9d138f8a4b3da6fdb71" compoundref="_g_i_match_table_executor_8h" startline="517">llvm::GIR_CopyConstantAsSImm</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a84bd2d59a7f26a059f49e39641648a4f" compoundref="_g_i_match_table_executor_8h" startline="523">llvm::GIR_CopyFConstantAsFPImm</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ab8f45f0502469e2044380f3c140911f5" compoundref="_g_i_match_table_executor_8h" startline="437">llvm::GIR_CopyMIFlags</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a97bd5d7159872feaeff08bbac3cf9c4f" compoundref="_g_i_match_table_executor_8h" startline="390">llvm::GIR_CopyOrAddZeroReg</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a91f917ed872d98c61903d74b503b6187" compoundref="_g_i_match_table_executor_8h" startline="382">llvm::GIR_CopyRemaining</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a4892d4acf82fbcf2299b40b295a37dc1" compoundref="_g_i_match_table_executor_8h" startline="396">llvm::GIR_CopySubReg</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aea1ef60ea5055083fb954a7e2f2ee62c" compoundref="_g_i_match_table_executor_8h" startline="577">llvm::GIR_Coverage</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84afacd20764289c28ed9ac7e288991e696" compoundref="_g_i_match_table_executor_8h" startline="511">llvm::GIR_CustomOperandRenderer</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84acc919467d5ad7054d4f2fab52052cb61" compoundref="_g_i_match_table_executor_8h" startline="495">llvm::GIR_CustomRenderer</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a163cb4909d585c3835baf2a6d66df440" compoundref="_g_i_match_table_executor_8h" startline="573">llvm::GIR_Done</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84abe33bb8f1b6dbceed138e94ab44f91fd" compoundref="_g_i_match_table_executor_8h" startline="501">llvm::GIR_DoneWithCustomAction</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a42f131d412046ab6741376162d6a0277" compoundref="_g_i_match_table_executor_8h" startline="548">llvm::GIR_EraseFromParent</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ab64446e49f757afd093d8b6d651b7fc1" compoundref="_g_i_match_table_executor_8h" startline="551">llvm::GIR_EraseRootFromParent_Done</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a066f2dc31445dd5e74f41e43607e6c05" compoundref="_g_i_match_table_executor_8h" startline="556">llvm::GIR_MakeTempReg</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aec963bbaf7fc97925f4538070b2174cd" compoundref="_g_i_match_table_executor_8h" startline="544">llvm::GIR_MergeMemOperands</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a4c733a5d0a8572f93e5a05426e64707d" compoundref="_g_i_match_table_executor_8h" startline="355">llvm::GIR_MutateOpcode</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a5fab2fc8368f57fbd8b34835b8bb109a" compoundref="_g_i_match_table_executor_8h" startline="564">llvm::GIR_ReplaceReg</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a03d829ac5438ded725144a7eea5af40c" compoundref="_g_i_match_table_executor_8h" startline="570">llvm::GIR_ReplaceRegWithTempReg</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84a1be994013f6fb9fc774f1f71c001324e" compoundref="_g_i_match_table_executor_8h" startline="537">llvm::GIR_RootConstrainSelectedInstOperands</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84af74b3e669873cf7553b1c8626763b232" compoundref="_g_i_match_table_executor_8h" startline="375">llvm::GIR_RootToRootCopy</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84ad455ae9e50e58c6c80468ddd07d50a04" compoundref="_g_i_match_table_executor_8h" startline="423">llvm::GIR_SetImplicitDefDead</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84aeef4fb2114a647b95873663988984e91" compoundref="_g_i_match_table_executor_8h" startline="429">llvm::GIR_SetMIFlags</references>
+        <references refid="namespacellvm_1aecc1a270efbc7afe5e8be928dbe9bf84adbb46023bf50160423d802af73e070e7" compoundref="_g_i_match_table_executor_8h" startline="430">llvm::GIR_UnsetMIFlags</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1_1_reg_state_1ade26fe5c9b3fe6948def36f7ca12dfc5a0fec8ba6f4a4dc758b725205985eee99" compoundref="_machine_instr_builder_8h" startline="48">llvm::RegState::Implicit</references>
+        <references refid="namespacellvm_1a7f04318888b610cbdd037adc9b1b17e3" compoundref="_atomic_ordering_8h" startline="106" endline="119">llvm::isAtLeastOrStrongerThan</references>
+        <references refid="namespacellvm_1a882ca8d6de322e8bbc18be97b45085fc" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="1446" endline="1450">llvm::isBuildVectorAllOnes</references>
+        <references refid="namespacellvm_1a0905ec01af203441d890c82574431329" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="1440" endline="1444">llvm::isBuildVectorAllZeros</references>
+        <references refid="classllvm_1_1_machine_operand_1a32ea768fbb182d6bbe3ff85ae1eb7031" compoundref="_machine_operand_8h" startline="333" endline="333">llvm::MachineOperand::isCImm</references>
+        <references refid="classllvm_1_1_machine_operand_1a76f61c6784df6dc8402a8b9011041926" compoundref="_machine_operand_8h" startline="331" endline="331">llvm::MachineOperand::isImm</references>
+        <references refid="classllvm_1_1_machine_operand_1a44f92ba840149cc7f75e38279341257a" compoundref="_machine_operand_8h" startline="361" endline="361">llvm::MachineOperand::isIntrinsicID</references>
+        <references refid="classllvm_1_1details_1_1_fixed_or_scalable_quantity_1afb486f9022a26e1cc53ff189710dbde5" compoundref="_type_size_8h" startline="239" endline="244">llvm::details::FixedOrScalableQuantity&lt; TypeSize, uint64_t &gt;::isKnownGE</references>
+        <references refid="classllvm_1_1details_1_1_fixed_or_scalable_quantity_1a338ba7ca7a526243ab1853d07d90fe38" compoundref="_type_size_8h" startline="232" endline="237">llvm::details::FixedOrScalableQuantity&lt; TypeSize, uint64_t &gt;::isKnownLE</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1acc7375926290b7d52cce5ef2c03505f7" compoundref="_g_i_match_table_executor_8cpp" startline="62" endline="102">isObviouslySafeToFold</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1aa29ae3958e21ba305518fbad7c6ec004" compoundref="_g_i_match_table_executor_8cpp" startline="29" endline="43">isOperandImmEqual</references>
+        <references refid="classllvm_1_1_register_1affdbf5b92ed7e01352e2f39466efbe21" compoundref="_register_8h" startline="95" endline="95">llvm::Register::isPhysical</references>
+        <references refid="classllvm_1_1_machine_operand_1a4039d2f36755814cb173552df270bddc" compoundref="_machine_operand_8h" startline="362" endline="362">llvm::MachineOperand::isPredicate</references>
+        <references refid="classllvm_1_1_machine_operand_1a4c9594c955fec80c73ddd964b5efd554" compoundref="_machine_operand_8h" startline="329" endline="329">llvm::MachineOperand::isReg</references>
+        <references refid="namespacellvm_1af21b12b7c8de1504a945c4c974e06bff" compoundref="_atomic_ordering_8h" startline="91" endline="104">llvm::isStrongerThan</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a52fb4682a4be0321cf8eec99c1f76f93" compoundref="_g_i_match_table_executor_8h" startline="592">MF</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1a59f98bbb1f440db8d5db1c8b5bd819f6" compoundref="_math_extras_8h" startline="367" endline="374">llvm::MinAlign</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="classllvm_1_1_machine_instr_1aafacf84de1cb994a92dc045f4aa1d518a1cf224b3316c689f4735877ef0bbd893" compoundref="_machine_instr_8h" startline="113">llvm::MachineInstr::NoFPExcept</references>
+        <references refid="classllvm_1_1_machine_instr_1a999b8f3e58e7ca479f26445bae791a7c" compoundref="_machine_instr_8h" startline="693" endline="695">llvm::MachineInstr::operands</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a0c8ffe664a36e30d49c84d0aded2fe08" compoundref="_small_vector_8h" startline="673" endline="677">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a6d26f4e678274a5d6300f87b0600d20e" compoundref="_g_i_match_table_executor_8h" startline="733" endline="737">readBytesAs</references>
+        <references refid="classllvm_1_1_small_vector_impl_1ad0b3d8447f88377b62d9c019f3c4e118" compoundref="_small_vector_8h" startline="638" endline="638">llvm::SmallVectorImpl&lt; T &gt;::resize</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1ad448a6032e3d1900673393daf481779e" compoundref="_g_i_match_table_executor_8h" startline="713" endline="716">runCustomAction</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a0df93c0f752428162e14b54f8999172d" compoundref="_machine_i_r_builder_8h" startline="338" endline="343">llvm::MachineIRBuilder::setInsertPt</references>
+        <references refid="namespacellvm_1ad12a58d7f81a304e0c568ad2210bc4fe" compoundref="_math_extras_8h" startline="582" endline="587">llvm::SignExtend64</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1a92a6b0a9b7228d190b0a7d8ae3ef03c7" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="104">SubReg</references>
+        <references refid="_a_arch64_disassembler_8cpp_1abdb086b34295fb7aa09493c62d798465" compoundref="_a_arch64_disassembler_8cpp" startline="220">Success</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a1ee63f1b4a837790372b80495555ff62" compoundref="_g_i_match_table_executor_8h" startline="699" endline="702">testImmPredicate_APFloat</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a30455b548886763b211edbaf57ddb508" compoundref="_g_i_match_table_executor_8h" startline="695" endline="698">testImmPredicate_APInt</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a687b5956ba7da14119b517367930c1dc" compoundref="_g_i_match_table_executor_8h" startline="691" endline="694">testImmPredicate_I64</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a4b585bef87c3ab61a04267def7cbf4c5" compoundref="_g_i_match_table_executor_8h" startline="703" endline="707">testMIPredicate_MI</references>
+        <references refid="classllvm_1_1_g_i_match_table_executor_1a04a7e93988e5d41a4d7851bf21340476" compoundref="_g_i_match_table_executor_8h" startline="709" endline="711">testSimplePredicate</references>
+        <references refid="_hexagon_copy_to_combine_8cpp_1a1d40004718218dbdf06b496766299101" compoundref="_hexagon_copy_to_combine_8cpp" startline="125">TII</references>
+        <references refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" compoundref="_machine_sink_8cpp" startline="2029">TRI</references>
+        <references refid="structllvm_1_1_g_i_match_table_executor_1_1_exec_info_ty_1a9ca01bc8856409a03f8fa62e4cbcd9ed" compoundref="_g_i_match_table_executor_8h" startline="667">llvm::GIMatchTableExecutor::ExecInfoTy&lt; PredicateBitset, ComplexMatcherMemFn, CustomRendererFn &gt;::TypeIDMap</references>
+        <references refid="structllvm_1_1_g_i_match_table_executor_1_1_exec_info_ty_1a32f82439a0e15f9e31515bcc7150df94" compoundref="_g_i_match_table_executor_8h" startline="662">llvm::GIMatchTableExecutor::ExecInfoTy&lt; PredicateBitset, ComplexMatcherMemFn, CustomRendererFn &gt;::TypeObjects</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1a2f85d40b6bad4aaf700854ae1b370be0" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint8__t" kindref="compound">uint8_t</ref> *</type>
+        <definition>virtual const uint8_t * llvm::GIMatchTableExecutor::getMatchTable</definition>
+        <argsstring>() const</argsstring>
+        <name>getMatchTable</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::getMatchTable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="687" column="25" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="687" bodyend="689"/>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1a687b5956ba7da14119b517367930c1dc" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::GIMatchTableExecutor::testImmPredicate_I64</definition>
+        <argsstring>(unsigned, int64_t) const</argsstring>
+        <name>testImmPredicate_I64</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::testImmPredicate_I64</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classint64__t" kindref="compound">int64_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="691" column="16" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="691" bodyend="694"/>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1a30455b548886763b211edbaf57ddb508" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::GIMatchTableExecutor::testImmPredicate_APInt</definition>
+        <argsstring>(unsigned, const APInt &amp;) const</argsstring>
+        <name>testImmPredicate_APInt</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::testImmPredicate_APInt</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_a_p_int" kindref="compound">APInt</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="695" column="16" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="695" bodyend="698"/>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1a1ee63f1b4a837790372b80495555ff62" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::GIMatchTableExecutor::testImmPredicate_APFloat</definition>
+        <argsstring>(unsigned, const APFloat &amp;) const</argsstring>
+        <name>testImmPredicate_APFloat</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::testImmPredicate_APFloat</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_a_p_float" kindref="compound">APFloat</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="699" column="16" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="699" bodyend="702"/>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1a4b585bef87c3ab61a04267def7cbf4c5" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::GIMatchTableExecutor::testMIPredicate_MI</definition>
+        <argsstring>(unsigned, const MachineInstr &amp;, const MatcherState &amp;State) const</argsstring>
+        <name>testMIPredicate_MI</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::testMIPredicate_MI</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_g_i_match_table_executor_1_1_matcher_state" kindref="compound">MatcherState</ref> &amp;</type>
+          <declname>State</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="703" column="16" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="703" bodyend="707"/>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1a04a7e93988e5d41a4d7851bf21340476" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::GIMatchTableExecutor::testSimplePredicate</definition>
+        <argsstring>(unsigned) const</argsstring>
+        <name>testSimplePredicate</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::testSimplePredicate</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="709" column="16" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="709" bodyend="711"/>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1ad448a6032e3d1900673393daf481779e" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::GIMatchTableExecutor::runCustomAction</definition>
+        <argsstring>(unsigned, const MatcherState &amp;State, NewMIVector &amp;OutMIs) const</argsstring>
+        <name>runCustomAction</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::runCustomAction</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_g_i_match_table_executor_1_1_matcher_state" kindref="compound">MatcherState</ref> &amp;</type>
+          <declname>State</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_match_table_executor_1a6ac0ddf7ea380f085ca48f45fa6035a5" kindref="member">NewMIVector</ref> &amp;</type>
+          <declname>OutMIs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="713" column="16" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="713" bodyend="716"/>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1aa29ae3958e21ba305518fbad7c6ec004" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GIMatchTableExecutor::isOperandImmEqual</definition>
+        <argsstring>(const MachineOperand &amp;MO, int64_t Value, const MachineRegisterInfo &amp;MRI, bool Splat=false) const</argsstring>
+        <name>isOperandImmEqual</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::isOperandImmEqual</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> &amp;</type>
+          <declname>MO</declname>
+        </param>
+        <param>
+          <type><ref refid="classint64__t" kindref="compound">int64_t</ref></type>
+          <declname>Value</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Splat</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="718" column="8" bodyfile="lib/CodeGen/GlobalISel/GIMatchTableExecutor.cpp" bodystart="29" bodyend="43"/>
+        <references refid="namespacellvm_1a1af9fe220013bab6cfd9c7bb1be42477" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="1400" endline="1409">llvm::getIConstantSplatVal</references>
+        <references refid="namespacellvm_1ac76eb82370e997f967454f441effbbff" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="433" endline="437">llvm::getIConstantVRegValWithLookThrough</references>
+        <references refid="classllvm_1_1_machine_operand_1ac0035d7c1c860501c877c20e6e93297b" compoundref="_machine_operand_8h" startline="369" endline="372">llvm::MachineOperand::getReg</references>
+        <references refid="classllvm_1_1_machine_operand_1a4c9594c955fec80c73ddd964b5efd554" compoundref="_machine_operand_8h" startline="329" endline="329">llvm::MachineOperand::isReg</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="namespacellvm_1a766456df1dd21e804cd4596304e10764a5b9bf50c6579a978e5c1104bf8787651" compoundref="_complex_deinterleaving_pass_8h" startline="42">llvm::Splat</references>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1a596366d4034015c0668d2070e597425f" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GIMatchTableExecutor::isBaseWithConstantOffset</definition>
+        <argsstring>(const MachineOperand &amp;Root, const MachineRegisterInfo &amp;MRI) const</argsstring>
+        <name>isBaseWithConstantOffset</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::isBaseWithConstantOffset</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> &amp;</type>
+          <declname>Root</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+<para>Return true if the specified operand is a G_PTR_ADD with a G_CONSTANT on the right-hand side. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>GlobalISel&apos;s separation of pointer and integer types means that we don&apos;t need to worry about G_OR with equivalent semantics. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="725" column="8" bodyfile="lib/CodeGen/GlobalISel/GIMatchTableExecutor.cpp" bodystart="45" bodyend="60"/>
+        <references refid="classllvm_1_1_machine_instr_1a0363204b5fbab08a46f5a7cd7f376f78" compoundref="_machine_instr_8h" startline="577" endline="577">llvm::MachineInstr::getOpcode</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classllvm_1_1_machine_operand_1ac0035d7c1c860501c877c20e6e93297b" compoundref="_machine_operand_8h" startline="369" endline="372">llvm::MachineOperand::getReg</references>
+        <references refid="classllvm_1_1_machine_operand_1a4c9594c955fec80c73ddd964b5efd554" compoundref="_machine_operand_8h" startline="329" endline="329">llvm::MachineOperand::isReg</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1acc7375926290b7d52cce5ef2c03505f7" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GIMatchTableExecutor::isObviouslySafeToFold</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineInstr &amp;IntoMI) const</argsstring>
+        <name>isObviouslySafeToFold</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::isObviouslySafeToFold</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>IntoMI</declname>
+        </param>
+        <briefdescription>
+<para>Return true if MI can obviously be folded into IntoMI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>MI and IntoMI do not need to be in the same basic blocks, but MI must preceed IntoMI. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="731" column="8" bodyfile="lib/CodeGen/GlobalISel/GIMatchTableExecutor.cpp" bodystart="62" bodyend="102"/>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_machine_instr_1a1e855100f407ca4be098d0050be403b0" compoundref="_machine_instr_8h" startline="349" endline="349">llvm::MachineInstr::getParent</references>
+        <references refid="namespacellvm_1a90f68a1fc5d44bb06164dc2188b8e486" compoundref="_machine_basic_block_8h" startline="1463" endline="1468">llvm::instructionsWithoutDebug</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1a6d26f4e678274a5d6300f87b0600d20e" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_ty" kindref="compound">Ty</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_ty" kindref="compound">Ty</ref></type>
+        <definition>static Ty llvm::GIMatchTableExecutor::readBytesAs</definition>
+        <argsstring>(const uint8_t *MatchTable)</argsstring>
+        <name>readBytesAs</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::readBytesAs</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint8__t" kindref="compound">uint8_t</ref> *</type>
+          <declname>MatchTable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="733" column="25" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="733" bodyend="737"/>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1ae8bba411b15797dcf6969c2f6e636bcd" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> &gt;</type>
+        <definition>static ArrayRef&lt; MachineOperand &gt; llvm::GIMatchTableExecutor::getRemainingOperands</definition>
+        <argsstring>(const MachineInstr &amp;MI, unsigned FirstVarOp)</argsstring>
+        <name>getRemainingOperands</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::getRemainingOperands</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>FirstVarOp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="739" column="19" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="739" bodyend="743"/>
+        <references refid="namespacellvm_1a02981de53fb6ffd384d39addc4d25f37" compoundref="_s_t_l_extras_8h" startline="329" endline="332">llvm::drop_begin</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_m_i_r_namer_pass_8cpp_1a05e4be4ec3e2c3587dda0e376bb6822c" compoundref="_m_i_r_namer_pass_8cpp" startline="74">Operands</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_g_i_match_table_executor_1aa284de70c1521913d9eda75728495b36" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1a338bdf98e9e600f582b7bef274bc9388" kindref="member">LLVM_ATTRIBUTE_ALWAYS_INLINE</ref> <ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>static LLVM_ATTRIBUTE_ALWAYS_INLINE uint64_t llvm::GIMatchTableExecutor::fastDecodeULEB128</definition>
+        <argsstring>(const uint8_t *LLVM_ATTRIBUTE_RESTRICT MatchTable, uint64_t &amp;CurrentIdx)</argsstring>
+        <name>fastDecodeULEB128</name>
+        <qualifiedname>llvm::GIMatchTableExecutor::fastDecodeULEB128</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint8__t" kindref="compound">uint8_t</ref> *<ref refid="_compiler_8h_1a5b37bec11eb1346dfa611754d0b12263" kindref="member">LLVM_ATTRIBUTE_RESTRICT</ref></type>
+          <declname>MatchTable</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref> &amp;</type>
+          <declname>CurrentIdx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="752" column="3" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="752" bodyend="765"/>
+        <references refid="_compiler_8h_1a5b37bec11eb1346dfa611754d0b12263" compoundref="_compiler_8h" startline="365">LLVM_ATTRIBUTE_RESTRICT</references>
+        <references refid="_compiler_8h_1a104cae72182bec0ab951e3faea6ce509" compoundref="_compiler_8h" startline="320">LLVM_UNLIKELY</references>
+        <referencedby refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" compoundref="_g_i_match_table_executor_impl_8h" startline="46" endline="1558">executeMatchTable</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Provides the logic to execute GlobalISel match tables, which are used by the instruction selector and instruction combiners as their engine to match and apply MIR patterns. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="17">
+        <label>anonymous_namespace{AArch64InstructionSelector.cpp}::AArch64InstructionSelector</label>
+        <link refid="classanonymous__namespace_02_a_arch64_instruction_selector_8cpp_03_1_1_a_arch64_instruction_selector"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>anonymous_namespace{AArch64O0PreLegalizerCombiner.cpp}::AArch64O0PreLegalizerCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_a_arch64_o0_pre_legalizer_combiner_8cpp_03_1_1_a_arch64_o0_pre_legalizer_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>anonymous_namespace{AArch64PostLegalizerCombiner.cpp}::AArch64PostLegalizerCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_a_arch64_post_legalizer_combiner_8cpp_03_1_1_a_arch64_post_legalizer_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::AArch64PostLegalizerLoweringImpl</label>
+        <link refid="classanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_a_arch64_post_legalizer_lowering_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>anonymous_namespace{AArch64PreLegalizerCombiner.cpp}::AArch64PreLegalizerCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_a_arch64_pre_legalizer_combiner_8cpp_03_1_1_a_arch64_pre_legalizer_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>anonymous_namespace{AMDGPUPostLegalizerCombiner.cpp}::AMDGPUPostLegalizerCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_a_m_d_g_p_u_post_legalizer_combiner_8cpp_03_1_1_a_m_d_g_p_u_post_legalizer_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>anonymous_namespace{AMDGPUPreLegalizerCombiner.cpp}::AMDGPUPreLegalizerCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_a_m_d_g_p_u_pre_legalizer_combiner_8cpp_03_1_1_a_m_d_g_p_u_pre_legalizer_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>anonymous_namespace{AMDGPURegBankCombiner.cpp}::AMDGPURegBankCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_a_m_d_g_p_u_reg_bank_combiner_8cpp_03_1_1_a_m_d_g_p_u_reg_bank_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>anonymous_namespace{ARMInstructionSelector.cpp}::ARMInstructionSelector</label>
+        <link refid="classanonymous__namespace_02_a_r_m_instruction_selector_8cpp_03_1_1_a_r_m_instruction_selector"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>anonymous_namespace{BPFInstructionSelector.cpp}::BPFInstructionSelector</label>
+        <link refid="classanonymous__namespace_02_b_p_f_instruction_selector_8cpp_03_1_1_b_p_f_instruction_selector"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>anonymous_namespace{M68kInstructionSelector.cpp}::M68kInstructionSelector</label>
+        <link refid="classanonymous__namespace_02_m68k_instruction_selector_8cpp_03_1_1_m68k_instruction_selector"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>anonymous_namespace{MipsInstructionSelector.cpp}::MipsInstructionSelector</label>
+        <link refid="classanonymous__namespace_02_mips_instruction_selector_8cpp_03_1_1_mips_instruction_selector"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>anonymous_namespace{MipsPostLegalizerCombiner.cpp}::MipsPostLegalizerCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_mips_post_legalizer_combiner_8cpp_03_1_1_mips_post_legalizer_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>anonymous_namespace{MipsPreLegalizerCombiner.cpp}::MipsPreLegalizerCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_mips_pre_legalizer_combiner_8cpp_03_1_1_mips_pre_legalizer_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>anonymous_namespace{PPCInstructionSelector.cpp}::PPCInstructionSelector</label>
+        <link refid="classanonymous__namespace_02_p_p_c_instruction_selector_8cpp_03_1_1_p_p_c_instruction_selector"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>anonymous_namespace{RISCVInstructionSelector.cpp}::RISCVInstructionSelector</label>
+        <link refid="classanonymous__namespace_02_r_i_s_c_v_instruction_selector_8cpp_03_1_1_r_i_s_c_v_instruction_selector"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>anonymous_namespace{RISCVO0PreLegalizerCombiner.cpp}::RISCVO0PreLegalizerCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_r_i_s_c_v_o0_pre_legalizer_combiner_8cpp_03_1_1_r_i_s_c_v_o0_pre_legalizer_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>anonymous_namespace{RISCVPostLegalizerCombiner.cpp}::RISCVPostLegalizerCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_r_i_s_c_v_post_legalizer_combiner_8cpp_03_1_1_r_i_s_c_v_post_legalizer_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>anonymous_namespace{RISCVPreLegalizerCombiner.cpp}::RISCVPreLegalizerCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_r_i_s_c_v_pre_legalizer_combiner_8cpp_03_1_1_r_i_s_c_v_pre_legalizer_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>anonymous_namespace{SPIRVInstructionSelector.cpp}::SPIRVInstructionSelector</label>
+        <link refid="classanonymous__namespace_02_s_p_i_r_v_instruction_selector_8cpp_03_1_1_s_p_i_r_v_instruction_selector"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>anonymous_namespace{SPIRVPreLegalizerCombiner.cpp}::SPIRVPreLegalizerCombinerImpl</label>
+        <link refid="classanonymous__namespace_02_s_p_i_r_v_pre_legalizer_combiner_8cpp_03_1_1_s_p_i_r_v_pre_legalizer_combiner_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>anonymous_namespace{X86InstructionSelector.cpp}::X86InstructionSelector</label>
+        <link refid="classanonymous__namespace_02_x86_instruction_selector_8cpp_03_1_1_x86_instruction_selector"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::AMDGPUInstructionSelector</label>
+        <link refid="classllvm_1_1_a_m_d_g_p_u_instruction_selector"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::Combiner</label>
+        <link refid="classllvm_1_1_combiner"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::GIMatchTableExecutor</label>
+        <link refid="classllvm_1_1_g_i_match_table_executor"/>
+      </node>
+      <node id="16">
+        <label>llvm::InstructionSelector</label>
+        <link refid="classllvm_1_1_instruction_selector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="54">
+        <label>OptionsT::node_base_type</label>
+      </node>
+      <node id="14">
+        <label>Size_T</label>
+      </node>
+      <node id="27">
+        <label>SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_machine_function_1_1_debug_substitution_01_4"/>
+      </node>
+      <node id="15">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="17">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="44">
+        <label>ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+        <childnode refid="47" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="63">
+        <label>ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+        <childnode refid="47" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="58">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+        <childnode refid="47" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::BitVector</label>
+        <link refid="classllvm_1_1_bit_vector"/>
+      </node>
+      <node id="39">
+        <label>llvm::BlockFrequencyInfo</label>
+        <link refid="classllvm_1_1_block_frequency_info"/>
+      </node>
+      <node id="2">
+        <label>llvm::CodeGenCoverage</label>
+        <link refid="classllvm_1_1_code_gen_coverage"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>RuleCoverage</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm::DebugEpochBase</label>
+        <link refid="classllvm_1_1_debug_epoch_base"/>
+      </node>
+      <node id="36">
+        <label>llvm::DenseMap&lt; KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>llvm::DenseMap&lt; unsigned, llvm::MachineFunction::DebugPHIRegallocPos &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+        <childnode refid="36" relation="template-instance">
+          <edgelabel>&lt; unsigned, llvm::MachineFunction::DebugPHIRegallocPos &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::GIMatchTableExecutor</label>
+        <link refid="classllvm_1_1_g_i_match_table_executor"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>CoverageInfo</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>KB</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>MF</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>PSI</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>BFI</edgelabel>
+        </childnode>
+        <childnode refid="40" relation="usage">
+          <edgelabel>CurMBB</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::GISelChangeObserver</label>
+        <link refid="classllvm_1_1_g_i_sel_change_observer"/>
+      </node>
+      <node id="4">
+        <label>llvm::GISelKnownBits</label>
+        <link refid="classllvm_1_1_g_i_sel_known_bits"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm::MachineBasicBlock</label>
+        <link refid="classllvm_1_1_machine_basic_block"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::MachineFunction</label>
+        <link refid="classllvm_1_1_machine_function"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>VariableDbgInfos</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>DebugInstrNumberingCount</edgelabel>
+          <edgelabel>DebugOperandMemNumber</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>DebugValueSubstitutions</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>DebugPHIPositions</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>UseDebugInstrRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm::ProfileSummaryInfo</label>
+        <link refid="classllvm_1_1_profile_summary_info"/>
+      </node>
+      <node id="18">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+        <childnode refid="20" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::SmallVector&lt; VariableDbgInfo, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="private-inheritance">
+        </childnode>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; VariableDbgInfo, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::SmallVector&lt; llvm::MachineFunction::DebugSubstitution, 8 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="31" relation="private-inheritance">
+        </childnode>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution, 8 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::SmallVectorImpl&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+        <childnode refid="30" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="32">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::SmallVectorStorage&lt; llvm::MachineFunction::DebugSubstitution, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+        <childnode refid="28" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="50">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="46">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="49">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="48">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+        <childnode refid="49" relation="template-instance">
+          <edgelabel>&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="45">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="52">
+        <label>llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+      </node>
+      <node id="55">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="52" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="51">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="52" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="64">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="52" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="59">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="52" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="56">
+        <label>llvm::ilist_node&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>llvm::ilist_node&lt; MachineBasicBlock, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+        <childnode refid="56" relation="template-instance">
+          <edgelabel>&lt; MachineBasicBlock, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>llvm::ilist_node&lt; NodeTy, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="62" relation="public-inheritance">
+        </childnode>
+        <childnode refid="56" relation="template-instance">
+          <edgelabel>&lt; NodeTy, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm::ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>llvm::ilist_node_impl&lt; OptionsT &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="54" relation="private-inheritance">
+        </childnode>
+        <childnode refid="55" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="44" relation="private-inheritance">
+        </childnode>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+        <childnode refid="53" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="62">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="63" relation="private-inheritance">
+        </childnode>
+        <childnode refid="64" relation="public-inheritance">
+        </childnode>
+        <childnode refid="53" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="57">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="58" relation="private-inheritance">
+        </childnode>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+        <childnode refid="53" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="60">
+        <label>llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="61" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm::ilist_node_with_parent&lt; MachineBasicBlock, MachineFunction &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+        <childnode refid="60" relation="template-instance">
+          <edgelabel>&lt; MachineBasicBlock, MachineFunction &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+      <node id="13">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" line="586" column="1" bodyfile="include/llvm/CodeGen/GlobalISel/GIMatchTableExecutor.h" bodystart="586" bodyend="766"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a224495037f6eee0b6970aa0c30fffb74" prot="public" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>BFI</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a86de393f150025719e982512eb086b2a" prot="protected" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>ComplexRendererFns</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1ae5900cfb710c3c8b5f5d2a5b0cadabf9" prot="public" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>CoverageInfo</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a2000833f7ae5727959f4058707e206f7" prot="public" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>CurMBB</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a0a2955a941402b4280306f0142b21061" prot="protected" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>executeMatchTable</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1aa284de70c1521913d9eda75728495b36" prot="public" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>fastDecodeULEB128</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a2f85d40b6bad4aaf700854ae1b370be0" prot="protected" virt="virtual"><scope>llvm::GIMatchTableExecutor</scope><name>getMatchTable</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1ae8bba411b15797dcf6969c2f6e636bcd" prot="protected" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>getRemainingOperands</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a54a74ca0c82840e37a9a92890385eee6" prot="protected" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>GIMatchTableExecutor</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a596366d4034015c0668d2070e597425f" prot="protected" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>isBaseWithConstantOffset</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1acc7375926290b7d52cce5ef2c03505f7" prot="protected" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>isObviouslySafeToFold</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1aa29ae3958e21ba305518fbad7c6ec004" prot="protected" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>isOperandImmEqual</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a42689945d570c32ab32defb5469ca47b" prot="public" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>KB</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a52fb4682a4be0321cf8eec99c1f76f93" prot="public" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>MF</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a6ac0ddf7ea380f085ca48f45fa6035a5" prot="protected" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>NewMIVector</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1aa2ed5c2002db167510960436bf654fc2" prot="public" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>PSI</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a6d26f4e678274a5d6300f87b0600d20e" prot="protected" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>readBytesAs</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a8af184f677d5c7d4eaae692428df99c9" prot="protected" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>RecordedMIVector</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1ad448a6032e3d1900673393daf481779e" prot="protected" virt="virtual"><scope>llvm::GIMatchTableExecutor</scope><name>runCustomAction</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1af441511571ed4ad4bc6b719b42934d96" prot="public" virt="pure-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>setupGeneratedPerFunctionState</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1abc092c61ef888b461f955c86b994511c" prot="public" virt="virtual"><scope>llvm::GIMatchTableExecutor</scope><name>setupMF</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a9554b6a1531cc435fc2508a89a9748e0" prot="protected" virt="non-virtual"><scope>llvm::GIMatchTableExecutor</scope><name>shouldOptForSize</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a1ee63f1b4a837790372b80495555ff62" prot="protected" virt="virtual"><scope>llvm::GIMatchTableExecutor</scope><name>testImmPredicate_APFloat</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a30455b548886763b211edbaf57ddb508" prot="protected" virt="virtual"><scope>llvm::GIMatchTableExecutor</scope><name>testImmPredicate_APInt</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a687b5956ba7da14119b517367930c1dc" prot="protected" virt="virtual"><scope>llvm::GIMatchTableExecutor</scope><name>testImmPredicate_I64</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a4b585bef87c3ab61a04267def7cbf4c5" prot="protected" virt="virtual"><scope>llvm::GIMatchTableExecutor</scope><name>testMIPredicate_MI</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1a04a7e93988e5d41a4d7851bf21340476" prot="protected" virt="virtual"><scope>llvm::GIMatchTableExecutor</scope><name>testSimplePredicate</name></member>
+      <member refid="classllvm_1_1_g_i_match_table_executor_1ab96d74d3dc284435fdeaee475c7c85cf" prot="public" virt="virtual"><scope>llvm::GIMatchTableExecutor</scope><name>~GIMatchTableExecutor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

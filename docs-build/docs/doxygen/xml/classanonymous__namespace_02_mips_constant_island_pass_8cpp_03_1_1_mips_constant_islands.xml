@@ -1,0 +1,1466 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_function_pass" prot="public" virt="non-virtual">llvm::MachineFunctionPass</basecompoundref>
+    <innerclass refid="structanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1_1_basic_block_info" prot="private">anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::BasicBlockInfo</innerclass>
+    <innerclass refid="structanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1_1_c_p_entry" prot="private">anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::CPEntry</innerclass>
+    <innerclass refid="structanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1_1_c_p_user" prot="private">anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::CPUser</innerclass>
+    <innerclass refid="structanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1_1_imm_branch" prot="private">anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::ImmBranch</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a00f2076a28018c3bfc723f8e050d47f1" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;<ref refid="classllvm_1_1iplist" kindref="compound">::iterator</ref></type>
+        <definition>using anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::water_iterator =  std::vector&lt;MachineBasicBlock *&gt;::iterator</definition>
+        <argsstring></argsstring>
+        <name>water_iterator</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::water_iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="237" column="5" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="237" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a58771c042bdfa919ec8bcbb1d31c16f6" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; BasicBlockInfo &gt;</type>
+        <definition>std::vector&lt;BasicBlockInfo&gt; anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::BBInfo</definition>
+        <argsstring></argsstring>
+        <name>BBInfo</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::BBInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="226" column="17" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a10dcf6f9c47bb7108021a53309a7d7e4" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;</type>
+        <definition>std::vector&lt;MachineBasicBlock*&gt; anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::WaterList</definition>
+        <argsstring></argsstring>
+        <name>WaterList</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::WaterList</qualifiedname>
+        <briefdescription>
+<para>WaterList - A sorted list of basic blocks where islands could be placed (i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>blocks that don&apos;t fall through to the following block, due to a return, unreachable, or unconditional branch). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="231" column="17" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1742c7abbffe2e7c8f52ddf471134d2d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_set" kindref="compound">SmallSet</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, 4 &gt;</type>
+        <definition>SmallSet&lt;MachineBasicBlock*, 4&gt; anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::NewWaterList</definition>
+        <argsstring></argsstring>
+        <name>NewWaterList</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::NewWaterList</qualifiedname>
+        <briefdescription>
+<para>NewWaterList - The subset of WaterList that was created since the previous iteration by inserting unconditional branches. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="235" column="14" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1afe46c27f7de9e1bda02f4e600d7e7956" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; CPUser &gt;</type>
+        <definition>std::vector&lt;CPUser&gt; anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::CPUsers</definition>
+        <argsstring></argsstring>
+        <name>CPUsers</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::CPUsers</qualifiedname>
+        <briefdescription>
+<para>CPUsers - Keep track of all of the machine instructions that use various constant pools and their max displacement. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="296" column="17" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ada86103c0d8df9f57ccd95c8b05b4edf" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; CPEntry &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;CPEntry&gt; &gt; anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::CPEntries</definition>
+        <argsstring></argsstring>
+        <name>CPEntries</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::CPEntries</qualifiedname>
+        <briefdescription>
+<para>CPEntries - Keep track of all of the constant pool entry machine instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For each original constpool index (i.e. those that existed upon entry to this pass), it keeps a vector of entries. Original elements are cloned as we go along; the clones are put in the vector of the original element, but have distinct CPIs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="315" column="15" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a08e290b3a199b1b4442e0813699c419d" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; ImmBranch &gt;</type>
+        <definition>std::vector&lt;ImmBranch&gt; anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::ImmBranches</definition>
+        <argsstring></argsstring>
+        <name>ImmBranches</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::ImmBranches</qualifiedname>
+        <briefdescription>
+<para>ImmBranches - Keep track of all the immediate branch instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="333" column="15" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="333" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a0c0c3b7629352c1badf160b5c543f300" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::HasFarJump</definition>
+        <argsstring></argsstring>
+        <name>HasFarJump</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::HasFarJump</qualifiedname>
+        <briefdescription>
+<para>HasFarJump - True if any far jump instruction has been emitted during the branch fix up pass. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="337" column="8" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aede378370907852a8b71a3736f9bb3e8" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_mips_subtarget" kindref="compound">MipsSubtarget</ref> *</type>
+        <definition>const MipsSubtarget* anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::STI</definition>
+        <argsstring></argsstring>
+        <name>STI</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::STI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="339" column="23" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="339" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1accd28ae71ea74a61c09836e32e327a8d" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_mips16_instr_info" kindref="compound">Mips16InstrInfo</ref> *</type>
+        <definition>const Mips16InstrInfo* anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::TII</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="340" column="25" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="340" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a270a74a5b73411acc138319b5c95b400" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_mips_function_info" kindref="compound">MipsFunctionInfo</ref> *</type>
+        <definition>MipsFunctionInfo* anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::MFI</definition>
+        <argsstring></argsstring>
+        <name>MFI</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::MFI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="341" column="20" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="341" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4f99b0f4c14da5268d3cc55189cf0abe" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>MachineFunction* anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::MF</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="342" column="19" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a410843c5d1fd2a31cbc8f4e8b3a5fc83" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_constant_pool" kindref="compound">MachineConstantPool</ref> *</type>
+        <definition>MachineConstantPool* anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::MCP</definition>
+        <argsstring></argsstring>
+        <name>MCP</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::MCP</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="343" column="23" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a76a5194141e8f78dd727b7e25c22e0ee" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::PICLabelUId</definition>
+        <argsstring></argsstring>
+        <name>PICLabelUId</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::PICLabelUId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="345" column="12" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1adc48aa9316247959c8b794508778bb13" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::PrescannedForConstants</definition>
+        <argsstring></argsstring>
+        <name>PrescannedForConstants</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::PrescannedForConstants</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="346" column="8" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="346" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa0890e6f8c439d468daf1459997d306f" prot="public" static="yes" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>char MipsConstantIslands::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::ID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="357" column="17" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="357" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa5de99ed1dd179bee53f782e65658825" compoundref="_mips_constant_island_pass_8cpp" startline="359" endline="359">MipsConstantIslands</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a891b9ad6b0a73dce910ef9e1288b9589" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::initPICLabelUId</definition>
+        <argsstring>(unsigned UId)</argsstring>
+        <name>initPICLabelUId</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::initPICLabelUId</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="348" column="8" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="348" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1da0e648d3236347558f8ec47e5d9541" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::createPICLabelUId</definition>
+        <argsstring>()</argsstring>
+        <name>createPICLabelUId</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::createPICLabelUId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="352" column="12" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="352" bodyend="354"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa5de99ed1dd179bee53f782e65658825" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::MipsConstantIslands</definition>
+        <argsstring>()</argsstring>
+        <name>MipsConstantIslands</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::MipsConstantIslands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="359" column="5" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="359" bodyend="359"/>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa0890e6f8c439d468daf1459997d306f" compoundref="_mips_constant_island_pass_8cpp" startline="357">ID</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" compoundref="_machine_function_pass_8h" startline="41" endline="41">llvm::MachineFunctionPass::MachineFunctionPass</references>
+        <referencedby refid="namespacellvm_1a270ba817659def3d8dae62b9f3d45098" compoundref="_mips_constant_island_pass_8cpp" startline="1663" endline="1665">llvm::createMipsConstantIslandPass</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d4287d21f67efdb4195c66923f5a522" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::getPassName</definition>
+        <argsstring>() const override</argsstring>
+        <name>getPassName</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::getPassName</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1ad729b39eacf070a9bca84533b3c743bf">getPassName</reimplements>
+        <briefdescription>
+<para>getPassName - Return a nice clean name for a pass. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This usually implemented in terms of the name that is registered by one of the Registration templates, but can be overloaded directly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="361" column="15" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="361" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3bce3734199ffc400a2172acaaf616d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::runOnMachineFunction</definition>
+        <argsstring>(MachineFunction &amp;F) override</argsstring>
+        <name>runOnMachineFunction</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::runOnMachineFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1abb98ed32e4e5acae62ef3edd7bf04fb5">runOnMachineFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>The next UID to take is the first unused one.</para>
+<para>Remove dead constant pool entries.</para>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="363" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="432" bodyend="519"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3068d2fa3c2556694ca3db57b7c197dd" compoundref="_mips_constant_island_pass_8cpp" startline="524" endline="582">doInitialPlacement</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a6e6938d2a62e2461cc8809a568a2d431" compoundref="_mips_constant_island_pass_8cpp" startline="423" endline="429">dumpBBs</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac9afd9876c042dc602d1eea614b13129" compoundref="_mips_constant_island_pass_8cpp" startline="1475" endline="1487">fixupImmediateBr</references>
+        <references refid="classllvm_1_1_machine_function_1aba1fee9e9c9b537fd2a02f33f714ca68" compoundref="_machine_function_8h" startline="765" endline="765">llvm::MachineFunction::getConstantPool</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a5f59896e3d3eccc7cae863ff29642896" compoundref="_mips_constant_island_pass_8cpp" startline="630" endline="778">initializeFunctionInfo</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a657c17735f988deb12c8067e40be44d4" compoundref="_mips_constant_island_pass_8cpp" startline="1630" endline="1660">prescanForConstants</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa1b9c7bc8345561b60f6d942c5a16126" compoundref="_mips_constant_island_pass_8cpp" startline="1434" endline="1446">removeUnusedCPEntries</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <references refid="classllvm_1_1_mips_subtarget_1a056776ea56d64939bb6cf447b0e24e3c" compoundref="_mips_subtarget_8cpp" startline="274" endline="278">llvm::MipsSubtarget::useConstantIslands</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aeed0ecac46a557ab2e45f837ad079795" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_function_properties" kindref="compound">MachineFunctionProperties</ref></type>
+        <definition>MachineFunctionProperties anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::getRequiredProperties</definition>
+        <argsstring>() const override</argsstring>
+        <name>getRequiredProperties</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::getRequiredProperties</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1af0f2f06a3a773431ee9813351d609c4d">getRequiredProperties</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="365" column="31" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="365" bodyend="368"/>
+        <references refid="classllvm_1_1_machine_function_properties_1ad85237c6c667e4713efe8921e9c32ac1a72f7d830dd5ddb30f06d8e9639558ac3" compoundref="_machine_function_8h" startline="191">llvm::MachineFunctionProperties::NoVRegs</references>
+        <references refid="classllvm_1_1_machine_function_properties_1aa7780563d7ca260d0ae67d957b56427f" compoundref="_machine_function_8h" startline="207" endline="210">llvm::MachineFunctionProperties::set</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3068d2fa3c2556694ca3db57b7c197dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MipsConstantIslands::doInitialPlacement</definition>
+        <argsstring>(std::vector&lt; MachineInstr * &gt; &amp;CPEMIs)</argsstring>
+        <name>doInitialPlacement</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::doInitialPlacement</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>CPEMIs</declname>
+        </param>
+        <briefdescription>
+<para>doInitialPlacement - Perform the initial placement of the constant pool entries. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To start with, we put them all at the end of the function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="370" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="524" bodyend="582"/>
+        <references refid="classllvm_1_1_machine_instr_builder_1a88177c2ee5d3e579e50128cf83de5ba6" compoundref="_machine_instr_builder_8h" startline="160" endline="164">llvm::MachineInstrBuilder::addConstantPoolIndex</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a6c1f959947905135c7dd215b64957654" compoundref="_machine_instr_builder_8h" startline="133" endline="136">llvm::MachineInstrBuilder::addImm</references>
+        <references refid="_mips_constant_island_pass_8cpp_1ac0982c4457626f028f88f7031a6e42db">AlignConstantIslands</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">llvm::dwarf_linker::DebugLoc</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a8cec41e65c7ebf7da3e9d41f2317065e" compoundref="_machine_basic_block_8cpp" startline="301" endline="303">llvm::MachineBasicBlock::dump</references>
+        <references refid="classllvm_1_1_machine_basic_block_1acbc921830578e2741be6549db716c0ce" compoundref="_machine_basic_block_8h" startline="366" endline="366">llvm::MachineBasicBlock::end</references>
+        <references refid="classllvm_1_1_machine_basic_block_1ae13575403de0e7d005f1b5905053f3ea" compoundref="_machine_basic_block_8h" startline="623" endline="623">llvm::MachineBasicBlock::getAlignment</references>
+        <references refid="namespacellvm_1a25f1d7ccf87af8d87fcb950f7ed758b5" compoundref="_alignment_8h" startline="145" endline="147">llvm::isAligned</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1ad82de9da62635df78a534de0f16c1129" compoundref="_alignment_8h" startline="208" endline="208">llvm::Log2</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3b1dce1f3354a357fb9061bb7568a84e" compoundref="_machine_basic_block_8h" startline="1011" endline="1011">llvm::MachineBasicBlock::push_back</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a8cb665c210dc8e43f537cf4c9b84e2c7" compoundref="_machine_basic_block_8h" startline="626" endline="626">llvm::MachineBasicBlock::setAlignment</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="structllvm_1_1_align_1a80735739b49cf97a491922c8f9af2cc1" compoundref="_alignment_8h" startline="85" endline="85">llvm::Align::value</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3bce3734199ffc400a2172acaaf616d0" compoundref="_mips_constant_island_pass_8cpp" startline="432" endline="519">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a421414700d8d58b412a7e067cb02ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CPEntry *</type>
+        <definition>MipsConstantIslands::CPEntry * MipsConstantIslands::findConstPoolEntry</definition>
+        <argsstring>(unsigned CPI, const MachineInstr *CPEMI)</argsstring>
+        <name>findConstPoolEntry</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::findConstPoolEntry</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>findConstPoolEntry - Given the constpool index and CONSTPOOL_ENTRY MI, look up the corresponding CPEntry. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="371" column="13" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="600" bodyend="610"/>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a9eb61d7398e8effdbe50e72ed69b1d" compoundref="_mips_constant_island_pass_8cpp" startline="1018" endline="1030">decrementCPEReferenceCount</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a5f59896e3d3eccc7cae863ff29642896" compoundref="_mips_constant_island_pass_8cpp" startline="630" endline="778">initializeFunctionInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a5077615197d034930b58d221032e96f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_align" kindref="compound">Align</ref></type>
+        <definition>Align MipsConstantIslands::getCPEAlign</definition>
+        <argsstring>(const MachineInstr &amp;CPEMI)</argsstring>
+        <name>getCPEAlign</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::getCPEAlign</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>getCPEAlign - Returns the required alignment of the constant pool entry represented by CPEMI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Alignment is measured in log2(bytes) units. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="372" column="11" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="614" bodyend="624"/>
+        <references refid="_mips_constant_island_pass_8cpp_1ac0982c4457626f028f88f7031a6e42db">AlignConstantIslands</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_operand_1aaa68daaf8d7b773d012887c92c2023ce" compoundref="_machine_operand_8h" startline="576" endline="580">llvm::MachineOperand::getIndex</references>
+        <references refid="classllvm_1_1_machine_instr_1a0363204b5fbab08a46f5a7cd7f376f78" compoundref="_machine_instr_8h" startline="577" endline="577">llvm::MachineInstr::getOpcode</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="_n_v_v_m_reflect_8cpp_1ac934769d93af95250952646a3829df4c">size</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1abbda87d0f5c41ed3eca00b354a53417d" compoundref="_mips_constant_island_pass_8cpp" startline="1408" endline="1430">removeDeadCPEMI</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a5f59896e3d3eccc7cae863ff29642896" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MipsConstantIslands::initializeFunctionInfo</definition>
+        <argsstring>(const std::vector&lt; MachineInstr * &gt; &amp;CPEMIs)</argsstring>
+        <name>initializeFunctionInfo</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::initializeFunctionInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>CPEMIs</declname>
+        </param>
+        <briefdescription>
+<para>initializeFunctionInfo - Do the initial scan of the function, building up information about the sizes of each block, the location of all the water, and finding all of the constant pool users. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="373" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="630" bodyend="778"/>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a94b3ade7f05777308f0695ef6eb5da19" compoundref="_mips_constant_island_pass_8cpp" startline="1004" endline="1012">adjustBBOffsetsAfter</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_mips_constant_island_pass_8cpp_1a2591f82337ce78f51703e6b3382eec3c" compoundref="_mips_constant_island_pass_8cpp" startline="586" endline="595">BBHasFallthrough</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a77b47e627bb837517308b9541f97f6b5" compoundref="_mips_constant_island_pass_8cpp" startline="782" endline="788">computeBlockSize</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a421414700d8d58b412a7e067cb02ad" compoundref="_mips_constant_island_pass_8cpp" startline="600" endline="610">findConstPoolEntry</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3bce3734199ffc400a2172acaaf616d0" compoundref="_mips_constant_island_pass_8cpp" startline="432" endline="519">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1acdf67bdb496306b9cd4fd8bfed5c5a58" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned MipsConstantIslands::getOffsetOf</definition>
+        <argsstring>(MachineInstr *MI) const</argsstring>
+        <name>getOffsetOf</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::getOffsetOf</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>getOffsetOf - Return the current offset of the specified machine instruction from the start of the function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This offset changes as stuff is moved around inside the function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="374" column="14" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="793" bodyend="807"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a834ed21b1c7973122c01bd42928af333" compoundref="_mips_constant_island_pass_8cpp" startline="834" endline="836">getUserOffset</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab686eff61461eaac81cf87ba84143a0a" compoundref="_mips_constant_island_pass_8cpp" startline="1451" endline="1471">isBBInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a31eb3e86e2c774c4c03267a7368cadf0" compoundref="_mips_constant_island_pass_8cpp" startline="967" endline="987">isCPEntryInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a834ed21b1c7973122c01bd42928af333" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned MipsConstantIslands::getUserOffset</definition>
+        <argsstring>(CPUser &amp;) const</argsstring>
+        <name>getUserOffset</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::getUserOffset</qualifiedname>
+        <param>
+          <type>CPUser &amp;</type>
+          <defname>U</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="375" column="14" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="834" bodyend="836"/>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1acdf67bdb496306b9cd4fd8bfed5c5a58" compoundref="_mips_constant_island_pass_8cpp" startline="793" endline="807">getOffsetOf</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a6e6938d2a62e2461cc8809a568a2d431" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void MipsConstantIslands::dumpBBs</definition>
+        <argsstring>()</argsstring>
+        <name>dumpBBs</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::dumpBBs</qualifiedname>
+        <briefdescription>
+<para>print block size and offset information - debugging </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="376" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="423" bodyend="429"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+        <references refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" compoundref="_compiler_8h" startline="622">LLVM_DUMP_METHOD</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3bce3734199ffc400a2172acaaf616d0" compoundref="_mips_constant_island_pass_8cpp" startline="432" endline="519">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::isOffsetInRange</definition>
+        <argsstring>(unsigned UserOffset, unsigned TrialOffset, unsigned Disp, bool NegativeOK)</argsstring>
+        <name>isOffsetInRange</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::isOffsetInRange</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>TrialOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Disp</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>NegativeOK</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="378" column="10"/>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a94b3ade7f05777308f0695ef6eb5da19" compoundref="_mips_constant_island_pass_8cpp" startline="1004" endline="1012">adjustBBOffsetsAfter</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a77b47e627bb837517308b9541f97f6b5" compoundref="_mips_constant_island_pass_8cpp" startline="782" endline="788">computeBlockSize</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac438bed7ae6afbb9ff9e0be02099ad0f" compoundref="_mips_constant_island_pass_8cpp" startline="1204" endline="1295">createNewWater</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a9eb61d7398e8effdbe50e72ed69b1d" compoundref="_mips_constant_island_pass_8cpp" startline="1018" endline="1030">decrementCPEReferenceCount</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a909a324ed32517aaca69fb2e87f41bca" compoundref="_mips_constant_island_pass_8cpp" startline="1160" endline="1195">findAvailableWater</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a85299a5742cf6712729343b973727ab7" compoundref="_mips_constant_island_pass_8cpp" startline="1038" endline="1080">findInRangeCPEntry</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab5cf6bcc5a1eea788ee5fcc95ea36a8f" compoundref="_mips_constant_island_pass_8cpp" startline="1091" endline="1136">findLongFormInRangeCPEntry</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3e3daf4218b791b2796b808627b7f864" compoundref="_mips_constant_island_pass_8cpp" startline="1534" endline="1628">fixupConditionalBr</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac9afd9876c042dc602d1eea614b13129" compoundref="_mips_constant_island_pass_8cpp" startline="1475" endline="1487">fixupImmediateBr</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a7faaededab3b537edc011e168876a92b" compoundref="_mips_constant_island_pass_8cpp" startline="1494" endline="1528">fixupUnconditionalBr</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab686eff61461eaac81cf87ba84143a0a" compoundref="_mips_constant_island_pass_8cpp" startline="1451" endline="1471">isBBInRange</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a31eb3e86e2c774c4c03267a7368cadf0" compoundref="_mips_constant_island_pass_8cpp" startline="967" endline="987">isCPEntryInRange</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a54ee101062ec8079d8d7fadafb29c511" compoundref="_mips_constant_island_pass_8cpp" startline="926" endline="962">isWaterInRange</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a657c17735f988deb12c8067e40be44d4" compoundref="_mips_constant_island_pass_8cpp" startline="1630" endline="1660">prescanForConstants</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1abbda87d0f5c41ed3eca00b354a53417d" compoundref="_mips_constant_island_pass_8cpp" startline="1408" endline="1430">removeDeadCPEMI</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa1b9c7bc8345561b60f6d942c5a16126" compoundref="_mips_constant_island_pass_8cpp" startline="1434" endline="1446">removeUnusedCPEntries</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a747abf73a79323919b62fb98e61aeaf2" compoundref="_mips_constant_island_pass_8cpp" startline="842" endline="903">splitBlockBeforeInstr</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a2810208a226ed8b333882063153be2e0" compoundref="_mips_constant_island_pass_8cpp" startline="820" endline="832">updateForInsertedWaterBlock</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac438bed7ae6afbb9ff9e0be02099ad0f" compoundref="_mips_constant_island_pass_8cpp" startline="1204" endline="1295">createNewWater</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a31eb3e86e2c774c4c03267a7368cadf0" compoundref="_mips_constant_island_pass_8cpp" startline="967" endline="987">isCPEntryInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a13a0a6a8c8eaf928c2362effb37e73ab" compoundref="_mips_constant_island_pass_8cpp" startline="415" endline="419">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a54ee101062ec8079d8d7fadafb29c511" compoundref="_mips_constant_island_pass_8cpp" startline="926" endline="962">isWaterInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a13a0a6a8c8eaf928c2362effb37e73ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::isOffsetInRange</definition>
+        <argsstring>(unsigned UserOffset, unsigned TrialOffset, const CPUser &amp;U)</argsstring>
+        <name>isOffsetInRange</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::isOffsetInRange</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>TrialOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="380" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="415" bodyend="419"/>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a77b47e627bb837517308b9541f97f6b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MipsConstantIslands::computeBlockSize</definition>
+        <argsstring>(MachineBasicBlock *MBB)</argsstring>
+        <name>computeBlockSize</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::computeBlockSize</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+<para>computeBlockSize - Compute the size and some alignment information for MBB. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function updates BBInfo directly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="383" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="782" bodyend="788"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a5f59896e3d3eccc7cae863ff29642896" compoundref="_mips_constant_island_pass_8cpp" startline="630" endline="778">initializeFunctionInfo</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a747abf73a79323919b62fb98e61aeaf2" compoundref="_mips_constant_island_pass_8cpp" startline="842" endline="903">splitBlockBeforeInstr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a747abf73a79323919b62fb98e61aeaf2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * MipsConstantIslands::splitBlockBeforeInstr</definition>
+        <argsstring>(MachineInstr &amp;MI)</argsstring>
+        <name>splitBlockBeforeInstr</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::splitBlockBeforeInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Split the basic block containing MI into two blocks, which are joined by an unconditional branch. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Update data structures and renumber blocks to account for this change and returns the newly created block. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="384" column="23" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="842" bodyend="903"/>
+        <references refid="classllvm_1_1_machine_instr_builder_1abf1febf2a98f588146548a3a485d3838" compoundref="_machine_instr_builder_8h" startline="148" endline="152">llvm::MachineInstrBuilder::addMBB</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a935e2a8884592189d8f261634a0b24c5" compoundref="_machine_basic_block_8cpp" startline="798" endline="806">llvm::MachineBasicBlock::addSuccessor</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a94b3ade7f05777308f0695ef6eb5da19" compoundref="_mips_constant_island_pass_8cpp" startline="1004" endline="1012">adjustBBOffsetsAfter</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="_a_r_m_constant_island_pass_8cpp_1a29885c784cdf6c08d6952699d790c8c4" compoundref="_a_r_m_constant_island_pass_8cpp" startline="967" endline="970">CompareMBBNumbers</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a77b47e627bb837517308b9541f97f6b5" compoundref="_mips_constant_island_pass_8cpp" startline="782" endline="788">computeBlockSize</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">llvm::dwarf_linker::DebugLoc</references>
+        <references refid="classllvm_1_1_machine_basic_block_1acbc921830578e2741be6549db716c0ce" compoundref="_machine_basic_block_8h" startline="366" endline="366">llvm::MachineBasicBlock::end</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a4874816314c3308be0bf1e71de2078d8" compoundref="_machine_basic_block_8h" startline="256" endline="256">llvm::MachineBasicBlock::getBasicBlock</references>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3435a2381e60e842e915f85c931b7dde" compoundref="_machine_basic_block_8cpp" startline="1456" endline="1465">llvm::MachineBasicBlock::insert</references>
+        <references refid="namespacellvm_1aa81eb67f09ee4944eaeeddbc54c0c0de" compoundref="_s_t_l_extras_8h" startline="1978" endline="1981">llvm::lower_bound</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad5f691fdc1a09aaf6df5fef958b35a3d" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="72">MBBI</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_machine_basic_block_1adf0023bdc4f05a7849c35b1c859580d8" compoundref="_machine_basic_block_8h" startline="1118" endline="1122">llvm::MachineBasicBlock::splice</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a31e57b158a17c459f0dc34b0e602ecc6" compoundref="_machine_basic_block_8cpp" startline="917" endline="934">llvm::MachineBasicBlock::transferSuccessors</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac438bed7ae6afbb9ff9e0be02099ad0f" compoundref="_mips_constant_island_pass_8cpp" startline="1204" endline="1295">createNewWater</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3e3daf4218b791b2796b808627b7f864" compoundref="_mips_constant_island_pass_8cpp" startline="1534" endline="1628">fixupConditionalBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a2810208a226ed8b333882063153be2e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MipsConstantIslands::updateForInsertedWaterBlock</definition>
+        <argsstring>(MachineBasicBlock *NewBB)</argsstring>
+        <name>updateForInsertedWaterBlock</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::updateForInsertedWaterBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>NewBB</declname>
+        </param>
+        <briefdescription>
+<para>updateForInsertedWaterBlock - When a block is newly inserted into the machine function, it upsets all of the block numbers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Renumber the blocks and update the arrays that parallel this numbering. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="385" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="820" bodyend="832"/>
+        <references refid="_a_r_m_constant_island_pass_8cpp_1a29885c784cdf6c08d6952699d790c8c4" compoundref="_a_r_m_constant_island_pass_8cpp" startline="967" endline="970">CompareMBBNumbers</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classllvm_1_1_machine_basic_block_1acf6442108e21e7e5379feb8962de65b7" compoundref="_machine_basic_block_8h" startline="311" endline="311">llvm::MachineBasicBlock::getParent</references>
+        <references refid="namespacellvm_1aa81eb67f09ee4944eaeeddbc54c0c0de" compoundref="_s_t_l_extras_8h" startline="1978" endline="1981">llvm::lower_bound</references>
+        <references refid="classllvm_1_1_machine_function_1ac85349aab432e6b7d8b2e8926048a6de" compoundref="_machine_function_8cpp" startline="343" endline="379">llvm::MachineFunction::RenumberBlocks</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a94b3ade7f05777308f0695ef6eb5da19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MipsConstantIslands::adjustBBOffsetsAfter</definition>
+        <argsstring>(MachineBasicBlock *BB)</argsstring>
+        <name>adjustBBOffsetsAfter</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::adjustBBOffsetsAfter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="386" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1004" bodyend="1012"/>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac438bed7ae6afbb9ff9e0be02099ad0f" compoundref="_mips_constant_island_pass_8cpp" startline="1204" endline="1295">createNewWater</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3e3daf4218b791b2796b808627b7f864" compoundref="_mips_constant_island_pass_8cpp" startline="1534" endline="1628">fixupConditionalBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a7faaededab3b537edc011e168876a92b" compoundref="_mips_constant_island_pass_8cpp" startline="1494" endline="1528">fixupUnconditionalBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a5f59896e3d3eccc7cae863ff29642896" compoundref="_mips_constant_island_pass_8cpp" startline="630" endline="778">initializeFunctionInfo</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1abbda87d0f5c41ed3eca00b354a53417d" compoundref="_mips_constant_island_pass_8cpp" startline="1408" endline="1430">removeDeadCPEMI</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a747abf73a79323919b62fb98e61aeaf2" compoundref="_mips_constant_island_pass_8cpp" startline="842" endline="903">splitBlockBeforeInstr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a9eb61d7398e8effdbe50e72ed69b1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::decrementCPEReferenceCount</definition>
+        <argsstring>(unsigned CPI, MachineInstr *CPEMI)</argsstring>
+        <name>decrementCPEReferenceCount</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::decrementCPEReferenceCount</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>decrementCPEReferenceCount - find the constant pool entry with index CPI and instruction CPEMI, and decrement its refcount. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the refcount becomes 0 remove the entry and instruction. Returns true if we removed the entry, false if we didn&apos;t. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="387" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1018" bodyend="1030"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a421414700d8d58b412a7e067cb02ad" compoundref="_mips_constant_island_pass_8cpp" startline="600" endline="610">findConstPoolEntry</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1abbda87d0f5c41ed3eca00b354a53417d" compoundref="_mips_constant_island_pass_8cpp" startline="1408" endline="1430">removeDeadCPEMI</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a85299a5742cf6712729343b973727ab7" compoundref="_mips_constant_island_pass_8cpp" startline="1038" endline="1080">findInRangeCPEntry</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab5cf6bcc5a1eea788ee5fcc95ea36a8f" compoundref="_mips_constant_island_pass_8cpp" startline="1091" endline="1136">findLongFormInRangeCPEntry</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a85299a5742cf6712729343b973727ab7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MipsConstantIslands::findInRangeCPEntry</definition>
+        <argsstring>(CPUser &amp;U, unsigned UserOffset)</argsstring>
+        <name>findInRangeCPEntry</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::findInRangeCPEntry</qualifiedname>
+        <param>
+          <type>CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <briefdescription>
+<para>LookForCPEntryInRange - see if the currently referenced CPE is in range; if not, see if an in-range clone of the CPE is in range, and if so, change the data structures so the user references the clone. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns: 0 = no existing entry found 1 = entry found, and there were no code insertions or deletions 2 = entry found, and there were code insertions or deletions </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="388" column="9" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1038" bodyend="1080"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a9eb61d7398e8effdbe50e72ed69b1d" compoundref="_mips_constant_island_pass_8cpp" startline="1018" endline="1030">decrementCPEReferenceCount</references>
+        <references refid="classllvm_1_1_machine_operand_1aaa68daaf8d7b773d012887c92c2023ce" compoundref="_machine_operand_8h" startline="576" endline="580">llvm::MachineOperand::getIndex</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a31eb3e86e2c774c4c03267a7368cadf0" compoundref="_mips_constant_island_pass_8cpp" startline="967" endline="987">isCPEntryInRange</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_machine_instr_1a999b8f3e58e7ca479f26445bae791a7c" compoundref="_machine_instr_8h" startline="693" endline="695">llvm::MachineInstr::operands</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab5cf6bcc5a1eea788ee5fcc95ea36a8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MipsConstantIslands::findLongFormInRangeCPEntry</definition>
+        <argsstring>(CPUser &amp;U, unsigned UserOffset)</argsstring>
+        <name>findLongFormInRangeCPEntry</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::findLongFormInRangeCPEntry</qualifiedname>
+        <param>
+          <type>CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <briefdescription>
+<para>LookForCPEntryInRange - see if the currently referenced CPE is in range; This version checks if the longer form of the instruction can be used to to satisfy things. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>if not, see if an in-range clone of the CPE is in range, and if so, change the data structures so the user references the clone. Returns: 0 = no existing entry found 1 = entry found, and there were no code insertions or deletions 2 = entry found, and there were code insertions or deletions </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="389" column="9" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1091" bodyend="1136"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a9eb61d7398e8effdbe50e72ed69b1d" compoundref="_mips_constant_island_pass_8cpp" startline="1018" endline="1030">decrementCPEReferenceCount</references>
+        <references refid="classllvm_1_1_machine_operand_1aaa68daaf8d7b773d012887c92c2023ce" compoundref="_machine_operand_8h" startline="576" endline="580">llvm::MachineOperand::getIndex</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a31eb3e86e2c774c4c03267a7368cadf0" compoundref="_mips_constant_island_pass_8cpp" startline="967" endline="987">isCPEntryInRange</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_machine_instr_1a999b8f3e58e7ca479f26445bae791a7c" compoundref="_machine_instr_8h" startline="693" endline="695">llvm::MachineInstr::operands</references>
+        <references refid="classllvm_1_1_machine_instr_1a9117508fb00fda14207e7f968389544c" compoundref="_machine_instr_8cpp" startline="144" endline="149">llvm::MachineInstr::setDesc</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a909a324ed32517aaca69fb2e87f41bca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::findAvailableWater</definition>
+        <argsstring>(CPUser &amp;U, unsigned UserOffset, water_iterator &amp;WaterIter)</argsstring>
+        <name>findAvailableWater</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::findAvailableWater</qualifiedname>
+        <param>
+          <type>CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type>water_iterator &amp;</type>
+          <declname>WaterIter</declname>
+        </param>
+        <briefdescription>
+<para>findAvailableWater - Look for an existing entry in the WaterList in which we can place the CPE referenced from U so it&apos;s within range of U&apos;s MI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if found, false if not. If it returns true, WaterIter is set to the WaterList entry. To ensure that this pass terminates, the CPE location for a particular CPUser is only allowed to move to a lower address, so search backward from the end of the list and prefer the first water that is in range. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="390" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1160" bodyend="1195"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a54ee101062ec8079d8d7fadafb29c511" compoundref="_mips_constant_island_pass_8cpp" startline="926" endline="962">isWaterInRange</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac438bed7ae6afbb9ff9e0be02099ad0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MipsConstantIslands::createNewWater</definition>
+        <argsstring>(unsigned CPUserIndex, unsigned UserOffset, MachineBasicBlock *&amp;NewMBB)</argsstring>
+        <name>createNewWater</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::createNewWater</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPUserIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *&amp;</type>
+          <declname>NewMBB</declname>
+        </param>
+        <briefdescription>
+<para>createNewWater - No existing WaterList entry will work for CPUsers[CPUserIndex], so create a place to put the CPE. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The end of the block is used if in range, and the conditional branch munged so control flow is correct. Otherwise the block is split to create a hole with an unconditional branch around it. In either case NewMBB is set to a block following which the new island can be inserted (the WaterList is not adjusted). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="392" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1204" bodyend="1295"/>
+        <references refid="classllvm_1_1_machine_instr_builder_1abf1febf2a98f588146548a3a485d3838" compoundref="_machine_instr_builder_8h" startline="148" endline="152">llvm::MachineInstrBuilder::addMBB</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a94b3ade7f05777308f0695ef6eb5da19" compoundref="_mips_constant_island_pass_8cpp" startline="1004" endline="1012">adjustBBOffsetsAfter</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_basic_block_1acf35424231192c6b4a3e22d711f50b1e" compoundref="_machine_basic_block_8h" startline="344" endline="344">llvm::MachineBasicBlock::back</references>
+        <references refid="_mips_constant_island_pass_8cpp_1a2591f82337ce78f51703e6b3382eec3c" compoundref="_mips_constant_island_pass_8cpp" startline="586" endline="595">BBHasFallthrough</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">llvm::dwarf_linker::DebugLoc</references>
+        <references refid="classllvm_1_1_machine_basic_block_1acbc921830578e2741be6549db716c0ce" compoundref="_machine_basic_block_8h" startline="366" endline="366">llvm::MachineBasicBlock::end</references>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+        <references refid="classllvm_1_1_machine_operand_1a38b28a85f818b49d8806c150b8a5b4f7" compoundref="_machine_operand_8h" startline="556" endline="559">llvm::MachineOperand::getImm</references>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classllvm_1_1_machine_instr_1a1e855100f407ca4be098d0050be403b0" compoundref="_machine_instr_8h" startline="349" endline="349">llvm::MachineInstr::getParent</references>
+        <references refid="_mips_constant_island_pass_8cpp_1a2e62a3c07e3b7d0f0591b2d80bd20967" compoundref="_mips_constant_island_pass_8cpp" startline="1140" endline="1150">getUnconditionalBrDisp</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1ad82de9da62635df78a534de0f16c1129" compoundref="_alignment_8h" startline="208" endline="208">llvm::Log2</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a747abf73a79323919b62fb98e61aeaf2" compoundref="_mips_constant_island_pass_8cpp" startline="842" endline="903">splitBlockBeforeInstr</references>
+        <references refid="structllvm_1_1_align_1a80735739b49cf97a491922c8f9af2cc1" compoundref="_alignment_8h" startline="85" endline="85">llvm::Align::value</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" compoundref="_mips_constant_island_pass_8cpp" startline="1301" endline="1404">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::handleConstantPoolUser</definition>
+        <argsstring>(unsigned CPUserIndex)</argsstring>
+        <name>handleConstantPoolUser</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::handleConstantPoolUser</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPUserIndex</declname>
+        </param>
+        <briefdescription>
+<para>handleConstantPoolUser - Analyze the specified user, checking to see if it is out-of-range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If so, pick up the constant pool value and move it some place in-range. Return true if we changed any addresses (thus must run another pass of branch lengthening), false otherwise. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="394" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1301" bodyend="1404"/>
+        <references refid="classllvm_1_1_machine_instr_builder_1a88177c2ee5d3e579e50128cf83de5ba6" compoundref="_machine_instr_builder_8h" startline="160" endline="164">llvm::MachineInstrBuilder::addConstantPoolIndex</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a6c1f959947905135c7dd215b64957654" compoundref="_machine_instr_builder_8h" startline="133" endline="136">llvm::MachineInstrBuilder::addImm</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a94b3ade7f05777308f0695ef6eb5da19" compoundref="_mips_constant_island_pass_8cpp" startline="1004" endline="1012">adjustBBOffsetsAfter</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac438bed7ae6afbb9ff9e0be02099ad0f" compoundref="_mips_constant_island_pass_8cpp" startline="1204" endline="1295">createNewWater</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">llvm::dwarf_linker::DebugLoc</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a9eb61d7398e8effdbe50e72ed69b1d" compoundref="_mips_constant_island_pass_8cpp" startline="1018" endline="1030">decrementCPEReferenceCount</references>
+        <references refid="classllvm_1_1_machine_basic_block_1ad26bff839257f220557ce812b2159c72" compoundref="_machine_basic_block_8cpp" startline="1443" endline="1446">llvm::MachineBasicBlock::erase</references>
+        <references refid="namespacellvm_1a086e9fbdb06276db7753101a08a63adf" compoundref="_s_t_l_extras_8h" startline="1759" endline="1761">llvm::find</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a909a324ed32517aaca69fb2e87f41bca" compoundref="_mips_constant_island_pass_8cpp" startline="1160" endline="1195">findAvailableWater</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a85299a5742cf6712729343b973727ab7" compoundref="_mips_constant_island_pass_8cpp" startline="1038" endline="1080">findInRangeCPEntry</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab5cf6bcc5a1eea788ee5fcc95ea36a8f" compoundref="_mips_constant_island_pass_8cpp" startline="1091" endline="1136">findLongFormInRangeCPEntry</references>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a5077615197d034930b58d221032e96f0" compoundref="_mips_constant_island_pass_8cpp" startline="614" endline="624">getCPEAlign</references>
+        <references refid="classllvm_1_1_machine_operand_1a38b28a85f818b49d8806c150b8a5b4f7" compoundref="_machine_operand_8h" startline="556" endline="559">llvm::MachineOperand::getImm</references>
+        <references refid="classllvm_1_1_machine_operand_1aaa68daaf8d7b773d012887c92c2023ce" compoundref="_machine_operand_8h" startline="576" endline="580">llvm::MachineOperand::getIndex</references>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a834ed21b1c7973122c01bd42928af333" compoundref="_mips_constant_island_pass_8cpp" startline="834" endline="836">getUserOffset</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa0890e6f8c439d468daf1459997d306f" compoundref="_mips_constant_island_pass_8cpp" startline="357">ID</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3435a2381e60e842e915f85c931b7dde" compoundref="_machine_basic_block_8cpp" startline="1456" endline="1465">llvm::MachineBasicBlock::insert</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_mips_constant_island_pass_8cpp_1a64b4c652c8d686f935a8ea55c4b19420">NoLoadRelaxation</references>
+        <references refid="classllvm_1_1_machine_instr_1a999b8f3e58e7ca479f26445bae791a7c" compoundref="_machine_instr_8h" startline="693" endline="695">llvm::MachineInstr::operands</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a8cb665c210dc8e43f537cf4c9b84e2c7" compoundref="_machine_basic_block_8h" startline="626" endline="626">llvm::MachineBasicBlock::setAlignment</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a2810208a226ed8b333882063153be2e0" compoundref="_mips_constant_island_pass_8cpp" startline="820" endline="832">updateForInsertedWaterBlock</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3bce3734199ffc400a2172acaaf616d0" compoundref="_mips_constant_island_pass_8cpp" startline="432" endline="519">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1abbda87d0f5c41ed3eca00b354a53417d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MipsConstantIslands::removeDeadCPEMI</definition>
+        <argsstring>(MachineInstr *CPEMI)</argsstring>
+        <name>removeDeadCPEMI</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::removeDeadCPEMI</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>removeDeadCPEMI - Remove a dead constant pool entry instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Update sizes and offsets of impacted basic blocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="395" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1408" bodyend="1430"/>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a94b3ade7f05777308f0695ef6eb5da19" compoundref="_mips_constant_island_pass_8cpp" startline="1004" endline="1012">adjustBBOffsetsAfter</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_mips_constant_island_pass_8cpp_1af6522321d1fc294742102bbee0779b62" compoundref="_mips_constant_island_pass_8cpp" startline="992" endline="1001">BBIsJumpedOver</references>
+        <references refid="classllvm_1_1_machine_basic_block_1ab2d91e7bec944efcbc39d8e30644f111" compoundref="_machine_basic_block_8h" startline="364" endline="364">llvm::MachineBasicBlock::begin</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a095ce2d870dadf620a4c887ecc0efef8" compoundref="_machine_basic_block_8h" startline="336" endline="336">llvm::MachineBasicBlock::empty</references>
+        <references refid="classllvm_1_1_machine_instr_1ac2421adbb9996e1b15f03a8abb6c70a8" compoundref="_machine_instr_8cpp" startline="767" endline="770">llvm::MachineInstr::eraseFromParent</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a5077615197d034930b58d221032e96f0" compoundref="_mips_constant_island_pass_8cpp" startline="614" endline="624">getCPEAlign</references>
+        <references refid="classllvm_1_1_machine_operand_1a38b28a85f818b49d8806c150b8a5b4f7" compoundref="_machine_operand_8h" startline="556" endline="559">llvm::MachineOperand::getImm</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classllvm_1_1_machine_instr_1a1e855100f407ca4be098d0050be403b0" compoundref="_machine_instr_8h" startline="349" endline="349">llvm::MachineInstr::getParent</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a8cb665c210dc8e43f537cf4c9b84e2c7" compoundref="_machine_basic_block_8h" startline="626" endline="626">llvm::MachineBasicBlock::setAlignment</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a9eb61d7398e8effdbe50e72ed69b1d" compoundref="_mips_constant_island_pass_8cpp" startline="1018" endline="1030">decrementCPEReferenceCount</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa1b9c7bc8345561b60f6d942c5a16126" compoundref="_mips_constant_island_pass_8cpp" startline="1434" endline="1446">removeUnusedCPEntries</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa1b9c7bc8345561b60f6d942c5a16126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::removeUnusedCPEntries</definition>
+        <argsstring>()</argsstring>
+        <name>removeUnusedCPEntries</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::removeUnusedCPEntries</qualifiedname>
+        <briefdescription>
+<para>removeUnusedCPEntries - Remove constant pool entries whose refcounts are zero. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="396" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1434" bodyend="1446"/>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1abbda87d0f5c41ed3eca00b354a53417d" compoundref="_mips_constant_island_pass_8cpp" startline="1408" endline="1430">removeDeadCPEMI</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3bce3734199ffc400a2172acaaf616d0" compoundref="_mips_constant_island_pass_8cpp" startline="432" endline="519">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a31eb3e86e2c774c4c03267a7368cadf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::isCPEntryInRange</definition>
+        <argsstring>(MachineInstr *MI, unsigned UserOffset, MachineInstr *CPEMI, unsigned Disp, bool NegOk, bool DoDump=false)</argsstring>
+        <name>isCPEntryInRange</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::isCPEntryInRange</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Disp</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>NegOk</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>DoDump</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>isCPEntryInRange - Returns true if the distance between specific MI and specific ConstPool entry instruction can fit in MI&apos;s displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="397" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="967" bodyend="987"/>
+        <references refid="namespacellvm_1a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2" compoundref="_pseudo_probe_8h" startline="29">llvm::Block</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+        <references refid="classllvm_1_1_machine_operand_1a38b28a85f818b49d8806c150b8a5b4f7" compoundref="_machine_operand_8h" startline="556" endline="559">llvm::MachineOperand::getImm</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1acdf67bdb496306b9cd4fd8bfed5c5a58" compoundref="_mips_constant_island_pass_8cpp" startline="793" endline="807">getOffsetOf</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a85299a5742cf6712729343b973727ab7" compoundref="_mips_constant_island_pass_8cpp" startline="1038" endline="1080">findInRangeCPEntry</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab5cf6bcc5a1eea788ee5fcc95ea36a8f" compoundref="_mips_constant_island_pass_8cpp" startline="1091" endline="1136">findLongFormInRangeCPEntry</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a54ee101062ec8079d8d7fadafb29c511" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::isWaterInRange</definition>
+        <argsstring>(unsigned UserOffset, MachineBasicBlock *Water, CPUser &amp;U, unsigned &amp;Growth)</argsstring>
+        <name>isWaterInRange</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::isWaterInRange</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Water</declname>
+        </param>
+        <param>
+          <type>CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>Growth</declname>
+        </param>
+        <briefdescription>
+<para>isWaterInRange - Returns true if a CPE placed after the specified Water (a basic block) will be in range for the specific MI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute how much the function will grow by inserting a CPE after Water. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="400" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="926" bodyend="962"/>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</references>
+        <references refid="namespacellvm_1a99cdcecbadc13087f087c61809bb44f1" compoundref="_alignment_8h" startline="197" endline="199">llvm::offsetToAlignment</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a909a324ed32517aaca69fb2e87f41bca" compoundref="_mips_constant_island_pass_8cpp" startline="1160" endline="1195">findAvailableWater</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab686eff61461eaac81cf87ba84143a0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::isBBInRange</definition>
+        <argsstring>(MachineInstr *MI, MachineBasicBlock *BB, unsigned Disp)</argsstring>
+        <name>isBBInRange</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::isBBInRange</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Disp</declname>
+        </param>
+        <briefdescription>
+<para>isBBInRange - Returns true if the distance between specific MI and specific BB can fit in MI&apos;s displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="402" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1451" bodyend="1471"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1acdf67bdb496306b9cd4fd8bfed5c5a58" compoundref="_mips_constant_island_pass_8cpp" startline="793" endline="807">getOffsetOf</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3e3daf4218b791b2796b808627b7f864" compoundref="_mips_constant_island_pass_8cpp" startline="1534" endline="1628">fixupConditionalBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac9afd9876c042dc602d1eea614b13129" compoundref="_mips_constant_island_pass_8cpp" startline="1475" endline="1487">fixupImmediateBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a7faaededab3b537edc011e168876a92b" compoundref="_mips_constant_island_pass_8cpp" startline="1494" endline="1528">fixupUnconditionalBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac9afd9876c042dc602d1eea614b13129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::fixupImmediateBr</definition>
+        <argsstring>(ImmBranch &amp;Br)</argsstring>
+        <name>fixupImmediateBr</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::fixupImmediateBr</qualifiedname>
+        <param>
+          <type>ImmBranch &amp;</type>
+          <declname>Br</declname>
+        </param>
+        <briefdescription>
+<para>fixupImmediateBr - Fix up an immediate branch whose destination is too far away to fit in its displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="403" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1475" bodyend="1487"/>
+        <references refid="_mips_constant_island_pass_8cpp_1aebe2f39320b8f7f94354d4a19091d4fe" compoundref="_mips_constant_island_pass_8cpp" startline="86" endline="103">branchTargetOperand</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3e3daf4218b791b2796b808627b7f864" compoundref="_mips_constant_island_pass_8cpp" startline="1534" endline="1628">fixupConditionalBr</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a7faaededab3b537edc011e168876a92b" compoundref="_mips_constant_island_pass_8cpp" startline="1494" endline="1528">fixupUnconditionalBr</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab686eff61461eaac81cf87ba84143a0a" compoundref="_mips_constant_island_pass_8cpp" startline="1451" endline="1471">isBBInRange</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3bce3734199ffc400a2172acaaf616d0" compoundref="_mips_constant_island_pass_8cpp" startline="432" endline="519">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3e3daf4218b791b2796b808627b7f864" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::fixupConditionalBr</definition>
+        <argsstring>(ImmBranch &amp;Br)</argsstring>
+        <name>fixupConditionalBr</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::fixupConditionalBr</qualifiedname>
+        <param>
+          <type>ImmBranch &amp;</type>
+          <declname>Br</declname>
+        </param>
+        <briefdescription>
+<para>fixupConditionalBr - Fix up a conditional branch whose destination is too far away to fit in its displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is converted to an inverse conditional branch + an unconditional branch to the destination. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="404" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1534" bodyend="1628"/>
+        <references refid="classllvm_1_1_machine_instr_builder_1abf1febf2a98f588146548a3a485d3838" compoundref="_machine_instr_builder_8h" startline="148" endline="152">llvm::MachineInstrBuilder::addMBB</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a927857fc69e4b4f0cde307f86f180df5" compoundref="_machine_instr_builder_8h" startline="99" endline="115">llvm::MachineInstrBuilder::addReg</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a94b3ade7f05777308f0695ef6eb5da19" compoundref="_mips_constant_island_pass_8cpp" startline="1004" endline="1012">adjustBBOffsetsAfter</references>
+        <references refid="_mips_constant_island_pass_8cpp_1a2591f82337ce78f51703e6b3382eec3c" compoundref="_mips_constant_island_pass_8cpp" startline="586" endline="595">BBHasFallthrough</references>
+        <references refid="_mips_constant_island_pass_8cpp_1a4ed70b091d984638ade40c36b700db3a" compoundref="_mips_constant_island_pass_8cpp" startline="132" endline="180">branchMaxOffsets</references>
+        <references refid="_mips_constant_island_pass_8cpp_1aebe2f39320b8f7f94354d4a19091d4fe" compoundref="_mips_constant_island_pass_8cpp" startline="86" endline="103">branchTargetOperand</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">llvm::dwarf_linker::DebugLoc</references>
+        <references refid="classllvm_1_1_machine_operand_1a57e64b633278df75c699e6b98ce15031" compoundref="_machine_operand_8h" startline="571" endline="574">llvm::MachineOperand::getMBB</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="_mips_constant_island_pass_8cpp_1a2e62a3c07e3b7d0f0591b2d80bd20967" compoundref="_mips_constant_island_pass_8cpp" startline="1140" endline="1150">getUnconditionalBrDisp</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab686eff61461eaac81cf87ba84143a0a" compoundref="_mips_constant_island_pass_8cpp" startline="1451" endline="1471">isBBInRange</references>
+        <references refid="classllvm_1_1_machine_instr_1a91c590e8191655a6739eb4df9c443896" compoundref="_machine_instr_8h" startline="1022" endline="1024">llvm::MachineInstr::isUnconditionalBranch</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_mips_constant_island_pass_8cpp_1a4d0addd716a1fc273a5b43e0e850f376" compoundref="_mips_constant_island_pass_8cpp" startline="105" endline="126">longformBranchOpcode</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <references refid="classllvm_1_1_machine_operand_1a98e9c9e8ef7cbb6c4aa89a38f21decfa" compoundref="_machine_operand_8h" startline="728" endline="731">llvm::MachineOperand::setMBB</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a747abf73a79323919b62fb98e61aeaf2" compoundref="_mips_constant_island_pass_8cpp" startline="842" endline="903">splitBlockBeforeInstr</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac9afd9876c042dc602d1eea614b13129" compoundref="_mips_constant_island_pass_8cpp" startline="1475" endline="1487">fixupImmediateBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a7faaededab3b537edc011e168876a92b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MipsConstantIslands::fixupUnconditionalBr</definition>
+        <argsstring>(ImmBranch &amp;Br)</argsstring>
+        <name>fixupUnconditionalBr</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::fixupUnconditionalBr</qualifiedname>
+        <param>
+          <type>ImmBranch &amp;</type>
+          <declname>Br</declname>
+        </param>
+        <briefdescription>
+<para>fixupUnconditionalBr - Fix up an unconditional branch whose destination is too far away to fit in its displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the LR register has been spilled in the epilogue, then we can use BL to implement a far jump. Otherwise, add an intermediate branch instruction to a branch. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="405" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1494" bodyend="1528"/>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a94b3ade7f05777308f0695ef6eb5da19" compoundref="_mips_constant_island_pass_8cpp" startline="1004" endline="1012">adjustBBOffsetsAfter</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab686eff61461eaac81cf87ba84143a0a" compoundref="_mips_constant_island_pass_8cpp" startline="1451" endline="1471">isBBInRange</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a8cb665c210dc8e43f537cf4c9b84e2c7" compoundref="_machine_basic_block_8h" startline="626" endline="626">llvm::MachineBasicBlock::setAlignment</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac9afd9876c042dc602d1eea614b13129" compoundref="_mips_constant_island_pass_8cpp" startline="1475" endline="1487">fixupImmediateBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a657c17735f988deb12c8067e40be44d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MipsConstantIslands::prescanForConstants</definition>
+        <argsstring>()</argsstring>
+        <name>prescanForConstants</name>
+        <qualifiedname>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands::prescanForConstants</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="407" column="10" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="1630" bodyend="1660"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="classllvm_1_1_machine_operand_1aebe6fe7948d0ae093aba94381c73ed67" compoundref="_machine_operand_8h" startline="875" endline="882">llvm::MachineOperand::CreateCPI</references>
+        <references refid="classllvm_1_1_machine_operand_1ab09679b541a6ba1219b3602569847364" compoundref="_machine_operand_8h" startline="820" endline="824">llvm::MachineOperand::CreateImm</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_type_1a30dd396c5b40cd86c1591872e574ccdf" compoundref="_sandbox_i_r_2_type_8cpp" startline="287" endline="287">llvm::Type::getInt32Ty</references>
+        <references refid="namespacellvm_1a23f9ec4bb2576ca8738f3edc9c4f5cdf" compoundref="_instr_prof_8h" startline="296">llvm::Int32Ty</references>
+        <references refid="namespacellvm_1ab7530cd22b8952cb41774507dd40c6f3ad7da1b76e5799f53a399b7a96ba67437" compoundref="_format_variadic_8h" startline="46">llvm::Literal</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3bce3734199ffc400a2172acaaf616d0" compoundref="_mips_constant_island_pass_8cpp" startline="432" endline="519">runOnMachineFunction</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands" kindref="compound">MipsConstantIslands</ref> - Due to limited PC-relative displacements, <ref refid="namespacellvm_1_1_mips" kindref="compound">Mips</ref> requires constant pool entries to be scattered among the instructions inside a function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>To do this, it completely ignores the normal LLVM constant pool; instead, it places constants wherever it feels like with special instructions.</para>
+<para>The terminology used in this pass includes: Islands - Clumps of constants placed in the function. Water - Potential places where an island could be formed. CPE - A constant pool entry that has been placed somewhere, which tracks a list of users. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</label>
+        <link refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</label>
+        <link refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/Mips/MipsConstantIslandPass.cpp" line="199" column="3" bodyfile="lib/Target/Mips/MipsConstantIslandPass.cpp" bodystart="199" bodyend="408"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a94b3ade7f05777308f0695ef6eb5da19" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>adjustBBOffsetsAfter</name></member>
+      <member refid="classllvm_1_1_function_pass_1a748922f143f2da9a13b0b15ff6a3dd22" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>assignPassManager</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a58771c042bdfa919ec8bcbb1d31c16f6" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>BBInfo</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a77b47e627bb837517308b9541f97f6b5" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>computeBlockSize</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ada86103c0d8df9f57ccd95c8b05b4edf" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>CPEntries</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1afe46c27f7de9e1bda02f4e600d7e7956" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>CPUsers</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac438bed7ae6afbb9ff9e0be02099ad0f" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>createNewWater</name></member>
+      <member refid="classllvm_1_1_pass_1a2ed7d79d79dffe7368c3d3cdf40dd80e" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>createPass</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1da0e648d3236347558f8ec47e5d9541" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>createPICLabelUId</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a9eb61d7398e8effdbe50e72ed69b1d" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>decrementCPEReferenceCount</name></member>
+      <member refid="classllvm_1_1_pass_1ac7811985250c75d7e2a244292d615fff" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>doFinalization</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a204ffdf4717a340f8cbe1fd1341a8148" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>doInitialization</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3068d2fa3c2556694ca3db57b7c197dd" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>doInitialPlacement</name></member>
+      <member refid="classllvm_1_1_pass_1a1a60731eeff800b39fca7280a5a167ae" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>dump</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a6e6938d2a62e2461cc8809a568a2d431" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>dumpBBs</name></member>
+      <member refid="classllvm_1_1_pass_1ad2f0576ef7c9c4af40e35001c81f4922" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>dumpPassStructure</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a909a324ed32517aaca69fb2e87f41bca" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>findAvailableWater</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1a421414700d8d58b412a7e067cb02ad" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>findConstPoolEntry</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a85299a5742cf6712729343b973727ab7" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>findInRangeCPEntry</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab5cf6bcc5a1eea788ee5fcc95ea36a8f" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>findLongFormInRangeCPEntry</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3e3daf4218b791b2796b808627b7f864" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>fixupConditionalBr</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ac9afd9876c042dc602d1eea614b13129" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>fixupImmediateBr</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a7faaededab3b537edc011e168876a92b" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>fixupUnconditionalBr</name></member>
+      <member refid="classllvm_1_1_function_pass_1a7691d83e3561f781cae4ce4a01bdfa93" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>FunctionPass</name></member>
+      <member refid="classllvm_1_1_pass_1a03d3a81b1c46aff7c38ef3a6750ba225" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getAdjustedAnalysisPointer</name></member>
+      <member refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a560d384c0cef7f62836884fdbbd1fe66" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a6613f29d3e54ce175ac33fb9ba264fae" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1a2190247edbacb33b4e8a3d409fa2d99e" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getAnalysisIfAvailable</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e" prot="protected" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getAnalysisUsage</name></member>
+      <member refid="classllvm_1_1_pass_1ae31759fd992cddb1f2d62ab0df85834a" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getAsImmutablePass</name></member>
+      <member refid="classllvm_1_1_pass_1a626b77ef8abdfa9f53c697ad129a6e5a" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getAsPMDataManager</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a22bc7c91051dca8dc211c3afe9929603" prot="protected" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getClearedProperties</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a5077615197d034930b58d221032e96f0" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getCPEAlign</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1acdf67bdb496306b9cd4fd8bfed5c5a58" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getOffsetOf</name></member>
+      <member refid="classllvm_1_1_pass_1a63192e749ba4a0ee29336a59d6a19647" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getPassID</name></member>
+      <member refid="classllvm_1_1_pass_1a9de4db62e6884f2e5efea6793af30d99" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getPassKind</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d4287d21f67efdb4195c66923f5a522" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getPassName</name></member>
+      <member refid="classllvm_1_1_function_pass_1a68517706d9801aec6d20c32a424ed152" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getPotentialPassManagerType</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aeed0ecac46a557ab2e45f837ad079795" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getRequiredProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a969c082f66671df288441bbad9ca87db" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getResolver</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a8fbedd15c1c809e6050f3fd3ccd3338e" prot="protected" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getSetProperties</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a834ed21b1c7973122c01bd42928af333" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>getUserOffset</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4d3a04a082a7dd5b285cddb7feef368c" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>handleConstantPoolUser</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a0c0c3b7629352c1badf160b5c543f300" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>HasFarJump</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa0890e6f8c439d468daf1459997d306f" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>ID</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a08e290b3a199b1b4442e0813699c419d" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>ImmBranches</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a5f59896e3d3eccc7cae863ff29642896" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>initializeFunctionInfo</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a891b9ad6b0a73dce910ef9e1288b9589" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>initPICLabelUId</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1ab686eff61461eaac81cf87ba84143a0a" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>isBBInRange</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a31eb3e86e2c774c4c03267a7368cadf0" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>isCPEntryInRange</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1af8551cd00faa264bb137701056f6f3d0" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>isOffsetInRange</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a13a0a6a8c8eaf928c2362effb37e73ab" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>isOffsetInRange</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a54ee101062ec8079d8d7fadafb29c511" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>isWaterInRange</name></member>
+      <member refid="classllvm_1_1_pass_1aab174263c400ece13a7278990e102fa6" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_pass_1a992ff669acca94459037cfb1f41cb9dc" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>MachineFunctionPass</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a410843c5d1fd2a31cbc8f4e8b3a5fc83" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>MCP</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a4f99b0f4c14da5268d3cc55189cf0abe" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>MF</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a270a74a5b73411acc138319b5c95b400" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>MFI</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa5de99ed1dd179bee53f782e65658825" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>MipsConstantIslands</name></member>
+      <member refid="classllvm_1_1_pass_1a0b4a511579939b07831db90c3fc98996" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>mustPreserveAnalysisID</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a1742c7abbffe2e7c8f52ddf471134d2d" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>NewWaterList</name></member>
+      <member refid="classllvm_1_1_pass_1af468a2aeb0d98e3dbeda38176ce516d3" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_pass_1a16baa169d062524be5a6b67609266174" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1ad40d19ce644ec38c52ea00be59016cd5" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>Pass</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a76a5194141e8f78dd727b7e25c22e0ee" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>PICLabelUId</name></member>
+      <member refid="classllvm_1_1_pass_1aa5f61a8789f87816c5f494d42a70f01f" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>preparePassManager</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a657c17735f988deb12c8067e40be44d4" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>prescanForConstants</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1adc48aa9316247959c8b794508778bb13" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>PrescannedForConstants</name></member>
+      <member refid="classllvm_1_1_pass_1a061b4c01e9c189208dbfd3c77fdb9a5c" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>print</name></member>
+      <member refid="classllvm_1_1_pass_1aeb6e74b0f36a0acd1d20149ef088715a" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>releaseMemory</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1abbda87d0f5c41ed3eca00b354a53417d" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>removeDeadCPEMI</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aa1b9c7bc8345561b60f6d942c5a16126" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>removeUnusedCPEntries</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a3bce3734199ffc400a2172acaaf616d0" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>runOnMachineFunction</name></member>
+      <member refid="classllvm_1_1_pass_1a2423fcc912a698d4f36c9c9380b53a50" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>setResolver</name></member>
+      <member refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>skipFunction</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a747abf73a79323919b62fb98e61aeaf2" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>splitBlockBeforeInstr</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1aede378370907852a8b71a3736f9bb3e8" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>STI</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1accd28ae71ea74a61c09836e32e327a8d" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>TII</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a2810208a226ed8b333882063153be2e0" prot="public" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>updateForInsertedWaterBlock</name></member>
+      <member refid="classllvm_1_1_pass_1ac8ef6f57d4ec869a7f1007aeddf2b169" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>verifyAnalysis</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a00f2076a28018c3bfc723f8e050d47f1" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>water_iterator</name></member>
+      <member refid="classanonymous__namespace_02_mips_constant_island_pass_8cpp_03_1_1_mips_constant_islands_1a10dcf6f9c47bb7108021a53309a7d7e4" prot="private" virt="non-virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>WaterList</name></member>
+      <member refid="classllvm_1_1_pass_1abe2fe9b29d21424fe4b410fc8e98606c" prot="public" virt="virtual"><scope>anonymous_namespace{MipsConstantIslandPass.cpp}::MipsConstantIslands</scope><name>~Pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,666 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_text_instr_prof_reader" kind="class" language="C++" prot="public">
+    <compoundname>llvm::TextInstrProfReader</compoundname>
+    <basecompoundref refid="classllvm_1_1_instr_prof_reader" prot="public" virt="non-virtual">llvm::InstrProfReader</basecompoundref>
+    <includes refid="_instr_prof_reader_8h" local="yes">llvm/ProfileData/InstrProfReader.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_text_instr_prof_reader_1ac33b6c4f85438af3892a8a365fae945e" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_buffer" kindref="compound">MemoryBuffer</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MemoryBuffer&gt; llvm::TextInstrProfReader::DataBuffer</definition>
+        <argsstring></argsstring>
+        <name>DataBuffer</name>
+        <qualifiedname>llvm::TextInstrProfReader::DataBuffer</qualifiedname>
+        <briefdescription>
+<para>The profile data file contents. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="246" column="19" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_text_instr_prof_reader_1ad725363a709c06cb91225fe938e0c819" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1line__iterator" kindref="compound">line_iterator</ref></type>
+        <definition>line_iterator llvm::TextInstrProfReader::Line</definition>
+        <argsstring></argsstring>
+        <name>Line</name>
+        <qualifiedname>llvm::TextInstrProfReader::Line</qualifiedname>
+        <briefdescription>
+<para>Iterator over the profile data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="248" column="17" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_text_instr_prof_reader_1abc3e79d553338e4c6aee3690f6239f5c" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6" kindref="member">InstrProfKind</ref></type>
+        <definition>InstrProfKind llvm::TextInstrProfReader::ProfileKind</definition>
+        <argsstring></argsstring>
+        <name>ProfileKind</name>
+        <qualifiedname>llvm::TextInstrProfReader::ProfileKind</qualifiedname>
+        <initializer>= <ref refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">InstrProfKind::Unknown</ref></initializer>
+        <briefdescription>
+<para>The attributes of the current profile. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="250" column="17" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="250" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1af96e8dee455517fb60665ac236ebb60d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error TextInstrProfReader::readValueProfileData</definition>
+        <argsstring>(InstrProfRecord &amp;Record)</argsstring>
+        <name>readValueProfileData</name>
+        <qualifiedname>llvm::TextInstrProfReader::readValueProfileData</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_instr_prof_record" kindref="compound">InstrProfRecord</ref> &amp;</type>
+          <declname>Record</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="252" column="9" bodyfile="lib/ProfileData/InstrProfReader.cpp" bodystart="324" bodyend="401"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1a82ac41fe67683b86cf94a838fcafad76" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error TextInstrProfReader::readTemporalProfTraceData</definition>
+        <argsstring>()</argsstring>
+        <name>readTemporalProfTraceData</name>
+        <qualifiedname>llvm::TextInstrProfReader::readTemporalProfTraceData</qualifiedname>
+        <briefdescription>
+<para>Temporal profile trace data is stored in the header immediately after &quot;:temporal_prof_traces&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The first integer is the number of traces, the second integer is the stream size, then the following lines are the actual traces which consist of a weight and a comma separated list of function names. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="254" column="9" bodyfile="lib/ProfileData/InstrProfReader.cpp" bodystart="288" bodyend="321"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1a695aae8d351cd41d0b6ae8400dc864b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::TextInstrProfReader::TextInstrProfReader</definition>
+        <argsstring>(std::unique_ptr&lt; MemoryBuffer &gt; DataBuffer_)</argsstring>
+        <name>TextInstrProfReader</name>
+        <qualifiedname>llvm::TextInstrProfReader::TextInstrProfReader</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_buffer" kindref="compound">MemoryBuffer</ref> &gt;</type>
+          <declname>DataBuffer_</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="257" column="3" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="257" bodyend="258"/>
+        <references refid="namespacellvm_1abfc9c7ecf70f66901e439f7c04ef3dbb" compoundref="_s_t_l_extras_8h" startline="1873" endline="1875">llvm::move</references>
+        <references refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" compoundref="_basic_alias_analysis_8cpp" startline="1983">true</references>
+        <referencedby refid="classllvm_1_1_text_instr_prof_reader_1afc646b5709aacb1e61f7efaa7cc14102">operator=</referencedby>
+        <referencedby refid="classllvm_1_1_text_instr_prof_reader_1a95a2cfc308d36df18ec1ed72bd99b140">TextInstrProfReader</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1a95a2cfc308d36df18ec1ed72bd99b140" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::TextInstrProfReader::TextInstrProfReader</definition>
+        <argsstring>(const TextInstrProfReader &amp;)=delete</argsstring>
+        <name>TextInstrProfReader</name>
+        <qualifiedname>llvm::TextInstrProfReader::TextInstrProfReader</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_text_instr_prof_reader" kindref="compound">TextInstrProfReader</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="259" column="3"/>
+        <references refid="classllvm_1_1_text_instr_prof_reader_1a695aae8d351cd41d0b6ae8400dc864b3" compoundref="_instr_prof_reader_8h" startline="257" endline="258">TextInstrProfReader</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1afc646b5709aacb1e61f7efaa7cc14102" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_text_instr_prof_reader" kindref="compound">TextInstrProfReader</ref> &amp;</type>
+        <definition>TextInstrProfReader &amp; llvm::TextInstrProfReader::operator=</definition>
+        <argsstring>(const TextInstrProfReader &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::TextInstrProfReader::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_text_instr_prof_reader" kindref="compound">TextInstrProfReader</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="260" column="23"/>
+        <references refid="classllvm_1_1_text_instr_prof_reader_1a695aae8d351cd41d0b6ae8400dc864b3" compoundref="_instr_prof_reader_8h" startline="257" endline="258">TextInstrProfReader</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1a462b5a012961fd76b1e0dd1426e8c6ff" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::TextInstrProfReader::getVersion</definition>
+        <argsstring>() const override</argsstring>
+        <name>getVersion</name>
+        <qualifiedname>llvm::TextInstrProfReader::getVersion</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1aa9d4337f3870273bef2b18114dab187b">getVersion</reimplements>
+        <briefdescription>
+<para>Return the profile version. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="266" column="12" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="266" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1a11786ab82600e8236280d142243b17a1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TextInstrProfReader::isIRLevelProfile</definition>
+        <argsstring>() const override</argsstring>
+        <name>isIRLevelProfile</name>
+        <qualifiedname>llvm::TextInstrProfReader::isIRLevelProfile</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1ada5446003076610d306e8578c6724080">isIRLevelProfile</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="268" column="8" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="268" bodyend="270"/>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a51056965b635025ecb4cdafb28bc1ae2" compoundref="_instr_prof_8h" startline="334">llvm::IRInstrumentation</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1aab67ead159bf57a0700945d0198d3e4d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TextInstrProfReader::hasCSIRLevelProfile</definition>
+        <argsstring>() const override</argsstring>
+        <name>hasCSIRLevelProfile</name>
+        <qualifiedname>llvm::TextInstrProfReader::hasCSIRLevelProfile</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1ad8d70b222f0a5d03ad0d5f9ad4839d56">hasCSIRLevelProfile</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="272" column="8" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="272" bodyend="274"/>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a087151dc0bb6ff33db94d0479b6bc2cf" compoundref="_instr_prof_8h" startline="338">llvm::ContextSensitive</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1abc133101f5e847ad386948fa5bb27a15" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TextInstrProfReader::instrEntryBBEnabled</definition>
+        <argsstring>() const override</argsstring>
+        <name>instrEntryBBEnabled</name>
+        <qualifiedname>llvm::TextInstrProfReader::instrEntryBBEnabled</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1a05b37c8d0e6be99d6b5994fc5983db0f">instrEntryBBEnabled</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="276" column="8" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="276" bodyend="279"/>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a3d8a924372eb01d27427b757ba52d318" compoundref="_instr_prof_8h" startline="336">llvm::FunctionEntryInstrumentation</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1afddb50e18046c0300a21bc3b6e766081" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TextInstrProfReader::instrLoopEntriesEnabled</definition>
+        <argsstring>() const override</argsstring>
+        <name>instrLoopEntriesEnabled</name>
+        <qualifiedname>llvm::TextInstrProfReader::instrLoopEntriesEnabled</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1acc22024a1f1d6053cc88a38cde62835b">instrLoopEntriesEnabled</reimplements>
+        <briefdescription>
+<para>Return true if the profile instruments all loop entries. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="281" column="8" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="281" bodyend="284"/>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a2d0e271ef09b456a7c73384c7e787173" compoundref="_instr_prof_8h" startline="348">llvm::LoopEntriesInstrumentation</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1a6ba65d02a1ca0d62a0d3d4120ef91161" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TextInstrProfReader::hasSingleByteCoverage</definition>
+        <argsstring>() const override</argsstring>
+        <name>hasSingleByteCoverage</name>
+        <qualifiedname>llvm::TextInstrProfReader::hasSingleByteCoverage</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1a660ea951e93164675ae85b2c0fc24b16">hasSingleByteCoverage</reimplements>
+        <briefdescription>
+<para>Return true if the profile has single byte counters representing coverage. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="286" column="8" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="286" bodyend="288"/>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a5505edfdbf5f7c9b5bd53a769be32faf" compoundref="_instr_prof_8h" startline="340">llvm::SingleByteCoverage</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1ac03f9090429b07a6dcb0f91e7fe38487" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TextInstrProfReader::functionEntryOnly</definition>
+        <argsstring>() const override</argsstring>
+        <name>functionEntryOnly</name>
+        <qualifiedname>llvm::TextInstrProfReader::functionEntryOnly</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1a5059912d6355d52199189b5bc33e726a">functionEntryOnly</reimplements>
+        <briefdescription>
+<para>Return true if the profile only instruments function entries. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="290" column="8" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="290" bodyend="292"/>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a0e0f0e75dc57be5c12274ba6e78bc75a" compoundref="_instr_prof_8h" startline="342">llvm::FunctionEntryOnly</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1aa9bbd2893531315f5a033e8fed6d84a6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TextInstrProfReader::hasMemoryProfile</definition>
+        <argsstring>() const override</argsstring>
+        <name>hasMemoryProfile</name>
+        <qualifiedname>llvm::TextInstrProfReader::hasMemoryProfile</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1ac1ce57725116511902473def39c312d8">hasMemoryProfile</reimplements>
+        <briefdescription>
+<para>Return true if profile includes a memory profile. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="294" column="8" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="294" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1ad3ee6fd0439fd878669a196179430ae5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TextInstrProfReader::hasTemporalProfile</definition>
+        <argsstring>() const override</argsstring>
+        <name>hasTemporalProfile</name>
+        <qualifiedname>llvm::TextInstrProfReader::hasTemporalProfile</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1a68312554b273d30d54920e51b2398185">hasTemporalProfile</reimplements>
+        <briefdescription>
+<para>Return true if this has a temporal profile. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="299" column="8" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="299" bodyend="301"/>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a3ef3ba43212f6a2779d594e507451d54" compoundref="_instr_prof_8h" startline="346">llvm::TemporalProfile</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1ac616e56dc9d68268db19ed1897793004" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6" kindref="member">InstrProfKind</ref></type>
+        <definition>InstrProfKind llvm::TextInstrProfReader::getProfileKind</definition>
+        <argsstring>() const override</argsstring>
+        <name>getProfileKind</name>
+        <qualifiedname>llvm::TextInstrProfReader::getProfileKind</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1a860fc33a5f850e1cbf75e689e342529b">getProfileKind</reimplements>
+        <briefdescription>
+<para>Returns a BitsetEnum describing the attributes of the profile. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To check individual attributes prefer using the helpers above. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="303" column="17" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="303" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1aef869625c91dde9e5539eb2a417eaef4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error TextInstrProfReader::readHeader</definition>
+        <argsstring>() override</argsstring>
+        <name>readHeader</name>
+        <qualifiedname>llvm::TextInstrProfReader::readHeader</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1ae686ef643be1a63e6ff637640691d82e">readHeader</reimplements>
+        <briefdescription>
+<para>Read the header. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="306" column="9" bodyfile="lib/ProfileData/InstrProfReader.cpp" bodystart="252" bodyend="281"/>
+        <references refid="namespacellvm_1aa218f6b22c8e271f5f9e92aa1fe51086adde571add68cc36593098a17df48bd45" compoundref="_instr_prof_8h" startline="359">llvm::bad_header</references>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a087151dc0bb6ff33db94d0479b6bc2cf" compoundref="_instr_prof_8h" startline="338">llvm::ContextSensitive</references>
+        <references refid="_symbol_record_mapping_8cpp_1a9cdf893c7d17e47fa1ed8bebf92a5da4" compoundref="_symbol_record_mapping_8cpp" startline="14" endline="16">error</references>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a5b8e304d44bb4e39203ed9bc70168db9" compoundref="_instr_prof_8h" startline="332">llvm::FrontendInstrumentation</references>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a3d8a924372eb01d27427b757ba52d318" compoundref="_instr_prof_8h" startline="336">llvm::FunctionEntryInstrumentation</references>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a51056965b635025ecb4cdafb28bc1ae2" compoundref="_instr_prof_8h" startline="334">llvm::IRInstrumentation</references>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a2d0e271ef09b456a7c73384c7e787173" compoundref="_instr_prof_8h" startline="348">llvm::LoopEntriesInstrumentation</references>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a5505edfdbf5f7c9b5bd53a769be32faf" compoundref="_instr_prof_8h" startline="340">llvm::SingleByteCoverage</references>
+        <references refid="classllvm_1_1_instr_prof_reader_1a6fd927accec00ab7a4178b5290fcdb4b" compoundref="_instr_prof_reader_8h" startline="186" endline="186">llvm::InstrProfReader::success</references>
+        <references refid="classllvm_1_1_instr_prof_reader_1a51d19452b19c498a18cafa947fd744ad" compoundref="_instr_prof_reader_8h" startline="162">llvm::InstrProfReader::Symtab</references>
+        <references refid="namespacellvm_1afe5a7327058c6702e128c22292fb66c6a3ef3ba43212f6a2779d594e507451d54" compoundref="_instr_prof_8h" startline="346">llvm::TemporalProfile</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1a7d3a3124492d7f44aeebfea0d19e0e37" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error TextInstrProfReader::readNextRecord</definition>
+        <argsstring>(NamedInstrProfRecord &amp;Record) override</argsstring>
+        <name>readNextRecord</name>
+        <qualifiedname>llvm::TextInstrProfReader::readNextRecord</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1a1b9cdf649b060d35ae19272f246e5b12">readNextRecord</reimplements>
+        <param>
+          <type><ref refid="structllvm_1_1_named_instr_prof_record" kindref="compound">NamedInstrProfRecord</ref> &amp;</type>
+          <declname>Record</declname>
+        </param>
+        <briefdescription>
+<para>Read a single record. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="309" column="9" bodyfile="lib/ProfileData/InstrProfReader.cpp" bodystart="403" bodyend="474"/>
+        <references refid="namespacellvm_1a845e08be4b0320d66901a66b0c0e9509" compoundref="_instr_prof_8h" startline="139">llvm::Count</references>
+        <references refid="namespacellvm_1aa218f6b22c8e271f5f9e92aa1fe51086a2e51b1ab42e8a4a67f3445174be5191b" compoundref="_instr_prof_8h" startline="356">llvm::eof</references>
+        <references refid="_symbol_record_mapping_8cpp_1a9cdf893c7d17e47fa1ed8bebf92a5da4" compoundref="_symbol_record_mapping_8cpp" startline="14" endline="16">error</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1aa218f6b22c8e271f5f9e92aa1fe51086a7596fdd04dba990373ab2f3da0c7dd3f" compoundref="_instr_prof_8h" startline="364">llvm::malformed</references>
+        <references refid="namespacellvm_1a0832225d8bce717f7aeb97c2f0eb2af3" compoundref="_instr_prof_8h" startline="95">llvm::NumBitmapBytes</references>
+        <references refid="namespacellvm_1a435d7554367e426f8c41efd8c1f70ab0" compoundref="_instr_prof_8h" startline="91">llvm::NumCounters</references>
+        <references refid="classllvm_1_1_instr_prof_reader_1a6fd927accec00ab7a4178b5290fcdb4b" compoundref="_instr_prof_reader_8h" startline="186" endline="186">llvm::InstrProfReader::success</references>
+        <references refid="classllvm_1_1_instr_prof_reader_1a51d19452b19c498a18cafa947fd744ad" compoundref="_instr_prof_reader_8h" startline="162">llvm::InstrProfReader::Symtab</references>
+        <references refid="namespacellvm_1aa218f6b22c8e271f5f9e92aa1fe51086aac273a9aa2a7a6e63ef477fa7f6d1980" compoundref="_instr_prof_8h" startline="363">llvm::truncated</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1aabfeeaac8e03fccb0f88213b3920a304" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_instr_prof_symtab" kindref="compound">InstrProfSymtab</ref> &amp;</type>
+        <definition>InstrProfSymtab &amp; llvm::TextInstrProfReader::getSymtab</definition>
+        <argsstring>() override</argsstring>
+        <name>getSymtab</name>
+        <qualifiedname>llvm::TextInstrProfReader::getSymtab</qualifiedname>
+        <reimplements refid="classllvm_1_1_instr_prof_reader_1a5467e3d047994e58741d1092cafd51aa">getSymtab</reimplements>
+        <briefdescription>
+<para>Return the PGO symtab. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There are three different readers: Raw, Text, and Indexed profile readers. The first two types of readers are used only by llvm-profdata tool, while the indexed profile reader is also used by llvm-cov tool and the compiler ( backend or frontend). Since creating PGO symtab can create significant runtime and memory overhead (as it touches data for the whole program), <ref refid="classllvm_1_1_instr_prof_symtab" kindref="compound">InstrProfSymtab</ref> for the indexed profile reader should be created on demand and it is recommended to be only used for dumping purpose with llvm-proftool, not with the compiler. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="311" column="19" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="311" bodyend="314"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_instr_prof_reader_1a51d19452b19c498a18cafa947fd744ad" compoundref="_instr_prof_reader_8h" startline="162">llvm::InstrProfReader::Symtab</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_text_instr_prof_reader_1a54ea33c903b163ee020c34e36d6849c9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool TextInstrProfReader::hasFormat</definition>
+        <argsstring>(const MemoryBuffer &amp;Buffer)</argsstring>
+        <name>hasFormat</name>
+        <qualifiedname>llvm::TextInstrProfReader::hasFormat</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_buffer" kindref="compound">MemoryBuffer</ref> &amp;</type>
+          <declname>Buffer</declname>
+        </param>
+        <briefdescription>
+<para>Return true if the given buffer is in text instrprof format. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/InstrProfReader.h" line="263" column="15" bodyfile="lib/ProfileData/InstrProfReader.cpp" bodystart="239" bodyend="247"/>
+        <references refid="classllvm_1_1_string_ref_1a46f643f1eb1939362c7dd79361bcbd0e" compoundref="_string_ref_8h" startline="116" endline="116">llvm::StringRef::begin</references>
+        <references refid="namespacellvm_1ab1772fd431decccb7926d484ea223db7" compoundref="_s_t_l_extras_8h" startline="1938" endline="1940">llvm::count</references>
+        <references refid="classllvm_1_1_memory_buffer_1a2ea075bd68f15b57e95f0771b8ba0bca" compoundref="_memory_buffer_8h" startline="68" endline="68">llvm::MemoryBuffer::getBufferSize</references>
+        <references refid="classllvm_1_1_memory_buffer_1af1972b9a0324e0311ad641eac2de2b7f" compoundref="_memory_buffer_8h" startline="66" endline="66">llvm::MemoryBuffer::getBufferStart</references>
+        <referencedby refid="classllvm_1_1_instr_prof_reader_1a8cf37c58eefb5569a3926484ff808cbd" compoundref="_instr_prof_reader_8cpp" startline="169" endline="199">llvm::InstrProfReader::create</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Reader for the simple text based instrprof format. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This format is a simple text format that&apos;s suitable for test data. Records are separated by one or more blank lines, and record fields are separated by new lines.</para>
+<para>Each record consists of a function name, a function hash, a number of counters, and then each counter value, in that order. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::InstrProfReader</label>
+        <link refid="classllvm_1_1_instr_prof_reader"/>
+      </node>
+      <node id="1">
+        <label>llvm::TextInstrProfReader</label>
+        <link refid="classllvm_1_1_text_instr_prof_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="12">
+        <label>Size_T</label>
+      </node>
+      <node id="10">
+        <label>SmallVectorSizeType&lt; llvm::TemporalProfTraceTy &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_temporal_prof_trace_ty_01_4"/>
+      </node>
+      <node id="15">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="21">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="2">
+        <label>llvm::InstrProfReader</label>
+        <link refid="classllvm_1_1_instr_prof_reader"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Symtab</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>TemporalProfTraces</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>TemporalProfTraceStreamSize</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::SmallVector&lt; llvm::TemporalProfTraceTy &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="20" relation="private-inheritance">
+        </childnode>
+        <childnode refid="22" relation="template-instance">
+          <edgelabel>&lt; llvm::TemporalProfTraceTy &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="11" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::TemporalProfTraceTy &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::TemporalProfTraceTy &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::SmallVectorImpl&lt; llvm::TemporalProfTraceTy &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; llvm::TemporalProfTraceTy &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::TemporalProfTraceTy &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; llvm::TemporalProfTraceTy &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::TemporalProfTraceTy &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; llvm::TemporalProfTraceTy &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::TextInstrProfReader</label>
+        <link refid="classllvm_1_1_text_instr_prof_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>unique_ptr&lt; llvm::InstrProfSymtab &gt;</label>
+      </node>
+      <node id="25">
+        <label>uint64_t</label>
+        <link refid="classuint64__t"/>
+      </node>
+      <node id="9">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/ProfileData/InstrProfReader.h" line="243" column="1" bodyfile="include/llvm/ProfileData/InstrProfReader.h" bodystart="243" bodyend="315"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_instr_prof_reader_1af8e0c59b9bcc7888f39284b3fc417834" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>accumulateCounts</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a04a2a4a9659d4d6019d5a6d810dda937" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>begin</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1af9b6bc8513f2e320ab04eba79fc01491" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>create</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a8cf37c58eefb5569a3926484ff808cbd" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>create</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1ac33b6c4f85438af3892a8a365fae945e" prot="private" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>DataBuffer</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a4847f830ab8c053322ac7f566ec2a119" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>end</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1aedd4249ec00d14c5505207bd648514f0" prot="protected" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>error</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a466f13d47a37668e56429b8d6b490827" prot="protected" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>error</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1ac03f9090429b07a6dcb0f91e7fe38487" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>functionEntryOnly</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a52fa2464e6641c29b3a34dd839e715de" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>getError</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1ac616e56dc9d68268db19ed1897793004" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>getProfileKind</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1aabfeeaac8e03fccb0f88213b3920a304" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>getSymtab</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1ad54942c83a065e5a3f09a0191739ae70" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>getTemporalProfTraces</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1aa0cba7a223c3af6425a03fd0976001b8" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>getTemporalProfTraceStreamSize</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1a462b5a012961fd76b1e0dd1426e8c6ff" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>getVersion</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1aab67ead159bf57a0700945d0198d3e4d" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>hasCSIRLevelProfile</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a818a3437e77efa5945bd93b436f56afb" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>hasError</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1a54ea33c903b163ee020c34e36d6849c9" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>hasFormat</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1aa9bbd2893531315f5a033e8fed6d84a6" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>hasMemoryProfile</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1a6ba65d02a1ca0d62a0d3d4120ef91161" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>hasSingleByteCoverage</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1ad3ee6fd0439fd878669a196179430ae5" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>hasTemporalProfile</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1abc133101f5e847ad386948fa5bb27a15" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>instrEntryBBEnabled</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1afddb50e18046c0300a21bc3b6e766081" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>instrLoopEntriesEnabled</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a642718576ce5cc227b098a14e9c068ea" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>InstrProfReader</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1afbaa5669610a1ee60d2b799857380848" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>isEOF</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1a11786ab82600e8236280d142243b17a1" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>isIRLevelProfile</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1ad725363a709c06cb91225fe938e0c819" prot="private" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>Line</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1afc646b5709aacb1e61f7efaa7cc14102" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a97d8fdc555046086e94bd70e70934ee3" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>printBinaryIds</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1abc3e79d553338e4c6aee3690f6239f5c" prot="private" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>ProfileKind</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a492a1911ce111cfe4ddf4a3364822725" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>readBinaryIds</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1aef869625c91dde9e5539eb2a417eaef4" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>readHeader</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1a7d3a3124492d7f44aeebfea0d19e0e37" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>readNextRecord</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1a82ac41fe67683b86cf94a838fcafad76" prot="private" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>readTemporalProfTraceData</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1af96e8dee455517fb60665ac236ebb60d" prot="private" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>readValueProfileData</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a6fd927accec00ab7a4178b5290fcdb4b" prot="protected" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>success</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a51d19452b19c498a18cafa947fd744ad" prot="protected" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>Symtab</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a8afe9dc475adf979112b1d545b83161d" prot="protected" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>TemporalProfTraces</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1a9103089d5bcf6859e703f7532b38b08b" prot="protected" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>TemporalProfTraceStreamSize</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1a695aae8d351cd41d0b6ae8400dc864b3" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>TextInstrProfReader</name></member>
+      <member refid="classllvm_1_1_text_instr_prof_reader_1a95a2cfc308d36df18ec1ed72bd99b140" prot="public" virt="non-virtual"><scope>llvm::TextInstrProfReader</scope><name>TextInstrProfReader</name></member>
+      <member refid="classllvm_1_1_instr_prof_reader_1ae67408dc28669b5f128825f39aef1949" prot="public" virt="virtual"><scope>llvm::TextInstrProfReader</scope><name>~InstrProfReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

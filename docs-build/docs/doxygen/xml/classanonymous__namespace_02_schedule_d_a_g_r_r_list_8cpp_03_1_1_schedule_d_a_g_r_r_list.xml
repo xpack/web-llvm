@@ -1,0 +1,2329 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</compoundname>
+    <basecompoundref refid="classllvm_1_1_schedule_d_a_g_s_d_nodes" prot="public" virt="non-virtual">llvm::ScheduleDAGSDNodes</basecompoundref>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a2f5967dcf2d7cc1aa0eda6cffffd8abd" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, 4 &gt; &gt;</type>
+        <definition>using anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::LRegsMapT =  DenseMap&lt;SUnit *, SmallVector&lt;unsigned, 4&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>LRegsMapT</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::LRegsMapT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="176" column="3" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="176" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1adf12f22003b98e03f8a1aa2c86e4b4b2" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::NeedLatency</definition>
+        <argsstring></argsstring>
+        <name>NeedLatency</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::NeedLatency</qualifiedname>
+        <briefdescription>
+<para>NeedLatency - True if the scheduler will make use of latency information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="141" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a3716f1cf6af7da4a34fb0ad31ab84389" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_scheduling_priority_queue" kindref="compound">SchedulingPriorityQueue</ref> *</type>
+        <definition>SchedulingPriorityQueue* anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::AvailableQueue</definition>
+        <argsstring></argsstring>
+        <name>AvailableQueue</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::AvailableQueue</qualifiedname>
+        <briefdescription>
+<para>AvailableQueue - The priority queue to use for the available SUnits. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="144" column="27" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a781cf002d1e7b1cde375eb335c48089a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt;</type>
+        <definition>std::vector&lt;SUnit *&gt; anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::PendingQueue</definition>
+        <argsstring></argsstring>
+        <name>PendingQueue</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::PendingQueue</qualifiedname>
+        <briefdescription>
+<para>PendingQueue - This contains all of the instructions whose operands have been issued, but their results are not ready yet (due to the latency of the operation). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Once the operands becomes available, the instruction is added to the AvailableQueue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="150" column="15" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a169e0b3dc3b79970fd63f7eaf26cbc77" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_schedule_hazard_recognizer" kindref="compound">ScheduleHazardRecognizer</ref> *</type>
+        <definition>ScheduleHazardRecognizer* anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::HazardRec</definition>
+        <argsstring></argsstring>
+        <name>HazardRec</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::HazardRec</qualifiedname>
+        <briefdescription>
+<para>HazardRec - The hazard recognizer to use. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="153" column="28" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a9b785d998cfbef3501bb6d43a3f50493" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::CurCycle</definition>
+        <argsstring></argsstring>
+        <name>CurCycle</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::CurCycle</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>CurCycle - The current scheduler state corresponds to this cycle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="156" column="12" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a01a0103daf695260127161f8866b69e5" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::MinAvailableCycle</definition>
+        <argsstring></argsstring>
+        <name>MinAvailableCycle</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::MinAvailableCycle</qualifiedname>
+        <initializer>= ~0u</initializer>
+        <briefdescription>
+<para>MinAvailableCycle - <ref refid="namespacellvm_1a60dc5ae8be8d73033ce099677e645b9b" kindref="member">Cycle</ref> of the soonest available instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="159" column="12" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a09bead3d68b728cd8e7ba7d734ead551" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::IssueCount</definition>
+        <argsstring></argsstring>
+        <name>IssueCount</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::IssueCount</qualifiedname>
+        <initializer>= 0u</initializer>
+        <briefdescription>
+<para>IssueCount - Count instructions issued in this cycle Currently valid only for bottom-up scheduling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="163" column="12" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a1d268a56ccd3f8dcec37f15b4bfc8d9f" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::NumLiveRegs</definition>
+        <argsstring></argsstring>
+        <name>NumLiveRegs</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::NumLiveRegs</qualifiedname>
+        <initializer>= 0u</initializer>
+        <briefdescription>
+<para>LiveRegDefs - A set of physical registers and their definition that are &quot;live&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These nodes must be scheduled before any other nodes that modifies the registers can be scheduled. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="168" column="12" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ae2ebda7223ea0bbcd799e7982287e359" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *[]&gt;</type>
+        <definition>std::unique_ptr&lt;SUnit*[]&gt; anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::LiveRegDefs</definition>
+        <argsstring></argsstring>
+        <name>LiveRegDefs</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::LiveRegDefs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="169" column="19" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a3695a27e0f679c21a8a8f89b3d8b912c" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *[]&gt;</type>
+        <definition>std::unique_ptr&lt;SUnit*[]&gt; anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::LiveRegGens</definition>
+        <argsstring></argsstring>
+        <name>LiveRegGens</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::LiveRegGens</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="170" column="19" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1afbe7236a16ae6d79968bbd79a73fd3ac" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *, 4 &gt;</type>
+        <definition>SmallVector&lt;SUnit*, 4&gt; anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::Interferences</definition>
+        <argsstring></argsstring>
+        <name>Interferences</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::Interferences</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="174" column="15" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1aba5cb5c79fc18dd73c716642b2542a01" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">LRegsMapT</ref></type>
+        <definition>LRegsMapT anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::LRegsMap</definition>
+        <argsstring></argsstring>
+        <name>LRegsMap</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::LRegsMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="178" column="13" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a7688b41495dc5ee9297682970dd36382" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_schedule_d_a_g_topological_sort" kindref="compound">ScheduleDAGTopologicalSort</ref></type>
+        <definition>ScheduleDAGTopologicalSort anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::Topo</definition>
+        <argsstring></argsstring>
+        <name>Topo</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::Topo</qualifiedname>
+        <briefdescription>
+<para>Topo - A topological ordering for SUnits which permits fast IsReachable and similar queries. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="182" column="30" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a758b6694bd168ae4d50f4aee109efd97" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *, <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *, 16 &gt;</type>
+        <definition>SmallDenseMap&lt;SUnit *, SUnit *, 16&gt; anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::CallSeqEndForStart</definition>
+        <argsstring></argsstring>
+        <name>CallSeqEndForStart</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::CallSeqEndForStart</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="186" column="17" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="186" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a2ddd224f4d981bb2a8ceb7d5c977f392" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::ScheduleDAGRRList</definition>
+        <argsstring>(MachineFunction &amp;mf, bool needlatency, SchedulingPriorityQueue *availqueue, CodeGenOptLevel OptLevel)</argsstring>
+        <name>ScheduleDAGRRList</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::ScheduleDAGRRList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>needlatency</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_scheduling_priority_queue" kindref="compound">SchedulingPriorityQueue</ref> *</type>
+          <declname>availqueue</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a8ec1bf8d7b792ca9fac56f8514db18d2" kindref="member">CodeGenOptLevel</ref></type>
+          <declname>OptLevel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="189" column="3" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="189" bodyend="199"/>
+        <references refid="_schedule_d_a_g_r_r_list_8cpp_1a10beddeded3621d5cca48dae7043f774">DisableSchedCycles</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1acd858ed72f11db9444617740c3622608" compoundref="_target_subtarget_info_8h" startline="97" endline="97">llvm::TargetSubtargetInfo::getInstrInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1ad73652eab6e03e092e32bde82040c8c7" compoundref="_schedule_d_a_g_s_d_nodes_8cpp" startline="50" endline="51">llvm::ScheduleDAGSDNodes::ScheduleDAGSDNodes</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a3d5aacd5fc7d6a739ce913974ed1e53d" compoundref="_schedule_d_a_g_8h" startline="579">llvm::ScheduleDAG::SUnits</references>
+        <referencedby refid="namespacellvm_1a145f77473f4a050a8e1bf0dd7e2a34fa" compoundref="_schedule_d_a_g_r_r_list_8cpp" startline="3145" endline="3156">llvm::createBURRListDAGScheduler</referencedby>
+        <referencedby refid="namespacellvm_1a24fb0e850aa86095101c2cd7110aa32b" compoundref="_schedule_d_a_g_r_r_list_8cpp" startline="3173" endline="3186">llvm::createHybridListDAGScheduler</referencedby>
+        <referencedby refid="namespacellvm_1ac2c88a3ebea5ca10491d30d01274c96d" compoundref="_schedule_d_a_g_r_r_list_8cpp" startline="3188" endline="3200">llvm::createILPListDAGScheduler</referencedby>
+        <referencedby refid="namespacellvm_1aa743cb95ae4e26544366fb66fa23f4dc" compoundref="_schedule_d_a_g_r_r_list_8cpp" startline="3159" endline="3170">llvm::createSourceListDAGScheduler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a3de1dee78b74e3a6d925d75bbc824772" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::~ScheduleDAGRRList</definition>
+        <argsstring>() override</argsstring>
+        <name>~ScheduleDAGRRList</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::~ScheduleDAGRRList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="201" column="3" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="201" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a9f958f8f55c3516c1b509f9c49cb0923" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::Schedule</definition>
+        <argsstring>() override</argsstring>
+        <name>Schedule</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::Schedule</qualifiedname>
+        <reimplements refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a6730dde277dec2e2f901917520c8b3cc">Schedule</reimplements>
+        <briefdescription>
+<para>Schedule - Schedule the DAG using list scheduling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="206" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="356" bodyend="392"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a9f718397926caadcb301ca1e00aaf68c" compoundref="_schedule_d_a_g_s_d_nodes_8h" startline="48">llvm::ScheduleDAGSDNodes::BB</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1aa88c65a5abb5774125c8d66a48d07adf" compoundref="_schedule_d_a_g_s_d_nodes_8cpp" startline="539" endline="546">llvm::ScheduleDAGSDNodes::BuildSchedGraph</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_schedule_d_a_g_r_r_list_8cpp_1a10beddeded3621d5cca48dae7043f774">DisableSchedCycles</references>
+        <references refid="namespacellvm_1a03503773241005f01b090b9862aad304" compoundref="_sparse_bit_vector_8h" startline="877" endline="889">llvm::dump</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1ad8f08e38b6a51a322e450fc0cb6351f9" compoundref="_schedule_d_a_g_s_d_nodes_8cpp" startline="714" endline="721">llvm::ScheduleDAGSDNodes::dumpSchedule</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a3d5aacd5fc7d6a739ce913974ed1e53d" compoundref="_schedule_d_a_g_8h" startline="579">llvm::ScheduleDAG::SUnits</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a418bc6d3f660325fa6d5b9fb269add62" compoundref="_schedule_d_a_g_8h" startline="576">llvm::ScheduleDAG::TRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a1feca63a87c6625122fdf74658a30566" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_schedule_hazard_recognizer" kindref="compound">ScheduleHazardRecognizer</ref> *</type>
+        <definition>ScheduleHazardRecognizer * anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::getHazardRec</definition>
+        <argsstring>()</argsstring>
+        <name>getHazardRec</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::getHazardRec</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="208" column="28" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="208" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1aff54d81ed97148c13cffefb6fee1265c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::IsReachable</definition>
+        <argsstring>(const SUnit *SU, const SUnit *TargetSU)</argsstring>
+        <name>IsReachable</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::IsReachable</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>TargetSU</declname>
+        </param>
+        <briefdescription>
+<para>IsReachable - Checks if SU is reachable from TargetSU. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="211" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="211" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a3e7e4a676407494f9cf7187b88afde67" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::WillCreateCycle</definition>
+        <argsstring>(SUnit *SU, SUnit *TargetSU)</argsstring>
+        <name>WillCreateCycle</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::WillCreateCycle</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>TargetSU</declname>
+        </param>
+        <briefdescription>
+<para>WillCreateCycle - Returns true if adding an edge from SU to TargetSU will create a cycle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="217" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="217" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ab0b0b9b17a48e53bd335408d459656f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::AddPredQueued</definition>
+        <argsstring>(SUnit *SU, const SDep &amp;D)</argsstring>
+        <name>AddPredQueued</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::AddPredQueued</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_dep" kindref="compound">SDep</ref> &amp;</type>
+          <declname>D</declname>
+        </param>
+        <briefdescription>
+<para>AddPredQueued - Queues and update to add a predecessor edge to <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> SU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns true if this is a new predecessor. Does <emphasis>NOT</emphasis> update the topological ordering! It just queues an update. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="224" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="224" bodyend="227"/>
+        <references refid="classllvm_1_1_s_unit_1af92bf49ed4846e026e68c380d74d7b15" compoundref="_schedule_d_a_g_8cpp" startline="106" endline="173">llvm::SUnit::addPred</references>
+        <references refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82">D</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a81edbd7ea9536622badd16797bb7fb9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::AddPred</definition>
+        <argsstring>(SUnit *SU, const SDep &amp;D)</argsstring>
+        <name>AddPred</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::AddPred</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_dep" kindref="compound">SDep</ref> &amp;</type>
+          <declname>D</declname>
+        </param>
+        <briefdescription>
+<para>AddPred - adds a predecessor edge to <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> SU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns true if this is a new predecessor. Updates the topological ordering if required. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="232" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="232" bodyend="235"/>
+        <references refid="classllvm_1_1_s_unit_1af92bf49ed4846e026e68c380d74d7b15" compoundref="_schedule_d_a_g_8cpp" startline="106" endline="173">llvm::SUnit::addPred</references>
+        <references refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82">D</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a3a3d1204e84d95a7bf978e1f3bc1debe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::RemovePred</definition>
+        <argsstring>(SUnit *SU, const SDep &amp;D)</argsstring>
+        <name>RemovePred</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::RemovePred</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_dep" kindref="compound">SDep</ref> &amp;</type>
+          <declname>D</declname>
+        </param>
+        <briefdescription>
+<para>RemovePred - removes a predecessor edge from <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> SU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This returns true if an edge was removed. Updates the topological ordering if required. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="240" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="240" bodyend="243"/>
+        <references refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82">D</references>
+        <references refid="classllvm_1_1_s_unit_1a6d3233165db1e6be5c44060cd4a95461" compoundref="_schedule_d_a_g_8cpp" startline="175" endline="215">llvm::SUnit::removePred</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1abbcc438409af7c1f5a197ad089e88709" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::isReady</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>isReady</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::isReady</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="246" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="246" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a6b657c21d37ea4e6670c169f62104444" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::ReleasePred</definition>
+        <argsstring>(SUnit *SU, const SDep *PredEdge)</argsstring>
+        <name>ReleasePred</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::ReleasePred</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_dep" kindref="compound">SDep</ref> *</type>
+          <declname>PredEdge</declname>
+        </param>
+        <briefdescription>
+<para>ReleasePred - Decrement the NumSuccsLeft count of a predecessor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Add it to the AvailableQueue if the count reaches zero. Also update its cycle bound. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="251" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="400" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a71f9ee19c4785d50729582ff915ec6e9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::ReleasePredecessors</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>ReleasePredecessors</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::ReleasePredecessors</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>Call ReleasePred for each predecessor, then update register live def/gen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Always update LiveRegDefs for a register dependence even if the current SU also defines the register. This effectively create one large live range across a sequence of two-address node. This is important because the entire chain must be scheduled together. Example:</para>
+<para>flags = (3) add flags = (2) addc flags flags = (1) addc flags</para>
+<para>results in</para>
+<para>LiveRegDefs[flags] = 3 LiveRegGens[flags] = 1</para>
+<para>If (2) addc is unscheduled, then (1) addc must also be unscheduled to avoid interference on flags. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="252" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="556" bodyend="597"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a9aed47f4562fe7753e80220ab25e0dea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::ReleasePending</definition>
+        <argsstring>()</argsstring>
+        <name>ReleasePending</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::ReleasePending</qualifiedname>
+        <briefdescription>
+<para>Check to see if any of the pending instructions are ready to issue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If so, add them to the available queue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="253" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="601" bodyend="628"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ad1621d67a87ac92efc1906b5b8167825" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::AdvanceToCycle</definition>
+        <argsstring>(unsigned NextCycle)</argsstring>
+        <name>AdvanceToCycle</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::AdvanceToCycle</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NextCycle</declname>
+        </param>
+        <briefdescription>
+<para>Move the scheduler state forward by the specified number of Cycles. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="254" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="631" bodyend="649"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ae4c2af672726658ea403713e17491483" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::AdvancePastStalls</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>AdvancePastStalls</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::AdvancePastStalls</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>Move the scheduler state forward until the specified node&apos;s dependents are ready and can be scheduled with no resource conflicts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="255" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="653" bodyend="691"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1acbb8b96518c5b89e76b69fafd1852d74" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::EmitNode</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>EmitNode</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::EmitNode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> this <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> in the HazardRecognizer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Does not update CurCycle. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="256" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="695" bodyend="731"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a8260a8d300001afdd3e5672e2ba656be" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::ScheduleNodeBottomUp</definition>
+        <argsstring>(SUnit *)</argsstring>
+        <name>ScheduleNodeBottomUp</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::ScheduleNodeBottomUp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <defname>SU</defname>
+        </param>
+        <briefdescription>
+<para>ScheduleNodeBottomUp - Add the node to the schedule. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Decrement the pending count of its predecessors. If a predecessor pending count is zero, add it to the Available queue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="257" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="738" bodyend="817"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a819e28314b950f85d9d628ef945c61ad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::CapturePred</definition>
+        <argsstring>(SDep *PredEdge)</argsstring>
+        <name>CapturePred</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::CapturePred</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_dep" kindref="compound">SDep</ref> *</type>
+          <declname>PredEdge</declname>
+        </param>
+        <briefdescription>
+<para>CapturePred - This does the opposite of ReleasePred. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Since SU is being unscheduled, increase the succ left count of its predecessors. Remove them from AvailableQueue if necessary. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="258" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="822" bodyend="833"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a439188be2ce20d954b5e1cca6af44c4f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::UnscheduleNodeBottomUp</definition>
+        <argsstring>(SUnit *)</argsstring>
+        <name>UnscheduleNodeBottomUp</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::UnscheduleNodeBottomUp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <defname>SU</defname>
+        </param>
+        <briefdescription>
+<para>UnscheduleNodeBottomUp - Remove the node from the schedule, update its and its predecessor states to reflect the change. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="259" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="837" bodyend="925"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1acabc52a663e09454e24b0b0e9452aba7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::RestoreHazardCheckerBottomUp</definition>
+        <argsstring>()</argsstring>
+        <name>RestoreHazardCheckerBottomUp</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::RestoreHazardCheckerBottomUp</qualifiedname>
+        <briefdescription>
+<para>After backtracking, the hazard checker needs to be restored to a state corresponding the current cycle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="260" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="929" bodyend="946"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a888942912054fc4d14b1aa2accb381eb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::BacktrackBottomUp</definition>
+        <argsstring>(SUnit *, SUnit *)</argsstring>
+        <name>BacktrackBottomUp</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::BacktrackBottomUp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <defname>SU</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <defname>BtSU</defname>
+        </param>
+        <briefdescription>
+<para>BacktrackBottomUp - Backtrack scheduling to a previous cycle specified in BTCycle in order to schedule a specific node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="261" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="950" bodyend="970"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ac8bac1915315894107f9b1ef3cc78d14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * ScheduleDAGRRList::TryUnfoldSU</definition>
+        <argsstring>(SUnit *)</argsstring>
+        <name>TryUnfoldSU</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::TryUnfoldSU</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <defname>SU</defname>
+        </param>
+        <briefdescription>
+<para>TryUnfold - Attempt to unfold. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="262" column="9" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="982" bodyend="1127"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a8470761d2a1affcfe4ade9a792eb8687" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * ScheduleDAGRRList::CopyAndMoveSuccessors</definition>
+        <argsstring>(SUnit *)</argsstring>
+        <name>CopyAndMoveSuccessors</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::CopyAndMoveSuccessors</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <defname>SU</defname>
+        </param>
+        <briefdescription>
+<para>CopyAndMoveSuccessors - Clone the specified node and move its scheduled successors to the newly created node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="263" column="9" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="1131" bodyend="1215"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1aea41cbab319e5c468817bcf8f4bcc5df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::InsertCopiesAndMoveSuccs</definition>
+        <argsstring>(SUnit *, unsigned, const TargetRegisterClass *, const TargetRegisterClass *, SmallVectorImpl&lt; SUnit * &gt; &amp;)</argsstring>
+        <name>InsertCopiesAndMoveSuccs</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::InsertCopiesAndMoveSuccs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <defname>SU</defname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <defname>Reg</defname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_class" kindref="compound">TargetRegisterClass</ref> *</type>
+          <defname>DestRC</defname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_class" kindref="compound">TargetRegisterClass</ref> *</type>
+          <defname>SrcRC</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt; &amp;</type>
+          <defname>Copies</defname>
+        </param>
+        <briefdescription>
+<para>InsertCopiesAndMoveSuccs - Insert register copies and move all scheduled successors of the given <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> to the last copy. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="264" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="1219" bodyend="1268"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ad7290c1b4f8e316ccc3229d8edd1248c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ScheduleDAGRRList::DelayForLiveRegsBottomUp</definition>
+        <argsstring>(SUnit *, SmallVectorImpl&lt; unsigned &gt; &amp;)</argsstring>
+        <name>DelayForLiveRegsBottomUp</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::DelayForLiveRegsBottomUp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <defname>SU</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <defname>LRegs</defname>
+        </param>
+        <briefdescription>
+<para>DelayForLiveRegsBottomUp - Returns true if it is necessary to delay scheduling of the given node to satisfy live physical register dependencies. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the specific node is the last one that&apos;s available to schedule, do whatever is necessary (i.e. backtracking or cloning) to make it possible. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="268" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="1348" bodyend="1440"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ae774754e344e8d0e9f88fc3afc539282" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::releaseInterferences</definition>
+        <argsstring>(unsigned Reg=0)</argsstring>
+        <name>releaseInterferences</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::releaseInterferences</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Reg</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="270" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="1442" bodyend="1465"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a757fc93ce8f64d83757b560ba4e19be5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * ScheduleDAGRRList::PickNodeToScheduleBottomUp</definition>
+        <argsstring>()</argsstring>
+        <name>PickNodeToScheduleBottomUp</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::PickNodeToScheduleBottomUp</qualifiedname>
+        <briefdescription>
+<para>Return a node that can be scheduled in this cycle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Requirements: (1) Ready: latency has been satisfied (2) No Hazards: resources are available (3) No Interferences: may unschedule to break register interferences. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="272" column="9" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="1471" bodyend="1600"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ac00a500ceca90de69f13162113dcf316" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScheduleDAGRRList::ListScheduleBottomUp</definition>
+        <argsstring>()</argsstring>
+        <name>ListScheduleBottomUp</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::ListScheduleBottomUp</qualifiedname>
+        <briefdescription>
+<para>ListScheduleBottomUp - The main loop of list scheduling for bottom-up schedulers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="273" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="1604" bodyend="1645"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ac0daae9d4a5734cabcc527cb9746603b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::CreateNewSUnit</definition>
+        <argsstring>(SDNode *N)</argsstring>
+        <name>CreateNewSUnit</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::CreateNewSUnit</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_d_node" kindref="compound">SDNode</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>CreateNewSUnit - Creates a new <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> and returns a pointer to it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="276" column="9" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="276" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a9c21a0982a87fb677decb94a2f19e8f6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::CreateClone</definition>
+        <argsstring>(SUnit *N)</argsstring>
+        <name>CreateClone</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::CreateClone</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>CreateClone - Creates a new <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> from an existing one. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="286" column="9" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="286" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ae26de31ad5fc73770ed9112c0871bc14" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::forceUnitLatencies</definition>
+        <argsstring>() const override</argsstring>
+        <name>forceUnitLatencies</name>
+        <qualifiedname>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList::forceUnitLatencies</qualifiedname>
+        <reimplements refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a730a3e9cea2f0a6383aacbb13b40dd10">forceUnitLatencies</reimplements>
+        <briefdescription>
+<para>forceUnitLatencies - Register-pressure-reducing scheduling doesn&apos;t need actual latency information but the hybrid scheduler does. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="297" column="8" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="297" bodyend="299"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list" kindref="compound">ScheduleDAGRRList</ref> - The actual register reduction list scheduler implementation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This supports both top-down and bottom-up scheduling. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</label>
+        <link refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::ScheduleDAG</label>
+        <link refid="classllvm_1_1_schedule_d_a_g"/>
+      </node>
+      <node id="2">
+        <label>llvm::ScheduleDAGSDNodes</label>
+        <link refid="classllvm_1_1_schedule_d_a_g_s_d_nodes"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="23">
+        <label>BasicBlockSection</label>
+      </node>
+      <node id="12">
+        <label>CodeGenOptLevel</label>
+      </node>
+      <node id="10">
+        <label>Model</label>
+      </node>
+      <node id="37">
+        <label>DebugCompressionType</label>
+      </node>
+      <node id="29">
+        <label>DebuggerKind</label>
+      </node>
+      <node id="36">
+        <label>DwarfDirectory</label>
+      </node>
+      <node id="28">
+        <label>EABI</label>
+      </node>
+      <node id="34">
+        <label>EmitDwarfUnwindType</label>
+      </node>
+      <node id="30">
+        <label>ExceptionHandling</label>
+      </node>
+      <node id="26">
+        <label>FPOpFusionMode</label>
+      </node>
+      <node id="25">
+        <label>ABIType</label>
+      </node>
+      <node id="77">
+        <label>FoldingSetNode</label>
+        <link refid="classllvm_1_1_folding_set_base_1_1_node"/>
+      </node>
+      <node id="21">
+        <label>GlobalISelAbortMode</label>
+      </node>
+      <node id="90">
+        <label>OptionsT::node_base_type</label>
+      </node>
+      <node id="9">
+        <label>Model</label>
+      </node>
+      <node id="148">
+        <label>ReservationKinds</label>
+      </node>
+      <node id="131">
+        <label>Preference</label>
+      </node>
+      <node id="51">
+        <label>Size_T</label>
+      </node>
+      <node id="62">
+        <label>SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_machine_function_1_1_debug_substitution_01_4"/>
+      </node>
+      <node id="129">
+        <label>SmallVectorSizeType&lt; llvm::SDep &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_s_dep_01_4"/>
+      </node>
+      <node id="22">
+        <label>SwiftAsyncFramePointerMode</label>
+      </node>
+      <node id="27">
+        <label>Model</label>
+      </node>
+      <node id="102">
+        <label>anonymous:@370244304303264220336170167243112326265100173335</label>
+      </node>
+      <node id="1">
+        <label>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</label>
+        <link refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="53">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="136">
+        <label>ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+        <childnode refid="83" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="108">
+        <label>ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+        <childnode refid="83" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="113">
+        <label>ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+        <childnode refid="83" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="80">
+        <label>ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+        <childnode refid="83" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="94">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+        <childnode refid="83" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>int</label>
+      </node>
+      <node id="143">
+        <label>int16_t</label>
+      </node>
+      <node id="120">
+        <label>int8_t</label>
+      </node>
+      <node id="123">
+        <label>llvm::ArrayRef&lt; T &gt;</label>
+        <link refid="classllvm_1_1_array_ref"/>
+      </node>
+      <node id="122">
+        <label>llvm::ArrayRef&lt; uint16_t &gt;</label>
+        <link refid="classllvm_1_1_array_ref"/>
+        <childnode refid="123" relation="template-instance">
+          <edgelabel>&lt; uint16_t &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::DataLayout</label>
+        <link refid="classllvm_1_1_data_layout"/>
+      </node>
+      <node id="70">
+        <label>llvm::DebugEpochBase</label>
+        <link refid="classllvm_1_1_debug_epoch_base"/>
+      </node>
+      <node id="71">
+        <label>llvm::DenseMap&lt; KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>llvm::DenseMap&lt; unsigned, llvm::MachineFunction::DebugPHIRegallocPos &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="69" relation="public-inheritance">
+        </childnode>
+        <childnode refid="71" relation="template-instance">
+          <edgelabel>&lt; unsigned, llvm::MachineFunction::DebugPHIRegallocPos &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="72">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="70" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="70" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="142">
+        <label>llvm::InstrItinerary</label>
+        <link refid="structllvm_1_1_instr_itinerary"/>
+        <childnode refid="143" relation="usage">
+          <edgelabel>NumMicroOps</edgelabel>
+        </childnode>
+        <childnode refid="103" relation="usage">
+          <edgelabel>FirstOperandCycle</edgelabel>
+          <edgelabel>FirstStage</edgelabel>
+          <edgelabel>LastOperandCycle</edgelabel>
+          <edgelabel>LastStage</edgelabel>
+        </childnode>
+      </node>
+      <node id="139">
+        <label>llvm::InstrItineraryData</label>
+        <link refid="classllvm_1_1_instr_itinerary_data"/>
+        <childnode refid="140" relation="usage">
+          <edgelabel>SchedModel</edgelabel>
+        </childnode>
+        <childnode refid="147" relation="usage">
+          <edgelabel>Stages</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>Forwardings</edgelabel>
+          <edgelabel>OperandCycles</edgelabel>
+        </childnode>
+        <childnode refid="142" relation="usage">
+          <edgelabel>Itineraries</edgelabel>
+        </childnode>
+      </node>
+      <node id="147">
+        <label>llvm::InstrStage</label>
+        <link refid="structllvm_1_1_instr_stage"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>Cycles_</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>Units_</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>NextCycles_</edgelabel>
+        </childnode>
+        <childnode refid="148" relation="usage">
+          <edgelabel>Kind_</edgelabel>
+        </childnode>
+      </node>
+      <node id="121">
+        <label>llvm::LaneBitmask</label>
+        <link refid="structllvm_1_1_lane_bitmask"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>FormatStr</edgelabel>
+        </childnode>
+      </node>
+      <node id="144">
+        <label>llvm::MCExtraProcessorInfo</label>
+        <link refid="structllvm_1_1_m_c_extra_processor_info"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>LoadQueueID</edgelabel>
+          <edgelabel>MaxRetirePerCycle</edgelabel>
+          <edgelabel>NumRegisterCostEntries</edgelabel>
+          <edgelabel>NumRegisterFiles</edgelabel>
+          <edgelabel>ReorderBufferSize</edgelabel>
+          <edgelabel>StoreQueueID</edgelabel>
+        </childnode>
+        <childnode refid="145" relation="usage">
+          <edgelabel>RegisterFiles</edgelabel>
+        </childnode>
+        <childnode refid="146" relation="usage">
+          <edgelabel>RegisterCostTable</edgelabel>
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm::MCInstrInfo</label>
+        <link refid="classllvm_1_1_m_c_instr_info"/>
+      </node>
+      <node id="141">
+        <label>llvm::MCProcResourceDesc</label>
+        <link refid="structllvm_1_1_m_c_proc_resource_desc"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>Name</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>NumUnits</edgelabel>
+          <edgelabel>SubUnitsIdxBegin</edgelabel>
+          <edgelabel>SuperIdx</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>BufferSize</edgelabel>
+        </childnode>
+      </node>
+      <node id="117">
+        <label>llvm::MCRegisterClass</label>
+        <link refid="classllvm_1_1_m_c_register_class"/>
+        <childnode refid="103" relation="usage">
+          <edgelabel>ID</edgelabel>
+          <edgelabel>RegSetSize</edgelabel>
+          <edgelabel>RegSizeInBits</edgelabel>
+          <edgelabel>RegsBegin</edgelabel>
+          <edgelabel>RegsSize</edgelabel>
+        </childnode>
+        <childnode refid="118" relation="usage">
+          <edgelabel>RegSet</edgelabel>
+        </childnode>
+        <childnode refid="119" relation="usage">
+          <edgelabel>NameIdx</edgelabel>
+        </childnode>
+        <childnode refid="120" relation="usage">
+          <edgelabel>CopyCost</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>Allocatable</edgelabel>
+          <edgelabel>BaseClass</edgelabel>
+        </childnode>
+      </node>
+      <node id="146">
+        <label>llvm::MCRegisterCostEntry</label>
+        <link refid="structllvm_1_1_m_c_register_cost_entry"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>Cost</edgelabel>
+          <edgelabel>RegisterClassID</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>AllowMoveElimination</edgelabel>
+        </childnode>
+      </node>
+      <node id="145">
+        <label>llvm::MCRegisterFileDesc</label>
+        <link refid="structllvm_1_1_m_c_register_file_desc"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>Name</edgelabel>
+        </childnode>
+        <childnode refid="103" relation="usage">
+          <edgelabel>MaxMovesEliminatedPerCycle</edgelabel>
+          <edgelabel>NumPhysRegs</edgelabel>
+          <edgelabel>NumRegisterCostEntries</edgelabel>
+          <edgelabel>RegisterCostEntryIdx</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>AllowZeroMoveEliminationOnly</edgelabel>
+        </childnode>
+      </node>
+      <node id="42">
+        <label>llvm::MCRegisterInfo</label>
+        <link refid="classllvm_1_1_m_c_register_info"/>
+      </node>
+      <node id="115">
+        <label>llvm::MCSchedClassDesc</label>
+        <link refid="structllvm_1_1_m_c_sched_class_desc"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>InvalidNumMicroOps</edgelabel>
+          <edgelabel>VariantNumMicroOps</edgelabel>
+        </childnode>
+        <childnode refid="53" relation="usage">
+          <edgelabel>Name</edgelabel>
+        </childnode>
+        <childnode refid="103" relation="usage">
+          <edgelabel>BeginGroup</edgelabel>
+          <edgelabel>EndGroup</edgelabel>
+          <edgelabel>NumMicroOps</edgelabel>
+          <edgelabel>NumReadAdvanceEntries</edgelabel>
+          <edgelabel>NumWriteLatencyEntries</edgelabel>
+          <edgelabel>NumWriteProcResEntries</edgelabel>
+          <edgelabel>ReadAdvanceIdx</edgelabel>
+          <edgelabel>RetireOOO</edgelabel>
+          <edgelabel>WriteLatencyIdx</edgelabel>
+          <edgelabel>WriteProcResIdx</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+      </node>
+      <node id="140">
+        <label>llvm::MCSchedModel</label>
+        <link refid="structllvm_1_1_m_c_sched_model"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>DefaultHighLatency</edgelabel>
+          <edgelabel>DefaultIssueWidth</edgelabel>
+          <edgelabel>DefaultLoadLatency</edgelabel>
+          <edgelabel>DefaultLoopMicroOpBufferSize</edgelabel>
+          <edgelabel>DefaultMicroOpBufferSize</edgelabel>
+          <edgelabel>DefaultMispredictPenalty</edgelabel>
+          <edgelabel>HighLatency</edgelabel>
+          <edgelabel>IssueWidth</edgelabel>
+          <edgelabel>LoadLatency</edgelabel>
+          <edgelabel>LoopMicroOpBufferSize</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>CompleteModel</edgelabel>
+          <edgelabel>EnableIntervals</edgelabel>
+          <edgelabel>PostRAScheduler</edgelabel>
+        </childnode>
+        <childnode refid="141" relation="usage">
+          <edgelabel>ProcResourceTable</edgelabel>
+        </childnode>
+        <childnode refid="115" relation="usage">
+          <edgelabel>SchedClassTable</edgelabel>
+        </childnode>
+        <childnode refid="142" relation="usage">
+          <edgelabel>InstrItineraries</edgelabel>
+        </childnode>
+        <childnode refid="144" relation="usage">
+          <edgelabel>ExtraProcessorInfo</edgelabel>
+        </childnode>
+        <childnode refid="140" relation="usage">
+          <edgelabel>Default</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::MCTargetOptions</label>
+        <link refid="classllvm_1_1_m_c_target_options"/>
+        <childnode refid="32" relation="usage">
+          <edgelabel>AsmVerbose</edgelabel>
+          <edgelabel>Crel</edgelabel>
+          <edgelabel>Dwarf64</edgelabel>
+          <edgelabel>EmitCompactUnwindNonCanonical</edgelabel>
+          <edgelabel>FDPIC</edgelabel>
+          <edgelabel>ImplicitMapSyms</edgelabel>
+          <edgelabel>MCFatalWarnings</edgelabel>
+          <edgelabel>MCIncrementalLinkerCompatible</edgelabel>
+          <edgelabel>MCNoDeprecatedWarn</edgelabel>
+          <edgelabel>MCNoExecStack</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>OutputAsmVariant</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>EmitDwarfUnwind</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>DwarfVersion</edgelabel>
+        </childnode>
+        <childnode refid="36" relation="usage">
+          <edgelabel>MCUseDwarfDirectory</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="usage">
+          <edgelabel>CompressDebugSections</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>ABIName</edgelabel>
+          <edgelabel>Argv0</edgelabel>
+          <edgelabel>AsSecureLogFile</edgelabel>
+          <edgelabel>AssemblyLanguage</edgelabel>
+          <edgelabel>CommandlineArgs</edgelabel>
+          <edgelabel>SplitDwarfFile</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>IASSearchPaths</edgelabel>
+        </childnode>
+      </node>
+      <node id="132">
+        <label>llvm::MachineBasicBlock</label>
+        <link refid="classllvm_1_1_machine_basic_block"/>
+        <childnode refid="133" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm::MachineFunction</label>
+        <link refid="classllvm_1_1_machine_function"/>
+        <childnode refid="44" relation="usage">
+          <edgelabel>VariableDbgInfos</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>DebugInstrNumberingCount</edgelabel>
+          <edgelabel>DebugOperandMemNumber</edgelabel>
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>DebugValueSubstitutions</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>DebugPHIPositions</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>UseDebugInstrRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="104">
+        <label>llvm::MachineInstr</label>
+        <link refid="classllvm_1_1_machine_instr"/>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>llvm::MachineRegisterInfo</label>
+        <link refid="classllvm_1_1_machine_register_info"/>
+      </node>
+      <node id="76">
+        <label>llvm::SDNode</label>
+        <link refid="classllvm_1_1_s_d_node"/>
+        <childnode refid="77" relation="public-inheritance">
+        </childnode>
+        <childnode refid="78" relation="public-inheritance">
+        </childnode>
+        <childnode refid="53" relation="usage">
+          <edgelabel>RawSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="96" relation="usage">
+          <edgelabel>SDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="97" relation="usage">
+          <edgelabel>ConstantSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="98" relation="usage">
+          <edgelabel>MemSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="99" relation="usage">
+          <edgelabel>LSBaseSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="100" relation="usage">
+          <edgelabel>LoadSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="101" relation="usage">
+          <edgelabel>StoreSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="102" relation="usage">
+          <edgelabel>@370244304303264220336170167243112326265100173335</edgelabel>
+        </childnode>
+        <childnode refid="103" relation="usage">
+          <edgelabel>PersistentId</edgelabel>
+        </childnode>
+      </node>
+      <node id="97">
+        <label>llvm::SDNode::ConstantSDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_constant_s_d_node_bitfields"/>
+      </node>
+      <node id="99">
+        <label>llvm::SDNode::LSBaseSDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_l_s_base_s_d_node_bitfields"/>
+      </node>
+      <node id="100">
+        <label>llvm::SDNode::LoadSDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_load_s_d_node_bitfields"/>
+      </node>
+      <node id="98">
+        <label>llvm::SDNode::MemSDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_mem_s_d_node_bitfields"/>
+      </node>
+      <node id="96">
+        <label>llvm::SDNode::SDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_s_d_node_bitfields"/>
+      </node>
+      <node id="101">
+        <label>llvm::SDNode::StoreSDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_store_s_d_node_bitfields"/>
+      </node>
+      <node id="75">
+        <label>llvm::SUnit</label>
+        <link refid="classllvm_1_1_s_unit"/>
+        <childnode refid="76" relation="usage">
+          <edgelabel>Node</edgelabel>
+        </childnode>
+        <childnode refid="104" relation="usage">
+          <edgelabel>Instr</edgelabel>
+        </childnode>
+        <childnode refid="75" relation="usage">
+          <edgelabel>OrigNode</edgelabel>
+        </childnode>
+        <childnode refid="115" relation="usage">
+          <edgelabel>SchedClass</edgelabel>
+        </childnode>
+        <childnode refid="116" relation="usage">
+          <edgelabel>CopyDstRC</edgelabel>
+          <edgelabel>CopySrcRC</edgelabel>
+        </childnode>
+        <childnode refid="124" relation="usage">
+          <edgelabel>Preds</edgelabel>
+          <edgelabel>Succs</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>BotReadyCycle</edgelabel>
+          <edgelabel>Latency</edgelabel>
+          <edgelabel>NodeNum</edgelabel>
+          <edgelabel>NodeQueueId</edgelabel>
+          <edgelabel>NumPreds</edgelabel>
+          <edgelabel>NumPredsLeft</edgelabel>
+          <edgelabel>NumRegDefsLeft</edgelabel>
+          <edgelabel>NumSuccs</edgelabel>
+          <edgelabel>NumSuccsLeft</edgelabel>
+          <edgelabel>TopReadyCycle</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>hasPhysRegClobbers</edgelabel>
+          <edgelabel>hasPhysRegDefs</edgelabel>
+          <edgelabel>hasPhysRegUses</edgelabel>
+          <edgelabel>hasReservedResource</edgelabel>
+          <edgelabel>isAvailable</edgelabel>
+          <edgelabel>isCall</edgelabel>
+          <edgelabel>isCallOp</edgelabel>
+          <edgelabel>isCloned</edgelabel>
+          <edgelabel>isCommutable</edgelabel>
+          <edgelabel>isPending</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="131" relation="usage">
+          <edgelabel>SchedulingPref</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::ScheduleDAG</label>
+        <link refid="classllvm_1_1_schedule_d_a_g"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>TM</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>TII</edgelabel>
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>TRI</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>MF</edgelabel>
+        </childnode>
+        <childnode refid="73" relation="usage">
+          <edgelabel>MRI</edgelabel>
+        </childnode>
+        <childnode refid="74" relation="usage">
+          <edgelabel>SUnits</edgelabel>
+        </childnode>
+        <childnode refid="75" relation="usage">
+          <edgelabel>EntrySU</edgelabel>
+          <edgelabel>ExitSU</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>StressSched</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::ScheduleDAGSDNodes</label>
+        <link refid="classllvm_1_1_schedule_d_a_g_s_d_nodes"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="132" relation="usage">
+          <edgelabel>BB</edgelabel>
+        </childnode>
+        <childnode refid="138" relation="usage">
+          <edgelabel>DAG</edgelabel>
+        </childnode>
+        <childnode refid="139" relation="usage">
+          <edgelabel>InstrItins</edgelabel>
+        </childnode>
+        <childnode refid="149" relation="usage">
+          <edgelabel>Sequence</edgelabel>
+        </childnode>
+      </node>
+      <node id="138">
+        <label>llvm::SelectionDAG</label>
+        <link refid="classllvm_1_1_selection_d_a_g"/>
+        <childnode refid="32" relation="usage">
+          <edgelabel>NewNodesMustHaveLegalTypes</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>MaxRecursionDepth</edgelabel>
+        </childnode>
+      </node>
+      <node id="54">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="55" relation="public-inheritance">
+        </childnode>
+        <childnode refid="56" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>llvm::SmallVector&lt; VariableDbgInfo, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+        <childnode refid="52" relation="private-inheritance">
+        </childnode>
+        <childnode refid="54" relation="template-instance">
+          <edgelabel>&lt; VariableDbgInfo, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="57">
+        <label>llvm::SmallVector&lt; llvm::MachineFunction::DebugSubstitution, 8 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="58" relation="public-inheritance">
+        </childnode>
+        <childnode refid="66" relation="private-inheritance">
+        </childnode>
+        <childnode refid="54" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution, 8 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="124">
+        <label>llvm::SmallVector&lt; llvm::SDep, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+        <childnode refid="130" relation="private-inheritance">
+        </childnode>
+        <childnode refid="54" relation="template-instance">
+          <edgelabel>&lt; llvm::SDep, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="49">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="51" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="48">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="49" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="62" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="128">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::SDep &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="129" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::SDep &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="65">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>llvm::SmallVectorImpl&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+        <childnode refid="65" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="125">
+        <label>llvm::SmallVectorImpl&lt; llvm::SDep &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="126" relation="public-inheritance">
+        </childnode>
+        <childnode refid="65" relation="template-instance">
+          <edgelabel>&lt; llvm::SDep &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="67">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="56">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="52">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="66">
+        <label>llvm::SmallVectorStorage&lt; llvm::MachineFunction::DebugSubstitution, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="67" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="130">
+        <label>llvm::SmallVectorStorage&lt; llvm::SDep, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="67" relation="template-instance">
+          <edgelabel>&lt; llvm::SDep, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="64">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="59">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="60" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="126">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::SDep &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="127" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="template-instance">
+          <edgelabel>&lt; llvm::SDep &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="63">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="61" relation="public-inheritance">
+        </childnode>
+        <childnode refid="63" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="127">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::SDep &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="128" relation="public-inheritance">
+        </childnode>
+        <childnode refid="63" relation="template-instance">
+          <edgelabel>&lt; llvm::SDep &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::Target</label>
+        <link refid="classllvm_1_1_target"/>
+      </node>
+      <node id="39">
+        <label>llvm::TargetInstrInfo</label>
+        <link refid="classllvm_1_1_target_instr_info"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>CommuteAnyOperandIndex</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::TargetMachine</label>
+        <link refid="classllvm_1_1_target_machine"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>TheTarget</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>DL</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>TargetTriple</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>TargetCPU</edgelabel>
+          <edgelabel>TargetFS</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>RM</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>CMModel</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>LargeDataThreshold</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>OptLevel</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>AsmInfo</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>MRI</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>MII</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>STI</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>DefaultSjLjDataSize</edgelabel>
+          <edgelabel>O0WantsFastISel</edgelabel>
+          <edgelabel>RequireStructuredCFG</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>PGOOption</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>Options</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::TargetOptions</label>
+        <link refid="classllvm_1_1_target_options"/>
+        <childnode refid="20" relation="usage">
+          <edgelabel>BinutilsVersion</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>ApproxFuncFPMath</edgelabel>
+          <edgelabel>BBAddrMap</edgelabel>
+          <edgelabel>DataSections</edgelabel>
+          <edgelabel>DebugStrictDwarf</edgelabel>
+          <edgelabel>DisableIntegratedAS</edgelabel>
+          <edgelabel>EmitAddrsig</edgelabel>
+          <edgelabel>EmitCallSiteInfo</edgelabel>
+          <edgelabel>EmitStackSizeSection</edgelabel>
+          <edgelabel>EmulatedTLS</edgelabel>
+          <edgelabel>EnableAIXExtendedAltivecABI</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>GlobalISelAbort</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>SwiftAsyncFramePointer</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>BBSections</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>BBSectionsFuncListBuf</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>ObjectFilenameForDebug</edgelabel>
+          <edgelabel>StackUsageOutput</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>FloatABIType</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>AllowFPOpFusion</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>ThreadModel</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>EABIVersion</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>DebuggerTuning</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>ExceptionModel</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>MCOptions</edgelabel>
+        </childnode>
+      </node>
+      <node id="116">
+        <label>llvm::TargetRegisterClass</label>
+        <link refid="classllvm_1_1_target_register_class"/>
+        <childnode refid="117" relation="usage">
+          <edgelabel>MC</edgelabel>
+        </childnode>
+        <childnode refid="119" relation="usage">
+          <edgelabel>SubClassMask</edgelabel>
+        </childnode>
+        <childnode refid="103" relation="usage">
+          <edgelabel>SuperClassesSize</edgelabel>
+          <edgelabel>SuperRegIndices</edgelabel>
+        </childnode>
+        <childnode refid="121" relation="usage">
+          <edgelabel>LaneMask</edgelabel>
+        </childnode>
+        <childnode refid="118" relation="usage">
+          <edgelabel>AllocationPriority</edgelabel>
+          <edgelabel>TSFlags</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>CoveredBySubRegs</edgelabel>
+          <edgelabel>GlobalPriority</edgelabel>
+          <edgelabel>HasDisjunctSubRegs</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>SuperClasses</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>OrderFunc</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm::TargetRegisterInfo</label>
+        <link refid="classllvm_1_1_target_register_info"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::Triple</label>
+        <link refid="classllvm_1_1_triple"/>
+      </node>
+      <node id="86">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="82">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="85">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="84">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+        <childnode refid="85" relation="template-instance">
+          <edgelabel>&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="81">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="88">
+        <label>llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+      </node>
+      <node id="91">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="137">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="109">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="114">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="87">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="95">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="92">
+        <label>llvm::ilist_node&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="93" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="134">
+        <label>llvm::ilist_node&lt; MachineBasicBlock, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="135" relation="public-inheritance">
+        </childnode>
+        <childnode refid="92" relation="template-instance">
+          <edgelabel>&lt; MachineBasicBlock, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="106">
+        <label>llvm::ilist_node&lt; MachineInstr, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="107" relation="public-inheritance">
+        </childnode>
+        <childnode refid="92" relation="template-instance">
+          <edgelabel>&lt; MachineInstr, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="111">
+        <label>llvm::ilist_node&lt; NodeTy, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="112" relation="public-inheritance">
+        </childnode>
+        <childnode refid="92" relation="template-instance">
+          <edgelabel>&lt; NodeTy, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="78">
+        <label>llvm::ilist_node&lt; SDNode &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="79" relation="public-inheritance">
+        </childnode>
+        <childnode refid="92" relation="template-instance">
+          <edgelabel>&lt; SDNode &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="83">
+        <label>llvm::ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+        <childnode refid="86" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>llvm::ilist_node_impl&lt; OptionsT &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="90" relation="private-inheritance">
+        </childnode>
+        <childnode refid="91" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="136" relation="private-inheritance">
+        </childnode>
+        <childnode refid="137" relation="public-inheritance">
+        </childnode>
+        <childnode refid="89" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="107">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="108" relation="private-inheritance">
+        </childnode>
+        <childnode refid="109" relation="public-inheritance">
+        </childnode>
+        <childnode refid="89" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="112">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="113" relation="private-inheritance">
+        </childnode>
+        <childnode refid="114" relation="public-inheritance">
+        </childnode>
+        <childnode refid="89" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="79">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="80" relation="private-inheritance">
+        </childnode>
+        <childnode refid="87" relation="public-inheritance">
+        </childnode>
+        <childnode refid="89" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="93">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="94" relation="private-inheritance">
+        </childnode>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+        <childnode refid="89" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="110">
+        <label>llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="111" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="133">
+        <label>llvm::ilist_node_with_parent&lt; MachineBasicBlock, MachineFunction &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="134" relation="public-inheritance">
+        </childnode>
+        <childnode refid="110" relation="template-instance">
+          <edgelabel>&lt; MachineBasicBlock, MachineFunction &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="105">
+        <label>llvm::ilist_node_with_parent&lt; MachineInstr, MachineBasicBlock, ilist_sentinel_tracking&lt; true &gt; &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="106" relation="public-inheritance">
+        </childnode>
+        <childnode refid="110" relation="template-instance">
+          <edgelabel>&lt; MachineInstr, MachineBasicBlock, ilist_sentinel_tracking&lt; true &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>optional&lt; llvm::PGOOptions &gt;</label>
+      </node>
+      <node id="33">
+        <label>optional&lt; unsigned &gt;</label>
+      </node>
+      <node id="20">
+        <label>pair&lt; int, int &gt;</label>
+      </node>
+      <node id="24">
+        <label>shared_ptr&lt; llvm::MemoryBuffer &gt;</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="13">
+        <label>unique_ptr&lt; const llvm::MCAsmInfo &gt;</label>
+      </node>
+      <node id="15">
+        <label>unique_ptr&lt; const llvm::MCInstrInfo &gt;</label>
+      </node>
+      <node id="14">
+        <label>unique_ptr&lt; const llvm::MCRegisterInfo &gt;</label>
+      </node>
+      <node id="16">
+        <label>unique_ptr&lt; const llvm::MCSubtargetInfo &gt;</label>
+      </node>
+      <node id="149">
+        <label>vector&lt; llvm::SUnit * &gt;</label>
+      </node>
+      <node id="74">
+        <label>vector&lt; llvm::SUnit &gt;</label>
+      </node>
+      <node id="38">
+        <label>vector&lt; std::string &gt;</label>
+      </node>
+      <node id="103">
+        <label>uint16_t</label>
+        <link refid="classuint16__t"/>
+      </node>
+      <node id="119">
+        <label>uint32_t</label>
+        <link refid="classuint32__t"/>
+      </node>
+      <node id="11">
+        <label>uint64_t</label>
+        <link refid="classuint64__t"/>
+      </node>
+      <node id="118">
+        <label>uint8_t</label>
+        <link refid="classuint8__t"/>
+      </node>
+      <node id="17">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+      <node id="50">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" line="138" column="1" bodyfile="lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp" bodystart="138" bodyend="300"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_schedule_d_a_g_1ab73bd59791820601925b8535b61fba66" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>addCustomGraphFeatures</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a81edbd7ea9536622badd16797bb7fb9c" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>AddPred</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ab0b0b9b17a48e53bd335408d459656f9" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>AddPredQueued</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ae4c2af672726658ea403713e17491483" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>AdvancePastStalls</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ad1621d67a87ac92efc1906b5b8167825" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>AdvanceToCycle</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a3716f1cf6af7da4a34fb0ad31ab84389" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>AvailableQueue</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a888942912054fc4d14b1aa2accb381eb" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>BacktrackBottomUp</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a9f718397926caadcb301ca1e00aaf68c" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>BB</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1aa88c65a5abb5774125c8d66a48d07adf" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>BuildSchedGraph</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a758b6694bd168ae4d50f4aee109efd97" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>CallSeqEndForStart</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a819e28314b950f85d9d628ef945c61ad" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>CapturePred</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a20e10e20ded7655f844479a648aa0c66" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>clearDAG</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1abb309c4ecf566e6daf86db0edbb0dbc5" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>Clone</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a6ab45d1027ab01be9c371634c49d077b" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>computeLatency</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1ae7e825d2af275c631d66e063c4eff615" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>computeOperandLatency</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a8470761d2a1affcfe4ade9a792eb8687" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>CopyAndMoveSuccessors</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a9c21a0982a87fb677decb94a2f19e8f6" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>CreateClone</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ac0daae9d4a5734cabcc527cb9746603b" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>CreateNewSUnit</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a9b785d998cfbef3501bb6d43a3f50493" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>CurCycle</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a2dbfb92f74a3067ce823a76e3266b0e0" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>DAG</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ad7290c1b4f8e316ccc3229d8edd1248c" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>DelayForLiveRegsBottomUp</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1aacd9b18c4caf8c84e5bf1e9912f44022" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1ab34667f1d218ea0b6566dd8f861dfe93" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>dumpNode</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a917f4d40ed0bbdaf4ab50e5df4de067b" prot="protected" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>dumpNodeAll</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1ac464b0883162724583f0f124c8be8157" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>dumpNodeName</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1ad8f08e38b6a51a322e450fc0cb6351f9" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>dumpSchedule</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1acbb8b96518c5b89e76b69fafd1852d74" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>EmitNode</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a6f60ed03227dbeb711a3ae9b1f0238e9" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>EmitSchedule</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a521bf68518a92483130a58680716d153" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>EntrySU</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1af81f734d7fb268c95c1c63c399a7c4a6" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>ExitSU</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ae26de31ad5fc73770ed9112c0871bc14" prot="private" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>forceUnitLatencies</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a0923f09dc063b0d957449c45c562ca08" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>getCustomGraphFeatures</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a6b08a15af6f0a05a50270e7848c259c3" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>getDAGName</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a8cbdb500ba4abd11fd23de4e7a020a2d" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>getGraphNodeLabel</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a1feca63a87c6625122fdf74658a30566" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>getHazardRec</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a100d476a583a34879b296908da01fdac" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>getInstrDesc</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a169e0b3dc3b79970fd63f7eaf26cbc77" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>HazardRec</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a9e19da5240e1c311814f574bb0c235a4" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>InitNumRegDefsLeft</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1aea41cbab319e5c468817bcf8f4bcc5df" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>InsertCopiesAndMoveSuccs</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a91db1a13eaa5f8a8ac8ac78b5a60791b" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>InstrItins</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1afbe7236a16ae6d79968bbd79a73fd3ac" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>Interferences</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a901a96fb8eb2598eed200755554567c0" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>isPassiveNode</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1aff54d81ed97148c13cffefb6fee1265c" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>IsReachable</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1abbcc438409af7c1f5a197ad089e88709" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>isReady</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a09bead3d68b728cd8e7ba7d734ead551" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>IssueCount</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ac00a500ceca90de69f13162113dcf316" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>ListScheduleBottomUp</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ae2ebda7223ea0bbcd799e7982287e359" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>LiveRegDefs</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a3695a27e0f679c21a8a8f89b3d8b912c" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>LiveRegGens</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1aba5cb5c79fc18dd73c716642b2542a01" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>LRegsMap</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a2f5967dcf2d7cc1aa0eda6cffffd8abd" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>LRegsMapT</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a5a3d3d075a208011a24a0918b58d7daa" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>MF</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a01a0103daf695260127161f8866b69e5" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>MinAvailableCycle</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a1b09f4d9c91e25f7bc2ac60b3b929d11" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>MRI</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1adf12f22003b98e03f8a1aa2c86e4b4b2" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>NeedLatency</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a15c0200b4b6e12b97d270fbea215443e" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>newSUnit</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a1d268a56ccd3f8dcec37f15b4bfc8d9f" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>NumLiveRegs</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a6a6dac3959c6817445a767a848061ff7" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>operator=</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a781cf002d1e7b1cde375eb335c48089a" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>PendingQueue</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a757fc93ce8f64d83757b560ba4e19be5" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>PickNodeToScheduleBottomUp</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ae774754e344e8d0e9f88fc3afc539282" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>releaseInterferences</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a9aed47f4562fe7753e80220ab25e0dea" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>ReleasePending</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a6b657c21d37ea4e6670c169f62104444" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>ReleasePred</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a71f9ee19c4785d50729582ff915ec6e9" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>ReleasePredecessors</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a3a3d1204e84d95a7bf978e1f3bc1debe" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>RemovePred</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1acabc52a663e09454e24b0b0e9452aba7" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>RestoreHazardCheckerBottomUp</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1aa00d73e05dee6c2701209bac3d7786b8" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>Run</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a9f958f8f55c3516c1b509f9c49cb0923" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>Schedule</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a8bdf35180225e74794f7d23399a3db22" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>ScheduleDAG</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1ae2ebc23ff27164ec1d375d4bac6040de" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>ScheduleDAG</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a2ddd224f4d981bb2a8ceb7d5c977f392" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>ScheduleDAGRRList</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1ad73652eab6e03e092e32bde82040c8c7" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>ScheduleDAGSDNodes</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a8260a8d300001afdd3e5672e2ba656be" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>ScheduleNodeBottomUp</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a9e9bf8e61a41a12bd87df9f4c671b2c2" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>Sequence</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a8de65d3a774ee7a23dc72e3d534e6ce6" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>StressSched</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a3d5aacd5fc7d6a739ce913974ed1e53d" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>SUnits</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a348590624c488b04d0f9e227e6c3960e" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>TII</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a9aa31260fcd6b572eb34528673438c3c" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>TM</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a7688b41495dc5ee9297682970dd36382" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>Topo</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a418bc6d3f660325fa6d5b9fb269add62" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>TRI</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1ac8bac1915315894107f9b1ef3cc78d14" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>TryUnfoldSU</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a439188be2ce20d954b5e1cca6af44c4f" prot="private" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>UnscheduleNodeBottomUp</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1ab464241184b77be167ff521aa2552e29" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>VerifyScheduledDAG</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a4b8c5a6f17aa50ecc8f64f74d4ba5e47" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>VerifyScheduledSequence</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a209b615edbcad3e1a7afd7411ce4eae2" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>viewGraph</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a7e726201ecf499acd7f87ac1d4ff610e" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>viewGraph</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a3e7e4a676407494f9cf7187b88afde67" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>WillCreateCycle</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a40f40bf3808799abdd4411ba209215dc" prot="public" virt="virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>~ScheduleDAG</name></member>
+      <member refid="classanonymous__namespace_02_schedule_d_a_g_r_r_list_8cpp_03_1_1_schedule_d_a_g_r_r_list_1a3de1dee78b74e3a6d925d75bbc824772" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>~ScheduleDAGRRList</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_s_d_nodes_1a70000f67618d7404d40977cff48ebc1f" prot="public" virt="non-virtual"><scope>anonymous_namespace{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</scope><name>~ScheduleDAGSDNodes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

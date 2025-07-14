@@ -1,0 +1,473 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_machine_jump_table_info" kind="class" language="C++" prot="public">
+    <compoundname>llvm::MachineJumpTableInfo</compoundname>
+    <includes refid="_machine_jump_table_info_8h" local="yes">llvm/CodeGen/MachineJumpTableInfo.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>JTEntryKind</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::JTEntryKind</qualifiedname>
+        <enumvalue id="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3ab0c4687afc1a6858d37711a814f8f5b3" prot="public">
+          <name>EK_BlockAddress</name>
+          <briefdescription>
+<para>EK_BlockAddress - Each entry is a plain address of block, e.g.: .word LBB123. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3aba174e822c60ce5af99bdb57ab3ec640" prot="public">
+          <name>EK_GPRel64BlockAddress</name>
+          <briefdescription>
+<para>EK_GPRel64BlockAddress - Each entry is an address of block, encoded with a relocation as gp-relative, e.g.: .gpdword LBB123. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a0145ef8496d090993849ec0d7ca947f7" prot="public">
+          <name>EK_GPRel32BlockAddress</name>
+          <briefdescription>
+<para>EK_GPRel32BlockAddress - Each entry is an address of block, encoded with a relocation as gp-relative, e.g.: .gprel32 LBB123. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a6e05991949952d4e85600b0868dcd803" prot="public">
+          <name>EK_LabelDifference32</name>
+          <briefdescription>
+<para>EK_LabelDifference32 - Each entry is the address of the block minus the address of the jump table. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This is used for PIC jump tables where gprel32 is not supported. e.g.: .word LBB123 - LJTI1_2 If the .set directive is supported, this is emitted as: .set L4_5_set_123, LBB123 - LJTI1_2 .word L4_5_set_123 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a9f3683fb3f6e9f802d817742cf08a1a5" prot="public">
+          <name>EK_LabelDifference64</name>
+          <briefdescription>
+<para>EK_LabelDifference64 - Each entry is the address of the block minus the address of the jump table. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This is used for PIC jump tables where gprel64 is not supported. e.g.: .quad LBB123 - LJTI1_2 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a0c8edab8f0150200196e0c217e343058" prot="public">
+          <name>EK_Inline</name>
+          <briefdescription>
+<para>EK_Inline - Jump table entries are emitted inline at their point of use. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>It is the responsibility of the target to emit the entries. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a9e655fb625d744f96e03aed78ca85707" prot="public">
+          <name>EK_Custom32</name>
+          <briefdescription>
+<para>EK_Custom32 - Each entry is a 32-bit value that is custom lowered by the <ref refid="classllvm_1_1_target_lowering_1acf30ced2ac2474a0dd5af2e3417c7b7d" kindref="member">TargetLowering::LowerCustomJumpTableEntry</ref> hook. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3" kindref="member">JTEntryKind</ref> - This enum indicates how each entry of the jump table is represented and emitted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="50" column="3" bodyfile="include/llvm/CodeGen/MachineJumpTableInfo.h" bodystart="50" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_machine_jump_table_info_1a41fed3e29345a23866eac293ab161a8d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3" kindref="member">JTEntryKind</ref></type>
+        <definition>JTEntryKind llvm::MachineJumpTableInfo::EntryKind</definition>
+        <argsstring></argsstring>
+        <name>EntryKind</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::EntryKind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="90" column="15" bodyfile="include/llvm/CodeGen/MachineJumpTableInfo.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_machine_jump_table_info_1a1b2a87a24e0ecdb058314bd056475b39" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structllvm_1_1_machine_jump_table_entry" kindref="compound">MachineJumpTableEntry</ref> &gt;</type>
+        <definition>std::vector&lt;MachineJumpTableEntry&gt; llvm::MachineJumpTableInfo::JumpTables</definition>
+        <argsstring></argsstring>
+        <name>JumpTables</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::JumpTables</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="91" column="15" bodyfile="include/llvm/CodeGen/MachineJumpTableInfo.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1a8e51fede2625324f2e23fccc99ace42d" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MachineJumpTableInfo::MachineJumpTableInfo</definition>
+        <argsstring>(JTEntryKind Kind)</argsstring>
+        <name>MachineJumpTableInfo</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::MachineJumpTableInfo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3" kindref="member">JTEntryKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="93" column="12" bodyfile="include/llvm/CodeGen/MachineJumpTableInfo.h" bodystart="93" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1ab63740cb84cbbb0300d8fd6cf987928d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3" kindref="member">JTEntryKind</ref></type>
+        <definition>JTEntryKind llvm::MachineJumpTableInfo::getEntryKind</definition>
+        <argsstring>() const</argsstring>
+        <name>getEntryKind</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::getEntryKind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="95" column="15" bodyfile="include/llvm/CodeGen/MachineJumpTableInfo.h" bodystart="95" bodyend="95"/>
+        <referencedby refid="classllvm_1_1_m_i_r_printer_1a144cc64259d65d3f419f9d176fcf8078" compoundref="_m_i_r_printer_8cpp" startline="649" endline="666">llvm::MIRPrinter::convert</referencedby>
+        <referencedby refid="classllvm_1_1_asm_printer_1a52b44307c581360f228fe357414b2784" compoundref="_asm_printer_8cpp" startline="2855" endline="2876">llvm::AsmPrinter::emitJumpTableInfo</referencedby>
+        <referencedby refid="classllvm_1_1_machine_jump_table_info_1ab0097819d1d3f4c8eca96c9d9ac4fa0d" compoundref="_machine_function_8cpp" startline="1340" endline="1358">getEntryAlignment</referencedby>
+        <referencedby refid="classllvm_1_1_machine_jump_table_info_1a4d6ef9167ddc2ae5fdf29a41cbaa5202" compoundref="_machine_function_8cpp" startline="1320" endline="1337">getEntrySize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1a4d6ef9167ddc2ae5fdf29a41cbaa5202" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned MachineJumpTableInfo::getEntrySize</definition>
+        <argsstring>(const DataLayout &amp;TD) const</argsstring>
+        <name>getEntrySize</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::getEntrySize</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>TD</declname>
+        </param>
+        <briefdescription>
+<para>getEntrySize - Return the size of each entry in the jump table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the size of each entry in the jump table. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="98" column="12" bodyfile="lib/CodeGen/MachineFunction.cpp" bodystart="1320" bodyend="1337"/>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3ab0c4687afc1a6858d37711a814f8f5b3" compoundref="_machine_jump_table_info_8h" startline="53">EK_BlockAddress</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a9e655fb625d744f96e03aed78ca85707" compoundref="_machine_jump_table_info_8h" startline="86">EK_Custom32</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a0145ef8496d090993849ec0d7ca947f7" compoundref="_machine_jump_table_info_8h" startline="63">EK_GPRel32BlockAddress</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3aba174e822c60ce5af99bdb57ab3ec640" compoundref="_machine_jump_table_info_8h" startline="58">EK_GPRel64BlockAddress</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a0c8edab8f0150200196e0c217e343058" compoundref="_machine_jump_table_info_8h" startline="82">EK_Inline</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a6e05991949952d4e85600b0868dcd803" compoundref="_machine_jump_table_info_8h" startline="72">EK_LabelDifference32</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a9f3683fb3f6e9f802d817742cf08a1a5" compoundref="_machine_jump_table_info_8h" startline="78">EK_LabelDifference64</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1ab63740cb84cbbb0300d8fd6cf987928d" compoundref="_machine_jump_table_info_8h" startline="95" endline="95">getEntryKind</references>
+        <references refid="classllvm_1_1_data_layout_1ac4d8e60ce9a5b62049e6b71f19a24c8b" compoundref="_data_layout_8cpp" startline="739" endline="741">llvm::DataLayout::getPointerSize</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1ab0097819d1d3f4c8eca96c9d9ac4fa0d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned MachineJumpTableInfo::getEntryAlignment</definition>
+        <argsstring>(const DataLayout &amp;TD) const</argsstring>
+        <name>getEntryAlignment</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::getEntryAlignment</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>TD</declname>
+        </param>
+        <briefdescription>
+<para>getEntryAlignment - Return the alignment of each entry in the jump table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the alignment of each entry in the jump table. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="100" column="12" bodyfile="lib/CodeGen/MachineFunction.cpp" bodystart="1340" bodyend="1358"/>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3ab0c4687afc1a6858d37711a814f8f5b3" compoundref="_machine_jump_table_info_8h" startline="53">EK_BlockAddress</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a9e655fb625d744f96e03aed78ca85707" compoundref="_machine_jump_table_info_8h" startline="86">EK_Custom32</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a0145ef8496d090993849ec0d7ca947f7" compoundref="_machine_jump_table_info_8h" startline="63">EK_GPRel32BlockAddress</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3aba174e822c60ce5af99bdb57ab3ec640" compoundref="_machine_jump_table_info_8h" startline="58">EK_GPRel64BlockAddress</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a0c8edab8f0150200196e0c217e343058" compoundref="_machine_jump_table_info_8h" startline="82">EK_Inline</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a6e05991949952d4e85600b0868dcd803" compoundref="_machine_jump_table_info_8h" startline="72">EK_LabelDifference32</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a9f3683fb3f6e9f802d817742cf08a1a5" compoundref="_machine_jump_table_info_8h" startline="78">EK_LabelDifference64</references>
+        <references refid="classllvm_1_1_data_layout_1a4ed9cb07b066ca1f510e65f375aca091" compoundref="_data_layout_8h" startline="486" endline="488">llvm::DataLayout::getABIIntegerTypeAlignment</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1ab63740cb84cbbb0300d8fd6cf987928d" compoundref="_machine_jump_table_info_8h" startline="95" endline="95">getEntryKind</references>
+        <references refid="classllvm_1_1_data_layout_1af46786371f2d40a54174ac9c9abfd12f" compoundref="_data_layout_8cpp" startline="731" endline="733">llvm::DataLayout::getPointerABIAlignment</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="structllvm_1_1_align_1a80735739b49cf97a491922c8f9af2cc1" compoundref="_alignment_8h" startline="85" endline="85">llvm::Align::value</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1a5a48ea8ae9371565b98b24668016e5ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned MachineJumpTableInfo::createJumpTableIndex</definition>
+        <argsstring>(const std::vector&lt; MachineBasicBlock * &gt; &amp;DestBBs)</argsstring>
+        <name>createJumpTableIndex</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::createJumpTableIndex</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt; &amp;</type>
+          <declname>DestBBs</declname>
+        </param>
+        <briefdescription>
+<para>createJumpTableIndex - Create a new jump table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new jump table entry in the jump table info. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="104" column="12" bodyfile="lib/CodeGen/MachineFunction.cpp" bodystart="1361" bodyend="1366"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1_switch_c_g_1_1_switch_lowering_1ae706b72bcadad3acf12a239b257aabc6" compoundref="_switch_lowering_utils_8cpp" startline="192" endline="266">llvm::SwitchCG::SwitchLowering::buildJumpTable</referencedby>
+        <referencedby refid="classllvm_1_1_v_e_target_lowering_1a751f59893007a8fdcc892d81119abc82" compoundref="_v_e_i_sel_lowering_8cpp" startline="2371" endline="2672">llvm::VETargetLowering::emitSjLjDispatchBlock</referencedby>
+        <referencedby refid="classllvm_1_1_m_i_r_parser_impl_1a4e8962fa2139c288809acff971691109" compoundref="_m_i_r_parser_8cpp" startline="1080" endline="1099">llvm::MIRParserImpl::initializeJumpTableInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1a519c867ae285099cc58e9bfad73a8895" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MachineJumpTableInfo::isEmpty</definition>
+        <argsstring>() const</argsstring>
+        <name>isEmpty</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::isEmpty</qualifiedname>
+        <briefdescription>
+<para>isEmpty - Return true if there are no jump tables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="108" column="8" bodyfile="include/llvm/CodeGen/MachineJumpTableInfo.h" bodystart="108" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1af9c60f4a0193375a5dd205fb945107a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; <ref refid="structllvm_1_1_machine_jump_table_entry" kindref="compound">MachineJumpTableEntry</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; MachineJumpTableEntry &gt; &amp; llvm::MachineJumpTableInfo::getJumpTables</definition>
+        <argsstring>() const</argsstring>
+        <name>getJumpTables</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::getJumpTables</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="110" column="21" bodyfile="include/llvm/CodeGen/MachineJumpTableInfo.h" bodystart="110" bodyend="112"/>
+        <referencedby refid="classllvm_1_1_m_i_r_printer_1a144cc64259d65d3f419f9d176fcf8078" compoundref="_m_i_r_printer_8cpp" startline="649" endline="666">llvm::MIRPrinter::convert</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_asm_printer_1a11d81bc488e34bd6e757c2831ecc5e42" compoundref="_a_r_m_asm_printer_8cpp" startline="992" endline="1036">llvm::ARMAsmPrinter::emitJumpTableAddrs</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_arch64_asm_printer_8cpp_03_1_1_a_arch64_asm_printer_1a7b744276265a7587d11961d5cbf82dd0" compoundref="_a_arch64_asm_printer_8cpp" startline="1277" endline="1318">anonymous_namespace{AArch64AsmPrinter.cpp}::AArch64AsmPrinter::emitJumpTableInfo</referencedby>
+        <referencedby refid="classllvm_1_1_asm_printer_1a52b44307c581360f228fe357414b2784" compoundref="_asm_printer_8cpp" startline="2855" endline="2876">llvm::AsmPrinter::emitJumpTableInfo</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_asm_printer_1aa925bb5b36e9ac03cfbe86ebcd70dd57" compoundref="_a_r_m_asm_printer_8cpp" startline="1038" endline="1064">llvm::ARMAsmPrinter::emitJumpTableInsts</referencedby>
+        <referencedby refid="classllvm_1_1_a_r_m_asm_printer_1a27e1e6e35a8e68da67d5090a6e9f4c0d" compoundref="_a_r_m_asm_printer_8cpp" startline="1066" endline="1117">llvm::ARMAsmPrinter::emitJumpTableTBInst</referencedby>
+        <referencedby refid="_a_r_m_frame_lowering_8cpp_1a558790807cf5c060c4c82f09decb89d5" compoundref="_a_r_m_frame_lowering_8cpp" startline="2221" endline="2233">EstimateFunctionSizeInBytes</referencedby>
+        <referencedby refid="_machine_basic_block_8cpp_1a466674860524a217292797476e9ce371" compoundref="_machine_basic_block_8cpp" startline="1068" endline="1108">jumpTableHasOtherUses</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_arch64_asm_printer_8cpp_03_1_1_a_arch64_asm_printer_1ab55c74c151c09190ab2204e33e77b299" compoundref="_a_arch64_asm_printer_8cpp" startline="1509" endline="1616">anonymous_namespace{AArch64AsmPrinter.cpp}::AArch64AsmPrinter::LowerHardenedBRJumpTable</referencedby>
+        <referencedby refid="classllvm_1_1_branch_folder_1aa0d50fee4d0d41ccf591e29de109786f" compoundref="_branch_folding_8cpp" startline="180" endline="249">llvm::BranchFolder::OptimizeFunction</referencedby>
+        <referencedby refid="classanonymous__namespace_02_x_core_asm_printer_8cpp_03_1_1_x_core_asm_printer_1a0449defbfc0b9bf98fd830be8dc2587a" compoundref="_x_core_asm_printer_8cpp" startline="180" endline="194">anonymous_namespace{XCoreAsmPrinter.cpp}::XCoreAsmPrinter::printInlineJT</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1a8399f4d8dfa10432948d8da0ef0e6674" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineJumpTableInfo::updateJumpTableEntryHotness</definition>
+        <argsstring>(size_t JTI, MachineFunctionDataHotness Hotness)</argsstring>
+        <name>updateJumpTableEntryHotness</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::updateJumpTableEntryHotness</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>JTI</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a59c007354dfad2f618a37e6efaf7cd9b" kindref="member">MachineFunctionDataHotness</ref></type>
+          <declname>Hotness</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="116" column="8" bodyfile="lib/CodeGen/MachineFunction.cpp" bodystart="1368" bodyend="1377"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1a4884f00bcde9528a64e1c18adc789641" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::MachineJumpTableInfo::RemoveJumpTable</definition>
+        <argsstring>(unsigned Idx)</argsstring>
+        <name>RemoveJumpTable</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::RemoveJumpTable</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <briefdescription>
+<para>RemoveJumpTable - Mark the specific index as being dead. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This will prevent it from being emitted. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="121" column="8" bodyfile="include/llvm/CodeGen/MachineJumpTableInfo.h" bodystart="121" bodyend="123"/>
+        <referencedby refid="classllvm_1_1_branch_folder_1aa0d50fee4d0d41ccf591e29de109786f" compoundref="_branch_folding_8cpp" startline="180" endline="249">llvm::BranchFolder::OptimizeFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1a0d850b9f4484d7ec9a8ab1880922dcb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineJumpTableInfo::RemoveMBBFromJumpTables</definition>
+        <argsstring>(MachineBasicBlock *MBB)</argsstring>
+        <name>RemoveMBBFromJumpTables</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::RemoveMBBFromJumpTables</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+<para>RemoveMBBFromJumpTables - If MBB is present in any jump tables, remove it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If MBB is present in any jump tables, remove it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="126" column="8" bodyfile="lib/CodeGen/MachineFunction.cpp" bodystart="1391" bodyend="1399"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1a1a20b9072a0cd65db50bed95c12e915b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineJumpTableInfo::ReplaceMBBInJumpTables</definition>
+        <argsstring>(MachineBasicBlock *Old, MachineBasicBlock *New)</argsstring>
+        <name>ReplaceMBBInJumpTables</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::ReplaceMBBInJumpTables</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Old</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>New</declname>
+        </param>
+        <briefdescription>
+<para>ReplaceMBBInJumpTables - If Old is the target of any jump tables, update the jump tables to branch to New instead. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If Old is the target of any jump tables, update the jump tables to branch to New instead. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="130" column="8" bodyfile="lib/CodeGen/MachineFunction.cpp" bodystart="1381" bodyend="1388"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1a729a069c6d2880c2c75148c61998c129" compoundref="_machine_function_8cpp" startline="1403" endline="1415">ReplaceMBBInJumpTable</references>
+        <referencedby refid="class_g_c_empty_basic_blocks_1a77700a9eb5ecac3a68b09ea0ec2b18a7" compoundref="_g_c_empty_basic_blocks_8cpp" startline="44" endline="89">GCEmptyBasicBlocks::runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1a729a069c6d2880c2c75148c61998c129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineJumpTableInfo::ReplaceMBBInJumpTable</definition>
+        <argsstring>(unsigned Idx, MachineBasicBlock *Old, MachineBasicBlock *New)</argsstring>
+        <name>ReplaceMBBInJumpTable</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::ReplaceMBBInJumpTable</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Old</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>New</declname>
+        </param>
+        <briefdescription>
+<para>ReplaceMBBInJumpTable - If Old is a target of the jump tables, update the jump table to branch to New instead. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If Old is a target of the jump tables, update the jump table to branch to New instead. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="134" column="8" bodyfile="lib/CodeGen/MachineFunction.cpp" bodystart="1403" bodyend="1415"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="structllvm_1_1_machine_jump_table_entry_1a9c14af1916ca19e3e7fbec5fb2e11c79" compoundref="_machine_jump_table_info_8h" startline="37">llvm::MachineJumpTableEntry::MBBs</references>
+        <referencedby refid="classllvm_1_1_machine_jump_table_info_1a1a20b9072a0cd65db50bed95c12e915b" compoundref="_machine_function_8cpp" startline="1381" endline="1388">ReplaceMBBInJumpTables</referencedby>
+        <referencedby refid="classllvm_1_1_machine_basic_block_1aa80aaa82844ab5560ece045eee7b34ac" compoundref="_machine_basic_block_8cpp" startline="1149" endline="1382">llvm::MachineBasicBlock::SplitCriticalEdge</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1a2f4b116ba160a0fb57241dee011905e6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineJumpTableInfo::print</definition>
+        <argsstring>(raw_ostream &amp;OS) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+<para>print - Used by the <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> printer to print information about jump tables. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Implemented in <ref refid="_machine_function_8cpp" kindref="compound">MachineFunction.cpp</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="140" column="8" bodyfile="lib/CodeGen/MachineFunction.cpp" bodystart="1417" bodyend="1431"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="namespacellvm_1a4610639927aff734aeacb607c43f01f2" compoundref="_machine_function_8cpp" startline="1437" endline="1439">llvm::printJumpTableEntryReference</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <referencedby refid="classllvm_1_1_machine_jump_table_info_1a723eff4a497357d7c8602abd695daa11" compoundref="_machine_function_8cpp" startline="1434" endline="1434">dump</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_machine_jump_table_info_1a723eff4a497357d7c8602abd695daa11" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void MachineJumpTableInfo::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::MachineJumpTableInfo::dump</qualifiedname>
+        <briefdescription>
+<para>dump - Call to stderr. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="144" column="8" bodyfile="lib/CodeGen/MachineFunction.cpp" bodystart="1434" bodyend="1434"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" compoundref="_compiler_8h" startline="622">LLVM_DUMP_METHOD</references>
+        <references refid="classllvm_1_1_machine_jump_table_info_1a2f4b116ba160a0fb57241dee011905e6" compoundref="_machine_function_8cpp" startline="1417" endline="1431">print</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/CodeGen/MachineJumpTableInfo.h" line="46" column="1" bodyfile="include/llvm/CodeGen/MachineJumpTableInfo.h" bodystart="46" bodyend="145"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a5a48ea8ae9371565b98b24668016e5ef" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>createJumpTableIndex</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a723eff4a497357d7c8602abd695daa11" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3ab0c4687afc1a6858d37711a814f8f5b3" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>EK_BlockAddress</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a9e655fb625d744f96e03aed78ca85707" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>EK_Custom32</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a0145ef8496d090993849ec0d7ca947f7" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>EK_GPRel32BlockAddress</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3aba174e822c60ce5af99bdb57ab3ec640" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>EK_GPRel64BlockAddress</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a0c8edab8f0150200196e0c217e343058" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>EK_Inline</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a6e05991949952d4e85600b0868dcd803" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>EK_LabelDifference32</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3a9f3683fb3f6e9f802d817742cf08a1a5" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>EK_LabelDifference64</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a41fed3e29345a23866eac293ab161a8d" prot="private" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>EntryKind</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1ab0097819d1d3f4c8eca96c9d9ac4fa0d" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>getEntryAlignment</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1ab63740cb84cbbb0300d8fd6cf987928d" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>getEntryKind</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a4d6ef9167ddc2ae5fdf29a41cbaa5202" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>getEntrySize</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1af9c60f4a0193375a5dd205fb945107a8" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>getJumpTables</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a519c867ae285099cc58e9bfad73a8895" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>isEmpty</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1aaa21facdbb167f7c33d21907b8e5b9d3" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>JTEntryKind</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a1b2a87a24e0ecdb058314bd056475b39" prot="private" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>JumpTables</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a8e51fede2625324f2e23fccc99ace42d" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>MachineJumpTableInfo</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a2f4b116ba160a0fb57241dee011905e6" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>print</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a4884f00bcde9528a64e1c18adc789641" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>RemoveJumpTable</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a0d850b9f4484d7ec9a8ab1880922dcb5" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>RemoveMBBFromJumpTables</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a729a069c6d2880c2c75148c61998c129" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>ReplaceMBBInJumpTable</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a1a20b9072a0cd65db50bed95c12e915b" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>ReplaceMBBInJumpTables</name></member>
+      <member refid="classllvm_1_1_machine_jump_table_info_1a8399f4d8dfa10432948d8da0ef0e6674" prot="public" virt="non-virtual"><scope>llvm::MachineJumpTableInfo</scope><name>updateJumpTableEntryHotness</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

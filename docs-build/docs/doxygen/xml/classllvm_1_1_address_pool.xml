@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_address_pool" kind="class" language="C++" prot="public">
+    <compoundname>llvm::AddressPool</compoundname>
+    <includes refid="_address_pool_8h" local="yes">CodeGen/AsmPrinter/AddressPool.h</includes>
+    <innerclass refid="structllvm_1_1_address_pool_1_1_address_pool_entry" prot="private">llvm::AddressPool::AddressPoolEntry</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_address_pool_1a947fcd146376f4dcc4baa9e2bd8269df" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> *, AddressPoolEntry &gt;</type>
+        <definition>DenseMap&lt;const MCSymbol *, AddressPoolEntry&gt; llvm::AddressPool::Pool</definition>
+        <argsstring></argsstring>
+        <name>Pool</name>
+        <qualifiedname>llvm::AddressPool::Pool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="30" column="12" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_address_pool_1aff75ea30bd4879854218de5fdf29bf78" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AddressPool::HasBeenUsed</definition>
+        <argsstring></argsstring>
+        <name>HasBeenUsed</name>
+        <qualifiedname>llvm::AddressPool::HasBeenUsed</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> whether the <ref refid="classllvm_1_1_address_pool" kindref="compound">AddressPool</ref> has been queried for an address index since the last &quot;resetUsedFlag&quot; call. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used to implement type unit fallback - a type that references addresses cannot be placed in a type unit when using fission. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="36" column="8" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_address_pool_1aecabee7d535895e8aaeacfa2c46f165c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> *</type>
+        <definition>MCSymbol* llvm::AddressPool::AddressTableBaseSym</definition>
+        <argsstring></argsstring>
+        <name>AddressTableBaseSym</name>
+        <qualifiedname>llvm::AddressPool::AddressTableBaseSym</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Symbol designates the start of the contribution to the address table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="60" column="12" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_address_pool_1aef8d035743adf757b18d519e87ccc63d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::AddressPool::AddressPool</definition>
+        <argsstring>()=default</argsstring>
+        <name>AddressPool</name>
+        <qualifiedname>llvm::AddressPool::AddressPool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="39" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_address_pool_1a7e7f44ae5cd653026e1d18b9a251fd86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned AddressPool::getIndex</definition>
+        <argsstring>(const MCSymbol *Sym, bool TLS=false)</argsstring>
+        <name>getIndex</name>
+        <qualifiedname>llvm::AddressPool::getIndex</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> *</type>
+          <declname>Sym</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>TLS</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Returns the index into the address pool with the given label/symbol. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="43" column="12" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.cpp" bodystart="19" bodyend="24"/>
+        <references refid="classllvm_1_1_address_pool_1af6f00501e2e0e9050b21c2c0b38b3940" compoundref="_address_pool_8h" startline="51" endline="51">resetUsedFlag</references>
+        <referencedby refid="_dwarf_debug_8cpp_1afe65683534ca819c702e4eb5f158f387" compoundref="_dwarf_debug_8cpp" startline="3079" endline="3183">emitRangeList</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_address_pool_1aca37ed4296007b66416361e122caf678" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AddressPool::emit</definition>
+        <argsstring>(AsmPrinter &amp;Asm, MCSection *AddrSection)</argsstring>
+        <name>emit</name>
+        <qualifiedname>llvm::AddressPool::emit</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_asm_printer" kindref="compound">AsmPrinter</ref> &amp;</type>
+          <declname>Asm</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_section" kindref="compound">MCSection</ref> *</type>
+          <declname>AddrSection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="45" column="8" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.cpp" bodystart="42" bodyend="72"/>
+        <references refid="classllvm_1_1_m_c_symbol_ref_expr_1a9914b597552aa4b4bcbb8acaa04d632a" compoundref="_m_c_expr_8h" startline="398" endline="400">llvm::MCSymbolRefExpr::create</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_address_pool_1a82e6b4f0011add0f9468c431335ec06b" compoundref="_address_pool_8h" startline="47" endline="47">isEmpty</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_address_pool_1a82e6b4f0011add0f9468c431335ec06b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AddressPool::isEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>isEmpty</name>
+        <qualifiedname>llvm::AddressPool::isEmpty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="47" column="8" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.h" bodystart="47" bodyend="47"/>
+        <referencedby refid="classllvm_1_1_address_pool_1aca37ed4296007b66416361e122caf678" compoundref="_address_pool_8cpp" startline="42" endline="72">emit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_address_pool_1ae68b40332f2260a61089aab73d8f2b38" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AddressPool::hasBeenUsed</definition>
+        <argsstring>() const</argsstring>
+        <name>hasBeenUsed</name>
+        <qualifiedname>llvm::AddressPool::hasBeenUsed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="49" column="8" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.h" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_address_pool_1af6f00501e2e0e9050b21c2c0b38b3940" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::AddressPool::resetUsedFlag</definition>
+        <argsstring>(bool HasBeenUsed=false)</argsstring>
+        <name>resetUsedFlag</name>
+        <qualifiedname>llvm::AddressPool::resetUsedFlag</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>HasBeenUsed</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="51" column="8" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.h" bodystart="51" bodyend="51"/>
+        <referencedby refid="classllvm_1_1_address_pool_1a7e7f44ae5cd653026e1d18b9a251fd86" compoundref="_address_pool_8cpp" startline="19" endline="24">getIndex</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_address_pool_1ab822101111fd76353b54243562426058" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> *</type>
+        <definition>MCSymbol * llvm::AddressPool::getLabel</definition>
+        <argsstring>()</argsstring>
+        <name>getLabel</name>
+        <qualifiedname>llvm::AddressPool::getLabel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="53" column="12" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.h" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_address_pool_1adc235e115344216ec43efe25d829c122" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::AddressPool::setLabel</definition>
+        <argsstring>(MCSymbol *Sym)</argsstring>
+        <name>setLabel</name>
+        <qualifiedname>llvm::AddressPool::setLabel</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> *</type>
+          <declname>Sym</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="54" column="8" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.h" bodystart="54" bodyend="54"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_address_pool_1a38b49c2e75f9119860f63de65249b166" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> *</type>
+        <definition>MCSymbol * AddressPool::emitHeader</definition>
+        <argsstring>(AsmPrinter &amp;Asm, MCSection *Section)</argsstring>
+        <name>emitHeader</name>
+        <qualifiedname>llvm::AddressPool::emitHeader</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_asm_printer" kindref="compound">AsmPrinter</ref> &amp;</type>
+          <declname>Asm</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_section" kindref="compound">MCSection</ref> *</type>
+          <declname>Section</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="57" column="12" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.cpp" bodystart="26" bodyend="39"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/AsmPrinter/AddressPool.h" line="23" column="1" bodyfile="lib/CodeGen/AsmPrinter/AddressPool.h" bodystart="23" bodyend="61"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_address_pool_1aef8d035743adf757b18d519e87ccc63d" prot="public" virt="non-virtual"><scope>llvm::AddressPool</scope><name>AddressPool</name></member>
+      <member refid="classllvm_1_1_address_pool_1aecabee7d535895e8aaeacfa2c46f165c" prot="private" virt="non-virtual"><scope>llvm::AddressPool</scope><name>AddressTableBaseSym</name></member>
+      <member refid="classllvm_1_1_address_pool_1aca37ed4296007b66416361e122caf678" prot="public" virt="non-virtual"><scope>llvm::AddressPool</scope><name>emit</name></member>
+      <member refid="classllvm_1_1_address_pool_1a38b49c2e75f9119860f63de65249b166" prot="private" virt="non-virtual"><scope>llvm::AddressPool</scope><name>emitHeader</name></member>
+      <member refid="classllvm_1_1_address_pool_1a7e7f44ae5cd653026e1d18b9a251fd86" prot="public" virt="non-virtual"><scope>llvm::AddressPool</scope><name>getIndex</name></member>
+      <member refid="classllvm_1_1_address_pool_1ab822101111fd76353b54243562426058" prot="public" virt="non-virtual"><scope>llvm::AddressPool</scope><name>getLabel</name></member>
+      <member refid="classllvm_1_1_address_pool_1aff75ea30bd4879854218de5fdf29bf78" prot="private" virt="non-virtual"><scope>llvm::AddressPool</scope><name>HasBeenUsed</name></member>
+      <member refid="classllvm_1_1_address_pool_1ae68b40332f2260a61089aab73d8f2b38" prot="public" virt="non-virtual"><scope>llvm::AddressPool</scope><name>hasBeenUsed</name></member>
+      <member refid="classllvm_1_1_address_pool_1a82e6b4f0011add0f9468c431335ec06b" prot="public" virt="non-virtual"><scope>llvm::AddressPool</scope><name>isEmpty</name></member>
+      <member refid="classllvm_1_1_address_pool_1a947fcd146376f4dcc4baa9e2bd8269df" prot="private" virt="non-virtual"><scope>llvm::AddressPool</scope><name>Pool</name></member>
+      <member refid="classllvm_1_1_address_pool_1af6f00501e2e0e9050b21c2c0b38b3940" prot="public" virt="non-virtual"><scope>llvm::AddressPool</scope><name>resetUsedFlag</name></member>
+      <member refid="classllvm_1_1_address_pool_1adc235e115344216ec43efe25d829c122" prot="public" virt="non-virtual"><scope>llvm::AddressPool</scope><name>setLabel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

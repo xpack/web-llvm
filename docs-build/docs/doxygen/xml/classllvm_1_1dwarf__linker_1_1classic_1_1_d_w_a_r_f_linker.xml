@@ -1,0 +1,1241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker" kind="class" language="C++" prot="public">
+    <compoundname>llvm::dwarf_linker::classic::DWARFLinker</compoundname>
+    <basecompoundref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base" prot="public" virt="non-virtual">llvm::dwarf_linker::DWARFLinkerBase</basecompoundref>
+    <includes refid="_classic_2_d_w_a_r_f_linker_8h" local="yes">llvm/DWARFLinker/Classic/DWARFLinker.h</includes>
+    <innerclass refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1_1_d_i_e_cloner" prot="private">llvm::dwarf_linker::classic::DWARFLinker::DIECloner</innerclass>
+    <innerclass refid="structllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1_1_d_w_a_r_f_linker_options" prot="private">llvm::dwarf_linker::classic::DWARFLinker::DWARFLinkerOptions</innerclass>
+    <innerclass refid="structllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1_1_link_context" prot="private">llvm::dwarf_linker::classic::DWARFLinker::LinkContext</innerclass>
+    <innerclass refid="structllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1_1_ref_module_unit" prot="private">llvm::dwarf_linker::classic::DWARFLinker::RefModuleUnit</innerclass>
+    <innerclass refid="structllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1_1_worklist_item" prot="private">llvm::dwarf_linker::classic::DWARFLinker::WorklistItem</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75" prot="private" static="no" strong="no">
+        <type></type>
+        <name>TraversalFlags</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::TraversalFlags</qualifiedname>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75af1dbff36d3f0145c09d40a8cc5564852" prot="private">
+          <name>TF_Keep</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+<para>Mark the traversed DIEs as kept. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75a4ec197ba7e11cfb89b03e175118ed3a7" prot="private">
+          <name>TF_InFunctionScope</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+<para>Current scope is a function scope. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75a4433a604d690b5582ca42d6785e994d5" prot="private">
+          <name>TF_DependencyWalk</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+<para>Walking the dependencies of a kept <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75a198689d1bc624cd33d19cfd4efd4a5ad" prot="private">
+          <name>TF_ParentWalk</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+<para>Walking up the parents of a kept <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75a49b5af23de9e4a7a8aa2b77654c1f931" prot="private">
+          <name>TF_ODR</name>
+          <initializer>= 1 &lt;&lt; 4</initializer>
+          <briefdescription>
+<para><ref refid="classllvm_1_1_use" kindref="compound">Use</ref> the ODR while keeping dependents. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75ad86739eb568c26a46cbb34f5ab4176be" prot="private">
+          <name>TF_SkipPC</name>
+          <initializer>= 1 &lt;&lt; 5</initializer>
+          <briefdescription>
+<para>Skip all location attributes. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Flags passed to DwarfLinker::lookForDIEsToKeep. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="324" column="3" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="324" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="enum" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a39f9f13cf5aa4aaff8230c8b58dac7a3" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>WorklistItemType</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::WorklistItemType</qualifiedname>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a39f9f13cf5aa4aaff8230c8b58dac7a3a00f3bd202e9536bda80388d957e3fbe4" prot="private">
+          <name>LookForDIEsToKeep</name>
+          <briefdescription>
+<para>Given a <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref>, look for DIEs to be kept. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a39f9f13cf5aa4aaff8230c8b58dac7a3a7eea2219d805fb5ee87f35f288ba1c35" prot="private">
+          <name>LookForChildDIEsToKeep</name>
+          <briefdescription>
+<para>Given a <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref>, look for children of this <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> to be kept. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a39f9f13cf5aa4aaff8230c8b58dac7a3a15db5729476e3d463dffed92a3edbdb1" prot="private">
+          <name>LookForRefDIEsToKeep</name>
+          <briefdescription>
+<para>Given a <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref>, look for DIEs referencing this <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> to be kept. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a39f9f13cf5aa4aaff8230c8b58dac7a3adc3110b05a8ab44a392fb0322de4723f" prot="private">
+          <name>LookForParentDIEsToKeep</name>
+          <briefdescription>
+<para>Given a <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref>, look for parent DIEs to be kept. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a39f9f13cf5aa4aaff8230c8b58dac7a3a09d6d603a77f055293e557547eef0016" prot="private">
+          <name>UpdateChildIncompleteness</name>
+          <briefdescription>
+<para>Given a <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref>, update its incompleteness based on whether its children are incomplete. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a39f9f13cf5aa4aaff8230c8b58dac7a3ab01d435668eb3b4787c215df88dc3fc1" prot="private">
+          <name>UpdateRefIncompleteness</name>
+          <briefdescription>
+<para>Given a <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref>, update its incompleteness based on whether the DIEs it references are incomplete. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a39f9f13cf5aa4aaff8230c8b58dac7a3ace142adec4c00340472182a8034ab571" prot="private">
+          <name>MarkODRCanonicalDie</name>
+          <briefdescription>
+<para>Given a <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref>, mark it as ODR Canonical if applicable. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The distinct types of work performed by the work loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="334" column="3" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="334" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aa6e60159172b5e312354fe80203b2b3e" prot="private" static="no">
+        <type>std::vector&lt; RefModuleUnit &gt;</type>
+        <definition>using llvm::dwarf_linker::classic::DWARFLinker::ModuleUnitListTy =  std::vector&lt;RefModuleUnit&gt;</definition>
+        <argsstring></argsstring>
+        <name>ModuleUnitListTy</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::ModuleUnitListTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="411" column="3" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="411" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <member refid="group___methods_1ga4848fb1c48d2177a581998f4148a79e1" kind="variable"><name>AbbreviationsSet</name></member>
+      <member refid="group___methods_1ga28295e4595aa2e9795bafb4f988eb387" kind="variable"><name>Abbreviations</name></member>
+      <member refid="group___methods_1ga4dc98e41bb74bd3034ab586cbf65825d" kind="variable"><name>DIELocs</name></member>
+      <member refid="group___methods_1ga3469ff79fcbde6523ed545795538932c" kind="variable"><name>DIEBlocks</name></member>
+      <member refid="group___methods_1ga173bf0b93926ea58018760bfdac46950" kind="variable"><name>DIEAlloc</name></member>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1af04d9d231bad7e179e7736904370fbd0" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1dwarf__linker_1_1classic_1_1_dwarf_emitter" kindref="compound">DwarfEmitter</ref> *</type>
+        <definition>DwarfEmitter* llvm::dwarf_linker::classic::DWARFLinker::TheDwarfEmitter</definition>
+        <argsstring></argsstring>
+        <name>TheDwarfEmitter</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::TheDwarfEmitter</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="755" column="16" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="755" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ad6f7c983f88453183ad9f0cc7e5a653d" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; LinkContext &gt;</type>
+        <definition>std::vector&lt;LinkContext&gt; llvm::dwarf_linker::classic::DWARFLinker::ObjectContexts</definition>
+        <argsstring></argsstring>
+        <name>ObjectContexts</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::ObjectContexts</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="756" column="15" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="756" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a2932cb8d50074973bbdc9adc35d41794" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_map" kindref="compound">StringMap</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>StringMap&lt;uint32_t&gt; llvm::dwarf_linker::classic::DWARFLinker::EmittedCIEs</definition>
+        <argsstring></argsstring>
+        <name>EmittedCIEs</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::EmittedCIEs</qualifiedname>
+        <briefdescription>
+<para>The CIEs that have been emitted in the output section. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The actual CIE data serves a the key to this <ref refid="classllvm_1_1_string_map" kindref="compound">StringMap</ref>, this takes care of comparing the semantics of CIEs defined in different object files. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="761" column="13" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="761" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ad783d0a3eb256e858e99e88f912660e0" prot="private" static="no" mutable="no">
+        <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t llvm::dwarf_linker::classic::DWARFLinker::LastCIEOffset</definition>
+        <argsstring></argsstring>
+        <name>LastCIEOffset</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::LastCIEOffset</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Offset of the last CIE that has been emitted in the output .debug_frame section. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="765" column="12" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="765" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aa0395fcf056236a5537cc267e4f582db" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_d_w_a_r_f5_accel_table" kindref="compound">DWARF5AccelTable</ref></type>
+        <definition>DWARF5AccelTable llvm::dwarf_linker::classic::DWARFLinker::DebugNames</definition>
+        <argsstring></argsstring>
+        <name>DebugNames</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::DebugNames</qualifiedname>
+        <briefdescription>
+<para>Apple accelerator tables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="768" column="20" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="768" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a72efa2f2b84ccbfa80b4ac7f529f0fb3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_accel_table" kindref="compound">AccelTable</ref>&lt; <ref refid="classllvm_1_1_apple_accel_table_static_offset_data" kindref="compound">AppleAccelTableStaticOffsetData</ref> &gt;</type>
+        <definition>AccelTable&lt;AppleAccelTableStaticOffsetData&gt; llvm::dwarf_linker::classic::DWARFLinker::AppleNames</definition>
+        <argsstring></argsstring>
+        <name>AppleNames</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::AppleNames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="769" column="14" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="769" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a7c061d1b674ffbdcc0e1e2287f3e6891" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_accel_table" kindref="compound">AccelTable</ref>&lt; <ref refid="classllvm_1_1_apple_accel_table_static_offset_data" kindref="compound">AppleAccelTableStaticOffsetData</ref> &gt;</type>
+        <definition>AccelTable&lt;AppleAccelTableStaticOffsetData&gt; llvm::dwarf_linker::classic::DWARFLinker::AppleNamespaces</definition>
+        <argsstring></argsstring>
+        <name>AppleNamespaces</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::AppleNamespaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="770" column="14" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="770" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a6b0f34dd0b6f04aa4ab188334b3dddb9" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_accel_table" kindref="compound">AccelTable</ref>&lt; <ref refid="classllvm_1_1_apple_accel_table_static_offset_data" kindref="compound">AppleAccelTableStaticOffsetData</ref> &gt;</type>
+        <definition>AccelTable&lt;AppleAccelTableStaticOffsetData&gt; llvm::dwarf_linker::classic::DWARFLinker::AppleObjc</definition>
+        <argsstring></argsstring>
+        <name>AppleObjc</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::AppleObjc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="771" column="14" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="771" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a1440f27f336334a23a0dc4f05fc4f25d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_accel_table" kindref="compound">AccelTable</ref>&lt; <ref refid="classllvm_1_1_apple_accel_table_static_type_data" kindref="compound">AppleAccelTableStaticTypeData</ref> &gt;</type>
+        <definition>AccelTable&lt;AppleAccelTableStaticTypeData&gt; llvm::dwarf_linker::classic::DWARFLinker::AppleTypes</definition>
+        <argsstring></argsstring>
+        <name>AppleTypes</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::AppleTypes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="772" column="14" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="772" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aa5cdeb7ae46271105ef46d21de94ddc4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_map" kindref="compound">StringMap</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>StringMap&lt;uint64_t&gt; llvm::dwarf_linker::classic::DWARFLinker::ClangModules</definition>
+        <argsstring></argsstring>
+        <name>ClangModules</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::ClangModules</qualifiedname>
+        <briefdescription>
+<para>Mapping the PCM filename to the DwoId. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="775" column="13" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="775" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a100e3ac356e1699f1648bfb1a5dc182c" prot="private" static="no" mutable="no">
+        <type>std::function&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>)&gt;</type>
+        <definition>std::function&lt;StringRef(StringRef)&gt; llvm::dwarf_linker::classic::DWARFLinker::StringsTranslator</definition>
+        <argsstring></argsstring>
+        <name>StringsTranslator</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::StringsTranslator</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="777" column="17" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="777" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a684d27971fce3d5980daf565c3bd9083" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::dwarf_linker::classic::DWARFLinker::UniqueUnitID</definition>
+        <argsstring></argsstring>
+        <name>UniqueUnitID</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::UniqueUnitID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>A unique <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> that identifies each compile unit. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="780" column="12" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="780" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a48f74aeb511ba3a1f845c8790e9b0615" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a6171d1affe838c4595f5bc1306ca5749" kindref="member">MessageHandlerTy</ref></type>
+        <definition>MessageHandlerTy llvm::dwarf_linker::classic::DWARFLinker::ErrorHandler</definition>
+        <argsstring></argsstring>
+        <name>ErrorHandler</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::ErrorHandler</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="783" column="20" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="783" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a5df071ad3ffef1f8e8afa4655b0de021" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a6171d1affe838c4595f5bc1306ca5749" kindref="member">MessageHandlerTy</ref></type>
+        <definition>MessageHandlerTy llvm::dwarf_linker::classic::DWARFLinker::WarningHandler</definition>
+        <argsstring></argsstring>
+        <name>WarningHandler</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::WarningHandler</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="786" column="20" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="786" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1af784ab096506152175a4d2e6cdfc200a" prot="private" static="no" mutable="no">
+        <type>struct llvm::dwarf_linker::classic::DWARFLinker::DWARFLinkerOptions</type>
+        <definition>struct llvm::dwarf_linker::classic::DWARFLinker::DWARFLinkerOptions llvm::dwarf_linker::classic::DWARFLinker::Options</definition>
+        <argsstring></argsstring>
+        <name>Options</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::Options</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="833" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a419275b4bdc8a89c7cce1506c7f24345" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::dwarf_linker::classic::DWARFLinker::DWARFLinker</definition>
+        <argsstring>(MessageHandlerTy ErrorHandler, MessageHandlerTy WarningHandler, std::function&lt; StringRef(StringRef)&gt; StringsTranslator)</argsstring>
+        <name>DWARFLinker</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::DWARFLinker</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a6171d1affe838c4595f5bc1306ca5749" kindref="member">MessageHandlerTy</ref></type>
+          <declname>ErrorHandler</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a6171d1affe838c4595f5bc1306ca5749" kindref="member">MessageHandlerTy</ref></type>
+          <declname>WarningHandler</declname>
+        </param>
+        <param>
+          <type>std::function&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>)&gt;</type>
+          <declname>StringsTranslator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="213" column="3" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="213" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ab3c001f01a280aefade681724cc88f7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setOutputDWARFEmitter</definition>
+        <argsstring>(DwarfEmitter *Emitter)</argsstring>
+        <name>setOutputDWARFEmitter</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setOutputDWARFEmitter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1classic_1_1_dwarf_emitter" kindref="compound">DwarfEmitter</ref> *</type>
+          <declname>Emitter</declname>
+        </param>
+        <briefdescription>
+<para>Set output DWARF emitter. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="226" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="226" bodyend="228"/>
+        <references refid="_d_x_container_globals_8cpp_1a4e37c99d7f846fd82966c68def83c4fc" compoundref="_d_x_container_globals_8cpp" startline="251">Emitter</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ae58e570d50b3ef11bc8cd906ee008222" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::DWARFLinker::addObjectFile</definition>
+        <argsstring>(DWARFFile &amp;File, ObjFileLoaderTy Loader=nullptr, CompileUnitHandlerTy OnCUDieLoaded=[](const DWARFUnit &amp;) {}) override</argsstring>
+        <name>addObjectFile</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::addObjectFile</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a1cd1c06e048565246194a799ecbc9486">addObjectFile</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_file" kindref="compound">DWARFFile</ref> &amp;</type>
+          <declname>File</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1abdf3094623b3752dabeeb5bd7ceb24ad" kindref="member">ObjFileLoaderTy</ref></type>
+          <declname>Loader</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a537122974e714f93e8ad5fa29439e856" kindref="member">CompileUnitHandlerTy</ref></type>
+          <declname>OnCUDieLoaded</declname>
+          <defval>[](<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_unit" kindref="compound">DWARFUnit</ref> &amp;) {}</defval>
+        </param>
+        <briefdescription>
+<para>Add object file to be linked. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Pre-load compile unit die. Call <computeroutput>OnCUDieLoaded</computeroutput> for each compile unit die. If specified <computeroutput>File</computeroutput> has reference to the Clang module then such module would be pre-loaded by <computeroutput>Loader</computeroutput> for !Update case.</para>
+<para><simplesect kind="pre"><para>NoODR, Update options should be set before call to addObjectFile. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="236" column="8" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="2709" bodyend="2728"/>
+        <references refid="_compiler_8h_1a104cae72182bec0ab951e3faea6ce509" compoundref="_compiler_8h" startline="320">LLVM_UNLIKELY</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1af6caebcd7dc40dea28562fde4f260414" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::DWARFLinker::link</definition>
+        <argsstring>() override</argsstring>
+        <name>link</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::link</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a5c06ee4a3b2d38bf3fc825fc74580383">link</reimplements>
+        <briefdescription>
+<para>Link debug info for added objFiles. Object files are linked all together. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="241" column="9" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="2730" bodyend="3029"/>
+        <references refid="namespacellvm_1ac7f4306c508478ca81791cbccef212fb" compoundref="_classic_2_d_w_a_r_f_linker_8cpp" startline="304" endline="380">llvm::analyzeContextInfo</references>
+        <references refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a78ca7920cd1aaf69f7da553285c55308a9f6290f4436e5a2351f12e03b6433c3c" compoundref="_d_w_a_r_f_linker_base_8h" startline="93">llvm::dwarf_linker::DWARFLinkerBase::Apple</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_thread_pool_interface_1ad43d0052f680e6ac08426d8821df178d" compoundref="_thread_pool_8h" startline="78" endline="82">llvm::ThreadPoolInterface::async</references>
+        <references refid="structllvm_1_1_d_i_dump_options_1ae396b319b15cbecf51ec8dc4ee2719b0" compoundref="_d_i_context_8h" startline="198">llvm::DIDumpOptions::ChildRecurseDepth</references>
+        <references refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a78ca7920cd1aaf69f7da553285c55308a20f18d4a28570b83b8f5bd6c9d26d7b8" compoundref="_d_w_a_r_f_linker_base_8h" startline="95">llvm::dwarf_linker::DWARFLinkerBase::DebugNames</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1aa56d25bb5127dd7a5831c25764f76cbe" compoundref="_path_8cpp" startline="577" endline="577">llvm::sys::path::filename</references>
+        <references refid="namespacellvm_1a653cce37b80c03eebe7a00520a8eabb6" compoundref="_format_variadic_8h" startline="252" endline="256">llvm::formatv</references>
+        <references refid="namespacellvm_1a78afeb48a64a0f1d800ab10827de4f8b" compoundref="_classic_2_d_w_a_r_f_linker_8cpp" startline="53" endline="59">llvm::getDebugInfoSize</references>
+        <references refid="namespacellvm_1a58c8277a8af9d4c7d299c82c95b39668" compoundref="_classic_2_d_w_a_r_f_linker_8cpp" startline="2454" endline="2466">llvm::getPCMFile</references>
+        <references refid="classllvm_1_1dwarf__linker_1_1classic_1_1_decl_context_tree_1af8626f61b69ed2ebd28e34fd2a1f5379" compoundref="_d_w_a_r_f_linker_decl_context_8h" startline="147" endline="147">llvm::dwarf_linker::classic::DeclContextTree::getRoot</references>
+        <references refid="classllvm_1_1dwarf__linker_1_1_indexed_values_map_1a99aebbd2baa77e4f1354011f9763ca2a" compoundref="_indexed_values_map_8h" startline="30" endline="30">llvm::dwarf_linker::IndexedValuesMap&lt; T &gt;::getValues</references>
+        <references refid="namespacellvm_1a00440f10281348fd9f7be52e23c7c874" compoundref="_threading_8h" startline="184" endline="188">llvm::hardware_concurrency</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_x86_partial_reduction_8cpp_1a9e1483f7215664a2315c53c3558d9a8d" compoundref="_x86_partial_reduction_8cpp" startline="73">LHS</references>
+        <references refid="_compiler_8h_1ae5b35beb6f127e5f47269e9124b886fb" compoundref="_compiler_8h" startline="319">LLVM_LIKELY</references>
+        <references refid="_compiler_8h_1a104cae72182bec0ab951e3faea6ce509" compoundref="_compiler_8h" startline="320">LLVM_UNLIKELY</references>
+        <references refid="namespacellvm_1a2d79a00fa7c56f57b87f2fe2a3f118c7" compoundref="raw__ostream_8cpp" startline="895" endline="905">llvm::outs</references>
+        <references refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a78ca7920cd1aaf69f7da553285c55308aa29bdd003ef6c0c34279807341f450f2" compoundref="_d_w_a_r_f_linker_base_8h" startline="94">llvm::dwarf_linker::DWARFLinkerBase::Pub</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+        <references refid="classllvm_1_1_bit_vector_1a62237ebe27691377a942abe7446332ec" compoundref="_bit_vector_8h" startline="351" endline="355">llvm::BitVector::set</references>
+        <references refid="namespacellvm_1a74cdbd1e4f731e7d7cd83461b8b1de0b" compoundref="_s_t_l_extras_8h" startline="1664" endline="1675">llvm::sort</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="namespacellvm_1aba83a013c55b19255697393a10d9165e" compoundref="_string_extras_8h" startline="342" endline="349">llvm::toString</references>
+        <references refid="structllvm_1_1_d_i_dump_options_1add6a33649e764a95f041d7b8358a019e" compoundref="_d_i_context_8h" startline="207">llvm::DIDumpOptions::Verbose</references>
+        <references refid="namespacellvm_1a02b44f93159b4b08e7998a4fb4d7705f" compoundref="_classic_2_d_w_a_r_f_linker_8cpp" startline="963" endline="1001">llvm::verifyKeepChain</references>
+        <references refid="classllvm_1_1_single_thread_executor_1a4a9fc38bb7d9ff3f944e25971330cb42" compoundref="_thread_pool_8cpp" startline="201" endline="208">llvm::SingleThreadExecutor::wait</references>
+        <references refid="namespacellvm_1ac226f3d2b9ca090171a8e0a8cb92c343a0eaadb4fcb48a0a0ed7bc9868be9fbaa" compoundref="_with_color_8h" startline="35">llvm::Warning</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ae7d1b94dba1c04e090a344a1e31888e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setVerbosity</definition>
+        <argsstring>(bool Verbose) override</argsstring>
+        <name>setVerbosity</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setVerbosity</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a6dca372a9ce194fb6229528b4a1f9ed1">setVerbosity</reimplements>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Verbose</declname>
+        </param>
+        <briefdescription>
+<para>A number of methods setting various linking options: </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows to generate log of linking process to the standard output. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="246" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="246" bodyend="246"/>
+        <references refid="namespacellvm_1adacba4cb06d1dd9232ee3d2d49a44d8fad4a9fa383ab700c5bdd6f31cf7df0faf" compoundref="_imported_functions_inlining_statistics_8h" startline="107">llvm::Verbose</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a010ff281766fef5c1c343ba71c45f4bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setStatistics</definition>
+        <argsstring>(bool Statistics) override</argsstring>
+        <name>setStatistics</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setStatistics</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a9dfbf23fdcb24d443f9bc71946ff162e">setStatistics</reimplements>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Statistics</declname>
+        </param>
+        <briefdescription>
+<para>Print statistics to standard output. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="249" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="249" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4511f5243766afa68114a68c157c51dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setVerifyInputDWARF</definition>
+        <argsstring>(bool Verify) override</argsstring>
+        <name>setVerifyInputDWARF</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setVerifyInputDWARF</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a7e83aaae6734ba1c6b88cf33c1385433">setVerifyInputDWARF</reimplements>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Verify</declname>
+        </param>
+        <briefdescription>
+<para>Verify the input DWARF. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="254" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="254" bodyend="256"/>
+        <references refid="_p_p_c_c_t_r_loops_verify_8cpp_1a345bd69760b9ee32b3f49d4fc04120fb" compoundref="_p_p_c_c_t_r_loops_verify_8cpp" startline="73">Verify</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a9d1c779a9536b634e8db8646a1cd0b0e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setNoODR</definition>
+        <argsstring>(bool NoODR) override</argsstring>
+        <name>setNoODR</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setNoODR</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1afd26699118ddc2e3a819d96ceae62105">setNoODR</reimplements>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>NoODR</declname>
+        </param>
+        <briefdescription>
+<para>Do not unique types according to ODR. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="259" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="259" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ab761f2217eadcb15a3a8cd8704345951" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setUpdateIndexTablesOnly</definition>
+        <argsstring>(bool Update) override</argsstring>
+        <name>setUpdateIndexTablesOnly</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setUpdateIndexTablesOnly</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a84197c8fcb9b0eaec294a800bdfa6f69">setUpdateIndexTablesOnly</reimplements>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Update</declname>
+        </param>
+        <briefdescription>
+<para>Update index tables <ref refid="_region_printer_8cpp_1a5782a8740ff1e91516b41b3726a3168c" kindref="member">only(do not modify rest of DWARF)</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="262" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="262" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a2a4c741bb835d7f1346afdf113e0ec20" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setAllowNonDeterministicOutput</definition>
+        <argsstring>(bool) override</argsstring>
+        <name>setAllowNonDeterministicOutput</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setAllowNonDeterministicOutput</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a410af2fa92cd9d9212ec907727bd20b7">setAllowNonDeterministicOutput</reimplements>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        </param>
+        <briefdescription>
+<para>Allow generating valid, but non-deterministic output. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="267" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="267" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a33297f14d9c80430108df6e5e5f30089" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setKeepFunctionForStatic</definition>
+        <argsstring>(bool KeepFunctionForStatic) override</argsstring>
+        <name>setKeepFunctionForStatic</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setKeepFunctionForStatic</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a348a3140c262752a95cf457cc4f87f56">setKeepFunctionForStatic</reimplements>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>KeepFunctionForStatic</declname>
+        </param>
+        <briefdescription>
+<para>Set whether to keep the enclosing function for a static variable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="271" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="271" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a2439e49252170de3fc15fca7752d5a58" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setNumThreads</definition>
+        <argsstring>(unsigned NumThreads) override</argsstring>
+        <name>setNumThreads</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setNumThreads</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a06d0812f600a91908eb8e3dff058842a">setNumThreads</reimplements>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumThreads</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_use" kindref="compound">Use</ref> specified number of threads for parallel files linking. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="276" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="276" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a5af387e6e654a7f0c2a2a9d520fd37c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::addAccelTableKind</definition>
+        <argsstring>(AccelTableKind Kind) override</argsstring>
+        <name>addAccelTableKind</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::addAccelTableKind</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a695221640f0ce12baf933c6c84a56304">addAccelTableKind</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a78ca7920cd1aaf69f7da553285c55308" kindref="member">AccelTableKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <briefdescription>
+<para>Add kind of accelerator tables to be generated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="281" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="281" bodyend="284"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1acd1cd968cb420c82d70926920fcdc7d7" compoundref="_s_t_l_extras_8h" startline="1903" endline="1911">llvm::is_contained</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aa309e19361ee14fee735cfff59d67d3a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setPrependPath</definition>
+        <argsstring>(StringRef Ppath) override</argsstring>
+        <name>setPrependPath</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setPrependPath</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1ad4cb202f68a8a4e00b0795eaaa96634f">setPrependPath</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Ppath</declname>
+        </param>
+        <briefdescription>
+<para>Set prepend path for clang modules. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="287" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="287" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1add2cdea32535864c9c9a750390c2d0ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setEstimatedObjfilesAmount</definition>
+        <argsstring>(unsigned ObjFilesNum) override</argsstring>
+        <name>setEstimatedObjfilesAmount</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setEstimatedObjfilesAmount</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a2a1a44080da5982bafd54dc2e4e1fae0">setEstimatedObjfilesAmount</reimplements>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ObjFilesNum</declname>
+        </param>
+        <briefdescription>
+<para>Set estimated objects files amount, for preliminary data allocation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="290" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="290" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a017ab2d6b4a7ef8969ac4c8c85da214a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setInputVerificationHandler</definition>
+        <argsstring>(InputVerificationHandlerTy Handler) override</argsstring>
+        <name>setInputVerificationHandler</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setInputVerificationHandler</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1adeefca349d3a5f672394a68ac92f5f43">setInputVerificationHandler</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1ac482b3b01bd8e00cd02ecfba94e88694" kindref="member">InputVerificationHandlerTy</ref></type>
+          <declname>Handler</declname>
+        </param>
+        <briefdescription>
+<para>Set verification handler which would be used to report verification errors. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="297" column="3" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="297" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a216a1d8caddbc127e14e041ed76d6210" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setSwiftInterfacesMap</definition>
+        <argsstring>(SwiftInterfacesMapTy *Map) override</argsstring>
+        <name>setSwiftInterfacesMap</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setSwiftInterfacesMap</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a4de4f6bdb6745431d564e632324d27d7">setSwiftInterfacesMap</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1ab7230244084c9a0c89b2113444331260" kindref="member">SwiftInterfacesMapTy</ref> *</type>
+          <declname>Map</declname>
+        </param>
+        <briefdescription>
+<para>Set map for Swift interfaces. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="302" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="302" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a2da6af9e657fdde595f9a166ca7e4878" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::setObjectPrefixMap</definition>
+        <argsstring>(ObjectPrefixMapTy *Map) override</argsstring>
+        <name>setObjectPrefixMap</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setObjectPrefixMap</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a618ba947bc20587d40c9caeac603af3d">setObjectPrefixMap</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a0b10e00e608ed9bcead9c3c7bcd62b4c" kindref="member">ObjectPrefixMapTy</ref> *</type>
+          <declname>Map</declname>
+        </param>
+        <briefdescription>
+<para>Set prefix map for objects. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="307" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="307" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aac36499d5ebb7dc9994adee56cf716c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::dwarf_linker::classic::DWARFLinker::setTargetDWARFVersion</definition>
+        <argsstring>(uint16_t TargetDWARFVersion) override</argsstring>
+        <name>setTargetDWARFVersion</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::setTargetDWARFVersion</qualifiedname>
+        <reimplements refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a6f64d34a0a87ea1901a0029abb5db6b9">setTargetDWARFVersion</reimplements>
+        <param>
+          <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+          <declname>TargetDWARFVersion</declname>
+        </param>
+        <briefdescription>
+<para>Set target DWARF version. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="312" column="9" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="312" bodyend="320"/>
+        <references refid="namespacellvm_1a4d2fd926089a58d482fb67a362e11bad" compoundref="llvm_2_support_2_error_8h" startline="1291" endline="1296">llvm::createStringError</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a978871b5919763e0bf8bfe0fbfca93e6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker" kindref="compound">DWARFLinker</ref> &gt;</type>
+        <definition>static std::unique_ptr&lt; DWARFLinker &gt; llvm::dwarf_linker::classic::DWARFLinker::createLinker</definition>
+        <argsstring>(MessageHandlerTy ErrorHandler, MessageHandlerTy WarningHandler, std::function&lt; StringRef(StringRef)&gt; StringsTranslator=nullptr)</argsstring>
+        <name>createLinker</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::createLinker</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a6171d1affe838c4595f5bc1306ca5749" kindref="member">MessageHandlerTy</ref></type>
+          <declname>ErrorHandler</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a6171d1affe838c4595f5bc1306ca5749" kindref="member">MessageHandlerTy</ref></type>
+          <declname>WarningHandler</declname>
+        </param>
+        <param>
+          <type>std::function&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>)&gt;</type>
+          <declname>StringsTranslator</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="218" column="26" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="218" bodyend="223"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a385669e7f2cb8235f12f3693ec123f05" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DWARFLinker::verifyInput</definition>
+        <argsstring>(const DWARFFile &amp;File)</argsstring>
+        <name>verifyInput</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::verifyInput</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_file" kindref="compound">DWARFFile</ref> &amp;</type>
+          <declname>File</declname>
+        </param>
+        <briefdescription>
+<para>Verify the given DWARF file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="380" column="8" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="3068" bodyend="3078"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a9dfcf9d7db0a21ce196271e480750e02" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::dwarf_linker::classic::DWARFLinker::needToTranslateStrings</definition>
+        <argsstring>()</argsstring>
+        <name>needToTranslateStrings</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::needToTranslateStrings</qualifiedname>
+        <briefdescription>
+<para>returns true if we need to translate strings. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="383" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="383" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a2c3c6eb2ee0857c3d6d55f8ba188646b" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::reportWarning</definition>
+        <argsstring>(const Twine &amp;Warning, const DWARFFile &amp;File, const DWARFDie *DIE=nullptr) const</argsstring>
+        <name>reportWarning</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::reportWarning</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Warning</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_file" kindref="compound">DWARFFile</ref> &amp;</type>
+          <declname>File</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> *</type>
+          <declname>DIE</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="385" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="385" bodyend="389"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a1ae3d857175c82a13a192d98490e691c" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::dwarf_linker::classic::DWARFLinker::reportError</definition>
+        <argsstring>(const Twine &amp;Warning, const DWARFFile &amp;File, const DWARFDie *DIE=nullptr) const</argsstring>
+        <name>reportError</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::reportError</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Warning</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_file" kindref="compound">DWARFFile</ref> &amp;</type>
+          <declname>File</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> *</type>
+          <declname>DIE</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="391" column="8" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="391" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a86e319465467e3ce1d7ea29415464327" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DWARFLinker::copyInvariantDebugSection</definition>
+        <argsstring>(DWARFContext &amp;Dwarf)</argsstring>
+        <name>copyInvariantDebugSection</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::copyInvariantDebugSection</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_d_w_a_r_f_context" kindref="compound">DWARFContext</ref> &amp;</type>
+          <declname>Dwarf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="397" column="8" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="2689" bodyend="2707"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a34590575f0376ebbae5463c3cc60c743" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DWARFLinker::cleanupAuxiliarryData</definition>
+        <argsstring>(LinkContext &amp;Context)</argsstring>
+        <name>cleanupAuxiliarryData</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::cleanupAuxiliarryData</qualifiedname>
+        <param>
+          <type>LinkContext &amp;</type>
+          <declname>Context</declname>
+        </param>
+        <briefdescription>
+<para>Called before emitting object data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="432" column="8" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="398" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ae3708da9e428050f8e282506451d8046" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DWARFLinker::lookForParentDIEsToKeep</definition>
+        <argsstring>(unsigned AncestorIdx, CompileUnit &amp;CU, unsigned Flags, SmallVectorImpl&lt; WorklistItem &gt; &amp;Worklist)</argsstring>
+        <name>lookForParentDIEsToKeep</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::lookForParentDIEsToKeep</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>AncestorIdx</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1classic_1_1_compile_unit" kindref="compound">CompileUnit</ref> &amp;</type>
+          <declname>CU</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; WorklistItem &gt; &amp;</type>
+          <declname>Worklist</declname>
+        </param>
+        <briefdescription>
+<para>Look at the parent of the given <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> and decide whether they should be kept. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="436" column="8" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="810" bodyend="821"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aeb439c21365779ac39a26f19cc425184" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DWARFLinker::lookForChildDIEsToKeep</definition>
+        <argsstring>(const DWARFDie &amp;Die, CompileUnit &amp;CU, unsigned Flags, SmallVectorImpl&lt; WorklistItem &gt; &amp;Worklist)</argsstring>
+        <name>lookForChildDIEsToKeep</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::lookForChildDIEsToKeep</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> &amp;</type>
+          <declname>Die</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1classic_1_1_compile_unit" kindref="compound">CompileUnit</ref> &amp;</type>
+          <declname>CU</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; WorklistItem &gt; &amp;</type>
+          <declname>Worklist</declname>
+        </param>
+        <briefdescription>
+<para>Look at the children of the given <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> and decide whether they should be kept. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="442" column="8" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="692" bodyend="718"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a1e89c90434c1338539cedff8ca5b97c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DWARFLinker::lookForRefDIEsToKeep</definition>
+        <argsstring>(const DWARFDie &amp;Die, CompileUnit &amp;CU, unsigned Flags, const UnitListTy &amp;Units, const DWARFFile &amp;File, SmallVectorImpl&lt; WorklistItem &gt; &amp;Worklist)</argsstring>
+        <name>lookForRefDIEsToKeep</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::lookForRefDIEsToKeep</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> &amp;</type>
+          <declname>Die</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1classic_1_1_compile_unit" kindref="compound">CompileUnit</ref> &amp;</type>
+          <declname>CU</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1dwarf__linker_1_1classic_1a15dd9ce2c2728a22611f39c0fdfce567" kindref="member">UnitListTy</ref> &amp;</type>
+          <declname>Units</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_file" kindref="compound">DWARFFile</ref> &amp;</type>
+          <declname>File</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; WorklistItem &gt; &amp;</type>
+          <declname>Worklist</declname>
+        </param>
+        <briefdescription>
+<para>Look at DIEs referenced by the given <ref refid="classllvm_1_1_d_i_e" kindref="compound">DIE</ref> and decide whether they should be kept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All DIEs referenced though attributes should be kept. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="448" column="8" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="743" bodyend="807"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a8b619a56892640997c9a8d696ee161ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DWARFLinker::markODRCanonicalDie</definition>
+        <argsstring>(const DWARFDie &amp;Die, CompileUnit &amp;CU)</argsstring>
+        <name>markODRCanonicalDie</name>
+        <qualifiedname>llvm::dwarf_linker::classic::DWARFLinker::markODRCanonicalDie</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_w_a_r_f_die" kindref="compound">DWARFDie</ref> &amp;</type>
+          <declname>Die</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1dwarf__linker_1_1classic_1_1_compile_unit" kindref="compound">CompileUnit</ref> &amp;</type>
+          <declname>CU</declname>
+        </param>
+        <briefdescription>
+<para>Mark context corresponding to the specified <computeroutput>Die</computeroutput> as having canonical die, if applicable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="455" column="8" bodyfile="lib/DWARFLinker/Classic/DWARFLinker.cpp" bodystart="732" bodyend="739"/>
+      </memberdef>
+      <member refid="group___find_root_d_i_es_1ga2b4682e0fe0146440fe8826e4e67182e" kind="function"><name>lookForDIEsToKeep</name></member>
+      <member refid="group___find_root_d_i_es_1ga343cf73eec78f37be68c0f8a131a0d49" kind="function"><name>isClangModuleRef</name></member>
+      <member refid="group___find_root_d_i_es_1gabd5556765c8fe5426d92dc474a1e7966" kind="function"><name>registerModuleReference</name></member>
+      <member refid="group___find_root_d_i_es_1ga173d5c588b7bec182a851c6cfd7b3fa4" kind="function"><name>loadClangModule</name></member>
+      <member refid="group___find_root_d_i_es_1ga16541c95c463709f1163b52f913e6bc4" kind="function"><name>cloneModuleUnit</name></member>
+      <member refid="group___find_root_d_i_es_1ga24c2bcead90bfc63a47c4c1832093b10" kind="function"><name>shouldKeepDIE</name></member>
+      <member refid="group___find_root_d_i_es_1gaa180d20c87f7cda613a75894475ca2f0" kind="function"><name>getVariableRelocAdjustment</name></member>
+      <member refid="group___find_root_d_i_es_1ga036b9988329e2d2dff7482b094cc5d63" kind="function"><name>shouldKeepVariableDIE</name></member>
+      <member refid="group___find_root_d_i_es_1gaf0bf84a58c76b6f9173903dc44014df7" kind="function"><name>shouldKeepSubprogramDIE</name></member>
+      <member refid="group___find_root_d_i_es_1ga6061ea947e754c29e1a73d644b113f03" kind="function"><name>resolveDIEReference</name></member>
+      <member refid="group___methods_1ga2aa92c4a933559ff31416fbf591a2ebb" kind="function"><name>assignAbbrev</name></member>
+      <member refid="group___methods_1ga8394ac912aa1b29344c695448138771c" kind="function"><name>generateUnitRanges</name></member>
+      <member refid="group___methods_1ga54dda4f7a2eefd155f9b950467deeb3e" kind="function"><name>emitAcceleratorEntriesForUnit</name></member>
+      <member refid="group___methods_1gaedf18a2dd597536e4fcc81f0c746cef0" kind="function"><name>patchFrameInfoForObject</name></member>
+    </sectiondef>
+    <briefdescription>
+<para>The core of the Dwarf linking logic. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The generation of the dwarf information from the object files will be driven by the selection of &apos;root DIEs&apos;, which are DIEs that describe variables or functions that resolves to the corresponding code section(and thus have entries in the Addresses map). All the debug information that will be generated(the DIEs, but also the line
+tables, ranges, ...) is derived from that set of root DIEs.</para>
+<para>The root DIEs are identified because they contain relocations that points to code section(the low_pc for a function, the location for
+a variable). These relocations are called ValidRelocs in the AddressesInfo and are gathered as a very first step when we start processing a object file. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::dwarf_linker::DWARFLinkerBase</label>
+        <link refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base"/>
+      </node>
+      <node id="1">
+        <label>llvm::dwarf_linker::classic::DWARFLinker</label>
+        <link refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>llvm::dwarf_linker::DWARFLinkerBase</label>
+        <link refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base"/>
+      </node>
+      <node id="1">
+        <label>llvm::dwarf_linker::classic::DWARFLinker</label>
+        <link refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/DWARFLinker/Classic/DWARFLinker.h" line="211" column="1" bodyfile="include/llvm/DWARFLinker/Classic/DWARFLinker.h" bodystart="211" bodyend="834"/>
+    <listofallmembers>
+      <member refid="group___methods_1ga28295e4595aa2e9795bafb4f988eb387" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>Abbreviations</name></member>
+      <member refid="group___methods_1ga4848fb1c48d2177a581998f4148a79e1" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>AbbreviationsSet</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a78ca7920cd1aaf69f7da553285c55308" prot="public" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>AccelTableKind</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a5af387e6e654a7f0c2a2a9d520fd37c0" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>addAccelTableKind</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ae58e570d50b3ef11bc8cd906ee008222" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>addObjectFile</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a72efa2f2b84ccbfa80b4ac7f529f0fb3" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>AppleNames</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a7c061d1b674ffbdcc0e1e2287f3e6891" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>AppleNamespaces</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a6b0f34dd0b6f04aa4ab188334b3dddb9" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>AppleObjc</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a1440f27f336334a23a0dc4f05fc4f25d" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>AppleTypes</name></member>
+      <member refid="group___methods_1ga2aa92c4a933559ff31416fbf591a2ebb" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>assignAbbrev</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aa5cdeb7ae46271105ef46d21de94ddc4" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>ClangModules</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a34590575f0376ebbae5463c3cc60c743" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>cleanupAuxiliarryData</name></member>
+      <member refid="group___find_root_d_i_es_1ga16541c95c463709f1163b52f913e6bc4" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>cloneModuleUnit</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a537122974e714f93e8ad5fa29439e856" prot="public" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>CompileUnitHandlerTy</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a86e319465467e3ce1d7ea29415464327" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>copyInvariantDebugSection</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a978871b5919763e0bf8bfe0fbfca93e6" prot="public" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>createLinker</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aa0395fcf056236a5537cc267e4f582db" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>DebugNames</name></member>
+      <member refid="group___methods_1ga173bf0b93926ea58018760bfdac46950" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>DIEAlloc</name></member>
+      <member refid="group___methods_1ga3469ff79fcbde6523ed545795538932c" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>DIEBlocks</name></member>
+      <member refid="group___methods_1ga4dc98e41bb74bd3034ab586cbf65825d" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>DIELocs</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a419275b4bdc8a89c7cce1506c7f24345" prot="public" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>DWARFLinker</name></member>
+      <member refid="group___methods_1ga54dda4f7a2eefd155f9b950467deeb3e" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>emitAcceleratorEntriesForUnit</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a2932cb8d50074973bbdc9adc35d41794" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>EmittedCIEs</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a48f74aeb511ba3a1f845c8790e9b0615" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>ErrorHandler</name></member>
+      <member refid="group___methods_1ga8394ac912aa1b29344c695448138771c" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>generateUnitRanges</name></member>
+      <member refid="group___find_root_d_i_es_1gaa180d20c87f7cda613a75894475ca2f0" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>getVariableRelocAdjustment</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1ac482b3b01bd8e00cd02ecfba94e88694" prot="public" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>InputVerificationHandlerTy</name></member>
+      <member refid="group___find_root_d_i_es_1ga343cf73eec78f37be68c0f8a131a0d49" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>isClangModuleRef</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ad783d0a3eb256e858e99e88f912660e0" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>LastCIEOffset</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1af6caebcd7dc40dea28562fde4f260414" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>link</name></member>
+      <member refid="group___find_root_d_i_es_1ga173d5c588b7bec182a851c6cfd7b3fa4" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>loadClangModule</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aeb439c21365779ac39a26f19cc425184" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>lookForChildDIEsToKeep</name></member>
+      <member refid="group___find_root_d_i_es_1ga2b4682e0fe0146440fe8826e4e67182e" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>lookForDIEsToKeep</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ae3708da9e428050f8e282506451d8046" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>lookForParentDIEsToKeep</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a1e89c90434c1338539cedff8ca5b97c0" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>lookForRefDIEsToKeep</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a8b619a56892640997c9a8d696ee161ed" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>markODRCanonicalDie</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a6171d1affe838c4595f5bc1306ca5749" prot="public" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>MessageHandlerTy</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aa6e60159172b5e312354fe80203b2b3e" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>ModuleUnitListTy</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a9dfcf9d7db0a21ce196271e480750e02" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>needToTranslateStrings</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ad6f7c983f88453183ad9f0cc7e5a653d" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>ObjectContexts</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a0b10e00e608ed9bcead9c3c7bcd62b4c" prot="public" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>ObjectPrefixMapTy</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1abdf3094623b3752dabeeb5bd7ceb24ad" prot="public" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>ObjFileLoaderTy</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1af784ab096506152175a4d2e6cdfc200a" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>Options</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1aba62c3e12b7c341d64f21e98325f4082" prot="public" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>OutputFileType</name></member>
+      <member refid="group___methods_1gaedf18a2dd597536e4fcc81f0c746cef0" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>patchFrameInfoForObject</name></member>
+      <member refid="group___find_root_d_i_es_1gabd5556765c8fe5426d92dc474a1e7966" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>registerModuleReference</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a1ae3d857175c82a13a192d98490e691c" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>reportError</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a2c3c6eb2ee0857c3d6d55f8ba188646b" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>reportWarning</name></member>
+      <member refid="group___find_root_d_i_es_1ga6061ea947e754c29e1a73d644b113f03" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>resolveDIEReference</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a2a4c741bb835d7f1346afdf113e0ec20" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setAllowNonDeterministicOutput</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1add2cdea32535864c9c9a750390c2d0ba" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setEstimatedObjfilesAmount</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a017ab2d6b4a7ef8969ac4c8c85da214a" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setInputVerificationHandler</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a33297f14d9c80430108df6e5e5f30089" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setKeepFunctionForStatic</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a9d1c779a9536b634e8db8646a1cd0b0e" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setNoODR</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a2439e49252170de3fc15fca7752d5a58" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setNumThreads</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a2da6af9e657fdde595f9a166ca7e4878" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setObjectPrefixMap</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ab3c001f01a280aefade681724cc88f7f" prot="public" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setOutputDWARFEmitter</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aa309e19361ee14fee735cfff59d67d3a" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setPrependPath</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a010ff281766fef5c1c343ba71c45f4bf" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setStatistics</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a216a1d8caddbc127e14e041ed76d6210" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setSwiftInterfacesMap</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1aac36499d5ebb7dc9994adee56cf716c4" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setTargetDWARFVersion</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ab761f2217eadcb15a3a8cd8704345951" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setUpdateIndexTablesOnly</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1ae7d1b94dba1c04e090a344a1e31888e4" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setVerbosity</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4511f5243766afa68114a68c157c51dd" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>setVerifyInputDWARF</name></member>
+      <member refid="group___find_root_d_i_es_1ga24c2bcead90bfc63a47c4c1832093b10" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>shouldKeepDIE</name></member>
+      <member refid="group___find_root_d_i_es_1gaf0bf84a58c76b6f9173903dc44014df7" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>shouldKeepSubprogramDIE</name></member>
+      <member refid="group___find_root_d_i_es_1ga036b9988329e2d2dff7482b094cc5d63" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>shouldKeepVariableDIE</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a100e3ac356e1699f1648bfb1a5dc182c" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>StringsTranslator</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1ab7230244084c9a0c89b2113444331260" prot="public" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>SwiftInterfacesMapTy</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75a4433a604d690b5582ca42d6785e994d5" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>TF_DependencyWalk</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75a4ec197ba7e11cfb89b03e175118ed3a7" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>TF_InFunctionScope</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75af1dbff36d3f0145c09d40a8cc5564852" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>TF_Keep</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75a49b5af23de9e4a7a8aa2b77654c1f931" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>TF_ODR</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75a198689d1bc624cd33d19cfd4efd4a5ad" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>TF_ParentWalk</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75ad86739eb568c26a46cbb34f5ab4176be" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>TF_SkipPC</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1af04d9d231bad7e179e7736904370fbd0" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>TheDwarfEmitter</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a4ea254a884fa28ec31e634ddada2ec75" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>TraversalFlags</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a684d27971fce3d5980daf565c3bd9083" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>UniqueUnitID</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a385669e7f2cb8235f12f3693ec123f05" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>verifyInput</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a5df071ad3ffef1f8e8afa4655b0de021" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>WarningHandler</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1a39f9f13cf5aa4aaff8230c8b58dac7a3" prot="private" virt="non-virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>WorklistItemType</name></member>
+      <member refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base_1a3e1120c43e3a5dad3262ab158857bfce" prot="public" virt="virtual"><scope>llvm::dwarf_linker::classic::DWARFLinker</scope><name>~DWARFLinkerBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

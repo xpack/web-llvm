@@ -1,0 +1,996 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_g_v_n_hoist" kind="class" language="C++" prot="public">
+    <compoundname>llvm::GVNHoist</compoundname>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1_g_v_n_hoist_1a56d0cbf9485737ec04942211c485eb6f" prot="private" static="no" strong="no">
+        <type></type>
+        <name>InsKind</name>
+        <qualifiedname>llvm::GVNHoist::InsKind</qualifiedname>
+        <enumvalue id="classllvm_1_1_g_v_n_hoist_1a56d0cbf9485737ec04942211c485eb6fa105956481a8664109c0c7e26d4412bd6" prot="private">
+          <name>Unknown</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_g_v_n_hoist_1a56d0cbf9485737ec04942211c485eb6fa657e50c75f6663271bcf34639917ca8c" prot="private">
+          <name>Scalar</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_g_v_n_hoist_1a56d0cbf9485737ec04942211c485eb6face2fedfaf5d467b8454ddd7baca83939" prot="private">
+          <name>Load</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_g_v_n_hoist_1a56d0cbf9485737ec04942211c485eb6fab50214ef8d95de94077aacf570ddcd88" prot="private">
+          <name>Store</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="277" column="3" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="277" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_g_v_n_hoist_1aeea5c1c2a3cc5009c684902aa879e7e5" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="namespacellvm_1a731f2f585eeed402141e8b3b6e511143" kindref="member">VNType</ref>, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, 2 &gt; &gt;</type>
+        <definition>using llvm::GVNHoist::RenameStackType =  DenseMap&lt;VNType, SmallVector&lt;Instruction *, 2&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>RenameStackType</name>
+        <qualifiedname>llvm::GVNHoist::RenameStackType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="348" column="3" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="348" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1a925fcecde947f8f2e298bc27aa898ce1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_g_v_n_pass_1_1_value_table" kindref="compound">GVNPass::ValueTable</ref></type>
+        <definition>GVNPass::ValueTable llvm::GVNHoist::VN</definition>
+        <argsstring></argsstring>
+        <name>VN</name>
+        <qualifiedname>llvm::GVNHoist::VN</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="263" column="23" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1aaeb54ae6009a131f51311d5260f0f00e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+        <definition>DominatorTree* llvm::GVNHoist::DT</definition>
+        <argsstring></argsstring>
+        <name>DT</name>
+        <qualifiedname>llvm::GVNHoist::DT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="264" column="17" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1a21288d2db589642eb2035dc31e494c91" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref> *</type>
+        <definition>PostDominatorTree* llvm::GVNHoist::PDT</definition>
+        <argsstring></argsstring>
+        <name>PDT</name>
+        <qualifiedname>llvm::GVNHoist::PDT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="265" column="21" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1a3a863f2d54efc04d08730fda42cf5aee" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1ae457f1cf451ed893666c4a384e58f8e5" kindref="member">AliasAnalysis</ref> *</type>
+        <definition>AliasAnalysis* llvm::GVNHoist::AA</definition>
+        <argsstring></argsstring>
+        <name>AA</name>
+        <qualifiedname>llvm::GVNHoist::AA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="266" column="17" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1a6d7ad36f0e6ad2150a0ebe1425d0adff" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_memory_dependence_results" kindref="compound">MemoryDependenceResults</ref> *</type>
+        <definition>MemoryDependenceResults* llvm::GVNHoist::MD</definition>
+        <argsstring></argsstring>
+        <name>MD</name>
+        <qualifiedname>llvm::GVNHoist::MD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="267" column="27" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1a76ac4585337028514f1ec6bb5c789fbe" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref> *</type>
+        <definition>MemorySSA* llvm::GVNHoist::MSSA</definition>
+        <argsstring></argsstring>
+        <name>MSSA</name>
+        <qualifiedname>llvm::GVNHoist::MSSA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="268" column="13" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1ae40b1c72f70b8f17760b13f8b5b46ceb" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_s_s_a_updater" kindref="compound">MemorySSAUpdater</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MemorySSAUpdater&gt; llvm::GVNHoist::MSSAUpdater</definition>
+        <argsstring></argsstring>
+        <name>MSSAUpdater</name>
+        <qualifiedname>llvm::GVNHoist::MSSAUpdater</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="269" column="19" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1a65bed1716c68fdf9e0b8570d9af1b30c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>DenseMap&lt;const Value *, unsigned&gt; llvm::GVNHoist::DFSNumber</definition>
+        <argsstring></argsstring>
+        <name>DFSNumber</name>
+        <qualifiedname>llvm::GVNHoist::DFSNumber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="270" column="12" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="270" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1ac10502c9402e162dcbab85da6b4994f8" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1ae9b209ee602c8c5d31ad4e7b440b2891" kindref="member">BBSideEffectsSet</ref></type>
+        <definition>BBSideEffectsSet llvm::GVNHoist::BBSideEffects</definition>
+        <argsstring></argsstring>
+        <name>BBSideEffects</name>
+        <qualifiedname>llvm::GVNHoist::BBSideEffects</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="271" column="20" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1a8eafe9a2f4267eba208eb0286c4c64b2" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt;</type>
+        <definition>DenseSet&lt;const BasicBlock *&gt; llvm::GVNHoist::HoistBarrier</definition>
+        <argsstring></argsstring>
+        <name>HoistBarrier</name>
+        <qualifiedname>llvm::GVNHoist::HoistBarrier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="272" column="12" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1a5abb07885d7af927dca924f770ab9453" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, 32 &gt;</type>
+        <definition>SmallVector&lt;BasicBlock *, 32&gt; llvm::GVNHoist::IDFBlocks</definition>
+        <argsstring></argsstring>
+        <name>IDFBlocks</name>
+        <qualifiedname>llvm::GVNHoist::IDFBlocks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="273" column="15" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="273" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1a52c3e1adafdae076201aa7e45ac07fec" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::GVNHoist::NumFuncArgs</definition>
+        <argsstring></argsstring>
+        <name>NumFuncArgs</name>
+        <qualifiedname>llvm::GVNHoist::NumFuncArgs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="274" column="12" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="274" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_hoist_1a01fc6221a72da86d0e33ce653bbea946" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>const bool llvm::GVNHoist::HoistingGeps</definition>
+        <argsstring></argsstring>
+        <name>HoistingGeps</name>
+        <qualifiedname>llvm::GVNHoist::HoistingGeps</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="275" column="14" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="275" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a2d45156b505c5826f7ee38d7b9f8951a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::GVNHoist::GVNHoist</definition>
+        <argsstring>(DominatorTree *DT, PostDominatorTree *PDT, AliasAnalysis *AA, MemoryDependenceResults *MD, MemorySSA *MSSA)</argsstring>
+        <name>GVNHoist</name>
+        <qualifiedname>llvm::GVNHoist::GVNHoist</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+          <declname>DT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref> *</type>
+          <declname>PDT</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1ae457f1cf451ed893666c4a384e58f8e5" kindref="member">AliasAnalysis</ref> *</type>
+          <declname>AA</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_dependence_results" kindref="compound">MemoryDependenceResults</ref> *</type>
+          <declname>MD</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref> *</type>
+          <declname>MSSA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="245" column="3" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="245" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a16ce6b957db913c105611ac945641ce9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::run</definition>
+        <argsstring>(Function &amp;F)</argsstring>
+        <name>run</name>
+        <qualifiedname>llvm::GVNHoist::run</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="252" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="506" bodyend="542"/>
+        <references refid="namespacellvm_1ad6e19a09aeed4c56617c284e099c81de" compoundref="_depth_first_iterator_8h" startline="233" endline="235">llvm::depth_first</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_g_v_n_hoist_8cpp_1a33a6da95fd9ca88d076c64631998556a">MaxChainLength</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a9791f6da767d303d3917bfb29e61a341" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref> int</type>
+        <definition>unsigned int llvm::GVNHoist::rank</definition>
+        <argsstring>(const Value *V) const</argsstring>
+        <name>rank</name>
+        <qualifiedname>llvm::GVNHoist::rank</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="260" column="16" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="544" bodyend="564"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a3bbc6eab6ee1883c6e039591bb05f94c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::hasEH</definition>
+        <argsstring>(const BasicBlock *BB)</argsstring>
+        <name>hasEH</name>
+        <qualifiedname>llvm::GVNHoist::hasEH</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="280" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="566" bodyend="583"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a67c47325e19cea19f5a025ee32d3e6e7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::firstInBB</definition>
+        <argsstring>(const Instruction *I1, const Instruction *I2)</argsstring>
+        <name>firstInBB</name>
+        <qualifiedname>llvm::GVNHoist::firstInBB</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I1</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="283" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="283" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a0053fae58f19f1a99fa58666629bc0e4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::hasMemoryUse</definition>
+        <argsstring>(const Instruction *NewPt, MemoryDef *Def, const BasicBlock *BB)</argsstring>
+        <name>hasMemoryUse</name>
+        <qualifiedname>llvm::GVNHoist::hasMemoryUse</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>NewPt</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_def" kindref="compound">MemoryDef</ref> *</type>
+          <declname>Def</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="292" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="585" bodyend="617"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1ad1d8dc01e5d869f361423b748ed9a6c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::hasEHhelper</definition>
+        <argsstring>(const BasicBlock *BB, const BasicBlock *SrcBB, int &amp;NBBsOnAllPaths)</argsstring>
+        <name>hasEHhelper</name>
+        <qualifiedname>llvm::GVNHoist::hasEHhelper</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>SrcBB</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>NBBsOnAllPaths</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="295" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="619" bodyend="636"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a4d83aa137af8f3f4325c0fc291a419c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::hasEHOrLoadsOnPath</definition>
+        <argsstring>(const Instruction *NewPt, MemoryDef *Def, int &amp;NBBsOnAllPaths)</argsstring>
+        <name>hasEHOrLoadsOnPath</name>
+        <qualifiedname>llvm::GVNHoist::hasEHOrLoadsOnPath</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>NewPt</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_def" kindref="compound">MemoryDef</ref> *</type>
+          <declname>Def</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>NBBsOnAllPaths</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="305" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="638" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a888d0f3f8dfd9a33b046b2bf4d683344" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::hasEHOnPath</definition>
+        <argsstring>(const BasicBlock *HoistPt, const BasicBlock *SrcBB, int &amp;NBBsOnAllPaths)</argsstring>
+        <name>hasEHOnPath</name>
+        <qualifiedname>llvm::GVNHoist::hasEHOnPath</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>HoistPt</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>SrcBB</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>NBBsOnAllPaths</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="312" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="675" bodyend="703"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1afea22dc0a65bcd38bfdbe1ae07a45535" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::safeToHoistLdSt</definition>
+        <argsstring>(const Instruction *NewPt, const Instruction *OldPt, MemoryUseOrDef *U, InsKind K, int &amp;NBBsOnAllPaths)</argsstring>
+        <name>safeToHoistLdSt</name>
+        <qualifiedname>llvm::GVNHoist::safeToHoistLdSt</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>NewPt</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>OldPt</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_use_or_def" kindref="compound">MemoryUseOrDef</ref> *</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type>InsKind</type>
+          <declname>K</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>NBBsOnAllPaths</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="317" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="705" bodyend="745"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1ada27ee22479beb0b5b774547b2834cbe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::safeToHoistScalar</definition>
+        <argsstring>(const BasicBlock *HoistBB, const BasicBlock *BB, int &amp;NBBsOnAllPaths)</argsstring>
+        <name>safeToHoistScalar</name>
+        <qualifiedname>llvm::GVNHoist::safeToHoistScalar</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>HoistBB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>NBBsOnAllPaths</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="322" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="322" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a39f29c9e5d6dad63c7c7b1186d86913d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::valueAnticipable</definition>
+        <argsstring>(CHIArgs C, Instruction *TI) const</argsstring>
+        <name>valueAnticipable</name>
+        <qualifiedname>llvm::GVNHoist::valueAnticipable</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1acb00a063664e2d0bacaa838f4a05d7a9" kindref="member">CHIArgs</ref></type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>TI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="341" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="747" bodyend="757"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1ae2c45cad4cf273ec0918d5eb0bb6439f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::GVNHoist::checkSafety</definition>
+        <argsstring>(CHIArgs C, BasicBlock *BB, InsKind K, SmallVectorImpl&lt; CHIArg &gt; &amp;Safe)</argsstring>
+        <name>checkSafety</name>
+        <qualifiedname>llvm::GVNHoist::checkSafety</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1acb00a063664e2d0bacaa838f4a05d7a9" kindref="member">CHIArgs</ref></type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type>InsKind</type>
+          <declname>K</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="structllvm_1_1_c_h_i_arg" kindref="compound">CHIArg</ref> &gt; &amp;</type>
+          <declname>Safe</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="345" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="759" bodyend="781"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a0482c572ea3ddf7b3d5c3548b3d74d43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::GVNHoist::fillRenameStack</definition>
+        <argsstring>(BasicBlock *BB, InValuesType &amp;ValueBBs, RenameStackType &amp;RenameStack)</argsstring>
+        <name>fillRenameStack</name>
+        <qualifiedname>llvm::GVNHoist::fillRenameStack</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a002edc66e5fa771306c789fc291e3dff" kindref="member">InValuesType</ref> &amp;</type>
+          <declname>ValueBBs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">RenameStackType</ref> &amp;</type>
+          <declname>RenameStack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="351" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="783" bodyend="796"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1aa47b0993e2022cd359c6cedfc28c8a61" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::GVNHoist::fillChiArgs</definition>
+        <argsstring>(BasicBlock *BB, OutValuesType &amp;CHIBBs, RenameStackType &amp;RenameStack)</argsstring>
+        <name>fillChiArgs</name>
+        <qualifiedname>llvm::GVNHoist::fillChiArgs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1abee26f453888e5ddc9f1751037d7327b" kindref="member">OutValuesType</ref> &amp;</type>
+          <declname>CHIBBs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">RenameStackType</ref> &amp;</type>
+          <declname>RenameStack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="354" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="798" bodyend="831"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a7d42966f1e8056270bdcba0ac2a4394c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::GVNHoist::insertCHI</definition>
+        <argsstring>(InValuesType &amp;ValueBBs, OutValuesType &amp;CHIBBs)</argsstring>
+        <name>insertCHI</name>
+        <qualifiedname>llvm::GVNHoist::insertCHI</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1a002edc66e5fa771306c789fc291e3dff" kindref="member">InValuesType</ref> &amp;</type>
+          <declname>ValueBBs</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1abee26f453888e5ddc9f1751037d7327b" kindref="member">OutValuesType</ref> &amp;</type>
+          <declname>CHIBBs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="361" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="361" bodyend="378"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1ac72793d725c5f52a8391fac00a359ec5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::GVNHoist::findHoistableCandidates</definition>
+        <argsstring>(OutValuesType &amp;CHIBBs, InsKind K, HoistingPointList &amp;HPL)</argsstring>
+        <name>findHoistableCandidates</name>
+        <qualifiedname>llvm::GVNHoist::findHoistableCandidates</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1abee26f453888e5ddc9f1751037d7327b" kindref="member">OutValuesType</ref> &amp;</type>
+          <declname>CHIBBs</declname>
+        </param>
+        <param>
+          <type>InsKind</type>
+          <declname>K</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a08747570bc008b1976437348ef473a0d" kindref="member">HoistingPointList</ref> &amp;</type>
+          <declname>HPL</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="384" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="833" bodyend="875"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a200ab1933f8f4ea61d8a45068b8c970a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::GVNHoist::computeInsertionPoints</definition>
+        <argsstring>(const VNtoInsns &amp;Map, HoistingPointList &amp;HPL, InsKind K)</argsstring>
+        <name>computeInsertionPoints</name>
+        <qualifiedname>llvm::GVNHoist::computeInsertionPoints</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1a56ff7c7c0a1a28379835df7aebfc8668" kindref="member">VNtoInsns</ref> &amp;</type>
+          <declname>Map</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a08747570bc008b1976437348ef473a0d" kindref="member">HoistingPointList</ref> &amp;</type>
+          <declname>HPL</declname>
+        </param>
+        <param>
+          <type>InsKind</type>
+          <declname>K</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="389" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="389" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a9580698ca7c226f3e7fc885fa68a251d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::allOperandsAvailable</definition>
+        <argsstring>(const Instruction *I, const BasicBlock *HoistPt) const</argsstring>
+        <name>allOperandsAvailable</name>
+        <qualifiedname>llvm::GVNHoist::allOperandsAvailable</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>HoistPt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="467" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="877" bodyend="885"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a1ce661064ec1cc447e8cc43ddce9073c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::allGepOperandsAvailable</definition>
+        <argsstring>(const Instruction *I, const BasicBlock *HoistPt) const</argsstring>
+        <name>allGepOperandsAvailable</name>
+        <qualifiedname>llvm::GVNHoist::allGepOperandsAvailable</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>HoistPt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="471" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="887" bodyend="904"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a0f0f26b2a2158f487058524d0cf4a5b1" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::GVNHoist::makeGepsAvailable</definition>
+        <argsstring>(Instruction *Repl, BasicBlock *HoistPt, const SmallVecInsn &amp;InstructionsToHoist, Instruction *Gep) const</argsstring>
+        <name>makeGepsAvailable</name>
+        <qualifiedname>llvm::GVNHoist::makeGepsAvailable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Repl</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>HoistPt</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1a5192eb89f03df8875902f78430b2e7bb" kindref="member">SmallVecInsn</ref> &amp;</type>
+          <declname>InstructionsToHoist</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Gep</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="475" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="906" bodyend="953"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a3cd9dd38fee8aa43b03bac1b57d41153" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::GVNHoist::updateAlignment</definition>
+        <argsstring>(Instruction *I, Instruction *Repl)</argsstring>
+        <name>updateAlignment</name>
+        <qualifiedname>llvm::GVNHoist::updateAlignment</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Repl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="479" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="955" bodyend="970"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a4f17aff9841eb7baf971aa45fbc624e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::GVNHoist::rauw</definition>
+        <argsstring>(const SmallVecInsn &amp;Candidates, Instruction *Repl, MemoryUseOrDef *NewMemAcc)</argsstring>
+        <name>rauw</name>
+        <qualifiedname>llvm::GVNHoist::rauw</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1a5192eb89f03df8875902f78430b2e7bb" kindref="member">SmallVecInsn</ref> &amp;</type>
+          <declname>Candidates</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Repl</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_use_or_def" kindref="compound">MemoryUseOrDef</ref> *</type>
+          <declname>NewMemAcc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="483" column="12" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="972" bodyend="995"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a5f6b94d8d027da67a382aaf748fa14fb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::GVNHoist::raMPHIuw</definition>
+        <argsstring>(MemoryUseOrDef *NewMemAcc)</argsstring>
+        <name>raMPHIuw</name>
+        <qualifiedname>llvm::GVNHoist::raMPHIuw</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_use_or_def" kindref="compound">MemoryUseOrDef</ref> *</type>
+          <declname>NewMemAcc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="487" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="997" bodyend="1010"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1af9c60ffc1529bc891e4b268557b9f695" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::GVNHoist::removeAndReplace</definition>
+        <argsstring>(const SmallVecInsn &amp;Candidates, Instruction *Repl, BasicBlock *DestBB, bool MoveAccess)</argsstring>
+        <name>removeAndReplace</name>
+        <qualifiedname>llvm::GVNHoist::removeAndReplace</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1a5192eb89f03df8875902f78430b2e7bb" kindref="member">SmallVecInsn</ref> &amp;</type>
+          <declname>Candidates</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Repl</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>DestBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>MoveAccess</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="490" column="12" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="1012" bodyend="1029"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1ac93f07dabfb4f469d6a3ca963877b79f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNHoist::makeGepOperandsAvailable</definition>
+        <argsstring>(Instruction *Repl, BasicBlock *HoistPt, const SmallVecInsn &amp;InstructionsToHoist) const</argsstring>
+        <name>makeGepOperandsAvailable</name>
+        <qualifiedname>llvm::GVNHoist::makeGepOperandsAvailable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Repl</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>HoistPt</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1a5192eb89f03df8875902f78430b2e7bb" kindref="member">SmallVecInsn</ref> &amp;</type>
+          <declname>InstructionsToHoist</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="496" column="8" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="1031" bodyend="1063"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a948ec4d06a395b23499117623686104a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::pair&lt; unsigned, unsigned &gt; llvm::GVNHoist::hoist</definition>
+        <argsstring>(HoistingPointList &amp;HPL)</argsstring>
+        <name>hoist</name>
+        <qualifiedname>llvm::GVNHoist::hoist</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1a08747570bc008b1976437348ef473a0d" kindref="member">HoistingPointList</ref> &amp;</type>
+          <declname>HPL</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="499" column="13" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="1065" bodyend="1139"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_hoist_1a9f04abf1e29320dcefd3e44be509fcff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::pair&lt; unsigned, unsigned &gt; llvm::GVNHoist::hoistExpressions</definition>
+        <argsstring>(Function &amp;F)</argsstring>
+        <name>hoistExpressions</name>
+        <qualifiedname>llvm::GVNHoist::hoistExpressions</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="503" column="13" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="1141" bodyend="1199"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/Transforms/Scalar/GVNHoist.cpp" line="243" column="1" bodyfile="lib/Transforms/Scalar/GVNHoist.cpp" bodystart="243" bodyend="504"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a3a863f2d54efc04d08730fda42cf5aee" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>AA</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a1ce661064ec1cc447e8cc43ddce9073c" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>allGepOperandsAvailable</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a9580698ca7c226f3e7fc885fa68a251d" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>allOperandsAvailable</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1ac10502c9402e162dcbab85da6b4994f8" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>BBSideEffects</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1ae2c45cad4cf273ec0918d5eb0bb6439f" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>checkSafety</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a200ab1933f8f4ea61d8a45068b8c970a" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>computeInsertionPoints</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a65bed1716c68fdf9e0b8570d9af1b30c" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>DFSNumber</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1aaeb54ae6009a131f51311d5260f0f00e" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>DT</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1aa47b0993e2022cd359c6cedfc28c8a61" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>fillChiArgs</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a0482c572ea3ddf7b3d5c3548b3d74d43" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>fillRenameStack</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1ac72793d725c5f52a8391fac00a359ec5" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>findHoistableCandidates</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a67c47325e19cea19f5a025ee32d3e6e7" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>firstInBB</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a2d45156b505c5826f7ee38d7b9f8951a" prot="public" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>GVNHoist</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a3bbc6eab6ee1883c6e039591bb05f94c" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>hasEH</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1ad1d8dc01e5d869f361423b748ed9a6c6" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>hasEHhelper</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a888d0f3f8dfd9a33b046b2bf4d683344" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>hasEHOnPath</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a4d83aa137af8f3f4325c0fc291a419c8" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>hasEHOrLoadsOnPath</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a0053fae58f19f1a99fa58666629bc0e4" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>hasMemoryUse</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a948ec4d06a395b23499117623686104a" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>hoist</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a8eafe9a2f4267eba208eb0286c4c64b2" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>HoistBarrier</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a9f04abf1e29320dcefd3e44be509fcff" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>hoistExpressions</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a01fc6221a72da86d0e33ce653bbea946" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>HoistingGeps</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a5abb07885d7af927dca924f770ab9453" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>IDFBlocks</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a7d42966f1e8056270bdcba0ac2a4394c" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>insertCHI</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a56d0cbf9485737ec04942211c485eb6f" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>InsKind</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a56d0cbf9485737ec04942211c485eb6face2fedfaf5d467b8454ddd7baca83939" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>Load</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1ac93f07dabfb4f469d6a3ca963877b79f" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>makeGepOperandsAvailable</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a0f0f26b2a2158f487058524d0cf4a5b1" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>makeGepsAvailable</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a6d7ad36f0e6ad2150a0ebe1425d0adff" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>MD</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a76ac4585337028514f1ec6bb5c789fbe" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>MSSA</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1ae40b1c72f70b8f17760b13f8b5b46ceb" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>MSSAUpdater</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a52c3e1adafdae076201aa7e45ac07fec" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>NumFuncArgs</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a21288d2db589642eb2035dc31e494c91" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>PDT</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a5f6b94d8d027da67a382aaf748fa14fb" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>raMPHIuw</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a9791f6da767d303d3917bfb29e61a341" prot="public" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>rank</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a4f17aff9841eb7baf971aa45fbc624e8" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>rauw</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1af9c60ffc1529bc891e4b268557b9f695" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>removeAndReplace</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1aeea5c1c2a3cc5009c684902aa879e7e5" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>RenameStackType</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a16ce6b957db913c105611ac945641ce9" prot="public" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>run</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1afea22dc0a65bcd38bfdbe1ae07a45535" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>safeToHoistLdSt</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1ada27ee22479beb0b5b774547b2834cbe" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>safeToHoistScalar</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a56d0cbf9485737ec04942211c485eb6fa657e50c75f6663271bcf34639917ca8c" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>Scalar</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a56d0cbf9485737ec04942211c485eb6fab50214ef8d95de94077aacf570ddcd88" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>Store</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a56d0cbf9485737ec04942211c485eb6fa105956481a8664109c0c7e26d4412bd6" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>Unknown</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a3cd9dd38fee8aa43b03bac1b57d41153" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>updateAlignment</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a39f29c9e5d6dad63c7c7b1186d86913d" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>valueAnticipable</name></member>
+      <member refid="classllvm_1_1_g_v_n_hoist_1a925fcecde947f8f2e298bc27aa898ce1" prot="private" virt="non-virtual"><scope>llvm::GVNHoist</scope><name>VN</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

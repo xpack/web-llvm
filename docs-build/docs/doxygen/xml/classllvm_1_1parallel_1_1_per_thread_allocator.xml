@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1parallel_1_1_per_thread_allocator" kind="class" language="C++" prot="public">
+    <compoundname>llvm::parallel::PerThreadAllocator</compoundname>
+    <basecompoundref refid="classllvm_1_1_allocator_base" prot="public" virt="non-virtual">llvm::AllocatorBase&lt; PerThreadAllocator&lt; AllocatorTy &gt; &gt;</basecompoundref>
+    <includes refid="_per_thread_bump_ptr_allocator_8h" local="yes">llvm/Support/PerThreadBumpPtrAllocator.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename AllocatorTy</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classllvm_1_1parallel_1_1_per_thread_allocator_1a7d71a90411fa5e6e21e4d1a031c43016" prot="protected" static="no" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::parallel::PerThreadAllocator&lt; AllocatorTy &gt;::NumOfAllocators</definition>
+        <argsstring></argsstring>
+        <name>NumOfAllocators</name>
+        <qualifiedname>llvm::parallel::PerThreadAllocator::NumOfAllocators</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/PerThreadBumpPtrAllocator.h" line="111" column="10" bodyfile="include/llvm/Support/PerThreadBumpPtrAllocator.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1parallel_1_1_per_thread_allocator_1a678653bedea6e6b44032c7a3d0aa163c" prot="protected" static="no" mutable="no">
+        <type>std::unique_ptr&lt; AllocatorTy[]&gt;</type>
+        <definition>std::unique_ptr&lt;AllocatorTy[]&gt; llvm::parallel::PerThreadAllocator&lt; AllocatorTy &gt;::Allocators</definition>
+        <argsstring></argsstring>
+        <name>Allocators</name>
+        <qualifiedname>llvm::parallel::PerThreadAllocator::Allocators</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/PerThreadBumpPtrAllocator.h" line="112" column="19" bodyfile="include/llvm/Support/PerThreadBumpPtrAllocator.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1parallel_1_1_per_thread_allocator_1a9712b9344a02b17ef04b17ff8a182b56" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::parallel::PerThreadAllocator&lt; AllocatorTy &gt;::PerThreadAllocator</definition>
+        <argsstring>()</argsstring>
+        <name>PerThreadAllocator</name>
+        <qualifiedname>llvm::parallel::PerThreadAllocator::PerThreadAllocator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/PerThreadBumpPtrAllocator.h" line="30" column="3" bodyfile="include/llvm/Support/PerThreadBumpPtrAllocator.h" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <member refid="group___methods_1gac50204237d93d1b18c5a6bef8e7f7a35" kind="function"><name>Allocate</name></member>
+      <member refid="group___methods_1ga40b8fb32acf8598697e08acfdeb9dfe6" kind="function"><name>Deallocate</name></member>
+      <member refid="group___methods_1gae12d36c6142e37df006ccd257fe67ed4" kind="function"><name>getThreadLocalAllocator</name></member>
+      <member refid="group___methods_1ga241da07086c81f8b14f6f766defddfb0" kind="function"><name>getNumberOfAllocators</name></member>
+      <member refid="group___methods_1ga8bace7a71275aacc0eb1a5d3529dba88" kind="function"><name>Reset</name></member>
+      <member refid="group___methods_1ga2aab65f0894500db262b9a96babdd677" kind="function"><name>getTotalMemory</name></member>
+      <member refid="group___methods_1ga7620b54ef2853df9ff49fbe17f68c699" kind="function"><name>getBytesAllocated</name></member>
+      <member refid="group___methods_1gae81580dabe11d9791d230dafbf468995" kind="function"><name>setRedZoneSize</name></member>
+      <member refid="group___methods_1gadb4c324f923536f648a97734daaeebfd" kind="function"><name>PrintStats</name></member>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1parallel_1_1_per_thread_allocator" kindref="compound">PerThreadAllocator</ref> is used in conjunction with ThreadPoolExecutor to allow per-thread allocations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It wraps a possibly thread-unsafe allocator, e.g. <ref refid="namespacellvm_1a8e612822d4ba7bb36c9c79582a567108" kindref="member">BumpPtrAllocator</ref>. <ref refid="classllvm_1_1parallel_1_1_per_thread_allocator" kindref="compound">PerThreadAllocator</ref> must be used with only main thread or threads created by ThreadPoolExecutor, as it utilizes getThreadIndex, which is set by ThreadPoolExecutor. To work properly, ThreadPoolExecutor should be initialized before <ref refid="classllvm_1_1parallel_1_1_per_thread_allocator" kindref="compound">PerThreadAllocator</ref> is created. TODO: The same approach might be implemented for ThreadPool. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>llvm::AllocatorBase&lt; DerivedT &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+      </node>
+      <node id="2">
+        <label>llvm::AllocatorBase&lt; PerThreadAllocator&lt; AllocatorTy &gt; &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; PerThreadAllocator&lt; AllocatorTy &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::parallel::PerThreadAllocator&lt; AllocatorTy &gt;</label>
+        <link refid="classllvm_1_1parallel_1_1_per_thread_allocator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::parallel::PerThreadAllocator&lt; BumpPtrAllocator &gt;</label>
+        <link refid="classllvm_1_1parallel_1_1_per_thread_allocator"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; BumpPtrAllocator &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>llvm::AllocatorBase&lt; DerivedT &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+      </node>
+      <node id="2">
+        <label>llvm::AllocatorBase&lt; PerThreadAllocator&lt; AllocatorTy &gt; &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; PerThreadAllocator&lt; AllocatorTy &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::parallel::PerThreadAllocator&lt; AllocatorTy &gt;</label>
+        <link refid="classllvm_1_1parallel_1_1_per_thread_allocator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>NumOfAllocators</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>Allocators</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>size_t</label>
+        <link refid="classsize__t"/>
+      </node>
+      <node id="5">
+        <label>unique_ptr&lt; AllocatorTy[]&gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Support/PerThreadBumpPtrAllocator.h" line="27" column="1" bodyfile="include/llvm/Support/PerThreadBumpPtrAllocator.h" bodystart="28" bodyend="113"/>
+    <listofallmembers>
+      <member refid="group___methods_1gac50204237d93d1b18c5a6bef8e7f7a35" prot="public" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>Allocate</name></member>
+      <member refid="classllvm_1_1parallel_1_1_per_thread_allocator_1a678653bedea6e6b44032c7a3d0aa163c" prot="protected" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>Allocators</name></member>
+      <member refid="group___methods_1ga40b8fb32acf8598697e08acfdeb9dfe6" prot="public" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>Deallocate</name></member>
+      <member refid="group___methods_1ga7620b54ef2853df9ff49fbe17f68c699" prot="public" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>getBytesAllocated</name></member>
+      <member refid="group___methods_1ga241da07086c81f8b14f6f766defddfb0" prot="public" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>getNumberOfAllocators</name></member>
+      <member refid="group___methods_1gae12d36c6142e37df006ccd257fe67ed4" prot="public" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>getThreadLocalAllocator</name></member>
+      <member refid="group___methods_1ga2aab65f0894500db262b9a96babdd677" prot="public" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>getTotalMemory</name></member>
+      <member refid="classllvm_1_1parallel_1_1_per_thread_allocator_1a7d71a90411fa5e6e21e4d1a031c43016" prot="protected" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>NumOfAllocators</name></member>
+      <member refid="classllvm_1_1parallel_1_1_per_thread_allocator_1a9712b9344a02b17ef04b17ff8a182b56" prot="public" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>PerThreadAllocator</name></member>
+      <member refid="group___methods_1gadb4c324f923536f648a97734daaeebfd" prot="public" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>PrintStats</name></member>
+      <member refid="group___methods_1ga8bace7a71275aacc0eb1a5d3529dba88" prot="public" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>Reset</name></member>
+      <member refid="group___methods_1gae81580dabe11d9791d230dafbf468995" prot="public" virt="non-virtual"><scope>llvm::parallel::PerThreadAllocator</scope><name>setRedZoneSize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

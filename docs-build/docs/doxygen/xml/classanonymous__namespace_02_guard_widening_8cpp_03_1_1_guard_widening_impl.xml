@@ -1,0 +1,697 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</compoundname>
+    <innerclass refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1_1_range_check" prot="private">anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::RangeCheck</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa9e8beadcf5341e4ac3cdb0cfcd1e34a" prot="private" static="no" strong="no">
+        <type></type>
+        <name>WideningScore</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::WideningScore</qualifiedname>
+        <enumvalue id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa9e8beadcf5341e4ac3cdb0cfcd1e34aa7185f5f623554ddd36bc3b5bdb71098b" prot="private">
+          <name>WS_IllegalOrNegative</name>
+          <briefdescription>
+<para>Don&apos;t widen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa9e8beadcf5341e4ac3cdb0cfcd1e34aa5f72eac0eee880047c5f9df8e6ebf8d4" prot="private">
+          <name>WS_Neutral</name>
+          <briefdescription>
+<para>Widening is performance neutral as far as the cycles spent in check conditions goes (but can still help, e.g., code layout, having less deopt state). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa9e8beadcf5341e4ac3cdb0cfcd1e34aaa17716a08f770b2592f8128db66d3e4f" prot="private">
+          <name>WS_Positive</name>
+          <briefdescription>
+<para>Widening is profitable. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa9e8beadcf5341e4ac3cdb0cfcd1e34aad8a157bafd0feefb20f7450bfa2413c0" prot="private">
+          <name>WS_VeryPositive</name>
+          <briefdescription>
+<para>Widening is very profitable. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Not significantly different from <computeroutput>WS_Positive</computeroutput>, except by the order. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Used to keep track of which widening potential is more effective. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="163" column="3" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="163" bodyend="178"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a29b33a1f54ea2874a2b2ac77eea68245" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+        <definition>DominatorTree&amp; anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::DT</definition>
+        <argsstring></argsstring>
+        <name>DT</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::DT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="134" column="17" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a7cc86318b9431bdb26a0cd38079d04f0" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref> *</type>
+        <definition>PostDominatorTree* anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::PDT</definition>
+        <argsstring></argsstring>
+        <name>PDT</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::PDT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="135" column="21" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a58127f0206fe3dc3e751bdb32e3c4fac" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> &amp;</type>
+        <definition>LoopInfo&amp; anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::LI</definition>
+        <argsstring></argsstring>
+        <name>LI</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::LI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="136" column="12" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a3657a1ffaec9baf8aab3b04473444db3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref> &amp;</type>
+        <definition>AssumptionCache&amp; anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::AC</definition>
+        <argsstring></argsstring>
+        <name>AC</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::AC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="137" column="19" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aba44956c882a8db23cac02f7df2d4cbc" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_memory_s_s_a_updater" kindref="compound">MemorySSAUpdater</ref> *</type>
+        <definition>MemorySSAUpdater* anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::MSSAU</definition>
+        <argsstring></argsstring>
+        <name>MSSAU</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::MSSAU</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="138" column="20" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a4899d4180f4bb2e24e98a730d94c27c1" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1a58b9df85470fc4e2a8066ff6a62e5a34" kindref="member">DomTreeNode</ref> *</type>
+        <definition>DomTreeNode* anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::Root</definition>
+        <argsstring></argsstring>
+        <name>Root</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::Root</qualifiedname>
+        <briefdescription>
+<para>Together, these describe the region of interest. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This might be all of the blocks within a function, or only a given loop&apos;s blocks and preheader. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="142" column="15" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a9b0b18911f40aff1bb1b87ea757a8957" prot="private" static="no" mutable="no">
+        <type>std::function&lt; <ref refid="classbool" kindref="compound">bool</ref>(<ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *)&gt;</type>
+        <definition>std::function&lt;bool(BasicBlock*)&gt; anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::BlockFilter</definition>
+        <argsstring></argsstring>
+        <name>BlockFilter</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::BlockFilter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="143" column="17" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a44a5d15694962ab0f69abf50bddf2ef5" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, 16 &gt;</type>
+        <definition>SmallVector&lt;Instruction *, 16&gt; anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::EliminatedGuardsAndBranches</definition>
+        <argsstring></argsstring>
+        <name>EliminatedGuardsAndBranches</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::EliminatedGuardsAndBranches</qualifiedname>
+        <briefdescription>
+<para>The set of guards and conditional branches whose conditions have been widened into dominating guards. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="147" column="15" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a8f54f9f34bcac1dac8832b238a7bfd8c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> * &gt;</type>
+        <definition>DenseSet&lt;Instruction *&gt; anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::WidenedGuards</definition>
+        <argsstring></argsstring>
+        <name>WidenedGuards</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::WidenedGuards</qualifiedname>
+        <briefdescription>
+<para>The set of guards which have been widened to include conditions to other guards. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="151" column="12" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="151" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa32a9e25de2b7880d55ef07d3baea4e7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GuardWideningImpl::eliminateInstrViaWidening</definition>
+        <argsstring>(Instruction *Instr, const df_iterator&lt; DomTreeNode * &gt; &amp;DFSI, const DenseMap&lt; BasicBlock *, SmallVector&lt; Instruction *, 8 &gt; &gt; &amp;GuardsPerBlock)</argsstring>
+        <name>eliminateInstrViaWidening</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::eliminateInstrViaWidening</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Instr</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1df__iterator" kindref="compound">df_iterator</ref>&lt; <ref refid="namespacellvm_1a58b9df85470fc4e2a8066ff6a62e5a34" kindref="member">DomTreeNode</ref> * &gt; &amp;</type>
+          <declname>DFSI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, 8 &gt; &gt; &amp;</type>
+          <declname>GuardsPerBlock</declname>
+        </param>
+        <briefdescription>
+<para>Try to eliminate instruction <computeroutput>Instr</computeroutput> by widening it into an earlier dominating guard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>DFSI</computeroutput> is the DFS iterator on the dominator tree that is currently visiting the block containing <computeroutput>Guard</computeroutput>, and <computeroutput>GuardsPerBlock</computeroutput> maps BasicBlocks to the set of guards seen in that block. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="157" column="8" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="376" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1acd75e355f390b797c5746e1f3644ef6d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>WideningScore</type>
+        <definition>GuardWideningImpl::WideningScore GuardWideningImpl::computeWideningScore</definition>
+        <argsstring>(Instruction *DominatedInstr, Instruction *ToWiden, BasicBlock::iterator WideningPoint, SmallVectorImpl&lt; Value * &gt; &amp;ChecksToHoist, SmallVectorImpl&lt; Value * &gt; &amp;ChecksToWiden)</argsstring>
+        <name>computeWideningScore</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::computeWideningScore</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>DominatedInstr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>ToWiden</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>WideningPoint</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>ChecksToHoist</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>ChecksToWiden</declname>
+        </param>
+        <briefdescription>
+<para>Compute the score for widening the condition in <computeroutput>DominatedInstr</computeroutput> into <computeroutput>WideningPoint</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="184" column="17" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="459" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a5e7d3e3e94a516f327ab285752e06baf" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::canBeHoistedTo</definition>
+        <argsstring>(const Value *V, BasicBlock::iterator InsertPos) const</argsstring>
+        <name>canBeHoistedTo</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::canBeHoistedTo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>InsertPos</declname>
+        </param>
+        <briefdescription>
+<para>Helper to check if <computeroutput>V</computeroutput> can be hoisted to <computeroutput>InsertPos</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="191" column="8" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="191" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a33f52a08a49cef4ec90169a9c92917b4" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::canBeHoistedTo</definition>
+        <argsstring>(const Value *V, BasicBlock::iterator InsertPos, SmallPtrSetImpl&lt; const Instruction * &gt; &amp;Visited) const</argsstring>
+        <name>canBeHoistedTo</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::canBeHoistedTo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>InsertPos</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> * &gt; &amp;</type>
+          <declname>Visited</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="196" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aad3681fc6c799b4e22354afd2934307e" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::canBeHoistedTo</definition>
+        <argsstring>(const SmallVectorImpl&lt; Value * &gt; &amp;Checks, BasicBlock::iterator InsertPos) const</argsstring>
+        <name>canBeHoistedTo</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::canBeHoistedTo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>Checks</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>InsertPos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="199" column="8" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="199" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aedb908507b8175e81e5770a23d79db63" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::makeAvailableAt</definition>
+        <argsstring>(Value *V, BasicBlock::iterator InsertPos) const</argsstring>
+        <name>makeAvailableAt</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::makeAvailableAt</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>InsertPos</declname>
+        </param>
+        <briefdescription>
+<para>Helper to hoist <computeroutput>V</computeroutput> to <computeroutput>InsertPos</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Guaranteed to succeed if <computeroutput>canBeHoistedTo</computeroutput> returned true. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="206" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a7978e5adc354b6e3ccd8e81f2384cb2e" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::makeAvailableAt</definition>
+        <argsstring>(const SmallVectorImpl&lt; Value * &gt; &amp;Checks, BasicBlock::iterator InsertPos) const</argsstring>
+        <name>makeAvailableAt</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::makeAvailableAt</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>Checks</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>InsertPos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="208" column="8" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="208" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1ae8daa08b9ec74d43126a9f5f1249bdcc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt;</type>
+        <definition>std::optional&lt; Value * &gt; GuardWideningImpl::mergeChecks</definition>
+        <argsstring>(SmallVectorImpl&lt; Value * &gt; &amp;ChecksToHoist, SmallVectorImpl&lt; Value * &gt; &amp;ChecksToWiden, std::optional&lt; BasicBlock::iterator &gt; InsertPt)</argsstring>
+        <name>mergeChecks</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::mergeChecks</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>ChecksToHoist</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>ChecksToWiden</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref> &gt;</type>
+          <declname>InsertPt</declname>
+        </param>
+        <briefdescription>
+<para>Common helper used by <computeroutput>widenGuard</computeroutput> and <computeroutput>isWideningCondProfitable</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Try to generate an expression computing the logical AND of <computeroutput>ChecksToHoist</computeroutput> and <computeroutput>ChecksToWiden</computeroutput>. Return true if the expression computing the AND is only as expensive as computing one of the set of expressions. If <computeroutput>InsertPt</computeroutput> is true then actually generate the resulting expression, make it available at <computeroutput>InsertPt</computeroutput> and return it in <computeroutput>Result</computeroutput> (else no change to the IR is made). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="222" column="3" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="720" bodyend="789"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a8f64b83cce9feb42af542950da6586a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * GuardWideningImpl::hoistChecks</definition>
+        <argsstring>(SmallVectorImpl&lt; Value * &gt; &amp;ChecksToHoist, Value *OldCondition, BasicBlock::iterator InsertPt)</argsstring>
+        <name>hoistChecks</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::hoistChecks</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>ChecksToHoist</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>OldCondition</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>InsertPt</declname>
+        </param>
+        <briefdescription>
+<para>Generate the logical AND of <computeroutput>ChecksToHoist</computeroutput> and <computeroutput>OldCondition</computeroutput> and make it available at InsertPt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="228" column="9" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="791" bodyend="803"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1ac88cc86c8216cc92483bfa396bfab50c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * GuardWideningImpl::freezeAndPush</definition>
+        <argsstring>(Value *Orig, BasicBlock::iterator InsertPt)</argsstring>
+        <name>freezeAndPush</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::freezeAndPush</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Orig</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>InsertPt</declname>
+        </param>
+        <briefdescription>
+<para>Adds freeze to Orig and push it as far as possible very aggressively. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Also replaces all uses of frozen instruction with frozen version. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="233" column="9" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="627" bodyend="717"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a12d1e40ac3d732cbfa6cc845f3f06181" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::parseRangeChecks</definition>
+        <argsstring>(SmallVectorImpl&lt; Value * &gt; &amp;ToParse, SmallVectorImpl&lt; RangeCheck &gt; &amp;Checks)</argsstring>
+        <name>parseRangeChecks</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::parseRangeChecks</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>ToParse</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; RangeCheck &gt; &amp;</type>
+          <declname>Checks</declname>
+        </param>
+        <briefdescription>
+<para>Parse <computeroutput>ToParse</computeroutput> into a conjunction (logical-and) of range checks; and append them to <computeroutput>Checks</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true on success, may clobber <computeroutput>Checks</computeroutput> on failure. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="277" column="8" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="277" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a8b465ce04eeb7eb39b7c0bba3db2ad2d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::parseRangeChecks</definition>
+        <argsstring>(Value *CheckCond, SmallVectorImpl&lt; RangeCheck &gt; &amp;Checks)</argsstring>
+        <name>parseRangeChecks</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::parseRangeChecks</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>CheckCond</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; RangeCheck &gt; &amp;</type>
+          <declname>Checks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="286" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a7958648a4ca0d02d3646dce9e49fef27" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GuardWideningImpl::combineRangeChecks</definition>
+        <argsstring>(SmallVectorImpl&lt; RangeCheck &gt; &amp;Checks, SmallVectorImpl&lt; RangeCheck &gt; &amp;CombinedChecks) const</argsstring>
+        <name>combineRangeChecks</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::combineRangeChecks</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; RangeCheck &gt; &amp;</type>
+          <declname>Checks</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; RangeCheck &gt; &amp;</type>
+          <declname>CombinedChecks</declname>
+        </param>
+        <briefdescription>
+<para>Combine the checks in <computeroutput>Checks</computeroutput> into a smaller set of checks and append them into <computeroutput>CombinedChecks</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true on success (i.e. all of checks in <computeroutput>Checks</computeroutput> were combined into <computeroutput>CombinedChecks</computeroutput>). Clobbers <computeroutput>Checks</computeroutput> and <computeroutput>CombinedChecks</computeroutput> on success and on failure. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="292" column="8" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="866" bodyend="960"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aacf701867ea778aca724363a7f424985" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::isWideningCondProfitable</definition>
+        <argsstring>(SmallVectorImpl&lt; Value * &gt; &amp;ChecksToHoist, SmallVectorImpl&lt; Value * &gt; &amp;ChecksToWiden)</argsstring>
+        <name>isWideningCondProfitable</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::isWideningCondProfitable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>ChecksToHoist</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>ChecksToWiden</declname>
+        </param>
+        <briefdescription>
+<para>Can we compute the logical AND of <computeroutput>ChecksToHoist</computeroutput> and <computeroutput>ChecksToWiden</computeroutput> for the price of computing only one of the set of expressions? </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="297" column="8" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="297" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1ae2a16c4e918a5c4e81014531e62e1b9a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::widenGuard</definition>
+        <argsstring>(SmallVectorImpl&lt; Value * &gt; &amp;ChecksToHoist, SmallVectorImpl&lt; Value * &gt; &amp;ChecksToWiden, Instruction *ToWiden)</argsstring>
+        <name>widenGuard</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::widenGuard</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>ChecksToHoist</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>ChecksToWiden</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>ToWiden</declname>
+        </param>
+        <briefdescription>
+<para>Widen <computeroutput>ChecksToWiden</computeroutput> to fail if any of <computeroutput>ChecksToHoist</computeroutput> is false. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="304" column="8" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="304" bodyend="318"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1adeac7cb64bc131b0235e1c63043512ca" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef GuardWideningImpl::scoreTypeToString</definition>
+        <argsstring>(WideningScore WS)</argsstring>
+        <name>scoreTypeToString</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::scoreTypeToString</qualifiedname>
+        <param>
+          <type>WideningScore</type>
+          <declname>WS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="180" column="20" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="963" bodyend="976"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a29f953f1a7cf473c2f1bf531711e0622" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::GuardWideningImpl</definition>
+        <argsstring>(DominatorTree &amp;DT, PostDominatorTree *PDT, LoopInfo &amp;LI, AssumptionCache &amp;AC, MemorySSAUpdater *MSSAU, DomTreeNode *Root, std::function&lt; bool(BasicBlock *)&gt; BlockFilter)</argsstring>
+        <name>GuardWideningImpl</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::GuardWideningImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+          <declname>DT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref> *</type>
+          <declname>PDT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> &amp;</type>
+          <declname>LI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref> &amp;</type>
+          <declname>AC</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_s_s_a_updater" kindref="compound">MemorySSAUpdater</ref> *</type>
+          <declname>MSSAU</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a58b9df85470fc4e2a8066ff6a62e5a34" kindref="member">DomTreeNode</ref> *</type>
+          <declname>Root</declname>
+        </param>
+        <param>
+          <type>std::function&lt; <ref refid="classbool" kindref="compound">bool</ref>(<ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *)&gt;</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="321" column="12" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="321" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1ab5aa5682f973c80e1570c6c788b92122" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GuardWideningImpl::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <qualifiedname>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl::run</qualifiedname>
+        <briefdescription>
+<para>The entry point for this pass. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="329" column="8" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="341" bodyend="374"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2373">Changed</references>
+        <references refid="namespacellvm_1a3a4c46542f8881cacd05836ba00ab8ec" compoundref="_depth_first_iterator_8h" startline="222" endline="224">llvm::df_begin</references>
+        <references refid="namespacellvm_1ad6c4441c599522e0d10c1391a460c275" compoundref="_depth_first_iterator_8h" startline="227" endline="229">llvm::df_end</references>
+        <references refid="namespaceanonymous__namespace_02_guard_widening_8cpp_03_1a6d418914e8b20f42ccd313fd4f1f2585" compoundref="_guard_widening_8cpp" startline="108" endline="113">anonymous_namespace{GuardWidening.cpp}::eliminateGuard</references>
+        <references refid="namespaceanonymous__namespace_02_guard_widening_8cpp_03_1afcfd6271b1843fd8e001db13c306bac4" compoundref="_guard_widening_8cpp" startline="81" endline="93">anonymous_namespace{GuardWidening.cpp}::getCondition</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1ac5804672fc0850438d63caec770647f8" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">II</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="_guard_widening_8cpp_1a06f1432892d38967fd37f87b142994d5" compoundref="_guard_widening_8cpp" startline="333" endline="339">isSupportedGuardInstruction</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/Transforms/Scalar/GuardWidening.cpp" line="133" column="1" bodyfile="lib/Transforms/Scalar/GuardWidening.cpp" bodystart="133" bodyend="330"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a3657a1ffaec9baf8aab3b04473444db3" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>AC</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a9b0b18911f40aff1bb1b87ea757a8957" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>BlockFilter</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a5e7d3e3e94a516f327ab285752e06baf" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>canBeHoistedTo</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a33f52a08a49cef4ec90169a9c92917b4" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>canBeHoistedTo</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aad3681fc6c799b4e22354afd2934307e" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>canBeHoistedTo</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a7958648a4ca0d02d3646dce9e49fef27" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>combineRangeChecks</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1acd75e355f390b797c5746e1f3644ef6d" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>computeWideningScore</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a29b33a1f54ea2874a2b2ac77eea68245" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>DT</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a44a5d15694962ab0f69abf50bddf2ef5" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>EliminatedGuardsAndBranches</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa32a9e25de2b7880d55ef07d3baea4e7" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>eliminateInstrViaWidening</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1ac88cc86c8216cc92483bfa396bfab50c" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>freezeAndPush</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a29f953f1a7cf473c2f1bf531711e0622" prot="public" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>GuardWideningImpl</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a8f64b83cce9feb42af542950da6586a8" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>hoistChecks</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aacf701867ea778aca724363a7f424985" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>isWideningCondProfitable</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a58127f0206fe3dc3e751bdb32e3c4fac" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>LI</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aedb908507b8175e81e5770a23d79db63" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>makeAvailableAt</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a7978e5adc354b6e3ccd8e81f2384cb2e" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>makeAvailableAt</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1ae8daa08b9ec74d43126a9f5f1249bdcc" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>mergeChecks</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aba44956c882a8db23cac02f7df2d4cbc" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>MSSAU</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a12d1e40ac3d732cbfa6cc845f3f06181" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>parseRangeChecks</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a8b465ce04eeb7eb39b7c0bba3db2ad2d" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>parseRangeChecks</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a7cc86318b9431bdb26a0cd38079d04f0" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>PDT</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a4899d4180f4bb2e24e98a730d94c27c1" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>Root</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1ab5aa5682f973c80e1570c6c788b92122" prot="public" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>run</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1adeac7cb64bc131b0235e1c63043512ca" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>scoreTypeToString</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1a8f54f9f34bcac1dac8832b238a7bfd8c" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>WidenedGuards</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1ae2a16c4e918a5c4e81014531e62e1b9a" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>widenGuard</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa9e8beadcf5341e4ac3cdb0cfcd1e34a" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>WideningScore</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa9e8beadcf5341e4ac3cdb0cfcd1e34aa7185f5f623554ddd36bc3b5bdb71098b" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>WS_IllegalOrNegative</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa9e8beadcf5341e4ac3cdb0cfcd1e34aa5f72eac0eee880047c5f9df8e6ebf8d4" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>WS_Neutral</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa9e8beadcf5341e4ac3cdb0cfcd1e34aaa17716a08f770b2592f8128db66d3e4f" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>WS_Positive</name></member>
+      <member refid="classanonymous__namespace_02_guard_widening_8cpp_03_1_1_guard_widening_impl_1aa9e8beadcf5341e4ac3cdb0cfcd1e34aad8a157bafd0feefb20f7450bfa2413c0" prot="private" virt="non-virtual"><scope>anonymous_namespace{GuardWidening.cpp}::GuardWideningImpl</scope><name>WS_VeryPositive</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1orc_1_1_simple_remote_e_p_c" kind="class" language="C++" prot="public">
+    <compoundname>llvm::orc::SimpleRemoteEPC</compoundname>
+    <basecompoundref refid="classllvm_1_1orc_1_1_executor_process_control" prot="public" virt="non-virtual">llvm::orc::ExecutorProcessControl</basecompoundref>
+    <basecompoundref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client" prot="public" virt="non-virtual">llvm::orc::SimpleRemoteEPCTransportClient</basecompoundref>
+    <basecompoundref refid="classllvm_1_1orc_1_1_dylib_manager" prot="private" virt="non-virtual">llvm::orc::DylibManager</basecompoundref>
+    <includes refid="_simple_remote_e_p_c_8h" local="yes">llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h</includes>
+    <innerclass refid="structllvm_1_1orc_1_1_simple_remote_e_p_c_1_1_setup" prot="public">llvm::orc::SimpleRemoteEPC::Setup</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ac2f60bade0e43fa6464539d0c139e127" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref>, <ref refid="classllvm_1_1orc_1_1_executor_process_control_1_1_incoming_w_f_r_handler" kindref="compound">IncomingWFRHandler</ref> &gt;</type>
+        <definition>using llvm::orc::SimpleRemoteEPC::PendingCallWrapperResultsMap = 
+    DenseMap&lt;uint64_t, IncomingWFRHandler&gt;</definition>
+        <argsstring></argsstring>
+        <name>PendingCallWrapperResultsMap</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::PendingCallWrapperResultsMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="125" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1abafcabf7d20c85e00bec0c77cc34562d" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex llvm::orc::SimpleRemoteEPC::SimpleRemoteEPCMutex</definition>
+        <argsstring></argsstring>
+        <name>SimpleRemoteEPCMutex</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::SimpleRemoteEPCMutex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="128" column="14" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1acf21b9f49a050986f61a58a6126e6ccb" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable llvm::orc::SimpleRemoteEPC::DisconnectCV</definition>
+        <argsstring></argsstring>
+        <name>DisconnectCV</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::DisconnectCV</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="129" column="27" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a4d72df62ca4232485882de9b19698b4b" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::orc::SimpleRemoteEPC::Disconnected</definition>
+        <argsstring></argsstring>
+        <name>Disconnected</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::Disconnected</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="130" column="8" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a6e2048a63f4cb8b37134e20e7b4fa87b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::SimpleRemoteEPC::DisconnectErr</definition>
+        <argsstring></argsstring>
+        <name>DisconnectErr</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::DisconnectErr</qualifiedname>
+        <initializer>= <ref refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" kindref="member">Error::success</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="131" column="9" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a7d6a6b98d811b81ae84dc6164b358fd6" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport" kindref="compound">SimpleRemoteEPCTransport</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;SimpleRemoteEPCTransport&gt; llvm::orc::SimpleRemoteEPC::T</definition>
+        <argsstring></argsstring>
+        <name>T</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::T</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="133" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a742f14be9bf19b2050bb5b0742923bc4" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1jitlink_1_1_j_i_t_link_memory_manager" kindref="compound">jitlink::JITLinkMemoryManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;jitlink::JITLinkMemoryManager&gt; llvm::orc::SimpleRemoteEPC::OwnedMemMgr</definition>
+        <argsstring></argsstring>
+        <name>OwnedMemMgr</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::OwnedMemMgr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="134" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a52dd45dfcbb92fb125949415f32c4d30" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_executor_process_control_1_1_memory_access" kindref="compound">MemoryAccess</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MemoryAccess&gt; llvm::orc::SimpleRemoteEPC::OwnedMemAccess</definition>
+        <argsstring></argsstring>
+        <name>OwnedMemAccess</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::OwnedMemAccess</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="135" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1acbae862a35e48711ec9bf3db8088f62b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_e_p_c_generic_dylib_manager" kindref="compound">EPCGenericDylibManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;EPCGenericDylibManager&gt; llvm::orc::SimpleRemoteEPC::EPCDylibMgr</definition>
+        <argsstring></argsstring>
+        <name>EPCDylibMgr</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::EPCDylibMgr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="137" column="19" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a55512723884702646c683095df453c26" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+        <definition>ExecutorAddr llvm::orc::SimpleRemoteEPC::RunAsMainAddr</definition>
+        <argsstring></argsstring>
+        <name>RunAsMainAddr</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::RunAsMainAddr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="138" column="16" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af3673c8660c7f0cf812956fb2fdb6a41" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+        <definition>ExecutorAddr llvm::orc::SimpleRemoteEPC::RunAsVoidFunctionAddr</definition>
+        <argsstring></argsstring>
+        <name>RunAsVoidFunctionAddr</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::RunAsVoidFunctionAddr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="139" column="16" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ab6475151050aa3d128b28acb19ef1e96" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+        <definition>ExecutorAddr llvm::orc::SimpleRemoteEPC::RunAsIntFunctionAddr</definition>
+        <argsstring></argsstring>
+        <name>RunAsIntFunctionAddr</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::RunAsIntFunctionAddr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="140" column="16" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a0444451ddc03b46f1bae4af64fa49361" prot="private" static="no" mutable="no">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::orc::SimpleRemoteEPC::NextSeqNo</definition>
+        <argsstring></argsstring>
+        <name>NextSeqNo</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::NextSeqNo</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="142" column="12" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ae609f135d8595aa5642fc567828208d4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">PendingCallWrapperResultsMap</ref></type>
+        <definition>PendingCallWrapperResultsMap llvm::orc::SimpleRemoteEPC::PendingCallWrapperResults</definition>
+        <argsstring></argsstring>
+        <name>PendingCallWrapperResults</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::PendingCallWrapperResults</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="143" column="32" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a4753da41da67751c4d4a706a90eeeeec" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TransportT</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>TransportTCtorArgTs</declname>
+            <defname>TransportTCtorArgTs</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c" kindref="compound">SimpleRemoteEPC</ref> &gt; &gt;</type>
+        <definition>static Expected&lt; std::unique_ptr&lt; SimpleRemoteEPC &gt; &gt; llvm::orc::SimpleRemoteEPC::Create</definition>
+        <argsstring>(std::unique_ptr&lt; TaskDispatcher &gt; D, Setup S, TransportTCtorArgTs &amp;&amp;...TransportTCtorArgs)</argsstring>
+        <name>Create</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::Create</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_task_dispatcher" kindref="compound">TaskDispatcher</ref> &gt;</type>
+          <declname>D</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1orc_1_1_simple_remote_e_p_c_1_1_setup" kindref="compound">Setup</ref></type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type>TransportTCtorArgTs &amp;&amp;...</type>
+          <declname>TransportTCtorArgs</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c" kindref="compound">SimpleRemoteEPC</ref> using the given transport type and args. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="52" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="52" bodyend="65"/>
+        <references refid="classllvm_1_1orc_1_1_executor_process_control_1a30812e122ddf831a3226a84f0d5caa40" compoundref="_executor_process_control_8h" startline="389">llvm::orc::ExecutorProcessControl::D</references>
+        <references refid="namespacellvm_1a71210b99d2ef87236d8505c1771a7ab1" compoundref="llvm_2_support_2_error_8h" startline="438" endline="440">llvm::joinErrors</references>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a8b2cbfc62eb357c72da0f9e18c645042">SimpleRemoteEPC</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a8b2cbfc62eb357c72da0f9e18c645042" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::orc::SimpleRemoteEPC::SimpleRemoteEPC</definition>
+        <argsstring>(const SimpleRemoteEPC &amp;)=delete</argsstring>
+        <name>SimpleRemoteEPC</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::SimpleRemoteEPC</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c" kindref="compound">SimpleRemoteEPC</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="67" column="3"/>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a8b2cbfc62eb357c72da0f9e18c645042">SimpleRemoteEPC</references>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a4753da41da67751c4d4a706a90eeeeec" compoundref="_simple_remote_e_p_c_8h" startline="52" endline="65">Create</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a359e785a6b64f374d70fb370ad0934d4">operator=</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af1372961e954f0dad1ec0e4a04dd5220">operator=</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a8b2cbfc62eb357c72da0f9e18c645042">SimpleRemoteEPC</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ae502362f8f0f307531af6bdee3d0f443">SimpleRemoteEPC</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a359e785a6b64f374d70fb370ad0934d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c" kindref="compound">SimpleRemoteEPC</ref> &amp;</type>
+        <definition>SimpleRemoteEPC &amp; llvm::orc::SimpleRemoteEPC::operator=</definition>
+        <argsstring>(const SimpleRemoteEPC &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c" kindref="compound">SimpleRemoteEPC</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="68" column="19"/>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a8b2cbfc62eb357c72da0f9e18c645042">SimpleRemoteEPC</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ae502362f8f0f307531af6bdee3d0f443" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::orc::SimpleRemoteEPC::SimpleRemoteEPC</definition>
+        <argsstring>(SimpleRemoteEPC &amp;&amp;)=delete</argsstring>
+        <name>SimpleRemoteEPC</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::SimpleRemoteEPC</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c" kindref="compound">SimpleRemoteEPC</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="69" column="3"/>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a8b2cbfc62eb357c72da0f9e18c645042">SimpleRemoteEPC</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af1372961e954f0dad1ec0e4a04dd5220" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c" kindref="compound">SimpleRemoteEPC</ref> &amp;</type>
+        <definition>SimpleRemoteEPC &amp; llvm::orc::SimpleRemoteEPC::operator=</definition>
+        <argsstring>(SimpleRemoteEPC &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c" kindref="compound">SimpleRemoteEPC</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="70" column="19"/>
+        <references refid="classllvm_1_1orc_1_1_executor_process_control_1a30812e122ddf831a3226a84f0d5caa40" compoundref="_executor_process_control_8h" startline="389">llvm::orc::ExecutorProcessControl::D</references>
+        <references refid="classllvm_1_1orc_1_1_executor_process_control_1ab10c2e8e258477c2c02ce7903e223df0" compoundref="_executor_process_control_8h" startline="396">llvm::orc::ExecutorProcessControl::DylibMgr</references>
+        <references refid="classllvm_1_1orc_1_1_executor_process_control_1abb438764fe4565ba9704400b74cf38ab" compoundref="_executor_process_control_8h" startline="183" endline="185">llvm::orc::ExecutorProcessControl::ExecutorProcessControl</references>
+        <references refid="namespacellvm_1abfc9c7ecf70f66901e439f7c04ef3dbb" compoundref="_s_t_l_extras_8h" startline="1873" endline="1875">llvm::move</references>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a8b2cbfc62eb357c72da0f9e18c645042">SimpleRemoteEPC</references>
+        <references refid="classllvm_1_1orc_1_1_executor_process_control_1a58fe1bcc0c0139d754c0d01cce3b42bf" compoundref="_executor_process_control_8h" startline="388">llvm::orc::ExecutorProcessControl::SSP</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a3f348cc2f20be9925b6f762a7a14df84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::orc::SimpleRemoteEPC::~SimpleRemoteEPC</definition>
+        <argsstring>()</argsstring>
+        <name>~SimpleRemoteEPC</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::~SimpleRemoteEPC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="71" column="3" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="19" bodyend="24"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a3ac93f1af0581195d51da5070d0b2791" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; int32_t &gt;</type>
+        <definition>Expected&lt; int32_t &gt; llvm::orc::SimpleRemoteEPC::runAsMain</definition>
+        <argsstring>(ExecutorAddr MainFnAddr, ArrayRef&lt; std::string &gt; Args) override</argsstring>
+        <name>runAsMain</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::runAsMain</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_executor_process_control_1a1f007606935ffd8cce497cc85266d796">runAsMain</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+          <declname>MainFnAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::string &gt;</type>
+          <declname>Args</declname>
+        </param>
+        <briefdescription>
+<para>Run function with a main-like signature. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="73" column="12" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="64" bodyend="71"/>
+        <references refid="classllvm_1_1orc_1_1_executor_process_control_1a955b3e2910b75b483c867cf4e79bb78e" compoundref="_executor_process_control_8h" startline="372" endline="379">llvm::orc::ExecutorProcessControl::callSPSWrapper</references>
+        <references refid="namespacellvm_1_1orc_1a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e" compoundref="_simple_remote_e_p_c_utils_8h" startline="40">llvm::orc::Result</references>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a3ac93f1af0581195d51da5070d0b2791" compoundref="_simple_remote_e_p_c_8cpp" startline="64" endline="71">runAsMain</references>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a3ac93f1af0581195d51da5070d0b2791" compoundref="_simple_remote_e_p_c_8cpp" startline="64" endline="71">runAsMain</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ae2902337e404cc39c82cc2c8bf435c0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; int32_t &gt;</type>
+        <definition>Expected&lt; int32_t &gt; llvm::orc::SimpleRemoteEPC::runAsVoidFunction</definition>
+        <argsstring>(ExecutorAddr VoidFnAddr) override</argsstring>
+        <name>runAsVoidFunction</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::runAsVoidFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_executor_process_control_1a7d1ee134a86d5409efdcf07e177bc1b9">runAsVoidFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+          <declname>VoidFnAddr</declname>
+        </param>
+        <briefdescription>
+<para>Run function with a int (*)(void) signature. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="76" column="12" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="73" bodyend="79"/>
+        <references refid="classllvm_1_1orc_1_1_executor_process_control_1a955b3e2910b75b483c867cf4e79bb78e" compoundref="_executor_process_control_8h" startline="372" endline="379">llvm::orc::ExecutorProcessControl::callSPSWrapper</references>
+        <references refid="namespacellvm_1_1orc_1a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e" compoundref="_simple_remote_e_p_c_utils_8h" startline="40">llvm::orc::Result</references>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ae2902337e404cc39c82cc2c8bf435c0a" compoundref="_simple_remote_e_p_c_8cpp" startline="73" endline="79">runAsVoidFunction</references>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ae2902337e404cc39c82cc2c8bf435c0a" compoundref="_simple_remote_e_p_c_8cpp" startline="73" endline="79">runAsVoidFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af6ac6028d1ca8cb645402b4fafc88452" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; int32_t &gt;</type>
+        <definition>Expected&lt; int32_t &gt; llvm::orc::SimpleRemoteEPC::runAsIntFunction</definition>
+        <argsstring>(ExecutorAddr IntFnAddr, int Arg) override</argsstring>
+        <name>runAsIntFunction</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::runAsIntFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_executor_process_control_1a1311188c70924fb09c232f055985e8ae">runAsIntFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+          <declname>IntFnAddr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>Arg</declname>
+        </param>
+        <briefdescription>
+<para>Run function with a int (*)(int) signature. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="78" column="12" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="81" bodyend="88"/>
+        <references refid="classllvm_1_1orc_1_1_executor_process_control_1a955b3e2910b75b483c867cf4e79bb78e" compoundref="_executor_process_control_8h" startline="372" endline="379">llvm::orc::ExecutorProcessControl::callSPSWrapper</references>
+        <references refid="namespacellvm_1_1orc_1a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e" compoundref="_simple_remote_e_p_c_utils_8h" startline="40">llvm::orc::Result</references>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af6ac6028d1ca8cb645402b4fafc88452" compoundref="_simple_remote_e_p_c_8cpp" startline="81" endline="88">runAsIntFunction</references>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af6ac6028d1ca8cb645402b4fafc88452" compoundref="_simple_remote_e_p_c_8cpp" startline="81" endline="88">runAsIntFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af21de81dd1759e3d1385c8ed7c0aa472" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::orc::SimpleRemoteEPC::callWrapperAsync</definition>
+        <argsstring>(ExecutorAddr WrapperFnAddr, IncomingWFRHandler OnComplete, ArrayRef&lt; char &gt; ArgBuffer) override</argsstring>
+        <name>callWrapperAsync</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::callWrapperAsync</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_executor_process_control_1a3528e929721c0c2bbb0ea09688eb8eb9">callWrapperAsync</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+          <declname>WrapperFnAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_process_control_1_1_incoming_w_f_r_handler" kindref="compound">IncomingWFRHandler</ref></type>
+          <declname>OnComplete</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classchar" kindref="compound">char</ref> &gt;</type>
+          <declname>ArgBuffer</declname>
+        </param>
+        <briefdescription>
+<para>Run a wrapper function in the executor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The given WFRHandler will be called on the result when it is returned.</para>
+<para>The wrapper function should be callable as:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">CWrapperFunctionResult<sp/>fn(uint8_t<sp/>*<ref refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" kindref="member">Data</ref>,<sp/>uint64_t<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>);</highlight></codeline>
+</programlisting>{.cpp} </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="80" column="8" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="90" bodyend="124"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1orc_1a1448b52253eb43f8f07b7f5d94336a47a0fe959195d2bfd3ccc5cd9c358c4b561" compoundref="_simple_remote_e_p_c_utils_8h" startline="41">llvm::orc::CallWrapper</references>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af21de81dd1759e3d1385c8ed7c0aa472" compoundref="_simple_remote_e_p_c_8cpp" startline="90" endline="124">callWrapperAsync</references>
+        <references refid="classllvm_1_1orc_1_1shared_1_1_wrapper_function_result_1ae0a341aa5651a0e6b296119ad73cdef5" compoundref="_wrapper_function_utils_8h" startline="140" endline="147">llvm::orc::shared::WrapperFunctionResult::createOutOfBandError</references>
+        <references refid="classllvm_1_1orc_1_1_executor_process_control_1ab3631f9109f6d1422c68b7628c0a0573" compoundref="_executor_process_control_8h" startline="191" endline="194">llvm::orc::ExecutorProcessControl::getExecutionSession</references>
+        <references refid="_m_d5_8cpp_1ae42219072d798876e6b08e6b78614ff6" compoundref="_m_d5_8cpp" startline="57">H</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af21de81dd1759e3d1385c8ed7c0aa472" compoundref="_simple_remote_e_p_c_8cpp" startline="90" endline="124">callWrapperAsync</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ab4c26bc089f703fd592ca80cdeb9bd3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::SimpleRemoteEPC::disconnect</definition>
+        <argsstring>() override</argsstring>
+        <name>disconnect</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::disconnect</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_executor_process_control_1a6646c3c9c9192b203f0faf6821160afc">disconnect</reimplements>
+        <briefdescription>
+<para>Disconnect from the target process. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This should be called after the JIT session is shut down. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="84" column="9" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="126" bodyend="132"/>
+        <references refid="classllvm_1_1orc_1_1_executor_process_control_1a30812e122ddf831a3226a84f0d5caa40" compoundref="_executor_process_control_8h" startline="389">llvm::orc::ExecutorProcessControl::D</references>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ab4c26bc089f703fd592ca80cdeb9bd3f" compoundref="_simple_remote_e_p_c_8cpp" startline="126" endline="132">disconnect</references>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ab4c26bc089f703fd592ca80cdeb9bd3f" compoundref="_simple_remote_e_p_c_8cpp" startline="126" endline="132">disconnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a4f573eb08d6775d4348ae9efd7532f7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client_1a0cae86f42eaefdba4b602c77afb1e035" kindref="member">HandleMessageAction</ref> &gt;</type>
+        <definition>Expected&lt; SimpleRemoteEPCTransportClient::HandleMessageAction &gt; llvm::orc::SimpleRemoteEPC::handleMessage</definition>
+        <argsstring>(SimpleRemoteEPCOpcode OpC, uint64_t SeqNo, ExecutorAddr TagAddr, SimpleRemoteEPCArgBytesVector ArgBytes) override</argsstring>
+        <name>handleMessage</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::handleMessage</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client_1a756770283ea204755873a23eb1324f69">handleMessage</reimplements>
+        <param>
+          <type><ref refid="namespacellvm_1_1orc_1a1448b52253eb43f8f07b7f5d94336a47" kindref="member">SimpleRemoteEPCOpcode</ref></type>
+          <declname>OpC</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>SeqNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+          <declname>TagAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1orc_1a7b57ebab4d32c81530df07ac39a3b0ca" kindref="member">SimpleRemoteEPCArgBytesVector</ref></type>
+          <declname>ArgBytes</declname>
+        </param>
+        <briefdescription>
+<para>Handle receipt of a message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an <ref refid="classllvm_1_1_error" kindref="compound">Error</ref> if the message cannot be handled, &apos;EndSession&apos; if the client will not accept any further messages, and &apos;ContinueSession&apos; otherwise. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="87" column="3" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="135" bodyend="189"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1orc_1a1448b52253eb43f8f07b7f5d94336a47a0fe959195d2bfd3ccc5cd9c358c4b561" compoundref="_simple_remote_e_p_c_utils_8h" startline="41">llvm::orc::CallWrapper</references>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client_1a0cae86f42eaefdba4b602c77afb1e035a5e8b6f0100b3a1ab9b994fc190a1b14d" compoundref="_simple_remote_e_p_c_utils_8h" startline="56">llvm::orc::SimpleRemoteEPCTransportClient::ContinueSession</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client_1a0cae86f42eaefdba4b602c77afb1e035abd48e7a3495d02791216dca8b8ad1837" compoundref="_simple_remote_e_p_c_utils_8h" startline="56">llvm::orc::SimpleRemoteEPCTransportClient::EndSession</references>
+        <references refid="namespacellvm_1a653cce37b80c03eebe7a00520a8eabb6" compoundref="_format_variadic_8h" startline="252" endline="256">llvm::formatv</references>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a4f573eb08d6775d4348ae9efd7532f7a" compoundref="_simple_remote_e_p_c_8cpp" startline="135" endline="189">handleMessage</references>
+        <references refid="namespacellvm_1_1orc_1a1448b52253eb43f8f07b7f5d94336a47a77bd384c19f071f8d0579398b90df0b6" compoundref="_simple_remote_e_p_c_utils_8h" startline="39">llvm::orc::Hangup</references>
+        <references refid="namespacellvm_1a2b43c21951d0948b34bcf7019949032d" compoundref="_testing_2_support_2_error_8cpp" startline="98" endline="101">llvm::inconvertibleErrorCode</references>
+        <references refid="namespacellvm_1_1orc_1a1448b52253eb43f8f07b7f5d94336a47ac1412e64d00512f6facfacd333f8c2b3" compoundref="_simple_remote_e_p_c_utils_8h" startline="42">llvm::orc::LastOpC</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="namespacellvm_1_1orc_1a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e" compoundref="_simple_remote_e_p_c_utils_8h" startline="40">llvm::orc::Result</references>
+        <references refid="namespacellvm_1_1orc_1a1448b52253eb43f8f07b7f5d94336a47aad2376beebecdcf7846ba973fa1a005b" compoundref="_simple_remote_e_p_c_utils_8h" startline="38">llvm::orc::Setup</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a4f573eb08d6775d4348ae9efd7532f7a" compoundref="_simple_remote_e_p_c_8cpp" startline="135" endline="189">handleMessage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a1cbd9c46f77bca6e36af9be20d9ed738" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::orc::SimpleRemoteEPC::handleDisconnect</definition>
+        <argsstring>(Error Err) override</argsstring>
+        <name>handleDisconnect</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::handleDisconnect</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client_1a8477fb0a7c21a1860bd529ebbb3b09ea">handleDisconnect</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+          <declname>Err</declname>
+        </param>
+        <briefdescription>
+<para>Handle a disconnection from the underlying transport. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>No further messages should be sent to handleMessage after this is called. Err may contain an <ref refid="classllvm_1_1_error" kindref="compound">Error</ref> value indicating unexpected disconnection. This allows clients to log such errors, but no attempt should be made at recovery (which should be handled inside the transport class, if it is supported at all). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="90" column="8" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="191" bodyend="212"/>
+        <references refid="classllvm_1_1orc_1_1shared_1_1_wrapper_function_result_1ae0a341aa5651a0e6b296119ad73cdef5" compoundref="_wrapper_function_utils_8h" startline="140" endline="147">llvm::orc::shared::WrapperFunctionResult::createOutOfBandError</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a1cbd9c46f77bca6e36af9be20d9ed738" compoundref="_simple_remote_e_p_c_8cpp" startline="191" endline="212">handleDisconnect</references>
+        <references refid="namespacellvm_1a71210b99d2ef87236d8505c1771a7ab1" compoundref="llvm_2_support_2_error_8h" startline="438" endline="440">llvm::joinErrors</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacestd_1ab8424022895aee3e366fb9a32f2883cb" compoundref="_bit_vector_8h" startline="860" endline="860">std::swap</references>
+        <referencedby refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a1cbd9c46f77bca6e36af9be20d9ed738" compoundref="_simple_remote_e_p_c_8cpp" startline="191" endline="212">handleDisconnect</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1acc2b5a826ee89b520e8dccabf2d9499b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::orc::SimpleRemoteEPC::SimpleRemoteEPC</definition>
+        <argsstring>(std::shared_ptr&lt; SymbolStringPool &gt; SSP, std::unique_ptr&lt; TaskDispatcher &gt; D)</argsstring>
+        <name>SimpleRemoteEPC</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::SimpleRemoteEPC</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classllvm_1_1orc_1_1_symbol_string_pool" kindref="compound">SymbolStringPool</ref> &gt;</type>
+          <declname>SSP</declname>
+        </param>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_task_dispatcher" kindref="compound">TaskDispatcher</ref> &gt;</type>
+          <declname>D</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="93" column="3" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="93" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a584912754a294f87627fb44d56edc94b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::SimpleRemoteEPC::sendMessage</definition>
+        <argsstring>(SimpleRemoteEPCOpcode OpC, uint64_t SeqNo, ExecutorAddr TagAddr, ArrayRef&lt; char &gt; ArgBytes)</argsstring>
+        <name>sendMessage</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::sendMessage</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1orc_1a1448b52253eb43f8f07b7f5d94336a47" kindref="member">SimpleRemoteEPCOpcode</ref></type>
+          <declname>OpC</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>SeqNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+          <declname>TagAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classchar" kindref="compound">char</ref> &gt;</type>
+          <declname>ArgBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="104" column="9" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="243" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ad4fa44e089a3a007eabf7496057c1c92" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::SimpleRemoteEPC::handleSetup</definition>
+        <argsstring>(uint64_t SeqNo, ExecutorAddr TagAddr, SimpleRemoteEPCArgBytesVector ArgBytes)</argsstring>
+        <name>handleSetup</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::handleSetup</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>SeqNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+          <declname>TagAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1orc_1a7b57ebab4d32c81530df07ac39a3b0ca" kindref="member">SimpleRemoteEPCArgBytesVector</ref></type>
+          <declname>ArgBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="107" column="9" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="279" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1adc2b129f7051e01ca44630c2935c6153" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::SimpleRemoteEPC::setup</definition>
+        <argsstring>(Setup S)</argsstring>
+        <name>setup</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::setup</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1orc_1_1_simple_remote_e_p_c_1_1_setup" kindref="compound">Setup</ref></type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="109" column="9" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="303" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a2bb6c64a380344599ef865ce564c1a45" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::SimpleRemoteEPC::handleResult</definition>
+        <argsstring>(uint64_t SeqNo, ExecutorAddr TagAddr, SimpleRemoteEPCArgBytesVector ArgBytes)</argsstring>
+        <name>handleResult</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::handleResult</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>SeqNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+          <declname>TagAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1orc_1a7b57ebab4d32c81530df07ac39a3b0ca" kindref="member">SimpleRemoteEPCArgBytesVector</ref></type>
+          <declname>ArgBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="111" column="9" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="396" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a5d2d72766c37a1fe977ff1c6e8ce4f65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::orc::SimpleRemoteEPC::handleCallWrapper</definition>
+        <argsstring>(uint64_t RemoteSeqNo, ExecutorAddr TagAddr, SimpleRemoteEPCArgBytesVector ArgBytes)</argsstring>
+        <name>handleCallWrapper</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::handleCallWrapper</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>RemoteSeqNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">ExecutorAddr</ref></type>
+          <declname>TagAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1orc_1a7b57ebab4d32c81530df07ac39a3b0ca" kindref="member">SimpleRemoteEPCArgBytesVector</ref></type>
+          <declname>ArgBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="113" column="8" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="422" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a7fe4765d6f14d84ee0de9701e343c04d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::orc::SimpleRemoteEPC::handleHangup</definition>
+        <argsstring>(SimpleRemoteEPCArgBytesVector ArgBytes)</argsstring>
+        <name>handleHangup</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::handleHangup</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1orc_1a7b57ebab4d32c81530df07ac39a3b0ca" kindref="member">SimpleRemoteEPCArgBytesVector</ref></type>
+          <declname>ArgBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="115" column="9" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="440" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1aada4f1eb4ff075e6e438cd13daf7dea0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::orc::SimpleRemoteEPC::getNextSeqNo</definition>
+        <argsstring>()</argsstring>
+        <name>getNextSeqNo</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::getNextSeqNo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="117" column="12" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="117" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a233ef25a2a9adb33fbcdf46685e9ae89" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::orc::SimpleRemoteEPC::releaseSeqNo</definition>
+        <argsstring>(uint64_t SeqNo)</argsstring>
+        <name>releaseSeqNo</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::releaseSeqNo</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>SeqNo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="118" column="8" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1abd23dea682c738a8da0780a1b91f2738" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="namespacellvm_1_1orc_1_1tpctypes_1a791ec0843cc10da4c64ae6d79f8381d8" kindref="member">tpctypes::DylibHandle</ref> &gt;</type>
+        <definition>Expected&lt; tpctypes::DylibHandle &gt; llvm::orc::SimpleRemoteEPC::loadDylib</definition>
+        <argsstring>(const char *DylibPath) override</argsstring>
+        <name>loadDylib</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::loadDylib</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_dylib_manager_1aa3949ea92bf2614064d7303fb0cc3629">loadDylib</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>DylibPath</declname>
+        </param>
+        <briefdescription>
+<para>Load the dynamic library at the given path and return a handle to it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If LibraryPath is null this function will return the global handle for the target process. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="120" column="12" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a11e56da51ed067ea889375b88daecbda" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::orc::SimpleRemoteEPC::lookupSymbolsAsync</definition>
+        <argsstring>(ArrayRef&lt; LookupRequest &gt; Request, SymbolLookupCompleteFn F) override</argsstring>
+        <name>lookupSymbolsAsync</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::lookupSymbolsAsync</qualifiedname>
+        <reimplements refid="classllvm_1_1orc_1_1_dylib_manager_1a632bc46fd555571d3c82bbf22c7c928a">lookupSymbolsAsync</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1orc_1_1_dylib_manager_1_1_lookup_request" kindref="compound">LookupRequest</ref> &gt;</type>
+          <declname>Request</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_dylib_manager_1ae71ec09d3b629cd60c40a90681bf09d3" kindref="member">SymbolLookupCompleteFn</ref></type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Search for symbols in the target process. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The result of the lookup is a 2-dimensional array of target addresses that correspond to the lookup order. If a required symbol is not found then this method will return an error. If a weakly referenced symbol is not found then it be assigned a &apos;0&apos; value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="122" column="8" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="59" bodyend="62"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ae3e9633f1849f0a3f49676a2659922b4" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1jitlink_1_1_j_i_t_link_memory_manager" kindref="compound">jitlink::JITLinkMemoryManager</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; jitlink::JITLinkMemoryManager &gt; &gt; llvm::orc::SimpleRemoteEPC::createDefaultMemoryManager</definition>
+        <argsstring>(SimpleRemoteEPC &amp;SREPC)</argsstring>
+        <name>createDefaultMemoryManager</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::createDefaultMemoryManager</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c" kindref="compound">SimpleRemoteEPC</ref> &amp;</type>
+          <declname>SREPC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="100" column="3" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="215" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a103b7f0a669896a935f8305884ec7dd4" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1orc_1_1_executor_process_control_1_1_memory_access" kindref="compound">MemoryAccess</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; ExecutorProcessControl::MemoryAccess &gt; &gt; llvm::orc::SimpleRemoteEPC::createDefaultMemoryAccess</definition>
+        <argsstring>(SimpleRemoteEPC &amp;SREPC)</argsstring>
+        <name>createDefaultMemoryAccess</name>
+        <qualifiedname>llvm::orc::SimpleRemoteEPC::createDefaultMemoryAccess</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_simple_remote_e_p_c" kindref="compound">SimpleRemoteEPC</ref> &amp;</type>
+          <declname>SREPC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="102" column="3" bodyfile="lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp" bodystart="229" bodyend="241"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>llvm::orc::DylibManager</label>
+        <link refid="classllvm_1_1orc_1_1_dylib_manager"/>
+      </node>
+      <node id="2">
+        <label>llvm::orc::ExecutorProcessControl</label>
+        <link refid="classllvm_1_1orc_1_1_executor_process_control"/>
+      </node>
+      <node id="1">
+        <label>llvm::orc::SimpleRemoteEPC</label>
+        <link refid="classllvm_1_1orc_1_1_simple_remote_e_p_c"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::orc::SimpleRemoteEPCTransportClient</label>
+        <link refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="22">
+        <label>Alloc</label>
+      </node>
+      <node id="20">
+        <label>llvm::AllocatorBase&lt; DerivedT &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+      </node>
+      <node id="19">
+        <label>llvm::AllocatorBase&lt; MallocAllocator &gt;</label>
+        <link refid="classllvm_1_1_allocator_base"/>
+        <childnode refid="20" relation="template-instance">
+          <edgelabel>&lt; MallocAllocator &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::MallocAllocator</label>
+        <link refid="classllvm_1_1_malloc_allocator"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::StringMap&lt; ValueTy, AllocatorTy &gt;</label>
+        <link refid="classllvm_1_1_string_map"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::StringMap&lt; llvm::orc::ExecutorAddr &gt;</label>
+        <link refid="classllvm_1_1_string_map"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="private-inheritance">
+        </childnode>
+        <childnode refid="23" relation="template-instance">
+          <edgelabel>&lt; llvm::orc::ExecutorAddr &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::StringMap&lt; std::vector&lt; char &gt; &gt;</label>
+        <link refid="classllvm_1_1_string_map"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="private-inheritance">
+        </childnode>
+        <childnode refid="23" relation="template-instance">
+          <edgelabel>&lt; std::vector&lt; char &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm::StringMapEntryBase</label>
+        <link refid="classllvm_1_1_string_map_entry_base"/>
+      </node>
+      <node id="14">
+        <label>llvm::StringMapImpl</label>
+        <link refid="classllvm_1_1_string_map_impl"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>TheTable</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>ItemSize</edgelabel>
+          <edgelabel>NumBuckets</edgelabel>
+          <edgelabel>NumItems</edgelabel>
+          <edgelabel>NumTombstones</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>TombstoneIntVal</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::Triple</label>
+        <link refid="classllvm_1_1_triple"/>
+      </node>
+      <node id="21">
+        <label>llvm::detail::AllocatorHolder&lt; Alloc &gt;</label>
+        <link refid="classllvm_1_1detail_1_1_allocator_holder"/>
+        <childnode refid="22" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::detail::AllocatorHolder&lt; MallocAllocator &gt;</label>
+        <link refid="classllvm_1_1detail_1_1_allocator_holder"/>
+        <childnode refid="18" relation="private-inheritance">
+        </childnode>
+        <childnode refid="21" relation="template-instance">
+          <edgelabel>&lt; MallocAllocator &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::jitlink::JITLinkMemoryManager</label>
+        <link refid="classllvm_1_1jitlink_1_1_j_i_t_link_memory_manager"/>
+      </node>
+      <node id="12">
+        <label>llvm::orc::DylibManager</label>
+        <link refid="classllvm_1_1orc_1_1_dylib_manager"/>
+      </node>
+      <node id="5">
+        <label>llvm::orc::ExecutionSession</label>
+        <link refid="classllvm_1_1orc_1_1_execution_session"/>
+      </node>
+      <node id="9">
+        <label>llvm::orc::ExecutorAddr</label>
+        <link refid="classllvm_1_1orc_1_1_executor_addr"/>
+      </node>
+      <node id="2">
+        <label>llvm::orc::ExecutorProcessControl</label>
+        <link refid="classllvm_1_1orc_1_1_executor_process_control"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>SSP</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>D</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ES</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>TargetTriple</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>PageSize</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>JDI</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>MemAccess</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>MemMgr</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>DylibMgr</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>BootstrapMap</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>BootstrapSymbols</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::orc::ExecutorProcessControl::JITDispatchInfo</label>
+        <link refid="structllvm_1_1orc_1_1_executor_process_control_1_1_j_i_t_dispatch_info"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>JITDispatchContext</edgelabel>
+          <edgelabel>JITDispatchFunction</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::orc::ExecutorProcessControl::MemoryAccess</label>
+        <link refid="classllvm_1_1orc_1_1_executor_process_control_1_1_memory_access"/>
+      </node>
+      <node id="1">
+        <label>llvm::orc::SimpleRemoteEPC</label>
+        <link refid="classllvm_1_1orc_1_1_simple_remote_e_p_c"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::orc::SimpleRemoteEPCTransportClient</label>
+        <link refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client"/>
+      </node>
+      <node id="3">
+        <label>shared_ptr&lt; llvm::orc::SymbolStringPool &gt;</label>
+      </node>
+      <node id="4">
+        <label>unique_ptr&lt; llvm::orc::TaskDispatcher &gt;</label>
+      </node>
+      <node id="16">
+        <label>uintptr_t</label>
+      </node>
+      <node id="7">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" line="31" column="1" bodyfile="include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h" bodystart="33" bodyend="144"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a74714a7a45a2501fda9da5b5066425b8" prot="protected" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>BootstrapMap</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a644afbfdc6251cffa535988ec59c259e" prot="protected" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>BootstrapSymbols</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a955b3e2910b75b483c867cf4e79bb78e" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>callSPSWrapper</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a17f9962c6727ed170f8b494243302732" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>callSPSWrapperAsync</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a3233c5b7439500375aba08633ec68794" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>callSPSWrapperAsync</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a1140ddd9e676afc51207f47d6730acf9" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>callWrapper</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af21de81dd1759e3d1385c8ed7c0aa472" prot="public" virt="virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>callWrapperAsync</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1aa84549ad8ace430ee3f082604fa90633" prot="public" virt="non-virtual" ambiguityscope="llvm::orc::ExecutorProcessControl::"><scope>llvm::orc::SimpleRemoteEPC</scope><name>callWrapperAsync</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a12a2f5fbb8fd996dda1215f2a960fd3f" prot="public" virt="non-virtual" ambiguityscope="llvm::orc::ExecutorProcessControl::"><scope>llvm::orc::SimpleRemoteEPC</scope><name>callWrapperAsync</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client_1a0cae86f42eaefdba4b602c77afb1e035a5e8b6f0100b3a1ab9b994fc190a1b14d" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>ContinueSession</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a4753da41da67751c4d4a706a90eeeeec" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>Create</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a103b7f0a669896a935f8305884ec7dd4" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>createDefaultMemoryAccess</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ae3e9633f1849f0a3f49676a2659922b4" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>createDefaultMemoryManager</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a30812e122ddf831a3226a84f0d5caa40" prot="protected" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>D</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ab4c26bc089f703fd592ca80cdeb9bd3f" prot="public" virt="virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>disconnect</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1acf21b9f49a050986f61a58a6126e6ccb" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>DisconnectCV</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a4d72df62ca4232485882de9b19698b4b" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>Disconnected</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a6e2048a63f4cb8b37134e20e7b4fa87b" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>DisconnectErr</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1ab10c2e8e258477c2c02ce7903e223df0" prot="protected" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>DylibMgr</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client_1a0cae86f42eaefdba4b602c77afb1e035abd48e7a3495d02791216dca8b8ad1837" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>EndSession</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1acbae862a35e48711ec9bf3db8088f62b" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>EPCDylibMgr</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1ae63a1019e9fd3ba61c6923c1213bb131" prot="protected" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>ES</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1abb438764fe4565ba9704400b74cf38ab" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>ExecutorProcessControl</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a3ccd16237cf9693dbf3c55f594ab9497" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getBootstrapMap</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a2dc8aa3190f19a2085f418b95cd8194a" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getBootstrapMapValue</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1aab12eb0f7563916a37da32e520dc1ecf" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getBootstrapSymbols</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a79094e0d6941ab427ac6ecff3a6b7b55" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getBootstrapSymbolsMap</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1af759539063517970e6256c1ccebdd4ee" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getDispatcher</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1ab68f0fe783c50ddf340d5d709c1d08a9" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getDylibMgr</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1ab3631f9109f6d1422c68b7628c0a0573" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getExecutionSession</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a9382f09a7c29aa5edde7c64f3ad1e8d0" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getJITDispatchInfo</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a1068806ac2e90b55bbd145d923f09777" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getMemMgr</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1acac882e2638ebe645c1226976e87a674" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getMemoryAccess</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1aada4f1eb4ff075e6e438cd13daf7dea0" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getNextSeqNo</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a8827238488b1ce8b05a3054a5bda4c3e" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getPageSize</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a75e1dd9778ba22121cbf5d9f69597377" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getSymbolStringPool</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a590d6e44240bce2fcf173b11ee2fe1be" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>getTargetTriple</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a5d2d72766c37a1fe977ff1c6e8ce4f65" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>handleCallWrapper</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a1cbd9c46f77bca6e36af9be20d9ed738" prot="public" virt="virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>handleDisconnect</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a7fe4765d6f14d84ee0de9701e343c04d" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>handleHangup</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a4f573eb08d6775d4348ae9efd7532f7a" prot="public" virt="virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>handleMessage</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client_1a0cae86f42eaefdba4b602c77afb1e035" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>HandleMessageAction</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a2bb6c64a380344599ef865ce564c1a45" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>handleResult</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ad4fa44e089a3a007eabf7496057c1c92" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>handleSetup</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a6461773648a1bc1717ce65bf3247e909" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>intern</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a408bb953a401290b10daa97f87531a37" prot="protected" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>JDI</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1abd23dea682c738a8da0780a1b91f2738" prot="private" virt="virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>loadDylib</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a11e56da51ed067ea889375b88daecbda" prot="private" virt="virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>lookupSymbolsAsync</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1ad8710c264afee46f88cd003b98ae8f86" prot="protected" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>MemAccess</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a86d16d153b1dc4d9d280a7e4ceee8d5e" prot="protected" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>MemMgr</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a0444451ddc03b46f1bae4af64fa49361" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>NextSeqNo</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a359e785a6b64f374d70fb370ad0934d4" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af1372961e954f0dad1ec0e4a04dd5220" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a52dd45dfcbb92fb125949415f32c4d30" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>OwnedMemAccess</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a742f14be9bf19b2050bb5b0742923bc4" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>OwnedMemMgr</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a887a86a6014e53f51ffede51edae5987" prot="protected" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>PageSize</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ae609f135d8595aa5642fc567828208d4" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>PendingCallWrapperResults</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ac2f60bade0e43fa6464539d0c139e127" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>PendingCallWrapperResultsMap</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a233ef25a2a9adb33fbcdf46685e9ae89" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>releaseSeqNo</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af6ac6028d1ca8cb645402b4fafc88452" prot="public" virt="virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>runAsIntFunction</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ab6475151050aa3d128b28acb19ef1e96" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>RunAsIntFunctionAddr</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a3ac93f1af0581195d51da5070d0b2791" prot="public" virt="virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>runAsMain</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a55512723884702646c683095df453c26" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>RunAsMainAddr</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ae2902337e404cc39c82cc2c8bf435c0a" prot="public" virt="virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>runAsVoidFunction</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1af3673c8660c7f0cf812956fb2fdb6a41" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>RunAsVoidFunctionAddr</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a584912754a294f87627fb44d56edc94b" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>sendMessage</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1adc2b129f7051e01ca44630c2935c6153" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>setup</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a8b2cbfc62eb357c72da0f9e18c645042" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>SimpleRemoteEPC</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1ae502362f8f0f307531af6bdee3d0f443" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>SimpleRemoteEPC</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1acc2b5a826ee89b520e8dccabf2d9499b" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>SimpleRemoteEPC</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1abafcabf7d20c85e00bec0c77cc34562d" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>SimpleRemoteEPCMutex</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a58fe1bcc0c0139d754c0d01cce3b42bf" prot="protected" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>SSP</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a7d6a6b98d811b81ae84dc6164b358fd6" prot="private" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>T</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1a43e46ade7cdd5c5a944e4e0b436eebcc" prot="protected" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>TargetTriple</name></member>
+      <member refid="classllvm_1_1orc_1_1_executor_process_control_1afbe55d7fe25145ade3cd207703bd28b3" prot="public" virt="virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>~ExecutorProcessControl</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_1a3f348cc2f20be9925b6f762a7a14df84" prot="public" virt="non-virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>~SimpleRemoteEPC</name></member>
+      <member refid="classllvm_1_1orc_1_1_simple_remote_e_p_c_transport_client_1abe6c8e45cc780da3a5e5045424b4eaf5" prot="public" virt="virtual"><scope>llvm::orc::SimpleRemoteEPC</scope><name>~SimpleRemoteEPCTransportClient</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

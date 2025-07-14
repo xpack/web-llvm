@@ -1,0 +1,464 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_time_passes_handler" kind="class" language="C++" prot="public">
+    <compoundname>llvm::TimePassesHandler</compoundname>
+    <includes refid="_pass_timing_info_8h" local="yes">llvm/IR/PassTimingInfo.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_time_passes_handler_1af45b90509dd81917b8af65699f5be32b" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using llvm::TimePassesHandler::PassInvocationID =  std::pair&lt;StringRef, unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>PassInvocationID</name>
+        <qualifiedname>llvm::TimePassesHandler::PassInvocationID</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> of this type is capable of uniquely identifying pass invocations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is a pair of string Pass-Identifier (which for now is common to all the instance of a given pass) + sequential invocation counter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="48" column="3" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_time_passes_handler_1a380ea0bd7356f070f45c5249bb7ed802" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">llvm::SmallVector</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_timer" kindref="compound">Timer</ref> &gt;, 4 &gt;</type>
+        <definition>using llvm::TimePassesHandler::TimerVector =  llvm::SmallVector&lt;std::unique_ptr&lt;Timer&gt;, 4&gt;</definition>
+        <argsstring></argsstring>
+        <name>TimerVector</name>
+        <qualifiedname>llvm::TimePassesHandler::TimerVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="54" column="3" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_time_passes_handler_1a7930557d1bda66a193e1ab1ab510ae5c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_timer_group" kindref="compound">TimerGroup</ref></type>
+        <definition>TimerGroup llvm::TimePassesHandler::PassTG</definition>
+        <argsstring></argsstring>
+        <name>PassTG</name>
+        <qualifiedname>llvm::TimePassesHandler::PassTG</qualifiedname>
+        <briefdescription>
+<para>Groups of timers for passes and analyses. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="51" column="14" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_time_passes_handler_1a0123d60e111770c843b480402cc65110" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_timer_group" kindref="compound">TimerGroup</ref></type>
+        <definition>TimerGroup llvm::TimePassesHandler::AnalysisTG</definition>
+        <argsstring></argsstring>
+        <name>AnalysisTG</name>
+        <qualifiedname>llvm::TimePassesHandler::AnalysisTG</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="52" column="14" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_time_passes_handler_1a1b7762a9493d9ddf1f9f0073d5fa537f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_map" kindref="compound">StringMap</ref>&lt; <ref refid="classllvm_1_1_small_vector" kindref="compound">TimerVector</ref> &gt;</type>
+        <definition>StringMap&lt;TimerVector&gt; llvm::TimePassesHandler::TimingData</definition>
+        <argsstring></argsstring>
+        <name>TimingData</name>
+        <qualifiedname>llvm::TimePassesHandler::TimingData</qualifiedname>
+        <briefdescription>
+<para>Map of timers for pass invocations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="56" column="13" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_time_passes_handler_1a9943d4a07dcfcee6e0e37264eaa06b92" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_timer" kindref="compound">Timer</ref> *, 8 &gt;</type>
+        <definition>SmallVector&lt;Timer *, 8&gt; llvm::TimePassesHandler::PassActiveTimerStack</definition>
+        <argsstring></argsstring>
+        <name>PassActiveTimerStack</name>
+        <qualifiedname>llvm::TimePassesHandler::PassActiveTimerStack</qualifiedname>
+        <briefdescription>
+<para>Stack of currently active pass timers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Passes can run other passes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="60" column="15" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_time_passes_handler_1acb3c68b8c094f30dbcfe761a656aedc4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_timer" kindref="compound">Timer</ref> *, 8 &gt;</type>
+        <definition>SmallVector&lt;Timer *, 8&gt; llvm::TimePassesHandler::AnalysisActiveTimerStack</definition>
+        <argsstring></argsstring>
+        <name>AnalysisActiveTimerStack</name>
+        <qualifiedname>llvm::TimePassesHandler::AnalysisActiveTimerStack</qualifiedname>
+        <briefdescription>
+<para>Stack of currently active analysis timers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Analyses can request other analyses. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="63" column="15" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_time_passes_handler_1a2feb027e6348b1dbda15d9f1c914ded4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> *</type>
+        <definition>raw_ostream* llvm::TimePassesHandler::OutStream</definition>
+        <argsstring></argsstring>
+        <name>OutStream</name>
+        <qualifiedname>llvm::TimePassesHandler::OutStream</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Custom output stream to print timing information into. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default (== nullptr) we emit time report into the stream created by <ref refid="namespacellvm_1a09515ea8784bdea8e0e866799bb38409" kindref="member">CreateInfoOutputFile()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="68" column="15" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_time_passes_handler_1ac378dd6c8e5cfabb1e7fd8f2e56b4e4a" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TimePassesHandler::Enabled</definition>
+        <argsstring></argsstring>
+        <name>Enabled</name>
+        <qualifiedname>llvm::TimePassesHandler::Enabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="70" column="8" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_time_passes_handler_1a9a89da8b158d50ecffe8f01a198f6b9b" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::TimePassesHandler::PerRun</definition>
+        <argsstring></argsstring>
+        <name>PerRun</name>
+        <qualifiedname>llvm::TimePassesHandler::PerRun</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="71" column="8" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1a65d71b7296adf075c33a364803706412" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::TimePassesHandler::TimePassesHandler</definition>
+        <argsstring>()</argsstring>
+        <name>TimePassesHandler</name>
+        <qualifiedname>llvm::TimePassesHandler::TimePassesHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="74" column="3" bodyfile="lib/IR/PassTimingInfo.cpp" bodystart="200" bodyend="201"/>
+        <references refid="classllvm_1_1_time_passes_handler_1a65d71b7296adf075c33a364803706412" compoundref="_pass_timing_info_8cpp" startline="200" endline="201">TimePassesHandler</references>
+        <references refid="namespacellvm_1a44e2fc6ce783a1ca396d473139a0ae76" compoundref="_pass_timing_info_8cpp" startline="37">llvm::TimePassesIsEnabled</references>
+        <references refid="namespacellvm_1a48b120bb2106f966aef4e178c993433c" compoundref="_pass_timing_info_8cpp" startline="38">llvm::TimePassesPerRun</references>
+        <referencedby refid="classllvm_1_1_time_passes_handler_1ac1d5878f935f77ce61e2d792797bd1e2">operator=</referencedby>
+        <referencedby refid="classllvm_1_1_time_passes_handler_1a65d71b7296adf075c33a364803706412" compoundref="_pass_timing_info_8cpp" startline="200" endline="201">TimePassesHandler</referencedby>
+        <referencedby refid="classllvm_1_1_time_passes_handler_1a1bc492cc2f98b66cc142597980b4f66d">TimePassesHandler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1ae479faed38e27e2d14b336f348a8dda7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::TimePassesHandler::TimePassesHandler</definition>
+        <argsstring>(bool Enabled, bool PerRun=false)</argsstring>
+        <name>TimePassesHandler</name>
+        <qualifiedname>llvm::TimePassesHandler::TimePassesHandler</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Enabled</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>PerRun</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="75" column="3" bodyfile="lib/IR/PassTimingInfo.cpp" bodystart="195" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1ab82c2833fab714769cb856edc7c6c8bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::TimePassesHandler::~TimePassesHandler</definition>
+        <argsstring>()</argsstring>
+        <name>~TimePassesHandler</name>
+        <qualifiedname>llvm::TimePassesHandler::~TimePassesHandler</qualifiedname>
+        <briefdescription>
+<para>Destructor handles the print action if it has not been handled before. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="78" column="3" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="78" bodyend="78"/>
+        <references refid="classllvm_1_1_time_passes_handler_1aaf0e4bd581c69cc7229f6364d47f6d05" compoundref="_pass_timing_info_8cpp" startline="207" endline="220">print</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1aaf0e4bd581c69cc7229f6364d47f6d05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::TimePassesHandler::print</definition>
+        <argsstring>()</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::TimePassesHandler::print</qualifiedname>
+        <briefdescription>
+<para>Prints out timing information and then resets the timers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="81" column="8" bodyfile="lib/IR/PassTimingInfo.cpp" bodystart="207" bodyend="220"/>
+        <references refid="namespacellvm_1a09515ea8784bdea8e0e866799bb38409" compoundref="_timer_8cpp" startline="66" endline="86">llvm::CreateInfoOutputFile</references>
+        <referencedby refid="classllvm_1_1_time_passes_handler_1ab82c2833fab714769cb856edc7c6c8bb" compoundref="_pass_timing_info_8h" startline="78" endline="78">~TimePassesHandler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1a1bc492cc2f98b66cc142597980b4f66d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::TimePassesHandler::TimePassesHandler</definition>
+        <argsstring>(const TimePassesHandler &amp;)=delete</argsstring>
+        <name>TimePassesHandler</name>
+        <qualifiedname>llvm::TimePassesHandler::TimePassesHandler</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_time_passes_handler" kindref="compound">TimePassesHandler</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="84" column="3"/>
+        <references refid="classllvm_1_1_time_passes_handler_1a65d71b7296adf075c33a364803706412" compoundref="_pass_timing_info_8cpp" startline="200" endline="201">TimePassesHandler</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1ac1d5878f935f77ce61e2d792797bd1e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::TimePassesHandler::operator=</definition>
+        <argsstring>(const TimePassesHandler &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::TimePassesHandler::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_time_passes_handler" kindref="compound">TimePassesHandler</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="85" column="8"/>
+        <references refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" compoundref="_compiler_8h" startline="622">LLVM_DUMP_METHOD</references>
+        <references refid="_pass_builder_bindings_8cpp_1ad4d247df65c12507f447383be37d7ccb" compoundref="_pass_builder_bindings_8cpp" startline="57">PIC</references>
+        <references refid="classllvm_1_1_time_passes_handler_1a65d71b7296adf075c33a364803706412" compoundref="_pass_timing_info_8cpp" startline="200" endline="201">TimePassesHandler</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1a03d2e896dae596a26cf715589b8cf9f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::TimePassesHandler::registerCallbacks</definition>
+        <argsstring>(PassInstrumentationCallbacks &amp;PIC)</argsstring>
+        <name>registerCallbacks</name>
+        <qualifiedname>llvm::TimePassesHandler::registerCallbacks</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_pass_instrumentation_callbacks" kindref="compound">PassInstrumentationCallbacks</ref> &amp;</type>
+          <declname>PIC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="87" column="8" bodyfile="lib/IR/PassTimingInfo.cpp" bodystart="311" bodyend="329"/>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="_pass_builder_bindings_8cpp_1ad4d247df65c12507f447383be37d7ccb" compoundref="_pass_builder_bindings_8cpp" startline="57">PIC</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1acad49f69255a43df18bb55e79f6cbe93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::TimePassesHandler::setOutStream</definition>
+        <argsstring>(raw_ostream &amp;OutStream)</argsstring>
+        <name>setOutStream</name>
+        <qualifiedname>llvm::TimePassesHandler::setOutStream</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OutStream</declname>
+        </param>
+        <briefdescription>
+<para>Set a custom output stream for subsequent reporting. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="90" column="8" bodyfile="lib/IR/PassTimingInfo.cpp" bodystart="203" bodyend="205"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1aa6bd211c681c162a60cd74d8b59ced87" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" kindref="member">LLVM_DUMP_METHOD</ref> void</type>
+        <definition>LLVM_DUMP_METHOD void llvm::TimePassesHandler::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::TimePassesHandler::dump</qualifiedname>
+        <briefdescription>
+<para>Dumps information for running/triggered timers, useful for debugging. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="94" column="25" bodyfile="lib/IR/PassTimingInfo.cpp" bodystart="222" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1a5b98ab0ecf94165c9f01066c028f9bed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_timer" kindref="compound">Timer</ref> &amp;</type>
+        <definition>Timer &amp; llvm::TimePassesHandler::getPassTimer</definition>
+        <argsstring>(StringRef PassID, bool IsPass)</argsstring>
+        <name>getPassTimer</name>
+        <qualifiedname>llvm::TimePassesHandler::getPassTimer</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>PassID</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsPass</declname>
+        </param>
+        <briefdescription>
+<para>Returns the new timer for each new run of the pass. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the timer for the specified pass invocation of <computeroutput>PassID</computeroutput>.</para>
+<para>Each time it creates a new timer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="97" column="9" bodyfile="lib/IR/PassTimingInfo.cpp" bodystart="172" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1ac0fe0685e0cbe181e4a7ca89a0292572" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::TimePassesHandler::startAnalysisTimer</definition>
+        <argsstring>(StringRef PassID)</argsstring>
+        <name>startAnalysisTimer</name>
+        <qualifiedname>llvm::TimePassesHandler::startAnalysisTimer</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>PassID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="99" column="8" bodyfile="lib/IR/PassTimingInfo.cpp" bodystart="283" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1a524aca12119ae39c366f4dd06d805b35" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::TimePassesHandler::stopAnalysisTimer</definition>
+        <argsstring>(StringRef PassID)</argsstring>
+        <name>stopAnalysisTimer</name>
+        <qualifiedname>llvm::TimePassesHandler::stopAnalysisTimer</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>PassID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="100" column="8" bodyfile="lib/IR/PassTimingInfo.cpp" bodystart="297" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1af060142adfbac735c7febacc2ccff9fe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::TimePassesHandler::startPassTimer</definition>
+        <argsstring>(StringRef PassID)</argsstring>
+        <name>startPassTimer</name>
+        <qualifiedname>llvm::TimePassesHandler::startPassTimer</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>PassID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="101" column="8" bodyfile="lib/IR/PassTimingInfo.cpp" bodystart="252" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_time_passes_handler_1ad5a0b43db3617832710bea1da1186ff9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::TimePassesHandler::stopPassTimer</definition>
+        <argsstring>(StringRef PassID)</argsstring>
+        <name>stopPassTimer</name>
+        <qualifiedname>llvm::TimePassesHandler::stopPassTimer</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>PassID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassTimingInfo.h" line="102" column="8" bodyfile="lib/IR/PassTimingInfo.cpp" bodystart="267" bodyend="281"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class implements -time-passes functionality for new pass manager. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It provides the pass-instrumentation callbacks that measure the pass execution time. They collect timing info into individual timers as passes are being run. At the end of its life-time it prints the resulting timing report. </para>
+    </detaileddescription>
+    <location file="include/llvm/IR/PassTimingInfo.h" line="44" column="1" bodyfile="include/llvm/IR/PassTimingInfo.h" bodystart="44" bodyend="103"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_time_passes_handler_1acb3c68b8c094f30dbcfe761a656aedc4" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>AnalysisActiveTimerStack</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a0123d60e111770c843b480402cc65110" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>AnalysisTG</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1aa6bd211c681c162a60cd74d8b59ced87" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1ac378dd6c8e5cfabb1e7fd8f2e56b4e4a" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>Enabled</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a5b98ab0ecf94165c9f01066c028f9bed" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>getPassTimer</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1ac1d5878f935f77ce61e2d792797bd1e2" prot="public" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a2feb027e6348b1dbda15d9f1c914ded4" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>OutStream</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a9943d4a07dcfcee6e0e37264eaa06b92" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>PassActiveTimerStack</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1af45b90509dd81917b8af65699f5be32b" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>PassInvocationID</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a7930557d1bda66a193e1ab1ab510ae5c" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>PassTG</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a9a89da8b158d50ecffe8f01a198f6b9b" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>PerRun</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1aaf0e4bd581c69cc7229f6364d47f6d05" prot="public" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>print</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a03d2e896dae596a26cf715589b8cf9f8" prot="public" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>registerCallbacks</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1acad49f69255a43df18bb55e79f6cbe93" prot="public" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>setOutStream</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1ac0fe0685e0cbe181e4a7ca89a0292572" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>startAnalysisTimer</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1af060142adfbac735c7febacc2ccff9fe" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>startPassTimer</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a524aca12119ae39c366f4dd06d805b35" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>stopAnalysisTimer</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1ad5a0b43db3617832710bea1da1186ff9" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>stopPassTimer</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a65d71b7296adf075c33a364803706412" prot="public" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>TimePassesHandler</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1ae479faed38e27e2d14b336f348a8dda7" prot="public" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>TimePassesHandler</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a1bc492cc2f98b66cc142597980b4f66d" prot="public" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>TimePassesHandler</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a380ea0bd7356f070f45c5249bb7ed802" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>TimerVector</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1a1b7762a9493d9ddf1f9f0073d5fa537f" prot="private" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>TimingData</name></member>
+      <member refid="classllvm_1_1_time_passes_handler_1ab82c2833fab714769cb856edc7c6c8bb" prot="public" virt="non-virtual"><scope>llvm::TimePassesHandler</scope><name>~TimePassesHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,589 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl" kind="class" language="C++" prot="public">
+    <compoundname>llvm::PBQP::RegAlloc::RegAllocSolverImpl</compoundname>
+    <includes refid="_reg_alloc_p_b_q_p_8h" local="yes">llvm/CodeGen/RegAllocPBQP.h</includes>
+    <innerclass refid="structllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1_1_edge_metadata" prot="public">llvm::PBQP::RegAlloc::RegAllocSolverImpl::EdgeMetadata</innerclass>
+    <innerclass refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1_1_spill_cost_comparator" prot="private">llvm::PBQP::RegAlloc::RegAllocSolverImpl::SpillCostComparator</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a0b0edd3e17d4ebc093ab792e375508a9" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_m_d_matrix" kindref="compound">MDMatrix</ref>&lt; <ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_matrix_metadata" kindref="compound">MatrixMetadata</ref> &gt;</type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::RAMatrix =  MDMatrix&lt;MatrixMetadata&gt;</definition>
+        <argsstring></argsstring>
+        <name>RAMatrix</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::RAMatrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="272" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1aa724d92a06dff6d74e4c978fd66847fb" prot="private" static="no">
+        <type>std::set&lt; <ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" kindref="member">NodeId</ref> &gt;</type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::NodeSet =  std::set&lt;NodeId&gt;</definition>
+        <argsstring></argsstring>
+        <name>NodeSet</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::NodeSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="495" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="495" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1ad81ed1ec529c1f7c9d8819dafb444dd8" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_vector" kindref="compound">PBQP::Vector</ref></type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::RawVector =  PBQP::Vector</definition>
+        <argsstring></argsstring>
+        <name>RawVector</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::RawVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="275" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a189d06ab3dca5870c2a347e91a43490d" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_matrix" kindref="compound">PBQP::Matrix</ref></type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::RawMatrix =  PBQP::Matrix</definition>
+        <argsstring></argsstring>
+        <name>RawMatrix</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::RawMatrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="276" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a2f3369eccf0486c246b9a4e52f3ad5e2" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_vector" kindref="compound">PBQP::Vector</ref></type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::Vector =  PBQP::Vector</definition>
+        <argsstring></argsstring>
+        <name>Vector</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::Vector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="277" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="277" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1ae0bbdafab57812ec43eb7912ec60040a" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_m_d_matrix" kindref="compound">RAMatrix</ref></type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::Matrix =  RAMatrix</definition>
+        <argsstring></argsstring>
+        <name>Matrix</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::Matrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="278" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a4e4120f6053795a7d6574410935a78c4" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_pool_cost_allocator" kindref="compound">PBQP::PoolCostAllocator</ref>&lt; <ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a2f3369eccf0486c246b9a4e52f3ad5e2" kindref="member">Vector</ref>, <ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1ae0bbdafab57812ec43eb7912ec60040a" kindref="member">Matrix</ref> &gt;</type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::CostAllocator =  PBQP::PoolCostAllocator&lt;Vector, Matrix&gt;</definition>
+        <argsstring></argsstring>
+        <name>CostAllocator</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::CostAllocator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="279" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_graph_base_1a7187d2e408994bd7307a4c8f32f745a8" kindref="member">GraphBase::NodeId</ref></type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::NodeId =  GraphBase::NodeId</definition>
+        <argsstring></argsstring>
+        <name>NodeId</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::NodeId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="281" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a048ad1767be1d154a0482fb06325c889" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_graph_base_1a679643c1e5202061ef3e9b121a2a7dce" kindref="member">GraphBase::EdgeId</ref></type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::EdgeId =  GraphBase::EdgeId</definition>
+        <argsstring></argsstring>
+        <name>EdgeId</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::EdgeId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="282" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1ac05c7d03c98e19bddb708ec1a837c324" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_node_metadata" kindref="compound">RegAlloc::NodeMetadata</ref></type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::NodeMetadata =  RegAlloc::NodeMetadata</definition>
+        <argsstring></argsstring>
+        <name>NodeMetadata</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::NodeMetadata</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="284" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="284" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a20c8319042007f64dadaa628301d9575" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_graph_metadata" kindref="compound">RegAlloc::GraphMetadata</ref></type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::GraphMetadata =  RegAlloc::GraphMetadata</definition>
+        <argsstring></argsstring>
+        <name>GraphMetadata</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::GraphMetadata</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="286" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a34eec38b7af10d85a3fb2ee8b50aea38" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_graph" kindref="compound">PBQP::Graph</ref>&lt; <ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl" kindref="compound">RegAllocSolverImpl</ref> &gt;</type>
+        <definition>using llvm::PBQP::RegAlloc::RegAllocSolverImpl::Graph =  PBQP::Graph&lt;RegAllocSolverImpl&gt;</definition>
+        <argsstring></argsstring>
+        <name>Graph</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::Graph</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="288" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="288" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a328459b7d8d5cff64595f10d2a419825" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a34eec38b7af10d85a3fb2ee8b50aea38" kindref="member">Graph</ref> &amp;</type>
+        <definition>Graph&amp; llvm::PBQP::RegAlloc::RegAllocSolverImpl::G</definition>
+        <argsstring></argsstring>
+        <name>G</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::G</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="494" column="9" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="494" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a2a7aa760ac244cf7120695846fadd413" prot="private" static="no" mutable="no">
+        <type>NodeSet</type>
+        <definition>NodeSet llvm::PBQP::RegAlloc::RegAllocSolverImpl::OptimallyReducibleNodes</definition>
+        <argsstring></argsstring>
+        <name>OptimallyReducibleNodes</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::OptimallyReducibleNodes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="496" column="11" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="496" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a03f101daad2698753e67f0f270f47d34" prot="private" static="no" mutable="no">
+        <type>NodeSet</type>
+        <definition>NodeSet llvm::PBQP::RegAlloc::RegAllocSolverImpl::ConservativelyAllocatableNodes</definition>
+        <argsstring></argsstring>
+        <name>ConservativelyAllocatableNodes</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::ConservativelyAllocatableNodes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="497" column="11" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="497" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a250d83710e0a2e7bccb216d7cd72e215" prot="private" static="no" mutable="no">
+        <type>NodeSet</type>
+        <definition>NodeSet llvm::PBQP::RegAlloc::RegAllocSolverImpl::NotProvablyAllocatableNodes</definition>
+        <argsstring></argsstring>
+        <name>NotProvablyAllocatableNodes</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::NotProvablyAllocatableNodes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="498" column="11" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="498" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1acffcfc1501a9c4bd67ad2ddd9d509e5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::PBQP::RegAlloc::RegAllocSolverImpl::RegAllocSolverImpl</definition>
+        <argsstring>(Graph &amp;G)</argsstring>
+        <name>RegAllocSolverImpl</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::RegAllocSolverImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a34eec38b7af10d85a3fb2ee8b50aea38" kindref="member">Graph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="290" column="3" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="290" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1af627ac537503219854146d8a62ff67f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_p_b_q_p_1_1_solution" kindref="compound">Solution</ref></type>
+        <definition>Solution llvm::PBQP::RegAlloc::RegAllocSolverImpl::solve</definition>
+        <argsstring>()</argsstring>
+        <name>solve</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::solve</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="292" column="12" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="292" bodyend="299"/>
+        <references refid="namespacellvm_1_1_p_b_q_p_1aca4beb871fa19efbf46dbb8487d05ae9" compoundref="_reduction_rules_8h" startline="180" endline="217">llvm::PBQP::backpropagate</references>
+        <references refid="_loop_strength_reduce_8cpp_1a6d827fc34f1b4371a0b7183d3ca5bcac" compoundref="_loop_strength_reduce_8cpp" startline="7190">reduce</references>
+        <referencedby refid="namespacellvm_1_1_p_b_q_p_1_1_reg_alloc_1a57e1115cb3c891254a6e675437c1a40c" compoundref="_reg_alloc_p_b_q_p_8h" startline="520" endline="525">llvm::PBQP::RegAlloc::solve</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1aa23e26965fa2403fae5617990944cc91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleAddNode</definition>
+        <argsstring>(NodeId NId)</argsstring>
+        <name>handleAddNode</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleAddNode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" kindref="member">NodeId</ref></type>
+          <declname>NId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="301" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="301" bodyend="305"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a4b9ee6feb43c41c8a3a4b98704ad575f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleRemoveNode</definition>
+        <argsstring>(NodeId NId)</argsstring>
+        <name>handleRemoveNode</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleRemoveNode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" kindref="member">NodeId</ref></type>
+          <declname>NId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="307" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="307" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a331c82b5c04343af3c7ace3c9107e134" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleSetNodeCosts</definition>
+        <argsstring>(NodeId NId, const Vector &amp;newCosts)</argsstring>
+        <name>handleSetNodeCosts</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleSetNodeCosts</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" kindref="member">NodeId</ref></type>
+          <declname>NId</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a2f3369eccf0486c246b9a4e52f3ad5e2" kindref="member">Vector</ref> &amp;</type>
+          <declname>newCosts</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="308" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="308" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1acce95f2c09046a3cf58a37b1194157a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleAddEdge</definition>
+        <argsstring>(EdgeId EId)</argsstring>
+        <name>handleAddEdge</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleAddEdge</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a048ad1767be1d154a0482fb06325c889" kindref="member">EdgeId</ref></type>
+          <declname>EId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="310" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="310" bodyend="313"/>
+        <references refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1af9368cb01cb6c15a40aea0541d6a5974" compoundref="_reg_alloc_p_b_q_p_8h" startline="322" endline="326">handleReconnectEdge</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a63cb5b126699087dcdd956681e1686cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleDisconnectEdge</definition>
+        <argsstring>(EdgeId EId, NodeId NId)</argsstring>
+        <name>handleDisconnectEdge</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleDisconnectEdge</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a048ad1767be1d154a0482fb06325c889" kindref="member">EdgeId</ref></type>
+          <declname>EId</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" kindref="member">NodeId</ref></type>
+          <declname>NId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="315" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="315" bodyend="320"/>
+        <references refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_node_metadata_1a1c74e0792948c70c031151491b34da14" compoundref="_reg_alloc_p_b_q_p_8h" startline="237" endline="243">llvm::PBQP::RegAlloc::NodeMetadata::handleRemoveEdge</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1af9368cb01cb6c15a40aea0541d6a5974" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleReconnectEdge</definition>
+        <argsstring>(EdgeId EId, NodeId NId)</argsstring>
+        <name>handleReconnectEdge</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleReconnectEdge</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a048ad1767be1d154a0482fb06325c889" kindref="member">EdgeId</ref></type>
+          <declname>EId</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" kindref="member">NodeId</ref></type>
+          <declname>NId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="322" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="322" bodyend="326"/>
+        <references refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_node_metadata_1af604de88cfa10f1c5c955d781ee30d7a" compoundref="_reg_alloc_p_b_q_p_8h" startline="229" endline="235">llvm::PBQP::RegAlloc::NodeMetadata::handleAddEdge</references>
+        <referencedby refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1acce95f2c09046a3cf58a37b1194157a6" compoundref="_reg_alloc_p_b_q_p_8h" startline="310" endline="313">handleAddEdge</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a61bc4541418cc85ba3130756c7dc86b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleUpdateCosts</definition>
+        <argsstring>(EdgeId EId, const Matrix &amp;NewCosts)</argsstring>
+        <name>handleUpdateCosts</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::handleUpdateCosts</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a048ad1767be1d154a0482fb06325c889" kindref="member">EdgeId</ref></type>
+          <declname>EId</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1ae0bbdafab57812ec43eb7912ec60040a" kindref="member">Matrix</ref> &amp;</type>
+          <declname>NewCosts</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="328" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="328" bodyend="350"/>
+        <references refid="classllvm_1_1_p_b_q_p_1_1_m_d_matrix_1acd63ba8da2c8d08ff0fc73f840926666" compoundref="_math_8h" startline="277" endline="277">llvm::PBQP::MDMatrix&lt; Metadata &gt;::getMetadata</references>
+        <references refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_node_metadata_1af604de88cfa10f1c5c955d781ee30d7a" compoundref="_reg_alloc_p_b_q_p_8h" startline="229" endline="235">llvm::PBQP::RegAlloc::NodeMetadata::handleAddEdge</references>
+        <references refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_node_metadata_1a1c74e0792948c70c031151491b34da14" compoundref="_reg_alloc_p_b_q_p_8h" startline="237" endline="243">llvm::PBQP::RegAlloc::NodeMetadata::handleRemoveEdge</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a085baf3aa391535135b9f48cd1bbddaf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::promote</definition>
+        <argsstring>(NodeId NId, NodeMetadata &amp;NMd)</argsstring>
+        <name>promote</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::promote</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" kindref="member">NodeId</ref></type>
+          <declname>NId</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1ac05c7d03c98e19bddb708ec1a837c324" kindref="member">NodeMetadata</ref> &amp;</type>
+          <declname>NMd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="353" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="353" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1af095e7231170470b806de1e4ec3f8d39" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::removeFromCurrentSet</definition>
+        <argsstring>(NodeId NId)</argsstring>
+        <name>removeFromCurrentSet</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::removeFromCurrentSet</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" kindref="member">NodeId</ref></type>
+          <declname>NId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="365" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="365" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a29e99a44ca12f2aa6feb4a5c34117607" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::moveToOptimallyReducibleNodes</definition>
+        <argsstring>(NodeId NId)</argsstring>
+        <name>moveToOptimallyReducibleNodes</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::moveToOptimallyReducibleNodes</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" kindref="member">NodeId</ref></type>
+          <declname>NId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="389" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="389" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1aa56bc20fa1679f20f1ffd5fd3c96ac2a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::moveToConservativelyAllocatableNodes</definition>
+        <argsstring>(NodeId NId)</argsstring>
+        <name>moveToConservativelyAllocatableNodes</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::moveToConservativelyAllocatableNodes</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" kindref="member">NodeId</ref></type>
+          <declname>NId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="396" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="396" bodyend="401"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1ade5413dff75e1c175434617875227c10" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::moveToNotProvablyAllocatableNodes</definition>
+        <argsstring>(NodeId NId)</argsstring>
+        <name>moveToNotProvablyAllocatableNodes</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::moveToNotProvablyAllocatableNodes</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" kindref="member">NodeId</ref></type>
+          <declname>NId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="403" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="403" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a7a0becab886cce3c04b459287641c8dd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PBQP::RegAlloc::RegAllocSolverImpl::setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::setup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="410" column="8" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="410" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a7bffc2c50a7a1da79005b7a086920c9c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_p_b_q_p_1_1_graph_base_1a7187d2e408994bd7307a4c8f32f745a8" kindref="member">GraphBase::NodeId</ref> &gt;</type>
+        <definition>std::vector&lt; GraphBase::NodeId &gt; llvm::PBQP::RegAlloc::RegAllocSolverImpl::reduce</definition>
+        <argsstring>()</argsstring>
+        <name>reduce</name>
+        <qualifiedname>llvm::PBQP::RegAlloc::RegAllocSolverImpl::reduce</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="428" column="15" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="428" bodyend="476"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/CodeGen/RegAllocPBQP.h" line="270" column="1" bodyfile="include/llvm/CodeGen/RegAllocPBQP.h" bodystart="270" bodyend="499"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a03f101daad2698753e67f0f270f47d34" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>ConservativelyAllocatableNodes</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a4e4120f6053795a7d6574410935a78c4" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>CostAllocator</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a048ad1767be1d154a0482fb06325c889" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>EdgeId</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a328459b7d8d5cff64595f10d2a419825" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>G</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a34eec38b7af10d85a3fb2ee8b50aea38" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>Graph</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a20c8319042007f64dadaa628301d9575" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>GraphMetadata</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1acce95f2c09046a3cf58a37b1194157a6" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>handleAddEdge</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1aa23e26965fa2403fae5617990944cc91" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>handleAddNode</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a63cb5b126699087dcdd956681e1686cf" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>handleDisconnectEdge</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1af9368cb01cb6c15a40aea0541d6a5974" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>handleReconnectEdge</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a4b9ee6feb43c41c8a3a4b98704ad575f" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>handleRemoveNode</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a331c82b5c04343af3c7ace3c9107e134" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>handleSetNodeCosts</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a61bc4541418cc85ba3130756c7dc86b5" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>handleUpdateCosts</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1ae0bbdafab57812ec43eb7912ec60040a" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>Matrix</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1aa56bc20fa1679f20f1ffd5fd3c96ac2a" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>moveToConservativelyAllocatableNodes</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1ade5413dff75e1c175434617875227c10" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>moveToNotProvablyAllocatableNodes</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a29e99a44ca12f2aa6feb4a5c34117607" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>moveToOptimallyReducibleNodes</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a882a5d143fa147a161f2f7e12543622e" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>NodeId</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1ac05c7d03c98e19bddb708ec1a837c324" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>NodeMetadata</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1aa724d92a06dff6d74e4c978fd66847fb" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>NodeSet</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a250d83710e0a2e7bccb216d7cd72e215" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>NotProvablyAllocatableNodes</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a2a7aa760ac244cf7120695846fadd413" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>OptimallyReducibleNodes</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a085baf3aa391535135b9f48cd1bbddaf" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>promote</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a0b0edd3e17d4ebc093ab792e375508a9" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>RAMatrix</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a189d06ab3dca5870c2a347e91a43490d" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>RawMatrix</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1ad81ed1ec529c1f7c9d8819dafb444dd8" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>RawVector</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a7bffc2c50a7a1da79005b7a086920c9c" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>reduce</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1acffcfc1501a9c4bd67ad2ddd9d509e5b" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>RegAllocSolverImpl</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1af095e7231170470b806de1e4ec3f8d39" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>removeFromCurrentSet</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a7a0becab886cce3c04b459287641c8dd" prot="private" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>setup</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1af627ac537503219854146d8a62ff67f4" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>solve</name></member>
+      <member refid="classllvm_1_1_p_b_q_p_1_1_reg_alloc_1_1_reg_alloc_solver_impl_1a2f3369eccf0486c246b9a4e52f3ad5e2" prot="public" virt="non-virtual"><scope>llvm::PBQP::RegAlloc::RegAllocSolverImpl</scope><name>Vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

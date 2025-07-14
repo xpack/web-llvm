@@ -1,0 +1,1391 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1_analysis_info_mixin" kind="struct" language="C++" prot="public">
+    <compoundname>llvm::AnalysisInfoMixin</compoundname>
+    <basecompoundref refid="structllvm_1_1_pass_info_mixin" prot="public" virt="non-virtual">llvm::PassInfoMixin&lt; DerivedT &gt;</basecompoundref>
+    <derivedcompoundref refid="classllvm_1_1_inner_analysis_manager_proxy" prot="public" virt="non-virtual">llvm::InnerAnalysisManagerProxy&lt; CGSCCAnalysisManager, Module &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_inner_analysis_manager_proxy" prot="public" virt="non-virtual">llvm::InnerAnalysisManagerProxy&lt; LoopAnalysisManager, Function &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_inner_analysis_manager_proxy" prot="public" virt="non-virtual">llvm::InnerAnalysisManagerProxy&lt; MachineFunctionAnalysisManager, Module &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_inner_analysis_manager_proxy" prot="public" virt="non-virtual">llvm::InnerAnalysisManagerProxy&lt; MachineFunctionAnalysisManager, Function &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_inner_analysis_manager_proxy" prot="public" virt="non-virtual">llvm::InnerAnalysisManagerProxy&lt; FunctionAnalysisManager, Module &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_outer_analysis_manager_proxy" prot="public" virt="non-virtual">llvm::OuterAnalysisManagerProxy&lt; ModuleAnalysisManager, LazyCallGraph::SCC, LazyCallGraph &amp; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_outer_analysis_manager_proxy" prot="public" virt="non-virtual">llvm::OuterAnalysisManagerProxy&lt; CGSCCAnalysisManager, Function &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_outer_analysis_manager_proxy" prot="public" virt="non-virtual">llvm::OuterAnalysisManagerProxy&lt; FunctionAnalysisManager, Loop, LoopStandardAnalysisResults &amp; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_outer_analysis_manager_proxy" prot="public" virt="non-virtual">llvm::OuterAnalysisManagerProxy&lt; ModuleAnalysisManager, MachineFunction &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classllvm_1_1_outer_analysis_manager_proxy" prot="public" virt="non-virtual">llvm::OuterAnalysisManagerProxy&lt; ModuleAnalysisManager, Function &gt;</derivedcompoundref>
+    <includes refid="_i_r_2_pass_manager_8h" local="yes">llvm/IR/PassManager.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename DerivedT</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structllvm_1_1_analysis_info_mixin_1a605c4abf7c7f3a053bf869b79098cd68" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_analysis_key" kindref="compound">AnalysisKey</ref> *</type>
+        <definition>static AnalysisKey * llvm::AnalysisInfoMixin&lt; DerivedT &gt;::ID</definition>
+        <argsstring>()</argsstring>
+        <name>ID</name>
+        <qualifiedname>llvm::AnalysisInfoMixin::ID</qualifiedname>
+        <briefdescription>
+<para>Returns an opaque, unique ID for this analysis type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This ID is a pointer type that is guaranteed to be 8-byte aligned and thus suitable for use in sets, maps, and other data structures that use the low bits of pointers.</para>
+<para>Note that this requires the derived type provide a static <computeroutput><ref refid="structllvm_1_1_analysis_key" kindref="compound">AnalysisKey</ref></computeroutput> member called <computeroutput>Key</computeroutput>.</para>
+<para>FIXME: The only reason the mixin type itself can&apos;t declare the Key value is that some compilers cannot correctly unique a templated static variable so it has the same addresses in each instantiation. The only currently known platform with this limitation is Windows DLL builds, specifically building each part of LLVM as a DLL. If we ever remove that build configuration, this mixin can provide the static key as well. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="108" column="22" bodyfile="include/llvm/IR/PassManager.h" bodystart="108" bodyend="112"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A CRTP mix-in that provides informational APIs needed for analysis passes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This provides some boilerplate for types that are analysis passes. It automatically mixes in <computeroutput><ref refid="structllvm_1_1_pass_info_mixin" kindref="compound">PassInfoMixin</ref></computeroutput>. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="14">
+        <label>PreservedCFGCheckerAnalysis</label>
+        <link refid="struct_preserved_c_f_g_checker_analysis"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>PreservedFunctionHashAnalysis</label>
+        <link refid="struct_preserved_function_hash_analysis"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>PreservedModuleHashAnalysis</label>
+        <link refid="struct_preserved_module_hash_analysis"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::AAManager</label>
+        <link refid="classllvm_1_1_a_a_manager"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::AMDGPUAA</label>
+        <link refid="classllvm_1_1_a_m_d_g_p_u_a_a"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::AnalysisInfoMixin&lt; AAManager &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; AAManager &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>llvm::AnalysisInfoMixin&lt; AMDGPUAA &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; AMDGPUAA &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::AnalysisInfoMixin&lt; AssumptionAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; AssumptionAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::AnalysisInfoMixin&lt; BasicAA &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; BasicAA &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>llvm::AnalysisInfoMixin&lt; BasicBlockSectionsProfileReaderAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; BasicBlockSectionsProfileReaderAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm::AnalysisInfoMixin&lt; BlockFrequencyAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; BlockFrequencyAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::AnalysisInfoMixin&lt; BranchProbabilityAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; BranchProbabilityAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>llvm::AnalysisInfoMixin&lt; CallGraphAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; CallGraphAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm::AnalysisInfoMixin&lt; CollectorMetadataAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; CollectorMetadataAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>llvm::AnalysisInfoMixin&lt; CtxProfAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; CtxProfAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="39">
+        <label>llvm::AnalysisInfoMixin&lt; CycleAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; CycleAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm::AnalysisInfoMixin&lt; DDGAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; DDGAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm::AnalysisInfoMixin&lt; DXILMetadataAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; DXILMetadataAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="45">
+        <label>llvm::AnalysisInfoMixin&lt; DXILResourceBindingAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; DXILResourceBindingAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm::AnalysisInfoMixin&lt; DXILResourceMDAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; DXILResourceMDAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="49">
+        <label>llvm::AnalysisInfoMixin&lt; DXILResourceTypeAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; DXILResourceTypeAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="51">
+        <label>llvm::AnalysisInfoMixin&lt; DebugAssignmentTrackingAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; DebugAssignmentTrackingAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="53">
+        <label>llvm::AnalysisInfoMixin&lt; DemandedBitsAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; DemandedBitsAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="55">
+        <label>llvm::AnalysisInfoMixin&lt; DependenceAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; DependenceAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::AnalysisInfoMixin&lt; DerivedT &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>llvm::AnalysisInfoMixin&lt; DominanceFrontierAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; DominanceFrontierAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="59">
+        <label>llvm::AnalysisInfoMixin&lt; DominatorTreeAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; DominatorTreeAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>llvm::AnalysisInfoMixin&lt; EdgeBundlesAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; EdgeBundlesAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="63">
+        <label>llvm::AnalysisInfoMixin&lt; FunctionAnalysisManagerCGSCCProxy &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; FunctionAnalysisManagerCGSCCProxy &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="65">
+        <label>llvm::AnalysisInfoMixin&lt; FunctionAnalysisManagerMachineFunctionProxy &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; FunctionAnalysisManagerMachineFunctionProxy &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="67">
+        <label>llvm::AnalysisInfoMixin&lt; FunctionPropertiesAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; FunctionPropertiesAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="69">
+        <label>llvm::AnalysisInfoMixin&lt; GCFunctionAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; GCFunctionAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="71">
+        <label>llvm::AnalysisInfoMixin&lt; GlobalsAA &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; GlobalsAA &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="73">
+        <label>llvm::AnalysisInfoMixin&lt; IRSimilarityAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; IRSimilarityAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="75">
+        <label>llvm::AnalysisInfoMixin&lt; IVUsersAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; IVUsersAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="77">
+        <label>llvm::AnalysisInfoMixin&lt; InlineAdvisorAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; InlineAdvisorAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="79">
+        <label>llvm::AnalysisInfoMixin&lt; InlineSizeEstimatorAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; InlineSizeEstimatorAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="81">
+        <label>llvm::AnalysisInfoMixin&lt; InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT &gt; &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="83">
+        <label>llvm::AnalysisInfoMixin&lt; LastRunTrackingAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LastRunTrackingAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="85">
+        <label>llvm::AnalysisInfoMixin&lt; LazyCallGraphAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LazyCallGraphAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="87">
+        <label>llvm::AnalysisInfoMixin&lt; LazyValueAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LazyValueAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="89">
+        <label>llvm::AnalysisInfoMixin&lt; LiveDebugVariablesAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LiveDebugVariablesAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="91">
+        <label>llvm::AnalysisInfoMixin&lt; LiveIntervalsAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LiveIntervalsAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="93">
+        <label>llvm::AnalysisInfoMixin&lt; LiveRegMatrixAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LiveRegMatrixAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="95">
+        <label>llvm::AnalysisInfoMixin&lt; LiveStacksAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LiveStacksAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="97">
+        <label>llvm::AnalysisInfoMixin&lt; LiveVariablesAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LiveVariablesAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="99">
+        <label>llvm::AnalysisInfoMixin&lt; LoopAccessAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LoopAccessAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="101">
+        <label>llvm::AnalysisInfoMixin&lt; LoopAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LoopAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="103">
+        <label>llvm::AnalysisInfoMixin&lt; LoopNestAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LoopNestAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="105">
+        <label>llvm::AnalysisInfoMixin&lt; MachineBlockFrequencyAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MachineBlockFrequencyAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="107">
+        <label>llvm::AnalysisInfoMixin&lt; MachineBranchProbabilityAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MachineBranchProbabilityAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="109">
+        <label>llvm::AnalysisInfoMixin&lt; MachineDominatorTreeAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MachineDominatorTreeAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="111">
+        <label>llvm::AnalysisInfoMixin&lt; MachineFunctionAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MachineFunctionAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="113">
+        <label>llvm::AnalysisInfoMixin&lt; MachineLoopAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MachineLoopAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="115">
+        <label>llvm::AnalysisInfoMixin&lt; MachineModuleAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MachineModuleAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="117">
+        <label>llvm::AnalysisInfoMixin&lt; MachineOptimizationRemarkEmitterAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MachineOptimizationRemarkEmitterAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="119">
+        <label>llvm::AnalysisInfoMixin&lt; MachinePostDominatorTreeAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MachinePostDominatorTreeAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="121">
+        <label>llvm::AnalysisInfoMixin&lt; MachineTraceMetricsAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MachineTraceMetricsAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="123">
+        <label>llvm::AnalysisInfoMixin&lt; MemoryDependenceAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MemoryDependenceAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="125">
+        <label>llvm::AnalysisInfoMixin&lt; MemorySSAAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MemorySSAAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="127">
+        <label>llvm::AnalysisInfoMixin&lt; ModuleSummaryIndexAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ModuleSummaryIndexAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="129">
+        <label>llvm::AnalysisInfoMixin&lt; NVPTXAA &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; NVPTXAA &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="131">
+        <label>llvm::AnalysisInfoMixin&lt; NoOpCGSCCAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; NoOpCGSCCAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="133">
+        <label>llvm::AnalysisInfoMixin&lt; NoOpFunctionAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; NoOpFunctionAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="135">
+        <label>llvm::AnalysisInfoMixin&lt; NoOpLoopAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; NoOpLoopAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="137">
+        <label>llvm::AnalysisInfoMixin&lt; NoOpModuleAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; NoOpModuleAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="199">
+        <label>llvm::AnalysisInfoMixin&lt; ObjCARCAA &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ObjCARCAA &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="139">
+        <label>llvm::AnalysisInfoMixin&lt; OptimizationRemarkEmitterAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; OptimizationRemarkEmitterAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="141">
+        <label>llvm::AnalysisInfoMixin&lt; OuterAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt; &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; OuterAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="143">
+        <label>llvm::AnalysisInfoMixin&lt; PassInstrumentationAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; PassInstrumentationAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="145">
+        <label>llvm::AnalysisInfoMixin&lt; PhiValuesAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; PhiValuesAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="147">
+        <label>llvm::AnalysisInfoMixin&lt; PhysicalRegisterUsageAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; PhysicalRegisterUsageAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="149">
+        <label>llvm::AnalysisInfoMixin&lt; PluginInlineAdvisorAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; PluginInlineAdvisorAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="151">
+        <label>llvm::AnalysisInfoMixin&lt; PluginInlineOrderAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; PluginInlineOrderAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="153">
+        <label>llvm::AnalysisInfoMixin&lt; PostDominatorTreeAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; PostDominatorTreeAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::AnalysisInfoMixin&lt; PreservedCFGCheckerAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; PreservedCFGCheckerAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm::AnalysisInfoMixin&lt; PreservedFunctionHashAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; PreservedFunctionHashAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::AnalysisInfoMixin&lt; PreservedModuleHashAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; PreservedModuleHashAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="155">
+        <label>llvm::AnalysisInfoMixin&lt; ProfileSummaryAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ProfileSummaryAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="157">
+        <label>llvm::AnalysisInfoMixin&lt; RegUsageInfoCollectorPass &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; RegUsageInfoCollectorPass &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="159">
+        <label>llvm::AnalysisInfoMixin&lt; RegionInfoAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; RegionInfoAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="161">
+        <label>llvm::AnalysisInfoMixin&lt; SCEVAA &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; SCEVAA &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="163">
+        <label>llvm::AnalysisInfoMixin&lt; SPIRVConvergenceRegionAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; SPIRVConvergenceRegionAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="165">
+        <label>llvm::AnalysisInfoMixin&lt; SSPLayoutAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; SSPLayoutAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="167">
+        <label>llvm::AnalysisInfoMixin&lt; ScalarEvolutionAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ScalarEvolutionAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="169">
+        <label>llvm::AnalysisInfoMixin&lt; ScopedNoAliasAA &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ScopedNoAliasAA &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="197">
+        <label>llvm::AnalysisInfoMixin&lt; ShaderFlagsAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ShaderFlagsAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="171">
+        <label>llvm::AnalysisInfoMixin&lt; ShouldNotRunFunctionPassesAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ShouldNotRunFunctionPassesAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="173">
+        <label>llvm::AnalysisInfoMixin&lt; ShouldRunExtraSimpleLoopUnswitch &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ShouldRunExtraSimpleLoopUnswitch &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="175">
+        <label>llvm::AnalysisInfoMixin&lt; ShouldRunExtraVectorPasses &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ShouldRunExtraVectorPasses &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="177">
+        <label>llvm::AnalysisInfoMixin&lt; SlotIndexesAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; SlotIndexesAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="179">
+        <label>llvm::AnalysisInfoMixin&lt; SpillPlacementAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; SpillPlacementAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="181">
+        <label>llvm::AnalysisInfoMixin&lt; StackSafetyAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; StackSafetyAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="183">
+        <label>llvm::AnalysisInfoMixin&lt; StackSafetyGlobalAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; StackSafetyGlobalAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="185">
+        <label>llvm::AnalysisInfoMixin&lt; TargetIRAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; TargetIRAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="187">
+        <label>llvm::AnalysisInfoMixin&lt; TargetLibraryAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; TargetLibraryAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="189">
+        <label>llvm::AnalysisInfoMixin&lt; TypeBasedAA &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; TypeBasedAA &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="191">
+        <label>llvm::AnalysisInfoMixin&lt; UniformityInfoAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; UniformityInfoAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="193">
+        <label>llvm::AnalysisInfoMixin&lt; VerifierAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; VerifierAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="195">
+        <label>llvm::AnalysisInfoMixin&lt; VirtRegMapAnalysis &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; VirtRegMapAnalysis &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::AssumptionAnalysis</label>
+        <link refid="classllvm_1_1_assumption_analysis"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::BasicAA</label>
+        <link refid="classllvm_1_1_basic_a_a"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm::BasicBlockSectionsProfileReaderAnalysis</label>
+        <link refid="classllvm_1_1_basic_block_sections_profile_reader_analysis"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm::BlockFrequencyAnalysis</label>
+        <link refid="classllvm_1_1_block_frequency_analysis"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>llvm::BranchProbabilityAnalysis</label>
+        <link refid="classllvm_1_1_branch_probability_analysis"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm::CallGraphAnalysis</label>
+        <link refid="classllvm_1_1_call_graph_analysis"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>llvm::CollectorMetadataAnalysis</label>
+        <link refid="classllvm_1_1_collector_metadata_analysis"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm::CtxProfAnalysis</label>
+        <link refid="classllvm_1_1_ctx_prof_analysis"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm::CycleAnalysis</label>
+        <link refid="classllvm_1_1_cycle_analysis"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>llvm::DDGAnalysis</label>
+        <link refid="classllvm_1_1_d_d_g_analysis"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>llvm::DXILMetadataAnalysis</label>
+        <link refid="classllvm_1_1_d_x_i_l_metadata_analysis"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm::DXILResourceBindingAnalysis</label>
+        <link refid="classllvm_1_1_d_x_i_l_resource_binding_analysis"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>llvm::DXILResourceMDAnalysis</label>
+        <link refid="classllvm_1_1_d_x_i_l_resource_m_d_analysis"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>llvm::DXILResourceTypeAnalysis</label>
+        <link refid="classllvm_1_1_d_x_i_l_resource_type_analysis"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>llvm::DebugAssignmentTrackingAnalysis</label>
+        <link refid="classllvm_1_1_debug_assignment_tracking_analysis"/>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>llvm::DemandedBitsAnalysis</label>
+        <link refid="classllvm_1_1_demanded_bits_analysis"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>llvm::DependenceAnalysis</label>
+        <link refid="classllvm_1_1_dependence_analysis"/>
+        <childnode refid="55" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>llvm::DominanceFrontierAnalysis</label>
+        <link refid="classllvm_1_1_dominance_frontier_analysis"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>llvm::DominatorTreeAnalysis</label>
+        <link refid="classllvm_1_1_dominator_tree_analysis"/>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>llvm::EdgeBundlesAnalysis</label>
+        <link refid="classllvm_1_1_edge_bundles_analysis"/>
+        <childnode refid="61" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>llvm::FunctionAnalysisManagerCGSCCProxy</label>
+        <link refid="classllvm_1_1_function_analysis_manager_c_g_s_c_c_proxy"/>
+        <childnode refid="63" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>llvm::FunctionAnalysisManagerMachineFunctionProxy</label>
+        <link refid="classllvm_1_1_function_analysis_manager_machine_function_proxy"/>
+        <childnode refid="65" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>llvm::FunctionPropertiesAnalysis</label>
+        <link refid="classllvm_1_1_function_properties_analysis"/>
+        <childnode refid="67" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>llvm::GCFunctionAnalysis</label>
+        <link refid="classllvm_1_1_g_c_function_analysis"/>
+        <childnode refid="69" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>llvm::GlobalsAA</label>
+        <link refid="classllvm_1_1_globals_a_a"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>llvm::IRSimilarityAnalysis</label>
+        <link refid="classllvm_1_1_i_r_similarity_analysis"/>
+        <childnode refid="73" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>llvm::IVUsersAnalysis</label>
+        <link refid="classllvm_1_1_i_v_users_analysis"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>llvm::InlineAdvisorAnalysis</label>
+        <link refid="classllvm_1_1_inline_advisor_analysis"/>
+        <childnode refid="77" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>llvm::InlineSizeEstimatorAnalysis</label>
+        <link refid="classllvm_1_1_inline_size_estimator_analysis"/>
+        <childnode refid="79" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs &gt;</label>
+        <link refid="classllvm_1_1_inner_analysis_manager_proxy"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::InnerAnalysisManagerProxy&lt; CGSCCAnalysisManager, Module &gt;</label>
+        <link refid="classllvm_1_1_inner_analysis_manager_proxy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="template-instance">
+          <edgelabel>&lt; CGSCCAnalysisManager, Module &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::InnerAnalysisManagerProxy&lt; FunctionAnalysisManager, Module &gt;</label>
+        <link refid="classllvm_1_1_inner_analysis_manager_proxy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="template-instance">
+          <edgelabel>&lt; FunctionAnalysisManager, Module &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::InnerAnalysisManagerProxy&lt; LoopAnalysisManager, Function &gt;</label>
+        <link refid="classllvm_1_1_inner_analysis_manager_proxy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="template-instance">
+          <edgelabel>&lt; LoopAnalysisManager, Function &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::InnerAnalysisManagerProxy&lt; MachineFunctionAnalysisManager, Function &gt;</label>
+        <link refid="classllvm_1_1_inner_analysis_manager_proxy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="template-instance">
+          <edgelabel>&lt; MachineFunctionAnalysisManager, Function &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::InnerAnalysisManagerProxy&lt; MachineFunctionAnalysisManager, Module &gt;</label>
+        <link refid="classllvm_1_1_inner_analysis_manager_proxy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="template-instance">
+          <edgelabel>&lt; MachineFunctionAnalysisManager, Module &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="84">
+        <label>llvm::LastRunTrackingAnalysis</label>
+        <link refid="classllvm_1_1_last_run_tracking_analysis"/>
+        <childnode refid="83" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>llvm::LazyCallGraphAnalysis</label>
+        <link refid="classllvm_1_1_lazy_call_graph_analysis"/>
+        <childnode refid="85" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>llvm::LazyValueAnalysis</label>
+        <link refid="classllvm_1_1_lazy_value_analysis"/>
+        <childnode refid="87" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>llvm::LiveDebugVariablesAnalysis</label>
+        <link refid="classllvm_1_1_live_debug_variables_analysis"/>
+        <childnode refid="89" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>llvm::LiveIntervalsAnalysis</label>
+        <link refid="classllvm_1_1_live_intervals_analysis"/>
+        <childnode refid="91" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>llvm::LiveRegMatrixAnalysis</label>
+        <link refid="classllvm_1_1_live_reg_matrix_analysis"/>
+        <childnode refid="93" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>llvm::LiveStacksAnalysis</label>
+        <link refid="classllvm_1_1_live_stacks_analysis"/>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>llvm::LiveVariablesAnalysis</label>
+        <link refid="classllvm_1_1_live_variables_analysis"/>
+        <childnode refid="97" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>llvm::LoopAccessAnalysis</label>
+        <link refid="classllvm_1_1_loop_access_analysis"/>
+        <childnode refid="99" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>llvm::LoopAnalysis</label>
+        <link refid="classllvm_1_1_loop_analysis"/>
+        <childnode refid="101" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>llvm::LoopNestAnalysis</label>
+        <link refid="classllvm_1_1_loop_nest_analysis"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>llvm::MachineBlockFrequencyAnalysis</label>
+        <link refid="classllvm_1_1_machine_block_frequency_analysis"/>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>llvm::MachineBranchProbabilityAnalysis</label>
+        <link refid="classllvm_1_1_machine_branch_probability_analysis"/>
+        <childnode refid="107" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>llvm::MachineDominatorTreeAnalysis</label>
+        <link refid="classllvm_1_1_machine_dominator_tree_analysis"/>
+        <childnode refid="109" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>llvm::MachineFunctionAnalysis</label>
+        <link refid="classllvm_1_1_machine_function_analysis"/>
+        <childnode refid="111" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>llvm::MachineLoopAnalysis</label>
+        <link refid="classllvm_1_1_machine_loop_analysis"/>
+        <childnode refid="113" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>llvm::MachineModuleAnalysis</label>
+        <link refid="classllvm_1_1_machine_module_analysis"/>
+        <childnode refid="115" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>llvm::MachineOptimizationRemarkEmitterAnalysis</label>
+        <link refid="classllvm_1_1_machine_optimization_remark_emitter_analysis"/>
+        <childnode refid="117" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>llvm::MachinePostDominatorTreeAnalysis</label>
+        <link refid="classllvm_1_1_machine_post_dominator_tree_analysis"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="122">
+        <label>llvm::MachineTraceMetricsAnalysis</label>
+        <link refid="classllvm_1_1_machine_trace_metrics_analysis"/>
+        <childnode refid="121" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>llvm::MemoryDependenceAnalysis</label>
+        <link refid="classllvm_1_1_memory_dependence_analysis"/>
+        <childnode refid="123" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>llvm::MemorySSAAnalysis</label>
+        <link refid="classllvm_1_1_memory_s_s_a_analysis"/>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="128">
+        <label>llvm::ModuleSummaryIndexAnalysis</label>
+        <link refid="classllvm_1_1_module_summary_index_analysis"/>
+        <childnode refid="127" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>llvm::NVPTXAA</label>
+        <link refid="classllvm_1_1_n_v_p_t_x_a_a"/>
+        <childnode refid="129" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>llvm::NoOpCGSCCAnalysis</label>
+        <link refid="classllvm_1_1_no_op_c_g_s_c_c_analysis"/>
+        <childnode refid="131" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="134">
+        <label>llvm::NoOpFunctionAnalysis</label>
+        <link refid="classllvm_1_1_no_op_function_analysis"/>
+        <childnode refid="133" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="136">
+        <label>llvm::NoOpLoopAnalysis</label>
+        <link refid="classllvm_1_1_no_op_loop_analysis"/>
+        <childnode refid="135" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="138">
+        <label>llvm::NoOpModuleAnalysis</label>
+        <link refid="classllvm_1_1_no_op_module_analysis"/>
+        <childnode refid="137" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="140">
+        <label>llvm::OptimizationRemarkEmitterAnalysis</label>
+        <link refid="classllvm_1_1_optimization_remark_emitter_analysis"/>
+        <childnode refid="139" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="142">
+        <label>llvm::OuterAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs &gt;</label>
+        <link refid="classllvm_1_1_outer_analysis_manager_proxy"/>
+        <childnode refid="141" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::OuterAnalysisManagerProxy&lt; CGSCCAnalysisManager, Function &gt;</label>
+        <link refid="classllvm_1_1_outer_analysis_manager_proxy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="142" relation="template-instance">
+          <edgelabel>&lt; CGSCCAnalysisManager, Function &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::OuterAnalysisManagerProxy&lt; FunctionAnalysisManager, Loop, LoopStandardAnalysisResults &amp; &gt;</label>
+        <link refid="classllvm_1_1_outer_analysis_manager_proxy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="142" relation="template-instance">
+          <edgelabel>&lt; FunctionAnalysisManager, Loop, LoopStandardAnalysisResults &amp; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm::OuterAnalysisManagerProxy&lt; ModuleAnalysisManager, Function &gt;</label>
+        <link refid="classllvm_1_1_outer_analysis_manager_proxy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="142" relation="template-instance">
+          <edgelabel>&lt; ModuleAnalysisManager, Function &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::OuterAnalysisManagerProxy&lt; ModuleAnalysisManager, LazyCallGraph::SCC, LazyCallGraph &amp; &gt;</label>
+        <link refid="classllvm_1_1_outer_analysis_manager_proxy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="142" relation="template-instance">
+          <edgelabel>&lt; ModuleAnalysisManager, LazyCallGraph::SCC, LazyCallGraph &amp; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::OuterAnalysisManagerProxy&lt; ModuleAnalysisManager, MachineFunction &gt;</label>
+        <link refid="classllvm_1_1_outer_analysis_manager_proxy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="142" relation="template-instance">
+          <edgelabel>&lt; ModuleAnalysisManager, MachineFunction &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::PassInfoMixin&lt; DerivedT &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+      </node>
+      <node id="144">
+        <label>llvm::PassInstrumentationAnalysis</label>
+        <link refid="classllvm_1_1_pass_instrumentation_analysis"/>
+        <childnode refid="143" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>llvm::PhiValuesAnalysis</label>
+        <link refid="classllvm_1_1_phi_values_analysis"/>
+        <childnode refid="145" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>llvm::PhysicalRegisterUsageAnalysis</label>
+        <link refid="classllvm_1_1_physical_register_usage_analysis"/>
+        <childnode refid="147" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="150">
+        <label>llvm::PluginInlineAdvisorAnalysis</label>
+        <link refid="classllvm_1_1_plugin_inline_advisor_analysis"/>
+        <childnode refid="149" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="152">
+        <label>llvm::PluginInlineOrderAnalysis</label>
+        <link refid="classllvm_1_1_plugin_inline_order_analysis"/>
+        <childnode refid="151" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="154">
+        <label>llvm::PostDominatorTreeAnalysis</label>
+        <link refid="classllvm_1_1_post_dominator_tree_analysis"/>
+        <childnode refid="153" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="156">
+        <label>llvm::ProfileSummaryAnalysis</label>
+        <link refid="classllvm_1_1_profile_summary_analysis"/>
+        <childnode refid="155" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>llvm::RegUsageInfoCollectorPass</label>
+        <link refid="classllvm_1_1_reg_usage_info_collector_pass"/>
+        <childnode refid="157" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="160">
+        <label>llvm::RegionInfoAnalysis</label>
+        <link refid="classllvm_1_1_region_info_analysis"/>
+        <childnode refid="159" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>llvm::SCEVAA</label>
+        <link refid="classllvm_1_1_s_c_e_v_a_a"/>
+        <childnode refid="161" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="164">
+        <label>llvm::SPIRVConvergenceRegionAnalysis</label>
+        <link refid="classllvm_1_1_s_p_i_r_v_convergence_region_analysis"/>
+        <childnode refid="163" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>llvm::SSPLayoutAnalysis</label>
+        <link refid="classllvm_1_1_s_s_p_layout_analysis"/>
+        <childnode refid="165" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>llvm::ScalarEvolutionAnalysis</label>
+        <link refid="classllvm_1_1_scalar_evolution_analysis"/>
+        <childnode refid="167" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="170">
+        <label>llvm::ScopedNoAliasAA</label>
+        <link refid="classllvm_1_1_scoped_no_alias_a_a"/>
+        <childnode refid="169" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="172">
+        <label>llvm::ShouldNotRunFunctionPassesAnalysis</label>
+        <link refid="classllvm_1_1_should_not_run_function_passes_analysis"/>
+        <childnode refid="171" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="174">
+        <label>llvm::ShouldRunExtraSimpleLoopUnswitch</label>
+        <link refid="structllvm_1_1_should_run_extra_simple_loop_unswitch"/>
+        <childnode refid="173" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="176">
+        <label>llvm::ShouldRunExtraVectorPasses</label>
+        <link refid="structllvm_1_1_should_run_extra_vector_passes"/>
+        <childnode refid="175" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="178">
+        <label>llvm::SlotIndexesAnalysis</label>
+        <link refid="classllvm_1_1_slot_indexes_analysis"/>
+        <childnode refid="177" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="180">
+        <label>llvm::SpillPlacementAnalysis</label>
+        <link refid="classllvm_1_1_spill_placement_analysis"/>
+        <childnode refid="179" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="182">
+        <label>llvm::StackSafetyAnalysis</label>
+        <link refid="classllvm_1_1_stack_safety_analysis"/>
+        <childnode refid="181" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="184">
+        <label>llvm::StackSafetyGlobalAnalysis</label>
+        <link refid="classllvm_1_1_stack_safety_global_analysis"/>
+        <childnode refid="183" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="186">
+        <label>llvm::TargetIRAnalysis</label>
+        <link refid="classllvm_1_1_target_i_r_analysis"/>
+        <childnode refid="185" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="188">
+        <label>llvm::TargetLibraryAnalysis</label>
+        <link refid="classllvm_1_1_target_library_analysis"/>
+        <childnode refid="187" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="190">
+        <label>llvm::TypeBasedAA</label>
+        <link refid="classllvm_1_1_type_based_a_a"/>
+        <childnode refid="189" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="192">
+        <label>llvm::UniformityInfoAnalysis</label>
+        <link refid="classllvm_1_1_uniformity_info_analysis"/>
+        <childnode refid="191" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="194">
+        <label>llvm::VerifierAnalysis</label>
+        <link refid="classllvm_1_1_verifier_analysis"/>
+        <childnode refid="193" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="196">
+        <label>llvm::VirtRegMapAnalysis</label>
+        <link refid="classllvm_1_1_virt_reg_map_analysis"/>
+        <childnode refid="195" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="198">
+        <label>llvm::dxil::ShaderFlagsAnalysis</label>
+        <link refid="classllvm_1_1dxil_1_1_shader_flags_analysis"/>
+        <childnode refid="197" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="200">
+        <label>llvm::objcarc::ObjCARCAA</label>
+        <link refid="classllvm_1_1objcarc_1_1_obj_c_a_r_c_a_a"/>
+        <childnode refid="199" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::AnalysisInfoMixin&lt; DerivedT &gt;</label>
+        <link refid="structllvm_1_1_analysis_info_mixin"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::PassInfoMixin&lt; DerivedT &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/IR/PassManager.h" line="92" column="1" bodyfile="include/llvm/IR/PassManager.h" bodystart="92" bodyend="113"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1_analysis_info_mixin_1a605c4abf7c7f3a053bf869b79098cd68" prot="public" virt="non-virtual"><scope>llvm::AnalysisInfoMixin</scope><name>ID</name></member>
+      <member refid="structllvm_1_1_pass_info_mixin_1a630e2eac0694bcbcfed653c6a7f616e3" prot="public" virt="non-virtual"><scope>llvm::AnalysisInfoMixin</scope><name>name</name></member>
+      <member refid="structllvm_1_1_pass_info_mixin_1aa4cc9f41bee4680f8bc4dce320d8f7c7" prot="public" virt="non-virtual"><scope>llvm::AnalysisInfoMixin</scope><name>printPipeline</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

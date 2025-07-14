@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1sandboxir_1_1_scheduler" kind="class" language="C++" prot="public">
+    <compoundname>llvm::sandboxir::Scheduler</compoundname>
+    <includes refid="_transforms_2_vectorize_2_sandbox_vectorizer_2_scheduler_8h" local="yes">llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1sandboxir_1_1_scheduler_1a70441fbb9460ff5697b574062f4a85b4" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>BndlSchedState</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::BndlSchedState</qualifiedname>
+        <enumvalue id="classllvm_1_1sandboxir_1_1_scheduler_1a70441fbb9460ff5697b574062f4a85b4ac9a612b94ad3384ca7ac8478b8cb81a6" prot="private">
+          <name>NoneScheduled</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1sandboxir_1_1_scheduler_1a70441fbb9460ff5697b574062f4a85b4a570a36f1714bdc7dd9869308775cbf54" prot="private">
+          <name>PartiallyOrDifferentlyScheduled</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><blockquote><para>No instruction in the bundle was previously scheduled. </para>
+</blockquote></para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1sandboxir_1_1_scheduler_1a70441fbb9460ff5697b574062f4a85b4a69ca2e87bec89043ec92d2e83207bf14" prot="private">
+          <name>FullyScheduled</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><blockquote><para>Only some of the instrs in the bundle were previously scheduled, or all of them were but not in the same <ref refid="classllvm_1_1sandboxir_1_1_sched_bundle" kindref="compound">SchedBundle</ref>. </para>
+</blockquote></para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The scheduling state of the instructions in the bundle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="138" column="3" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" bodystart="138" bodyend="146"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_scheduler_1af51a5db50b03e4d90b83a4feb412f207" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_ready_list_container" kindref="compound">ReadyListContainer</ref></type>
+        <definition>ReadyListContainer llvm::sandboxir::Scheduler::ReadyList</definition>
+        <argsstring></argsstring>
+        <name>ReadyList</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::ReadyList</qualifiedname>
+        <briefdescription>
+<para>This is a list-scheduler and this is the list containing the instructions that are ready, meaning that all their dependency successors have already been scheduled. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="115" column="22" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_scheduler_1aaf1b416561eac81f6587e3f0919c2d52" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_dependency_graph" kindref="compound">DependencyGraph</ref></type>
+        <definition>DependencyGraph llvm::sandboxir::Scheduler::DAG</definition>
+        <argsstring></argsstring>
+        <name>DAG</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::DAG</qualifiedname>
+        <briefdescription>
+<para>The dependency graph is used by the scheduler to determine the legal ordering of instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="118" column="19" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_scheduler_1a9b8a7e2d9b2579ea32b5826cd4cf169c" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref> &gt;</type>
+        <definition>std::optional&lt;BasicBlock::iterator&gt; llvm::sandboxir::Scheduler::ScheduleTopItOpt</definition>
+        <argsstring></argsstring>
+        <name>ScheduleTopItOpt</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::ScheduleTopItOpt</qualifiedname>
+        <briefdescription>
+<para>This is the top of the schedule, i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>the location where the scheduler is about to place the scheduled instructions. It gets updated as we schedule. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="122" column="17" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_scheduler_1ae3ac215ad54d28482f61bb3d0d5e038c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_sched_bundle" kindref="compound">SchedBundle</ref> *, std::unique_ptr&lt; <ref refid="classllvm_1_1sandboxir_1_1_sched_bundle" kindref="compound">SchedBundle</ref> &gt; &gt;</type>
+        <definition>DenseMap&lt;SchedBundle *, std::unique_ptr&lt;SchedBundle&gt; &gt; llvm::sandboxir::Scheduler::Bndls</definition>
+        <argsstring></argsstring>
+        <name>Bndls</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::Bndls</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="124" column="12" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sandboxir_1_1_scheduler_1a7853f964bc5e759342edbea60a4e5d3d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+        <definition>BasicBlock* llvm::sandboxir::Scheduler::ScheduledBB</definition>
+        <argsstring></argsstring>
+        <name>ScheduledBB</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::ScheduledBB</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>The BB that we are currently scheduling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="126" column="14" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1a1281604142558e345e1352c34018e092" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_sched_bundle" kindref="compound">SchedBundle</ref> *</type>
+        <definition>SchedBundle * llvm::sandboxir::Scheduler::createBundle</definition>
+        <argsstring>(ArrayRef&lt; Instruction * &gt; Instrs)</argsstring>
+        <name>createBundle</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::createBundle</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> * &gt;</type>
+          <declname>Instrs</declname>
+        </param>
+        <briefdescription>
+<para>\Returns a scheduling bundle containing <computeroutput>Instrs</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="129" column="15" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/Scheduler.cpp" bodystart="92" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1acc4f661deb09d40198b075ecfebcae64" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::Scheduler::eraseBundle</definition>
+        <argsstring>(SchedBundle *SB)</argsstring>
+        <name>eraseBundle</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::eraseBundle</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_sched_bundle" kindref="compound">SchedBundle</ref> *</type>
+          <declname>SB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="130" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/Scheduler.cpp" bodystart="103" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1a06f98481eab8604ab7cf604e77f6155b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sandboxir::Scheduler::tryScheduleUntil</definition>
+        <argsstring>(ArrayRef&lt; Instruction * &gt; Instrs)</argsstring>
+        <name>tryScheduleUntil</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::tryScheduleUntil</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> * &gt;</type>
+          <declname>Instrs</declname>
+        </param>
+        <briefdescription>
+<para>Schedule nodes until we can schedule <computeroutput>Instrs</computeroutput> back-to-back. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="132" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/Scheduler.cpp" bodystart="105" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1a5b0bd84c79a35f0d585108a2683723b4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::Scheduler::scheduleAndUpdateReadyList</definition>
+        <argsstring>(SchedBundle &amp;Bndl)</argsstring>
+        <name>scheduleAndUpdateReadyList</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::scheduleAndUpdateReadyList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_sched_bundle" kindref="compound">SchedBundle</ref> &amp;</type>
+          <declname>Bndl</declname>
+        </param>
+        <briefdescription>
+<para>Schedules all nodes in <computeroutput>Bndl</computeroutput>, marks them as scheduled, updates the UnscheduledSuccs counter of all dependency predecessors, and adds any of them that become ready to the ready list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="136" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/Scheduler.cpp" bodystart="69" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1a422c5167cbc9d5c2eaeb913326839f2d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>BndlSchedState</type>
+        <definition>Scheduler::BndlSchedState llvm::sandboxir::Scheduler::getBndlSchedState</definition>
+        <argsstring>(ArrayRef&lt; Instruction * &gt; Instrs) const</argsstring>
+        <name>getBndlSchedState</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::getBndlSchedState</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> * &gt;</type>
+          <declname>Instrs</declname>
+        </param>
+        <briefdescription>
+<para>\Returns whether none/some/all of <computeroutput>Instrs</computeroutput> have been scheduled. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="148" column="18" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/Scheduler.cpp" bodystart="140" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1a2789f8dd7df59ce0619a3e24e4fa8d6e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::Scheduler::trimSchedule</definition>
+        <argsstring>(ArrayRef&lt; Instruction * &gt; Instrs)</argsstring>
+        <name>trimSchedule</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::trimSchedule</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> * &gt;</type>
+          <declname>Instrs</declname>
+        </param>
+        <briefdescription>
+<para>Destroy the top-most part of the schedule that includes <computeroutput>Instrs</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="150" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/Scheduler.cpp" bodystart="168" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1ada96c257595dd4a7bbe058ce39217579" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::sandboxir::Scheduler::Scheduler</definition>
+        <argsstring>(const Scheduler &amp;)=delete</argsstring>
+        <name>Scheduler</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::Scheduler</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sandboxir_1_1_scheduler" kindref="compound">Scheduler</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Disable copies. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="152" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1a5626c1430c40f9d9b180d84400d63395" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1sandboxir_1_1_scheduler" kindref="compound">Scheduler</ref> &amp;</type>
+        <definition>Scheduler &amp; llvm::sandboxir::Scheduler::operator=</definition>
+        <argsstring>(const Scheduler &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sandboxir_1_1_scheduler" kindref="compound">Scheduler</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="153" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1afc7ba921cb118ef7f7a8b0fac4188350" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::sandboxir::Scheduler::Scheduler</definition>
+        <argsstring>(AAResults &amp;AA, Context &amp;Ctx)</argsstring>
+        <name>Scheduler</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::Scheduler</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_a_a_results" kindref="compound">AAResults</ref> &amp;</type>
+          <declname>AA</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_context" kindref="compound">Context</ref> &amp;</type>
+          <declname>Ctx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="156" column="3" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" bodystart="156" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1ae5196b707393b2021e397b3ccc989151" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::sandboxir::Scheduler::~Scheduler</definition>
+        <argsstring>()</argsstring>
+        <name>~Scheduler</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::~Scheduler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="157" column="3" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" bodystart="157" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1a9c67d906d22a6018e3ff649bafed6a1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sandboxir::Scheduler::trySchedule</definition>
+        <argsstring>(ArrayRef&lt; Instruction * &gt; Instrs)</argsstring>
+        <name>trySchedule</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::trySchedule</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref> * &gt;</type>
+          <declname>Instrs</declname>
+        </param>
+        <briefdescription>
+<para>Tries to build a schedule that includes all of <computeroutput>Instrs</computeroutput> scheduled at the same scheduling cycle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This essentially checks that there are no dependencies among <computeroutput>Instrs</computeroutput>. This function may involve scheduling intermediate instructions or canceling and re-scheduling if needed. \Returns true on success, false otherwise. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="163" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/Scheduler.cpp" bodystart="189" bodyend="237"/>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_array_ref_1aab36927882fbfdcbb860d87fd9c30da8" compoundref="_array_ref_8h" startline="156" endline="156">llvm::ArrayRef&lt; T &gt;::begin</references>
+        <references refid="namespacellvm_1a02981de53fb6ffd384d39addc4d25f37" compoundref="_s_t_l_extras_8h" startline="329" endline="332">llvm::drop_begin</references>
+        <references refid="classllvm_1_1sandboxir_1_1_vec_utils_1a089cccbe66baa77d85c8a291030c7796" compoundref="_vec_utils_8h" startline="105" endline="112">llvm::sandboxir::VecUtils::getLowest</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1abf8f36441eb2768093b280ec47ab22fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::Scheduler::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::clear</qualifiedname>
+        <briefdescription>
+<para>Clear the scheduler&apos;s state, including the DAG. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="165" column="8" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" bodystart="165" bodyend="175"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1a113dcc23dbfd41addaba405a2b7ce30e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sandboxir::Scheduler::dump</definition>
+        <argsstring>(raw_ostream &amp;OS) const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::dump</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="178" column="8" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/Scheduler.cpp" bodystart="240" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_scheduler_1a6a39dd033ba9a22a413f05b32f498509" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" kindref="member">LLVM_DUMP_METHOD</ref> void</type>
+        <definition>void llvm::sandboxir::Scheduler::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::sandboxir::Scheduler::dump</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="179" column="25" bodyfile="lib/Transforms/Vectorize/SandboxVectorizer/Scheduler.cpp" bodystart="244" bodyend="244"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1sandboxir_1_1_scheduler_1a6a39dd033ba9a22a413f05b32f498509" compoundref="_transforms_2_vectorize_2_sandbox_vectorizer_2_scheduler_8cpp" startline="244" endline="244">dump</references>
+        <referencedby refid="classllvm_1_1sandboxir_1_1_scheduler_1a6a39dd033ba9a22a413f05b32f498509" compoundref="_transforms_2_vectorize_2_sandbox_vectorizer_2_scheduler_8cpp" startline="244" endline="244">dump</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The list scheduler. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" line="111" column="1" bodyfile="include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h" bodystart="111" bodyend="181"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1ae3ac215ad54d28482f61bb3d0d5e038c" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>Bndls</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a70441fbb9460ff5697b574062f4a85b4" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>BndlSchedState</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1abf8f36441eb2768093b280ec47ab22fc" prot="public" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>clear</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a1281604142558e345e1352c34018e092" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>createBundle</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1aaf1b416561eac81f6587e3f0919c2d52" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>DAG</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a113dcc23dbfd41addaba405a2b7ce30e" prot="public" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>dump</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a6a39dd033ba9a22a413f05b32f498509" prot="public" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>dump</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1acc4f661deb09d40198b075ecfebcae64" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>eraseBundle</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a422c5167cbc9d5c2eaeb913326839f2d" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>getBndlSchedState</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a5626c1430c40f9d9b180d84400d63395" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1af51a5db50b03e4d90b83a4feb412f207" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>ReadyList</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a5b0bd84c79a35f0d585108a2683723b4" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>scheduleAndUpdateReadyList</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a7853f964bc5e759342edbea60a4e5d3d" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>ScheduledBB</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1ada96c257595dd4a7bbe058ce39217579" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>Scheduler</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1afc7ba921cb118ef7f7a8b0fac4188350" prot="public" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>Scheduler</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a9b8a7e2d9b2579ea32b5826cd4cf169c" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>ScheduleTopItOpt</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a2789f8dd7df59ce0619a3e24e4fa8d6e" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>trimSchedule</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a9c67d906d22a6018e3ff649bafed6a1a" prot="public" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>trySchedule</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1a06f98481eab8604ab7cf604e77f6155b" prot="private" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>tryScheduleUntil</name></member>
+      <member refid="classllvm_1_1sandboxir_1_1_scheduler_1ae5196b707393b2021e397b3ccc989151" prot="public" virt="non-virtual"><scope>llvm::sandboxir::Scheduler</scope><name>~Scheduler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

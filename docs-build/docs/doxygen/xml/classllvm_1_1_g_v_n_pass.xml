@@ -1,0 +1,1345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_g_v_n_pass" kind="class" language="C++" prot="public">
+    <compoundname>llvm::GVNPass</compoundname>
+    <basecompoundref refid="structllvm_1_1_pass_info_mixin" prot="public" virt="non-virtual">llvm::PassInfoMixin&lt; GVNPass &gt;</basecompoundref>
+    <includes refid="_g_v_n_8h" local="yes">llvm/Transforms/Scalar/GVN.h</includes>
+    <innerclass refid="structllvm_1_1_g_v_n_pass_1_1_expression" prot="public">llvm::GVNPass::Expression</innerclass>
+    <innerclass refid="classllvm_1_1_g_v_n_pass_1_1_leader_map" prot="private">llvm::GVNPass::LeaderMap</innerclass>
+    <innerclass refid="classllvm_1_1_g_v_n_pass_1_1_value_table" prot="public">llvm::GVNPass::ValueTable</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_g_v_n_pass_1a063f1fae9025ed4f9d7186c26d8ed532" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_non_local_dep_result" kindref="compound">NonLocalDepResult</ref>, 64 &gt;</type>
+        <definition>using llvm::GVNPass::LoadDepVect =  SmallVector&lt;NonLocalDepResult, 64&gt;</definition>
+        <argsstring></argsstring>
+        <name>LoadDepVect</name>
+        <qualifiedname>llvm::GVNPass::LoadDepVect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="320" column="3" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_g_v_n_pass_1a3f60d95a30f6b03ac0444e402430ba86" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1gvn_1_1_available_value_in_block" kindref="compound">gvn::AvailableValueInBlock</ref>, 64 &gt;</type>
+        <definition>using llvm::GVNPass::AvailValInBlkVect =  SmallVector&lt;gvn::AvailableValueInBlock, 64&gt;</definition>
+        <argsstring></argsstring>
+        <name>AvailValInBlkVect</name>
+        <qualifiedname>llvm::GVNPass::AvailValInBlkVect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="321" column="3" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="321" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_g_v_n_pass_1a9e3305b0655234e9925523630033bfe0" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, 64 &gt;</type>
+        <definition>using llvm::GVNPass::UnavailBlkVect =  SmallVector&lt;BasicBlock *, 64&gt;</definition>
+        <argsstring></argsstring>
+        <name>UnavailBlkVect</name>
+        <qualifiedname>llvm::GVNPass::UnavailBlkVect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="322" column="3" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="322" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a4872dd95e1b2e12a67b93f2d1f3f8e8d" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1_g_v_n_options" kindref="compound">GVNOptions</ref></type>
+        <definition>GVNOptions llvm::GVNPass::Options</definition>
+        <argsstring></argsstring>
+        <name>Options</name>
+        <qualifiedname>llvm::GVNPass::Options</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="125" column="14" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a6b51549c2f13824b682f99bdf1cc2b30" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_memory_dependence_results" kindref="compound">MemoryDependenceResults</ref> *</type>
+        <definition>MemoryDependenceResults* llvm::GVNPass::MD</definition>
+        <argsstring></argsstring>
+        <name>MD</name>
+        <qualifiedname>llvm::GVNPass::MD</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="229" column="27" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a84d4b8769beeb7c6fa4f6cb6d5096072" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+        <definition>DominatorTree* llvm::GVNPass::DT</definition>
+        <argsstring></argsstring>
+        <name>DT</name>
+        <qualifiedname>llvm::GVNPass::DT</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="230" column="17" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a4f4615b38281e1dc8e0bb7dee2d21075" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+        <definition>const TargetLibraryInfo* llvm::GVNPass::TLI</definition>
+        <argsstring></argsstring>
+        <name>TLI</name>
+        <qualifiedname>llvm::GVNPass::TLI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="231" column="27" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a59611f7431a9eb927d926eb8159c0304" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref> *</type>
+        <definition>AssumptionCache* llvm::GVNPass::AC</definition>
+        <argsstring></argsstring>
+        <name>AC</name>
+        <qualifiedname>llvm::GVNPass::AC</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="232" column="19" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1ade3873d950dffe8120470545656ff8e8" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_set_vector" kindref="compound">SetVector</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt;</type>
+        <definition>SetVector&lt;BasicBlock *&gt; llvm::GVNPass::DeadBlocks</definition>
+        <argsstring></argsstring>
+        <name>DeadBlocks</name>
+        <qualifiedname>llvm::GVNPass::DeadBlocks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="233" column="13" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a45487bff9c9c5b57b59276fa645f8a59" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_optimization_remark_emitter" kindref="compound">OptimizationRemarkEmitter</ref> *</type>
+        <definition>OptimizationRemarkEmitter* llvm::GVNPass::ORE</definition>
+        <argsstring></argsstring>
+        <name>ORE</name>
+        <qualifiedname>llvm::GVNPass::ORE</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="234" column="29" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a31dfde3ecc7d57315577784362eaf68c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_implicit_control_flow_tracking" kindref="compound">ImplicitControlFlowTracking</ref> *</type>
+        <definition>ImplicitControlFlowTracking* llvm::GVNPass::ICF</definition>
+        <argsstring></argsstring>
+        <name>ICF</name>
+        <qualifiedname>llvm::GVNPass::ICF</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="235" column="31" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a89e347a318825b56dd54bd6ddab7517b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> *</type>
+        <definition>LoopInfo* llvm::GVNPass::LI</definition>
+        <argsstring></argsstring>
+        <name>LI</name>
+        <qualifiedname>llvm::GVNPass::LI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="236" column="12" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a8825e7a8754152284c6b8357b1dfd230" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_memory_s_s_a_updater" kindref="compound">MemorySSAUpdater</ref> *</type>
+        <definition>MemorySSAUpdater* llvm::GVNPass::MSSAU</definition>
+        <argsstring></argsstring>
+        <name>MSSAU</name>
+        <qualifiedname>llvm::GVNPass::MSSAU</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="237" column="20" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a8dbeb2bb2219628221836b087a7717fc" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_g_v_n_pass_1_1_value_table" kindref="compound">ValueTable</ref></type>
+        <definition>ValueTable llvm::GVNPass::VN</definition>
+        <argsstring></argsstring>
+        <name>VN</name>
+        <qualifiedname>llvm::GVNPass::VN</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="239" column="14" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1ac9998ed2d8f7a097fd16abb2fc453254" prot="private" static="no" mutable="no">
+        <type>LeaderMap</type>
+        <definition>LeaderMap llvm::GVNPass::LeaderTable</definition>
+        <argsstring></argsstring>
+        <name>LeaderTable</name>
+        <qualifiedname>llvm::GVNPass::LeaderTable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="303" column="13" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1ab5fdd7023ac99bf2e1e6d6a27c7f523a" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1_small_map_vector" kindref="compound">SmallMapVector</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, 4 &gt;</type>
+        <definition>SmallMapVector&lt;Value *, Value *, 4&gt; llvm::GVNPass::ReplaceOperandsWithMap</definition>
+        <argsstring></argsstring>
+        <name>ReplaceOperandsWithMap</name>
+        <qualifiedname>llvm::GVNPass::ReplaceOperandsWithMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="308" column="18" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a36703c1bcffea599057b99920e6fc3f6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, 8 &gt;</type>
+        <definition>SmallVector&lt;Instruction *, 8&gt; llvm::GVNPass::InstrsToErase</definition>
+        <argsstring></argsstring>
+        <name>InstrsToErase</name>
+        <qualifiedname>llvm::GVNPass::InstrsToErase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="309" column="15" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a79c365aa18fca1a6533c0660186cd924" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_asserting_v_h" kindref="compound">AssertingVH</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> &gt;, <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>DenseMap&lt;AssertingVH&lt;BasicBlock&gt;, uint32_t&gt; llvm::GVNPass::BlockRPONumber</definition>
+        <argsstring></argsstring>
+        <name>BlockRPONumber</name>
+        <qualifiedname>llvm::GVNPass::BlockRPONumber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="313" column="12" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a691dc30a9468424c1e3d926ab0abfd3c" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GVNPass::InvalidBlockRPONumbers</definition>
+        <argsstring></argsstring>
+        <name>InvalidBlockRPONumbers</name>
+        <qualifiedname>llvm::GVNPass::InvalidBlockRPONumbers</qualifiedname>
+        <initializer>= <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="318" column="8" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_v_n_pass_1a898fe350cb5c5bc4aef93e35e9017d33" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::pair&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;, 4 &gt;</type>
+        <definition>SmallVector&lt;std::pair&lt;Instruction *, unsigned&gt;, 4&gt; llvm::GVNPass::toSplit</definition>
+        <argsstring></argsstring>
+        <name>toSplit</name>
+        <qualifiedname>llvm::GVNPass::toSplit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="330" column="15" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="330" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_g_v_n_pass_1a1bd68f76e3641c20dfa1dec36e41cf61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class gvn::GVNLegacyPass</definition>
+        <argsstring></argsstring>
+        <name>gvn::GVNLegacyPass</name>
+        <qualifiedname>llvm::GVNPass::GVNLegacyPass</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1gvn_1_1_g_v_n_legacy_pass" kindref="compound">gvn::GVNLegacyPass</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="226" column="16" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="226" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1aaa43409c7dab66be0480defab2d17687" compoundref="_g_v_n_8cpp" startline="3375" endline="3375">llvm::createGVNPass</referencedby>
+      </memberdef>
+      <memberdef kind="friend" id="classllvm_1_1_g_v_n_pass_1a8f1b6c33b018570dddad6adfde31870a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct</type>
+        <definition>friend struct DenseMapInfo&lt; Expression &gt;</definition>
+        <argsstring></argsstring>
+        <name>DenseMapInfo&lt; Expression &gt;</name>
+        <qualifiedname>llvm::GVNPass::DenseMapInfo&lt; Expression &gt;</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_dense_map_info" kindref="compound">DenseMapInfo</ref>&lt; <ref refid="structllvm_1_1_g_v_n_pass_1_1_expression" kindref="compound">Expression</ref> &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="226" column="16" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a62b9ab672829302405b735225d5e20b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::GVNPass::GVNPass</definition>
+        <argsstring>(GVNOptions Options={})</argsstring>
+        <name>GVNPass</name>
+        <qualifiedname>llvm::GVNPass::GVNPass</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_g_v_n_options" kindref="compound">GVNOptions</ref></type>
+          <declname>Options</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="130" column="3" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="130" bodyend="130"/>
+        <referencedby refid="classllvm_1_1_g_v_n_pass_1_1_value_table_1a5b8ab87af8cabbd0686f6e2e5c3a13ae">llvm::GVNPass::ValueTable::operator=</referencedby>
+        <referencedby refid="classllvm_1_1_g_v_n_pass_1_1_value_table_1aa65e06a8ebf36de45b4859c5e3a52b03" compoundref="_g_v_n_8cpp" startline="2247" endline="2256">llvm::GVNPass::ValueTable::phiTranslate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a25dcf17194b012b2b35388798cac2da7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_preserved_analyses" kindref="compound">PreservedAnalyses</ref></type>
+        <definition>PreservedAnalyses GVNPass::run</definition>
+        <argsstring>(Function &amp;F, FunctionAnalysisManager &amp;AM)</argsstring>
+        <name>run</name>
+        <qualifiedname>llvm::GVNPass::run</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1adce09a5a0de0e3177eb00e932734af2f" kindref="member">FunctionAnalysisManager</ref> &amp;</type>
+          <declname>AM</declname>
+        </param>
+        <briefdescription>
+<para>Run the pass over the function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="133" column="21" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="829" bodyend="859"/>
+        <references refid="classllvm_1_1_preserved_analyses_1a1258a1ff55557c27684010ebd7283712" compoundref="llvm_2_i_r_2_analysis_8h" startline="117" endline="121">llvm::PreservedAnalyses::all</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2373">Changed</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_analysis_manager_1a828ff8185f881fca9e3d534781244041" compoundref="_i_r_2_pass_manager_8h" startline="429" endline="442">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getCachedResult</references>
+        <references refid="classllvm_1_1_analysis_manager_1aaab1fad63e4f3b8679469720a873fedd" compoundref="_i_r_2_pass_manager_8h" startline="410" endline="421">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult</references>
+        <references refid="classllvm_1_1_g_v_n_pass_1adf1278a3accfd7d0207e37273e4229d2" compoundref="_g_v_n_8cpp" startline="821" endline="823">isMemDepEnabled</references>
+        <references refid="classllvm_1_1_g_v_n_pass_1a75b7cd0e780b19141e601e75a706fb5c" compoundref="_g_v_n_8cpp" startline="825" endline="827">isMemorySSAEnabled</references>
+        <references refid="classllvm_1_1_preserved_analyses_1ad966bea18aa62ffb9e040509adc7c99f" compoundref="llvm_2_i_r_2_analysis_8h" startline="131" endline="131">llvm::PreservedAnalyses::preserve</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a6796eb8a0e27f209321cbeff6a6faee8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GVNPass::printPipeline</definition>
+        <argsstring>(raw_ostream &amp;OS, function_ref&lt; StringRef(StringRef)&gt; MapClassName2PassName)</argsstring>
+        <name>printPipeline</name>
+        <qualifiedname>llvm::GVNPass::printPipeline</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>)&gt;</type>
+          <declname>MapClassName2PassName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="135" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="861" bodyend="879"/>
+        <references refid="classllvm_1_1_g_v_n_pass_1a6796eb8a0e27f209321cbeff6a6faee8" compoundref="_g_v_n_8cpp" startline="861" endline="879">printPipeline</references>
+        <referencedby refid="classllvm_1_1_g_v_n_pass_1a6796eb8a0e27f209321cbeff6a6faee8" compoundref="_g_v_n_8cpp" startline="861" endline="879">printPipeline</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1abefca2348c563ac9ceaab87ff2f2152f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::GVNPass::markInstructionForDeletion</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>markInstructionForDeletion</name>
+        <qualifiedname>llvm::GVNPass::markInstructionForDeletion</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>This removes the specified instruction from our various maps and marks it for deletion. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="140" column="8" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="140" bodyend="143"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a82ed0f5454537781dd2949146821f7a1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+        <definition>DominatorTree &amp; llvm::GVNPass::getDominatorTree</definition>
+        <argsstring>() const</argsstring>
+        <name>getDominatorTree</name>
+        <qualifiedname>llvm::GVNPass::getDominatorTree</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="145" column="17" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="145" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a465c9577ba88345e23a496d47e185e2b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_a_a_results" kindref="compound">AAResults</ref> *</type>
+        <definition>AAResults * llvm::GVNPass::getAliasAnalysis</definition>
+        <argsstring>() const</argsstring>
+        <name>getAliasAnalysis</name>
+        <qualifiedname>llvm::GVNPass::getAliasAnalysis</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="146" column="13" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="146" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1aeb3aabd952dd6fc744032b003a67ec5d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_dependence_results" kindref="compound">MemoryDependenceResults</ref> &amp;</type>
+        <definition>MemoryDependenceResults &amp; llvm::GVNPass::getMemDep</definition>
+        <argsstring>() const</argsstring>
+        <name>getMemDep</name>
+        <qualifiedname>llvm::GVNPass::getMemDep</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="147" column="27" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="147" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a1cc0652ed25618b41f317c0bae461e16" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::isPREEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>isPREEnabled</name>
+        <qualifiedname>llvm::GVNPass::isPREEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="149" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="804" bodyend="806"/>
+        <references refid="_g_v_n_8cpp_1aecfdc57f16d44724e335d66f1e811b95">GVNEnablePRE</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a5046bdddf55a6ad3fd2ad7640b4f8d0c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::isLoadPREEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>isLoadPREEnabled</name>
+        <qualifiedname>llvm::GVNPass::isLoadPREEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="150" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="808" bodyend="810"/>
+        <references refid="_g_v_n_8cpp_1af6be18dc177c25396a20c8b0598befae">GVNEnableLoadPRE</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a9449bef29f49a1b4be0ba63609317a34" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::isLoadInLoopPREEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>isLoadInLoopPREEnabled</name>
+        <qualifiedname>llvm::GVNPass::isLoadInLoopPREEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="151" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="812" bodyend="814"/>
+        <references refid="_g_v_n_8cpp_1a4088aff9f92891762f4ea3007c825296">GVNEnableLoadInLoopPRE</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1aac8394f15fa6e03d02344993ef4a15df" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::isLoadPRESplitBackedgeEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>isLoadPRESplitBackedgeEnabled</name>
+        <qualifiedname>llvm::GVNPass::isLoadPRESplitBackedgeEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="152" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="816" bodyend="819"/>
+        <references refid="_g_v_n_8cpp_1ab7d05d78d66adecbabb55b12bbcf2156">GVNEnableSplitBackedgeInLoadPRE</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1adf1278a3accfd7d0207e37273e4229d2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::isMemDepEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>isMemDepEnabled</name>
+        <qualifiedname>llvm::GVNPass::isMemDepEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="153" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="821" bodyend="823"/>
+        <references refid="_g_v_n_8cpp_1a339391b287bf908cc66970a90f41da5b">GVNEnableMemDep</references>
+        <referencedby refid="classllvm_1_1_g_v_n_pass_1a25dcf17194b012b2b35388798cac2da7" compoundref="_g_v_n_8cpp" startline="829" endline="859">run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a75b7cd0e780b19141e601e75a706fb5c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::isMemorySSAEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>isMemorySSAEnabled</name>
+        <qualifiedname>llvm::GVNPass::isMemorySSAEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="154" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="825" bodyend="827"/>
+        <references refid="_g_v_n_8cpp_1a6d813a7562c8c6b0bfe4e730856c7ded">GVNEnableMemorySSA</references>
+        <referencedby refid="classllvm_1_1_g_v_n_pass_1a25dcf17194b012b2b35388798cac2da7" compoundref="_g_v_n_8cpp" startline="829" endline="859">run</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a570ea6443fd6d50edbc44b69ee2e1bea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::runImpl</definition>
+        <argsstring>(Function &amp;F, AssumptionCache &amp;RunAC, DominatorTree &amp;RunDT, const TargetLibraryInfo &amp;RunTLI, AAResults &amp;RunAA, MemoryDependenceResults *RunMD, LoopInfo &amp;LI, OptimizationRemarkEmitter *ORE, MemorySSA *MSSA=nullptr)</argsstring>
+        <name>runImpl</name>
+        <qualifiedname>llvm::GVNPass::runImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref> &amp;</type>
+          <declname>RunAC</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+          <declname>RunDT</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> &amp;</type>
+          <declname>RunTLI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_a_a_results" kindref="compound">AAResults</ref> &amp;</type>
+          <declname>RunAA</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_dependence_results" kindref="compound">MemoryDependenceResults</ref> *</type>
+          <declname>RunMD</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> &amp;</type>
+          <declname>LI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_optimization_remark_emitter" kindref="compound">OptimizationRemarkEmitter</ref> *</type>
+          <declname>ORE</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref> *</type>
+          <declname>MSSA</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>runOnFunction - This is the main transformation entry point for a function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="324" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="2728" bodyend="2796"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a774d11f023c46f5ef42b95684cc538a5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::processLoad</definition>
+        <argsstring>(LoadInst *L)</argsstring>
+        <name>processLoad</name>
+        <qualifiedname>llvm::GVNPass::processLoad</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> *</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Attempt to eliminate a load, first by eliminating it locally, and then attempting non-local elimination if that fails. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="333" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="2170" bodyend="2219"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1af6fe145bf27fa72c40dacb2354a2639a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::processNonLocalLoad</definition>
+        <argsstring>(LoadInst *L)</argsstring>
+        <name>processNonLocalLoad</name>
+        <qualifiedname>llvm::GVNPass::processNonLocalLoad</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> *</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Attempt to eliminate a load whose dependencies are non-local by performing PHI construction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="334" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="1926" bodyend="2014"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a2a2d0007c1e09679867cebfff73029ce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::processAssumeIntrinsic</definition>
+        <argsstring>(AssumeInst *II)</argsstring>
+        <name>processAssumeIntrinsic</name>
+        <qualifiedname>llvm::GVNPass::processAssumeIntrinsic</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_assume_inst" kindref="compound">AssumeInst</ref> *</type>
+          <declname>II</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="335" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="2023" bodyend="2161"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1ab449cc343665eeb9c96de359159002a9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structllvm_1_1gvn_1_1_available_value" kindref="compound">gvn::AvailableValue</ref> &gt;</type>
+        <definition>std::optional&lt; AvailableValue &gt; GVNPass::AnalyzeLoadAvailability</definition>
+        <argsstring>(LoadInst *Load, MemDepResult DepInfo, Value *Address)</argsstring>
+        <name>AnalyzeLoadAvailability</name>
+        <qualifiedname>llvm::GVNPass::AnalyzeLoadAvailability</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> *</type>
+          <declname>Load</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref></type>
+          <declname>DepInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Given a local dependency (Def or Clobber) determine if a value is available for the load. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="340" column="3" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="1257" bodyend="1395"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a36768091a495c346736e5357279c1fbb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GVNPass::AnalyzeLoadAvailability</definition>
+        <argsstring>(LoadInst *Load, LoadDepVect &amp;Deps, AvailValInBlkVect &amp;ValuesPerBlock, UnavailBlkVect &amp;UnavailableBlocks)</argsstring>
+        <name>AnalyzeLoadAvailability</name>
+        <qualifiedname>llvm::GVNPass::AnalyzeLoadAvailability</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> *</type>
+          <declname>Load</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">LoadDepVect</ref> &amp;</type>
+          <declname>Deps</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">AvailValInBlkVect</ref> &amp;</type>
+          <declname>ValuesPerBlock</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">UnavailBlkVect</ref> &amp;</type>
+          <declname>UnavailableBlocks</declname>
+        </param>
+        <briefdescription>
+<para>Given a list of non-local dependencies, determine if a value is available for the load in each specified block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If it is, add it to ValuesPerBlock. If not, add it to UnavailableBlocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="345" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="1397" bodyend="1436"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a554ab06dfc88e09773e4edf1ae6b9757" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> *</type>
+        <definition>LoadInst * GVNPass::findLoadToHoistIntoPred</definition>
+        <argsstring>(BasicBlock *Pred, BasicBlock *LoadBB, LoadInst *Load)</argsstring>
+        <name>findLoadToHoistIntoPred</name>
+        <qualifiedname>llvm::GVNPass::findLoadToHoistIntoPred</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Pred</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>LoadBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> *</type>
+          <declname>Load</declname>
+        </param>
+        <briefdescription>
+<para>Given a critical edge from Pred to LoadBB, find a load instruction which is identical to Load from another successor of Pred. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Given the following code, v1 is partially available on some edges, but not available on the edge from PredBB.</para>
+<para>This function tries to find if there is another identical load in the other successor of PredBB. <verbatim> v0 = load %addr
+ br %LoadBB
+</verbatim></para>
+<para>LoadBB: v1 = load addr ...</para>
+<para>PredBB: ... br cond, label LoadBB, label SuccBB</para>
+<para>SuccBB: v2 = load addr ... </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="351" column="12" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="1457" bodyend="1493"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a1273ce1e1a4d4da230f67d20c070f8d3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::PerformLoadPRE</definition>
+        <argsstring>(LoadInst *Load, AvailValInBlkVect &amp;ValuesPerBlock, UnavailBlkVect &amp;UnavailableBlocks)</argsstring>
+        <name>PerformLoadPRE</name>
+        <qualifiedname>llvm::GVNPass::PerformLoadPRE</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> *</type>
+          <declname>Load</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">AvailValInBlkVect</ref> &amp;</type>
+          <declname>ValuesPerBlock</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">UnavailBlkVect</ref> &amp;</type>
+          <declname>UnavailableBlocks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="354" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="1581" bodyend="1833"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a08f3629df4a98210b6695a2a871c3840" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::performLoopLoadPRE</definition>
+        <argsstring>(LoadInst *Load, AvailValInBlkVect &amp;ValuesPerBlock, UnavailBlkVect &amp;UnavailableBlocks)</argsstring>
+        <name>performLoopLoadPRE</name>
+        <qualifiedname>llvm::GVNPass::performLoopLoadPRE</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> *</type>
+          <declname>Load</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">AvailValInBlkVect</ref> &amp;</type>
+          <declname>ValuesPerBlock</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">UnavailBlkVect</ref> &amp;</type>
+          <declname>UnavailableBlocks</declname>
+        </param>
+        <briefdescription>
+<para>Try to replace a load which executes on each loop iteraiton with Phi translation of load in preheader and <ref refid="_a_m_d_g_p_u_mark_last_scratch_load_8cpp_1a8a3fe89940744b94ffe5dacd6704c2be" kindref="member">load(s)</ref> in conditionally executed paths. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="360" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="1835" bodyend="1910"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1ae6b697d2d71d8acdcae306ad8c5a3a4f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GVNPass::eliminatePartiallyRedundantLoad</definition>
+        <argsstring>(LoadInst *Load, AvailValInBlkVect &amp;ValuesPerBlock, MapVector&lt; BasicBlock *, Value * &gt; &amp;AvailableLoads, MapVector&lt; BasicBlock *, LoadInst * &gt; *CriticalEdgePredAndLoad)</argsstring>
+        <name>eliminatePartiallyRedundantLoad</name>
+        <qualifiedname>llvm::GVNPass::eliminatePartiallyRedundantLoad</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> *</type>
+          <declname>Load</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">AvailValInBlkVect</ref> &amp;</type>
+          <declname>ValuesPerBlock</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_map_vector" kindref="compound">MapVector</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>AvailableLoads</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_map_vector" kindref="compound">MapVector</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> * &gt; *</type>
+          <declname>CriticalEdgePredAndLoad</declname>
+        </param>
+        <briefdescription>
+<para>Eliminates partially redundant <computeroutput>Load</computeroutput>, replacing it with <computeroutput>AvailableLoads</computeroutput> (connected by Phis if needed). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="365" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="1495" bodyend="1579"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a409c568a0cf6d1eadc338748c0f876ac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::processInstruction</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>processInstruction</name>
+        <qualifiedname>llvm::GVNPass::processInstruction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>When calculating availability, handle an instruction by inserting it into the appropriate sets. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="371" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="2585" bodyend="2725"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1aab26e913f0b539a84fd05f0d8243ef89" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::processBlock</definition>
+        <argsstring>(BasicBlock *BB)</argsstring>
+        <name>processBlock</name>
+        <qualifiedname>llvm::GVNPass::processBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="372" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="2798" bodyend="2856"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a4d90fab8b539080c87c13ee5a2a35f3f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void GVNPass::dump</definition>
+        <argsstring>(DenseMap&lt; uint32_t, Value * &gt; &amp;d) const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::GVNPass::dump</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref>, <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="373" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="882" bodyend="889"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a034bd384b4685148a356acb369148a51" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::iterateOnFunction</definition>
+        <argsstring>(Function &amp;F)</argsstring>
+        <name>iterateOnFunction</name>
+        <qualifiedname>llvm::GVNPass::iterateOnFunction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Executes one iteration of GVN. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="374" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="3135" bodyend="3149"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1aa3ca257196732c65fdb55de2347d1fb0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::performPRE</definition>
+        <argsstring>(Function &amp;F)</argsstring>
+        <name>performPRE</name>
+        <qualifiedname>llvm::GVNPass::performPRE</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Perform a purely local form of PRE that looks for diamond control flow patterns and attempts to perform simple PRE at the join point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="375" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="3072" bodyend="3095"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1ac72ed47b852b5ec16b4c619209d3229c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::performScalarPRE</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>performScalarPRE</name>
+        <qualifiedname>llvm::GVNPass::performScalarPRE</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="376" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="2908" bodyend="3068"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1ae3faf4456489aa4307899493442a9263" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::performScalarPREInsertion</definition>
+        <argsstring>(Instruction *Instr, BasicBlock *Pred, BasicBlock *Curr, unsigned int ValNo)</argsstring>
+        <name>performScalarPREInsertion</name>
+        <qualifiedname>llvm::GVNPass::performScalarPREInsertion</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Instr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Pred</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Curr</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> int</type>
+          <declname>ValNo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="377" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="2859" bodyend="2906"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a999d7a6981d35fd4d415649745867980" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * GVNPass::findLeader</definition>
+        <argsstring>(const BasicBlock *BB, uint32_t num)</argsstring>
+        <name>findLeader</name>
+        <qualifiedname>llvm::GVNPass::findLeader</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="379" column="9" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="2361" bodyend="2376"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a3df96476b5a72c0bf919cf678b68e8da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GVNPass::cleanupGlobalSets</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupGlobalSets</name>
+        <qualifiedname>llvm::GVNPass::cleanupGlobalSets</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="380" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="3151" bodyend="3157"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a39e25b780908a0ad31bf6a6c467b2ff8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GVNPass::removeInstruction</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>removeInstruction</name>
+        <qualifiedname>llvm::GVNPass::removeInstruction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="381" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="3159" bodyend="3168"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1ae478cd0afce5f665b903e666c72026de" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GVNPass::verifyRemoved</definition>
+        <argsstring>(const Instruction *I) const</argsstring>
+        <name>verifyRemoved</name>
+        <qualifiedname>llvm::GVNPass::verifyRemoved</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Verify that the specified instruction does not occur in our internal data structures. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="382" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="3172" bodyend="3175"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a2c05580ee80ec2e52f8031fb648c0eaf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::splitCriticalEdges</definition>
+        <argsstring>()</argsstring>
+        <name>splitCriticalEdges</name>
+        <qualifiedname>llvm::GVNPass::splitCriticalEdges</qualifiedname>
+        <briefdescription>
+<para>Split critical edges found during the previous iteration that may enable further optimization. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="383" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="3115" bodyend="3132"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a1d3103d094e02c45bd85d9c490e5122b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+        <definition>BasicBlock * GVNPass::splitCriticalEdges</definition>
+        <argsstring>(BasicBlock *Pred, BasicBlock *Succ)</argsstring>
+        <name>splitCriticalEdges</name>
+        <qualifiedname>llvm::GVNPass::splitCriticalEdges</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Pred</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>Succ</declname>
+        </param>
+        <briefdescription>
+<para>Split the critical edge connecting the given two blocks, and return the block inserted to the critical edge. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="384" column="14" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="3099" bodyend="3111"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a8caf8e3f67e0a9bfb78e50f12ad5a55a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::replaceOperandsForInBlockEquality</definition>
+        <argsstring>(Instruction *I) const</argsstring>
+        <name>replaceOperandsForInBlockEquality</name>
+        <qualifiedname>llvm::GVNPass::replaceOperandsForInBlockEquality</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="385" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="2403" bodyend="2416"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a287167c47f398d7ddc96aa28c9b31a18" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::propagateEquality</definition>
+        <argsstring>(Value *LHS, Value *RHS, const BasicBlockEdge &amp;Root, bool DominatesByEdge)</argsstring>
+        <name>propagateEquality</name>
+        <qualifiedname>llvm::GVNPass::propagateEquality</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>LHS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>RHS</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block_edge" kindref="compound">BasicBlockEdge</ref> &amp;</type>
+          <declname>Root</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>DominatesByEdge</declname>
+        </param>
+        <briefdescription>
+<para>The given values are known to be equal in every block dominated by &apos;Root&apos;. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Exploit this, for example by replacing &apos;LHS&apos; with &apos;RHS&apos; everywhere in the scope. Returns whether a change was made. If DominatesByEdge is false, then it means that we will propagate the RHS value starting from the end of Root.Start. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="386" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="2423" bodyend="2581"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1aed917f4a3c4e968a2eb05a56281c594c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GVNPass::processFoldableCondBr</definition>
+        <argsstring>(BranchInst *BI)</argsstring>
+        <name>processFoldableCondBr</name>
+        <qualifiedname>llvm::GVNPass::processFoldableCondBr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_branch_inst" kindref="compound">BranchInst</ref> *</type>
+          <declname>BI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="388" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="3269" bodyend="3291"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1ad9d37c07cd1ce7d0d66294524213a67a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GVNPass::addDeadBlock</definition>
+        <argsstring>(BasicBlock *BB)</argsstring>
+        <name>addDeadBlock</name>
+        <qualifiedname>llvm::GVNPass::addDeadBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>BB is declared dead, which implied other blocks become dead as well. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is to add all these blocks to &quot;DeadBlocks&quot;. For the dead blocks&apos; live successors, update their phi nodes by replacing the operands corresponding to dead blocks with UndefVal. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="389" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="3181" bodyend="3254"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1ac98a1d35be5317a325419bce193b7a8b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GVNPass::assignValNumForDeadCode</definition>
+        <argsstring>()</argsstring>
+        <name>assignValNumForDeadCode</name>
+        <qualifiedname>llvm::GVNPass::assignValNumForDeadCode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="390" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="3297" bodyend="3304"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_v_n_pass_1a8802138a750fc42622dcdc18e3a6c697" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GVNPass::assignBlockRPONumber</definition>
+        <argsstring>(Function &amp;F)</argsstring>
+        <name>assignBlockRPONumber</name>
+        <qualifiedname>llvm::GVNPass::assignBlockRPONumber</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Scalar/GVN.h" line="391" column="8" bodyfile="lib/Transforms/Scalar/GVN.cpp" bodystart="2394" bodyend="2401"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The core GVN pass object. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>FIXME: We should have a good summary of the GVN algorithm implemented by this particular pass here. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::GVNPass</label>
+        <link refid="classllvm_1_1_g_v_n_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::PassInfoMixin&lt; DerivedT &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+      </node>
+      <node id="2">
+        <label>llvm::PassInfoMixin&lt; GVNPass &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; GVNPass &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::GVNPass</label>
+        <link refid="classllvm_1_1_g_v_n_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::PassInfoMixin&lt; DerivedT &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+      </node>
+      <node id="2">
+        <label>llvm::PassInfoMixin&lt; GVNPass &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; GVNPass &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Transforms/Scalar/GVN.h" line="124" column="1" bodyfile="include/llvm/Transforms/Scalar/GVN.h" bodystart="124" bodyend="392"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_g_v_n_pass_1a59611f7431a9eb927d926eb8159c0304" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>AC</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1ad9d37c07cd1ce7d0d66294524213a67a" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>addDeadBlock</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1ab449cc343665eeb9c96de359159002a9" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>AnalyzeLoadAvailability</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a36768091a495c346736e5357279c1fbb" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>AnalyzeLoadAvailability</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a8802138a750fc42622dcdc18e3a6c697" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>assignBlockRPONumber</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1ac98a1d35be5317a325419bce193b7a8b" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>assignValNumForDeadCode</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a3f60d95a30f6b03ac0444e402430ba86" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>AvailValInBlkVect</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a79c365aa18fca1a6533c0660186cd924" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>BlockRPONumber</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a3df96476b5a72c0bf919cf678b68e8da" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>cleanupGlobalSets</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1ade3873d950dffe8120470545656ff8e8" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>DeadBlocks</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a8f1b6c33b018570dddad6adfde31870a" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>DenseMapInfo&lt; Expression &gt;</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a84d4b8769beeb7c6fa4f6cb6d5096072" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>DT</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a4d90fab8b539080c87c13ee5a2a35f3f" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1ae6b697d2d71d8acdcae306ad8c5a3a4f" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>eliminatePartiallyRedundantLoad</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a999d7a6981d35fd4d415649745867980" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>findLeader</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a554ab06dfc88e09773e4edf1ae6b9757" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>findLoadToHoistIntoPred</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a465c9577ba88345e23a496d47e185e2b" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>getAliasAnalysis</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a82ed0f5454537781dd2949146821f7a1" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>getDominatorTree</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1aeb3aabd952dd6fc744032b003a67ec5d" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>getMemDep</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a1bd68f76e3641c20dfa1dec36e41cf61" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>gvn::GVNLegacyPass</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a62b9ab672829302405b735225d5e20b6" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>GVNPass</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a31dfde3ecc7d57315577784362eaf68c" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>ICF</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a36703c1bcffea599057b99920e6fc3f6" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>InstrsToErase</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a691dc30a9468424c1e3d926ab0abfd3c" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>InvalidBlockRPONumbers</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a9449bef29f49a1b4be0ba63609317a34" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>isLoadInLoopPREEnabled</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a5046bdddf55a6ad3fd2ad7640b4f8d0c" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>isLoadPREEnabled</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1aac8394f15fa6e03d02344993ef4a15df" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>isLoadPRESplitBackedgeEnabled</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1adf1278a3accfd7d0207e37273e4229d2" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>isMemDepEnabled</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a75b7cd0e780b19141e601e75a706fb5c" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>isMemorySSAEnabled</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a1cc0652ed25618b41f317c0bae461e16" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>isPREEnabled</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a034bd384b4685148a356acb369148a51" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>iterateOnFunction</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1ac9998ed2d8f7a097fd16abb2fc453254" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>LeaderTable</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a89e347a318825b56dd54bd6ddab7517b" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>LI</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a063f1fae9025ed4f9d7186c26d8ed532" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>LoadDepVect</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1abefca2348c563ac9ceaab87ff2f2152f" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>markInstructionForDeletion</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a6b51549c2f13824b682f99bdf1cc2b30" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>MD</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a8825e7a8754152284c6b8357b1dfd230" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>MSSAU</name></member>
+      <member refid="structllvm_1_1_pass_info_mixin_1a630e2eac0694bcbcfed653c6a7f616e3" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>name</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a4872dd95e1b2e12a67b93f2d1f3f8e8d" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>Options</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a45487bff9c9c5b57b59276fa645f8a59" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>ORE</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a1273ce1e1a4d4da230f67d20c070f8d3" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>PerformLoadPRE</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a08f3629df4a98210b6695a2a871c3840" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>performLoopLoadPRE</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1aa3ca257196732c65fdb55de2347d1fb0" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>performPRE</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1ac72ed47b852b5ec16b4c619209d3229c" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>performScalarPRE</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1ae3faf4456489aa4307899493442a9263" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>performScalarPREInsertion</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a6796eb8a0e27f209321cbeff6a6faee8" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>printPipeline</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a2a2d0007c1e09679867cebfff73029ce" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>processAssumeIntrinsic</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1aab26e913f0b539a84fd05f0d8243ef89" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>processBlock</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1aed917f4a3c4e968a2eb05a56281c594c" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>processFoldableCondBr</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a409c568a0cf6d1eadc338748c0f876ac" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>processInstruction</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a774d11f023c46f5ef42b95684cc538a5" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>processLoad</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1af6fe145bf27fa72c40dacb2354a2639a" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>processNonLocalLoad</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a287167c47f398d7ddc96aa28c9b31a18" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>propagateEquality</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a39e25b780908a0ad31bf6a6c467b2ff8" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>removeInstruction</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a8caf8e3f67e0a9bfb78e50f12ad5a55a" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>replaceOperandsForInBlockEquality</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1ab5fdd7023ac99bf2e1e6d6a27c7f523a" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>ReplaceOperandsWithMap</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a25dcf17194b012b2b35388798cac2da7" prot="public" virt="non-virtual"><scope>llvm::GVNPass</scope><name>run</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a570ea6443fd6d50edbc44b69ee2e1bea" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>runImpl</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a2c05580ee80ec2e52f8031fb648c0eaf" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>splitCriticalEdges</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a1d3103d094e02c45bd85d9c490e5122b" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>splitCriticalEdges</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a4f4615b38281e1dc8e0bb7dee2d21075" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>TLI</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a898fe350cb5c5bc4aef93e35e9017d33" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>toSplit</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a9e3305b0655234e9925523630033bfe0" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>UnavailBlkVect</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1ae478cd0afce5f665b903e666c72026de" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>verifyRemoved</name></member>
+      <member refid="classllvm_1_1_g_v_n_pass_1a8dbeb2bb2219628221836b087a7717fc" prot="private" virt="non-virtual"><scope>llvm::GVNPass</scope><name>VN</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

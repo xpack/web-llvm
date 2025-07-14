@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_code_gen_data_8inc" kind="file" language="PHP">
+    <compoundname>CodeGenData.inc</compoundname>
+    <includedby refid="_code_gen_data_8h" local="yes">include/llvm/CGData/CodeGenData.h</includedby>
+    <includedby refid="_code_gen_data_8cpp" local="yes">lib/CGData/CodeGenData.cpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/llvm/CGData/CodeGenData.h</label>
+        <link refid="_code_gen_data_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/llvm/CGData/CodeGenData.inc</label>
+        <link refid="_code_gen_data_8inc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/llvm/CGData/CodeGenDataReader.h</label>
+        <link refid="_code_gen_data_reader_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>include/llvm/CGData/CodeGenDataWriter.h</label>
+        <link refid="_code_gen_data_writer_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>lib/CGData/CodeGenData.cpp</label>
+        <link refid="_code_gen_data_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/CGData/CodeGenDataReader.cpp</label>
+        <link refid="_code_gen_data_reader_8cpp"/>
+      </node>
+      <node id="8">
+        <label>lib/CGData/CodeGenDataWriter.cpp</label>
+        <link refid="_code_gen_data_writer_8cpp"/>
+      </node>
+      <node id="9">
+        <label>lib/CodeGen/GlobalMergeFunctions.cpp</label>
+        <link refid="_global_merge_functions_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/CodeGen/MachineOutliner.cpp</label>
+        <link refid="_machine_outliner_8cpp"/>
+      </node>
+      <node id="10">
+        <label>lib/LTO/LTO.cpp</label>
+        <link refid="_l_t_o_8cpp"/>
+      </node>
+      <node id="11">
+        <label>lib/LTO/LTOBackend.cpp</label>
+        <link refid="_l_t_o_backend_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*===--<sp/>CodeGenData.inc<sp/>----------------------------------------*-<sp/>C++<sp/>-*-===<sp/>*\</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">|*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">|*<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">|*<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">|*<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">|*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">\*===----------------------------------------------------------------------===*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>is<sp/>the<sp/>main<sp/>file<sp/>that<sp/>defines<sp/>all<sp/>the<sp/>data<sp/>structure,<sp/>signature,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>constant<sp/>literals<sp/>that<sp/>are<sp/>shared<sp/>across<sp/>compiler,<sp/>host<sp/>tools<sp/>(reader/writer)</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>to<sp/>support<sp/>codegen<sp/>data.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">\*===----------------------------------------------------------------------===*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Helper<sp/>macros.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_SIMPLE_QUOTE(x)<sp/>#x</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_QUOTE(x)<sp/>CG_DATA_SIMPLE_QUOTE(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>CG_DATA_SECT_ENTRY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_DEFINED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="_code_gen_data_8h_1a63b97a1d3b66aae039e7fa8516f5dcf8" kindref="member">CG_DATA_SECT_ENTRY</ref>(CG_outline,<sp/><ref refid="_code_gen_data_8h_1a9e44402ece363a1354b3452084e62c30" kindref="member">CG_DATA_QUOTE</ref>(<ref refid="_code_gen_data_8h_1a895a7cd01d120f313080055b9ba67e09" kindref="member">CG_DATA_OUTLINE_COMMON</ref>),</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_code_gen_data_8h_1a55dc8171a7674baeadcb3a4736cdbbae" kindref="member">CG_DATA_OUTLINE_COFF</ref>,<sp/></highlight><highlight class="stringliteral">&quot;__DATA,&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="_code_gen_data_8h_1a63b97a1d3b66aae039e7fa8516f5dcf8" kindref="member">CG_DATA_SECT_ENTRY</ref>(CG_merge,<sp/><ref refid="_code_gen_data_8h_1a9e44402ece363a1354b3452084e62c30" kindref="member">CG_DATA_QUOTE</ref>(<ref refid="_code_gen_data_8h_1a9194077710db2d0b68bc9f1ec299c7fb" kindref="member">CG_DATA_MERGE_COMMON</ref>),</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_code_gen_data_8h_1add273b3d8474ec87c05db2cea27be460" kindref="member">CG_DATA_MERGE_COFF</ref>,<sp/></highlight><highlight class="stringliteral">&quot;__DATA,&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>CG_DATA_SECT_ENTRY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>section<sp/>name<sp/>strings<sp/>common<sp/>to<sp/>all<sp/>targets<sp/>other</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/>than<sp/>WIN32<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_OUTLINE_COMMON<sp/>__llvm_outline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_MERGE_COMMON<sp/>__llvm_merge</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Since<sp/>cg<sp/>data<sp/>sections<sp/>are<sp/>not<sp/>allocated,<sp/>we<sp/>don&apos;t<sp/>need<sp/>to</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>access<sp/>them<sp/>at<sp/>runtime.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_OUTLINE_COFF<sp/>&quot;.loutline&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_MERGE_COFF<sp/>&quot;.lmerge&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Runtime<sp/>section<sp/>names<sp/>and<sp/>name<sp/>strings.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_OUTLINE_SECT_NAME<sp/>CG_DATA_OUTLINE_COFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_MERGE_SECT_NAME<sp/>CG_DATA_MERGE_COFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Runtime<sp/>section<sp/>names<sp/>and<sp/>name<sp/>strings.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_OUTLINE_SECT_NAME<sp/>CG_DATA_QUOTE(CG_DATA_OUTLINE_COMMON)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_MERGE_SECT_NAME<sp/>CG_DATA_QUOTE(CG_DATA_MERGE_COMMON)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Indexed<sp/>codegen<sp/>data<sp/>format<sp/>version<sp/>(start<sp/>from<sp/>1).<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CG_DATA_INDEX_VERSION<sp/>2</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/CGData/CodeGenData.inc"/>
+  </compounddef>
+</doxygen>

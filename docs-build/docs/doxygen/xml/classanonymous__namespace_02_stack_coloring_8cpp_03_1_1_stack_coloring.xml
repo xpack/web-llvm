@@ -1,0 +1,584 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{StackColoring.cpp}::StackColoring</compoundname>
+    <innerclass refid="structanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1_1_block_lifetime_info" prot="private">anonymous_namespace{StackColoring.cpp}::StackColoring::BlockLifetimeInfo</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1aeba0a81e646e7bfcb6cf6f2d9cb764d7" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, BlockLifetimeInfo &gt;</type>
+        <definition>using anonymous_namespace{StackColoring.cpp}::StackColoring::LivenessMap =  DenseMap&lt;const MachineBasicBlock *, BlockLifetimeInfo&gt;</definition>
+        <argsstring></argsstring>
+        <name>LivenessMap</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::LivenessMap</qualifiedname>
+        <briefdescription>
+<para>Maps active slots (per bit) for each basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="402" column="3" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="402" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a4f4c6a26dd0fc3d4fed356823f8453a3" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, <ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> &gt;</type>
+        <definition>using anonymous_namespace{StackColoring.cpp}::StackColoring::BlockBitVecMap =  DenseMap&lt;const MachineBasicBlock *, BitVector&gt;</definition>
+        <argsstring></argsstring>
+        <name>BlockBitVecMap</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::BlockBitVecMap</qualifiedname>
+        <briefdescription>
+<para>Used in collectMarkers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="445" column="3" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="445" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a9f067fa92eae557d887a259cd4473056" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_frame_info" kindref="compound">MachineFrameInfo</ref> *</type>
+        <definition>MachineFrameInfo* anonymous_namespace{StackColoring.cpp}::StackColoring::MFI</definition>
+        <argsstring></argsstring>
+        <name>MFI</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::MFI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="381" column="20" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a1969b3be516af7d49d65dc4e01088b77" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>MachineFunction* anonymous_namespace{StackColoring.cpp}::StackColoring::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::MF</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="382" column="19" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="382" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a1d18763758b9e02a8b90b6544e74b10e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">LivenessMap</ref></type>
+        <definition>LivenessMap anonymous_namespace{StackColoring.cpp}::StackColoring::BlockLiveness</definition>
+        <argsstring></argsstring>
+        <name>BlockLiveness</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::BlockLiveness</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="403" column="15" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="403" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a28a6e4a4de17b7dc7bf12592659de5eb" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, int &gt;</type>
+        <definition>DenseMap&lt;const MachineBasicBlock *, int&gt; anonymous_namespace{StackColoring.cpp}::StackColoring::BasicBlocks</definition>
+        <argsstring></argsstring>
+        <name>BasicBlocks</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::BasicBlocks</qualifiedname>
+        <briefdescription>
+<para>Maps serial numbers to basic blocks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="406" column="12" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="406" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1aefe3b60f85c7b2bad89636fc410811f5" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, 8 &gt;</type>
+        <definition>SmallVector&lt;const MachineBasicBlock *, 8&gt; anonymous_namespace{StackColoring.cpp}::StackColoring::BasicBlockNumbering</definition>
+        <argsstring></argsstring>
+        <name>BasicBlockNumbering</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::BasicBlockNumbering</qualifiedname>
+        <briefdescription>
+<para>Maps basic blocks to a serial number. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="409" column="15" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="409" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1acbf06c25cbd660c617dafab6b6d65a22" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &gt;, 16 &gt;</type>
+        <definition>SmallVector&lt;std::unique_ptr&lt;LiveInterval&gt;, 16&gt; anonymous_namespace{StackColoring.cpp}::StackColoring::Intervals</definition>
+        <argsstring></argsstring>
+        <name>Intervals</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::Intervals</qualifiedname>
+        <briefdescription>
+<para>Maps slots to their use interval. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Outside of this interval, slots values are either dead or <computeroutput>undef</computeroutput> and they will not be written to. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="413" column="15" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="413" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a0dcc57a834d7e84d9a1c0f2a1f779e9d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref>, 4 &gt;, 16 &gt;</type>
+        <definition>SmallVector&lt;SmallVector&lt;SlotIndex, 4&gt;, 16&gt; anonymous_namespace{StackColoring.cpp}::StackColoring::LiveStarts</definition>
+        <argsstring></argsstring>
+        <name>LiveStarts</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::LiveStarts</qualifiedname>
+        <briefdescription>
+<para>Maps slots to the points where they can become in-use. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="416" column="15" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="416" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1ab5ccff269dcd58edec1b11c4d7ed5749" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_v_n_info_1aa750a7f159760b9c378d930deb6a9837" kindref="member">VNInfo::Allocator</ref></type>
+        <definition>VNInfo::Allocator anonymous_namespace{StackColoring.cpp}::StackColoring::VNInfoAllocator</definition>
+        <argsstring></argsstring>
+        <name>VNInfoAllocator</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::VNInfoAllocator</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_v_n_info" kindref="compound">VNInfo</ref> is used for the construction of <ref refid="classllvm_1_1_live_intervals" kindref="compound">LiveIntervals</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="419" column="21" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="419" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a603d228e4b43c1dc04d4497e04194b78" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_slot_indexes" kindref="compound">SlotIndexes</ref> *</type>
+        <definition>SlotIndexes* anonymous_namespace{StackColoring.cpp}::StackColoring::Indexes</definition>
+        <argsstring></argsstring>
+        <name>Indexes</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::Indexes</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_slot_index" kindref="compound">SlotIndex</ref> analysis object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="422" column="15" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="422" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a1c87d375f0618157ddc718da2963624a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, 8 &gt;</type>
+        <definition>SmallVector&lt;MachineInstr*, 8&gt; anonymous_namespace{StackColoring.cpp}::StackColoring::Markers</definition>
+        <argsstring></argsstring>
+        <name>Markers</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::Markers</qualifiedname>
+        <briefdescription>
+<para>The list of lifetime markers found. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These markers are to be removed once the coloring is done. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="426" column="15" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="426" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a01a726bfc4c3b3759f51b091d8ef900f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref></type>
+        <definition>BitVector anonymous_namespace{StackColoring.cpp}::StackColoring::InterestingSlots</definition>
+        <argsstring></argsstring>
+        <name>InterestingSlots</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::InterestingSlots</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> the FI slots for which we have seen some sort of lifetime marker (either start or end). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="430" column="13" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a956dc290dead4febb97579c22c7a1809" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref></type>
+        <definition>BitVector anonymous_namespace{StackColoring.cpp}::StackColoring::ConservativeSlots</definition>
+        <argsstring></argsstring>
+        <name>ConservativeSlots</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::ConservativeSlots</qualifiedname>
+        <briefdescription>
+<para>FI slots that need to be handled conservatively (for these slots lifetime-start-on-first-use is disabled). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="434" column="13" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="434" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a3c9ca929b48b028ea79a547cf8ff98f7" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{StackColoring.cpp}::StackColoring::NumIterations</definition>
+        <argsstring></argsstring>
+        <name>NumIterations</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::NumIterations</qualifiedname>
+        <briefdescription>
+<para>Number of iterations taken during data flow analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="437" column="12" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="437" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1af7c4d85591a3578b1b420dbde4c42580" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{StackColoring.cpp}::StackColoring::StackColoring</definition>
+        <argsstring>(SlotIndexes *Indexes)</argsstring>
+        <name>StackColoring</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::StackColoring</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_slot_indexes" kindref="compound">SlotIndexes</ref> *</type>
+          <declname>Indexes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="440" column="3" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="440" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a97d6b0d6fae6fc47e5e354e6c3382938" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool StackColoring::run</definition>
+        <argsstring>(MachineFunction &amp;Func)</argsstring>
+        <name>run</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::run</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>Func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="441" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="1203" bodyend="1372"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2373">Changed</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_stack_coloring_8cpp_1a53f7abea6827cac44c5cc170ed1b2429">DisableColoring</references>
+        <references refid="namespacellvm_1a03503773241005f01b090b9862aad304" compoundref="_sparse_bit_vector_8h" startline="877" endline="889">llvm::dump</references>
+        <references refid="classllvm_1_1_dense_map_base_1a49c487a9395a6c384be8544cfb2cfccf" compoundref="_dense_map_8h" startline="98" endline="98">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::empty</references>
+        <references refid="classllvm_1_1_live_range_1a66ff664a97cd3c30de7e873335a0c075" compoundref="_live_interval_8h" startline="382" endline="382">llvm::LiveRange::empty</references>
+        <references refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04" compoundref="_mod_ref_8h" startline="68">llvm::First</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_live_range_1a4e12c0cb71a44b8822c5a35cbbe5c731" compoundref="_live_interval_8cpp" startline="803" endline="835">llvm::LiveRange::isLiveAtIndexes</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_stack_coloring_8cpp_1a64335ebd86014e6660bc751627663b31">ProtectFromEscapedAllocas</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a499ea32ca1b8d16cedfe01d1e5b08f29" compoundref="_small_vector_8h" startline="663" endline="666">llvm::SmallVectorImpl&lt; T &gt;::reserve</references>
+        <references refid="namespacellvm_1a74cdbd1e4f731e7d7cd83461b8b1de0b" compoundref="_s_t_l_extras_8h" startline="1664" endline="1675">llvm::sort</references>
+        <references refid="namespacellvm_1a076f93c387f454f0db13d4bc7d4e7f9c" compoundref="_s_t_l_extras_8h" startline="2037" endline="2039">llvm::stable_sort</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a1b02a9db581601dda7f4faad4e933e39" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void StackColoring::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::dump</qualifiedname>
+        <briefdescription>
+<para>Debug. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="448" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="554" bodyend="560"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a2ded4a94ddbb27252f02217befa76eb0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void StackColoring::dumpIntervals</definition>
+        <argsstring>() const</argsstring>
+        <name>dumpIntervals</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::dumpIntervals</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="449" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="562" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a6250e9734eb86b21892a686ab4fb25b8" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void StackColoring::dumpBB</definition>
+        <argsstring>(MachineBasicBlock *MBB) const</argsstring>
+        <name>dumpBB</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::dumpBB</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="450" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="543" bodyend="552"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a9fbf3b1bbd4f8d43645cdb31c5df4567" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void StackColoring::dumpBV</definition>
+        <argsstring>(const char *tag, const BitVector &amp;BV) const</argsstring>
+        <name>dumpBV</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::dumpBV</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> &amp;</type>
+          <declname>BV</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="451" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="535" bodyend="541"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1ac69d963ba237190c8208f310c1cb0e45" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool StackColoring::removeAllMarkers</definition>
+        <argsstring>()</argsstring>
+        <name>removeAllMarkers</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::removeAllMarkers</qualifiedname>
+        <briefdescription>
+<para>Removes all of the lifetime marker instructions from the function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if any markers were removed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="455" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="895" bodyend="905"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a39e133b79aeab3ac6dace3fb804ceddf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned StackColoring::collectMarkers</definition>
+        <argsstring>(unsigned NumSlot)</argsstring>
+        <name>collectMarkers</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::collectMarkers</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumSlot</declname>
+        </param>
+        <briefdescription>
+<para>Scan the machine function and find all of the lifetime markers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> the findings in the BEGIN and END vectors. <simplesect kind="return"><para>the number of markers found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="460" column="12" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="628" bodyend="776"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a8d4ea186aaa9b69e5344c93b732677ec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StackColoring::calculateLocalLiveness</definition>
+        <argsstring>()</argsstring>
+        <name>calculateLocalLiveness</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::calculateLocalLiveness</qualifiedname>
+        <briefdescription>
+<para>Perform the dataflow calculation and calculate the lifetime for each of the slots, based on the BEGIN/END vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the LifetimeLIVE_IN and LifetimeLIVE_OUT maps that represent which stack slots are live coming in and out blocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="466" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="778" bodyend="832"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a02d0909e976dfc868d13ec513b189a17" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{StackColoring.cpp}::StackColoring::applyFirstUse</definition>
+        <argsstring>(int Slot)</argsstring>
+        <name>applyFirstUse</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::applyFirstUse</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>Slot</declname>
+        </param>
+        <briefdescription>
+<para>Returns TRUE if we&apos;re using the first-use-begins-lifetime method for this slot (if FALSE, then the start marker is treated as start of lifetime). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="470" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="470" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a2bbb75088b66780d62e1bfb73fd26537" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool StackColoring::isLifetimeStartOrEnd</definition>
+        <argsstring>(const MachineInstr &amp;MI, SmallVector&lt; int, 4 &gt; &amp;slots, bool &amp;isStart)</argsstring>
+        <name>isLifetimeStartOrEnd</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::isLifetimeStartOrEnd</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; int, 4 &gt; &amp;</type>
+          <declname>slots</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>isStart</declname>
+        </param>
+        <briefdescription>
+<para>Examines the specified instruction and returns TRUE if the instruction represents the start or end of an interesting lifetime. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The slot or slots starting or ending are added to the vector &quot;slots&quot; and &quot;isStart&quot; is set accordingly. <simplesect kind="return"><para>True if inst contains a lifetime start or end </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="483" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="586" bodyend="626"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a1dd47c7be3573a6ac61078f1b5543558" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StackColoring::calculateLiveIntervals</definition>
+        <argsstring>(unsigned NumSlots)</argsstring>
+        <name>calculateLiveIntervals</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::calculateLiveIntervals</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumSlots</declname>
+        </param>
+        <briefdescription>
+<para>Construct the <ref refid="classllvm_1_1_live_intervals" kindref="compound">LiveIntervals</ref> for the slots. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="488" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="834" bodyend="893"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a525b83fcc144faf424b7a13fa25c8bdd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StackColoring::remapInstructions</definition>
+        <argsstring>(DenseMap&lt; int, int &gt; &amp;SlotRemap)</argsstring>
+        <name>remapInstructions</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::remapInstructions</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; int, int &gt; &amp;</type>
+          <declname>SlotRemap</declname>
+        </param>
+        <briefdescription>
+<para>Go over the machine function and change instructions which use stack slots to use the joint slots. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="492" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="907" bodyend="1127"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1afe94386f11658e8b96e3f7a810e90401" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StackColoring::removeInvalidSlotRanges</definition>
+        <argsstring>()</argsstring>
+        <name>removeInvalidSlotRanges</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::removeInvalidSlotRanges</qualifiedname>
+        <briefdescription>
+<para>The input program may contain instructions which are not inside lifetime markers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can happen due to a bug in the compiler or due to a bug in user code (for example, returning a reference to a local variable). This procedure checks all of the instructions in the function and invalidates lifetime ranges which do not contain all of the instructions which access that frame slot. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="500" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="1129" bodyend="1169"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a17b088823e2eda3b62fa805530a05c3d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StackColoring::expungeSlotMap</definition>
+        <argsstring>(DenseMap&lt; int, int &gt; &amp;SlotRemap, unsigned NumSlots)</argsstring>
+        <name>expungeSlotMap</name>
+        <qualifiedname>anonymous_namespace{StackColoring.cpp}::StackColoring::expungeSlotMap</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; int, int &gt; &amp;</type>
+          <declname>SlotRemap</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumSlots</declname>
+        </param>
+        <briefdescription>
+<para>Map entries which point to other entries to their destination. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A-&gt;B-&gt;C becomes A-&gt;C. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/StackColoring.cpp" line="504" column="8" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="1171" bodyend="1185"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring" kindref="compound">StackColoring</ref> - A machine pass for merging disjoint stack allocations, marked by the LIFETIME_START and LIFETIME_END pseudo instructions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/StackColoring.cpp" line="380" column="1" bodyfile="lib/CodeGen/StackColoring.cpp" bodystart="380" bodyend="505"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a02d0909e976dfc868d13ec513b189a17" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>applyFirstUse</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1aefe3b60f85c7b2bad89636fc410811f5" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>BasicBlockNumbering</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a28a6e4a4de17b7dc7bf12592659de5eb" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>BasicBlocks</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a4f4c6a26dd0fc3d4fed356823f8453a3" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>BlockBitVecMap</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a1d18763758b9e02a8b90b6544e74b10e" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>BlockLiveness</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a1dd47c7be3573a6ac61078f1b5543558" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>calculateLiveIntervals</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a8d4ea186aaa9b69e5344c93b732677ec" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>calculateLocalLiveness</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a39e133b79aeab3ac6dace3fb804ceddf" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>collectMarkers</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a956dc290dead4febb97579c22c7a1809" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>ConservativeSlots</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a1b02a9db581601dda7f4faad4e933e39" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>dump</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a6250e9734eb86b21892a686ab4fb25b8" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>dumpBB</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a9fbf3b1bbd4f8d43645cdb31c5df4567" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>dumpBV</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a2ded4a94ddbb27252f02217befa76eb0" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>dumpIntervals</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a17b088823e2eda3b62fa805530a05c3d" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>expungeSlotMap</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a603d228e4b43c1dc04d4497e04194b78" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>Indexes</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a01a726bfc4c3b3759f51b091d8ef900f" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>InterestingSlots</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1acbf06c25cbd660c617dafab6b6d65a22" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>Intervals</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a2bbb75088b66780d62e1bfb73fd26537" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>isLifetimeStartOrEnd</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1aeba0a81e646e7bfcb6cf6f2d9cb764d7" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>LivenessMap</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a0dcc57a834d7e84d9a1c0f2a1f779e9d" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>LiveStarts</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a1c87d375f0618157ddc718da2963624a" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>Markers</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a1969b3be516af7d49d65dc4e01088b77" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>MF</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a9f067fa92eae557d887a259cd4473056" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>MFI</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a3c9ca929b48b028ea79a547cf8ff98f7" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>NumIterations</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a525b83fcc144faf424b7a13fa25c8bdd" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>remapInstructions</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1ac69d963ba237190c8208f310c1cb0e45" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>removeAllMarkers</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1afe94386f11658e8b96e3f7a810e90401" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>removeInvalidSlotRanges</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1a97d6b0d6fae6fc47e5e354e6c3382938" prot="public" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>run</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1af7c4d85591a3578b1b420dbde4c42580" prot="public" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>StackColoring</name></member>
+      <member refid="classanonymous__namespace_02_stack_coloring_8cpp_03_1_1_stack_coloring_1ab5ccff269dcd58edec1b11c4d7ed5749" prot="private" virt="non-virtual"><scope>anonymous_namespace{StackColoring.cpp}::StackColoring</scope><name>VNInfoAllocator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

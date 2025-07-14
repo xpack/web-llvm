@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_lazy_atomic_pointer_8h" kind="file" language="C++">
+    <compoundname>LazyAtomicPointer.h</compoundname>
+    <includes refid="_s_t_l_functional_extras_8h" local="yes">llvm/ADT/STLFunctionalExtras.h</includes>
+    <includes refid="_compiler_8h" local="yes">llvm/Support/Compiler.h</includes>
+    <includes local="no">assert.h</includes>
+    <includes local="no">atomic</includes>
+    <includedby refid="_trie_raw_hash_map_8cpp" local="yes">lib/Support/TrieRawHashMap.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/ADT/LazyAtomicPointer.h</label>
+        <link refid="_lazy_atomic_pointer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>assert.h</label>
+      </node>
+      <node id="12">
+        <label>atomic</label>
+      </node>
+      <node id="9">
+        <label>cstdint</label>
+      </node>
+      <node id="7">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="4">
+        <label>optional</label>
+      </node>
+      <node id="8">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>type_traits</label>
+      </node>
+      <node id="10">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/ADT/LazyAtomicPointer.h</label>
+        <link refid="_lazy_atomic_pointer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Support/TrieRawHashMap.cpp</label>
+        <link refid="_trie_raw_hash_map_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1_lazy_atomic_pointer" prot="public">llvm::LazyAtomicPointer</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>LazyAtomicPointer.----------------------------------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_ADT_LAZYATOMICPOINTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_ADT_LAZYATOMICPOINTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_t_l_functional_extras_8h" kindref="compound">llvm/ADT/STLFunctionalExtras.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_compiler_8h" kindref="compound">llvm/Support/Compiler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">///<sp/>Atomic<sp/>pointer<sp/>that&apos;s<sp/>lock-free,<sp/>but<sp/>that<sp/>can<sp/>coordinate<sp/>concurrent<sp/>writes</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">///<sp/>from<sp/>a<sp/>lazy<sp/>generator.<sp/>Should<sp/>be<sp/>reserved<sp/>for<sp/>cases<sp/>where<sp/>concurrent<sp/>uses<sp/>of</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">///<sp/>a<sp/>generator<sp/>for<sp/>the<sp/>same<sp/>storage<sp/>is<sp/>unlikely.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">///<sp/>The<sp/>laziness<sp/>comes<sp/>in<sp/>with<sp/>\a<sp/>loadOrGenerate(),<sp/>which<sp/>lazily<sp/>calls<sp/>the</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">///<sp/>provided<sp/>generator<sp/>ONLY<sp/>when<sp/>the<sp/>value<sp/>is<sp/>currently<sp/>\c<sp/>nullptr.<sp/>With</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">///<sp/>concurrent<sp/>calls,<sp/>only<sp/>one<sp/>generator<sp/>is<sp/>called<sp/>and<sp/>the<sp/>rest<sp/>see<sp/>that<sp/>value.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">///<sp/>Most<sp/>other<sp/>APIs<sp/>treat<sp/>an<sp/>in-flight<sp/>\a<sp/>loadOrGenerate()<sp/>as<sp/>if<sp/>\c<sp/>nullptr</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">///<sp/>were<sp/>stored.<sp/>APIs<sp/>that<sp/>are<sp/>required<sp/>to<sp/>write<sp/>a<sp/>value<sp/>will<sp/>spin.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">///<sp/>The<sp/>underlying<sp/>storage<sp/>is<sp/>\a<sp/>std::atomic&lt;uintptr_t&gt;.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">///<sp/>TODO:<sp/>In<sp/>C++20,<sp/>use<sp/>std::atomic&lt;T&gt;::wait()<sp/>instead<sp/>of<sp/>spinning<sp/>and<sp/>call</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">///<sp/>std::atomic&lt;T&gt;::notify_all()<sp/>in<sp/>\a<sp/>loadOrGenerate().</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classllvm_1_1_lazy_atomic_pointer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_lazy_atomic_pointer_1aa697fdaf1fb346ba87e659b5502d95ed" kindref="member">LazyAtomicPointer</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uintptr_t<sp/>getNull()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uintptr_t<sp/>getBusy()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>UINTPTR_MAX;<sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*makePointer(uintptr_t<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>!=<sp/>getBusy());</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>?<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref>)<sp/>:<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uintptr_t<sp/>makeRaw(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*<ref refid="classllvm_1_1_value" kindref="compound">Value</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>uintptr_t<sp/>Raw<sp/>=<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>?<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">uintptr_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref>)<sp/>:<sp/>getNull();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Raw<sp/>!=<sp/>getBusy());</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Raw;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/>///<sp/>Store<sp/>a<sp/>value.<sp/>Waits<sp/>for<sp/>concurrent<sp/>\a<sp/>loadOrGenerate()<sp/>calls.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classllvm_1_1_lazy_atomic_pointer_1a06b2044c993588d4b7a03932c695f40d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1a06b2044c993588d4b7a03932c695f40d" kindref="member">store</ref>(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*<ref refid="classllvm_1_1_value" kindref="compound">Value</ref>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<ref refid="classllvm_1_1_lazy_atomic_pointer_1abbb2a344166a0994a7e737e409b076d1" kindref="member">exchange</ref>(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/>///<sp/>Set<sp/>a<sp/>value.<sp/>Return<sp/>the<sp/>old<sp/>value.<sp/>Waits<sp/>for<sp/>concurrent<sp/>\a</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/>///<sp/>loadOrGenerate()<sp/>calls.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classllvm_1_1_lazy_atomic_pointer_1abbb2a344166a0994a7e737e409b076d1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*<ref refid="classllvm_1_1_lazy_atomic_pointer_1abbb2a344166a0994a7e737e409b076d1" kindref="member">exchange</ref>(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*<ref refid="classllvm_1_1_value" kindref="compound">Value</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note:<sp/>the<sp/>call<sp/>to<sp/>compare_exchange_weak()<sp/>fails<sp/>&quot;spuriously&quot;<sp/>if<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>current<sp/>value<sp/>is<sp/>\a<sp/>getBusy(),<sp/>causing<sp/>the<sp/>loop<sp/>to<sp/>spin.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*Old<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!<ref refid="classllvm_1_1_lazy_atomic_pointer_1aa16e4fb83461cff80958d3d154f7a096" kindref="member">compare_exchange_weak</ref>(Old,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Old;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/>///<sp/>Compare-exchange.<sp/>Returns<sp/>\c<sp/>false<sp/>if<sp/>there<sp/>is<sp/>a<sp/>concurrent<sp/>\a</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/>///<sp/>loadOrGenerate()<sp/>call,<sp/>setting<sp/>\p<sp/>ExistingValue<sp/>to<sp/>\c<sp/>nullptr.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classllvm_1_1_lazy_atomic_pointer_1aa16e4fb83461cff80958d3d154f7a096" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1aa16e4fb83461cff80958d3d154f7a096" kindref="member">compare_exchange_weak</ref>(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*&amp;ExistingValue,<sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*NewValue)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>uintptr_t<sp/>RawExistingValue<sp/>=<sp/>makeRaw(ExistingValue);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Storage.compare_exchange_weak(RawExistingValue,<sp/>makeRaw(NewValue)))</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/>///<sp/>Report<sp/>the<sp/>existing<sp/>value<sp/>as<sp/>&quot;None&quot;<sp/>if<sp/>busy.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(RawExistingValue<sp/>==<sp/>getBusy())</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ExistingValue<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ExistingValue<sp/>=<sp/>makePointer(RawExistingValue);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/>///<sp/>Compare-exchange.<sp/>Keeps<sp/>trying<sp/>if<sp/>there<sp/>is<sp/>a<sp/>concurrent</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/>///<sp/>\a<sp/>loadOrGenerate()<sp/>call.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classllvm_1_1_lazy_atomic_pointer_1a1ef184ef819b5890fc765374952031c0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1a1ef184ef819b5890fc765374952031c0" kindref="member">compare_exchange_strong</ref>(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*&amp;ExistingValue,<sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*NewValue)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>uintptr_t<sp/>RawExistingValue<sp/>=<sp/>makeRaw(ExistingValue);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uintptr_t<sp/>OriginalRawExistingValue<sp/>=<sp/>RawExistingValue;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Storage.compare_exchange_strong(RawExistingValue,<sp/>makeRaw(NewValue)))</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/>///<sp/>Keep<sp/>trying<sp/>as<sp/>long<sp/>as<sp/>it&apos;s<sp/>busy.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_compiler_8h_1a104cae72182bec0ab951e3faea6ce509" kindref="member">LLVM_UNLIKELY</ref>(RawExistingValue<sp/>==<sp/>getBusy()))<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(RawExistingValue<sp/>==<sp/>getBusy())<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RawExistingValue<sp/>=<sp/>OriginalRawExistingValue;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Storage.compare_exchange_weak(RawExistingValue,<sp/>makeRaw(NewValue)))</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>ExistingValue<sp/>=<sp/>makePointer(RawExistingValue);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/>///<sp/>Return<sp/>the<sp/>current<sp/>stored<sp/>value.<sp/>Returns<sp/>\a<sp/>None<sp/>if<sp/>there<sp/>is<sp/>a<sp/>concurrent</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/>///<sp/>\a<sp/>loadOrGenerate()<sp/>in<sp/>flight.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classllvm_1_1_lazy_atomic_pointer_1a2765bbb67bf6ef080ea479268430623d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*<ref refid="classllvm_1_1_lazy_atomic_pointer_1a2765bbb67bf6ef080ea479268430623d" kindref="member">load</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>uintptr_t<sp/>RawValue<sp/>=<sp/>Storage.load();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RawValue<sp/>==<sp/>getBusy()<sp/>?<sp/>nullptr<sp/>:<sp/>makePointer(RawValue);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/>///<sp/>Get<sp/>the<sp/>current<sp/>value,<sp/>or<sp/>call<sp/>\p<sp/>Generator<sp/>to<sp/>generate<sp/>a<sp/>value.</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/>///<sp/>Guarantees<sp/>that<sp/>only<sp/>one<sp/>thread&apos;s<sp/>\p<sp/>Generator<sp/>will<sp/>run.</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/>///</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/>///<sp/>\pre<sp/>\p<sp/>Generator<sp/>doesn&apos;t<sp/>return<sp/>\c<sp/>nullptr.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="classllvm_1_1_lazy_atomic_pointer_1aa2b1f76810fa4eb122a4057c975c9396" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>&amp;<ref refid="classllvm_1_1_lazy_atomic_pointer_1aa2b1f76810fa4eb122a4057c975c9396" kindref="member">loadOrGenerate</ref>(<ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*()&gt;<sp/>Generator)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>existing<sp/>value,<sp/>if<sp/>already<sp/>set.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>uintptr_t<sp/>Raw<sp/>=<sp/>Storage.load();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Raw<sp/>!=<sp/>getNull()<sp/>&amp;&amp;<sp/>Raw<sp/>!=<sp/>getBusy())</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*makePointer(Raw);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Try<sp/>to<sp/>mark<sp/>as<sp/>busy,<sp/>then<sp/>generate<sp/>and<sp/>store<sp/>a<sp/>new<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_compiler_8h_1ae5b35beb6f127e5f47269e9124b886fb" kindref="member">LLVM_LIKELY</ref>(Raw<sp/>==<sp/>getNull()<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Storage.compare_exchange_strong(Raw,<sp/>getBusy())))<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Raw<sp/>=<sp/>makeRaw(Generator());</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Raw<sp/>!=<sp/>getNull()<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Expected<sp/>non-null<sp/>from<sp/>generator&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Storage.store(Raw);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*makePointer(Raw);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Contended<sp/>with<sp/>another<sp/>generator.<sp/>Wait<sp/>for<sp/>it<sp/>to<sp/>complete.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(Raw<sp/>==<sp/>getBusy())</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Raw<sp/>=<sp/>Storage.load();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Raw<sp/>!=<sp/>getNull()<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Expected<sp/>non-null<sp/>from<sp/>competing<sp/>generator&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*makePointer(Raw);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classllvm_1_1_lazy_atomic_pointer_1a6c95319b9ef803355015d561991ba91b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/><ref refid="classbool" kindref="compound">bool</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1a2765bbb67bf6ef080ea479268430623d" kindref="member">load</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="132" refid="classllvm_1_1_lazy_atomic_pointer_1a93ce341f2c76dc894bd07c629458e16e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1a2765bbb67bf6ef080ea479268430623d" kindref="member">load</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="classllvm_1_1_lazy_atomic_pointer_1a4504a055b55e9ce49b4c092b81594489" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>&amp;<ref refid="classllvm_1_1_lazy_atomic_pointer_1a4504a055b55e9ce49b4c092b81594489" kindref="member">operator*</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*<ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>=<sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1a2765bbb67bf6ef080ea479268430623d" kindref="member">load</ref>();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref><sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Unexpected<sp/>null<sp/>dereference&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2" kindref="member">P</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139" refid="classllvm_1_1_lazy_atomic_pointer_1a27a2682732bf6259ee142cfa790bda3c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*<ref refid="classllvm_1_1_lazy_atomic_pointer_1a27a2682732bf6259ee142cfa790bda3c" kindref="member">operator-&gt;</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;<ref refid="classllvm_1_1_lazy_atomic_pointer_1a4504a055b55e9ce49b4c092b81594489" kindref="member">operator*</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="classllvm_1_1_lazy_atomic_pointer_1aa697fdaf1fb346ba87e659b5502d95ed" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1aa697fdaf1fb346ba87e659b5502d95ed" kindref="member">LazyAtomicPointer</ref>()<sp/>:<sp/>Storage(0)<sp/>{}</highlight></codeline>
+<codeline lineno="142" refid="classllvm_1_1_lazy_atomic_pointer_1a3a4e677ae59931f23ce58ee70b3ac033" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1a3a4e677ae59931f23ce58ee70b3ac033" kindref="member">LazyAtomicPointer</ref>(std::nullptr_t)<sp/>:<sp/>Storage(0)<sp/>{}</highlight></codeline>
+<codeline lineno="143" refid="classllvm_1_1_lazy_atomic_pointer_1af00ab451e65a2466f32de07956b5c074" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1af00ab451e65a2466f32de07956b5c074" kindref="member">LazyAtomicPointer</ref>(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*<ref refid="classllvm_1_1_value" kindref="compound">Value</ref>)<sp/>:<sp/>Storage(makeRaw(<ref refid="classllvm_1_1_value" kindref="compound">Value</ref>))<sp/>{}</highlight></codeline>
+<codeline lineno="144" refid="classllvm_1_1_lazy_atomic_pointer_1a36831f2a76fe5ee296ac5a04ba77cc47" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1a36831f2a76fe5ee296ac5a04ba77cc47" kindref="member">LazyAtomicPointer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1aa697fdaf1fb346ba87e659b5502d95ed" kindref="member">LazyAtomicPointer</ref><sp/>&amp;<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Storage(makeRaw(<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>.<ref refid="classllvm_1_1_lazy_atomic_pointer_1a2765bbb67bf6ef080ea479268430623d" kindref="member">load</ref>()))<sp/>{}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="classllvm_1_1_lazy_atomic_pointer_1a47a5f8a4cd6ba5c762869f2c67f38c96" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1aa697fdaf1fb346ba87e659b5502d95ed" kindref="member">LazyAtomicPointer</ref><sp/>&amp;<ref refid="classllvm_1_1_lazy_atomic_pointer_1a47a5f8a4cd6ba5c762869f2c67f38c96" kindref="member">operator=</ref>(std::nullptr_t)<sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1a06b2044c993588d4b7a03932c695f40d" kindref="member">store</ref>(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151" refid="classllvm_1_1_lazy_atomic_pointer_1a1bac19503df509df8a58391ad33e901c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1aa697fdaf1fb346ba87e659b5502d95ed" kindref="member">LazyAtomicPointer</ref><sp/>&amp;<ref refid="classllvm_1_1_lazy_atomic_pointer_1a1bac19503df509df8a58391ad33e901c" kindref="member">operator=</ref>(<ref refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" kindref="member">T</ref><sp/>*<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1a06b2044c993588d4b7a03932c695f40d" kindref="member">store</ref>(<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155" refid="classllvm_1_1_lazy_atomic_pointer_1a3df1c7c3423af0ada9819169d176cac5" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1aa697fdaf1fb346ba87e659b5502d95ed" kindref="member">LazyAtomicPointer</ref><sp/>&amp;<ref refid="classllvm_1_1_lazy_atomic_pointer_1a3df1c7c3423af0ada9819169d176cac5" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1aa697fdaf1fb346ba87e659b5502d95ed" kindref="member">LazyAtomicPointer</ref><sp/>&amp;<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_lazy_atomic_pointer_1a06b2044c993588d4b7a03932c695f40d" kindref="member">store</ref>(<ref refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" kindref="member">RHS</ref>.load());</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>std::atomic&lt;uintptr_t&gt;<sp/>Storage;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_ADT_LAZYATOMICPOINTER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/ADT/LazyAtomicPointer.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_replace_constant_8h" kind="file" language="C++">
+    <compoundname>ReplaceConstant.h</compoundname>
+    <includedby refid="_o_m_p_i_r_builder_8cpp" local="yes">lib/Frontend/OpenMP/OMPIRBuilder.cpp</includedby>
+    <includedby refid="_replace_constant_8cpp" local="yes">lib/IR/ReplaceConstant.cpp</includedby>
+    <includedby refid="_a_m_d_g_p_u_lower_buffer_fat_pointers_8cpp" local="yes">lib/Target/AMDGPU/AMDGPULowerBufferFatPointers.cpp</includedby>
+    <includedby refid="_a_m_d_g_p_u_lower_module_l_d_s_pass_8cpp" local="yes">lib/Target/AMDGPU/AMDGPULowerModuleLDSPass.cpp</includedby>
+    <includedby refid="_a_m_d_g_p_u_memory_utils_8cpp" local="yes">lib/Target/AMDGPU/AMDGPUMemoryUtils.cpp</includedby>
+    <includedby refid="_a_m_d_g_p_u_sw_lower_l_d_s_8cpp" local="yes">lib/Target/AMDGPU/AMDGPUSwLowerLDS.cpp</includedby>
+    <includedby refid="_d_x_i_l_data_scalarization_8cpp" local="yes">lib/Target/DirectX/DXILDataScalarization.cpp</includedby>
+    <includedby refid="_d_x_i_l_flatten_arrays_8cpp" local="yes">lib/Target/DirectX/DXILFlattenArrays.cpp</includedby>
+    <includedby refid="_lower_type_tests_8cpp" local="yes">lib/Transforms/IPO/LowerTypeTests.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/IR/ReplaceConstant.h</label>
+        <link refid="_replace_constant_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Frontend/OpenMP/OMPIRBuilder.cpp</label>
+        <link refid="_o_m_p_i_r_builder_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/IR/ReplaceConstant.cpp</label>
+        <link refid="_replace_constant_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Target/AMDGPU/AMDGPULowerBufferFatPointers.cpp</label>
+        <link refid="_a_m_d_g_p_u_lower_buffer_fat_pointers_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/Target/AMDGPU/AMDGPULowerModuleLDSPass.cpp</label>
+        <link refid="_a_m_d_g_p_u_lower_module_l_d_s_pass_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/Target/AMDGPU/AMDGPUMemoryUtils.cpp</label>
+        <link refid="_a_m_d_g_p_u_memory_utils_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/Target/AMDGPU/AMDGPUSwLowerLDS.cpp</label>
+        <link refid="_a_m_d_g_p_u_sw_lower_l_d_s_8cpp"/>
+      </node>
+      <node id="8">
+        <label>lib/Target/DirectX/DXILDataScalarization.cpp</label>
+        <link refid="_d_x_i_l_data_scalarization_8cpp"/>
+      </node>
+      <node id="9">
+        <label>lib/Target/DirectX/DXILFlattenArrays.cpp</label>
+        <link refid="_d_x_i_l_flatten_arrays_8cpp"/>
+      </node>
+      <node id="10">
+        <label>lib/Transforms/IPO/LowerTypeTests.cpp</label>
+        <link refid="_lower_type_tests_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>ReplaceConstant.h<sp/>-<sp/>Replacing<sp/>LLVM<sp/>constant<sp/>expressions<sp/>--*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>declares<sp/>the<sp/>utility<sp/>function<sp/>for<sp/>replacing<sp/>LLVM<sp/>constant</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>expressions<sp/>by<sp/>instructions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_IR_REPLACECONSTANT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_IR_REPLACECONSTANT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_function" kindref="compound">Function</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="23"><highlight class="comment">///<sp/>Replace<sp/>constant<sp/>expressions<sp/>users<sp/>of<sp/>the<sp/>given<sp/>constants<sp/>with</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">///<sp/>instructions.<sp/>Return<sp/>whether<sp/>anything<sp/>was<sp/>changed.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">///<sp/>Passing<sp/>RestrictToFunc<sp/>will<sp/>restrict<sp/>the<sp/>constant<sp/>replacement</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">///<sp/>to<sp/>the<sp/>passed<sp/>in<sp/>functions<sp/>scope,<sp/>as<sp/>opposed<sp/>to<sp/>the<sp/>replacements</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">///<sp/>occurring<sp/>at<sp/>module<sp/>scope.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">///<sp/>RemoveDeadConstants<sp/>by<sp/>default<sp/>will<sp/>remove<sp/>all<sp/>dead<sp/>constants<sp/>as</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">///<sp/>the<sp/>final<sp/>step<sp/>of<sp/>the<sp/>function<sp/>after<sp/>replacement,<sp/>when<sp/>passed</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">///<sp/>false<sp/>it<sp/>will<sp/>skip<sp/>this<sp/>final<sp/>step.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">///<sp/>If<sp/>\p<sp/>IncludeSelf<sp/>is<sp/>enabled,<sp/>also<sp/>convert<sp/>the<sp/>passed<sp/>constants<sp/>themselves</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">///<sp/>to<sp/>instructions,<sp/>rather<sp/>than<sp/>only<sp/>their<sp/>users.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a60cf4cd57355563164d053dd470ac00f" kindref="member">convertUsersOfConstantsToInstructions</ref>(<ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;Constant *&gt;</ref><sp/>Consts,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>*RestrictToFunc<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>RemoveDeadConstants<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IncludeSelf<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_IR_REPLACECONSTANT_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/IR/ReplaceConstant.h"/>
+  </compounddef>
+</doxygen>

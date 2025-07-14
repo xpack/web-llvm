@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group___l_l_v_m_c_error" kind="group">
+    <compoundname>LLVMCError</compoundname>
+    <title>Error Handling</title>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group___l_l_v_m_c_error_1gad81d81a316ef38888533a24b786a6605" prot="public" static="no">
+        <type>struct LLVMOpaqueError *</type>
+        <definition>typedef struct LLVMOpaqueError* LLVMErrorRef</definition>
+        <argsstring></argsstring>
+        <name>LLVMErrorRef</name>
+        <briefdescription>
+<para>Opaque reference to an error instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Null serves as the &apos;success&apos; value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Error.h" line="33" column="30" bodyfile="include/llvm-c/Error.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___l_l_v_m_c_error_1gabf3930c1476f60f432d79776858039f6" prot="public" static="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> void *</type>
+        <definition>typedef const void* LLVMErrorTypeId</definition>
+        <argsstring></argsstring>
+        <name>LLVMErrorTypeId</name>
+        <briefdescription>
+<para>Error type identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Error.h" line="38" column="20" bodyfile="include/llvm-c/Error.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___l_l_v_m_c_error_1gaaba79ae56a17485c5d3fbd004ff60e47" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* LLVMFatalErrorHandler) (const char *Reason)</definition>
+        <argsstring>)(const char *Reason)</argsstring>
+        <name>LLVMFatalErrorHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/ErrorHandling.h" line="27" column="9" bodyfile="include/llvm-c/ErrorHandling.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_l_v_m_c_error_1ga2847de0d8da92d7f217dad48c14fee23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___l_l_v_m_c_error_1gabf3930c1476f60f432d79776858039f6" kindref="member">LLVMErrorTypeId</ref></type>
+        <definition>LLVMErrorTypeId LLVMGetErrorTypeId</definition>
+        <argsstring>(LLVMErrorRef Err)</argsstring>
+        <name>LLVMGetErrorTypeId</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_error_1gad81d81a316ef38888533a24b786a6605" kindref="member">LLVMErrorRef</ref></type>
+          <declname>Err</declname>
+        </param>
+        <briefdescription>
+<para>Returns the type id for the given error instance, which must be a failure value (i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>non-null). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Error.h" line="44" column="17" bodyfile="lib/Testing/Support/Error.cpp" bodystart="179" bodyend="181" declfile="include/llvm-c/Error.h" declline="44" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_error_1gafa975b13e476c457d93779475f960540" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LLVMConsumeError</definition>
+        <argsstring>(LLVMErrorRef Err)</argsstring>
+        <name>LLVMConsumeError</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_error_1gad81d81a316ef38888533a24b786a6605" kindref="member">LLVMErrorRef</ref></type>
+          <declname>Err</declname>
+        </param>
+        <briefdescription>
+<para>Dispose of the given error without handling it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operation consumes the error, and the given <ref refid="group___l_l_v_m_c_error_1gad81d81a316ef38888533a24b786a6605" kindref="member">LLVMErrorRef</ref> value is not usable once this call returns. Note: This method <emphasis>only</emphasis> needs to be called if the error is not being passed to some other consuming operation, e.g. LLVMGetErrorMessage. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Error.h" line="52" column="6" bodyfile="lib/Testing/Support/Error.cpp" bodystart="183" bodyend="183" declfile="include/llvm-c/Error.h" declline="52" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_error_1ga946eaac2a6fc0b492ffc6e59545c4378" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LLVMCantFail</definition>
+        <argsstring>(LLVMErrorRef Err)</argsstring>
+        <name>LLVMCantFail</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_error_1gad81d81a316ef38888533a24b786a6605" kindref="member">LLVMErrorRef</ref></type>
+          <declname>Err</declname>
+        </param>
+        <briefdescription>
+<para>Report a fatal error if Err is a failure value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function can be used to wrap calls to fallible functions ONLY when it is known that the Error will always be a success value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Error.h" line="60" column="6" bodyfile="lib/Testing/Support/Error.cpp" bodystart="187" bodyend="189" declfile="include/llvm-c/Error.h" declline="60" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_error_1ga089f52c976405b1df7daa6718bbed82a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>char * LLVMGetErrorMessage</definition>
+        <argsstring>(LLVMErrorRef Err)</argsstring>
+        <name>LLVMGetErrorMessage</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_error_1gad81d81a316ef38888533a24b786a6605" kindref="member">LLVMErrorRef</ref></type>
+          <declname>Err</declname>
+        </param>
+        <briefdescription>
+<para>Returns the given string&apos;s error message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operation consumes the error, and the given <ref refid="group___l_l_v_m_c_error_1gad81d81a316ef38888533a24b786a6605" kindref="member">LLVMErrorRef</ref> value is not usable once this call returns. The caller is responsible for disposing of the string by calling LLVMDisposeErrorMessage. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Error.h" line="68" column="6" bodyfile="lib/Testing/Support/Error.cpp" bodystart="191" bodyend="197" declfile="include/llvm-c/Error.h" declline="68" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_error_1ga68cbd8d8b7b1a6819f3a7fab9c1e777c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LLVMDisposeErrorMessage</definition>
+        <argsstring>(char *ErrMsg)</argsstring>
+        <name>LLVMDisposeErrorMessage</name>
+        <param>
+          <type><ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>ErrMsg</declname>
+        </param>
+        <briefdescription>
+<para>Dispose of the given error message. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Error.h" line="73" column="6" bodyfile="lib/Testing/Support/Error.cpp" bodystart="199" bodyend="199" declfile="include/llvm-c/Error.h" declline="73" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_error_1ga4a05289ff7e0e3ad3ae432894a40c2f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___l_l_v_m_c_error_1gabf3930c1476f60f432d79776858039f6" kindref="member">LLVMErrorTypeId</ref></type>
+        <definition>LLVMErrorTypeId LLVMGetStringErrorTypeId</definition>
+        <argsstring>(void)</argsstring>
+        <name>LLVMGetStringErrorTypeId</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Returns the type id for llvm StringError. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Error.h" line="78" column="17" bodyfile="lib/Testing/Support/Error.cpp" bodystart="201" bodyend="203" declfile="include/llvm-c/Error.h" declline="78" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_error_1gaf49e4718877356aa8d4e88ed8b652668" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___l_l_v_m_c_error_1gad81d81a316ef38888533a24b786a6605" kindref="member">LLVMErrorRef</ref></type>
+        <definition>LLVMErrorRef LLVMCreateStringError</definition>
+        <argsstring>(const char *ErrMsg)</argsstring>
+        <name>LLVMCreateStringError</name>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>ErrMsg</declname>
+        </param>
+        <briefdescription>
+<para>Create a StringError. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Error.h" line="83" column="14" bodyfile="lib/Testing/Support/Error.cpp" bodystart="205" bodyend="207" declfile="include/llvm-c/Error.h" declline="83" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_error_1gaf6159e6764fb23072ec25514b90b0ebd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LLVMInstallFatalErrorHandler</definition>
+        <argsstring>(LLVMFatalErrorHandler Handler)</argsstring>
+        <name>LLVMInstallFatalErrorHandler</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_error_1gaaba79ae56a17485c5d3fbd004ff60e47" kindref="member">LLVMFatalErrorHandler</ref></type>
+          <declname>Handler</declname>
+        </param>
+        <briefdescription>
+<para>Install a fatal error handler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default, if LLVM detects a fatal error, it will call exit(1). This may not be appropriate in many contexts. For example, doing exit(1) will bypass many crash reporting/tracing system tools. This function allows you to install a callback that will be invoked prior to the call to exit(1). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/ErrorHandling.h" line="36" column="6" bodyfile="lib/Support/ErrorHandling.cpp" bodystart="229" bodyend="232" declfile="include/llvm-c/ErrorHandling.h" declline="36" declcolumn="6"/>
+        <references refid="_error_handling_8cpp_1a8bf77e8726f283ee9fa0a48c07a871ee" compoundref="_error_handling_8cpp" startline="222" endline="227">bindingsErrorHandler</references>
+        <references refid="namespacellvm_1a2aeb96bbf49b1dd8f8a6cf1ceb4e86a7" compoundref="_error_handling_8cpp" startline="65" endline="73">llvm::install_fatal_error_handler</references>
+        <references refid="_compiler_8h_1aa308b4893c1ee3415893491cd9c061d1" compoundref="_compiler_8h" startline="433">LLVM_EXTENSION</references>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_error_1ga7ea3d621a4b178b39e068f2c017ae617" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LLVMResetFatalErrorHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>LLVMResetFatalErrorHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reset the fatal error handler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This resets LLVM&apos;s fatal error handling behavior to the default. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/ErrorHandling.h" line="42" column="6" bodyfile="lib/Support/ErrorHandling.cpp" bodystart="234" bodyend="236" declfile="include/llvm-c/ErrorHandling.h" declline="42" declcolumn="6"/>
+        <references refid="namespacellvm_1abdb4f14b8a339d669818c3c274d1add3" compoundref="_error_handling_8cpp" startline="75" endline="81">llvm::remove_fatal_error_handler</references>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_error_1gacd4315fc836550166df8bff5bf55dc32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LLVMEnablePrettyStackTrace</definition>
+        <argsstring>(void)</argsstring>
+        <name>LLVMEnablePrettyStackTrace</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Enable LLVM&apos;s built-in stack trace code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This intercepts the OS&apos;s crash signals and prints which component of LLVM you were in at the time if the crash. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/ErrorHandling.h" line="49" column="6" bodyfile="lib/Support/PrettyStackTrace.cpp" bodystart="323" bodyend="325" declfile="include/llvm-c/ErrorHandling.h" declline="49" declcolumn="6"/>
+        <references refid="namespacellvm_1acfde701cd4218fcd2f236f2e4d893fef" compoundref="_pretty_stack_trace_8cpp" startline="278" endline="284">llvm::EnablePrettyStackTrace</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group___l_l_v_m_c_error_1ga7073a9a5281337ab9bc306eeb567dd48" prot="public" static="no">
+        <name>LLVMErrorSuccess</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/Error.h" line="28" column="9" bodyfile="include/llvm-c/Error.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_o_r_c_1ga7286ab56f015dc3d1364ee35c18248a0" compoundref="_orc_v2_c_bindings_8cpp" startline="685" endline="709">LLVMOrcCreateDynamicLibrarySearchGeneratorForPath</referencedby>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_o_r_c_1ga989066e131860f8fe758251c061860a7" compoundref="_orc_v2_c_bindings_8cpp" startline="660" endline="683">LLVMOrcCreateDynamicLibrarySearchGeneratorForProcess</referencedby>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_l_l_j_i_t_1gae5289a7cc63f872a7ba713bdaef88cd9" compoundref="_orc_v2_c_bindings_8cpp" startline="922" endline="939">LLVMOrcCreateLLJIT</referencedby>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_o_r_c_1ga18d11d3d068c59207d39cd72a6224f01" compoundref="_orc_v2_c_bindings_8cpp" startline="1166" endline="1177">LLVMOrcCreateLocalLazyCallThroughManager</referencedby>
+        <referencedby refid="_orc_v2_c_bindings_8cpp_1a734850637f9fd595b4fb8aac2f1fe061" compoundref="_orc_v2_c_bindings_8cpp" startline="711" endline="726">LLVMOrcCreateStaticLibrarySearchGeneratorForPath</referencedby>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_l_l_j_i_t_1ga364a3b00fb6982a14e2532cec903e8ae" compoundref="_orc_v2_c_bindings_8cpp" startline="941" endline="944">LLVMOrcDisposeLLJIT</referencedby>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_o_r_c_1ga9293a65df367929436b36c2fff46e563" compoundref="_orc_v2_c_bindings_8cpp" startline="885" endline="895">LLVMOrcDumpObjects_CallOperator</referencedby>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_o_r_c_1gaec6788883ef8ca0728d8f31c16a8a90e" compoundref="_orc_v2_c_bindings_8cpp" startline="610" endline="618">LLVMOrcExecutionSessionCreateJITDylib</referencedby>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_o_r_c_1ga4af207d5a28d38c765a7f33d658df2a5" compoundref="_orc_v2_c_bindings_8cpp" startline="338" endline="372">LLVMOrcExecutionSessionLookup</referencedby>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_o_r_c_1gaa349e25fd72cbf480e926aeab681b4e2" compoundref="_orc_v2_c_bindings_8cpp" startline="626" endline="635">LLVMOrcJITDylibDefine</referencedby>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_o_r_c_1ga5718550d7bc69420aef9830b23a1bec7" compoundref="_orc_v2_c_bindings_8cpp" startline="760" endline="772">LLVMOrcJITTargetMachineBuilderDetectHost</referencedby>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_l_l_j_i_t_1gaf8efaaa71b4b22ed96c3c05b93e98273" compoundref="_orc_v2_c_bindings_8cpp" startline="997" endline="1010">LLVMOrcLLJITLookup</referencedby>
+        <referencedby refid="group___l_l_v_m_c_execution_engine_o_r_c_1ga8ed0de76e9767b06afa96fd9df5796b6" compoundref="_orc_v2_c_bindings_8cpp" startline="572" endline="587">LLVMOrcMaterializationResponsibilityDelegate</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

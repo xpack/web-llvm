@@ -1,0 +1,2790 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_swing_scheduler_d_a_g" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SwingSchedulerDAG</compoundname>
+    <basecompoundref refid="classllvm_1_1_schedule_d_a_g_instrs" prot="public" virt="non-virtual">llvm::ScheduleDAGInstrs</basecompoundref>
+    <includes refid="_machine_pipeliner_8h" local="yes">llvm/CodeGen/MachinePipeliner.h</includes>
+    <innerclass refid="classllvm_1_1_swing_scheduler_d_a_g_1_1_circuits" prot="private">llvm::SwingSchedulerDAG::Circuits</innerclass>
+    <innerclass refid="structllvm_1_1_swing_scheduler_d_a_g_1_1_copy_to_phi_mutation" prot="private">llvm::SwingSchedulerDAG::CopyToPhiMutation</innerclass>
+    <innerclass refid="structllvm_1_1_swing_scheduler_d_a_g_1_1_node_info" prot="private">llvm::SwingSchedulerDAG::NodeInfo</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1_swing_scheduler_d_a_g_1afe4dd7c417f923290a8b51fe44754139" prot="private" static="no" strong="no">
+        <type></type>
+        <name>OrderKind</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::OrderKind</qualifiedname>
+        <enumvalue id="classllvm_1_1_swing_scheduler_d_a_g_1afe4dd7c417f923290a8b51fe44754139a7aec248eaa60e255b3a3de989e6c8a3a" prot="private">
+          <name>BottomUp</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_swing_scheduler_d_a_g_1afe4dd7c417f923290a8b51fe44754139a8881c0b875f3e67ae29f0a0a46a23713" prot="private">
+          <name>TopDown</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="262" column="3" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="262" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_swing_scheduler_d_a_g_1a652272861670afd4bebde130c1296f46" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_node_set" kindref="compound">NodeSet</ref>, 8 &gt;</type>
+        <definition>using llvm::SwingSchedulerDAG::NodeSetType =  SmallVector&lt;NodeSet, 8&gt;</definition>
+        <argsstring></argsstring>
+        <name>NodeSetType</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::NodeSetType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="266" column="3" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_swing_scheduler_d_a_g_1af820aef7230d6cf6d9ea7a54f1833e08" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using llvm::SwingSchedulerDAG::ValueMapTy =  DenseMap&lt;unsigned, unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>ValueMapTy</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::ValueMapTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="267" column="3" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_swing_scheduler_d_a_g_1aac280c130e9859af6dfdf018c352fda2" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;</type>
+        <definition>using llvm::SwingSchedulerDAG::MBBVectorTy =  SmallVectorImpl&lt;MachineBasicBlock *&gt;</definition>
+        <argsstring></argsstring>
+        <name>MBBVectorTy</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::MBBVectorTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="268" column="3" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_swing_scheduler_d_a_g_1a153744940e5e92832d47a0e276caaa54" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt;</type>
+        <definition>using llvm::SwingSchedulerDAG::InstrMapTy =  DenseMap&lt;MachineInstr *, MachineInstr *&gt;</definition>
+        <argsstring></argsstring>
+        <name>InstrMapTy</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::InstrMapTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="269" column="3" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="269" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1afa3b83fe45a90bdfc53e1b82a5c90ecd" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_pipeliner" kindref="compound">MachinePipeliner</ref> &amp;</type>
+        <definition>MachinePipeliner&amp; llvm::SwingSchedulerDAG::Pass</definition>
+        <argsstring></argsstring>
+        <name>Pass</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::Pass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="231" column="20" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1a942a7f3c9de7da713da0408bbb43e57d" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_swing_scheduler_d_d_g" kindref="compound">SwingSchedulerDDG</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;SwingSchedulerDDG&gt; llvm::SwingSchedulerDAG::DDG</definition>
+        <argsstring></argsstring>
+        <name>DDG</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::DDG</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="233" column="19" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1a76127a5e370c98779391a21ea632847c" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SwingSchedulerDAG::MII</definition>
+        <argsstring></argsstring>
+        <name>MII</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::MII</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The minimum initiation interval between iterations for this schedule. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="236" column="12" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1aff7774223b1d3c6ed4e2fc210e18c6a9" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SwingSchedulerDAG::MAX_II</definition>
+        <argsstring></argsstring>
+        <name>MAX_II</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::MAX_II</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The maximum initiation interval between iterations for this schedule. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="238" column="12" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1ad407ad1a8ccb88fd412b072df5b0a800" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SwingSchedulerDAG::Scheduled</definition>
+        <argsstring></argsstring>
+        <name>Scheduled</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::Scheduled</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Set to true if a valid pipelined schedule is found for the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="240" column="8" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1ad675d445d3d96d3a42289dc831fbf746" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_loop" kindref="compound">MachineLoop</ref> &amp;</type>
+        <definition>MachineLoop&amp; llvm::SwingSchedulerDAG::Loop</definition>
+        <argsstring></argsstring>
+        <name>Loop</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::Loop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="241" column="15" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1aadcf8c7efb398e83b83f9f5af115bdab" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_live_intervals" kindref="compound">LiveIntervals</ref> &amp;</type>
+        <definition>LiveIntervals&amp; llvm::SwingSchedulerDAG::LIS</definition>
+        <argsstring></argsstring>
+        <name>LIS</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::LIS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="242" column="17" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1a0073ef3770216f7c5675ad62264d5003" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_register_class_info" kindref="compound">RegisterClassInfo</ref> &amp;</type>
+        <definition>const RegisterClassInfo&amp; llvm::SwingSchedulerDAG::RegClassInfo</definition>
+        <argsstring></argsstring>
+        <name>RegClassInfo</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::RegClassInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="243" column="27" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1a107f0d07634bd95db06f58be13ac5295" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SwingSchedulerDAG::II_setByPragma</definition>
+        <argsstring></argsstring>
+        <name>II_setByPragma</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::II_setByPragma</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="244" column="12" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1a7bda7e8ec2e623ea90f5312a0114084a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_target_instr_info_1_1_pipeliner_loop_info" kindref="compound">TargetInstrInfo::PipelinerLoopInfo</ref> *</type>
+        <definition>TargetInstrInfo::PipelinerLoopInfo* llvm::SwingSchedulerDAG::LoopPipelinerInfo</definition>
+        <argsstring></argsstring>
+        <name>LoopPipelinerInfo</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::LoopPipelinerInfo</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="245" column="38" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1a0f8c28379ffc58f9b83fc7dbcd6189e2" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_schedule_d_a_g_topological_sort" kindref="compound">ScheduleDAGTopologicalSort</ref></type>
+        <definition>ScheduleDAGTopologicalSort llvm::SwingSchedulerDAG::Topo</definition>
+        <argsstring></argsstring>
+        <name>Topo</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::Topo</qualifiedname>
+        <briefdescription>
+<para>A topological ordering of the SUnits, which is needed for changing dependences and iterating over the SUnits. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="249" column="30" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1a531ccf68ea21b19d447289f17ed9cb76" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; NodeInfo &gt;</type>
+        <definition>std::vector&lt;NodeInfo&gt; llvm::SwingSchedulerDAG::ScheduleInfo</definition>
+        <argsstring></argsstring>
+        <name>ScheduleInfo</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::ScheduleInfo</qualifiedname>
+        <briefdescription>
+<para>Computed properties for each node in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="260" column="15" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1a8c9662afc79f83448512781080a97459" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_set_vector" kindref="compound">SetVector</ref>&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt;</type>
+        <definition>SetVector&lt;SUnit *&gt; llvm::SwingSchedulerDAG::NodeOrder</definition>
+        <argsstring></argsstring>
+        <name>NodeOrder</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::NodeOrder</qualifiedname>
+        <briefdescription>
+<para>Computed node ordering for scheduling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="264" column="13" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1a7b9389d72da9bd055959c6d92fe32a42" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *, std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classint64__t" kindref="compound">int64_t</ref> &gt; &gt;</type>
+        <definition>DenseMap&lt;SUnit *, std::pair&lt;unsigned, int64_t&gt; &gt; llvm::SwingSchedulerDAG::InstrChanges</definition>
+        <argsstring></argsstring>
+        <name>InstrChanges</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::InstrChanges</qualifiedname>
+        <briefdescription>
+<para>Instructions to change when emitting the final schedule. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="272" column="12" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1a057e1947603c62abf744b5153df86df3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt;</type>
+        <definition>DenseMap&lt;MachineInstr*, MachineInstr *&gt; llvm::SwingSchedulerDAG::NewMIs</definition>
+        <argsstring></argsstring>
+        <name>NewMIs</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::NewMIs</qualifiedname>
+        <briefdescription>
+<para>We may create a new instruction, so remember it because it must be deleted when the pass is finished. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="276" column="12" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_swing_scheduler_d_a_g_1a47c5ff124ae9d48c2c23b057d9223590" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_schedule_d_a_g_mutation" kindref="compound">ScheduleDAGMutation</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;ScheduleDAGMutation&gt; &gt; llvm::SwingSchedulerDAG::Mutations</definition>
+        <argsstring></argsstring>
+        <name>Mutations</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::Mutations</qualifiedname>
+        <briefdescription>
+<para>Ordered list of DAG postprocessing steps. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="279" column="15" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a682039af4aa49f562ba74775bc32b1c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SwingSchedulerDAG::SwingSchedulerDAG</definition>
+        <argsstring>(MachinePipeliner &amp;P, MachineLoop &amp;L, LiveIntervals &amp;lis, const RegisterClassInfo &amp;rci, unsigned II, TargetInstrInfo::PipelinerLoopInfo *PLI)</argsstring>
+        <name>SwingSchedulerDAG</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::SwingSchedulerDAG</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_pipeliner" kindref="compound">MachinePipeliner</ref> &amp;</type>
+          <declname>P</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_loop" kindref="compound">MachineLoop</ref> &amp;</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_live_intervals" kindref="compound">LiveIntervals</ref> &amp;</type>
+          <declname>lis</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_register_class_info" kindref="compound">RegisterClassInfo</ref> &amp;</type>
+          <declname>rci</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>II</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_target_instr_info_1_1_pipeliner_loop_info" kindref="compound">TargetInstrInfo::PipelinerLoopInfo</ref> *</type>
+          <declname>PLI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="324" column="3" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="324" bodyend="333"/>
+        <references refid="classllvm_1_1_schedule_d_a_g_1af81f734d7fb268c95c1c63c399a7c4a6" compoundref="_schedule_d_a_g_8h" startline="581">llvm::ScheduleDAG::ExitSU</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1ac5804672fc0850438d63caec770647f8" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">II</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a5a3d3d075a208011a24a0918b58d7daa" compoundref="_schedule_d_a_g_8h" startline="577">llvm::ScheduleDAG::MF</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_instrs_1ad2b3e1939f6f39819ad55c714deefad6" compoundref="_schedule_d_a_g_instrs_8h" startline="117">llvm::ScheduleDAGInstrs::MLI</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_instrs_1a5bcb745a3e78c329d1431608b1f51c25" compoundref="_schedule_d_a_g_instrs_8cpp" startline="114" endline="125">llvm::ScheduleDAGInstrs::ScheduleDAGInstrs</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a3d5aacd5fc7d6a739ce913974ed1e53d" compoundref="_schedule_d_a_g_8h" startline="579">llvm::ScheduleDAG::SUnits</references>
+        <references refid="namespacellvm_1ac4cb6fea209b09bdaa515dc24f0245eb">llvm::SwpEnableCopyToPhi</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a87416d44c85818861fe0152759e9acb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::schedule</definition>
+        <argsstring>() override</argsstring>
+        <name>schedule</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::schedule</qualifiedname>
+        <reimplements refid="classllvm_1_1_schedule_d_a_g_instrs_1ac0cecc651db330128468e08794794f5c">schedule</reimplements>
+        <briefdescription>
+<para>We override the schedule function in <ref refid="classllvm_1_1_schedule_d_a_g_instrs" kindref="compound">ScheduleDAGInstrs</ref> to implement the scheduling part of the Swing Modulo Scheduling algorithm. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="335" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="562" bodyend="744"/>
+        <references refid="classllvm_1_1_modulo_schedule_test_annotater_1a20dd6e00191a092f48bd5598b8829bb3" compoundref="_modulo_schedule_8cpp" startline="2859" endline="2867">llvm::ModuloScheduleTestAnnotater::annotate</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_instrs_1ab580983de4f7b69ebcca992be9cb3223" compoundref="_schedule_d_a_g_instrs_8cpp" startline="735" endline="1030">llvm::ScheduleDAGInstrs::buildSchedGraph</references>
+        <references refid="classllvm_1_1_modulo_schedule_expander_m_v_e_1a8b570f6c1b94d49245ad3cee2887acf3" compoundref="_modulo_schedule_8cpp" startline="2711" endline="2756">llvm::ModuloScheduleExpanderMVE::canApply</references>
+        <references refid="classllvm_1_1_modulo_schedule_expander_1a1e6babf78504a9699ed219fab9ce3460" compoundref="_modulo_schedule_8cpp" startline="188" endline="194">llvm::ModuloScheduleExpander::cleanup</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_generic_cycle_impl_8h_1ad78e062f62e0d6e453941fb4ca843e4d" compoundref="_generic_cycle_impl_8h" startline="31">DEBUG_TYPE</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_instrs_1aea2d4ef1e00ee834ab155abd18a560e4" compoundref="_schedule_d_a_g_instrs_8cpp" startline="1186" endline="1195">llvm::ScheduleDAGInstrs::dump</references>
+        <references refid="_machine_pipeliner_8cpp_1a551a277a8ae527efcc47f0e484af0e6a">EmitTestAnnotations</references>
+        <references refid="classllvm_1_1_dense_map_base_1a49c487a9395a6c384be8544cfb2cfccf" compoundref="_dense_map_8h" startline="98" endline="98">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::empty</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a521bf68518a92483130a58680716d153" compoundref="_schedule_d_a_g_8h" startline="580">llvm::ScheduleDAG::EntrySU</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1af81f734d7fb268c95c1c63c399a7c4a6" compoundref="_schedule_d_a_g_8h" startline="581">llvm::ScheduleDAG::ExitSU</references>
+        <references refid="classllvm_1_1_modulo_schedule_expander_1a772c336d26015c2e6fb5efc62cf166be" compoundref="_modulo_schedule_8cpp" startline="71" endline="104">llvm::ModuloScheduleExpander::expand</references>
+        <references refid="classllvm_1_1_modulo_schedule_expander_m_v_e_1a8758dcb4e80e8dc55780edb8f91392f3" compoundref="_modulo_schedule_8cpp" startline="2700" endline="2708">llvm::ModuloScheduleExpanderMVE::expand</references>
+        <references refid="classllvm_1_1_peeling_modulo_schedule_expander_1a134f4cf4ad60c97b1d23e9d1e465031a" compoundref="_modulo_schedule_8cpp" startline="2026" endline="2036">llvm::PeelingModuloScheduleExpander::expand</references>
+        <references refid="_machine_pipeliner_8cpp_1a1cf5e102c99cccf5a676b6b4c5bd5c03">ExperimentalCodeGen</references>
+        <references refid="classllvm_1_1_s_m_schedule_1af238533c2437443030e5fa4a710094c5" compoundref="_machine_pipeliner_8h" startline="723" endline="723">llvm::SMSchedule::getFinalCycle</references>
+        <references refid="classllvm_1_1_s_m_schedule_1aa9cf7f8bcf9a31775f99c732ad69e907" compoundref="_machine_pipeliner_8h" startline="720" endline="720">llvm::SMSchedule::getFirstCycle</references>
+        <references refid="classllvm_1_1_s_m_schedule_1a9d33c5d7d0efea61cb68e2ce82f693ce" compoundref="_machine_pipeliner_8h" startline="772" endline="774">llvm::SMSchedule::getInstructions</references>
+        <references refid="classllvm_1_1_s_m_schedule_1a336ecf423257d7f3b529f5817d9598c9" compoundref="_machine_pipeliner_8h" startline="767" endline="769">llvm::SMSchedule::getMaxStageCount</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_instrs_1ab75cd37a7a0319d5a4c77189cca106ec" compoundref="_schedule_d_a_g_instrs_8h" startline="405" endline="407">llvm::ScheduleDAGInstrs::getSUnit</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a5a3d3d075a208011a24a0918b58d7daa" compoundref="_schedule_d_a_g_8h" startline="577">llvm::ScheduleDAG::MF</references>
+        <references refid="_machine_pipeliner_8cpp_1a2ce05e9bc931c62ddfcc8d52397961d2">MVECodeGen</references>
+        <references refid="namespacellvm_1a076f93c387f454f0db13d4bc7d4e7f9c" compoundref="_s_t_l_extras_8h" startline="2037" endline="2039">llvm::stable_sort</references>
+        <references refid="classllvm_1_1_s_m_schedule_1a64379c9a0436bfd06da2e854c7fc9c33" compoundref="_machine_pipeliner_8h" startline="751" endline="756">llvm::SMSchedule::stageScheduled</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a3d5aacd5fc7d6a739ce913974ed1e53d" compoundref="_schedule_d_a_g_8h" startline="579">llvm::ScheduleDAG::SUnits</references>
+        <references refid="_machine_pipeliner_8cpp_1a6cd9339d8034975d10b380cd19f2dfca">SwpIgnoreRecMII</references>
+        <references refid="_machine_pipeliner_8cpp_1a8b6b2fb6ba0ee9688fb2b68ab8249a65">SwpMaxMii</references>
+        <references refid="_machine_pipeliner_8cpp_1aa52e4697ac2f28af2390eead4614c1d1">SwpMaxStages</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a47f63b6ab42a97ca3b5346b6c7093b09" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::finishBlock</definition>
+        <argsstring>() override</argsstring>
+        <name>finishBlock</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::finishBlock</qualifiedname>
+        <reimplements refid="classllvm_1_1_schedule_d_a_g_instrs_1a1f9a4461e2c9ac06b97f55554f836d66">finishBlock</reimplements>
+        <briefdescription>
+<para>Clean up after the software pipeliner runs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="336" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="747" bodyend="754"/>
+        <references refid="classllvm_1_1_schedule_d_a_g_instrs_1a1f9a4461e2c9ac06b97f55554f836d66" compoundref="_schedule_d_a_g_instrs_8cpp" startline="185" endline="188">llvm::ScheduleDAGInstrs::finishBlock</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a5a3d3d075a208011a24a0918b58d7daa" compoundref="_schedule_d_a_g_8h" startline="577">llvm::ScheduleDAG::MF</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a56cf5c93a877b49ed7ce7b2dce45c62a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SwingSchedulerDAG::hasNewSchedule</definition>
+        <argsstring>()</argsstring>
+        <name>hasNewSchedule</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::hasNewSchedule</qualifiedname>
+        <briefdescription>
+<para>Return true if the loop kernel has been scheduled. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="339" column="8" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="339" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a39271d8f98026cdac8a9fa7b8e90b333" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::SwingSchedulerDAG::getASAP</definition>
+        <argsstring>(SUnit *Node)</argsstring>
+        <name>getASAP</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::getASAP</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>Return the earliest time an instruction may be scheduled. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="342" column="7" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="342" bodyend="342"/>
+        <referencedby refid="classllvm_1_1_swing_scheduler_d_a_g_1a8ff8459ca7a8040add90e7c72a760a5e" compoundref="_machine_pipeliner_8h" startline="349" endline="349">getMOV</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1ae7447e7e3cc13e37cf8738c523a7394e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::SwingSchedulerDAG::getALAP</definition>
+        <argsstring>(SUnit *Node)</argsstring>
+        <name>getALAP</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::getALAP</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>Return the latest time an instruction my be scheduled. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="345" column="7" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="345" bodyend="345"/>
+        <referencedby refid="classllvm_1_1_swing_scheduler_d_a_g_1a8ff8459ca7a8040add90e7c72a760a5e" compoundref="_machine_pipeliner_8h" startline="349" endline="349">getMOV</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a8ff8459ca7a8040add90e7c72a760a5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::SwingSchedulerDAG::getMOV</definition>
+        <argsstring>(SUnit *Node)</argsstring>
+        <name>getMOV</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::getMOV</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>The mobility function, which the number of slots in which an instruction may be scheduled. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="349" column="7" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="349" bodyend="349"/>
+        <references refid="classllvm_1_1_swing_scheduler_d_a_g_1ae7447e7e3cc13e37cf8738c523a7394e" compoundref="_machine_pipeliner_8h" startline="345" endline="345">getALAP</references>
+        <references refid="classllvm_1_1_swing_scheduler_d_a_g_1a39271d8f98026cdac8a9fa7b8e90b333" compoundref="_machine_pipeliner_8h" startline="342" endline="342">getASAP</references>
+        <referencedby refid="classllvm_1_1_node_set_1a3ac566678609edcf0bc8258d32fe533f" compoundref="_machine_pipeliner_8h" startline="524" endline="529">llvm::NodeSet::computeNodeSetInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a23e7afeb8a38aa0340c5644ebcd28f40" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SwingSchedulerDAG::getDepth</definition>
+        <argsstring>(SUnit *Node)</argsstring>
+        <name>getDepth</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::getDepth</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>The depth, in the dependence graph, for a node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="352" column="12" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="352" bodyend="352"/>
+        <referencedby refid="classllvm_1_1_node_set_1a3ac566678609edcf0bc8258d32fe533f" compoundref="_machine_pipeliner_8h" startline="524" endline="529">llvm::NodeSet::computeNodeSetInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a6d8664e79797a05e27343b7e7c14a13f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::SwingSchedulerDAG::getZeroLatencyDepth</definition>
+        <argsstring>(SUnit *Node)</argsstring>
+        <name>getZeroLatencyDepth</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::getZeroLatencyDepth</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>The maximum unweighted length of a path from an arbitrary node to the given node in which each edge has latency 0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="356" column="7" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="356" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1ae3334289ef55f4f25b59ce3e4665a4b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SwingSchedulerDAG::getHeight</definition>
+        <argsstring>(SUnit *Node)</argsstring>
+        <name>getHeight</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::getHeight</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>The height, in the dependence graph, for a node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="361" column="12" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="361" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1aafdb9280bf95dfeed0282509233ebe29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::SwingSchedulerDAG::getZeroLatencyHeight</definition>
+        <argsstring>(SUnit *Node)</argsstring>
+        <name>getZeroLatencyHeight</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::getZeroLatencyHeight</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>Node</declname>
+        </param>
+        <briefdescription>
+<para>The maximum unweighted length of a path from the given node to an arbitrary node in which each edge has latency 0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="365" column="7" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="365" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a78e274f7aa81fdeddac470d645c3c6e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SwingSchedulerDAG::isLoopCarriedDep</definition>
+        <argsstring>(const SwingSchedulerDDGEdge &amp;Edge) const</argsstring>
+        <name>isLoopCarriedDep</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::isLoopCarriedDep</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_swing_scheduler_d_d_g_edge" kindref="compound">SwingSchedulerDDGEdge</ref> &amp;</type>
+          <declname>Edge</declname>
+        </param>
+        <briefdescription>
+<para>Return true for an order or output dependence that is loop carried potentially. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A dependence is loop carried if the destination defines a value that may be used or defined by the source in a subsequent iteration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="369" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2679" bodyend="2762"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_instrs_1a254403f7804208ade3cb68086201cb7a" compoundref="_schedule_d_a_g_instrs_8h" startline="141">llvm::ScheduleDAGInstrs::BB</references>
+        <references refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82">D</references>
+        <references refid="_machine_pipeliner_8cpp_1ad4cf8c8e4e2cc5bf94656e979ed629b4" compoundref="_machine_pipeliner_8cpp" startline="758" endline="771">getPhiRegs</references>
+        <references refid="classllvm_1_1_machine_operand_1ac0035d7c1c860501c877c20e6e93297b" compoundref="_machine_operand_8h" startline="369" endline="372">llvm::MachineOperand::getReg</references>
+        <references refid="classllvm_1_1_location_size_1a935a116f6c8690449f4eddd56a99504b" compoundref="_memory_location_8h" startline="170" endline="175">llvm::LocationSize::getValue</references>
+        <references refid="classllvm_1_1_machine_instr_1aabc3917d917c6247778c88107945d13b" compoundref="_machine_instr_8cpp" startline="1533" endline="1550">llvm::MachineInstr::hasOrderedMemoryRef</references>
+        <references refid="classllvm_1_1_machine_instr_1a8c161f5f015730ac6853c802c3693a41" compoundref="_machine_instr_8cpp" startline="1604" endline="1614">llvm::MachineInstr::hasUnmodeledSideEffects</references>
+        <references refid="classllvm_1_1_location_size_1a0b0401973fc9567440717a5d32a8eb8d" compoundref="_memory_location_8h" startline="165" endline="167">llvm::LocationSize::hasValue</references>
+        <references refid="classllvm_1_1_machine_instr_1aab9a96f10af025498520e00ff044bec1" compoundref="_machine_instr_8cpp" startline="655" endline="732">llvm::MachineInstr::isIdenticalTo</references>
+        <references refid="classllvm_1_1_machine_instr_1ad43bf1af480830a4d6604e969e3f38e9" compoundref="_machine_instr_8h" startline="1415" endline="1418">llvm::MachineInstr::isPHI</references>
+        <references refid="classllvm_1_1_machine_instr_1a17f5d15a7320dec2cfefb6617f711ab7" compoundref="_machine_instr_8h" startline="1177" endline="1179">llvm::MachineInstr::mayLoadOrStore</references>
+        <references refid="classllvm_1_1_machine_instr_1a00966a294fe7a54bf2f6a296e82fc8e1" compoundref="_machine_instr_8h" startline="1187" endline="1190">llvm::MachineInstr::mayRaiseFPException</references>
+        <references refid="classllvm_1_1_machine_instr_1aa5ff177bc1498508696aaf27235db3fc" compoundref="_machine_instr_8h" startline="808" endline="808">llvm::MachineInstr::memoperands_begin</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a5a3d3d075a208011a24a0918b58d7daa" compoundref="_schedule_d_a_g_8h" startline="577">llvm::ScheduleDAG::MF</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a1b09f4d9c91e25f7bc2ac60b3b929d11" compoundref="_schedule_d_a_g_8h" startline="578">llvm::ScheduleDAG::MRI</references>
+        <references refid="_machine_pipeliner_8cpp_1a7b6b1d062b0c40fd5ead036b19c5ea60">SwpPruneLoopCarried</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a348590624c488b04d0f9e227e6c3960e" compoundref="_schedule_d_a_g_8h" startline="575">llvm::ScheduleDAG::TII</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a418bc6d3f660325fa6d5b9fb269add62" compoundref="_schedule_d_a_g_8h" startline="576">llvm::ScheduleDAG::TRI</references>
+        <referencedby refid="classllvm_1_1_s_m_schedule_1acfd4efd1c9f1a0174bd6f3942238c51b" compoundref="_machine_pipeliner_8cpp" startline="2875" endline="2920">llvm::SMSchedule::computeStart</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a3fa089137317e93276cab5774d4bf11f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::applyInstrChange</definition>
+        <argsstring>(MachineInstr *MI, SMSchedule &amp;Schedule)</argsstring>
+        <name>applyInstrChange</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::applyInstrChange</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_schedule" kindref="compound">SMSchedule</ref> &amp;</type>
+          <declname>Schedule</declname>
+        </param>
+        <briefdescription>
+<para>Apply changes to the instruction if needed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The changes are need to improve the scheduling and depend up on the final schedule. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="371" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2624" bodyend="2656"/>
+        <references refid="classllvm_1_1_s_m_schedule_1ac2afdd571841c61dc8f980fe3d6f4885" compoundref="_machine_pipeliner_8h" startline="760" endline="764">llvm::SMSchedule::cycleScheduled</references>
+        <references refid="classllvm_1_1_dense_map_base_1a65520b9c67759099e313d0f4e7b5ff9e" compoundref="_dense_map_8h" startline="84" endline="86">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_instrs_1ab75cd37a7a0319d5a4c77189cca106ec" compoundref="_schedule_d_a_g_instrs_8h" startline="405" endline="407">llvm::ScheduleDAGInstrs::getSUnit</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a5a3d3d075a208011a24a0918b58d7daa" compoundref="_schedule_d_a_g_8h" startline="577">llvm::ScheduleDAG::MF</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_instrs_1a077eef2c61ca462db1800cc506092d38" compoundref="_schedule_d_a_g_instrs_8h" startline="154">llvm::ScheduleDAGInstrs::MISUnitMap</references>
+        <references refid="classllvm_1_1_machine_operand_1a2feaa1c69335c6b9028076cd68c7a5f5" compoundref="_machine_operand_8h" startline="685" endline="688">llvm::MachineOperand::setImm</references>
+        <references refid="classllvm_1_1_s_unit_1a5a869f04a623443a4cf2d2857f9cd085" compoundref="_schedule_d_a_g_8h" startline="382" endline="386">llvm::SUnit::setInstr</references>
+        <references refid="classllvm_1_1_machine_operand_1a682ba82f42f7903d0000ffbb13ea3b57" compoundref="_machine_operand_8cpp" startline="61" endline="81">llvm::MachineOperand::setReg</references>
+        <references refid="classllvm_1_1_s_m_schedule_1a64379c9a0436bfd06da2e854c7fc9c33" compoundref="_machine_pipeliner_8h" startline="751" endline="756">llvm::SMSchedule::stageScheduled</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a348590624c488b04d0f9e227e6c3960e" compoundref="_schedule_d_a_g_8h" startline="575">llvm::ScheduleDAG::TII</references>
+        <referencedby refid="classllvm_1_1_s_m_schedule_1aff7649124c08f77b72e5d539f2f8afdf" compoundref="_machine_pipeliner_8cpp" startline="3384" endline="3415">llvm::SMSchedule::finalizeSchedule</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a51bda1806219d879123625c8d4ae3fbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::fixupRegisterOverlaps</definition>
+        <argsstring>(std::deque&lt; SUnit * &gt; &amp;Instrs)</argsstring>
+        <name>fixupRegisterOverlaps</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::fixupRegisterOverlaps</qualifiedname>
+        <param>
+          <type>std::deque&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt; &amp;</type>
+          <declname>Instrs</declname>
+        </param>
+        <briefdescription>
+<para>Attempt to fix the degenerate cases when the instruction serialization causes the register lifetimes to overlap. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For example, p&apos; = store_pi(p, b) = load p, offset In this case p and p&apos; overlap, which means that two registers are needed. Instead, this function changes the load to use p&apos; and updates the offset. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="373" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="3318" bodyend="3362"/>
+        <references refid="classllvm_1_1_dense_map_base_1a65520b9c67759099e313d0f4e7b5ff9e" compoundref="_dense_map_8h" startline="84" endline="86">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end</references>
+        <references refid="classllvm_1_1_s_unit_1afc98c2c5417cad1a90fc4fe241fe8ba4" compoundref="_schedule_d_a_g_8h" startline="390" endline="394">llvm::SUnit::getInstr</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classllvm_1_1_machine_operand_1ac0035d7c1c860501c877c20e6e93297b" compoundref="_machine_operand_8h" startline="369" endline="372">llvm::MachineOperand::getReg</references>
+        <references refid="classllvm_1_1_machine_operand_1a4c9594c955fec80c73ddd964b5efd554" compoundref="_machine_operand_8h" startline="329" endline="329">llvm::MachineOperand::isReg</references>
+        <references refid="classllvm_1_1_machine_operand_1a69544ec8658eadeed98245dc37c3a541" compoundref="_machine_operand_8h" startline="379" endline="382">llvm::MachineOperand::isUse</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a5a3d3d075a208011a24a0918b58d7daa" compoundref="_schedule_d_a_g_8h" startline="577">llvm::ScheduleDAG::MF</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_instrs_1a077eef2c61ca462db1800cc506092d38" compoundref="_schedule_d_a_g_instrs_8h" startline="154">llvm::ScheduleDAGInstrs::MISUnitMap</references>
+        <references refid="classllvm_1_1_machine_operand_1a2feaa1c69335c6b9028076cd68c7a5f5" compoundref="_machine_operand_8h" startline="685" endline="688">llvm::MachineOperand::setImm</references>
+        <references refid="classllvm_1_1_s_unit_1a5a869f04a623443a4cf2d2857f9cd085" compoundref="_schedule_d_a_g_8h" startline="382" endline="386">llvm::SUnit::setInstr</references>
+        <references refid="classllvm_1_1_machine_operand_1a682ba82f42f7903d0000ffbb13ea3b57" compoundref="_machine_operand_8cpp" startline="61" endline="81">llvm::MachineOperand::setReg</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_1a348590624c488b04d0f9e227e6c3960e" compoundref="_schedule_d_a_g_8h" startline="575">llvm::ScheduleDAG::TII</references>
+        <referencedby refid="classllvm_1_1_s_m_schedule_1aff7649124c08f77b72e5d539f2f8afdf" compoundref="_machine_pipeliner_8cpp" startline="3384" endline="3415">llvm::SMSchedule::finalizeSchedule</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a1fe621a53bd3086e49d01cc0a3dcfd40" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SwingSchedulerDAG::getInstrBaseReg</definition>
+        <argsstring>(SUnit *SU) const</argsstring>
+        <name>getInstrBaseReg</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::getInstrBaseReg</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>Return the new base register that was stored away for the changed instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="377" column="12" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="377" bodyend="383"/>
+        <references refid="classllvm_1_1_dense_map_base_1a65520b9c67759099e313d0f4e7b5ff9e" compoundref="_dense_map_8h" startline="84" endline="86">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end</references>
+        <referencedby refid="classllvm_1_1_s_m_schedule_1a70c8219e8d9627e2373f281be45f96ae" compoundref="_machine_pipeliner_8cpp" startline="2925" endline="3053">llvm::SMSchedule::orderDependence</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a6775a0e40c6e1ffd004c76d5391b7d0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SwingSchedulerDAG::addMutation</definition>
+        <argsstring>(std::unique_ptr&lt; ScheduleDAGMutation &gt; Mutation)</argsstring>
+        <name>addMutation</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::addMutation</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_schedule_d_a_g_mutation" kindref="compound">ScheduleDAGMutation</ref> &gt;</type>
+          <declname>Mutation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="385" column="8" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="385" bodyend="387"/>
+        <references refid="_p_p_c_v_s_x_f_m_a_mutate_8cpp_1a11cb5628e531251532f100309802a146" compoundref="_p_p_c_v_s_x_f_m_a_mutate_8cpp" startline="370">Mutation</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a461d411e76e02e7a4ec0ca56098540aa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_swing_scheduler_d_d_g" kindref="compound">SwingSchedulerDDG</ref> *</type>
+        <definition>const SwingSchedulerDDG * llvm::SwingSchedulerDAG::getDDG</definition>
+        <argsstring>() const</argsstring>
+        <name>getDDG</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::getDDG</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="391" column="27" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="391" bodyend="391"/>
+        <referencedby refid="classllvm_1_1_s_m_schedule_1acfd4efd1c9f1a0174bd6f3942238c51b" compoundref="_machine_pipeliner_8cpp" startline="2875" endline="2920">llvm::SMSchedule::computeStart</referencedby>
+        <referencedby refid="classllvm_1_1_s_m_schedule_1a23d6b914952799027040a351f501a0ad" compoundref="_machine_pipeliner_8cpp" startline="3116" endline="3142">llvm::SMSchedule::computeUnpipelineableNodes</referencedby>
+        <referencedby refid="classllvm_1_1_s_m_schedule_1a7c7d5ab8d9814b721a1844a867ef948a" compoundref="_machine_pipeliner_8cpp" startline="3195" endline="3214">llvm::SMSchedule::isValidSchedule</referencedby>
+        <referencedby refid="classllvm_1_1_node_set_1a802a019a7c7dbb3c15f7ce000c74fae4" compoundref="_machine_pipeliner_8h" startline="440" endline="491">llvm::NodeSet::NodeSet</referencedby>
+        <referencedby refid="classllvm_1_1_s_m_schedule_1ae26138aceef07cf5465c2840b437e1d8" compoundref="_machine_pipeliner_8cpp" startline="3146" endline="3185">llvm::SMSchedule::normalizeNonPipelinedInstructions</referencedby>
+        <referencedby refid="classllvm_1_1_s_m_schedule_1a70c8219e8d9627e2373f281be45f96ae" compoundref="_machine_pipeliner_8cpp" startline="2925" endline="3053">llvm::SMSchedule::orderDependence</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1ac186f04d2e32eb9be8028a51f1231fec" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::SwingSchedulerDAG::classof</definition>
+        <argsstring>(const ScheduleDAGInstrs *DAG)</argsstring>
+        <name>classof</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::classof</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_schedule_d_a_g_instrs" kindref="compound">ScheduleDAGInstrs</ref> *</type>
+          <declname>DAG</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="389" column="15" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="389" bodyend="389"/>
+        <references refid="classllvm_1_1_schedule_d_a_g_instrs_1a5bcb745a3e78c329d1431608b1f51c25" compoundref="_schedule_d_a_g_instrs_8cpp" startline="114" endline="125">llvm::ScheduleDAGInstrs::ScheduleDAGInstrs</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a4b7010b69ce3c8086ee8bca7822f4baa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::addLoopCarriedDependences</definition>
+        <argsstring>(AAResults *AA)</argsstring>
+        <name>addLoopCarriedDependences</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::addLoopCarriedDependences</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_a_a_results" kindref="compound">AAResults</ref> *</type>
+          <declname>AA</declname>
+        </param>
+        <briefdescription>
+<para>Add a chain edge between a load and store if the store can be an alias of the load on a subsequent iteration, i.e., a loop carried dependence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This code is very similar to the code in <ref refid="classllvm_1_1_schedule_d_a_g_instrs" kindref="compound">ScheduleDAGInstrs</ref> but that code doesn&apos;t create loop carried dependences. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="394" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="836" bodyend="924"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a9109b3fda2093b8cd43b2901ccbe8c71" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::updatePhiDependences</definition>
+        <argsstring>()</argsstring>
+        <name>updatePhiDependences</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::updatePhiDependences</qualifiedname>
+        <briefdescription>
+<para>Update the phi dependences to the DAG because <ref refid="classllvm_1_1_schedule_d_a_g_instrs" kindref="compound">ScheduleDAGInstrs</ref> no longer processes dependences for PHIs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function adds true dependences from a PHI to a use, and a loop carried dependence from the use to the PHI. The loop carried dependence is represented as an anti dependence edge. This function also removes chain dependences between unrelated PHIs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="395" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="932" bodyend="1011"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1affa5f788ec0fa1056fcdfa2491bff962" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::changeDependences</definition>
+        <argsstring>()</argsstring>
+        <name>changeDependences</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::changeDependences</qualifiedname>
+        <briefdescription>
+<para>Iterate over each DAG node and see if we can change any dependences in order to reduce the recurrence MII. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="396" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1015" bodyend="1074"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1af3bcb5961f7a85fee68461dc6f3adeea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned SwingSchedulerDAG::calculateResMII</definition>
+        <argsstring>()</argsstring>
+        <name>calculateResMII</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::calculateResMII</qualifiedname>
+        <briefdescription>
+<para>Calculate the resource constrained minimum initiation interval for the specified loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We use the DFA to model the resources needed for each instruction, and we ignore dependences. A different DFA is created for each cycle that is required. When adding a new instruction, we attempt to add it to each existing DFA, until a legal space is found. If the instruction cannot be reserved in an existing DFA, we create a new one. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="397" column="12" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1555" bodyend="1559"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a0fc2a7bedd4c3e03b5873f83e79355ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned SwingSchedulerDAG::calculateRecMII</definition>
+        <argsstring>(NodeSetType &amp;RecNodeSets)</argsstring>
+        <name>calculateRecMII</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::calculateRecMII</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">NodeSetType</ref> &amp;</type>
+          <declname>RecNodeSets</declname>
+          <defname>NodeSets</defname>
+        </param>
+        <briefdescription>
+<para>Calculate the recurrence-constrainted minimum initiation interval. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Iterate over each circuit. Compute the delay(c) and distance(c) for each circuit. The II needs to satisfy the inequality delay(c) - II*distance(c) &lt;= 0. For each circuit, choose the smallest II that satisfies the inequality, and the RecMII is the maximum of those values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="398" column="12" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1567" bodyend="1585"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1ae6ac3b6df4d81fb03fce3233f7f4af94" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::findCircuits</definition>
+        <argsstring>(NodeSetType &amp;NodeSets)</argsstring>
+        <name>findCircuits</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::findCircuits</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">NodeSetType</ref> &amp;</type>
+          <declname>NodeSets</declname>
+        </param>
+        <briefdescription>
+<para>Identify all the elementary circuits in the dependence graph using Johnson&apos;s circuit algorithm. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="399" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1709" bodyend="1717"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a91fd142d23ad89467fbb7eb1f18abaed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::fuseRecs</definition>
+        <argsstring>(NodeSetType &amp;NodeSets)</argsstring>
+        <name>fuseRecs</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::fuseRecs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">NodeSetType</ref> &amp;</type>
+          <declname>NodeSets</declname>
+        </param>
+        <briefdescription>
+<para>Merge the recurrence node sets that have the same initial node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="400" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2199" bodyend="2217"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a4a951e2923916d4a97ef3be3e3c74441" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::removeDuplicateNodes</definition>
+        <argsstring>(NodeSetType &amp;NodeSets)</argsstring>
+        <name>removeDuplicateNodes</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::removeDuplicateNodes</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">NodeSetType</ref> &amp;</type>
+          <declname>NodeSets</declname>
+        </param>
+        <briefdescription>
+<para>Remove nodes that have been scheduled in previous NodeSets. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="401" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2220" bodyend="2233"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a186424dcc81a78c441731a980d4ec7f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::computeNodeFunctions</definition>
+        <argsstring>(NodeSetType &amp;NodeSets)</argsstring>
+        <name>computeNodeFunctions</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::computeNodeFunctions</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">NodeSetType</ref> &amp;</type>
+          <declname>NodeSets</declname>
+        </param>
+        <briefdescription>
+<para>Compute several functions need to order the nodes for scheduling. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ASAP - Earliest time to schedule a node. ALAP - Latest time to schedule a node. MOV - Mobility function, difference between ALAP and ASAP. D - Depth of each node. H - Height of each node. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="402" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="1805" bodyend="1874"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a2f8cfaa78266df30cc5467eb466773d0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::registerPressureFilter</definition>
+        <argsstring>(NodeSetType &amp;NodeSets)</argsstring>
+        <name>registerPressureFilter</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::registerPressureFilter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">NodeSetType</ref> &amp;</type>
+          <declname>NodeSets</declname>
+        </param>
+        <briefdescription>
+<para>A heuristic to filter nodes in recurrent node-sets if the register pressure of a set is too high. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="403" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2017" bodyend="2057"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1ae19479e331f3204209bf8db99d1e3bff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::colocateNodeSets</definition>
+        <argsstring>(NodeSetType &amp;NodeSets)</argsstring>
+        <name>colocateNodeSets</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::colocateNodeSets</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">NodeSetType</ref> &amp;</type>
+          <declname>NodeSets</declname>
+        </param>
+        <briefdescription>
+<para>A heuristic to colocate node sets that have the same set of successors. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="404" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2061" bodyend="2082"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a2d952a8df443c64f2b71e7b5769f0291" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::checkNodeSets</definition>
+        <argsstring>(NodeSetType &amp;NodeSets)</argsstring>
+        <name>checkNodeSets</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::checkNodeSets</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">NodeSetType</ref> &amp;</type>
+          <declname>NodeSets</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if the existing node-sets are profitable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If not, then ignore the recurrent node-sets, and attempt to schedule all nodes together. This is a heuristic. If the MII is large and all the recurrent node-sets are small, then it&apos;s best to try to schedule all instructions together instead of starting with the recurrent node-sets. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="405" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2089" bodyend="2102"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a9ae23cbef9334b097cf99b4b6c6daa39" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::groupRemainingNodes</definition>
+        <argsstring>(NodeSetType &amp;NodeSets)</argsstring>
+        <name>groupRemainingNodes</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::groupRemainingNodes</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">NodeSetType</ref> &amp;</type>
+          <declname>NodeSets</declname>
+        </param>
+        <briefdescription>
+<para>Add the nodes that do not belong to a recurrence set into groups based upon connected components. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="406" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2106" bodyend="2166"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1aca348b05d2c77671669d3b8160990a65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::addConnectedNodes</definition>
+        <argsstring>(SUnit *SU, NodeSet &amp;NewSet, SetVector&lt; SUnit * &gt; &amp;NodesAdded)</argsstring>
+        <name>addConnectedNodes</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::addConnectedNodes</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_node_set" kindref="compound">NodeSet</ref> &amp;</type>
+          <declname>NewSet</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_set_vector" kindref="compound">SetVector</ref>&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt; &amp;</type>
+          <declname>NodesAdded</declname>
+        </param>
+        <briefdescription>
+<para>Add the node to the set, and add all of its connected nodes to the set. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="407" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2169" bodyend="2184"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a74490ca24a23c6ac48795945cd564438" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::computeNodeOrder</definition>
+        <argsstring>(NodeSetType &amp;NodeSets)</argsstring>
+        <name>computeNodeOrder</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::computeNodeOrder</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">NodeSetType</ref> &amp;</type>
+          <declname>NodeSets</declname>
+        </param>
+        <briefdescription>
+<para>Compute an ordered list of the dependence graph nodes, which indicates the order that the nodes will be scheduled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a two-level algorithm. First, a partial order is created, which consists of a list of sets ordered from highest to lowest priority. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="409" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2239" bodyend="2399"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a8c36a266c74ca556a5967b55824db8eb" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::checkValidNodeOrder</definition>
+        <argsstring>(const NodeSetType &amp;Circuits) const</argsstring>
+        <name>checkValidNodeOrder</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::checkValidNodeOrder</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector" kindref="compound">NodeSetType</ref> &amp;</type>
+          <declname>Circuits</declname>
+        </param>
+        <briefdescription>
+<para>A property of the node order in swing-modulo-scheduling is that for nodes outside circuits the following holds: none of them is scheduled after both a successor and a predecessor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The method below checks whether the property is met. If not, debug information is printed and statistics information updated. Note that we do not use an assert statement. The reason is that although an invalid node order may prevent the pipeliner from finding a pipelined schedule for arbitrary II, it does not lead to the generation of incorrect code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="410" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="3226" bodyend="3310"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a79f9997cf0bf86e2766f2fdad35cb884" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SwingSchedulerDAG::schedulePipeline</definition>
+        <argsstring>(SMSchedule &amp;Schedule)</argsstring>
+        <name>schedulePipeline</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::schedulePipeline</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_schedule" kindref="compound">SMSchedule</ref> &amp;</type>
+          <declname>Schedule</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1sys_1_1_process" kindref="compound">Process</ref> the nodes in the computed order and create the pipelined schedule of the instructions, if possible. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if a schedule is found. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="411" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2403" bodyend="2522"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a77e856ba6c38c68759f4c3b0c08bf664" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SwingSchedulerDAG::computeDelta</definition>
+        <argsstring>(MachineInstr &amp;MI, unsigned &amp;Delta) const</argsstring>
+        <name>computeDelta</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::computeDelta</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>Delta</declname>
+        </param>
+        <briefdescription>
+<para>Return true if we can compute the amount the instruction changes during each iteration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set Delta to the amount of the change. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="412" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2526" bodyend="2559"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a29418daf101ce2922be32ac1cf163889" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * SwingSchedulerDAG::findDefInLoop</definition>
+        <argsstring>(Register Reg)</argsstring>
+        <name>findDefInLoop</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::findDefInLoop</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Return the instruction in the loop that defines the register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the definition is a Phi, then follow the Phi operand to the instruction in the loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="413" column="16" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2661" bodyend="2674"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a695dcf3e1e7d340e079ebe83920d1155" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SwingSchedulerDAG::canUseLastOffsetValue</definition>
+        <argsstring>(MachineInstr *MI, unsigned &amp;BasePos, unsigned &amp;OffsetPos, unsigned &amp;NewBase, int64_t &amp;NewOffset)</argsstring>
+        <name>canUseLastOffsetValue</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::canUseLastOffsetValue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>BasePos</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>OffsetPos</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>NewBase</declname>
+        </param>
+        <param>
+          <type><ref refid="classint64__t" kindref="compound">int64_t</ref> &amp;</type>
+          <declname>NewOffset</declname>
+          <defname>Offset</defname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if we can change the instruction to use an offset value from the previous iteration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If so, return true and set the base and offset values so that we can rewrite the load, if necessary. v1 = Phi(v0, v3) v2 = load v1, 0 v3 = post_store v1, 4, x This function enables the load to be rewritten as v2 = load v3, 4. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="414" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2568" bodyend="2620"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a22bd00e121b0b9dd67c505e0c10e535b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::postProcessDAG</definition>
+        <argsstring>()</argsstring>
+        <name>postProcessDAG</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::postProcessDAG</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="417" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="2764" bodyend="2767"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a0e712a4db6f3d2878738d884617b4314" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::setMII</definition>
+        <argsstring>(unsigned ResMII, unsigned RecMII)</argsstring>
+        <name>setMII</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::setMII</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ResMII</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>RecMII</declname>
+        </param>
+        <briefdescription>
+<para>Set the Minimum Initiation <ref refid="_mapped_block_stream_8cpp_1a4ab9bd667f674c16b2cee01ab8823644" kindref="member">Interval</ref> for this schedule attempt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="419" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="542" bodyend="549"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_swing_scheduler_d_a_g_1a6fe5eb4feb9c239ba0ed0e36415c19f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SwingSchedulerDAG::setMAX_II</definition>
+        <argsstring>()</argsstring>
+        <name>setMAX_II</name>
+        <qualifiedname>llvm::SwingSchedulerDAG::setMAX_II</qualifiedname>
+        <briefdescription>
+<para>Set the Maximum Initiation <ref refid="_mapped_block_stream_8cpp_1a4ab9bd667f674c16b2cee01ab8823644" kindref="member">Interval</ref> for this schedule attempt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/MachinePipeliner.h" line="421" column="8" bodyfile="lib/CodeGen/MachinePipeliner.cpp" bodystart="551" bodyend="558"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class builds the dependence graph for the instructions in a loop, and attempts to schedule the instructions using the SMS algorithm. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>llvm::ScheduleDAG</label>
+        <link refid="classllvm_1_1_schedule_d_a_g"/>
+      </node>
+      <node id="2">
+        <label>llvm::ScheduleDAGInstrs</label>
+        <link refid="classllvm_1_1_schedule_d_a_g_instrs"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::SwingSchedulerDAG</label>
+        <link refid="classllvm_1_1_swing_scheduler_d_a_g"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="23">
+        <label>BasicBlockSection</label>
+      </node>
+      <node id="12">
+        <label>CodeGenOptLevel</label>
+      </node>
+      <node id="10">
+        <label>Model</label>
+      </node>
+      <node id="37">
+        <label>DebugCompressionType</label>
+      </node>
+      <node id="29">
+        <label>DebuggerKind</label>
+      </node>
+      <node id="154">
+        <label>DumpDirection</label>
+      </node>
+      <node id="36">
+        <label>DwarfDirectory</label>
+      </node>
+      <node id="28">
+        <label>EABI</label>
+      </node>
+      <node id="34">
+        <label>EmitDwarfUnwindType</label>
+      </node>
+      <node id="30">
+        <label>ExceptionHandling</label>
+      </node>
+      <node id="26">
+        <label>FPOpFusionMode</label>
+      </node>
+      <node id="25">
+        <label>ABIType</label>
+      </node>
+      <node id="77">
+        <label>FoldingSetNode</label>
+        <link refid="classllvm_1_1_folding_set_base_1_1_node"/>
+      </node>
+      <node id="21">
+        <label>GlobalISelAbortMode</label>
+      </node>
+      <node id="90">
+        <label>OptionsT::node_base_type</label>
+      </node>
+      <node id="9">
+        <label>Model</label>
+      </node>
+      <node id="131">
+        <label>Preference</label>
+      </node>
+      <node id="51">
+        <label>Size_T</label>
+      </node>
+      <node id="62">
+        <label>SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_machine_function_1_1_debug_substitution_01_4"/>
+      </node>
+      <node id="129">
+        <label>SmallVectorSizeType&lt; llvm::SDep &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_s_dep_01_4"/>
+      </node>
+      <node id="22">
+        <label>SwiftAsyncFramePointerMode</label>
+      </node>
+      <node id="27">
+        <label>Model</label>
+      </node>
+      <node id="102">
+        <label>anonymous:@370244304303264220336170167243112326265100173335</label>
+      </node>
+      <node id="32">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="53">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="141">
+        <label>ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+        <childnode refid="83" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="108">
+        <label>ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+        <childnode refid="83" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="113">
+        <label>ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+        <childnode refid="83" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="80">
+        <label>ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+        <childnode refid="83" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="94">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+        <childnode refid="83" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>int</label>
+      </node>
+      <node id="120">
+        <label>int8_t</label>
+      </node>
+      <node id="123">
+        <label>llvm::ArrayRef&lt; T &gt;</label>
+        <link refid="classllvm_1_1_array_ref"/>
+      </node>
+      <node id="122">
+        <label>llvm::ArrayRef&lt; uint16_t &gt;</label>
+        <link refid="classllvm_1_1_array_ref"/>
+        <childnode refid="123" relation="template-instance">
+          <edgelabel>&lt; uint16_t &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="157">
+        <label>llvm::Constant</label>
+        <link refid="classllvm_1_1_constant"/>
+        <childnode refid="158" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="156">
+        <label>llvm::ConstantData</label>
+        <link refid="classllvm_1_1_constant_data"/>
+        <childnode refid="157" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::DataLayout</label>
+        <link refid="classllvm_1_1_data_layout"/>
+      </node>
+      <node id="70">
+        <label>llvm::DebugEpochBase</label>
+        <link refid="classllvm_1_1_debug_epoch_base"/>
+      </node>
+      <node id="71">
+        <label>llvm::DenseMap&lt; KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="147">
+        <label>llvm::DenseMap&lt; llvm::MachineInstr *, llvm::SUnit * &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="148" relation="public-inheritance">
+        </childnode>
+        <childnode refid="71" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineInstr *, llvm::SUnit * &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="68">
+        <label>llvm::DenseMap&lt; unsigned, llvm::MachineFunction::DebugPHIRegallocPos &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="69" relation="public-inheritance">
+        </childnode>
+        <childnode refid="71" relation="template-instance">
+          <edgelabel>&lt; unsigned, llvm::MachineFunction::DebugPHIRegallocPos &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="72">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="70" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="70" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="70" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>llvm::LaneBitmask</label>
+        <link refid="structllvm_1_1_lane_bitmask"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>FormatStr</edgelabel>
+        </childnode>
+      </node>
+      <node id="162">
+        <label>llvm::LiveRegUnits</label>
+        <link refid="classllvm_1_1_live_reg_units"/>
+      </node>
+      <node id="134">
+        <label>llvm::LoopInfoBase&lt; BlockT, LoopT &gt;</label>
+        <link refid="classllvm_1_1_loop_info_base"/>
+      </node>
+      <node id="133">
+        <label>llvm::LoopInfoBase&lt; MachineBasicBlock, MachineLoop &gt;</label>
+        <link refid="classllvm_1_1_loop_info_base"/>
+        <childnode refid="134" relation="template-instance">
+          <edgelabel>&lt; MachineBasicBlock, MachineLoop &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm::MCInstrInfo</label>
+        <link refid="classllvm_1_1_m_c_instr_info"/>
+      </node>
+      <node id="117">
+        <label>llvm::MCRegisterClass</label>
+        <link refid="classllvm_1_1_m_c_register_class"/>
+        <childnode refid="103" relation="usage">
+          <edgelabel>ID</edgelabel>
+          <edgelabel>RegSetSize</edgelabel>
+          <edgelabel>RegSizeInBits</edgelabel>
+          <edgelabel>RegsBegin</edgelabel>
+          <edgelabel>RegsSize</edgelabel>
+        </childnode>
+        <childnode refid="118" relation="usage">
+          <edgelabel>RegSet</edgelabel>
+        </childnode>
+        <childnode refid="119" relation="usage">
+          <edgelabel>NameIdx</edgelabel>
+        </childnode>
+        <childnode refid="120" relation="usage">
+          <edgelabel>CopyCost</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>Allocatable</edgelabel>
+          <edgelabel>BaseClass</edgelabel>
+        </childnode>
+      </node>
+      <node id="42">
+        <label>llvm::MCRegisterInfo</label>
+        <link refid="classllvm_1_1_m_c_register_info"/>
+      </node>
+      <node id="115">
+        <label>llvm::MCSchedClassDesc</label>
+        <link refid="structllvm_1_1_m_c_sched_class_desc"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>InvalidNumMicroOps</edgelabel>
+          <edgelabel>VariantNumMicroOps</edgelabel>
+        </childnode>
+        <childnode refid="53" relation="usage">
+          <edgelabel>Name</edgelabel>
+        </childnode>
+        <childnode refid="103" relation="usage">
+          <edgelabel>BeginGroup</edgelabel>
+          <edgelabel>EndGroup</edgelabel>
+          <edgelabel>NumMicroOps</edgelabel>
+          <edgelabel>NumReadAdvanceEntries</edgelabel>
+          <edgelabel>NumWriteLatencyEntries</edgelabel>
+          <edgelabel>NumWriteProcResEntries</edgelabel>
+          <edgelabel>ReadAdvanceIdx</edgelabel>
+          <edgelabel>RetireOOO</edgelabel>
+          <edgelabel>WriteLatencyIdx</edgelabel>
+          <edgelabel>WriteProcResIdx</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::MCTargetOptions</label>
+        <link refid="classllvm_1_1_m_c_target_options"/>
+        <childnode refid="32" relation="usage">
+          <edgelabel>AsmVerbose</edgelabel>
+          <edgelabel>Crel</edgelabel>
+          <edgelabel>Dwarf64</edgelabel>
+          <edgelabel>EmitCompactUnwindNonCanonical</edgelabel>
+          <edgelabel>FDPIC</edgelabel>
+          <edgelabel>ImplicitMapSyms</edgelabel>
+          <edgelabel>MCFatalWarnings</edgelabel>
+          <edgelabel>MCIncrementalLinkerCompatible</edgelabel>
+          <edgelabel>MCNoDeprecatedWarn</edgelabel>
+          <edgelabel>MCNoExecStack</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>OutputAsmVariant</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>EmitDwarfUnwind</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>DwarfVersion</edgelabel>
+        </childnode>
+        <childnode refid="36" relation="usage">
+          <edgelabel>MCUseDwarfDirectory</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="usage">
+          <edgelabel>CompressDebugSections</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>ABIName</edgelabel>
+          <edgelabel>Argv0</edgelabel>
+          <edgelabel>AsSecureLogFile</edgelabel>
+          <edgelabel>AssemblyLanguage</edgelabel>
+          <edgelabel>CommandlineArgs</edgelabel>
+          <edgelabel>SplitDwarfFile</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>IASSearchPaths</edgelabel>
+        </childnode>
+      </node>
+      <node id="137">
+        <label>llvm::MachineBasicBlock</label>
+        <link refid="classllvm_1_1_machine_basic_block"/>
+        <childnode refid="138" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>llvm::MachineFrameInfo</label>
+        <link refid="classllvm_1_1_machine_frame_info"/>
+      </node>
+      <node id="43">
+        <label>llvm::MachineFunction</label>
+        <link refid="classllvm_1_1_machine_function"/>
+        <childnode refid="44" relation="usage">
+          <edgelabel>VariableDbgInfos</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>DebugInstrNumberingCount</edgelabel>
+          <edgelabel>DebugOperandMemNumber</edgelabel>
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>DebugValueSubstitutions</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>DebugPHIPositions</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>UseDebugInstrRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="104">
+        <label>llvm::MachineInstr</label>
+        <link refid="classllvm_1_1_machine_instr"/>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>llvm::MachineInstrBundleIterator&lt; Ty, IsReverse &gt;</label>
+        <link refid="classllvm_1_1_machine_instr_bundle_iterator"/>
+        <childnode refid="144" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="143">
+        <label>llvm::MachineInstrBundleIterator&lt; MachineInstr &gt;</label>
+        <link refid="classllvm_1_1_machine_instr_bundle_iterator"/>
+        <childnode refid="144" relation="private-inheritance">
+        </childnode>
+        <childnode refid="146" relation="template-instance">
+          <edgelabel>&lt; MachineInstr &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="145">
+        <label>llvm::MachineInstrBundleIteratorHelper&lt; IsReverse &gt;</label>
+        <link refid="structllvm_1_1_machine_instr_bundle_iterator_helper"/>
+      </node>
+      <node id="144">
+        <label>llvm::MachineInstrBundleIteratorHelper&lt; false &gt;</label>
+        <link refid="structllvm_1_1_machine_instr_bundle_iterator_helper_3_01false_01_4"/>
+        <childnode refid="145" relation="template-instance">
+          <edgelabel>&lt; false &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="132">
+        <label>llvm::MachineLoopInfo</label>
+        <link refid="classllvm_1_1_machine_loop_info"/>
+        <childnode refid="133" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>llvm::MachineRegisterInfo</label>
+        <link refid="classllvm_1_1_machine_register_info"/>
+      </node>
+      <node id="76">
+        <label>llvm::SDNode</label>
+        <link refid="classllvm_1_1_s_d_node"/>
+        <childnode refid="77" relation="public-inheritance">
+        </childnode>
+        <childnode refid="78" relation="public-inheritance">
+        </childnode>
+        <childnode refid="53" relation="usage">
+          <edgelabel>RawSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="96" relation="usage">
+          <edgelabel>SDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="97" relation="usage">
+          <edgelabel>ConstantSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="98" relation="usage">
+          <edgelabel>MemSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="99" relation="usage">
+          <edgelabel>LSBaseSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="100" relation="usage">
+          <edgelabel>LoadSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="101" relation="usage">
+          <edgelabel>StoreSDNodeBits</edgelabel>
+        </childnode>
+        <childnode refid="102" relation="usage">
+          <edgelabel>@370244304303264220336170167243112326265100173335</edgelabel>
+        </childnode>
+        <childnode refid="103" relation="usage">
+          <edgelabel>PersistentId</edgelabel>
+        </childnode>
+      </node>
+      <node id="97">
+        <label>llvm::SDNode::ConstantSDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_constant_s_d_node_bitfields"/>
+      </node>
+      <node id="99">
+        <label>llvm::SDNode::LSBaseSDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_l_s_base_s_d_node_bitfields"/>
+      </node>
+      <node id="100">
+        <label>llvm::SDNode::LoadSDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_load_s_d_node_bitfields"/>
+      </node>
+      <node id="98">
+        <label>llvm::SDNode::MemSDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_mem_s_d_node_bitfields"/>
+      </node>
+      <node id="96">
+        <label>llvm::SDNode::SDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_s_d_node_bitfields"/>
+      </node>
+      <node id="101">
+        <label>llvm::SDNode::StoreSDNodeBitfields</label>
+        <link refid="classllvm_1_1_s_d_node_1_1_store_s_d_node_bitfields"/>
+      </node>
+      <node id="75">
+        <label>llvm::SUnit</label>
+        <link refid="classllvm_1_1_s_unit"/>
+        <childnode refid="76" relation="usage">
+          <edgelabel>Node</edgelabel>
+        </childnode>
+        <childnode refid="104" relation="usage">
+          <edgelabel>Instr</edgelabel>
+        </childnode>
+        <childnode refid="75" relation="usage">
+          <edgelabel>OrigNode</edgelabel>
+        </childnode>
+        <childnode refid="115" relation="usage">
+          <edgelabel>SchedClass</edgelabel>
+        </childnode>
+        <childnode refid="116" relation="usage">
+          <edgelabel>CopyDstRC</edgelabel>
+          <edgelabel>CopySrcRC</edgelabel>
+        </childnode>
+        <childnode refid="124" relation="usage">
+          <edgelabel>Preds</edgelabel>
+          <edgelabel>Succs</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>BotReadyCycle</edgelabel>
+          <edgelabel>Latency</edgelabel>
+          <edgelabel>NodeNum</edgelabel>
+          <edgelabel>NodeQueueId</edgelabel>
+          <edgelabel>NumPreds</edgelabel>
+          <edgelabel>NumPredsLeft</edgelabel>
+          <edgelabel>NumRegDefsLeft</edgelabel>
+          <edgelabel>NumSuccs</edgelabel>
+          <edgelabel>NumSuccsLeft</edgelabel>
+          <edgelabel>TopReadyCycle</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>hasPhysRegClobbers</edgelabel>
+          <edgelabel>hasPhysRegDefs</edgelabel>
+          <edgelabel>hasPhysRegUses</edgelabel>
+          <edgelabel>hasReservedResource</edgelabel>
+          <edgelabel>isAvailable</edgelabel>
+          <edgelabel>isCall</edgelabel>
+          <edgelabel>isCallOp</edgelabel>
+          <edgelabel>isCloned</edgelabel>
+          <edgelabel>isCommutable</edgelabel>
+          <edgelabel>isPending</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="131" relation="usage">
+          <edgelabel>SchedulingPref</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::ScheduleDAG</label>
+        <link refid="classllvm_1_1_schedule_d_a_g"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>TM</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>TII</edgelabel>
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>TRI</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>MF</edgelabel>
+        </childnode>
+        <childnode refid="73" relation="usage">
+          <edgelabel>MRI</edgelabel>
+        </childnode>
+        <childnode refid="74" relation="usage">
+          <edgelabel>SUnits</edgelabel>
+        </childnode>
+        <childnode refid="75" relation="usage">
+          <edgelabel>EntrySU</edgelabel>
+          <edgelabel>ExitSU</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>StressSched</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::ScheduleDAGInstrs</label>
+        <link refid="classllvm_1_1_schedule_d_a_g_instrs"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="132" relation="usage">
+          <edgelabel>MLI</edgelabel>
+        </childnode>
+        <childnode refid="135" relation="usage">
+          <edgelabel>MFI</edgelabel>
+        </childnode>
+        <childnode refid="136" relation="usage">
+          <edgelabel>SchedModel</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>CanHandleTerminators</edgelabel>
+          <edgelabel>RemoveKillFlags</edgelabel>
+          <edgelabel>TrackLaneMasks</edgelabel>
+        </childnode>
+        <childnode refid="137" relation="usage">
+          <edgelabel>BB</edgelabel>
+        </childnode>
+        <childnode refid="143" relation="usage">
+          <edgelabel>RegionBegin</edgelabel>
+          <edgelabel>RegionEnd</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>NumRegionInstrs</edgelabel>
+        </childnode>
+        <childnode refid="147" relation="usage">
+          <edgelabel>MISUnitMap</edgelabel>
+        </childnode>
+        <childnode refid="149" relation="usage">
+          <edgelabel>Defs</edgelabel>
+          <edgelabel>Uses</edgelabel>
+        </childnode>
+        <childnode refid="151" relation="usage">
+          <edgelabel>CurrentVRegDefs</edgelabel>
+        </childnode>
+        <childnode refid="152" relation="usage">
+          <edgelabel>CurrentVRegUses</edgelabel>
+        </childnode>
+        <childnode refid="153" relation="usage">
+          <edgelabel>AAForDep</edgelabel>
+        </childnode>
+        <childnode refid="75" relation="usage">
+          <edgelabel>BarrierChain</edgelabel>
+        </childnode>
+        <childnode refid="154" relation="usage">
+          <edgelabel>DumpDir</edgelabel>
+        </childnode>
+        <childnode refid="155" relation="usage">
+          <edgelabel>UnknownValue</edgelabel>
+        </childnode>
+        <childnode refid="160" relation="usage">
+          <edgelabel>Topo</edgelabel>
+        </childnode>
+        <childnode refid="161" relation="usage">
+          <edgelabel>DbgValues</edgelabel>
+        </childnode>
+        <childnode refid="104" relation="usage">
+          <edgelabel>FirstDbgValue</edgelabel>
+        </childnode>
+        <childnode refid="162" relation="usage">
+          <edgelabel>LiveRegs</edgelabel>
+        </childnode>
+      </node>
+      <node id="160">
+        <label>llvm::ScheduleDAGTopologicalSort</label>
+        <link refid="classllvm_1_1_schedule_d_a_g_topological_sort"/>
+      </node>
+      <node id="54">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="55" relation="public-inheritance">
+        </childnode>
+        <childnode refid="56" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>llvm::SmallVector&lt; VariableDbgInfo, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+        <childnode refid="52" relation="private-inheritance">
+        </childnode>
+        <childnode refid="54" relation="template-instance">
+          <edgelabel>&lt; VariableDbgInfo, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="57">
+        <label>llvm::SmallVector&lt; llvm::MachineFunction::DebugSubstitution, 8 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="58" relation="public-inheritance">
+        </childnode>
+        <childnode refid="66" relation="private-inheritance">
+        </childnode>
+        <childnode refid="54" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution, 8 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="124">
+        <label>llvm::SmallVector&lt; llvm::SDep, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+        <childnode refid="130" relation="private-inheritance">
+        </childnode>
+        <childnode refid="54" relation="template-instance">
+          <edgelabel>&lt; llvm::SDep, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="49">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="51" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="48">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="49" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="62" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="128">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::SDep &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="129" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::SDep &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="65">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>llvm::SmallVectorImpl&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+        <childnode refid="65" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="125">
+        <label>llvm::SmallVectorImpl&lt; llvm::SDep &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="126" relation="public-inheritance">
+        </childnode>
+        <childnode refid="65" relation="template-instance">
+          <edgelabel>&lt; llvm::SDep &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="67">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="56">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="52">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="66">
+        <label>llvm::SmallVectorStorage&lt; llvm::MachineFunction::DebugSubstitution, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="67" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="130">
+        <label>llvm::SmallVectorStorage&lt; llvm::SDep, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="67" relation="template-instance">
+          <edgelabel>&lt; llvm::SDep, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="64">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="59">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="60" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="126">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::SDep &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="127" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="template-instance">
+          <edgelabel>&lt; llvm::SDep &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="63">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="61" relation="public-inheritance">
+        </childnode>
+        <childnode refid="63" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="127">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::SDep &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="128" relation="public-inheritance">
+        </childnode>
+        <childnode refid="63" relation="template-instance">
+          <edgelabel>&lt; llvm::SDep &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="150">
+        <label>llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;</label>
+        <link refid="classllvm_1_1_sparse_multi_set"/>
+      </node>
+      <node id="149">
+        <label>llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;</label>
+        <link refid="classllvm_1_1_sparse_multi_set"/>
+        <childnode refid="150" relation="template-instance">
+          <edgelabel>&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="151">
+        <label>llvm::SparseMultiSet&lt; VReg2SUnit, VirtReg2IndexFunctor &gt;</label>
+        <link refid="classllvm_1_1_sparse_multi_set"/>
+        <childnode refid="150" relation="template-instance">
+          <edgelabel>&lt; VReg2SUnit, VirtReg2IndexFunctor &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="152">
+        <label>llvm::SparseMultiSet&lt; VReg2SUnitOperIdx, VirtReg2IndexFunctor &gt;</label>
+        <link refid="classllvm_1_1_sparse_multi_set"/>
+        <childnode refid="150" relation="template-instance">
+          <edgelabel>&lt; VReg2SUnitOperIdx, VirtReg2IndexFunctor &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::SwingSchedulerDAG</label>
+        <link refid="classllvm_1_1_swing_scheduler_d_a_g"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::Target</label>
+        <link refid="classllvm_1_1_target"/>
+      </node>
+      <node id="39">
+        <label>llvm::TargetInstrInfo</label>
+        <link refid="classllvm_1_1_target_instr_info"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>CommuteAnyOperandIndex</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::TargetMachine</label>
+        <link refid="classllvm_1_1_target_machine"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>TheTarget</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>DL</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>TargetTriple</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>TargetCPU</edgelabel>
+          <edgelabel>TargetFS</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>RM</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>CMModel</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>LargeDataThreshold</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>OptLevel</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>AsmInfo</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>MRI</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>MII</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>STI</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>DefaultSjLjDataSize</edgelabel>
+          <edgelabel>O0WantsFastISel</edgelabel>
+          <edgelabel>RequireStructuredCFG</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>PGOOption</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>Options</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::TargetOptions</label>
+        <link refid="classllvm_1_1_target_options"/>
+        <childnode refid="20" relation="usage">
+          <edgelabel>BinutilsVersion</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>ApproxFuncFPMath</edgelabel>
+          <edgelabel>BBAddrMap</edgelabel>
+          <edgelabel>DataSections</edgelabel>
+          <edgelabel>DebugStrictDwarf</edgelabel>
+          <edgelabel>DisableIntegratedAS</edgelabel>
+          <edgelabel>EmitAddrsig</edgelabel>
+          <edgelabel>EmitCallSiteInfo</edgelabel>
+          <edgelabel>EmitStackSizeSection</edgelabel>
+          <edgelabel>EmulatedTLS</edgelabel>
+          <edgelabel>EnableAIXExtendedAltivecABI</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>GlobalISelAbort</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>SwiftAsyncFramePointer</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>BBSections</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>BBSectionsFuncListBuf</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>ObjectFilenameForDebug</edgelabel>
+          <edgelabel>StackUsageOutput</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>FloatABIType</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>AllowFPOpFusion</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>ThreadModel</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>EABIVersion</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>DebuggerTuning</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>ExceptionModel</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>MCOptions</edgelabel>
+        </childnode>
+      </node>
+      <node id="116">
+        <label>llvm::TargetRegisterClass</label>
+        <link refid="classllvm_1_1_target_register_class"/>
+        <childnode refid="117" relation="usage">
+          <edgelabel>MC</edgelabel>
+        </childnode>
+        <childnode refid="119" relation="usage">
+          <edgelabel>SubClassMask</edgelabel>
+        </childnode>
+        <childnode refid="103" relation="usage">
+          <edgelabel>SuperClassesSize</edgelabel>
+          <edgelabel>SuperRegIndices</edgelabel>
+        </childnode>
+        <childnode refid="121" relation="usage">
+          <edgelabel>LaneMask</edgelabel>
+        </childnode>
+        <childnode refid="118" relation="usage">
+          <edgelabel>AllocationPriority</edgelabel>
+          <edgelabel>TSFlags</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>CoveredBySubRegs</edgelabel>
+          <edgelabel>GlobalPriority</edgelabel>
+          <edgelabel>HasDisjunctSubRegs</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>SuperClasses</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>OrderFunc</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm::TargetRegisterInfo</label>
+        <link refid="classllvm_1_1_target_register_info"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="136">
+        <label>llvm::TargetSchedModel</label>
+        <link refid="classllvm_1_1_target_sched_model"/>
+      </node>
+      <node id="7">
+        <label>llvm::Triple</label>
+        <link refid="classllvm_1_1_triple"/>
+      </node>
+      <node id="155">
+        <label>llvm::UndefValue</label>
+        <link refid="classllvm_1_1_undef_value"/>
+        <childnode refid="156" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>llvm::User</label>
+        <link refid="classllvm_1_1_user"/>
+        <childnode refid="159" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="159">
+        <label>llvm::Value</label>
+        <link refid="classllvm_1_1_value"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>HasDescriptor</edgelabel>
+          <edgelabel>HasHungOffUses</edgelabel>
+          <edgelabel>HasMetadata</edgelabel>
+          <edgelabel>HasName</edgelabel>
+          <edgelabel>IsUsedByMD</edgelabel>
+          <edgelabel>MaxAlignmentExponent</edgelabel>
+          <edgelabel>NumUserOperands</edgelabel>
+          <edgelabel>SubclassOptionalData</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>MaximumAlignment</edgelabel>
+        </childnode>
+      </node>
+      <node id="86">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="82">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="85">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="84">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+        <childnode refid="85" relation="template-instance">
+          <edgelabel>&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="81">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="88">
+        <label>llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+      </node>
+      <node id="91">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="142">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="109">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="114">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="87">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="95">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="88" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="92">
+        <label>llvm::ilist_node&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="93" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="139">
+        <label>llvm::ilist_node&lt; MachineBasicBlock, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="140" relation="public-inheritance">
+        </childnode>
+        <childnode refid="92" relation="template-instance">
+          <edgelabel>&lt; MachineBasicBlock, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="106">
+        <label>llvm::ilist_node&lt; MachineInstr, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="107" relation="public-inheritance">
+        </childnode>
+        <childnode refid="92" relation="template-instance">
+          <edgelabel>&lt; MachineInstr, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="111">
+        <label>llvm::ilist_node&lt; NodeTy, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="112" relation="public-inheritance">
+        </childnode>
+        <childnode refid="92" relation="template-instance">
+          <edgelabel>&lt; NodeTy, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="78">
+        <label>llvm::ilist_node&lt; SDNode &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="79" relation="public-inheritance">
+        </childnode>
+        <childnode refid="92" relation="template-instance">
+          <edgelabel>&lt; SDNode &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="83">
+        <label>llvm::ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+        <childnode refid="86" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>llvm::ilist_node_impl&lt; OptionsT &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="90" relation="private-inheritance">
+        </childnode>
+        <childnode refid="91" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="140">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="141" relation="private-inheritance">
+        </childnode>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+        <childnode refid="89" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; MachineBasicBlock, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="107">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="108" relation="private-inheritance">
+        </childnode>
+        <childnode refid="109" relation="public-inheritance">
+        </childnode>
+        <childnode refid="89" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="112">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="113" relation="private-inheritance">
+        </childnode>
+        <childnode refid="114" relation="public-inheritance">
+        </childnode>
+        <childnode refid="89" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="79">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="80" relation="private-inheritance">
+        </childnode>
+        <childnode refid="87" relation="public-inheritance">
+        </childnode>
+        <childnode refid="89" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; SDNode, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="93">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="94" relation="private-inheritance">
+        </childnode>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+        <childnode refid="89" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="110">
+        <label>llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="111" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="138">
+        <label>llvm::ilist_node_with_parent&lt; MachineBasicBlock, MachineFunction &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="139" relation="public-inheritance">
+        </childnode>
+        <childnode refid="110" relation="template-instance">
+          <edgelabel>&lt; MachineBasicBlock, MachineFunction &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="105">
+        <label>llvm::ilist_node_with_parent&lt; MachineInstr, MachineBasicBlock, ilist_sentinel_tracking&lt; true &gt; &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="106" relation="public-inheritance">
+        </childnode>
+        <childnode refid="110" relation="template-instance">
+          <edgelabel>&lt; MachineInstr, MachineBasicBlock, ilist_sentinel_tracking&lt; true &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="153">
+        <label>optional&lt; llvm::BatchAAResults &gt;</label>
+      </node>
+      <node id="18">
+        <label>optional&lt; llvm::PGOOptions &gt;</label>
+      </node>
+      <node id="33">
+        <label>optional&lt; unsigned &gt;</label>
+      </node>
+      <node id="20">
+        <label>pair&lt; int, int &gt;</label>
+      </node>
+      <node id="24">
+        <label>shared_ptr&lt; llvm::MemoryBuffer &gt;</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="13">
+        <label>unique_ptr&lt; const llvm::MCAsmInfo &gt;</label>
+      </node>
+      <node id="15">
+        <label>unique_ptr&lt; const llvm::MCInstrInfo &gt;</label>
+      </node>
+      <node id="14">
+        <label>unique_ptr&lt; const llvm::MCRegisterInfo &gt;</label>
+      </node>
+      <node id="16">
+        <label>unique_ptr&lt; const llvm::MCSubtargetInfo &gt;</label>
+      </node>
+      <node id="74">
+        <label>vector&lt; llvm::SUnit &gt;</label>
+      </node>
+      <node id="161">
+        <label>vector&lt; std::pair&lt; MachineInstr *, MachineInstr * &gt; &gt;</label>
+      </node>
+      <node id="38">
+        <label>vector&lt; std::string &gt;</label>
+      </node>
+      <node id="103">
+        <label>uint16_t</label>
+        <link refid="classuint16__t"/>
+      </node>
+      <node id="119">
+        <label>uint32_t</label>
+        <link refid="classuint32__t"/>
+      </node>
+      <node id="11">
+        <label>uint64_t</label>
+        <link refid="classuint64__t"/>
+      </node>
+      <node id="118">
+        <label>uint8_t</label>
+        <link refid="classuint8__t"/>
+      </node>
+      <node id="17">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+      <node id="50">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/CodeGen/MachinePipeliner.h" line="230" column="1" bodyfile="include/llvm/CodeGen/MachinePipeliner.h" bodystart="230" bodyend="422"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1ae07229f0bfadc988528dbf976f65c0bb" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>AAForDep</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a2cfd9da0e5724aa91bf1767dc1e2515e" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addBarrierChain</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a48e69d6ef017966f2a55dbf4d1d0b193" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addChainDependencies</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1afe11e438e3ecc0381047e0e01958fea0" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addChainDependencies</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a14962363da4c4a48ad6646cb05f49b77" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addChainDependencies</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1aee33e06ea8865a2fb2bf229325c07194" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addChainDependency</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1aca348b05d2c77671669d3b8160990a65" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addConnectedNodes</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1ab73bd59791820601925b8535b61fba66" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addCustomGraphFeatures</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a86bfa4838cb7e42648615d27c94c8017" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addEdge</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a4b7010b69ce3c8086ee8bca7822f4baa" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addLoopCarriedDependences</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a6775a0e40c6e1ffd004c76d5391b7d0a" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addMutation</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a56fbc3f460289602ce8a51538ebc1e26" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addPhysRegDataDeps</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a2e9425c046cf742bfbb9ebb96466d8e5" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addPhysRegDeps</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1ae8625c1e6c9bc82f2eaef39d3fff65a8" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addSchedBarrierDeps</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a10acc9310a21d9a8191d3d84916bdffb" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addVRegDefDeps</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a0f958ee7dc9902af4093fe8fabbabd6e" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>addVRegUseDeps</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a3fa089137317e93276cab5774d4bf11f" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>applyInstrChange</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a948f446009b83c0bca40324131e27868" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>BarrierChain</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a254403f7804208ade3cb68086201cb7a" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>BB</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1ab50b64c518a7455daf3e0bc87aee5514" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>begin</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a8d1f67b9f6d31b169c0d4b1d2080b4e7a7aa4fbe53df8b2bf33ec065623b42e34" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>Bidirectional</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1afe4dd7c417f923290a8b51fe44754139a7aec248eaa60e255b3a3de989e6c8a3a" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>BottomUp</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1ab580983de4f7b69ebcca992be9cb3223" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>buildSchedGraph</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a0fc2a7bedd4c3e03b5873f83e79355ca" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>calculateRecMII</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1af3bcb5961f7a85fee68461dc6f3adeea" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>calculateResMII</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1ac384df17605ecce542a6d2567c7f1ee0" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>canAddEdge</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a2ad332011e2040d133de24f33cf3f4cd" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>CanHandleTerminators</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a695dcf3e1e7d340e079ebe83920d1155" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>canUseLastOffsetValue</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1affa5f788ec0fa1056fcdfa2491bff962" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>changeDependences</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a2d952a8df443c64f2b71e7b5769f0291" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>checkNodeSets</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a8c36a266c74ca556a5967b55824db8eb" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>checkValidNodeOrder</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1ac186f04d2e32eb9be8028a51f1231fec" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>classof</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a20e10e20ded7655f844479a648aa0c66" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>clearDAG</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1ae19479e331f3204209bf8db99d1e3bff" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>colocateNodeSets</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a77e856ba6c38c68759f4c3b0c08bf664" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>computeDelta</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a186424dcc81a78c441731a980d4ec7f6" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>computeNodeFunctions</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a74490ca24a23c6ac48795945cd564438" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>computeNodeOrder</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1aae8addb45cc64764371ace084b48dc51" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>CurrentVRegDefs</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a417ece2bf0f001181401c6c6b210194a" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>CurrentVRegUses</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a6837fb2c08f4c8c986a4689a37ca93cf" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>DbgValues</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a6aeb725848d197181f722cec8aa21511" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>DbgValueVector</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a942a7f3c9de7da713da0408bbb43e57d" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>DDG</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1afb8c24d6929051d24b35af1ef0550e54" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>deadDefHasNoUse</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1aaa916ccdc8e2490104520c6d65861e90" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>Defs</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1af637149166f4dbc65315b9d6bd96e242" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>doMBBSchedRegionsTopDown</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1aea2d4ef1e00ee834ab155abd18a560e4" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1ab3c913205add9c73e6bfe3540749737e" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>DumpDir</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a8d1f67b9f6d31b169c0d4b1d2080b4e7" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>DumpDirection</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1aa5f22315c4064579fca6cd88fb36ea5a" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>dumpNode</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a917f4d40ed0bbdaf4ab50e5df4de067b" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>dumpNodeAll</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1ac464b0883162724583f0f124c8be8157" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>dumpNodeName</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a21805259f54dab47c2b3da009216996a" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>end</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1ae8727d434d20639d563849891f5ca1e1" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>enterRegion</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a521bf68518a92483130a58680716d153" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>EntrySU</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1abc5a5c32ac78a99ee2633dbbeec20397" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>exitRegion</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1af81f734d7fb268c95c1c63c399a7c4a6" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>ExitSU</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a7c30ee6cdef3f4784c192654dcb9bab0" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>finalizeSchedule</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1ae6ac3b6df4d81fb03fce3233f7f4af94" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>findCircuits</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a29418daf101ce2922be32ac1cf163889" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>findDefInLoop</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a47f63b6ab42a97ca3b5346b6c7093b09" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>finishBlock</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a25ae020b571d18d34d03097d91ca0f40" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>FirstDbgValue</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a4dc06d4fb42d48a6ade1958f76334826" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>fixupKills</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a51bda1806219d879123625c8d4ae3fbc" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>fixupRegisterOverlaps</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a91fd142d23ad89467fbb7eb1f18abaed" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>fuseRecs</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a954c0aedb37bd7682d2d586026c5c483" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getAAForDep</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1ae7447e7e3cc13e37cf8738c523a7394e" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getALAP</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a39271d8f98026cdac8a9fa7b8e90b333" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getASAP</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a23f7a6c4d1be0ca66f44eb4aa499075a" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getDAGName</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a461d411e76e02e7a4ec0ca56098540aa" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getDDG</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a23e7afeb8a38aa0340c5644ebcd28f40" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getDepth</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1afbb37cc24abd3ed381b0fd496351bd17" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getGraphNodeLabel</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1ae3334289ef55f4f25b59ce3e4665a4b3" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getHeight</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a1fe621a53bd3086e49d01cc0a3dcfd40" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getInstrBaseReg</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a100d476a583a34879b296908da01fdac" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getInstrDesc</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a643ff7dd8c287dd58e75cbe79556e74c" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getLaneMaskForMO</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a8ff8459ca7a8040add90e7c72a760a5e" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getMOV</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a4bf5573660c55924d68b517a0e9b4554" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getSchedClass</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a3f70979bd43329e7ad53ad796db8112f" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getSchedModel</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1ab75cd37a7a0319d5a4c77189cca106ec" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getSUnit</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a6d8664e79797a05e27343b7e7c14a13f" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getZeroLatencyDepth</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1aafdb9280bf95dfeed0282509233ebe29" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>getZeroLatencyHeight</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a9ae23cbef9334b097cf99b4b6c6daa39" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>groupRemainingNodes</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a56cf5c93a877b49ed7ce7b2dce45c62a" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>hasNewSchedule</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a107f0d07634bd95db06f58be13ac5295" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>II_setByPragma</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a705a0975de8335b0b6bdbbae165e8f5c" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>initSUnits</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1ac483efdc6c5ab7a20f776b77f986b6cf" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>insertBarrierChain</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a7b9389d72da9bd055959c6d92fe32a42" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>InstrChanges</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a153744940e5e92832d47a0e276caaa54" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>InstrMapTy</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a78e274f7aa81fdeddac470d645c3c6e8" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>isLoopCarriedDep</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1aa79589a56769cd108d08e21544be1420" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>IsReachable</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1aadcf8c7efb398e83b83f9f5af115bdab" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>LIS</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a00bf9ef6a0eb5cba9d3461711cbcc6a8" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>LiveRegs</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1ad675d445d3d96d3a42289dc831fbf746" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>Loop</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a7bda7e8ec2e623ea90f5312a0114084a" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>LoopPipelinerInfo</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1aff7774223b1d3c6ed4e2fc210e18c6a9" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>MAX_II</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1aac280c130e9859af6dfdf018c352fda2" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>MBBVectorTy</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a5a3d3d075a208011a24a0918b58d7daa" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>MF</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1af2cd9b498508774a2da120d08b8d67cc" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>MFI</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a76127a5e370c98779391a21ea632847c" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>MII</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a077eef2c61ca462db1800cc506092d38" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>MISUnitMap</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1ad2b3e1939f6f39819ad55c714deefad6" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>MLI</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a1b09f4d9c91e25f7bc2ac60b3b929d11" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a47c5ff124ae9d48c2c23b057d9223590" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>Mutations</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a057e1947603c62abf744b5153df86df3" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>NewMIs</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a6c497ec4b863f7d59aa3678740331c8e" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>newSUnit</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a8c9662afc79f83448512781080a97459" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>NodeOrder</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a652272861670afd4bebde130c1296f46" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>NodeSetType</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a8d1f67b9f6d31b169c0d4b1d2080b4e7a79bebac6c64e00c788ab9aff723c504a" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>NotSet</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1af1c8be2ff5fd8eab8091e6ffa40ded8d" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>NumRegionInstrs</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a6a6dac3959c6817445a767a848061ff7" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1afe4dd7c417f923290a8b51fe44754139" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>OrderKind</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1afa3b83fe45a90bdfc53e1b82a5c90ecd" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a22bd00e121b0b9dd67c505e0c10e535b" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>postProcessDAG</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a2e28b826aaa73d2dacf89ba8f8c775d1" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>reduceHugeMemNodeMaps</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a0073ef3770216f7c5675ad62264d5003" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>RegClassInfo</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1ae81ad8ece7681af658742f6d4e2fcfb1" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>RegionBegin</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a3f74b283acf0dfb537bc387e49344f04" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>RegionEnd</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a2f8cfaa78266df30cc5467eb466773d0" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>registerPressureFilter</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a4a951e2923916d4a97ef3be3e3c74441" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>removeDuplicateNodes</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1adf7cb9b8e5dda7b42273e79048f1b8b3" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>RemoveKillFlags</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1abb11b650b88a61630eba2a1b2eaa6fd0" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>SchedModel</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a87416d44c85818861fe0152759e9acb1" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>schedule</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1ad407ad1a8ccb88fd412b072df5b0a800" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>Scheduled</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a8bdf35180225e74794f7d23399a3db22" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>ScheduleDAG</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1ae2ebc23ff27164ec1d375d4bac6040de" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>ScheduleDAG</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a5bcb745a3e78c329d1431608b1f51c25" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>ScheduleDAGInstrs</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a531ccf68ea21b19d447289f17ed9cb76" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>ScheduleInfo</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a79f9997cf0bf86e2766f2fdad35cb884" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>schedulePipeline</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1afdb896a30eb0e9fc3143fe6c447570cb" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>setDumpDirection</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a6fe5eb4feb9c239ba0ed0e36415c19f8" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>setMAX_II</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a0e712a4db6f3d2878738d884617b4314" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>setMII</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a2822215b7634783aece96ef695a72f1d" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>startBlock</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a8de65d3a774ee7a23dc72e3d534e6ce6" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>StressSched</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a8e1e9d0b1c64c405c0e99288f9225bd5" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>SUList</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a3d5aacd5fc7d6a739ce913974ed1e53d" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>SUnits</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a682039af4aa49f562ba74775bc32b1c4" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>SwingSchedulerDAG</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a348590624c488b04d0f9e227e6c3960e" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>TII</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a9aa31260fcd6b572eb34528673438c3c" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>TM</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1afe4dd7c417f923290a8b51fe44754139a8881c0b875f3e67ae29f0a0a46a23713" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>TopDown</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a0f8c28379ffc58f9b83fc7dbcd6189e2" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>Topo</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a96bb77f51ee973b0613bf5083144fa69" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>TrackLaneMasks</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a418bc6d3f660325fa6d5b9fb269add62" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>TRI</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1aad4b383d6bf0b66dd1a20a81505788fd" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>UnknownValue</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1a9109b3fda2093b8cd43b2901ccbe8c71" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>updatePhiDependences</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1abc7a356b097ebfec45c1f663a4e52575" prot="protected" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>Uses</name></member>
+      <member refid="classllvm_1_1_swing_scheduler_d_a_g_1af820aef7230d6cf6d9ea7a54f1833e08" prot="private" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>ValueMapTy</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1ab464241184b77be167ff521aa2552e29" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>VerifyScheduledDAG</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a209b615edbcad3e1a7afd7411ce4eae2" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>viewGraph</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a7e726201ecf499acd7f87ac1d4ff610e" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>viewGraph</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_1a40f40bf3808799abdd4411ba209215dc" prot="public" virt="virtual"><scope>llvm::SwingSchedulerDAG</scope><name>~ScheduleDAG</name></member>
+      <member refid="classllvm_1_1_schedule_d_a_g_instrs_1a55ec5f63fd13f77063e0fc05a722283a" prot="public" virt="non-virtual"><scope>llvm::SwingSchedulerDAG</scope><name>~ScheduleDAGInstrs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

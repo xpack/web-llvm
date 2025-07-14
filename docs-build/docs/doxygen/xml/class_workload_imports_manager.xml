@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="class_workload_imports_manager" kind="class" language="C++" prot="public">
+    <compoundname>WorkloadImportsManager</compoundname>
+    <basecompoundref refid="class_module_imports_manager" prot="public" virt="non-virtual">ModuleImportsManager</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_workload_imports_manager_1a2150a0d15215bdaf5f112418964b3882" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_map" kindref="compound">StringMap</ref>&lt; <ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="structllvm_1_1_value_info" kindref="compound">ValueInfo</ref> &gt; &gt;</type>
+        <definition>StringMap&lt;DenseSet&lt;ValueInfo&gt; &gt; WorkloadImportsManager::Workloads</definition>
+        <argsstring></argsstring>
+        <name>Workloads</name>
+        <qualifiedname>WorkloadImportsManager::Workloads</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/FunctionImport.cpp" line="532" column="13" bodyfile="lib/Transforms/IPO/FunctionImport.cpp" bodystart="532" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_workload_imports_manager_1aa8294e48b89fb927ea78787e639cb44e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void WorkloadImportsManager::computeImportForModule</definition>
+        <argsstring>(const GVSummaryMapTy &amp;DefinedGVSummaries, StringRef ModName, FunctionImporter::ImportMapTy &amp;ImportList) override</argsstring>
+        <name>computeImportForModule</name>
+        <qualifiedname>WorkloadImportsManager::computeImportForModule</qualifiedname>
+        <reimplements refid="class_module_imports_manager_1af806f9d842ec97d31bd9550eb338f678">computeImportForModule</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1a31671124e718a9212f15c19ac1e62515" kindref="member">GVSummaryMapTy</ref> &amp;</type>
+          <declname>DefinedGVSummaries</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>ModName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function_importer_1_1_import_map_ty" kindref="compound">FunctionImporter::ImportMapTy</ref> &amp;</type>
+          <declname>ImportList</declname>
+        </param>
+        <briefdescription>
+<para>Given the list of globals defined in a module, compute the list of imports as well as the list of &quot;exports&quot;, i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>the list of symbols referenced from another module (that may require promotion). </para>
+        </detaileddescription>
+        <inbodydescription>
+<para>We will prefer importing the prevailing candidate, if not, we&apos;ll still pick the first available candidate. The reason we want to make sure we do import the prevailing candidate is because the goal of workload-awareness is to enable optimizations specializing the call graph of that workload. Suppose a function is already defined in the module, but it&apos;s not the prevailing variant. Suppose also we do not inline it (in fact, if it were interposable, we can&apos;t inline it), but we could specialize it to the workload in other ways. However, the linker would drop it in the favor of the prevailing copy. Instead, by importing the prevailing variant (assuming also the use of <computeroutput>-avail-extern-to-local</computeroutput>), we keep the specialization. We could alteranatively make the non-prevailing variant local, but the prevailing one is also the one for which we would have previously collected profiles, making it preferrable.</para>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/FunctionImport.cpp" line="535" column="3" bodyfile="lib/Transforms/IPO/FunctionImport.cpp" bodystart="535" bodyend="642"/>
+      </memberdef>
+      <memberdef kind="function" id="class_workload_imports_manager_1a7ca498969ffbfe71dc10dc9d9e484944" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void WorkloadImportsManager::loadFromJson</definition>
+        <argsstring>()</argsstring>
+        <name>loadFromJson</name>
+        <qualifiedname>WorkloadImportsManager::loadFromJson</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/FunctionImport.cpp" line="644" column="8" bodyfile="lib/Transforms/IPO/FunctionImport.cpp" bodystart="644" bodyend="715"/>
+      </memberdef>
+      <memberdef kind="function" id="class_workload_imports_manager_1a9782bfc19b0d85a4c8c2a678890823e8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void WorkloadImportsManager::loadFromCtxProf</definition>
+        <argsstring>()</argsstring>
+        <name>loadFromCtxProf</name>
+        <qualifiedname>WorkloadImportsManager::loadFromCtxProf</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/FunctionImport.cpp" line="717" column="8" bodyfile="lib/Transforms/IPO/FunctionImport.cpp" bodystart="717" bodyend="761"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_workload_imports_manager_1a153fc7b2387346443f6c6503cc92b47d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>WorkloadImportsManager::WorkloadImportsManager</definition>
+        <argsstring>(function_ref&lt; bool(GlobalValue::GUID, const GlobalValueSummary *)&gt; IsPrevailing, const ModuleSummaryIndex &amp;Index, DenseMap&lt; StringRef, FunctionImporter::ExportSetTy &gt; *ExportLists)</argsstring>
+        <name>WorkloadImportsManager</name>
+        <qualifiedname>WorkloadImportsManager::WorkloadImportsManager</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; <ref refid="classbool" kindref="compound">bool</ref>(<ref refid="classllvm_1_1_global_value_1a3af0428ec6e48cb2f05c199b7b9f7e07" kindref="member">GlobalValue::GUID</ref>, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_global_value_summary" kindref="compound">GlobalValueSummary</ref> *)&gt;</type>
+          <declname>IsPrevailing</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_module_summary_index" kindref="compound">ModuleSummaryIndex</ref> &amp;</type>
+          <declname>Index</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>, <ref refid="classllvm_1_1_function_importer_1acd58852b94e5cce68ad66dc3045f72f0" kindref="member">FunctionImporter::ExportSetTy</ref> &gt; *</type>
+          <declname>ExportLists</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/FunctionImport.cpp" line="764" column="3" bodyfile="lib/Transforms/IPO/FunctionImport.cpp" bodystart="764" bodyend="789"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="class_module_imports_manager_1a40827647112314295abf19af886c26c5" compoundref="_function_import_8cpp" startline="497">ModuleImportsManager::ExportLists</references>
+        <references refid="_pass_builder_bindings_8cpp_1acdfbcf188e2d4a80837e89de2ccdffab" compoundref="_pass_builder_bindings_8cpp" startline="64" endline="71">if</references>
+        <references refid="class_module_imports_manager_1abb7b98ef41a696c3512fc1c3b422c4c7" compoundref="_function_import_8cpp" startline="496">ModuleImportsManager::Index</references>
+        <references refid="class_module_imports_manager_1a92b001539a5e6a5f85dcc886fefda5dc" compoundref="_function_import_8cpp" startline="495">ModuleImportsManager::IsPrevailing</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="class_module_imports_manager_1aad8972791f7ffadd05e220b4e7e09cba" compoundref="_function_import_8cpp" startline="499" endline="504">ModuleImportsManager::ModuleImportsManager</references>
+        <references refid="_function_import_8cpp_1a5ac99641888d5b06352c629f38485394">UseCtxProfile</references>
+        <references refid="_function_import_8cpp_1aae0290be33da33adb70977d0e595ce73">WorkloadDefinitions</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A <ref refid="class_module_imports_manager" kindref="compound">ModuleImportsManager</ref> that operates based on a workload definition (see -thinlto-workload-def). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>For modules that do not define workload roots, it applies the base <ref refid="class_module_imports_manager" kindref="compound">ModuleImportsManager</ref> import policy. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ModuleImportsManager</label>
+        <link refid="class_module_imports_manager"/>
+      </node>
+      <node id="1">
+        <label>WorkloadImportsManager</label>
+        <link refid="class_workload_imports_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ModuleImportsManager</label>
+        <link refid="class_module_imports_manager"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>IsPrevailing</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>Index</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>ExportLists</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>WorkloadImportsManager</label>
+        <link refid="class_workload_imports_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::DebugEpochBase</label>
+        <link refid="classllvm_1_1_debug_epoch_base"/>
+      </node>
+      <node id="10">
+        <label>llvm::DenseMap&lt; KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::DenseMap&lt; llvm::StringRef, FunctionImporter::ExportSetTy &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; llvm::StringRef, FunctionImporter::ExportSetTy &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::ModuleSummaryIndex</label>
+        <link refid="classllvm_1_1_module_summary_index"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>BitcodeSummaryVersion</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::function_ref&lt; Fn &gt;</label>
+        <link refid="classllvm_1_1function__ref"/>
+      </node>
+      <node id="3">
+        <label>llvm::function_ref&lt; bool(GlobalValue::GUID, const llvm::GlobalValueSummary *)&gt;</label>
+        <link refid="classllvm_1_1function__ref"/>
+        <childnode refid="4" relation="template-instance">
+          <edgelabel>&lt; bool(GlobalValue::GUID, const llvm::GlobalValueSummary *)&gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>uint64_t</label>
+        <link refid="classuint64__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Transforms/IPO/FunctionImport.cpp" line="528" column="1" bodyfile="lib/Transforms/IPO/FunctionImport.cpp" bodystart="528" bodyend="790"/>
+    <listofallmembers>
+      <member refid="class_workload_imports_manager_1aa8294e48b89fb927ea78787e639cb44e" prot="private" virt="virtual"><scope>WorkloadImportsManager</scope><name>computeImportForModule</name></member>
+      <member refid="class_module_imports_manager_1a928dfa99d0b0ced1e5a2abe150a51234" prot="public" virt="non-virtual"><scope>WorkloadImportsManager</scope><name>create</name></member>
+      <member refid="class_module_imports_manager_1a40827647112314295abf19af886c26c5" prot="protected" virt="non-virtual"><scope>WorkloadImportsManager</scope><name>ExportLists</name></member>
+      <member refid="class_module_imports_manager_1abb7b98ef41a696c3512fc1c3b422c4c7" prot="protected" virt="non-virtual"><scope>WorkloadImportsManager</scope><name>Index</name></member>
+      <member refid="class_module_imports_manager_1a92b001539a5e6a5f85dcc886fefda5dc" prot="protected" virt="non-virtual"><scope>WorkloadImportsManager</scope><name>IsPrevailing</name></member>
+      <member refid="class_workload_imports_manager_1a9782bfc19b0d85a4c8c2a678890823e8" prot="private" virt="non-virtual"><scope>WorkloadImportsManager</scope><name>loadFromCtxProf</name></member>
+      <member refid="class_workload_imports_manager_1a7ca498969ffbfe71dc10dc9d9e484944" prot="private" virt="non-virtual"><scope>WorkloadImportsManager</scope><name>loadFromJson</name></member>
+      <member refid="class_module_imports_manager_1aad8972791f7ffadd05e220b4e7e09cba" prot="protected" virt="non-virtual"><scope>WorkloadImportsManager</scope><name>ModuleImportsManager</name></member>
+      <member refid="class_workload_imports_manager_1a153fc7b2387346443f6c6503cc92b47d" prot="public" virt="non-virtual"><scope>WorkloadImportsManager</scope><name>WorkloadImportsManager</name></member>
+      <member refid="class_workload_imports_manager_1a2150a0d15215bdaf5f112418964b3882" prot="private" virt="non-virtual"><scope>WorkloadImportsManager</scope><name>Workloads</name></member>
+      <member refid="class_module_imports_manager_1a6a3454591a5ee718dbf250c4a95adc34" prot="public" virt="virtual"><scope>WorkloadImportsManager</scope><name>~ModuleImportsManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

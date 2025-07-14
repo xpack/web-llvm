@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_live_interval_calc" kind="class" language="C++" prot="public">
+    <compoundname>llvm::LiveIntervalCalc</compoundname>
+    <basecompoundref refid="classllvm_1_1_live_range_calc" prot="public" virt="non-virtual">llvm::LiveRangeCalc</basecompoundref>
+    <includes refid="_live_interval_calc_8h" local="yes">llvm/CodeGen/LiveIntervalCalc.h</includes>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_live_interval_calc_1abf0d796c3c3e4edc136150896749a589" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveIntervalCalc::extendToUses</definition>
+        <argsstring>(LiveRange &amp;LR, Register Reg, LaneBitmask LaneMask, LiveInterval *LI=nullptr)</argsstring>
+        <name>extendToUses</name>
+        <qualifiedname>llvm::LiveIntervalCalc::extendToUses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>LR</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_lane_bitmask" kindref="compound">LaneBitmask</ref></type>
+          <declname>LaneMask</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> *</type>
+          <declname>LI</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Extend the live range of <computeroutput>LR</computeroutput> to reach all uses of Reg. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>LR</computeroutput> is a main range, or if <computeroutput>LI</computeroutput> is null, then all uses must be jointly dominated by the definitions from <computeroutput>LR</computeroutput>. If <computeroutput>LR</computeroutput> is a subrange of the live interval <computeroutput>LI</computeroutput>, corresponding to lane mask <computeroutput>LaneMask</computeroutput>, all uses must be jointly dominated by the definitions from <computeroutput>LR</computeroutput> together with definitions of other lanes where <computeroutput>LR</computeroutput> becomes undefined (via &lt;def,read-undef&gt; operands). If <computeroutput>LR</computeroutput> is a main range, the <computeroutput>LaneMask</computeroutput> should be set to ~0, i.e. <ref refid="structllvm_1_1_lane_bitmask_1a3714a639930eab71d7202da05ad82990" kindref="member">LaneBitmask::getAll()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveIntervalCalc.h" line="39" column="8" bodyfile="lib/CodeGen/LiveIntervalCalc.cpp" bodystart="134" bodyend="194"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_live_interval_calc_1a93435c79c80dceea8b29e6b47993a577" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::LiveIntervalCalc::LiveIntervalCalc</definition>
+        <argsstring>()=default</argsstring>
+        <name>LiveIntervalCalc</name>
+        <qualifiedname>llvm::LiveIntervalCalc::LiveIntervalCalc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveIntervalCalc.h" line="43" column="3"/>
+        <references refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" compoundref="_machine_sink_8cpp" startline="2028">Reg</references>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1ad67d6b7f9f91a2d5852b0f9aebfe542a" compoundref="_live_interval_calc_8cpp" startline="41" endline="103">calculate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_interval_calc_1a1c36b75f4a0dac1a833a459617f03c76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveIntervalCalc::createDeadDefs</definition>
+        <argsstring>(LiveRange &amp;LR, Register Reg)</argsstring>
+        <name>createDeadDefs</name>
+        <qualifiedname>llvm::LiveIntervalCalc::createDeadDefs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>LR</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>createDeadDefs - Create a dead def in LI for every def operand of Reg. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each instruction defining Reg gets a new <ref refid="classllvm_1_1_v_n_info" kindref="compound">VNInfo</ref> with a corresponding minimal live range. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveIntervalCalc.h" line="48" column="8" bodyfile="lib/CodeGen/LiveIntervalCalc.cpp" bodystart="122" bodyend="132"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_live_interval_calc_8cpp_1a70e2de8376b84c468e8a5762fda4c419" compoundref="_live_interval_calc_8cpp" startline="31" endline="39">createDeadDef</references>
+        <references refid="classllvm_1_1_live_range_calc_1a11a21f58b3a7b8b7c401958cd3f7304f" compoundref="_live_range_calc_8h" startline="168" endline="168">llvm::LiveRangeCalc::getIndexes</references>
+        <references refid="classllvm_1_1_live_range_calc_1ad09d2d2f0c1d47c7bc6eb04e33b5e51d" compoundref="_live_range_calc_8h" startline="167" endline="167">llvm::LiveRangeCalc::getRegInfo</references>
+        <references refid="classllvm_1_1_live_range_calc_1a60d4123651abf23e886661980d951ffc" compoundref="_live_range_calc_8h" startline="170" endline="170">llvm::LiveRangeCalc::getVNAlloc</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_interval_calc_1ae3bff863d5f2c5df37ef42d76e457f74" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::LiveIntervalCalc::extendToUses</definition>
+        <argsstring>(LiveRange &amp;LR, MCRegister PhysReg)</argsstring>
+        <name>extendToUses</name>
+        <qualifiedname>llvm::LiveIntervalCalc::extendToUses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_range" kindref="compound">LiveRange</ref> &amp;</type>
+          <declname>LR</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_register" kindref="compound">MCRegister</ref></type>
+          <declname>PhysReg</declname>
+        </param>
+        <briefdescription>
+<para>Extend the live range of <computeroutput>LR</computeroutput> to reach all uses of Reg. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All uses must be jointly dominated by existing liveness. PHI-defs are inserted as needed to preserve SSA form. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveIntervalCalc.h" line="54" column="8" bodyfile="include/llvm/CodeGen/LiveIntervalCalc.h" bodystart="54" bodyend="56"/>
+        <references refid="structllvm_1_1_lane_bitmask_1a3714a639930eab71d7202da05ad82990" compoundref="_lane_bitmask_8h" startline="82" endline="82">llvm::LaneBitmask::getAll</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_interval_calc_1ad67d6b7f9f91a2d5852b0f9aebfe542a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveIntervalCalc::calculate</definition>
+        <argsstring>(LiveInterval &amp;LI, bool TrackSubRegs)</argsstring>
+        <name>calculate</name>
+        <qualifiedname>llvm::LiveIntervalCalc::calculate</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>LI</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>TrackSubRegs</declname>
+        </param>
+        <briefdescription>
+<para>Calculates liveness for the register specified in live interval <computeroutput>LI</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates subregister live ranges as needed if subreg liveness tracking is enabled. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveIntervalCalc.h" line="61" column="8" bodyfile="lib/CodeGen/LiveIntervalCalc.cpp" bodystart="41" bodyend="103"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_live_range_1aa1555194b9f176612b04fbd38f49b40d" compoundref="_live_interval_8h" startline="300" endline="303">llvm::LiveRange::clear</references>
+        <references refid="classllvm_1_1_live_interval_calc_1af5198110c0058e3d60524eecf500ee51" compoundref="_live_interval_calc_8cpp" startline="105" endline="120">constructMainRangeFromSubranges</references>
+        <references refid="_live_interval_calc_8cpp_1a70e2de8376b84c468e8a5762fda4c419" compoundref="_live_interval_calc_8cpp" startline="31" endline="39">createDeadDef</references>
+        <references refid="classllvm_1_1_live_interval_1a8104005914e3dfed73608d0d8961b822" compoundref="_live_interval_8h" startline="801" endline="807">llvm::LiveInterval::createSubRangeFrom</references>
+        <references refid="classllvm_1_1_live_range_1a66ff664a97cd3c30de7e873335a0c075" compoundref="_live_interval_8h" startline="382" endline="382">llvm::LiveRange::empty</references>
+        <references refid="structllvm_1_1_lane_bitmask_1a3714a639930eab71d7202da05ad82990" compoundref="_lane_bitmask_8h" startline="82" endline="82">llvm::LaneBitmask::getAll</references>
+        <references refid="classllvm_1_1_live_range_calc_1a3c8fd02f213ccc28812243ec1f36957c" compoundref="_live_range_calc_8h" startline="169" endline="169">llvm::LiveRangeCalc::getDomTree</references>
+        <references refid="classllvm_1_1_live_range_calc_1a11a21f58b3a7b8b7c401958cd3f7304f" compoundref="_live_range_calc_8h" startline="168" endline="168">llvm::LiveRangeCalc::getIndexes</references>
+        <references refid="classllvm_1_1_live_range_calc_1ab032314f07277bf920fd315187ab9605" compoundref="_live_range_calc_8h" startline="166" endline="166">llvm::LiveRangeCalc::getMachineFunction</references>
+        <references refid="classllvm_1_1_live_range_calc_1ad09d2d2f0c1d47c7bc6eb04e33b5e51d" compoundref="_live_range_calc_8h" startline="167" endline="167">llvm::LiveRangeCalc::getRegInfo</references>
+        <references refid="classllvm_1_1_live_range_calc_1a60d4123651abf23e886661980d951ffc" compoundref="_live_range_calc_8h" startline="170" endline="170">llvm::LiveRangeCalc::getVNAlloc</references>
+        <references refid="classllvm_1_1_live_interval_1a1c198291d6ee66150b76633cda8a1749" compoundref="_live_interval_8h" startline="810" endline="812">llvm::LiveInterval::hasSubRanges</references>
+        <references refid="classllvm_1_1_live_interval_calc_1a93435c79c80dceea8b29e6b47993a577">LiveIntervalCalc</references>
+        <references refid="classllvm_1_1_live_interval_1a967540f5e5799b56c6fbcee378d110eb" compoundref="_live_interval_8cpp" startline="919" endline="956">llvm::LiveInterval::refineSubRanges</references>
+        <references refid="classllvm_1_1_live_interval_1a14d46e70db7e417c8ed5bc66fb295185" compoundref="_live_interval_8h" startline="718" endline="718">llvm::LiveInterval::reg</references>
+        <references refid="classllvm_1_1_live_interval_1a0aac3ef1eadaa206a70b767730ef3c5b" compoundref="_live_interval_8cpp" startline="842" endline="859">llvm::LiveInterval::removeEmptySubRanges</references>
+        <references refid="classllvm_1_1_live_range_calc_1a65f0beed94a7dbdf8c8d7e2b46a0afa0" compoundref="_live_range_calc_8cpp" startline="48" endline="59">llvm::LiveRangeCalc::reset</references>
+        <references refid="classllvm_1_1_live_range_calc_1a56cefbb66ed770ce1e6df7cbd1fa90d1" compoundref="_live_range_calc_8cpp" startline="40" endline="46">llvm::LiveRangeCalc::resetLiveOutMap</references>
+        <references refid="classllvm_1_1_live_interval_1a9545a896d571165e9f43cf4b29a6d072" compoundref="_live_interval_8h" startline="782" endline="784">llvm::LiveInterval::subranges</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1a92a6b0a9b7228d190b0a7d8ae3ef03c7" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="104">SubReg</references>
+        <references refid="_machine_sink_8cpp_1a0f36ed1bc17fc1aa97fe291c439a0698" compoundref="_machine_sink_8cpp" startline="2029">TRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_live_interval_calc_1af5198110c0058e3d60524eecf500ee51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveIntervalCalc::constructMainRangeFromSubranges</definition>
+        <argsstring>(LiveInterval &amp;LI)</argsstring>
+        <name>constructMainRangeFromSubranges</name>
+        <qualifiedname>llvm::LiveIntervalCalc::constructMainRangeFromSubranges</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_live_interval" kindref="compound">LiveInterval</ref> &amp;</type>
+          <declname>LI</declname>
+        </param>
+        <briefdescription>
+<para>For live interval <computeroutput>LI</computeroutput> with correct SubRanges construct matching information for the main live range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Expects the main live range to not have any segments or value numbers. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/LiveIntervalCalc.h" line="66" column="8" bodyfile="lib/CodeGen/LiveIntervalCalc.cpp" bodystart="105" bodyend="120"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_live_range_1a4258d794235c7a408b3f52e5e4ef7159" compoundref="_live_interval_8cpp" startline="355" endline="361">llvm::LiveRange::createDeadDef</references>
+        <references refid="classllvm_1_1_v_n_info_1ae623a0f1ab59da851f2ebf1674d1fddb" compoundref="_live_interval_8h" startline="61">llvm::VNInfo::def</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="structllvm_1_1_lane_bitmask_1a3714a639930eab71d7202da05ad82990" compoundref="_lane_bitmask_8h" startline="82" endline="82">llvm::LaneBitmask::getAll</references>
+        <references refid="classllvm_1_1_live_range_calc_1a60d4123651abf23e886661980d951ffc" compoundref="_live_range_calc_8h" startline="170" endline="170">llvm::LiveRangeCalc::getVNAlloc</references>
+        <references refid="classllvm_1_1_v_n_info_1ae72fbcf51be7574c84817cde814df07e" compoundref="_live_interval_8h" startline="78" endline="78">llvm::VNInfo::isPHIDef</references>
+        <references refid="classllvm_1_1_v_n_info_1ab72366fd538f240cbb53dac39368cdfc" compoundref="_live_interval_8h" startline="81" endline="81">llvm::VNInfo::isUnused</references>
+        <references refid="classllvm_1_1_live_interval_1a14d46e70db7e417c8ed5bc66fb295185" compoundref="_live_interval_8h" startline="718" endline="718">llvm::LiveInterval::reg</references>
+        <references refid="classllvm_1_1_live_range_calc_1a56cefbb66ed770ce1e6df7cbd1fa90d1" compoundref="_live_range_calc_8cpp" startline="40" endline="46">llvm::LiveRangeCalc::resetLiveOutMap</references>
+        <references refid="classllvm_1_1_live_range_1a9c628b400be67b6adb4fa07e84a96a82" compoundref="_live_interval_8h" startline="203">llvm::LiveRange::segments</references>
+        <references refid="classllvm_1_1_live_interval_1a9545a896d571165e9f43cf4b29a6d072" compoundref="_live_interval_8h" startline="782" endline="784">llvm::LiveInterval::subranges</references>
+        <references refid="classllvm_1_1_live_range_1a9eb4aa155c41e60dff42f4e741a0dcf0" compoundref="_live_interval_8h" startline="204">llvm::LiveRange::valnos</references>
+        <referencedby refid="classllvm_1_1_live_interval_calc_1ad67d6b7f9f91a2d5852b0f9aebfe542a" compoundref="_live_interval_calc_8cpp" startline="41" endline="103">calculate</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::LiveIntervalCalc</label>
+        <link refid="classllvm_1_1_live_interval_calc"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::LiveRangeCalc</label>
+        <link refid="classllvm_1_1_live_range_calc"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::LiveIntervalCalc</label>
+        <link refid="classllvm_1_1_live_interval_calc"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::LiveRangeCalc</label>
+        <link refid="classllvm_1_1_live_range_calc"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/CodeGen/LiveIntervalCalc.h" line="28" column="1" bodyfile="include/llvm/CodeGen/LiveIntervalCalc.h" bodystart="28" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_live_range_calc_1a46981dd5d4bb3043b740ce285b7b4a95" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>addLiveInBlock</name></member>
+      <member refid="classllvm_1_1_live_interval_calc_1ad67d6b7f9f91a2d5852b0f9aebfe542a" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>calculate</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ae5c960114840d1c6dddfbaa529ac633e" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>calculateValues</name></member>
+      <member refid="classllvm_1_1_live_interval_calc_1af5198110c0058e3d60524eecf500ee51" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>constructMainRangeFromSubranges</name></member>
+      <member refid="classllvm_1_1_live_interval_calc_1a1c36b75f4a0dac1a833a459617f03c76" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>createDeadDefs</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ad445a5028efdf094173a202811f003e3" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>extend</name></member>
+      <member refid="classllvm_1_1_live_interval_calc_1abf0d796c3c3e4edc136150896749a589" prot="private" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>extendToUses</name></member>
+      <member refid="classllvm_1_1_live_interval_calc_1ae3bff863d5f2c5df37ef42d76e457f74" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>extendToUses</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a3c8fd02f213ccc28812243ec1f36957c" prot="protected" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>getDomTree</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a11a21f58b3a7b8b7c401958cd3f7304f" prot="protected" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>getIndexes</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ab032314f07277bf920fd315187ab9605" prot="protected" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>getMachineFunction</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ad09d2d2f0c1d47c7bc6eb04e33b5e51d" prot="protected" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>getRegInfo</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a60d4123651abf23e886661980d951ffc" prot="protected" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>getVNAlloc</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a13c4005ea769c09d88be76fa40744e7e" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>isJointlyDominated</name></member>
+      <member refid="classllvm_1_1_live_interval_calc_1a93435c79c80dceea8b29e6b47993a577" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>LiveIntervalCalc</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ae41cc4877968749dfa2b1fc3f1110a19" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>LiveRangeCalc</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a65f0beed94a7dbdf8c8d7e2b46a0afa0" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>reset</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1a56cefbb66ed770ce1e6df7cbd1fa90d1" prot="protected" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>resetLiveOutMap</name></member>
+      <member refid="classllvm_1_1_live_range_calc_1ae8e6fcd2d2e7e04fb1aa8fab71910f68" prot="public" virt="non-virtual"><scope>llvm::LiveIntervalCalc</scope><name>setLiveOutValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

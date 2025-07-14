@@ -1,0 +1,998 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_instruction_cost" kind="class" language="C++" prot="public">
+    <compoundname>llvm::InstructionCost</compoundname>
+    <includes refid="_instruction_cost_8h" local="yes">llvm/Support/InstructionCost.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029" prot="public" static="no" strong="no">
+        <type></type>
+        <name>CostState</name>
+        <qualifiedname>llvm::InstructionCost::CostState</qualifiedname>
+        <enumvalue id="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029af2a8117cfe9e0f4b0aa8e9897fed80a7" prot="public">
+          <name>Valid</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029a30cd573b546b4b6ec8a46680544db2c3" prot="public">
+          <name>Invalid</name>
+          <briefdescription>
+<para>&lt; The cost value represents a valid cost, even when the cost-value is large. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>&lt; Invalid indicates there is no way to represent the cost as a numeric value. This state exists to represent a possible issue, e.g. if the cost-model knows the operation cannot be expanded into a valid code-sequence by the code-generator. While some passes may assert that the calculated cost must be valid, it is up to individual passes how to interpret an Invalid cost. For example, a transformation pass could choose not to perform a transformation if the resulting cost would end up Invalid. Because some passes may assert a cost is Valid, it is not recommended to use Invalid costs to model &apos;Unknown&apos;. Note that Invalid is semantically different from a (very) high, but valid cost, which intentionally indicates no issue, but rather a strong preference not to select a certain operation. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029" kindref="member">CostState</ref> describes the state of a cost. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="34" column="3" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="34" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" prot="public" static="no">
+        <type><ref refid="classint64__t" kindref="compound">int64_t</ref></type>
+        <definition>using llvm::InstructionCost::CostType =  int64_t</definition>
+        <argsstring></argsstring>
+        <name>CostType</name>
+        <qualifiedname>llvm::InstructionCost::CostType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="31" column="3" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_instruction_cost_1aa58bc3a667079c0d8b6e817c32aa0e9d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+        <definition>CostType llvm::InstructionCost::Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <qualifiedname>llvm::InstructionCost::Value</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="53" column="12" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_instruction_cost_1a26f48d4776e6441674f73c4fffc7f3bb" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029" kindref="member">CostState</ref></type>
+        <definition>CostState llvm::InstructionCost::State</definition>
+        <argsstring></argsstring>
+        <name>State</name>
+        <qualifiedname>llvm::InstructionCost::State</qualifiedname>
+        <initializer>= <ref refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029af2a8117cfe9e0f4b0aa8e9897fed80a7" kindref="member">Valid</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="54" column="13" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a590bf4189d307d8bc4fd9e6151e28a05" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::InstructionCost::propagateState</definition>
+        <argsstring>(const InstructionCost &amp;RHS)</argsstring>
+        <name>propagateState</name>
+        <qualifiedname>llvm::InstructionCost::propagateState</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="56" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="56" bodyend="59"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a5015fe9ff731561c11e54d6a25676a8a" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+        <definition>static CostType llvm::InstructionCost::getMaxValue</definition>
+        <argsstring>()</argsstring>
+        <name>getMaxValue</name>
+        <qualifiedname>llvm::InstructionCost::getMaxValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="61" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a6f820375be61bf234f25bf8ab89e19bd" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+        <definition>static CostType llvm::InstructionCost::getMinValue</definition>
+        <argsstring>()</argsstring>
+        <name>getMinValue</name>
+        <qualifiedname>llvm::InstructionCost::getMinValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="62" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="62" bodyend="62"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::InstructionCost::InstructionCost</definition>
+        <argsstring>()=default</argsstring>
+        <name>InstructionCost</name>
+        <qualifiedname>llvm::InstructionCost::InstructionCost</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="66" column="3"/>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a57207993e2fe6ec98912e8072e4600bc" compoundref="_instruction_cost_8h" startline="73" endline="77">getInvalid</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a6de26b938774385a0a4fb0d0b2a32d48" compoundref="_instruction_cost_8h" startline="71" endline="71">getMax</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a44fe7c0339c1a7550cd1e0b7bf505e87" compoundref="_instruction_cost_8h" startline="72" endline="72">getMin</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a3371d78e8a89bf16ff333af1f383eb4b" compoundref="_instruction_cost_8h" startline="243" endline="247">map</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a9197c084b530b9f4c7d01cb6b6b3b1a0" compoundref="_instruction_cost_8h" startline="205" endline="205">operator!=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1aa3f1470be741fb01f922da764c8b85da" compoundref="_instruction_cost_8h" startline="150" endline="154">operator*=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a317301c54ee5c9803a693b1e72e66ff0" compoundref="_instruction_cost_8h" startline="134" endline="148">operator*=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a417a141153532fe0f14002a76d2c623f" compoundref="_instruction_cost_8h" startline="168" endline="171">operator++</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a4ee5fc78e76c246cd3a10b773a9ccb92" compoundref="_instruction_cost_8h" startline="173" endline="177">operator++</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a0eb2c1aeae46e9c414e94547740e1025" compoundref="_instruction_cost_8h" startline="111" endline="115">operator+=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a79829a95fb4e733a459c2d65ced4a293" compoundref="_instruction_cost_8h" startline="99" endline="109">operator+=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a39a5d770d01c0b085760a7d6ae116edc" compoundref="_instruction_cost_8h" startline="179" endline="182">operator--</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a6becb31e3eec25b6e2cbb41a93e1e89d" compoundref="_instruction_cost_8h" startline="184" endline="188">operator--</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a629687062186d9089f363a4776d9b572" compoundref="_instruction_cost_8h" startline="128" endline="132">operator-=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a946cb586f14f0ea44db84f2a920fa82b" compoundref="_instruction_cost_8h" startline="117" endline="126">operator-=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1afe527986cc2bbf98dfb03cea32c9584a" compoundref="_instruction_cost_8h" startline="162" endline="166">operator/=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a9a064ce8195a488d5c68ca0774d447c6" compoundref="_instruction_cost_8h" startline="156" endline="160">operator/=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1abebda5b4d1c727363ba5b5d02a700523" compoundref="_instruction_cost_8h" startline="220" endline="223">operator&lt;</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1aa0e99b0b79a9c06dc6dd0547a4f83cea" compoundref="_instruction_cost_8h" startline="195" endline="199">operator&lt;</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a8aeb8715cf72d5add6734a3d859d16c8" compoundref="_instruction_cost_8h" startline="230" endline="233">operator&lt;=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1abd40f2f151a4a6ad7195934de16390a3" compoundref="_instruction_cost_8h" startline="216" endline="216">operator&lt;=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1aaf0ca45e36e2ddf2685e072893b8fbfe" compoundref="_instruction_cost_8h" startline="207" endline="210">operator==</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a2c3c6ca97f6864d50e2d3b81a4cb9ff2" compoundref="_instruction_cost_8h" startline="201" endline="203">operator==</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1ac0ff072adb9816c274c8bf9c58b20398" compoundref="_instruction_cost_8h" startline="225" endline="228">operator&gt;</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a6b4329af60e2f4e144d5fff118006dc2" compoundref="_instruction_cost_8h" startline="214" endline="214">operator&gt;</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a7fe3f9404337688cd5aa4d092730febd" compoundref="_instruction_cost_8h" startline="235" endline="238">operator&gt;=</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a9fbd9ec0cd6937982861d39f400f7a07" compoundref="_instruction_cost_8h" startline="218" endline="218">operator&gt;=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1aae83a2e8bde83d82502d21fe35c28890" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::InstructionCost::InstructionCost</definition>
+        <argsstring>(CostState)=delete</argsstring>
+        <name>InstructionCost</name>
+        <qualifiedname>llvm::InstructionCost::InstructionCost</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029" kindref="member">CostState</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="68" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1aa0da62f1c1214dbd0e0705be9c0e374b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::InstructionCost::InstructionCost</definition>
+        <argsstring>(CostType Val)</argsstring>
+        <name>InstructionCost</name>
+        <qualifiedname>llvm::InstructionCost::InstructionCost</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="69" column="3" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="69" bodyend="69"/>
+        <references refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029af2a8117cfe9e0f4b0aa8e9897fed80a7" compoundref="_instruction_cost_8h" startline="35">Valid</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1ae01c5ced9fe2fe50f421ae121483ef04" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::isValid</definition>
+        <argsstring>() const</argsstring>
+        <name>isValid</name>
+        <qualifiedname>llvm::InstructionCost::isValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="79" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="79" bodyend="79"/>
+        <references refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029af2a8117cfe9e0f4b0aa8e9897fed80a7" compoundref="_instruction_cost_8h" startline="35">Valid</references>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a76ff59dafad74689cfe1966b0ed9fa3c" compoundref="_loop_unroll_pass_8cpp" startline="357" endline="682">analyzeLoopUnrollCost</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a362f793f3254317c698e3560548788a5" compoundref="_loop_vectorize_8cpp" startline="10054" endline="10148">areRuntimeChecksProfitable</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_recipe_base_1ac84a2bc6b484c5d3a03e80ce40f0a14c" compoundref="_v_plan_recipes_8cpp" startline="246" endline="274">llvm::VPRecipeBase::cost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a35de5712aacf900ec00d1817008eeed1" compoundref="_p_p_c_target_transform_info_8cpp" startline="582" endline="602">llvm::PPCTTIImpl::getArithmeticInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1aa96045bfcd00b9908c624a5626b2c05c" compoundref="_p_p_c_target_transform_info_8cpp" startline="636" endline="654">llvm::PPCTTIImpl::getCastInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a228a182df5d1f649d5b9f6dc8be75011" compoundref="_p_p_c_target_transform_info_8cpp" startline="656" endline="671">llvm::PPCTTIImpl::getCmpSelInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1afffe3207f30907d3ca4800ba3d26c9f0" compoundref="_p_p_c_target_transform_info_8cpp" startline="858" endline="890">llvm::PPCTTIImpl::getInterleavedMemoryOpCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a9ab346ad59b02578a3fc143c77397761" compoundref="_p_p_c_target_transform_info_8cpp" startline="763" endline="856">llvm::PPCTTIImpl::getMemoryOpCost</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1a4e307866e6d65e87d1e6884b0d13306c" compoundref="_loop_vectorize_8cpp" startline="5783" endline="5962">llvm::LoopVectorizationCostModel::getReductionPatternCost</referencedby>
+        <referencedby refid="_loop_strength_reduce_8cpp_1a3cbf7279944dc2f0f99a6896501277f9" compoundref="_loop_strength_reduce_8cpp" startline="1963" endline="2006">getScalingFactorCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a2933bd38a4062250af0ebb41af0caa10" compoundref="_p_p_c_target_transform_info_8cpp" startline="604" endline="625">llvm::PPCTTIImpl::getShuffleCost</referencedby>
+        <referencedby refid="classllvm_1_1_x86_t_t_i_impl_1a671590a0e2685f1038479bd7c00b920a" compoundref="_x86_target_transform_info_8cpp" startline="1525" endline="2267">llvm::X86TTIImpl::getShuffleCost</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a9b642067999075ba996ecdee40b52b68" compoundref="_instruction_cost_8h" startline="87" endline="91">getValue</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a513e1873d7e7760f5e0241cc47a9aaca" compoundref="_p_p_c_target_transform_info_8cpp" startline="673" endline="761">llvm::PPCTTIImpl::getVectorInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1ae2dcbf9f4bf17b489bfdebc4187d25d4" compoundref="_p_p_c_target_transform_info_8cpp" startline="1046" endline="1098">llvm::PPCTTIImpl::getVPMemoryOpCost</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a3371d78e8a89bf16ff333af1f383eb4b" compoundref="_instruction_cost_8h" startline="243" endline="247">map</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a7a0b7d0565cbdb80fcc368365bf86c9c" compoundref="_instruction_cost_8cpp" startline="19" endline="24">print</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_strength_reduce_8cpp_03_1_1_cost_1abd90406531e76ab0007b8cf6ebe8b34d" compoundref="_loop_strength_reduce_8cpp" startline="1497" endline="1603">anonymous_namespace{LoopStrengthReduce.cpp}::Cost::RateFormula</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1af9f62350ccdebd24858be552f3fc051c" compoundref="_loop_vectorize_8cpp" startline="4861" endline="5142">llvm::LoopVectorizationCostModel::selectInterleaveCount</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1a885ad9ea73b97e3154433e5c37fefa99" compoundref="_loop_vectorize_8cpp" startline="994" endline="998">llvm::LoopVectorizationCostModel::selectUserVectorizationFactor</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a914b19fed88b441570be70455efd195c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::InstructionCost::setValid</definition>
+        <argsstring>()</argsstring>
+        <name>setValid</name>
+        <qualifiedname>llvm::InstructionCost::setValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="80" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="80" bodyend="80"/>
+        <references refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029af2a8117cfe9e0f4b0aa8e9897fed80a7" compoundref="_instruction_cost_8h" startline="35">Valid</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a0e2de49134b2835ec083cd3d15dfa2a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::InstructionCost::setInvalid</definition>
+        <argsstring>()</argsstring>
+        <name>setInvalid</name>
+        <qualifiedname>llvm::InstructionCost::setInvalid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="81" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="81" bodyend="81"/>
+        <references refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029a30cd573b546b4b6ec8a46680544db2c3" compoundref="_instruction_cost_8h" startline="37">Invalid</references>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a57207993e2fe6ec98912e8072e4600bc" compoundref="_instruction_cost_8h" startline="73" endline="77">getInvalid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1ada2193d3ec8ed244d636c20c8f17b2d1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029" kindref="member">CostState</ref></type>
+        <definition>CostState llvm::InstructionCost::getState</definition>
+        <argsstring>() const</argsstring>
+        <name>getState</name>
+        <qualifiedname>llvm::InstructionCost::getState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="82" column="13" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="82" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a9b642067999075ba996ecdee40b52b68" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref> &gt;</type>
+        <definition>std::optional&lt; CostType &gt; llvm::InstructionCost::getValue</definition>
+        <argsstring>() const</argsstring>
+        <name>getValue</name>
+        <qualifiedname>llvm::InstructionCost::getValue</qualifiedname>
+        <briefdescription>
+<para>This function is intended to be used as sparingly as possible, since the class provides the full range of operator support required for arithmetic and comparisons. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="87" column="17" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="87" bodyend="91"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae01c5ced9fe2fe50f421ae121483ef04" compoundref="_instruction_cost_8h" startline="79" endline="79">isValid</references>
+        <referencedby refid="_a_m_d_g_p_u_target_transform_info_8cpp_1a490938b206738261d5984fe958a872ad" compoundref="_a_m_d_g_p_u_target_transform_info_8cpp" startline="1264" endline="1308">adjustInliningThresholdUsingCallee</referencedby>
+        <referencedby refid="_loop_unroll_pass_8cpp_1a76ff59dafad74689cfe1966b0ed9fa3c" compoundref="_loop_unroll_pass_8cpp" startline="357" endline="682">analyzeLoopUnrollCost</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a362f793f3254317c698e3560548788a5" compoundref="_loop_vectorize_8cpp" startline="10054" endline="10148">areRuntimeChecksProfitable</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_vectorize_8cpp_03_1_1_generated_r_t_checks_1ad7b44d9befce70f070d4355d10ffc419" compoundref="_loop_vectorize_8cpp" startline="1943" endline="2020">anonymous_namespace{LoopVectorize.cpp}::GeneratedRTChecks::getCost</referencedby>
+        <referencedby refid="classllvm_1_1_x86_t_t_i_impl_1a671590a0e2685f1038479bd7c00b920a" compoundref="_x86_target_transform_info_8cpp" startline="1525" endline="2267">llvm::X86TTIImpl::getShuffleCost</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_t_t_i_impl_1a99733e87982c752be1218b2d87e592b9" compoundref="_system_z_target_transform_info_8cpp" startline="364" endline="418">llvm::SystemZTTIImpl::getUnrollingPreferences</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_strength_reduce_8cpp_03_1_1_cost_1abd90406531e76ab0007b8cf6ebe8b34d" compoundref="_loop_strength_reduce_8cpp" startline="1497" endline="1603">anonymous_namespace{LoopStrengthReduce.cpp}::Cost::RateFormula</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1af9f62350ccdebd24858be552f3fc051c" compoundref="_loop_vectorize_8cpp" startline="4861" endline="5142">llvm::LoopVectorizationCostModel::selectInterleaveCount</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a79829a95fb4e733a459c2d65ced4a293" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+        <definition>InstructionCost &amp; llvm::InstructionCost::operator+=</definition>
+        <argsstring>(const InstructionCost &amp;RHS)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>llvm::InstructionCost::operator+=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+<para>For all of the arithmetic operators provided here any invalid state is perpetuated and cannot be removed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Once a cost becomes invalid it stays invalid, and it also inherits any invalid state from the RHS. Arithmetic work on the actual values is implemented with saturation, to avoid overflow when using more extreme cost values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="99" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="99" bodyend="109"/>
+        <references refid="namespacellvm_1ad67c6622d517b525fc5d420330d8b3f2" compoundref="_math_extras_8h" startline="702" endline="723">llvm::AddOverflow</references>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a0eb2c1aeae46e9c414e94547740e1025" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+        <definition>InstructionCost &amp; llvm::InstructionCost::operator+=</definition>
+        <argsstring>(const CostType RHS)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>llvm::InstructionCost::operator+=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="111" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="111" bodyend="115"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a946cb586f14f0ea44db84f2a920fa82b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+        <definition>InstructionCost &amp; llvm::InstructionCost::operator-=</definition>
+        <argsstring>(const InstructionCost &amp;RHS)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>llvm::InstructionCost::operator-=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="117" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="117" bodyend="126"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+        <references refid="namespacellvm_1add3b47639a79f68bc108a2c491f579f8" compoundref="_math_extras_8h" startline="728" endline="749">llvm::SubOverflow</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a629687062186d9089f363a4776d9b572" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+        <definition>InstructionCost &amp; llvm::InstructionCost::operator-=</definition>
+        <argsstring>(const CostType RHS)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>llvm::InstructionCost::operator-=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="128" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="128" bodyend="132"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a317301c54ee5c9803a693b1e72e66ff0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+        <definition>InstructionCost &amp; llvm::InstructionCost::operator*=</definition>
+        <argsstring>(const InstructionCost &amp;RHS)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>llvm::InstructionCost::operator*=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="134" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="134" bodyend="148"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="namespacellvm_1a073e9e9c9d16980286268ddb7cf3e2d9" compoundref="_math_extras_8h" startline="754" endline="780">llvm::MulOverflow</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1aa3f1470be741fb01f922da764c8b85da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+        <definition>InstructionCost &amp; llvm::InstructionCost::operator*=</definition>
+        <argsstring>(const CostType RHS)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>llvm::InstructionCost::operator*=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="150" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="150" bodyend="154"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a9a064ce8195a488d5c68ca0774d447c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+        <definition>InstructionCost &amp; llvm::InstructionCost::operator/=</definition>
+        <argsstring>(const InstructionCost &amp;RHS)</argsstring>
+        <name>operator/=</name>
+        <qualifiedname>llvm::InstructionCost::operator/=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="156" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="156" bodyend="160"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1afe527986cc2bbf98dfb03cea32c9584a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+        <definition>InstructionCost &amp; llvm::InstructionCost::operator/=</definition>
+        <argsstring>(const CostType RHS)</argsstring>
+        <name>operator/=</name>
+        <qualifiedname>llvm::InstructionCost::operator/=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="162" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="162" bodyend="166"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a417a141153532fe0f14002a76d2c623f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+        <definition>InstructionCost &amp; llvm::InstructionCost::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <qualifiedname>llvm::InstructionCost::operator++</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="168" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="168" bodyend="171"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a4ee5fc78e76c246cd3a10b773a9ccb92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref></type>
+        <definition>InstructionCost llvm::InstructionCost::operator++</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator++</name>
+        <qualifiedname>llvm::InstructionCost::operator++</qualifiedname>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="173" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="173" bodyend="177"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a39a5d770d01c0b085760a7d6ae116edc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+        <definition>InstructionCost &amp; llvm::InstructionCost::operator--</definition>
+        <argsstring>()</argsstring>
+        <name>operator--</name>
+        <qualifiedname>llvm::InstructionCost::operator--</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="179" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="179" bodyend="182"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a6becb31e3eec25b6e2cbb41a93e1e89d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref></type>
+        <definition>InstructionCost llvm::InstructionCost::operator--</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator--</name>
+        <qualifiedname>llvm::InstructionCost::operator--</qualifiedname>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="184" column="19" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="184" bodyend="188"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1aa0e99b0b79a9c06dc6dd0547a4f83cea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator&lt;</definition>
+        <argsstring>(const InstructionCost &amp;RHS) const</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>llvm::InstructionCost::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+<para>For the comparison operators we have chosen to use lexicographical ordering where valid costs are always considered to be less than invalid costs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This avoids having to add asserts to the comparison operators that the states are valid and users can test for validity of the cost explicitly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="195" column="3" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="195" bodyend="199"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a2c3c6ca97f6864d50e2d3b81a4cb9ff2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator==</definition>
+        <argsstring>(const InstructionCost &amp;RHS) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>llvm::InstructionCost::operator==</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="201" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="201" bodyend="203"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a9197c084b530b9f4c7d01cb6b6b3b1a0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator!=</definition>
+        <argsstring>(const InstructionCost &amp;RHS) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>llvm::InstructionCost::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="205" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="205" bodyend="205"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1aaf0ca45e36e2ddf2685e072893b8fbfe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator==</definition>
+        <argsstring>(const CostType RHS) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>llvm::InstructionCost::operator==</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="207" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="207" bodyend="210"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a2b38258080d11d8b171b809c8e87116a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator!=</definition>
+        <argsstring>(const CostType RHS) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>llvm::InstructionCost::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="212" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="212" bodyend="212"/>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a6b4329af60e2f4e144d5fff118006dc2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator&gt;</definition>
+        <argsstring>(const InstructionCost &amp;RHS) const</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>llvm::InstructionCost::operator&gt;</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="214" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="214" bodyend="214"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1abd40f2f151a4a6ad7195934de16390a3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator&lt;=</definition>
+        <argsstring>(const InstructionCost &amp;RHS) const</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>llvm::InstructionCost::operator&lt;=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="216" column="3" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="216" bodyend="216"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a9fbd9ec0cd6937982861d39f400f7a07" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator&gt;=</definition>
+        <argsstring>(const InstructionCost &amp;RHS) const</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>llvm::InstructionCost::operator&gt;=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="218" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="218" bodyend="218"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1abebda5b4d1c727363ba5b5d02a700523" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator&lt;</definition>
+        <argsstring>(const CostType RHS) const</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>llvm::InstructionCost::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="220" column="3" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="220" bodyend="223"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1ac0ff072adb9816c274c8bf9c58b20398" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator&gt;</definition>
+        <argsstring>(const CostType RHS) const</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>llvm::InstructionCost::operator&gt;</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="225" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="225" bodyend="228"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a8aeb8715cf72d5add6734a3d859d16c8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator&lt;=</definition>
+        <argsstring>(const CostType RHS) const</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>llvm::InstructionCost::operator&lt;=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="230" column="3" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="230" bodyend="233"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a7fe3f9404337688cd5aa4d092730febd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::InstructionCost::operator&gt;=</definition>
+        <argsstring>(const CostType RHS) const</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>llvm::InstructionCost::operator&gt;=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="235" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="235" bodyend="238"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a7a0b7d0565cbdb80fcc368365bf86c9c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Cost::print</definition>
+        <argsstring>(raw_ostream &amp;OS) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::InstructionCost::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="240" column="8" bodyfile="lib/Support/InstructionCost.cpp" bodystart="19" bodyend="24"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae01c5ced9fe2fe50f421ae121483ef04" compoundref="_instruction_cost_8h" startline="79" endline="79">isValid</references>
+        <referencedby refid="classanonymous__namespace_02_loop_strength_reduce_8cpp_03_1_1_cost_1ab9ff5264fbc3faf5b26768f683a43e59" compoundref="_loop_strength_reduce_8cpp" startline="1646" endline="1648">anonymous_namespace{LoopStrengthReduce.cpp}::Cost::dump</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a3371d78e8a89bf16ff333af1f383eb4b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class <ref refid="classllvm_1_1_function" kindref="compound">Function</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref></type>
+        <definition>InstructionCost llvm::InstructionCost::map</definition>
+        <argsstring>(const Function &amp;F) const</argsstring>
+        <name>map</name>
+        <qualifiedname>llvm::InstructionCost::map</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="243" column="8" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="243" bodyend="247"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_instruction_cost_1a57207993e2fe6ec98912e8072e4600bc" compoundref="_instruction_cost_8h" startline="73" endline="77">getInvalid</references>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="classllvm_1_1_instruction_cost_1ae01c5ced9fe2fe50f421ae121483ef04" compoundref="_instruction_cost_8h" startline="79" endline="79">isValid</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a6de26b938774385a0a4fb0d0b2a32d48" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref></type>
+        <definition>static InstructionCost llvm::InstructionCost::getMax</definition>
+        <argsstring>()</argsstring>
+        <name>getMax</name>
+        <qualifiedname>llvm::InstructionCost::getMax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="71" column="26" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="71" bodyend="71"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <referencedby refid="namespacellvm_1_1anonymous__namespace_02_a_m_d_g_p_u_split_module_8cpp_03_1a3884c27912d0714a0f475680f6324b3d" compoundref="_a_m_d_g_p_u_split_module_8cpp" startline="188" endline="240">llvm::anonymous_namespace{AMDGPUSplitModule.cpp}::calculateFunctionCosts</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_planner_1a4adc69fc8f74164e990cce6afc1e061b" compoundref="_loop_vectorize_8cpp" startline="7457" endline="7543">llvm::LoopVectorizationPlanner::computeBestVF</referencedby>
+        <referencedby refid="classllvm_1_1_hexagon_t_t_i_impl_1ad7ba1c452de730eb7097066c418ca601" compoundref="_hexagon_target_transform_info_8cpp" startline="273" endline="292">llvm::HexagonTTIImpl::getArithmeticInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a35de5712aacf900ec00d1817008eeed1" compoundref="_p_p_c_target_transform_info_8cpp" startline="582" endline="602">llvm::PPCTTIImpl::getArithmeticInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_hexagon_t_t_i_impl_1a094857314ef83a5c1a71e2941a00e795" compoundref="_hexagon_target_transform_info_8cpp" startline="294" endline="319">llvm::HexagonTTIImpl::getCastInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1aa96045bfcd00b9908c624a5626b2c05c" compoundref="_p_p_c_target_transform_info_8cpp" startline="636" endline="654">llvm::PPCTTIImpl::getCastInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_hexagon_t_t_i_impl_1ac3fc391aec3ded7732a0715fea1cf4e7" compoundref="_hexagon_target_transform_info_8cpp" startline="258" endline="271">llvm::HexagonTTIImpl::getCmpSelInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a228a182df5d1f649d5b9f6dc8be75011" compoundref="_p_p_c_target_transform_info_8cpp" startline="656" endline="671">llvm::PPCTTIImpl::getCmpSelInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1afffe3207f30907d3ca4800ba3d26c9f0" compoundref="_p_p_c_target_transform_info_8cpp" startline="858" endline="890">llvm::PPCTTIImpl::getInterleavedMemoryOpCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a9ab346ad59b02578a3fc143c77397761" compoundref="_p_p_c_target_transform_info_8cpp" startline="763" endline="856">llvm::PPCTTIImpl::getMemoryOpCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a2933bd38a4062250af0ebb41af0caa10" compoundref="_p_p_c_target_transform_info_8cpp" startline="604" endline="625">llvm::PPCTTIImpl::getShuffleCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a513e1873d7e7760f5e0241cc47a9aaca" compoundref="_p_p_c_target_transform_info_8cpp" startline="673" endline="761">llvm::PPCTTIImpl::getVectorInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1ae2dcbf9f4bf17b489bfdebc4187d25d4" compoundref="_p_p_c_target_transform_info_8cpp" startline="1046" endline="1098">llvm::PPCTTIImpl::getVPMemoryOpCost</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a44fe7c0339c1a7550cd1e0b7bf505e87" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref></type>
+        <definition>static InstructionCost llvm::InstructionCost::getMin</definition>
+        <argsstring>()</argsstring>
+        <name>getMin</name>
+        <qualifiedname>llvm::InstructionCost::getMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="72" column="26" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="72" bodyend="72"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_instruction_cost_1a57207993e2fe6ec98912e8072e4600bc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref></type>
+        <definition>static InstructionCost llvm::InstructionCost::getInvalid</definition>
+        <argsstring>(CostType Val=0)</argsstring>
+        <name>getInvalid</name>
+        <qualifiedname>llvm::InstructionCost::getInvalid</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" kindref="member">CostType</ref></type>
+          <declname>Val</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/InstructionCost.h" line="73" column="26" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="73" bodyend="77"/>
+        <references refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a">InstructionCost</references>
+        <references refid="classllvm_1_1_instruction_cost_1a0e2de49134b2835ec083cd3d15dfa2a5" compoundref="_instruction_cost_8h" startline="81" endline="81">setInvalid</references>
+        <referencedby refid="structllvm_1_1_v_p_first_order_recurrence_p_h_i_recipe_1a465d0006e51f34ba35fccf2cb3f72f89" compoundref="_v_plan_recipes_8cpp" startline="3425" endline="3441">llvm::VPFirstOrderRecurrencePHIRecipe::computeCost</referencedby>
+        <referencedby refid="classllvm_1_1_indexed_reference_1a0182cdf55f9bfbdd904e3f5e6802316a" compoundref="_loop_cache_analysis_8cpp" startline="272" endline="355">llvm::IndexedReference::computeRefCost</referencedby>
+        <referencedby refid="namespacellvm_1aee2e01f96c805b5a96eba720d4eb880b" compoundref="_speculative_execution_8cpp" startline="214" endline="262">llvm::ComputeSpeculationCost</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_region_block_1aa948ba905ff37c533b3c85068f94fd24" compoundref="_v_plan_8cpp" startline="764" endline="799">llvm::VPRegionBlock::cost</referencedby>
+        <referencedby refid="classllvm_1_1_target_transform_info_impl_base_1af789f2112e21a8c039b186e90cc811a8" compoundref="_target_transform_info_impl_8h" startline="640" endline="645">llvm::TargetTransformInfoImplBase::getAltInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_x86_t_t_i_impl_1a0f637a0e145cbc99df0a5c41b51e90b6" compoundref="_x86_target_transform_info_8cpp" startline="1517" endline="1523">llvm::X86TTIImpl::getAltInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1aae70ddddbfd05ed5831918fa1836b947" compoundref="_a_arch64_target_transform_info_8cpp" startline="3476" endline="3676">llvm::AArch64TTIImpl::getArithmeticInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1a24fb14e02fa8e4a261838b46074e42fa" compoundref="_a_arch64_target_transform_info_8cpp" startline="4483" endline="4610">llvm::AArch64TTIImpl::getArithmeticReductionCost</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1a38dd0562fe8267823b87ef5c3bacc264" compoundref="_a_arch64_target_transform_info_8cpp" startline="4457" endline="4480">llvm::AArch64TTIImpl::getArithmeticReductionCostSVE</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1ad0c9ac06022884eb218dc8f8c4056e43" compoundref="_basic_t_t_i_impl_8h" startline="1116" endline="1274">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getCastInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1ad8398a35cd187d6a75b460fcf54b5236" compoundref="_loop_vectorize_8cpp" startline="3314" endline="3375">llvm::LoopVectorizationCostModel::getDivRemSpeculationCost</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1aa47f57320f9f28895b6df6b5eb0f9dfa" compoundref="_a_arch64_target_transform_info_8cpp" startline="3858" endline="3889">llvm::AArch64TTIImpl::getGatherScatterOpCost</referencedby>
+        <referencedby refid="_a_arch64_target_transform_info_8cpp_1a8a65916cd3a5fe149b7cee7a978a80eb" compoundref="_a_arch64_target_transform_info_8cpp" startline="532" endline="560">getHistogramCost</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1a556ec90a0fa1e168a9f22db1deb1fee6" compoundref="_loop_vectorize_8cpp" startline="6384" endline="6823">llvm::LoopVectorizationCostModel::getInstructionCost</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1a3b08e9ad2a315e50f4b0189d9755deed" compoundref="_a_arch64_target_transform_info_8cpp" startline="3992" endline="4025">llvm::AArch64TTIImpl::getInterleavedMemoryOpCost</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a09ac3c26a04fdf36e4bcc0e725fca41e" compoundref="_basic_t_t_i_impl_8h" startline="1483" endline="1624">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getInterleavedMemoryOpCost</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_t_t_i_impl_1affbb031405865e13b46411b934814a83" compoundref="_r_i_s_c_v_target_transform_info_8cpp" startline="720" endline="814">llvm::RISCVTTIImpl::getInterleavedMemoryOpCost</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1a24393b2d81198cf0c6b844750b943292" compoundref="_a_arch64_target_transform_info_8cpp" startline="563" endline="947">llvm::AArch64TTIImpl::getIntrinsicInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a05184f6230f850d3f972f6d904bd2ef5" compoundref="_basic_t_t_i_impl_8h" startline="1627" endline="1993">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getIntrinsicInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_t_t_i_impl_1a8965f79b48ae37911f82bc71e1433131" compoundref="_r_i_s_c_v_target_transform_info_8cpp" startline="963" endline="1251">llvm::RISCVTTIImpl::getIntrinsicInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_target_transform_info_impl_base_1a4eaac4d2c1c7ce1ac8be447338a6e7e5" compoundref="_target_transform_info_impl_8h" startline="792" endline="841">llvm::TargetTransformInfoImplBase::getIntrinsicInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_target_lowering_1a601135659272829d63f02580f4559995" compoundref="_r_i_s_c_v_i_sel_lowering_8cpp" startline="2826" endline="2846">llvm::RISCVTargetLowering::getLMULCost</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1a0ed0459656c8a2378156bf244c7e2087" compoundref="_a_arch64_target_transform_info_8cpp" startline="3811" endline="3834">llvm::AArch64TTIImpl::getMaskedMemoryOpCost</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1a6c8d73add4e552328f931ce1681c494f" compoundref="_a_arch64_target_transform_info_8cpp" startline="3895" endline="3990">llvm::AArch64TTIImpl::getMemoryOpCost</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1adb7e05c95393c231260785fc1ce4700b" compoundref="_a_arch64_target_transform_info_8cpp" startline="4431" endline="4455">llvm::AArch64TTIImpl::getMinMaxReductionCost</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a4b5cc16bea89163600c002e89334a82e" compoundref="_basic_t_t_i_impl_8h" startline="2843" endline="2889">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getMinMaxReductionCost</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a22615a6ebaa0232be4b70be555bf0690" compoundref="_basic_t_t_i_impl_8h" startline="2815" endline="2830">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getOrderedReductionCost</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1a252df3516bdd18a47c638e745bcd01f4" compoundref="_a_arch64_target_transform_info_8cpp" startline="4668" endline="4737">llvm::AArch64TTIImpl::getPartialReductionCost</referencedby>
+        <referencedby refid="classllvm_1_1_target_transform_info_impl_base_1a99ef92b3ecac3ce293aaae0f0a4a3611" compoundref="_target_transform_info_impl_8h" startline="589" endline="595">llvm::TargetTransformInfoImplBase::getPartialReductionCost</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1aae63a6d9d535be11dc640352ea48b6ed" compoundref="_a_arch64_target_transform_info_8cpp" startline="3464" endline="3474">llvm::AArch64TTIImpl::getScalarizationOverhead</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a925361ad88aa02b69d20adaaab9f4f33" compoundref="_basic_t_t_i_impl_8h" startline="859" endline="869">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getScalarizationOverhead</referencedby>
+        <referencedby refid="classllvm_1_1_r_i_s_c_v_t_t_i_impl_1aa50ff21994f2f42d5336fbea8a4ecf06" compoundref="_r_i_s_c_v_target_transform_info_8cpp" startline="671" endline="706">llvm::RISCVTTIImpl::getScalarizationOverhead</referencedby>
+        <referencedby refid="classllvm_1_1_a_arch64_t_t_i_impl_1a005211a6c7f26317af98d088c06f0f64" compoundref="_a_arch64_target_transform_info_8cpp" startline="4612" endline="4666">llvm::AArch64TTIImpl::getSpliceCost</referencedby>
+        <referencedby refid="classllvm_1_1_target_transform_info_impl_base_1a5bfac53f25d38d17febbe2ff84d2e15a" compoundref="_target_transform_info_impl_8h" startline="777" endline="783">llvm::TargetTransformInfoImplBase::getStridedMemoryOpCost</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1a2c1b9368972e15e3602d4279f9988584" compoundref="_basic_t_t_i_impl_8h" startline="2739" endline="2797">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getTreeReductionCost</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1ae2b0b2a1ae237432c1c272406a8b4667" compoundref="_basic_t_t_i_impl_8h" startline="2000" endline="2677">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getTypeBasedIntrinsicInstrCost</referencedby>
+        <referencedby refid="classllvm_1_1_basic_t_t_i_impl_base_1ab192bc3b4b8ccaa71341acf20e6ac335" compoundref="_basic_t_t_i_impl_8h" startline="922" endline="954">llvm::BasicTTIImplBase&lt; BasicTTIImpl &gt;::getTypeLegalizationCost</referencedby>
+        <referencedby refid="classanonymous__namespace_02_lower_matrix_intrinsics_8cpp_03_1_1_lower_matrix_intrinsics_1ab3118e33ed28deca370645b8b909fa5a" compoundref="_lower_matrix_intrinsics_8cpp" startline="1358" endline="1543">anonymous_namespace{LowerMatrixIntrinsics.cpp}::LowerMatrixIntrinsics::lowerDotProduct</referencedby>
+        <referencedby refid="classllvm_1_1_instruction_cost_1a3371d78e8a89bf16ff333af1f383eb4b" compoundref="_instruction_cost_8h" startline="243" endline="247">map</referencedby>
+        <referencedby refid="classllvm_1_1_cost_model_printer_pass_1a6685ffe146df7448fc95cd7fcec89e55" compoundref="_cost_model_8cpp" startline="48" endline="76">llvm::CostModelPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1ae8d11752355845a0e271111de7be7d3a" compoundref="_loop_vectorize_8cpp" startline="6024" endline="6209">llvm::LoopVectorizationCostModel::setCostBasedWideningDecision</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1a8178cc5e49d5251d7ca3413b8a434f8f" compoundref="_loop_vectorize_8cpp" startline="6211" endline="6368">llvm::LoopVectorizationCostModel::setVectorizedCallDecision</referencedby>
+        <referencedby refid="classllvm_1_1_p_p_c_t_t_i_impl_1a40003c9aae5f4e1d9cf4b042db0b0c13" compoundref="_p_p_c_target_transform_info_8cpp" startline="551" endline="580">llvm::PPCTTIImpl::vectorCostAdjustmentFactor</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Support/InstructionCost.h" line="29" column="1" bodyfile="include/llvm/Support/InstructionCost.h" bodystart="29" bodyend="248"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>CostState</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a5dbf65370a0656ea05a0aa97380c15cc" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>CostType</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a57207993e2fe6ec98912e8072e4600bc" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>getInvalid</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a6de26b938774385a0a4fb0d0b2a32d48" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>getMax</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a5015fe9ff731561c11e54d6a25676a8a" prot="private" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>getMaxValue</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a44fe7c0339c1a7550cd1e0b7bf505e87" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>getMin</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a6f820375be61bf234f25bf8ab89e19bd" prot="private" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>getMinValue</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1ada2193d3ec8ed244d636c20c8f17b2d1" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>getState</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a9b642067999075ba996ecdee40b52b68" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>getValue</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1ae38a6fdb26e43b2354add8d313b5df2a" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>InstructionCost</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1aae83a2e8bde83d82502d21fe35c28890" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>InstructionCost</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1aa0da62f1c1214dbd0e0705be9c0e374b" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>InstructionCost</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029a30cd573b546b4b6ec8a46680544db2c3" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>Invalid</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1ae01c5ced9fe2fe50f421ae121483ef04" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>isValid</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a3371d78e8a89bf16ff333af1f383eb4b" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>map</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a9197c084b530b9f4c7d01cb6b6b3b1a0" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator!=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a2b38258080d11d8b171b809c8e87116a" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator!=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a317301c54ee5c9803a693b1e72e66ff0" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator*=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1aa3f1470be741fb01f922da764c8b85da" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator*=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a417a141153532fe0f14002a76d2c623f" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator++</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a4ee5fc78e76c246cd3a10b773a9ccb92" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator++</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a79829a95fb4e733a459c2d65ced4a293" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator+=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a0eb2c1aeae46e9c414e94547740e1025" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator+=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a39a5d770d01c0b085760a7d6ae116edc" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator--</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a6becb31e3eec25b6e2cbb41a93e1e89d" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator--</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a946cb586f14f0ea44db84f2a920fa82b" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator-=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a629687062186d9089f363a4776d9b572" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator-=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a9a064ce8195a488d5c68ca0774d447c6" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator/=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1afe527986cc2bbf98dfb03cea32c9584a" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator/=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1aa0e99b0b79a9c06dc6dd0547a4f83cea" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator&lt;</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1abebda5b4d1c727363ba5b5d02a700523" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator&lt;</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1abd40f2f151a4a6ad7195934de16390a3" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator&lt;=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a8aeb8715cf72d5add6734a3d859d16c8" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator&lt;=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a2c3c6ca97f6864d50e2d3b81a4cb9ff2" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator==</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1aaf0ca45e36e2ddf2685e072893b8fbfe" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator==</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a6b4329af60e2f4e144d5fff118006dc2" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator&gt;</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1ac0ff072adb9816c274c8bf9c58b20398" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator&gt;</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a9fbd9ec0cd6937982861d39f400f7a07" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator&gt;=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a7fe3f9404337688cd5aa4d092730febd" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>operator&gt;=</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a7a0b7d0565cbdb80fcc368365bf86c9c" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>print</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a590bf4189d307d8bc4fd9e6151e28a05" prot="private" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>propagateState</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a0e2de49134b2835ec083cd3d15dfa2a5" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>setInvalid</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a914b19fed88b441570be70455efd195c" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>setValid</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a26f48d4776e6441674f73c4fffc7f3bb" prot="private" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>State</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1a964cfda478e11c52ec46d73eb3185029af2a8117cfe9e0f4b0aa8e9897fed80a7" prot="public" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>Valid</name></member>
+      <member refid="classllvm_1_1_instruction_cost_1aa58bc3a667079c0d8b6e817c32aa0e9d" prot="private" virt="non-virtual"><scope>llvm::InstructionCost</scope><name>Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

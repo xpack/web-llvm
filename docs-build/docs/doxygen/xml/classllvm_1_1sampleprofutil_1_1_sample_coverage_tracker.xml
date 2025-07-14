@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker" kind="class" language="C++" prot="public">
+    <compoundname>llvm::sampleprofutil::SampleCoverageTracker</compoundname>
+    <includes refid="_sample_profile_loader_base_util_8h" local="yes">llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1ada2e5c1756c734b14655435629546d54" prot="private" static="no">
+        <type>std::map&lt; <ref refid="structllvm_1_1sampleprof_1_1_line_location" kindref="compound">LineLocation</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using llvm::sampleprofutil::SampleCoverageTracker::BodySampleCoverageMap =  std::map&lt;LineLocation, unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>BodySampleCoverageMap</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::BodySampleCoverageMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="55" column="3" bodyfile="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a275c12b6d9409c5d92e8fa4a6d99f026" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sampleprof_1_1_function_samples" kindref="compound">FunctionSamples</ref> *, BodySampleCoverageMap &gt;</type>
+        <definition>using llvm::sampleprofutil::SampleCoverageTracker::FunctionSamplesCoverageMap = 
+      DenseMap&lt;const FunctionSamples *, BodySampleCoverageMap&gt;</definition>
+        <argsstring></argsstring>
+        <name>FunctionSamplesCoverageMap</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::FunctionSamplesCoverageMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="56" column="3" bodyfile="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1ac33a61e71320f900a0e25e05fb51821d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">FunctionSamplesCoverageMap</ref></type>
+        <definition>FunctionSamplesCoverageMap llvm::sampleprofutil::SampleCoverageTracker::SampleCoverage</definition>
+        <argsstring></argsstring>
+        <name>SampleCoverage</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::SampleCoverage</qualifiedname>
+        <briefdescription>
+<para>Coverage map for sampling records. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This map keeps a record of sampling records that have been matched to an IR instruction. This is used to detect some form of staleness in profiles (see flag -sample-profile-check-coverage).</para>
+<para>Each entry in the map corresponds to a <ref refid="classllvm_1_1sampleprof_1_1_function_samples" kindref="compound">FunctionSamples</ref> instance. This is another map that counts how many times the sample record at the given location has been used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="68" column="30" bodyfile="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a3920b32e680c8d6b70bfabe0d80bae6c" prot="private" static="no" mutable="no">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::sampleprofutil::SampleCoverageTracker::TotalUsedSamples</definition>
+        <argsstring></argsstring>
+        <name>TotalUsedSamples</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::TotalUsedSamples</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Number of samples used from the profile. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When a sampling record is used for the first time, the samples from that record are added to this accumulator. Coverage is later computed based on the total number of samples available in this function and its callsites.</para>
+<para>Note that this accumulator tracks samples used from a single function and all the inlined callsites. Strictly, we should have a map of counters keyed by <ref refid="classllvm_1_1sampleprof_1_1_function_samples" kindref="compound">FunctionSamples</ref> pointers, but these stats are cleared after every function, so we just need to keep a single counter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="81" column="12" bodyfile="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1aab4339f8a6226476034e6477007648e6" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sampleprofutil::SampleCoverageTracker::ProfAccForSymsInList</definition>
+        <argsstring></argsstring>
+        <name>ProfAccForSymsInList</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::ProfAccForSymsInList</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="85" column="8" bodyfile="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1adb303c9c849d1db014aac9dc66d344c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sampleprofutil::SampleCoverageTracker::markSamplesUsed</definition>
+        <argsstring>(const FunctionSamples *FS, uint32_t LineOffset, uint32_t Discriminator, uint64_t Samples)</argsstring>
+        <name>markSamplesUsed</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::markSamplesUsed</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sampleprof_1_1_function_samples" kindref="compound">FunctionSamples</ref> *</type>
+          <declname>FS</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>LineOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Discriminator</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Samples</declname>
+        </param>
+        <briefdescription>
+<para>Mark as used the sample record for the given function samples at (LineOffset, Discriminator). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if this is the first time we mark the given record. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="37" column="8" bodyfile="lib/Transforms/Utils/SampleProfileLoaderBaseUtil.cpp" bodystart="81" bodyend="91"/>
+        <references refid="namespacellvm_1a845e08be4b0320d66901a66b0c0e9509" compoundref="_instr_prof_8h" startline="139">llvm::Count</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a794d2f372a7bc1e5f5f90bd2bc5ca8d3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::sampleprofutil::SampleCoverageTracker::computeCoverage</definition>
+        <argsstring>(unsigned Used, unsigned Total) const</argsstring>
+        <name>computeCoverage</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::computeCoverage</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Used</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Total</declname>
+        </param>
+        <briefdescription>
+<para>Return the fraction of sample records used in this profile. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned value is an unsigned integer in the range 0-100 indicating the percentage of sample records that were used while applying this profile to the associated function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="39" column="12" bodyfile="lib/Transforms/Utils/SampleProfileLoaderBaseUtil.cpp" bodystart="163" bodyend="168"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1af5ab7a47bc553dfc3ee92daf969d0d7ca96b0141273eabab320119c467cdcaf17" compoundref="_tensor_spec_8h" startline="59">llvm::Total</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a3dd722b8bbc4b043fd9a360f68aead04" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::sampleprofutil::SampleCoverageTracker::countUsedRecords</definition>
+        <argsstring>(const FunctionSamples *FS, ProfileSummaryInfo *PSI) const</argsstring>
+        <name>countUsedRecords</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::countUsedRecords</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sampleprof_1_1_function_samples" kindref="compound">FunctionSamples</ref> *</type>
+          <declname>FS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+          <declname>PSI</declname>
+        </param>
+        <briefdescription>
+<para>Return the number of sample records that were applied from this profile. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This count does not include records from cold inlined callsites. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="40" column="12" bodyfile="lib/Transforms/Utils/SampleProfileLoaderBaseUtil.cpp" bodystart="97" bodyend="116"/>
+        <references refid="namespacellvm_1_1sampleprofutil_1ab6789a9522443425d339fa34c25f89d5" compoundref="_sample_profile_loader_base_util_8cpp" startline="64" endline="75">llvm::sampleprofutil::callsiteIsHot</references>
+        <references refid="namespacellvm_1a845e08be4b0320d66901a66b0c0e9509" compoundref="_instr_prof_8h" startline="139">llvm::Count</references>
+        <references refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a3dd722b8bbc4b043fd9a360f68aead04" compoundref="_sample_profile_loader_base_util_8cpp" startline="97" endline="116">countUsedRecords</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a3dd722b8bbc4b043fd9a360f68aead04" compoundref="_sample_profile_loader_base_util_8cpp" startline="97" endline="116">countUsedRecords</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a115955d2509b80c7c2c435899404b086" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::sampleprofutil::SampleCoverageTracker::countBodyRecords</definition>
+        <argsstring>(const FunctionSamples *FS, ProfileSummaryInfo *PSI) const</argsstring>
+        <name>countBodyRecords</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::countBodyRecords</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sampleprof_1_1_function_samples" kindref="compound">FunctionSamples</ref> *</type>
+          <declname>FS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+          <declname>PSI</declname>
+        </param>
+        <briefdescription>
+<para>Return the number of sample records in the body of this profile. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This count does not include records from cold inlined callsites. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="42" column="12" bodyfile="lib/Transforms/Utils/SampleProfileLoaderBaseUtil.cpp" bodystart="122" bodyend="135"/>
+        <references refid="namespacellvm_1_1sampleprofutil_1ab6789a9522443425d339fa34c25f89d5" compoundref="_sample_profile_loader_base_util_8cpp" startline="64" endline="75">llvm::sampleprofutil::callsiteIsHot</references>
+        <references refid="namespacellvm_1a845e08be4b0320d66901a66b0c0e9509" compoundref="_instr_prof_8h" startline="139">llvm::Count</references>
+        <references refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a115955d2509b80c7c2c435899404b086" compoundref="_sample_profile_loader_base_util_8cpp" startline="122" endline="135">countBodyRecords</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a115955d2509b80c7c2c435899404b086" compoundref="_sample_profile_loader_base_util_8cpp" startline="122" endline="135">countBodyRecords</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a87f6aca2c16e499ae62a681c9afe9ad8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::sampleprofutil::SampleCoverageTracker::getTotalUsedSamples</definition>
+        <argsstring>() const</argsstring>
+        <name>getTotalUsedSamples</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::getTotalUsedSamples</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="44" column="12" bodyfile="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a982cd37395d6c62bb2030d3e1b09b4d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::sampleprofutil::SampleCoverageTracker::countBodySamples</definition>
+        <argsstring>(const FunctionSamples *FS, ProfileSummaryInfo *PSI) const</argsstring>
+        <name>countBodySamples</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::countBodySamples</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sampleprof_1_1_function_samples" kindref="compound">FunctionSamples</ref> *</type>
+          <declname>FS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+          <declname>PSI</declname>
+        </param>
+        <briefdescription>
+<para>Return the number of samples collected in the body of this profile. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This count does not include samples from cold inlined callsites. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="45" column="12" bodyfile="lib/Transforms/Utils/SampleProfileLoaderBaseUtil.cpp" bodystart="141" bodyend="156"/>
+        <references refid="namespacellvm_1_1sampleprofutil_1ab6789a9522443425d339fa34c25f89d5" compoundref="_sample_profile_loader_base_util_8cpp" startline="64" endline="75">llvm::sampleprofutil::callsiteIsHot</references>
+        <references refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a982cd37395d6c62bb2030d3e1b09b4d0" compoundref="_sample_profile_loader_base_util_8cpp" startline="141" endline="156">countBodySamples</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1af5ab7a47bc553dfc3ee92daf969d0d7ca96b0141273eabab320119c467cdcaf17" compoundref="_tensor_spec_8h" startline="59">llvm::Total</references>
+        <referencedby refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a982cd37395d6c62bb2030d3e1b09b4d0" compoundref="_sample_profile_loader_base_util_8cpp" startline="141" endline="156">countBodySamples</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1aba883bb7e12f0e55cc6739a33ade0044" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sampleprofutil::SampleCoverageTracker::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="48" column="8" bodyfile="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1aaed3f5a638013e8a62cf5e15d4770133" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sampleprofutil::SampleCoverageTracker::setProfAccForSymsInList</definition>
+        <argsstring>(bool V)</argsstring>
+        <name>setProfAccForSymsInList</name>
+        <qualifiedname>llvm::sampleprofutil::SampleCoverageTracker::setProfAccForSymsInList</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="52" column="8" bodyfile="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" bodystart="52" bodyend="52"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" line="35" column="1" bodyfile="include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h" bodystart="35" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1ada2e5c1756c734b14655435629546d54" prot="private" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>BodySampleCoverageMap</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1aba883bb7e12f0e55cc6739a33ade0044" prot="public" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>clear</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a794d2f372a7bc1e5f5f90bd2bc5ca8d3" prot="public" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>computeCoverage</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a115955d2509b80c7c2c435899404b086" prot="public" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>countBodyRecords</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a982cd37395d6c62bb2030d3e1b09b4d0" prot="public" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>countBodySamples</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a3dd722b8bbc4b043fd9a360f68aead04" prot="public" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>countUsedRecords</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a275c12b6d9409c5d92e8fa4a6d99f026" prot="private" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>FunctionSamplesCoverageMap</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a87f6aca2c16e499ae62a681c9afe9ad8" prot="public" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>getTotalUsedSamples</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1adb303c9c849d1db014aac9dc66d344c8" prot="public" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>markSamplesUsed</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1aab4339f8a6226476034e6477007648e6" prot="private" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>ProfAccForSymsInList</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1ac33a61e71320f900a0e25e05fb51821d" prot="private" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>SampleCoverage</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1aaed3f5a638013e8a62cf5e15d4770133" prot="public" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>setProfAccForSymsInList</name></member>
+      <member refid="classllvm_1_1sampleprofutil_1_1_sample_coverage_tracker_1a3920b32e680c8d6b70bfabe0d80bae6c" prot="private" virt="non-virtual"><scope>llvm::sampleprofutil::SampleCoverageTracker</scope><name>TotalUsedSamples</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

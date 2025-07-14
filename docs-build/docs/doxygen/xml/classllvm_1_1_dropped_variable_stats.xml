@@ -1,0 +1,818 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_dropped_variable_stats" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>llvm::DroppedVariableStats</compoundname>
+    <derivedcompoundref refid="classllvm_1_1_dropped_variable_stats_i_r" prot="public" virt="non-virtual">llvm::DroppedVariableStatsIR</derivedcompoundref>
+    <includes refid="_dropped_variable_stats_8h" local="yes">llvm/Passes/DroppedVariableStats.h</includes>
+    <innerclass refid="structllvm_1_1_dropped_variable_stats_1_1_debug_variables" prot="protected">llvm::DroppedVariableStats::DebugVariables</innerclass>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_dropped_variable_stats_1a6868779973ca0e558f17521d7810da52" prot="protected" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::DroppedVariableStats::DroppedVariableStatsEnabled</definition>
+        <argsstring></argsstring>
+        <name>DroppedVariableStatsEnabled</name>
+        <qualifiedname>llvm::DroppedVariableStats::DroppedVariableStatsEnabled</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="68" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1a46f071337fdc4a5ed806508f6b6073b4" compoundref="_dropped_variable_stats_8h" startline="36" endline="42">DroppedVariableStats</referencedby>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_i_r_1a098ebeae73eb3b1c09384466602931e7" compoundref="_dropped_variable_stats_i_r_8cpp" startline="51" endline="64">llvm::DroppedVariableStatsIR::registerCallbacks</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_dropped_variable_stats_1a956a96918980eb304dedaa78b88c0d3c" prot="protected" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *, <ref refid="structllvm_1_1_dropped_variable_stats_1_1_debug_variables" kindref="compound">DebugVariables</ref> &gt; &gt;</type>
+        <definition>SmallVector&lt;DenseMap&lt;const Function *, DebugVariables&gt; &gt; llvm::DroppedVariableStats::DebugVariablesStack</definition>
+        <argsstring></argsstring>
+        <name>DebugVariablesStack</name>
+        <qualifiedname>llvm::DroppedVariableStats::DebugVariablesStack</qualifiedname>
+        <briefdescription>
+<para>A stack of a <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>, that maps <ref refid="structllvm_1_1_dropped_variable_stats_1_1_debug_variables" kindref="compound">DebugVariables</ref> for every pass to an <ref refid="classllvm_1_1_function" kindref="compound">llvm::Function</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A stack is used because an optimization pass can call other passes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="80" column="15" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1ab91542990bbb5413110da7acf1815924" compoundref="_dropped_variable_stats_8h" startline="60" endline="66">cleanup</referencedby>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1afb370e0ed83426862695812314133aa7" compoundref="_dropped_variable_stats_8h" startline="53" endline="58">setup</referencedby>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1a39ae6f33a21851aaab9d15fcb979c037">visitEveryDebugRecord</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_dropped_variable_stats_1a07e15724976aed7adc5b3a178548ca77" prot="protected" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_i_scope" kindref="compound">DIScope</ref> * &gt;</type>
+        <definition>DenseSet&lt;const DIScope *&gt; llvm::DroppedVariableStats::VisitedScope</definition>
+        <argsstring></argsstring>
+        <name>VisitedScope</name>
+        <qualifiedname>llvm::DroppedVariableStats::VisitedScope</qualifiedname>
+        <briefdescription>
+<para>A <ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref> tracking whether a scope was visited before. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="83" column="12" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_dropped_variable_stats_1a276914a247d61781f51e41186a9dc2af" prot="protected" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>, <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="namespacellvm_1a07ea053ea2cdbee8e68ebd607c26dc8a" kindref="member">VarID</ref>, <ref refid="classllvm_1_1_d_i_location" kindref="compound">DILocation</ref> * &gt; &gt; &gt;</type>
+        <definition>SmallVector&lt;DenseMap&lt;StringRef, DenseMap&lt;VarID, DILocation *&gt; &gt; &gt; llvm::DroppedVariableStats::InlinedAts</definition>
+        <argsstring></argsstring>
+        <name>InlinedAts</name>
+        <qualifiedname>llvm::DroppedVariableStats::InlinedAts</qualifiedname>
+        <briefdescription>
+<para>A stack of DenseMaps, which map the name of an <ref refid="classllvm_1_1_function" kindref="compound">llvm::Function</ref> to a <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref> of VarIDs and their inlinedAt locations before an optimization pass has run. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="87" column="15" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="87" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1a039613c35cae74dbc1b9f2bcdc793f9e" compoundref="_dropped_variable_stats_8h" startline="90" endline="117">calculateDroppedStatsAndPrint</referencedby>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1ab91542990bbb5413110da7acf1815924" compoundref="_dropped_variable_stats_8h" startline="60" endline="66">cleanup</referencedby>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1a848e174c81c6209939940cb31f1353cf" compoundref="_dropped_variable_stats_8h" startline="141" endline="149">run</referencedby>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1afb370e0ed83426862695812314133aa7" compoundref="_dropped_variable_stats_8h" startline="53" endline="58">setup</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_dropped_variable_stats_1a9530fc2d82858ef5f7f0f05a572b0451" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::DroppedVariableStats::PassDroppedVariables</definition>
+        <argsstring></argsstring>
+        <name>PassDroppedVariables</name>
+        <qualifiedname>llvm::DroppedVariableStats::PassDroppedVariables</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="220" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a46f071337fdc4a5ed806508f6b6073b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::DroppedVariableStats::DroppedVariableStats</definition>
+        <argsstring>(bool DroppedVarStatsEnabled)</argsstring>
+        <name>DroppedVariableStats</name>
+        <qualifiedname>llvm::DroppedVariableStats::DroppedVariableStats</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>DroppedVarStatsEnabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="36" column="3" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="36" bodyend="42"/>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a6868779973ca0e558f17521d7810da52" compoundref="_dropped_variable_stats_8h" startline="68">DroppedVariableStatsEnabled</references>
+        <references refid="namespacellvm_1a2d79a00fa7c56f57b87f2fe2a3f118c7" compoundref="raw__ostream_8cpp" startline="895" endline="905">llvm::outs</references>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1a57364af948f3e0f629a32882a0e7f68b">DroppedVariableStats</referencedby>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_i_r_1ab45a0f0dfd5a887154fffaae4cc6e3be" compoundref="_dropped_variable_stats_i_r_8h" startline="28" endline="29">llvm::DroppedVariableStatsIR::DroppedVariableStatsIR</referencedby>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1ad32f8e42bb15683d18d8a78de0f854cc">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1addabc63a03c26b62477fb7af2490f574" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual llvm::DroppedVariableStats::~DroppedVariableStats</definition>
+        <argsstring>()</argsstring>
+        <name>~DroppedVariableStats</name>
+        <qualifiedname>llvm::DroppedVariableStats::~DroppedVariableStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="44" column="11" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a57364af948f3e0f629a32882a0e7f68b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::DroppedVariableStats::DroppedVariableStats</definition>
+        <argsstring>(const DroppedVariableStats &amp;)=delete</argsstring>
+        <name>DroppedVariableStats</name>
+        <qualifiedname>llvm::DroppedVariableStats::DroppedVariableStats</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dropped_variable_stats" kindref="compound">DroppedVariableStats</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="47" column="3"/>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a46f071337fdc4a5ed806508f6b6073b4" compoundref="_dropped_variable_stats_8h" startline="36" endline="42">DroppedVariableStats</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1ad32f8e42bb15683d18d8a78de0f854cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DroppedVariableStats::operator=</definition>
+        <argsstring>(const DroppedVariableStats &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::DroppedVariableStats::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dropped_variable_stats" kindref="compound">DroppedVariableStats</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="48" column="8"/>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a46f071337fdc4a5ed806508f6b6073b4" compoundref="_dropped_variable_stats_8h" startline="36" endline="42">DroppedVariableStats</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a2849714d5e1cfb51a1df91c1bc855dcb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::DroppedVariableStats::getPassDroppedVariables</definition>
+        <argsstring>()</argsstring>
+        <name>getPassDroppedVariables</name>
+        <qualifiedname>llvm::DroppedVariableStats::getPassDroppedVariables</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="50" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="50" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1afb370e0ed83426862695812314133aa7" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DroppedVariableStats::setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <qualifiedname>llvm::DroppedVariableStats::setup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="53" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="53" bodyend="58"/>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a956a96918980eb304dedaa78b88c0d3c" compoundref="_dropped_variable_stats_8h" startline="80">DebugVariablesStack</references>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a276914a247d61781f51e41186a9dc2af" compoundref="_dropped_variable_stats_8h" startline="87">InlinedAts</references>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_i_r_1a07f08df571060b6c07de22e8211a6b39" compoundref="_dropped_variable_stats_i_r_8h" startline="31" endline="37">llvm::DroppedVariableStatsIR::runBeforePass</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1ab91542990bbb5413110da7acf1815924" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DroppedVariableStats::cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup</name>
+        <qualifiedname>llvm::DroppedVariableStats::cleanup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="60" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="60" bodyend="66"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a956a96918980eb304dedaa78b88c0d3c" compoundref="_dropped_variable_stats_8h" startline="80">DebugVariablesStack</references>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a276914a247d61781f51e41186a9dc2af" compoundref="_dropped_variable_stats_8h" startline="87">InlinedAts</references>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_i_r_1a098ebeae73eb3b1c09384466602931e7" compoundref="_dropped_variable_stats_i_r_8cpp" startline="51" endline="64">llvm::DroppedVariableStatsIR::registerCallbacks</referencedby>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_i_r_1abe7c231e11ef6c5345cbf3f9e9ae7979" compoundref="_dropped_variable_stats_i_r_8h" startline="39" endline="45">llvm::DroppedVariableStatsIR::runAfterPass</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a039613c35cae74dbc1b9f2bcdc793f9e" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DroppedVariableStats::calculateDroppedStatsAndPrint</definition>
+        <argsstring>(DebugVariables &amp;DbgVariables, StringRef FuncName, StringRef PassID, StringRef FuncOrModName, StringRef PassLevel, const Function *Func)</argsstring>
+        <name>calculateDroppedStatsAndPrint</name>
+        <qualifiedname>llvm::DroppedVariableStats::calculateDroppedStatsAndPrint</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_dropped_variable_stats_1_1_debug_variables" kindref="compound">DebugVariables</ref> &amp;</type>
+          <declname>DbgVariables</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>FuncName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>PassID</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>FuncOrModName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>PassLevel</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>Func</declname>
+        </param>
+        <briefdescription>
+<para>Calculate the number of dropped variables in an <ref refid="classllvm_1_1_function" kindref="compound">llvm::Function</ref> or <ref refid="classllvm_1_1_machine_function" kindref="compound">llvm::MachineFunction</ref> and print the relevant information to stdout. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="90" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="90" bodyend="117"/>
+        <references refid="classllvm_1_1detail_1_1_dense_set_impl_1ad409c2de8502b94c8a0b1193307c63b6" compoundref="_dense_set_8h" startline="193" endline="195">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::contains</references>
+        <references refid="structllvm_1_1_dropped_variable_stats_1_1_debug_variables_1a5e4d16731206131193654cbea6408074" compoundref="_dropped_variable_stats_8h" startline="73">llvm::DroppedVariableStats::DebugVariables::DebugVariablesAfter</references>
+        <references refid="structllvm_1_1_dropped_variable_stats_1_1_debug_variables_1ae0035704c71ffaf5c1e72109a3209140" compoundref="_dropped_variable_stats_8h" startline="71">llvm::DroppedVariableStats::DebugVariables::DebugVariablesBefore</references>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a276914a247d61781f51e41186a9dc2af" compoundref="_dropped_variable_stats_8h" startline="87">InlinedAts</references>
+        <references refid="namespacellvm_1a2d79a00fa7c56f57b87f2fe2a3f118c7" compoundref="raw__ostream_8cpp" startline="895" endline="905">llvm::outs</references>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a1eb80ff593f2b7c49f83baaa60306b25">visitEveryInstruction</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a75d47320ab41eb44b12c355c8a3e9fe7" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::DroppedVariableStats::updateDroppedCount</definition>
+        <argsstring>(DILocation *DbgLoc, const DIScope *Scope, const DIScope *DbgValScope, DenseMap&lt; VarID, DILocation * &gt; &amp;InlinedAtsMap, VarID Var, unsigned &amp;DroppedCount)</argsstring>
+        <name>updateDroppedCount</name>
+        <qualifiedname>llvm::DroppedVariableStats::updateDroppedCount</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_d_i_location" kindref="compound">DILocation</ref> *</type>
+          <declname>DbgLoc</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_i_scope" kindref="compound">DIScope</ref> *</type>
+          <declname>Scope</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_i_scope" kindref="compound">DIScope</ref> *</type>
+          <declname>DbgValScope</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="namespacellvm_1a07ea053ea2cdbee8e68ebd607c26dc8a" kindref="member">VarID</ref>, <ref refid="classllvm_1_1_d_i_location" kindref="compound">DILocation</ref> * &gt; &amp;</type>
+          <declname>InlinedAtsMap</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a07ea053ea2cdbee8e68ebd607c26dc8a" kindref="member">VarID</ref></type>
+          <declname>Var</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>DroppedCount</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if a <computeroutput>Var</computeroutput> has been dropped or is a false positive. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Also update the <computeroutput>DroppedCount</computeroutput> if a debug variable is dropped. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="121" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="121" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a848e174c81c6209939940cb31f1353cf" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DroppedVariableStats::run</definition>
+        <argsstring>(DebugVariables &amp;DbgVariables, StringRef FuncName, bool Before)</argsstring>
+        <name>run</name>
+        <qualifiedname>llvm::DroppedVariableStats::run</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_dropped_variable_stats_1_1_debug_variables" kindref="compound">DebugVariables</ref> &amp;</type>
+          <declname>DbgVariables</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>FuncName</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Before</declname>
+        </param>
+        <briefdescription>
+<para>Run code to populate relevant data structures over an <ref refid="classllvm_1_1_function" kindref="compound">llvm::Function</ref> or <ref refid="classllvm_1_1_machine_function" kindref="compound">llvm::MachineFunction</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="141" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="141" bodyend="149"/>
+        <references refid="_standard_instrumentations_8cpp_1a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e" compoundref="_standard_instrumentations_8cpp" startline="811">Before</references>
+        <references refid="structllvm_1_1_dropped_variable_stats_1_1_debug_variables_1a5e4d16731206131193654cbea6408074" compoundref="_dropped_variable_stats_8h" startline="73">llvm::DroppedVariableStats::DebugVariables::DebugVariablesAfter</references>
+        <references refid="structllvm_1_1_dropped_variable_stats_1_1_debug_variables_1ae0035704c71ffaf5c1e72109a3209140" compoundref="_dropped_variable_stats_8h" startline="71">llvm::DroppedVariableStats::DebugVariables::DebugVariablesBefore</references>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a276914a247d61781f51e41186a9dc2af" compoundref="_dropped_variable_stats_8h" startline="87">InlinedAts</references>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a39ae6f33a21851aaab9d15fcb979c037">visitEveryDebugRecord</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a2ad1df667a6a13366805e55ea363ee9b" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DroppedVariableStats::populateVarIDSetAndInlinedMap</definition>
+        <argsstring>(const DILocalVariable *DbgVar, DebugLoc DbgLoc, DenseSet&lt; VarID &gt; &amp;VarIDSet, DenseMap&lt; StringRef, DenseMap&lt; VarID, DILocation * &gt; &gt; &amp;InlinedAtsMap, StringRef FuncName, bool Before)</argsstring>
+        <name>populateVarIDSetAndInlinedMap</name>
+        <qualifiedname>llvm::DroppedVariableStats::populateVarIDSetAndInlinedMap</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_i_local_variable" kindref="compound">DILocalVariable</ref> *</type>
+          <declname>DbgVar</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_debug_loc" kindref="compound">DebugLoc</ref></type>
+          <declname>DbgLoc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="namespacellvm_1a07ea053ea2cdbee8e68ebd607c26dc8a" kindref="member">VarID</ref> &gt; &amp;</type>
+          <declname>VarIDSet</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>, <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="namespacellvm_1a07ea053ea2cdbee8e68ebd607c26dc8a" kindref="member">VarID</ref>, <ref refid="classllvm_1_1_d_i_location" kindref="compound">DILocation</ref> * &gt; &gt; &amp;</type>
+          <declname>InlinedAtsMap</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>FuncName</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Before</declname>
+        </param>
+        <briefdescription>
+<para>Populate the VarIDSet and InlinedAtMap with the relevant information needed for before and after pass analysis to determine dropped variable status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="153" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="153" bodyend="161"/>
+        <references refid="_standard_instrumentations_8cpp_1a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e" compoundref="_standard_instrumentations_8cpp" startline="811">Before</references>
+        <references refid="classllvm_1_1_debug_loc_1ada0b6f3c53a53b7274e7aeb23eeab5a8" compoundref="_debug_loc_8cpp" startline="39" endline="42">llvm::DebugLoc::getInlinedAt</references>
+        <references refid="classllvm_1_1_d_i_local_variable_1a38229438b1c22802074b3181b0b80b85" compoundref="_debug_info_metadata_8h" startline="3518" endline="3520">llvm::DILocalVariable::getScope</references>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+        <references refid="classllvm_1_1detail_1_1_dense_set_impl_1a1b0f3ebdced8fce4b22c6a63b25d9525" compoundref="_dense_set_8h" startline="213" endline="216">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a1eb80ff593f2b7c49f83baaa60306b25" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::DroppedVariableStats::visitEveryInstruction</definition>
+        <argsstring>(unsigned &amp;DroppedCount, DenseMap&lt; VarID, DILocation * &gt; &amp;InlinedAtsMap, VarID Var)=0</argsstring>
+        <name>visitEveryInstruction</name>
+        <qualifiedname>llvm::DroppedVariableStats::visitEveryInstruction</qualifiedname>
+        <reimplementedby refid="classllvm_1_1_dropped_variable_stats_i_r_1ae3faee18808aed1804ac4480fb2105cd">visitEveryInstruction</reimplementedby>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>DroppedCount</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="namespacellvm_1a07ea053ea2cdbee8e68ebd607c26dc8a" kindref="member">VarID</ref>, <ref refid="classllvm_1_1_d_i_location" kindref="compound">DILocation</ref> * &gt; &amp;</type>
+          <declname>InlinedAtsMap</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a07ea053ea2cdbee8e68ebd607c26dc8a" kindref="member">VarID</ref></type>
+          <declname>Var</declname>
+        </param>
+        <briefdescription>
+<para>Visit every <ref refid="classllvm_1_1_instruction" kindref="compound">llvm::Instruction</ref> or llvm::MachineInstruction and check if the debug variable denoted by its <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> <computeroutput>Var</computeroutput> may have been dropped by an optimization pass. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="166" column="3"/>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1a039613c35cae74dbc1b9f2bcdc793f9e" compoundref="_dropped_variable_stats_8h" startline="90" endline="117">calculateDroppedStatsAndPrint</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a39ae6f33a21851aaab9d15fcb979c037" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::DroppedVariableStats::visitEveryDebugRecord</definition>
+        <argsstring>(DenseSet&lt; VarID &gt; &amp;VarIDSet, DenseMap&lt; StringRef, DenseMap&lt; VarID, DILocation * &gt; &gt; &amp;InlinedAtsMap, StringRef FuncName, bool Before)=0</argsstring>
+        <name>visitEveryDebugRecord</name>
+        <qualifiedname>llvm::DroppedVariableStats::visitEveryDebugRecord</qualifiedname>
+        <reimplementedby refid="classllvm_1_1_dropped_variable_stats_i_r_1af6ed4852a8021c4fedc463204a04187d">visitEveryDebugRecord</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="namespacellvm_1a07ea053ea2cdbee8e68ebd607c26dc8a" kindref="member">VarID</ref> &gt; &amp;</type>
+          <declname>VarIDSet</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>, <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="namespacellvm_1a07ea053ea2cdbee8e68ebd607c26dc8a" kindref="member">VarID</ref>, <ref refid="classllvm_1_1_d_i_location" kindref="compound">DILocation</ref> * &gt; &gt; &amp;</type>
+          <declname>InlinedAtsMap</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>FuncName</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Before</declname>
+        </param>
+        <briefdescription>
+<para>Visit every debug record in an <ref refid="classllvm_1_1_function" kindref="compound">llvm::Function</ref> or <ref refid="classllvm_1_1_machine_function" kindref="compound">llvm::MachineFunction</ref> and call populateVarIDSetAndInlinedMap on it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="171" column="16"/>
+        <references refid="_standard_instrumentations_8cpp_1a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e" compoundref="_standard_instrumentations_8cpp" startline="811">Before</references>
+        <references refid="classllvm_1_1_dropped_variable_stats_1a956a96918980eb304dedaa78b88c0d3c" compoundref="_dropped_variable_stats_8h" startline="80">DebugVariablesStack</references>
+        <references refid="namespacellvm_1a9b64313b5c1907066b7bab1c60a2ea08" compoundref="_s_t_l_extras_8h" startline="336" endline="339">llvm::drop_end</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <referencedby refid="classllvm_1_1_dropped_variable_stats_1a848e174c81c6209939940cb31f1353cf" compoundref="_dropped_variable_stats_8h" startline="141" endline="149">run</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a5e4c7649922447cb5f1fc59c5a9ee77b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DroppedVariableStats::removeVarFromAllSets</definition>
+        <argsstring>(VarID Var, const Function *F)</argsstring>
+        <name>removeVarFromAllSets</name>
+        <qualifiedname>llvm::DroppedVariableStats::removeVarFromAllSets</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1a07ea053ea2cdbee8e68ebd607c26dc8a" kindref="member">VarID</ref></type>
+          <declname>Var</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Remove a dropped debug variable&apos;s <ref refid="namespacellvm_1a07ea053ea2cdbee8e68ebd607c26dc8a" kindref="member">VarID</ref> from all Sets in the DroppedVariablesBefore stack. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="179" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="179" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a66487f37dbb3cafb85728feda13892e0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::DroppedVariableStats::isScopeChildOfOrEqualTo</definition>
+        <argsstring>(const DIScope *Scope, const DIScope *DbgValScope)</argsstring>
+        <name>isScopeChildOfOrEqualTo</name>
+        <qualifiedname>llvm::DroppedVariableStats::isScopeChildOfOrEqualTo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_i_scope" kindref="compound">DIScope</ref> *</type>
+          <declname>Scope</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_i_scope" kindref="compound">DIScope</ref> *</type>
+          <declname>DbgValScope</declname>
+        </param>
+        <briefdescription>
+<para>Return true if <computeroutput>Scope</computeroutput> is the same as <computeroutput>DbgValScope</computeroutput> or a child scope of <computeroutput>DbgValScope</computeroutput>, return false otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="187" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="187" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dropped_variable_stats_1a8fdbc373ce011810665540c9e898e989" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::DroppedVariableStats::isInlinedAtChildOfOrEqualTo</definition>
+        <argsstring>(const DILocation *InlinedAt, const DILocation *DbgValInlinedAt)</argsstring>
+        <name>isInlinedAtChildOfOrEqualTo</name>
+        <qualifiedname>llvm::DroppedVariableStats::isInlinedAtChildOfOrEqualTo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_i_location" kindref="compound">DILocation</ref> *</type>
+          <declname>InlinedAt</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_i_location" kindref="compound">DILocation</ref> *</type>
+          <declname>DbgValInlinedAt</declname>
+        </param>
+        <briefdescription>
+<para>Return true if <computeroutput>InlinedAt</computeroutput> is the same as <computeroutput>DbgValInlinedAt</computeroutput> or part of the InlinedAt chain, return false otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Passes/DroppedVariableStats.h" line="206" column="8" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="206" bodyend="219"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A base class to collect and print dropped debug information variable statistics. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::DroppedVariableStats</label>
+        <link refid="classllvm_1_1_dropped_variable_stats"/>
+      </node>
+      <node id="2">
+        <label>llvm::DroppedVariableStatsIR</label>
+        <link refid="classllvm_1_1_dropped_variable_stats_i_r"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>Size_T</label>
+      </node>
+      <node id="9">
+        <label>SmallVectorSizeType&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt; &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_dense_map_3_01const_01llvm_1_1_function_01_5_00_01llvm8d1dc3849ccbe2ea63da935245c77b53"/>
+      </node>
+      <node id="32">
+        <label>SmallVectorSizeType&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt; &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_dense_map_3_01llvm_1_1_string_ref_00_01llvm_1_1_dense_6b0de29d6993fea475c9e866cec15a19"/>
+      </node>
+      <node id="18">
+        <label>SmallVectorStorage&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt;, CalculateSmallVectorDefaultInlinedElements&lt;llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt;&gt;::value &gt;</label>
+      </node>
+      <node id="33">
+        <label>SmallVectorStorage&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt;, CalculateSmallVectorDefaultInlinedElements&lt;llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt;&gt;::value &gt;</label>
+      </node>
+      <node id="2">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="22">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="25">
+        <label>llvm::DenseSet&lt; ValueT, ValueInfoT &gt;</label>
+        <link refid="classllvm_1_1_dense_set"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::DenseSet&lt; const llvm::DIScope * &gt;</label>
+        <link refid="classllvm_1_1_dense_set"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+        <childnode refid="25" relation="template-instance">
+          <edgelabel>&lt; const llvm::DIScope * &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::DroppedVariableStats</label>
+        <link refid="classllvm_1_1_dropped_variable_stats"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>DroppedVariableStatsEnabled</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>DebugVariablesStack</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>VisitedScope</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>InlinedAts</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+        <childnode refid="21" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::SmallVector&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="18" relation="private-inheritance">
+        </childnode>
+        <childnode refid="19" relation="template-instance">
+          <edgelabel>&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>llvm::SmallVector&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+        <childnode refid="33" relation="private-inheritance">
+        </childnode>
+        <childnode refid="19" relation="template-instance">
+          <edgelabel>&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt; &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt; &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::SmallVectorImpl&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm::SmallVectorImpl&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="22" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="template-instance">
+          <edgelabel>&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="template-instance">
+          <edgelabel>&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; llvm::DenseMap&lt; const llvm::Function *, llvm::DroppedVariableStats::DebugVariables &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; llvm::DenseMap&lt; llvm::StringRef, llvm::DenseMap&lt; VarID, llvm::DILocation * &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;</label>
+        <link refid="classllvm_1_1detail_1_1_dense_set_impl"/>
+      </node>
+      <node id="24">
+        <label>llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;</label>
+        <link refid="classllvm_1_1detail_1_1_dense_set_impl"/>
+      </node>
+      <node id="8">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Passes/DroppedVariableStats.h" line="34" column="1" bodyfile="include/llvm/Passes/DroppedVariableStats.h" bodystart="34" bodyend="221"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a039613c35cae74dbc1b9f2bcdc793f9e" prot="protected" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>calculateDroppedStatsAndPrint</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1ab91542990bbb5413110da7acf1815924" prot="protected" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>cleanup</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a956a96918980eb304dedaa78b88c0d3c" prot="protected" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>DebugVariablesStack</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a46f071337fdc4a5ed806508f6b6073b4" prot="public" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>DroppedVariableStats</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a57364af948f3e0f629a32882a0e7f68b" prot="public" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>DroppedVariableStats</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a6868779973ca0e558f17521d7810da52" prot="protected" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>DroppedVariableStatsEnabled</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a2849714d5e1cfb51a1df91c1bc855dcb" prot="public" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>getPassDroppedVariables</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a276914a247d61781f51e41186a9dc2af" prot="protected" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>InlinedAts</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a8fdbc373ce011810665540c9e898e989" prot="private" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>isInlinedAtChildOfOrEqualTo</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a66487f37dbb3cafb85728feda13892e0" prot="private" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>isScopeChildOfOrEqualTo</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1ad32f8e42bb15683d18d8a78de0f854cc" prot="public" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a9530fc2d82858ef5f7f0f05a572b0451" prot="private" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>PassDroppedVariables</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a2ad1df667a6a13366805e55ea363ee9b" prot="protected" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>populateVarIDSetAndInlinedMap</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a5e4c7649922447cb5f1fc59c5a9ee77b" prot="private" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>removeVarFromAllSets</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a848e174c81c6209939940cb31f1353cf" prot="protected" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>run</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1afb370e0ed83426862695812314133aa7" prot="protected" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>setup</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a75d47320ab41eb44b12c355c8a3e9fe7" prot="protected" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>updateDroppedCount</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a07e15724976aed7adc5b3a178548ca77" prot="protected" virt="non-virtual"><scope>llvm::DroppedVariableStats</scope><name>VisitedScope</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a39ae6f33a21851aaab9d15fcb979c037" prot="protected" virt="pure-virtual"><scope>llvm::DroppedVariableStats</scope><name>visitEveryDebugRecord</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1a1eb80ff593f2b7c49f83baaa60306b25" prot="protected" virt="pure-virtual"><scope>llvm::DroppedVariableStats</scope><name>visitEveryInstruction</name></member>
+      <member refid="classllvm_1_1_dropped_variable_stats_1addabc63a03c26b62477fb7af2490f574" prot="public" virt="virtual"><scope>llvm::DroppedVariableStats</scope><name>~DroppedVariableStats</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

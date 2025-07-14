@@ -1,0 +1,1162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1jitlink_1_1aarch64" kind="namespace" language="C++">
+    <compoundname>llvm::jitlink::aarch64</compoundname>
+    <innerclass refid="classllvm_1_1jitlink_1_1aarch64_1_1_g_o_t_table_manager" prot="public">llvm::jitlink::aarch64::GOTTableManager</innerclass>
+    <innerclass refid="classllvm_1_1jitlink_1_1aarch64_1_1_p_l_t_table_manager" prot="public">llvm::jitlink::aarch64::PLTTableManager</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043" prot="public" static="no" strong="no">
+        <type><ref refid="classllvm_1_1jitlink_1_1_edge_1af18145da213e6c4033b368d657e80baa" kindref="member">Edge::Kind</ref></type>
+        <name>EdgeKind_aarch64</name>
+        <qualifiedname>llvm::jitlink::aarch64::EdgeKind_aarch64</qualifiedname>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a9f6ab8a0d2f19948762b78f6d6c5f562" prot="public">
+          <name>Pointer64</name>
+          <initializer>= Edge::FirstRelocation</initializer>
+          <briefdescription>
+<para>A plain 64-bit pointer value relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : uint64 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a109802d2cdabf31aaf8cb2aeac27547a" prot="public">
+          <name>Pointer64Authenticated</name>
+          <briefdescription>
+<para>An arm64e authenticated pointer relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The addend contains a 64-bit struct containing the authentication parameters:</para>
+<para>Addend encoding: int32_t addend; <ref refid="classuint16__t" kindref="compound">uint16_t</ref> diversityData; <ref refid="classuint16__t" kindref="compound">uint16_t</ref> hasAddressDiversity : 1; <ref refid="classuint16__t" kindref="compound">uint16_t</ref> key : 2; <ref refid="classuint16__t" kindref="compound">uint16_t</ref> zeroes : 12; <ref refid="classuint16__t" kindref="compound">uint16_t</ref> authenticated : 1;</para>
+<para>Note: This means that the addend cannot be interpreted as a plain offset prior to lowering.</para>
+<para>Authenticated pointer edges cannot be fixed up directly by JITLink as the signing keys are held in the executing process. They can be removed from the graph by a combination of the createEmptyPointerSigningFunction pass (post-prune) and the lowerPointer64AuthEdgesToSigningFunction pass (pre-fixup). Together these passes construct a signing function that will be run in the executing process to write the signed pointers to the fixup locations.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para>Failure to handle edges of this kind prior to the fixup phase will result in an unsupported error during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043aad97367a7201c67ade1c6d15c96f0746" prot="public">
+          <name>Pointer32</name>
+          <briefdescription>
+<para>A plain 32-bit pointer value relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : uint32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The target must reside in the low 32-bits of the address space, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043aa43de9079a03e5cf7ea9c96de2956a47" prot="public">
+          <name>Delta64</name>
+          <briefdescription>
+<para>A 64-bit delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from the fixup to the target.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int64 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a8d7dc75674b3fc58ba929cbef0217e4b" prot="public">
+          <name>Delta32</name>
+          <briefdescription>
+<para>A 32-bit delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from the fixup to the target.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int64</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043adec7252c806dda04339c709cd9aec6e0" prot="public">
+          <name>NegDelta64</name>
+          <briefdescription>
+<para>A 64-bit negative delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from target back to the fixup.</para>
+<para>Fixup expression: Fixup &lt;- Fixup - <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : int64 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ade36f74cb3bddd6f86b25f96238033c3" prot="public">
+          <name>NegDelta32</name>
+          <briefdescription>
+<para>A 32-bit negative delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from the target back to the fixup.</para>
+<para>Fixup expression: Fixup &lt;- Fixup - <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a71c601f1339f93bc2c5fea1e3a225985" prot="public">
+          <name>Branch26PCRel</name>
+          <briefdescription>
+<para>A 26-bit PC-relative branch. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Represents a PC-relative call or branch to a target within +/-128Mb. The target must be 32-bit aligned.</para>
+<para>Fixup expression: Fixup &lt;- (<ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend) &gt;&gt; 2 : int26</para>
+<para>Notes: The &apos;26&apos; in the name refers to the number operand bits and follows the naming convention used by the corresponding <ref refid="namespacellvm_1_1_e_l_f" kindref="compound">ELF</ref> and <ref refid="namespacellvm_1_1_mach_o" kindref="compound">MachO</ref> relocations. Since the low two bits must be zero (because of the 32-bit alignment of the target) the operand is effectively a signed 28-bit number.</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the unshifted part of the fixup expression must be 32-bit aligned otherwise an alignment error will be returned.</para>
+</listitem><listitem><para>The result of the fixup expression must fit into an int26 otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043acb7c5eaf3ed95ac3a2b5dadcccd86829" prot="public">
+          <name>TestAndBranch14PCRel</name>
+          <briefdescription>
+<para>A 14-bit PC-relative test and branch. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Represents a PC-relative test and branch to a target within +/-32Kb. The target must be 32-bit aligned.</para>
+<para>Fixup expression: Fixup &lt;- (<ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend) &gt;&gt; 2 : int14</para>
+<para>Notes: The &apos;14&apos; in the name refers to the number operand bits and follows the naming convention used by the corresponding <ref refid="namespacellvm_1_1_e_l_f" kindref="compound">ELF</ref> relocation. Since the low two bits must be zero (because of the 32-bit alignment of the target) the operand is effectively a signed 16-bit number.</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the unshifted part of the fixup expression must be 32-bit aligned otherwise an alignment error will be returned.</para>
+</listitem><listitem><para>The result of the fixup expression must fit into an int14 otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a3bd47a01bb7612390e36cca6b1412b28" prot="public">
+          <name>CondBranch19PCRel</name>
+          <briefdescription>
+<para>A 19-bit PC-relative conditional branch. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Represents a PC-relative conditional branch to a target within +/-1Mb. The target must be 32-bit aligned.</para>
+<para>Fixup expression: Fixup &lt;- (<ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend) &gt;&gt; 2 : int19</para>
+<para>Notes: The &apos;19&apos; in the name refers to the number operand bits and follows the naming convention used by the corresponding <ref refid="namespacellvm_1_1_e_l_f" kindref="compound">ELF</ref> relocation. Since the low two bits must be zero (because of the 32-bit alignment of the target) the operand is effectively a signed 21-bit number.</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the unshifted part of the fixup expression must be 32-bit aligned otherwise an alignment error will be returned.</para>
+</listitem><listitem><para>The result of the fixup expression must fit into an int19 otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043abee974069f5d980fe119624159e787fe" prot="public">
+          <name>MoveWide16</name>
+          <briefdescription>
+<para>A 16-bit slice of the target address (which slice depends on the instruction at the fixup location). </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Used to fix up MOVK/MOVN/MOVZ instructions.</para>
+<para>Fixup expression:</para>
+<para>Fixup &lt;- (<ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend) &gt;&gt; Shift : uint16</para>
+<para>where Shift is encoded in the instruction at the fixup location. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a0014e81d3ba9092cf8b528e9c4976509" prot="public">
+          <name>LDRLiteral19</name>
+          <briefdescription>
+<para>The signed 21-bit delta from the fixup to the target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Typically used to load a pointers at a PC-relative offset of +/- 1Mb. The target must be 32-bit aligned.</para>
+<para>Fixup expression:</para>
+<para>Fixup &lt;- (<ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend) &gt;&gt; 2 : int19</para>
+<para>Notes: The &apos;19&apos; in the name refers to the number operand bits and follows the naming convention used by the corresponding <ref refid="namespacellvm_1_1_e_l_f" kindref="compound">ELF</ref> relocation. Since the low two bits must be zero (because of the 32-bit alignment of the target) the operand is effectively a signed 21-bit number.</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the unshifted part of the fixup expression must be 32-bit aligned otherwise an alignment error will be returned.</para>
+</listitem><listitem><para>The result of the fixup expression must fit into an int19 or an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043acded784063fe1cacf961152240dbfe8c" prot="public">
+          <name>ADRLiteral21</name>
+          <briefdescription>
+<para>The signed 21-bit delta from the fixup to the target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression:</para>
+<para>Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int21</para>
+<para>Notes: For ADR fixups.</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int21 otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a69369335041eac416a42ce8fd039d38e" prot="public">
+          <name>Page21</name>
+          <briefdescription>
+<para>The signed 21-bit delta from the fixup page to the page containing the target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression:</para>
+<para>Fixup &lt;- (((<ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend) &amp; ~0xfff) - (Fixup &amp; ~0xfff)) &gt;&gt; 12 : int21</para>
+<para>Notes: For ADRP fixups.</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int21 otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043af73aef9a424551ef1049e0bcb3e71ac1" prot="public">
+          <name>PageOffset12</name>
+          <briefdescription>
+<para>The 12-bit (potentially shifted) offset of the target within its page. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Typically used to fix up LDR immediates.</para>
+<para>Fixup expression:</para>
+<para>Fixup &lt;- ((<ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend) &gt;&gt; Shift) &amp; 0xfff : uint12</para>
+<para>where Shift is encoded in the size field of the instruction.</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the unshifted part of the fixup expression must be aligned otherwise an alignment error will be returned.</para>
+</listitem><listitem><para>The result of the fixup expression must fit into a uint12 otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ab6bafbc8841c3ff8d19e709ef4b71609" prot="public">
+          <name>GotPageOffset15</name>
+          <briefdescription>
+<para>The 15-bit offset of the GOT entry from the GOT table. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Used for load/store instructions addressing a GOT entry.</para>
+<para>Fixup expression:</para>
+<para>Fixup &lt;- ((<ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend - Page(GOT))) &amp; 0x7fff) &gt;&gt; 3 : uint12</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the unshifted part of the fixup expression must be aligned otherwise an alignment error will be returned.</para>
+</listitem><listitem><para>The result of the fixup expression must fit into a uint12 otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043acdbf75e478b336cc041c86d8c4ec2a81" prot="public">
+          <name>RequestGOTAndTransformToPage21</name>
+          <briefdescription>
+<para>A GOT entry getter/constructor, transformed to Page21 pointing at the GOT entry for the original target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a Page21 targeting the GOT entry for the edge&apos;s current target, maintaining the same addend. A GOT entry for the target should be created if one does not already exist.</para>
+<para>Edges of this kind are usually handled by a GOT builder pass inserted by default.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ad9a0f2806d0a2a90cd99edc0e54caf10" prot="public">
+          <name>RequestGOTAndTransformToPageOffset12</name>
+          <briefdescription>
+<para>A GOT entry getter/constructor, transformed to Pageoffset12 pointing at the GOT entry for the original target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a PageOffset12 targeting the GOT entry for the edge&apos;s current target, maintaining the same addend. A GOT entry for the target should be created if one does not already exist.</para>
+<para>Edges of this kind are usually handled by a GOT builder pass inserted by default.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a10e93e2b017fdd1a792986be9fec69f4" prot="public">
+          <name>RequestGOTAndTransformToPageOffset15</name>
+          <briefdescription>
+<para>A GOT entry getter/constructor, transformed to Pageoffset15 pointing at the GOT entry for the original target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a GotPageOffset15 targeting the GOT entry for the edge&apos;s current target, maintaining the same addend. A GOT entry for the target should be created if one does not already exist.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ae6ed0aefe60a60c482de8fde088bba9b" prot="public">
+          <name>RequestGOTAndTransformToDelta32</name>
+          <briefdescription>
+<para>A GOT entry getter/constructor, transformed to Delta32 pointing at the GOT entry for the original target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a Delta32/ targeting the GOT entry for the edge&apos;s current target, maintaining the same addend. A GOT entry for the target should be created if one does not already exist.</para>
+<para>Edges of this kind are usually handled by a GOT builder pass inserted by default.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ab08a3e147eb8472939a6ee86abecbdd5" prot="public">
+          <name>RequestTLVPAndTransformToPage21</name>
+          <briefdescription>
+<para>A TLVP entry getter/constructor, transformed to Page21. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a Page21 targeting the TLVP entry for the edge&apos;s current target. A TLVP entry for the target should be created if one does not already exist.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a5c427ef98778eb60400f10d3d9cdccfd" prot="public">
+          <name>RequestTLVPAndTransformToPageOffset12</name>
+          <briefdescription>
+<para>A TLVP entry getter/constructor, transformed to PageOffset12. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a PageOffset12 targeting the TLVP entry for the edge&apos;s current target. A TLVP entry for the target should be created if one does not already exist.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043afbe257ada8dca290ade8bf1e3aabb917" prot="public">
+          <name>RequestTLSDescEntryAndTransformToPage21</name>
+          <briefdescription>
+<para>A TLSDesc entry getter/constructor, transformed to Page21. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a Page21 targeting the TLSDesc entry for the edge&apos;s current target. A TLSDesc entry for the target should be created if one does not already exist.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a67f88d116fb2dc50609a16d0f89c8a50" prot="public">
+          <name>RequestTLSDescEntryAndTransformToPageOffset12</name>
+          <briefdescription>
+<para>A TLSDesc entry getter/constructor, transformed to PageOffset12. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a PageOffset12 targeting the TLSDesc entry for the edge&apos;s current target. A TLSDesc entry for the target should be created if one does not already exist.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Represents <ref refid="namespacellvm_1_1jitlink_1_1aarch64" kindref="compound">aarch64</ref> fixups and other aarch64-specific edge kinds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="25" column="1" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="25" bodyend="417"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacellvm_1_1jitlink_1_1aarch64_1a54a878e42755b4a0e4cc8709f3f34e51" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::jitlink::aarch64::PointerSize</definition>
+        <argsstring></argsstring>
+        <name>PointerSize</name>
+        <qualifiedname>llvm::jitlink::aarch64::PointerSize</qualifiedname>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1jitlink_1_1aarch64" kindref="compound">aarch64</ref> pointer size. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="697" column="20" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="697" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1jitlink_1_1_mach_o_j_i_t_linker__arm64_1a113f10ffe5b6be0ae401eaad984c4a4a" compoundref="_mach_o__arm64_8cpp" startline="570">llvm::jitlink::MachOJITLinker_arm64::JITLinker&lt; MachOJITLinker_arm64 &gt;</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacellvm_1_1jitlink_1_1aarch64_1a181cfa45de3ed8d2ddb85568b0c6b016" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>const char llvm::jitlink::aarch64::NullPointerContent</definition>
+        <argsstring>[PointerSize]</argsstring>
+        <name>NullPointerContent</name>
+        <qualifiedname>llvm::jitlink::aarch64::NullPointerContent</qualifiedname>
+        <initializer>= {0x00, 0x00, 0x00, 0x00,
+                                    0x00, 0x00, 0x00, 0x00}</initializer>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_a_arch64" kindref="compound">AArch64</ref> null pointer content. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/aarch64.cpp" line="23" column="12" bodyfile="lib/ExecutionEngine/JITLink/aarch64.cpp" bodystart="23" bodyend="24" declfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" declline="700" declcolumn="19"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1ab246c2fa3507148bda940a4f0f680f68" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="721" endline="729">createAnonymousPointer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacellvm_1_1jitlink_1_1aarch64_1a8977c0dcc341e31e5f7497441b3b5c47" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>const char llvm::jitlink::aarch64::PointerJumpStubContent</definition>
+        <argsstring>[12]</argsstring>
+        <name>PointerJumpStubContent</name>
+        <qualifiedname>llvm::jitlink::aarch64::PointerJumpStubContent</qualifiedname>
+        <initializer>= {
+    0x10, 0x00, 0x00, (<ref refid="classchar" kindref="compound">char</ref>)0x90u, 
+    0x10, 0x02, 0x40, (<ref refid="classchar" kindref="compound">char</ref>)0xf9u, 
+    0x00, 0x02, 0x1f, (<ref refid="classchar" kindref="compound">char</ref>)0xd6u  
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/aarch64.cpp" line="26" column="12" bodyfile="lib/ExecutionEngine/JITLink/aarch64.cpp" bodystart="26" bodyend="30" declfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" declline="709" declcolumn="19"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1afea59b722159d204506a5a02667bdfe8" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="750" endline="756">createAnonymousPointerJumpStub</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1aaa9c9aa1ac7e99b9934a23fd0b4702e1" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="737" endline="744">createPointerJumpStubBlock</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacellvm_1_1jitlink_1_1aarch64_1a38d2666eb61e141f865f2197a8d90a37" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>const char llvm::jitlink::aarch64::ReentryTrampolineContent</definition>
+        <argsstring>[8]</argsstring>
+        <name>ReentryTrampolineContent</name>
+        <qualifiedname>llvm::jitlink::aarch64::ReentryTrampolineContent</qualifiedname>
+        <initializer>= {
+    (<ref refid="classchar" kindref="compound">char</ref>)0xfd, 0x7b, (<ref refid="classchar" kindref="compound">char</ref>)0xbf, (<ref refid="classchar" kindref="compound">char</ref>)0xa9, 
+    0x00,       0x00, 0x00,       (<ref refid="classchar" kindref="compound">char</ref>)0x94  
+}</initializer>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_a_arch64" kindref="compound">AArch64</ref> reentry trampoline. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Contains the instruction sequence for a trampoline that stores its return address (and stack pointer) on the stack and calls the given reentry symbol: STP x29, x30, [sp, #-16]! BL &lt;reentry-symbol&gt; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/aarch64.cpp" line="32" column="12" bodyfile="lib/ExecutionEngine/JITLink/aarch64.cpp" bodystart="32" bodyend="35" declfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" declline="764" declcolumn="19"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1ad63469562c129c2c06c6e71f82ea37d5" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="776" endline="782">createAnonymousReentryTrampoline</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a69bd04f026c43d7e3c5a5903a96877d7" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="767" endline="774">createReentryTrampolineBlock</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1aa80cedc88aa3fa28ac1e91b1515a82ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>const char * llvm::jitlink::aarch64::getEdgeKindName</definition>
+        <argsstring>(Edge::Kind K)</argsstring>
+        <name>getEdgeKindName</name>
+        <qualifiedname>llvm::jitlink::aarch64::getEdgeKindName</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_edge_1af18145da213e6c4033b368d657e80baa" kindref="member">Edge::Kind</ref></type>
+          <declname>K</declname>
+        </param>
+        <briefdescription>
+<para>Returns a string name for the given <ref refid="namespacellvm_1_1jitlink_1_1aarch64" kindref="compound">aarch64</ref> edge. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For debugging purposes only </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/aarch64.cpp" line="37" column="12" bodyfile="lib/ExecutionEngine/JITLink/aarch64.cpp" bodystart="37" bodyend="90" declfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" declline="421" declcolumn="12"/>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043acded784063fe1cacf961152240dbfe8c" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="232">ADRLiteral21</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a71c601f1339f93bc2c5fea1e3a225985" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="138">Branch26PCRel</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a3bd47a01bb7612390e36cca6b1412b28" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="182">CondBranch19PCRel</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a8d7dc75674b3fc58ba929cbef0217e4b" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="95">Delta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043aa43de9079a03e5cf7ea9c96de2956a47" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="82">Delta64</references>
+        <references refid="namespacellvm_1_1jitlink_1a06eee57acde48953ffd29ae8d337202e" compoundref="_j_i_t_link_8cpp" startline="61" endline="70">llvm::jitlink::getGenericEdgeKindName</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ab6bafbc8841c3ff8d19e709ef4b71609" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="279">GotPageOffset15</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a0014e81d3ba9092cf8b528e9c4976509" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="218">LDRLiteral19</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043abee974069f5d980fe119624159e787fe" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="195">MoveWide16</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ade36f74cb3bddd6f86b25f96238033c3" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="116">NegDelta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043adec7252c806dda04339c709cd9aec6e0" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="104">NegDelta64</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a69369335041eac416a42ce8fd039d38e" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="247">Page21</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043af73aef9a424551ef1049e0bcb3e71ac1" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="264">PageOffset12</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043aad97367a7201c67ade1c6d15c96f0746" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="73">Pointer32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a9f6ab8a0d2f19948762b78f6d6c5f562" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="32">Pointer64</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a109802d2cdabf31aaf8cb2aeac27547a" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="62">Pointer64Authenticated</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ae6ed0aefe60a60c482de8fde088bba9b" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="356">RequestGOTAndTransformToDelta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043acdbf75e478b336cc041c86d8c4ec2a81" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="299">RequestGOTAndTransformToPage21</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ad9a0f2806d0a2a90cd99edc0e54caf10" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="319">RequestGOTAndTransformToPageOffset12</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a10e93e2b017fdd1a792986be9fec69f4" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="336">RequestGOTAndTransformToPageOffset15</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043afbe257ada8dca290ade8bf1e3aabb917" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="401">RequestTLSDescEntryAndTransformToPage21</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a67f88d116fb2dc50609a16d0f89c8a50" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="416">RequestTLSDescEntryAndTransformToPageOffset12</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ab08a3e147eb8472939a6ee86abecbdd5" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="371">RequestTLVPAndTransformToPage21</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a5c427ef98778eb60400f10d3d9cdccfd" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="386">RequestTLVPAndTransformToPageOffset12</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043acb7c5eaf3ed95ac3a2b5dadcccd86829" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="160">TestAndBranch14PCRel</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a61310b6c90769dc38a55a4b84b1cc054" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="495" endline="694">applyFixup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a8aece3dfdd829a8318dd121de06819d0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::jitlink::aarch64::isLoadStoreImm12</definition>
+        <argsstring>(uint32_t Instr)</argsstring>
+        <name>isLoadStoreImm12</name>
+        <qualifiedname>llvm::jitlink::aarch64::isLoadStoreImm12</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Instr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="424" column="13" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="424" bodyend="427"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1aea82948d63bc3b330d72ad903f0d41a3" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="460" endline="473">getPageOffset12Shift</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1adecd0bdff8d54d6d6eb59cb909abdc49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::jitlink::aarch64::isTestAndBranchImm14</definition>
+        <argsstring>(uint32_t Instr)</argsstring>
+        <name>isTestAndBranchImm14</name>
+        <qualifiedname>llvm::jitlink::aarch64::isTestAndBranchImm14</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Instr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="429" column="13" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="429" bodyend="432"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a61310b6c90769dc38a55a4b84b1cc054" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="495" endline="694">applyFixup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a2ed829f34b9e69176fe3de4882c623d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::jitlink::aarch64::isCondBranchImm19</definition>
+        <argsstring>(uint32_t Instr)</argsstring>
+        <name>isCondBranchImm19</name>
+        <qualifiedname>llvm::jitlink::aarch64::isCondBranchImm19</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Instr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="434" column="13" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="434" bodyend="437"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a61310b6c90769dc38a55a4b84b1cc054" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="495" endline="694">applyFixup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a85584875f88a7cddec5b2d6205f327d0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::jitlink::aarch64::isCompAndBranchImm19</definition>
+        <argsstring>(uint32_t Instr)</argsstring>
+        <name>isCompAndBranchImm19</name>
+        <qualifiedname>llvm::jitlink::aarch64::isCompAndBranchImm19</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Instr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="439" column="13" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="439" bodyend="442"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a61310b6c90769dc38a55a4b84b1cc054" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="495" endline="694">applyFixup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a2a4973d0e044b2eed09d989b5f5f34ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::jitlink::aarch64::isADR</definition>
+        <argsstring>(uint32_t Instr)</argsstring>
+        <name>isADR</name>
+        <qualifiedname>llvm::jitlink::aarch64::isADR</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Instr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="444" column="13" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="444" bodyend="447"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a61310b6c90769dc38a55a4b84b1cc054" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="495" endline="694">applyFixup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a18b270c27d7172e1979be56e8f758876" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::jitlink::aarch64::isLDRLiteral</definition>
+        <argsstring>(uint32_t Instr)</argsstring>
+        <name>isLDRLiteral</name>
+        <qualifiedname>llvm::jitlink::aarch64::isLDRLiteral</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Instr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="449" column="13" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="449" bodyend="452"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a61310b6c90769dc38a55a4b84b1cc054" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="495" endline="694">applyFixup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1aea82948d63bc3b330d72ad903f0d41a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::jitlink::aarch64::getPageOffset12Shift</definition>
+        <argsstring>(uint32_t Instr)</argsstring>
+        <name>getPageOffset12Shift</name>
+        <qualifiedname>llvm::jitlink::aarch64::getPageOffset12Shift</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Instr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="460" column="17" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="460" bodyend="473"/>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a8aece3dfdd829a8318dd121de06819d0" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="424" endline="427">isLoadStoreImm12</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a61310b6c90769dc38a55a4b84b1cc054" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="495" endline="694">applyFixup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a7cfabdcd9c87d8a7b080616c8319e76d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::jitlink::aarch64::isMoveWideImm16</definition>
+        <argsstring>(uint32_t Instr)</argsstring>
+        <name>isMoveWideImm16</name>
+        <qualifiedname>llvm::jitlink::aarch64::isMoveWideImm16</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Instr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="476" column="13" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="476" bodyend="479"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a61310b6c90769dc38a55a4b84b1cc054" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="495" endline="694">applyFixup</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1aefd5232906dfb5d0134d5cb86d59cd8d" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="485" endline="492">getMoveWide16Shift</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1aefd5232906dfb5d0134d5cb86d59cd8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::jitlink::aarch64::getMoveWide16Shift</definition>
+        <argsstring>(uint32_t Instr)</argsstring>
+        <name>getMoveWide16Shift</name>
+        <qualifiedname>llvm::jitlink::aarch64::getMoveWide16Shift</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Instr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="485" column="17" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="485" bodyend="492"/>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a7cfabdcd9c87d8a7b080616c8319e76d" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="476" endline="479">isMoveWideImm16</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a61310b6c90769dc38a55a4b84b1cc054" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="495" endline="694">applyFixup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a61310b6c90769dc38a55a4b84b1cc054" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::aarch64::applyFixup</definition>
+        <argsstring>(LinkGraph &amp;G, Block &amp;B, const Edge &amp;E, const Symbol *GOTSymbol)</argsstring>
+        <name>applyFixup</name>
+        <qualifiedname>llvm::jitlink::aarch64::applyFixup</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_block" kindref="compound">Block</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1jitlink_1_1_edge" kindref="compound">Edge</ref> &amp;</type>
+          <declname>E</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> *</type>
+          <declname>GOTSymbol</declname>
+        </param>
+        <briefdescription>
+<para>Apply fixup expression for edge to block content. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="495" column="14" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="495" bodyend="694"/>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043acded784063fe1cacf961152240dbfe8c" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="232">ADRLiteral21</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a71c601f1339f93bc2c5fea1e3a225985" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="138">Branch26PCRel</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a3bd47a01bb7612390e36cca6b1412b28" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="182">CondBranch19PCRel</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a8d7dc75674b3fc58ba929cbef0217e4b" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="95">Delta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043aa43de9079a03e5cf7ea9c96de2956a47" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="82">Delta64</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="_s_r_o_a_8cpp_1a4a30a3fae601106b8b33c0871aa3069d" compoundref="_s_r_o_a_8cpp" startline="5023" endline="5027">getAddress</references>
+        <references refid="classllvm_1_1jitlink_1_1_symbol_1a9266b50b560808e8f69eb394690d79c4" compoundref="_j_i_t_link_8h" startline="602" endline="602">llvm::jitlink::Symbol::getAddress</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1aa80cedc88aa3fa28ac1e91b1515a82ea" compoundref="aarch64_8cpp" startline="37" endline="90">getEdgeKindName</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1aefd5232906dfb5d0134d5cb86d59cd8d" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="485" endline="492">getMoveWide16Shift</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1aea82948d63bc3b330d72ad903f0d41a3" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="460" endline="473">getPageOffset12Shift</references>
+        <references refid="classllvm_1_1orc_1_1_executor_addr_1a4ee908fb9052f020e3c50e3f1a7d81c5" compoundref="_executor_address_8h" startline="136" endline="136">llvm::orc::ExecutorAddr::getValue</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ab6bafbc8841c3ff8d19e709ef4b71609" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="279">GotPageOffset15</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a2a4973d0e044b2eed09d989b5f5f34ce" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="444" endline="447">isADR</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a85584875f88a7cddec5b2d6205f327d0" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="439" endline="442">isCompAndBranchImm19</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a2ed829f34b9e69176fe3de4882c623d9" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="434" endline="437">isCondBranchImm19</references>
+        <references refid="namespacellvm_1a1a1e51a5952c3afa00875df90e7ae6f8" compoundref="_math_extras_8h" startline="170" endline="183">llvm::isInt</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a18b270c27d7172e1979be56e8f758876" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="449" endline="452">isLDRLiteral</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a7cfabdcd9c87d8a7b080616c8319e76d" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="476" endline="479">isMoveWideImm16</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adecd0bdff8d54d6d6eb59cb909abdc49" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="429" endline="432">isTestAndBranchImm14</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a0014e81d3ba9092cf8b528e9c4976509" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="218">LDRLiteral19</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="namespacellvm_1_1jitlink_1a061c97aa3532f0b4a2390febaa911a65" compoundref="_j_i_t_link_8cpp" startline="416" endline="450">llvm::jitlink::makeTargetOutOfRangeError</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043abee974069f5d980fe119624159e787fe" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="195">MoveWide16</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043ade36f74cb3bddd6f86b25f96238033c3" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="116">NegDelta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043adec7252c806dda04339c709cd9aec6e0" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="104">NegDelta64</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a69369335041eac416a42ce8fd039d38e" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="247">Page21</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043af73aef9a424551ef1049e0bcb3e71ac1" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="264">PageOffset12</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043aad97367a7201c67ade1c6d15c96f0746" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="73">Pointer32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a9f6ab8a0d2f19948762b78f6d6c5f562" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="32">Pointer64</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043acb7c5eaf3ed95ac3a2b5dadcccd86829" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="160">TestAndBranch14PCRel</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1ab246c2fa3507148bda940a4f0f680f68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+        <definition>Symbol &amp; llvm::jitlink::aarch64::createAnonymousPointer</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;PointerSection, Symbol *InitialTarget=nullptr, uint64_t InitialAddend=0)</argsstring>
+        <name>createAnonymousPointer</name>
+        <qualifiedname>llvm::jitlink::aarch64::createAnonymousPointer</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>PointerSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> *</type>
+          <declname>InitialTarget</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>InitialAddend</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Creates a new pointer block in the given section and returns an Anonymous symbol pointing to it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If InitialTarget is given then an Pointer64 relocation will be added to the block pointing at InitialTarget.</para>
+<para>The pointer block will have the following default values: alignment: 64-bit alignment-offset: 0 address: highest allowable (~7U) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="721" column="15" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="721" bodyend="729"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a181cfa45de3ed8d2ddb85568b0c6b016" compoundref="aarch64_8cpp" startline="23" endline="24">NullPointerContent</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a9f6ab8a0d2f19948762b78f6d6c5f562" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="32">Pointer64</references>
+        <referencedby refid="classllvm_1_1jitlink_1_1aarch64_1_1_g_o_t_table_manager_1a59f864b0c47abab716508e5683d3e82a" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="844" endline="846">llvm::jitlink::aarch64::GOTTableManager::createEntry</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1af86dbecbbb47825e36f9af37bd6868ca" compoundref="_j_i_t_link_8cpp" startline="461" endline="475">llvm::jitlink::getAnonymousPointerCreator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1aaa9c9aa1ac7e99b9934a23fd0b4702e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_block" kindref="compound">Block</ref> &amp;</type>
+        <definition>Block &amp; llvm::jitlink::aarch64::createPointerJumpStubBlock</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;StubSection, Symbol &amp;PointerSymbol)</argsstring>
+        <name>createPointerJumpStubBlock</name>
+        <qualifiedname>llvm::jitlink::aarch64::createPointerJumpStubBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>StubSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>PointerSymbol</declname>
+        </param>
+        <briefdescription>
+<para>Create a jump stub block that jumps via the pointer at the given symbol. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The stub block will have the following default values: alignment: 32-bit alignment-offset: 0 address: highest allowable: (~11U) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="737" column="14" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="737" bodyend="744"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a69369335041eac416a42ce8fd039d38e" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="247">Page21</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043af73aef9a424551ef1049e0bcb3e71ac1" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="264">PageOffset12</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a8977c0dcc341e31e5f7497441b3b5c47" compoundref="aarch64_8cpp" startline="26" endline="30">PointerJumpStubContent</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1afea59b722159d204506a5a02667bdfe8" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="750" endline="756">createAnonymousPointerJumpStub</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1afea59b722159d204506a5a02667bdfe8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+        <definition>Symbol &amp; llvm::jitlink::aarch64::createAnonymousPointerJumpStub</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;StubSection, Symbol &amp;PointerSymbol)</argsstring>
+        <name>createAnonymousPointerJumpStub</name>
+        <qualifiedname>llvm::jitlink::aarch64::createAnonymousPointerJumpStub</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>StubSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>PointerSymbol</declname>
+        </param>
+        <briefdescription>
+<para>Create a jump stub that jumps via the pointer at the given symbol and an anonymous symbol pointing to it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the anonymous symbol.</para>
+<para>The stub block will be created by createPointerJumpStubBlock. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="750" column="15" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="750" bodyend="756"/>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1aaa9c9aa1ac7e99b9934a23fd0b4702e1" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="737" endline="744">createPointerJumpStubBlock</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a8977c0dcc341e31e5f7497441b3b5c47" compoundref="aarch64_8cpp" startline="26" endline="30">PointerJumpStubContent</references>
+        <referencedby refid="classllvm_1_1jitlink_1_1aarch64_1_1_p_l_t_table_manager_1aa15da2c9de13f9495f443216bcbd8991" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="884" endline="887">llvm::jitlink::aarch64::PLTTableManager::createEntry</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1a6e58d27e8cd9ba5dadc9194100b69be4" compoundref="_j_i_t_link_8cpp" startline="477" endline="491">llvm::jitlink::getPointerJumpStubCreator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a69bd04f026c43d7e3c5a5903a96877d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_block" kindref="compound">Block</ref> &amp;</type>
+        <definition>Block &amp; llvm::jitlink::aarch64::createReentryTrampolineBlock</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;TrampolineSection, Symbol &amp;ReentrySymbol)</argsstring>
+        <name>createReentryTrampolineBlock</name>
+        <qualifiedname>llvm::jitlink::aarch64::createReentryTrampolineBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>TrampolineSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>ReentrySymbol</declname>
+        </param>
+        <briefdescription>
+<para>Create a block of N reentry trampolines. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="767" column="14" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="767" bodyend="774"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a71c601f1339f93bc2c5fea1e3a225985" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="138">Branch26PCRel</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a38d2666eb61e141f865f2197a8d90a37" compoundref="aarch64_8cpp" startline="32" endline="35">ReentryTrampolineContent</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1ad63469562c129c2c06c6e71f82ea37d5" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="776" endline="782">createAnonymousReentryTrampoline</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1ad63469562c129c2c06c6e71f82ea37d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+        <definition>Symbol &amp; llvm::jitlink::aarch64::createAnonymousReentryTrampoline</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;TrampolineSection, Symbol &amp;ReentrySymbol)</argsstring>
+        <name>createAnonymousReentryTrampoline</name>
+        <qualifiedname>llvm::jitlink::aarch64::createAnonymousReentryTrampoline</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>TrampolineSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>ReentrySymbol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="776" column="15" bodyfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" bodystart="776" bodyend="782"/>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a69bd04f026c43d7e3c5a5903a96877d7" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="767" endline="774">createReentryTrampolineBlock</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a38d2666eb61e141f865f2197a8d90a37" compoundref="aarch64_8cpp" startline="32" endline="35">ReentryTrampolineContent</references>
+        <referencedby refid="classllvm_1_1orc_1_1_j_i_t_link_reentry_trampolines_1a65b27dfd43dad3af09bd244752f7eadf" compoundref="_j_i_t_link_reentry_trampolines_8cpp" startline="86" endline="106">llvm::orc::JITLinkReentryTrampolines::Create</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1aceea9a8cc2d736eb57b2818121c46452" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>const char * llvm::jitlink::aarch64::getPointerSigningFunctionSectionName</definition>
+        <argsstring>()</argsstring>
+        <name>getPointerSigningFunctionSectionName</name>
+        <qualifiedname>llvm::jitlink::aarch64::getPointerSigningFunctionSectionName</qualifiedname>
+        <briefdescription>
+<para>Returns the name of the pointer signing function section. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/aarch64.cpp" line="227" column="12" bodyfile="lib/ExecutionEngine/JITLink/aarch64.cpp" bodystart="227" bodyend="227" declfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" declline="904" declcolumn="12"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a8b6a1311d66ca584dd828968ec269156" compoundref="aarch64_8cpp" startline="233" endline="279">createEmptyPointerSigningFunction</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a92e5f360eac04874168e30f0df2bc5bb" compoundref="aarch64_8cpp" startline="287" endline="381">lowerPointer64AuthEdgesToSigningFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a8b6a1311d66ca584dd828968ec269156" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::aarch64::createEmptyPointerSigningFunction</definition>
+        <argsstring>(LinkGraph &amp;G)</argsstring>
+        <name>createEmptyPointerSigningFunction</name>
+        <qualifiedname>llvm::jitlink::aarch64::createEmptyPointerSigningFunction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+<para>Creates a pointer signing function section, block, and symbol to reserve space for a signing function for this <ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Clients should insert this pass in the post-prune phase, and add the paired lowerPointer64AuthEdgesToSigningFunction pass to the pre-fixup phase.</para>
+<para>No new Pointer64Auth edges can be inserted into the graph between when this pass is run and when the pass below runs (since there will not be sufficient space reserved in the signing function to write the signing code for them).</para>
+<para>Clients should insert this pass in the post-prune phase, and add the paired lowerPointer64AuthEdgesToSigningFunction pass to the pre-fixup phase. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/aarch64.cpp" line="233" column="7" bodyfile="lib/ExecutionEngine/JITLink/aarch64.cpp" bodystart="233" bodyend="279" declfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" declline="914" declcolumn="7"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="namespacellvm_1_1orc_1a2fbb59fad28934f72ede7ddc316dfc89a953feeff1e20f40677fb7f77c073b3be" compoundref="_memory_flags_8h" startline="31">llvm::orc::Exec</references>
+        <references refid="namespacellvm_1_1orc_1abdd6ae2070338087f3d5d54200d708d6afd565de81da1c94807c0b80840ba18b0" compoundref="_memory_flags_8h" startline="83">llvm::orc::Finalize</references>
+        <references refid="namespacellvm_1a653cce37b80c03eebe7a00520a8eabb6" compoundref="_format_variadic_8h" startline="252" endline="256">llvm::formatv</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1aceea9a8cc2d736eb57b2818121c46452" compoundref="aarch64_8cpp" startline="227" endline="227">getPointerSigningFunctionSectionName</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a109802d2cdabf31aaf8cb2aeac27547a" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="62">Pointer64Authenticated</references>
+        <references refid="namespacellvm_1_1orc_1a2fbb59fad28934f72ede7ddc316dfc89a7a1a5f3e79fdc91edf2f5ead9d66abb4" compoundref="_memory_flags_8h" startline="29">llvm::orc::Read</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1a3a5a64d0c1b7bad36afd4b742f3069db" compoundref="_mach_o__arm64_8cpp" startline="652" endline="712">llvm::jitlink::link_MachO_arm64</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a92e5f360eac04874168e30f0df2bc5bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::aarch64::lowerPointer64AuthEdgesToSigningFunction</definition>
+        <argsstring>(LinkGraph &amp;G)</argsstring>
+        <name>lowerPointer64AuthEdgesToSigningFunction</name>
+        <qualifiedname>llvm::jitlink::aarch64::lowerPointer64AuthEdgesToSigningFunction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+<para>Given a <ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> containing Pointer64Authenticated edges, transform those edges to Pointer64 and add signing code to the pointer signing function (which must already have been created by the createEmptyPointerSigningFunction pass above). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Given a <ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> containing Pointer64Auth edges, transform those edges to Pointer64 and add code to sign the pointers in the executor.</para>
+<para>This function will add a $__ptrauth_sign section with finalization-lifetime containing an anonymous function that will sign all pointers in the graph. An allocation action will be added to run this function during finalization. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/aarch64.cpp" line="287" column="7" bodyfile="lib/ExecutionEngine/JITLink/aarch64.cpp" bodystart="287" bodyend="381" declfile="include/llvm/ExecutionEngine/JITLink/aarch64.h" declline="924" declcolumn="7"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1aa1e1474f15df639f0d874b21f15666f7" compoundref="llvm_2_support_2_error_8h" startline="756" endline="768">llvm::cantFail</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="namespacellvm_1a653cce37b80c03eebe7a00520a8eabb6" compoundref="_format_variadic_8h" startline="252" endline="256">llvm::formatv</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1aceea9a8cc2d736eb57b2818121c46452" compoundref="aarch64_8cpp" startline="227" endline="227">getPointerSigningFunctionSectionName</references>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+        <references refid="classllvm_1_1jitlink_1_1_edge_1aa21629cef4aed37ffc47ef8681c46a99aa9b64b2f23ec4cf94410dcbad41796d6" compoundref="_j_i_t_link_8h" startline="74">llvm::jitlink::Edge::KeepAlive</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1adaafb311352b6b70437034d62373d043a109802d2cdabf31aaf8cb2aeac27547a" compoundref="include_2llvm_2_execution_engine_2_j_i_t_link_2aarch64_8h" startline="62">Pointer64Authenticated</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="classllvm_1_1_binary_stream_writer_1a344647bc1c4a4b53334296eba145d408" compoundref="_binary_stream_writer_8h" startline="58" endline="64">llvm::BinaryStreamWriter::writeInteger</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a1d7cfdefe09dc42a8d92cdf8e1ba7237" compoundref="aarch64_8cpp" startline="113" endline="142">writeMovRegImm64Seq</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1af23e2186772c6692361fc0385ebf6012" compoundref="aarch64_8cpp" startline="146" endline="188">writePACSignSeq</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1ad00be06ff205e2f0ad69e5e100d5e0e6" compoundref="aarch64_8cpp" startline="191" endline="205">writeStoreRegSeq</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1a3a5a64d0c1b7bad36afd4b742f3069db" compoundref="_mach_o__arm64_8cpp" startline="652" endline="712">llvm::jitlink::link_MachO_arm64</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a5c13edb875d691dffc20e456bdc41538" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AppendFtor</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>static Error llvm::jitlink::aarch64::writeMovRegRegSeq</definition>
+        <argsstring>(AppendFtor &amp;Append, uint64_t DstReg, uint64_t SrcReg)</argsstring>
+        <name>writeMovRegRegSeq</name>
+        <qualifiedname>llvm::jitlink::aarch64::writeMovRegRegSeq</qualifiedname>
+        <param>
+          <type>AppendFtor &amp;</type>
+          <declname>Append</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>DstReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>SrcReg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/aarch64.cpp" line="94" column="14" bodyfile="lib/ExecutionEngine/JITLink/aarch64.cpp" bodystart="94" bodyend="109"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1af23e2186772c6692361fc0385ebf6012" compoundref="aarch64_8cpp" startline="146" endline="188">writePACSignSeq</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1a1d7cfdefe09dc42a8d92cdf8e1ba7237" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AppendFtor</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>static Error llvm::jitlink::aarch64::writeMovRegImm64Seq</definition>
+        <argsstring>(AppendFtor &amp;Append, uint64_t Reg, uint64_t Imm)</argsstring>
+        <name>writeMovRegImm64Seq</name>
+        <qualifiedname>llvm::jitlink::aarch64::writeMovRegImm64Seq</qualifiedname>
+        <param>
+          <type>AppendFtor &amp;</type>
+          <declname>Append</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Imm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/aarch64.cpp" line="113" column="14" bodyfile="lib/ExecutionEngine/JITLink/aarch64.cpp" bodystart="113" bodyend="142"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" compoundref="_machine_sink_8cpp" startline="2028">Reg</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a92e5f360eac04874168e30f0df2bc5bb" compoundref="aarch64_8cpp" startline="287" endline="381">lowerPointer64AuthEdgesToSigningFunction</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1af23e2186772c6692361fc0385ebf6012" compoundref="aarch64_8cpp" startline="146" endline="188">writePACSignSeq</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1af23e2186772c6692361fc0385ebf6012" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AppendFtor</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>static Error llvm::jitlink::aarch64::writePACSignSeq</definition>
+        <argsstring>(AppendFtor &amp;Append, unsigned DstReg, orc::ExecutorAddr RawAddr, unsigned RawAddrReg, unsigned DiscriminatorReg, unsigned Key, uint64_t EncodedDiscriminator, bool AddressDiversify)</argsstring>
+        <name>writePACSignSeq</name>
+        <qualifiedname>llvm::jitlink::aarch64::writePACSignSeq</qualifiedname>
+        <param>
+          <type>AppendFtor &amp;</type>
+          <declname>Append</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>DstReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">orc::ExecutorAddr</ref></type>
+          <declname>RawAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>RawAddrReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>DiscriminatorReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Key</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>EncodedDiscriminator</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>AddressDiversify</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/aarch64.cpp" line="146" column="1" bodyfile="lib/ExecutionEngine/JITLink/aarch64.cpp" bodystart="146" bodyend="188"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a1d7cfdefe09dc42a8d92cdf8e1ba7237" compoundref="aarch64_8cpp" startline="113" endline="142">writeMovRegImm64Seq</references>
+        <references refid="namespacellvm_1_1jitlink_1_1aarch64_1a5c13edb875d691dffc20e456bdc41538" compoundref="aarch64_8cpp" startline="94" endline="109">writeMovRegRegSeq</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a92e5f360eac04874168e30f0df2bc5bb" compoundref="aarch64_8cpp" startline="287" endline="381">lowerPointer64AuthEdgesToSigningFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1aarch64_1ad00be06ff205e2f0ad69e5e100d5e0e6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AppendFtor</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>static Error llvm::jitlink::aarch64::writeStoreRegSeq</definition>
+        <argsstring>(AppendFtor &amp;Append, unsigned DstLocReg, unsigned SrcReg)</argsstring>
+        <name>writeStoreRegSeq</name>
+        <qualifiedname>llvm::jitlink::aarch64::writeStoreRegSeq</qualifiedname>
+        <param>
+          <type>AppendFtor &amp;</type>
+          <declname>Append</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>DstLocReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>SrcReg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/aarch64.cpp" line="191" column="14" bodyfile="lib/ExecutionEngine/JITLink/aarch64.cpp" bodystart="191" bodyend="205"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1aarch64_1a92e5f360eac04874168e30f0df2bc5bb" compoundref="aarch64_8cpp" startline="287" endline="381">lowerPointer64AuthEdgesToSigningFunction</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/ExecutionEngine/JITLink/aarch64.h" line="22" column="1"/>
+  </compounddef>
+</doxygen>

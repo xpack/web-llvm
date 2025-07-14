@@ -1,0 +1,1115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</compoundname>
+    <innerclass refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_assignment" prot="public">anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::Assignment</innerclass>
+    <innerclass refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_block_info" prot="private">anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::BlockInfo</innerclass>
+    <sectiondef kind="user-defined">
+      <header>joinMethods</header>
+      <description><para>Functions that implement <computeroutput>join</computeroutput> (the least upper bound) for the join-semilattice types used in the dataflow.</para>
+<para>There is an explicit bottom value (⊥) for some types and and explicit top value (⊤) for all types. By definition: <verbatim>Join(A, B) &gt;= A &amp;&amp; Join(A, B) &gt;= B
+Join(A, ⊥) = A
+Join(A, ⊤) = ⊤
+</verbatim></para>
+<para>These invariants are important for monotonicity.</para>
+<para>For the map-type functions, all unmapped keys in an empty map are associated with a bottom value (⊥). This represents their values being unknown. Unmapped keys in non-empty maps (joining two maps with a key only present in one) represents either a variable going out of scope or dropped debug info. It is assumed the key is associated with a top value (⊤) in this case (unknown location / assignment). </para>
+</description>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a9e3dea86b716ecd08aec5804e14bf632" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BlockInfo</type>
+        <definition>AssignmentTrackingLowering::BlockInfo AssignmentTrackingLowering::joinBlockInfo</definition>
+        <argsstring>(const BlockInfo &amp;A, const BlockInfo &amp;B)</argsstring>
+        <name>joinBlockInfo</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::joinBlockInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> BlockInfo &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> BlockInfo &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1339" column="13" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="2024" bodyend="2027"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1adf5287e05f6fc042184d45a9d60a8ed6" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">LocKind</ref></type>
+        <definition>AssignmentTrackingLowering::LocKind AssignmentTrackingLowering::joinKind</definition>
+        <argsstring>(LocKind A, LocKind B)</argsstring>
+        <name>joinKind</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::joinKind</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">LocKind</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">LocKind</ref></type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1337" column="18" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1967" bodyend="1971"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a284bde494a758f137ae9aadc3eaf0dbf" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_assignment" kindref="compound">Assignment</ref></type>
+        <definition>AssignmentTrackingLowering::Assignment AssignmentTrackingLowering::joinAssignment</definition>
+        <argsstring>(const Assignment &amp;A, const Assignment &amp;B)</argsstring>
+        <name>joinAssignment</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::joinAssignment</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_assignment" kindref="compound">Assignment</ref> &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_assignment" kindref="compound">Assignment</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1338" column="21" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1974" bodyend="2021"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>processMethods</header>
+      <description><para>Methods to process instructions in order to update the LiveSet (current location information). </para>
+</description>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a47f512f6497daf8ba0be6476d70b90d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::processNonDbgInstruction</definition>
+        <argsstring>(Instruction &amp;I, BlockInfo *LiveSet)</argsstring>
+        <name>processNonDbgInstruction</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::processNonDbgInstruction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1350" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1599" bodyend="1605"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a59bb8432b7c3837317cc521c69ff06f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::processDbgInstruction</definition>
+        <argsstring>(DbgInfoIntrinsic &amp;I, BlockInfo *LiveSet)</argsstring>
+        <name>processDbgInstruction</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::processDbgInstruction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dbg_info_intrinsic" kindref="compound">DbgInfoIntrinsic</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1351" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1850" bodyend="1864"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a8a1f2f4bbbe8a0c19a6b96343e2fe826" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::processTaggedInstruction</definition>
+        <argsstring>(Instruction &amp;I, BlockInfo *LiveSet)</argsstring>
+        <name>processTaggedInstruction</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::processTaggedInstruction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <briefdescription>
+<para>Update <computeroutput>LiveSet</computeroutput> after encountering an instruction with a <ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> attachment, <computeroutput>I</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1354" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1676" bodyend="1764"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1abbb525e882e3f6d0bf70f9ea18565393" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::processUntaggedInstruction</definition>
+        <argsstring>(Instruction &amp;I, BlockInfo *LiveSet)</argsstring>
+        <name>processUntaggedInstruction</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::processUntaggedInstruction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <briefdescription>
+<para>Update <computeroutput>LiveSet</computeroutput> after encountering an instruciton without a <ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> attachment, <computeroutput>I</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1357" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1607" bodyend="1674"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1af22058985c8fdfd518da9118f5aa1bce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::processDbgAssign</definition>
+        <argsstring>(AssignRecord Assign, BlockInfo *LiveSet)</argsstring>
+        <name>processDbgAssign</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::processDbgAssign</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a6e0b2146e9115e385d8e406b6c36e645" kindref="member">AssignRecord</ref></type>
+          <declname>Assign</declname>
+        </param>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1358" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1766" bodyend="1811"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ab04cf251f137dd30b8d6da9ef2fb6694" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::processDbgVariableRecord</definition>
+        <argsstring>(DbgVariableRecord &amp;DVR, BlockInfo *LiveSet)</argsstring>
+        <name>processDbgVariableRecord</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::processDbgVariableRecord</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dbg_variable_record" kindref="compound">DbgVariableRecord</ref> &amp;</type>
+          <declname>DVR</declname>
+        </param>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1359" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1865" bodyend="1875"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ac2a8586109e219243dc14ea0fef3e3c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::processDbgValue</definition>
+        <argsstring>(PointerUnion&lt; DbgValueInst *, DbgVariableRecord * &gt; DbgValueRecord, BlockInfo *LiveSet)</argsstring>
+        <name>processDbgValue</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::processDbgValue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_pointer_union" kindref="compound">PointerUnion</ref>&lt; <ref refid="classllvm_1_1_dbg_value_inst" kindref="compound">DbgValueInst</ref> *, <ref refid="classllvm_1_1_dbg_variable_record" kindref="compound">DbgVariableRecord</ref> * &gt;</type>
+          <declname>DbgValueRecord</declname>
+        </param>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1360" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1813" bodyend="1842"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a7490ef214b500a29b5125bac0bdbdf8b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::addMemDef</definition>
+        <argsstring>(BlockInfo *LiveSet, VariableID Var, const Assignment &amp;AV)</argsstring>
+        <name>addMemDef</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::addMemDef</qualifiedname>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref></type>
+          <declname>Var</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_assignment" kindref="compound">Assignment</ref> &amp;</type>
+          <declname>AV</declname>
+        </param>
+        <briefdescription>
+<para>Add an assignment to memory for the variable /p Var. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1364" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1428" bodyend="1439"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a7cbb8139150f8f691c89fb73658f92c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::addDbgDef</definition>
+        <argsstring>(BlockInfo *LiveSet, VariableID Var, const Assignment &amp;AV)</argsstring>
+        <name>addDbgDef</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::addDbgDef</qualifiedname>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref></type>
+          <declname>Var</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_assignment" kindref="compound">Assignment</ref> &amp;</type>
+          <declname>AV</declname>
+        </param>
+        <briefdescription>
+<para>Add an assignment to the variable /p Var. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1366" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1441" bodyend="1452"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>LocKind</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::LocKind</qualifiedname>
+        <enumvalue id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4cadba5553473d129a7985fb532dc249ff4" prot="public">
+          <name>Mem</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4ca5988c20a047cfe063999787584b0aca7" prot="public">
+          <name>Val</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4ca6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The kind of location in use for a variable, where Mem is the stack home, Val is an SSA value or const, and None means that there is not one single kind (either because there are multiple or because there is none; it may prove useful to split this into two values in the future). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">LocKind</ref> is a join-semilattice with the partial order: None &gt; Mem, Val</para>
+<para>i.e. join(Mem, Mem) = Mem join(Val, Val) = Val join(Mem, Val) = None join(None, Mem) = None join(None, Val) = None join(None, None) = None</para>
+<para>Note: the order is not <computeroutput>None &gt; Val &gt; Mem</computeroutput> because we&apos;re using <ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> to name assignments and are not tracking the actual stored values. Therefore currently there&apos;s no way to ensure that Mem values and Val values are the same. This could be a future extension, though it&apos;s not clear that many additional locations would be recovered that way in practice as the likelihood of this sitation arising naturally seems incredibly low. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1015" column="3" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1015" bodyend="1015"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a6e0b2146e9115e385d8e406b6c36e645" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_pointer_union" kindref="compound">PointerUnion</ref>&lt; <ref refid="classllvm_1_1_dbg_assign_intrinsic" kindref="compound">DbgAssignIntrinsic</ref> *, <ref refid="classllvm_1_1_dbg_variable_record" kindref="compound">DbgVariableRecord</ref> * &gt;</type>
+        <definition>using anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::AssignRecord =  PointerUnion&lt;DbgAssignIntrinsic *, DbgVariableRecord *&gt;</definition>
+        <argsstring></argsstring>
+        <name>AssignRecord</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::AssignRecord</qualifiedname>
+        <briefdescription>
+<para>An abstraction of the assignment of a value to a variable or memory location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>An <ref refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_assignment" kindref="compound">Assignment</ref> is Known or NoneOrPhi. A Known <ref refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_assignment" kindref="compound">Assignment</ref> means we have a <ref refid="classllvm_1_1_d_i_assign_i_d" kindref="compound">DIAssignID</ref> ptr that represents it. NoneOrPhi means that we don&apos;t (or can&apos;t) know the <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> of the last assignment that took place.</para>
+<para>The <ref refid="struct_status" kindref="compound">Status</ref> of the <ref refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_assignment" kindref="compound">Assignment</ref> (Known or NoneOrPhi) is another join-semilattice. The partial order is: NoneOrPhi &gt; Known {id_0, id_1, ...id_N}</para>
+<para>i.e. for all values x and y where x != y: join(x, x) = x join(x, y) = NoneOrPhi </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1031" column="3" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1031" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1aecd3fbed2e4d7501952b5de23ba8aba8" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_assignment" kindref="compound">Assignment</ref> &gt;</type>
+        <definition>using anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::AssignmentMap =  SmallVector&lt;Assignment&gt;</definition>
+        <argsstring></argsstring>
+        <name>AssignmentMap</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::AssignmentMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1100" column="3" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1afadbf47f53cfe3d4eb25a3cb1e53b19d" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">LocKind</ref> &gt;</type>
+        <definition>using anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::LocMap =  SmallVector&lt;LocKind&gt;</definition>
+        <argsstring></argsstring>
+        <name>LocMap</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::LocMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1101" column="3" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a0ff60cdc2be1ee891c876f458018fd1c" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref>, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref> &gt; &gt;</type>
+        <definition>using anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::OverlapMap =  DenseMap&lt;VariableID, SmallVector&lt;VariableID&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>OverlapMap</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::OverlapMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1102" column="3" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a0dcaf963c14e849c62941b7f402bf74e" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::pair&lt; <ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref>, <ref refid="structllvm_1_1at_1_1_assignment_info" kindref="compound">at::AssignmentInfo</ref> &gt; &gt; &gt;</type>
+        <definition>using anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::UntaggedStoreAssignmentMap = 
+      DenseMap&lt;const Instruction *,
+               SmallVector&lt;std::pair&lt;VariableID, at::AssignmentInfo&gt;&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>UntaggedStoreAssignmentMap</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::UntaggedStoreAssignmentMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1103" column="3" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1103" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ac1a71f3e9fc332d4fae9351111e97486" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_map_vector" kindref="compound">MapVector</ref>&lt; <ref refid="_assignment_tracking_analysis_8cpp_1a6c7f6b65820380603c12c83d4d3b620c" kindref="member">VarLocInsertPt</ref>, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_var_loc_info" kindref="compound">VarLocInfo</ref> &gt; &gt;</type>
+        <definition>using anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::InstInsertMap =  MapVector&lt;VarLocInsertPt, SmallVector&lt;VarLocInfo&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>InstInsertMap</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::InstInsertMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1118" column="3" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1118" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ac39d04e9015d4b22203bdc7878a5b411" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::TrackedVariablesVectorSize</definition>
+        <argsstring></argsstring>
+        <name>TrackedVariablesVectorSize</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::TrackedVariablesVectorSize</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The highest numbered <ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref> for partially promoted variables plus 1, the values for which start at 1. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1110" column="12" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a0eefa7f711d818fe8df07e5af7f9a35e" prot="private" static="no" mutable="no">
+        <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a0ff60cdc2be1ee891c876f458018fd1c" kindref="member">OverlapMap</ref></type>
+        <definition>OverlapMap anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::VarContains</definition>
+        <argsstring></argsstring>
+        <name>VarContains</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::VarContains</qualifiedname>
+        <briefdescription>
+<para>Map a variable to the set of variables that it fully contains. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1112" column="14" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1add6b4e5ace0120a7aa432375cd646c7f" prot="private" static="no" mutable="no">
+        <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a0dcaf963c14e849c62941b7f402bf74e" kindref="member">UntaggedStoreAssignmentMap</ref></type>
+        <definition>UntaggedStoreAssignmentMap anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::UntaggedStoreVars</definition>
+        <argsstring></argsstring>
+        <name>UntaggedStoreVars</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::UntaggedStoreVars</qualifiedname>
+        <briefdescription>
+<para>Map untagged stores to the variable fragments they assign to. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used by processUntaggedInstruction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1115" column="30" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a11aecf12030437ee0754dc89b45122d4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_map_vector" kindref="compound">InstInsertMap</ref></type>
+        <definition>InstInsertMap anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::InsertBeforeMap</definition>
+        <argsstring></argsstring>
+        <name>InsertBeforeMap</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::InsertBeforeMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1119" column="17" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ace3fb6446346e99d5e1f996d6691f86c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+        <definition>Function&amp; anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::Fn</definition>
+        <argsstring></argsstring>
+        <name>Fn</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::Fn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1296" column="12" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ae6dd837818886caa416388cb894e0617" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+        <definition>const DataLayout&amp; anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::Layout</definition>
+        <argsstring></argsstring>
+        <name>Layout</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::Layout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1297" column="20" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1297" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a3ce4e3e0b2e8283d365bfac025630623" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="_assignment_tracking_analysis_8cpp_1a05c5b2328f38cb1affebb8ad4ab6fe40" kindref="member">DebugAggregate</ref> &gt; *</type>
+        <definition>const DenseSet&lt;DebugAggregate&gt;* anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::VarsWithStackSlot</definition>
+        <argsstring></argsstring>
+        <name>VarsWithStackSlot</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::VarsWithStackSlot</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1298" column="18" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a03de30a67feb92759fbcbbdcd0f3e151" prot="private" static="no" mutable="no">
+        <type><ref refid="class_function_var_locs_builder" kindref="compound">FunctionVarLocsBuilder</ref> *</type>
+        <definition>FunctionVarLocsBuilder* anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::FnVarLocs</definition>
+        <argsstring></argsstring>
+        <name>FnVarLocs</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::FnVarLocs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1299" column="26" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a42dd67983e1e57ba55bb4547f5e0098a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, BlockInfo &gt;</type>
+        <definition>DenseMap&lt;const BasicBlock *, BlockInfo&gt; anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::LiveIn</definition>
+        <argsstring></argsstring>
+        <name>LiveIn</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::LiveIn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1300" column="12" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a030d7cd52be1827efbb975ef3b6884c4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, BlockInfo &gt;</type>
+        <definition>DenseMap&lt;const BasicBlock *, BlockInfo&gt; anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::LiveOut</definition>
+        <argsstring></argsstring>
+        <name>LiveOut</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::LiveOut</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1301" column="12" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1aa7a33f46af3ed06d248cca47b81f0b2f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref> &gt;</type>
+        <definition>DenseSet&lt;VariableID&gt; anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::VarsTouchedThisFrame</definition>
+        <argsstring></argsstring>
+        <name>VarsTouchedThisFrame</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::VarsTouchedThisFrame</qualifiedname>
+        <briefdescription>
+<para>Helper for process methods to track variables touched each frame. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1304" column="12" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a93d689c2128cdf73067ce441fd3337c6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="_assignment_tracking_analysis_8cpp_1a05c5b2328f38cb1affebb8ad4ab6fe40" kindref="member">DebugAggregate</ref> &gt;</type>
+        <definition>DenseSet&lt;DebugAggregate&gt; anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::NotAlwaysStackHomed</definition>
+        <argsstring></argsstring>
+        <name>NotAlwaysStackHomed</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::NotAlwaysStackHomed</qualifiedname>
+        <briefdescription>
+<para>The set of variables that sometimes are not located in their stack home. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1307" column="12" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1307" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a0fcbe6b3e2238d2527750fb9229641cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::resetInsertionPoint</definition>
+        <argsstring>(Instruction &amp;After)</argsstring>
+        <name>resetInsertionPoint</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::resetInsertionPoint</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> &amp;</type>
+          <declname>After</declname>
+        </param>
+        <briefdescription>
+<para>Clear the location definitions currently cached for insertion after /p After. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1122" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1877" bodyend="1883"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a3db1e9c5375ffd29742c0fecdc8acedc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::resetInsertionPoint</definition>
+        <argsstring>(DbgVariableRecord &amp;After)</argsstring>
+        <name>resetInsertionPoint</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::resetInsertionPoint</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dbg_variable_record" kindref="compound">DbgVariableRecord</ref> &amp;</type>
+          <declname>After</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1123" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1884" bodyend="1889"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1af3ff0c30e3418026bec378dcf3094951" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::emitDbgValue</definition>
+        <argsstring>(LocKind Kind, AssignRecord Source, VarLocInsertPt After)</argsstring>
+        <name>emitDbgValue</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::emitDbgValue</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">LocKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a6e0b2146e9115e385d8e406b6c36e645" kindref="member">AssignRecord</ref></type>
+          <declname>Source</declname>
+        </param>
+        <param>
+          <type><ref refid="_assignment_tracking_analysis_8cpp_1a6c7f6b65820380603c12c83d4d3b620c" kindref="member">VarLocInsertPt</ref></type>
+          <declname>After</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1131" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a7c44df02806cf6f4abb1e57fac4a5774" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::emitDbgValue</definition>
+        <argsstring>(LocKind Kind, const T Source, VarLocInsertPt After)</argsstring>
+        <name>emitDbgValue</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::emitDbgValue</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">LocKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_t" kindref="compound">T</ref></type>
+          <declname>Source</declname>
+        </param>
+        <param>
+          <type><ref refid="_assignment_tracking_analysis_8cpp_1a6c7f6b65820380603c12c83d4d3b620c" kindref="member">VarLocInsertPt</ref></type>
+          <declname>After</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1133" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a6a9ba2a4c1d82ad44e9d75af9c304fc1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref></type>
+        <definition>VariableID anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::getVariableID</definition>
+        <argsstring>(const DebugVariable &amp;Var)</argsstring>
+        <name>getVariableID</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::getVariableID</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_debug_variable" kindref="compound">DebugVariable</ref> &amp;</type>
+          <declname>Var</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1309" column="14" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1309" bodyend="1311"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1af0a599e9e9a2ec3e762ac2a1ff3f6801" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool AssignmentTrackingLowering::join</definition>
+        <argsstring>(const BasicBlock &amp;BB, const SmallPtrSet&lt; BasicBlock *, 16 &gt; &amp;Visited)</argsstring>
+        <name>join</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::join</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> &amp;</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, 16 &gt; &amp;</type>
+          <declname>Visited</declname>
+        </param>
+        <briefdescription>
+<para>Join the LiveOut values of preds that are contained in <computeroutput>Visited</computeroutput> into LiveIn[BB]. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return True if LiveIn[BB] has changed as a result. LiveIn[BB] values monotonically increase. See the <ref refid="" kindref="compound">join methods </ref> documentation for more info. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1317" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="2029" bodyend="2096"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1af7a4ca3a25308251fca56b212108ab2c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::process</definition>
+        <argsstring>(BasicBlock &amp;BB, BlockInfo *LiveSet)</argsstring>
+        <name>process</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::process</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> &amp;</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1sys_1_1_process" kindref="compound">Process</ref> the instructions in <computeroutput>BB</computeroutput> updating <computeroutput>LiveSet</computeroutput> along the way. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>LiveSet</computeroutput> must be initialized with the current live-in locations before calling this. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1345" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1891" bodyend="1964"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a932045eceb64e8070ec4058d915c79ec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::setLocKind</definition>
+        <argsstring>(BlockInfo *LiveSet, VariableID Var, LocKind K)</argsstring>
+        <name>setLocKind</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::setLocKind</qualifiedname>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref></type>
+          <declname>Var</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">LocKind</ref></type>
+          <declname>K</declname>
+        </param>
+        <briefdescription>
+<para>Set the <ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">LocKind</ref> for <computeroutput>Var</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1370" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1410" bodyend="1421"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1aaaa9406d8d3ceb2831508d9a3af47eb1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">LocKind</ref></type>
+        <definition>AssignmentTrackingLowering::LocKind AssignmentTrackingLowering::getLocKind</definition>
+        <argsstring>(BlockInfo *LiveSet, VariableID Var)</argsstring>
+        <name>getLocKind</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::getLocKind</qualifiedname>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref></type>
+          <declname>Var</declname>
+        </param>
+        <briefdescription>
+<para>Get the live <ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">LocKind</ref> for a <computeroutput>Var</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Requires addMemDef or addDbgDef to have been called for <computeroutput>Var</computeroutput> first. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1373" column="11" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1424" bodyend="1426"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a1748ba335a579a8166341235b4e07504" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool AssignmentTrackingLowering::hasVarWithAssignment</definition>
+        <argsstring>(BlockInfo *LiveSet, BlockInfo::AssignmentKind Kind, VariableID Var, const Assignment &amp;AV)</argsstring>
+        <name>hasVarWithAssignment</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::hasVarWithAssignment</qualifiedname>
+        <param>
+          <type>BlockInfo *</type>
+          <declname>LiveSet</declname>
+        </param>
+        <param>
+          <type>BlockInfo::AssignmentKind</type>
+          <declname>Kind</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref></type>
+          <declname>Var</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1_1_assignment" kindref="compound">Assignment</ref> &amp;</type>
+          <declname>AV</declname>
+        </param>
+        <briefdescription>
+<para>Return true if <computeroutput>Var</computeroutput> has an assignment in <computeroutput>M</computeroutput> matching <computeroutput>AV</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1375" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1469" bodyend="1481"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1add36cc320c73ceca3c4b781d2632e62d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref> &gt;</type>
+        <definition>ArrayRef&lt; VariableID &gt; AssignmentTrackingLowering::getContainedFragments</definition>
+        <argsstring>(VariableID Var) const</argsstring>
+        <name>getContainedFragments</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::getContainedFragments</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref></type>
+          <declname>Var</declname>
+        </param>
+        <briefdescription>
+<para>Return the set of VariableIDs corresponding the fragments contained fully within the variable/fragment <computeroutput>Var</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1379" column="12" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1399" bodyend="1404"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a20f6564be46165cd2d8c7c931ca01f15" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssignmentTrackingLowering::touchFragment</definition>
+        <argsstring>(VariableID Var)</argsstring>
+        <name>touchFragment</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::touchFragment</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1a8c9d5a3046b96979a032c218e858cd15" kindref="member">VariableID</ref></type>
+          <declname>Var</declname>
+        </param>
+        <briefdescription>
+<para>Mark <computeroutput>Var</computeroutput> as having been touched this frame. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note, this applies only to the exact fragment <computeroutput>Var</computeroutput> and not to any fragments contained within. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1383" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1406" bodyend="1408"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a8dc095d5a7ebf04bdcee6c8bbfdc0c0c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool AssignmentTrackingLowering::emitPromotedVarLocs</definition>
+        <argsstring>(FunctionVarLocsBuilder *FnVarLocs)</argsstring>
+        <name>emitPromotedVarLocs</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::emitPromotedVarLocs</qualifiedname>
+        <param>
+          <type><ref refid="class_function_var_locs_builder" kindref="compound">FunctionVarLocsBuilder</ref> *</type>
+          <declname>FnVarLocs</declname>
+        </param>
+        <briefdescription>
+<para>Emit info for variables that are fully promoted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1386" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="2453" bodyend="2482"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ab415c1f08b41ea0367bdde0bc900f2f3" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::mapsAreEqual</definition>
+        <argsstring>(const BitVector &amp;Mask, const AssignmentMap &amp;A, const AssignmentMap &amp;B)</argsstring>
+        <name>mapsAreEqual</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::mapsAreEqual</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> &amp;</type>
+          <declname>Mask</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1aecd3fbed2e4d7501952b5de23ba8aba8" kindref="member">AssignmentMap</ref> &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1aecd3fbed2e4d7501952b5de23ba8aba8" kindref="member">AssignmentMap</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1135" column="15" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1135" bodyend="1140"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a14796ed9d9b5b6770e2a62108feca587" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::AssignmentTrackingLowering</definition>
+        <argsstring>(Function &amp;Fn, const DataLayout &amp;Layout, const DenseSet&lt; DebugAggregate &gt; *VarsWithStackSlot)</argsstring>
+        <name>AssignmentTrackingLowering</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::AssignmentTrackingLowering</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>Fn</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>Layout</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="_assignment_tracking_analysis_8cpp_1a05c5b2328f38cb1affebb8ad4ab6fe40" kindref="member">DebugAggregate</ref> &gt; *</type>
+          <declname>VarsWithStackSlot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1389" column="3" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1389" bodyend="1391"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a9db16f6b49d380b76183877d54b42c5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool AssignmentTrackingLowering::run</definition>
+        <argsstring>(FunctionVarLocsBuilder *FnVarLocs)</argsstring>
+        <name>run</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::run</qualifiedname>
+        <param>
+          <type><ref refid="class_function_var_locs_builder" kindref="compound">FunctionVarLocsBuilder</ref> *</type>
+          <declname>FnVarLocs</declname>
+        </param>
+        <briefdescription>
+<para>Run the analysis, adding variable location info to <computeroutput>FnVarLocs</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if any variable locations have been added to FnVarLocs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1394" column="8" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="2283" bodyend="2451"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_assignment_tracking_analysis_8cpp_1a4ad92667dcad9ad33a52a2e1c505a03a" compoundref="_assignment_tracking_analysis_8cpp" startline="2152" endline="2281">buildOverlapMapAndRecordDeclares</references>
+        <references refid="classllvm_1_1detail_1_1_dense_set_impl_1ad409c2de8502b94c8a0b1193307c63b6" compoundref="_dense_set_8h" startline="193" endline="195">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::contains</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1_1at_1a11e115c0bc63e73df009e5117821d230" compoundref="_debug_info_8cpp" startline="1915" endline="1933">llvm::at::deleteAll</references>
+        <references refid="structllvm_1_1_var_loc_info_1ad7e310409e444bad60535cf956972194" compoundref="_assignment_tracking_analysis_8h" startline="31">llvm::VarLocInfo::DL</references>
+        <references refid="structllvm_1_1_var_loc_info_1a2db7bf8bbe7f16fcee0e9f21aa87fe03" compoundref="_assignment_tracking_analysis_8h" startline="30">llvm::VarLocInfo::Expr</references>
+        <references refid="classllvm_1_1_m_d_node_1a7d10a7b9b7f40b04d27ed97c38ea1950" compoundref="_metadata_8h" startline="1549" endline="1551">llvm::MDNode::get</references>
+        <references refid="classllvm_1_1_debug_variable_1a58e53986006a2e7d95385fe4e633fb2e" compoundref="_debug_info_metadata_8h" startline="4052" endline="4052">llvm::DebugVariable::getInlinedAt</references>
+        <references refid="classllvm_1_1_value_1adb5c319f5905c1d3ca9eb5df546388c5" compoundref="_sandbox_i_r_2_value_8cpp" startline="309" endline="316">llvm::Value::getName</references>
+        <references refid="classllvm_1_1_d_i_expression_1a1b59c8fe81267b338774bf6c542f90ee" compoundref="_debug_info_metadata_8h" startline="2789" endline="2789">llvm::DIExpression::getNumElements</references>
+        <references refid="classllvm_1_1_debug_variable_1af2ca096ab72c055f6c2c7e3ffbe5d6bf" compoundref="_debug_info_metadata_8h" startline="4050" endline="4050">llvm::DebugVariable::getVariable</references>
+        <references refid="classllvm_1_1_raw_location_wrapper_1acaf135b0c3da7778910e043864bcf1ac" compoundref="_i_r_2_intrinsic_inst_8h" startline="267" endline="267">llvm::RawLocationWrapper::hasArgList</references>
+        <references refid="classllvm_1_1detail_1_1_dense_set_impl_1a1b0f3ebdced8fce4b22c6a63b25d9525" compoundref="_dense_set_8h" startline="213" endline="216">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="namespacellvm_1aa1fd1719afe5b07ebe55f1d105c98916" compoundref="_string_extras_8h" startline="489" endline="492">llvm::join</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_assignment_tracking_analysis_8cpp_1af0952d00328de72e269c7f157a015e1c">MaxNumBlocks</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="namespacellvm_1a1200affbcdb869bf32076f90ad9d0eafa1fbb1e3943c2c6c560247ac8f9289780" compoundref="_a_arch64_base_info_8h" startline="586">llvm::Simple</references>
+        <references refid="classllvm_1_1_d_i_expression_1a3c6397a9b21812183d69e90c3dac17f9" compoundref="_debug_info_metadata_8cpp" startline="1382" endline="1387">llvm::DIExpression::startsWithDeref</references>
+        <references refid="namespacellvm_1a26e2a938b431eaa6eca2beaa96410c9d" compoundref="_machine_basic_block_8h" startline="1385" endline="1385">llvm::successors</references>
+        <references refid="structllvm_1_1_var_loc_info_1a95406039aa97abe00aa3b1265d846455" compoundref="_assignment_tracking_analysis_8h" startline="32">llvm::VarLocInfo::Values</references>
+        <references refid="structllvm_1_1_var_loc_info_1af70494f348808c889f07f71f43cd28ec" compoundref="_assignment_tracking_analysis_8h" startline="29">llvm::VarLocInfo::VariableID</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a81d863ec17163a5dcedc09cb1a48aadf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::emitDbgValue</definition>
+        <argsstring>(AssignmentTrackingLowering::LocKind Kind, const T Source, VarLocInsertPt After)</argsstring>
+        <name>emitDbgValue</name>
+        <qualifiedname>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::emitDbgValue</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" kindref="member">AssignmentTrackingLowering::LocKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_t" kindref="compound">T</ref></type>
+          <declname>Source</declname>
+        </param>
+        <param>
+          <type><ref refid="_assignment_tracking_analysis_8cpp_1a6c7f6b65820380603c12c83d4d3b620c" kindref="member">VarLocInsertPt</ref></type>
+          <declname>After</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="1535" column="6" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="1535" bodyend="1597"/>
+        <references refid="_standard_instrumentations_8cpp_1a6f1bbcae7288f05872dcfe811d0388baa7bfcadb5535fe8aad5032762b7bfe159" compoundref="_standard_instrumentations_8cpp" startline="812">After</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_assignment_tracking_analysis_8cpp_1ab89ede590f1a89ea1b5b9cfd422d7c86" compoundref="_assignment_tracking_analysis_8cpp" startline="1516" endline="1518">CastToDbgAssign</references>
+        <references refid="classllvm_1_1_d_i_expression_1ab2fc167f75191e1d22e12e8e382605bb" compoundref="_debug_info_metadata_8cpp" startline="2006" endline="2096">llvm::DIExpression::createFragmentExpression</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="structllvm_1_1_var_loc_info_1ad7e310409e444bad60535cf956972194" compoundref="_assignment_tracking_analysis_8h" startline="31">llvm::VarLocInfo::DL</references>
+        <references refid="structllvm_1_1_var_loc_info_1a2db7bf8bbe7f16fcee0e9f21aa87fe03" compoundref="_assignment_tracking_analysis_8h" startline="30">llvm::VarLocInfo::Expr</references>
+        <references refid="classllvm_1_1_poison_value_1a1bf08613fb664a2e377a9a72c59a6b66" compoundref="_constants_8cpp" startline="1878" endline="1884">llvm::PoisonValue::get</references>
+        <references refid="classllvm_1_1_value_as_metadata_1a53fc78b63202142110d0e86dd1a71fbe" compoundref="_metadata_8cpp" startline="501" endline="518">llvm::ValueAsMetadata::get</references>
+        <references refid="classllvm_1_1_d_i_expression_1a7cc5f1632a4c520497898439c17dc026" compoundref="_debug_info_metadata_8cpp" startline="1677" endline="1684">llvm::DIExpression::getFragmentInfo</references>
+        <references refid="classllvm_1_1_type_1aa75984a442f2379de0c66018201fa628" compoundref="_sandbox_i_r_2_type_8cpp" startline="284" endline="284">llvm::Type::getInt1Ty</references>
+        <references refid="_assignment_tracking_analysis_8cpp_1a05eb84c8f630be406f61761013146574" compoundref="_assignment_tracking_analysis_8cpp" startline="1498" endline="1503">getNextNode</references>
+        <references refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4cadba5553473d129a7985fb532dc249ff4" compoundref="_assignment_tracking_analysis_8cpp" startline="1015">Mem</references>
+        <references refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4ca6adf97f83acf6453d4a6a4b1070f3754" compoundref="_assignment_tracking_analysis_8cpp" startline="1015">None</references>
+        <references refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4ca5988c20a047cfe063999787584b0aca7" compoundref="_assignment_tracking_analysis_8cpp" startline="1015">Val</references>
+        <references refid="structllvm_1_1_var_loc_info_1a95406039aa97abe00aa3b1265d846455" compoundref="_assignment_tracking_analysis_8h" startline="32">llvm::VarLocInfo::Values</references>
+        <references refid="structllvm_1_1_var_loc_info_1af70494f348808c889f07f71f43cd28ec" compoundref="_assignment_tracking_analysis_8h" startline="29">llvm::VarLocInfo::VariableID</references>
+        <references refid="_assignment_tracking_analysis_8cpp_1a0b1eb53b30ddeb8ebdccc60c0837300f" compoundref="_assignment_tracking_analysis_8cpp" startline="268" endline="281">walkToAllocaAndPrependOffsetDeref</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering" kindref="compound">AssignmentTrackingLowering</ref> encapsulates a dataflow analysis over a function that interprets assignment tracking debug info metadata and stores in IR to create a map of variable locations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/AssignmentTrackingAnalysis.cpp" line="990" column="1" bodyfile="lib/CodeGen/AssignmentTrackingAnalysis.cpp" bodystart="990" bodyend="1395"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a7cbb8139150f8f691c89fb73658f92c9" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>addDbgDef</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a7490ef214b500a29b5125bac0bdbdf8b" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>addMemDef</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1aecd3fbed2e4d7501952b5de23ba8aba8" prot="public" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>AssignmentMap</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a14796ed9d9b5b6770e2a62108feca587" prot="public" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>AssignmentTrackingLowering</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a6e0b2146e9115e385d8e406b6c36e645" prot="public" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>AssignRecord</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1af3ff0c30e3418026bec378dcf3094951" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>emitDbgValue</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a7c44df02806cf6f4abb1e57fac4a5774" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>emitDbgValue</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a81d863ec17163a5dcedc09cb1a48aadf" prot="public" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>emitDbgValue</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a8dc095d5a7ebf04bdcee6c8bbfdc0c0c" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>emitPromotedVarLocs</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ace3fb6446346e99d5e1f996d6691f86c" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>Fn</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a03de30a67feb92759fbcbbdcd0f3e151" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>FnVarLocs</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1add36cc320c73ceca3c4b781d2632e62d" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>getContainedFragments</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1aaaa9406d8d3ceb2831508d9a3af47eb1" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>getLocKind</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a6a9ba2a4c1d82ad44e9d75af9c304fc1" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>getVariableID</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a1748ba335a579a8166341235b4e07504" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>hasVarWithAssignment</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a11aecf12030437ee0754dc89b45122d4" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>InsertBeforeMap</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ac1a71f3e9fc332d4fae9351111e97486" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>InstInsertMap</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1af0a599e9e9a2ec3e762ac2a1ff3f6801" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>join</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a284bde494a758f137ae9aadc3eaf0dbf" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>joinAssignment</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a9e3dea86b716ecd08aec5804e14bf632" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>joinBlockInfo</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1adf5287e05f6fc042184d45a9d60a8ed6" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>joinKind</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ae6dd837818886caa416388cb894e0617" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>Layout</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a42dd67983e1e57ba55bb4547f5e0098a" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>LiveIn</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a030d7cd52be1827efbb975ef3b6884c4" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>LiveOut</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a4012a71c02f4a13c5234aea48e772f4c" prot="public" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>LocKind</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1afadbf47f53cfe3d4eb25a3cb1e53b19d" prot="public" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>LocMap</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ab415c1f08b41ea0367bdde0bc900f2f3" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>mapsAreEqual</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a93d689c2128cdf73067ce441fd3337c6" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>NotAlwaysStackHomed</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a0ff60cdc2be1ee891c876f458018fd1c" prot="public" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>OverlapMap</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1af7a4ca3a25308251fca56b212108ab2c" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>process</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1af22058985c8fdfd518da9118f5aa1bce" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>processDbgAssign</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a59bb8432b7c3837317cc521c69ff06f6" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>processDbgInstruction</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ac2a8586109e219243dc14ea0fef3e3c0" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>processDbgValue</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ab04cf251f137dd30b8d6da9ef2fb6694" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>processDbgVariableRecord</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a47f512f6497daf8ba0be6476d70b90d7" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>processNonDbgInstruction</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a8a1f2f4bbbe8a0c19a6b96343e2fe826" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>processTaggedInstruction</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1abbb525e882e3f6d0bf70f9ea18565393" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>processUntaggedInstruction</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a0fcbe6b3e2238d2527750fb9229641cb" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>resetInsertionPoint</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a3db1e9c5375ffd29742c0fecdc8acedc" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>resetInsertionPoint</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a9db16f6b49d380b76183877d54b42c5c" prot="public" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>run</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a932045eceb64e8070ec4058d915c79ec" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>setLocKind</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a20f6564be46165cd2d8c7c931ca01f15" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>touchFragment</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1ac39d04e9015d4b22203bdc7878a5b411" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>TrackedVariablesVectorSize</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a0dcaf963c14e849c62941b7f402bf74e" prot="public" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>UntaggedStoreAssignmentMap</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1add6b4e5ace0120a7aa432375cd646c7f" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>UntaggedStoreVars</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a0eefa7f711d818fe8df07e5af7f9a35e" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>VarContains</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1aa7a33f46af3ed06d248cca47b81f0b2f" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>VarsTouchedThisFrame</name></member>
+      <member refid="classanonymous__namespace_02_assignment_tracking_analysis_8cpp_03_1_1_assignment_tracking_lowering_1a3ce4e3e0b2e8283d365bfac025630623" prot="private" virt="non-virtual"><scope>anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</scope><name>VarsWithStackSlot</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_x86_fold_tables_utils_8h" kind="file" language="C++">
+    <compoundname>X86FoldTablesUtils.h</compoundname>
+    <includedby refid="_x86_instr_fold_tables_8h" local="yes">lib/Target/X86/X86InstrFoldTables.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/X86FoldTablesUtils.h</label>
+        <link refid="_x86_fold_tables_utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>lib/Target/X86/X86FixupVectorConstants.cpp</label>
+        <link refid="_x86_fixup_vector_constants_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Target/X86/X86InstrFoldTables.cpp</label>
+        <link refid="_x86_instr_fold_tables_8cpp"/>
+      </node>
+      <node id="2">
+        <label>lib/Target/X86/X86InstrFoldTables.h</label>
+        <link refid="_x86_instr_fold_tables_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>lib/Target/X86/X86InstrInfo.cpp</label>
+        <link refid="_x86_instr_info_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===--<sp/>X86FoldTablesUtils.h<sp/>------------------------------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_SUPPORT_X86FOLDTABLESUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_SUPPORT_X86FOLDTABLESUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Select<sp/>which<sp/>memory<sp/>operand<sp/>is<sp/>being<sp/>unfolded.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>(stored<sp/>in<sp/>bits<sp/>0<sp/>-<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482aab83411d5cbdfd01f204a4e5da6f6974" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482aab83411d5cbdfd01f204a4e5da6f6974" kindref="member">TB_INDEX_0</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="17" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a9d7bf67c61e7357b1eee2c680ede0108" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a9d7bf67c61e7357b1eee2c680ede0108" kindref="member">TB_INDEX_1</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="18" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a16acf2d99f8e3a751c0de8f6bc8a8631" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a16acf2d99f8e3a751c0de8f6bc8a8631" kindref="member">TB_INDEX_2</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="19" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a01e8b454e398dfee88e7917058ee2cc1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a01e8b454e398dfee88e7917058ee2cc1" kindref="member">TB_INDEX_3</ref><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="20" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482aba2e99f3194a879f01d0da4e9ba36d8c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482aba2e99f3194a879f01d0da4e9ba36d8c" kindref="member">TB_INDEX_4</ref><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="21" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a0d7f8d289a0039b0408874c4ea209077" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a0d7f8d289a0039b0408874c4ea209077" kindref="member">TB_INDEX_MASK</ref><sp/>=<sp/>0x7,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>insert<sp/>the<sp/>reverse<sp/>map<sp/>(MemOp<sp/>-&gt;<sp/>RegOp)<sp/>into<sp/>the<sp/>table.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>may<sp/>be<sp/>needed<sp/>because<sp/>there<sp/>is<sp/>a<sp/>many<sp/>-&gt;<sp/>one<sp/>mapping.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482af6fbf6d6d521683c803b1f1e22d50a5e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482af6fbf6d6d521683c803b1f1e22d50a5e" kindref="member">TB_NO_REVERSE</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>3,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>insert<sp/>the<sp/>forward<sp/>map<sp/>(RegOp<sp/>-&gt;<sp/>MemOp)<sp/>into<sp/>the<sp/>table.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>needed<sp/>for<sp/>Native<sp/>Client,<sp/>which<sp/>prohibits<sp/>branch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>instructions<sp/>from<sp/>using<sp/>a<sp/>memory<sp/>operand.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a3c979ad13097cb5cb53a62ff6a706194" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a3c979ad13097cb5cb53a62ff6a706194" kindref="member">TB_NO_FORWARD</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>4,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a7b903091e4c353176eb5262ca703c1a6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a7b903091e4c353176eb5262ca703c1a6" kindref="member">TB_FOLDED_LOAD</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>5,</highlight></codeline>
+<codeline lineno="33" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a7ee73885c18c45ccdc0925a2580c4a8d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a7ee73885c18c45ccdc0925a2580c4a8d" kindref="member">TB_FOLDED_STORE</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>6,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Minimum<sp/>alignment<sp/>required<sp/>for<sp/>load/store.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>for<sp/>RegOp-&gt;MemOp<sp/>conversion.<sp/>Encoded<sp/>as<sp/>Log2(Align)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>(stored<sp/>in<sp/>bits<sp/>8<sp/>-<sp/>10)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a699570caf06fde2410a5bcd1e00fd3a0" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a699570caf06fde2410a5bcd1e00fd3a0" kindref="member">TB_ALIGN_SHIFT</ref><sp/>=<sp/>7,</highlight></codeline>
+<codeline lineno="39" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a769b69c85c1b8fd20ed80ec93767208d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a769b69c85c1b8fd20ed80ec93767208d" kindref="member">TB_ALIGN_1</ref><sp/>=<sp/>0<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a699570caf06fde2410a5bcd1e00fd3a0" kindref="member">TB_ALIGN_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="40" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a1f472a2912682e1fd8a5a315ed524c6a" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a1f472a2912682e1fd8a5a315ed524c6a" kindref="member">TB_ALIGN_16</ref><sp/>=<sp/>4<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a699570caf06fde2410a5bcd1e00fd3a0" kindref="member">TB_ALIGN_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="41" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a45e4c456d3d1b22b25fba57f0b0027d1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a45e4c456d3d1b22b25fba57f0b0027d1" kindref="member">TB_ALIGN_32</ref><sp/>=<sp/>5<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a699570caf06fde2410a5bcd1e00fd3a0" kindref="member">TB_ALIGN_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="42" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a20c7ca94ee4054fcb4abd1d2f524db7c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a20c7ca94ee4054fcb4abd1d2f524db7c" kindref="member">TB_ALIGN_64</ref><sp/>=<sp/>6<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a699570caf06fde2410a5bcd1e00fd3a0" kindref="member">TB_ALIGN_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="43" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482ad8c2650433c6088758b5d3b6fe956ce5" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482ad8c2650433c6088758b5d3b6fe956ce5" kindref="member">TB_ALIGN_MASK</ref><sp/>=<sp/>0x7<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a699570caf06fde2410a5bcd1e00fd3a0" kindref="member">TB_ALIGN_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Broadcast<sp/>type.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>(stored<sp/>in<sp/>bits<sp/>11<sp/>-<sp/>13)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482abf5ad66f314c071b1ad5de2fbdd5fe0e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482abf5ad66f314c071b1ad5de2fbdd5fe0e" kindref="member">TB_BCAST_TYPE_SHIFT</ref><sp/>=<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a699570caf06fde2410a5bcd1e00fd3a0" kindref="member">TB_ALIGN_SHIFT</ref><sp/>+<sp/>3,</highlight></codeline>
+<codeline lineno="48" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482aba07a9aab4d411b074da14653e92dd6d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482aba07a9aab4d411b074da14653e92dd6d" kindref="member">TB_BCAST_W</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482abf5ad66f314c071b1ad5de2fbdd5fe0e" kindref="member">TB_BCAST_TYPE_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="49" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a03c37df61f8c273e8bdbfcb93398c42b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a03c37df61f8c273e8bdbfcb93398c42b" kindref="member">TB_BCAST_D</ref><sp/>=<sp/>2<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482abf5ad66f314c071b1ad5de2fbdd5fe0e" kindref="member">TB_BCAST_TYPE_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="50" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a12a1bf9665fb6bd1628d7b0098090843" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a12a1bf9665fb6bd1628d7b0098090843" kindref="member">TB_BCAST_Q</ref><sp/>=<sp/>3<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482abf5ad66f314c071b1ad5de2fbdd5fe0e" kindref="member">TB_BCAST_TYPE_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="51" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a99eb96ce9758ed647d71a8a60ed1829d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a99eb96ce9758ed647d71a8a60ed1829d" kindref="member">TB_BCAST_SS</ref><sp/>=<sp/>4<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482abf5ad66f314c071b1ad5de2fbdd5fe0e" kindref="member">TB_BCAST_TYPE_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="52" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482ab5f42773ff8c513697f3e2fefdd7e076" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482ab5f42773ff8c513697f3e2fefdd7e076" kindref="member">TB_BCAST_SD</ref><sp/>=<sp/>5<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482abf5ad66f314c071b1ad5de2fbdd5fe0e" kindref="member">TB_BCAST_TYPE_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="53" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a0511e3db9048903781870cf51a00155c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482a0511e3db9048903781870cf51a00155c" kindref="member">TB_BCAST_SH</ref><sp/>=<sp/>6<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482abf5ad66f314c071b1ad5de2fbdd5fe0e" kindref="member">TB_BCAST_TYPE_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="54" refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482ab67367af6d320936d141dc22810f6957" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482ab67367af6d320936d141dc22810f6957" kindref="member">TB_BCAST_MASK</ref><sp/>=<sp/>0x7<sp/>&lt;&lt;<sp/><ref refid="namespacellvm_1a29a2141006db02d9668671bb5d7ca482abf5ad66f314c071b1ad5de2fbdd5fe0e" kindref="member">TB_BCAST_TYPE_SHIFT</ref>,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Unused<sp/>bits<sp/>14-16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_SUPPORT_X86FOLDTABLESUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Support/X86FoldTablesUtils.h"/>
+  </compounddef>
+</doxygen>

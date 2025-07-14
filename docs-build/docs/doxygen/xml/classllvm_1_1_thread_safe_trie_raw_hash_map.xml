@@ -1,0 +1,455 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_thread_safe_trie_raw_hash_map" kind="class" language="C++" prot="public">
+    <compoundname>llvm::ThreadSafeTrieRawHashMap</compoundname>
+    <basecompoundref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base" prot="public" virt="non-virtual">llvm::ThreadSafeTrieRawHashMapBase</basecompoundref>
+    <includes refid="_trie_raw_hash_map_8h" local="yes">llvm/ADT/TrieRawHashMap.h</includes>
+    <innerclass refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1const__pointer" prot="public">llvm::ThreadSafeTrieRawHashMap::const_pointer</innerclass>
+    <innerclass refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1_lazy_value_constructor" prot="public">llvm::ThreadSafeTrieRawHashMap::LazyValueConstructor</innerclass>
+    <innerclass refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1pointer" prot="public">llvm::ThreadSafeTrieRawHashMap::pointer</innerclass>
+    <innerclass refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1_pointer_impl" prot="private">llvm::ThreadSafeTrieRawHashMap::PointerImpl</innerclass>
+    <innerclass refid="structllvm_1_1_thread_safe_trie_raw_hash_map_1_1value__type" prot="public">llvm::ThreadSafeTrieRawHashMap::value_type</innerclass>
+    <templateparamlist>
+      <param>
+        <type>class <ref refid="class_t" kindref="compound">T</ref></type>
+      </param>
+      <param>
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <declname>NumHashBytes</declname>
+        <defname>NumHashBytes</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1a6b45384f59859e36cbf243e4dc3db505" prot="public" static="no">
+        <type>std::array&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref>, NumHashBytes &gt;</type>
+        <definition>using llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::HashT =  std::array&lt;uint8_t, NumHashBytes&gt;</definition>
+        <argsstring></argsstring>
+        <name>HashT</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::HashT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="184" column="3" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1a6f14f688e9bc56ec427b56aaeb9267ac" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a6b45384f59859e36cbf243e4dc3db505" kindref="member">HashT</ref></type>
+        <definition>using llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::HashType =  HashT</definition>
+        <argsstring></argsstring>
+        <name>HashType</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::HashType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="215" column="3" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1a6cd2c4f25dfbd382aca540c2ffeed8b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1pointer" kindref="compound">pointer</ref></type>
+        <definition>pointer llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::insertLazy</definition>
+        <argsstring>(const_pointer Hint, ArrayRef&lt; uint8_t &gt; Hash, function_ref&lt; void(LazyValueConstructor)&gt; OnConstruct)</argsstring>
+        <name>insertLazy</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::insertLazy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1const__pointer" kindref="compound">const_pointer</ref></type>
+          <declname>Hint</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt;</type>
+          <declname>Hash</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; void(<ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1_lazy_value_constructor" kindref="compound">LazyValueConstructor</ref>)&gt;</type>
+          <declname>OnConstruct</declname>
+        </param>
+        <briefdescription>
+<para>Insert with a hint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Default-constructed hint will work, but it&apos;s recommended to start with a lookup to avoid overhead in object creation if it already exists. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="314" column="11" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="314" bodyend="322"/>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1aa9dbc0a952dfbed82b71fd482c4fcdd7" compoundref="_trie_raw_hash_map_8cpp" startline="259" endline="329">llvm::ThreadSafeTrieRawHashMapBase::insert</references>
+        <referencedby refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a977e70a3331d8740cd387ecd59131cc0" compoundref="_trie_raw_hash_map_8h" startline="335" endline="338">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::insert</referencedby>
+        <referencedby refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a86b2da64c041a829f4ea723fe69cfeb6" compoundref="_trie_raw_hash_map_8h" startline="329" endline="333">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::insert</referencedby>
+        <referencedby refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a100f40ca3b95104219fddde1d2c86381" compoundref="_trie_raw_hash_map_8h" startline="324" endline="327">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::insertLazy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1a100f40ca3b95104219fddde1d2c86381" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1pointer" kindref="compound">pointer</ref></type>
+        <definition>pointer llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::insertLazy</definition>
+        <argsstring>(ArrayRef&lt; uint8_t &gt; Hash, function_ref&lt; void(LazyValueConstructor)&gt; OnConstruct)</argsstring>
+        <name>insertLazy</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::insertLazy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt;</type>
+          <declname>Hash</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; void(<ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1_lazy_value_constructor" kindref="compound">LazyValueConstructor</ref>)&gt;</type>
+          <declname>OnConstruct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="324" column="11" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="324" bodyend="327"/>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a6cd2c4f25dfbd382aca540c2ffeed8b9" compoundref="_trie_raw_hash_map_8h" startline="314" endline="322">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::insertLazy</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1a86b2da64c041a829f4ea723fe69cfeb6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1pointer" kindref="compound">pointer</ref></type>
+        <definition>pointer llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::insert</definition>
+        <argsstring>(const_pointer Hint, value_type &amp;&amp;HashedData)</argsstring>
+        <name>insert</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::insert</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1const__pointer" kindref="compound">const_pointer</ref></type>
+          <declname>Hint</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_thread_safe_trie_raw_hash_map_1_1value__type" kindref="compound">value_type</ref> &amp;&amp;</type>
+          <declname>HashedData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="329" column="11" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="329" bodyend="333"/>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a6cd2c4f25dfbd382aca540c2ffeed8b9" compoundref="_trie_raw_hash_map_8h" startline="314" endline="322">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::insertLazy</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1a977e70a3331d8740cd387ecd59131cc0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1pointer" kindref="compound">pointer</ref></type>
+        <definition>pointer llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::insert</definition>
+        <argsstring>(const_pointer Hint, const value_type &amp;HashedData)</argsstring>
+        <name>insert</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::insert</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1const__pointer" kindref="compound">const_pointer</ref></type>
+          <declname>Hint</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_thread_safe_trie_raw_hash_map_1_1value__type" kindref="compound">value_type</ref> &amp;</type>
+          <declname>HashedData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="335" column="11" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="335" bodyend="338"/>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="structllvm_1_1_thread_safe_trie_raw_hash_map_1_1value__type_1a1001bb86898858150a2512e80e55657d" compoundref="_trie_raw_hash_map_8h" startline="188">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::value_type::Hash</references>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a6cd2c4f25dfbd382aca540c2ffeed8b9" compoundref="_trie_raw_hash_map_8h" startline="314" endline="322">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::insertLazy</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1a4d0d05a3c39242b69eec429ba4945c64" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1pointer" kindref="compound">pointer</ref></type>
+        <definition>pointer llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::find</definition>
+        <argsstring>(ArrayRef&lt; uint8_t &gt; Hash)</argsstring>
+        <name>find</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::find</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt;</type>
+          <declname>Hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="340" column="11" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="340" bodyend="343"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a7184c737372d1fa8d3783e5000463f2b" compoundref="_trie_raw_hash_map_8cpp" startline="231" endline="257">llvm::ThreadSafeTrieRawHashMapBase::find</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1a702eff07aa75ca8d8cfaba044f7b3f29" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1_1const__pointer" kindref="compound">const_pointer</ref></type>
+        <definition>const_pointer llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::find</definition>
+        <argsstring>(ArrayRef&lt; uint8_t &gt; Hash) const</argsstring>
+        <name>find</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::find</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt;</type>
+          <declname>Hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="345" column="17" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="345" bodyend="348"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a7184c737372d1fa8d3783e5000463f2b" compoundref="_trie_raw_hash_map_8cpp" startline="231" endline="257">llvm::ThreadSafeTrieRawHashMapBase::find</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1aa8d047a4708e34aa727230ae60404c08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::ThreadSafeTrieRawHashMap</definition>
+        <argsstring>(std::optional&lt; size_t &gt; NumRootBits=std::nullopt, std::optional&lt; size_t &gt; NumSubtrieBits=std::nullopt)</argsstring>
+        <name>ThreadSafeTrieRawHashMap</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::ThreadSafeTrieRawHashMap</qualifiedname>
+        <param>
+          <type>std::optional&lt; <ref refid="classsize__t" kindref="compound">size_t</ref> &gt;</type>
+          <declname>NumRootBits</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classsize__t" kindref="compound">size_t</ref> &gt;</type>
+          <declname>NumSubtrieBits</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="350" column="3" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="350" bodyend="355"/>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a634aba0be92e82ec8a94d804c5908ad2" compoundref="_trie_raw_hash_map_8h" startline="83">llvm::ThreadSafeTrieRawHashMapBase::DefaultContentAllocAlign</references>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a5f41768b20810e783418ff5ae0b0f51a" compoundref="_trie_raw_hash_map_8h" startline="80">llvm::ThreadSafeTrieRawHashMapBase::DefaultContentAllocSize</references>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a63a45375ca4651489077dbc94d008311" compoundref="_trie_raw_hash_map_8h" startline="86">llvm::ThreadSafeTrieRawHashMapBase::DefaultContentOffset</references>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a6e8722a5417fddf6486c3236e835173a">llvm::ThreadSafeTrieRawHashMapBase::ThreadSafeTrieRawHashMapBase</references>
+        <referencedby refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a0ea51e7e0db451003d50ae45d2ac385b">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::operator=</referencedby>
+        <referencedby refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a39989a41e690c1b98d46b1876309e9b3">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::operator=</referencedby>
+        <referencedby refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1ab2f2843e0a5a306e133d58416a6f8596">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::ThreadSafeTrieRawHashMap</referencedby>
+        <referencedby refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1acbc649a60f30e89d28857b67dc21dde4">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::ThreadSafeTrieRawHashMap</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1adb9395d3295ddf120895498b02e2f673" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::~ThreadSafeTrieRawHashMap</definition>
+        <argsstring>()</argsstring>
+        <name>~ThreadSafeTrieRawHashMap</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::~ThreadSafeTrieRawHashMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="357" column="3" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="357" bodyend="363"/>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a5eda088431655fae36128201cafbb19b" compoundref="_trie_raw_hash_map_8cpp" startline="362" endline="387">llvm::ThreadSafeTrieRawHashMapBase::destroyImpl</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1acbc649a60f30e89d28857b67dc21dde4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::ThreadSafeTrieRawHashMap</definition>
+        <argsstring>(ThreadSafeTrieRawHashMap &amp;&amp;)=default</argsstring>
+        <name>ThreadSafeTrieRawHashMap</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::ThreadSafeTrieRawHashMap</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map" kindref="compound">ThreadSafeTrieRawHashMap</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="366" column="3"/>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1aa8d047a4708e34aa727230ae60404c08" compoundref="_trie_raw_hash_map_8h" startline="350" endline="355">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::ThreadSafeTrieRawHashMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1a39989a41e690c1b98d46b1876309e9b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map" kindref="compound">ThreadSafeTrieRawHashMap</ref> &amp;</type>
+        <definition>ThreadSafeTrieRawHashMap &amp; llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::operator=</definition>
+        <argsstring>(ThreadSafeTrieRawHashMap &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map" kindref="compound">ThreadSafeTrieRawHashMap</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="369" column="28"/>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1aa8d047a4708e34aa727230ae60404c08" compoundref="_trie_raw_hash_map_8h" startline="350" endline="355">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::ThreadSafeTrieRawHashMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1ab2f2843e0a5a306e133d58416a6f8596" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::ThreadSafeTrieRawHashMap</definition>
+        <argsstring>(const ThreadSafeTrieRawHashMap &amp;)=delete</argsstring>
+        <name>ThreadSafeTrieRawHashMap</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::ThreadSafeTrieRawHashMap</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map" kindref="compound">ThreadSafeTrieRawHashMap</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="370" column="3"/>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1aa8d047a4708e34aa727230ae60404c08" compoundref="_trie_raw_hash_map_8h" startline="350" endline="355">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::ThreadSafeTrieRawHashMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1a0ea51e7e0db451003d50ae45d2ac385b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map" kindref="compound">ThreadSafeTrieRawHashMap</ref> &amp;</type>
+        <definition>ThreadSafeTrieRawHashMap &amp; llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::operator=</definition>
+        <argsstring>(const ThreadSafeTrieRawHashMap &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_thread_safe_trie_raw_hash_map" kindref="compound">ThreadSafeTrieRawHashMap</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="372" column="3"/>
+        <references refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1aa8d047a4708e34aa727230ae60404c08" compoundref="_trie_raw_hash_map_8h" startline="350" endline="355">llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;::ThreadSafeTrieRawHashMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1abc391c1e6c335e191a5e653ab156d0e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::ThreadSafeTrieRawHashMapBase::operator delete</definition>
+        <argsstring>(void *Ptr)</argsstring>
+        <name>operator delete</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::operator delete</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>Ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="214" column="3" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="91" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1a7a914a734fa37fdb1bb52291ecedc4b4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" kindref="member">LLVM_DUMP_METHOD</ref> void</type>
+        <definition>LLVM_DUMP_METHOD void llvm::ThreadSafeTrieRawHashMapBase::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::dump</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="217" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_safe_trie_raw_hash_map_1aafdc5312a9cc637e22a61875e1a263f0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::ThreadSafeTrieRawHashMapBase::print</definition>
+        <argsstring>(raw_ostream &amp;OS) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::ThreadSafeTrieRawHashMap::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/TrieRawHashMap.h" line="218" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Lock-free thread-safe hash-mapped trie. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;</label>
+        <link refid="classllvm_1_1_thread_safe_trie_raw_hash_map"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::ThreadSafeTrieRawHashMapBase</label>
+        <link refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::ThreadSafeTrieRawHashMap&lt; T, NumHashBytes &gt;</label>
+        <link refid="classllvm_1_1_thread_safe_trie_raw_hash_map"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::ThreadSafeTrieRawHashMapBase</label>
+        <link refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>DefaultContentAllocAlign</edgelabel>
+          <edgelabel>DefaultContentAllocSize</edgelabel>
+          <edgelabel>DefaultContentOffset</edgelabel>
+          <edgelabel>DefaultNumRootBits</edgelabel>
+          <edgelabel>DefaultNumSubtrieBits</edgelabel>
+          <edgelabel>TrieContentBaseSize</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>size_t</label>
+        <link refid="classsize__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/ADT/TrieRawHashMap.h" line="182" column="1" bodyfile="include/llvm/ADT/TrieRawHashMap.h" bodystart="182" bodyend="373"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a634aba0be92e82ec8a94d804c5908ad2" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>DefaultContentAllocAlign</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a5f41768b20810e783418ff5ae0b0f51a" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>DefaultContentAllocSize</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a63a45375ca4651489077dbc94d008311" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>DefaultContentOffset</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1adc630f62e7131f3dfb65e014931f3876" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>DefaultNumRootBits</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a68f9fa680bc5be723927f82917a1fb9e" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>DefaultNumSubtrieBits</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a5eda088431655fae36128201cafbb19b" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>destroyImpl</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a7a914a734fa37fdb1bb52291ecedc4b4" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a4d0d05a3c39242b69eec429ba4945c64" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>find</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a702eff07aa75ca8d8cfaba044f7b3f29" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>find</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a00da23e2d60556d07dfb7b85484b1ffb" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>getNextTrie</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a50305af280d36d1dd60dad8e19c4856e" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>getNumBits</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a5356949cb58c7ea85a34e88d6449de50" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>getNumSlotUsed</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a40165689c35e859e537d4c04481bd356" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>getNumTries</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a9b46b32a7ad8e0bbd46ac236c458972e" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>getRoot</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1aae212c2ee246515be53128a7b312bcb4" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>getStartBit</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1acedcd0c6ec24c3ce338800619f5d8262" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>getTriePrefixAsString</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a6b45384f59859e36cbf243e4dc3db505" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>HashT</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a6f14f688e9bc56ec427b56aaeb9267ac" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>HashType</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a86b2da64c041a829f4ea723fe69cfeb6" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>insert</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a977e70a3331d8740cd387ecd59131cc0" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>insert</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1aa9dbc0a952dfbed82b71fd482c4fcdd7" prot="protected" virt="non-virtual" ambiguityscope="llvm::ThreadSafeTrieRawHashMapBase::"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>insert</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a6cd2c4f25dfbd382aca540c2ffeed8b9" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>insertLazy</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a100f40ca3b95104219fddde1d2c86381" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>insertLazy</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1abc391c1e6c335e191a5e653ab156d0e3" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>operator delete</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a20cad65fc859c83271d06000ad02da44" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>operator new</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a39989a41e690c1b98d46b1876309e9b3" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1a0ea51e7e0db451003d50ae45d2ac385b" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1ab47b2bca06a2ac9847d8835081b29b3b" prot="protected" virt="non-virtual" ambiguityscope="llvm::ThreadSafeTrieRawHashMapBase::"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a52152a25da14c6579308fa9de4045935" prot="protected" virt="non-virtual" ambiguityscope="llvm::ThreadSafeTrieRawHashMapBase::"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1aafdc5312a9cc637e22a61875e1a263f0" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>print</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1aa8d047a4708e34aa727230ae60404c08" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>ThreadSafeTrieRawHashMap</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1acbc649a60f30e89d28857b67dc21dde4" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>ThreadSafeTrieRawHashMap</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1ab2f2843e0a5a306e133d58416a6f8596" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>ThreadSafeTrieRawHashMap</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a6e8722a5417fddf6486c3236e835173a" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>ThreadSafeTrieRawHashMapBase</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a680f79939c5bb8275ff275c335b5fe5a" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>ThreadSafeTrieRawHashMapBase</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a900dd95fc13a72dbc38c3e95694461f8" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>ThreadSafeTrieRawHashMapBase</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1af50f504b9f39e93ea34cb323db970930" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>ThreadSafeTrieRawHashMapBase</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1ad9a3da3661129b546e7667e9655c62a5" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>TrieContentBaseSize</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_1adb9395d3295ddf120895498b02e2f673" prot="public" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>~ThreadSafeTrieRawHashMap</name></member>
+      <member refid="classllvm_1_1_thread_safe_trie_raw_hash_map_base_1a538ad0b852455c782b91c9e3c994de70" prot="protected" virt="non-virtual"><scope>llvm::ThreadSafeTrieRawHashMap</scope><name>~ThreadSafeTrieRawHashMapBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

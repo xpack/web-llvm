@@ -1,0 +1,556 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_dom_tree_updater" kind="class" language="C++" prot="public">
+    <compoundname>llvm::DomTreeUpdater</compoundname>
+    <basecompoundref refid="classllvm_1_1_generic_dom_tree_updater" prot="public" virt="non-virtual">llvm::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;</basecompoundref>
+    <includes refid="_dom_tree_updater_8h" local="yes">llvm/Analysis/DomTreeUpdater.h</includes>
+    <innerclass refid="classllvm_1_1_dom_tree_updater_1_1_call_back_on_deletion" prot="private">llvm::DomTreeUpdater::CallBackOnDeletion</innerclass>
+    <sectiondef kind="user-defined">
+      <header>Mutation APIs</header>
+      <description><para>These methods provide APIs for submitting updates to the <ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> and the <ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref>.</para>
+<para>Note: There are two strategies to update the <ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> and the <ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref>:<orderedlist>
+<listitem><para>Eager <ref refid="classllvm_1_1_generic_dom_tree_updater_1a2655b89361decf2c1493792dc14e5a56" kindref="member">UpdateStrategy</ref>: Updates are submitted and then flushed immediately.</para>
+</listitem><listitem><para>Lazy <ref refid="classllvm_1_1_generic_dom_tree_updater_1a2655b89361decf2c1493792dc14e5a56" kindref="member">UpdateStrategy</ref>: Updates are submitted but only flushed when you explicitly call Flush APIs. It is recommended to use this update strategy when you submit a bunch of updates multiple times which can then add up to a large number of updates between two queries on the <ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref>. The incremental updater can reschedule the updates or decide to recalculate the dominator tree in order to speedup the updating process depending on the number of updates.</para>
+</listitem></orderedlist>
+</para>
+<para>Although GenericDomTree provides several update primitives, it is not encouraged to use these APIs directly. </para>
+</description>
+      <memberdef kind="function" id="classllvm_1_1_dom_tree_updater_1adcca375fa8086f6844e863abbf58f83b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DomTreeUpdater::deleteBB</definition>
+        <argsstring>(BasicBlock *DelBB)</argsstring>
+        <name>deleteBB</name>
+        <qualifiedname>llvm::DomTreeUpdater::deleteBB</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>DelBB</declname>
+        </param>
+        <briefdescription>
+<para>Delete DelBB. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>DelBB will be removed from its Parent and erased from available trees if it exists and finally get deleted. Under Eager <ref refid="classllvm_1_1_generic_dom_tree_updater_1a2655b89361decf2c1493792dc14e5a56" kindref="member">UpdateStrategy</ref>, DelBB will be processed immediately. Under Lazy <ref refid="classllvm_1_1_generic_dom_tree_updater_1a2655b89361decf2c1493792dc14e5a56" kindref="member">UpdateStrategy</ref>, DelBB will be queued until a flush event and all available trees are up-to-date. Assert if any instruction of DelBB is modified while awaiting deletion. When both DT and PDT are nullptrs, DelBB will be queued until <ref refid="classllvm_1_1_generic_dom_tree_updater_1a43c80a160270d75d99cfeb080c165694" kindref="member">flush()</ref> is called. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/DomTreeUpdater.h" line="69" column="8" bodyfile="lib/Analysis/DomTreeUpdater.cpp" bodystart="62" bodyend="71"/>
+        <references refid="classllvm_1_1_generic_dom_tree_updater_1a03640c958debd0b9a525cff8fe5a11ed" compoundref="_generic_dom_tree_updater_8h" startline="238">llvm::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;::DeletedBBs</references>
+        <references refid="classllvm_1_1_generic_dom_tree_updater_1a42eae544363676292b0d6a03d06ba9df">llvm::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;::eraseDelBBNode</references>
+        <references refid="classllvm_1_1_basic_block_1a8dd327a937563afdb08250abc43820b0" compoundref="_sandbox_i_r_2_basic_block_8cpp" startline="279" endline="281">llvm::BasicBlock::eraseFromParent</references>
+        <references refid="classllvm_1_1_generic_dom_tree_updater_1a6c1229274a768152e5ed6af3872af602" compoundref="_generic_dom_tree_updater_8h" startline="237">llvm::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;::Strategy</references>
+        <referencedby refid="namespacellvm_1addf42fea14164ec994d4d517eaa56688" compoundref="_basic_block_utils_8cpp" startline="101" endline="123">llvm::DeleteDeadBlocks</referencedby>
+        <referencedby refid="namespacellvm_1aa16cddaa1497dc3248fc105467671e82" compoundref="_transforms_2_utils_2_local_8cpp" startline="777" endline="858">llvm::MergeBasicBlockIntoOnlyPred</referencedby>
+        <referencedby refid="_scalar_2_s_c_c_p_8cpp_1a1b81143fa40d877b5cfe5496cbf3ced9" compoundref="_scalar_2_s_c_c_p_8cpp" startline="55" endline="119">runSCCP</referencedby>
+        <referencedby refid="_call_site_splitting_8cpp_1afad0de1026bed50eff308033f7cd132b" compoundref="_call_site_splitting_8cpp" startline="302" endline="412">splitCallSite</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dom_tree_updater_1aa22a66bf381f2b0a994b4e00cca5eac4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DomTreeUpdater::callbackDeleteBB</definition>
+        <argsstring>(BasicBlock *DelBB, std::function&lt; void(BasicBlock *)&gt; Callback)</argsstring>
+        <name>callbackDeleteBB</name>
+        <qualifiedname>llvm::DomTreeUpdater::callbackDeleteBB</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>DelBB</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(<ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *)&gt;</type>
+          <declname>Callback</declname>
+        </param>
+        <briefdescription>
+<para>Delete DelBB. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>DelBB will be removed from its Parent and erased from available trees if it exists. Then the callback will be called. Finally, DelBB will be deleted. Under Eager <ref refid="classllvm_1_1_generic_dom_tree_updater_1a2655b89361decf2c1493792dc14e5a56" kindref="member">UpdateStrategy</ref>, DelBB will be processed immediately. Under Lazy <ref refid="classllvm_1_1_generic_dom_tree_updater_1a2655b89361decf2c1493792dc14e5a56" kindref="member">UpdateStrategy</ref>, DelBB will be queued until a flush event and all available trees are up-to-date. Assert if any instruction of DelBB is modified while awaiting deletion. Multiple callbacks can be queued for one DelBB under Lazy <ref refid="classllvm_1_1_generic_dom_tree_updater_1a2655b89361decf2c1493792dc14e5a56" kindref="member">UpdateStrategy</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/DomTreeUpdater.h" line="79" column="8" bodyfile="lib/Analysis/DomTreeUpdater.cpp" bodystart="73" bodyend="86"/>
+        <references refid="classllvm_1_1_generic_dom_tree_updater_1a03640c958debd0b9a525cff8fe5a11ed" compoundref="_generic_dom_tree_updater_8h" startline="238">llvm::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;::DeletedBBs</references>
+        <references refid="classllvm_1_1_generic_dom_tree_updater_1a42eae544363676292b0d6a03d06ba9df">llvm::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;::eraseDelBBNode</references>
+        <references refid="classllvm_1_1_basic_block_1a629adad5a5d84929eac0f0b00132af1b" compoundref="_sandbox_i_r_2_basic_block_8cpp" startline="275" endline="277">llvm::BasicBlock::removeFromParent</references>
+        <references refid="classllvm_1_1_generic_dom_tree_updater_1a6c1229274a768152e5ed6af3872af602" compoundref="_generic_dom_tree_updater_8h" startline="237">llvm::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;::Strategy</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_dom_tree_updater_1a036ff8cccdbdcfa3263cc9d426f36ea7" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_generic_dom_tree_updater" kindref="compound">GenericDomTreeUpdater</ref>&lt; <ref refid="classllvm_1_1_dom_tree_updater" kindref="compound">DomTreeUpdater</ref>, <ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref>, <ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref> &gt;</type>
+        <definition>using llvm::DomTreeUpdater::Base = 
+      GenericDomTreeUpdater&lt;DomTreeUpdater, DominatorTree, PostDominatorTree&gt;</definition>
+        <argsstring></argsstring>
+        <name>Base</name>
+        <qualifiedname>llvm::DomTreeUpdater::Base</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/DomTreeUpdater.h" line="35" column="3" bodyfile="include/llvm/Analysis/DomTreeUpdater.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_dom_tree_updater_1a56c09ac5aa2c107a9c733bc133e9582e" prot="private" static="no" mutable="no">
+        <type>friend</type>
+        <definition>friend llvm::DomTreeUpdater::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;</definition>
+        <argsstring></argsstring>
+        <name>GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;</name>
+        <qualifiedname>llvm::DomTreeUpdater::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/DomTreeUpdater.h" line="31" column="3" bodyfile="include/llvm/Analysis/DomTreeUpdater.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_dom_tree_updater_1a2b70cc7e93d1f949c3a97ba026de23c1" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; CallBackOnDeletion &gt;</type>
+        <definition>std::vector&lt;CallBackOnDeletion&gt; llvm::DomTreeUpdater::Callbacks</definition>
+        <argsstring></argsstring>
+        <name>Callbacks</name>
+        <qualifiedname>llvm::DomTreeUpdater::Callbacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/DomTreeUpdater.h" line="104" column="15" bodyfile="include/llvm/Analysis/DomTreeUpdater.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_dom_tree_updater_1a684501bae0019eba47728686bc16c478" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::DomTreeUpdater::~DomTreeUpdater</definition>
+        <argsstring>()</argsstring>
+        <name>~DomTreeUpdater</name>
+        <qualifiedname>llvm::DomTreeUpdater::~DomTreeUpdater</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/DomTreeUpdater.h" line="39" column="3" bodyfile="include/llvm/Analysis/DomTreeUpdater.h" bodystart="39" bodyend="39"/>
+        <references refid="classllvm_1_1_generic_dom_tree_updater_1a43c80a160270d75d99cfeb080c165694" compoundref="_generic_dom_tree_updater_8h" startline="202" endline="206">llvm::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;::flush</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dom_tree_updater_1a5b547854a7f9e418222c9823b2602314" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" kindref="member">LLVM_DUMP_METHOD</ref> void</type>
+        <definition>LLVM_DUMP_METHOD void llvm::DomTreeUpdater::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::DomTreeUpdater::dump</qualifiedname>
+        <briefdescription>
+<para>Debug method to help view the internal state of this class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/DomTreeUpdater.h" line="85" column="25" bodyfile="lib/Analysis/DomTreeUpdater.cpp" bodystart="105" bodyend="121"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_generic_dom_tree_updater_1aefa1d7d67dd758fb993876e62c56890d">llvm::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;::dump</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_dom_tree_updater_1a17a3ebc3ad4cebba81973a05ebc38833" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::DomTreeUpdater::validateDeleteBB</definition>
+        <argsstring>(BasicBlock *DelBB)</argsstring>
+        <name>validateDeleteBB</name>
+        <qualifiedname>llvm::DomTreeUpdater::validateDeleteBB</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>DelBB</declname>
+        </param>
+        <briefdescription>
+<para>First remove all the instructions of DelBB and then make sure DelBB has a valid terminator instruction which is necessary to have when DelBB still has to be inside of its parent <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> while awaiting deletion under Lazy <ref refid="classllvm_1_1_generic_dom_tree_updater_1a2655b89361decf2c1493792dc14e5a56" kindref="member">UpdateStrategy</ref> to prevent other routines from asserting the state of the IR is inconsistent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assert if DelBB is nullptr or has predecessors. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/DomTreeUpdater.h" line="111" column="8" bodyfile="lib/Analysis/DomTreeUpdater.cpp" bodystart="88" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_dom_tree_updater_1aa7b218e43061f94f9d4b65216b53f045" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::DomTreeUpdater::forceFlushDeletedBB</definition>
+        <argsstring>()</argsstring>
+        <name>forceFlushDeletedBB</name>
+        <qualifiedname>llvm::DomTreeUpdater::forceFlushDeletedBB</qualifiedname>
+        <briefdescription>
+<para>Returns true if at least one <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> is deleted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/DomTreeUpdater.h" line="114" column="8" bodyfile="lib/Analysis/DomTreeUpdater.cpp" bodystart="38" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::DomTreeUpdater</label>
+        <link refid="classllvm_1_1_dom_tree_updater"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::GenericDomTreeUpdater&lt; DerivedT, DomTreeT, PostDomTreeT &gt;</label>
+        <link refid="classllvm_1_1_generic_dom_tree_updater"/>
+      </node>
+      <node id="2">
+        <label>llvm::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;</label>
+        <link refid="classllvm_1_1_generic_dom_tree_updater"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="27">
+        <label>DomTreeT *</label>
+      </node>
+      <node id="28">
+        <label>PostDomTreeT *</label>
+      </node>
+      <node id="12">
+        <label>Size_T</label>
+      </node>
+      <node id="10">
+        <label>SmallVectorSizeType&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_generic_dom_tree_updater_1_1_dom_tree_update_01_4"/>
+      </node>
+      <node id="15">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="21">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="29">
+        <label>const UpdateStrategy</label>
+      </node>
+      <node id="34">
+        <label>const void **</label>
+      </node>
+      <node id="33">
+        <label>llvm::DebugEpochBase</label>
+        <link refid="classllvm_1_1_debug_epoch_base"/>
+      </node>
+      <node id="1">
+        <label>llvm::DomTreeUpdater</label>
+        <link refid="classllvm_1_1_dom_tree_updater"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::GenericDomTreeUpdater&lt; DerivedT, DomTreeT, PostDomTreeT &gt;</label>
+        <link refid="classllvm_1_1_generic_dom_tree_updater"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>PendUpdates</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>PendDTUpdateIndex</edgelabel>
+          <edgelabel>PendPDTUpdateIndex</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>DT</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>PDT</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>Strategy</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>DeletedBBs</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>IsRecalculatingDomTree</edgelabel>
+          <edgelabel>IsRecalculatingPostDomTree</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;</label>
+        <link refid="classllvm_1_1_generic_dom_tree_updater"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>llvm::SmallPtrSet&lt; PtrType, SmallSize &gt;</label>
+        <link refid="classllvm_1_1_small_ptr_set"/>
+        <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm::SmallPtrSet&lt; BasicBlockT *, 8 &gt;</label>
+        <link refid="classllvm_1_1_small_ptr_set"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+        <childnode refid="37" relation="template-instance">
+          <edgelabel>&lt; BasicBlockT *, 8 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="36">
+        <label>llvm::SmallPtrSetImpl&lt; PtrType &gt;</label>
+        <link refid="classllvm_1_1_small_ptr_set_impl"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::SmallPtrSetImpl&lt; BasicBlockT * &gt;</label>
+        <link refid="classllvm_1_1_small_ptr_set_impl"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+        <childnode refid="36" relation="template-instance">
+          <edgelabel>&lt; BasicBlockT * &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm::SmallPtrSetImpl&lt; PtrType &gt;</label>
+        <link refid="classllvm_1_1_small_ptr_set_impl"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>llvm::SmallPtrSetImplBase</label>
+        <link refid="classllvm_1_1_small_ptr_set_impl_base"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>CurArray</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>CurArraySize</edgelabel>
+          <edgelabel>NumNonEmpty</edgelabel>
+          <edgelabel>NumTombstones</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>IsSmall</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+        <childnode refid="25" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::SmallVector&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate, 16 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="20" relation="private-inheritance">
+        </childnode>
+        <childnode refid="23" relation="template-instance">
+          <edgelabel>&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate, 16 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="11" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::SmallVectorImpl&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::SmallVectorStorage&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="template-instance">
+          <edgelabel>&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; llvm::GenericDomTreeUpdater::DomTreeUpdate &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>size_t</label>
+        <link refid="classsize__t"/>
+      </node>
+      <node id="35">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+      <node id="9">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Analysis/DomTreeUpdater.h" line="28" column="1" bodyfile="include/llvm/Analysis/DomTreeUpdater.h" bodystart="30" bodyend="115"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1abc26be7bd6050f81f1a42835451926f0" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>applyDomTreeUpdates</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a26a51dd25592d4f008dd31fbe5161cfc" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>applyPostDomTreeUpdates</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a363d442ff7f9a13eafaee275aad9f54c" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>applyUpdates</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a28512659006140e4ac78ee3a68043dd5" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>applyUpdatesPermissive</name></member>
+      <member refid="classllvm_1_1_dom_tree_updater_1a036ff8cccdbdcfa3263cc9d426f36ea7" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>Base</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a7962416c960380f3b76c88e536514a1a" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>BasicBlockT</name></member>
+      <member refid="classllvm_1_1_dom_tree_updater_1aa22a66bf381f2b0a994b4e00cca5eac4" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>callbackDeleteBB</name></member>
+      <member refid="classllvm_1_1_dom_tree_updater_1a2b70cc7e93d1f949c3a97ba026de23c1" prot="private" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>Callbacks</name></member>
+      <member refid="classllvm_1_1_dom_tree_updater_1adcca375fa8086f6844e863abbf58f83b" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>deleteBB</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a03640c958debd0b9a525cff8fe5a11ed" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>DeletedBBs</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1aa7ab6accfde7220340d4862ff76bd9c0" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>dropOutOfDateUpdates</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1ad1fa5651fae1f44c6ec195a819e343ee" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>DT</name></member>
+      <member refid="classllvm_1_1_dom_tree_updater_1a5b547854a7f9e418222c9823b2602314" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a42eae544363676292b0d6a03d06ba9df" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>eraseDelBBNode</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a43c80a160270d75d99cfeb080c165694" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>flush</name></member>
+      <member refid="classllvm_1_1_dom_tree_updater_1aa7b218e43061f94f9d4b65216b53f045" prot="private" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>forceFlushDeletedBB</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1abd144d408e6269c2e616fc68d236d29f" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>GenericDomTreeUpdater</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a7c6eeddbc93b84b241dca92f95fcaba0" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>GenericDomTreeUpdater</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1af3ab357049d01bd9a5a15bfd081f595f" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>GenericDomTreeUpdater</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a309d97fda0728cd1eb7f4b714527ae6b" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>GenericDomTreeUpdater</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1ac49df693e127d23ca41786138439552c" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>GenericDomTreeUpdater</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1abeaf079c958f70c8312e19660c105e0b" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>GenericDomTreeUpdater</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1aa43a8208260ffd505cbf8dc2402f6b1c" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>GenericDomTreeUpdater</name></member>
+      <member refid="classllvm_1_1_dom_tree_updater_1a56c09ac5aa2c107a9c733bc133e9582e" prot="private" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>GenericDomTreeUpdater&lt; DomTreeUpdater, DominatorTree, PostDominatorTree &gt;</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a0ec32b69ca3c12883ee03ad1c2bd92d9" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>getDomTree</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a1b9134f9520d0b3b4b807db72d540e25" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>getPostDomTree</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a5aeecafe7f5def8f5623f333db959b75" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>hasDomTree</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1ae9bd72b91681bfabb7ffe59e95f988d6" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>hasPendingDeletedBB</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1af23127149c201b9f52f10f70529d0e15" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>hasPendingDomTreeUpdates</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1ab0b15b0878dd25a9a4d8fde055027e31" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>hasPendingPostDomTreeUpdates</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a49a3abb0b92111611d0d88de7105ef70" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>hasPendingUpdates</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a78e05b61b35c5a3d87eb22d50f56a00a" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>hasPostDomTree</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a8c21c6dda4c7cfb40fc54ff0fc7e5e3f" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>isBBPendingDeletion</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a26011eedf1c9a04983e127f6d3f2699a" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>isEager</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1afce0c05f1246398130114d3744926871" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>isLazy</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1aa959e1a9f7af4da4bd2af56964a3aa80" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>IsRecalculatingDomTree</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a3c573f8f6a31e4c1d156a097f54e0485" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>IsRecalculatingPostDomTree</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a5c325f9e45c085ee9757538409359e21" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>isSelfDominance</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1ac69f0f33bd155d164f8f39c96647c413" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>isUpdateValid</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a9703952a73adf5c6adb9a14cc3385c27" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>PDT</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1adf8853c7c430053f0789589d49755109" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>PendDTUpdateIndex</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1ab4889b35d9c71f2a1cee818e1d32563b" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>PendPDTUpdateIndex</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1ad09768c934fd481e5a641cc327d1a5cb" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>PendUpdates</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1ab6ae3c90eff5a8a46fe9ed9909e7d3cd" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>recalculate</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1abb620d887e5e200028c5e0fb37f82592" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>splitCriticalEdge</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a6c1229274a768152e5ed6af3872af602" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>Strategy</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a8badf1528ca212cd5f5e28afeb051244" prot="protected" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>tryFlushDeletedBB</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a2655b89361decf2c1493792dc14e5a56" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>UpdateStrategy</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1a733fd2d0da71dee3118ad3b03e4948ea" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>UpdateT</name></member>
+      <member refid="classllvm_1_1_dom_tree_updater_1a17a3ebc3ad4cebba81973a05ebc38833" prot="private" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>validateDeleteBB</name></member>
+      <member refid="classllvm_1_1_dom_tree_updater_1a684501bae0019eba47728686bc16c478" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>~DomTreeUpdater</name></member>
+      <member refid="classllvm_1_1_generic_dom_tree_updater_1ae30a3a83acd5c1ea411e8bf1d6a95c26" prot="public" virt="non-virtual"><scope>llvm::DomTreeUpdater</scope><name>~GenericDomTreeUpdater</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

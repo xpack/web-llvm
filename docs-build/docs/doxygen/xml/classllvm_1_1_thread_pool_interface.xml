@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_thread_pool_interface" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>llvm::ThreadPoolInterface</compoundname>
+    <derivedcompoundref refid="classllvm_1_1_single_thread_executor" prot="public" virt="non-virtual">llvm::SingleThreadExecutor</derivedcompoundref>
+    <includes refid="_thread_pool_8h" local="yes">llvm/Support/ThreadPool.h</includes>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_thread_pool_interface_1a7d2ed24366ea0eaa572d4273f9ff2fd6" prot="private" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::ThreadPoolInterface::asyncEnqueue</definition>
+        <argsstring>(std::function&lt; void()&gt; Task, ThreadPoolTaskGroup *Group)=0</argsstring>
+        <name>asyncEnqueue</name>
+        <qualifiedname>llvm::ThreadPoolInterface::asyncEnqueue</qualifiedname>
+        <reimplementedby refid="classllvm_1_1_single_thread_executor_1a9acfa809163ab2fcd803aec68d59a4ce">asyncEnqueue</reimplementedby>
+        <param>
+          <type>std::function&lt; void()&gt;</type>
+          <declname>Task</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_pool_task_group" kindref="compound">ThreadPoolTaskGroup</ref> *</type>
+          <declname>Group</declname>
+        </param>
+        <briefdescription>
+<para>The actual method to enqueue a task to be defined by the concrete implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="52" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_pool_interface_1ace2964d9b181e3894a14807262340e1a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ResTy</type>
+          </param>
+        </templateparamlist>
+        <type>std::shared_future&lt; ResTy &gt;</type>
+        <definition>std::shared_future&lt; ResTy &gt; llvm::ThreadPoolInterface::asyncImpl</definition>
+        <argsstring>(std::function&lt; ResTy()&gt; Task, ThreadPoolTaskGroup *Group)</argsstring>
+        <name>asyncImpl</name>
+        <qualifiedname>llvm::ThreadPoolInterface::asyncImpl</qualifiedname>
+        <param>
+          <type>std::function&lt; ResTy()&gt;</type>
+          <declname>Task</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_pool_task_group" kindref="compound">ThreadPoolTaskGroup</ref> *</type>
+          <declname>Group</declname>
+        </param>
+        <briefdescription>
+<para>Asynchronous submission of a task to the pool. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned future can be used to wait for the task to finish and is <emphasis>non-blocking</emphasis> on destruction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="111" column="22" bodyfile="include/llvm/Support/ThreadPool.h" bodystart="111" bodyend="116"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_thread_pool_interface_1abe20bbefd5e591081ad9ac5c19eedb5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ThreadPoolInterface::~ThreadPoolInterface</definition>
+        <argsstring>()</argsstring>
+        <name>~ThreadPoolInterface</name>
+        <qualifiedname>llvm::ThreadPoolInterface::~ThreadPoolInterface</qualifiedname>
+        <briefdescription>
+<para>Destroying the pool will drain the pending tasks and wait. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The current thread may participate in the execution of the pending tasks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="58" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_pool_interface_1a0ea46b29f97f4f535c563a68a38185a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::ThreadPoolInterface::wait</definition>
+        <argsstring>()=0</argsstring>
+        <name>wait</name>
+        <qualifiedname>llvm::ThreadPoolInterface::wait</qualifiedname>
+        <reimplementedby refid="classllvm_1_1_single_thread_executor_1a4a9fc38bb7d9ff3f944e25971330cb42">wait</reimplementedby>
+        <briefdescription>
+<para>Blocking wait for all the threads to complete and the queue to be empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is an error to try to add new tasks while blocking on this call. Calling <ref refid="classllvm_1_1_thread_pool_interface_1a0ea46b29f97f4f535c563a68a38185a4" kindref="member">wait()</ref> from a task would deadlock waiting for itself. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="63" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_pool_interface_1ad4dbcf0b0e80230eb3f28d30672eff19" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::ThreadPoolInterface::wait</definition>
+        <argsstring>(ThreadPoolTaskGroup &amp;Group)=0</argsstring>
+        <name>wait</name>
+        <qualifiedname>llvm::ThreadPoolInterface::wait</qualifiedname>
+        <reimplementedby refid="classllvm_1_1_single_thread_executor_1a49af26efe3b94237c38fc28a166f3386">wait</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_pool_task_group" kindref="compound">ThreadPoolTaskGroup</ref> &amp;</type>
+          <declname>Group</declname>
+        </param>
+        <briefdescription>
+<para>Blocking wait for only all the threads in the given group to complete. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is possible to wait even inside a task, but waiting (directly or indirectly) on itself will deadlock. If called from a task running on a worker thread, the call may process pending tasks while waiting in order not to waste the thread. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="70" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_pool_interface_1a6ec7a595fe1af1fa5204286641a356fc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>virtual unsigned llvm::ThreadPoolInterface::getMaxConcurrency</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getMaxConcurrency</name>
+        <qualifiedname>llvm::ThreadPoolInterface::getMaxConcurrency</qualifiedname>
+        <reimplementedby refid="classllvm_1_1_single_thread_executor_1ac7bf90e52e4cf7b2190d1d976527b025">getMaxConcurrency</reimplementedby>
+        <briefdescription>
+<para>Returns the maximum number of worker this pool can eventually grow to. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="73" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_pool_interface_1ad43d0052f680e6ac08426d8821df178d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="classllvm_1_1_function" kindref="compound">Function</ref></type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto llvm::ThreadPoolInterface::async</definition>
+        <argsstring>(Function &amp;&amp;F, Args &amp;&amp;...ArgList)</argsstring>
+        <name>async</name>
+        <qualifiedname>llvm::ThreadPoolInterface::async</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;&amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>ArgList</declname>
+        </param>
+        <briefdescription>
+<para>Asynchronous submission of a task to the pool. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned future can be used to wait for the task to finish and is <emphasis>non-blocking</emphasis> on destruction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="78" column="8" bodyfile="include/llvm/Support/ThreadPool.h" bodystart="78" bodyend="82"/>
+        <references refid="classllvm_1_1_thread_pool_interface_1ad43d0052f680e6ac08426d8821df178d" compoundref="_thread_pool_8h" startline="78" endline="82">async</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <referencedby refid="classllvm_1_1_thread_pool_interface_1ad43d0052f680e6ac08426d8821df178d" compoundref="_thread_pool_8h" startline="78" endline="82">async</referencedby>
+        <referencedby refid="classllvm_1_1_thread_pool_interface_1a0c671f2f05014107ee55248f18f88dea" compoundref="_thread_pool_8h" startline="86" endline="90">async</referencedby>
+        <referencedby refid="classllvm_1_1gsym_1_1_dwarf_transformer_1ab014307b03ade42770de6ed2f827630b" compoundref="_dwarf_transformer_8cpp" startline="618" endline="693">llvm::gsym::DwarfTransformer::convert</referencedby>
+        <referencedby refid="classllvm_1_1dwarf__linker_1_1classic_1_1_d_w_a_r_f_linker_1af6caebcd7dc40dea28562fde4f260414" compoundref="_classic_2_d_w_a_r_f_linker_8cpp" startline="2730" endline="3029">llvm::dwarf_linker::classic::DWARFLinker::link</referencedby>
+        <referencedby refid="classllvm_1_1dwarf__linker_1_1parallel_1_1_d_w_a_r_f_linker_impl_1a42302ab883ef8ec7e51b00701d626ce4" compoundref="_d_w_a_r_f_linker_impl_8cpp" startline="90" endline="223">llvm::dwarf_linker::parallel::DWARFLinkerImpl::link</referencedby>
+        <referencedby refid="classllvm_1_1_thin_l_t_o_code_generator_1a8f109c8e5687e9ee05ee86648c229398" compoundref="_thin_l_t_o_code_generator_8cpp" startline="959" endline="1221">llvm::ThinLTOCodeGenerator::run</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1a2fad224b57541514de4fb5be6eb2e7f1" compoundref="_l_t_o_backend_8cpp" startline="460" endline="513">splitCodeGen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_pool_interface_1a0c671f2f05014107ee55248f18f88dea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="classllvm_1_1_function" kindref="compound">Function</ref></type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto llvm::ThreadPoolInterface::async</definition>
+        <argsstring>(ThreadPoolTaskGroup &amp;Group, Function &amp;&amp;F, Args &amp;&amp;...ArgList)</argsstring>
+        <name>async</name>
+        <qualifiedname>llvm::ThreadPoolInterface::async</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_pool_task_group" kindref="compound">ThreadPoolTaskGroup</ref> &amp;</type>
+          <declname>Group</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;&amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>ArgList</declname>
+        </param>
+        <briefdescription>
+<para>Overload, task will be in the given task group. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="86" column="8" bodyfile="include/llvm/Support/ThreadPool.h" bodystart="86" bodyend="90"/>
+        <references refid="classllvm_1_1_thread_pool_interface_1ad43d0052f680e6ac08426d8821df178d" compoundref="_thread_pool_8h" startline="78" endline="82">async</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_pool_interface_1a7397950f434c9dff4b594c980e5d518d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type>std::shared_future&lt; decltype(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>())&gt;</type>
+        <definition>std::shared_future&lt; decltype(F())&gt; llvm::ThreadPoolInterface::async</definition>
+        <argsstring>(Func &amp;&amp;F)</argsstring>
+        <name>async</name>
+        <qualifiedname>llvm::ThreadPoolInterface::async</qualifiedname>
+        <param>
+          <type>Func &amp;&amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Asynchronous submission of a task to the pool. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned future can be used to wait for the task to finish and is <emphasis>non-blocking</emphasis> on destruction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="95" column="8" bodyfile="include/llvm/Support/ThreadPool.h" bodystart="95" bodyend="98"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_thread_pool_interface_1a671aff841cc82b9c2f39b1d7272c6174" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type>std::shared_future&lt; decltype(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>())&gt;</type>
+        <definition>std::shared_future&lt; decltype(F())&gt; llvm::ThreadPoolInterface::async</definition>
+        <argsstring>(ThreadPoolTaskGroup &amp;Group, Func &amp;&amp;F)</argsstring>
+        <name>async</name>
+        <qualifiedname>llvm::ThreadPoolInterface::async</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_thread_pool_task_group" kindref="compound">ThreadPoolTaskGroup</ref> &amp;</type>
+          <declname>Group</declname>
+        </param>
+        <param>
+          <type>Func &amp;&amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/ThreadPool.h" line="101" column="8" bodyfile="include/llvm/Support/ThreadPool.h" bodystart="101" bodyend="105"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This defines the abstract base interface for a ThreadPool allowing asynchronous parallel execution on a defined number of threads. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It is possible to reuse one thread pool for different groups of tasks by grouping tasks using <ref refid="classllvm_1_1_thread_pool_task_group" kindref="compound">ThreadPoolTaskGroup</ref>. All tasks are processed using the same queue, but it is possible to wait only for a specific group of tasks to finish.</para>
+<para>It is also possible for worker threads to submit new tasks and wait for them. Note that this may result in a deadlock in cases such as when a task (directly or indirectly) tries to wait for its own completion, or when all available threads are used up by tasks waiting for a task that has no thread left to run on (this includes waiting on the returned future). It should be generally safe to <ref refid="classllvm_1_1_thread_pool_interface_1a0ea46b29f97f4f535c563a68a38185a4" kindref="member">wait()</ref> for a group as long as groups do not form a cycle. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::SingleThreadExecutor</label>
+        <link refid="classllvm_1_1_single_thread_executor"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::ThreadPoolInterface</label>
+        <link refid="classllvm_1_1_thread_pool_interface"/>
+      </node>
+    </inheritancegraph>
+    <location file="include/llvm/Support/ThreadPool.h" line="49" column="1" bodyfile="include/llvm/Support/ThreadPool.h" bodystart="49" bodyend="117"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_thread_pool_interface_1ad43d0052f680e6ac08426d8821df178d" prot="public" virt="non-virtual"><scope>llvm::ThreadPoolInterface</scope><name>async</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1a0c671f2f05014107ee55248f18f88dea" prot="public" virt="non-virtual"><scope>llvm::ThreadPoolInterface</scope><name>async</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1a7397950f434c9dff4b594c980e5d518d" prot="public" virt="non-virtual"><scope>llvm::ThreadPoolInterface</scope><name>async</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1a671aff841cc82b9c2f39b1d7272c6174" prot="public" virt="non-virtual"><scope>llvm::ThreadPoolInterface</scope><name>async</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1a7d2ed24366ea0eaa572d4273f9ff2fd6" prot="private" virt="pure-virtual"><scope>llvm::ThreadPoolInterface</scope><name>asyncEnqueue</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1ace2964d9b181e3894a14807262340e1a" prot="private" virt="non-virtual"><scope>llvm::ThreadPoolInterface</scope><name>asyncImpl</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1a6ec7a595fe1af1fa5204286641a356fc" prot="public" virt="pure-virtual"><scope>llvm::ThreadPoolInterface</scope><name>getMaxConcurrency</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1a0ea46b29f97f4f535c563a68a38185a4" prot="public" virt="pure-virtual"><scope>llvm::ThreadPoolInterface</scope><name>wait</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1ad4dbcf0b0e80230eb3f28d30672eff19" prot="public" virt="pure-virtual"><scope>llvm::ThreadPoolInterface</scope><name>wait</name></member>
+      <member refid="classllvm_1_1_thread_pool_interface_1abe20bbefd5e591081ad9ac5c19eedb5a" prot="public" virt="virtual"><scope>llvm::ThreadPoolInterface</scope><name>~ThreadPoolInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

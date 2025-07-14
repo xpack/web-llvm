@@ -1,0 +1,1372 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_function_pass" prot="public" virt="non-virtual">llvm::MachineFunctionPass</basecompoundref>
+    <innerclass refid="structanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1_1_basic_block_info" prot="private">anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::BasicBlockInfo</innerclass>
+    <innerclass refid="structanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1_1_c_p_entry" prot="private">anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::CPEntry</innerclass>
+    <innerclass refid="structanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1_1_c_p_user" prot="private">anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::CPUser</innerclass>
+    <innerclass refid="structanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1_1_imm_branch" prot="private">anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::ImmBranch</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1af93be04db74349a2313b5b98d4417110" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;<ref refid="classllvm_1_1iplist" kindref="compound">::iterator</ref></type>
+        <definition>using anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::water_iterator =  std::vector&lt;MachineBasicBlock *&gt;::iterator</definition>
+        <argsstring></argsstring>
+        <name>water_iterator</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::water_iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="121" column="3" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1af292616f0f4e969fef2e46519880c4dc" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; BasicBlockInfo &gt;</type>
+        <definition>std::vector&lt;BasicBlockInfo&gt; anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::BBInfo</definition>
+        <argsstring></argsstring>
+        <name>BBInfo</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::BBInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="110" column="15" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a1b44fcfeb5d3ee0d87843f2b153480d8" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;</type>
+        <definition>std::vector&lt;MachineBasicBlock *&gt; anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::WaterList</definition>
+        <argsstring></argsstring>
+        <name>WaterList</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::WaterList</qualifiedname>
+        <briefdescription>
+<para>WaterList - A sorted list of basic blocks where islands could be placed (i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>blocks that don&apos;t fall through to the following block, due to a return, unreachable, or unconditional branch). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="115" column="15" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a41ebb8e065959c56131929923b790e4d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_set" kindref="compound">SmallSet</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, 4 &gt;</type>
+        <definition>SmallSet&lt;MachineBasicBlock *, 4&gt; anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::NewWaterList</definition>
+        <argsstring></argsstring>
+        <name>NewWaterList</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::NewWaterList</qualifiedname>
+        <briefdescription>
+<para>NewWaterList - The subset of WaterList that was created since the previous iteration by inserting unconditional branches. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="119" column="12" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a68df402ec0e1495cb28c4ff7951b918c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; CPUser &gt;</type>
+        <definition>std::vector&lt;CPUser&gt; anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::CPUsers</definition>
+        <argsstring></argsstring>
+        <name>CPUsers</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::CPUsers</qualifiedname>
+        <briefdescription>
+<para>CPUsers - Keep track of all of the machine instructions that use various constant pools and their max displacement. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="159" column="15" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ab83104a7b1db171f4aa5a90f71895da2" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; CPEntry &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;CPEntry&gt; &gt; anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::CPEntries</definition>
+        <argsstring></argsstring>
+        <name>CPEntries</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::CPEntries</qualifiedname>
+        <briefdescription>
+<para>CPEntries - Keep track of all of the constant pool entry machine instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For each original constpool index (i.e. those that existed upon entry to this pass), it keeps a vector of entries. Original elements are cloned as we go along; the clones are put in the vector of the original element, but have distinct CPIs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="178" column="15" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a772ff7f87a7e3078b7ce900ab36226eb" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; ImmBranch &gt;</type>
+        <definition>std::vector&lt;ImmBranch&gt; anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::ImmBranches</definition>
+        <argsstring></argsstring>
+        <name>ImmBranches</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::ImmBranches</qualifiedname>
+        <briefdescription>
+<para>ImmBranches - Keep track of all the immediate branch instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="196" column="15" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1aeb3d1fc38ef543199e48b460c0dba5e9" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_c_s_k_y_subtarget" kindref="compound">CSKYSubtarget</ref> *</type>
+        <definition>const CSKYSubtarget* anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::STI</definition>
+        <argsstring></argsstring>
+        <name>STI</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::STI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="198" column="23" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a1b90b76e2a41f15d51a3e6931c79ee89" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_c_s_k_y_instr_info" kindref="compound">CSKYInstrInfo</ref> *</type>
+        <definition>const CSKYInstrInfo* anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::TII</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="199" column="23" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ad9d009de0deb443aed28870efbeb221d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_c_s_k_y_machine_function_info" kindref="compound">CSKYMachineFunctionInfo</ref> *</type>
+        <definition>CSKYMachineFunctionInfo* anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::MFI</definition>
+        <argsstring></argsstring>
+        <name>MFI</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::MFI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="200" column="27" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a33cfaa1eca37c1a6930e7a2bfb98ced3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>MachineFunction* anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::MF</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="201" column="19" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1afabf4fb29fc0dccd216bd656a389fe63" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_constant_pool" kindref="compound">MachineConstantPool</ref> *</type>
+        <definition>MachineConstantPool* anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::MCP</definition>
+        <argsstring></argsstring>
+        <name>MCP</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::MCP</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="202" column="23" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a027b306e7c0aad1f21e946a8757c0089" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::PICLabelUId</definition>
+        <argsstring></argsstring>
+        <name>PICLabelUId</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::PICLabelUId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="204" column="12" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="204" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1adff00ea41ead523def4f011c420a4101" prot="public" static="yes" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>char CSKYConstantIslands::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::ID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="211" column="15" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="211" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a5c45f2e455446584aceb11cdeec58440" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="213" endline="213">CSKYConstantIslands</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1058" endline="1158">handleConstantPoolUser</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a16751ce70ea59361531918891088fd7f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::initPICLabelUId</definition>
+        <argsstring>(unsigned UId)</argsstring>
+        <name>initPICLabelUId</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::initPICLabelUId</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="206" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="206" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1afe64db154ac991cb59cbd0a91a9c655e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::createPICLabelUId</definition>
+        <argsstring>()</argsstring>
+        <name>createPICLabelUId</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::createPICLabelUId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="208" column="12" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="208" bodyend="208"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a5c45f2e455446584aceb11cdeec58440" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::CSKYConstantIslands</definition>
+        <argsstring>()</argsstring>
+        <name>CSKYConstantIslands</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::CSKYConstantIslands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="213" column="3" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="213" bodyend="213"/>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1adff00ea41ead523def4f011c420a4101" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="211">ID</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" compoundref="_machine_function_pass_8h" startline="41" endline="41">llvm::MachineFunctionPass::MachineFunctionPass</references>
+        <referencedby refid="namespacellvm_1ab3048fe42c5af7707fe9d438d8c527c5" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1360" endline="1362">llvm::createCSKYConstantIslandPass</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1aff885f0970b91511053b6c150c9e17fb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::getPassName</definition>
+        <argsstring>() const override</argsstring>
+        <name>getPassName</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::getPassName</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1ad729b39eacf070a9bca84533b3c743bf">getPassName</reimplements>
+        <briefdescription>
+<para>getPassName - Return a nice clean name for a pass. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This usually implemented in terms of the name that is registered by one of the Registration templates, but can be overloaded directly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="215" column="13" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="215" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8b801eba10402b4228f1623ce5ceb871" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::runOnMachineFunction</definition>
+        <argsstring>(MachineFunction &amp;F) override</argsstring>
+        <name>runOnMachineFunction</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::runOnMachineFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1abb98ed32e4e5acae62ef3edd7bf04fb5">runOnMachineFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>The next UID to take is the first unused one.</para>
+<para>Remove dead constant pool entries.</para>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="217" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="281" bodyend="358"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a6159cb24e3496f5b8bd5e830e052aba1" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="362" endline="422">doInitialPlacement</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ae9bfa833198bca98db6ff7bb76c1f71d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="272" endline="278">dumpBBs</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a5648beaeee682a37c2c01b7a7439db6e" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1230" endline="1241">fixupImmediateBr</references>
+        <references refid="classllvm_1_1_machine_function_1aba1fee9e9c9b537fd2a02f33f714ca68" compoundref="_machine_function_8h" startline="765" endline="765">llvm::MachineFunction::getConstantPool</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1058" endline="1158">handleConstantPoolUser</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a288be25d1bc5cf01068ce4dbc091a5f8" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="471" endline="573">initializeFunctionInfo</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a6672890784945b1489131dc6894b5e40" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1188" endline="1201">removeUnusedCPEntries</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a1c7f4adf2824a37fb41489767a871fcc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_function_properties" kindref="compound">MachineFunctionProperties</ref></type>
+        <definition>MachineFunctionProperties anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::getRequiredProperties</definition>
+        <argsstring>() const override</argsstring>
+        <name>getRequiredProperties</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::getRequiredProperties</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1af0f2f06a3a773431ee9813351d609c4d">getRequiredProperties</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="219" column="29" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="219" bodyend="222"/>
+        <references refid="classllvm_1_1_machine_function_properties_1ad85237c6c667e4713efe8921e9c32ac1a72f7d830dd5ddb30f06d8e9639558ac3" compoundref="_machine_function_8h" startline="191">llvm::MachineFunctionProperties::NoVRegs</references>
+        <references refid="classllvm_1_1_machine_function_properties_1aa7780563d7ca260d0ae67d957b56427f" compoundref="_machine_function_8h" startline="207" endline="210">llvm::MachineFunctionProperties::set</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a6159cb24e3496f5b8bd5e830e052aba1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSKYConstantIslands::doInitialPlacement</definition>
+        <argsstring>(std::vector&lt; MachineInstr * &gt; &amp;CPEMIs)</argsstring>
+        <name>doInitialPlacement</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::doInitialPlacement</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>CPEMIs</declname>
+        </param>
+        <briefdescription>
+<para>doInitialPlacement - Perform the initial placement of the constant pool entries. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To start with, we put them all at the end of the function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="224" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="362" bodyend="422"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a88177c2ee5d3e579e50128cf83de5ba6" compoundref="_machine_instr_builder_8h" startline="160" endline="164">llvm::MachineInstrBuilder::addConstantPoolIndex</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a6c1f959947905135c7dd215b64957654" compoundref="_machine_instr_builder_8h" startline="133" endline="136">llvm::MachineInstrBuilder::addImm</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">llvm::dwarf_linker::DebugLoc</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a8cec41e65c7ebf7da3e9d41f2317065e" compoundref="_machine_basic_block_8cpp" startline="301" endline="303">llvm::MachineBasicBlock::dump</references>
+        <references refid="classllvm_1_1_machine_basic_block_1acbc921830578e2741be6549db716c0ce" compoundref="_machine_basic_block_8h" startline="366" endline="366">llvm::MachineBasicBlock::end</references>
+        <references refid="classllvm_1_1_machine_basic_block_1ae13575403de0e7d005f1b5905053f3ea" compoundref="_machine_basic_block_8h" startline="623" endline="623">llvm::MachineBasicBlock::getAlignment</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a25f1d7ccf87af8d87fcb950f7ed758b5" compoundref="_alignment_8h" startline="145" endline="147">llvm::isAligned</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1ad82de9da62635df78a534de0f16c1129" compoundref="_alignment_8h" startline="208" endline="208">llvm::Log2</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3b1dce1f3354a357fb9061bb7568a84e" compoundref="_machine_basic_block_8h" startline="1011" endline="1011">llvm::MachineBasicBlock::push_back</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a8cb665c210dc8e43f537cf4c9b84e2c7" compoundref="_machine_basic_block_8h" startline="626" endline="626">llvm::MachineBasicBlock::setAlignment</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="structllvm_1_1_align_1a80735739b49cf97a491922c8f9af2cc1" compoundref="_alignment_8h" startline="85" endline="85">llvm::Align::value</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8b801eba10402b4228f1623ce5ceb871" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="281" endline="358">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ac9f8243193a930d0f06eb4e6e694165f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CPEntry *</type>
+        <definition>CSKYConstantIslands::CPEntry * CSKYConstantIslands::findConstPoolEntry</definition>
+        <argsstring>(unsigned CPI, const MachineInstr *CPEMI)</argsstring>
+        <name>findConstPoolEntry</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::findConstPoolEntry</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>findConstPoolEntry - Given the constpool index and CONSTPOOL_ENTRY MI, look up the corresponding CPEntry. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="225" column="11" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="446" bodyend="456"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ade449e1f08656cef186933b3a1bdd621" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="820" endline="832">decrementCPEReferenceCount</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a288be25d1bc5cf01068ce4dbc091a5f8" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="471" endline="573">initializeFunctionInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a7b4dfdd596d675a34ee339b581424255" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_align" kindref="compound">Align</ref></type>
+        <definition>Align CSKYConstantIslands::getCPEAlign</definition>
+        <argsstring>(const MachineInstr &amp;CPEMI)</argsstring>
+        <name>getCPEAlign</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::getCPEAlign</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>getCPEAlign - Returns the required alignment of the constant pool entry represented by CPEMI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Alignment is measured in log2(bytes) units. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="226" column="9" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="460" bodyend="466"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_operand_1aaa68daaf8d7b773d012887c92c2023ce" compoundref="_machine_operand_8h" startline="576" endline="580">llvm::MachineOperand::getIndex</references>
+        <references refid="classllvm_1_1_machine_instr_1a0363204b5fbab08a46f5a7cd7f376f78" compoundref="_machine_instr_8h" startline="577" endline="577">llvm::MachineInstr::getOpcode</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="_n_v_v_m_reflect_8cpp_1ac934769d93af95250952646a3829df4c">size</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1058" endline="1158">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a260e4fa04b4392ed7de8a9202292a2ca" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1162" endline="1184">removeDeadCPEMI</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a288be25d1bc5cf01068ce4dbc091a5f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSKYConstantIslands::initializeFunctionInfo</definition>
+        <argsstring>(const std::vector&lt; MachineInstr * &gt; &amp;CPEMIs)</argsstring>
+        <name>initializeFunctionInfo</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::initializeFunctionInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>CPEMIs</declname>
+        </param>
+        <briefdescription>
+<para>initializeFunctionInfo - Do the initial scan of the function, building up information about the sizes of each block, the location of all the water, and finding all of the constant pool users. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="227" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="471" bodyend="573"/>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a3384fc522b23fa07500bd151eee9fed5" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="806" endline="814">adjustBBOffsetsAfter</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_c_s_k_y_constant_island_pass_8cpp_1a64267a385738a1aa6a110071d05ff207" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="426" endline="441">bbHasFallthrough</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a288bac1f9b76bdcac5aff851aa744aa1" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="577" endline="583">computeBlockSize</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ac9f8243193a930d0f06eb4e6e694165f" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="446" endline="456">findConstPoolEntry</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8b801eba10402b4228f1623ce5ceb871" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="281" endline="358">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a0daa44e7ce506555db204876c480f657" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned CSKYConstantIslands::getOffsetOf</definition>
+        <argsstring>(MachineInstr *MI) const</argsstring>
+        <name>getOffsetOf</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::getOffsetOf</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>getOffsetOf - Return the current offset of the specified machine instruction from the start of the function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This offset changes as stuff is moved around inside the function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="228" column="12" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="588" bodyend="602"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a0f75a6f1f9e24915627364dc171aeb23" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="629" endline="635">getUserOffset</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a32cee73e5a706eff3a8fc0b655f3ad93" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1205" endline="1226">isBBInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ad1c6e08944b4fbe61244afe2ca4b113d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="767" endline="789">isCPEntryInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a0f75a6f1f9e24915627364dc171aeb23" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned CSKYConstantIslands::getUserOffset</definition>
+        <argsstring>(CPUser &amp;) const</argsstring>
+        <name>getUserOffset</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::getUserOffset</qualifiedname>
+        <param>
+          <type>CPUser &amp;</type>
+          <defname>U</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="229" column="12" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="629" bodyend="635"/>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a0daa44e7ce506555db204876c480f657" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="588" endline="602">getOffsetOf</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1058" endline="1158">handleConstantPoolUser</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ae9bfa833198bca98db6ff7bb76c1f71d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void CSKYConstantIslands::dumpBBs</definition>
+        <argsstring>()</argsstring>
+        <name>dumpBBs</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::dumpBBs</qualifiedname>
+        <briefdescription>
+<para>print block size and offset information - debugging </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="230" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="272" bodyend="278"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+        <references refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" compoundref="_compiler_8h" startline="622">LLVM_DUMP_METHOD</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8b801eba10402b4228f1623ce5ceb871" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="281" endline="358">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::isOffsetInRange</definition>
+        <argsstring>(unsigned UserOffset, unsigned TrialOffset, unsigned Disp, bool NegativeOK)</argsstring>
+        <name>isOffsetInRange</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::isOffsetInRange</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>TrialOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Disp</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>NegativeOK</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="232" column="8"/>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a3384fc522b23fa07500bd151eee9fed5" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="806" endline="814">adjustBBOffsetsAfter</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a288bac1f9b76bdcac5aff851aa744aa1" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="577" endline="583">computeBlockSize</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1aee171a94c094d78c3744e68795791b8d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="958" endline="1052">createNewWater</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ade449e1f08656cef186933b3a1bdd621" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="820" endline="832">decrementCPEReferenceCount</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a4a94570a6a2a0044a7e4e959f414b317" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="913" endline="949">findAvailableWater</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a977522c71b9c7099aa74222cc12bbf17" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="840" endline="881">findInRangeCPEntry</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a222d82bcc0b1cb30a36ed1bf3bbeac63" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1269" endline="1357">fixupConditionalBr</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a5648beaeee682a37c2c01b7a7439db6e" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1230" endline="1241">fixupImmediateBr</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a18197c3f531ddd266aa561369145a16d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1247" endline="1264">fixupUnconditionalBr</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1058" endline="1158">handleConstantPoolUser</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a32cee73e5a706eff3a8fc0b655f3ad93" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1205" endline="1226">isBBInRange</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ad1c6e08944b4fbe61244afe2ca4b113d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="767" endline="789">isCPEntryInRange</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a31dc649eb968f53e71376a708b40333f" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="727" endline="763">isWaterInRange</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a260e4fa04b4392ed7de8a9202292a2ca" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1162" endline="1184">removeDeadCPEMI</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a6672890784945b1489131dc6894b5e40" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1188" endline="1201">removeUnusedCPEntries</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ae708a0dc9c80038ba6d971c94eb9db5c" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="641" endline="704">splitBlockBeforeInstr</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ab83a38fd680014ffab61e69579bb7c36" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="614" endline="627">updateForInsertedWaterBlock</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1aee171a94c094d78c3744e68795791b8d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="958" endline="1052">createNewWater</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ad1c6e08944b4fbe61244afe2ca4b113d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="767" endline="789">isCPEntryInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8944493843f5bc5f183784463c301f54" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="264" endline="268">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a31dc649eb968f53e71376a708b40333f" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="727" endline="763">isWaterInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8944493843f5bc5f183784463c301f54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::isOffsetInRange</definition>
+        <argsstring>(unsigned UserOffset, unsigned TrialOffset, const CPUser &amp;U)</argsstring>
+        <name>isOffsetInRange</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::isOffsetInRange</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>TrialOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="234" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="264" bodyend="268"/>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a288bac1f9b76bdcac5aff851aa744aa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSKYConstantIslands::computeBlockSize</definition>
+        <argsstring>(MachineBasicBlock *MBB)</argsstring>
+        <name>computeBlockSize</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::computeBlockSize</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+<para>computeBlockSize - Compute the size and some alignment information for MBB. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function updates BBInfo directly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="237" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="577" bodyend="583"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a288be25d1bc5cf01068ce4dbc091a5f8" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="471" endline="573">initializeFunctionInfo</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ae708a0dc9c80038ba6d971c94eb9db5c" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="641" endline="704">splitBlockBeforeInstr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ae708a0dc9c80038ba6d971c94eb9db5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * CSKYConstantIslands::splitBlockBeforeInstr</definition>
+        <argsstring>(MachineInstr &amp;MI)</argsstring>
+        <name>splitBlockBeforeInstr</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::splitBlockBeforeInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Split the basic block containing MI into two blocks, which are joined by an unconditional branch. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Update data structures and renumber blocks to account for this change and returns the newly created block. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="238" column="21" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="641" bodyend="704"/>
+        <references refid="classllvm_1_1_machine_instr_builder_1abf1febf2a98f588146548a3a485d3838" compoundref="_machine_instr_builder_8h" startline="148" endline="152">llvm::MachineInstrBuilder::addMBB</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a935e2a8884592189d8f261634a0b24c5" compoundref="_machine_basic_block_8cpp" startline="798" endline="806">llvm::MachineBasicBlock::addSuccessor</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a3384fc522b23fa07500bd151eee9fed5" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="806" endline="814">adjustBBOffsetsAfter</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="_c_s_k_y_constant_island_pass_8cpp_1ad11e5fb888cddb54cbf9f2ab1d513653" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="606" endline="609">compareMbbNumbers</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a288bac1f9b76bdcac5aff851aa744aa1" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="577" endline="583">computeBlockSize</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">llvm::dwarf_linker::DebugLoc</references>
+        <references refid="classllvm_1_1_machine_basic_block_1acbc921830578e2741be6549db716c0ce" compoundref="_machine_basic_block_8h" startline="366" endline="366">llvm::MachineBasicBlock::end</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a4874816314c3308be0bf1e71de2078d8" compoundref="_machine_basic_block_8h" startline="256" endline="256">llvm::MachineBasicBlock::getBasicBlock</references>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3435a2381e60e842e915f85c931b7dde" compoundref="_machine_basic_block_8cpp" startline="1456" endline="1465">llvm::MachineBasicBlock::insert</references>
+        <references refid="namespacellvm_1aa81eb67f09ee4944eaeeddbc54c0c0de" compoundref="_s_t_l_extras_8h" startline="1978" endline="1981">llvm::lower_bound</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad5f691fdc1a09aaf6df5fef958b35a3d" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="72">MBBI</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_machine_basic_block_1adf0023bdc4f05a7849c35b1c859580d8" compoundref="_machine_basic_block_8h" startline="1118" endline="1122">llvm::MachineBasicBlock::splice</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a31e57b158a17c459f0dc34b0e602ecc6" compoundref="_machine_basic_block_8cpp" startline="917" endline="934">llvm::MachineBasicBlock::transferSuccessors</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1aee171a94c094d78c3744e68795791b8d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="958" endline="1052">createNewWater</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a222d82bcc0b1cb30a36ed1bf3bbeac63" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1269" endline="1357">fixupConditionalBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ab83a38fd680014ffab61e69579bb7c36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSKYConstantIslands::updateForInsertedWaterBlock</definition>
+        <argsstring>(MachineBasicBlock *NewBB)</argsstring>
+        <name>updateForInsertedWaterBlock</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::updateForInsertedWaterBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>NewBB</declname>
+        </param>
+        <briefdescription>
+<para>updateForInsertedWaterBlock - When a block is newly inserted into the machine function, it upsets all of the block numbers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Renumber the blocks and update the arrays that parallel this numbering. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="239" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="614" bodyend="627"/>
+        <references refid="_c_s_k_y_constant_island_pass_8cpp_1ad11e5fb888cddb54cbf9f2ab1d513653" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="606" endline="609">compareMbbNumbers</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classllvm_1_1_machine_basic_block_1acf6442108e21e7e5379feb8962de65b7" compoundref="_machine_basic_block_8h" startline="311" endline="311">llvm::MachineBasicBlock::getParent</references>
+        <references refid="namespacellvm_1aa81eb67f09ee4944eaeeddbc54c0c0de" compoundref="_s_t_l_extras_8h" startline="1978" endline="1981">llvm::lower_bound</references>
+        <references refid="classllvm_1_1_machine_function_1ac85349aab432e6b7d8b2e8926048a6de" compoundref="_machine_function_8cpp" startline="343" endline="379">llvm::MachineFunction::RenumberBlocks</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1058" endline="1158">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a3384fc522b23fa07500bd151eee9fed5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSKYConstantIslands::adjustBBOffsetsAfter</definition>
+        <argsstring>(MachineBasicBlock *BB)</argsstring>
+        <name>adjustBBOffsetsAfter</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::adjustBBOffsetsAfter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="240" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="806" bodyend="814"/>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1aee171a94c094d78c3744e68795791b8d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="958" endline="1052">createNewWater</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a222d82bcc0b1cb30a36ed1bf3bbeac63" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1269" endline="1357">fixupConditionalBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a18197c3f531ddd266aa561369145a16d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1247" endline="1264">fixupUnconditionalBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1058" endline="1158">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a288be25d1bc5cf01068ce4dbc091a5f8" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="471" endline="573">initializeFunctionInfo</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a260e4fa04b4392ed7de8a9202292a2ca" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1162" endline="1184">removeDeadCPEMI</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ae708a0dc9c80038ba6d971c94eb9db5c" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="641" endline="704">splitBlockBeforeInstr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ade449e1f08656cef186933b3a1bdd621" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::decrementCPEReferenceCount</definition>
+        <argsstring>(unsigned CPI, MachineInstr *CPEMI)</argsstring>
+        <name>decrementCPEReferenceCount</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::decrementCPEReferenceCount</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>decrementCPEReferenceCount - find the constant pool entry with index CPI and instruction CPEMI, and decrement its refcount. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the refcount becomes 0 remove the entry and instruction. Returns true if we removed the entry, false if we didn&apos;t. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="241" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="820" bodyend="832"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ac9f8243193a930d0f06eb4e6e694165f" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="446" endline="456">findConstPoolEntry</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a260e4fa04b4392ed7de8a9202292a2ca" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1162" endline="1184">removeDeadCPEMI</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a977522c71b9c7099aa74222cc12bbf17" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="840" endline="881">findInRangeCPEntry</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1058" endline="1158">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a977522c71b9c7099aa74222cc12bbf17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CSKYConstantIslands::findInRangeCPEntry</definition>
+        <argsstring>(CPUser &amp;U, unsigned UserOffset)</argsstring>
+        <name>findInRangeCPEntry</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::findInRangeCPEntry</qualifiedname>
+        <param>
+          <type>CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <briefdescription>
+<para>LookForCPEntryInRange - see if the currently referenced CPE is in range; if not, see if an in-range clone of the CPE is in range, and if so, change the data structures so the user references the clone. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns: 0 = no existing entry found 1 = entry found, and there were no code insertions or deletions 2 = entry found, and there were code insertions or deletions </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="242" column="7" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="840" bodyend="881"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ade449e1f08656cef186933b3a1bdd621" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="820" endline="832">decrementCPEReferenceCount</references>
+        <references refid="classllvm_1_1_machine_operand_1aaa68daaf8d7b773d012887c92c2023ce" compoundref="_machine_operand_8h" startline="576" endline="580">llvm::MachineOperand::getIndex</references>
+        <references refid="classllvm_1_1_machine_instr_1a432824f0975bb863478bf4ef3a5df258" compoundref="_machine_instr_8h" startline="580" endline="580">llvm::MachineInstr::getNumOperands</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ad1c6e08944b4fbe61244afe2ca4b113d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="767" endline="789">isCPEntryInRange</references>
+        <references refid="classllvm_1_1_machine_operand_1a5b401e780c5eed0aca1cfbf44d36a545" compoundref="_machine_operand_8h" startline="341" endline="341">llvm::MachineOperand::isCPI</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_machine_operand_1aebc99c3c37896879abad49e7254a2fb8" compoundref="_machine_operand_8h" startline="708" endline="712">llvm::MachineOperand::setIndex</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1058" endline="1158">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a4a94570a6a2a0044a7e4e959f414b317" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::findAvailableWater</definition>
+        <argsstring>(CPUser &amp;U, unsigned UserOffset, water_iterator &amp;WaterIter)</argsstring>
+        <name>findAvailableWater</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::findAvailableWater</qualifiedname>
+        <param>
+          <type>CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type>water_iterator &amp;</type>
+          <declname>WaterIter</declname>
+        </param>
+        <briefdescription>
+<para>findAvailableWater - Look for an existing entry in the WaterList in which we can place the CPE referenced from U so it&apos;s within range of U&apos;s MI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if found, false if not. If it returns true, WaterIter is set to the WaterList entry. To ensure that this pass terminates, the CPE location for a particular CPUser is only allowed to move to a lower address, so search backward from the end of the list and prefer the first water that is in range. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="243" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="913" bodyend="949"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a31dc649eb968f53e71376a708b40333f" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="727" endline="763">isWaterInRange</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1058" endline="1158">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1aee171a94c094d78c3744e68795791b8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSKYConstantIslands::createNewWater</definition>
+        <argsstring>(unsigned CPUserIndex, unsigned UserOffset, MachineBasicBlock *&amp;NewMBB)</argsstring>
+        <name>createNewWater</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::createNewWater</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPUserIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *&amp;</type>
+          <declname>NewMBB</declname>
+        </param>
+        <briefdescription>
+<para>createNewWater - No existing WaterList entry will work for CPUsers[CPUserIndex], so create a place to put the CPE. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The end of the block is used if in range, and the conditional branch munged so control flow is correct. Otherwise the block is split to create a hole with an unconditional branch around it. In either case NewMBB is set to a block following which the new island can be inserted (the WaterList is not adjusted). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="245" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="958" bodyend="1052"/>
+        <references refid="classllvm_1_1_machine_instr_builder_1abf1febf2a98f588146548a3a485d3838" compoundref="_machine_instr_builder_8h" startline="148" endline="152">llvm::MachineInstrBuilder::addMBB</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a3384fc522b23fa07500bd151eee9fed5" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="806" endline="814">adjustBBOffsetsAfter</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_basic_block_1acf35424231192c6b4a3e22d711f50b1e" compoundref="_machine_basic_block_8h" startline="344" endline="344">llvm::MachineBasicBlock::back</references>
+        <references refid="_c_s_k_y_constant_island_pass_8cpp_1a64267a385738a1aa6a110071d05ff207" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="426" endline="441">bbHasFallthrough</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">llvm::dwarf_linker::DebugLoc</references>
+        <references refid="classllvm_1_1_machine_basic_block_1acbc921830578e2741be6549db716c0ce" compoundref="_machine_basic_block_8h" startline="366" endline="366">llvm::MachineBasicBlock::end</references>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+        <references refid="classllvm_1_1_machine_operand_1a38b28a85f818b49d8806c150b8a5b4f7" compoundref="_machine_operand_8h" startline="556" endline="559">llvm::MachineOperand::getImm</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1af066b2b6a1013299bfca84fe8b798a0b" compoundref="_machine_instr_builder_8h" startline="91" endline="91">llvm::MachineInstrBuilder::getInstr</references>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classllvm_1_1_machine_instr_1a1e855100f407ca4be098d0050be403b0" compoundref="_machine_instr_8h" startline="349" endline="349">llvm::MachineInstr::getParent</references>
+        <references refid="_c_s_k_y_constant_island_pass_8cpp_1a2e62a3c07e3b7d0f0591b2d80bd20967" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="885" endline="903">getUnconditionalBrDisp</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1ad82de9da62635df78a534de0f16c1129" compoundref="_alignment_8h" startline="208" endline="208">llvm::Log2</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ae708a0dc9c80038ba6d971c94eb9db5c" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="641" endline="704">splitBlockBeforeInstr</references>
+        <references refid="structllvm_1_1_align_1a80735739b49cf97a491922c8f9af2cc1" compoundref="_alignment_8h" startline="85" endline="85">llvm::Align::value</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1058" endline="1158">handleConstantPoolUser</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::handleConstantPoolUser</definition>
+        <argsstring>(unsigned CPUserIndex)</argsstring>
+        <name>handleConstantPoolUser</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::handleConstantPoolUser</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPUserIndex</declname>
+        </param>
+        <briefdescription>
+<para>handleConstantPoolUser - Analyze the specified user, checking to see if it is out-of-range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If so, pick up the constant pool value and move it some place in-range. Return true if we changed any addresses (thus must run another pass of branch lengthening), false otherwise. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="247" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="1058" bodyend="1158"/>
+        <references refid="classllvm_1_1_machine_instr_builder_1a88177c2ee5d3e579e50128cf83de5ba6" compoundref="_machine_instr_builder_8h" startline="160" endline="164">llvm::MachineInstrBuilder::addConstantPoolIndex</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a6c1f959947905135c7dd215b64957654" compoundref="_machine_instr_builder_8h" startline="133" endline="136">llvm::MachineInstrBuilder::addImm</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a3384fc522b23fa07500bd151eee9fed5" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="806" endline="814">adjustBBOffsetsAfter</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1aee171a94c094d78c3744e68795791b8d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="958" endline="1052">createNewWater</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">llvm::dwarf_linker::DebugLoc</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ade449e1f08656cef186933b3a1bdd621" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="820" endline="832">decrementCPEReferenceCount</references>
+        <references refid="classllvm_1_1_machine_basic_block_1ad26bff839257f220557ce812b2159c72" compoundref="_machine_basic_block_8cpp" startline="1443" endline="1446">llvm::MachineBasicBlock::erase</references>
+        <references refid="namespacellvm_1a086e9fbdb06276db7753101a08a63adf" compoundref="_s_t_l_extras_8h" startline="1759" endline="1761">llvm::find</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a4a94570a6a2a0044a7e4e959f414b317" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="913" endline="949">findAvailableWater</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a977522c71b9c7099aa74222cc12bbf17" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="840" endline="881">findInRangeCPEntry</references>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a7b4dfdd596d675a34ee339b581424255" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="460" endline="466">getCPEAlign</references>
+        <references refid="classllvm_1_1_machine_operand_1a38b28a85f818b49d8806c150b8a5b4f7" compoundref="_machine_operand_8h" startline="556" endline="559">llvm::MachineOperand::getImm</references>
+        <references refid="classllvm_1_1_machine_operand_1aaa68daaf8d7b773d012887c92c2023ce" compoundref="_machine_operand_8h" startline="576" endline="580">llvm::MachineOperand::getIndex</references>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classllvm_1_1_machine_instr_1a432824f0975bb863478bf4ef3a5df258" compoundref="_machine_instr_8h" startline="580" endline="580">llvm::MachineInstr::getNumOperands</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a0f75a6f1f9e24915627364dc171aeb23" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="629" endline="635">getUserOffset</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1adff00ea41ead523def4f011c420a4101" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="211">ID</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3435a2381e60e842e915f85c931b7dde" compoundref="_machine_basic_block_8cpp" startline="1456" endline="1465">llvm::MachineBasicBlock::insert</references>
+        <references refid="classllvm_1_1_machine_operand_1a5b401e780c5eed0aca1cfbf44d36a545" compoundref="_machine_operand_8h" startline="341" endline="341">llvm::MachineOperand::isCPI</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a8cb665c210dc8e43f537cf4c9b84e2c7" compoundref="_machine_basic_block_8h" startline="626" endline="626">llvm::MachineBasicBlock::setAlignment</references>
+        <references refid="classllvm_1_1_machine_operand_1aebc99c3c37896879abad49e7254a2fb8" compoundref="_machine_operand_8h" startline="708" endline="712">llvm::MachineOperand::setIndex</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ab83a38fd680014ffab61e69579bb7c36" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="614" endline="627">updateForInsertedWaterBlock</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8b801eba10402b4228f1623ce5ceb871" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="281" endline="358">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a260e4fa04b4392ed7de8a9202292a2ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSKYConstantIslands::removeDeadCPEMI</definition>
+        <argsstring>(MachineInstr *CPEMI)</argsstring>
+        <name>removeDeadCPEMI</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::removeDeadCPEMI</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>removeDeadCPEMI - Remove a dead constant pool entry instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Update sizes and offsets of impacted basic blocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="248" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="1162" bodyend="1184"/>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a3384fc522b23fa07500bd151eee9fed5" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="806" endline="814">adjustBBOffsetsAfter</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_c_s_k_y_constant_island_pass_8cpp_1a69f0bf266f1e42f9d65ec549a6481ba6" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="794" endline="803">bbIsJumpedOver</references>
+        <references refid="classllvm_1_1_machine_basic_block_1ab2d91e7bec944efcbc39d8e30644f111" compoundref="_machine_basic_block_8h" startline="364" endline="364">llvm::MachineBasicBlock::begin</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a095ce2d870dadf620a4c887ecc0efef8" compoundref="_machine_basic_block_8h" startline="336" endline="336">llvm::MachineBasicBlock::empty</references>
+        <references refid="classllvm_1_1_machine_instr_1ac2421adbb9996e1b15f03a8abb6c70a8" compoundref="_machine_instr_8cpp" startline="767" endline="770">llvm::MachineInstr::eraseFromParent</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a7b4dfdd596d675a34ee339b581424255" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="460" endline="466">getCPEAlign</references>
+        <references refid="classllvm_1_1_machine_operand_1a38b28a85f818b49d8806c150b8a5b4f7" compoundref="_machine_operand_8h" startline="556" endline="559">llvm::MachineOperand::getImm</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classllvm_1_1_machine_instr_1a1e855100f407ca4be098d0050be403b0" compoundref="_machine_instr_8h" startline="349" endline="349">llvm::MachineInstr::getParent</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a8cb665c210dc8e43f537cf4c9b84e2c7" compoundref="_machine_basic_block_8h" startline="626" endline="626">llvm::MachineBasicBlock::setAlignment</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ade449e1f08656cef186933b3a1bdd621" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="820" endline="832">decrementCPEReferenceCount</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a6672890784945b1489131dc6894b5e40" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1188" endline="1201">removeUnusedCPEntries</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a6672890784945b1489131dc6894b5e40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::removeUnusedCPEntries</definition>
+        <argsstring>()</argsstring>
+        <name>removeUnusedCPEntries</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::removeUnusedCPEntries</qualifiedname>
+        <briefdescription>
+<para>removeUnusedCPEntries - Remove constant pool entries whose refcounts are zero. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="249" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="1188" bodyend="1201"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a260e4fa04b4392ed7de8a9202292a2ca" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1162" endline="1184">removeDeadCPEMI</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8b801eba10402b4228f1623ce5ceb871" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="281" endline="358">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ad1c6e08944b4fbe61244afe2ca4b113d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::isCPEntryInRange</definition>
+        <argsstring>(MachineInstr *MI, unsigned UserOffset, MachineInstr *CPEMI, unsigned Disp, bool NegOk, bool DoDump=false)</argsstring>
+        <name>isCPEntryInRange</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::isCPEntryInRange</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Disp</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>NegOk</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>DoDump</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>isCPEntryInRange - Returns true if the distance between specific MI and specific ConstPool entry instruction can fit in MI&apos;s displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="250" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="767" bodyend="789"/>
+        <references refid="namespacellvm_1a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2" compoundref="_pseudo_probe_8h" startline="29">llvm::Block</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+        <references refid="classllvm_1_1_machine_operand_1a38b28a85f818b49d8806c150b8a5b4f7" compoundref="_machine_operand_8h" startline="556" endline="559">llvm::MachineOperand::getImm</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a0daa44e7ce506555db204876c480f657" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="588" endline="602">getOffsetOf</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a977522c71b9c7099aa74222cc12bbf17" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="840" endline="881">findInRangeCPEntry</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a31dc649eb968f53e71376a708b40333f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::isWaterInRange</definition>
+        <argsstring>(unsigned UserOffset, MachineBasicBlock *Water, CPUser &amp;U, unsigned &amp;Growth)</argsstring>
+        <name>isWaterInRange</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::isWaterInRange</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Water</declname>
+        </param>
+        <param>
+          <type>CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>Growth</declname>
+        </param>
+        <briefdescription>
+<para>isWaterInRange - Returns true if a CPE placed after the specified Water (a basic block) will be in range for the specific MI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute how much the function will grow by inserting a CPE after Water. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="253" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="727" bodyend="763"/>
+        <references refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" compoundref="ilist__node_8h" startline="132" endline="132">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</references>
+        <references refid="namespacellvm_1a99cdcecbadc13087f087c61809bb44f1" compoundref="_alignment_8h" startline="197" endline="199">llvm::offsetToAlignment</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a4a94570a6a2a0044a7e4e959f414b317" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="913" endline="949">findAvailableWater</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a32cee73e5a706eff3a8fc0b655f3ad93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::isBBInRange</definition>
+        <argsstring>(MachineInstr *MI, MachineBasicBlock *BB, unsigned Disp)</argsstring>
+        <name>isBBInRange</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::isBBInRange</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Disp</declname>
+        </param>
+        <briefdescription>
+<para>isBBInRange - Returns true if the distance between specific MI and specific BB can fit in MI&apos;s displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="255" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="1205" bodyend="1226"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a3aa22d521bd6a7e6b9f35545dc7b0f1e" compoundref="_machine_basic_block_8h" startline="1226" endline="1226">llvm::MachineBasicBlock::getNumber</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a0daa44e7ce506555db204876c480f657" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="588" endline="602">getOffsetOf</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a222d82bcc0b1cb30a36ed1bf3bbeac63" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1269" endline="1357">fixupConditionalBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a5648beaeee682a37c2c01b7a7439db6e" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1230" endline="1241">fixupImmediateBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a5648beaeee682a37c2c01b7a7439db6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::fixupImmediateBr</definition>
+        <argsstring>(ImmBranch &amp;Br)</argsstring>
+        <name>fixupImmediateBr</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::fixupImmediateBr</qualifiedname>
+        <param>
+          <type>ImmBranch &amp;</type>
+          <declname>Br</declname>
+        </param>
+        <briefdescription>
+<para>fixupImmediateBr - Fix up an immediate branch whose destination is too far away to fit in its displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="256" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="1230" bodyend="1241"/>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a222d82bcc0b1cb30a36ed1bf3bbeac63" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1269" endline="1357">fixupConditionalBr</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a18197c3f531ddd266aa561369145a16d" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1247" endline="1264">fixupUnconditionalBr</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a32cee73e5a706eff3a8fc0b655f3ad93" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1205" endline="1226">isBBInRange</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8b801eba10402b4228f1623ce5ceb871" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="281" endline="358">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a222d82bcc0b1cb30a36ed1bf3bbeac63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::fixupConditionalBr</definition>
+        <argsstring>(ImmBranch &amp;Br)</argsstring>
+        <name>fixupConditionalBr</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::fixupConditionalBr</qualifiedname>
+        <param>
+          <type>ImmBranch &amp;</type>
+          <declname>Br</declname>
+        </param>
+        <briefdescription>
+<para>fixupConditionalBr - Fix up a conditional branch whose destination is too far away to fit in its displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is converted to an inverse conditional branch + an unconditional branch to the destination. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="257" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="1269" bodyend="1357"/>
+        <references refid="classllvm_1_1_machine_instr_builder_1abf1febf2a98f588146548a3a485d3838" compoundref="_machine_instr_builder_8h" startline="148" endline="152">llvm::MachineInstrBuilder::addMBB</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a927857fc69e4b4f0cde307f86f180df5" compoundref="_machine_instr_builder_8h" startline="99" endline="115">llvm::MachineInstrBuilder::addReg</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a3384fc522b23fa07500bd151eee9fed5" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="806" endline="814">adjustBBOffsetsAfter</references>
+        <references refid="_c_s_k_y_constant_island_pass_8cpp_1a64267a385738a1aa6a110071d05ff207" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="426" endline="441">bbHasFallthrough</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a193847098793cdbab306803186676899" compoundref="_r_i_s_c_v_redundant_copy_elimination_8cpp" startline="75">Cond</references>
+        <references refid="classllvm_1_1_machine_operand_1ab09679b541a6ba1219b3602569847364" compoundref="_machine_operand_8h" startline="820" endline="824">llvm::MachineOperand::CreateImm</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">llvm::dwarf_linker::DebugLoc</references>
+        <references refid="classllvm_1_1_machine_instr_1a56b7fed94faeb5bc67ee2b71608d2665" compoundref="_machine_instr_8cpp" startline="796" endline="813">llvm::MachineInstr::getNumExplicitOperands</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="_c_s_k_y_constant_island_pass_8cpp_1a2e62a3c07e3b7d0f0591b2d80bd20967" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="885" endline="903">getUnconditionalBrDisp</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a32cee73e5a706eff3a8fc0b655f3ad93" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1205" endline="1226">isBBInRange</references>
+        <references refid="classllvm_1_1_machine_instr_1a91c590e8191655a6739eb4df9c443896" compoundref="_machine_instr_8h" startline="1022" endline="1024">llvm::MachineInstr::isUnconditionalBranch</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <references refid="classllvm_1_1_machine_operand_1a98e9c9e8ef7cbb6c4aa89a38f21decfa" compoundref="_machine_operand_8h" startline="728" endline="731">llvm::MachineOperand::setMBB</references>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ae708a0dc9c80038ba6d971c94eb9db5c" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="641" endline="704">splitBlockBeforeInstr</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a5648beaeee682a37c2c01b7a7439db6e" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1230" endline="1241">fixupImmediateBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a18197c3f531ddd266aa561369145a16d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CSKYConstantIslands::fixupUnconditionalBr</definition>
+        <argsstring>(ImmBranch &amp;Br)</argsstring>
+        <name>fixupUnconditionalBr</name>
+        <qualifiedname>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands::fixupUnconditionalBr</qualifiedname>
+        <param>
+          <type>ImmBranch &amp;</type>
+          <declname>Br</declname>
+        </param>
+        <briefdescription>
+<para>fixupUnconditionalBr - Fix up an unconditional branch whose destination is too far away to fit in its displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the LR register has been spilled in the epilogue, then we can use BSR to implement a far jump. Otherwise, add an intermediate branch instruction to a branch. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="258" column="8" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="1247" bodyend="1264"/>
+        <references refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a3384fc522b23fa07500bd151eee9fed5" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="806" endline="814">adjustBBOffsetsAfter</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a5648beaeee682a37c2c01b7a7439db6e" compoundref="_c_s_k_y_constant_island_pass_8cpp" startline="1230" endline="1241">fixupImmediateBr</referencedby>
+        <referencedby refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122">isOffsetInRange</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands" kindref="compound">CSKYConstantIslands</ref> - Due to limited PC-relative displacements, <ref refid="namespacellvm_1_1_c_s_k_y" kindref="compound">CSKY</ref> requires constant pool entries to be scattered among the instructions inside a function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>To do this, it completely ignores the normal LLVM constant pool; instead, it places constants wherever it feels like with special instructions.</para>
+<para>The terminology used in this pass includes: Islands - Clumps of constants placed in the function. Water - Potential places where an island could be formed. CPE - A constant pool entry that has been placed somewhere, which tracks a list of users. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</label>
+        <link refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</label>
+        <link refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/CSKY/CSKYConstantIslandPass.cpp" line="83" column="1" bodyfile="lib/Target/CSKY/CSKYConstantIslandPass.cpp" bodystart="83" bodyend="259"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a3384fc522b23fa07500bd151eee9fed5" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>adjustBBOffsetsAfter</name></member>
+      <member refid="classllvm_1_1_function_pass_1a748922f143f2da9a13b0b15ff6a3dd22" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>assignPassManager</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1af292616f0f4e969fef2e46519880c4dc" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>BBInfo</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a288bac1f9b76bdcac5aff851aa744aa1" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>computeBlockSize</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ab83104a7b1db171f4aa5a90f71895da2" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>CPEntries</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a68df402ec0e1495cb28c4ff7951b918c" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>CPUsers</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1aee171a94c094d78c3744e68795791b8d" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>createNewWater</name></member>
+      <member refid="classllvm_1_1_pass_1a2ed7d79d79dffe7368c3d3cdf40dd80e" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>createPass</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1afe64db154ac991cb59cbd0a91a9c655e" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>createPICLabelUId</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a5c45f2e455446584aceb11cdeec58440" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>CSKYConstantIslands</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ade449e1f08656cef186933b3a1bdd621" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>decrementCPEReferenceCount</name></member>
+      <member refid="classllvm_1_1_pass_1ac7811985250c75d7e2a244292d615fff" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>doFinalization</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a204ffdf4717a340f8cbe1fd1341a8148" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>doInitialization</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a6159cb24e3496f5b8bd5e830e052aba1" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>doInitialPlacement</name></member>
+      <member refid="classllvm_1_1_pass_1a1a60731eeff800b39fca7280a5a167ae" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>dump</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ae9bfa833198bca98db6ff7bb76c1f71d" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>dumpBBs</name></member>
+      <member refid="classllvm_1_1_pass_1ad2f0576ef7c9c4af40e35001c81f4922" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>dumpPassStructure</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a4a94570a6a2a0044a7e4e959f414b317" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>findAvailableWater</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ac9f8243193a930d0f06eb4e6e694165f" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>findConstPoolEntry</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a977522c71b9c7099aa74222cc12bbf17" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>findInRangeCPEntry</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a222d82bcc0b1cb30a36ed1bf3bbeac63" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>fixupConditionalBr</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a5648beaeee682a37c2c01b7a7439db6e" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>fixupImmediateBr</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a18197c3f531ddd266aa561369145a16d" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>fixupUnconditionalBr</name></member>
+      <member refid="classllvm_1_1_function_pass_1a7691d83e3561f781cae4ce4a01bdfa93" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>FunctionPass</name></member>
+      <member refid="classllvm_1_1_pass_1a03d3a81b1c46aff7c38ef3a6750ba225" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getAdjustedAnalysisPointer</name></member>
+      <member refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a560d384c0cef7f62836884fdbbd1fe66" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a6613f29d3e54ce175ac33fb9ba264fae" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1a2190247edbacb33b4e8a3d409fa2d99e" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getAnalysisIfAvailable</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e" prot="protected" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getAnalysisUsage</name></member>
+      <member refid="classllvm_1_1_pass_1ae31759fd992cddb1f2d62ab0df85834a" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getAsImmutablePass</name></member>
+      <member refid="classllvm_1_1_pass_1a626b77ef8abdfa9f53c697ad129a6e5a" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getAsPMDataManager</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a22bc7c91051dca8dc211c3afe9929603" prot="protected" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getClearedProperties</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a7b4dfdd596d675a34ee339b581424255" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getCPEAlign</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a0daa44e7ce506555db204876c480f657" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getOffsetOf</name></member>
+      <member refid="classllvm_1_1_pass_1a63192e749ba4a0ee29336a59d6a19647" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getPassID</name></member>
+      <member refid="classllvm_1_1_pass_1a9de4db62e6884f2e5efea6793af30d99" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getPassKind</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1aff885f0970b91511053b6c150c9e17fb" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getPassName</name></member>
+      <member refid="classllvm_1_1_function_pass_1a68517706d9801aec6d20c32a424ed152" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getPotentialPassManagerType</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a1c7f4adf2824a37fb41489767a871fcc" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getRequiredProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a969c082f66671df288441bbad9ca87db" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getResolver</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a8fbedd15c1c809e6050f3fd3ccd3338e" prot="protected" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getSetProperties</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a0f75a6f1f9e24915627364dc171aeb23" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>getUserOffset</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a800f62f10fe1fafc076ae4002371ba45" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>handleConstantPoolUser</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1adff00ea41ead523def4f011c420a4101" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>ID</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a772ff7f87a7e3078b7ce900ab36226eb" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>ImmBranches</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a288be25d1bc5cf01068ce4dbc091a5f8" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>initializeFunctionInfo</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a16751ce70ea59361531918891088fd7f" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>initPICLabelUId</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a32cee73e5a706eff3a8fc0b655f3ad93" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>isBBInRange</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ad1c6e08944b4fbe61244afe2ca4b113d" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>isCPEntryInRange</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8ed9829c73ee2b346eefc344633ef122" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>isOffsetInRange</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8944493843f5bc5f183784463c301f54" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>isOffsetInRange</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a31dc649eb968f53e71376a708b40333f" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>isWaterInRange</name></member>
+      <member refid="classllvm_1_1_pass_1aab174263c400ece13a7278990e102fa6" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_pass_1a992ff669acca94459037cfb1f41cb9dc" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>MachineFunctionPass</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1afabf4fb29fc0dccd216bd656a389fe63" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>MCP</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a33cfaa1eca37c1a6930e7a2bfb98ced3" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>MF</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ad9d009de0deb443aed28870efbeb221d" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>MFI</name></member>
+      <member refid="classllvm_1_1_pass_1a0b4a511579939b07831db90c3fc98996" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>mustPreserveAnalysisID</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a41ebb8e065959c56131929923b790e4d" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>NewWaterList</name></member>
+      <member refid="classllvm_1_1_pass_1af468a2aeb0d98e3dbeda38176ce516d3" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_pass_1a16baa169d062524be5a6b67609266174" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1ad40d19ce644ec38c52ea00be59016cd5" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>Pass</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a027b306e7c0aad1f21e946a8757c0089" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>PICLabelUId</name></member>
+      <member refid="classllvm_1_1_pass_1aa5f61a8789f87816c5f494d42a70f01f" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>preparePassManager</name></member>
+      <member refid="classllvm_1_1_pass_1a061b4c01e9c189208dbfd3c77fdb9a5c" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>print</name></member>
+      <member refid="classllvm_1_1_pass_1aeb6e74b0f36a0acd1d20149ef088715a" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>releaseMemory</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a260e4fa04b4392ed7de8a9202292a2ca" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>removeDeadCPEMI</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a6672890784945b1489131dc6894b5e40" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>removeUnusedCPEntries</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a8b801eba10402b4228f1623ce5ceb871" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>runOnMachineFunction</name></member>
+      <member refid="classllvm_1_1_pass_1a2423fcc912a698d4f36c9c9380b53a50" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>setResolver</name></member>
+      <member refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>skipFunction</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ae708a0dc9c80038ba6d971c94eb9db5c" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>splitBlockBeforeInstr</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1aeb3d1fc38ef543199e48b460c0dba5e9" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>STI</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a1b90b76e2a41f15d51a3e6931c79ee89" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>TII</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1ab83a38fd680014ffab61e69579bb7c36" prot="public" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>updateForInsertedWaterBlock</name></member>
+      <member refid="classllvm_1_1_pass_1ac8ef6f57d4ec869a7f1007aeddf2b169" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>verifyAnalysis</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1af93be04db74349a2313b5b98d4417110" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>water_iterator</name></member>
+      <member refid="classanonymous__namespace_02_c_s_k_y_constant_island_pass_8cpp_03_1_1_c_s_k_y_constant_islands_1a1b44fcfeb5d3ee0d87843f2b153480d8" prot="private" virt="non-virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>WaterList</name></member>
+      <member refid="classllvm_1_1_pass_1abe2fe9b29d21424fe4b410fc8e98606c" prot="public" virt="virtual"><scope>anonymous_namespace{CSKYConstantIslandPass.cpp}::CSKYConstantIslands</scope><name>~Pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1740 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_function_pass" prot="public" virt="non-virtual">llvm::MachineFunctionPass</basecompoundref>
+    <innerclass refid="structanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1_1_block_and_tail_dup_result" prot="private">anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::BlockAndTailDupResult</innerclass>
+    <innerclass refid="structanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1_1_weighted_edge" prot="private">anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::WeightedEdge</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a2c69f46915104b4b42bad5b16926896b" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">SmallSetVector</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, 16 &gt;</type>
+        <definition>using anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::BlockFilterSet =  SmallSetVector&lt;const MachineBasicBlock *, 16&gt;</definition>
+        <argsstring></argsstring>
+        <name>BlockFilterSet</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::BlockFilterSet</qualifiedname>
+        <briefdescription>
+<para>A type for a block filter set. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="362" column="3" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="362" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1aae3cba63507b6bbbb2a0132e16880431" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, 16 &gt;</type>
+        <definition>SmallVector&lt;MachineBasicBlock *, 16&gt; anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::BlockWorkList</definition>
+        <argsstring></argsstring>
+        <name>BlockWorkList</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::BlockWorkList</qualifiedname>
+        <briefdescription>
+<para>work lists of blocks that are ready to be laid out </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="378" column="15" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a78e15aacb3f480ea24dcef7ee9bf2942" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, 16 &gt;</type>
+        <definition>SmallVector&lt;MachineBasicBlock *, 16&gt; anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::EHPadWorkList</definition>
+        <argsstring></argsstring>
+        <name>EHPadWorkList</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::EHPadWorkList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="379" column="15" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a787183229d5c3229b5084e4577e3083d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, BlockAndTailDupResult &gt;</type>
+        <definition>DenseMap&lt;const MachineBasicBlock *, BlockAndTailDupResult&gt; anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::ComputedEdges</definition>
+        <argsstring></argsstring>
+        <name>ComputedEdges</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::ComputedEdges</qualifiedname>
+        <briefdescription>
+<para>Edges that have already been computed as optimal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="382" column="12" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="382" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a441346b8c3a351fc729ba5322d76f650" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>MachineFunction* anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::F</definition>
+        <argsstring></argsstring>
+        <name>F</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::F</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Machine <ref refid="classllvm_1_1_function" kindref="compound">Function</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="385" column="19" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="385" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a1cafd878b0393094413d5314b7f5433f" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_branch_probability_info" kindref="compound">MachineBranchProbabilityInfo</ref> *</type>
+        <definition>const MachineBranchProbabilityInfo* anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::MBPI</definition>
+        <argsstring></argsstring>
+        <name>MBPI</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::MBPI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>A handle to the branch probability pass. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="388" column="38" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="388" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ae4d3256c15bed44ceb54bd6d1e98eeac" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_m_b_f_i_wrapper" kindref="compound">MBFIWrapper</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MBFIWrapper&gt; anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::MBFI</definition>
+        <argsstring></argsstring>
+        <name>MBFI</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::MBFI</qualifiedname>
+        <briefdescription>
+<para>A handle to the function-wide block frequency pass. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="391" column="19" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="391" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a9043c382d0cd4a27bb67f8d04f51f0bd" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_loop_info" kindref="compound">MachineLoopInfo</ref> *</type>
+        <definition>MachineLoopInfo* anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::MLI</definition>
+        <argsstring></argsstring>
+        <name>MLI</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::MLI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>A handle to the loop info. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="394" column="19" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="394" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a2a50cdc995bbaf9976f47390525c799b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock* anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::PreferredLoopExit</definition>
+        <argsstring></argsstring>
+        <name>PreferredLoopExit</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::PreferredLoopExit</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Preferred loop exit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Member variable for convenience. It may be removed by duplication deep in the call stack. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="399" column="21" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="399" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a6be7707838427e4d20b01d1888fd1950" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> *</type>
+        <definition>const TargetInstrInfo* anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::TII</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>A handle to the target&apos;s instruction info. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="402" column="25" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="402" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1aff48bdcbafede2c75e4d99a4b8a62cb0" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_lowering_base" kindref="compound">TargetLoweringBase</ref> *</type>
+        <definition>const TargetLoweringBase* anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::TLI</definition>
+        <argsstring></argsstring>
+        <name>TLI</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::TLI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>A handle to the target&apos;s lowering info. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="405" column="28" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="405" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1aebd727768855e8c4d0aec1e56ef0276d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_post_dominator_tree" kindref="compound">MachinePostDominatorTree</ref> *</type>
+        <definition>MachinePostDominatorTree* anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::MPDT</definition>
+        <argsstring></argsstring>
+        <name>MPDT</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::MPDT</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>A handle to the post dominator tree. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="408" column="28" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="408" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a0bf36e76dddb06c1e1ffa7510b32f1e5" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+        <definition>ProfileSummaryInfo* anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::PSI</definition>
+        <argsstring></argsstring>
+        <name>PSI</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::PSI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="410" column="22" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="410" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a657470178bb8e218eff04adbf577e575" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_target_pass_config" kindref="compound">TargetPassConfig</ref> *</type>
+        <definition>TargetPassConfig* anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::PassConfig</definition>
+        <argsstring></argsstring>
+        <name>PassConfig</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::PassConfig</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="412" column="20" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a70a3df2e6483c164757dceb156788a11" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_tail_duplicator" kindref="compound">TailDuplicator</ref></type>
+        <definition>TailDuplicator anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::TailDup</definition>
+        <argsstring></argsstring>
+        <name>TailDup</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::TailDup</qualifiedname>
+        <briefdescription>
+<para>Duplicator used to duplicate tails during placement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Placement decisions can open up new tail duplication opportunities, but since tail duplication affects placement decisions of later blocks, it must be done inline. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="419" column="18" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="419" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ae11922d600fffe2c8358b1ab5746328d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_block_frequency" kindref="compound">BlockFrequency</ref></type>
+        <definition>BlockFrequency anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::DupThreshold</definition>
+        <argsstring></argsstring>
+        <name>DupThreshold</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::DupThreshold</qualifiedname>
+        <briefdescription>
+<para>Partial tail duplication threshold. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="422" column="18" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="422" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ace8891a946fba735052f70421f420e8d" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::TailDupSize</definition>
+        <argsstring></argsstring>
+        <name>TailDupSize</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::TailDupSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="424" column="12" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="424" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a581affb9c081f5fb1826892f66531871" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::UseProfileCount</definition>
+        <argsstring></argsstring>
+        <name>UseProfileCount</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::UseProfileCount</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>True: use block profile count to compute tail duplication cost. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>False: use block frequency to compute tail duplication cost. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="428" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a409c5b3292089d63a3a8afc797f7853d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_specific_bump_ptr_allocator" kindref="compound">SpecificBumpPtrAllocator</ref>&lt; <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &gt;</type>
+        <definition>SpecificBumpPtrAllocator&lt;BlockChain&gt; anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::ChainAllocator</definition>
+        <argsstring></argsstring>
+        <name>ChainAllocator</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::ChainAllocator</qualifiedname>
+        <briefdescription>
+<para>Allocator and owner of <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> structures. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We build BlockChains lazily while processing the loop structure of a function. To reduce malloc traffic, we allocate them using this slab-like allocator, and destroy them after the pass completes. An important guarantee is that this allocator produces stable pointers to the chains. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="437" column="28" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="437" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a73f0109902ee879fc0f2fb344a40ec60" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> * &gt;</type>
+        <definition>DenseMap&lt;const MachineBasicBlock *, BlockChain *&gt; anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::BlockToChain</definition>
+        <argsstring></argsstring>
+        <name>BlockToChain</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::BlockToChain</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> wide <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> to <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> mapping. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This mapping allows efficiently moving from any given basic block to the <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> it participates in, if any. We use it to, among other things, allow implicitly defining edges between chains as the existing edges between basic blocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="445" column="12" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="445" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ad3fc59ca71bf4817ece50eb678512a81" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, 4 &gt;</type>
+        <definition>SmallPtrSet&lt;MachineBasicBlock *, 4&gt; anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::BlocksWithUnanalyzableExits</definition>
+        <argsstring></argsstring>
+        <name>BlocksWithUnanalyzableExits</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::BlocksWithUnanalyzableExits</qualifiedname>
+        <briefdescription>
+<para>The set of basic blocks that have terminators that cannot be fully analyzed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These basic blocks cannot be re-ordered safely by <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement" kindref="compound">MachineBlockPlacement</ref>, and we must preserve physical layout of these blocks and their successors through the pass. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="452" column="15" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="452" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a4944db6b12999ee0713352c27e8125e4" prot="public" static="yes" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>char MachineBlockPlacement::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::ID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="612" column="15" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="612" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ad7175334e09f55bf7b5fb08d9522449e" compoundref="_machine_block_placement_8cpp" startline="614" endline="616">MachineBlockPlacement</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1aadb8826c90dd0b335005ad4bcec6a319" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_block_frequency" kindref="compound">BlockFrequency</ref></type>
+        <definition>BlockFrequency anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::getBlockCountOrFrequency</definition>
+        <argsstring>(const MachineBasicBlock *BB)</argsstring>
+        <name>getBlockCountOrFrequency</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::getBlockCountOrFrequency</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Get block profile count or frequency according to UseProfileCount. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The return value is used to model tail duplication cost. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="457" column="18" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="457" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a009bd7be185b0d28640c95a65d3015cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_block_frequency" kindref="compound">BlockFrequency</ref></type>
+        <definition>BlockFrequency MachineBlockPlacement::scaleThreshold</definition>
+        <argsstring>(MachineBasicBlock *BB)</argsstring>
+        <name>scaleThreshold</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::scaleThreshold</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Scale the DupThreshold according to basic block size. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="469" column="18" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="3284" bodyend="3286"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a332bfc8fa4bd863bb875ec26f28764c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::initTailDupThreshold</definition>
+        <argsstring>()</argsstring>
+        <name>initTailDupThreshold</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::initTailDupThreshold</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="470" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="3437" bodyend="3484"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a8609559711967b7ec0af133d7979c4d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::markChainSuccessors</definition>
+        <argsstring>(const BlockChain &amp;Chain, const MachineBasicBlock *LoopHeaderBB, const BlockFilterSet *BlockFilter=nullptr)</argsstring>
+        <name>markChainSuccessors</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::markChainSuccessors</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>LoopHeaderBB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Decrease the UnscheduledPredecessors count for all blocks in chain, and if the count goes to 0, add them to the appropriate work list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Mark a chain&apos;s successors as having one fewer preds.</para>
+<para>When a chain is being merged into the &quot;placed&quot; chain, this routine will quickly walk the successors of each block in the chain and mark them as having one fewer active predecessor. It also adds any successors of this chain which reach the zero-predecessor state to the appropriate worklist. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="474" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="673" bodyend="681"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a7fa0e67ba11ea993bd3f047cb851220a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::markBlockSuccessors</definition>
+        <argsstring>(const BlockChain &amp;Chain, const MachineBasicBlock *BB, const MachineBasicBlock *LoopHeaderBB, const BlockFilterSet *BlockFilter=nullptr)</argsstring>
+        <name>markBlockSuccessors</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::markBlockSuccessors</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+          <defname>MBB</defname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>LoopHeaderBB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Decrease the UnscheduledPredecessors count for a single block, and if the count goes to 0, add them to the appropriate work list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Mark a single block&apos;s successors as having one fewer preds.</para>
+<para>Under normal circumstances, this is only called by markChainSuccessors, but if a block that was to be placed is completely tail-duplicated away, and was duplicated into the chain end, we need to redo markBlockSuccessors for just that block. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="480" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="689" bodyend="716"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1af4f747b70337f75406dd9c17e20c2903" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref></type>
+        <definition>BranchProbability MachineBlockPlacement::collectViableSuccessors</definition>
+        <argsstring>(const MachineBasicBlock *BB, const BlockChain &amp;Chain, const BlockFilterSet *BlockFilter, SmallVector&lt; MachineBasicBlock *, 4 &gt; &amp;Successors)</argsstring>
+        <name>collectViableSuccessors</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::collectViableSuccessors</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, 4 &gt; &amp;</type>
+          <declname>Successors</declname>
+        </param>
+        <briefdescription>
+<para>This helper function collects the set of successors of block <computeroutput>BB</computeroutput> that are allowed to be its layout successors, and return the total branch probability of edges from <computeroutput>BB</computeroutput> to those blocks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="485" column="3" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="722" bodyend="764"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1abd05f1814cdb465e33bbd1f8ad3acc9c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineBlockPlacement::isBestSuccessor</definition>
+        <argsstring>(MachineBasicBlock *BB, MachineBasicBlock *Pred, BlockFilterSet *BlockFilter)</argsstring>
+        <name>isBestSuccessor</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::isBestSuccessor</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Pred</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="488" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="3289" bodyend="3323"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ae7b682f772067f17b5b2a9fd6450053e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::findDuplicateCandidates</definition>
+        <argsstring>(SmallVectorImpl&lt; MachineBasicBlock * &gt; &amp;Candidates, MachineBasicBlock *BB, BlockFilterSet *BlockFilter)</argsstring>
+        <name>findDuplicateCandidates</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::findDuplicateCandidates</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt; &amp;</type>
+          <declname>Candidates</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="490" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="3327" bodyend="3435"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a65ae9e4e255c09f00874e3defceaaf75" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineBlockPlacement::repeatedlyTailDuplicateBlock</definition>
+        <argsstring>(MachineBasicBlock *BB, MachineBasicBlock *&amp;LPred, const MachineBasicBlock *LoopHeaderBB, BlockChain &amp;Chain, BlockFilterSet *BlockFilter, MachineFunction::iterator &amp;PrevUnplacedBlockIt, BlockFilterSet::iterator &amp;PrevUnplacedBlockInFilterIt)</argsstring>
+        <name>repeatedlyTailDuplicateBlock</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::repeatedlyTailDuplicateBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *&amp;</type>
+          <declname>LPred</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>LoopHeaderBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function_1aaba82c71ffdca966cad10eae0992fff9" kindref="member">MachineFunction::iterator</ref> &amp;</type>
+          <declname>PrevUnplacedBlockIt</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_set_vector_1a813fd00ac7e5e3261ffe67f9322a5480" kindref="member">BlockFilterSet::iterator</ref> &amp;</type>
+          <declname>PrevUnplacedBlockInFilterIt</declname>
+        </param>
+        <briefdescription>
+<para>Tail duplicate <computeroutput>BB</computeroutput> into (some) predecessors if profitable, repeating if it was duplicated into its chain predecessor and removed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>BB</computeroutput> - Basic block that may be duplicated.</para>
+<para><computeroutput>LPred</computeroutput> - Chosen layout predecessor of <computeroutput>BB</computeroutput>. Updated to be the chain end if LPred is removed. <computeroutput>Chain</computeroutput> - Chain to which <computeroutput>LPred</computeroutput> belongs, and <computeroutput>BB</computeroutput> will belong. <computeroutput>BlockFilter</computeroutput> - Set of blocks that belong to the loop being laid out. Used to identify which blocks to update predecessor counts. <computeroutput>PrevUnplacedBlockIt</computeroutput> - Iterator pointing to the last block that was chosen in the given order due to unnatural CFG only needed if <computeroutput>BB</computeroutput> is removed and <computeroutput>PrevUnplacedBlockIt</computeroutput> pointed to <computeroutput>BB</computeroutput>. <simplesect kind="return"><para>true if <computeroutput>BB</computeroutput> was removed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="493" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="3101" bodyend="3144"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a7e211e03c3ab0d21b495345984eb1b63" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineBlockPlacement::maybeTailDuplicateBlock</definition>
+        <argsstring>(MachineBasicBlock *BB, MachineBasicBlock *LPred, BlockChain &amp;Chain, BlockFilterSet *BlockFilter, MachineFunction::iterator &amp;PrevUnplacedBlockIt, BlockFilterSet::iterator &amp;PrevUnplacedBlockInFilterIt, bool &amp;DuplicatedToLPred)</argsstring>
+        <name>maybeTailDuplicateBlock</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::maybeTailDuplicateBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>LPred</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function_1aaba82c71ffdca966cad10eae0992fff9" kindref="member">MachineFunction::iterator</ref> &amp;</type>
+          <declname>PrevUnplacedBlockIt</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_set_vector_1a813fd00ac7e5e3261ffe67f9322a5480" kindref="member">BlockFilterSet::iterator</ref> &amp;</type>
+          <declname>PrevUnplacedBlockInFilterIt</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>DuplicatedToLPred</declname>
+        </param>
+        <briefdescription>
+<para>Tail duplicate <computeroutput>BB</computeroutput> into (some) predecessors if profitable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>BB</computeroutput> - Basic block that may be duplicated <computeroutput>LPred</computeroutput> - Chosen layout predecessor of <computeroutput>BB</computeroutput> <computeroutput>Chain</computeroutput> - Chain to which <computeroutput>LPred</computeroutput> belongs, and <computeroutput>BB</computeroutput> will belong. <computeroutput>BlockFilter</computeroutput> - Set of blocks that belong to the loop being laid out. Used to identify which blocks to update predecessor counts. <computeroutput>PrevUnplacedBlockIt</computeroutput> - Iterator pointing to the last block that was chosen in the given order due to unnatural CFG only needed if <computeroutput>BB</computeroutput> is removed and <computeroutput>PrevUnplacedBlockIt</computeroutput> pointed to <computeroutput>BB</computeroutput>. <computeroutput>DuplicatedToLPred</computeroutput> - True if the block was duplicated into LPred. <simplesect kind="return"><para>- True if the block was duplicated into all preds and removed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="500" column="3" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="3159" bodyend="3269"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a3a68e0308163acb4ff57c35fda2d4c0b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineBlockPlacement::hasBetterLayoutPredecessor</definition>
+        <argsstring>(const MachineBasicBlock *BB, const MachineBasicBlock *Succ, const BlockChain &amp;SuccChain, BranchProbability SuccProb, BranchProbability RealSuccProb, const BlockChain &amp;Chain, const BlockFilterSet *BlockFilter)</argsstring>
+        <name>hasBetterLayoutPredecessor</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::hasBetterLayoutPredecessor</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Succ</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>SuccChain</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref></type>
+          <declname>SuccProb</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref></type>
+          <declname>RealSuccProb</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <briefdescription>
+<para>Checks to see if the layout candidate block <computeroutput>Succ</computeroutput> has a better layout predecessor than <computeroutput>BB</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If yes, returns true. <computeroutput>SuccProb:</computeroutput> The probability adjusted for only remaining blocks. Only used for logging <computeroutput>RealSuccProb:</computeroutput> The un-adjusted probability. <computeroutput>Chain:</computeroutput> The chain that BB belongs to and Succ is being considered for. <computeroutput>BlockFilter:</computeroutput> if non-null, the set of blocks that make up the loop being considered </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="505" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1428" bodyend="1596"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a3ed68a87de5a4e312f928382ee2d8a39" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BlockAndTailDupResult</type>
+        <definition>MachineBlockPlacement::BlockAndTailDupResult MachineBlockPlacement::selectBestSuccessor</definition>
+        <argsstring>(const MachineBasicBlock *BB, const BlockChain &amp;Chain, const BlockFilterSet *BlockFilter)</argsstring>
+        <name>selectBestSuccessor</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::selectBestSuccessor</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <briefdescription>
+<para>Select the best successor for a block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This looks across all successors of a particular block and attempts to select the &quot;best&quot; one to be the layout successor. It only considers direct successors which also pass the block filter. It will attempt to avoid breaking CFG structure, but cave and break such structures in the case of very hot successor edges.</para>
+<para><simplesect kind="return"><para>The best successor block found, or null if none are viable, along with a boolean indicating if tail duplication is necessary. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="512" column="25" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1609" bodyend="1709"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a3dbe168d7c61f38f4c3c8e68ddc68bc0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * MachineBlockPlacement::selectBestCandidateBlock</definition>
+        <argsstring>(const BlockChain &amp;Chain, SmallVectorImpl&lt; MachineBasicBlock * &gt; &amp;WorkList)</argsstring>
+        <name>selectBestCandidateBlock</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::selectBestCandidateBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt; &amp;</type>
+          <declname>WorkList</declname>
+        </param>
+        <briefdescription>
+<para>Select the best block from a worklist. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This looks through the provided worklist as a list of candidate basic blocks and select the most profitable one to place. The definition of profitable only really makes sense in the context of a loop. This returns the most frequently visited block in the worklist, which in the case of a loop, is the one most desirable to be physically close to the rest of the loop body in order to improve i-cache behavior.</para>
+<para><simplesect kind="return"><para>The best block found, or null if none are viable. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="516" column="3" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1721" bodyend="1780"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a4fc423946a994d1c522af1f0cdd78842" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * MachineBlockPlacement::getFirstUnplacedBlock</definition>
+        <argsstring>(const BlockChain &amp;PlacedChain, MachineFunction::iterator &amp;PrevUnplacedBlockIt)</argsstring>
+        <name>getFirstUnplacedBlock</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::getFirstUnplacedBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>PlacedChain</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function_1aaba82c71ffdca966cad10eae0992fff9" kindref="member">MachineFunction::iterator</ref> &amp;</type>
+          <declname>PrevUnplacedBlockIt</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve the first unplaced basic block in the entire function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This routine is called when we are unable to use the CFG to walk through all of the basic blocks and form a chain due to unnatural loops in the CFG. We walk through the function&apos;s blocks in order, starting from the LastUnplacedBlockIt. We update this iterator on each call to avoid re-scanning the entire sequence on repeated calls to this routine. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="519" column="3" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1789" bodyend="1804"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a05bb0192a595fdd2777b79e53dda7699" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * MachineBlockPlacement::getFirstUnplacedBlock</definition>
+        <argsstring>(const BlockChain &amp;PlacedChain, BlockFilterSet::iterator &amp;PrevUnplacedBlockInFilterIt, const BlockFilterSet *BlockFilter)</argsstring>
+        <name>getFirstUnplacedBlock</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::getFirstUnplacedBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>PlacedChain</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_set_vector_1a813fd00ac7e5e3261ffe67f9322a5480" kindref="member">BlockFilterSet::iterator</ref> &amp;</type>
+          <declname>PrevUnplacedBlockInFilterIt</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve the first unplaced basic block among the blocks in BlockFilter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is similar to getFirstUnplacedBlock for the entire function, but since the size of BlockFilter is typically far less than the number of blocks in the entire function, iterating through the BlockFilter is more efficient. When processing the entire funciton, using the version without BlockFilter has a complexity of #(loops in function) * #(blocks in function), while this version has a complexity of sum(#(loops in block) foreach block in function) which is always smaller. For long function mostly sequential in structure, the complexity is amortized to 1 * #(blocks in function). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="522" column="3" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1816" bodyend="1829"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1acb4f20302361dca3c6ad9c7a0a23a254" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::fillWorkLists</definition>
+        <argsstring>(const MachineBasicBlock *MBB, SmallPtrSetImpl&lt; BlockChain * &gt; &amp;UpdatedPreds, const BlockFilterSet *BlockFilter)</argsstring>
+        <name>fillWorkLists</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::fillWorkLists</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> * &gt; &amp;</type>
+          <declname>UpdatedPreds</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <briefdescription>
+<para>Add a basic block to the work list if it is appropriate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the optional parameter BlockFilter is provided, only MBB present in the set will be added to the worklist. If nullptr is provided, no filtering occurs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="531" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1831" bodyend="1861"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a66ed2f04dbeb423f8b2b05d83fe373c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::buildChain</definition>
+        <argsstring>(const MachineBasicBlock *BB, BlockChain &amp;Chain, BlockFilterSet *BlockFilter=nullptr)</argsstring>
+        <name>buildChain</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::buildChain</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="535" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1863" bodyend="1937"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a94c706ea3bc7f05bb86d36f275569739" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineBlockPlacement::canMoveBottomBlockToTop</definition>
+        <argsstring>(const MachineBasicBlock *BottomBlock, const MachineBasicBlock *OldTop)</argsstring>
+        <name>canMoveBottomBlockToTop</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::canMoveBottomBlockToTop</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BottomBlock</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>OldTop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="537" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1953" bodyend="1968"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a2ff12fe20ff61e8bf79201ab31679c39" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineBlockPlacement::hasViableTopFallthrough</definition>
+        <argsstring>(const MachineBasicBlock *Top, const BlockFilterSet &amp;LoopBlockSet)</argsstring>
+        <name>hasViableTopFallthrough</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::hasViableTopFallthrough</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Top</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> &amp;</type>
+          <declname>LoopBlockSet</declname>
+        </param>
+        <briefdescription>
+<para>Check if there is a fallthrough to loop header Top. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>Look for a Pred that can be layout before Top.</para>
+</listitem><listitem><para>Check if Top is the most possible successor of Pred. </para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="539" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2333" bodyend="2358"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1acea1eb87358ab0ae882000fdfa36feb9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_block_frequency" kindref="compound">BlockFrequency</ref></type>
+        <definition>BlockFrequency MachineBlockPlacement::TopFallThroughFreq</definition>
+        <argsstring>(const MachineBasicBlock *Top, const BlockFilterSet &amp;LoopBlockSet)</argsstring>
+        <name>TopFallThroughFreq</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::TopFallThroughFreq</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Top</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> &amp;</type>
+          <declname>LoopBlockSet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="541" column="18" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1972" bodyend="2003"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a48d9afd96859e481b29ccc73e1b7501c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_block_frequency" kindref="compound">BlockFrequency</ref></type>
+        <definition>BlockFrequency MachineBlockPlacement::FallThroughGains</definition>
+        <argsstring>(const MachineBasicBlock *NewTop, const MachineBasicBlock *OldTop, const MachineBasicBlock *ExitBB, const BlockFilterSet &amp;LoopBlockSet)</argsstring>
+        <name>FallThroughGains</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::FallThroughGains</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>NewTop</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>OldTop</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>ExitBB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> &amp;</type>
+          <declname>LoopBlockSet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="543" column="18" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2026" bodyend="2090"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a52cc0da9270fd9c0b3429a269a01bb08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * MachineBlockPlacement::findBestLoopTopHelper</definition>
+        <argsstring>(MachineBasicBlock *OldTop, const MachineLoop &amp;L, const BlockFilterSet &amp;LoopBlockSet)</argsstring>
+        <name>findBestLoopTopHelper</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::findBestLoopTopHelper</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>OldTop</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_loop" kindref="compound">MachineLoop</ref> &amp;</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> &amp;</type>
+          <declname>LoopBlockSet</declname>
+        </param>
+        <briefdescription>
+<para>Helper function of findBestLoopTop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Find the best loop top block from predecessors of old top.</para>
+<para>Look for a block which is strictly better than the old top for laying out before the old top of the loop. This looks for only two patterns: <verbatim>1. a block has only one successor, the old loop top
+
+   Because such a block will always result in an unconditional jump,
+   rotating it in front of the old top is always profitable.
+
+2. a block has two successors, one is old top, another is exit
+   and it has more than one predecessors
+
+   If it is below one of its predecessors P, only P can fall through to
+   it, all other predecessors need a jump to it, and another conditional
+   jump to loop header. If it is moved before loop header, all its
+   predecessors jump to it, then fall through to loop header. So all its
+   predecessors except P can reduce one taken branch.
+   At the same time, move it before old top increases the taken branch
+   to loop exit block, so the reduced taken branch will be compared with
+   the increased taken branch to the loop exit block. 
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="547" column="21" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2114" bodyend="2176"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a700f6c4424f435cc11b5afabd9c115a4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * MachineBlockPlacement::findBestLoopTop</definition>
+        <argsstring>(const MachineLoop &amp;L, const BlockFilterSet &amp;LoopBlockSet)</argsstring>
+        <name>findBestLoopTop</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::findBestLoopTop</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_loop" kindref="compound">MachineLoop</ref> &amp;</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> &amp;</type>
+          <declname>LoopBlockSet</declname>
+        </param>
+        <briefdescription>
+<para>Find the best loop top block for layout. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function iteratively calls findBestLoopTopHelper, until no new better BB can be found. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="550" column="21" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2183" bodyend="2204"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1afa49006361b1edf655176b7b8f4d974d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * MachineBlockPlacement::findBestLoopExit</definition>
+        <argsstring>(const MachineLoop &amp;L, const BlockFilterSet &amp;LoopBlockSet, BlockFrequency &amp;ExitFreq)</argsstring>
+        <name>findBestLoopExit</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::findBestLoopExit</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_loop" kindref="compound">MachineLoop</ref> &amp;</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> &amp;</type>
+          <declname>LoopBlockSet</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_block_frequency" kindref="compound">BlockFrequency</ref> &amp;</type>
+          <declname>ExitFreq</declname>
+        </param>
+        <briefdescription>
+<para>Find the best loop exiting block for layout. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This routine implements the logic to analyze the loop looking for the best block to layout at the top of the loop. Typically this is done to maximize fallthrough opportunities. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="552" column="21" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2212" bodyend="2327"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a1acc167ff314bcf89aa2028e25ffaaf2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref></type>
+        <definition>MachineBlockPlacement::BlockFilterSet MachineBlockPlacement::collectLoopBlockSet</definition>
+        <argsstring>(const MachineLoop &amp;L)</argsstring>
+        <name>collectLoopBlockSet</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::collectLoopBlockSet</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_loop" kindref="compound">MachineLoop</ref> &amp;</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Collect blocks in the given loop that are to be placed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When profile data is available, exclude cold blocks from the returned set; otherwise, collect all blocks in the loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="555" column="18" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2596" bodyend="2641"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a752789a7a68c3b05cf9c6a697457c0f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::buildLoopChains</definition>
+        <argsstring>(const MachineLoop &amp;L)</argsstring>
+        <name>buildLoopChains</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::buildLoopChains</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_loop" kindref="compound">MachineLoop</ref> &amp;</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Forms basic block chains from the natural loop structures. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These chains are designed to preserve the existing <emphasis>structure</emphasis> of the code as much as possible. We can then stitch the chains together in a way which both preserves the topological structure and minimizes taken conditional branches. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="556" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2649" bodyend="2740"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a9447fbcd903da1f7bca306c626f7b3da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::rotateLoop</definition>
+        <argsstring>(BlockChain &amp;LoopChain, const MachineBasicBlock *ExitingBB, BlockFrequency ExitFreq, const BlockFilterSet &amp;LoopBlockSet)</argsstring>
+        <name>rotateLoop</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::rotateLoop</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>LoopChain</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>ExitingBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_block_frequency" kindref="compound">BlockFrequency</ref></type>
+          <declname>ExitFreq</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> &amp;</type>
+          <declname>LoopBlockSet</declname>
+        </param>
+        <briefdescription>
+<para>Attempt to rotate an exiting block to the bottom of the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Once we have built a chain, try to rotate it to line up the hot exit block with fallthrough out of the loop if doing so doesn&apos;t introduce unnecessary branches. For example, if the loop has fallthrough into its header and out of its bottom already, don&apos;t rotate it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="557" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2366" bodyend="2439"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a48fba9be30449ffa8970bb8aa4edb2b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::rotateLoopWithProfile</definition>
+        <argsstring>(BlockChain &amp;LoopChain, const MachineLoop &amp;L, const BlockFilterSet &amp;LoopBlockSet)</argsstring>
+        <name>rotateLoopWithProfile</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::rotateLoopWithProfile</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>LoopChain</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_loop" kindref="compound">MachineLoop</ref> &amp;</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> &amp;</type>
+          <declname>LoopBlockSet</declname>
+        </param>
+        <briefdescription>
+<para>Attempt to rotate a loop based on profile data to reduce branch cost. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>With profile data, we can determine the cost in terms of missed fall through opportunities when rotating a loop chain and select the best rotation. Basically, there are three kinds of cost to consider for each rotation:<orderedlist>
+<listitem><para>The possibly missed fall through edge (if it exists) from BB out of the loop to the loop header.</para>
+</listitem><listitem><para>The possibly missed fall through edges (if they exist) from the loop exits to BB out of the loop.</para>
+</listitem><listitem><para>The missed fall through edge (if it exists) from the last BB to the first BB in the loop chain. Therefore, the cost for a given rotation is the sum of costs listed above. We select the best rotation with the smallest cost. </para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="559" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2454" bodyend="2589"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a0f22114b14e9ddeab55355f3c27acc58" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::buildCFGChains</definition>
+        <argsstring>()</argsstring>
+        <name>buildCFGChains</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::buildCFGChains</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="561" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2742" bodyend="2905"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a45f862faa7617594bcb965034bbf4c39" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::optimizeBranches</definition>
+        <argsstring>()</argsstring>
+        <name>optimizeBranches</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::optimizeBranches</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="562" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2907" bodyend="2944"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a0b76bc8d639056cba8c0deaa82dab8ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::alignBlocks</definition>
+        <argsstring>()</argsstring>
+        <name>alignBlocks</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::alignBlocks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="563" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="2946" bodyend="3084"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a7d6e3b50fb30841d4a19f267d7ba413a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineBlockPlacement::shouldTailDuplicate</definition>
+        <argsstring>(MachineBasicBlock *BB)</argsstring>
+        <name>shouldTailDuplicate</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::shouldTailDuplicate</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if a block should be tail-duplicated to increase fallthrough opportunities. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if a block should be tail duplicated to increase fallthrough opportunities.</para>
+<para><computeroutput>BB</computeroutput> Block to check. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="566" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="800" bodyend="809"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1aeb5410d1504b3e2a7a4a0685d8bba226" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineBlockPlacement::isProfitableToTailDup</definition>
+        <argsstring>(const MachineBasicBlock *BB, const MachineBasicBlock *Succ, BranchProbability QProb, const BlockChain &amp;Chain, const BlockFilterSet *BlockFilter)</argsstring>
+        <name>isProfitableToTailDup</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::isProfitableToTailDup</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Succ</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref></type>
+          <declname>QProb</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <briefdescription>
+<para>Check the edge frequencies to see if tail duplication will increase fallthroughs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It only makes sense to call this function when <computeroutput>Succ</computeroutput> would not be chosen otherwise. Tail duplication of <computeroutput>Succ</computeroutput> is always locally profitable if we would have picked <computeroutput>Succ</computeroutput> without considering duplication. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="569" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="829" bodyend="974"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a314cc0aa7d21a01c59621f195b117be7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineBlockPlacement::isTrellis</definition>
+        <argsstring>(const MachineBasicBlock *BB, const SmallVectorImpl&lt; MachineBasicBlock * &gt; &amp;ViableSuccs, const BlockChain &amp;Chain, const BlockFilterSet *BlockFilter)</argsstring>
+        <name>isTrellis</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::isTrellis</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt; &amp;</type>
+          <declname>ViableSuccs</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <briefdescription>
+<para>Check for a trellis layout. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>BB</computeroutput> is the upper part of a trellis if its successors form the lower part of a trellis. A successor set S forms the lower part of a trellis if all of the predecessors of S are either in S or have all of S as successors. We ignore trellises where BB doesn&apos;t have 2 successors because for fewer than 2, it&apos;s trivial, and for 3 or greater they are very uncommon and complex to compute optimally. Allowing edges within S is not strictly a trellis, but the same algorithm works, so we allow it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="575" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="983" bodyend="1025"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a5d4e1f1116322b2fae38b312ea5604f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BlockAndTailDupResult</type>
+        <definition>MachineBlockPlacement::BlockAndTailDupResult MachineBlockPlacement::getBestTrellisSuccessor</definition>
+        <argsstring>(const MachineBasicBlock *BB, const SmallVectorImpl&lt; MachineBasicBlock * &gt; &amp;ViableSuccs, BranchProbability AdjustedSumProb, const BlockChain &amp;Chain, const BlockFilterSet *BlockFilter)</argsstring>
+        <name>getBestTrellisSuccessor</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::getBestTrellisSuccessor</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt; &amp;</type>
+          <declname>ViableSuccs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_branch_probability" kindref="compound">BranchProbability</ref></type>
+          <declname>AdjustedSumProb</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <briefdescription>
+<para>Get the best successor given a trellis layout. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the best successor from <computeroutput>BB</computeroutput> based on <computeroutput>BB</computeroutput> being part of a trellis.</para>
+<para>We only handle trellises with 2 successors, so the algorithm is straightforward: Find the best pair of edges that don&apos;t conflict. We find the best incoming edge for each successor in the trellis. If those conflict, we consider which of them should be replaced with the second best. Upon return the two best edges will be in <computeroutput>BestEdges</computeroutput>. If one of the edges comes from <computeroutput>BB</computeroutput>, it will be in <computeroutput>BestEdges</computeroutput>[0] </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="580" column="25" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1078" bodyend="1158"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ac0a79faa1efd30a5da08320dfb6844e4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineBlockPlacement::canTailDuplicateUnplacedPreds</definition>
+        <argsstring>(const MachineBasicBlock *BB, MachineBasicBlock *Succ, const BlockChain &amp;Chain, const BlockFilterSet *BlockFilter)</argsstring>
+        <name>canTailDuplicateUnplacedPreds</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::canTailDuplicateUnplacedPreds</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Succ</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_block_chain" kindref="compound">BlockChain</ref> &amp;</type>
+          <declname>Chain</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_set_vector" kindref="compound">BlockFilterSet</ref> *</type>
+          <declname>BlockFilter</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if a block can tail duplicate into all unplaced predecessors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When the option <ref refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ad65badde897b7d4f51fc7c545538a388" kindref="member">allowTailDupPlacement()</ref> is on, this method checks if the fallthrough candidate block <computeroutput>Succ</computeroutput> (of block <computeroutput>BB</computeroutput>) can be tail-duplicated into all of its unplaced, unfiltered predecessors, that are not BB.</para>
+<para>Filters based on loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="593" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1163" bodyend="1267"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a9f9503d0622e93edb0a6ba39a1a83bc9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::precomputeTriangleChains</definition>
+        <argsstring>()</argsstring>
+        <name>precomputeTriangleChains</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::precomputeTriangleChains</qualifiedname>
+        <briefdescription>
+<para>Find chains of triangles to tail-duplicate where a global analysis works, but a local analysis would not find them. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Find chains of triangles where we believe it would be profitable to tail-duplicate them all, but a local analysis would not find them.</para>
+<para>There are 3 ways this can be profitable: 1) The post-dominators marked 50% are actually taken 55% (This shrinks with longer chains) 2) The chains are statically correlated. Branch probabilities have a very U-shaped distribution. [<ulink url="http://nrs.harvard.edu/urn-3:HUL.InstRepos:24015805">http://nrs.harvard.edu/urn-3:HUL.InstRepos:24015805</ulink>] If the branches in a chain are likely to be from the same side of the distribution as their predecessor, but are independent at runtime, this transformation is profitable. (Because the cost of being wrong is a small fixed cost, unlike the standard triangle layout where the cost of being wrong scales with the # of triangles.) 3) The chains are dynamically correlated. If the probability that a previous branch was taken positively influences whether the next branch will be taken We believe that 2 and 3 are common enough to justify the small margin in 1. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="600" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1286" bodyend="1392"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a74729b845cbd9fa6bc1ad1e004e725eb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::applyExtTsp</definition>
+        <argsstring>(bool OptForSize)</argsstring>
+        <name>applyExtTsp</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::applyExtTsp</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>OptForSize</declname>
+        </param>
+        <briefdescription>
+<para>Apply a post-processing step optimizing block placement. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="603" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="3606" bodyend="3694"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a9da2ef31296d894b5114536904af573b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::assignBlockOrder</definition>
+        <argsstring>(const std::vector&lt; const MachineBasicBlock * &gt; &amp;NewOrder)</argsstring>
+        <name>assignBlockOrder</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::assignBlockOrder</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt; &amp;</type>
+          <declname>NewOrder</declname>
+        </param>
+        <briefdescription>
+<para>Modify the existing block placement in the function and adjust all jumps. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="606" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="3696" bodyend="3753"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a2b9d27f22cbc9e88e6fd93b4cbb0c67f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineBlockPlacement::createCFGChainExtTsp</definition>
+        <argsstring>()</argsstring>
+        <name>createCFGChainExtTsp</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::createCFGChainExtTsp</qualifiedname>
+        <briefdescription>
+<para>Create a single CFG chain from the current block order. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="609" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="3755" bodyend="3769"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a984864f0c5f4ecf52a87268c077969ee" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; WeightedEdge, WeightedEdge &gt;</type>
+        <definition>std::pair&lt; MachineBlockPlacement::WeightedEdge, MachineBlockPlacement::WeightedEdge &gt; MachineBlockPlacement::getBestNonConflictingEdges</definition>
+        <argsstring>(const MachineBasicBlock *BB, MutableArrayRef&lt; SmallVector&lt; WeightedEdge, 8 &gt; &gt; Edges)</argsstring>
+        <name>getBestNonConflictingEdges</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::getBestNonConflictingEdges</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_mutable_array_ref" kindref="compound">MutableArrayRef</ref>&lt; <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; WeightedEdge, 8 &gt; &gt;</type>
+          <declname>Edges</declname>
+        </param>
+        <briefdescription>
+<para>Get the best pair of non-conflicting edges. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Pick the highest total weight pair of edges that can both be laid out.</para>
+<para>The edges in <computeroutput>Edges</computeroutput>[0] are assumed to have a different destination than the edges in <computeroutput>Edges</computeroutput>[1]. Simple counting shows that the best pair is either the individual highest weight edges to the 2 different destinations, or in case of a conflict, one of them should be replaced with a 2nd best edge. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="587" column="20" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="1034" bodyend="1068"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ad7175334e09f55bf7b5fb08d9522449e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::MachineBlockPlacement</definition>
+        <argsstring>()</argsstring>
+        <name>MachineBlockPlacement</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::MachineBlockPlacement</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="614" column="3" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="614" bodyend="616"/>
+        <references refid="classllvm_1_1_pass_registry_1a05a729900b76c89e808c6c3094921b2f" compoundref="_pass_registry_8cpp" startline="24" endline="27">llvm::PassRegistry::getPassRegistry</references>
+        <references refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a4944db6b12999ee0713352c27e8125e4" compoundref="_machine_block_placement_8cpp" startline="612">ID</references>
+        <references refid="namespacellvm_1af3e08655b0654029c7cf037651c8d7d6">llvm::initializeMachineBlockPlacementPass</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" compoundref="_machine_function_pass_8h" startline="41" endline="41">llvm::MachineFunctionPass::MachineFunctionPass</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a1f0291b83febf5c94491d76bf5236799" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineBlockPlacement::runOnMachineFunction</definition>
+        <argsstring>(MachineFunction &amp;F) override</argsstring>
+        <name>runOnMachineFunction</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::runOnMachineFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1abb98ed32e4e5acae62ef3edd7bf04fb5">runOnMachineFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="618" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="3486" bodyend="3604"/>
+        <references refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ad65badde897b7d4f51fc7c545538a388" compoundref="_machine_block_placement_8cpp" startline="620" endline="623">allowTailDupPlacement</references>
+        <references refid="_machine_block_placement_8cpp_1a956f6faccd85fe2a75302e0ac3ecc606">ApplyExtTspForSize</references>
+        <references refid="namespacellvm_1a2dee051dfc0746e4fbf6e26175ece121">llvm::ApplyExtTspWithoutProfile</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_function_1ab0789854909cf47f640a85fa2bac29c7" compoundref="_machine_function_8h" startline="947" endline="947">llvm::MachineFunction::begin</references>
+        <references refid="_machine_block_placement_8cpp_1a84ae0b35deb4cbcffc27c3d52a781fca">BranchFoldPlacement</references>
+        <references refid="namespacellvm_1ae4599fe5d1385154f1bfbc41a10495c5" compoundref="_sample_profile_8cpp" startline="340">llvm::EnableExtTspBlockPlacement</references>
+        <references refid="classllvm_1_1_machine_function_1a9d017af749f76484cb9aec9ff6e4330c" compoundref="_machine_function_8h" startline="949" endline="949">llvm::MachineFunction::end</references>
+        <references refid="_machine_block_placement_8cpp_1a1160412b923427430e8bf4c819d79a93">ExtTspBlockPlacementMaxBlocks</references>
+        <references refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" compoundref="_pass_analysis_support_8h" startline="230" endline="233">llvm::Pass::getAnalysis</references>
+        <references refid="classllvm_1_1_machine_function_1a977ddce262de45c645be23d951066351" compoundref="_machine_function_8h" startline="704" endline="704">llvm::MachineFunction::getFunction</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1acd858ed72f11db9444617740c3622608" compoundref="_target_subtarget_info_8h" startline="97" endline="97">llvm::TargetSubtargetInfo::getInstrInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3d142c9e7c066059e15232c56dec9e2e" compoundref="_machine_function_8cpp" startline="645" endline="647">llvm::MachineFunction::getName</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1a43c530c830206ecf5ad3359364634c75" compoundref="_target_subtarget_info_8h" startline="129" endline="129">llvm::TargetSubtargetInfo::getRegisterInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classllvm_1_1_machine_function_1af777ff93c9e07a6ff5ffe3226deb3e76" compoundref="_machine_function_8h" startline="729" endline="729">llvm::MachineFunction::getTarget</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1ade3f0d8b35d67c43df9425bb730a9a7c" compoundref="_target_subtarget_info_8h" startline="101" endline="101">llvm::TargetSubtargetInfo::getTargetLowering</references>
+        <references refid="namespacellvm_1af0bf055834b973decc2477a8061624ffa49315903a2559d882f356ae28a455556" compoundref="_block_frequency_info_impl_8h" startline="1796">llvm::GVDT_None</references>
+        <references refid="_partial_inlining_8cpp_1a8884a3765a9cdbc730400587d4a3192c" compoundref="_partial_inlining_8cpp" startline="663" endline="675">hasProfileData</references>
+        <references refid="classllvm_1_1_branch_folder_1aa0d50fee4d0d41ccf591e29de109786f" compoundref="_branch_folding_8cpp" startline="180" endline="249">llvm::BranchFolder::OptimizeFunction</references>
+        <references refid="classllvm_1_1_machine_function_1ac85349aab432e6b7d8b2e8926048a6de" compoundref="_machine_function_8cpp" startline="343" endline="379">llvm::MachineFunction::RenumberBlocks</references>
+        <references refid="_machine_block_placement_8cpp_1ad1fed248fc2af534bd094b35c9f0c64b">RenumberBlocksBeforeView</references>
+        <references refid="classllvm_1_1_target_machine_1aa276e49983e93afa359ec83ad71ccadc" compoundref="llvm_2_target_2_target_machine_8h" startline="223" endline="223">llvm::TargetMachine::requiresStructuredCFG</references>
+        <references refid="namespacellvm_1a3af72f14ea20f2c762c751d2d49e5ea3" compoundref="_machine_size_opts_8cpp" startline="27" endline="34">llvm::shouldOptimizeForSize</references>
+        <references refid="classllvm_1_1_machine_function_1a7d2ce2106f9f7cf8f45c7c3c116ef43d" compoundref="_machine_function_8h" startline="957" endline="957">llvm::MachineFunction::size</references>
+        <references refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" compoundref="_sandbox_i_r_2_pass_8cpp" startline="178" endline="190">llvm::FunctionPass::skipFunction</references>
+        <references refid="_branch_folding_8cpp_1a73423bf857429f170a6355ae20e1d798">TailMergeSize</references>
+        <references refid="namespacellvm_1a6391a34afa5b4ed1a5e556a8cc4d971b" compoundref="_machine_block_frequency_info_8cpp" startline="66">llvm::ViewBlockFreqFuncName</references>
+        <references refid="namespacellvm_1a7cc8a419725f3a9ce1d23c2db21ea143" compoundref="_machine_block_placement_8cpp" startline="235">llvm::ViewBlockLayoutWithBFI</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ad65badde897b7d4f51fc7c545538a388" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::allowTailDupPlacement</definition>
+        <argsstring>() const</argsstring>
+        <name>allowTailDupPlacement</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::allowTailDupPlacement</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="620" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="620" bodyend="623"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_machine_block_placement_8cpp_1abf71e6f582691ae8bdf8ed170fb11ae6">TailDupPlacement</references>
+        <referencedby refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a1f0291b83febf5c94491d76bf5236799" compoundref="_machine_block_placement_8cpp" startline="3486" endline="3604">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a237eea84de9a4035f23734cb04d32389" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::getAnalysisUsage</definition>
+        <argsstring>(AnalysisUsage &amp;AU) const override</argsstring>
+        <name>getAnalysisUsage</name>
+        <qualifiedname>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement::getAnalysisUsage</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1a6590d0486104165ca40c7df0707f7b9e">getAnalysisUsage</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_analysis_usage" kindref="compound">AnalysisUsage</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>getAnalysisUsage - This function should be overriden by passes that need analysis information to do their job. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If a pass specifies that it uses a particular analysis result to this function, it can then use the <ref refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" kindref="member">getAnalysis&lt;AnalysisType&gt;()</ref> function, below. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="625" column="8" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="625" bodyend="634"/>
+        <references refid="classllvm_1_1_analysis_usage_1ae0adcccca08fb686c9ce00f9397b660c" compoundref="_pass_analysis_support_8h" startline="75" endline="77">llvm::AnalysisUsage::addRequired</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e" compoundref="_machine_function_pass_8cpp" startline="169" endline="190">llvm::MachineFunctionPass::getAnalysisUsage</references>
+        <references refid="_machine_block_placement_8cpp_1abf71e6f582691ae8bdf8ed170fb11ae6">TailDupPlacement</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</label>
+        <link refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</label>
+        <link refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/CodeGen/MachineBlockPlacement.cpp" line="360" column="1" bodyfile="lib/CodeGen/MachineBlockPlacement.cpp" bodystart="360" bodyend="635"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a0b76bc8d639056cba8c0deaa82dab8ba" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>alignBlocks</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ad65badde897b7d4f51fc7c545538a388" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>allowTailDupPlacement</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a74729b845cbd9fa6bc1ad1e004e725eb" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>applyExtTsp</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a9da2ef31296d894b5114536904af573b" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>assignBlockOrder</name></member>
+      <member refid="classllvm_1_1_function_pass_1a748922f143f2da9a13b0b15ff6a3dd22" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>assignPassManager</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a2c69f46915104b4b42bad5b16926896b" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>BlockFilterSet</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ad3fc59ca71bf4817ece50eb678512a81" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>BlocksWithUnanalyzableExits</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a73f0109902ee879fc0f2fb344a40ec60" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>BlockToChain</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1aae3cba63507b6bbbb2a0132e16880431" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>BlockWorkList</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a0f22114b14e9ddeab55355f3c27acc58" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>buildCFGChains</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a66ed2f04dbeb423f8b2b05d83fe373c0" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>buildChain</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a752789a7a68c3b05cf9c6a697457c0f6" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>buildLoopChains</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a94c706ea3bc7f05bb86d36f275569739" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>canMoveBottomBlockToTop</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ac0a79faa1efd30a5da08320dfb6844e4" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>canTailDuplicateUnplacedPreds</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a409c5b3292089d63a3a8afc797f7853d" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>ChainAllocator</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a1acc167ff314bcf89aa2028e25ffaaf2" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>collectLoopBlockSet</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1af4f747b70337f75406dd9c17e20c2903" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>collectViableSuccessors</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a787183229d5c3229b5084e4577e3083d" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>ComputedEdges</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a2b9d27f22cbc9e88e6fd93b4cbb0c67f" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>createCFGChainExtTsp</name></member>
+      <member refid="classllvm_1_1_pass_1a2ed7d79d79dffe7368c3d3cdf40dd80e" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>createPass</name></member>
+      <member refid="classllvm_1_1_pass_1ac7811985250c75d7e2a244292d615fff" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>doFinalization</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a204ffdf4717a340f8cbe1fd1341a8148" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>doInitialization</name></member>
+      <member refid="classllvm_1_1_pass_1a1a60731eeff800b39fca7280a5a167ae" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_pass_1ad2f0576ef7c9c4af40e35001c81f4922" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>dumpPassStructure</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ae11922d600fffe2c8358b1ab5746328d" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>DupThreshold</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a78e15aacb3f480ea24dcef7ee9bf2942" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>EHPadWorkList</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a441346b8c3a351fc729ba5322d76f650" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>F</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a48d9afd96859e481b29ccc73e1b7501c" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>FallThroughGains</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1acb4f20302361dca3c6ad9c7a0a23a254" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>fillWorkLists</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1afa49006361b1edf655176b7b8f4d974d" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>findBestLoopExit</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a700f6c4424f435cc11b5afabd9c115a4" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>findBestLoopTop</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a52cc0da9270fd9c0b3429a269a01bb08" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>findBestLoopTopHelper</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ae7b682f772067f17b5b2a9fd6450053e" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>findDuplicateCandidates</name></member>
+      <member refid="classllvm_1_1_function_pass_1a7691d83e3561f781cae4ce4a01bdfa93" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>FunctionPass</name></member>
+      <member refid="classllvm_1_1_pass_1a03d3a81b1c46aff7c38ef3a6750ba225" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getAdjustedAnalysisPointer</name></member>
+      <member refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a560d384c0cef7f62836884fdbbd1fe66" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a6613f29d3e54ce175ac33fb9ba264fae" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1a2190247edbacb33b4e8a3d409fa2d99e" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getAnalysisIfAvailable</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a237eea84de9a4035f23734cb04d32389" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getAnalysisUsage</name></member>
+      <member refid="classllvm_1_1_pass_1ae31759fd992cddb1f2d62ab0df85834a" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getAsImmutablePass</name></member>
+      <member refid="classllvm_1_1_pass_1a626b77ef8abdfa9f53c697ad129a6e5a" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getAsPMDataManager</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a984864f0c5f4ecf52a87268c077969ee" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getBestNonConflictingEdges</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a5d4e1f1116322b2fae38b312ea5604f8" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getBestTrellisSuccessor</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1aadb8826c90dd0b335005ad4bcec6a319" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getBlockCountOrFrequency</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a22bc7c91051dca8dc211c3afe9929603" prot="protected" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getClearedProperties</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a4fc423946a994d1c522af1f0cdd78842" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getFirstUnplacedBlock</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a05bb0192a595fdd2777b79e53dda7699" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getFirstUnplacedBlock</name></member>
+      <member refid="classllvm_1_1_pass_1a63192e749ba4a0ee29336a59d6a19647" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getPassID</name></member>
+      <member refid="classllvm_1_1_pass_1a9de4db62e6884f2e5efea6793af30d99" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getPassKind</name></member>
+      <member refid="classllvm_1_1_pass_1ad729b39eacf070a9bca84533b3c743bf" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getPassName</name></member>
+      <member refid="classllvm_1_1_function_pass_1a68517706d9801aec6d20c32a424ed152" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getPotentialPassManagerType</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1af0f2f06a3a773431ee9813351d609c4d" prot="protected" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getRequiredProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a969c082f66671df288441bbad9ca87db" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getResolver</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a8fbedd15c1c809e6050f3fd3ccd3338e" prot="protected" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>getSetProperties</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a3a68e0308163acb4ff57c35fda2d4c0b" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>hasBetterLayoutPredecessor</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a2ff12fe20ff61e8bf79201ab31679c39" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>hasViableTopFallthrough</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a4944db6b12999ee0713352c27e8125e4" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>ID</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a332bfc8fa4bd863bb875ec26f28764c9" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>initTailDupThreshold</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1abd05f1814cdb465e33bbd1f8ad3acc9c" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>isBestSuccessor</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1aeb5410d1504b3e2a7a4a0685d8bba226" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>isProfitableToTailDup</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a314cc0aa7d21a01c59621f195b117be7" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>isTrellis</name></member>
+      <member refid="classllvm_1_1_pass_1aab174263c400ece13a7278990e102fa6" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_pass_1a992ff669acca94459037cfb1f41cb9dc" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>lookupPassInfo</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ad7175334e09f55bf7b5fb08d9522449e" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>MachineBlockPlacement</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>MachineFunctionPass</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a7fa0e67ba11ea993bd3f047cb851220a" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>markBlockSuccessors</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a8609559711967b7ec0af133d7979c4d9" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>markChainSuccessors</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a7e211e03c3ab0d21b495345984eb1b63" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>maybeTailDuplicateBlock</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ae4d3256c15bed44ceb54bd6d1e98eeac" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>MBFI</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a1cafd878b0393094413d5314b7f5433f" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>MBPI</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a9043c382d0cd4a27bb67f8d04f51f0bd" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>MLI</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1aebd727768855e8c4d0aec1e56ef0276d" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>MPDT</name></member>
+      <member refid="classllvm_1_1_pass_1a0b4a511579939b07831db90c3fc98996" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>mustPreserveAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af468a2aeb0d98e3dbeda38176ce516d3" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>operator=</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a45f862faa7617594bcb965034bbf4c39" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>optimizeBranches</name></member>
+      <member refid="classllvm_1_1_pass_1a16baa169d062524be5a6b67609266174" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1ad40d19ce644ec38c52ea00be59016cd5" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>Pass</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a657470178bb8e218eff04adbf577e575" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>PassConfig</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a9f9503d0622e93edb0a6ba39a1a83bc9" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>precomputeTriangleChains</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a2a50cdc995bbaf9976f47390525c799b" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>PreferredLoopExit</name></member>
+      <member refid="classllvm_1_1_pass_1aa5f61a8789f87816c5f494d42a70f01f" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>preparePassManager</name></member>
+      <member refid="classllvm_1_1_pass_1a061b4c01e9c189208dbfd3c77fdb9a5c" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>print</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a0bf36e76dddb06c1e1ffa7510b32f1e5" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>PSI</name></member>
+      <member refid="classllvm_1_1_pass_1aeb6e74b0f36a0acd1d20149ef088715a" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>releaseMemory</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a65ae9e4e255c09f00874e3defceaaf75" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>repeatedlyTailDuplicateBlock</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a9447fbcd903da1f7bca306c626f7b3da" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>rotateLoop</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a48fba9be30449ffa8970bb8aa4edb2b9" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>rotateLoopWithProfile</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a1f0291b83febf5c94491d76bf5236799" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>runOnMachineFunction</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a009bd7be185b0d28640c95a65d3015cd" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>scaleThreshold</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a3dbe168d7c61f38f4c3c8e68ddc68bc0" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>selectBestCandidateBlock</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a3ed68a87de5a4e312f928382ee2d8a39" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>selectBestSuccessor</name></member>
+      <member refid="classllvm_1_1_pass_1a2423fcc912a698d4f36c9c9380b53a50" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>setResolver</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a7d6e3b50fb30841d4a19f267d7ba413a" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>shouldTailDuplicate</name></member>
+      <member refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>skipFunction</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a70a3df2e6483c164757dceb156788a11" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>TailDup</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1ace8891a946fba735052f70421f420e8d" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>TailDupSize</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a6be7707838427e4d20b01d1888fd1950" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>TII</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1aff48bdcbafede2c75e4d99a4b8a62cb0" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>TLI</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1acea1eb87358ab0ae882000fdfa36feb9" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>TopFallThroughFreq</name></member>
+      <member refid="classanonymous__namespace_02_machine_block_placement_8cpp_03_1_1_machine_block_placement_1a581affb9c081f5fb1826892f66531871" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>UseProfileCount</name></member>
+      <member refid="classllvm_1_1_pass_1ac8ef6f57d4ec869a7f1007aeddf2b169" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>verifyAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1abe2fe9b29d21424fe4b410fc8e98606c" prot="public" virt="virtual"><scope>anonymous_namespace{MachineBlockPlacement.cpp}::MachineBlockPlacement</scope><name>~Pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

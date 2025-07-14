@@ -1,0 +1,1605 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03" kind="namespace" language="C++">
+    <compoundname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}</compoundname>
+    <innerclass refid="classanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_a_arch64_post_legalizer_lowering_impl" prot="public">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::AArch64PostLegalizerLoweringImpl</innerclass>
+    <innerclass refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo" prot="public">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1acf625a32c19c58380ada30e43781d0ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::pair&lt; <ref refid="classbool" kindref="compound">bool</ref>, <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt; &gt;</type>
+        <definition>std::optional&lt; std::pair&lt; bool, uint64_t &gt; &gt; anonymous_namespace{AArch64PostLegalizerLowering.cpp}::getExtMask</definition>
+        <argsstring>(ArrayRef&lt; int &gt; M, unsigned NumElts)</argsstring>
+        <name>getExtMask</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::getExtMask</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; int &gt;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NumElts</declname>
+        </param>
+        <briefdescription>
+<para>Check if a G_EXT instruction can handle a shuffle mask <computeroutput>M</computeroutput> when the vector sources of the shuffle are different. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="81" column="15" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="81" bodyend="119"/>
+        <references refid="namespacellvm_1a61d13d6824ec46c31260a4fd0997eda0" compoundref="_s_t_l_extras_8h" startline="1746" endline="1748">llvm::any_of</references>
+        <references refid="namespacellvm_1ac78c09ae232b2ce188ff590d51e3c268" compoundref="_s_t_l_extras_8h" startline="1766" endline="1768">llvm::find_if</references>
+        <references refid="classllvm_1_1_a_p_int_1a217e0207d9cc8e046c2dccbf0e4bb198" compoundref="_a_p_int_8h" startline="1520" endline="1525">llvm::APInt::getZExtValue</references>
+        <references refid="classllvm_1_1_a_p_int_1aae3b959a0a2981340fd03c29f528f2f0" compoundref="_a_p_int_8h" startline="1739" endline="1739">llvm::APInt::logBase2</references>
+        <references refid="namespacellvm_1a341215803e83773a3e97860dc291f121" compoundref="iterator__range_8h" startline="77" endline="79">llvm::make_range</references>
+        <referencedby refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a0e7fcc80fba58e49993976fe1ca63bb6" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="352" endline="380">matchEXT</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a61f448f38b08c0471d67cb0b0240ba86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::pair&lt; <ref refid="classbool" kindref="compound">bool</ref>, int &gt; &gt;</type>
+        <definition>std::optional&lt; std::pair&lt; bool, int &gt; &gt; anonymous_namespace{AArch64PostLegalizerLowering.cpp}::isINSMask</definition>
+        <argsstring>(ArrayRef&lt; int &gt; M, int NumInputElements)</argsstring>
+        <name>isINSMask</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::isINSMask</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; int &gt;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>NumInputElements</declname>
+        </param>
+        <briefdescription>
+<para>Helper function for matchINS. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a value when <computeroutput>M</computeroutput> is an ins mask for <computeroutput>NumInputElements</computeroutput>.</para>
+</simplesect>
+First element of the returned pair is true when the produced G_INSERT_VECTOR_ELT destination should be the LHS of the G_SHUFFLE_VECTOR.</para>
+<para>Second element is the destination lane for the G_INSERT_VECTOR_ELT. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="129" column="15" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="129" bodyend="150"/>
+        <referencedby refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a2ee6326b52dadb77c3f2a942357122c1" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="484" endline="509">matchINS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a5f2ddad973979c1e22c12df4eb61d289" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchREV</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, ShuffleVectorPseudo &amp;MatchInfo)</argsstring>
+        <name>matchREV</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchREV</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo" kindref="compound">ShuffleVectorPseudo</ref> &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if a G_SHUFFLE_VECTOR instruction <computeroutput>MI</computeroutput> can be replaced with a G_REV instruction. Returns the appropriate G_REV opcode in <computeroutput>Opc</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="154" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="154" bodyend="186"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a83f67cbf085fcd2c92b4e126c42c779e" compoundref="_a_arch64_perfect_shuffle_8h" startline="6702" endline="6724">llvm::isREVMask</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1a60d9148780c72da3c2a7b5bfa0954615">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::ShuffleVectorPseudo</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1abe0132c19c2bd5fa7901bdcbf8e2791e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchTRN</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, ShuffleVectorPseudo &amp;MatchInfo)</argsstring>
+        <name>matchTRN</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchTRN</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo" kindref="compound">ShuffleVectorPseudo</ref> &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if a G_SHUFFLE_VECTOR instruction <computeroutput>MI</computeroutput> can be replaced with a G_TRN1 or G_TRN2 instruction. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="190" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="190" bodyend="204"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a3557bd5bf8d46a334181220040a54407" compoundref="_a_arch64_perfect_shuffle_8h" startline="6686" endline="6697">llvm::isTRNMask</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1a60d9148780c72da3c2a7b5bfa0954615">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::ShuffleVectorPseudo</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a9107f70b16e7f301b6bb8d8f8a9c3d11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchUZP</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, ShuffleVectorPseudo &amp;MatchInfo)</argsstring>
+        <name>matchUZP</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchUZP</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo" kindref="compound">ShuffleVectorPseudo</ref> &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if a G_SHUFFLE_VECTOR instruction <computeroutput>MI</computeroutput> can be replaced with a G_UZP1 or G_UZP2 instruction.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">MI</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The shuffle vector instruction. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">MatchInfo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Either G_UZP1 or G_UZP2 on success. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="211" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="211" bodyend="225"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a80b0675ed4d93b3ed0728f977e2b75ae" compoundref="_a_arch64_perfect_shuffle_8h" startline="6659" endline="6681">llvm::isUZPMask</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1a60d9148780c72da3c2a7b5bfa0954615">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::ShuffleVectorPseudo</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a360fc2ad0865f80a9d354eb41b791e0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchZip</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, ShuffleVectorPseudo &amp;MatchInfo)</argsstring>
+        <name>matchZip</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchZip</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo" kindref="compound">ShuffleVectorPseudo</ref> &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="227" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="227" bodyend="241"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1aa8285681750cd2e7633f8737a8e45bf5" compoundref="_a_arch64_perfect_shuffle_8h" startline="6626" endline="6654">llvm::isZIPMask</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1a60d9148780c72da3c2a7b5bfa0954615">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::ShuffleVectorPseudo</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a9b2765617a7f219018411ea15d1b2357" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchDupFromInsertVectorElt</definition>
+        <argsstring>(int Lane, MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, ShuffleVectorPseudo &amp;MatchInfo)</argsstring>
+        <name>matchDupFromInsertVectorElt</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchDupFromInsertVectorElt</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>Lane</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo" kindref="compound">ShuffleVectorPseudo</ref> &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+<para>Helper function for matchDup. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="244" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="244" bodyend="281"/>
+        <references refid="namespacellvm_1a0edf31d256ecb3ac003bf2d81a576c9e" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="645" endline="649">llvm::getOpcodeDef</references>
+        <references refid="namespacellvm_1_1_m_i_pattern_match_1a42b1e7334c8da7ebef6e192f085eb563" compoundref="_m_i_pattern_match_8h" startline="238" endline="238">llvm::MIPatternMatch::m_ZeroInt</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1_1_m_i_pattern_match_1aa9bd186f4281a367fb872d17d0e7728b" compoundref="_m_i_pattern_match_8h" startline="25" endline="28">llvm::MIPatternMatch::mi_match</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1a60d9148780c72da3c2a7b5bfa0954615">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::ShuffleVectorPseudo</references>
+        <referencedby refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a040bb477a18726cd6117b7b20f1642c4" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="306" endline="321">matchDup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1aab8df7d7e3ce751342641af96a441226" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchDupFromBuildVector</definition>
+        <argsstring>(int Lane, MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, ShuffleVectorPseudo &amp;MatchInfo)</argsstring>
+        <name>matchDupFromBuildVector</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchDupFromBuildVector</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>Lane</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo" kindref="compound">ShuffleVectorPseudo</ref> &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+<para>Helper function for matchDup. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="284" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="284" bodyend="304"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a0edf31d256ecb3ac003bf2d81a576c9e" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="645" endline="649">llvm::getOpcodeDef</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1a60d9148780c72da3c2a7b5bfa0954615">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::ShuffleVectorPseudo</references>
+        <referencedby refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a040bb477a18726cd6117b7b20f1642c4" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="306" endline="321">matchDup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a040bb477a18726cd6117b7b20f1642c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchDup</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, ShuffleVectorPseudo &amp;MatchInfo)</argsstring>
+        <name>matchDup</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchDup</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo" kindref="compound">ShuffleVectorPseudo</ref> &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="306" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="306" bodyend="321"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1afe8a7cc03eb7adf81589f0744e379f74" compoundref="_vector_utils_8cpp" startline="290" endline="306">llvm::getSplatIndex</references>
+        <references refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1aab8df7d7e3ce751342641af96a441226" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="284" endline="304">matchDupFromBuildVector</references>
+        <references refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a9b2765617a7f219018411ea15d1b2357" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="244" endline="281">matchDupFromInsertVectorElt</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ac8d7723495a75e290cb489accc124544" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::isSingletonExtMask</definition>
+        <argsstring>(ArrayRef&lt; int &gt; M, LLT Ty)</argsstring>
+        <name>isSingletonExtMask</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::isSingletonExtMask</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; int &gt;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_l_l_t" kindref="compound">LLT</ref></type>
+          <declname>Ty</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="325" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="325" bodyend="350"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a0e7fcc80fba58e49993976fe1ca63bb6" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="352" endline="380">matchEXT</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a0e7fcc80fba58e49993976fe1ca63bb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchEXT</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, ShuffleVectorPseudo &amp;MatchInfo)</argsstring>
+        <name>matchEXT</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchEXT</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo" kindref="compound">ShuffleVectorPseudo</ref> &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="352" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="352" bodyend="380"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1acf625a32c19c58380ada30e43781d0ae" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="81" endline="119">getExtMask</references>
+        <references refid="classllvm_1_1_l_l_t_1a71181d67d0bf68c3b8a535ec20463f90" compoundref="_low_level_type_8h" startline="159" endline="166">llvm::LLT::getNumElements</references>
+        <references refid="namespacellvm_1a0edf31d256ecb3ac003bf2d81a576c9e" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="645" endline="649">llvm::getOpcodeDef</references>
+        <references refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ac8d7723495a75e290cb489accc124544" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="325" endline="350">isSingletonExtMask</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1a60d9148780c72da3c2a7b5bfa0954615">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::ShuffleVectorPseudo</references>
+        <references refid="namespacestd_1ab8424022895aee3e366fb9a32f2883cb" compoundref="_bit_vector_8h" startline="860" endline="860">std::swap</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ad32e02ce8096aee6a5378ec754bf5034" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyShuffleVectorPseudo</definition>
+        <argsstring>(MachineInstr &amp;MI, ShuffleVectorPseudo &amp;MatchInfo)</argsstring>
+        <name>applyShuffleVectorPseudo</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyShuffleVectorPseudo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo" kindref="compound">ShuffleVectorPseudo</ref> &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+<para>Replace a G_SHUFFLE_VECTOR instruction with a pseudo. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>Opc</computeroutput> is the opcode to use. <computeroutput>MI</computeroutput> is the G_SHUFFLE_VECTOR. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="384" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="384" bodyend="389"/>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a8bc92b8a902afb7675480ecc729a66d4" compoundref="_machine_i_r_builder_8h" startline="417" endline="419">llvm::MachineIRBuilder::buildInstr</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1a87e8e4a2a5e8a93ab861aa885e0ce1ee" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="70">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::Opc</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1afb5dd89cc73c6ba82243116bab56e479" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="72">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::SrcOps</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ab5aa406f974e74967376237df439846a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyEXT</definition>
+        <argsstring>(MachineInstr &amp;MI, ShuffleVectorPseudo &amp;MatchInfo)</argsstring>
+        <name>applyEXT</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyEXT</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo" kindref="compound">ShuffleVectorPseudo</ref> &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+<para>Replace a G_SHUFFLE_VECTOR instruction with G_EXT. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Special-cased because the constant operand must be emitted as a G_CONSTANT for the imported tablegen patterns to work. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="394" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="394" bodyend="406"/>
+        <references refid="classllvm_1_1_machine_i_r_builder_1af751c28a69e1d07e19dad11e4e26a70d" compoundref="_machine_i_r_builder_8cpp" startline="317" endline="339">llvm::MachineIRBuilder::buildConstant</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1ae32b6e2213ad3119a124e6e0673a5898" compoundref="_machine_i_r_builder_8cpp" startline="312" endline="315">llvm::MachineIRBuilder::buildCopy</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a8bc92b8a902afb7675480ecc729a66d4" compoundref="_machine_i_r_builder_8h" startline="417" endline="419">llvm::MachineIRBuilder::buildInstr</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1a2d139a37610d566987401c615398a3b3" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="71">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::Dst</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1a87e8e4a2a5e8a93ab861aa885e0ce1ee" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="70">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::Opc</references>
+        <references refid="classllvm_1_1_l_l_t_1a67021459c7ef8f9a634b4eac7ffd0f96" compoundref="_low_level_type_8h" startline="42" endline="46">llvm::LLT::scalar</references>
+        <references refid="structanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1_1_shuffle_vector_pseudo_1afb5dd89cc73c6ba82243116bab56e479" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="72">anonymous_namespace{AArch64PostLegalizerLowering.cpp}::ShuffleVectorPseudo::SrcOps</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1adf82bf97d32fede84099257eb720a1a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyFullRev</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>applyFullRev</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyFullRev</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="408" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="408" bodyend="419"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1af751c28a69e1d07e19dad11e4e26a70d" compoundref="_machine_i_r_builder_8cpp" startline="317" endline="339">llvm::MachineIRBuilder::buildConstant</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a8bc92b8a902afb7675480ecc729a66d4" compoundref="_machine_i_r_builder_8h" startline="417" endline="419">llvm::MachineIRBuilder::buildInstr</references>
+        <references refid="classllvm_1_1_l_l_t_1a956ffd0de93798f523683b447646dd92" compoundref="_low_level_type_8h" startline="190" endline="196">llvm::LLT::getSizeInBits</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="classllvm_1_1_l_l_t_1a67021459c7ef8f9a634b4eac7ffd0f96" compoundref="_low_level_type_8h" startline="42" endline="46">llvm::LLT::scalar</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1aa5c9be1556d71510d66f17301101bfcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchNonConstInsert</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>matchNonConstInsert</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchNonConstInsert</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="421" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="421" bodyend="427"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac76eb82370e997f967454f441effbbff" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="433" endline="437">llvm::getIConstantVRegValWithLookThrough</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a580c192e2fc41ab69e61d087027ceabf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyNonConstInsert</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;Builder)</argsstring>
+        <name>applyNonConstInsert</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyNonConstInsert</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="429" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="429" bodyend="471"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a33eb6083767372c564ea4bcf6c06eaf1" compoundref="_machine_i_r_builder_8h" startline="1881" endline="1884">llvm::MachineIRBuilder::buildAnd</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1af751c28a69e1d07e19dad11e4e26a70d" compoundref="_machine_i_r_builder_8cpp" startline="317" endline="339">llvm::MachineIRBuilder::buildConstant</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a92664cdbeb0b24030809439993ac271d" compoundref="_machine_i_r_builder_8cpp" startline="147" endline="154">llvm::MachineIRBuilder::buildFrameIndex</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a7962eca94c9f77da448245745fb22f57" compoundref="_machine_i_r_builder_8h" startline="959" endline="962">llvm::MachineIRBuilder::buildLoad</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a31a4848346777be4c13b39d57c0885d0" compoundref="_machine_i_r_builder_8h" startline="1769" endline="1773">llvm::MachineIRBuilder::buildMul</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a7aae2634e3c0980c4f68983738b90ff7" compoundref="_machine_i_r_builder_8cpp" startline="202" endline="209">llvm::MachineIRBuilder::buildPtrAdd</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a87a7405685118d45876c996318829ceb" compoundref="_machine_i_r_builder_8cpp" startline="468" endline="479">llvm::MachineIRBuilder::buildStore</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_machine_frame_info_1a1ae307f415a8989475e3f7ddd6eefc8b" compoundref="_machine_frame_info_8cpp" startline="51" endline="64">llvm::MachineFrameInfo::CreateStackObject</references>
+        <references refid="structllvm_1_1_machine_pointer_info_1ad8ce1aee13dbdcc05d20284a30e83170" compoundref="_machine_operand_8cpp" startline="1072" endline="1075">llvm::MachinePointerInfo::getFixedStack</references>
+        <references refid="classllvm_1_1_machine_function_1a54f334a9c8ca6d105eae383ae87e4524" compoundref="_machine_function_8h" startline="749" endline="749">llvm::MachineFunction::getFrameInfo</references>
+        <references refid="classllvm_1_1details_1_1_fixed_or_scalable_quantity_1ac4ab9dd9440c55bee1aa4a1195cee759" compoundref="_type_size_8h" startline="168" endline="168">llvm::details::FixedOrScalableQuantity&lt; LeafTy, ValueTy &gt;::getKnownMinValue</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a9ec04f3692b9601036d2d4477c4c3749" compoundref="_machine_i_r_builder_8h" startline="287" endline="290">llvm::MachineIRBuilder::getMF</references>
+        <references refid="classllvm_1_1_l_l_t_1a71181d67d0bf68c3b8a535ec20463f90" compoundref="_low_level_type_8h" startline="159" endline="166">llvm::LLT::getNumElements</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a1c5fadb14ff1d77faad0cb58a43252ab" compoundref="_machine_instr_builder_8h" startline="96" endline="96">llvm::MachineInstrBuilder::getReg</references>
+        <references refid="classllvm_1_1_l_l_t_1ae456a811703836ee5d9e32c3e51a15b6" compoundref="_low_level_type_8h" startline="200" endline="203">llvm::LLT::getSizeInBytes</references>
+        <references refid="namespacellvm_1a434f6a0d80fb13e4326e848a6391f057" compoundref="_math_extras_8h" startline="297" endline="299">llvm::isPowerOf2_64</references>
+        <references refid="classllvm_1_1_l_l_t_1a3016e0f01ad96a198f81f74397b1c0e6" compoundref="_low_level_type_8h" startline="181" endline="181">llvm::LLT::isScalableVector</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="_x86_partial_reduction_8cpp_1ae0f503db91504a3f3440ab81260e4134" compoundref="_x86_partial_reduction_8cpp" startline="68">Mul</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <references refid="classllvm_1_1_l_l_t_1a7ff0361855acbbe71b15b8dc6003fbc5" compoundref="_low_level_type_8h" startline="57" endline="61">llvm::LLT::pointer</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1ab24db762f0912a99f1e4d9e44eaeaa44" compoundref="_machine_i_r_builder_8h" startline="376" endline="379">llvm::MachineIRBuilder::setInstrAndDebugLoc</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a2ee6326b52dadb77c3f2a942357122c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchINS</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, std::tuple&lt; Register, int, Register, int &gt; &amp;MatchInfo)</argsstring>
+        <name>matchINS</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchINS</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type>std::tuple&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, int, <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, int &gt; &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+<para>Match a G_SHUFFLE_VECTOR with a mask which corresponds to a G_INSERT_VECTOR_ELT and G_EXTRACT_VECTOR_ELT pair. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>e.g. shuf = G_SHUFFLE_VECTOR left, right, shufflemask(0, 0)</para>
+<para>Can be represented as</para>
+<para>extract = G_EXTRACT_VECTOR_ELT left, 0 ins = G_INSERT_VECTOR_ELT left, extract, 1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="484" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="484" bodyend="509"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a61f448f38b08c0471d67cb0b0240ba86" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="129" endline="150">isINSMask</references>
+        <references refid="namespacellvm_1a2554a96c67bdd7d0a62855a844ec55b0a945d5e233cf7d6240f6b783b36a374ff" compoundref="_format_common_8h" startline="17">llvm::Left</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="namespacellvm_1a2554a96c67bdd7d0a62855a844ec55b0a92b09c7c48c520c3c55e497875da437c" compoundref="_format_common_8h" startline="17">llvm::Right</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a79c39eb0fd06bbc443b66f4b6d6711af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyINS</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;Builder, std::tuple&lt; Register, int, Register, int &gt; &amp;MatchInfo)</argsstring>
+        <name>applyINS</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyINS</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <param>
+          <type>std::tuple&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, int, <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, int &gt; &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="511" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="511" bodyend="525"/>
+        <references refid="classllvm_1_1_machine_i_r_builder_1af751c28a69e1d07e19dad11e4e26a70d" compoundref="_machine_i_r_builder_8cpp" startline="317" endline="339">llvm::MachineIRBuilder::buildConstant</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a7835e6cd3f1b340d3bb617304038d744" compoundref="_machine_i_r_builder_8cpp" startline="979" endline="982">llvm::MachineIRBuilder::buildExtractVectorElement</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1aca31191486506a279715dd3bf677d75f" compoundref="_machine_i_r_builder_8cpp" startline="973" endline="976">llvm::MachineIRBuilder::buildInsertVectorElement</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="classllvm_1_1_l_l_t_1a67021459c7ef8f9a634b4eac7ffd0f96" compoundref="_low_level_type_8h" startline="42" endline="46">llvm::LLT::scalar</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1ab24db762f0912a99f1e4d9e44eaeaa44" compoundref="_machine_i_r_builder_8h" startline="376" endline="379">llvm::MachineIRBuilder::setInstrAndDebugLoc</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a636f9045d913ee16ab01c97bbbac5fde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::isVShiftRImm</definition>
+        <argsstring>(Register Reg, MachineRegisterInfo &amp;MRI, LLT Ty, int64_t &amp;Cnt)</argsstring>
+        <name>isVShiftRImm</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::isVShiftRImm</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_l_l_t" kindref="compound">LLT</ref></type>
+          <declname>Ty</declname>
+        </param>
+        <param>
+          <type><ref refid="classint64__t" kindref="compound">int64_t</ref> &amp;</type>
+          <declname>Cnt</declname>
+        </param>
+        <briefdescription>
+<para>isVShiftRImm - Check if this is a valid vector for the immediate operand of a vector shift right operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The value must be in the range: 1 &lt;= <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> &lt;= ElementBits for a right shift. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="530" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="530" bodyend="540"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1_a_arch64_g_i_sel_utils_1afbd23de302bae474849243a215cb910c" compoundref="_a_arch64_global_i_sel_utils_8cpp" startline="33" endline="39">llvm::AArch64GISelUtils::getAArch64VectorSplatScalar</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <referencedby refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ab635ee0a18c3c7903a2351721c3604e6" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="543" endline="551">matchVAshrLshrImm</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ab635ee0a18c3c7903a2351721c3604e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchVAshrLshrImm</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, int64_t &amp;Imm)</argsstring>
+        <name>matchVAshrLshrImm</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchVAshrLshrImm</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classint64__t" kindref="compound">int64_t</ref> &amp;</type>
+          <declname>Imm</declname>
+        </param>
+        <briefdescription>
+<para>Match a vector G_ASHR or G_LSHR with a valid immediate shift. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="543" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="543" bodyend="551"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a636f9045d913ee16ab01c97bbbac5fde" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="530" endline="540">isVShiftRImm</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a976bf3034ffa13d0fd59454e588e316a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyVAshrLshrImm</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, int64_t &amp;Imm)</argsstring>
+        <name>applyVAshrLshrImm</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyVAshrLshrImm</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classint64__t" kindref="compound">int64_t</ref> &amp;</type>
+          <declname>Imm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="553" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="553" bodyend="563"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1af751c28a69e1d07e19dad11e4e26a70d" compoundref="_machine_i_r_builder_8cpp" startline="317" endline="339">llvm::MachineIRBuilder::buildConstant</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a8bc92b8a902afb7675480ecc729a66d4" compoundref="_machine_i_r_builder_8h" startline="417" endline="419">llvm::MachineIRBuilder::buildInstr</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="classllvm_1_1_l_l_t_1a67021459c7ef8f9a634b4eac7ffd0f96" compoundref="_low_level_type_8h" startline="42" endline="46">llvm::LLT::scalar</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a681a012ac18b27513b6715881d002520" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::pair&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref>, <ref refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78b" kindref="member">CmpInst::Predicate</ref> &gt; &gt;</type>
+        <definition>std::optional&lt; std::pair&lt; uint64_t, CmpInst::Predicate &gt; &gt; anonymous_namespace{AArch64PostLegalizerLowering.cpp}::tryAdjustICmpImmAndPred</definition>
+        <argsstring>(Register RHS, CmpInst::Predicate P, const MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>tryAdjustICmpImmAndPred</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::tryAdjustICmpImmAndPred</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78b" kindref="member">CmpInst::Predicate</ref></type>
+          <declname>P</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+<para>Determine if it is possible to modify the <computeroutput>RHS</computeroutput> and predicate <computeroutput>P</computeroutput> of a G_ICMP instruction such that the right-hand side is an arithmetic immediate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pair containing the updated immediate and predicate which may be used to optimize the instruction.</para>
+</simplesect>
+<simplesect kind="note"><para>This assumes that the comparison has been legalized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="573" column="1" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="573" bodyend="671"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="namespacellvm_1_1_a_arch64___i_m_m_1a77a4e6615fbc6c2bbcf179370dbd0fa9" compoundref="_a_arch64_expand_imm_8cpp" startline="533" endline="647">llvm::AArch64_IMM::expandMOVImm</references>
+        <references refid="namespacellvm_1ac76eb82370e997f967454f441effbbff" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="433" endline="437">llvm::getIConstantVRegValWithLookThrough</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78bac1aa7b798ba11d2e497d5cce6ce6d3dc" compoundref="_instr_types_8h" startline="701">llvm::CmpInst::ICMP_SGE</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba720a42e85f7e981afd61e28473b0000a" compoundref="_instr_types_8h" startline="700">llvm::CmpInst::ICMP_SGT</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba2751d6136a2819749dcef65dc19a4246" compoundref="_instr_types_8h" startline="703">llvm::CmpInst::ICMP_SLE</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba15ae464950ac676919c2f0c7aafc706c" compoundref="_instr_types_8h" startline="702">llvm::CmpInst::ICMP_SLT</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba573bcd571c938fce863525330bbfc4b8" compoundref="_instr_types_8h" startline="697">llvm::CmpInst::ICMP_UGE</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba607cecdc5172814382033e001ed11fad" compoundref="_instr_types_8h" startline="696">llvm::CmpInst::ICMP_UGT</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78bad92f160316221fd4090520bb2b3cefc5" compoundref="_instr_types_8h" startline="699">llvm::CmpInst::ICMP_ULE</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba91d86a4753c8bd7624e01bf565d87f8e" compoundref="_instr_types_8h" startline="698">llvm::CmpInst::ICMP_ULT</references>
+        <references refid="_a_arch64_m_i_peephole_opt_8cpp_1a96d5dc120196819fbfbc257cba09b2aa" compoundref="_a_arch64_m_i_peephole_opt_8cpp" startline="167">Insn</references>
+        <references refid="llvm-c_2_data_types_8h_1ad0d744f05898e32d01f73f8af3cd2071" compoundref="llvm-c_2_data_types_8h" startline="71">INT64_MAX</references>
+        <references refid="llvm-c_2_data_types_8h_1ab21f12f372f67b8ff0aa3432336ede67" compoundref="llvm-c_2_data_types_8h" startline="74">INT64_MIN</references>
+        <references refid="namespacellvm_1_1_a_arch64_g_i_sel_utils_1a698a57c6350d84d41c3892d6c5bb02ee" compoundref="_a_arch64_global_i_sel_utils_8h" startline="28" endline="30">llvm::AArch64GISelUtils::isLegalArithImmed</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="llvm-c_2_data_types_8h_1a30654b4b67d97c42ca3f9b6052dda916" compoundref="llvm-c_2_data_types_8h" startline="77">UINT64_MAX</references>
+        <referencedby refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a111e7be050368ec6ccc9946822ae7402" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="681" endline="692">matchAdjustICmpImmAndPred</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a111e7be050368ec6ccc9946822ae7402" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchAdjustICmpImmAndPred</definition>
+        <argsstring>(MachineInstr &amp;MI, const MachineRegisterInfo &amp;MRI, std::pair&lt; uint64_t, CmpInst::Predicate &gt; &amp;MatchInfo)</argsstring>
+        <name>matchAdjustICmpImmAndPred</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchAdjustICmpImmAndPred</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref>, <ref refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78b" kindref="member">CmpInst::Predicate</ref> &gt; &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+<para>Determine whether or not it is possible to update the RHS and predicate of a G_ICMP instruction such that the RHS will be selected as an arithmetic immediate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>MI</computeroutput> - The G_ICMP instruction <computeroutput>MatchInfo</computeroutput> - The new RHS immediate and predicate on success</para>
+<para>See tryAdjustICmpImmAndPred for valid transformations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="681" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="681" bodyend="692"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a681a012ac18b27513b6715881d002520" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="573" endline="671">tryAdjustICmpImmAndPred</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a50bbcbf690dd0de0a3f4abe2dd51fb55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyAdjustICmpImmAndPred</definition>
+        <argsstring>(MachineInstr &amp;MI, std::pair&lt; uint64_t, CmpInst::Predicate &gt; &amp;MatchInfo, MachineIRBuilder &amp;MIB, GISelChangeObserver &amp;Observer)</argsstring>
+        <name>applyAdjustICmpImmAndPred</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyAdjustICmpImmAndPred</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref>, <ref refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78b" kindref="member">CmpInst::Predicate</ref> &gt; &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>MIB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_change_observer" kindref="compound">GISelChangeObserver</ref> &amp;</type>
+          <declname>Observer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="694" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="694" bodyend="706"/>
+        <references refid="classllvm_1_1_machine_i_r_builder_1af751c28a69e1d07e19dad11e4e26a70d" compoundref="_machine_i_r_builder_8cpp" startline="317" endline="339">llvm::MachineIRBuilder::buildConstant</references>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1a45a05a932f80f51023592ff5131d56a5">llvm::GISelChangeObserver::changedInstr</references>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1a1f637715070a99aa4140444e12697f9a">llvm::GISelChangeObserver::changingInstr</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1ad7322f56c0659b8dc8e55567767b74d6" compoundref="_machine_i_r_builder_8h" startline="309" endline="309">llvm::MachineIRBuilder::getMRI</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1ab24db762f0912a99f1e4d9e44eaeaa44" compoundref="_machine_i_r_builder_8h" startline="376" endline="379">llvm::MachineIRBuilder::setInstrAndDebugLoc</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a726cda62bb8fa499c865bc2d38b17265" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchDupLane</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, std::pair&lt; unsigned, int &gt; &amp;MatchInfo)</argsstring>
+        <name>matchDupLane</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchDupLane</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, int &gt; &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="708" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="708" bodyend="762"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_l_l_t_1aa24450f600cabd7212bd264a6dbc190c" compoundref="_low_level_type_8h" startline="277" endline="283">llvm::LLT::getElementType</references>
+        <references refid="classllvm_1_1_l_l_t_1a956ffd0de93798f523683b447646dd92" compoundref="_low_level_type_8h" startline="190" endline="196">llvm::LLT::getSizeInBits</references>
+        <references refid="namespacellvm_1afe8a7cc03eb7adf81589f0744e379f74" compoundref="_vector_utils_8cpp" startline="290" endline="306">llvm::getSplatIndex</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1afda3e606ec193ca5b66ef40e9b6da474" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyDupLane</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;B, std::pair&lt; unsigned, int &gt; &amp;MatchInfo)</argsstring>
+        <name>applyDupLane</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyDupLane</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, int &gt; &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="764" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="764" bodyend="784"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="classllvm_1_1_l_l_t_1a67021459c7ef8f9a634b4eac7ffd0f96" compoundref="_low_level_type_8h" startline="42" endline="46">llvm::LLT::scalar</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ada38e4a8c07220e7a969008ea177551e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchScalarizeVectorUnmerge</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>matchScalarizeVectorUnmerge</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchScalarizeVectorUnmerge</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="786" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="786" bodyend="794"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ac457aab1ba60bb063b3115810ea525da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyScalarizeVectorUnmerge</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;B)</argsstring>
+        <name>applyScalarizeVectorUnmerge</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyScalarizeVectorUnmerge</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="796" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="796" bodyend="807"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ad9a5e80bc77674729bdcc1c2dc37a26a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchBuildVectorToDup</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>matchBuildVectorToDup</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchBuildVectorToDup</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="809" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="809" bodyend="821"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1_a_arch64_g_i_sel_utils_1a1c5d42864ce1e65a6adc088512f68b51" compoundref="_a_arch64_global_i_sel_utils_8cpp" startline="19" endline="30">llvm::AArch64GISelUtils::getAArch64VectorSplat</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="namespacellvm_1a766456df1dd21e804cd4596304e10764a5b9bf50c6579a978e5c1104bf8787651" compoundref="_complex_deinterleaving_pass_8h" startline="42">llvm::Splat</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a0a20e1db5f3a9423d554cb4d9e122055" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyBuildVectorToDup</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;B)</argsstring>
+        <name>applyBuildVectorToDup</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyBuildVectorToDup</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="823" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="823" bodyend="829"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a720407f5bae57f950848887c6a3578e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{AArch64PostLegalizerLowering.cpp}::getCmpOperandFoldingProfit</definition>
+        <argsstring>(Register CmpOp, MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>getCmpOperandFoldingProfit</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::getCmpOperandFoldingProfit</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>CmpOp</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>how many instructions would be saved by folding a G_ICMP&apos;s shift and/or extension operations. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="833" column="10" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="833" bodyend="883"/>
+        <references refid="namespacellvm_1a4b2430ab5e686b82f8cd6fd588d6de6f" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="486" endline="491">llvm::getDefIgnoringCopies</references>
+        <references refid="namespacellvm_1ac76eb82370e997f967454f441effbbff" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="433" endline="437">llvm::getIConstantVRegValWithLookThrough</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <referencedby refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a177c66f5e165807020847e8ce53e036c" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="887" endline="921">trySwapICmpOperands</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a177c66f5e165807020847e8ce53e036c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::trySwapICmpOperands</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>trySwapICmpOperands</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::trySwapICmpOperands</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if it would be profitable to swap the LHS and RHS of a G_ICMP instruction <computeroutput>MI</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="887" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="887" bodyend="921"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a720407f5bae57f950848887c6a3578e8" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="833" endline="883">getCmpOperandFoldingProfit</references>
+        <references refid="namespacellvm_1a4b2430ab5e686b82f8cd6fd588d6de6f" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="486" endline="491">llvm::getDefIgnoringCopies</references>
+        <references refid="namespacellvm_1ac76eb82370e997f967454f441effbbff" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="433" endline="437">llvm::getIConstantVRegValWithLookThrough</references>
+        <references refid="namespacellvm_1_1_a_arch64_g_i_sel_utils_1aecef689b4ba2a5bf1d3609151f448180" compoundref="_a_arch64_global_i_sel_utils_8cpp" startline="41" endline="59">llvm::AArch64GISelUtils::isCMN</references>
+        <references refid="namespacellvm_1_1_a_arch64_g_i_sel_utils_1a698a57c6350d84d41c3892d6c5bb02ee" compoundref="_a_arch64_global_i_sel_utils_8h" startline="28" endline="30">llvm::AArch64GISelUtils::isLegalArithImmed</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a682303631f076977e40a54643727e8a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applySwapICmpOperands</definition>
+        <argsstring>(MachineInstr &amp;MI, GISelChangeObserver &amp;Observer)</argsstring>
+        <name>applySwapICmpOperands</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applySwapICmpOperands</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_change_observer" kindref="compound">GISelChangeObserver</ref> &amp;</type>
+          <declname>Observer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="923" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="923" bodyend="932"/>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1a45a05a932f80f51023592ff5131d56a5">llvm::GISelChangeObserver::changedInstr</references>
+        <references refid="classllvm_1_1_cmp_inst_1a49a2d8f483ea08a3d6ea75f90c640d76" compoundref="_instr_types_8h" startline="825" endline="827">llvm::CmpInst::getSwappedPredicate</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a7917a4a285e36269f30a2a1de721136e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::function&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>(<ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;)&gt;</type>
+        <definition>std::function&lt; Register(MachineIRBuilder &amp;)&gt; anonymous_namespace{AArch64PostLegalizerLowering.cpp}::getVectorFCMP</definition>
+        <argsstring>(AArch64CC::CondCode CC, Register LHS, Register RHS, bool IsZero, bool NoNans, MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>getVectorFCMP</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::getVectorFCMP</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1_a_arch64_c_c_1abfa1f7dce576430da99eed57807c7f28" kindref="member">AArch64CC::CondCode</ref></type>
+          <declname>CC</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>LHS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>RHS</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsZero</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>NoNans</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a function which builds a vector floating point compare instruction for a condition code <computeroutput>CC</computeroutput>. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">IsZero</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- True if the comparison is against 0. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">NoNans</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- True if the target has NoNansFPMath. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="939" column="1" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="939" bodyend="990"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a77c69067ae8279bc00ab8757731e90d7" compoundref="_r_i_s_c_v_redundant_copy_elimination_8cpp" startline="79">CC</references>
+        <references refid="namespacellvm_1_1_a_arch64_c_c_1abfa1f7dce576430da99eed57807c7f28a756347c46f7abfa1e1fefcc39502c680" compoundref="_a_arch64_base_info_8h" startline="255">llvm::AArch64CC::EQ</references>
+        <references refid="namespacellvm_1_1_a_arch64_c_c_1abfa1f7dce576430da99eed57807c7f28a2f9f5539ad5eab7c3de9fb21766bc78b" compoundref="_a_arch64_base_info_8h" startline="265">llvm::AArch64CC::GE</references>
+        <references refid="_mips_disassembler_8cpp_1a15b5b86944f6df97d2c3659d77f51f91" compoundref="_mips_disassembler_8cpp" startline="520" endline="523">getReg</references>
+        <references refid="namespacellvm_1_1_a_arch64_c_c_1abfa1f7dce576430da99eed57807c7f28a91a0c1b4eac415607c4ceb0a899c4629" compoundref="_a_arch64_base_info_8h" startline="267">llvm::AArch64CC::GT</references>
+        <references refid="classllvm_1_1_l_l_t_1a7da5cc6e8aadd4d5fb6dd68f8ec12b7e" compoundref="_low_level_type_8h" startline="148" endline="148">llvm::LLT::isVector</references>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <references refid="namespacellvm_1_1_a_arch64_c_c_1abfa1f7dce576430da99eed57807c7f28afdd8238d6005774fe2bb9067de76eb8c" compoundref="_a_arch64_base_info_8h" startline="264">llvm::AArch64CC::LS</references>
+        <references refid="namespacellvm_1_1_a_arch64_c_c_1abfa1f7dce576430da99eed57807c7f28a913fd2deccaf3e27694eefb90ffeee00" compoundref="_a_arch64_base_info_8h" startline="259">llvm::AArch64CC::MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="namespacellvm_1_1_a_arch64_c_c_1abfa1f7dce576430da99eed57807c7f28a191e89dbc4939ebd0b572cae44aac05f" compoundref="_a_arch64_base_info_8h" startline="256">llvm::AArch64CC::NE</references>
+        <referencedby refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ac9275cee4b272a43dca3299ab8b6144c" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="1013" endline="1068">applyLowerVectorFCMP</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a661e6393009add33162594f630c4c775" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchLowerVectorFCMP</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;MIB)</argsstring>
+        <name>matchLowerVectorFCMP</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchLowerVectorFCMP</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>MIB</declname>
+        </param>
+        <briefdescription>
+<para>Try to lower a vector G_FCMP <computeroutput>MI</computeroutput> into an AArch64-specific pseudo. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="993" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="993" bodyend="1010"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_l_l_t_1a7da5cc6e8aadd4d5fb6dd68f8ec12b7e" compoundref="_low_level_type_8h" startline="148" endline="148">llvm::LLT::isVector</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ac9275cee4b272a43dca3299ab8b6144c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyLowerVectorFCMP</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;MIB)</argsstring>
+        <name>applyLowerVectorFCMP</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyLowerVectorFCMP</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>MIB</declname>
+        </param>
+        <briefdescription>
+<para>Try to lower a vector G_FCMP <computeroutput>MI</computeroutput> into an AArch64-specific pseudo. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="1013" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="1013" bodyend="1068"/>
+        <references refid="namespacellvm_1_1_a_arch64_c_c_1abfa1f7dce576430da99eed57807c7f28ab89adee997fb2a645a2d26e1f1bdaadf" compoundref="_a_arch64_base_info_8h" startline="269">llvm::AArch64CC::AL</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1a16532d0d8fb47080714810131b45b75b" compoundref="_machine_i_r_builder_8h" startline="1911" endline="1914">llvm::MachineIRBuilder::buildNot</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1ad93e8a9d68a578f6a53c70d39aef0dbe" compoundref="_machine_i_r_builder_8h" startline="1896" endline="1900">llvm::MachineIRBuilder::buildOr</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a77c69067ae8279bc00ab8757731e90d7" compoundref="_r_i_s_c_v_redundant_copy_elimination_8cpp" startline="79">CC</references>
+        <references refid="namespacellvm_1_1_a_arch64_g_i_sel_utils_1ab7a7906ef883e6d0a588e63caf3315cf" compoundref="_a_arch64_global_i_sel_utils_8cpp" startline="186" endline="214">llvm::AArch64GISelUtils::changeVectorFCMPPredToAArch64CC</references>
+        <references refid="namespacellvm_1_1_a_arch64_c_c_1abfa1f7dce576430da99eed57807c7f28a756347c46f7abfa1e1fefcc39502c680" compoundref="_a_arch64_base_info_8h" startline="255">llvm::AArch64CC::EQ</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78baa3213b645e029aba8bb1b85213607d5e" compoundref="_instr_types_8h" startline="682">llvm::CmpInst::FCMP_ORD</references>
+        <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78baf0159e4005258dc54f20b6fc227d19ed" compoundref="_instr_types_8h" startline="683">llvm::CmpInst::FCMP_UNO</references>
+        <references refid="namespacellvm_1_1_a_arch64_g_i_sel_utils_1a1c5d42864ce1e65a6adc088512f68b51" compoundref="_a_arch64_global_i_sel_utils_8cpp" startline="19" endline="30">llvm::AArch64GISelUtils::getAArch64VectorSplat</references>
+        <references refid="classllvm_1_1_machine_instr_builder_1a1c5fadb14ff1d77faad0cb58a43252ab" compoundref="_machine_instr_builder_8h" startline="96" endline="96">llvm::MachineInstrBuilder::getReg</references>
+        <references refid="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a7917a4a285e36269f30a2a1de721136e" compoundref="_a_arch64_post_legalizer_lowering_8cpp" startline="939" endline="990">getVectorFCMP</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="namespacellvm_1_1_a_arch64_c_c_1abfa1f7dce576430da99eed57807c7f28a191e89dbc4939ebd0b572cae44aac05f" compoundref="_a_arch64_base_info_8h" startline="256">llvm::AArch64CC::NE</references>
+        <references refid="classllvm_1_1_machine_i_r_builder_1ab24db762f0912a99f1e4d9e44eaeaa44" compoundref="_machine_i_r_builder_8h" startline="376" endline="379">llvm::MachineIRBuilder::setInstrAndDebugLoc</references>
+        <references refid="namespacellvm_1a766456df1dd21e804cd4596304e10764a5b9bf50c6579a978e5c1104bf8787651" compoundref="_complex_deinterleaving_pass_8h" startline="42">llvm::Splat</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a24acaf030c088ec5ba7146f2c3d3da92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchLowerBuildToInsertVecElt</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>matchLowerBuildToInsertVecElt</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchLowerBuildToInsertVecElt</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="1071" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="1071" bodyend="1084"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1a85529a618809e1a60d0426db69ac8235" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="439" endline="445">llvm::getAnyConstantVRegValWithLookThrough</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a1db29ac06ff4dea847d6e5dae7f21ee2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyLowerBuildToInsertVecElt</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;B)</argsstring>
+        <name>applyLowerBuildToInsertVecElt</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyLowerBuildToInsertVecElt</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="1086" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="1086" bodyend="1102"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1_1_m_i_pattern_match_1a7555ded58a860b9a592e545c4e3c0322" compoundref="_m_i_pattern_match_8h" startline="414" endline="414">llvm::MIPatternMatch::m_GImplicitDef</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1_1_m_i_pattern_match_1aa9bd186f4281a367fb872d17d0e7728b" compoundref="_m_i_pattern_match_8h" startline="25" endline="28">llvm::MIPatternMatch::mi_match</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="classllvm_1_1_l_l_t_1a67021459c7ef8f9a634b4eac7ffd0f96" compoundref="_low_level_type_8h" startline="42" endline="46">llvm::LLT::scalar</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a79f58d5ae765b226aae720e2cd689d94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchFormTruncstore</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, Register &amp;SrcReg)</argsstring>
+        <name>matchFormTruncstore</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchFormTruncstore</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &amp;</type>
+          <declname>SrcReg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="1104" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="1104" bodyend="1115"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1_m_i_pattern_match_1aeaad33cb0fd8ffab79aab1414253854d" compoundref="_m_i_pattern_match_8h" startline="643" endline="645">llvm::MIPatternMatch::m_GTrunc</references>
+        <references refid="namespacellvm_1_1_m_i_pattern_match_1a00b04b7613c62a52917e1d2467faeab0" compoundref="_m_i_pattern_match_8h" startline="270" endline="270">llvm::MIPatternMatch::m_Reg</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1_1_m_i_pattern_match_1aa9bd186f4281a367fb872d17d0e7728b" compoundref="_m_i_pattern_match_8h" startline="25" endline="28">llvm::MIPatternMatch::mi_match</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1aaf7cc2c49ca5083e87a6ea579cc61831" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyFormTruncstore</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;B, GISelChangeObserver &amp;Observer, Register &amp;SrcReg)</argsstring>
+        <name>applyFormTruncstore</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyFormTruncstore</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_change_observer" kindref="compound">GISelChangeObserver</ref> &amp;</type>
+          <declname>Observer</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &amp;</type>
+          <declname>SrcReg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="1117" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="1117" bodyend="1124"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1a45a05a932f80f51023592ff5131d56a5">llvm::GISelChangeObserver::changedInstr</references>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1a1f637715070a99aa4140444e12697f9a">llvm::GISelChangeObserver::changingInstr</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ad46be7825f60fea273692628c6e569b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchVectorSextInReg</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>matchVectorSextInReg</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchVectorSextInReg</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="1129" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="1129" bodyend="1134"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_l_l_t_1a7da5cc6e8aadd4d5fb6dd68f8ec12b7e" compoundref="_low_level_type_8h" startline="148" endline="148">llvm::LLT::isVector</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a13a6a6b42a21b2d435af5a2ef097f694" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyVectorSextInReg</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;B, GISelChangeObserver &amp;Observer)</argsstring>
+        <name>applyVectorSextInReg</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyVectorSextInReg</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_change_observer" kindref="compound">GISelChangeObserver</ref> &amp;</type>
+          <declname>Observer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="1136" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="1136" bodyend="1142"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_legalizer_helper_1aa411af5653e9ed6cd4f664853b61bf0d" compoundref="_legalizer_helper_8cpp" startline="4332" endline="4682">llvm::LegalizerHelper::lower</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1ad00560f7fdae2f561cc4bf8d7b70b94a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchUnmergeExtToUnmerge</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, Register &amp;MatchInfo)</argsstring>
+        <name>matchUnmergeExtToUnmerge</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchUnmergeExtToUnmerge</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &amp;</type>
+          <declname>MatchInfo</declname>
+        </param>
+        <briefdescription>
+<para>Combine &lt;N x t&gt;, unused = unmerge(G_EXT &lt;2*N x t&gt; v, undef, N) =&gt; unused, &lt;N x t&gt; = unmerge v. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="1146" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="1146" bodyend="1174"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1ac76eb82370e997f967454f441effbbff" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="433" endline="437">llvm::getIConstantVRegValWithLookThrough</references>
+        <references refid="namespacellvm_1a0edf31d256ecb3ac003bf2d81a576c9e" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="645" endline="649">llvm::getOpcodeDef</references>
+        <references refid="classllvm_1_1_l_l_t_1ae456a811703836ee5d9e32c3e51a15b6" compoundref="_low_level_type_8h" startline="200" endline="203">llvm::LLT::getSizeInBytes</references>
+        <references refid="classllvm_1_1_l_l_t_1a7da5cc6e8aadd4d5fb6dd68f8ec12b7e" compoundref="_low_level_type_8h" startline="148" endline="148">llvm::LLT::isVector</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a14b95cfe536a811b87f134aa5e91c0f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyUnmergeExtToUnmerge</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;B, GISelChangeObserver &amp;Observer, Register &amp;SrcReg)</argsstring>
+        <name>applyUnmergeExtToUnmerge</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyUnmergeExtToUnmerge</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_change_observer" kindref="compound">GISelChangeObserver</ref> &amp;</type>
+          <declname>Observer</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &amp;</type>
+          <declname>SrcReg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="1176" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="1176" bodyend="1186"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1a45a05a932f80f51023592ff5131d56a5">llvm::GISelChangeObserver::changedInstr</references>
+        <references refid="classllvm_1_1_g_i_sel_change_observer_1a1f637715070a99aa4140444e12697f9a">llvm::GISelChangeObserver::changingInstr</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a6288bdc9c0864757a314ab233c31590d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchExtMulToMULL</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI)</argsstring>
+        <name>matchExtMulToMULL</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::matchExtMulToMULL</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="1193" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="1193" bodyend="1217"/>
+        <references refid="classllvm_1_1_l_l_t_1acd1eca3232b7b3072543294cd2377a37" compoundref="_low_level_type_8h" startline="100" endline="103">llvm::LLT::fixed_vector</references>
+        <references refid="namespacellvm_1a4b2430ab5e686b82f8cd6fd588d6de6f" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="486" endline="491">llvm::getDefIgnoringCopies</references>
+        <references refid="classllvm_1_1_machine_instr_1a0363204b5fbab08a46f5a7cd7f376f78" compoundref="_machine_instr_8h" startline="577" endline="577">llvm::MachineInstr::getOpcode</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classllvm_1_1_machine_operand_1ac0035d7c1c860501c877c20e6e93297b" compoundref="_machine_operand_8h" startline="369" endline="372">llvm::MachineOperand::getReg</references>
+        <references refid="classllvm_1_1_l_l_t_1a7da5cc6e8aadd4d5fb6dd68f8ec12b7e" compoundref="_low_level_type_8h" startline="148" endline="148">llvm::LLT::isVector</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_a_arch64_post_legalizer_lowering_8cpp_03_1a1c822a5562978796947ffc71a1e9a1b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyExtMulToMULL</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineRegisterInfo &amp;MRI, MachineIRBuilder &amp;B, GISelChangeObserver &amp;Observer)</argsstring>
+        <name>applyExtMulToMULL</name>
+        <qualifiedname>anonymous_namespace{AArch64PostLegalizerLowering.cpp}::applyExtMulToMULL</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_i_r_builder" kindref="compound">MachineIRBuilder</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_g_i_sel_change_observer" kindref="compound">GISelChangeObserver</ref> &amp;</type>
+          <declname>Observer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="1219" column="6" bodyfile="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" bodystart="1219" bodyend="1255"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_l_l_t_1adabd45e67a1847750a117317b5ef8f9f" compoundref="_low_level_type_8h" startline="227" endline="229">llvm::LLT::changeElementCount</references>
+        <references refid="classllvm_1_1details_1_1_fixed_or_scalable_quantity_1ae7510a639ca53c1bfa1c90c6dfc7eb2e" compoundref="_type_size_8h" startline="254" endline="256">llvm::details::FixedOrScalableQuantity&lt; LeafTy, ValueTy &gt;::divideCoefficientBy</references>
+        <references refid="classllvm_1_1_legalizer_helper_1aa8fe481cda91a90b364e410009785003" compoundref="_legalizer_helper_8cpp" startline="5288" endline="5460">llvm::LegalizerHelper::fewerElementsVector</references>
+        <references refid="classllvm_1_1_l_l_t_1acd1eca3232b7b3072543294cd2377a37" compoundref="_low_level_type_8h" startline="100" endline="103">llvm::LLT::fixed_vector</references>
+        <references refid="namespacellvm_1a4b2430ab5e686b82f8cd6fd588d6de6f" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="486" endline="491">llvm::getDefIgnoringCopies</references>
+        <references refid="classllvm_1_1_l_l_t_1aa911a7e9e51b7ed20810fc819efe6a26" compoundref="_low_level_type_8h" startline="183" endline="187">llvm::LLT::getElementCount</references>
+        <references refid="classllvm_1_1_machine_instr_1a0363204b5fbab08a46f5a7cd7f376f78" compoundref="_machine_instr_8h" startline="577" endline="577">llvm::MachineInstr::getOpcode</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classllvm_1_1_machine_operand_1ac0035d7c1c860501c877c20e6e93297b" compoundref="_machine_operand_8h" startline="369" endline="372">llvm::MachineOperand::getReg</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp" line="60" column="1"/>
+  </compounddef>
+</doxygen>

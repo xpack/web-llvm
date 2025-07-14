@@ -1,0 +1,652 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1formatted__raw__ostream" kind="class" language="C++" prot="public">
+    <compoundname>llvm::formatted_raw_ostream</compoundname>
+    <basecompoundref refid="classllvm_1_1raw__ostream" prot="public" virt="non-virtual">llvm::raw_ostream</basecompoundref>
+    <includes refid="_formatted_stream_8h" local="yes">llvm/Support/FormattedStream.h</includes>
+    <innerclass refid="structllvm_1_1formatted__raw__ostream_1_1_disable_scan_scope" prot="private">llvm::formatted_raw_ostream::DisableScanScope</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1formatted__raw__ostream_1a56328b4f76c62594d9aab1a7c150e858" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> *</type>
+        <definition>raw_ostream* llvm::formatted_raw_ostream::TheStream</definition>
+        <argsstring></argsstring>
+        <name>TheStream</name>
+        <qualifiedname>llvm::formatted_raw_ostream::TheStream</qualifiedname>
+        <briefdescription>
+<para>TheStream - The real stream we output to. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We set it to be unbuffered, since we&apos;re already doing our own buffering. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="34" column="15" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1formatted__raw__ostream_1a7d20fff48491cf6e6182fa6a4413dc6e" prot="private" static="no" mutable="no">
+        <type>std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::pair&lt;unsigned, unsigned&gt; llvm::formatted_raw_ostream::Position</definition>
+        <argsstring></argsstring>
+        <name>Position</name>
+        <qualifiedname>llvm::formatted_raw_ostream::Position</qualifiedname>
+        <briefdescription>
+<para>Position - The current output column and line of the data that&apos;s been flushed and the portion of the buffer that&apos;s been scanned. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The line and column scheme is zero-based. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="40" column="13" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1formatted__raw__ostream_1a2f19693bce22f37bae1e485024982d80" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>const char* llvm::formatted_raw_ostream::Scanned</definition>
+        <argsstring></argsstring>
+        <name>Scanned</name>
+        <qualifiedname>llvm::formatted_raw_ostream::Scanned</qualifiedname>
+        <briefdescription>
+<para>Scanned - This points to one past the last character in the buffer we&apos;ve scanned. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="45" column="14" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1formatted__raw__ostream_1a490061834f20e68204c00bd9bc577e14" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_string" kindref="compound">SmallString</ref>&lt; 4 &gt;</type>
+        <definition>SmallString&lt;4&gt; llvm::formatted_raw_ostream::PartialUTF8Char</definition>
+        <argsstring></argsstring>
+        <name>PartialUTF8Char</name>
+        <qualifiedname>llvm::formatted_raw_ostream::PartialUTF8Char</qualifiedname>
+        <briefdescription>
+<para>PartialUTF8Char - Either empty or a prefix of a UTF-8 code unit sequence for a Unicode scalar value which should be prepended to the buffer for the next call to ComputePosition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is needed when the buffer is flushed when it ends part-way through the UTF-8 encoding of a Unicode scalar value, so that we can compute the display width of the character once we have the rest of it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="53" column="15" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1formatted__raw__ostream_1a22cad4e0c4f043b325ef2aac881871e5" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::formatted_raw_ostream::DisableScan</definition>
+        <argsstring></argsstring>
+        <name>DisableScan</name>
+        <qualifiedname>llvm::formatted_raw_ostream::DisableScan</qualifiedname>
+        <briefdescription>
+<para>DisableScan - Temporarily disable scanning of output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used to ignore color codes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="57" column="8" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1abe0dc170ee1ac6595ff41750af4437fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void formatted_raw_ostream::write_impl</definition>
+        <argsstring>(const char *Ptr, size_t Size) override</argsstring>
+        <name>write_impl</name>
+        <qualifiedname>llvm::formatted_raw_ostream::write_impl</qualifiedname>
+        <reimplements refid="classllvm_1_1raw__ostream_1aff81bd777453e69313941c475ec2a848">write_impl</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Ptr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>Size</declname>
+        </param>
+        <briefdescription>
+<para>The is the piece of the class that is implemented by subclasses. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This writes the <computeroutput>Size</computeroutput> bytes starting at <computeroutput>Ptr</computeroutput> to the underlying stream.</para>
+<para>This function is guaranteed to only be called at a point at which it is safe for the subclass to install a new buffer via SetBuffer.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The start of the data to be written. For buffered streams this is guaranteed to be the start of the buffer.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bytes to be written.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="invariant"><para>{ Size &gt; 0 } </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="59" column="8" bodyfile="lib/Support/FormattedStream.cpp" bodystart="134" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1afd79d672c078032c99364eb43bc5c9a8" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::formatted_raw_ostream::current_pos</definition>
+        <argsstring>() const override</argsstring>
+        <name>current_pos</name>
+        <qualifiedname>llvm::formatted_raw_ostream::current_pos</qualifiedname>
+        <reimplements refid="classllvm_1_1raw__ostream_1a7ba24fa2187fb1b7bcf1a7458db20d13">current_pos</reimplements>
+        <briefdescription>
+<para>current_pos - Return the current position within the stream, not counting the bytes currently in the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="63" column="12" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="63" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1a2497e9ad2f28aab73f9015b9d1d30172" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void formatted_raw_ostream::ComputePosition</definition>
+        <argsstring>(const char *Ptr, size_t size)</argsstring>
+        <name>ComputePosition</name>
+        <qualifiedname>llvm::formatted_raw_ostream::ComputePosition</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Ptr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>ComputePosition - Examine the given output buffer and figure out the new position after output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ComputePosition - Examine the current output and update line and column counts.</para>
+<para>This is safe to call multiple times on the same buffer, as it records the most recently scanned character and resumes from there when the buffer has not been flushed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="74" column="8" bodyfile="lib/Support/FormattedStream.cpp" bodystart="103" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1aaf580e50faf88ebc55f95743e66d8a5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void formatted_raw_ostream::UpdatePosition</definition>
+        <argsstring>(const char *Ptr, size_t Size)</argsstring>
+        <name>UpdatePosition</name>
+        <qualifiedname>llvm::formatted_raw_ostream::UpdatePosition</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Ptr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>Size</declname>
+        </param>
+        <briefdescription>
+<para>UpdatePosition - scan the characters in [Ptr, Ptr+Size), and update the line and column numbers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>UpdatePosition - Examine the given char sequence and figure out which column we end up in after output, and how many line breaks are contained.</para>
+<para>Unlike ComputePosition, this must be called exactly once on each region of the buffer.</para>
+<para>This assumes that the input string is well-formed UTF-8, and takes into account Unicode characters which render as multiple columns wide. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="79" column="8" bodyfile="lib/Support/FormattedStream.cpp" bodystart="26" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1abb3b11a04b2549a7903574535de34ea0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::formatted_raw_ostream::setStream</definition>
+        <argsstring>(raw_ostream &amp;Stream)</argsstring>
+        <name>setStream</name>
+        <qualifiedname>llvm::formatted_raw_ostream::setStream</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>Stream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="81" column="8" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="81" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1ab89838a7698af16868b562f9914386e5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::formatted_raw_ostream::PreDisableScan</definition>
+        <argsstring>()</argsstring>
+        <name>PreDisableScan</name>
+        <qualifiedname>llvm::formatted_raw_ostream::PreDisableScan</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="101" column="8" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="101" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1a2a9bf000f361c47c7fb4162d7bc46fdf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::formatted_raw_ostream::PostDisableScan</definition>
+        <argsstring>()</argsstring>
+        <name>PostDisableScan</name>
+        <qualifiedname>llvm::formatted_raw_ostream::PostDisableScan</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="108" column="8" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="108" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1a81acdaa9ede919f1eed45bee715afa6e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::formatted_raw_ostream::releaseStream</definition>
+        <argsstring>()</argsstring>
+        <name>releaseStream</name>
+        <qualifiedname>llvm::formatted_raw_ostream::releaseStream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="195" column="8" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="195" bodyend="204"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1adb8a7ef601b3598707e6ae9a6c9f6e4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::formatted_raw_ostream::formatted_raw_ostream</definition>
+        <argsstring>(raw_ostream &amp;Stream)</argsstring>
+        <name>formatted_raw_ostream</name>
+        <qualifiedname>llvm::formatted_raw_ostream::formatted_raw_ostream</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>Stream</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1formatted__raw__ostream" kindref="compound">formatted_raw_ostream</ref> - Open the specified file for writing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If an error occurs, information about the error is put into <ref refid="classllvm_1_1_error_info" kindref="compound">ErrorInfo</ref>, and the stream should be immediately destroyed; the string will be empty if no error occurred.</para>
+<para>As a side effect, the given Stream is set to be Unbuffered. This is because <ref refid="classllvm_1_1formatted__raw__ostream" kindref="compound">formatted_raw_ostream</ref> does its own buffering, so it doesn&apos;t want another layer of buffering to be happening underneath it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="134" column="3" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="134" bodyend="137"/>
+        <references refid="classllvm_1_1raw__ostream_1a0f4b64a0f7aec0a02e7f2ff5a6552723" compoundref="raw__ostream_8h" startline="133" endline="139">llvm::raw_ostream::raw_ostream</references>
+        <referencedby refid="classllvm_1_1formatted__raw__ostream_1a1fc7f913807a21ba5a42df7cc2d2e748" compoundref="_formatted_stream_8cpp" startline="125" endline="132">PadToColumn</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1a91b597f0ba8945f847b8df2ff00e5880" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::formatted_raw_ostream::formatted_raw_ostream</definition>
+        <argsstring>()</argsstring>
+        <name>formatted_raw_ostream</name>
+        <qualifiedname>llvm::formatted_raw_ostream::formatted_raw_ostream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="138" column="12" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="138" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1a0eb361f836554627ef51810e0d3646c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::formatted_raw_ostream::~formatted_raw_ostream</definition>
+        <argsstring>() override</argsstring>
+        <name>~formatted_raw_ostream</name>
+        <qualifiedname>llvm::formatted_raw_ostream::~formatted_raw_ostream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="142" column="3" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="142" bodyend="145"/>
+        <references refid="classllvm_1_1raw__ostream_1a520bdf57dfe3e73abb53d482893f0a27" compoundref="raw__ostream_8h" startline="198" endline="201">llvm::raw_ostream::flush</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1a1fc7f913807a21ba5a42df7cc2d2e748" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1formatted__raw__ostream" kindref="compound">formatted_raw_ostream</ref> &amp;</type>
+        <definition>formatted_raw_ostream &amp; formatted_raw_ostream::PadToColumn</definition>
+        <argsstring>(unsigned NewCol)</argsstring>
+        <name>PadToColumn</name>
+        <qualifiedname>llvm::formatted_raw_ostream::PadToColumn</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NewCol</declname>
+        </param>
+        <briefdescription>
+<para>PadToColumn - <ref refid="structllvm_1_1_align" kindref="compound">Align</ref> the output to some column number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the current column is already equal to or more than NewCol, PadToColumn inserts one space.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>NewCol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The column to move to.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NewCol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The column to move to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="152" column="25" bodyfile="lib/Support/FormattedStream.cpp" bodystart="125" bodyend="132"/>
+        <references refid="classllvm_1_1formatted__raw__ostream_1adb8a7ef601b3598707e6ae9a6c9f6e4d" compoundref="_formatted_stream_8h" startline="134" endline="137">formatted_raw_ostream</references>
+        <references refid="classllvm_1_1raw__ostream_1a980ad6112624b521eb2d831b39b346eb" compoundref="raw__ostream_8h" startline="396" endline="396">llvm::raw_ostream::getBufferStart</references>
+        <references refid="classllvm_1_1formatted__raw__ostream_1a65290bab4b83149e403bf48709658bd1" compoundref="_formatted_stream_8h" startline="154" endline="158">getColumn</references>
+        <references refid="classllvm_1_1raw__ostream_1ad6cd89674692383208613b1e4ee560fe" compoundref="raw__ostream_8h" startline="190" endline="192">llvm::raw_ostream::GetNumBytesInBuffer</references>
+        <references refid="classllvm_1_1raw__ostream_1a8fdf5cdf041c8aded7e3308c1c3efacc" compoundref="raw__ostream_8cpp" startline="495" endline="497">llvm::raw_ostream::indent</references>
+        <referencedby refid="_disassembler_8cpp_1a0e50dc982f01eab3eeb5eef624e25f03" compoundref="_disassembler_8cpp" startline="138" endline="162">emitComments</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1a65290bab4b83149e403bf48709658bd1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::formatted_raw_ostream::getColumn</definition>
+        <argsstring>()</argsstring>
+        <name>getColumn</name>
+        <qualifiedname>llvm::formatted_raw_ostream::getColumn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="154" column="12" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="154" bodyend="158"/>
+        <references refid="classllvm_1_1raw__ostream_1a980ad6112624b521eb2d831b39b346eb" compoundref="raw__ostream_8h" startline="396" endline="396">llvm::raw_ostream::getBufferStart</references>
+        <references refid="classllvm_1_1raw__ostream_1ad6cd89674692383208613b1e4ee560fe" compoundref="raw__ostream_8h" startline="190" endline="192">llvm::raw_ostream::GetNumBytesInBuffer</references>
+        <referencedby refid="classllvm_1_1formatted__raw__ostream_1a1fc7f913807a21ba5a42df7cc2d2e748" compoundref="_formatted_stream_8cpp" startline="125" endline="132">PadToColumn</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1a88de341253439019e912f01fcd55c45b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::formatted_raw_ostream::getLine</definition>
+        <argsstring>()</argsstring>
+        <name>getLine</name>
+        <qualifiedname>llvm::formatted_raw_ostream::getLine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="160" column="12" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="160" bodyend="164"/>
+        <references refid="classllvm_1_1raw__ostream_1a980ad6112624b521eb2d831b39b346eb" compoundref="raw__ostream_8h" startline="396" endline="396">llvm::raw_ostream::getBufferStart</references>
+        <references refid="classllvm_1_1raw__ostream_1ad6cd89674692383208613b1e4ee560fe" compoundref="raw__ostream_8h" startline="190" endline="192">llvm::raw_ostream::GetNumBytesInBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1a255a1144d50063acc74b8b5143697694" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+        <definition>raw_ostream &amp; llvm::formatted_raw_ostream::resetColor</definition>
+        <argsstring>() override</argsstring>
+        <name>resetColor</name>
+        <qualifiedname>llvm::formatted_raw_ostream::resetColor</qualifiedname>
+        <reimplements refid="classllvm_1_1raw__ostream_1a4219e33c3cd0cc8383f615fc40254d21">resetColor</reimplements>
+        <briefdescription>
+<para>Resets the colors to terminal defaults. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call this when you are done outputting colored text, or before program exit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="166" column="15" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="166" bodyend="172"/>
+        <references refid="classllvm_1_1raw__ostream_1aff9ac3b7e5094380eca385afd6023cd4" compoundref="raw__ostream_8h" startline="357" endline="357">llvm::raw_ostream::colors_enabled</references>
+        <references refid="classllvm_1_1raw__ostream_1a0f4b64a0f7aec0a02e7f2ff5a6552723" compoundref="raw__ostream_8h" startline="133" endline="139">llvm::raw_ostream::raw_ostream</references>
+        <references refid="classllvm_1_1raw__ostream_1a4219e33c3cd0cc8383f615fc40254d21" compoundref="raw__ostream_8cpp" startline="533" endline="540">llvm::raw_ostream::resetColor</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1af55e6fb1fbaadb04b201cba1f302d7b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+        <definition>raw_ostream &amp; llvm::formatted_raw_ostream::reverseColor</definition>
+        <argsstring>() override</argsstring>
+        <name>reverseColor</name>
+        <qualifiedname>llvm::formatted_raw_ostream::reverseColor</qualifiedname>
+        <reimplements refid="classllvm_1_1raw__ostream_1a6095e2a0ebe961a05e2b3a7b6acbe769">reverseColor</reimplements>
+        <briefdescription>
+<para>Reverses the foreground and background colors. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="174" column="15" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="174" bodyend="180"/>
+        <references refid="classllvm_1_1raw__ostream_1aff9ac3b7e5094380eca385afd6023cd4" compoundref="raw__ostream_8h" startline="357" endline="357">llvm::raw_ostream::colors_enabled</references>
+        <references refid="classllvm_1_1raw__ostream_1a0f4b64a0f7aec0a02e7f2ff5a6552723" compoundref="raw__ostream_8h" startline="133" endline="139">llvm::raw_ostream::raw_ostream</references>
+        <references refid="classllvm_1_1raw__ostream_1a6095e2a0ebe961a05e2b3a7b6acbe769" compoundref="raw__ostream_8cpp" startline="542" endline="549">llvm::raw_ostream::reverseColor</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1a28c28221c236cdabcd2e6553854ed278" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+        <definition>raw_ostream &amp; llvm::formatted_raw_ostream::changeColor</definition>
+        <argsstring>(enum Colors Color, bool Bold, bool BG) override</argsstring>
+        <name>changeColor</name>
+        <qualifiedname>llvm::formatted_raw_ostream::changeColor</qualifiedname>
+        <reimplements refid="classllvm_1_1raw__ostream_1a28fa4a2054d6d628fa4eea21c5262212">changeColor</reimplements>
+        <param>
+          <type>enum <ref refid="classllvm_1_1raw__ostream_1a1d5efc43dd5669473ac2fe47d5aaf965" kindref="member">Colors</ref></type>
+          <declname>Color</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Bold</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>BG</declname>
+        </param>
+        <briefdescription>
+<para>Changes the foreground color of text that will be output from this point forward. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ANSI color to use, the special SAVEDCOLOR can be used to change only the bold attribute, and keep colors untouched </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Bold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bold/brighter text, default false </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>BG</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if true change the background, default: change foreground </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>itself so it can be used within &lt;&lt; invocations </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="182" column="15" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="182" bodyend="188"/>
+        <references refid="classllvm_1_1raw__ostream_1a28fa4a2054d6d628fa4eea21c5262212" compoundref="raw__ostream_8cpp" startline="520" endline="531">llvm::raw_ostream::changeColor</references>
+        <references refid="classllvm_1_1raw__ostream_1aff9ac3b7e5094380eca385afd6023cd4" compoundref="raw__ostream_8h" startline="357" endline="357">llvm::raw_ostream::colors_enabled</references>
+        <references refid="classllvm_1_1raw__ostream_1a0f4b64a0f7aec0a02e7f2ff5a6552723" compoundref="raw__ostream_8h" startline="133" endline="139">llvm::raw_ostream::raw_ostream</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1formatted__raw__ostream_1a0af326688c69076ecde5af500a1a7d5f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::formatted_raw_ostream::is_displayed</definition>
+        <argsstring>() const override</argsstring>
+        <name>is_displayed</name>
+        <qualifiedname>llvm::formatted_raw_ostream::is_displayed</qualifiedname>
+        <reimplements refid="classllvm_1_1raw__ostream_1a8f6a957a67e05e7355ab616619ee2608">is_displayed</reimplements>
+        <briefdescription>
+<para>This function determines if this stream is connected to a &quot;tty&quot; or &quot;console&quot; window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>That is, the output would be displayed to the user rather than being put on a pipe or stored in a file. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/FormattedStream.h" line="190" column="8" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="190" bodyend="192"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1formatted__raw__ostream" kindref="compound">formatted_raw_ostream</ref> - A <ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> that wraps another one and keeps track of line and column position, allowing padding out to specific column boundaries and querying the number of lines written to the stream. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This assumes that the contents of the stream is valid UTF-8 encoded text. This doesn&apos;t attempt to handle everything Unicode can do (combining characters, right-to-left markers, etc), but should cover the cases likely to appear in source code or diagnostic messages. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::formatted_raw_ostream</label>
+        <link refid="classllvm_1_1formatted__raw__ostream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::raw_ostream</label>
+        <link refid="classllvm_1_1raw__ostream"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::formatted_raw_ostream</label>
+        <link refid="classllvm_1_1formatted__raw__ostream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::raw_ostream</label>
+        <link refid="classllvm_1_1raw__ostream"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>BLACK</edgelabel>
+          <edgelabel>BLUE</edgelabel>
+          <edgelabel>BRIGHT_BLACK</edgelabel>
+          <edgelabel>BRIGHT_BLUE</edgelabel>
+          <edgelabel>BRIGHT_CYAN</edgelabel>
+          <edgelabel>BRIGHT_GREEN</edgelabel>
+          <edgelabel>BRIGHT_MAGENTA</edgelabel>
+          <edgelabel>BRIGHT_RED</edgelabel>
+          <edgelabel>BRIGHT_WHITE</edgelabel>
+          <edgelabel>BRIGHT_YELLOW</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>static constexpr Colors</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Support/FormattedStream.h" line="30" column="1" bodyfile="include/llvm/Support/FormattedStream.h" bodystart="30" bodyend="205"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1raw__ostream_1ad7fa72c34a893a70df723e8c90410864" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>BLACK</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a63c9d9dc86ce5675ba81e57258408628" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>BLUE</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ae1ed300c78ba04b636a61ecb147c92ce" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>BRIGHT_BLACK</name></member>
+      <member refid="classllvm_1_1raw__ostream_1af35171b7d8e8bd280c9ca13cee2e342c" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>BRIGHT_BLUE</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ad02a884bafdecf4c92bd7bb2ebec2b33" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>BRIGHT_CYAN</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ae9db6917b73438040622a62595123fbc" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>BRIGHT_GREEN</name></member>
+      <member refid="classllvm_1_1raw__ostream_1aa87ef9bf0a5af081e8f10606cb5e8687" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>BRIGHT_MAGENTA</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a1a335509d3624637f5c80198c97f3c00" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>BRIGHT_RED</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ae493f4fdc4c0739416102c6bd5b432a7" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>BRIGHT_WHITE</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ac7d521f5dc48e516c88ae329cf2ebb7e" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>BRIGHT_YELLOW</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a28c28221c236cdabcd2e6553854ed278" prot="public" virt="virtual"><scope>llvm::formatted_raw_ostream</scope><name>changeColor</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a1d5efc43dd5669473ac2fe47d5aaf965" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>Colors</name></member>
+      <member refid="classllvm_1_1raw__ostream_1aff9ac3b7e5094380eca385afd6023cd4" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>colors_enabled</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a2497e9ad2f28aab73f9015b9d1d30172" prot="private" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>ComputePosition</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1afd79d672c078032c99364eb43bc5c9a8" prot="private" virt="virtual"><scope>llvm::formatted_raw_ostream</scope><name>current_pos</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a1b89c1fc567cf8889baeccead5083434" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>CYAN</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a22cad4e0c4f043b325ef2aac881871e5" prot="private" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>DisableScan</name></member>
+      <member refid="classllvm_1_1raw__ostream_1abb9477fc02ae36079df14aa77d8789c3" prot="public" virt="virtual"><scope>llvm::formatted_raw_ostream</scope><name>enable_colors</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a520bdf57dfe3e73abb53d482893f0a27" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>flush</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1adb8a7ef601b3598707e6ae9a6c9f6e4d" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>formatted_raw_ostream</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a91b597f0ba8945f847b8df2ff00e5880" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>formatted_raw_ostream</name></member>
+      <member refid="classllvm_1_1raw__ostream_1af3aec1d6c89f3eed88579d13ade51ea0" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>get_kind</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a2d79232a41a2f24d43acb936c8522443" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>GetBufferSize</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a980ad6112624b521eb2d831b39b346eb" prot="protected" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>getBufferStart</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a65290bab4b83149e403bf48709658bd1" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>getColumn</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a88de341253439019e912f01fcd55c45b" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>getLine</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ad6cd89674692383208613b1e4ee560fe" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>GetNumBytesInBuffer</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ae56223ff7592f05301a6b496ae46299c" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>GREEN</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ae5c85e2158de685ed0c287a13c07ea49" prot="public" virt="virtual"><scope>llvm::formatted_raw_ostream</scope><name>has_colors</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a8fdf5cdf041c8aded7e3308c1c3efacc" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>indent</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a0af326688c69076ecde5af500a1a7d5f" prot="public" virt="virtual"><scope>llvm::formatted_raw_ostream</scope><name>is_displayed</name></member>
+      <member refid="classllvm_1_1raw__ostream_1abab3a5904ddc74e76f0a8021d383866f" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>MAGENTA</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a51b9992ae460e4e0fb0fa7ce054494e8" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a075cb7ac15c51197e4db4100b32a9fb2" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a9d7ad838c3518917424debc6be5ae9aa" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1acaffa29e8a30c948243c84abf6b92a54" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ac4379610669a40c09242de6f02bf715b" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ae00dbdc15d9b90a48e1326c50a2c0bc6" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a194a494c85e146be05d9e6fac49a5945" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ac88eab7965bf3a6d7c553f17e68d1513" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1aa0e27cd90adc0b6beb89033845f9823d" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ae9d57be5c0397ea87d9f634929629c25" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a45acd041c106c28341db5ef6c38d8125" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1acabcb5001c45027cf69ca516a38f9e77" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a8300c9b501bef90a5642fc3ef7807b0c" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ae161a943836d575a59a8c84534ed6dcf" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1abcf9b50e849ae41a25c3ac13ab1f1028" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a0901ea2124ad30e3766766e20ed3a73e" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ab6683621f818ca79cfe58e9bc0136d12" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a0a8d18dc26984414573e1d152d89a5e2" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ad72c5336e2ff27aefee791348d4e1680" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a980a91d30111be065234c1dac2f067e1" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ac5283ab203049acfffb2dd233f816402" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1aebda89a6230d3b4ac098b18b57c16f4b" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ac725aaaafa45384bad3197e47c74be4c" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ad85a9ad7858d658c954afde33bcf3d43" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>OStreamKind</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a1fc7f913807a21ba5a42df7cc2d2e748" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>PadToColumn</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a490061834f20e68204c00bd9bc577e14" prot="private" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>PartialUTF8Char</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a7d20fff48491cf6e6182fa6a4413dc6e" prot="private" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>Position</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a2a9bf000f361c47c7fb4162d7bc46fdf" prot="private" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>PostDisableScan</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1ab89838a7698af16868b562f9914386e5" prot="private" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>PreDisableScan</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a6799a9c00e1099623cec7e887f93eb57" prot="protected" virt="virtual"><scope>llvm::formatted_raw_ostream</scope><name>preferred_buffer_size</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a0f4b64a0f7aec0a02e7f2ff5a6552723" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>raw_ostream</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ac686d47980294a15635a65dee6bcab65" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>raw_ostream</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ae7b7856e1bc7aea739f05e4d65d5276b" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>RED</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a81acdaa9ede919f1eed45bee715afa6e" prot="private" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>releaseStream</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ad65ed6b6a8c96b6c1dc98ba50bc1547a" prot="public" virt="virtual"><scope>llvm::formatted_raw_ostream</scope><name>reserveExtraSpace</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a9ba1327251e8c5c71480b9876c52f4e4" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>RESET</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a255a1144d50063acc74b8b5143697694" prot="public" virt="virtual"><scope>llvm::formatted_raw_ostream</scope><name>resetColor</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1af55e6fb1fbaadb04b201cba1f302d7b9" prot="public" virt="virtual"><scope>llvm::formatted_raw_ostream</scope><name>reverseColor</name></member>
+      <member refid="classllvm_1_1raw__ostream_1ad55e55b3692fe8ec3e8b724d3d5bade0" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>SAVEDCOLOR</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a2f19693bce22f37bae1e485024982d80" prot="private" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>Scanned</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a61bcdba2623dbce59a5f460650255db2" prot="protected" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>SetBuffer</name></member>
+      <member refid="classllvm_1_1raw__ostream_1af6e095a40885b6ed93dcdeb112ceeab2" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>SetBuffered</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a1a59a3dce2d7cde8c5e6ef0e3a30b375" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>SetBufferSize</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1abb3b11a04b2549a7903574535de34ea0" prot="private" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>setStream</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a75860636a752bc2592f6e4185e63efdc" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>SetUnbuffered</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a0f90ad570f71349466844ee9f2d06cd1" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>tell</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a56328b4f76c62594d9aab1a7c150e858" prot="private" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>TheStream</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1aaf580e50faf88ebc55f95743e66d8a5a" prot="private" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>UpdatePosition</name></member>
+      <member refid="classllvm_1_1raw__ostream_1aad2a4949bc82f743fb17bd9131e7041b" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>uuid_t</name></member>
+      <member refid="classllvm_1_1raw__ostream_1afdcd12a4a8e2d561e7dd31b4c05b2053" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>WHITE</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a6e0cbc5c8568d8446c284c8538b2c9f1" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>write</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a581a276005e9f911c53aa145e4a01e53" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>write</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a5ba2ece4b959bae02752c34b784ba087" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>write_escaped</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a37b5dd8a8b82f2818e0f4ea9699d8ae5" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>write_hex</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1abe0dc170ee1ac6595ff41750af4437fc" prot="private" virt="virtual"><scope>llvm::formatted_raw_ostream</scope><name>write_impl</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a4e6042cae3a8ab74080998736eabd3fa" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>write_uuid</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a06288f4d38e1d74fc7a1d10056d88373" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>write_zeros</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a026561b02ba397a040ff1e681d2fb0ae" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>YELLOW</name></member>
+      <member refid="classllvm_1_1formatted__raw__ostream_1a0eb361f836554627ef51810e0d3646c6" prot="public" virt="non-virtual"><scope>llvm::formatted_raw_ostream</scope><name>~formatted_raw_ostream</name></member>
+      <member refid="classllvm_1_1raw__ostream_1a5231543b6b40176238cc62b982f4bdf5" prot="public" virt="virtual"><scope>llvm::formatted_raw_ostream</scope><name>~raw_ostream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

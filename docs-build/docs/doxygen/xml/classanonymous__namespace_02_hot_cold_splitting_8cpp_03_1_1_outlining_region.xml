@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1ace6ae890f4e7aa267464886f5fbce68d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="_hot_cold_splitting_8cpp_1a0134180716271c522b7b0e1537ce7d9b" kindref="member">BlockTy</ref>, 0 &gt;</type>
+        <definition>SmallVector&lt;BlockTy, 0&gt; anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::Blocks</definition>
+        <argsstring></argsstring>
+        <name>Blocks</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::Blocks</qualifiedname>
+        <initializer>= {}</initializer>
+        <briefdescription>
+<para>A list of (block, score) pairs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A block&apos;s score is non-zero iff it&apos;s a viable sub-region entry point. Blocks with higher scores are better entry points (i.e. they are more distant ancestors of the sink block). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="467" column="15" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="467" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1adc123ad80418ee9c05ce41828f5a9af2" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+        <definition>BasicBlock* anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::SuggestedEntryPoint</definition>
+        <argsstring></argsstring>
+        <name>SuggestedEntryPoint</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::SuggestedEntryPoint</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>The suggested entry point into the region. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the region has multiple entry points, all blocks within the region may not be reachable from this entry point. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="472" column="14" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1adff91e87c433b9098aeff30d38daabfc" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::EntireFunctionCold</definition>
+        <argsstring></argsstring>
+        <name>EntireFunctionCold</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::EntireFunctionCold</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Whether the entire function is cold. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="475" column="8" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="475" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a292d8e312f6c5754a04cfadbe63cbfb2" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::ScoreForSuccBlock</definition>
+        <argsstring></argsstring>
+        <name>ScoreForSuccBlock</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::ScoreForSuccBlock</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>These scores should be lower than the score for predecessor blocks, because regions starting at predecessor blocks are typically larger. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="484" column="29" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="484" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1ab7675720de200796de9221d11a40b6a0" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::ScoreForSinkBlock</definition>
+        <argsstring></argsstring>
+        <name>ScoreForSinkBlock</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::ScoreForSinkBlock</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="485" column="29" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="485" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a9ee6c67827d545040e0faf02da6d85f8" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>static unsigned anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::getEntryPointScore</definition>
+        <argsstring>(BasicBlock &amp;BB, unsigned Score)</argsstring>
+        <name>getEntryPointScore</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::getEntryPointScore</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> &amp;</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Score</declname>
+        </param>
+        <briefdescription>
+<para>If <computeroutput>BB</computeroutput> is a viable entry point, return <computeroutput>Score</computeroutput>. Return 0 otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="478" column="19" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="478" bodyend="480"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1aebdd1fd6521198094faf4f2b2229a4ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::OutliningRegion</definition>
+        <argsstring>(const OutliningRegion &amp;)=delete</argsstring>
+        <name>OutliningRegion</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::OutliningRegion</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region" kindref="compound">OutliningRegion</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="487" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1acb77049886673d713f7c1b537d58312c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region" kindref="compound">OutliningRegion</ref> &amp;</type>
+        <definition>OutliningRegion &amp; anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::operator=</definition>
+        <argsstring>(const OutliningRegion &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region" kindref="compound">OutliningRegion</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="488" column="19"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1afb4320cb58bc4cbe61cd1e3c8e7f73f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::OutliningRegion</definition>
+        <argsstring>()=default</argsstring>
+        <name>OutliningRegion</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::OutliningRegion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="491" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a3f35d35f99dde67eaebf75393bee5275" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::OutliningRegion</definition>
+        <argsstring>(OutliningRegion &amp;&amp;)=default</argsstring>
+        <name>OutliningRegion</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::OutliningRegion</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region" kindref="compound">OutliningRegion</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="492" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1add67f7f4d83727202d564d298c9e13ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region" kindref="compound">OutliningRegion</ref> &amp;</type>
+        <definition>OutliningRegion &amp; anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::operator=</definition>
+        <argsstring>(OutliningRegion &amp;&amp;)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region" kindref="compound">OutliningRegion</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="493" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1aa311967da870ea02dda9f469e13f7b6e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::empty</qualifiedname>
+        <briefdescription>
+<para>Whether this region has nothing to extract. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="597" column="8" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="597" bodyend="597"/>
+        <referencedby refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a631ea87e33f8e50c1b90ae334ceea4c8" compoundref="_hot_cold_splitting_8cpp" startline="606" endline="635">takeSingleEntrySubRegion</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1aa46fd5229e05fd19ab8885fd0449e7e7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::pair&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt;</type>
+        <definition>ArrayRef&lt; std::pair&lt; BasicBlock *, unsigned &gt; &gt; anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::blocks</definition>
+        <argsstring>() const</argsstring>
+        <name>blocks</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::blocks</qualifiedname>
+        <briefdescription>
+<para>The blocks in this region. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="600" column="12" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="600" bodyend="600"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a11603ff4c792faf9ce03bd0c31d12e93" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::isEntireFunctionCold</definition>
+        <argsstring>() const</argsstring>
+        <name>isEntireFunctionCold</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::isEntireFunctionCold</qualifiedname>
+        <briefdescription>
+<para>Whether the entire function containing this region is cold. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="603" column="8" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="603" bodyend="603"/>
+        <referencedby refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a631ea87e33f8e50c1b90ae334ceea4c8" compoundref="_hot_cold_splitting_8cpp" startline="606" endline="635">takeSingleEntrySubRegion</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a631ea87e33f8e50c1b90ae334ceea4c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1a4896b3891581797e838017eb11e76221" kindref="member">BlockSequence</ref></type>
+        <definition>BlockSequence anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::takeSingleEntrySubRegion</definition>
+        <argsstring>(DominatorTree &amp;DT)</argsstring>
+        <name>takeSingleEntrySubRegion</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::takeSingleEntrySubRegion</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+          <declname>DT</declname>
+        </param>
+        <briefdescription>
+<para>Remove a sub-region from this region and return it as a block sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="606" column="17" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="606" bodyend="635"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2" compoundref="_pseudo_probe_8h" startline="29">llvm::Block</references>
+        <references refid="classllvm_1_1_dominator_tree_1a5c69311e8d44898dac36a155c3d8691d" compoundref="_dominators_8cpp" startline="122" endline="130">llvm::DominatorTree::dominates</references>
+        <references refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1aa311967da870ea02dda9f469e13f7b6e" compoundref="_hot_cold_splitting_8cpp" startline="597" endline="597">empty</references>
+        <references refid="classllvm_1_1_basic_block_1a0b4e7bee9b8575cc7db73329f1a561bd" compoundref="_i_r_2_basic_block_8h" startline="474" endline="474">llvm::BasicBlock::end</references>
+        <references refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a11603ff4c792faf9ce03bd0c31d12e93" compoundref="_hot_cold_splitting_8cpp" startline="603" endline="603">isEntireFunctionCold</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="namespacellvm_1a9ec2517b6489e71067be03afebb4d350" compoundref="_s_t_l_extras_8h" startline="1778" endline="1780">llvm::remove_if</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1aead9a4f05ccb13941f28611766176f30" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region" kindref="compound">OutliningRegion</ref> &gt;</type>
+        <definition>static std::vector&lt; OutliningRegion &gt; anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::create</definition>
+        <argsstring>(BasicBlock &amp;SinkBB, const DominatorTree &amp;DT, const PostDominatorTree &amp;PDT)</argsstring>
+        <name>create</name>
+        <qualifiedname>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion::create</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> &amp;</type>
+          <declname>SinkBB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+          <declname>DT</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_post_dominator_tree" kindref="compound">PostDominatorTree</ref> &amp;</type>
+          <declname>PDT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="495" column="22" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="495" bodyend="594"/>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a1f475b0df44ebd7169e720fa1bf9169e" compoundref="_small_ptr_set_8h" startline="452" endline="454">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count</references>
+        <references refid="namespacellvm_1a3a4c46542f8881cacd05836ba00ab8ec" compoundref="_depth_first_iterator_8h" startline="222" endline="224">llvm::df_begin</references>
+        <references refid="namespacellvm_1ad6c4441c599522e0d10c1391a460c275" compoundref="_depth_first_iterator_8h" startline="227" endline="229">llvm::df_end</references>
+        <references refid="classllvm_1_1_dominator_tree_1a5c69311e8d44898dac36a155c3d8691d" compoundref="_dominators_8cpp" startline="122" endline="130">llvm::DominatorTree::dominates</references>
+        <references refid="classllvm_1_1_post_dominator_tree_1ac74ec035b8eeaeb39cfea312fa876c75" compoundref="_post_dominators_8cpp" startline="54" endline="74">llvm::PostDominatorTree::dominates</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a396fcfee6914c76974b73c3d203da6a5" compoundref="_small_vector_8h" startline="937" endline="944">llvm::SmallVectorImpl&lt; T &gt;::emplace_back</references>
+        <references refid="namespacellvm_1abe62b2144b4f06c41efe3c775316f282" compoundref="_depth_first_iterator_8h" startline="271" endline="273">llvm::idf_begin</references>
+        <references refid="namespacellvm_1a8ea0b29d9cab61cc46291acf44187279" compoundref="_depth_first_iterator_8h" startline="276" endline="278">llvm::idf_end</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="namespaceanonymous__namespace_02_hot_cold_splitting_8cpp_03_1aef2714d7816ffbf7f4eebf159be19d1f" compoundref="_hot_cold_splitting_8cpp" startline="164" endline="189">anonymous_namespace{HotColdSplitting.cpp}::mayExtractBlock</references>
+        <references refid="namespacellvm_1ad66c4759666aab78529658362b498c74" compoundref="_i_r_2_c_f_g_8h" startline="118" endline="120">llvm::pred_empty</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A maximal outlining region. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This contains all blocks post-dominated by a sink block, the sink block itself, and all blocks dominated by the sink. If sink-predecessors and sink-successors cannot be extracted in one region, the static constructor returns a list of suitable extraction regions. </para>
+    </detaileddescription>
+    <location file="lib/Transforms/IPO/HotColdSplitting.cpp" line="463" column="1" bodyfile="lib/Transforms/IPO/HotColdSplitting.cpp" bodystart="463" bodyend="636"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1ace6ae890f4e7aa267464886f5fbce68d" prot="private" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>Blocks</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1aa46fd5229e05fd19ab8885fd0449e7e7" prot="public" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>blocks</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1aead9a4f05ccb13941f28611766176f30" prot="public" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>create</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1aa311967da870ea02dda9f469e13f7b6e" prot="public" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>empty</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1adff91e87c433b9098aeff30d38daabfc" prot="private" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>EntireFunctionCold</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a9ee6c67827d545040e0faf02da6d85f8" prot="private" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>getEntryPointScore</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a11603ff4c792faf9ce03bd0c31d12e93" prot="public" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>isEntireFunctionCold</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1acb77049886673d713f7c1b537d58312c" prot="private" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>operator=</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1add67f7f4d83727202d564d298c9e13ac" prot="public" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>operator=</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1aebdd1fd6521198094faf4f2b2229a4ff" prot="private" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>OutliningRegion</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1afb4320cb58bc4cbe61cd1e3c8e7f73f3" prot="public" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>OutliningRegion</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a3f35d35f99dde67eaebf75393bee5275" prot="public" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>OutliningRegion</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1ab7675720de200796de9221d11a40b6a0" prot="private" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>ScoreForSinkBlock</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a292d8e312f6c5754a04cfadbe63cbfb2" prot="private" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>ScoreForSuccBlock</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1adc123ad80418ee9c05ce41828f5a9af2" prot="private" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>SuggestedEntryPoint</name></member>
+      <member refid="classanonymous__namespace_02_hot_cold_splitting_8cpp_03_1_1_outlining_region_1a631ea87e33f8e50c1b90ae334ceea4c8" prot="public" virt="non-virtual"><scope>anonymous_namespace{HotColdSplitting.cpp}::OutliningRegion</scope><name>takeSingleEntrySubRegion</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

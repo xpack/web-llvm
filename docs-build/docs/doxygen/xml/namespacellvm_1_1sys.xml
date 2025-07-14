@@ -1,0 +1,2230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1sys" kind="namespace" language="C++">
+    <compoundname>llvm::sys</compoundname>
+    <innerclass refid="classllvm_1_1sys_1_1_dynamic_library" prot="public">llvm::sys::DynamicLibrary</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1_initialize_c_o_m_r_a_i_i" prot="public">llvm::sys::InitializeCOMRAII</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1_memory" prot="public">llvm::sys::Memory</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1_memory_block" prot="public">llvm::sys::MemoryBlock</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1_owning_memory_block" prot="public">llvm::sys::OwningMemoryBlock</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1_process" prot="public">llvm::sys::Process</innerclass>
+    <innerclass refid="structllvm_1_1sys_1_1_process_info" prot="public">llvm::sys::ProcessInfo</innerclass>
+    <innerclass refid="structllvm_1_1sys_1_1_process_statistics" prot="public">llvm::sys::ProcessStatistics</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1_smart_mutex" prot="public">llvm::sys::SmartMutex</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1_smart_r_w_mutex" prot="public">llvm::sys::SmartRWMutex</innerclass>
+    <innerclass refid="structllvm_1_1sys_1_1_unicode_char_range" prot="public">llvm::sys::UnicodeCharRange</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1_unicode_char_set" prot="public">llvm::sys::UnicodeCharSet</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1_utc_clock" prot="public">llvm::sys::UtcClock</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1_watchdog" prot="public">llvm::sys::Watchdog</innerclass>
+    <innernamespace refid="namespacellvm_1_1sys_1_1detail">llvm::sys::detail</innernamespace>
+    <innernamespace refid="namespacellvm_1_1sys_1_1fs">llvm::sys::fs</innernamespace>
+    <innernamespace refid="namespacellvm_1_1sys_1_1locale">llvm::sys::locale</innernamespace>
+    <innernamespace refid="namespacellvm_1_1sys_1_1path">llvm::sys::path</innernamespace>
+    <innernamespace refid="namespacellvm_1_1sys_1_1unicode">llvm::sys::unicode</innernamespace>
+    <innernamespace refid="namespacellvm_1_1sys_1_1windows">llvm::sys::windows</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacellvm_1_1sys_1a4b70a76e943a3997fef6b97b3c46d2e9" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>COMThreadingMode</name>
+        <qualifiedname>llvm::sys::COMThreadingMode</qualifiedname>
+        <enumvalue id="namespacellvm_1_1sys_1a4b70a76e943a3997fef6b97b3c46d2e9aa32265e3ff7d55d382104535553f4564" prot="public">
+          <name>SingleThreaded</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1sys_1a4b70a76e943a3997fef6b97b3c46d2e9ab8bb485f012f668cbf7456c8d2d7da20" prot="public">
+          <name>MultiThreaded</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/COM.h" line="20" column="1" bodyfile="include/llvm/Support/COM.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacellvm_1_1sys_1aad87650fa22966074a3b341d0e5cef6c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>WindowsEncodingMethod</name>
+        <qualifiedname>llvm::sys::WindowsEncodingMethod</qualifiedname>
+        <enumvalue id="namespacellvm_1_1sys_1aad87650fa22966074a3b341d0e5cef6caf0fd365beea6ebcbd1e26eb24015da53" prot="public">
+          <name>WEM_UTF8</name>
+          <briefdescription>
+<para>UTF-8 is the LLVM native encoding, being the same as &quot;do not perform
+encoding conversion&quot;. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1sys_1aad87650fa22966074a3b341d0e5cef6ca4a36ece054fa83562738192455180088" prot="public">
+          <name>WEM_CurrentCodePage</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1sys_1aad87650fa22966074a3b341d0e5cef6ca89ceaeaaf604a94c4691ea915ada8c3c" prot="public">
+          <name>WEM_UTF16</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>File encoding options when writing contents that a non-UTF8 tool will read (on Windows systems). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For UNIX, we always use UTF-8. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="172" column="3" bodyfile="include/llvm/Support/Program.h" bodystart="172" bodyend="178"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a2311d06f966c58f271076e6b262fa092" prot="public" static="no">
+        <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+        <definition>typedef uint32_t llvm::sys::cas_flag</definition>
+        <argsstring></argsstring>
+        <name>cas_flag</name>
+        <qualifiedname>llvm::sys::cas_flag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Atomic.h" line="34" column="22" bodyfile="include/llvm/Support/Atomic.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a52f2c3fdd7f80c1991d8c7079489efff" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref></type>
+            <defval>std::chrono::nanoseconds</defval>
+          </param>
+        </templateparamlist>
+        <type>std::chrono::time_point&lt; <ref refid="classstd_1_1chrono_1_1system__clock" kindref="compound">std::chrono::system_clock</ref>, <ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref> &gt;</type>
+        <definition>using llvm::sys::TimePoint =  std::chrono::time_point&lt;std::chrono::system_clock, D&gt;</definition>
+        <argsstring></argsstring>
+        <name>TimePoint</name>
+        <qualifiedname>llvm::sys::TimePoint</qualifiedname>
+        <briefdescription>
+<para>A time point on the system clock. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is provided for two reasons:<itemizedlist>
+<listitem><para>to insulate us against subtle differences in behavior to differences in system clock precision (which is implementation-defined and differs between platforms).</para>
+</listitem><listitem><para>to shorten the type name The default precision is nanoseconds. If you need a specific precision specify it explicitly. If unsure, use the default. If you need a time point on a clock other than the system_clock, use std::chrono directly. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Chrono.h" line="34" column="1" bodyfile="include/llvm/Support/Chrono.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a0d6b9085695f9e366a389cbd887af1ad" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref></type>
+            <defval>std::chrono::nanoseconds</defval>
+          </param>
+        </templateparamlist>
+        <type>std::chrono::time_point&lt; <ref refid="classllvm_1_1sys_1_1_utc_clock" kindref="compound">UtcClock</ref>, <ref refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82" kindref="member">D</ref> &gt;</type>
+        <definition>using llvm::sys::UtcTime =  std::chrono::time_point&lt;UtcClock, D&gt;</definition>
+        <argsstring></argsstring>
+        <name>UtcTime</name>
+        <qualifiedname>llvm::sys::UtcTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Chrono.h" line="41" column="1" bodyfile="include/llvm/Support/Chrono.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a52d48084c5b60251870b6118e4670fee" prot="public" static="no">
+        <type><ref refid="classllvm_1_1sys_1_1_smart_mutex" kindref="compound">SmartMutex</ref>&lt; false &gt;</type>
+        <definition>typedef SmartMutex&lt;false&gt; llvm::sys::Mutex</definition>
+        <argsstring></argsstring>
+        <name>Mutex</name>
+        <qualifiedname>llvm::sys::Mutex</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1sys_1a52d48084c5b60251870b6118e4670fee" kindref="member">Mutex</ref> - A standard, always enforced mutex. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Mutex.h" line="66" column="24" bodyfile="include/llvm/Support/Mutex.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a1094ec958353ee43bd8ffd18187b1160" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="classbool" kindref="compound">bool</ref></type>
+            <declname>mt_only</declname>
+            <defname>mt_only</defname>
+          </param>
+        </templateparamlist>
+        <type>std::lock_guard&lt; <ref refid="classllvm_1_1sys_1_1_smart_mutex" kindref="compound">SmartMutex</ref>&lt; mt_only &gt; &gt;</type>
+        <definition>using llvm::sys::SmartScopedLock =  std::lock_guard&lt;SmartMutex&lt;mt_only&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>SmartScopedLock</name>
+        <qualifiedname>llvm::sys::SmartScopedLock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Mutex.h" line="69" column="5" bodyfile="include/llvm/Support/Mutex.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a266e19ae1ec2ce46c920460833ad35be" prot="public" static="no">
+        <type><ref refid="namespacellvm_1_1sys_1a1094ec958353ee43bd8ffd18187b1160" kindref="member">SmartScopedLock</ref>&lt; false &gt;</type>
+        <definition>typedef SmartScopedLock&lt;false&gt; llvm::sys::ScopedLock</definition>
+        <argsstring></argsstring>
+        <name>ScopedLock</name>
+        <qualifiedname>llvm::sys::ScopedLock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Mutex.h" line="71" column="29" bodyfile="include/llvm/Support/Mutex.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a0002a8efab1cd114eac8b9d1e52fbba0" prot="public" static="no">
+        <type>::pid_t</type>
+        <definition>typedef ::pid_t llvm::sys::procid_t</definition>
+        <argsstring></argsstring>
+        <name>procid_t</name>
+        <qualifiedname>llvm::sys::procid_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="41" column="19" bodyfile="include/llvm/Support/Program.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a145d354f2fcc7677afede50175c67de6" prot="public" static="no">
+        <type><ref refid="namespacellvm_1_1sys_1a0002a8efab1cd114eac8b9d1e52fbba0" kindref="member">procid_t</ref></type>
+        <definition>typedef procid_t llvm::sys::process_t</definition>
+        <argsstring></argsstring>
+        <name>process_t</name>
+        <qualifiedname>llvm::sys::process_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="42" column="20" bodyfile="include/llvm/Support/Program.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1aa3f166e8bb27e1c9a1e5cbb439e9749b" prot="public" static="no">
+        <type><ref refid="classllvm_1_1sys_1_1_smart_r_w_mutex" kindref="compound">SmartRWMutex</ref>&lt; false &gt;</type>
+        <definition>typedef SmartRWMutex&lt;false&gt; llvm::sys::RWMutex</definition>
+        <argsstring></argsstring>
+        <name>RWMutex</name>
+        <qualifiedname>llvm::sys::RWMutex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/RWMutex.h" line="165" column="22" bodyfile="include/llvm/Support/RWMutex.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a86d1020d641c72d805991fcd340b7f99" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="classbool" kindref="compound">bool</ref></type>
+            <declname>mt_only</declname>
+            <defname>mt_only</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::shared_lock&lt; <ref refid="classllvm_1_1sys_1_1_smart_r_w_mutex" kindref="compound">SmartRWMutex</ref>&lt; mt_only &gt; &gt;</type>
+        <definition>using llvm::sys::SmartScopedReader =  const std::shared_lock&lt;SmartRWMutex&lt;mt_only&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>SmartScopedReader</name>
+        <qualifiedname>llvm::sys::SmartScopedReader</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1sys_1a236c25c2602047e633c2ae38bac9ce17" kindref="member">ScopedReader</ref> - RAII acquisition of a reader lock. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/RWMutex.h" line="170" column="1" bodyfile="include/llvm/Support/RWMutex.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a236c25c2602047e633c2ae38bac9ce17" prot="public" static="no">
+        <type><ref refid="namespacellvm_1_1sys_1a86d1020d641c72d805991fcd340b7f99" kindref="member">SmartScopedReader</ref>&lt; false &gt;</type>
+        <definition>typedef SmartScopedReader&lt;false&gt; llvm::sys::ScopedReader</definition>
+        <argsstring></argsstring>
+        <name>ScopedReader</name>
+        <qualifiedname>llvm::sys::ScopedReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/RWMutex.h" line="182" column="27" bodyfile="include/llvm/Support/RWMutex.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a4509967f0975c070b89a860c405b5418" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="classbool" kindref="compound">bool</ref></type>
+            <declname>mt_only</declname>
+            <defname>mt_only</defname>
+          </param>
+        </templateparamlist>
+        <type>std::lock_guard&lt; <ref refid="classllvm_1_1sys_1_1_smart_r_w_mutex" kindref="compound">SmartRWMutex</ref>&lt; mt_only &gt; &gt;</type>
+        <definition>using llvm::sys::SmartScopedWriter =  std::lock_guard&lt;SmartRWMutex&lt;mt_only&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>SmartScopedWriter</name>
+        <qualifiedname>llvm::sys::SmartScopedWriter</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1sys_1a532bf81241c43f94f2b4e45aed519e1f" kindref="member">ScopedWriter</ref> - RAII acquisition of a writer lock. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/RWMutex.h" line="187" column="1" bodyfile="include/llvm/Support/RWMutex.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1a532bf81241c43f94f2b4e45aed519e1f" prot="public" static="no">
+        <type><ref refid="namespacellvm_1_1sys_1a4509967f0975c070b89a860c405b5418" kindref="member">SmartScopedWriter</ref>&lt; false &gt;</type>
+        <definition>typedef SmartScopedWriter&lt;false&gt; llvm::sys::ScopedWriter</definition>
+        <argsstring></argsstring>
+        <name>ScopedWriter</name>
+        <qualifiedname>llvm::sys::ScopedWriter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/RWMutex.h" line="199" column="27" bodyfile="include/llvm/Support/RWMutex.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1sys_1ae36d96d14c99fdcf62cf0a82008d71a3" prot="public" static="no">
+        <type>void(*)(void *)</type>
+        <definition>using llvm::sys::SignalHandlerCallback =  void (*)(void *)</definition>
+        <argsstring></argsstring>
+        <name>SignalHandlerCallback</name>
+        <qualifiedname>llvm::sys::SignalHandlerCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="61" column="3" bodyfile="include/llvm/Support/Signals.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacellvm_1_1sys_1a77295e6c130654c888b57aa25f9f90c5" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>const char llvm::sys::EnvPathSeparator</definition>
+        <argsstring></argsstring>
+        <name>EnvPathSeparator</name>
+        <qualifiedname>llvm::sys::EnvPathSeparator</qualifiedname>
+        <initializer>= &apos;:&apos;</initializer>
+        <briefdescription>
+<para>This is the OS-specific separator for PATH like environment variables: </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="32" column="14" bodyfile="include/llvm/Support/Program.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1a5a9952645a56e841314d2b880bd31375" compoundref="_m_s_v_c_paths_8cpp" startline="508" endline="615">llvm::findVCToolChainViaEnvironment</referencedby>
+        <referencedby refid="classllvm_1_1sys_1_1_process_1a8806fc38b760a88a96d5d7fb67de545f">llvm::sys::Process::GetEnv</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacellvm_1_1sys_1ab9f705441a3a825d4b8a93ca4476d4e7" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sys::IsBigEndianHost</definition>
+        <argsstring></argsstring>
+        <name>IsBigEndianHost</name>
+        <qualifiedname>llvm::sys::IsBigEndianHost</qualifiedname>
+        <initializer>=
+    <ref refid="namespacellvm_1ae1e26e57357947b25e392fd18ab000dba8e5f3adee38c8fccc13c1f3be0143796" kindref="member">llvm::endianness::native</ref> == <ref refid="namespacellvm_1ae1e26e57357947b25e392fd18ab000dbad861877da56b8b4ceb35c8cbfdf65bb4" kindref="member">llvm::endianness::big</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="26" column="16" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_folding_set_node_i_d_1af6cfdb17a50b09482364161707db0e4d" compoundref="_folding_set_8cpp" startline="45" endline="99">llvm::FoldingSetNodeID::AddString</referencedby>
+        <referencedby refid="namespacellvm_1_1object_1ad367577ea33bb6c474e53aee35df3b37" compoundref="_windows_resource_8cpp" startline="169" endline="178">llvm::object::convertUTF16LEToUTF8String</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1shared_1_1_s_p_s_serialization_traits_3_01_s_p_s_tag_t_00_01_s_p_s_tag_t_00_f024cad2a8ccb0c96527c11a4591b8d8_1a010e8003e79960145f2f3f9aa0609a34" compoundref="_simple_packed_serialization_8h" startline="178" endline="186">llvm::orc::shared::SPSSerializationTraits&lt; SPSTagT, SPSTagT, std::enable_if_t&lt; std::is_same&lt; SPSTagT, bool &gt;::value||std::is_same&lt; SPSTagT, char &gt;::value||std::is_same&lt; SPSTagT, int8_t &gt;::value||std::is_same&lt; SPSTagT, int16_t &gt;::value||std::is_same&lt; SPSTagT, int32_t &gt;::value||std::is_same&lt; SPSTagT, int64_t &gt;::value||std::is_same&lt; SPSTagT, uint8_t &gt;::value||std::is_same&lt; SPSTagT, uint16_t &gt;::value||std::is_same&lt; SPSTagT, uint32_t &gt;::value||std::is_same&lt; SPSTagT, uint64_t &gt;::value &gt; &gt;::deserialize</referencedby>
+        <referencedby refid="namespacellvm_1_1hashing_1_1detail_1a8b7aec03f89d9512ce1a14a3308ca161" compoundref="_hashing_8h" startline="144" endline="150">llvm::hashing::detail::fetch32</referencedby>
+        <referencedby refid="namespacellvm_1_1hashing_1_1detail_1a6af5e05ffaf0980f306a818bbe587f41" compoundref="_hashing_8h" startline="136" endline="142">llvm::hashing::detail::fetch64</referencedby>
+        <referencedby refid="structllvm_1_1mcdxbc_1_1_p_s_v_runtime_info_1a3afcf265b28cf1aae8dab4af4c89201c" compoundref="_d_x_container_p_s_v_info_8cpp" startline="150" endline="188">llvm::mcdxbc::PSVRuntimeInfo::finalize</referencedby>
+        <referencedby refid="structllvm_1_1object_1_1_view_array_1_1iterator_1a3bccb4d2cc76f0b52d2cb3ab57344aec" compoundref="_object_2_d_x_container_8h" startline="67" endline="79">llvm::object::ViewArray&lt; T &gt;::iterator::operator*</referencedby>
+        <referencedby refid="classllvm_1_1object_1_1_direct_x_1_1_p_s_v_runtime_info_1ac30f90a499bf2baa821b2838a784b86b" compoundref="_object_2_d_x_container_8cpp" startline="231" endline="432">llvm::object::DirectX::PSVRuntimeInfo::parse</referencedby>
+        <referencedby refid="_object_2_d_x_container_8cpp_1abc63df5c2aad9dab94dc1eeaa7ca4b57" compoundref="_object_2_d_x_container_8cpp" startline="36" endline="55">readInteger</referencedby>
+        <referencedby refid="_object_2_d_x_container_8cpp_1aa9e5fb5670969ca81a373909d83d51ae" compoundref="_object_2_d_x_container_8cpp" startline="23" endline="33">readStruct</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1shared_1_1_s_p_s_serialization_traits_3_01_s_p_s_tag_t_00_01_s_p_s_tag_t_00_f024cad2a8ccb0c96527c11a4591b8d8_1afe3ca4b56bc44bab916473dde49c6d4a" compoundref="_simple_packed_serialization_8h" startline="171" endline="176">llvm::orc::shared::SPSSerializationTraits&lt; SPSTagT, SPSTagT, std::enable_if_t&lt; std::is_same&lt; SPSTagT, bool &gt;::value||std::is_same&lt; SPSTagT, char &gt;::value||std::is_same&lt; SPSTagT, int8_t &gt;::value||std::is_same&lt; SPSTagT, int16_t &gt;::value||std::is_same&lt; SPSTagT, int32_t &gt;::value||std::is_same&lt; SPSTagT, int64_t &gt;::value||std::is_same&lt; SPSTagT, uint8_t &gt;::value||std::is_same&lt; SPSTagT, uint16_t &gt;::value||std::is_same&lt; SPSTagT, uint32_t &gt;::value||std::is_same&lt; SPSTagT, uint64_t &gt;::value &gt; &gt;::serialize</referencedby>
+        <referencedby refid="classllvm_1_1mcdxbc_1_1_signature_1a608616d2779ddc0d1ca2669b17119ba2" compoundref="_d_x_container_p_s_v_info_8cpp" startline="190" endline="236">llvm::mcdxbc::Signature::write</referencedby>
+        <referencedby refid="classllvm_1_1_d_x_container_object_writer_1aab937b67cb92336a4c82aeae0b8ccbf5" compoundref="_m_c_d_x_container_writer_8cpp" startline="21" endline="118">llvm::DXContainerObjectWriter::writeObject</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacellvm_1_1sys_1a4ee2015697caec796e59972aadc2f9e2" prot="public" static="yes" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>const bool llvm::sys::IsLittleEndianHost</definition>
+        <argsstring></argsstring>
+        <name>IsLittleEndianHost</name>
+        <qualifiedname>llvm::sys::IsLittleEndianHost</qualifiedname>
+        <initializer>= !<ref refid="namespacellvm_1_1sys_1ab9f705441a3a825d4b8a93ca4476d4e7" kindref="member">IsBigEndianHost</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="29" column="19" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_folding_set_node_i_d_1af6cfdb17a50b09482364161707db0e4d" compoundref="_folding_set_8cpp" startline="45" endline="99">llvm::FoldingSetNodeID::AddString</referencedby>
+        <referencedby refid="_mach_o_object_file_8cpp_1abc5ff59b8ea0a100389a37ea8ec40f9a" compoundref="_mach_o_object_file_8cpp" startline="1009" endline="1198">checkThreadCommand</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_streamer_1a7d36cf8691cdd5195631e8bbd8d38fc2" compoundref="_m_c_streamer_8cpp" startline="143" endline="157">llvm::MCStreamer::emitIntValue</referencedby>
+        <referencedby refid="_mach_o_reader_8cpp_1a3ebc7dd21b6e9c9781e5ac3e5d9b604e" compoundref="_mach_o_reader_8cpp" startline="60" endline="115">extractSections</referencedby>
+        <referencedby refid="structllvm_1_1_instr_prof_correlator_1_1_context_1a59d4e85507f7663c149617775b11623a" compoundref="_instr_prof_correlator_8cpp" startline="56" endline="91">llvm::InstrProfCorrelator::Context::get</referencedby>
+        <referencedby refid="_mach_o_object_file_8cpp_1a8e5744e3da3116ce5eaf50660b88d6aa" compoundref="_mach_o_object_file_8cpp" startline="5148" endline="5155">getArray</referencedby>
+        <referencedby refid="classllvm_1_1object_1_1_mach_o_object_file_1a766c3350d64dde8af24ef7b600b11185" compoundref="_mach_o_object_file_8cpp" startline="5049" endline="5135">llvm::object::MachOObjectFile::getChainedFixupsSegments</referencedby>
+        <referencedby refid="_mach_o_object_file_8cpp_1a65d683ab0721978a7568df291210a549" compoundref="_mach_o_object_file_8cpp" startline="71" endline="81">getStruct</referencedby>
+        <referencedby refid="_mach_o_object_file_8cpp_1a3be6030c853d0e0ffe5bc8545197118a" compoundref="_mach_o_object_file_8cpp" startline="84" endline="94">getStructOrErr</referencedby>
+        <referencedby refid="classllvm_1_1_data_extractor_1ae76306ed98218d7cb53f099c42c0dbef" compoundref="_data_extractor_8cpp" startline="102" endline="106">llvm::DataExtractor::getU24</referencedby>
+        <referencedby refid="_mach_o_universal_8cpp_1aba032268a29b9c4a5cbbf813370f0c21" compoundref="_mach_o_universal_8cpp" startline="32" endline="39">getUniversalBinaryStruct</referencedby>
+        <referencedby refid="_b_p_f_m_c_target_desc_8cpp_1a57c49ae0d15b512ea03aa0c8bd297a45" compoundref="_b_p_f_m_c_target_desc_8cpp" startline="107" endline="157">LLVMInitializeBPFTargetMC</referencedby>
+        <referencedby refid="namespacellvm_1af6d662507305e17aef5ce4361a349ad8" compoundref="_a_p_int_8cpp" startline="3050" endline="3074">llvm::LoadIntFromMemory</referencedby>
+        <referencedby refid="structllvm_1_1yaml_1_1_mapping_traits_3_01_mach_o_y_a_m_l_1_1_object_01_4_1a60b8756dcd66445c4f61cf46596474c7" compoundref="_mach_o_y_a_m_l_8cpp" startline="97" endline="124">llvm::yaml::MappingTraits&lt; MachOYAML::Object &gt;::mapping</referencedby>
+        <referencedby refid="classllvm_1_1object_1_1_mach_o_chained_fixup_entry_1a1ac5316af2beb36b1eee67c09c7448f8" compoundref="_mach_o_object_file_8cpp" startline="3379" endline="3467">llvm::object::MachOChainedFixupEntry::moveNext</referencedby>
+        <referencedby refid="_triple_8cpp_1aabf4024742648721f7840ae35fe7ffd8" compoundref="_triple_8cpp" startline="407" endline="420">parseBPFArch</referencedby>
+        <referencedby refid="namespacellvm_1a126453035cc98d97d01233bc532b32aa" compoundref="_a_p_int_8cpp" startline="3024" endline="3046">llvm::StoreIntToMemory</referencedby>
+        <referencedby refid="classllvm_1_1_execution_engine_1a08ed33d3b3f8b9e21167918d5de40014" compoundref="_execution_engine_8cpp" startline="1035" endline="1086">llvm::ExecutionEngine::StoreValueToMemory</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_mach_o_emitter_8cpp_03_1a5d4982689181e30f9114c6b35ec7facc" compoundref="_mach_o_emitter_8cpp" startline="705" endline="710">anonymous_namespace{MachOEmitter.cpp}::writeFatArch&lt; MachO::fat_arch &gt;</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_mach_o_emitter_8cpp_03_1a04e7b80e5a81e549928ca2e08054efa8" compoundref="_mach_o_emitter_8cpp" startline="713" endline="721">anonymous_namespace{MachOEmitter.cpp}::writeFatArch&lt; MachO::fat_arch_64 &gt;</referencedby>
+        <referencedby refid="_d_w_a_r_f_emitter_8cpp_1a7d09dee266df5fb62a8791100b24c5a6" compoundref="_d_w_a_r_f_emitter_8cpp" startline="42" endline="46">writeInteger</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_mach_o_emitter_8cpp_03_1ab0452cfab8d631ffe612b7db3ca753f3" compoundref="_mach_o_emitter_8cpp" startline="216" endline="228">anonymous_namespace{MachOEmitter.cpp}::writeLoadCommandData&lt; MachO::build_version_command &gt;</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_mach_o_emitter_8cpp_03_1a4526bc01726a48ab04a549eb59f98d82" compoundref="_mach_o_emitter_8cpp" startline="130" endline="143">anonymous_namespace{MachOEmitter.cpp}::writeLoadCommandData&lt; MachO::segment_command &gt;</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_mach_o_emitter_8cpp_03_1a218333fa07659a7328c0122fa819ed74" compoundref="_mach_o_emitter_8cpp" startline="146" endline="159">anonymous_namespace{MachOEmitter.cpp}::writeLoadCommandData&lt; MachO::segment_command_64 &gt;</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_mach_o_emitter_8cpp_03_1a46fc3f6bb1d9703770ef88e4b3d5d90b" compoundref="_mach_o_emitter_8cpp" startline="474" endline="486">anonymous_namespace{MachOEmitter.cpp}::writeNListEntry</referencedby>
+        <referencedby refid="_mach_o_writer_8cpp_1afb198633cab14d4e8eb44bbcbfae5cde" compoundref="_mach_o_writer_8cpp" startline="271" endline="284">writeNListEntry</referencedby>
+        <referencedby refid="_mach_o_universal_writer_8cpp_1a9f26efe564d8f7f1afb5f3033156d58d" compoundref="_mach_o_universal_writer_8cpp" startline="293" endline="329">writeUniversalArchsToStream</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a96357e03675b273feb2112dabb891ada" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::MemoryFence</definition>
+        <argsstring>()</argsstring>
+        <name>MemoryFence</name>
+        <qualifiedname>llvm::sys::MemoryFence</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Atomic.h" line="29" column="10" bodyfile="lib/Support/Atomic.cpp" bodystart="30" bodyend="42" declfile="include/llvm/Support/Atomic.h" declline="29" declcolumn="10"/>
+        <referencedby refid="namespacellvm_1abc08edd3ca31ae54f1a794719c4c153c" compoundref="_threading_8h" startline="86" endline="112">llvm::call_once</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1aff9e10eb8571f7854d34d38dc58b2ffb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1sys_1a2311d06f966c58f271076e6b262fa092" kindref="member">cas_flag</ref></type>
+        <definition>sys::cas_flag llvm::sys::CompareAndSwap</definition>
+        <argsstring>(volatile cas_flag *ptr, cas_flag new_value, cas_flag old_value)</argsstring>
+        <name>CompareAndSwap</name>
+        <qualifiedname>llvm::sys::CompareAndSwap</qualifiedname>
+        <param>
+          <type>volatile <ref refid="namespacellvm_1_1sys_1a2311d06f966c58f271076e6b262fa092" kindref="member">cas_flag</ref> *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1sys_1a2311d06f966c58f271076e6b262fa092" kindref="member">cas_flag</ref></type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1sys_1a2311d06f966c58f271076e6b262fa092" kindref="member">cas_flag</ref></type>
+          <declname>old_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Atomic.h" line="36" column="14" bodyfile="lib/Support/Atomic.cpp" bodystart="44" bodyend="59" declfile="include/llvm/Support/Atomic.h" declline="36" declcolumn="14"/>
+        <referencedby refid="namespacellvm_1abc08edd3ca31ae54f1a794719c4c153c" compoundref="_threading_8h" startline="86" endline="112">llvm::call_once</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1afb25f6b54f4b773fead4c4bacc1b8ab1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1sys_1a0d6b9085695f9e366a389cbd887af1ad" kindref="member">UtcTime</ref>&lt; std::chrono::seconds &gt;</type>
+        <definition>UtcTime&lt; std::chrono::seconds &gt; llvm::sys::toUtcTime</definition>
+        <argsstring>(std::time_t T)</argsstring>
+        <name>toUtcTime</name>
+        <qualifiedname>llvm::sys::toUtcTime</qualifiedname>
+        <param>
+          <type>std::time_t</type>
+          <declname>T</declname>
+        </param>
+        <briefdescription>
+<para>Convert a std::time_t to a <ref refid="namespacellvm_1_1sys_1a0d6b9085695f9e366a389cbd887af1ad" kindref="member">UtcTime</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Chrono.h" line="44" column="16" bodyfile="include/llvm/Support/Chrono.h" bodystart="44" bodyend="47"/>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1afb85ab84f25274ce79df485ddeadffdd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::time_t</type>
+        <definition>std::time_t llvm::sys::toTimeT</definition>
+        <argsstring>(TimePoint&lt;&gt; TP)</argsstring>
+        <name>toTimeT</name>
+        <qualifiedname>llvm::sys::toTimeT</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1sys_1a52f2c3fdd7f80c1991d8c7079489efff" kindref="member">TimePoint</ref>&lt;&gt;</type>
+          <declname>TP</declname>
+        </param>
+        <briefdescription>
+<para>Convert a <ref refid="namespacellvm_1_1sys_1a52f2c3fdd7f80c1991d8c7079489efff" kindref="member">TimePoint</ref> to std::time_t. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Chrono.h" line="50" column="20" bodyfile="include/llvm/Support/Chrono.h" bodystart="50" bodyend="54"/>
+        <referencedby refid="namespacellvm_1a75e4fcf4017cdd6f4f8631384f8a545a" compoundref="_chrono_8cpp" startline="25" endline="41">llvm::getStructTM</referencedby>
+        <referencedby refid="namespacellvm_1a9cb023219fbccf18f0dbadb83d3e3f21" compoundref="_chrono_8cpp" startline="43" endline="59">llvm::getStructTMUtc</referencedby>
+        <referencedby refid="_archive_writer_8cpp_1aea934139e960daaca81f19ee42fefb9a" compoundref="_archive_writer_8cpp" startline="256" endline="278">printBigArchiveMemberHeader</referencedby>
+        <referencedby refid="_archive_writer_8cpp_1a8a48633636bbcf3d359e1c02b6aba4a5" compoundref="_archive_writer_8cpp" startline="215" endline="228">printRestOfMemberHeader</referencedby>
+        <referencedby refid="namespacellvm_1_1sys_1acba86646ce5e530a99f56ba78408ca92" compoundref="_unix_8h" startline="81" endline="88">toTimeSpec</referencedby>
+        <referencedby refid="namespacellvm_1_1sys_1acbe2cb52d768f7aa907b648a08c1c9db" compoundref="_unix_8h" startline="91" endline="98">toTimeVal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a8ca1d721c5080ab3cbd34ecdf0e96b4a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::time_t</type>
+        <definition>std::time_t llvm::sys::toTimeT</definition>
+        <argsstring>(UtcTime&lt;&gt; TP)</argsstring>
+        <name>toTimeT</name>
+        <qualifiedname>llvm::sys::toTimeT</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1sys_1a0d6b9085695f9e366a389cbd887af1ad" kindref="member">UtcTime</ref>&lt;&gt;</type>
+          <declname>TP</declname>
+        </param>
+        <briefdescription>
+<para>Convert a <ref refid="namespacellvm_1_1sys_1a0d6b9085695f9e366a389cbd887af1ad" kindref="member">UtcTime</ref> to std::time_t. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Chrono.h" line="57" column="20" bodyfile="include/llvm/Support/Chrono.h" bodystart="57" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a7e0c6b3661b9c9f048aaef620463f1bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1sys_1a52f2c3fdd7f80c1991d8c7079489efff" kindref="member">TimePoint</ref>&lt; std::chrono::seconds &gt;</type>
+        <definition>TimePoint&lt; std::chrono::seconds &gt; llvm::sys::toTimePoint</definition>
+        <argsstring>(std::time_t T)</argsstring>
+        <name>toTimePoint</name>
+        <qualifiedname>llvm::sys::toTimePoint</qualifiedname>
+        <param>
+          <type>std::time_t</type>
+          <declname>T</declname>
+        </param>
+        <briefdescription>
+<para>Convert a std::time_t to a <ref refid="namespacellvm_1_1sys_1a52f2c3fdd7f80c1991d8c7079489efff" kindref="member">TimePoint</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Chrono.h" line="65" column="1" bodyfile="include/llvm/Support/Chrono.h" bodystart="65" bodyend="68"/>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+        <referencedby refid="_archive_writer_8cpp_1a98ad0137a31b38aa7b278f7cc52c4f3e" compoundref="_archive_writer_8cpp" startline="778" endline="985">computeMemberData</referencedby>
+        <referencedby refid="classllvm_1_1object_1_1_abstract_archive_member_header_1aa0994633a7dc598ab379d4dcfa99bb17" compoundref="_object_2_archive_8cpp" startline="393" endline="401">llvm::object::AbstractArchiveMemberHeader::getLastModified</referencedby>
+        <referencedby refid="structllvm_1_1vfs_1_1detail_1_1_new_in_memory_node_info_1a397f1399c965b53a95d8dbab6b8b41a3" compoundref="_virtual_file_system_8cpp" startline="828" endline="836">llvm::vfs::detail::NewInMemoryNodeInfo::makeStatus</referencedby>
+        <referencedby refid="namespacellvm_1ae80a7e9590f1bec7c0ca3b271e88a735" compoundref="_archive_writer_8cpp" startline="1030" endline="1298">llvm::writeArchiveToStream</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1af94f51747ff68462e325fb9129cdc10c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1sys_1a52f2c3fdd7f80c1991d8c7079489efff" kindref="member">TimePoint</ref></type>
+        <definition>TimePoint llvm::sys::toTimePoint</definition>
+        <argsstring>(std::time_t T, uint32_t nsec)</argsstring>
+        <name>toTimePoint</name>
+        <qualifiedname>llvm::sys::toTimePoint</qualifiedname>
+        <param>
+          <type>std::time_t</type>
+          <declname>T</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>nsec</declname>
+        </param>
+        <briefdescription>
+<para>Convert a std::time_t + nanoseconds to a <ref refid="namespacellvm_1_1sys_1a52f2c3fdd7f80c1991d8c7079489efff" kindref="member">TimePoint</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Chrono.h" line="72" column="1" bodyfile="include/llvm/Support/Chrono.h" bodystart="72" bodyend="76"/>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a1b09e9233389121e1492219e25daf411" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string llvm::sys::StrError</definition>
+        <argsstring>()</argsstring>
+        <name>StrError</name>
+        <qualifiedname>llvm::sys::StrError</qualifiedname>
+        <briefdescription>
+<para>Returns a string representation of the errno value, using whatever thread-safe variant of strerror() is available. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Be sure to call this immediately after the function that set errno, or errno may have been overwritten by an intervening call. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/Errno.cpp" line="26" column="13" bodyfile="lib/Support/Errno.cpp" bodystart="26" bodyend="28" declfile="include/llvm/Support/Errno.h" declline="26" declcolumn="13"/>
+        <references refid="namespacellvm_1_1sys_1a1b09e9233389121e1492219e25daf411" compoundref="_errno_8cpp" startline="26" endline="28">StrError</references>
+        <referencedby refid="_unix_8h_1a4a66e59cba198d78f4f5a80c1284a666" compoundref="_unix_8h" startline="53" endline="61">MakeErrMsg</referencedby>
+        <referencedby refid="namespacellvm_1_1sys_1a1b09e9233389121e1492219e25daf411" compoundref="_errno_8cpp" startline="26" endline="28">StrError</referencedby>
+        <referencedby refid="classanonymous__namespace_02_o_profile_j_i_t_event_listener_8cpp_03_1_1_o_profile_j_i_t_event_listener_1a25c2cd439ca2159c34dadfd04ba1c48e" compoundref="_o_profile_j_i_t_event_listener_8cpp" startline="68" endline="78">anonymous_namespace{OProfileJITEventListener.cpp}::OProfileJITEventListener::~OProfileJITEventListener</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a70f02bcd250a9d5b4dbdb66f7c453e32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string llvm::sys::StrError</definition>
+        <argsstring>(int errnum)</argsstring>
+        <name>StrError</name>
+        <qualifiedname>llvm::sys::StrError</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>errnum</declname>
+        </param>
+        <briefdescription>
+<para>Like the no-argument version above, but uses <computeroutput>errnum</computeroutput> instead of errno. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/Errno.cpp" line="30" column="13" bodyfile="lib/Support/Errno.cpp" bodystart="30" bodyend="60" declfile="include/llvm/Support/Errno.h" declline="29" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a137eaaa673e8fbf6bd1bfc41ea0c12b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FailT</type>
+          </param>
+          <param>
+            <type>typename <ref refid="_pass_builder_bindings_8cpp_1aec1db240440db5948a5f72be2665b8c5" kindref="member">Fun</ref></type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(auto)</type>
+        <definition>decltype(auto) llvm::sys::RetryAfterSignal</definition>
+        <argsstring>(const FailT &amp;Fail, const Fun &amp;F, const Args &amp;... As)</argsstring>
+        <name>RetryAfterSignal</name>
+        <qualifiedname>llvm::sys::RetryAfterSignal</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> FailT &amp;</type>
+          <declname>Fail</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="_pass_builder_bindings_8cpp_1aec1db240440db5948a5f72be2665b8c5" kindref="member">Fun</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Args &amp;...</type>
+          <declname>As</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Errno.h" line="32" column="17" bodyfile="include/llvm/Support/Errno.h" bodystart="32" bodyend="40"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="_a_arch64_disassembler_8cpp_1aae15979c93f7f0929116b975b5c46cd6" compoundref="_a_arch64_disassembler_8cpp" startline="221">Fail</references>
+        <references refid="_pass_builder_bindings_8cpp_1aec1db240440db5948a5f72be2665b8c5" compoundref="_pass_builder_bindings_8cpp" startline="51">Fun</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ae8ef6fee68f940f474858fd90281d2d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+        <definition>raw_ostream &amp; llvm::sys::operator&lt;&lt;</definition>
+        <argsstring>(raw_ostream &amp;OS, const Memory::ProtectionFlags &amp;PF)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>llvm::sys::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395" kindref="member">Memory::ProtectionFlags</ref> &amp;</type>
+          <declname>PF</declname>
+        </param>
+        <briefdescription>
+<para>Debugging output for <ref refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395" kindref="member">Memory::ProtectionFlags</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/Memory.cpp" line="34" column="1" bodyfile="lib/Support/Memory.cpp" bodystart="34" bodyend="41" declfile="include/llvm/Support/Memory.h" declline="174" declcolumn="3"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a72200d7026f0978efe86fc34f4cba76e" compoundref="_memory_8h" startline="58">llvm::sys::Memory::MF_EXEC</references>
+        <references refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417" compoundref="_memory_8h" startline="56">llvm::sys::Memory::MF_READ</references>
+        <references refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a83e34a8267f7acd88563e9d5a3ee7c25" compoundref="_memory_8h" startline="57">llvm::sys::Memory::MF_WRITE</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ac81114da21460a3e4e68c439d429e4e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+        <definition>raw_ostream &amp; llvm::sys::operator&lt;&lt;</definition>
+        <argsstring>(raw_ostream &amp;OS, const MemoryBlock &amp;MB)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>llvm::sys::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref> &amp;</type>
+          <declname>MB</declname>
+        </param>
+        <briefdescription>
+<para>Debugging output for <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/Memory.cpp" line="43" column="1" bodyfile="lib/Support/Memory.cpp" bodystart="43" bodyend="47" declfile="include/llvm/Support/Memory.h" declline="177" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ae87ab32d0995f94193aff5e380c8d251" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error_or" kindref="compound">ErrorOr</ref>&lt; std::string &gt;</type>
+        <definition>ErrorOr&lt; std::string &gt; llvm::sys::findProgramByName</definition>
+        <argsstring>(StringRef Name, ArrayRef&lt; StringRef &gt; Paths={})</argsstring>
+        <name>findProgramByName</name>
+        <qualifiedname>llvm::sys::findProgramByName</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+          <declname>Paths</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Find the first executable file <computeroutput>Name</computeroutput> in <computeroutput>Paths</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This does not perform hashing as a shell would but instead stats each PATH entry individually so should generally be avoided. Core LLVM library functions and options should instead require fully specified paths.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the executable to find. If it contains any system slashes, it will be returned as is. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Paths</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional list of paths to search for <computeroutput>Name</computeroutput>. If empty it will use the system PATH environment instead.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The fully qualified path to the first <computeroutput>Name</computeroutput> in <computeroutput>Paths</computeroutput> if it exists. <computeroutput>Name</computeroutput> if <computeroutput>Name</computeroutput> has slashes in it. Otherwise an error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="79" column="3" declfile="include/llvm/Support/Program.h" declline="79" declcolumn="3"/>
+        <referencedby refid="namespacellvm_1ab3a01ed22efa91390e377a44b45087d8" compoundref="_print_passes_8cpp" startline="215" endline="253">llvm::doSystemDiff</referencedby>
+        <referencedby refid="classllvm_1_1_dot_cfg_change_reporter_1a59364db4f35eb6929a72d9589afa2718" compoundref="_standard_instrumentations_8cpp" startline="2278" endline="2295">llvm::DotCfgChangeReporter::genHTML</referencedby>
+        <referencedby refid="classllvm_1_1_i_r_changed_tester_1ab20af032d1da88267e3e95d9b2ad9859" compoundref="_standard_instrumentations_8cpp" startline="552" endline="576">llvm::IRChangedTester::handleIR</referencedby>
+        <referencedby refid="_signals_8cpp_1a1c25905ebd1d19c4d5c4e2ca86cdb1f2" compoundref="_signals_8cpp" startline="142" endline="254">printSymbolizedStackTrace</referencedby>
+        <referencedby refid="structanonymous__namespace_02_graph_writer_8cpp_03_1_1_graph_session_1acdf2054b6bbe671ac14797cebde6cc8b" compoundref="_graph_writer_8cpp" startline="159" endline="171">anonymous_namespace{GraphWriter.cpp}::GraphSession::TryFindProgram</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a1b6956e6c738949193efee28bffe29f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code llvm::sys::ChangeStdinMode</definition>
+        <argsstring>(fs::OpenFlags Flags)</argsstring>
+        <name>ChangeStdinMode</name>
+        <qualifiedname>llvm::sys::ChangeStdinMode</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1sys_1_1fs_1a662978c0cdf81de0d448032f142a3695" kindref="member">fs::OpenFlags</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="84" column="19" declfile="include/llvm/Support/Program.h" declline="84" declcolumn="19"/>
+        <referencedby refid="classllvm_1_1_memory_buffer_1ae56e946cf4266646c30b0898033b88bc" compoundref="_memory_buffer_8cpp" startline="566" endline="574">llvm::MemoryBuffer::getSTDIN</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1aa8e20bc263db62de532feb3d46aead63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code llvm::sys::ChangeStdoutMode</definition>
+        <argsstring>(fs::OpenFlags Flags)</argsstring>
+        <name>ChangeStdoutMode</name>
+        <qualifiedname>llvm::sys::ChangeStdoutMode</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1sys_1_1fs_1a662978c0cdf81de0d448032f142a3695" kindref="member">fs::OpenFlags</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="85" column="19" declfile="include/llvm/Support/Program.h" declline="85" declcolumn="19"/>
+        <referencedby refid="raw__ostream_8cpp_1a2ef27606df20d46db5a3b4f58604ccba" compoundref="raw__ostream_8cpp" startline="565" endline="589">getFD</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a74b492689c767075c865526e04296d02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code llvm::sys::ChangeStdinToBinary</definition>
+        <argsstring>()</argsstring>
+        <name>ChangeStdinToBinary</name>
+        <qualifiedname>llvm::sys::ChangeStdinToBinary</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="90" column="19" declfile="include/llvm/Support/Program.h" declline="90" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ac35445acb02a4d09fe5aeaeaa3ad5165" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code llvm::sys::ChangeStdoutToBinary</definition>
+        <argsstring>()</argsstring>
+        <name>ChangeStdoutToBinary</name>
+        <qualifiedname>llvm::sys::ChangeStdoutToBinary</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="91" column="19" declfile="include/llvm/Support/Program.h" declline="91" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1abb13fbc7f52c659966b05092b19e6e19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::sys::ExecuteAndWait</definition>
+        <argsstring>(StringRef Program, ArrayRef&lt; StringRef &gt; Args, std::optional&lt; ArrayRef&lt; StringRef &gt; &gt; Env=std::nullopt, ArrayRef&lt; std::optional&lt; StringRef &gt; &gt; Redirects={}, unsigned SecondsToWait=0, unsigned MemoryLimit=0, std::string *ErrMsg=nullptr, bool *ExecutionFailed=nullptr, std::optional&lt; ProcessStatistics &gt; *ProcStat=nullptr, BitVector *AffinityMask=nullptr)</argsstring>
+        <name>ExecuteAndWait</name>
+        <qualifiedname>llvm::sys::ExecuteAndWait</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Program</declname>
+          <briefdescription><para>Path of the program to be executed. It is presumed this is the result of the findProgramByName method. </para>
+</briefdescription>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+          <declname>Args</declname>
+          <briefdescription><para>An array of strings that are passed to the program. The first element should be the name of the program. The array should <bold>not</bold> be terminated by an empty <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>. </para>
+</briefdescription>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt; &gt;</type>
+          <declname>Env</declname>
+          <defval>std::nullopt</defval>
+          <briefdescription><para>An optional vector of strings to use for the program&apos;s environment. If not provided, the current program&apos;s environment will be used. If specified, the vector should <bold>not</bold> be terminated by an empty <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>. </para>
+</briefdescription>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::optional&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt; &gt;</type>
+          <declname>Redirects</declname>
+          <defval>{}</defval>
+          <briefdescription><para>An array of optional paths. Should have a size of zero or three. If the array is empty, no redirections are performed. Otherwise, the inferior process&apos;s stdin(0), stdout(1), and stderr(2) will be redirected to the corresponding paths, if the optional path is present (not <computeroutput>std::nullopt</computeroutput>). When an empty path is passed in, the corresponding file descriptor will be disconnected (ie, /dev/null&apos;d) in a portable way. </para>
+</briefdescription>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>SecondsToWait</declname>
+          <defval>0</defval>
+          <briefdescription><para>If non-zero, this specifies the amount of time to wait for the child process to exit. If the time expires, the child is killed and this call returns. If zero, this function will wait until the child finishes or forever if it doesn&apos;t. </para>
+</briefdescription>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>MemoryLimit</declname>
+          <defval>0</defval>
+          <briefdescription><para>If non-zero, this specifies max. amount of memory can be allocated by process. If memory usage will be higher limit, the child is killed and this call returns. If zero<itemizedlist>
+<listitem><para>no memory limit. </para>
+</listitem></itemizedlist>
+</para>
+</briefdescription>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>ErrMsg</declname>
+          <defval>nullptr</defval>
+          <briefdescription><para>If non-zero, provides a pointer to a string instance in which error messages will be returned. If the string is non-empty upon return an error occurred while invoking the program. </para>
+</briefdescription>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> *</type>
+          <declname>ExecutionFailed</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="structllvm_1_1sys_1_1_process_statistics" kindref="compound">ProcessStatistics</ref> &gt; *</type>
+          <declname>ProcStat</declname>
+          <defval>nullptr</defval>
+          <briefdescription><para>If non-zero, </para>
+</briefdescription>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> *</type>
+          <declname>AffinityMask</declname>
+          <defval>nullptr</defval>
+          <briefdescription><para>provides a pointer to a structure in which process execution statistics will be stored. CPUs or processors the new program shall run on. </para>
+</briefdescription>
+        </param>
+        <briefdescription>
+<para>This function executes the program using the arguments provided. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The invoked program will inherit the stdin, stdout, and stderr file descriptors, the environment and other configuration settings of the invoking program. This function waits for the program to finish, so should be avoided in library functions that aren&apos;t expected to block. Consider using <ref refid="namespacellvm_1_1sys_1a76fe26a8f1401a60839398dedb2f170c" kindref="member">ExecuteNoWait()</ref> instead. <simplesect kind="return"><para>an integer result code indicating the status of the program. A zero or positive value indicates the result code of the program. -1 indicates failure to execute -2 indicates a crash during execution or timeout </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="104" column="7" bodyfile="lib/Support/Program.cpp" bodystart="32" bodyend="55" declfile="include/llvm/Support/Program.h" declline="104" declcolumn="7"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_program_8cpp_1a3cc4767a85e498eea6b41bfbbdb4d2e9">Execute</references>
+        <references refid="namespacellvm_1a233737223c9a3dba810df5b91bc91d1fa49bfe5e1e40e44e387a5e03c6ca759c5" compoundref="_threading_8h" startline="60">llvm::Wait</references>
+        <referencedby refid="namespacellvm_1ab3a01ed22efa91390e377a44b45087d8" compoundref="_print_passes_8cpp" startline="215" endline="253">llvm::doSystemDiff</referencedby>
+        <referencedby refid="_graph_writer_8cpp_1a757cbab3b98663245aad227dc16be58b" compoundref="_graph_writer_8cpp" startline="137" endline="152">ExecGraphViewer</referencedby>
+        <referencedby refid="classllvm_1_1_dot_cfg_change_reporter_1a59364db4f35eb6929a72d9589afa2718" compoundref="_standard_instrumentations_8cpp" startline="2278" endline="2295">llvm::DotCfgChangeReporter::genHTML</referencedby>
+        <referencedby refid="classllvm_1_1_i_r_changed_tester_1ab20af032d1da88267e3e95d9b2ad9859" compoundref="_standard_instrumentations_8cpp" startline="552" endline="576">llvm::IRChangedTester::handleIR</referencedby>
+        <referencedby refid="_signals_8cpp_1a1c25905ebd1d19c4d5c4e2ca86cdb1f2" compoundref="_signals_8cpp" startline="142" endline="254">printSymbolizedStackTrace</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a76fe26a8f1401a60839398dedb2f170c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1sys_1_1_process_info" kindref="compound">ProcessInfo</ref></type>
+        <definition>ProcessInfo llvm::sys::ExecuteNoWait</definition>
+        <argsstring>(StringRef Program, ArrayRef&lt; StringRef &gt; Args, std::optional&lt; ArrayRef&lt; StringRef &gt; &gt; Env, ArrayRef&lt; std::optional&lt; StringRef &gt; &gt; Redirects={}, unsigned MemoryLimit=0, std::string *ErrMsg=nullptr, bool *ExecutionFailed=nullptr, BitVector *AffinityMask=nullptr, bool DetachProcess=false)</argsstring>
+        <name>ExecuteNoWait</name>
+        <qualifiedname>llvm::sys::ExecuteNoWait</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Program</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+          <declname>Args</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt; &gt;</type>
+          <declname>Env</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::optional&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt; &gt;</type>
+          <declname>Redirects</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>MemoryLimit</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>ErrMsg</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> *</type>
+          <declname>ExecutionFailed</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref> *</type>
+          <declname>AffinityMask</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>DetachProcess</declname>
+          <defval>false</defval>
+          <briefdescription><para>If true the executed program detatches from the controlling terminal. I/O streams such as <ref refid="namespacellvm_1a2d79a00fa7c56f57b87f2fe2a3f118c7" kindref="member">llvm::outs</ref>, <ref refid="namespacellvm_1a9a7b5c68c90f85baaedaa854cc5002cc" kindref="member">llvm::errs</ref>, and stdin will be closed until redirected to another output location </para>
+</briefdescription>
+        </param>
+        <briefdescription>
+<para>Similar to <ref refid="namespacellvm_1_1sys_1abb13fbc7f52c659966b05092b19e6e19" kindref="member">ExecuteAndWait</ref>, but returns immediately. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="structllvm_1_1sys_1_1_process_info" kindref="compound">ProcessInfo</ref> of the newly launched process. </para>
+</simplesect>
+<simplesect kind="note"><para>On Microsoft Windows systems, users will need to either call <ref refid="namespacellvm_1_1sys_1a7defb51d8d6a2eba7a428d1a22f08bad" kindref="member">Wait</ref> until the process has finished executing or win32&apos;s CloseHandle API on ProcessInfo.ProcessHandle to avoid memory leaks. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="149" column="15" bodyfile="lib/Support/Program.cpp" bodystart="57" bodyend="73" declfile="include/llvm/Support/Program.h" declline="149" declcolumn="15"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_program_8cpp_1a3cc4767a85e498eea6b41bfbbdb4d2e9">Execute</references>
+        <referencedby refid="_graph_writer_8cpp_1a757cbab3b98663245aad227dc16be58b" compoundref="_graph_writer_8cpp" startline="137" endline="152">ExecGraphViewer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a8f03c560e53b510e60a472723126bb52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sys::commandLineFitsWithinSystemLimits</definition>
+        <argsstring>(StringRef Program, ArrayRef&lt; StringRef &gt; Args)</argsstring>
+        <name>commandLineFitsWithinSystemLimits</name>
+        <qualifiedname>llvm::sys::commandLineFitsWithinSystemLimits</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Program</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+          <declname>Args</declname>
+        </param>
+        <briefdescription>
+<para>Return true if the given arguments fit within system-specific argument length limits. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="162" column="8" declfile="include/llvm/Support/Program.h" declline="162" declcolumn="8"/>
+        <referencedby refid="namespacellvm_1_1sys_1adbd83d14e81066db92fde766029a7c37" compoundref="_program_8cpp" startline="75" endline="82">commandLineFitsWithinSystemLimits</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1adbd83d14e81066db92fde766029a7c37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sys::commandLineFitsWithinSystemLimits</definition>
+        <argsstring>(StringRef Program, ArrayRef&lt; const char * &gt; Args)</argsstring>
+        <name>commandLineFitsWithinSystemLimits</name>
+        <qualifiedname>llvm::sys::commandLineFitsWithinSystemLimits</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Program</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> * &gt;</type>
+          <declname>Args</declname>
+        </param>
+        <briefdescription>
+<para>Return true if the given arguments fit within system-specific argument length limits. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="167" column="8" bodyfile="lib/Support/Program.cpp" bodystart="75" bodyend="82" declfile="include/llvm/Support/Program.h" declline="167" declcolumn="8"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="namespacellvm_1_1sys_1a8f03c560e53b510e60a472723126bb52">commandLineFitsWithinSystemLimits</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a396fcfee6914c76974b73c3d203da6a5" compoundref="_small_vector_8h" startline="937" endline="944">llvm::SmallVectorImpl&lt; T &gt;::emplace_back</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a499ea32ca1b8d16cedfe01d1e5b08f29" compoundref="_small_vector_8h" startline="663" endline="666">llvm::SmallVectorImpl&lt; T &gt;::reserve</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ae1fa64c0bf9c723c5960fdd815df37df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>std::error_code llvm::sys::writeFileWithEncoding</definition>
+        <argsstring>(StringRef FileName, StringRef Contents, WindowsEncodingMethod Encoding=WEM_UTF8)</argsstring>
+        <name>writeFileWithEncoding</name>
+        <qualifiedname>llvm::sys::writeFileWithEncoding</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>FileName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Contents</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1sys_1aad87650fa22966074a3b341d0e5cef6c" kindref="member">WindowsEncodingMethod</ref></type>
+          <declname>Encoding</declname>
+          <defval><ref refid="namespacellvm_1_1sys_1aad87650fa22966074a3b341d0e5cef6caf0fd365beea6ebcbd1e26eb24015da53" kindref="member">WEM_UTF8</ref></defval>
+        </param>
+        <briefdescription>
+<para>Saves the UTF8-encoded <computeroutput>contents</computeroutput> string into the file <computeroutput>FileName</computeroutput> using a specific encoding. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This write file function adds the possibility to choose which encoding to use when writing a text file. On Windows, this is important when writing files with internationalization support with an encoding that is different from the one used in LLVM (UTF-8). We use this when writing response files, since GCC tools on MinGW only understand legacy code pages, and VisualStudio tools only understand UTF-16. For UNIX, using different encodings is silently ignored, since all tools work well with UTF-8. This function assumes that you only use UTF-8 <emphasis>text</emphasis> data and will convert it to your desired encoding before writing to the file.</para>
+<para>FIXME: We use EM_CurrentCodePage to write response files for GNU tools in a MinGW/MinGW-w64 environment, which has serious flaws but currently is our best shot to make gcc/ld understand international characters. This should be changed as soon as binutils fix this to support <ref refid="namespacellvm_1a17701f48ffa18ce5f16797db84617db2" kindref="member">UTF16</ref> on mingw.</para>
+<para><simplesect kind="return"><para>non-zero error_code if failed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="201" column="3" declfile="include/llvm/Support/Program.h" declline="201" declcolumn="3"/>
+        <references refid="namespacellvm_1_1sys_1aad87650fa22966074a3b341d0e5cef6caf0fd365beea6ebcbd1e26eb24015da53" compoundref="_program_8h" startline="175">WEM_UTF8</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a7defb51d8d6a2eba7a428d1a22f08bad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1sys_1_1_process_info" kindref="compound">ProcessInfo</ref></type>
+        <definition>ProcessInfo llvm::sys::Wait</definition>
+        <argsstring>(const ProcessInfo &amp;PI, std::optional&lt; unsigned &gt; SecondsToWait, std::string *ErrMsg=nullptr, std::optional&lt; ProcessStatistics &gt; *ProcStat=nullptr, bool Polling=false)</argsstring>
+        <name>Wait</name>
+        <qualifiedname>llvm::sys::Wait</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1sys_1_1_process_info" kindref="compound">ProcessInfo</ref> &amp;</type>
+          <declname>PI</declname>
+          <briefdescription><para>The child process that should be waited on. </para>
+</briefdescription>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+          <declname>SecondsToWait</declname>
+          <briefdescription><para>If std::nullopt, waits until child has terminated. If a value, this specifies the amount of time to wait for the child process. If the time expires, and <computeroutput>Polling</computeroutput> is false, the child is killed and this &lt; function returns. If the time expires and <computeroutput>Polling</computeroutput> is true, the child is resumed.</para>
+<para>If zero, this function will perform a non-blocking wait on the child process. </para>
+</briefdescription>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>ErrMsg</declname>
+          <defval>nullptr</defval>
+          <briefdescription><para>If non-zero, provides a pointer to a string instance in which error messages will be returned. If the string is non-empty upon return an error occurred while invoking the program. </para>
+</briefdescription>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="structllvm_1_1sys_1_1_process_statistics" kindref="compound">ProcessStatistics</ref> &gt; *</type>
+          <declname>ProcStat</declname>
+          <defval>nullptr</defval>
+          <briefdescription><para>If non-zero, provides </para>
+</briefdescription>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Polling</declname>
+          <defval>false</defval>
+          <briefdescription><para>a pointer to a structure in which process execution statistics will be stored. If true, do not kill the process on timeout. </para>
+</briefdescription>
+        </param>
+        <briefdescription>
+<para>This function waits for the process specified by <computeroutput>PI</computeroutput> to finish. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structllvm_1_1sys_1_1_process_info" kindref="compound">ProcessInfo</ref> struct with Pid set to: <itemizedlist>
+<listitem><para>The process id of the child process <ref refid="_pass_builder_bindings_8cpp_1acdfbcf188e2d4a80837e89de2ccdffab" kindref="member">if</ref> the child process has changed state. </para>
+</listitem>
+<listitem><para>0 <ref refid="_pass_builder_bindings_8cpp_1acdfbcf188e2d4a80837e89de2ccdffab" kindref="member">if</ref> the child process has not changed state. </para>
+</listitem>
+</itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="note"><para>Users of this function should always check the ReturnCode member of the </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structllvm_1_1sys_1_1_process_info" kindref="compound">ProcessInfo</ref> returned from this <ref refid="_region_printer_8cpp_1aa37fbbce2360106772fd97ed06455d55" kindref="member">function</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="212" column="3" declfile="include/llvm/Support/Program.h" declline="212" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a2407bfb7839e9f051cd446d587f978be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::printArg</definition>
+        <argsstring>(llvm::raw_ostream &amp;OS, StringRef Arg, bool Quote)</argsstring>
+        <name>printArg</name>
+        <qualifiedname>llvm::sys::printArg</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">llvm::raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Arg</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Quote</declname>
+        </param>
+        <briefdescription>
+<para>Print a command argument, and optionally quote it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Program.h" line="235" column="8" bodyfile="lib/Support/Program.cpp" bodystart="84" bodyend="100" declfile="include/llvm/Support/Program.h" declline="235" declcolumn="8"/>
+        <references refid="classllvm_1_1_string_ref_1a93b15a8c0022febbe39d17ab933737a8" compoundref="_string_ref_8h" startline="377" endline="379">llvm::StringRef::find_first_of</references>
+        <references refid="classllvm_1_1_string_ref_1ad0f54a163ac500b144590640c6f1eb6b" compoundref="_string_ref_8h" startline="53">llvm::StringRef::npos</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ab0938d8ccb6550ddc3865f45b48acb6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::RunInterruptHandlers</definition>
+        <argsstring>()</argsstring>
+        <name>RunInterruptHandlers</name>
+        <qualifiedname>llvm::sys::RunInterruptHandlers</qualifiedname>
+        <briefdescription>
+<para>This function runs all the registered interrupt handlers, including the removal of files registered by RemoveFileOnSignal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="28" column="8" declfile="include/llvm/Support/Signals.h" declline="28" declcolumn="8"/>
+        <referencedby refid="namespacellvm_1af17ded460e39f2bd20177d57b3b5e87d" compoundref="_table_gen_2_error_8cpp" startline="44" endline="48">llvm::fatal_exit</referencedby>
+        <referencedby refid="namespacellvm_1a66fc8969d714a36fb8b4918753d1b973" compoundref="_error_handling_8cpp" startline="91" endline="127">llvm::report_fatal_error</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1aee27cc5336ecd3f21eeda4ad2826b915" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sys::RemoveFileOnSignal</definition>
+        <argsstring>(StringRef Filename, std::string *ErrMsg=nullptr)</argsstring>
+        <name>RemoveFileOnSignal</name>
+        <qualifiedname>llvm::sys::RemoveFileOnSignal</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Filename</declname>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>ErrMsg</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>This function registers signal handlers to ensure that if a signal gets delivered that the named file is removed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Remove a file if a fatal signal occurs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="33" column="8" declfile="include/llvm/Support/Signals.h" declline="33" declcolumn="8"/>
+        <referencedby refid="classllvm_1_1_cleanup_installer_1a91c9dd60a97ff0a5fde60f97e99e4315" compoundref="_tool_output_file_8cpp" startline="20" endline="25">llvm::CleanupInstaller::CleanupInstaller</referencedby>
+        <referencedby refid="classllvm_1_1sys_1_1fs_1_1_temp_file_1ad1d2e9ae2eb5ea7e7b60f8bcb715b2e9" compoundref="_path_8cpp" startline="1325" endline="1351">llvm::sys::fs::TempFile::create</referencedby>
+        <referencedby refid="classanonymous__namespace_02_lock_file_manager_8cpp_03_1_1_remove_unique_lock_file_on_signal_1a2808d6ab8eaca1641b199df415589d0c" compoundref="_lock_file_manager_8cpp" startline="140" endline="143">anonymous_namespace{LockFileManager.cpp}::RemoveUniqueLockFileOnSignal::RemoveUniqueLockFileOnSignal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a7936dae925973eb8b0921c01b70b16d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::DontRemoveFileOnSignal</definition>
+        <argsstring>(StringRef Filename)</argsstring>
+        <name>DontRemoveFileOnSignal</name>
+        <qualifiedname>llvm::sys::DontRemoveFileOnSignal</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Filename</declname>
+        </param>
+        <briefdescription>
+<para>This function removes a file from the list of files to be removed on signal delivery. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="37" column="8" declfile="include/llvm/Support/Signals.h" declline="37" declcolumn="8"/>
+        <referencedby refid="classllvm_1_1sys_1_1fs_1_1_temp_file_1ac804c3ad178df1dd809e2232f9837e50" compoundref="_path_8cpp" startline="1226" endline="1252">llvm::sys::fs::TempFile::discard</referencedby>
+        <referencedby refid="classllvm_1_1sys_1_1fs_1_1_temp_file_1a218862a665465ddb719d8ac441e0b5ab" compoundref="_path_8cpp" startline="1305" endline="1323">llvm::sys::fs::TempFile::keep</referencedby>
+        <referencedby refid="classllvm_1_1sys_1_1fs_1_1_temp_file_1ad0b321ee190fd8f67b1f1792b30ff998" compoundref="_path_8cpp" startline="1254" endline="1303">llvm::sys::fs::TempFile::keep</referencedby>
+        <referencedby refid="classllvm_1_1_cleanup_installer_1a0aea26b563a856642fa6d4e8e4e2aaf9" compoundref="_tool_output_file_8cpp" startline="27" endline="38">llvm::CleanupInstaller::~CleanupInstaller</referencedby>
+        <referencedby refid="classllvm_1_1_lock_file_manager_1a12291e21b11c09c114c05a7225bb0812" compoundref="_lock_file_manager_8cpp" startline="282" endline="292">llvm::LockFileManager::~LockFileManager</referencedby>
+        <referencedby refid="classanonymous__namespace_02_lock_file_manager_8cpp_03_1_1_remove_unique_lock_file_on_signal_1ae308f9b10240071a475d37002cb34de5" compoundref="_lock_file_manager_8cpp" startline="145" endline="153">anonymous_namespace{LockFileManager.cpp}::RemoveUniqueLockFileOnSignal::~RemoveUniqueLockFileOnSignal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ab062fd190912d9ca714311df7cbe51d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::PrintStackTraceOnErrorSignal</definition>
+        <argsstring>(StringRef Argv0, bool DisableCrashReporting=false)</argsstring>
+        <name>PrintStackTraceOnErrorSignal</name>
+        <qualifiedname>llvm::sys::PrintStackTraceOnErrorSignal</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Argv0</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>DisableCrashReporting</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>When an error signal (such as SIGABRT or SIGSEGV) is delivered to the process, print a stack trace and then exit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Print a stack trace if a fatal signal occurs. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Argv0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the current binary name, used to find the symbolizer relative to the current binary before searching $PATH; can be StringRef(), in which case we will only search $PATH. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DisableCrashReporting</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if <computeroutput>true</computeroutput>, disable the normal crash reporting mechanisms on the underlying operating system. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="47" column="8" declfile="include/llvm/Support/Signals.h" declline="47" declcolumn="8"/>
+        <referencedby refid="classllvm_1_1_init_l_l_v_m_1a9640709b52fc6fe255ee87be2cf11fe1" compoundref="_init_l_l_v_m_8cpp" startline="37" endline="97">llvm::InitLLVM::InitLLVM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a3dda14c3980f644b8796c1a51d7bf11b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::DisableSystemDialogsOnCrash</definition>
+        <argsstring>()</argsstring>
+        <name>DisableSystemDialogsOnCrash</name>
+        <qualifiedname>llvm::sys::DisableSystemDialogsOnCrash</qualifiedname>
+        <briefdescription>
+<para>Disable all system dialog boxes that appear when the process crashes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="51" column="8" declfile="include/llvm/Support/Signals.h" declline="51" declcolumn="8"/>
+        <referencedby refid="classllvm_1_1_crash_recovery_context_1af9b65412e2f06422a5500e533cb3982d" compoundref="_crash_recovery_context_8cpp" startline="100" endline="105">llvm::CrashRecoveryContext::CrashRecoveryContext</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a3dd0c90b62e70756c75ae45c45ce5f8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::PrintStackTrace</definition>
+        <argsstring>(raw_ostream &amp;OS, int Depth=0)</argsstring>
+        <name>PrintStackTrace</name>
+        <qualifiedname>llvm::sys::PrintStackTrace</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>Depth</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Print the stack trace using the given <computeroutput><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref></computeroutput> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>refers to the number of stackframes to print. If not specified, the entire frame is printed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="56" column="8" declfile="include/llvm/Support/Signals.h" declline="56" declcolumn="8"/>
+        <references refid="namespacellvm_1a1eb5609345b906d024fbf9e4bc1adc06afe578efb7ca235af77fb0eef7edcf639" compoundref="_s_i_machine_scheduler_8h" startline="36">llvm::Depth</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1aa9516bcffe612375e99ac8c722b82847" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::RunSignalHandlers</definition>
+        <argsstring>()</argsstring>
+        <name>RunSignalHandlers</name>
+        <qualifiedname>llvm::sys::RunSignalHandlers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="59" column="8" bodyfile="lib/Support/Signals.cpp" bodystart="98" bodyend="109" declfile="include/llvm/Support/Signals.h" declline="59" declcolumn="8"/>
+        <references refid="_signals_8cpp_1a264b9d38cdac527e14628210ee764dba" compoundref="_signals_8cpp" startline="92" endline="95">CallBacksToRun</references>
+        <references refid="struct_callback_and_cookie_1acc5d30a641e7fd26257088e420487685ace2c8aed9c2fa0cfbed56cbda4d8bf07" compoundref="_signals_8cpp" startline="83">CallbackAndCookie::Empty</references>
+        <references refid="struct_callback_and_cookie_1acc5d30a641e7fd26257088e420487685a63c4cc5944eb60b1969f2333ead70fc9" compoundref="_signals_8cpp" startline="83">CallbackAndCookie::Executing</references>
+        <references refid="struct_callback_and_cookie_1acc5d30a641e7fd26257088e420487685a59d87a4758a9d35fbaf6b204341bb399" compoundref="_signals_8cpp" startline="83">CallbackAndCookie::Initialized</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a9b92e7ec359dded2b96fb6491fb99d8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::AddSignalHandler</definition>
+        <argsstring>(SignalHandlerCallback FnPtr, void *Cookie)</argsstring>
+        <name>AddSignalHandler</name>
+        <qualifiedname>llvm::sys::AddSignalHandler</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1sys_1ae36d96d14c99fdcf62cf0a82008d71a3" kindref="member">SignalHandlerCallback</ref></type>
+          <declname>FnPtr</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>Cookie</declname>
+        </param>
+        <briefdescription>
+<para>Add a function to be called when an abort/kill signal is delivered to the process. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The handler can have a cookie passed to it to identify what instance of the handler it is. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="66" column="8" declfile="include/llvm/Support/Signals.h" declline="66" declcolumn="8"/>
+        <referencedby refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</referencedby>
+        <referencedby refid="classllvm_1_1_init_l_l_v_m_1a9640709b52fc6fe255ee87be2cf11fe1" compoundref="_init_l_l_v_m_8cpp" startline="37" endline="97">llvm::InitLLVM::InitLLVM</referencedby>
+        <referencedby refid="classllvm_1_1_print_crash_i_r_instrumentation_1af4e053aebd6ae8747dd34fbfc4c2ca47" compoundref="_standard_instrumentations_8cpp" startline="2503" endline="2524">llvm::PrintCrashIRInstrumentation::registerCallbacks</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a03a7c4c80c31a619c5e452314166401a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::SetInterruptFunction</definition>
+        <argsstring>(void(*IF)())</argsstring>
+        <name>SetInterruptFunction</name>
+        <qualifiedname>llvm::sys::SetInterruptFunction</qualifiedname>
+        <param>
+          <type>void(*)()</type>
+          <declname>IF</declname>
+        </param>
+        <briefdescription>
+<para>This function registers a function to be called when the user &quot;interrupts&quot; the program (typically by pressing ctrl-c). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When the user interrupts the program, the specified interrupt function is called instead of the program being killed, and the interrupt function automatically disabled.</para>
+<para>Note that interrupt functions are not allowed to call any non-reentrant functions. An null interrupt function pointer disables the current installed function. Note also that the handler may be executed on a different thread on some platforms. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="77" column="8" declfile="include/llvm/Support/Signals.h" declline="77" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1aae32f3b9e37b0c3f107abb91220894d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::SetInfoSignalFunction</definition>
+        <argsstring>(void(*Handler)())</argsstring>
+        <name>SetInfoSignalFunction</name>
+        <qualifiedname>llvm::sys::SetInfoSignalFunction</qualifiedname>
+        <param>
+          <type>void(*)()</type>
+          <declname>Handler</declname>
+        </param>
+        <briefdescription>
+<para>Registers a function to be called when an &quot;info&quot; signal is delivered to the process. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>On POSIX systems, this will be SIGUSR1; on systems that have it, SIGINFO will also be used (typically ctrl-t).</para>
+<para>Note that signal handlers are not allowed to call any non-reentrant functions. An null function pointer disables the current installed function. Note also that the handler may be executed on a different thread on some platforms. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="89" column="8" declfile="include/llvm/Support/Signals.h" declline="89" declcolumn="8"/>
+        <referencedby refid="namespacellvm_1abad5b7bd03ab9279d8df20a0f29cdf18" compoundref="_pretty_stack_trace_8cpp" startline="286" endline="306">llvm::EnablePrettyStackTraceOnSigInfoForThisThread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a667819e7b48d7d4f3cf99c2709aac92e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::SetOneShotPipeSignalFunction</definition>
+        <argsstring>(void(*Handler)())</argsstring>
+        <name>SetOneShotPipeSignalFunction</name>
+        <qualifiedname>llvm::sys::SetOneShotPipeSignalFunction</qualifiedname>
+        <param>
+          <type>void(*)()</type>
+          <declname>Handler</declname>
+        </param>
+        <briefdescription>
+<para>Registers a function to be called in a &quot;one-shot&quot; manner when a pipe signal is delivered to the process (i.e., on a failed write to a pipe). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>After the pipe signal is handled once, the handler is unregistered.</para>
+<para>The LLVM signal handling code will not install any handler for the pipe signal unless one is provided with this API (see <ref refid="namespacellvm_1_1sys_1a916621b9926263f33c49d2dff9883db5" kindref="member">DefaultOneShotPipeSignalHandler</ref>). This handler must be provided before any other LLVM signal handlers are installed: the <ref refid="classllvm_1_1_init_l_l_v_m" kindref="compound">InitLLVM</ref> constructor has a flag that can simplify this setup.</para>
+<para>Note that the handler is not allowed to call any non-reentrant functions. A null handler pointer disables the current installed function. Note also that the handler may be executed on a different thread on some platforms. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="105" column="8" declfile="include/llvm/Support/Signals.h" declline="105" declcolumn="8"/>
+        <referencedby refid="classllvm_1_1_init_l_l_v_m_1a9640709b52fc6fe255ee87be2cf11fe1" compoundref="_init_l_l_v_m_8cpp" startline="37" endline="97">llvm::InitLLVM::InitLLVM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a916621b9926263f33c49d2dff9883db5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::DefaultOneShotPipeSignalHandler</definition>
+        <argsstring>()</argsstring>
+        <name>DefaultOneShotPipeSignalHandler</name>
+        <qualifiedname>llvm::sys::DefaultOneShotPipeSignalHandler</qualifiedname>
+        <briefdescription>
+<para>On Unix systems and Windows, this function exits with an &quot;IO error&quot; exit code. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="109" column="8" declfile="include/llvm/Support/Signals.h" declline="109" declcolumn="8"/>
+        <referencedby refid="classllvm_1_1_init_l_l_v_m_1a9640709b52fc6fe255ee87be2cf11fe1" compoundref="_init_l_l_v_m_8cpp" startline="37" endline="97">llvm::InitLLVM::InitLLVM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ad01be72a9c0cb2dc4c676aa0057a9b31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::CleanupOnSignal</definition>
+        <argsstring>(uintptr_t Context)</argsstring>
+        <name>CleanupOnSignal</name>
+        <qualifiedname>llvm::sys::CleanupOnSignal</qualifiedname>
+        <param>
+          <type>uintptr_t</type>
+          <declname>Context</declname>
+        </param>
+        <briefdescription>
+<para>This function does the following: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>clean up any temporary files registered with <ref refid="namespacellvm_1_1sys_1aee27cc5336ecd3f21eeda4ad2826b915" kindref="member">RemoveFileOnSignal()</ref></para>
+</listitem><listitem><para>dump the callstack from the exception context</para>
+</listitem><listitem><para>call any relevant interrupt/signal handlers</para>
+</listitem><listitem><para>create a core/mini dump of the exception context whenever possible Context is a system-specific failure context: it is the signal type on Unix; the ExceptionContext on Windows. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="123" column="8" declfile="include/llvm/Support/Signals.h" declline="123" declcolumn="8"/>
+        <referencedby refid="structanonymous__namespace_02_crash_recovery_context_8cpp_03_1_1_crash_recovery_context_impl_1a0f8515fbcec00f4cf6990321677ebdbd" compoundref="_crash_recovery_context_8cpp" startline="62" endline="81">anonymous_namespace{CrashRecoveryContext.cpp}::CrashRecoveryContextImpl::HandleCrash</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a80109dae9b24e661ea7fbff184ced3da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::unregisterHandlers</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterHandlers</name>
+        <qualifiedname>llvm::sys::unregisterHandlers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Signals.h" line="125" column="8" declfile="include/llvm/Support/Signals.h" declline="125" declcolumn="8"/>
+        <referencedby refid="classllvm_1_1_crash_recovery_context_1abbecc705fe2dd65984b0839e756d1f9a" compoundref="_crash_recovery_context_8cpp" startline="467" endline="477">llvm::CrashRecoveryContext::throwIfCrash</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a9fdc626fd366982b6620b0544f0e83ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>unsigned char llvm::sys::getSwappedBytes</definition>
+        <argsstring>(unsigned char C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="31" column="27" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="31" bodyend="31"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <referencedby refid="namespacellvm_1_1sys_1ad0e418047a3e04c4fd1fb83325b571ae" compoundref="_swap_byte_order_8h" startline="61" endline="63">swapByteOrder</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a43ff456f6ece9a1e0c5ee9ed3f8eea86" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>signed char llvm::sys::getSwappedBytes</definition>
+        <argsstring>(signed char C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type>signed <ref refid="classchar" kindref="compound">char</ref></type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="32" column="27" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="32" bodyend="32"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1aafd2d496b07043f395441ff1b1a28a93" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>char llvm::sys::getSwappedBytes</definition>
+        <argsstring>(char C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type><ref refid="classchar" kindref="compound">char</ref></type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="33" column="27" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="33" bodyend="33"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1aad90411f73fc54ca39d4d832b1871593" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref> short</type>
+        <definition>unsigned short llvm::sys::getSwappedBytes</definition>
+        <argsstring>(unsigned short C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> short</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="35" column="27" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="35" bodyend="35"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ae846344215d14e3e9591ef1a5e14414f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short llvm::sys::getSwappedBytes</definition>
+        <argsstring>(signed short C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="36" column="27" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="36" bodyend="36"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a2cca2c8be1cc91bf2a1a399e340b3605" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref> int</type>
+        <definition>unsigned int llvm::sys::getSwappedBytes</definition>
+        <argsstring>(unsigned int C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> int</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="38" column="27" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="38" bodyend="38"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a8736ffd70faa2a4966c360dcfab7e747" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed int</type>
+        <definition>signed int llvm::sys::getSwappedBytes</definition>
+        <argsstring>(signed int C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type>signed int</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="39" column="27" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="39" bodyend="39"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ad6a20027855c02c61a2a8659bb286745" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref> long</type>
+        <definition>unsigned long llvm::sys::getSwappedBytes</definition>
+        <argsstring>(unsigned long C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> long</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="41" column="27" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="41" bodyend="41"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a332623ae671930f6ac74a7d42a799cd1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed long</type>
+        <definition>signed long llvm::sys::getSwappedBytes</definition>
+        <argsstring>(signed long C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type>signed long</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="42" column="27" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="42" bodyend="42"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a63a08b31b95b428ae3c59de8af1dba0f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref> long long</type>
+        <definition>unsigned long long llvm::sys::getSwappedBytes</definition>
+        <argsstring>(unsigned long long C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> long long</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="44" column="27" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="44" bodyend="44"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a31e87877edb36cae912fa1663167e9df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed long long</type>
+        <definition>signed long long llvm::sys::getSwappedBytes</definition>
+        <argsstring>(signed long long C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type>signed long long</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="45" column="27" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="45" bodyend="45"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a43bc53aa19d332833136b94c731d8266" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float llvm::sys::getSwappedBytes</definition>
+        <argsstring>(float C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="47" column="14" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="47" bodyend="49"/>
+        <references refid="namespacellvm_1aab3863f16cb0767af49f0dd63bc5aa90" compoundref="bit_8h" startline="89" endline="97">llvm::bit_cast</references>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a682059512cfe037e45ccae7d76a1d556" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double llvm::sys::getSwappedBytes</definition>
+        <argsstring>(double C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="51" column="15" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="51" bodyend="53"/>
+        <references refid="namespacellvm_1aab3863f16cb0767af49f0dd63bc5aa90" compoundref="bit_8h" startline="89" endline="97">llvm::bit_cast</references>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a9a719f6e64d5b1d7800abb76c788f102" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; std::is_enum_v&lt; <ref refid="class_t" kindref="compound">T</ref> &gt;, <ref refid="class_t" kindref="compound">T</ref> &gt;</type>
+        <definition>std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, T &gt; llvm::sys::getSwappedBytes</definition>
+        <argsstring>(T C)</argsstring>
+        <name>getSwappedBytes</name>
+        <qualifiedname>llvm::sys::getSwappedBytes</qualifiedname>
+        <param>
+          <type><ref refid="class_t" kindref="compound">T</ref></type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="56" column="25" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="56" bodyend="58"/>
+        <references refid="namespacellvm_1a2a584ab307c8e962527df226089a7470" compoundref="bit_8h" startline="101" endline="143">llvm::byteswap</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+        <references refid="namespacellvm_1a842e49a58fb3eba4e42a8dadad77745b" compoundref="_s_t_l_forward_compat_8h" startline="66" endline="68">llvm::to_underlying</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ad0e418047a3e04c4fd1fb83325b571ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::sys::swapByteOrder</definition>
+        <argsstring>(T &amp;Value)</argsstring>
+        <name>swapByteOrder</name>
+        <qualifiedname>llvm::sys::swapByteOrder</qualifiedname>
+        <param>
+          <type><ref refid="class_t" kindref="compound">T</ref> &amp;</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SwapByteOrder.h" line="61" column="13" bodyfile="include/llvm/Support/SwapByteOrder.h" bodystart="61" bodyend="63"/>
+        <references refid="namespacellvm_1_1sys_1a9fdc626fd366982b6620b0544f0e83ae" compoundref="_swap_byte_order_8h" startline="31" endline="31">getSwappedBytes</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+        <referencedby refid="namespacellvm_1_1support_1_1endian_1a108ca68c609b3e8c00918a68d26905fa" compoundref="_endian_8h" startline="44" endline="48">llvm::support::endian::byte_swap</referencedby>
+        <referencedby refid="_mach_o_object_file_8cpp_1abc5ff59b8ea0a100389a37ea8ec40f9a" compoundref="_mach_o_object_file_8cpp" startline="1009" endline="1198">checkThreadCommand</referencedby>
+        <referencedby refid="classllvm_1_1dwarf__linker_1_1parallel_1_1_compile_unit_1a0b5afda9f8291e7c2433262c8dc8c167" compoundref="_parallel_2_d_w_a_r_f_linker_compile_unit_8cpp" startline="1093" endline="1229">llvm::dwarf_linker::parallel::CompileUnit::cloneDieAttrExpression</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1shared_1_1_s_p_s_serialization_traits_3_01_s_p_s_tag_t_00_01_s_p_s_tag_t_00_f024cad2a8ccb0c96527c11a4591b8d8_1a010e8003e79960145f2f3f9aa0609a34" compoundref="_simple_packed_serialization_8h" startline="178" endline="186">llvm::orc::shared::SPSSerializationTraits&lt; SPSTagT, SPSTagT, std::enable_if_t&lt; std::is_same&lt; SPSTagT, bool &gt;::value||std::is_same&lt; SPSTagT, char &gt;::value||std::is_same&lt; SPSTagT, int8_t &gt;::value||std::is_same&lt; SPSTagT, int16_t &gt;::value||std::is_same&lt; SPSTagT, int32_t &gt;::value||std::is_same&lt; SPSTagT, int64_t &gt;::value||std::is_same&lt; SPSTagT, uint8_t &gt;::value||std::is_same&lt; SPSTagT, uint16_t &gt;::value||std::is_same&lt; SPSTagT, uint32_t &gt;::value||std::is_same&lt; SPSTagT, uint64_t &gt;::value &gt; &gt;::deserialize</referencedby>
+        <referencedby refid="structllvm_1_1dwarf__linker_1_1parallel_1_1_section_descriptor_1a4954fa6faa9509d506fcedc034eb02c8" compoundref="_output_sections_8cpp" startline="140" endline="165">llvm::dwarf_linker::parallel::SectionDescriptor::emitIntVal</referencedby>
+        <referencedby refid="namespacellvm_1_1hashing_1_1detail_1a8b7aec03f89d9512ce1a14a3308ca161" compoundref="_hashing_8h" startline="144" endline="150">llvm::hashing::detail::fetch32</referencedby>
+        <referencedby refid="namespacellvm_1_1hashing_1_1detail_1a6af5e05ffaf0980f306a818bbe587f41" compoundref="_hashing_8h" startline="136" endline="142">llvm::hashing::detail::fetch64</referencedby>
+        <referencedby refid="_mach_o_object_file_8cpp_1a8e5744e3da3116ce5eaf50660b88d6aa" compoundref="_mach_o_object_file_8cpp" startline="5148" endline="5155">getArray</referencedby>
+        <referencedby refid="classllvm_1_1object_1_1_mach_o_object_file_1a766c3350d64dde8af24ef7b600b11185" compoundref="_mach_o_object_file_8cpp" startline="5049" endline="5135">llvm::object::MachOObjectFile::getChainedFixupsSegments</referencedby>
+        <referencedby refid="classllvm_1_1object_1_1_mach_o_chained_fixup_entry_1a1ac5316af2beb36b1eee67c09c7448f8" compoundref="_mach_o_object_file_8cpp" startline="3379" endline="3467">llvm::object::MachOChainedFixupEntry::moveNext</referencedby>
+        <referencedby refid="_object_2_d_x_container_8cpp_1abc63df5c2aad9dab94dc1eeaa7ca4b57" compoundref="_object_2_d_x_container_8cpp" startline="36" endline="55">readInteger</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1shared_1_1_s_p_s_serialization_traits_3_01_s_p_s_tag_t_00_01_s_p_s_tag_t_00_f024cad2a8ccb0c96527c11a4591b8d8_1afe3ca4b56bc44bab916473dde49c6d4a" compoundref="_simple_packed_serialization_8h" startline="171" endline="176">llvm::orc::shared::SPSSerializationTraits&lt; SPSTagT, SPSTagT, std::enable_if_t&lt; std::is_same&lt; SPSTagT, bool &gt;::value||std::is_same&lt; SPSTagT, char &gt;::value||std::is_same&lt; SPSTagT, int8_t &gt;::value||std::is_same&lt; SPSTagT, int16_t &gt;::value||std::is_same&lt; SPSTagT, int32_t &gt;::value||std::is_same&lt; SPSTagT, int64_t &gt;::value||std::is_same&lt; SPSTagT, uint8_t &gt;::value||std::is_same&lt; SPSTagT, uint16_t &gt;::value||std::is_same&lt; SPSTagT, uint32_t &gt;::value||std::is_same&lt; SPSTagT, uint64_t &gt;::value &gt; &gt;::serialize</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_amplification_p_s_v_info_1aabb8bc513d0eb3778580b039ff3bca90" compoundref="_binary_format_2_d_x_container_8h" startline="235" endline="235">llvm::dxbc::AmplificationPSVInfo::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_bitcode_header_1a85b75527d9f3a17e676e3ad3ecd48755" compoundref="_binary_format_2_d_x_container_8h" startline="113" endline="118">llvm::dxbc::BitcodeHeader::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_container_version_1a0de5cbad503a74c3052da3eae517f0a4" compoundref="_binary_format_2_d_x_container_8h" startline="70" endline="73">llvm::dxbc::ContainerVersion::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_domain_p_s_v_info_1aefddddc8e59bc7e6716707c278c42185" compoundref="_binary_format_2_d_x_container_8h" startline="186" endline="189">llvm::dxbc::DomainPSVInfo::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_geometry_p_s_v_info_1add3c2bd5e04da568dac6bedca137b1fe" compoundref="_binary_format_2_d_x_container_8h" startline="199" endline="203">llvm::dxbc::GeometryPSVInfo::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_header_1a8729233d1a30db8316e57d24dcafb7d7" compoundref="_binary_format_2_d_x_container_8h" startline="83" endline="87">llvm::dxbc::Header::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_hull_p_s_v_info_1a30b1ad207b06f03ca27a2093ed469815" compoundref="_binary_format_2_d_x_container_8h" startline="172" endline="177">llvm::dxbc::HullPSVInfo::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_mesh_p_s_v_info_1a1e3e8e3fdd982f66ee8540d9c338820d" compoundref="_binary_format_2_d_x_container_8h" startline="223" endline="229">llvm::dxbc::MeshPSVInfo::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_part_header_1a81a418f2c8a394a4b52b2f6db5482f9e" compoundref="_binary_format_2_d_x_container_8h" startline="97" endline="97">llvm::dxbc::PartHeader::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_program_header_1a9678b8060e17af7599913499ba108519" compoundref="_binary_format_2_d_x_container_8h" startline="128" endline="132">llvm::dxbc::ProgramHeader::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_program_signature_element_1ad7b8d6a05b4b6413fe3ce496a5014011" compoundref="_binary_format_2_d_x_container_8h" startline="528" endline="538">llvm::dxbc::ProgramSignatureElement::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_program_signature_header_1a2a6df212b6a70e0447059e38346fc739" compoundref="_binary_format_2_d_x_container_8h" startline="501" endline="504">llvm::dxbc::ProgramSignatureHeader::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_p_s_v_1_1v0_1_1_resource_bind_info_1acec2dd66ed6991c4cbbe9e7364893dcc" compoundref="_binary_format_2_d_x_container_8h" startline="350" endline="355">llvm::dxbc::PSV::v0::ResourceBindInfo::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_p_s_v_1_1v0_1_1_runtime_info_1a9200617059e5fc5a9bba93ba7845f148" compoundref="_binary_format_2_d_x_container_8h" startline="335" endline="339">llvm::dxbc::PSV::v0::RuntimeInfo::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_p_s_v_1_1v0_1_1_signature_element_1a958ddaed23b06c2af79165e71ecdbca3" compoundref="_binary_format_2_d_x_container_8h" startline="377" endline="380">llvm::dxbc::PSV::v0::SignatureElement::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_p_s_v_1_1v1_1_1_runtime_info_1a6f4da9df3d77860d4a98fa18a5ca94bc" compoundref="_binary_format_2_d_x_container_8h" startline="420" endline="424">llvm::dxbc::PSV::v1::RuntimeInfo::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_p_s_v_1_1v2_1_1_resource_bind_info_1a02d5cb26d17bda1914510120d3cb9eed" compoundref="_binary_format_2_d_x_container_8h" startline="450" endline="454">llvm::dxbc::PSV::v2::ResourceBindInfo::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_p_s_v_1_1v2_1_1_runtime_info_1a338b177ae280fc7b3aa400c6fba90c45" compoundref="_binary_format_2_d_x_container_8h" startline="435" endline="439">llvm::dxbc::PSV::v2::RuntimeInfo::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_p_s_v_1_1v3_1_1_runtime_info_1a0d55812b5503c4ad42d3d1cf4d614d7c" compoundref="_binary_format_2_d_x_container_8h" startline="463" endline="466">llvm::dxbc::PSV::v3::RuntimeInfo::swapBytes</referencedby>
+        <referencedby refid="structllvm_1_1dxbc_1_1_shader_hash_1a6ffaaa10e42660f631338aef36c4bf1c" compoundref="_binary_format_2_d_x_container_8h" startline="63" endline="63">llvm::dxbc::ShaderHash::swapBytes</referencedby>
+        <referencedby refid="namespacellvm_1_1object_1_1detail_1a2ae38e21a0c3cbf60bcafb09a1fe7704" compoundref="_object_2_d_x_container_8h" startline="32" endline="34">llvm::object::detail::swapBytes</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1ad3926a98533b21466bcd03d5669fc642" compoundref="_binary_format_2_mach_o_8h" startline="1396" endline="1399">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1af69806883e113ac710b0349cde610494" compoundref="_binary_format_2_mach_o_8h" startline="2030" endline="2033">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a6345ec816ad4c602bee7116dc8ecc364" compoundref="_binary_format_2_mach_o_8h" startline="1989" endline="1996">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1ad0ad0f017970f91d9283e2e60b5a0bf1" compoundref="_binary_format_2_mach_o_8h" startline="2008" endline="2016">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a7f05175289a3d440a9b7b576c5936d95" compoundref="_binary_format_2_mach_o_8h" startline="1463" endline="1466">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a5b89562dbaab565182e273fee061eb3b" compoundref="_binary_format_2_mach_o_8h" startline="1454" endline="1461">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a4f251e22e41a651972e417fb28a647cd" compoundref="_binary_format_2_mach_o_8h" startline="1468" endline="1472">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a6a2b1b09dabb444f74c330e3aa022a38" compoundref="_binary_format_2_mach_o_8h" startline="2188" endline="2196">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1af400056b690eb82f484e21cbc31bbd1e" compoundref="_binary_format_2_mach_o_8h" startline="2198" endline="2202">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a5abbbcf3407676e983a2212dc7d5a0b7" compoundref="_binary_format_2_mach_o_8h" startline="2204" endline="2212">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a6f479176a3ecfda8d65a409c53b5b3bf" compoundref="_binary_format_2_mach_o_8h" startline="1247" endline="1260">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a3d88797689f8ad4ed25e103477b80287" compoundref="_binary_format_2_mach_o_8h" startline="1262" endline="1269">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1acaeb662a56d4d7a8ce983695282504da" compoundref="_binary_format_2_mach_o_8h" startline="1326" endline="1330">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1af45340ac946e79990fcce26ffd6fa2aa" compoundref="_binary_format_2_mach_o_8h" startline="1373" endline="1394">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a4c5b9f75257acc4d912e524daabcfe9d" compoundref="_binary_format_2_mach_o_8h" startline="1356" endline="1362">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1af06e181d985c3f814715d77f2e91f937" compoundref="_binary_format_2_mach_o_8h" startline="1364" endline="1371">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a484a684c881c64cc6d0a45b30e2b3e50" compoundref="_binary_format_2_mach_o_8h" startline="1349" endline="1354">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a474b5789fb4d6c14aaccfdbbb9e6aa6c" compoundref="_binary_format_2_mach_o_8h" startline="1145" endline="1151">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a9520fba54f9ad8384cd712fd397a1af1" compoundref="_binary_format_2_mach_o_8h" startline="1153" endline="1160">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a754466f4b36d6a2365e56663e0d9de83" compoundref="_binary_format_2_mach_o_8h" startline="1140" endline="1143">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1ad9dc96ac3bb04b96933044e0a8af26b7" compoundref="_binary_format_2_mach_o_8h" startline="1431" endline="1438">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a357a8d4a62bcc8923d759bd6fdf42c87" compoundref="_binary_format_2_mach_o_8h" startline="1501" endline="1506">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a6c0b178e7c7f26b33d711e3b3cdf21ea" compoundref="_binary_format_2_mach_o_8h" startline="1522" endline="1526">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a1778d918ef753b292d1fc5547fc4d7a5" compoundref="_binary_format_2_mach_o_8h" startline="1529" endline="1533">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a3d97b534de4f8b3cfa1d4b66db623ff8" compoundref="_binary_format_2_mach_o_8h" startline="1517" endline="1520">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1af3d4f00f34b4e4c3c5fd7c035139983e" compoundref="_binary_format_2_mach_o_8h" startline="1418" endline="1423">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1ab155ee9de4325fe6616680a4a583a219" compoundref="_binary_format_2_mach_o_8h" startline="1425" endline="1429">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a7cb1f6fc00e4be65653c772f9571aefd" compoundref="_binary_format_2_mach_o_8h" startline="1183" endline="1186">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a601a5898e9617d37d74133b82c895d41" compoundref="_binary_format_2_mach_o_8h" startline="1162" endline="1170">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a34941dca69740b6801e3182751644954" compoundref="_binary_format_2_mach_o_8h" startline="1172" endline="1181">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1ae93af7ab4bf9f157d94b6747f77fdbb6" compoundref="_binary_format_2_mach_o_8h" startline="1406" endline="1410">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1aebfcf2f141f569fbf5d3a4f5f32c86b8" compoundref="_binary_format_2_mach_o_8h" startline="1412" endline="1416">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a46eb3a60e061f6e84e0c138523d68602" compoundref="_binary_format_2_mach_o_8h" startline="1401" endline="1404">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1abee91d1de4ac46875be30e39b57aafcf" compoundref="_binary_format_2_mach_o_8h" startline="1447" endline="1452">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a72e858776fff583b81d6d3465e132578" compoundref="_binary_format_2_mach_o_8h" startline="2155" endline="2158">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a5038f7c0ada64b0722b4bdb3a9231dad" compoundref="_binary_format_2_mach_o_8h" startline="2100" endline="2141">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a4582b2817628c9c23b55e7b792ce7bdc" compoundref="_binary_format_2_mach_o_8h" startline="1477" endline="1481">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a2752bc606dceea2077a46cb19042980d" compoundref="_binary_format_2_mach_o_8h" startline="1492" endline="1498">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a426ccd649d6f520870df15a025b1d686" compoundref="_binary_format_2_mach_o_8h" startline="1295" endline="1306">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a3b64e4ce1dfc1b83109abc6acf466f1c" compoundref="_binary_format_2_mach_o_8h" startline="1308" endline="1319">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a9de1f066aa52e408c1900e0616b237fc" compoundref="_binary_format_2_mach_o_8h" startline="1337" endline="1341">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a7dbb7742cb1c48a30aab48e16058b9f8" compoundref="_binary_format_2_mach_o_8h" startline="1235" endline="1245">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1ad5865e4251bae4fb65a548a17b585125" compoundref="_binary_format_2_mach_o_8h" startline="1223" endline="1233">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a67848e22f024123dd35611f82b7fccfd" compoundref="_binary_format_2_mach_o_8h" startline="1210" endline="1221">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a62ba838024c2bb0cd7f4df216178573b" compoundref="_binary_format_2_mach_o_8h" startline="1197" endline="1208">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1aab62b03625544e588639ffdad9169688" compoundref="_binary_format_2_mach_o_8h" startline="1343" endline="1347">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1aa8d6aaa11a14c42d7da4db4137676aac" compoundref="_binary_format_2_mach_o_8h" startline="1289" endline="1293">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a2d11034b690fc9df15a4aec3cbb8bf88" compoundref="_binary_format_2_mach_o_8h" startline="1271" endline="1275">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a241171198a867fa2841644d6111b0316" compoundref="_binary_format_2_mach_o_8h" startline="1283" endline="1287">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a3f68f60ddd4b5fc3201684ce7b940746" compoundref="_binary_format_2_mach_o_8h" startline="1277" endline="1281">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a078a65b723cf322ee4674af1139e7620" compoundref="_binary_format_2_mach_o_8h" startline="1509" endline="1514">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1afacaf9cfb208cb0914f70e534a469790" compoundref="_binary_format_2_mach_o_8h" startline="1188" endline="1195">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a5aef3ba5f153898fb06c6d0d18f1b103" compoundref="_binary_format_2_mach_o_8h" startline="1321" endline="1324">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1aa4af43d59cf3dca90fb30b9dcf288425" compoundref="_binary_format_2_mach_o_8h" startline="1484" endline="1489">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1acad52a71e0c527ee59bd219e9bef9fbf" compoundref="_binary_format_2_mach_o_8h" startline="1474" endline="1474">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a16097413c45e7a985924ca60996369b3" compoundref="_binary_format_2_mach_o_8h" startline="1332" endline="1335">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a3cb02fa1e4728b1e26cdd3f5d629cd2b" compoundref="_binary_format_2_mach_o_8h" startline="1440" endline="1445">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a594ec21f9a686b6e5c3fda98058ec850" compoundref="_binary_format_2_mach_o_8h" startline="1892" endline="1897">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1acc4d23e1416b82426e163f6a8bd5d801" compoundref="_binary_format_2_mach_o_8h" startline="1875" endline="1890">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1af53e9aef34dc41fd7023cae2250d329c" compoundref="_binary_format_2_mach_o_8h" startline="1926" endline="1929">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a2f3038a90e1cff58de30f47ffa7da378" compoundref="_binary_format_2_mach_o_8h" startline="1832" endline="1849">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="namespacellvm_1_1_mach_o_1a46a3474725f46cf9b84fa56c6c814604" compoundref="_binary_format_2_mach_o_8h" startline="1851" endline="1873">llvm::MachO::swapStruct</referencedby>
+        <referencedby refid="_d_w_a_r_f_emitter_8cpp_1a7d09dee266df5fb62a8791100b24c5a6" compoundref="_d_w_a_r_f_emitter_8cpp" startline="42" endline="46">writeInteger</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a03c98f04f71edd2423eadba4f8c049dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sys::operator&lt;</definition>
+        <argsstring>(uint32_t Value, UnicodeCharRange Range)</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>llvm::sys::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Value</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1sys_1_1_unicode_char_range" kindref="compound">UnicodeCharRange</ref></type>
+          <declname>Range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/UnicodeCharRanges.h" line="28" column="8" bodyfile="include/llvm/Support/UnicodeCharRanges.h" bodystart="28" bodyend="30"/>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a198340ce328fc0c2c8816d78b3673454" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sys::operator&lt;</definition>
+        <argsstring>(UnicodeCharRange Range, uint32_t Value)</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>llvm::sys::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1sys_1_1_unicode_char_range" kindref="compound">UnicodeCharRange</ref></type>
+          <declname>Range</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/UnicodeCharRanges.h" line="31" column="8" bodyfile="include/llvm/Support/UnicodeCharRanges.h" bodystart="31" bodyend="33"/>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a7bb57f69c2fedb3c82da6acf5833449c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::sys::RunningOnValgrind</definition>
+        <argsstring>()</argsstring>
+        <name>RunningOnValgrind</name>
+        <qualifiedname>llvm::sys::RunningOnValgrind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Valgrind.h" line="23" column="8" bodyfile="lib/Support/Valgrind.cpp" bodystart="32" bodyend="34" declfile="include/llvm/Support/Valgrind.h" declline="23" declcolumn="8"/>
+        <referencedby refid="structanonymous__namespace_02_link_all_passes_8h_03_1_1_force_pass_linking_1aca44adfcab3498802a1f54c6c5e42086" compoundref="_link_all_passes_8h" startline="52" endline="158">anonymous_namespace{LinkAllPasses.h}::ForcePassLinking::ForcePassLinking</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1afa3960ac5c365a344036b4c068477468" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::ValgrindDiscardTranslations</definition>
+        <argsstring>(const void *Addr, size_t Len)</argsstring>
+        <name>ValgrindDiscardTranslations</name>
+        <qualifiedname>llvm::sys::ValgrindDiscardTranslations</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> void *</type>
+          <declname>Addr</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Valgrind.h" line="27" column="8" bodyfile="lib/Support/Valgrind.cpp" bodystart="36" bodyend="37" declfile="include/llvm/Support/Valgrind.h" declline="27" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a1a420333641cfdaa22a032c78e92aa55" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::chrono::nanoseconds</type>
+        <definition>std::chrono::nanoseconds llvm::sys::toDuration</definition>
+        <argsstring>(FILETIME Time)</argsstring>
+        <name>toDuration</name>
+        <qualifiedname>llvm::sys::toDuration</qualifiedname>
+        <param>
+          <type>FILETIME</type>
+          <declname>Time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Windows/WindowsSupport.h" line="202" column="33" bodyfile="include/llvm/Support/Windows/WindowsSupport.h" bodystart="202" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a84a00c87271f14ecf54ba237642f6174" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1sys_1a52f2c3fdd7f80c1991d8c7079489efff" kindref="member">TimePoint</ref></type>
+        <definition>TimePoint llvm::sys::toTimePoint</definition>
+        <argsstring>(FILETIME Time)</argsstring>
+        <name>toTimePoint</name>
+        <qualifiedname>llvm::sys::toTimePoint</qualifiedname>
+        <param>
+          <type>FILETIME</type>
+          <declname>Time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Windows/WindowsSupport.h" line="211" column="9" bodyfile="include/llvm/Support/Windows/WindowsSupport.h" bodystart="211" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a3923e2871fd70f698ac2ea4317346593" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>FILETIME</type>
+        <definition>FILETIME llvm::sys::toFILETIME</definition>
+        <argsstring>(TimePoint&lt;&gt; TP)</argsstring>
+        <name>toFILETIME</name>
+        <qualifiedname>llvm::sys::toFILETIME</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1sys_1a52f2c3fdd7f80c1991d8c7079489efff" kindref="member">TimePoint</ref>&lt;&gt;</type>
+          <declname>TP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Windows/WindowsSupport.h" line="223" column="17" bodyfile="include/llvm/Support/Windows/WindowsSupport.h" bodystart="223" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1ae329f3571e25025c5496be7a9746a94f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string llvm::sys::getDefaultTargetTriple</definition>
+        <argsstring>()</argsstring>
+        <name>getDefaultTargetTriple</name>
+        <qualifiedname>llvm::sys::getDefaultTargetTriple</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1sys_1ae329f3571e25025c5496be7a9746a94f" kindref="member">getDefaultTargetTriple()</ref> - Return the default target triple the compiler has been configured to produce code for. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The target triple is a string in the format of: CPU_TYPE-VENDOR-OPERATING_SYSTEM or CPU_TYPE-VENDOR-KERNEL-OPERATING_SYSTEM </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/TargetParser/Host.h" line="33" column="15" declfile="include/llvm/TargetParser/Host.h" declline="33" declcolumn="15"/>
+        <referencedby refid="classllvm_1_1object_1_1_archive_1a6eb4b14d68eff7cfdc9457db1603fea7" compoundref="_object_2_archive_8cpp" startline="981" endline="984">llvm::object::Archive::getDefaultKind</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_dlltool_driver_8cpp_03_1abe8cc7c20ed41da5fdd4680342ddd45e" compoundref="_dlltool_driver_8cpp" startline="105" endline="107">anonymous_namespace{DlltoolDriver.cpp}::getDefaultMachine</referencedby>
+        <referencedby refid="classllvm_1_1object_1_1_mach_o_object_file_1a7dae944f91922455073b3d3d90ca8182" compoundref="_mach_o_object_file_8cpp" startline="2846" endline="2848">llvm::object::MachOObjectFile::getHostArch</referencedby>
+        <referencedby refid="group___l_l_v_m_c_target_1ga6b1d461077ad6a312eeaa2f0d561002e" compoundref="_target_machine_c_8cpp" startline="352" endline="354">LLVMGetDefaultTargetTriple</referencedby>
+        <referencedby refid="namespacellvm_1_1sys_1a4c97da4b78b9ba7daea27e6d8aec67d4" compoundref="_host_8cpp" startline="2287" endline="2295">printDefaultTargetAndDetectedCPU</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1aab375071f641a086c0d7067635ccd3dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string llvm::sys::getProcessTriple</definition>
+        <argsstring>()</argsstring>
+        <name>getProcessTriple</name>
+        <qualifiedname>llvm::sys::getProcessTriple</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1sys_1aab375071f641a086c0d7067635ccd3dc" kindref="member">getProcessTriple()</ref> - Return an appropriate target triple for generating code to be loaded into the current process, e.g. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>when using the JIT. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/TargetParser/Host.h" line="37" column="15" bodyfile="lib/TargetParser/Host.cpp" bodystart="2269" bodyend="2285" declfile="include/llvm/TargetParser/Host.h" declline="37" declcolumn="15"/>
+        <references refid="classllvm_1_1_triple_1a13e7af62cc56f460209e36190829d78c" compoundref="_triple_8cpp" startline="1746" endline="1823">llvm::Triple::get32BitArchVariant</references>
+        <references refid="classllvm_1_1_triple_1a424c4dc4d08741fa4615cc0c4ec956bd" compoundref="_triple_8cpp" startline="1825" endline="1902">llvm::Triple::get64BitArchVariant</references>
+        <references refid="classllvm_1_1_triple_1ae11d6e273225164d9da0c6cad55e093d" compoundref="_triple_8cpp" startline="1738" endline="1740">llvm::Triple::isArch32Bit</references>
+        <references refid="classllvm_1_1_triple_1a9e0d7431e635bbbf753602d214d89f0e" compoundref="_triple_8cpp" startline="1734" endline="1736">llvm::Triple::isArch64Bit</references>
+        <references refid="classllvm_1_1_triple_1a5c2fb6bace55f9b58ed0ba9fe363299e" compoundref="_triple_8cpp" startline="1131" endline="1352">llvm::Triple::normalize</references>
+        <references refid="classllvm_1_1_triple_1a6ad662bdf0613457ae9b81b47f5555b7" compoundref="_triple_8h" startline="462" endline="462">llvm::Triple::str</references>
+        <referencedby refid="classllvm_1_1orc_1_1_self_executor_process_control_1ae15684412736f37c545f8f2ec65cce56" compoundref="_executor_process_control_8cpp" startline="63" endline="83">llvm::orc::SelfExecutorProcessControl::Create</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_j_i_t_target_machine_builder_1aa67d14db111b10a6a09cb70fa5f4e084" compoundref="_j_i_t_target_machine_builder_8cpp" startline="24" endline="36">llvm::orc::JITTargetMachineBuilder::detectHost</referencedby>
+        <referencedby refid="namespacellvm_1abf156ed576f5bcdb93911b50b775c8ac" compoundref="_m_s_v_c_paths_8cpp" startline="339" endline="391">llvm::getSubDirectoryPath</referencedby>
+        <referencedby refid="classllvm_1_1_engine_builder_1a7ef5bb146eb2c0e3a609a6a169ac4f44" compoundref="_target_select_8cpp" startline="39" endline="95">llvm::EngineBuilder::selectTarget</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a2e8cdc0e591685c9156af3d0d4fdae06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef llvm::sys::getHostCPUName</definition>
+        <argsstring>()</argsstring>
+        <name>getHostCPUName</name>
+        <qualifiedname>llvm::sys::getHostCPUName</qualifiedname>
+        <briefdescription>
+<para>getHostCPUName - Get the LLVM name for the host CPU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The particular format of the name is target dependent, and suitable for passing as -mcpu to the target which matches the host.</para>
+<para><simplesect kind="return"><para>- The host CPU name, or empty if the CPU could not be determined. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/TargetParser/Host.h" line="44" column="13" bodyfile="lib/TargetParser/Host.cpp" bodystart="1793" bodyend="1793" declfile="include/llvm/TargetParser/Host.h" declline="44" declcolumn="13"/>
+        <referencedby refid="classllvm_1_1orc_1_1_j_i_t_target_machine_builder_1aa67d14db111b10a6a09cb70fa5f4e084" compoundref="_j_i_t_target_machine_builder_8cpp" startline="24" endline="36">llvm::orc::JITTargetMachineBuilder::detectHost</referencedby>
+        <referencedby refid="namespacellvm_1_1codegen_1a15043032d97d572dd021b8ca016e8be8" compoundref="_command_flags_8cpp" startline="608" endline="616">llvm::codegen::getCPUStr</referencedby>
+        <referencedby refid="namespacellvm_1_1_p_p_c_1a0f432b141d17384c56f11e55de61aff7" compoundref="_p_p_c_target_parser_8cpp" startline="91" endline="114">llvm::PPC::getNormalizedPPCTargetCPU</referencedby>
+        <referencedby refid="group___l_l_v_m_c_target_1ga2350c332ed29d2aa178ce014d01e9d1e" compoundref="_target_machine_c_8cpp" startline="360" endline="362">LLVMGetHostCPUName</referencedby>
+        <referencedby refid="namespacellvm_1_1sys_1a4c97da4b78b9ba7daea27e6d8aec67d4" compoundref="_host_8cpp" startline="2287" endline="2295">printDefaultTargetAndDetectedCPU</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a2e3453665d04910c970e81e6c2fc2f98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_string_map" kindref="compound">StringMap</ref>&lt; <ref refid="classbool" kindref="compound">bool</ref>, <ref refid="classllvm_1_1_malloc_allocator" kindref="compound">MallocAllocator</ref> &gt;</type>
+        <definition>const StringMap&lt; bool &gt; llvm::sys::getHostCPUFeatures</definition>
+        <argsstring>()</argsstring>
+        <name>getHostCPUFeatures</name>
+        <qualifiedname>llvm::sys::getHostCPUFeatures</qualifiedname>
+        <briefdescription>
+<para>getHostCPUFeatures - Get the LLVM names for the host CPU features. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The particular format of the names are target dependent, and suitable for passing as -mattr to the target which matches the host.</para>
+<para><simplesect kind="return"><para>- A string map mapping feature names to either true (if enabled) or false (if disabled). This routine makes no guarantees about exactly which features may appear in this map, except that they are all valid LLVM feature names. The map can be empty, for example if feature detection fails. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/TargetParser/Host.h" line="55" column="19" bodyfile="lib/TargetParser/Host.cpp" bodystart="2235" bodyend="2235" declfile="include/llvm/TargetParser/Host.h" declline="55" declcolumn="19"/>
+        <referencedby refid="classllvm_1_1orc_1_1_j_i_t_target_machine_builder_1aa67d14db111b10a6a09cb70fa5f4e084" compoundref="_j_i_t_target_machine_builder_8cpp" startline="24" endline="36">llvm::orc::JITTargetMachineBuilder::detectHost</referencedby>
+        <referencedby refid="namespacellvm_1_1codegen_1a6d80984ae9400c5f6fc20ac6eec8f6e1" compoundref="_command_flags_8cpp" startline="635" endline="650">llvm::codegen::getFeatureList</referencedby>
+        <referencedby refid="namespacellvm_1_1codegen_1a1b18aa9e75372c814e4d5207dce6b933" compoundref="_command_flags_8cpp" startline="618" endline="633">llvm::codegen::getFeaturesStr</referencedby>
+        <referencedby refid="group___l_l_v_m_c_target_1ga1186db08841661c3349d23a4344edd38" compoundref="_target_machine_c_8cpp" startline="364" endline="370">LLVMGetHostCPUFeatures</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a4c97da4b78b9ba7daea27e6d8aec67d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::sys::printDefaultTargetAndDetectedCPU</definition>
+        <argsstring>(raw_ostream &amp;OS)</argsstring>
+        <name>printDefaultTargetAndDetectedCPU</name>
+        <qualifiedname>llvm::sys::printDefaultTargetAndDetectedCPU</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+<para>This is a function compatible with <ref refid="namespacellvm_1_1cl_1af482fe65d5cc4df7480d60fdf731c14e" kindref="member">cl::AddExtraVersionPrinter</ref>, which adds info about the current target triple and detected CPU. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/TargetParser/Host.h" line="59" column="8" bodyfile="lib/TargetParser/Host.cpp" bodystart="2287" bodyend="2295" declfile="include/llvm/TargetParser/Host.h" declline="59" declcolumn="8"/>
+        <references refid="namespacellvm_1_1sys_1ae329f3571e25025c5496be7a9746a94f">getDefaultTargetTriple</references>
+        <references refid="namespacellvm_1_1sys_1a2e8cdc0e591685c9156af3d0d4fdae06" compoundref="_host_8cpp" startline="1793" endline="1793">getHostCPUName</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1a3189ab08fa255659486dc6924a6d62d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::chrono::microseconds</type>
+        <definition>std::chrono::microseconds llvm::sys::toDuration</definition>
+        <argsstring>(const struct timeval &amp;TV)</argsstring>
+        <name>toDuration</name>
+        <qualifiedname>llvm::sys::toDuration</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> struct timeval &amp;</type>
+          <declname>TV</declname>
+        </param>
+        <briefdescription>
+<para>Convert a struct timeval to a duration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that timeval can be used both as a time point and a duration. Be sure to check what the input represents. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/Unix/Unix.h" line="75" column="34" bodyfile="lib/Support/Unix/Unix.h" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1acba86646ce5e530a99f56ba78408ca92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>struct timespec</type>
+        <definition>struct timespec llvm::sys::toTimeSpec</definition>
+        <argsstring>(TimePoint&lt;&gt; TP)</argsstring>
+        <name>toTimeSpec</name>
+        <qualifiedname>llvm::sys::toTimeSpec</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1sys_1a52f2c3fdd7f80c1991d8c7079489efff" kindref="member">TimePoint</ref>&lt;&gt;</type>
+          <declname>TP</declname>
+        </param>
+        <briefdescription>
+<para>Convert a time point to struct timespec. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/Unix/Unix.h" line="81" column="22" bodyfile="lib/Support/Unix/Unix.h" bodystart="81" bodyend="88"/>
+        <references refid="namespacellvm_1_1sys_1acba86646ce5e530a99f56ba78408ca92" compoundref="_unix_8h" startline="81" endline="88">toTimeSpec</references>
+        <references refid="namespacellvm_1_1sys_1afb85ab84f25274ce79df485ddeadffdd" compoundref="_chrono_8h" startline="50" endline="54">toTimeT</references>
+        <referencedby refid="namespacellvm_1_1sys_1acba86646ce5e530a99f56ba78408ca92" compoundref="_unix_8h" startline="81" endline="88">toTimeSpec</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1sys_1acbe2cb52d768f7aa907b648a08c1c9db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>struct timeval</type>
+        <definition>struct timeval llvm::sys::toTimeVal</definition>
+        <argsstring>(TimePoint&lt; std::chrono::microseconds &gt; TP)</argsstring>
+        <name>toTimeVal</name>
+        <qualifiedname>llvm::sys::toTimeVal</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1sys_1a52f2c3fdd7f80c1991d8c7079489efff" kindref="member">TimePoint</ref>&lt; std::chrono::microseconds &gt;</type>
+          <declname>TP</declname>
+        </param>
+        <briefdescription>
+<para>Convert a time point to struct timeval. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Support/Unix/Unix.h" line="91" column="21" bodyfile="lib/Support/Unix/Unix.h" bodystart="91" bodyend="98"/>
+        <references refid="namespacellvm_1_1sys_1afb85ab84f25274ce79df485ddeadffdd" compoundref="_chrono_8h" startline="50" endline="54">toTimeT</references>
+        <references refid="namespacellvm_1_1sys_1acbe2cb52d768f7aa907b648a08c1c9db" compoundref="_unix_8h" startline="91" endline="98">toTimeVal</references>
+        <referencedby refid="namespacellvm_1_1sys_1acbe2cb52d768f7aa907b648a08c1c9db" compoundref="_unix_8h" startline="91" endline="98">toTimeVal</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Support/Atomic.h" line="28" column="3"/>
+  </compounddef>
+</doxygen>

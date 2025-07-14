@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_a_a_results_1_1_concept" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>llvm::AAResults::Concept</compoundname>
+    <includes refid="_alias_analysis_8h" local="yes">llvm/Analysis/AliasAnalysis.h</includes>
+    <sectiondef kind="user-defined">
+      <header>Alias Queries</header>
+      <memberdef kind="function" id="classllvm_1_1_a_a_results_1_1_concept_1a505c66e1248723049d5975aa14ff2a47" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classllvm_1_1_alias_result" kindref="compound">AliasResult</ref></type>
+        <definition>virtual AliasResult llvm::AAResults::Concept::alias</definition>
+        <argsstring>(const MemoryLocation &amp;LocA, const MemoryLocation &amp;LocB, AAQueryInfo &amp;AAQI, const Instruction *CtxI)=0</argsstring>
+        <name>alias</name>
+        <qualifiedname>llvm::AAResults::Concept::alias</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_location" kindref="compound">MemoryLocation</ref> &amp;</type>
+          <declname>LocA</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_location" kindref="compound">MemoryLocation</ref> &amp;</type>
+          <declname>LocB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_a_a_query_info" kindref="compound">AAQueryInfo</ref> &amp;</type>
+          <declname>AAQI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>CtxI</declname>
+        </param>
+        <briefdescription>
+<para>The main low level interface to the alias analysis implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an <ref refid="classllvm_1_1_alias_result" kindref="compound">AliasResult</ref> indicating whether the two pointers are aliased to each other. This is the interface that must be implemented by specific alias analysis implementations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="717" column="23"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Simple mod/ref information</header>
+      <memberdef kind="function" id="classllvm_1_1_a_a_results_1_1_concept_1a68270a548a0601cd6ad30e5263cfc8dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespacellvm_1a9db8c44b250b90e3ab7e4d144e7c9c2e" kindref="member">ModRefInfo</ref></type>
+        <definition>virtual ModRefInfo llvm::AAResults::Concept::getModRefInfoMask</definition>
+        <argsstring>(const MemoryLocation &amp;Loc, AAQueryInfo &amp;AAQI, bool IgnoreLocals)=0</argsstring>
+        <name>getModRefInfoMask</name>
+        <qualifiedname>llvm::AAResults::Concept::getModRefInfoMask</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_location" kindref="compound">MemoryLocation</ref> &amp;</type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_a_a_query_info" kindref="compound">AAQueryInfo</ref> &amp;</type>
+          <declname>AAQI</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IgnoreLocals</declname>
+        </param>
+        <briefdescription>
+<para>Returns a bitmask that should be unconditionally applied to the ModRef info of a memory location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This allows us to eliminate Mod and/or Ref from the ModRef info based on the knowledge that the memory location points to constant and/or locally-invariant memory. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="730" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_a_a_results_1_1_concept_1aa478d2c71803ef3e2ad9c852a9cf2a53" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespacellvm_1a9db8c44b250b90e3ab7e4d144e7c9c2e" kindref="member">ModRefInfo</ref></type>
+        <definition>virtual ModRefInfo llvm::AAResults::Concept::getArgModRefInfo</definition>
+        <argsstring>(const CallBase *Call, unsigned ArgIdx)=0</argsstring>
+        <name>getArgModRefInfo</name>
+        <qualifiedname>llvm::AAResults::Concept::getArgModRefInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref> *</type>
+          <declname>Call</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ArgIdx</declname>
+        </param>
+        <briefdescription>
+<para>Get the ModRef info associated with a pointer argument of a callsite. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The result&apos;s bits are set to indicate the allowed aliasing ModRef kinds. Note that these bits do not necessarily account for the overall behavior of the function, but rather only provide additional per-argument information. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="739" column="22"/>
+        <references refid="group___a_r_c_opt_1ga9c9cf6ad55eb23d77d083a184e416c09" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2363">Call</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_a_a_results_1_1_concept_1a5a6266b500111f3cb3230eb9b92ee1c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespacellvm_1a44ad2b29af9ebe3d12a99843a7594757" kindref="member">MemoryEffects</ref></type>
+        <definition>virtual MemoryEffects llvm::AAResults::Concept::getMemoryEffects</definition>
+        <argsstring>(const CallBase *Call, AAQueryInfo &amp;AAQI)=0</argsstring>
+        <name>getMemoryEffects</name>
+        <qualifiedname>llvm::AAResults::Concept::getMemoryEffects</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref> *</type>
+          <declname>Call</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_a_a_query_info" kindref="compound">AAQueryInfo</ref> &amp;</type>
+          <declname>AAQI</declname>
+        </param>
+        <briefdescription>
+<para>Return the behavior of the given call site. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="743" column="25"/>
+        <references refid="group___a_r_c_opt_1ga9c9cf6ad55eb23d77d083a184e416c09" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2363">Call</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_a_a_results_1_1_concept_1ab682a9f13cb804f7d8a23118cd40c7c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespacellvm_1a44ad2b29af9ebe3d12a99843a7594757" kindref="member">MemoryEffects</ref></type>
+        <definition>virtual MemoryEffects llvm::AAResults::Concept::getMemoryEffects</definition>
+        <argsstring>(const Function *F)=0</argsstring>
+        <name>getMemoryEffects</name>
+        <qualifiedname>llvm::AAResults::Concept::getMemoryEffects</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Return the behavior when calling the given function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="747" column="25"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_a_a_results_1_1_concept_1a9602bb7b95f52f87eb5a44eac0a650e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespacellvm_1a9db8c44b250b90e3ab7e4d144e7c9c2e" kindref="member">ModRefInfo</ref></type>
+        <definition>virtual ModRefInfo llvm::AAResults::Concept::getModRefInfo</definition>
+        <argsstring>(const CallBase *Call, const MemoryLocation &amp;Loc, AAQueryInfo &amp;AAQI)=0</argsstring>
+        <name>getModRefInfo</name>
+        <qualifiedname>llvm::AAResults::Concept::getModRefInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref> *</type>
+          <declname>Call</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_location" kindref="compound">MemoryLocation</ref> &amp;</type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_a_a_query_info" kindref="compound">AAQueryInfo</ref> &amp;</type>
+          <declname>AAQI</declname>
+        </param>
+        <briefdescription>
+<para>getModRefInfo (for call sites) - Return information about whether a particular call site modifies or reads the specified memory location. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="751" column="22"/>
+        <references refid="group___a_r_c_opt_1ga9c9cf6ad55eb23d77d083a184e416c09" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2363">Call</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_a_a_results_1_1_concept_1a6076406e8eefaa39178fe52f0e812c96" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespacellvm_1a9db8c44b250b90e3ab7e4d144e7c9c2e" kindref="member">ModRefInfo</ref></type>
+        <definition>virtual ModRefInfo llvm::AAResults::Concept::getModRefInfo</definition>
+        <argsstring>(const CallBase *Call1, const CallBase *Call2, AAQueryInfo &amp;AAQI)=0</argsstring>
+        <name>getModRefInfo</name>
+        <qualifiedname>llvm::AAResults::Concept::getModRefInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref> *</type>
+          <declname>Call1</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref> *</type>
+          <declname>Call2</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_a_a_query_info" kindref="compound">AAQueryInfo</ref> &amp;</type>
+          <declname>AAQI</declname>
+        </param>
+        <briefdescription>
+<para>Return information about whether two call sites may refer to the same set of memory locations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See the <ref refid="namespacellvm_1_1_a_a" kindref="compound">AA</ref> documentation for details: <ulink url="http://llvm.org/docs/AliasAnalysis.html#ModRefInfo">http://llvm.org/docs/AliasAnalysis.html#ModRefInfo</ulink> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="758" column="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_a_a_results_1_1_concept_1a372b9f67a03321793d31f46a95217990" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type></type>
+        <definition>AAResults::Concept::~Concept</definition>
+        <argsstring>()=0</argsstring>
+        <name>~Concept</name>
+        <qualifiedname>llvm::AAResults::Concept::~Concept</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="707" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A private abstract base class describing the concept of an individual alias analysis implementation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This interface is implemented by any <computeroutput>Model</computeroutput> instantiation. It is also the interface which a type used to instantiate the model must provide.</para>
+<para>All of these methods model methods by the same name in the <computeroutput><ref refid="classllvm_1_1_a_a_results" kindref="compound">AAResults</ref></computeroutput> class. Only differences and specifics to how the implementations are called are documented here. </para>
+    </detaileddescription>
+    <location file="include/llvm/Analysis/AliasAnalysis.h" line="705" column="1" bodyfile="include/llvm/Analysis/AliasAnalysis.h" bodystart="705" bodyend="762"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_a_a_results_1_1_concept_1a505c66e1248723049d5975aa14ff2a47" prot="public" virt="pure-virtual"><scope>llvm::AAResults::Concept</scope><name>alias</name></member>
+      <member refid="classllvm_1_1_a_a_results_1_1_concept_1aa478d2c71803ef3e2ad9c852a9cf2a53" prot="public" virt="pure-virtual"><scope>llvm::AAResults::Concept</scope><name>getArgModRefInfo</name></member>
+      <member refid="classllvm_1_1_a_a_results_1_1_concept_1a5a6266b500111f3cb3230eb9b92ee1c2" prot="public" virt="pure-virtual"><scope>llvm::AAResults::Concept</scope><name>getMemoryEffects</name></member>
+      <member refid="classllvm_1_1_a_a_results_1_1_concept_1ab682a9f13cb804f7d8a23118cd40c7c2" prot="public" virt="pure-virtual"><scope>llvm::AAResults::Concept</scope><name>getMemoryEffects</name></member>
+      <member refid="classllvm_1_1_a_a_results_1_1_concept_1a9602bb7b95f52f87eb5a44eac0a650e3" prot="public" virt="pure-virtual"><scope>llvm::AAResults::Concept</scope><name>getModRefInfo</name></member>
+      <member refid="classllvm_1_1_a_a_results_1_1_concept_1a6076406e8eefaa39178fe52f0e812c96" prot="public" virt="pure-virtual"><scope>llvm::AAResults::Concept</scope><name>getModRefInfo</name></member>
+      <member refid="classllvm_1_1_a_a_results_1_1_concept_1a68270a548a0601cd6ad30e5263cfc8dc" prot="public" virt="pure-virtual"><scope>llvm::AAResults::Concept</scope><name>getModRefInfoMask</name></member>
+      <member refid="classllvm_1_1_a_a_results_1_1_concept_1a372b9f67a03321793d31f46a95217990" prot="public" virt="pure-virtual"><scope>llvm::AAResults::Concept</scope><name>~Concept</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

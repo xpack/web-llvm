@@ -1,0 +1,684 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</compoundname>
+    <basecompoundref refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base" prot="public" virt="non-virtual">anonymous_namespace{BitcodeReader.cpp}::BitcodeReaderBase</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a9e08f014dee904d885696cbab9e2b5e0" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_module_summary_index" kindref="compound">ModuleSummaryIndex</ref> &amp;</type>
+        <definition>ModuleSummaryIndex&amp; anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::TheIndex</definition>
+        <argsstring></argsstring>
+        <name>TheIndex</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::TheIndex</qualifiedname>
+        <briefdescription>
+<para>The module index built during parsing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="945" column="22" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="945" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a04b70e69adb9e2ba212bff08d39b1703" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::SeenGlobalValSummary</definition>
+        <argsstring></argsstring>
+        <name>SeenGlobalValSummary</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::SeenGlobalValSummary</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Indicates whether we have encountered a global value summary section yet during parsing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="949" column="8" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="949" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1afa90232f40cefda923f45ccd59fd81ba" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::SeenValueSymbolTable</definition>
+        <argsstring></argsstring>
+        <name>SeenValueSymbolTable</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::SeenValueSymbolTable</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Indicates whether we have already parsed the VST, used for error checking. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="952" column="8" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="952" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a626ab0cd3c37072e4e5e844cc8f863dd" prot="private" static="no" mutable="no">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::VSTOffset</definition>
+        <argsstring></argsstring>
+        <name>VSTOffset</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::VSTOffset</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Set to the offset of the VST recorded in the MODULE_CODE_VSTOFFSET record. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used to enable on-demand parsing of the VST. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="956" column="12" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="956" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ad941e1b39236a2b5a3b145f16e87d2a6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, std::pair&lt; <ref refid="structllvm_1_1_value_info" kindref="compound">ValueInfo</ref>, <ref refid="classllvm_1_1_global_value_1a3af0428ec6e48cb2f05c199b7b9f7e07" kindref="member">GlobalValue::GUID</ref> &gt; &gt;</type>
+        <definition>DenseMap&lt;unsigned, std::pair&lt;ValueInfo, GlobalValue::GUID&gt; &gt; anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::ValueIdToValueInfoMap</definition>
+        <argsstring></argsstring>
+        <name>ValueIdToValueInfoMap</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::ValueIdToValueInfoMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="967" column="7" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="967" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a12e3d4826726b846f99bbc28c025ac78" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref>, <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt;</type>
+        <definition>DenseMap&lt;uint64_t, StringRef&gt; anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::ModuleIdMap</definition>
+        <argsstring></argsstring>
+        <name>ModuleIdMap</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::ModuleIdMap</qualifiedname>
+        <briefdescription>
+<para>Map populated during module path string table parsing, from the module <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> to a string reference owned by the index&apos;s module path string table, used to correlate with combined index summary records. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="973" column="12" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="973" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ac7cb9e093209fe88a03f17defd5476d5" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::SourceFileName</definition>
+        <argsstring></argsstring>
+        <name>SourceFileName</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::SourceFileName</qualifiedname>
+        <briefdescription>
+<para>Original source file name recorded in a bitcode record. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="976" column="15" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="976" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a5969817dd62b2fe69a74a887042007be" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::ModulePath</definition>
+        <argsstring></argsstring>
+        <name>ModulePath</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::ModulePath</qualifiedname>
+        <briefdescription>
+<para>The string identifier given to this module by the client, normally the path to the bitcode file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="980" column="13" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="980" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a611e1fdd6d13f9b5cefd16c75746c13d" prot="private" static="no" mutable="no">
+        <type>std::function&lt; <ref refid="classbool" kindref="compound">bool</ref>(<ref refid="classllvm_1_1_global_value_1a3af0428ec6e48cb2f05c199b7b9f7e07" kindref="member">GlobalValue::GUID</ref>)&gt;</type>
+        <definition>std::function&lt;bool(GlobalValue::GUID)&gt; anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::IsPrevailing</definition>
+        <argsstring></argsstring>
+        <name>IsPrevailing</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::IsPrevailing</qualifiedname>
+        <briefdescription>
+<para>Callback to ask whether a symbol is the prevailing copy when invoked during combined index building. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="984" column="17" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="984" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a1120cc9b5887948889750f76679d8f20" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>std::vector&lt;uint64_t&gt; anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::StackIds</definition>
+        <argsstring></argsstring>
+        <name>StackIds</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::StackIds</qualifiedname>
+        <briefdescription>
+<para>Saves the stack ids from the STACK_IDS record to consult when adding stack ids from the lists in the callsite and alloc entries to the index. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="988" column="15" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="988" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a9481cc26f9596e91cc102d677741ba47" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>std::vector&lt;uint64_t&gt; anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::RadixArray</definition>
+        <argsstring></argsstring>
+        <name>RadixArray</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::RadixArray</qualifiedname>
+        <briefdescription>
+<para>Linearized radix tree of allocation contexts. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See the description above the CallStackRadixTreeBuilder class in <ref refid="_mem_prof_8h" kindref="compound">ProfileData/MemProf.h</ref> for format. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="992" column="15" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="992" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a0f120c3d0b6eac0bf0e5969e53e47fed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ModuleSummaryIndexBitcodeReader::ModuleSummaryIndexBitcodeReader</definition>
+        <argsstring>(BitstreamCursor Stream, StringRef Strtab, ModuleSummaryIndex &amp;TheIndex, StringRef ModulePath, std::function&lt; bool(GlobalValue::GUID)&gt; IsPrevailing=nullptr)</argsstring>
+        <name>ModuleSummaryIndexBitcodeReader</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::ModuleSummaryIndexBitcodeReader</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_bitstream_cursor" kindref="compound">BitstreamCursor</ref></type>
+          <declname>Stream</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Strtab</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_module_summary_index" kindref="compound">ModuleSummaryIndex</ref> &amp;</type>
+          <declname>TheIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>ModulePath</declname>
+        </param>
+        <param>
+          <type>std::function&lt; <ref refid="classbool" kindref="compound">bool</ref>(<ref refid="classllvm_1_1_global_value_1a3af0428ec6e48cb2f05c199b7b9f7e07" kindref="member">GlobalValue::GUID</ref>)&gt;</type>
+          <declname>IsPrevailing</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="995" column="3" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7160" bodyend="7164"/>
+        <references refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1a5a0d125f481ab8e82010f86ab22bc3a3" compoundref="_bitcode_reader_8cpp" startline="436" endline="439">anonymous_namespace{BitcodeReader.cpp}::BitcodeReaderBase::BitcodeReaderBase</references>
+        <references refid="namespacellvm_1abfc9c7ecf70f66901e439f7c04ef3dbb" compoundref="_s_t_l_extras_8h" startline="1873" endline="1875">llvm::move</references>
+        <references refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1a591454abad1d73b04a12f610819bd8a9" compoundref="_bitcode_reader_8cpp" startline="443">anonymous_namespace{BitcodeReader.cpp}::BitcodeReaderBase::Strtab</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ae9f86888a27590c2d447d2f98b5f7cf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error ModuleSummaryIndexBitcodeReader::parseModule</definition>
+        <argsstring>()</argsstring>
+        <name>parseModule</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::parseModule</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>MODULE_CODE_SOURCE_FILENAME: [namechar x N]</para>
+<para>MODULE_CODE_HASH: [5*i32]</para>
+<para>MODULE_CODE_VSTOFFSET: [offset]</para>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1000" column="9" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7305" bodyend="7442"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1bitc_1a8cd4dd534ba6c31e93a88ca286c4f0e5a9c269366c4dc4af235c9bb24fa46f915" compoundref="_bit_code_enums_8h" startline="69">llvm::bitc::BLOCKINFO_BLOCK_ID</references>
+        <references refid="_bitcode_reader_8cpp_1a2d7d3464870033ae244f10f24678e945" compoundref="_bitcode_reader_8cpp" startline="174" endline="181">convertToString</references>
+        <references refid="structllvm_1_1_bitstream_entry_1aabd7d39bf1ac32328fce0cb152a9f1cea69bcb0a249ff563515ad5c77bc19ebfe" compoundref="_bitstream_reader_8h" startline="327">llvm::BitstreamEntry::EndBlock</references>
+        <references refid="structllvm_1_1_bitstream_entry_1aabd7d39bf1ac32328fce0cb152a9f1ceaff48a2349df5a9fe16c80d1d6e32e479" compoundref="_bitstream_reader_8h" startline="326">llvm::BitstreamEntry::Error</references>
+        <references refid="_symbol_record_mapping_8cpp_1a9cdf893c7d17e47fa1ed8bebf92a5da4" compoundref="_symbol_record_mapping_8cpp" startline="14" endline="16">error</references>
+        <references refid="namespacellvm_1_1bitc_1a802836c61fe369b670441d32741f933daca3afe4e93910906ab7d0c2e3bd2b90e" compoundref="_l_l_v_m_bit_codes_8h" startline="61">llvm::bitc::FULL_LTO_GLOBALVAL_SUMMARY_BLOCK_ID</references>
+        <references refid="classllvm_1_1_expected_1ad26ecbb6920f4ea55f5ed4f64e52342d" compoundref="llvm_2_support_2_error_8h" startline="578" endline="581">llvm::Expected&lt; T &gt;::get</references>
+        <references refid="_bitcode_reader_8cpp_1a9049fa6f0ceaa6bacf0a9bf51c0a2770" compoundref="_bitcode_reader_8cpp" startline="1111" endline="1151">getDecodedLinkage</references>
+        <references refid="namespacellvm_1_1bitc_1a802836c61fe369b670441d32741f933da642102503aff012fc2975f165138b454" compoundref="_l_l_v_m_bit_codes_8h" startline="53">llvm::bitc::GLOBALVAL_SUMMARY_BLOCK_ID</references>
+        <references refid="namespacellvm_1_1bitc_1a802836c61fe369b670441d32741f933da31e5f441b78348934094a9dde0a326e2" compoundref="_l_l_v_m_bit_codes_8h" startline="30">llvm::bitc::MODULE_BLOCK_ID</references>
+        <references refid="namespacellvm_1_1bitc_1a9d51b2066d2ce0b9fe4f39f1a80f7c81a9036417d96ab001e460a784ee529748c" compoundref="_l_l_v_m_bit_codes_8h" startline="111">llvm::bitc::MODULE_CODE_ALIAS</references>
+        <references refid="namespacellvm_1_1bitc_1a9d51b2066d2ce0b9fe4f39f1a80f7c81a0f98ccf6b361c7d704a34ae3abb8e9cf" compoundref="_l_l_v_m_bit_codes_8h" startline="100">llvm::bitc::MODULE_CODE_FUNCTION</references>
+        <references refid="namespacellvm_1_1bitc_1a9d51b2066d2ce0b9fe4f39f1a80f7c81a71e354585ad9af847e81899d9e9045cc" compoundref="_l_l_v_m_bit_codes_8h" startline="96">llvm::bitc::MODULE_CODE_GLOBALVAR</references>
+        <references refid="namespacellvm_1_1bitc_1a9d51b2066d2ce0b9fe4f39f1a80f7c81ab91f122af3779bc28dea7291c3c801a7" compoundref="_l_l_v_m_bit_codes_8h" startline="119">llvm::bitc::MODULE_CODE_HASH</references>
+        <references refid="namespacellvm_1_1bitc_1a9d51b2066d2ce0b9fe4f39f1a80f7c81a19650d5060a76b566188987c86d79f74" compoundref="_l_l_v_m_bit_codes_8h" startline="116">llvm::bitc::MODULE_CODE_SOURCE_FILENAME</references>
+        <references refid="namespacellvm_1_1bitc_1a9d51b2066d2ce0b9fe4f39f1a80f7c81a163b11eb41c06566dbc6e03e9273cc59" compoundref="_l_l_v_m_bit_codes_8h" startline="85">llvm::bitc::MODULE_CODE_VERSION</references>
+        <references refid="namespacellvm_1_1bitc_1a9d51b2066d2ce0b9fe4f39f1a80f7c81a7ecbb9458f443298c9f6e46cdfaa1ff2" compoundref="_l_l_v_m_bit_codes_8h" startline="108">llvm::bitc::MODULE_CODE_VSTOFFSET</references>
+        <references refid="namespacellvm_1_1bitc_1a802836c61fe369b670441d32741f933daca3ed786c04791d9c4961711ebf6c294" compoundref="_l_l_v_m_bit_codes_8h" startline="52">llvm::bitc::MODULE_STRTAB_BLOCK_ID</references>
+        <references refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1a07768b10e40ef48e376f169fa695357b" compoundref="_bitcode_reader_8cpp" startline="476" endline="484">anonymous_namespace{BitcodeReader.cpp}::BitcodeReaderBase::parseVersionRecord</references>
+        <references refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1ad04f7d6a08ad25b673e16a64825f640c" compoundref="_bitcode_reader_8cpp" startline="4011" endline="4022">anonymous_namespace{BitcodeReader.cpp}::BitcodeReaderBase::readBlockInfo</references>
+        <references refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1aafd9537e3f52adde4974da00a91cc31a" compoundref="_bitcode_reader_8cpp" startline="487" endline="494">anonymous_namespace{BitcodeReader.cpp}::BitcodeReaderBase::readNameFromStrtab</references>
+        <references refid="structllvm_1_1_bitstream_entry_1aabd7d39bf1ac32328fce0cb152a9f1cea05d3cc255293715b2712b9bbdfc6011c" compoundref="_bitstream_reader_8h" startline="330">llvm::BitstreamEntry::Record</references>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+        <references refid="classllvm_1_1_twine_1a4c1c1093a7749409c70838678514cc7c" compoundref="_twine_8cpp" startline="17" endline="30">llvm::Twine::str</references>
+        <references refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1ad08058cbd0be023ecb41322986993cd7" compoundref="_bitcode_reader_8cpp" startline="442">anonymous_namespace{BitcodeReader.cpp}::BitcodeReaderBase::Stream</references>
+        <references refid="structllvm_1_1_bitstream_entry_1aabd7d39bf1ac32328fce0cb152a9f1ceaac45aef6d995e5c810f2824a40fb1e2a" compoundref="_bitstream_reader_8h" startline="329">llvm::BitstreamEntry::SubBlock</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+        <references refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1a39904e89e51e7aeb6242100c6d008178" compoundref="_bitcode_reader_8cpp" startline="447">anonymous_namespace{BitcodeReader.cpp}::BitcodeReaderBase::UseStrtab</references>
+        <references refid="namespacellvm_1_1bitc_1a802836c61fe369b670441d32741f933dad03d0513adaa3462afbc7be6241b7db2" compoundref="_l_l_v_m_bit_codes_8h" startline="44">llvm::bitc::VALUE_SYMTAB_BLOCK_ID</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ae17531812ba8dfbc196a2f1e89bbdda0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="classbool" kindref="compound">bool</ref></type>
+            <declname>AllowNullValueInfo</declname>
+            <defname>AllowNullValueInfo</defname>
+          </param>
+        </templateparamlist>
+        <type>std::pair&lt; <ref refid="structllvm_1_1_value_info" kindref="compound">ValueInfo</ref>, <ref refid="classllvm_1_1_global_value_1a3af0428ec6e48cb2f05c199b7b9f7e07" kindref="member">GlobalValue::GUID</ref> &gt;</type>
+        <definition>std::pair&lt; ValueInfo, GlobalValue::GUID &gt; anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::getValueInfoFromValueId</definition>
+        <argsstring>(unsigned ValueId)</argsstring>
+        <name>getValueInfoFromValueId</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::getValueInfoFromValueId</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ValueId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="7177" column="1" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7177" bodyend="7185"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a612cd865c73f46d94163180f99741cd6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModuleSummaryIndexBitcodeReader::setValueGUID</definition>
+        <argsstring>(uint64_t ValueID, StringRef ValueName, GlobalValue::LinkageTypes Linkage, StringRef SourceFileName)</argsstring>
+        <name>setValueGUID</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::setValueGUID</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>ValueID</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>ValueName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_global_value_1aedfa75f0c85c4aa85b257f066fbea57c" kindref="member">GlobalValue::LinkageTypes</ref></type>
+          <declname>Linkage</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>SourceFileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1003" column="8" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7187" bodyend="7207"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a8f3a32d89e5649dd603fbde64cb28430" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error ModuleSummaryIndexBitcodeReader::parseValueSymbolTable</definition>
+        <argsstring>(uint64_t Offset, DenseMap&lt; unsigned, GlobalValue::LinkageTypes &gt; &amp;ValueIdToLinkageMap)</argsstring>
+        <name>parseValueSymbolTable</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::parseValueSymbolTable</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Offset</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classllvm_1_1_global_value_1aedfa75f0c85c4aa85b257f066fbea57c" kindref="member">GlobalValue::LinkageTypes</ref> &gt; &amp;</type>
+          <declname>ValueIdToLinkageMap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1006" column="9" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7212" bodyend="7300"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1afda6e4bc6e7ca69e4526a3d9a083fa0c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_value_info" kindref="compound">ValueInfo</ref>, 0 &gt;</type>
+        <definition>SmallVector&lt; ValueInfo, 0 &gt; ModuleSummaryIndexBitcodeReader::makeRefList</definition>
+        <argsstring>(ArrayRef&lt; uint64_t &gt; Record)</argsstring>
+        <name>makeRefList</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::makeRefList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>Record</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1009" column="15" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7445" bodyend="7451"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ab52a8da83eb14baf7bf00c773f35eed4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_function_summary_1a434edf3518376986c8bb393f5e0eec33" kindref="member">FunctionSummary::EdgeTy</ref>, 0 &gt;</type>
+        <definition>SmallVector&lt; FunctionSummary::EdgeTy, 0 &gt; ModuleSummaryIndexBitcodeReader::makeCallList</definition>
+        <argsstring>(ArrayRef&lt; uint64_t &gt; Record, bool IsOldProfileFormat, bool HasProfile, bool HasRelBF)</argsstring>
+        <name>makeCallList</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::makeCallList</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>Record</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsOldProfileFormat</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>HasProfile</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>HasRelBF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1011" column="3" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7454" bodyend="7483"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a7ddd9d112399fff7785a5baa3db54fcc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error ModuleSummaryIndexBitcodeReader::parseEntireSummary</definition>
+        <argsstring>(unsigned ID)</argsstring>
+        <name>parseEntireSummary</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::parseEntireSummary</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1013" column="9" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7647" bodyend="8224"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1aa3ce6c80af6a632ce7737db724e2eca1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error ModuleSummaryIndexBitcodeReader::parseModuleStringTable</definition>
+        <argsstring>()</argsstring>
+        <name>parseModuleStringTable</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::parseModuleStringTable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>MST_CODE_HASH: [5*i32]</para>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1014" column="9" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="8228" bodyend="8292"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a5c9fc503c94c857f347d9a6b4be49f43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModuleSummaryIndexBitcodeReader::parseTypeIdCompatibleVtableSummaryRecord</definition>
+        <argsstring>(ArrayRef&lt; uint64_t &gt; Record)</argsstring>
+        <name>parseTypeIdCompatibleVtableSummaryRecord</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::parseTypeIdCompatibleVtableSummaryRecord</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>Record</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1015" column="8" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7578" bodyend="7589"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a4cb24a85fec2d4bf22414e486ac9d294" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModuleSummaryIndexBitcodeReader::parseTypeIdCompatibleVtableInfo</definition>
+        <argsstring>(ArrayRef&lt; uint64_t &gt; Record, size_t &amp;Slot, TypeIdCompatibleVtableInfo &amp;TypeId)</argsstring>
+        <name>parseTypeIdCompatibleVtableInfo</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::parseTypeIdCompatibleVtableInfo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>Record</declname>
+        </param>
+        <param>
+          <type>size_t &amp;</type>
+          <declname>Slot</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1ada2485ca228b028f8639ad86ce41d6ec" kindref="member">TypeIdCompatibleVtableInfo</ref> &amp;</type>
+          <declname>TypeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1016" column="8" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7570" bodyend="7576"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a6363d0f4c85f7f5457211dc9cf8f6e44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="structllvm_1_1_function_summary_1_1_param_access" kindref="compound">FunctionSummary::ParamAccess</ref> &gt;</type>
+        <definition>std::vector&lt; FunctionSummary::ParamAccess &gt; ModuleSummaryIndexBitcodeReader::parseParamAccesses</definition>
+        <argsstring>(ArrayRef&lt; uint64_t &gt; Record)</argsstring>
+        <name>parseParamAccesses</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::parseParamAccesses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>Record</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1019" column="3" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7536" bodyend="7568"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a8b04e7faa35898db460ba47114b110f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>SmallVector&lt; unsigned &gt; ModuleSummaryIndexBitcodeReader::parseAllocInfoContext</definition>
+        <argsstring>(ArrayRef&lt; uint64_t &gt; Record, unsigned &amp;I)</argsstring>
+        <name>parseAllocInfoContext</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::parseAllocInfoContext</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+          <declname>Record</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1020" column="15" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7591" bodyend="7631"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ae17531812ba8dfbc196a2f1e89bbdda0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="classbool" kindref="compound">bool</ref></type>
+            <declname>AllowNullValueInfo</declname>
+            <defname>AllowNullValueInfo</defname>
+            <defval>false</defval>
+          </param>
+        </templateparamlist>
+        <type>std::pair&lt; <ref refid="structllvm_1_1_value_info" kindref="compound">ValueInfo</ref>, <ref refid="classllvm_1_1_global_value_1a3af0428ec6e48cb2f05c199b7b9f7e07" kindref="member">GlobalValue::GUID</ref> &gt;</type>
+        <definition>std::pair&lt; ValueInfo, GlobalValue::GUID &gt; anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::getValueInfoFromValueId</definition>
+        <argsstring>(unsigned ValueId)</argsstring>
+        <name>getValueInfoFromValueId</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::getValueInfoFromValueId</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ValueId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1025" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a22befe0376e6d75b62b04d96e3c2a79a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModuleSummaryIndexBitcodeReader::addThisModule</definition>
+        <argsstring>()</argsstring>
+        <name>addThisModule</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::addThisModule</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1027" column="8" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7166" bodyend="7168"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ab9f25885aa6bff749fb6c6e695386ffd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_module_summary_index_1a1295eb8bd6bd6cb19ab8e79f5eaa2ba9" kindref="member">ModuleSummaryIndex::ModuleInfo</ref> *</type>
+        <definition>ModuleSummaryIndex::ModuleInfo * ModuleSummaryIndexBitcodeReader::getThisModule</definition>
+        <argsstring>()</argsstring>
+        <name>getThisModule</name>
+        <qualifiedname>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader::getThisModule</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="1028" column="34" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="7171" bodyend="7173"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class to manage reading and parsing function summary index bitcode files/sections. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>anonymous_namespace{BitcodeReader.cpp}::BitcodeReaderBase</label>
+        <link refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base"/>
+      </node>
+      <node id="1">
+        <label>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</label>
+        <link refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>anonymous_namespace{BitcodeReader.cpp}::BitcodeReaderBase</label>
+        <link refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>BlockInfo</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Stream</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>Strtab</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>UseStrtab</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>ProducerIdentification</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</label>
+        <link refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="3">
+        <label>llvm::BitstreamBlockInfo</label>
+        <link refid="classllvm_1_1_bitstream_block_info"/>
+      </node>
+      <node id="4">
+        <label>llvm::BitstreamCursor</label>
+        <link refid="classllvm_1_1_bitstream_cursor"/>
+        <childnode refid="5" relation="private-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>MaxChunkSize</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::SimpleBitstreamCursor</label>
+        <link refid="classllvm_1_1_simple_bitstream_cursor"/>
+      </node>
+      <node id="7">
+        <label>llvm::StringRef</label>
+        <link refid="classllvm_1_1_string_ref"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>npos</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>size_t</label>
+        <link refid="classsize__t"/>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Bitcode/Reader/BitcodeReader.cpp" line="943" column="1" bodyfile="lib/Bitcode/Reader/BitcodeReader.cpp" bodystart="943" bodyend="1029"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a22befe0376e6d75b62b04d96e3c2a79a" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>addThisModule</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1a5a0d125f481ab8e82010f86ab22bc3a3" prot="protected" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>BitcodeReaderBase</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1a3644024aaeaa32d9ea0790cba19a4521" prot="protected" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>BlockInfo</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1a3aa88beff46b705033cfc09293ba298a" prot="protected" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>error</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ab9f25885aa6bff749fb6c6e695386ffd" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>getThisModule</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ae17531812ba8dfbc196a2f1e89bbdda0" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>getValueInfoFromValueId</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ae17531812ba8dfbc196a2f1e89bbdda0" prot="public" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>getValueInfoFromValueId</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a611e1fdd6d13f9b5cefd16c75746c13d" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>IsPrevailing</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ab52a8da83eb14baf7bf00c773f35eed4" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>makeCallList</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1afda6e4bc6e7ca69e4526a3d9a083fa0c" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>makeRefList</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a12e3d4826726b846f99bbc28c025ac78" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>ModuleIdMap</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a5969817dd62b2fe69a74a887042007be" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>ModulePath</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a0f120c3d0b6eac0bf0e5969e53e47fed" prot="public" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>ModuleSummaryIndexBitcodeReader</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a8b04e7faa35898db460ba47114b110f5" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>parseAllocInfoContext</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a7ddd9d112399fff7785a5baa3db54fcc" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>parseEntireSummary</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ae9f86888a27590c2d447d2f98b5f7cf8" prot="public" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>parseModule</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1aa3ce6c80af6a632ce7737db724e2eca1" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>parseModuleStringTable</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a6363d0f4c85f7f5457211dc9cf8f6e44" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>parseParamAccesses</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a4cb24a85fec2d4bf22414e486ac9d294" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>parseTypeIdCompatibleVtableInfo</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a5c9fc503c94c857f347d9a6b4be49f43" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>parseTypeIdCompatibleVtableSummaryRecord</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a8f3a32d89e5649dd603fbde64cb28430" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>parseValueSymbolTable</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1a07768b10e40ef48e376f169fa695357b" prot="protected" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>parseVersionRecord</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1a5dc983de42ec7ccaf7dddce3a4a696e4" prot="protected" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>ProducerIdentification</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a9481cc26f9596e91cc102d677741ba47" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>RadixArray</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1ad04f7d6a08ad25b673e16a64825f640c" prot="protected" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>readBlockInfo</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1aafd9537e3f52adde4974da00a91cc31a" prot="protected" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>readNameFromStrtab</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a04b70e69adb9e2ba212bff08d39b1703" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>SeenGlobalValSummary</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1afa90232f40cefda923f45ccd59fd81ba" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>SeenValueSymbolTable</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a612cd865c73f46d94163180f99741cd6" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>setValueGUID</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ac7cb9e093209fe88a03f17defd5476d5" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>SourceFileName</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a1120cc9b5887948889750f76679d8f20" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>StackIds</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1ad08058cbd0be023ecb41322986993cd7" prot="protected" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>Stream</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1a591454abad1d73b04a12f610819bd8a9" prot="protected" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>Strtab</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a9e08f014dee904d885696cbab9e2b5e0" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>TheIndex</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_bitcode_reader_base_1a39904e89e51e7aeb6242100c6d008178" prot="protected" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>UseStrtab</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1ad941e1b39236a2b5a3b145f16e87d2a6" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>ValueIdToValueInfoMap</name></member>
+      <member refid="classanonymous__namespace_02_bitcode_reader_8cpp_03_1_1_module_summary_index_bitcode_reader_1a626ab0cd3c37072e4e5e844cc8f863dd" prot="private" virt="non-virtual"><scope>anonymous_namespace{BitcodeReader.cpp}::ModuleSummaryIndexBitcodeReader</scope><name>VSTOffset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,842 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1pdb_1_1_symbol_cache" kind="class" language="C++" prot="public">
+    <compoundname>llvm::pdb::SymbolCache</compoundname>
+    <includes refid="_symbol_cache_8h" local="yes">llvm/DebugInfo/PDB/Native/SymbolCache.h</includes>
+    <innerclass refid="structllvm_1_1pdb_1_1_symbol_cache_1_1_line_table_entry" prot="private">llvm::pdb::SymbolCache::LineTableEntry</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1a3e9c12875206de38645fb077f49bb64f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1pdb_1_1_native_session" kindref="compound">NativeSession</ref> &amp;</type>
+        <definition>NativeSession&amp; llvm::pdb::SymbolCache::Session</definition>
+        <argsstring></argsstring>
+        <name>Session</name>
+        <qualifiedname>llvm::pdb::SymbolCache::Session</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="38" column="17" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1a9f0eb1f423cf39e599ac9e4aa55e777b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1pdb_1_1_dbi_stream" kindref="compound">DbiStream</ref> *</type>
+        <definition>DbiStream* llvm::pdb::SymbolCache::Dbi</definition>
+        <argsstring></argsstring>
+        <name>Dbi</name>
+        <qualifiedname>llvm::pdb::SymbolCache::Dbi</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="39" column="13" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1a52af23971ad83a6f9411b189c7ae1207" prot="private" static="no" mutable="yes">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1pdb_1_1_native_raw_symbol" kindref="compound">NativeRawSymbol</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;NativeRawSymbol&gt; &gt; llvm::pdb::SymbolCache::Cache</definition>
+        <argsstring></argsstring>
+        <name>Cache</name>
+        <qualifiedname>llvm::pdb::SymbolCache::Cache</qualifiedname>
+        <briefdescription>
+<para>Cache of all stable symbols, indexed by <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Just because a symbol has been parsed does not imply that it will be stable and have an Id. Id allocation is an implementation, with the only guarantee being that once an Id is allocated, the symbol can be assumed to be cached. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="46" column="23" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1aa708b2247973ea09f8d985c5b7806de5" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">codeview::TypeIndex</ref>, <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref> &gt;</type>
+        <definition>DenseMap&lt;codeview::TypeIndex, SymIndexId&gt; llvm::pdb::SymbolCache::TypeIndexToSymbolId</definition>
+        <argsstring></argsstring>
+        <name>TypeIndexToSymbolId</name>
+        <qualifiedname>llvm::pdb::SymbolCache::TypeIndexToSymbolId</qualifiedname>
+        <briefdescription>
+<para>For type records from the TPI stream which have been paresd and cached, stores a mapping to <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref> of the cached symbol. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="50" column="20" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1a13c25619e67ce1885e30479c10028918" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; std::pair&lt; <ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">codeview::TypeIndex</ref>, <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;, <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref> &gt;</type>
+        <definition>DenseMap&lt;std::pair&lt;codeview::TypeIndex, uint32_t&gt;, SymIndexId&gt; llvm::pdb::SymbolCache::FieldListMembersToSymbolId</definition>
+        <argsstring></argsstring>
+        <name>FieldListMembersToSymbolId</name>
+        <qualifiedname>llvm::pdb::SymbolCache::FieldListMembersToSymbolId</qualifiedname>
+        <briefdescription>
+<para>For field list members which have been parsed and cached, stores a mapping from (IndexOfClass, MemberIndex) to the corresponding <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref> of the cached symbol. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="56" column="7" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1a46b05480dc49ff6a65727d935e99f48d" prot="private" static="no" mutable="yes">
+        <type>std::vector&lt; <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref> &gt;</type>
+        <definition>std::vector&lt;SymIndexId&gt; llvm::pdb::SymbolCache::Compilands</definition>
+        <argsstring></argsstring>
+        <name>Compilands</name>
+        <qualifiedname>llvm::pdb::SymbolCache::Compilands</qualifiedname>
+        <briefdescription>
+<para>List of SymIndexIds for each compiland, indexed by compiland index as they appear in the PDB file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="60" column="23" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1a77d75b8935e998f585ff91d3a14596f5" prot="private" static="no" mutable="yes">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1pdb_1_1_native_source_file" kindref="compound">NativeSourceFile</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;NativeSourceFile&gt; &gt; llvm::pdb::SymbolCache::SourceFiles</definition>
+        <argsstring></argsstring>
+        <name>SourceFiles</name>
+        <qualifiedname>llvm::pdb::SymbolCache::SourceFiles</qualifiedname>
+        <briefdescription>
+<para>List of source files, indexed by unique source file index. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="63" column="23" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1a0d630aaa587ff6afacb3504174c2427b" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref>, <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref> &gt;</type>
+        <definition>DenseMap&lt;uint32_t, SymIndexId&gt; llvm::pdb::SymbolCache::FileNameOffsetToId</definition>
+        <argsstring></argsstring>
+        <name>FileNameOffsetToId</name>
+        <qualifiedname>llvm::pdb::SymbolCache::FileNameOffsetToId</qualifiedname>
+        <briefdescription>
+<para>Map from string table offset to source file Id. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="66" column="20" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1a873b2ca5797044ccdea8e45c1fca0fbc" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref>, <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref> &gt;</type>
+        <definition>DenseMap&lt;uint32_t, SymIndexId&gt; llvm::pdb::SymbolCache::GlobalOffsetToSymbolId</definition>
+        <argsstring></argsstring>
+        <name>GlobalOffsetToSymbolId</name>
+        <qualifiedname>llvm::pdb::SymbolCache::GlobalOffsetToSymbolId</qualifiedname>
+        <briefdescription>
+<para>Map from global symbol offset to <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="69" column="20" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1a6b0cd499fc9671581f54aaa0b3389d24" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; std::pair&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref>, <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;, <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref> &gt;</type>
+        <definition>DenseMap&lt;std::pair&lt;uint32_t, uint32_t&gt;, SymIndexId&gt; llvm::pdb::SymbolCache::AddressToSymbolId</definition>
+        <argsstring></argsstring>
+        <name>AddressToSymbolId</name>
+        <qualifiedname>llvm::pdb::SymbolCache::AddressToSymbolId</qualifiedname>
+        <briefdescription>
+<para>Map from segment and code offset to function symbols. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="72" column="20" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1a2c72782b0c0c875981ac6455523b7d25" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; std::pair&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref>, <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;, <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref> &gt;</type>
+        <definition>DenseMap&lt;std::pair&lt;uint32_t, uint32_t&gt;, SymIndexId&gt; llvm::pdb::SymbolCache::AddressToPublicSymId</definition>
+        <argsstring></argsstring>
+        <name>AddressToPublicSymId</name>
+        <qualifiedname>llvm::pdb::SymbolCache::AddressToPublicSymId</qualifiedname>
+        <briefdescription>
+<para>Map from segment and code offset to public symbols. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="75" column="7" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1a10a6f17f24dc8cfe69f91c4ed20f871d" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; std::pair&lt; <ref refid="classuint16__t" kindref="compound">uint16_t</ref>, <ref refid="classuint32__t" kindref="compound">uint32_t</ref> &gt;, <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref> &gt;</type>
+        <definition>DenseMap&lt;std::pair&lt;uint16_t, uint32_t&gt;, SymIndexId&gt; llvm::pdb::SymbolCache::SymTabOffsetToSymbolId</definition>
+        <argsstring></argsstring>
+        <name>SymTabOffsetToSymbolId</name>
+        <qualifiedname>llvm::pdb::SymbolCache::SymTabOffsetToSymbolId</qualifiedname>
+        <briefdescription>
+<para>Map from module index and symbol table offset to <ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="79" column="7" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1pdb_1_1_symbol_cache_1ac0f785690f037f5d71e0cd1057997e5a" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classuint16__t" kindref="compound">uint16_t</ref>, std::vector&lt; LineTableEntry &gt; &gt;</type>
+        <definition>DenseMap&lt;uint16_t, std::vector&lt;LineTableEntry&gt; &gt; llvm::pdb::SymbolCache::LineTable</definition>
+        <argsstring></argsstring>
+        <name>LineTable</name>
+        <qualifiedname>llvm::pdb::SymbolCache::LineTable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="90" column="20" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a5a3409ac3110b4aec3b8a1dc58852b1b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; LineTableEntry &gt;</type>
+        <definition>std::vector&lt; SymbolCache::LineTableEntry &gt; SymbolCache::findLineTable</definition>
+        <argsstring>(uint16_t Modi) const</argsstring>
+        <name>findLineTable</name>
+        <qualifiedname>llvm::pdb::SymbolCache::findLineTable</qualifiedname>
+        <param>
+          <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+          <declname>Modi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="89" column="15" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="452" bodyend="534"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a800457f34b652c102dae0e89ee657018" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+        <definition>SymIndexId llvm::pdb::SymbolCache::createSymbolPlaceholder</definition>
+        <argsstring>() const</argsstring>
+        <name>createSymbolPlaceholder</name>
+        <qualifiedname>llvm::pdb::SymbolCache::createSymbolPlaceholder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="92" column="14" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="92" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a912c2087ad9d8a12ecbb39e48e2d68a3" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ConcreteSymbolT</type>
+          </param>
+          <param>
+            <type>typename CVRecordT</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+        <definition>SymIndexId llvm::pdb::SymbolCache::createSymbolForType</definition>
+        <argsstring>(codeview::TypeIndex TI, codeview::CVType CVT, Args &amp;&amp;...ConstructorArgs) const</argsstring>
+        <name>createSymbolForType</name>
+        <qualifiedname>llvm::pdb::SymbolCache::createSymbolForType</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">codeview::TypeIndex</ref></type>
+          <declname>TI</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1codeview_1a238eda31f74c0f0f3224f71b50b7d165" kindref="member">codeview::CVType</ref></type>
+          <declname>CVT</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>ConstructorArgs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="99" column="14" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="99" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a007565ed67bd1bdde775bc1399c73330" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+        <definition>SymIndexId SymbolCache::createSymbolForModifiedType</definition>
+        <argsstring>(codeview::TypeIndex ModifierTI, codeview::CVType CVT) const</argsstring>
+        <name>createSymbolForModifiedType</name>
+        <qualifiedname>llvm::pdb::SymbolCache::createSymbolForModifiedType</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">codeview::TypeIndex</ref></type>
+          <declname>ModifierTI</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1codeview_1a238eda31f74c0f0f3224f71b50b7d165" kindref="member">codeview::CVType</ref></type>
+          <declname>CVT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="112" column="14" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="127" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1ac35d7ed761c737bce29a2726d593d8bd" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+        <definition>SymIndexId SymbolCache::createSimpleType</definition>
+        <argsstring>(codeview::TypeIndex TI, codeview::ModifierOptions Mods) const</argsstring>
+        <name>createSimpleType</name>
+        <qualifiedname>llvm::pdb::SymbolCache::createSimpleType</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">codeview::TypeIndex</ref></type>
+          <declname>TI</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1codeview_1acf5c2920c8a10eeb1d8c5d3a9c2adfb6" kindref="member">codeview::ModifierOptions</ref></type>
+          <declname>Mods</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="115" column="14" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="111" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a7deca2982fa8b50fcc911c51b89485c7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1pdb_1_1_p_d_b_symbol" kindref="compound">PDBSymbol</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; PDBSymbol &gt; SymbolCache::findFunctionSymbolBySectOffset</definition>
+        <argsstring>(uint32_t Sect, uint32_t Offset)</argsstring>
+        <name>findFunctionSymbolBySectOffset</name>
+        <qualifiedname>llvm::pdb::SymbolCache::findFunctionSymbolBySectOffset</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Sect</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="118" column="19" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="340" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a429f6cfddc33792bd55a6f9e24285826" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1pdb_1_1_p_d_b_symbol" kindref="compound">PDBSymbol</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; PDBSymbol &gt; SymbolCache::findPublicSymbolBySectOffset</definition>
+        <argsstring>(uint32_t Sect, uint32_t Offset)</argsstring>
+        <name>findPublicSymbolBySectOffset</name>
+        <qualifiedname>llvm::pdb::SymbolCache::findPublicSymbolBySectOffset</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Sect</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="120" column="19" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="385" bodyend="449"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a49f47a2cd26f29fa4f33e378f98dd3e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SymbolCache::SymbolCache</definition>
+        <argsstring>(NativeSession &amp;Session, DbiStream *Dbi)</argsstring>
+        <name>SymbolCache</name>
+        <qualifiedname>llvm::pdb::SymbolCache::SymbolCache</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1pdb_1_1_native_session" kindref="compound">NativeSession</ref> &amp;</type>
+          <declname>Session</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1pdb_1_1_dbi_stream" kindref="compound">DbiStream</ref> *</type>
+          <declname>Dbi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="124" column="3" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="78" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a99a06701f29bbeb0b8e9456325817dbc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ConcreteSymbolT</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+        <definition>SymIndexId llvm::pdb::SymbolCache::createSymbol</definition>
+        <argsstring>(Args &amp;&amp;...ConstructorArgs) const</argsstring>
+        <name>createSymbol</name>
+        <qualifiedname>llvm::pdb::SymbolCache::createSymbol</qualifiedname>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>ConstructorArgs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="127" column="14" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="127" bodyend="143"/>
+        <referencedby refid="classllvm_1_1pdb_1_1_symbol_cache_1a83fbd0b8f9ea20cb40d4b88f5202af72" compoundref="_symbol_cache_8cpp" startline="601" endline="615">getOrCreateCompiland</referencedby>
+        <referencedby refid="classllvm_1_1pdb_1_1_symbol_cache_1a27612830564b9c6c91be2bf8796a157f" compoundref="_symbol_cache_8h" startline="157" endline="169">getOrCreateFieldListMember</referencedby>
+        <referencedby refid="classllvm_1_1pdb_1_1_symbol_cache_1affa16ab83d35cb583b2ae91644aa8c68" compoundref="_symbol_cache_8cpp" startline="274" endline="298">getOrCreateGlobalSymbolByOffset</referencedby>
+        <referencedby refid="classllvm_1_1pdb_1_1_symbol_cache_1a2169fd7bc18a59ef7419264c0873ff83" compoundref="_symbol_cache_8cpp" startline="300" endline="311">getOrCreateInlineSymbol</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a309af6e3d085ae82fc04fbc6436e1021" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="namespacellvm_1_1pdb_1a998b8b6d4749134e27e473e313ece092" kindref="member">IPDBEnumSymbols</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; IPDBEnumSymbols &gt; SymbolCache::createTypeEnumerator</definition>
+        <argsstring>(codeview::TypeLeafKind Kind)</argsstring>
+        <name>createTypeEnumerator</name>
+        <qualifiedname>llvm::pdb::SymbolCache::createTypeEnumerator</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1codeview_1a945d5dcbe78d400d17656726e2f6089b" kindref="member">codeview::TypeLeafKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="146" column="3" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="89" bodyend="91"/>
+        <references refid="classllvm_1_1pdb_1_1_symbol_cache_1a309af6e3d085ae82fc04fbc6436e1021" compoundref="_symbol_cache_8cpp" startline="89" endline="91">createTypeEnumerator</references>
+        <referencedby refid="classllvm_1_1pdb_1_1_symbol_cache_1a309af6e3d085ae82fc04fbc6436e1021" compoundref="_symbol_cache_8cpp" startline="89" endline="91">createTypeEnumerator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1af442fdccce16e92d98a1c573822642ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="namespacellvm_1_1pdb_1a998b8b6d4749134e27e473e313ece092" kindref="member">IPDBEnumSymbols</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; IPDBEnumSymbols &gt; SymbolCache::createTypeEnumerator</definition>
+        <argsstring>(std::vector&lt; codeview::TypeLeafKind &gt; Kinds)</argsstring>
+        <name>createTypeEnumerator</name>
+        <qualifiedname>llvm::pdb::SymbolCache::createTypeEnumerator</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="namespacellvm_1_1codeview_1a945d5dcbe78d400d17656726e2f6089b" kindref="member">codeview::TypeLeafKind</ref> &gt;</type>
+          <declname>Kinds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="149" column="3" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="94" bodyend="103"/>
+        <references refid="namespacellvm_1aee0e70be66536b9ef7b65ae2e5a45959" compoundref="llvm_2_support_2_error_8h" startline="1069" endline="1071">llvm::consumeError</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a19cb28847fb480a08cfbfd16e0121308" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="namespacellvm_1_1pdb_1a998b8b6d4749134e27e473e313ece092" kindref="member">IPDBEnumSymbols</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; IPDBEnumSymbols &gt; SymbolCache::createGlobalsEnumerator</definition>
+        <argsstring>(codeview::SymbolKind Kind)</argsstring>
+        <name>createGlobalsEnumerator</name>
+        <qualifiedname>llvm::pdb::SymbolCache::createGlobalsEnumerator</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1codeview_1ac3fd578f133e7ee0210c835b393bca59" kindref="member">codeview::SymbolKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="152" column="3" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a5ec9985ad0d83fa432f370483228cf7d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+        <definition>SymIndexId SymbolCache::findSymbolByTypeIndex</definition>
+        <argsstring>(codeview::TypeIndex TI) const</argsstring>
+        <name>findSymbolByTypeIndex</name>
+        <qualifiedname>llvm::pdb::SymbolCache::findSymbolByTypeIndex</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">codeview::TypeIndex</ref></type>
+          <declname>TI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="154" column="14" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="158" bodyend="244"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1aee0e70be66536b9ef7b65ae2e5a45959" compoundref="llvm_2_support_2_error_8h" startline="1069" endline="1071">llvm::consumeError</references>
+        <references refid="classllvm_1_1pdb_1_1_symbol_cache_1a5ec9985ad0d83fa432f370483228cf7d" compoundref="_symbol_cache_8cpp" startline="158" endline="244">findSymbolByTypeIndex</references>
+        <references refid="namespacellvm_1_1codeview_1a1caacde32c41f8b301176da4190c3639" compoundref="_type_record_helpers_8cpp" startline="27" endline="45">llvm::codeview::isUdtForwardRef</references>
+        <references refid="classllvm_1_1codeview_1_1_c_v_record_1aaeef9f2a2d0dc09ec00ec9b38242c706" compoundref="_c_v_record_8h" startline="42" endline="47">llvm::codeview::CVRecord&lt; Kind &gt;::kind</references>
+        <references refid="namespacellvm_1_1codeview_1acf5c2920c8a10eeb1d8c5d3a9c2adfb6a6adf97f83acf6453d4a6a4b1070f3754" compoundref="_code_view_8h" startline="312">llvm::codeview::None</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+        <referencedby refid="classllvm_1_1pdb_1_1_symbol_cache_1a5ec9985ad0d83fa432f370483228cf7d" compoundref="_symbol_cache_8cpp" startline="158" endline="244">findSymbolByTypeIndex</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a27612830564b9c6c91be2bf8796a157f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ConcreteSymbolT</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+        <definition>SymIndexId llvm::pdb::SymbolCache::getOrCreateFieldListMember</definition>
+        <argsstring>(codeview::TypeIndex FieldListTI, uint32_t Index, Args &amp;&amp;... ConstructorArgs)</argsstring>
+        <name>getOrCreateFieldListMember</name>
+        <qualifiedname>llvm::pdb::SymbolCache::getOrCreateFieldListMember</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">codeview::TypeIndex</ref></type>
+          <declname>FieldListTI</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Index</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>ConstructorArgs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="157" column="14" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="157" bodyend="169"/>
+        <references refid="classllvm_1_1pdb_1_1_symbol_cache_1a99a06701f29bbeb0b8e9456325817dbc" compoundref="_symbol_cache_8h" startline="127" endline="143">createSymbol</references>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1affa16ab83d35cb583b2ae91644aa8c68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+        <definition>SymIndexId SymbolCache::getOrCreateGlobalSymbolByOffset</definition>
+        <argsstring>(uint32_t Offset)</argsstring>
+        <name>getOrCreateGlobalSymbolByOffset</name>
+        <qualifiedname>llvm::pdb::SymbolCache::getOrCreateGlobalSymbolByOffset</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="171" column="14" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="274" bodyend="298"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1aa1e1474f15df639f0d874b21f15666f7" compoundref="llvm_2_support_2_error_8h" startline="756" endline="768">llvm::cantFail</references>
+        <references refid="classllvm_1_1pdb_1_1_symbol_cache_1a99a06701f29bbeb0b8e9456325817dbc" compoundref="_symbol_cache_8h" startline="127" endline="143">createSymbol</references>
+        <references refid="classllvm_1_1codeview_1_1_symbol_deserializer_1a4f31719a3302d53ef0f8ab28e7afc76e" compoundref="_symbol_deserializer_8h" startline="36" endline="47">llvm::codeview::SymbolDeserializer::deserializeAs</references>
+        <references refid="classllvm_1_1codeview_1_1_c_v_record_1aaeef9f2a2d0dc09ec00ec9b38242c706" compoundref="_c_v_record_8h" startline="42" endline="47">llvm::codeview::CVRecord&lt; Kind &gt;::kind</references>
+        <references refid="namespacellvm_1_1pdb_1ac10322dc19a928c2dbb83ec9689dc23cadfd0a82c4bf37b1e90b690a22a20692e" compoundref="_line_printer_8h" startline="162">llvm::pdb::Offset</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a2169fd7bc18a59ef7419264c0873ff83" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+        <definition>SymIndexId SymbolCache::getOrCreateInlineSymbol</definition>
+        <argsstring>(codeview::InlineSiteSym Sym, uint64_t ParentAddr, uint16_t Modi, uint32_t RecordOffset) const</argsstring>
+        <name>getOrCreateInlineSymbol</name>
+        <qualifiedname>llvm::pdb::SymbolCache::getOrCreateInlineSymbol</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_inline_site_sym" kindref="compound">codeview::InlineSiteSym</ref></type>
+          <declname>Sym</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>ParentAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+          <declname>Modi</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>RecordOffset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="172" column="14" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="300" bodyend="311"/>
+        <references refid="classllvm_1_1pdb_1_1_symbol_cache_1a99a06701f29bbeb0b8e9456325817dbc" compoundref="_symbol_cache_8h" startline="127" endline="143">createSymbol</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1ad93a0efbf194d1b1e68aff90b8036966" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1pdb_1_1_p_d_b_symbol" kindref="compound">PDBSymbol</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; PDBSymbol &gt; SymbolCache::findSymbolBySectOffset</definition>
+        <argsstring>(uint32_t Sect, uint32_t Offset, PDB_SymType Type)</argsstring>
+        <name>findSymbolBySectOffset</name>
+        <qualifiedname>llvm::pdb::SymbolCache::findSymbolBySectOffset</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Sect</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Offset</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1pdb_1a33e853ec74d48b1340d1d4bae772d30b" kindref="member">PDB_SymType</ref></type>
+          <declname>Type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="177" column="3" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="314" bodyend="337"/>
+        <references refid="namespacellvm_1_1pdb_1a33e853ec74d48b1340d1d4bae772d30ba247232063f777fa3c2371e077db8b61b" compoundref="_p_d_b_types_8h" startline="246">llvm::pdb::Compiland</references>
+        <references refid="namespacellvm_1_1pdb_1a33e853ec74d48b1340d1d4bae772d30ba86408593c34af77fdd90df932f8b5261" compoundref="_p_d_b_types_8h" startline="249">llvm::pdb::Function</references>
+        <references refid="classllvm_1_1pdb_1_1_symbol_cache_1a83fbd0b8f9ea20cb40d4b88f5202af72" compoundref="_symbol_cache_8cpp" startline="601" endline="615">getOrCreateCompiland</references>
+        <references refid="namespacellvm_1_1pdb_1a33e853ec74d48b1340d1d4bae772d30ba6adf97f83acf6453d4a6a4b1070f3754" compoundref="_p_d_b_types_8h" startline="244">llvm::pdb::None</references>
+        <references refid="namespacellvm_1_1pdb_1ac10322dc19a928c2dbb83ec9689dc23cadfd0a82c4bf37b1e90b690a22a20692e" compoundref="_line_printer_8h" startline="162">llvm::pdb::Offset</references>
+        <references refid="namespacellvm_1_1pdb_1a33e853ec74d48b1340d1d4bae772d30ba05f34549a09be7d36ef51d11f13e6e58" compoundref="_p_d_b_types_8h" startline="254">llvm::pdb::PublicSymbol</references>
+        <references refid="namespacellvm_1_1pdb_1a952cb7401a07c49e2879fbfc92f0dc2caa1fa27779242b4902f7ae3bdd5c6d508" compoundref="_i_p_d_b_raw_symbol_8h" startline="29">llvm::pdb::Type</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a929ba7791d3d35e6660d8e04d3f0eb29" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="namespacellvm_1_1pdb_1a217f1bfdff572ea30e762481e0049ebf" kindref="member">IPDBEnumLineNumbers</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; IPDBEnumLineNumbers &gt; SymbolCache::findLineNumbersByVA</definition>
+        <argsstring>(uint64_t VA, uint32_t Length) const</argsstring>
+        <name>findLineNumbersByVA</name>
+        <qualifiedname>llvm::pdb::SymbolCache::findLineNumbersByVA</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>VA</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="180" column="3" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="537" bodyend="598"/>
+        <references refid="namespacellvm_1aee0e70be66536b9ef7b65ae2e5a45959" compoundref="llvm_2_support_2_error_8h" startline="1069" endline="1071">llvm::consumeError</references>
+        <references refid="classllvm_1_1pdb_1_1_symbol_cache_1a4f701c72d78d102b7b1041cc59a15d9a" compoundref="_symbol_cache_8cpp" startline="629" endline="639">getOrCreateSourceFile</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763" compoundref="_d_w_p_8cpp" startline="480">llvm::Length</references>
+        <references refid="namespacellvm_1_1pdb_1a2632601eef2a7254d0d50e82ba2ab620ae5fee14af6acced95bcf6fc16e893901" compoundref="_p_d_b_types_8h" startline="90">llvm::pdb::LineNumbers</references>
+        <references refid="namespacellvm_1_1codeview_1a04eb43a6dc736c2d6ed8dcc6d636a2afaa0b0293a2db49f5f93c15a62e095c819" compoundref="_code_view_8h" startline="325">llvm::codeview::Lines</references>
+        <references refid="namespacellvm_1a327a399b9f6ef414a29ddeffba934d26" compoundref="_s_t_l_extras_8h" startline="2050" endline="2052">llvm::partition_point</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a83fbd0b8f9ea20cb40d4b88f5202af72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1pdb_1_1_p_d_b_symbol_compiland" kindref="compound">PDBSymbolCompiland</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; PDBSymbolCompiland &gt; SymbolCache::getOrCreateCompiland</definition>
+        <argsstring>(uint32_t Index)</argsstring>
+        <name>getOrCreateCompiland</name>
+        <qualifiedname>llvm::pdb::SymbolCache::getOrCreateCompiland</qualifiedname>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="182" column="19" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="601" bodyend="615"/>
+        <references refid="classllvm_1_1pdb_1_1_symbol_cache_1a99a06701f29bbeb0b8e9456325817dbc" compoundref="_symbol_cache_8h" startline="127" endline="143">createSymbol</references>
+        <references refid="classllvm_1_1pdb_1_1_dbi_module_list_1a0f09e43a371ce36cc1ca387cf7e8f4f0" compoundref="_dbi_module_list_8cpp" startline="255" endline="261">llvm::pdb::DbiModuleList::getModuleDescriptor</references>
+        <referencedby refid="classllvm_1_1pdb_1_1_symbol_cache_1ad93a0efbf194d1b1e68aff90b8036966" compoundref="_symbol_cache_8cpp" startline="314" endline="337">findSymbolBySectOffset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a84340f1386a41d6ea7cc0866bc006581" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t SymbolCache::getNumCompilands</definition>
+        <argsstring>() const</argsstring>
+        <name>getNumCompilands</name>
+        <qualifiedname>llvm::pdb::SymbolCache::getNumCompilands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="183" column="12" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="267" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a3b12932b7e79110070694a5ede67a0b4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1pdb_1_1_p_d_b_symbol" kindref="compound">PDBSymbol</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; PDBSymbol &gt; SymbolCache::getSymbolById</definition>
+        <argsstring>(SymIndexId SymbolId) const</argsstring>
+        <name>getSymbolById</name>
+        <qualifiedname>llvm::pdb::SymbolCache::getSymbolById</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+          <declname>SymbolId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="185" column="19" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="247" bodyend="261"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1pdb_1_1_p_d_b_symbol_1af84414e8a3f8e769d547442500217aa8" compoundref="_p_d_b_symbol_8cpp" startline="102" endline="108">llvm::pdb::PDBSymbol::create</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a6151586fef4d3f5a03ab8af7fbe13945" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1pdb_1_1_native_raw_symbol" kindref="compound">NativeRawSymbol</ref> &amp;</type>
+        <definition>NativeRawSymbol &amp; SymbolCache::getNativeSymbolById</definition>
+        <argsstring>(SymIndexId SymbolId) const</argsstring>
+        <name>getNativeSymbolById</name>
+        <qualifiedname>llvm::pdb::SymbolCache::getNativeSymbolById</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+          <declname>SymbolId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="187" column="19" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="263" bodyend="265"/>
+        <referencedby refid="classllvm_1_1pdb_1_1_symbol_cache_1a748828f5c2c5ffbbb85410e320a614f9" compoundref="_symbol_cache_8h" startline="190" endline="192">getNativeSymbolById</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a748828f5c2c5ffbbb85410e320a614f9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ConcreteT</type>
+          </param>
+        </templateparamlist>
+        <type>ConcreteT &amp;</type>
+        <definition>ConcreteT &amp; llvm::pdb::SymbolCache::getNativeSymbolById</definition>
+        <argsstring>(SymIndexId SymbolId) const</argsstring>
+        <name>getNativeSymbolById</name>
+        <qualifiedname>llvm::pdb::SymbolCache::getNativeSymbolById</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+          <declname>SymbolId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="190" column="13" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="190" bodyend="192"/>
+        <references refid="classllvm_1_1pdb_1_1_symbol_cache_1a6151586fef4d3f5a03ab8af7fbe13945" compoundref="_symbol_cache_8cpp" startline="263" endline="265">getNativeSymbolById</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a8da751548b4ae733b8d57b4c67ad4bc3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1pdb_1_1_i_p_d_b_source_file" kindref="compound">IPDBSourceFile</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; IPDBSourceFile &gt; SymbolCache::getSourceFileById</definition>
+        <argsstring>(SymIndexId FileId) const</argsstring>
+        <name>getSourceFileById</name>
+        <qualifiedname>llvm::pdb::SymbolCache::getSourceFileById</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+          <declname>FileId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="194" column="19" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="618" bodyend="626"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a73257f51950d9ea50955e3fb9c724a25" compoundref="_pointer_int_pair_8h" startline="270" endline="276">llvm::get</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1pdb_1_1_symbol_cache_1a4f701c72d78d102b7b1041cc59a15d9a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1pdb_1a0d95a0af7fff523a0a4bfb7f6b578d12" kindref="member">SymIndexId</ref></type>
+        <definition>SymIndexId SymbolCache::getOrCreateSourceFile</definition>
+        <argsstring>(const codeview::FileChecksumEntry &amp;Checksum) const</argsstring>
+        <name>getOrCreateSourceFile</name>
+        <qualifiedname>llvm::pdb::SymbolCache::getOrCreateSourceFile</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1codeview_1_1_file_checksum_entry" kindref="compound">codeview::FileChecksumEntry</ref> &amp;</type>
+          <declname>Checksum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="196" column="3" bodyfile="lib/DebugInfo/PDB/Native/SymbolCache.cpp" bodystart="629" bodyend="639"/>
+        <references refid="structllvm_1_1codeview_1_1_file_checksum_entry_1a07a498fcd876bdc77f36ee3c29f98ce4" compoundref="_debug_checksums_subsection_8h" startline="34">llvm::codeview::FileChecksumEntry::FileNameOffset</references>
+        <referencedby refid="classllvm_1_1pdb_1_1_symbol_cache_1a929ba7791d3d35e6660d8e04d3f0eb29" compoundref="_symbol_cache_8cpp" startline="537" endline="598">findLineNumbersByVA</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" line="37" column="1" bodyfile="include/llvm/DebugInfo/PDB/Native/SymbolCache.h" bodystart="37" bodyend="197"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a2c72782b0c0c875981ac6455523b7d25" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>AddressToPublicSymId</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a6b0cd499fc9671581f54aaa0b3389d24" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>AddressToSymbolId</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a52af23971ad83a6f9411b189c7ae1207" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>Cache</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a46b05480dc49ff6a65727d935e99f48d" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>Compilands</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a19cb28847fb480a08cfbfd16e0121308" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>createGlobalsEnumerator</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1ac35d7ed761c737bce29a2726d593d8bd" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>createSimpleType</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a99a06701f29bbeb0b8e9456325817dbc" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>createSymbol</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a007565ed67bd1bdde775bc1399c73330" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>createSymbolForModifiedType</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a912c2087ad9d8a12ecbb39e48e2d68a3" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>createSymbolForType</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a800457f34b652c102dae0e89ee657018" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>createSymbolPlaceholder</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a309af6e3d085ae82fc04fbc6436e1021" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>createTypeEnumerator</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1af442fdccce16e92d98a1c573822642ea" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>createTypeEnumerator</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a9f0eb1f423cf39e599ac9e4aa55e777b" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>Dbi</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a13c25619e67ce1885e30479c10028918" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>FieldListMembersToSymbolId</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a0d630aaa587ff6afacb3504174c2427b" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>FileNameOffsetToId</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a7deca2982fa8b50fcc911c51b89485c7" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>findFunctionSymbolBySectOffset</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a929ba7791d3d35e6660d8e04d3f0eb29" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>findLineNumbersByVA</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a5a3409ac3110b4aec3b8a1dc58852b1b" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>findLineTable</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a429f6cfddc33792bd55a6f9e24285826" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>findPublicSymbolBySectOffset</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1ad93a0efbf194d1b1e68aff90b8036966" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>findSymbolBySectOffset</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a5ec9985ad0d83fa432f370483228cf7d" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>findSymbolByTypeIndex</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a6151586fef4d3f5a03ab8af7fbe13945" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>getNativeSymbolById</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a748828f5c2c5ffbbb85410e320a614f9" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>getNativeSymbolById</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a84340f1386a41d6ea7cc0866bc006581" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>getNumCompilands</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a83fbd0b8f9ea20cb40d4b88f5202af72" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>getOrCreateCompiland</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a27612830564b9c6c91be2bf8796a157f" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>getOrCreateFieldListMember</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1affa16ab83d35cb583b2ae91644aa8c68" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>getOrCreateGlobalSymbolByOffset</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a2169fd7bc18a59ef7419264c0873ff83" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>getOrCreateInlineSymbol</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a4f701c72d78d102b7b1041cc59a15d9a" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>getOrCreateSourceFile</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a8da751548b4ae733b8d57b4c67ad4bc3" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>getSourceFileById</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a3b12932b7e79110070694a5ede67a0b4" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>getSymbolById</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a873b2ca5797044ccdea8e45c1fca0fbc" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>GlobalOffsetToSymbolId</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1ac0f785690f037f5d71e0cd1057997e5a" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>LineTable</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a3e9c12875206de38645fb077f49bb64f" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>Session</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a77d75b8935e998f585ff91d3a14596f5" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>SourceFiles</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a49f47a2cd26f29fa4f33e378f98dd3e9" prot="public" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>SymbolCache</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1a10a6f17f24dc8cfe69f91c4ed20f871d" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>SymTabOffsetToSymbolId</name></member>
+      <member refid="classllvm_1_1pdb_1_1_symbol_cache_1aa708b2247973ea09f8d985c5b7806de5" prot="private" virt="non-virtual"><scope>llvm::pdb::SymbolCache</scope><name>TypeIndexToSymbolId</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

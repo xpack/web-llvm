@@ -1,0 +1,1696 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_memory_s_s_a" kind="class" language="C++" prot="public">
+    <compoundname>llvm::MemorySSA</compoundname>
+    <includes refid="_memory_s_s_a_8h" local="yes">llvm/Analysis/MemorySSA.h</includes>
+    <innerclass refid="classllvm_1_1_memory_s_s_a_1_1_caching_walker" prot="public">llvm::MemorySSA::CachingWalker</innerclass>
+    <innerclass refid="classllvm_1_1_memory_s_s_a_1_1_clobber_walker_base" prot="public">llvm::MemorySSA::ClobberWalkerBase</innerclass>
+    <innerclass refid="classllvm_1_1_memory_s_s_a_1_1_optimize_uses" prot="public">llvm::MemorySSA::OptimizeUses</innerclass>
+    <innerclass refid="classllvm_1_1_memory_s_s_a_1_1_skip_self_walker" prot="public">llvm::MemorySSA::SkipSelfWalker</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_memory_s_s_a_1a8a5ce5c05f5824d269bc5751104973c7" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>VerificationLevel</name>
+        <qualifiedname>llvm::MemorySSA::VerificationLevel</qualifiedname>
+        <enumvalue id="classllvm_1_1_memory_s_s_a_1a8a5ce5c05f5824d269bc5751104973c7ae16b5b7f26f54214445cbe38d72c2828" prot="public">
+          <name>Fast</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_memory_s_s_a_1a8a5ce5c05f5824d269bc5751104973c7abbd47109890259c0127154db1af26c75" prot="public">
+          <name>Full</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="783" column="3" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="783" bodyend="783"/>
+      </memberdef>
+      <memberdef kind="enum" id="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5" prot="public" static="no" strong="no">
+        <type></type>
+        <name>InsertionPlace</name>
+        <qualifiedname>llvm::MemorySSA::InsertionPlace</qualifiedname>
+        <enumvalue id="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5ad02ebd2ab52855a8e9fb8082c9530085" prot="public">
+          <name>Beginning</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5a542e7b754a1b868794fa2f47256a1d97" prot="public">
+          <name>End</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5a7806c120eb87aea9fbb52fed327e09de" prot="public">
+          <name>BeforeTerminator</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Used in various insertion functions to specify whether we are talking about the beginning or end of a block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="790" column="3" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="790" bodyend="790"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_memory_s_s_a_1a4b4af87796b358cd0cea30a192003591" prot="public" static="no">
+        <type><ref refid="classllvm_1_1iplist" kindref="compound">iplist</ref>&lt; <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref>, <ref refid="structllvm_1_1ilist__tag" kindref="compound">ilist_tag</ref>&lt; <ref refid="structllvm_1_1_m_s_s_a_helpers_1_1_all_access_tag" kindref="compound">MSSAHelpers::AllAccessTag</ref> &gt; &gt;</type>
+        <definition>using llvm::MemorySSA::AccessList =  iplist&lt;MemoryAccess, ilist_tag&lt;MSSAHelpers::AllAccessTag&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>AccessList</name>
+        <qualifiedname>llvm::MemorySSA::AccessList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="752" column="3" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="752" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_memory_s_s_a_1a043fc380f5e672ab28e6d4d57ab3e2ca" prot="public" static="no">
+        <type><ref refid="classllvm_1_1simple__ilist" kindref="compound">simple_ilist</ref>&lt; <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref>, <ref refid="structllvm_1_1ilist__tag" kindref="compound">ilist_tag</ref>&lt; <ref refid="structllvm_1_1_m_s_s_a_helpers_1_1_defs_only_tag" kindref="compound">MSSAHelpers::DefsOnlyTag</ref> &gt; &gt;</type>
+        <definition>using llvm::MemorySSA::DefsList = 
+      simple_ilist&lt;MemoryAccess, ilist_tag&lt;MSSAHelpers::DefsOnlyTag&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>DefsList</name>
+        <qualifiedname>llvm::MemorySSA::DefsList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="753" column="3" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="753" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_memory_s_s_a_1a74a73d09f6a768f6e03cba3622f75ad7" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_s_s_a_1a4b4af87796b358cd0cea30a192003591" kindref="member">AccessList</ref> &gt; &gt;</type>
+        <definition>using llvm::MemorySSA::AccessMap =  DenseMap&lt;const BasicBlock *, std::unique_ptr&lt;AccessList&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>AccessMap</name>
+        <qualifiedname>llvm::MemorySSA::AccessMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="859" column="3" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="859" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_memory_s_s_a_1a8150df0c766020e467eb16b03233b148" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_s_s_a_1a043fc380f5e672ab28e6d4d57ab3e2ca" kindref="member">DefsList</ref> &gt; &gt;</type>
+        <definition>using llvm::MemorySSA::DefsMap =  DenseMap&lt;const BasicBlock *, std::unique_ptr&lt;DefsList&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>DefsMap</name>
+        <qualifiedname>llvm::MemorySSA::DefsMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="860" column="3" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="860" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_memory_s_s_a_1abfd3c432d063870284f175107228d8c5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class MemorySSAUpdater</definition>
+        <argsstring></argsstring>
+        <name>MemorySSAUpdater</name>
+        <qualifiedname>llvm::MemorySSA::MemorySSAUpdater</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_s_s_a_updater" kindref="compound">MemorySSAUpdater</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="803" column="16" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="803" bodyend="-1"/>
+        <references refid="classllvm_1_1_memory_s_s_a_1a8a5ce5c05f5824d269bc5751104973c7ae16b5b7f26f54214445cbe38d72c2828" compoundref="_memory_s_s_a_8h" startline="783">Fast</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1abfd3c432d063870284f175107228d8c5" compoundref="_memory_s_s_a_8h" startline="803">MemorySSAUpdater</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1aceea1ce23f1a6764f5fd02fa8fde9713" compoundref="_memory_s_s_a_8cpp" startline="1979" endline="2012">verifyDominationNumbers</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a6dcb5e3d63691e83e0fdc0d67148077a" compoundref="_memory_s_s_a_8cpp" startline="2021" endline="2109">verifyOrderingDominationAndDefUses</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1ad34709127ea574767024538890e0e514" compoundref="_memory_s_s_a_8cpp" startline="1942" endline="1974">verifyPrevDefInPhis</references>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1abfd3c432d063870284f175107228d8c5" compoundref="_memory_s_s_a_8h" startline="803">MemorySSAUpdater</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1a9bfebb1c5c9f151ca7054789586a8fb5" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1ae457f1cf451ed893666c4a384e58f8e5" kindref="member">AliasAnalysis</ref> *</type>
+        <definition>AliasAnalysis* llvm::MemorySSA::AA</definition>
+        <argsstring></argsstring>
+        <name>AA</name>
+        <qualifiedname>llvm::MemorySSA::AA</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="876" column="17" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="876" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1a86af47ce966d32ff64902066ae34eb61" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+        <definition>DominatorTree* llvm::MemorySSA::DT</definition>
+        <argsstring></argsstring>
+        <name>DT</name>
+        <qualifiedname>llvm::MemorySSA::DT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="877" column="17" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="877" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1a78840a488cd8b369b060f4af2b417b13" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+        <definition>Function* llvm::MemorySSA::F</definition>
+        <argsstring></argsstring>
+        <name>F</name>
+        <qualifiedname>llvm::MemorySSA::F</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="878" column="12" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="878" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1a5b20cacf6bd91e129925ebb200fbb88f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+        <definition>Loop* llvm::MemorySSA::L</definition>
+        <argsstring></argsstring>
+        <name>L</name>
+        <qualifiedname>llvm::MemorySSA::L</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="879" column="8" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="879" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1a8984431a62626eae31e3a1bd1876094e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> * &gt;</type>
+        <definition>DenseMap&lt;const Value *, MemoryAccess *&gt; llvm::MemorySSA::ValueToMemoryAccess</definition>
+        <argsstring></argsstring>
+        <name>ValueToMemoryAccess</name>
+        <qualifiedname>llvm::MemorySSA::ValueToMemoryAccess</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="882" column="12" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="882" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1aff4fed477ce60887e4d645a6957dc8bb" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">AccessMap</ref></type>
+        <definition>AccessMap llvm::MemorySSA::PerBlockAccesses</definition>
+        <argsstring></argsstring>
+        <name>PerBlockAccesses</name>
+        <qualifiedname>llvm::MemorySSA::PerBlockAccesses</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="890" column="13" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="890" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1ad5a87419198d5efc849a42ec7ad8db4d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DefsMap</ref></type>
+        <definition>DefsMap llvm::MemorySSA::PerBlockDefs</definition>
+        <argsstring></argsstring>
+        <name>PerBlockDefs</name>
+        <qualifiedname>llvm::MemorySSA::PerBlockDefs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="891" column="11" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="891" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1a4dd3b14809ce8fe0a9fe6df605f6cae9" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref>, <ref refid="structllvm_1_1_value_deleter" kindref="compound">ValueDeleter</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MemoryAccess, ValueDeleter&gt; llvm::MemorySSA::LiveOnEntryDef</definition>
+        <argsstring></argsstring>
+        <name>LiveOnEntryDef</name>
+        <qualifiedname>llvm::MemorySSA::LiveOnEntryDef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="892" column="19" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="892" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1afb1ea38dec30d0ebaaedcbd122c67446" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, 16 &gt;</type>
+        <definition>SmallPtrSet&lt;const BasicBlock *, 16&gt; llvm::MemorySSA::BlockNumberingValid</definition>
+        <argsstring></argsstring>
+        <name>BlockNumberingValid</name>
+        <qualifiedname>llvm::MemorySSA::BlockNumberingValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="897" column="23" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="897" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1ae8ec64261cb036ddf4281b81e14a3b05" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> long &gt;</type>
+        <definition>DenseMap&lt;const MemoryAccess *, unsigned long&gt; llvm::MemorySSA::BlockNumbering</definition>
+        <argsstring></argsstring>
+        <name>BlockNumbering</name>
+        <qualifiedname>llvm::MemorySSA::BlockNumbering</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="898" column="20" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="898" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1a620baa9e8dafd4ed7485182d9124a774" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_s_s_a_1_1_clobber_walker_base" kindref="compound">ClobberWalkerBase</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ClobberWalkerBase&gt; llvm::MemorySSA::WalkerBase</definition>
+        <argsstring></argsstring>
+        <name>WalkerBase</name>
+        <qualifiedname>llvm::MemorySSA::WalkerBase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="901" column="19" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="901" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1a0f5218f0a4b886b7cd1e268c12420d51" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_s_s_a_1_1_caching_walker" kindref="compound">CachingWalker</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;CachingWalker&gt; llvm::MemorySSA::Walker</definition>
+        <argsstring></argsstring>
+        <name>Walker</name>
+        <qualifiedname>llvm::MemorySSA::Walker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="902" column="19" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="902" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1a944949e064d4a513deae18506d568a7a" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_s_s_a_1_1_skip_self_walker" kindref="compound">SkipSelfWalker</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;SkipSelfWalker&gt; llvm::MemorySSA::SkipWalker</definition>
+        <argsstring></argsstring>
+        <name>SkipWalker</name>
+        <qualifiedname>llvm::MemorySSA::SkipWalker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="903" column="19" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="903" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1a0a17d4dbd713639766530b0c470fc23b" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::MemorySSA::NextID</definition>
+        <argsstring></argsstring>
+        <name>NextID</name>
+        <qualifiedname>llvm::MemorySSA::NextID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="904" column="12" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="904" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_s_s_a_1af898ae6026843245ed77dd167def0835" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemorySSA::IsOptimized</definition>
+        <argsstring></argsstring>
+        <name>IsOptimized</name>
+        <qualifiedname>llvm::MemorySSA::IsOptimized</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="905" column="8" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="905" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a49f6b5c5e36a86395a7f91838768798d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MemorySSA::MemorySSA</definition>
+        <argsstring>(Function &amp;, AliasAnalysis *, DominatorTree *)</argsstring>
+        <name>MemorySSA</name>
+        <qualifiedname>llvm::MemorySSA::MemorySSA</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <defname>Func</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1ae457f1cf451ed893666c4a384e58f8e5" kindref="member">AliasAnalysis</ref> *</type>
+          <defname>AA</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+          <defname>DT</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="703" column="3" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1233" bodyend="1249"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a949151a1ebd664cb397323294cec0e53" compoundref="_memory_s_s_a_8cpp" startline="1590" endline="1590">getWalker</references>
+        <references refid="namespacellvm_1a9b5301a03dc90d7ac00440e2de4d9149">llvm::iterator_range</references>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1_1_clobber_walker_base_1a195c8f56de5acfa828fa5d3215e9a497" compoundref="_memory_s_s_a_8cpp" startline="993" endline="993">llvm::MemorySSA::ClobberWalkerBase::ClobberWalkerBase</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1aa853d12d6716fb18650576eea9d03c26">MemorySSA</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1_1_optimize_uses_1ad7fb8e8bcc5cf17ad15225ab3cb9e401" compoundref="_memory_s_s_a_8cpp" startline="1306" endline="1308">llvm::MemorySSA::OptimizeUses::OptimizeUses</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ae00fb511f1753cc06aaeed20f8de5d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MemorySSA::MemorySSA</definition>
+        <argsstring>(Loop &amp;, AliasAnalysis *, DominatorTree *)</argsstring>
+        <name>MemorySSA</name>
+        <qualifiedname>llvm::MemorySSA::MemorySSA</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> &amp;</type>
+          <defname>L</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1ae457f1cf451ed893666c4a384e58f8e5" kindref="member">AliasAnalysis</ref> *</type>
+          <defname>AA</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+          <defname>DT</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="704" column="3" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1251" bodyend="1270"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a949151a1ebd664cb397323294cec0e53" compoundref="_memory_s_s_a_8cpp" startline="1590" endline="1590">getWalker</references>
+        <references refid="namespacellvm_1a51c7cbd21e1104ee6841c18d7daa6edb" compoundref="_s_t_l_extras_8h" startline="377" endline="380">llvm::map_range</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1aa853d12d6716fb18650576eea9d03c26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MemorySSA::MemorySSA</definition>
+        <argsstring>(MemorySSA &amp;&amp;)=delete</argsstring>
+        <name>MemorySSA</name>
+        <qualifiedname>llvm::MemorySSA::MemorySSA</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="708" column="3"/>
+        <references refid="classllvm_1_1_memory_s_s_a_1a2ef6f9107316d963f20b9003b7668c4e" compoundref="_memory_s_s_a_8cpp" startline="1603" endline="1612">getSkipSelfWalker</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a949151a1ebd664cb397323294cec0e53" compoundref="_memory_s_s_a_8cpp" startline="1590" endline="1590">getWalker</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a49f6b5c5e36a86395a7f91838768798d" compoundref="_memory_s_s_a_8cpp" startline="1233" endline="1249">MemorySSA</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ae7375c161ecaf6b6f4ebd6abfcb5ce71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MemorySSA::~MemorySSA</definition>
+        <argsstring>()</argsstring>
+        <name>~MemorySSA</name>
+        <qualifiedname>llvm::MemorySSA::~MemorySSA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="710" column="3" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1272" bodyend="1277"/>
+        <references refid="classllvm_1_1_user_1a48ec5fcee6d2c17c723e8e67f169f948" compoundref="_i_r_2_user_8h" startline="345" endline="348">llvm::User::dropAllReferences</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a949151a1ebd664cb397323294cec0e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_s_s_a_walker" kindref="compound">MemorySSAWalker</ref> *</type>
+        <definition>MemorySSAWalker * MemorySSA::getWalker</definition>
+        <argsstring>()</argsstring>
+        <name>getWalker</name>
+        <qualifiedname>llvm::MemorySSA::getWalker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="712" column="19" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1590" bodyend="1590"/>
+        <referencedby refid="_loop_unroll_8cpp_1a92bfc4d7aa6add742c2a82b2e8f61455" compoundref="_loop_unroll_8cpp" startline="254" endline="272">getMatchingValue</referencedby>
+        <referencedby refid="namespacellvm_1_1_a_m_d_g_p_u_1af55cf9792d5f9186df02c58b337a1511" compoundref="_a_m_d_g_p_u_memory_utils_8cpp" startline="389" endline="434">llvm::AMDGPU::isClobberedInFunction</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a49f6b5c5e36a86395a7f91838768798d" compoundref="_memory_s_s_a_8cpp" startline="1233" endline="1249">MemorySSA</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1ae00fb511f1753cc06aaeed20f8de5d5c" compoundref="_memory_s_s_a_8cpp" startline="1251" endline="1270">MemorySSA</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1aa853d12d6716fb18650576eea9d03c26">MemorySSA</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1acd0427b84adce00e5b26f993c7aa48c8" compoundref="_memory_s_s_a_8cpp" startline="1839" endline="1858">removeFromLookups</referencedby>
+        <referencedby refid="_mem_cpy_optimizer_8cpp_1ab06d3147949b764919b5ad90014afdfd" compoundref="_mem_cpy_optimizer_8cpp" startline="319" endline="342">writtenBetween</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a2ef6f9107316d963f20b9003b7668c4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_s_s_a_walker" kindref="compound">MemorySSAWalker</ref> *</type>
+        <definition>MemorySSAWalker * MemorySSA::getSkipSelfWalker</definition>
+        <argsstring>()</argsstring>
+        <name>getSkipSelfWalker</name>
+        <qualifiedname>llvm::MemorySSA::getSkipSelfWalker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="713" column="19" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1603" bodyend="1612"/>
+        <referencedby refid="_l_i_c_m_8cpp_1a329ad21a549f7f43ad50b65f4d3ca487" compoundref="_l_i_c_m_8cpp" startline="1147" endline="1159">getClobberingMemoryAccess</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1aa853d12d6716fb18650576eea9d03c26">MemorySSA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ab15de610fca1c900038bf3c333919e45" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_use_or_def" kindref="compound">MemoryUseOrDef</ref> *</type>
+        <definition>MemoryUseOrDef * llvm::MemorySSA::getMemoryAccess</definition>
+        <argsstring>(const Instruction *I) const</argsstring>
+        <name>getMemoryAccess</name>
+        <qualifiedname>llvm::MemorySSA::getMemoryAccess</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Given a memory Mod/Ref&apos;ing instruction, get the <ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref> access associated with it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If passed a basic block gets the memory phi node that exists for that block, if there is one. Otherwise, this will get a <ref refid="classllvm_1_1_memory_use_or_def" kindref="compound">MemoryUseOrDef</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="719" column="18" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="719" bodyend="721"/>
+        <references refid="namespacellvm_1a3e627c32543ca70720c4270a8b11da3f" compoundref="_casting_8h" startline="720" endline="722">llvm::cast_or_null</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1a0eaf12b7854445670a7b0af3fe87b86c" compoundref="_simple_loop_unswitch_8cpp" startline="292" endline="332">buildPartialInvariantUnswitchConditionalBranch</referencedby>
+        <referencedby refid="namespacellvm_1a158e2caed73e4b5d2ad70c1b2a0e0cc8" compoundref="_l_i_c_m_8cpp" startline="1161" endline="1339">llvm::canSinkOrHoistInst</referencedby>
+        <referencedby refid="_l_i_c_m_8cpp_1a25f0b41add9507b8eafadfbc4a090d6c" compoundref="_l_i_c_m_8cpp" startline="1427" endline="1502">cloneInstructionInExitBlock</referencedby>
+        <referencedby refid="_loop_unroll_8cpp_1a92bfc4d7aa6add742c2a82b2e8f61455" compoundref="_loop_unroll_8cpp" startline="254" endline="272">getMatchingValue</referencedby>
+        <referencedby refid="_memory_s_s_a_updater_8cpp_1ac59d7eb34d6eb5a384a90489cd5dc7bc" compoundref="_memory_s_s_a_updater_8cpp" startline="568" endline="596">getNewDefiningAccessForClone</referencedby>
+        <referencedby refid="namespacellvm_1ae78f734e49b5ad94836bf32dda101ec6" compoundref="_loop_utils_8cpp" startline="2058" endline="2230">llvm::hasPartialIVCondition</referencedby>
+        <referencedby refid="classllvm_1_1_loop_1a9f134722dec96eeaf23085a29b5da9f7" compoundref="_loop_info_8cpp" startline="79" endline="123">llvm::Loop::makeLoopInvariant</referencedby>
+        <referencedby refid="namespacellvm_1aa76a2cf19b821f320ab439d5659ef4b9" compoundref="_basic_block_utils_8cpp" startline="180" endline="337">llvm::MergeBlockIntoPredecessor</referencedby>
+        <referencedby refid="_l_i_c_m_8cpp_1a22d7cc599c50e811dff1546c5ccb8794" compoundref="_l_i_c_m_8cpp" startline="1511" endline="1524">moveInstructionBefore</referencedby>
+        <referencedby refid="_move_auto_init_8cpp_1a8f3d27d1b480f6b3c90405707be76295" compoundref="_move_auto_init_8cpp" startline="104" endline="217">runMoveAutoInit</referencedby>
+        <referencedby refid="_loop_inst_simplify_8cpp_1ac7156f23f48b5eb96ead0522896d7574" compoundref="_loop_inst_simplify_8cpp" startline="42" endline="168">simplifyLoopInst</referencedby>
+        <referencedby refid="_loop_sink_8cpp_1a89374dd34ed723e45309afa9ac10eb83" compoundref="_loop_sink_8cpp" startline="186" endline="293">sinkInstruction</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1af3ac46dde637293a34d0ff7b619a656b" compoundref="_simple_loop_unswitch_8cpp" startline="2762" endline="2803">turnGuardIntoBranch</referencedby>
+        <referencedby refid="_move_auto_init_8cpp_1aa91fc385b3c151e89ac23b656e9bf8b6" compoundref="_move_auto_init_8cpp" startline="61" endline="102">usersDominator</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a6dcb5e3d63691e83e0fdc0d67148077a" compoundref="_memory_s_s_a_8cpp" startline="2021" endline="2109">verifyOrderingDominationAndDefUses</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1ad34709127ea574767024538890e0e514" compoundref="_memory_s_s_a_8cpp" startline="1942" endline="1974">verifyPrevDefInPhis</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ac191373743120120bdde2006f1531aa4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_phi" kindref="compound">MemoryPhi</ref> *</type>
+        <definition>MemoryPhi * llvm::MemorySSA::getMemoryAccess</definition>
+        <argsstring>(const BasicBlock *BB) const</argsstring>
+        <name>getMemoryAccess</name>
+        <qualifiedname>llvm::MemorySSA::getMemoryAccess</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="723" column="13" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="723" bodyend="725"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1a3e627c32543ca70720c4270a8b11da3f" compoundref="_casting_8h" startline="720" endline="722">llvm::cast_or_null</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1aa863c7ef18d17217ad6fb984e2ba4d93" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+        <definition>DominatorTree &amp; llvm::MemorySSA::getDomTree</definition>
+        <argsstring>() const</argsstring>
+        <name>getDomTree</name>
+        <qualifiedname>llvm::MemorySSA::getDomTree</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="727" column="17" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="727" bodyend="727"/>
+        <referencedby refid="_memory_s_s_a_8cpp_1a930e3a524f031bdb14fe281e4eff4219" compoundref="_memory_s_s_a_8cpp" startline="397" endline="484">checkClobberSanity</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a0211e050a705084ef5e653127a7fb3df" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void MemorySSA::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::MemorySSA::dump</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="729" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1902" bodyend="1902"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" compoundref="_compiler_8h" startline="622">LLVM_DUMP_METHOD</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1afa9b4a650e1a6de2061538a19be3a234" compoundref="_memory_s_s_a_8cpp" startline="1893" endline="1899">print</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1afa9b4a650e1a6de2061538a19be3a234" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::print</definition>
+        <argsstring>(raw_ostream &amp;) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::MemorySSA::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <defname>OS</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="730" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1893" bodyend="1899"/>
+        <references refid="classllvm_1_1_global_value_1a739b30c811f1eece61b05320ddf44e5b" compoundref="_global_value_8h" startline="657" endline="657">llvm::GlobalValue::getParent</references>
+        <references refid="classllvm_1_1_module_1a8ee5166cba8576e41617fc96aec1fb85" compoundref="_asm_writer_8cpp" startline="4912" endline="4919">llvm::Module::print</references>
+        <referencedby refid="classllvm_1_1_memory_access_1a0323cfb2d9032e14069108390831f5b7" compoundref="_memory_s_s_a_8cpp" startline="2272" endline="2278">llvm::MemoryAccess::dump</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a0211e050a705084ef5e653127a7fb3df" compoundref="_memory_s_s_a_8cpp" startline="1902" endline="1902">dump</referencedby>
+        <referencedby refid="classllvm_1_1_memory_access_1aadff5eaae30623b4077b9dec90f29dcf" compoundref="_memory_s_s_a_8cpp" startline="2211" endline="2218">llvm::MemoryAccess::print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ae3b89ffde42778289bcbd8a187199420" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemorySSA::isLiveOnEntryDef</definition>
+        <argsstring>(const MemoryAccess *MA) const</argsstring>
+        <name>isLiveOnEntryDef</name>
+        <qualifiedname>llvm::MemorySSA::isLiveOnEntryDef</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <declname>MA</declname>
+        </param>
+        <briefdescription>
+<para>Return true if <computeroutput>MA</computeroutput> represents the live on entry value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads and stores from pointer arguments and other global values may be defined by memory operations that do not occur in the current function, so they may be live on entry to the function. <ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref> represents such memory state by the live on entry definition, which is guaranteed to occur before any other memory access in the function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="739" column="15" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="739" bodyend="741"/>
+        <referencedby refid="namespacellvm_1a158e2caed73e4b5d2ad70c1b2a0e0cc8" compoundref="_l_i_c_m_8cpp" startline="1161" endline="1339">llvm::canSinkOrHoistInst</referencedby>
+        <referencedby refid="_memory_s_s_a_8cpp_1a930e3a524f031bdb14fe281e4eff4219" compoundref="_memory_s_s_a_8cpp" startline="397" endline="484">checkClobberSanity</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a56004f54560e9950f6eb148cb5dfa0a3" compoundref="_memory_s_s_a_8cpp" startline="2173" endline="2184">dominates</referencedby>
+        <referencedby refid="_memory_s_s_a_updater_8cpp_1ac59d7eb34d6eb5a384a90489cd5dc7bc" compoundref="_memory_s_s_a_updater_8cpp" startline="568" endline="596">getNewDefiningAccessForClone</referencedby>
+        <referencedby refid="_mem_cpy_optimizer_8cpp_1a781cb075ecf323c9670d5695db656718" compoundref="_mem_cpy_optimizer_8cpp" startline="1373" endline="1405">hasUndefContents</referencedby>
+        <referencedby refid="namespacellvm_1_1_a_m_d_g_p_u_1af55cf9792d5f9186df02c58b337a1511" compoundref="_a_m_d_g_p_u_memory_utils_8cpp" startline="389" endline="434">llvm::AMDGPU::isClobberedInFunction</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1ade88aedcbd2b55711000cf3e36c0fc91" compoundref="_memory_s_s_a_8cpp" startline="2142" endline="2171">locallyDominates</referencedby>
+        <referencedby refid="_l_i_c_m_8cpp_1a28d9fc94843828b60459abd31b7e82c6" compoundref="_l_i_c_m_8cpp" startline="2359" endline="2408">pointerInvalidatedByLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ac806483fa7b54b1eae5ebde9fd459b7e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+        <definition>MemoryAccess * llvm::MemorySSA::getLiveOnEntryDef</definition>
+        <argsstring>() const</argsstring>
+        <name>getLiveOnEntryDef</name>
+        <qualifiedname>llvm::MemorySSA::getLiveOnEntryDef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="743" column="23" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="743" bodyend="745"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a183ce8029c259d7f9edacadcc7448f06" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_s_s_a_1a4b4af87796b358cd0cea30a192003591" kindref="member">AccessList</ref> *</type>
+        <definition>const AccessList * llvm::MemorySSA::getBlockAccesses</definition>
+        <argsstring>(const BasicBlock *BB) const</argsstring>
+        <name>getBlockAccesses</name>
+        <qualifiedname>llvm::MemorySSA::getBlockAccesses</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Return the list of <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref>&apos;s for a given basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This list is not modifiable by the user. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="759" column="20" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="759" bodyend="761"/>
+        <references refid="classllvm_1_1_memory_s_s_a_1a78d0057da016dd16107bcbd0f069aad8" compoundref="_memory_s_s_a_8h" startline="812" endline="815">getWritableBlockAccesses</references>
+        <referencedby refid="namespacellvm_1a158e2caed73e4b5d2ad70c1b2a0e0cc8" compoundref="_l_i_c_m_8cpp" startline="1161" endline="1339">llvm::canSinkOrHoistInst</referencedby>
+        <referencedby refid="_l_i_c_m_8cpp_1a8046d863469d9c33287fa4a673d00571" compoundref="_l_i_c_m_8cpp" startline="2285" endline="2292">foreachMemoryAccess</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_l_i_c_m_8cpp_03_1af11bb20a72885fc6999bfbcb21bd39fe" compoundref="_l_i_c_m_8cpp" startline="1130" endline="1144">anonymous_namespace{LICM.cpp}::isOnlyMemoryAccess</referencedby>
+        <referencedby refid="classllvm_1_1_sink_and_hoist_l_i_c_m_flags_1a30d4121b007bf8064374e069fd2de689" compoundref="_l_i_c_m_8cpp" startline="388" endline="405">llvm::SinkAndHoistLICMFlags::SinkAndHoistLICMFlags</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1aceea1ce23f1a6764f5fd02fa8fde9713" compoundref="_memory_s_s_a_8cpp" startline="1979" endline="2012">verifyDominationNumbers</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a6dcb5e3d63691e83e0fdc0d67148077a" compoundref="_memory_s_s_a_8cpp" startline="2021" endline="2109">verifyOrderingDominationAndDefUses</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ad586af665c013c65c83a31294555f996" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_s_s_a_1a043fc380f5e672ab28e6d4d57ab3e2ca" kindref="member">DefsList</ref> *</type>
+        <definition>const DefsList * llvm::MemorySSA::getBlockDefs</definition>
+        <argsstring>(const BasicBlock *BB) const</argsstring>
+        <name>getBlockDefs</name>
+        <qualifiedname>llvm::MemorySSA::getBlockDefs</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>Return the list of <ref refid="classllvm_1_1_memory_def" kindref="compound">MemoryDef</ref>&apos;s and <ref refid="classllvm_1_1_memory_phi" kindref="compound">MemoryPhi</ref>&apos;s for a given basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This list is not modifiable by the user. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="767" column="18" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="767" bodyend="769"/>
+        <references refid="classllvm_1_1_memory_s_s_a_1a99c136a293cd78a1986bc2501e2ca137" compoundref="_memory_s_s_a_8h" startline="818" endline="821">getWritableBlockDefs</references>
+        <referencedby refid="namespaceanonymous__namespace_02_l_i_c_m_8cpp_03_1a9d7f9cdd2e085f1453ac2f3186255fdc" compoundref="_l_i_c_m_8cpp" startline="1122" endline="1127">anonymous_namespace{LICM.cpp}::isReadOnly</referencedby>
+        <referencedby refid="_l_i_c_m_8cpp_1aed7e046ac6f7dd5ff0edb6e7b7a30e2e" compoundref="_l_i_c_m_8cpp" startline="2410" endline="2417">pointerInvalidatedByBlock</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1a050cc2b2d1467ffcad6a825f1141424c" compoundref="_simple_loop_unswitch_8cpp" startline="1047" endline="1141">unswitchAllTrivialConditions</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a6dcb5e3d63691e83e0fdc0d67148077a" compoundref="_memory_s_s_a_8cpp" startline="2021" endline="2109">verifyOrderingDominationAndDefUses</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1ad34709127ea574767024538890e0e514" compoundref="_memory_s_s_a_8cpp" startline="1942" endline="1974">verifyPrevDefInPhis</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ade88aedcbd2b55711000cf3e36c0fc91" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MemorySSA::locallyDominates</definition>
+        <argsstring>(const MemoryAccess *A, const MemoryAccess *B) const</argsstring>
+        <name>locallyDominates</name>
+        <qualifiedname>llvm::MemorySSA::locallyDominates</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <declname>A</declname>
+          <defname>Dominator</defname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <declname>B</declname>
+          <defname>Dominatee</defname>
+        </param>
+        <briefdescription>
+<para>Given two memory accesses in the same basic block, determine whether <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> <computeroutput>A</computeroutput> dominates <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> <computeroutput>B</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Determine, for two memory accesses in the same block, whether <computeroutput>Dominator</computeroutput> dominates <computeroutput>Dominatee</computeroutput>.</para>
+<para><simplesect kind="return"><para>True if <computeroutput>Dominator</computeroutput> dominates <computeroutput>Dominatee</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="773" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="2142" bodyend="2171"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_memory_access_1a9a9c59da949d32a269725b6e254d426f" compoundref="_memory_s_s_a_8h" startline="161" endline="161">llvm::MemoryAccess::getBlock</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1ae3b89ffde42778289bcbd8a187199420" compoundref="_memory_s_s_a_8h" startline="739" endline="741">isLiveOnEntryDef</references>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a56004f54560e9950f6eb148cb5dfa0a3" compoundref="_memory_s_s_a_8cpp" startline="2173" endline="2184">dominates</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a4e92272bbf0049770569394d4956918b" compoundref="_memory_s_s_a_8cpp" startline="2186" endline="2198">dominates</referencedby>
+        <referencedby refid="_l_i_c_m_8cpp_1aed7e046ac6f7dd5ff0edb6e7b7a30e2e" compoundref="_l_i_c_m_8cpp" startline="2410" endline="2417">pointerInvalidatedByBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a56004f54560e9950f6eb148cb5dfa0a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MemorySSA::dominates</definition>
+        <argsstring>(const MemoryAccess *A, const MemoryAccess *B) const</argsstring>
+        <name>dominates</name>
+        <qualifiedname>llvm::MemorySSA::dominates</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+<para>Given two memory accesses in potentially different blocks, determine whether <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> <computeroutput>A</computeroutput> dominates <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> <computeroutput>B</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="777" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="2173" bodyend="2184"/>
+        <references refid="classllvm_1_1_memory_access_1a9a9c59da949d32a269725b6e254d426f" compoundref="_memory_s_s_a_8h" startline="161" endline="161">llvm::MemoryAccess::getBlock</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1ae3b89ffde42778289bcbd8a187199420" compoundref="_memory_s_s_a_8h" startline="739" endline="741">isLiveOnEntryDef</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1ade88aedcbd2b55711000cf3e36c0fc91" compoundref="_memory_s_s_a_8cpp" startline="2142" endline="2171">locallyDominates</references>
+        <referencedby refid="namespacellvm_1a158e2caed73e4b5d2ad70c1b2a0e0cc8" compoundref="_l_i_c_m_8cpp" startline="1161" endline="1339">llvm::canSinkOrHoistInst</referencedby>
+        <referencedby refid="_memory_s_s_a_8cpp_1a930e3a524f031bdb14fe281e4eff4219" compoundref="_memory_s_s_a_8cpp" startline="397" endline="484">checkClobberSanity</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a4e92272bbf0049770569394d4956918b" compoundref="_memory_s_s_a_8cpp" startline="2186" endline="2198">dominates</referencedby>
+        <referencedby refid="_loop_unroll_8cpp_1a92bfc4d7aa6add742c2a82b2e8f61455" compoundref="_loop_unroll_8cpp" startline="254" endline="272">getMatchingValue</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a6dcb5e3d63691e83e0fdc0d67148077a" compoundref="_memory_s_s_a_8cpp" startline="2021" endline="2109">verifyOrderingDominationAndDefUses</referencedby>
+        <referencedby refid="_mem_cpy_optimizer_8cpp_1ab06d3147949b764919b5ad90014afdfd" compoundref="_mem_cpy_optimizer_8cpp" startline="319" endline="342">writtenBetween</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a4e92272bbf0049770569394d4956918b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MemorySSA::dominates</definition>
+        <argsstring>(const MemoryAccess *A, const Use &amp;B) const</argsstring>
+        <name>dominates</name>
+        <qualifiedname>llvm::MemorySSA::dominates</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+<para>Given a <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> and a <ref refid="classllvm_1_1_use" kindref="compound">Use</ref>, determine whether <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> <computeroutput>A</computeroutput> dominates <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> <computeroutput>B</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="781" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="2186" bodyend="2198"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a56004f54560e9950f6eb148cb5dfa0a3" compoundref="_memory_s_s_a_8cpp" startline="2173" endline="2184">dominates</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_memory_access_1a9a9c59da949d32a269725b6e254d426f" compoundref="_memory_s_s_a_8h" startline="161" endline="161">llvm::MemoryAccess::getBlock</references>
+        <references refid="classllvm_1_1_use_1a53a48d67682705c5f7f06ffc850fd622" compoundref="_i_r_2_use_8h" startline="72" endline="72">llvm::Use::getUser</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1ade88aedcbd2b55711000cf3e36c0fc91" compoundref="_memory_s_s_a_8cpp" startline="2142" endline="2171">locallyDominates</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a88b10d37f671e58cf138ac84a8257c17" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::verifyMemorySSA</definition>
+        <argsstring>(VerificationLevel=VerificationLevel::Fast) const</argsstring>
+        <name>verifyMemorySSA</name>
+        <qualifiedname>llvm::MemorySSA::verifyMemorySSA</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_s_s_a_1a8a5ce5c05f5824d269bc5751104973c7" kindref="member">VerificationLevel</ref></type>
+          <defname>VL</defname>
+          <defval><ref refid="classllvm_1_1_memory_s_s_a_1a8a5ce5c05f5824d269bc5751104973c7ae16b5b7f26f54214445cbe38d72c2828" kindref="member">VerificationLevel::Fast</ref></defval>
+        </param>
+        <briefdescription>
+<para>Verify that <ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref> is self consistent (IE definitions dominate all uses, uses appear in the right places). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is used by unit tests. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="786" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1905" bodyend="1939"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a8a5ce5c05f5824d269bc5751104973c7abbd47109890259c0127154db1af26c75" compoundref="_memory_s_s_a_8h" startline="783">Full</references>
+        <references refid="namespacellvm_1a9b5301a03dc90d7ac00440e2de4d9149">llvm::iterator_range</references>
+        <references refid="namespacellvm_1a51c7cbd21e1104ee6841c18d7daa6edb" compoundref="_s_t_l_extras_8h" startline="377" endline="380">llvm::map_range</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1aceea1ce23f1a6764f5fd02fa8fde9713" compoundref="_memory_s_s_a_8cpp" startline="1979" endline="2012">verifyDominationNumbers</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a6dcb5e3d63691e83e0fdc0d67148077a" compoundref="_memory_s_s_a_8cpp" startline="2021" endline="2109">verifyOrderingDominationAndDefUses</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1ad34709127ea574767024538890e0e514" compoundref="_memory_s_s_a_8cpp" startline="1942" endline="1974">verifyPrevDefInPhis</references>
+        <referencedby refid="namespacellvm_1a74b422e2c15d859ba49911cc329f11d7" compoundref="_loop_utils_8cpp" startline="484" endline="723">llvm::deleteDeadLoop</referencedby>
+        <referencedby refid="namespacellvm_1a5efa2c3e00054566f1baaebc766461a4" compoundref="_l_i_c_m_8cpp" startline="875" endline="1047">llvm::hoistRegion</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aa8f270ce4d001ee9e7839aa11c607931" compoundref="_simple_loop_unswitch_8cpp" startline="3083" endline="3168">injectPendingInvariantConditions</referencedby>
+        <referencedby refid="_loop_simplify_c_f_g_8cpp_1a5a5d8a7a6d46886bfb6350ed47c0f225" compoundref="_loop_simplify_c_f_g_8cpp" startline="660" endline="693">mergeBlocksIntoPredecessors</referencedby>
+        <referencedby refid="namespacellvm_1ae8cc923f4e20540201f1cd1225811b9f" compoundref="_l_i_c_m_8cpp" startline="1970" endline="2283">llvm::promoteLoopAccessesToScalars</referencedby>
+        <referencedby refid="classllvm_1_1_function_to_loop_pass_adaptor_1aee681bfb37f62d30a1d0a1f47d73b4f1" compoundref="_loop_pass_manager_8cpp" startline="197" endline="360">llvm::FunctionToLoopPassAdaptor::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_flatten_pass_1af1670b8924fecfd8a7f0c4dc140bf603" compoundref="_loop_flatten_8cpp" startline="995" endline="1033">llvm::LoopFlattenPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_inst_simplify_pass_1a3e829edc978ccb3a88ff5532faf75879" compoundref="_loop_inst_simplify_8cpp" startline="170" endline="188">llvm::LoopInstSimplifyPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_rotate_pass_1aa87b74697e2ab3e760eddd32b866c508" compoundref="_loop_rotation_8cpp" startline="60" endline="91">llvm::LoopRotatePass::run</referencedby>
+        <referencedby refid="classllvm_1_1_simple_loop_unswitch_pass_1ae7088b7b5c8bd069497f13e3e1990eff" compoundref="_simple_loop_unswitch_8cpp" startline="3682" endline="3716">llvm::SimpleLoopUnswitchPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_mem_cpy_opt_pass_1a18e40505cff07b625ae84a227804a9f4" compoundref="_mem_cpy_optimizer_8cpp" startline="2171" endline="2197">llvm::MemCpyOptPass::runImpl</referencedby>
+        <referencedby refid="_move_auto_init_8cpp_1a8f3d27d1b480f6b3c90405707be76295" compoundref="_move_auto_init_8cpp" startline="104" endline="217">runMoveAutoInit</referencedby>
+        <referencedby refid="_loop_inst_simplify_8cpp_1ac7156f23f48b5eb96ead0522896d7574" compoundref="_loop_inst_simplify_8cpp" startline="42" endline="168">simplifyLoopInst</referencedby>
+        <referencedby refid="_loop_simplify_8cpp_1ad54a3c6c671e583284ff935bfde3368c" compoundref="_loop_simplify_8cpp" startline="475" endline="695">simplifyOneLoop</referencedby>
+        <referencedby refid="namespacellvm_1ad30fb60072e2996200ea591628e33c5a" compoundref="_l_i_c_m_8cpp" startline="555" endline="620">llvm::sinkRegion</referencedby>
+        <referencedby refid="namespacellvm_1a33f79ea6e1fd1b8ba93c75519b1c929c" compoundref="_basic_block_utils_8cpp" startline="1099" endline="1142">llvm::splitBlockBefore</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1af3ac46dde637293a34d0ff7b619a656b" compoundref="_simple_loop_unswitch_8cpp" startline="2762" endline="2803">turnGuardIntoBranch</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1a2e6301db15e4516c92e21f33761886c6" compoundref="_simple_loop_unswitch_8cpp" startline="2711" endline="2739">turnSelectIntoBranch</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aae4261fb86bc9023c3383785afa66b9a" compoundref="_simple_loop_unswitch_8cpp" startline="2175" endline="2652">unswitchNontrivialInvariants</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1a6a082aa2e05f44f7dab89e2ff8c582ff" compoundref="_simple_loop_unswitch_8cpp" startline="509" endline="715">unswitchTrivialBranch</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aadf6036e1d19c8ba91242af6ec48d40b" compoundref="_simple_loop_unswitch_8cpp" startline="743" endline="1033">unswitchTrivialSwitch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1acd30a2d319950c138d97d5b3356342b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::ensureOptimizedUses</definition>
+        <argsstring>()</argsstring>
+        <name>ensureOptimizedUses</name>
+        <qualifiedname>llvm::MemorySSA::ensureOptimizedUses</qualifiedname>
+        <briefdescription>
+<para>By default, uses are <emphasis>not</emphasis> optimized during <ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref> construction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calling this method will attempt to optimize all MemoryUses, if this has not happened yet for this <ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref> instance. This should be done if you plan to query the clobbering access for most uses, or if you walk the def-use chain of uses. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="797" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="2200" bodyend="2209"/>
+        <references refid="classllvm_1_1_memory_s_s_a_1_1_optimize_uses_1a195658a43b30378309ff4e62455dc137" compoundref="_memory_s_s_a_8cpp" startline="1492" endline="1503">llvm::MemorySSA::OptimizeUses::optimizeUses</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a09b19c342a68cda17cb92c8fd9804cc4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1ae457f1cf451ed893666c4a384e58f8e5" kindref="member">AliasAnalysis</ref> &amp;</type>
+        <definition>AliasAnalysis &amp; llvm::MemorySSA::getAA</definition>
+        <argsstring>()</argsstring>
+        <name>getAA</name>
+        <qualifiedname>llvm::MemorySSA::getAA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="799" column="17" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="799" bodyend="799"/>
+        <referencedby refid="_l_i_c_m_8cpp_1a28d9fc94843828b60459abd31b7e82c6" compoundref="_l_i_c_m_8cpp" startline="2359" endline="2408">pointerInvalidatedByLoop</referencedby>
+        <referencedby refid="_move_auto_init_8cpp_1aa91fc385b3c151e89ac23b656e9bf8b6" compoundref="_move_auto_init_8cpp" startline="61" endline="102">usersDominator</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a6dcb5e3d63691e83e0fdc0d67148077a" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename IterT</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void MemorySSA::verifyOrderingDominationAndDefUses</definition>
+        <argsstring>(IterT Blocks, VerificationLevel=VerificationLevel::Fast) const</argsstring>
+        <name>verifyOrderingDominationAndDefUses</name>
+        <qualifiedname>llvm::MemorySSA::verifyOrderingDominationAndDefUses</qualifiedname>
+        <param>
+          <type>IterT</type>
+          <declname>Blocks</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_s_s_a_1a8a5ce5c05f5824d269bc5751104973c7" kindref="member">VerificationLevel</ref></type>
+          <defname>VL</defname>
+          <defval><ref refid="classllvm_1_1_memory_s_s_a_1a8a5ce5c05f5824d269bc5751104973c7ae16b5b7f26f54214445cbe38d72c2828" kindref="member">VerificationLevel::Fast</ref></defval>
+        </param>
+        <briefdescription>
+<para>Verify ordering: the order and existence of MemoryAccesses matches the order and existence of memory affecting instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Verify domination: each definition dominates all of its uses. Verify def-uses: the immediate use information - walk all the memory accesses and verifying that, for each use, it appears in the appropriate def&apos;s use list </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="806" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="2021" bodyend="2109"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a8a045d250952c0867382a9840ee18fdf" compoundref="_small_vector_8h" startline="267" endline="267">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::begin</references>
+        <references refid="classllvm_1_1_small_vector_impl_1aac0ea55010b7b1a301e65a0baea057aa" compoundref="_small_vector_8h" startline="610" endline="613">llvm::SmallVectorImpl&lt; T &gt;::clear</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a56004f54560e9950f6eb148cb5dfa0a3" compoundref="_memory_s_s_a_8cpp" startline="2173" endline="2184">dominates</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a075e34e98605d0e7c289763a104869ac" compoundref="_small_vector_8h" startline="269" endline="269">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::end</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a8a5ce5c05f5824d269bc5751104973c7abbd47109890259c0127154db1af26c75" compoundref="_memory_s_s_a_8h" startline="783">Full</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a183ce8029c259d7f9edacadcc7448f06" compoundref="_memory_s_s_a_8h" startline="759" endline="761">getBlockAccesses</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1ad586af665c013c65c83a31294555f996" compoundref="_memory_s_s_a_8h" startline="767" endline="769">getBlockDefs</references>
+        <references refid="classllvm_1_1_memory_use_or_def_1a20455da69cab73871b8c0111f0afe712" compoundref="_memory_s_s_a_8h" startline="259" endline="259">llvm::MemoryUseOrDef::getDefiningAccess</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1ab15de610fca1c900038bf3c333919e45" compoundref="_memory_s_s_a_8h" startline="719" endline="721">getMemoryAccess</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1acd1cd968cb420c82d70926920fcdc7d7" compoundref="_s_t_l_extras_8h" startline="1903" endline="1911">llvm::is_contained</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="namespacellvm_1a3f211484edf604716a6c80030b0a0375" compoundref="_machine_basic_block_8h" startline="1390" endline="1390">llvm::pred_size</references>
+        <references refid="namespacellvm_1acb22fb04083152eee862457e42e8dc31" compoundref="_machine_basic_block_8h" startline="1386" endline="1388">llvm::predecessors</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <references refid="classllvm_1_1_value_1abf855b7cd63a0cd7f73759e396f280c9" compoundref="_i_r_2_value_8h" startline="376" endline="379">llvm::Value::uses</references>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1abfd3c432d063870284f175107228d8c5" compoundref="_memory_s_s_a_8h" startline="803">MemorySSAUpdater</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a88b10d37f671e58cf138ac84a8257c17" compoundref="_memory_s_s_a_8cpp" startline="1905" endline="1939">verifyMemorySSA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1aceea1ce23f1a6764f5fd02fa8fde9713" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename IterT</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void MemorySSA::verifyDominationNumbers</definition>
+        <argsstring>(IterT Blocks) const</argsstring>
+        <name>verifyDominationNumbers</name>
+        <qualifiedname>llvm::MemorySSA::verifyDominationNumbers</qualifiedname>
+        <param>
+          <type>IterT</type>
+          <declname>Blocks</declname>
+        </param>
+        <briefdescription>
+<para>Verify that all of the blocks we believe to have valid domination numbers actually have valid domination numbers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="808" column="20" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1979" bodyend="2012"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a1f475b0df44ebd7169e720fa1bf9169e" compoundref="_small_ptr_set_8h" startline="452" endline="454">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_base_1af8a50544090e81ac83601aff8f4b0142" compoundref="_small_ptr_set_8h" startline="93" endline="93">llvm::SmallPtrSetImplBase::empty</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a11045c7973ab24a8d6315b61fa337d4e" compoundref="_small_ptr_set_8h" startline="401" endline="403">llvm::SmallPtrSetImpl&lt; PtrType &gt;::erase</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a183ce8029c259d7f9edacadcc7448f06" compoundref="_memory_s_s_a_8h" startline="759" endline="761">getBlockAccesses</references>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1abfd3c432d063870284f175107228d8c5" compoundref="_memory_s_s_a_8h" startline="803">MemorySSAUpdater</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a88b10d37f671e58cf138ac84a8257c17" compoundref="_memory_s_s_a_8cpp" startline="1905" endline="1939">verifyMemorySSA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ad34709127ea574767024538890e0e514" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename IterT</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void MemorySSA::verifyPrevDefInPhis</definition>
+        <argsstring>(IterT Blocks) const</argsstring>
+        <name>verifyPrevDefInPhis</name>
+        <qualifiedname>llvm::MemorySSA::verifyPrevDefInPhis</qualifiedname>
+        <param>
+          <type>IterT</type>
+          <declname>Blocks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="809" column="20" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1942" bodyend="1974"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1ad586af665c013c65c83a31294555f996" compoundref="_memory_s_s_a_8h" startline="767" endline="769">getBlockDefs</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1ab15de610fca1c900038bf3c333919e45" compoundref="_memory_s_s_a_8h" startline="719" endline="721">getMemoryAccess</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1abfd3c432d063870284f175107228d8c5" compoundref="_memory_s_s_a_8h" startline="803">MemorySSAUpdater</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a88b10d37f671e58cf138ac84a8257c17" compoundref="_memory_s_s_a_8cpp" startline="1905" endline="1939">verifyMemorySSA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a78d0057da016dd16107bcbd0f069aad8" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_s_s_a_1a4b4af87796b358cd0cea30a192003591" kindref="member">AccessList</ref> *</type>
+        <definition>AccessList * llvm::MemorySSA::getWritableBlockAccesses</definition>
+        <argsstring>(const BasicBlock *BB) const</argsstring>
+        <name>getWritableBlockAccesses</name>
+        <qualifiedname>llvm::MemorySSA::getWritableBlockAccesses</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="812" column="14" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="812" bodyend="815"/>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a183ce8029c259d7f9edacadcc7448f06" compoundref="_memory_s_s_a_8h" startline="759" endline="761">getBlockAccesses</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a97891043f9eacb9b0e18e22767cc7802" compoundref="_memory_s_s_a_8cpp" startline="1650" endline="1676">insertIntoListsBefore</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a99c136a293cd78a1986bc2501e2ca137" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_s_s_a_1a043fc380f5e672ab28e6d4d57ab3e2ca" kindref="member">DefsList</ref> *</type>
+        <definition>DefsList * llvm::MemorySSA::getWritableBlockDefs</definition>
+        <argsstring>(const BasicBlock *BB) const</argsstring>
+        <name>getWritableBlockDefs</name>
+        <qualifiedname>llvm::MemorySSA::getWritableBlockDefs</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="818" column="12" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="818" bodyend="821"/>
+        <references refid="classllvm_1_1simple__ilist_1a9ed194b42c5b8ba68764c26760c9ddfe" compoundref="simple__ilist_8h" startline="127" endline="127">llvm::simple_ilist&lt; T, Options &gt;::end</references>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1ad586af665c013c65c83a31294555f996" compoundref="_memory_s_s_a_8h" startline="767" endline="769">getBlockDefs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a131110a75135a123427d3280dff1fef4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::moveTo</definition>
+        <argsstring>(MemoryUseOrDef *What, BasicBlock *BB, AccessList::iterator Where)</argsstring>
+        <name>moveTo</name>
+        <qualifiedname>llvm::MemorySSA::moveTo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_use_or_def" kindref="compound">MemoryUseOrDef</ref> *</type>
+          <declname>What</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1iplist__impl_1a4563732eae31ee14694e7ce17a5a6749" kindref="member">AccessList::iterator</ref></type>
+          <declname>Where</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="827" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1694" bodyend="1698"/>
+        <references refid="classllvm_1_1_memory_s_s_a_1a97891043f9eacb9b0e18e22767cc7802" compoundref="_memory_s_s_a_8cpp" startline="1650" endline="1676">insertIntoListsBefore</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a13073dfc4fd40b8388fb60885e493f8d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::moveTo</definition>
+        <argsstring>(MemoryAccess *What, BasicBlock *BB, InsertionPlace Point)</argsstring>
+        <name>moveTo</name>
+        <qualifiedname>llvm::MemorySSA::moveTo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <declname>What</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5" kindref="member">InsertionPlace</ref></type>
+          <declname>Point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="828" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1700" bodyend="1714"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5ad02ebd2ab52855a8e9fb8082c9530085" compoundref="_memory_s_s_a_8h" startline="790">Beginning</references>
+        <references refid="classllvm_1_1_memory_access_1a9a9c59da949d32a269725b6e254d426f" compoundref="_memory_s_s_a_8h" startline="161" endline="161">llvm::MemoryAccess::getBlock</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a8bc47ee66a3ac3b5f1a57c497048b090" compoundref="_memory_s_s_a_8cpp" startline="1618" endline="1648">insertIntoListsForBlock</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a1aa1ce1cb2192a65bf9e113882cd4ae9" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::MemorySSA::renamePass</definition>
+        <argsstring>(BasicBlock *BB, MemoryAccess *IncomingVal, SmallPtrSetImpl&lt; BasicBlock * &gt; &amp;Visited)</argsstring>
+        <name>renamePass</name>
+        <qualifiedname>llvm::MemorySSA::renamePass</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <declname>IncomingVal</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt; &amp;</type>
+          <declname>Visited</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="831" column="8" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="831" bodyend="834"/>
+        <references refid="classllvm_1_1_memory_s_s_a_1a1aa1ce1cb2192a65bf9e113882cd4ae9" compoundref="_memory_s_s_a_8h" startline="831" endline="834">renamePass</references>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a1aa1ce1cb2192a65bf9e113882cd4ae9" compoundref="_memory_s_s_a_8h" startline="831" endline="834">renamePass</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1acd0427b84adce00e5b26f993c7aa48c8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::removeFromLookups</definition>
+        <argsstring>(MemoryAccess *)</argsstring>
+        <name>removeFromLookups</name>
+        <qualifiedname>llvm::MemorySSA::removeFromLookups</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <defname>MA</defname>
+        </param>
+        <briefdescription>
+<para>Properly remove <computeroutput>MA</computeroutput> from all of <ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref>&apos;s lookup tables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="836" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1839" bodyend="1858"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_basic_block_1a018d5142c1a4469d9296a26a59fe2783" compoundref="_sandbox_i_r_2_basic_block_8cpp" startline="666" endline="671">llvm::BasicBlock::erase</references>
+        <references refid="classllvm_1_1_memory_access_1a9a9c59da949d32a269725b6e254d426f" compoundref="_memory_s_s_a_8h" startline="161" endline="161">llvm::MemoryAccess::getBlock</references>
+        <references refid="classllvm_1_1_memory_use_or_def_1abe63c310031eb3c578b122f0c31739d7" compoundref="_memory_s_s_a_8h" startline="256" endline="256">llvm::MemoryUseOrDef::getMemoryInst</references>
+        <references refid="classllvm_1_1_memory_s_s_a_1a949151a1ebd664cb397323294cec0e53" compoundref="_memory_s_s_a_8cpp" startline="1590" endline="1590">getWalker</references>
+        <references refid="classllvm_1_1_memory_s_s_a_walker_1a8bb8d1cc3b3a95d81ee75395cadf83c3" compoundref="_memory_s_s_a_8h" startline="1093" endline="1093">llvm::MemorySSAWalker::invalidateInfo</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1_memory_use_or_def_1a5c00de32cf1426ab78c346e7a251d608" compoundref="_memory_s_s_a_8h" startline="292" endline="298">llvm::MemoryUseOrDef::setDefiningAccess</references>
+        <references refid="classllvm_1_1_value_1a9d7de807ebdfe1819df3ff6cb0f16158" compoundref="_i_r_2_value_8h" startline="344" endline="347">llvm::Value::use_empty</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ae20e35b50e6cf67987421c996cf14a8c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::removeFromLists</definition>
+        <argsstring>(MemoryAccess *, bool ShouldDelete=true)</argsstring>
+        <name>removeFromLists</name>
+        <qualifiedname>llvm::MemorySSA::removeFromLists</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <defname>MA</defname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ShouldDelete</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+<para>Properly remove <computeroutput>MA</computeroutput> from all of <ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref>&apos;s lists. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Because of the way the intrusive list and use lists work, it is important to do removal in the right order. ShouldDelete defaults to true, and will cause the memory access to also be deleted, not just removed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="837" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1866" bodyend="1891"/>
+        <references refid="classllvm_1_1_basic_block_1a018d5142c1a4469d9296a26a59fe2783" compoundref="_sandbox_i_r_2_basic_block_8cpp" startline="666" endline="671">llvm::BasicBlock::erase</references>
+        <references refid="classllvm_1_1_memory_access_1a9a9c59da949d32a269725b6e254d426f" compoundref="_memory_s_s_a_8h" startline="161" endline="161">llvm::MemoryAccess::getBlock</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a8bc47ee66a3ac3b5f1a57c497048b090" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::insertIntoListsForBlock</definition>
+        <argsstring>(MemoryAccess *, const BasicBlock *, InsertionPlace)</argsstring>
+        <name>insertIntoListsForBlock</name>
+        <qualifiedname>llvm::MemorySSA::insertIntoListsForBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <defname>NewAccess</defname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <defname>BB</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5" kindref="member">InsertionPlace</ref></type>
+          <defname>Point</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="838" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1618" bodyend="1648"/>
+        <references refid="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5ad02ebd2ab52855a8e9fb8082c9530085" compoundref="_memory_s_s_a_8h" startline="790">Beginning</references>
+        <references refid="namespacellvm_1a7b49849160e7f089916f83c52511da9e" compoundref="_s_t_l_extras_8h" startline="1771" endline="1773">llvm::find_if_not</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a13073dfc4fd40b8388fb60885e493f8d" compoundref="_memory_s_s_a_8cpp" startline="1700" endline="1714">moveTo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a97891043f9eacb9b0e18e22767cc7802" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::insertIntoListsBefore</definition>
+        <argsstring>(MemoryAccess *, const BasicBlock *, AccessList::iterator)</argsstring>
+        <name>insertIntoListsBefore</name>
+        <qualifiedname>llvm::MemorySSA::insertIntoListsBefore</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <defname>What</defname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <defname>BB</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1iplist__impl_1a4563732eae31ee14694e7ce17a5a6749" kindref="member">AccessList::iterator</ref></type>
+          <defname>InsertPt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="840" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1650" bodyend="1676"/>
+        <references refid="classllvm_1_1_memory_s_s_a_1a78d0057da016dd16107bcbd0f069aad8" compoundref="_memory_s_s_a_8h" startline="812" endline="815">getWritableBlockAccesses</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_1a131110a75135a123427d3280dff1fef4" compoundref="_memory_s_s_a_8cpp" startline="1694" endline="1698">moveTo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a9939794555fe9e24e885d55e301de803" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_use_or_def" kindref="compound">MemoryUseOrDef</ref> *</type>
+        <definition>MemoryUseOrDef * MemorySSA::createDefinedAccess</definition>
+        <argsstring>(Instruction *, MemoryAccess *, const MemoryUseOrDef *Template=nullptr, bool CreationMustSucceed=true)</argsstring>
+        <name>createDefinedAccess</name>
+        <qualifiedname>llvm::MemorySSA::createDefinedAccess</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <defname>I</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <defname>Definition</defname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_use_or_def" kindref="compound">MemoryUseOrDef</ref> *</type>
+          <declname>Template</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>CreationMustSucceed</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="842" column="18" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1725" bodyend="1740"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1_memory_use_or_def_1a5c00de32cf1426ab78c346e7a251d608" compoundref="_memory_s_s_a_8h" startline="292" endline="298">llvm::MemoryUseOrDef::setDefiningAccess</references>
+        <references refid="_itanium_demangle_8h_1a88ee8e4eea43084bd8964682683da88ca278c491bdd8a53618c149c4ac790da34" compoundref="_itanium_demangle_8h" startline="1227">Template</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ab1fe41d146a7c374483dcaeadebdbf6c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_s_s_a_1_1_caching_walker" kindref="compound">CachingWalker</ref> *</type>
+        <definition>MemorySSA::CachingWalker * MemorySSA::getWalkerImpl</definition>
+        <argsstring>()</argsstring>
+        <name>getWalkerImpl</name>
+        <qualifiedname>llvm::MemorySSA::getWalkerImpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="852" column="17" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1592" bodyend="1601"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1aa5f392d0c9835d9e57f0378bfb187c5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename IterT</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void MemorySSA::buildMemorySSA</definition>
+        <argsstring>(BatchAAResults &amp;BAA, IterT Blocks)</argsstring>
+        <name>buildMemorySSA</name>
+        <qualifiedname>llvm::MemorySSA::buildMemorySSA</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_batch_a_a_results" kindref="compound">BatchAAResults</ref> &amp;</type>
+          <declname>BAA</declname>
+        </param>
+        <param>
+          <type>IterT</type>
+          <declname>Blocks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="854" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1519" bodyend="1588"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ac00ea77ceceb48b2895927bdbda9de06" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::prepareForMoveTo</definition>
+        <argsstring>(MemoryAccess *, BasicBlock *)</argsstring>
+        <name>prepareForMoveTo</name>
+        <qualifiedname>llvm::MemorySSA::prepareForMoveTo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <defname>What</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <defname>BB</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="856" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1678" bodyend="1688"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1aa6c3ccc8d57f0391906b968f43b3e98b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::verifyUseInDefs</definition>
+        <argsstring>(MemoryAccess *, MemoryAccess *) const</argsstring>
+        <name>verifyUseInDefs</name>
+        <qualifiedname>llvm::MemorySSA::verifyUseInDefs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <defname>Def</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <defname>Use</defname>
+        </param>
+        <briefdescription>
+<para>Verify the def-use lists in <ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref>, by verifying that <computeroutput><ref refid="classllvm_1_1_use" kindref="compound">Use</ref></computeroutput> appears in the use list of <computeroutput>Def</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="857" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="2113" bodyend="2121"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ae8329f01f0adf4e4e5582906094c20b4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::markUnreachableAsLiveOnEntry</definition>
+        <argsstring>(BasicBlock *BB)</argsstring>
+        <name>markUnreachableAsLiveOnEntry</name>
+        <qualifiedname>llvm::MemorySSA::markUnreachableAsLiveOnEntry</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>This handles unreachable block accesses by deleting phi nodes in unreachable blocks, and marking all other unreachable <ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref>&apos;s as being uses of the live on entry definition. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="862" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1196" bodyend="1231"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a5c0bfd3770ad87bc5d9eb0b25a79506a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_phi" kindref="compound">MemoryPhi</ref> *</type>
+        <definition>MemoryPhi * MemorySSA::createMemoryPhi</definition>
+        <argsstring>(BasicBlock *BB)</argsstring>
+        <name>createMemoryPhi</name>
+        <qualifiedname>llvm::MemorySSA::createMemoryPhi</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="863" column="13" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1716" bodyend="1723"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1acc97e9eadd33c31028fddfeb977b9948" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AliasAnalysisType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classllvm_1_1_memory_use_or_def" kindref="compound">MemoryUseOrDef</ref> *</type>
+        <definition>MemoryUseOrDef * MemorySSA::createNewAccess</definition>
+        <argsstring>(Instruction *, AliasAnalysisType *, const MemoryUseOrDef *Template=nullptr)</argsstring>
+        <name>createNewAccess</name>
+        <qualifiedname>llvm::MemorySSA::createNewAccess</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <defname>I</defname>
+        </param>
+        <param>
+          <type>AliasAnalysisType *</type>
+          <defname>AAP</defname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_use_or_def" kindref="compound">MemoryUseOrDef</ref> *</type>
+          <declname>Template</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Helper function to create new memory accesses. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="865" column="18" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1758" bodyend="1836"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1ac359ac2337252a5e40f7a410e29286a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::placePHINodes</definition>
+        <argsstring>(const SmallPtrSetImpl&lt; BasicBlock * &gt; &amp;)</argsstring>
+        <name>placePHINodes</name>
+        <qualifiedname>llvm::MemorySSA::placePHINodes</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt; &amp;</type>
+          <defname>DefiningBlocks</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="867" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1505" bodyend="1516"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1aeaa6c211e903a25bc0ca8d6e2cad2023" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+        <definition>MemoryAccess * MemorySSA::renameBlock</definition>
+        <argsstring>(BasicBlock *, MemoryAccess *, bool)</argsstring>
+        <name>renameBlock</name>
+        <qualifiedname>llvm::MemorySSA::renameBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <defname>BB</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <defname>IncomingVal</defname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <defname>RenameAllUses</defname>
+        </param>
+        <briefdescription>
+<para>Rename a single basic block into <ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref> form. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses the standard SSA renaming algorithm. <simplesect kind="return"><para>The new incoming value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="868" column="16" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1122" bodyend="1140"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1aecf86642708d444b478880776765cdc5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::renameSuccessorPhis</definition>
+        <argsstring>(BasicBlock *, MemoryAccess *, bool)</argsstring>
+        <name>renameSuccessorPhis</name>
+        <qualifiedname>llvm::MemorySSA::renameSuccessorPhis</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <defname>BB</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <defname>IncomingVal</defname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <defname>RenameAllUses</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="869" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1095" bodyend="1117"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a2ea0789f679a45f5053ea74316def1de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::renamePass</definition>
+        <argsstring>(DomTreeNode *, MemoryAccess *IncomingVal, SmallPtrSetImpl&lt; BasicBlock * &gt; &amp;Visited, bool SkipVisited=false, bool RenameAllUses=false)</argsstring>
+        <name>renamePass</name>
+        <qualifiedname>llvm::MemorySSA::renamePass</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1a58b9df85470fc4e2a8066ff6a62e5a34" kindref="member">DomTreeNode</ref> *</type>
+          <defname>Root</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_access" kindref="compound">MemoryAccess</ref> *</type>
+          <declname>IncomingVal</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt; &amp;</type>
+          <declname>Visited</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>SkipVisited</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>RenameAllUses</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>This is the standard SSA renaming algorithm. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We walk the dominator tree in preorder, renaming accesses, and then filling in phi nodes in our successors. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="870" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1146" bodyend="1191"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a15149cbaf5567f27e49e41a6f965ac34" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_s_s_a_1a4b4af87796b358cd0cea30a192003591" kindref="member">AccessList</ref> *</type>
+        <definition>MemorySSA::AccessList * MemorySSA::getOrCreateAccessList</definition>
+        <argsstring>(const BasicBlock *)</argsstring>
+        <name>getOrCreateAccessList</name>
+        <qualifiedname>llvm::MemorySSA::getOrCreateAccessList</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <defname>BB</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="873" column="14" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1279" bodyend="1285"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a51b01927f064891af68ace526a4f9be1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_memory_s_s_a_1a043fc380f5e672ab28e6d4d57ab3e2ca" kindref="member">DefsList</ref> *</type>
+        <definition>MemorySSA::DefsList * MemorySSA::getOrCreateDefsList</definition>
+        <argsstring>(const BasicBlock *)</argsstring>
+        <name>getOrCreateDefsList</name>
+        <qualifiedname>llvm::MemorySSA::getOrCreateDefsList</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <defname>BB</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="874" column="12" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="1287" bodyend="1293"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_s_s_a_1a2e0f168aba3bdf8cc523a0b7bb29fb6f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemorySSA::renumberBlock</definition>
+        <argsstring>(const BasicBlock *) const</argsstring>
+        <name>renumberBlock</name>
+        <qualifiedname>llvm::MemorySSA::renumberBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <defname>B</defname>
+        </param>
+        <briefdescription>
+<para>Perform a local numbering on blocks so that instruction ordering can be determined in constant time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>TODO: We currently just number in order. If we numbered by N, we could allow at least N-1 sequences of insertBefore or insertAfter (and at least log2(N) sequences of mixed before and after) without needing to invalidate the numbering. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemorySSA.h" line="875" column="8" bodyfile="lib/Analysis/MemorySSA.cpp" bodystart="2129" bodyend="2137"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Encapsulates <ref refid="classllvm_1_1_memory_s_s_a" kindref="compound">MemorySSA</ref>, including all data associated with memory accesses. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Analysis/MemorySSA.h" line="701" column="1" bodyfile="include/llvm/Analysis/MemorySSA.h" bodystart="701" bodyend="906"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_memory_s_s_a_1a9bfebb1c5c9f151ca7054789586a8fb5" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>AA</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a4b4af87796b358cd0cea30a192003591" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>AccessList</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a74a73d09f6a768f6e03cba3622f75ad7" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>AccessMap</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5a7806c120eb87aea9fbb52fed327e09de" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>BeforeTerminator</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5ad02ebd2ab52855a8e9fb8082c9530085" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>Beginning</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ae8ec64261cb036ddf4281b81e14a3b05" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>BlockNumbering</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1afb1ea38dec30d0ebaaedcbd122c67446" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>BlockNumberingValid</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1aa5f392d0c9835d9e57f0378bfb187c5a" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>buildMemorySSA</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a9939794555fe9e24e885d55e301de803" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>createDefinedAccess</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a5c0bfd3770ad87bc5d9eb0b25a79506a" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>createMemoryPhi</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1acc97e9eadd33c31028fddfeb977b9948" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>createNewAccess</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a043fc380f5e672ab28e6d4d57ab3e2ca" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>DefsList</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a8150df0c766020e467eb16b03233b148" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>DefsMap</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a56004f54560e9950f6eb148cb5dfa0a3" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>dominates</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a4e92272bbf0049770569394d4956918b" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>dominates</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a86af47ce966d32ff64902066ae34eb61" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>DT</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a0211e050a705084ef5e653127a7fb3df" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5a542e7b754a1b868794fa2f47256a1d97" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>End</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1acd30a2d319950c138d97d5b3356342b5" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>ensureOptimizedUses</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a78840a488cd8b369b060f4af2b417b13" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>F</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a09b19c342a68cda17cb92c8fd9804cc4" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getAA</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a183ce8029c259d7f9edacadcc7448f06" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getBlockAccesses</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ad586af665c013c65c83a31294555f996" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getBlockDefs</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1aa863c7ef18d17217ad6fb984e2ba4d93" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getDomTree</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ac806483fa7b54b1eae5ebde9fd459b7e" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getLiveOnEntryDef</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ab15de610fca1c900038bf3c333919e45" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getMemoryAccess</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ac191373743120120bdde2006f1531aa4" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getMemoryAccess</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a15149cbaf5567f27e49e41a6f965ac34" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getOrCreateAccessList</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a51b01927f064891af68ace526a4f9be1" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getOrCreateDefsList</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a2ef6f9107316d963f20b9003b7668c4e" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getSkipSelfWalker</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a949151a1ebd664cb397323294cec0e53" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getWalker</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ab1fe41d146a7c374483dcaeadebdbf6c" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getWalkerImpl</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a78d0057da016dd16107bcbd0f069aad8" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getWritableBlockAccesses</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a99c136a293cd78a1986bc2501e2ca137" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>getWritableBlockDefs</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a97891043f9eacb9b0e18e22767cc7802" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>insertIntoListsBefore</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a8bc47ee66a3ac3b5f1a57c497048b090" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>insertIntoListsForBlock</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a9773fde54683945b9e34a0f2e5c1a5a5" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>InsertionPlace</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ae3b89ffde42778289bcbd8a187199420" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>isLiveOnEntryDef</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1af898ae6026843245ed77dd167def0835" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>IsOptimized</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a5b20cacf6bd91e129925ebb200fbb88f" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>L</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a4dd3b14809ce8fe0a9fe6df605f6cae9" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>LiveOnEntryDef</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ade88aedcbd2b55711000cf3e36c0fc91" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>locallyDominates</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ae8329f01f0adf4e4e5582906094c20b4" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>markUnreachableAsLiveOnEntry</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a49f6b5c5e36a86395a7f91838768798d" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>MemorySSA</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ae00fb511f1753cc06aaeed20f8de5d5c" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>MemorySSA</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1aa853d12d6716fb18650576eea9d03c26" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>MemorySSA</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1abfd3c432d063870284f175107228d8c5" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>MemorySSAUpdater</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a131110a75135a123427d3280dff1fef4" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>moveTo</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a13073dfc4fd40b8388fb60885e493f8d" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>moveTo</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a0a17d4dbd713639766530b0c470fc23b" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>NextID</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1aff4fed477ce60887e4d645a6957dc8bb" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>PerBlockAccesses</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ad5a87419198d5efc849a42ec7ad8db4d" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>PerBlockDefs</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ac359ac2337252a5e40f7a410e29286a1" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>placePHINodes</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ac00ea77ceceb48b2895927bdbda9de06" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>prepareForMoveTo</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1afa9b4a650e1a6de2061538a19be3a234" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>print</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ae20e35b50e6cf67987421c996cf14a8c" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>removeFromLists</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1acd0427b84adce00e5b26f993c7aa48c8" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>removeFromLookups</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1aeaa6c211e903a25bc0ca8d6e2cad2023" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>renameBlock</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a1aa1ce1cb2192a65bf9e113882cd4ae9" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>renamePass</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a2ea0789f679a45f5053ea74316def1de" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>renamePass</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1aecf86642708d444b478880776765cdc5" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>renameSuccessorPhis</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a2e0f168aba3bdf8cc523a0b7bb29fb6f" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>renumberBlock</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a944949e064d4a513deae18506d568a7a" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>SkipWalker</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a8984431a62626eae31e3a1bd1876094e" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>ValueToMemoryAccess</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a8a5ce5c05f5824d269bc5751104973c7" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>VerificationLevel</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1aceea1ce23f1a6764f5fd02fa8fde9713" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>verifyDominationNumbers</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a88b10d37f671e58cf138ac84a8257c17" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>verifyMemorySSA</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a6dcb5e3d63691e83e0fdc0d67148077a" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>verifyOrderingDominationAndDefUses</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ad34709127ea574767024538890e0e514" prot="protected" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>verifyPrevDefInPhis</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1aa6c3ccc8d57f0391906b968f43b3e98b" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>verifyUseInDefs</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a0f5218f0a4b886b7cd1e268c12420d51" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>Walker</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1a620baa9e8dafd4ed7485182d9124a774" prot="private" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>WalkerBase</name></member>
+      <member refid="classllvm_1_1_memory_s_s_a_1ae7375c161ecaf6b6f4ebd6abfcb5ce71" prot="public" virt="non-virtual"><scope>llvm::MemorySSA</scope><name>~MemorySSA</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

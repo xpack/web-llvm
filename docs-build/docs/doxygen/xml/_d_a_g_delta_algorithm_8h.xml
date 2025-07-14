@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_d_a_g_delta_algorithm_8h" kind="file" language="C++">
+    <compoundname>DAGDeltaAlgorithm.h</compoundname>
+    <includes local="no">set</includes>
+    <includes local="no">utility</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="_d_a_g_delta_algorithm_8cpp" local="yes">lib/Support/DAGDeltaAlgorithm.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/ADT/DAGDeltaAlgorithm.h</label>
+        <link refid="_d_a_g_delta_algorithm_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>set</label>
+      </node>
+      <node id="3">
+        <label>utility</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/ADT/DAGDeltaAlgorithm.h</label>
+        <link refid="_d_a_g_delta_algorithm_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Support/DAGDeltaAlgorithm.cpp</label>
+        <link refid="_d_a_g_delta_algorithm_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1_d_a_g_delta_algorithm" prot="public">llvm::DAGDeltaAlgorithm</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>DAGDeltaAlgorithm.h<sp/>-<sp/>A<sp/>DAG<sp/>Minimization<sp/>Algorithm<sp/>------*-<sp/>C++<sp/>-*--===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_ADT_DAGDELTAALGORITHM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_ADT_DAGDELTAALGORITHM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="17"><highlight class="comment">///<sp/>DAGDeltaAlgorithm<sp/>-<sp/>Implements<sp/>a<sp/>&quot;delta<sp/>debugging&quot;<sp/>algorithm<sp/>for<sp/>minimizing</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">///<sp/>directed<sp/>acyclic<sp/>graphs<sp/>using<sp/>a<sp/>predicate<sp/>function.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">///<sp/>The<sp/>result<sp/>of<sp/>the<sp/>algorithm<sp/>is<sp/>a<sp/>subset<sp/>of<sp/>the<sp/>input<sp/>change<sp/>set<sp/>which<sp/>is</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">///<sp/>guaranteed<sp/>to<sp/>satisfy<sp/>the<sp/>predicate,<sp/>assuming<sp/>that<sp/>the<sp/>input<sp/>set<sp/>did.<sp/>For</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">///<sp/>well<sp/>formed<sp/>predicates,<sp/>the<sp/>result<sp/>set<sp/>is<sp/>guaranteed<sp/>to<sp/>be<sp/>such<sp/>that</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">///<sp/>removing<sp/>any<sp/>single<sp/>element<sp/>not<sp/>required<sp/>by<sp/>the<sp/>dependencies<sp/>on<sp/>the<sp/>other</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">///<sp/>elements<sp/>would<sp/>falsify<sp/>the<sp/>predicate.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">///<sp/>The<sp/>DAG<sp/>should<sp/>be<sp/>used<sp/>to<sp/>represent<sp/>dependencies<sp/>in<sp/>the<sp/>changes<sp/>which<sp/>are</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">///<sp/>likely<sp/>to<sp/>hold<sp/>across<sp/>the<sp/>predicate<sp/>function.<sp/>That<sp/>is,<sp/>for<sp/>a<sp/>particular</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">///<sp/>changeset<sp/>S<sp/>and<sp/>predicate<sp/>P:</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">///<sp/><sp/><sp/>P(S)<sp/>=&gt;<sp/>P(S<sp/>union<sp/>pred(S))</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">///<sp/>The<sp/>minimization<sp/>algorithm<sp/>uses<sp/>this<sp/>dependency<sp/>information<sp/>to<sp/>attempt<sp/>to</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">///<sp/>eagerly<sp/>prune<sp/>large<sp/>subsets<sp/>of<sp/>changes.<sp/>As<sp/>with<sp/>\see<sp/>DeltaAlgorithm,<sp/>the<sp/>DAG</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">///<sp/>is<sp/>not<sp/>required<sp/>to<sp/>satisfy<sp/>this<sp/>property,<sp/>but<sp/>the<sp/>algorithm<sp/>will<sp/>run</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">///<sp/>substantially<sp/>fewer<sp/>tests<sp/>with<sp/>appropriate<sp/>dependencies.<sp/>\see<sp/>DeltaAlgorithm</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">///<sp/>for<sp/>more<sp/>information<sp/>on<sp/>the<sp/>properties<sp/>which<sp/>the<sp/>predicate<sp/>function<sp/>itself</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">///<sp/>should<sp/>satisfy.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classllvm_1_1_d_a_g_delta_algorithm" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_d_a_g_delta_algorithm" kindref="compound">DAGDeltaAlgorithm</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>anchor();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42" refid="classllvm_1_1_d_a_g_delta_algorithm_1ad4db5080e3127c468dd4bc6c0812142c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1ad4db5080e3127c468dd4bc6c0812142c" kindref="member">change_ty</ref><sp/>=<sp/><ref refid="classunsigned" kindref="compound">unsigned</ref>;</highlight></codeline>
+<codeline lineno="43" refid="classllvm_1_1_d_a_g_delta_algorithm_1a658d0ed343fe1a2a704d4219a0a1a8ec" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1a658d0ed343fe1a2a704d4219a0a1a8ec" kindref="member">edge_ty</ref><sp/>=<sp/>std::pair&lt;change_ty,<sp/>change_ty&gt;;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>FIXME:<sp/>Use<sp/>a<sp/>decent<sp/>data<sp/>structure.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="classllvm_1_1_d_a_g_delta_algorithm_1a3f8cd32d8d69f713bf3c1dbeb942273a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1a3f8cd32d8d69f713bf3c1dbeb942273a" kindref="member">changeset_ty</ref><sp/>=<sp/>std::set&lt;change_ty&gt;;</highlight></codeline>
+<codeline lineno="47" refid="classllvm_1_1_d_a_g_delta_algorithm_1a2ef67c22dd53f113a1efa84a39ce14da" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1a2ef67c22dd53f113a1efa84a39ce14da" kindref="member">changesetlist_ty</ref><sp/>=<sp/>std::vector&lt;changeset_ty&gt;;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50" refid="classllvm_1_1_d_a_g_delta_algorithm_1acb9bf7f6f4b974912a37ab46382cafe4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1acb9bf7f6f4b974912a37ab46382cafe4" kindref="member">~DAGDeltaAlgorithm</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/>///<sp/>Run<sp/>-<sp/>Minimize<sp/>the<sp/>DAG<sp/>formed<sp/>by<sp/>the<sp/>\p<sp/>Changes<sp/>vertices<sp/>and<sp/>the</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/>///<sp/>\p<sp/>Dependencies<sp/>edges<sp/>by<sp/>executing<sp/>\see<sp/>ExecuteOneTest()<sp/>on<sp/>subsets<sp/>of</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/>///<sp/>changes<sp/>and<sp/>returning<sp/>the<sp/>smallest<sp/>set<sp/>which<sp/>still<sp/>satisfies<sp/>the<sp/>test</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/>///<sp/>predicate<sp/>and<sp/>the<sp/>input<sp/>\p<sp/>Dependencies.</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/>///</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/>///<sp/>\param<sp/>Changes<sp/>The<sp/>list<sp/>of<sp/>changes.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/>///</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/>///<sp/>\param<sp/>Dependencies<sp/>The<sp/>list<sp/>of<sp/>dependencies<sp/>amongst<sp/>changes.<sp/>For<sp/>each</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/>///<sp/>(x,y)<sp/>in<sp/>\p<sp/>Dependencies,<sp/>both<sp/>x<sp/>and<sp/>y<sp/>must<sp/>be<sp/>in<sp/>\p<sp/>Changes.<sp/>The</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/>///<sp/>minimization<sp/>algorithm<sp/>guarantees<sp/>that<sp/>for<sp/>each<sp/>tested<sp/>changed<sp/>set<sp/>S,</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/>///<sp/>\f$<sp/>x<sp/>\in<sp/>S<sp/>\f$<sp/>implies<sp/>\f$<sp/>y<sp/>\in<sp/>S<sp/>\f$.<sp/>It<sp/>is<sp/>an<sp/>error<sp/>to<sp/>have<sp/>cyclic</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/>///<sp/>dependencies.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1a3f8cd32d8d69f713bf3c1dbeb942273a" kindref="member">changeset_ty</ref><sp/><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1ad81448e27f4064d1df0bc1b6d816e65a" kindref="member">Run</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1a3f8cd32d8d69f713bf3c1dbeb942273a" kindref="member">changeset_ty</ref><sp/>&amp;Changes,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;edge_ty&gt;<sp/>&amp;Dependencies);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/>///<sp/>UpdatedSearchState<sp/>-<sp/>Callback<sp/>used<sp/>when<sp/>the<sp/>search<sp/>state<sp/>changes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classllvm_1_1_d_a_g_delta_algorithm_1a99839595939902668e36df8ee1719c0e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1a99839595939902668e36df8ee1719c0e" kindref="member">UpdatedSearchState</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1a3f8cd32d8d69f713bf3c1dbeb942273a" kindref="member">changeset_ty</ref><sp/>&amp;Changes,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1a2ef67c22dd53f113a1efa84a39ce14da" kindref="member">changesetlist_ty</ref><sp/>&amp;Sets,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1a3f8cd32d8d69f713bf3c1dbeb942273a" kindref="member">changeset_ty</ref><sp/>&amp;Required)<sp/>{}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/>///<sp/>ExecuteOneTest<sp/>-<sp/>Execute<sp/>a<sp/>single<sp/>test<sp/>predicate<sp/>on<sp/>the<sp/>change<sp/>set<sp/>\p<sp/>S.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classllvm_1_1_d_a_g_delta_algorithm_1a2ce094907b560cfd137fc68897103e48" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1a2ce094907b560cfd137fc68897103e48" kindref="member">ExecuteOneTest</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_d_a_g_delta_algorithm_1a3f8cd32d8d69f713bf3c1dbeb942273a" kindref="member">changeset_ty</ref><sp/>&amp;S)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_ADT_DAGDELTAALGORITHM_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/ADT/DAGDeltaAlgorithm.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1606 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_value_enumerator" kind="class" language="C++" prot="public">
+    <compoundname>llvm::ValueEnumerator</compoundname>
+    <includes refid="_value_enumerator_8h" local="yes">Bitcode/Writer/ValueEnumerator.h</includes>
+    <innerclass refid="structllvm_1_1_value_enumerator_1_1_m_d_index" prot="private">llvm::ValueEnumerator::MDIndex</innerclass>
+    <innerclass refid="structllvm_1_1_value_enumerator_1_1_m_d_range" prot="private">llvm::ValueEnumerator::MDRange</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_value_enumerator_1af1f12b99eeccb9b1dd4472bcefabad1b" prot="public" static="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> * &gt;</type>
+        <definition>using llvm::ValueEnumerator::TypeList =  std::vector&lt;Type *&gt;</definition>
+        <argsstring></argsstring>
+        <name>TypeList</name>
+        <qualifiedname>llvm::ValueEnumerator::TypeList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="45" column="3" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_value_enumerator_1a0fe0a0018aa9c5260a799727afa6c079" prot="public" static="no">
+        <type>std::vector&lt; std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt;</type>
+        <definition>using llvm::ValueEnumerator::ValueList =  std::vector&lt;std::pair&lt;const Value *, unsigned&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>ValueList</name>
+        <qualifiedname>llvm::ValueEnumerator::ValueList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="48" column="3" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_value_enumerator_1af5fc71f83729ad4bf795aa0ef06b2e11" prot="public" static="no">
+        <type>std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classllvm_1_1_attribute_set" kindref="compound">AttributeSet</ref> &gt;</type>
+        <definition>using llvm::ValueEnumerator::IndexAndAttrSet =  std::pair&lt;unsigned, AttributeSet&gt;</definition>
+        <argsstring></argsstring>
+        <name>IndexAndAttrSet</name>
+        <qualifiedname>llvm::ValueEnumerator::IndexAndAttrSet</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_attribute" kindref="compound">Attribute</ref> groups as encoded in bitcode are almost AttributeSets, but they include the AttributeList index, so we have to track that in our map. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="52" column="3" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_value_enumerator_1af283d5f31e554fdb8bfe561a9607143f" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using llvm::ValueEnumerator::TypeMapType =  DenseMap&lt;Type *, unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>TypeMapType</name>
+        <qualifiedname>llvm::ValueEnumerator::TypeMapType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="57" column="3" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_value_enumerator_1a6a95dd1e61695ded1746d841ef645427" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using llvm::ValueEnumerator::ValueMapType =  DenseMap&lt;const Value *, unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>ValueMapType</name>
+        <qualifiedname>llvm::ValueEnumerator::ValueMapType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="61" column="3" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_value_enumerator_1addb44697a31424f241a43e465c90cb98" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_unique_vector" kindref="compound">UniqueVector</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_comdat" kindref="compound">Comdat</ref> * &gt;</type>
+        <definition>using llvm::ValueEnumerator::ComdatSetType =  UniqueVector&lt;const Comdat *&gt;</definition>
+        <argsstring></argsstring>
+        <name>ComdatSetType</name>
+        <qualifiedname>llvm::ValueEnumerator::ComdatSetType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="65" column="3" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_value_enumerator_1a0f57fb51f818bcea53649c30164c2dac" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> *, MDIndex &gt;</type>
+        <definition>using llvm::ValueEnumerator::MetadataMapType =  DenseMap&lt;const Metadata *, MDIndex&gt;</definition>
+        <argsstring></argsstring>
+        <name>MetadataMapType</name>
+        <qualifiedname>llvm::ValueEnumerator::MetadataMapType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="90" column="3" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_value_enumerator_1a8e8526b8dd88330e78984265441a72bc" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value_enumerator_1af5fc71f83729ad4bf795aa0ef06b2e11" kindref="member">IndexAndAttrSet</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using llvm::ValueEnumerator::AttributeGroupMapType =  DenseMap&lt;IndexAndAttrSet, unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>AttributeGroupMapType</name>
+        <qualifiedname>llvm::ValueEnumerator::AttributeGroupMapType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="108" column="3" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_value_enumerator_1a852c4c689a6350e0d99e6d7f36638dc6" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; AttributeList, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using llvm::ValueEnumerator::AttributeListMapType =  DenseMap&lt;AttributeList, unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>AttributeListMapType</name>
+        <qualifiedname>llvm::ValueEnumerator::AttributeListMapType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="112" column="3" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_value_enumerator_1a0ad8e13f386bdddfa36ab0c07736cd21" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using llvm::ValueEnumerator::InstructionMapType =  DenseMap&lt;const Instruction *, unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>InstructionMapType</name>
+        <qualifiedname>llvm::ValueEnumerator::InstructionMapType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="120" column="3" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a27e5f9f24424e3eb4c56c3531f51dad4" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1a9a43e3984f6c051e29ffdf7b92db894f" kindref="member">UseListOrderStack</ref></type>
+        <definition>UseListOrderStack llvm::ValueEnumerator::UseListOrders</definition>
+        <argsstring></argsstring>
+        <name>UseListOrders</name>
+        <qualifiedname>llvm::ValueEnumerator::UseListOrders</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="54" column="21" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_value_enumerator_1a943584f0c65b24cfb9cbbca6d86fa75a" compoundref="_value_enumerator_8cpp" startline="336" endline="501">ValueEnumerator</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a2720caca2f1b1ac0bf7ce65df4b8d04a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">TypeMapType</ref></type>
+        <definition>TypeMapType llvm::ValueEnumerator::TypeMap</definition>
+        <argsstring></argsstring>
+        <name>TypeMap</name>
+        <qualifiedname>llvm::ValueEnumerator::TypeMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="58" column="15" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1af6e057ba623a8d9588c8ddc46642294f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_value_enumerator_1af1f12b99eeccb9b1dd4472bcefabad1b" kindref="member">TypeList</ref></type>
+        <definition>TypeList llvm::ValueEnumerator::Types</definition>
+        <argsstring></argsstring>
+        <name>Types</name>
+        <qualifiedname>llvm::ValueEnumerator::Types</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="59" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a224174d837033363c68fba0a5fc4681e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">ValueMapType</ref></type>
+        <definition>ValueMapType llvm::ValueEnumerator::ValueMap</definition>
+        <argsstring></argsstring>
+        <name>ValueMap</name>
+        <qualifiedname>llvm::ValueEnumerator::ValueMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="62" column="16" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a74725e29b724c7643ba2f18b64365cfa" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_value_enumerator_1a0fe0a0018aa9c5260a799727afa6c079" kindref="member">ValueList</ref></type>
+        <definition>ValueList llvm::ValueEnumerator::Values</definition>
+        <argsstring></argsstring>
+        <name>Values</name>
+        <qualifiedname>llvm::ValueEnumerator::Values</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="63" column="13" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a7277e108b5ede042e772928ea7934e0d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_unique_vector" kindref="compound">ComdatSetType</ref></type>
+        <definition>ComdatSetType llvm::ValueEnumerator::Comdats</definition>
+        <argsstring></argsstring>
+        <name>Comdats</name>
+        <qualifiedname>llvm::ValueEnumerator::Comdats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="66" column="17" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a71cc8a76bd71dcbb9c6b5dff2116f263" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> * &gt;</type>
+        <definition>std::vector&lt;const Metadata *&gt; llvm::ValueEnumerator::MDs</definition>
+        <argsstring></argsstring>
+        <name>MDs</name>
+        <qualifiedname>llvm::ValueEnumerator::MDs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="68" column="15" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a38c45f24423481b3c0d14b75a9226122" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> * &gt;</type>
+        <definition>std::vector&lt;const Metadata *&gt; llvm::ValueEnumerator::FunctionMDs</definition>
+        <argsstring></argsstring>
+        <name>FunctionMDs</name>
+        <qualifiedname>llvm::ValueEnumerator::FunctionMDs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="69" column="15" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a1920cae2187a4ea1a4c38e371edfc5c5" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">MetadataMapType</ref></type>
+        <definition>MetadataMapType llvm::ValueEnumerator::MetadataMap</definition>
+        <argsstring></argsstring>
+        <name>MetadataMap</name>
+        <qualifiedname>llvm::ValueEnumerator::MetadataMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="91" column="19" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1ac5c8daebd322f2f7f037d7efb218a670" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, MDRange, 1 &gt;</type>
+        <definition>SmallDenseMap&lt;unsigned, MDRange, 1&gt; llvm::ValueEnumerator::FunctionMDInfo</definition>
+        <argsstring></argsstring>
+        <name>FunctionMDInfo</name>
+        <qualifiedname>llvm::ValueEnumerator::FunctionMDInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="104" column="17" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a3086a14e003a1227cd6303f34a635cb3" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::ValueEnumerator::ShouldPreserveUseListOrder</definition>
+        <argsstring></argsstring>
+        <name>ShouldPreserveUseListOrder</name>
+        <qualifiedname>llvm::ValueEnumerator::ShouldPreserveUseListOrder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="106" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a90752fec6e0aefcc61b8ba3afb32c68e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">AttributeGroupMapType</ref></type>
+        <definition>AttributeGroupMapType llvm::ValueEnumerator::AttributeGroupMap</definition>
+        <argsstring></argsstring>
+        <name>AttributeGroupMap</name>
+        <qualifiedname>llvm::ValueEnumerator::AttributeGroupMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="109" column="25" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a057d18458633de9b8e85d6ddb8b1f4ab" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_value_enumerator_1af5fc71f83729ad4bf795aa0ef06b2e11" kindref="member">IndexAndAttrSet</ref> &gt;</type>
+        <definition>std::vector&lt;IndexAndAttrSet&gt; llvm::ValueEnumerator::AttributeGroups</definition>
+        <argsstring></argsstring>
+        <name>AttributeGroups</name>
+        <qualifiedname>llvm::ValueEnumerator::AttributeGroups</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="110" column="15" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1ad1d65256eb69e99e30667e0097791cfa" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">AttributeListMapType</ref></type>
+        <definition>AttributeListMapType llvm::ValueEnumerator::AttributeListMap</definition>
+        <argsstring></argsstring>
+        <name>AttributeListMap</name>
+        <qualifiedname>llvm::ValueEnumerator::AttributeListMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="113" column="24" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a77105779fce13170a12cf6bb7c324354" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; AttributeList &gt;</type>
+        <definition>std::vector&lt;AttributeList&gt; llvm::ValueEnumerator::AttributeLists</definition>
+        <argsstring></argsstring>
+        <name>AttributeLists</name>
+        <qualifiedname>llvm::ValueEnumerator::AttributeLists</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="114" column="15" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1aa2c02208f816b9c7243770a05b76c2ba" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>DenseMap&lt;const BasicBlock*, unsigned&gt; llvm::ValueEnumerator::GlobalBasicBlockIDs</definition>
+        <argsstring></argsstring>
+        <name>GlobalBasicBlockIDs</name>
+        <qualifiedname>llvm::ValueEnumerator::GlobalBasicBlockIDs</qualifiedname>
+        <briefdescription>
+<para>GlobalBasicBlockIDs - This map memoizes the basic block <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>&apos;s referenced by the &quot;getGlobalBasicBlockID&quot; method. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="118" column="20" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1abc7834ac383aee98212d47ddd01793a9" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">InstructionMapType</ref></type>
+        <definition>InstructionMapType llvm::ValueEnumerator::InstructionMap</definition>
+        <argsstring></argsstring>
+        <name>InstructionMap</name>
+        <qualifiedname>llvm::ValueEnumerator::InstructionMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="121" column="22" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1aa84fb678cc9d7984417c75da7b8d0d4f" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::InstructionCount</definition>
+        <argsstring></argsstring>
+        <name>InstructionCount</name>
+        <qualifiedname>llvm::ValueEnumerator::InstructionCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="122" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1ac8ac5d98c1118c2b4bbb13d7eed29184" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt;</type>
+        <definition>std::vector&lt;const BasicBlock*&gt; llvm::ValueEnumerator::BasicBlocks</definition>
+        <argsstring></argsstring>
+        <name>BasicBlocks</name>
+        <qualifiedname>llvm::ValueEnumerator::BasicBlocks</qualifiedname>
+        <briefdescription>
+<para>BasicBlocks - This contains all the basic blocks for the currently incorporated function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Their reverse mapping is stored in <ref refid="classllvm_1_1_value_map" kindref="compound">ValueMap</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="126" column="15" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1aed77be025b00fbb7c4da3220b0123da6" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::NumModuleValues</definition>
+        <argsstring></argsstring>
+        <name>NumModuleValues</name>
+        <qualifiedname>llvm::ValueEnumerator::NumModuleValues</qualifiedname>
+        <briefdescription>
+<para>When a function is incorporated, this is the size of the Values list before incorporation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="130" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1ad704949d243b045f64e14abca813a15c" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::NumModuleMDs</definition>
+        <argsstring></argsstring>
+        <name>NumModuleMDs</name>
+        <qualifiedname>llvm::ValueEnumerator::NumModuleMDs</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>When a function is incorporated, this is the size of the Metadatas list before incorporation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="134" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a81350572e774daea53bf8a867a55b914" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::NumMDStrings</definition>
+        <argsstring></argsstring>
+        <name>NumMDStrings</name>
+        <qualifiedname>llvm::ValueEnumerator::NumMDStrings</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="135" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1acaf8fb2770819105dd1e2d7540da7c33" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::FirstFuncConstantID</definition>
+        <argsstring></argsstring>
+        <name>FirstFuncConstantID</name>
+        <qualifiedname>llvm::ValueEnumerator::FirstFuncConstantID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="137" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_value_enumerator_1a59311be03ac1bcf0b9f66a8e7fa02ccd" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::FirstInstID</definition>
+        <argsstring></argsstring>
+        <name>FirstInstID</name>
+        <qualifiedname>llvm::ValueEnumerator::FirstInstID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="138" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a943584f0c65b24cfb9cbbca6d86fa75a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ValueEnumerator::ValueEnumerator</definition>
+        <argsstring>(const Module &amp;M, bool ShouldPreserveUseListOrder)</argsstring>
+        <name>ValueEnumerator</name>
+        <qualifiedname>llvm::ValueEnumerator::ValueEnumerator</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ShouldPreserveUseListOrder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="141" column="3" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="336" bodyend="501"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="group___a_r_c_opt_1ga9c9cf6ad55eb23d77d083a184e416c09" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2363">Call</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="_a_arch64_expand_pseudo_insts_8cpp_1a4cfc8b177e8521a4b496ae2edff6244f" compoundref="_a_arch64_expand_pseudo_insts_8cpp" startline="115" endline="122">for</references>
+        <references refid="_hexagon_common_g_e_p_8cpp_1ad532e8710e50302e0a376b61c91fa91d" compoundref="_hexagon_common_g_e_p_8cpp" startline="170">GEP</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1afa6b67c30dd439d0c3a04af3e81252e6" compoundref="_debug_program_instruction_8h" startline="514" endline="514">llvm::DbgVariableRecord::getAddressExpression</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1a4df534a195fe4df5fc7c2eaf2a96bd97" compoundref="_debug_program_instruction_8cpp" startline="485" endline="487">llvm::DbgVariableRecord::getAssignID</references>
+        <references refid="classllvm_1_1_dbg_record_1a3a0f4e00c3f6345c52c6acd178b3fca3" compoundref="_debug_program_instruction_8h" startline="208" endline="208">llvm::DbgRecord::getDebugLoc</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1a8ec5a479378113fc24b647afa2f06ee5" compoundref="_debug_program_instruction_8h" startline="453" endline="453">llvm::DbgVariableRecord::getExpression</references>
+        <references refid="classllvm_1_1_type_1a28fdf240b8220065bc60d6d1b1a2f174" compoundref="_sandbox_i_r_2_type_8cpp" startline="277" endline="277">llvm::Type::getMetadataTy</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1ad76c901f38759f560144bafef2c598be" compoundref="_debug_program_instruction_8h" startline="509" endline="511">llvm::DbgVariableRecord::getRawAddress</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1ab9edb568c54e87f08484a5f46e399bee" compoundref="_debug_program_instruction_8h" startline="460" endline="460">llvm::DbgVariableRecord::getRawLocation</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1aa774c62045e74bb457b32713c0670696" compoundref="_debug_program_instruction_8h" startline="449" endline="449">llvm::DbgVariableRecord::getVariable</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1_dbg_variable_record_1a8e44c4d5de5d1134497e3ca3b922c535" compoundref="_debug_program_instruction_8h" startline="506" endline="506">llvm::DbgVariableRecord::isDbgAssign</references>
+        <references refid="_value_enumerator_8cpp_1a9e9ff0c61346a6511c2f5eef7704c99e" compoundref="_value_enumerator_8cpp" startline="258" endline="330">predictUseListOrder</references>
+        <references refid="classllvm_1_1_value_enumerator_1a27e5f9f24424e3eb4c56c3531f51dad4" compoundref="_value_enumerator_8h" startline="54">UseListOrders</references>
+        <referencedby refid="classllvm_1_1_value_enumerator_1add3a39b068cffb1efce95ed3be2ca002">operator=</referencedby>
+        <referencedby refid="classllvm_1_1_value_enumerator_1aa788a79a456b2782b6eb28355e60ed20">ValueEnumerator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1aa788a79a456b2782b6eb28355e60ed20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ValueEnumerator::ValueEnumerator</definition>
+        <argsstring>(const ValueEnumerator &amp;)=delete</argsstring>
+        <name>ValueEnumerator</name>
+        <qualifiedname>llvm::ValueEnumerator::ValueEnumerator</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value_enumerator" kindref="compound">ValueEnumerator</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="142" column="3"/>
+        <references refid="classllvm_1_1_value_enumerator_1a943584f0c65b24cfb9cbbca6d86fa75a" compoundref="_value_enumerator_8cpp" startline="336" endline="501">ValueEnumerator</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1add3a39b068cffb1efce95ed3be2ca002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value_enumerator" kindref="compound">ValueEnumerator</ref> &amp;</type>
+        <definition>ValueEnumerator &amp; llvm::ValueEnumerator::operator=</definition>
+        <argsstring>(const ValueEnumerator &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::ValueEnumerator::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value_enumerator" kindref="compound">ValueEnumerator</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="143" column="19"/>
+        <references refid="classllvm_1_1_value_enumerator_1a943584f0c65b24cfb9cbbca6d86fa75a" compoundref="_value_enumerator_8cpp" startline="336" endline="501">ValueEnumerator</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1ab12a7ef156bf7b362cc00571276f2f1a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void ValueEnumerator::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::ValueEnumerator::dump</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="145" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="529" bodyend="534"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" compoundref="_compiler_8h" startline="622">LLVM_DUMP_METHOD</references>
+        <references refid="classllvm_1_1_value_enumerator_1a29d1924e4ba18c2dcbb6af2582f889a3" compoundref="_value_enumerator_8cpp" startline="537" endline="562">print</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a29d1924e4ba18c2dcbb6af2582f889a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::print</definition>
+        <argsstring>(raw_ostream &amp;OS, const ValueMapType &amp;Map, const char *Name) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::ValueEnumerator::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_map" kindref="compound">ValueMapType</ref> &amp;</type>
+          <declname>Map</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="146" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="537" bodyend="562"/>
+        <references refid="namespacellvm_1a9a7b5c68c90f85baaedaa854cc5002cc" compoundref="raw__ostream_8cpp" startline="907" endline="915">llvm::errs</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_value_1abf855b7cd63a0cd7f73759e396f280c9" compoundref="_i_r_2_value_8h" startline="376" endline="379">llvm::Value::uses</references>
+        <referencedby refid="classllvm_1_1_value_enumerator_1ab12a7ef156bf7b362cc00571276f2f1a" compoundref="_value_enumerator_8cpp" startline="529" endline="534">dump</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1abbd8654ef76eb2b675637bfb413b3206" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::print</definition>
+        <argsstring>(raw_ostream &amp;OS, const MetadataMapType &amp;Map, const char *Name) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::ValueEnumerator::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_map" kindref="compound">MetadataMapType</ref> &amp;</type>
+          <declname>Map</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="147" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="564" bodyend="575"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_metadata_1a451513f65fe632b0369c9f016117263f" compoundref="_asm_writer_8cpp" startline="5260" endline="5264">llvm::Metadata::print</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1aa8995efa03208a92f2a60121c5e1e4f7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned ValueEnumerator::getValueID</definition>
+        <argsstring>(const Value *V) const</argsstring>
+        <name>getValueID</name>
+        <qualifiedname>llvm::ValueEnumerator::getValueID</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="150" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="519" bodyend="526"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_value_enumerator_1a25b2bdd945dcdf12c242c190f25555d7" compoundref="_value_enumerator_8h" startline="152" endline="156">getMetadataID</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a25b2bdd945dcdf12c242c190f25555d7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::getMetadataID</definition>
+        <argsstring>(const Metadata *MD) const</argsstring>
+        <name>getMetadataID</name>
+        <qualifiedname>llvm::ValueEnumerator::getMetadataID</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> *</type>
+          <declname>MD</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="152" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="152" bodyend="156"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_value_enumerator_1ab12ac70e4fd06132bb14e64da12c6a3b" compoundref="_value_enumerator_8h" startline="158" endline="160">getMetadataOrNullID</references>
+        <referencedby refid="classllvm_1_1_value_enumerator_1aa8995efa03208a92f2a60121c5e1e4f7" compoundref="_value_enumerator_8cpp" startline="519" endline="526">getValueID</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1ab12ac70e4fd06132bb14e64da12c6a3b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::getMetadataOrNullID</definition>
+        <argsstring>(const Metadata *MD) const</argsstring>
+        <name>getMetadataOrNullID</name>
+        <qualifiedname>llvm::ValueEnumerator::getMetadataOrNullID</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> *</type>
+          <declname>MD</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="158" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="158" bodyend="160"/>
+        <referencedby refid="classllvm_1_1_value_enumerator_1a25b2bdd945dcdf12c242c190f25555d7" compoundref="_value_enumerator_8h" startline="152" endline="156">getMetadataID</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1ac8bbac7078e77a71361582c9321379bf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::numMDs</definition>
+        <argsstring>() const</argsstring>
+        <name>numMDs</name>
+        <qualifiedname>llvm::ValueEnumerator::numMDs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="162" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="162" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1ae5825d8cecd3c5c0d9f76812f1876e8f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::ValueEnumerator::shouldPreserveUseListOrder</definition>
+        <argsstring>() const</argsstring>
+        <name>shouldPreserveUseListOrder</name>
+        <qualifiedname>llvm::ValueEnumerator::shouldPreserveUseListOrder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="164" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="164" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a11b9e986e58deb839cfdbb43d1ea7119" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::getTypeID</definition>
+        <argsstring>(Type *T) const</argsstring>
+        <name>getTypeID</name>
+        <qualifiedname>llvm::ValueEnumerator::getTypeID</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>T</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="166" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="166" bodyend="170"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a5508ff6840940dced6b0e976fe7f9d90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned ValueEnumerator::getInstructionID</definition>
+        <argsstring>(const Instruction *I) const</argsstring>
+        <name>getInstructionID</name>
+        <qualifiedname>llvm::ValueEnumerator::getInstructionID</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="172" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="503" bodyend="507"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1ac60b56471e50c15103d54d2352b0549a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::setInstructionID</definition>
+        <argsstring>(const Instruction *I)</argsstring>
+        <name>setInstructionID</name>
+        <qualifiedname>llvm::ValueEnumerator::setInstructionID</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="173" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="515" bodyend="517"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a62665f1ab639a21566eb89d827446efc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::getAttributeListID</definition>
+        <argsstring>(AttributeList PAL) const</argsstring>
+        <name>getAttributeListID</name>
+        <qualifiedname>llvm::ValueEnumerator::getAttributeListID</qualifiedname>
+        <param>
+          <type>AttributeList</type>
+          <declname>PAL</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="175" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="175" bodyend="180"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a8cf159002e0149edd7556094a1588591" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ValueEnumerator::getAttributeGroupID</definition>
+        <argsstring>(IndexAndAttrSet Group) const</argsstring>
+        <name>getAttributeGroupID</name>
+        <qualifiedname>llvm::ValueEnumerator::getAttributeGroupID</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value_enumerator_1af5fc71f83729ad4bf795aa0ef06b2e11" kindref="member">IndexAndAttrSet</ref></type>
+          <declname>Group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="182" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="182" bodyend="188"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a72bb86567504661cc89bc6ef6ba11d35" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::ValueEnumerator::getFunctionConstantRange</definition>
+        <argsstring>(unsigned &amp;Start, unsigned &amp;End) const</argsstring>
+        <name>getFunctionConstantRange</name>
+        <qualifiedname>llvm::ValueEnumerator::getFunctionConstantRange</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>Start</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>End</declname>
+        </param>
+        <briefdescription>
+<para>getFunctionConstantRange - Return the range of values that corresponds to function-local constants. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="192" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1ab8cb7b0aca5c341264be5b60fdd31a08" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value_enumerator_1a0fe0a0018aa9c5260a799727afa6c079" kindref="member">ValueList</ref> &amp;</type>
+        <definition>const ValueList &amp; llvm::ValueEnumerator::getValues</definition>
+        <argsstring>() const</argsstring>
+        <name>getValues</name>
+        <qualifiedname>llvm::ValueEnumerator::getValues</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="197" column="19" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="197" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a92dcc85a07df47f111ec62d6f736d0d6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::ValueEnumerator::hasMDs</definition>
+        <argsstring>() const</argsstring>
+        <name>hasMDs</name>
+        <qualifiedname>llvm::ValueEnumerator::hasMDs</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> whether the current block has any metadata to emit. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="200" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="200" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1af3c334aa19a2653c2248e16fdbf7baa5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> * &gt;</type>
+        <definition>ArrayRef&lt; const Metadata * &gt; llvm::ValueEnumerator::getMDStrings</definition>
+        <argsstring>() const</argsstring>
+        <name>getMDStrings</name>
+        <qualifiedname>llvm::ValueEnumerator::getMDStrings</qualifiedname>
+        <briefdescription>
+<para>Get the <ref refid="classllvm_1_1_m_d_string" kindref="compound">MDString</ref> metadata for this block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="203" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="203" bodyend="205"/>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a326b5159ef65b6cb7ed7e3a6e4d5655f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> * &gt;</type>
+        <definition>ArrayRef&lt; const Metadata * &gt; llvm::ValueEnumerator::getNonMDStrings</definition>
+        <argsstring>() const</argsstring>
+        <name>getNonMDStrings</name>
+        <qualifiedname>llvm::ValueEnumerator::getNonMDStrings</qualifiedname>
+        <briefdescription>
+<para>Get the non-MDString metadata for this block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="208" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="208" bodyend="210"/>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1af6d16622dd1f8f0b633ada0de7364731" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value_enumerator_1af1f12b99eeccb9b1dd4472bcefabad1b" kindref="member">TypeList</ref> &amp;</type>
+        <definition>const TypeList &amp; llvm::ValueEnumerator::getTypes</definition>
+        <argsstring>() const</argsstring>
+        <name>getTypes</name>
+        <qualifiedname>llvm::ValueEnumerator::getTypes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="212" column="18" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="212" bodyend="212"/>
+        <referencedby refid="classllvm_1_1_value_enumerator_1aa64b4492783129ceac44b1cb75eaaac5" compoundref="_value_enumerator_8cpp" startline="1193" endline="1195">computeBitsRequiredForTypeIndices</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1ac739aae0bdbabbf9fd1a43e4f4d4cc63" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> * &gt; &amp;</type>
+        <definition>const std::vector&lt; const BasicBlock * &gt; &amp; llvm::ValueEnumerator::getBasicBlocks</definition>
+        <argsstring>() const</argsstring>
+        <name>getBasicBlocks</name>
+        <qualifiedname>llvm::ValueEnumerator::getBasicBlocks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="214" column="21" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="214" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1acde174184274dbc2a497e51a22c6172e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; AttributeList &gt; &amp;</type>
+        <definition>const std::vector&lt; AttributeList &gt; &amp; llvm::ValueEnumerator::getAttributeLists</definition>
+        <argsstring>() const</argsstring>
+        <name>getAttributeLists</name>
+        <qualifiedname>llvm::ValueEnumerator::getAttributeLists</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="218" column="21" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="218" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1ab31e06173d50f7ea79d89811c424b650" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; <ref refid="classllvm_1_1_value_enumerator_1af5fc71f83729ad4bf795aa0ef06b2e11" kindref="member">IndexAndAttrSet</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; IndexAndAttrSet &gt; &amp; llvm::ValueEnumerator::getAttributeGroups</definition>
+        <argsstring>() const</argsstring>
+        <name>getAttributeGroups</name>
+        <qualifiedname>llvm::ValueEnumerator::getAttributeGroups</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="220" column="21" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="220" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1aee712c8c8a1459cbcee91900c8c984d2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_unique_vector" kindref="compound">ComdatSetType</ref> &amp;</type>
+        <definition>const ComdatSetType &amp; llvm::ValueEnumerator::getComdats</definition>
+        <argsstring>() const</argsstring>
+        <name>getComdats</name>
+        <qualifiedname>llvm::ValueEnumerator::getComdats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="224" column="23" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="224" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1aa3af8c9852371a303793dc10bf5f6b6c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned ValueEnumerator::getComdatID</definition>
+        <argsstring>(const Comdat *C) const</argsstring>
+        <name>getComdatID</name>
+        <qualifiedname>llvm::ValueEnumerator::getComdatID</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_comdat" kindref="compound">Comdat</ref> *</type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="225" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="509" bodyend="513"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1ac26f6dabdd4fbb3288de35fce6b62422" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned ValueEnumerator::getGlobalBasicBlockID</definition>
+        <argsstring>(const BasicBlock *BB) const</argsstring>
+        <name>getGlobalBasicBlockID</name>
+        <qualifiedname>llvm::ValueEnumerator::getGlobalBasicBlockID</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+<para>getGlobalBasicBlockID - This returns the function-specific <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> for the specified basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is relatively expensive information, so it should only be used by rare constructs such as address-of-label. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="230" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="1184" bodyend="1191"/>
+        <references refid="classllvm_1_1_value_enumerator_1ac26f6dabdd4fbb3288de35fce6b62422" compoundref="_value_enumerator_8cpp" startline="1184" endline="1191">getGlobalBasicBlockID</references>
+        <references refid="classllvm_1_1_basic_block_1a1b4bf7c97cdc8159fd73d48063f0b250" compoundref="_i_r_2_basic_block_8h" startline="220" endline="220">llvm::BasicBlock::getParent</references>
+        <references refid="_value_enumerator_8cpp_1aa87138f9cc6039f404d5515371aac79a" compoundref="_value_enumerator_8cpp" startline="1174" endline="1179">IncorporateFunctionInfoGlobalBBIDs</references>
+        <referencedby refid="classllvm_1_1_value_enumerator_1ac26f6dabdd4fbb3288de35fce6b62422" compoundref="_value_enumerator_8cpp" startline="1184" endline="1191">getGlobalBasicBlockID</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a65f17f248759abd6b10991fba10a0a59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::incorporateFunction</definition>
+        <argsstring>(const Function &amp;F)</argsstring>
+        <name>incorporateFunction</name>
+        <qualifiedname>llvm::ValueEnumerator::incorporateFunction</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>incorporateFunction/purgeFunction - If you&apos;d like to deal with a function, use these two methods to get its data into the ValueEnumerator! </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>RemoveDIs: Add non-instruction function-local metadata uses.</para>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="234" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="1058" bodyend="1157"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="namespacellvm_1ae876eb96b89c1afcc3e9cd285cc3f08c" compoundref="_debug_program_instruction_8h" startline="555" endline="560">llvm::filterDbgVars</references>
+        <references refid="classllvm_1_1_d_i_arg_list_1a041fb5009dc16dbda18567dd4aa4f76e" compoundref="_debug_info_metadata_8h" startline="3997" endline="3997">llvm::DIArgList::getArgs</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="_global_merge_functions_8h_1a54f7429fa5826ff9909619b76d2bf319a509820290d57f333403f490dde7316f4" compoundref="_global_merge_functions_8h" startline="34">Local</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1ae809efbf4c13847ac23b06f2228427f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::purgeFunction</definition>
+        <argsstring>()</argsstring>
+        <name>purgeFunction</name>
+        <qualifiedname>llvm::ValueEnumerator::purgeFunction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Remove purged values from the <ref refid="classllvm_1_1_value_map" kindref="compound">ValueMap</ref>.</para>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="236" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="1159" bodyend="1172"/>
+        <references refid="namespacellvm_1a02981de53fb6ffd384d39addc4d25f37" compoundref="_s_t_l_extras_8h" startline="329" endline="332">llvm::drop_begin</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1aa64b4492783129ceac44b1cb75eaaac5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t ValueEnumerator::computeBitsRequiredForTypeIndices</definition>
+        <argsstring>() const</argsstring>
+        <name>computeBitsRequiredForTypeIndices</name>
+        <qualifiedname>llvm::ValueEnumerator::computeBitsRequiredForTypeIndices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="237" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="1193" bodyend="1195"/>
+        <references refid="classllvm_1_1_value_enumerator_1af6d16622dd1f8f0b633ada0de7364731" compoundref="_value_enumerator_8h" startline="212" endline="212">getTypes</references>
+        <references refid="namespacellvm_1a058782b98991f0719657d9008d3df41b" compoundref="_math_extras_8h" startline="354" endline="356">llvm::Log2_32_Ceil</references>
+        <references refid="_n_v_v_m_reflect_8cpp_1ac934769d93af95250952646a3829df4c">size</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a793bb5686d6ba4dd25437fce4a23cfa1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::OptimizeConstants</definition>
+        <argsstring>(unsigned CstStart, unsigned CstEnd)</argsstring>
+        <name>OptimizeConstants</name>
+        <qualifiedname>llvm::ValueEnumerator::OptimizeConstants</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CstStart</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CstEnd</declname>
+        </param>
+        <briefdescription>
+<para>OptimizeConstants - Reorder constant pool for denser encoding. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="240" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="578" bodyend="605"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a8f8c52d27ad477e64e2a256bcec26686" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::organizeMetadata</definition>
+        <argsstring>()</argsstring>
+        <name>organizeMetadata</name>
+        <qualifiedname>llvm::ValueEnumerator::organizeMetadata</qualifiedname>
+        <briefdescription>
+<para>Reorder the reachable metadata. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is not just an optimization, but is mandatory for emitting <ref refid="classllvm_1_1_m_d_string" kindref="compound">MDString</ref> correctly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="246" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="824" bodyend="892"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a36bd3a4328f41b13e1de6d17151ece6d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::dropFunctionFromMetadata</definition>
+        <argsstring>(MetadataMapType::value_type &amp;FirstMD)</argsstring>
+        <name>dropFunctionFromMetadata</name>
+        <qualifiedname>llvm::ValueEnumerator::dropFunctionFromMetadata</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map_base_1ab3749c7aa991a9067aa4d209d0f9191f" kindref="member">MetadataMapType::value_type</ref> &amp;</type>
+          <declname>FirstMD</declname>
+        </param>
+        <briefdescription>
+<para>Drop the function tag from the transitive operands of the given node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="249" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="645" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a62eb3fbb3bbcac785111bc10da9ec431" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::incorporateFunctionMetadata</definition>
+        <argsstring>(const Function &amp;F)</argsstring>
+        <name>incorporateFunctionMetadata</name>
+        <qualifiedname>llvm::ValueEnumerator::incorporateFunctionMetadata</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Incorporate the function metadata. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This should be called before enumerating <ref refid="classllvm_1_1_local_as_metadata" kindref="compound">LocalAsMetadata</ref> for the function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="255" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="894" bodyend="901"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a06d64555fb6b13a5637c3894cc6138dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_d_node" kindref="compound">MDNode</ref> *</type>
+        <definition>const MDNode * ValueEnumerator::enumerateMetadataImpl</definition>
+        <argsstring>(unsigned F, const Metadata *MD)</argsstring>
+        <name>enumerateMetadataImpl</name>
+        <qualifiedname>llvm::ValueEnumerator::enumerateMetadataImpl</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> *</type>
+          <declname>MD</declname>
+        </param>
+        <briefdescription>
+<para>Enumerate a single instance of metadata with the given function tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>MD</computeroutput> has already been enumerated, check that <computeroutput>F</computeroutput> matches its function tag. If not, call <emphasis>dropFunctionFromMetadata()</emphasis>.</para>
+<para>Otherwise, mark <computeroutput>MD</computeroutput> as visited. Assign it an <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>, or just return it if it&apos;s an <emphasis><ref refid="classllvm_1_1_m_d_node" kindref="compound">MDNode</ref></emphasis>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="264" column="16" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="723" bodyend="753"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a2148ad40a1cb30d76db49f9cfe3e086e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned ValueEnumerator::getMetadataFunctionID</definition>
+        <argsstring>(const Function *F) const</argsstring>
+        <name>getMetadataFunctionID</name>
+        <qualifiedname>llvm::ValueEnumerator::getMetadataFunctionID</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="266" column="12" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="627" bodyend="629"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a9881b6ffb82b3b5fe903bbb205488446" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateMetadata</definition>
+        <argsstring>(const Function *F, const Metadata *MD)</argsstring>
+        <name>EnumerateMetadata</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateMetadata</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> *</type>
+          <declname>MD</declname>
+        </param>
+        <briefdescription>
+<para>Enumerate reachable metadata in (almost) post-order. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Enumerate all the metadata reachable from MD. We want to minimize the cost of reading bitcode records, and so the primary consideration is that operands of uniqued nodes are resolved before the nodes are read. This avoids re-uniquing them on the context and factors away RAUW support.</para>
+<para>This algorithm guarantees that subgraphs of uniqued nodes are in post-order. Distinct subgraphs reachable only from a single uniqued node will be in post-order.</para>
+<para><simplesect kind="note"><para>The relative order of a distinct and uniqued node is irrelevant. <emphasis>organizeMetadata()</emphasis> will later partition distinct nodes ahead of uniqued ones. { </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="283" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="631" bodyend="633"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1af2a953094acc4dccf48f7c83df65b3c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateMetadata</definition>
+        <argsstring>(unsigned F, const Metadata *MD)</argsstring>
+        <name>EnumerateMetadata</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateMetadata</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> *</type>
+          <declname>MD</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="284" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="675" bodyend="721"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a9b50f9a1aab2d67037233cb098fc245b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateFunctionLocalMetadata</definition>
+        <argsstring>(const Function &amp;F, const LocalAsMetadata *Local)</argsstring>
+        <name>EnumerateFunctionLocalMetadata</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateFunctionLocalMetadata</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_local_as_metadata" kindref="compound">LocalAsMetadata</ref> *</type>
+          <declname>Local</declname>
+        </param>
+        <briefdescription>
+<para>} </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="287" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="635" bodyend="638"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a517700cce274b3583b4841fe235e87f4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateFunctionLocalMetadata</definition>
+        <argsstring>(unsigned F, const LocalAsMetadata *Local)</argsstring>
+        <name>EnumerateFunctionLocalMetadata</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateFunctionLocalMetadata</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_local_as_metadata" kindref="compound">LocalAsMetadata</ref> *</type>
+          <declname>Local</declname>
+        </param>
+        <briefdescription>
+<para>EnumerateFunctionLocalMetadata - Incorporate function-local metadata information reachable from the metadata. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="289" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="757" bodyend="773"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a0f6603be71284756910e0f619ba35224" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateFunctionLocalListMetadata</definition>
+        <argsstring>(const Function &amp;F, const DIArgList *ArgList)</argsstring>
+        <name>EnumerateFunctionLocalListMetadata</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateFunctionLocalListMetadata</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_i_arg_list" kindref="compound">DIArgList</ref> *</type>
+          <declname>ArgList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="290" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="640" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1ad8f40b79ca7ca504d4681335d6b0d421" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateFunctionLocalListMetadata</definition>
+        <argsstring>(unsigned F, const DIArgList *Arglist)</argsstring>
+        <name>EnumerateFunctionLocalListMetadata</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateFunctionLocalListMetadata</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_i_arg_list" kindref="compound">DIArgList</ref> *</type>
+          <declname>Arglist</declname>
+        </param>
+        <briefdescription>
+<para>EnumerateFunctionLocalListMetadata - Incorporate function-local metadata information reachable from the metadata. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="292" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="777" bodyend="806"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a093e2461002d34dee73a60e1a2746a10" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateNamedMDNode</definition>
+        <argsstring>(const NamedMDNode *NMD)</argsstring>
+        <name>EnumerateNamedMDNode</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateNamedMDNode</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_named_m_d_node" kindref="compound">NamedMDNode</ref> *</type>
+          <declname>NMD</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="293" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="622" bodyend="625"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a83b088e4df6ce886eb4e08f9e14e6e0d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateValue</definition>
+        <argsstring>(const Value *V)</argsstring>
+        <name>EnumerateValue</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateValue</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="294" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="903" bodyend="955"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a5abbaef3334685ee02bd6c38e13ec548" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateType</definition>
+        <argsstring>(Type *T)</argsstring>
+        <name>EnumerateType</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateType</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>T</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="295" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="958" bodyend="992"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a84c9951b9ce51ff7c3ce086574a98901" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateOperandType</definition>
+        <argsstring>(const Value *V)</argsstring>
+        <name>EnumerateOperandType</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateOperandType</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="296" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="996" bodyend="1026"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a183da3f2db5654778c40010eb4dcac1e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateAttributes</definition>
+        <argsstring>(AttributeList PAL)</argsstring>
+        <name>EnumerateAttributes</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateAttributes</qualifiedname>
+        <param>
+          <type>AttributeList</type>
+          <declname>PAL</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="297" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="1028" bodyend="1056"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1a9c6ae2fdffd44b55d1b13d9f099787b8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateValueSymbolTable</definition>
+        <argsstring>(const ValueSymbolTable &amp;ST)</argsstring>
+        <name>EnumerateValueSymbolTable</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateValueSymbolTable</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value_symbol_table" kindref="compound">ValueSymbolTable</ref> &amp;</type>
+          <declname>ST</declname>
+        </param>
+        <briefdescription>
+<para>EnumerateValueSymbolTable - Insert all of the values in the specified symbol table into the values table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="299" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="609" bodyend="613"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_value_enumerator_1aeb1c603a7b8e162406f196853f3e4031" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ValueEnumerator::EnumerateNamedMetadata</definition>
+        <argsstring>(const Module &amp;M)</argsstring>
+        <name>EnumerateNamedMetadata</name>
+        <qualifiedname>llvm::ValueEnumerator::EnumerateNamedMetadata</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+<para>Insert all of the values referenced by named metadata in the specified module. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="300" column="8" bodyfile="lib/Bitcode/Writer/ValueEnumerator.cpp" bodystart="617" bodyend="620"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::ValueEnumerator</label>
+        <link refid="classllvm_1_1_value_enumerator"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>UseListOrders</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>vector&lt; UseListOrder &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Bitcode/Writer/ValueEnumerator.h" line="43" column="1" bodyfile="lib/Bitcode/Writer/ValueEnumerator.h" bodystart="43" bodyend="301"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_value_enumerator_1a90752fec6e0aefcc61b8ba3afb32c68e" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>AttributeGroupMap</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a8e8526b8dd88330e78984265441a72bc" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>AttributeGroupMapType</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a057d18458633de9b8e85d6ddb8b1f4ab" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>AttributeGroups</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ad1d65256eb69e99e30667e0097791cfa" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>AttributeListMap</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a852c4c689a6350e0d99e6d7f36638dc6" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>AttributeListMapType</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a77105779fce13170a12cf6bb7c324354" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>AttributeLists</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ac8ac5d98c1118c2b4bbb13d7eed29184" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>BasicBlocks</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a7277e108b5ede042e772928ea7934e0d" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>Comdats</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1addb44697a31424f241a43e465c90cb98" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>ComdatSetType</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1aa64b4492783129ceac44b1cb75eaaac5" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>computeBitsRequiredForTypeIndices</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a36bd3a4328f41b13e1de6d17151ece6d" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>dropFunctionFromMetadata</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ab12a7ef156bf7b362cc00571276f2f1a" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a183da3f2db5654778c40010eb4dcac1e" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateAttributes</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a0f6603be71284756910e0f619ba35224" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateFunctionLocalListMetadata</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ad8f40b79ca7ca504d4681335d6b0d421" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateFunctionLocalListMetadata</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a9b50f9a1aab2d67037233cb098fc245b" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateFunctionLocalMetadata</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a517700cce274b3583b4841fe235e87f4" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateFunctionLocalMetadata</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a9881b6ffb82b3b5fe903bbb205488446" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateMetadata</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1af2a953094acc4dccf48f7c83df65b3c0" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateMetadata</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a06d64555fb6b13a5637c3894cc6138dd" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>enumerateMetadataImpl</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a093e2461002d34dee73a60e1a2746a10" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateNamedMDNode</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1aeb1c603a7b8e162406f196853f3e4031" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateNamedMetadata</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a84c9951b9ce51ff7c3ce086574a98901" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateOperandType</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a5abbaef3334685ee02bd6c38e13ec548" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateType</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a83b088e4df6ce886eb4e08f9e14e6e0d" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateValue</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a9c6ae2fdffd44b55d1b13d9f099787b8" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>EnumerateValueSymbolTable</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1acaf8fb2770819105dd1e2d7540da7c33" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>FirstFuncConstantID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a59311be03ac1bcf0b9f66a8e7fa02ccd" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>FirstInstID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ac5c8daebd322f2f7f037d7efb218a670" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>FunctionMDInfo</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a38c45f24423481b3c0d14b75a9226122" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>FunctionMDs</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a8cf159002e0149edd7556094a1588591" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getAttributeGroupID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ab31e06173d50f7ea79d89811c424b650" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getAttributeGroups</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a62665f1ab639a21566eb89d827446efc" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getAttributeListID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1acde174184274dbc2a497e51a22c6172e" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getAttributeLists</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ac739aae0bdbabbf9fd1a43e4f4d4cc63" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getBasicBlocks</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1aa3af8c9852371a303793dc10bf5f6b6c" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getComdatID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1aee712c8c8a1459cbcee91900c8c984d2" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getComdats</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a72bb86567504661cc89bc6ef6ba11d35" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getFunctionConstantRange</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ac26f6dabdd4fbb3288de35fce6b62422" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getGlobalBasicBlockID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a5508ff6840940dced6b0e976fe7f9d90" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getInstructionID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1af3c334aa19a2653c2248e16fdbf7baa5" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getMDStrings</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a2148ad40a1cb30d76db49f9cfe3e086e" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getMetadataFunctionID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a25b2bdd945dcdf12c242c190f25555d7" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getMetadataID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ab12ac70e4fd06132bb14e64da12c6a3b" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getMetadataOrNullID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a326b5159ef65b6cb7ed7e3a6e4d5655f" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getNonMDStrings</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a11b9e986e58deb839cfdbb43d1ea7119" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getTypeID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1af6d16622dd1f8f0b633ada0de7364731" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getTypes</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1aa8995efa03208a92f2a60121c5e1e4f7" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getValueID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ab8cb7b0aca5c341264be5b60fdd31a08" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>getValues</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1aa2c02208f816b9c7243770a05b76c2ba" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>GlobalBasicBlockIDs</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a92dcc85a07df47f111ec62d6f736d0d6" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>hasMDs</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a65f17f248759abd6b10991fba10a0a59" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>incorporateFunction</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a62eb3fbb3bbcac785111bc10da9ec431" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>incorporateFunctionMetadata</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1af5fc71f83729ad4bf795aa0ef06b2e11" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>IndexAndAttrSet</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1aa84fb678cc9d7984417c75da7b8d0d4f" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>InstructionCount</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1abc7834ac383aee98212d47ddd01793a9" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>InstructionMap</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a0ad8e13f386bdddfa36ab0c07736cd21" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>InstructionMapType</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a71cc8a76bd71dcbb9c6b5dff2116f263" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>MDs</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a1920cae2187a4ea1a4c38e371edfc5c5" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>MetadataMap</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a0f57fb51f818bcea53649c30164c2dac" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>MetadataMapType</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ac8bbac7078e77a71361582c9321379bf" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>numMDs</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a81350572e774daea53bf8a867a55b914" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>NumMDStrings</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ad704949d243b045f64e14abca813a15c" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>NumModuleMDs</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1aed77be025b00fbb7c4da3220b0123da6" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>NumModuleValues</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1add3a39b068cffb1efce95ed3be2ca002" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a793bb5686d6ba4dd25437fce4a23cfa1" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>OptimizeConstants</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a8f8c52d27ad477e64e2a256bcec26686" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>organizeMetadata</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a29d1924e4ba18c2dcbb6af2582f889a3" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>print</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1abbd8654ef76eb2b675637bfb413b3206" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>print</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ae809efbf4c13847ac23b06f2228427f1" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>purgeFunction</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ac60b56471e50c15103d54d2352b0549a" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>setInstructionID</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a3086a14e003a1227cd6303f34a635cb3" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>ShouldPreserveUseListOrder</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1ae5825d8cecd3c5c0d9f76812f1876e8f" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>shouldPreserveUseListOrder</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1af1f12b99eeccb9b1dd4472bcefabad1b" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>TypeList</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a2720caca2f1b1ac0bf7ce65df4b8d04a" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>TypeMap</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1af283d5f31e554fdb8bfe561a9607143f" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>TypeMapType</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1af6e057ba623a8d9588c8ddc46642294f" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>Types</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a27e5f9f24424e3eb4c56c3531f51dad4" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>UseListOrders</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a943584f0c65b24cfb9cbbca6d86fa75a" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>ValueEnumerator</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1aa788a79a456b2782b6eb28355e60ed20" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>ValueEnumerator</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a0fe0a0018aa9c5260a799727afa6c079" prot="public" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>ValueList</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a224174d837033363c68fba0a5fc4681e" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>ValueMap</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a6a95dd1e61695ded1746d841ef645427" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>ValueMapType</name></member>
+      <member refid="classllvm_1_1_value_enumerator_1a74725e29b724c7643ba2f18b64365cfa" prot="private" virt="non-virtual"><scope>llvm::ValueEnumerator</scope><name>Values</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

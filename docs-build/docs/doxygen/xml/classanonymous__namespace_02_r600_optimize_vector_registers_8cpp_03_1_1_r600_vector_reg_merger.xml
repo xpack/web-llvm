@@ -1,0 +1,538 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_function_pass" prot="public" virt="non-virtual">llvm::MachineFunctionPass</basecompoundref>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a40dfdc5d06dc5b3b61b00a9805d3c2f4" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, std::vector&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &gt;</type>
+        <definition>using anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::InstructionSetMap =  DenseMap&lt;unsigned, std::vector&lt;MachineInstr *&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>InstructionSetMap</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::InstructionSetMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="76" column="3" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a83e4fcf86f04347d2b2f8dbbb45caf32" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> *</type>
+        <definition>MachineRegisterInfo* anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::MRI</definition>
+        <argsstring></argsstring>
+        <name>MRI</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::MRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="78" column="23" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1aa5186b20ce8e47c7d0c719faeafee87e" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_r600_instr_info" kindref="compound">R600InstrInfo</ref> *</type>
+        <definition>const R600InstrInfo* anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::TII</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="79" column="23" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1ab95c59a32f6fde834544331e8575025a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, <ref refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_reg_seq_info" kindref="compound">RegSeqInfo</ref> &gt;</type>
+        <definition>DenseMap&lt;MachineInstr *, RegSeqInfo&gt; anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::PreviousRegSeq</definition>
+        <argsstring></argsstring>
+        <name>PreviousRegSeq</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::PreviousRegSeq</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="80" column="12" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a228486a3abb493afae7c7b5bb742600a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">InstructionSetMap</ref></type>
+        <definition>InstructionSetMap anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::PreviousRegSeqByReg</definition>
+        <argsstring></argsstring>
+        <name>PreviousRegSeqByReg</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::PreviousRegSeqByReg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="81" column="21" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1aed79696c71212468b1d2f99c745ed689" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">InstructionSetMap</ref></type>
+        <definition>InstructionSetMap anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::PreviousRegSeqByUndefCount</definition>
+        <argsstring></argsstring>
+        <name>PreviousRegSeqByUndefCount</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::PreviousRegSeqByUndefCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="82" column="21" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1acf0b60cf377480871c69b16a87f148a0" prot="public" static="yes" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>R600 Vector Reg false char R600VectorRegMerger::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::ID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="100" column="15" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1ac563bc9da5c2191f570d4603b80a2540" compoundref="_r600_optimize_vector_registers_8cpp" startline="102" endline="102">R600VectorRegMerger</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a15c6e716983144ce230e708cca50d72a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool R600VectorRegMerger::canSwizzle</definition>
+        <argsstring>(const MachineInstr &amp;MI) const</argsstring>
+        <name>canSwizzle</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::canSwizzle</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="84" column="8" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="136" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1aeb0cc81c33f090f31b7124eab6dc3bc3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool R600VectorRegMerger::areAllUsesSwizzeable</definition>
+        <argsstring>(Register Reg) const</argsstring>
+        <name>areAllUsesSwizzeable</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::areAllUsesSwizzeable</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="85" column="8" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="261" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a943f38ab7782cfb2771104dc0337c583" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void R600VectorRegMerger::SwizzleInput</definition>
+        <argsstring>(MachineInstr &amp;, const std::vector&lt; std::pair&lt; unsigned, unsigned &gt; &gt; &amp;RemapChan) const</argsstring>
+        <name>SwizzleInput</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::SwizzleInput</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <defname>MI</defname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt; &amp;</type>
+          <declname>RemapChan</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="86" column="8" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="243" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a20d7b3731f25f57eec01b618ab66d84c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool R600VectorRegMerger::tryMergeVector</definition>
+        <argsstring>(const RegSeqInfo *Untouched, RegSeqInfo *ToMerge, std::vector&lt; std::pair&lt; unsigned, unsigned &gt; &gt; &amp;Remap) const</argsstring>
+        <name>tryMergeVector</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::tryMergeVector</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_reg_seq_info" kindref="compound">RegSeqInfo</ref> *</type>
+          <declname>Untouched</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_reg_seq_info" kindref="compound">RegSeqInfo</ref> *</type>
+          <declname>ToMerge</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt; &amp;</type>
+          <declname>Remap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="88" column="8" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="149" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1adc390cbef302b7a05f5009afee5f863d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool R600VectorRegMerger::tryMergeUsingCommonSlot</definition>
+        <argsstring>(RegSeqInfo &amp;RSI, RegSeqInfo &amp;CompatibleRSI, std::vector&lt; std::pair&lt; unsigned, unsigned &gt; &gt; &amp;RemapChan)</argsstring>
+        <name>tryMergeUsingCommonSlot</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::tryMergeUsingCommonSlot</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_reg_seq_info" kindref="compound">RegSeqInfo</ref> &amp;</type>
+          <declname>RSI</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_reg_seq_info" kindref="compound">RegSeqInfo</ref> &amp;</type>
+          <declname>CompatibleRSI</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt; &amp;</type>
+          <declname>RemapChan</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="90" column="8" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="266" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a1034d137b83977381a1235ac1c3926c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool R600VectorRegMerger::tryMergeUsingFreeSlot</definition>
+        <argsstring>(RegSeqInfo &amp;RSI, RegSeqInfo &amp;CompatibleRSI, std::vector&lt; std::pair&lt; unsigned, unsigned &gt; &gt; &amp;RemapChan)</argsstring>
+        <name>tryMergeUsingFreeSlot</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::tryMergeUsingFreeSlot</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_reg_seq_info" kindref="compound">RegSeqInfo</ref> &amp;</type>
+          <declname>RSI</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_reg_seq_info" kindref="compound">RegSeqInfo</ref> &amp;</type>
+          <declname>CompatibleRSI</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt; &amp;</type>
+          <declname>RemapChan</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="92" column="8" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="286" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a50010e4506c9c7d3900788a071dd7043" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * R600VectorRegMerger::RebuildVector</definition>
+        <argsstring>(RegSeqInfo *MI, const RegSeqInfo *BaseVec, const std::vector&lt; std::pair&lt; unsigned, unsigned &gt; &gt; &amp;RemapChan) const</argsstring>
+        <name>RebuildVector</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::RebuildVector</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_reg_seq_info" kindref="compound">RegSeqInfo</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_reg_seq_info" kindref="compound">RegSeqInfo</ref> *</type>
+          <declname>BaseVec</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt; &amp;</type>
+          <declname>RemapChan</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="94" column="16" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="179" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1ac769e14d0bffa59093b7afa7178b4574" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void R600VectorRegMerger::RemoveMI</definition>
+        <argsstring>(MachineInstr *)</argsstring>
+        <name>RemoveMI</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::RemoveMI</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <defname>MI</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="96" column="8" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="232" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1acfb7bd75c4063afcefef569145a2f0ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void R600VectorRegMerger::trackRSI</definition>
+        <argsstring>(const RegSeqInfo &amp;RSI)</argsstring>
+        <name>trackRSI</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::trackRSI</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_reg_seq_info" kindref="compound">RegSeqInfo</ref> &amp;</type>
+          <declname>RSI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="97" column="8" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="299" bodyend="306"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1ac563bc9da5c2191f570d4603b80a2540" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::R600VectorRegMerger</definition>
+        <argsstring>()</argsstring>
+        <name>R600VectorRegMerger</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::R600VectorRegMerger</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="102" column="3" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="102" bodyend="102"/>
+        <references refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1acf0b60cf377480871c69b16a87f148a0" compoundref="_r600_optimize_vector_registers_8cpp" startline="100">ID</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" compoundref="_machine_function_pass_8h" startline="41" endline="41">llvm::MachineFunctionPass::MachineFunctionPass</references>
+        <referencedby refid="namespacellvm_1ac818c13a73fe24a22cffc26e592da8d2" compoundref="_r600_optimize_vector_registers_8cpp" startline="373" endline="375">llvm::createR600VectorRegMerger</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1ac75ad1526a7fdc5f26ee2807a660eb46" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::getAnalysisUsage</definition>
+        <argsstring>(AnalysisUsage &amp;AU) const override</argsstring>
+        <name>getAnalysisUsage</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::getAnalysisUsage</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e">getAnalysisUsage</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_analysis_usage" kindref="compound">AnalysisUsage</ref> &amp;</type>
+          <declname>AU</declname>
+        </param>
+        <briefdescription>
+<para>getAnalysisUsage - Subclasses that override getAnalysisUsage must call this. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For MachineFunctionPasses, calling AU.preservesCFG() indicates that the pass does not modify the MachineBasicBlock CFG. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="104" column="8" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="104" bodyend="111"/>
+        <references refid="classllvm_1_1_analysis_usage_1ae9356b720f6fbab112d809738dcc4f2a" compoundref="_pass_analysis_support_8h" startline="98" endline="101">llvm::AnalysisUsage::addPreserved</references>
+        <references refid="classllvm_1_1_analysis_usage_1ae0adcccca08fb686c9ce00f9397b660c" compoundref="_pass_analysis_support_8h" startline="75" endline="77">llvm::AnalysisUsage::addRequired</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e" compoundref="_machine_function_pass_8cpp" startline="169" endline="190">llvm::MachineFunctionPass::getAnalysisUsage</references>
+        <references refid="classllvm_1_1_analysis_usage_1af11a6ebf7ab3c388234cb6d5378439a3" compoundref="_sandbox_i_r_2_pass_8cpp" startline="256" endline="260">llvm::AnalysisUsage::setPreservesCFG</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a1a1532d9cf4834656588bf27b4810a62" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_function_properties" kindref="compound">MachineFunctionProperties</ref></type>
+        <definition>MachineFunctionProperties anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::getRequiredProperties</definition>
+        <argsstring>() const override</argsstring>
+        <name>getRequiredProperties</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::getRequiredProperties</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1af0f2f06a3a773431ee9813351d609c4d">getRequiredProperties</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="113" column="29" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="113" bodyend="116"/>
+        <references refid="classllvm_1_1_machine_function_properties_1ad85237c6c667e4713efe8921e9c32ac1a4fc3b812627e58da17a703f73013db96" compoundref="_machine_function_8h" startline="188">llvm::MachineFunctionProperties::IsSSA</references>
+        <references refid="classllvm_1_1_machine_function_properties_1aa7780563d7ca260d0ae67d957b56427f" compoundref="_machine_function_8h" startline="207" endline="210">llvm::MachineFunctionProperties::set</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1af6e1b28fefc469601fb8f8b7c3be8696" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::getPassName</definition>
+        <argsstring>() const override</argsstring>
+        <name>getPassName</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::getPassName</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1ad729b39eacf070a9bca84533b3c743bf">getPassName</reimplements>
+        <briefdescription>
+<para>getPassName - Return a nice clean name for a pass. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This usually implemented in terms of the name that is registered by one of the Registration templates, but can be overloaded directly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="118" column="13" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="118" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a40984fa414a6836d7ef8a672a5697333" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool R600VectorRegMerger::runOnMachineFunction</definition>
+        <argsstring>(MachineFunction &amp;Fn) override</argsstring>
+        <name>runOnMachineFunction</name>
+        <qualifiedname>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger::runOnMachineFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1abb98ed32e4e5acae62ef3edd7bf04fb5">runOnMachineFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="122" column="8" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="308" bodyend="371"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_machine_function_1a977ddce262de45c645be23d951066351" compoundref="_machine_function_8h" startline="704" endline="704">llvm::MachineFunction::getFunction</references>
+        <references refid="classllvm_1_1_machine_function_1a810234b6b3d223b7c74a4253fcc5ea5e" compoundref="_machine_function_8h" startline="743" endline="743">llvm::MachineFunction::getRegInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" compoundref="_sandbox_i_r_2_pass_8cpp" startline="178" endline="190">llvm::FunctionPass::skipFunction</references>
+        <references refid="namespace_r600___inst_flag_1a23106439cc906be24dc8953eedd3940dae0e682aeb7b578a9d64b2bbd27764f65" compoundref="_r600_defines_8h" startline="41">R600_InstFlag::TEX_INST</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</label>
+        <link refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</label>
+        <link refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" line="74" column="1" bodyfile="lib/Target/AMDGPU/R600OptimizeVectorRegisters.cpp" bodystart="74" bodyend="123"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1aeb0cc81c33f090f31b7124eab6dc3bc3" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>areAllUsesSwizzeable</name></member>
+      <member refid="classllvm_1_1_function_pass_1a748922f143f2da9a13b0b15ff6a3dd22" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>assignPassManager</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a15c6e716983144ce230e708cca50d72a" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>canSwizzle</name></member>
+      <member refid="classllvm_1_1_pass_1a2ed7d79d79dffe7368c3d3cdf40dd80e" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>createPass</name></member>
+      <member refid="classllvm_1_1_pass_1ac7811985250c75d7e2a244292d615fff" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>doFinalization</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a204ffdf4717a340f8cbe1fd1341a8148" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>doInitialization</name></member>
+      <member refid="classllvm_1_1_pass_1a1a60731eeff800b39fca7280a5a167ae" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_pass_1ad2f0576ef7c9c4af40e35001c81f4922" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>dumpPassStructure</name></member>
+      <member refid="classllvm_1_1_function_pass_1a7691d83e3561f781cae4ce4a01bdfa93" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>FunctionPass</name></member>
+      <member refid="classllvm_1_1_pass_1a03d3a81b1c46aff7c38ef3a6750ba225" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getAdjustedAnalysisPointer</name></member>
+      <member refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a560d384c0cef7f62836884fdbbd1fe66" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a6613f29d3e54ce175ac33fb9ba264fae" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1a2190247edbacb33b4e8a3d409fa2d99e" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getAnalysisIfAvailable</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1ac75ad1526a7fdc5f26ee2807a660eb46" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getAnalysisUsage</name></member>
+      <member refid="classllvm_1_1_pass_1ae31759fd992cddb1f2d62ab0df85834a" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getAsImmutablePass</name></member>
+      <member refid="classllvm_1_1_pass_1a626b77ef8abdfa9f53c697ad129a6e5a" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getAsPMDataManager</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a22bc7c91051dca8dc211c3afe9929603" prot="protected" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getClearedProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a63192e749ba4a0ee29336a59d6a19647" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getPassID</name></member>
+      <member refid="classllvm_1_1_pass_1a9de4db62e6884f2e5efea6793af30d99" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getPassKind</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1af6e1b28fefc469601fb8f8b7c3be8696" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getPassName</name></member>
+      <member refid="classllvm_1_1_function_pass_1a68517706d9801aec6d20c32a424ed152" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getPotentialPassManagerType</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a1a1532d9cf4834656588bf27b4810a62" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getRequiredProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a969c082f66671df288441bbad9ca87db" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getResolver</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a8fbedd15c1c809e6050f3fd3ccd3338e" prot="protected" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>getSetProperties</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1acf0b60cf377480871c69b16a87f148a0" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>ID</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a40dfdc5d06dc5b3b61b00a9805d3c2f4" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>InstructionSetMap</name></member>
+      <member refid="classllvm_1_1_pass_1aab174263c400ece13a7278990e102fa6" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_pass_1a992ff669acca94459037cfb1f41cb9dc" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>MachineFunctionPass</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a83e4fcf86f04347d2b2f8dbbb45caf32" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1_pass_1a0b4a511579939b07831db90c3fc98996" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>mustPreserveAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af468a2aeb0d98e3dbeda38176ce516d3" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_pass_1a16baa169d062524be5a6b67609266174" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1ad40d19ce644ec38c52ea00be59016cd5" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1aa5f61a8789f87816c5f494d42a70f01f" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>preparePassManager</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1ab95c59a32f6fde834544331e8575025a" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>PreviousRegSeq</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a228486a3abb493afae7c7b5bb742600a" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>PreviousRegSeqByReg</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1aed79696c71212468b1d2f99c745ed689" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>PreviousRegSeqByUndefCount</name></member>
+      <member refid="classllvm_1_1_pass_1a061b4c01e9c189208dbfd3c77fdb9a5c" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>print</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1ac563bc9da5c2191f570d4603b80a2540" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>R600VectorRegMerger</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a50010e4506c9c7d3900788a071dd7043" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>RebuildVector</name></member>
+      <member refid="classllvm_1_1_pass_1aeb6e74b0f36a0acd1d20149ef088715a" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>releaseMemory</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1ac769e14d0bffa59093b7afa7178b4574" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>RemoveMI</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a40984fa414a6836d7ef8a672a5697333" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>runOnMachineFunction</name></member>
+      <member refid="classllvm_1_1_pass_1a2423fcc912a698d4f36c9c9380b53a50" prot="public" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>setResolver</name></member>
+      <member refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>skipFunction</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a943f38ab7782cfb2771104dc0337c583" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>SwizzleInput</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1aa5186b20ce8e47c7d0c719faeafee87e" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>TII</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1acfb7bd75c4063afcefef569145a2f0ff" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>trackRSI</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1adc390cbef302b7a05f5009afee5f863d" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>tryMergeUsingCommonSlot</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a1034d137b83977381a1235ac1c3926c1" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>tryMergeUsingFreeSlot</name></member>
+      <member refid="classanonymous__namespace_02_r600_optimize_vector_registers_8cpp_03_1_1_r600_vector_reg_merger_1a20d7b3731f25f57eec01b618ab66d84c" prot="private" virt="non-virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>tryMergeVector</name></member>
+      <member refid="classllvm_1_1_pass_1ac8ef6f57d4ec869a7f1007aeddf2b169" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>verifyAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1abe2fe9b29d21424fe4b410fc8e98606c" prot="public" virt="virtual"><scope>anonymous_namespace{R600OptimizeVectorRegisters.cpp}::R600VectorRegMerger</scope><name>~Pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,699 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1json_1_1_o_stream" kind="class" language="C++" prot="public">
+    <compoundname>llvm::json::OStream</compoundname>
+    <includes refid="_j_s_o_n_8h" local="yes">llvm/Support/JSON.h</includes>
+    <innerclass refid="structllvm_1_1json_1_1_o_stream_1_1_state" prot="private">llvm::json::OStream::State</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1json_1_1_o_stream_1ae4b2f9a526f86b52da896e665428cfce" prot="private" static="no" strong="no">
+        <type></type>
+        <name>Context</name>
+        <qualifiedname>llvm::json::OStream::Context</qualifiedname>
+        <enumvalue id="classllvm_1_1json_1_1_o_stream_1ae4b2f9a526f86b52da896e665428cfcea2054207610f595ba37117d0fd0aa0180" prot="private">
+          <name>Singleton</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1json_1_1_o_stream_1ae4b2f9a526f86b52da896e665428cfceadc83d9c006f81d88f05548518e8c43f1" prot="private">
+          <name>Array</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1json_1_1_o_stream_1ae4b2f9a526f86b52da896e665428cfcea929cdb9ce3e4853e0c930ef11978c7ec" prot="private">
+          <name>Object</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1json_1_1_o_stream_1ae4b2f9a526f86b52da896e665428cfcea49425f005062878dbc6dfc7226b907fa" prot="private">
+          <name>RawValue</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1069" column="3" bodyfile="include/llvm/Support/JSON.h" bodystart="1069" bodyend="1074"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1json_1_1_o_stream_1ae5c537c76bd3b93f03bf4bbbbc489280" prot="public" static="no">
+        <type><ref refid="classllvm_1_1function__ref" kindref="compound">llvm::function_ref</ref>&lt; void()&gt;</type>
+        <definition>using llvm::json::OStream::Block =  llvm::function_ref&lt;void()&gt;</definition>
+        <argsstring></argsstring>
+        <name>Block</name>
+        <qualifiedname>llvm::json::OStream::Block</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="981" column="3" bodyfile="include/llvm/Support/JSON.h" bodystart="981" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1json_1_1_o_stream_1a404b8fd2af15380167c133d4cb87c285" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">llvm::SmallVector</ref>&lt; State, 16 &gt;</type>
+        <definition>llvm::SmallVector&lt;State, 16&gt; llvm::json::OStream::Stack</definition>
+        <argsstring></argsstring>
+        <name>Stack</name>
+        <qualifiedname>llvm::json::OStream::Stack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1079" column="21" bodyfile="include/llvm/Support/JSON.h" bodystart="1079" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1json_1_1_o_stream_1ad5b9e5ede5b59ce11a9e7fab5bec8cad" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref></type>
+        <definition>llvm::StringRef llvm::json::OStream::PendingComment</definition>
+        <argsstring></argsstring>
+        <name>PendingComment</name>
+        <qualifiedname>llvm::json::OStream::PendingComment</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1080" column="19" bodyfile="include/llvm/Support/JSON.h" bodystart="1080" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1json_1_1_o_stream_1af15c422eb2d5b0f5db9c555ee5c1465e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">llvm::raw_ostream</ref> &amp;</type>
+        <definition>llvm::raw_ostream&amp; llvm::json::OStream::OS</definition>
+        <argsstring></argsstring>
+        <name>OS</name>
+        <qualifiedname>llvm::json::OStream::OS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1081" column="21" bodyfile="include/llvm/Support/JSON.h" bodystart="1081" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1json_1_1_o_stream_1a2e2a6e8553a2600bf63521c30287f697" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::json::OStream::IndentSize</definition>
+        <argsstring></argsstring>
+        <name>IndentSize</name>
+        <qualifiedname>llvm::json::OStream::IndentSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1082" column="12" bodyfile="include/llvm/Support/JSON.h" bodystart="1082" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1json_1_1_o_stream_1a643f54799425b5182abe0ca5b8ebd4ae" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::json::OStream::Indent</definition>
+        <argsstring></argsstring>
+        <name>Indent</name>
+        <qualifiedname>llvm::json::OStream::Indent</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1083" column="12" bodyfile="include/llvm/Support/JSON.h" bodystart="1083" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a2601b35821c232bc7f2e68f7db52fdbb" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::json::OStream::OStream</definition>
+        <argsstring>(llvm::raw_ostream &amp;OS, unsigned IndentSize=0)</argsstring>
+        <name>OStream</name>
+        <qualifiedname>llvm::json::OStream::OStream</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">llvm::raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>IndentSize</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="983" column="12" bodyfile="include/llvm/Support/JSON.h" bodystart="983" bodyend="986"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1ae9b7de561c6d433f9123cbed7b3380da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::json::OStream::~OStream</definition>
+        <argsstring>()</argsstring>
+        <name>~OStream</name>
+        <qualifiedname>llvm::json::OStream::~OStream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="987" column="3" bodyfile="include/llvm/Support/JSON.h" bodystart="987" bodyend="991"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a4d07484a9d134e2f4e50f22039fdc5b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::flush</definition>
+        <argsstring>()</argsstring>
+        <name>flush</name>
+        <qualifiedname>llvm::json::OStream::flush</qualifiedname>
+        <briefdescription>
+<para>Flushes the underlying ostream. <ref refid="classllvm_1_1json_1_1_o_stream" kindref="compound">OStream</ref> does not buffer internally. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="994" column="8" bodyfile="include/llvm/Support/JSON.h" bodystart="994" bodyend="994"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1ad132dccf457f071b5854a8c94135e7c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::value</definition>
+        <argsstring>(const Value &amp;V)</argsstring>
+        <name>value</name>
+        <qualifiedname>llvm::json::OStream::value</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1json_1_1_value" kindref="compound">Value</ref> &amp;</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Emit a self-contained value (number, string, vector&lt;string&gt; etc). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1001" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="754" bodyend="789"/>
+        <references refid="classllvm_1_1json_1_1_value_1ae5050cd67e450419cf638e2a09bf11c9" compoundref="_j_s_o_n_8h" startline="482">llvm::json::Value::Array</references>
+        <references refid="classllvm_1_1json_1_1_o_stream_1a91056cd37dda55d4b00d69b6361641e4" compoundref="_j_s_o_n_8h" startline="1003" endline="1007">array</references>
+        <references refid="classllvm_1_1json_1_1_o_stream_1a4754bca88e59468dba45df18b849920a" compoundref="_j_s_o_n_8h" startline="1034" endline="1036">attribute</references>
+        <references refid="classllvm_1_1json_1_1_value_1ad10d8b22abefa6faed2bdc37463da8b5a0185c7ad51f75621f32a6ed346d4a56a" compoundref="_j_s_o_n_8h" startline="292">llvm::json::Value::Boolean</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="namespacellvm_1a939bc2108d47080767f0c06ba56caec7" compoundref="_format_8h" startline="125" endline="127">llvm::format</references>
+        <references refid="classllvm_1_1json_1_1_value_1ad10d8b22abefa6faed2bdc37463da8b5aea36c73e7e63de0c6fef578490a4e449" compoundref="_j_s_o_n_8h" startline="291">llvm::json::Value::Null</references>
+        <references refid="classllvm_1_1json_1_1_value_1ad10d8b22abefa6faed2bdc37463da8b5ad22dcab1996d111071600507eff3fbfc" compoundref="_j_s_o_n_8h" startline="295">llvm::json::Value::Number</references>
+        <references refid="classllvm_1_1json_1_1_value_1a0720b5f434e636e22a3ed34f847eec57" compoundref="_j_s_o_n_8h" startline="483">llvm::json::Value::Object</references>
+        <references refid="classllvm_1_1json_1_1_o_stream_1a06d556674c46c15e5906f2f645f4fbe5" compoundref="_j_s_o_n_8h" startline="1009" endline="1013">object</references>
+        <references refid="namespacellvm_1_1json_1a5e191005830159035ac7f4e4a0d51b4d" compoundref="_j_s_o_n_8cpp" startline="724" endline="752">llvm::json::quote</references>
+        <references refid="namespacellvm_1_1json_1a4821bec148e6c1fb582ae15d760d116c" compoundref="_j_s_o_n_8cpp" startline="245" endline="254">llvm::json::sortedElements</references>
+        <references refid="classllvm_1_1json_1_1_value_1ad10d8b22abefa6faed2bdc37463da8b5a5ce030d664a66bc0d280f1231ff2cc5b" compoundref="_j_s_o_n_8h" startline="296">llvm::json::Value::String</references>
+        <references refid="classllvm_1_1json_1_1_o_stream_1ad132dccf457f071b5854a8c94135e7c2" compoundref="_j_s_o_n_8cpp" startline="754" endline="789">value</references>
+        <referencedby refid="namespacellvm_1_1json_1a3251137d4e13982c711221d45fff9a09" compoundref="_j_s_o_n_8cpp" startline="259" endline="281">llvm::json::abbreviate</referencedby>
+        <referencedby refid="namespacellvm_1_1json_1a0cff3f49083a4dfc91368979f818f297" compoundref="_j_s_o_n_8cpp" startline="285" endline="305">llvm::json::abbreviateChildren</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1a4754bca88e59468dba45df18b849920a" compoundref="_j_s_o_n_8h" startline="1034" endline="1036">attribute</referencedby>
+        <referencedby refid="structllvm_1_1format__provider_3_01llvm_1_1json_1_1_value_01_4_1a190aff78bb7ee7618b561151f06dd5cd" compoundref="_j_s_o_n_8cpp" startline="921" endline="927">llvm::format_provider&lt; llvm::json::Value &gt;::format</referencedby>
+        <referencedby refid="namespacellvm_1_1json_1a5ac7cb89caebd966eb95a5cf81142409" compoundref="_j_s_o_n_8h" startline="1089" endline="1092">llvm::json::operator&lt;&lt;</referencedby>
+        <referencedby refid="classllvm_1_1_tensor_spec_1af36eb781aacdcc18a3199433080245bb" compoundref="_tensor_spec_8cpp" startline="50" endline="60">llvm::TensorSpec::toJSON</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1ad132dccf457f071b5854a8c94135e7c2" compoundref="_j_s_o_n_8cpp" startline="754" endline="789">value</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a91056cd37dda55d4b00d69b6361641e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::array</definition>
+        <argsstring>(Block Contents)</argsstring>
+        <name>array</name>
+        <qualifiedname>llvm::json::OStream::array</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1json_1_1_o_stream_1ae5c537c76bd3b93f03bf4bbbbc489280" kindref="member">Block</ref></type>
+          <declname>Contents</declname>
+        </param>
+        <briefdescription>
+<para>Emit an array whose elements are emitted in the provided <ref refid="classllvm_1_1json_1_1_o_stream_1ae5c537c76bd3b93f03bf4bbbbc489280" kindref="member">Block</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1003" column="8" bodyfile="include/llvm/Support/JSON.h" bodystart="1003" bodyend="1007"/>
+        <references refid="classllvm_1_1json_1_1_o_stream_1a5741cf7e48bbab22369fa2aa8c9e151f" compoundref="_j_s_o_n_8cpp" startline="840" endline="846">arrayBegin</references>
+        <references refid="classllvm_1_1json_1_1_o_stream_1aa4ef0d3ce12400b17d9f9a5cd028a211" compoundref="_j_s_o_n_8cpp" startline="848" endline="857">arrayEnd</references>
+        <referencedby refid="namespacellvm_1_1json_1a0cff3f49083a4dfc91368979f818f297" compoundref="_j_s_o_n_8cpp" startline="285" endline="305">llvm::json::abbreviateChildren</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1a7ff67320cc541a438d8fc170124af74f" compoundref="_j_s_o_n_8h" startline="1038" endline="1040">attributeArray</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_path_1_1_root_1a064c6a4f075f7dbdbdc16e791de1168a" compoundref="_j_s_o_n_8cpp" startline="307" endline="359">llvm::json::Path::Root::printErrorContext</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1ad132dccf457f071b5854a8c94135e7c2" compoundref="_j_s_o_n_8cpp" startline="754" endline="789">value</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a06d556674c46c15e5906f2f645f4fbe5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::object</definition>
+        <argsstring>(Block Contents)</argsstring>
+        <name>object</name>
+        <qualifiedname>llvm::json::OStream::object</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1json_1_1_o_stream_1ae5c537c76bd3b93f03bf4bbbbc489280" kindref="member">Block</ref></type>
+          <declname>Contents</declname>
+        </param>
+        <briefdescription>
+<para>Emit an object whose elements are emitted in the provided <ref refid="classllvm_1_1json_1_1_o_stream_1ae5c537c76bd3b93f03bf4bbbbc489280" kindref="member">Block</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1009" column="8" bodyfile="include/llvm/Support/JSON.h" bodystart="1009" bodyend="1013"/>
+        <references refid="classllvm_1_1json_1_1_o_stream_1a5f20bfc936e2aaf698df6de5b3a0c397" compoundref="_j_s_o_n_8cpp" startline="859" endline="865">objectBegin</references>
+        <references refid="classllvm_1_1json_1_1_o_stream_1af9928f1fc2112c92546d8e31ced97033" compoundref="_j_s_o_n_8cpp" startline="867" endline="876">objectEnd</references>
+        <referencedby refid="namespacellvm_1_1json_1a0cff3f49083a4dfc91368979f818f297" compoundref="_j_s_o_n_8cpp" startline="285" endline="305">llvm::json::abbreviateChildren</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1a0e888ce91e1087ca58869357b718fd38" compoundref="_j_s_o_n_8h" startline="1042" endline="1044">attributeObject</referencedby>
+        <referencedby refid="_sample_prof_reader_8cpp_1a3f66983ff782c5a6bc67a19058c7ea6b" compoundref="_sample_prof_reader_8cpp" startline="77" endline="134">dumpFunctionProfileJson</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_path_1_1_root_1a064c6a4f075f7dbdbdc16e791de1168a" compoundref="_j_s_o_n_8cpp" startline="307" endline="359">llvm::json::Path::Root::printErrorContext</referencedby>
+        <referencedby refid="classllvm_1_1_logger_1a6ca977785c8d33e0e44f0b25d3756f74" compoundref="_training_logger_8cpp" startline="58" endline="66">llvm::Logger::startObservation</referencedby>
+        <referencedby refid="classllvm_1_1_logger_1a9be20507499a9a17d9e77ce1ba2cf330" compoundref="_training_logger_8cpp" startline="51" endline="56">llvm::Logger::switchContext</referencedby>
+        <referencedby refid="classllvm_1_1_tensor_spec_1af36eb781aacdcc18a3199433080245bb" compoundref="_tensor_spec_8cpp" startline="50" endline="60">llvm::TensorSpec::toJSON</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1ad132dccf457f071b5854a8c94135e7c2" compoundref="_j_s_o_n_8cpp" startline="754" endline="789">value</referencedby>
+        <referencedby refid="structllvm_1_1_time_trace_profiler_1a0a693558700fd7f79d6ba0313d9139f9" compoundref="_time_profiler_8cpp" startline="213" endline="364">llvm::TimeTraceProfiler::write</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a08ce52de11e54269aeba894fcb72bb7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::rawValue</definition>
+        <argsstring>(llvm::function_ref&lt; void(raw_ostream &amp;)&gt; Contents)</argsstring>
+        <name>rawValue</name>
+        <qualifiedname>llvm::json::OStream::rawValue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">llvm::function_ref</ref>&lt; void(<ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;)&gt;</type>
+          <declname>Contents</declname>
+        </param>
+        <briefdescription>
+<para>Emit an externally-serialized value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The caller must write exactly one valid JSON value to the provided stream. No validation or formatting of this value occurs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1017" column="8" bodyfile="include/llvm/Support/JSON.h" bodystart="1017" bodyend="1021"/>
+        <references refid="classllvm_1_1json_1_1_o_stream_1a792749e73c83a275ccff99e769c64569" compoundref="_j_s_o_n_8cpp" startline="906" endline="911">rawValueBegin</references>
+        <references refid="classllvm_1_1json_1_1_o_stream_1ad3381dc4020a5d5353451a2348e3ec24" compoundref="_j_s_o_n_8cpp" startline="913" endline="916">rawValueEnd</references>
+        <referencedby refid="namespacellvm_1_1json_1a3251137d4e13982c711221d45fff9a09" compoundref="_j_s_o_n_8cpp" startline="259" endline="281">llvm::json::abbreviate</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1abe988728690935fad7313244c2f4a772" compoundref="_j_s_o_n_8h" startline="1022" endline="1024">rawValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1abe988728690935fad7313244c2f4a772" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::rawValue</definition>
+        <argsstring>(llvm::StringRef Contents)</argsstring>
+        <name>rawValue</name>
+        <qualifiedname>llvm::json::OStream::rawValue</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref></type>
+          <declname>Contents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1022" column="8" bodyfile="include/llvm/Support/JSON.h" bodystart="1022" bodyend="1024"/>
+        <references refid="classllvm_1_1json_1_1_o_stream_1a08ce52de11e54269aeba894fcb72bb7a" compoundref="_j_s_o_n_8h" startline="1017" endline="1021">rawValue</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a8d6140131d6891e8ca8c134b889b8ec8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::comment</definition>
+        <argsstring>(llvm::StringRef)</argsstring>
+        <name>comment</name>
+        <qualifiedname>llvm::json::OStream::comment</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref></type>
+          <defname>Comment</defname>
+        </param>
+        <briefdescription>
+<para>Emit a JavaScript comment associated with the next printed value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The string must be valid until the next attribute or value is emitted. Comments are not part of standard JSON, and many parsers reject them! </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1028" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="803" bodyend="806"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1json_1_1_path_1_1_root_1a064c6a4f075f7dbdbdc16e791de1168a" compoundref="_j_s_o_n_8cpp" startline="307" endline="359">llvm::json::Path::Root::printErrorContext</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a4754bca88e59468dba45df18b849920a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::attribute</definition>
+        <argsstring>(llvm::StringRef Key, const Value &amp;Contents)</argsstring>
+        <name>attribute</name>
+        <qualifiedname>llvm::json::OStream::attribute</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref></type>
+          <declname>Key</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1json_1_1_value" kindref="compound">Value</ref> &amp;</type>
+          <declname>Contents</declname>
+        </param>
+        <briefdescription>
+<para>Emit an attribute whose value is self-contained (number, vector&lt;int&gt; etc). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1034" column="8" bodyfile="include/llvm/Support/JSON.h" bodystart="1034" bodyend="1036"/>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+        <references refid="classllvm_1_1json_1_1_o_stream_1ad132dccf457f071b5854a8c94135e7c2" compoundref="_j_s_o_n_8cpp" startline="754" endline="789">value</references>
+        <referencedby refid="_sample_prof_reader_8cpp_1a3f66983ff782c5a6bc67a19058c7ea6b" compoundref="_sample_prof_reader_8cpp" startline="77" endline="134">dumpFunctionProfileJson</referencedby>
+        <referencedby refid="classllvm_1_1_logger_1a6ca977785c8d33e0e44f0b25d3756f74" compoundref="_training_logger_8cpp" startline="58" endline="66">llvm::Logger::startObservation</referencedby>
+        <referencedby refid="classllvm_1_1_logger_1a9be20507499a9a17d9e77ce1ba2cf330" compoundref="_training_logger_8cpp" startline="51" endline="56">llvm::Logger::switchContext</referencedby>
+        <referencedby refid="classllvm_1_1_tensor_spec_1af36eb781aacdcc18a3199433080245bb" compoundref="_tensor_spec_8cpp" startline="50" endline="60">llvm::TensorSpec::toJSON</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1ad132dccf457f071b5854a8c94135e7c2" compoundref="_j_s_o_n_8cpp" startline="754" endline="789">value</referencedby>
+        <referencedby refid="structllvm_1_1_time_trace_profiler_1a0a693558700fd7f79d6ba0313d9139f9" compoundref="_time_profiler_8cpp" startline="213" endline="364">llvm::TimeTraceProfiler::write</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a7ff67320cc541a438d8fc170124af74f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::attributeArray</definition>
+        <argsstring>(llvm::StringRef Key, Block Contents)</argsstring>
+        <name>attributeArray</name>
+        <qualifiedname>llvm::json::OStream::attributeArray</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref></type>
+          <declname>Key</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1json_1_1_o_stream_1ae5c537c76bd3b93f03bf4bbbbc489280" kindref="member">Block</ref></type>
+          <declname>Contents</declname>
+        </param>
+        <briefdescription>
+<para>Emit an attribute whose value is an array with elements from the <ref refid="classllvm_1_1json_1_1_o_stream_1ae5c537c76bd3b93f03bf4bbbbc489280" kindref="member">Block</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1038" column="8" bodyfile="include/llvm/Support/JSON.h" bodystart="1038" bodyend="1040"/>
+        <references refid="classllvm_1_1json_1_1_o_stream_1a91056cd37dda55d4b00d69b6361641e4" compoundref="_j_s_o_n_8h" startline="1003" endline="1007">array</references>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+        <referencedby refid="_sample_prof_reader_8cpp_1a3f66983ff782c5a6bc67a19058c7ea6b" compoundref="_sample_prof_reader_8cpp" startline="77" endline="134">dumpFunctionProfileJson</referencedby>
+        <referencedby refid="classllvm_1_1_tensor_spec_1af36eb781aacdcc18a3199433080245bb" compoundref="_tensor_spec_8cpp" startline="50" endline="60">llvm::TensorSpec::toJSON</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a0e888ce91e1087ca58869357b718fd38" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::attributeObject</definition>
+        <argsstring>(llvm::StringRef Key, Block Contents)</argsstring>
+        <name>attributeObject</name>
+        <qualifiedname>llvm::json::OStream::attributeObject</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref></type>
+          <declname>Key</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1json_1_1_o_stream_1ae5c537c76bd3b93f03bf4bbbbc489280" kindref="member">Block</ref></type>
+          <declname>Contents</declname>
+        </param>
+        <briefdescription>
+<para>Emit an attribute whose value is an object with attributes from the <ref refid="classllvm_1_1json_1_1_o_stream_1ae5c537c76bd3b93f03bf4bbbbc489280" kindref="member">Block</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1042" column="8" bodyfile="include/llvm/Support/JSON.h" bodystart="1042" bodyend="1044"/>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+        <references refid="classllvm_1_1json_1_1_o_stream_1a06d556674c46c15e5906f2f645f4fbe5" compoundref="_j_s_o_n_8h" startline="1009" endline="1013">object</references>
+        <referencedby refid="structllvm_1_1_time_trace_profiler_1a0a693558700fd7f79d6ba0313d9139f9" compoundref="_time_profiler_8cpp" startline="213" endline="364">llvm::TimeTraceProfiler::write</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a5741cf7e48bbab22369fa2aa8c9e151f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::arrayBegin</definition>
+        <argsstring>()</argsstring>
+        <name>arrayBegin</name>
+        <qualifiedname>llvm::json::OStream::arrayBegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1049" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="840" bodyend="846"/>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1a91056cd37dda55d4b00d69b6361641e4" compoundref="_j_s_o_n_8h" startline="1003" endline="1007">array</referencedby>
+        <referencedby refid="classllvm_1_1sampleprof_1_1_sample_profile_reader_1ad1a3cf9f9ad94831f204a4654a423906" compoundref="_sample_prof_reader_8cpp" startline="137" endline="148">llvm::sampleprof::SampleProfileReader::dumpJson</referencedby>
+        <referencedby refid="structllvm_1_1_time_trace_profiler_1a0a693558700fd7f79d6ba0313d9139f9" compoundref="_time_profiler_8cpp" startline="213" endline="364">llvm::TimeTraceProfiler::write</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1aa4ef0d3ce12400b17d9f9a5cd028a211" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::arrayEnd</definition>
+        <argsstring>()</argsstring>
+        <name>arrayEnd</name>
+        <qualifiedname>llvm::json::OStream::arrayEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1050" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="848" bodyend="857"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1a91056cd37dda55d4b00d69b6361641e4" compoundref="_j_s_o_n_8h" startline="1003" endline="1007">array</referencedby>
+        <referencedby refid="classllvm_1_1sampleprof_1_1_sample_profile_reader_1ad1a3cf9f9ad94831f204a4654a423906" compoundref="_sample_prof_reader_8cpp" startline="137" endline="148">llvm::sampleprof::SampleProfileReader::dumpJson</referencedby>
+        <referencedby refid="structllvm_1_1_time_trace_profiler_1a0a693558700fd7f79d6ba0313d9139f9" compoundref="_time_profiler_8cpp" startline="213" endline="364">llvm::TimeTraceProfiler::write</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a5f20bfc936e2aaf698df6de5b3a0c397" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::objectBegin</definition>
+        <argsstring>()</argsstring>
+        <name>objectBegin</name>
+        <qualifiedname>llvm::json::OStream::objectBegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1051" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="859" bodyend="865"/>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1a06d556674c46c15e5906f2f645f4fbe5" compoundref="_j_s_o_n_8h" startline="1009" endline="1013">object</referencedby>
+        <referencedby refid="structllvm_1_1_time_trace_profiler_1a0a693558700fd7f79d6ba0313d9139f9" compoundref="_time_profiler_8cpp" startline="213" endline="364">llvm::TimeTraceProfiler::write</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1af9928f1fc2112c92546d8e31ced97033" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::objectEnd</definition>
+        <argsstring>()</argsstring>
+        <name>objectEnd</name>
+        <qualifiedname>llvm::json::OStream::objectEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1052" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="867" bodyend="876"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1a06d556674c46c15e5906f2f645f4fbe5" compoundref="_j_s_o_n_8h" startline="1009" endline="1013">object</referencedby>
+        <referencedby refid="structllvm_1_1_time_trace_profiler_1a0a693558700fd7f79d6ba0313d9139f9" compoundref="_time_profiler_8cpp" startline="213" endline="364">llvm::TimeTraceProfiler::write</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a39613bf6aa1a8059a4dd25d57c7fd1e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::attributeBegin</definition>
+        <argsstring>(llvm::StringRef Key)</argsstring>
+        <name>attributeBegin</name>
+        <qualifiedname>llvm::json::OStream::attributeBegin</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref></type>
+          <declname>Key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1053" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="878" bodyend="896"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1json_1ab64ede9b347ffd8eb32ed5e05f2520f4" compoundref="_j_s_o_n_8cpp" startline="707" endline="722">llvm::json::fixUTF8</references>
+        <references refid="namespacellvm_1a98c6256d0644613c6b5b3e2ef06ef5ce" compoundref="_i_r_2_pass_manager_8h" startline="644">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</references>
+        <references refid="namespacellvm_1_1json_1a385765e73480a0f2d49dcc84a8fb70da" compoundref="_j_s_o_n_8cpp" startline="693" endline="705">llvm::json::isUTF8</references>
+        <references refid="_compiler_8h_1ae5b35beb6f127e5f47269e9124b886fb" compoundref="_compiler_8h" startline="319">LLVM_LIKELY</references>
+        <references refid="namespacellvm_1_1json_1a5e191005830159035ac7f4e4a0d51b4d" compoundref="_j_s_o_n_8cpp" startline="724" endline="752">llvm::json::quote</references>
+        <referencedby refid="namespacellvm_1_1json_1a0cff3f49083a4dfc91368979f818f297" compoundref="_j_s_o_n_8cpp" startline="285" endline="305">llvm::json::abbreviateChildren</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_path_1_1_root_1a064c6a4f075f7dbdbdc16e791de1168a" compoundref="_j_s_o_n_8cpp" startline="307" endline="359">llvm::json::Path::Root::printErrorContext</referencedby>
+        <referencedby refid="structllvm_1_1_time_trace_profiler_1a0a693558700fd7f79d6ba0313d9139f9" compoundref="_time_profiler_8cpp" startline="213" endline="364">llvm::TimeTraceProfiler::write</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1aacce5798acdb34154adce0318fdfdaf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::attributeEnd</definition>
+        <argsstring>()</argsstring>
+        <name>attributeEnd</name>
+        <qualifiedname>llvm::json::OStream::attributeEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1054" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="898" bodyend="904"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="namespacellvm_1_1json_1a0cff3f49083a4dfc91368979f818f297" compoundref="_j_s_o_n_8cpp" startline="285" endline="305">llvm::json::abbreviateChildren</referencedby>
+        <referencedby refid="classllvm_1_1json_1_1_path_1_1_root_1a064c6a4f075f7dbdbdc16e791de1168a" compoundref="_j_s_o_n_8cpp" startline="307" endline="359">llvm::json::Path::Root::printErrorContext</referencedby>
+        <referencedby refid="structllvm_1_1_time_trace_profiler_1a0a693558700fd7f79d6ba0313d9139f9" compoundref="_time_profiler_8cpp" startline="213" endline="364">llvm::TimeTraceProfiler::write</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a792749e73c83a275ccff99e769c64569" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+        <definition>raw_ostream &amp; llvm::json::OStream::rawValueBegin</definition>
+        <argsstring>()</argsstring>
+        <name>rawValueBegin</name>
+        <qualifiedname>llvm::json::OStream::rawValueBegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1055" column="15" bodyfile="lib/Support/JSON.cpp" bodystart="906" bodyend="911"/>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1a08ce52de11e54269aeba894fcb72bb7a" compoundref="_j_s_o_n_8h" startline="1017" endline="1021">rawValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1ad3381dc4020a5d5353451a2348e3ec24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::rawValueEnd</definition>
+        <argsstring>()</argsstring>
+        <name>rawValueEnd</name>
+        <qualifiedname>llvm::json::OStream::rawValueEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1056" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="913" bodyend="916"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1json_1_1_o_stream_1a08ce52de11e54269aeba894fcb72bb7a" compoundref="_j_s_o_n_8h" startline="1017" endline="1021">rawValue</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1ac2218cffea84ee2b2ae4a43110007039" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::attributeImpl</definition>
+        <argsstring>(llvm::StringRef Key, Block Contents)</argsstring>
+        <name>attributeImpl</name>
+        <qualifiedname>llvm::json::OStream::attributeImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref></type>
+          <declname>Key</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1json_1_1_o_stream_1ae5c537c76bd3b93f03bf4bbbbc489280" kindref="member">Block</ref></type>
+          <declname>Contents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1059" column="8" bodyfile="include/llvm/Support/JSON.h" bodystart="1059" bodyend="1063"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a45304e4252c69789af45c95e7f12ce0f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::valueBegin</definition>
+        <argsstring>()</argsstring>
+        <name>valueBegin</name>
+        <qualifiedname>llvm::json::OStream::valueBegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1065" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="791" bodyend="801"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1af1e16a477be6820f1946bcd40a62a2ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::flushComment</definition>
+        <argsstring>()</argsstring>
+        <name>flushComment</name>
+        <qualifiedname>llvm::json::OStream::flushComment</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1066" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="808" bodyend="831"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1json_1_1_o_stream_1a31470c2c8a2c1073d844aec2c10802ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::json::OStream::newline</definition>
+        <argsstring>()</argsstring>
+        <name>newline</name>
+        <qualifiedname>llvm::json::OStream::newline</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/JSON.h" line="1067" column="8" bodyfile="lib/Support/JSON.cpp" bodystart="833" bodyend="838"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1json_1_1_o_stream" kindref="compound">json::OStream</ref> allows writing well-formed JSON without materializing all structures as <ref refid="classllvm_1_1json_1_1_value" kindref="compound">json::Value</ref> ahead of time. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It&apos;s faster, lower-level, and less safe than OS &lt;&lt; <ref refid="classllvm_1_1json_1_1_value" kindref="compound">json::Value</ref>. It also allows emitting more constructs, such as comments.</para>
+<para>Only one &quot;top-level&quot; object can be written to a stream. Simplest usage involves passing lambdas (Blocks) to fill in containers:</para>
+<para><ref refid="classllvm_1_1json_1_1_o_stream" kindref="compound">json::OStream</ref> J(OS); J.array([&amp;]{ for (const Event &amp;E : Events) J.object([&amp;] { J.attribute(&quot;timestamp&quot;, <ref refid="classint64__t" kindref="compound">int64_t</ref>(E.Time)); J.attributeArray(&quot;participants&quot;, [&amp;] { for (const Participant &amp;P : E.Participants) J.value(P.toString()); }); }); });</para>
+<para>This would produce JSON like:</para>
+<para>[ { &quot;timestamp&quot;: 19287398741, &quot;participants&quot;: [ &quot;King Kong&quot;, &quot;Miley Cyrus&quot;, &quot;Cleopatra&quot; ] }, ... ]</para>
+<para>The lower level begin/end methods (<ref refid="classllvm_1_1json_1_1_o_stream_1a5741cf7e48bbab22369fa2aa8c9e151f" kindref="member">arrayBegin()</ref>) are more flexible but care must be taken to pair them correctly:</para>
+<para><ref refid="classllvm_1_1json_1_1_o_stream" kindref="compound">json::OStream</ref> J(OS); for (const Event &amp;E : Events) { J.objectBegin(); J.attribute(&quot;timestamp&quot;, <ref refid="classint64__t" kindref="compound">int64_t</ref>(E.Time)); J.attributeBegin(&quot;participants&quot;); for (const Participant &amp;P : E.Participants) J.value(P.toString()); J.attributeEnd(); J.objectEnd(); } J.arrayEnd();</para>
+<para>If the call sequence isn&apos;t valid JSON, asserts will fire in debug mode. This can be mismatched begin()/end() pairs, trying to emit attributes inside an array, and so on. With asserts disabled, this is undefined behavior. </para>
+    </detaileddescription>
+    <location file="include/llvm/Support/JSON.h" line="979" column="1" bodyfile="include/llvm/Support/JSON.h" bodystart="979" bodyend="1084"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1json_1_1_o_stream_1ae4b2f9a526f86b52da896e665428cfceadc83d9c006f81d88f05548518e8c43f1" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>Array</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a91056cd37dda55d4b00d69b6361641e4" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>array</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a5741cf7e48bbab22369fa2aa8c9e151f" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>arrayBegin</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1aa4ef0d3ce12400b17d9f9a5cd028a211" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>arrayEnd</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a4754bca88e59468dba45df18b849920a" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>attribute</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a7ff67320cc541a438d8fc170124af74f" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>attributeArray</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a39613bf6aa1a8059a4dd25d57c7fd1e5" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>attributeBegin</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1aacce5798acdb34154adce0318fdfdaf8" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>attributeEnd</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1ac2218cffea84ee2b2ae4a43110007039" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>attributeImpl</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a0e888ce91e1087ca58869357b718fd38" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>attributeObject</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1ae5c537c76bd3b93f03bf4bbbbc489280" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>Block</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a8d6140131d6891e8ca8c134b889b8ec8" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>comment</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1ae4b2f9a526f86b52da896e665428cfce" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>Context</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a4d07484a9d134e2f4e50f22039fdc5b0" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>flush</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1af1e16a477be6820f1946bcd40a62a2ed" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>flushComment</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a643f54799425b5182abe0ca5b8ebd4ae" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>Indent</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a2e2a6e8553a2600bf63521c30287f697" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>IndentSize</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a31470c2c8a2c1073d844aec2c10802ba" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>newline</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1ae4b2f9a526f86b52da896e665428cfcea929cdb9ce3e4853e0c930ef11978c7ec" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>Object</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a06d556674c46c15e5906f2f645f4fbe5" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>object</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a5f20bfc936e2aaf698df6de5b3a0c397" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>objectBegin</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1af9928f1fc2112c92546d8e31ced97033" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>objectEnd</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1af15c422eb2d5b0f5db9c555ee5c1465e" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>OS</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a2601b35821c232bc7f2e68f7db52fdbb" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>OStream</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1ad5b9e5ede5b59ce11a9e7fab5bec8cad" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>PendingComment</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1ae4b2f9a526f86b52da896e665428cfcea49425f005062878dbc6dfc7226b907fa" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>RawValue</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a08ce52de11e54269aeba894fcb72bb7a" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>rawValue</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1abe988728690935fad7313244c2f4a772" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>rawValue</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a792749e73c83a275ccff99e769c64569" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>rawValueBegin</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1ad3381dc4020a5d5353451a2348e3ec24" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>rawValueEnd</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1ae4b2f9a526f86b52da896e665428cfcea2054207610f595ba37117d0fd0aa0180" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>Singleton</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a404b8fd2af15380167c133d4cb87c285" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>Stack</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1ad132dccf457f071b5854a8c94135e7c2" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>value</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1a45304e4252c69789af45c95e7f12ce0f" prot="private" virt="non-virtual"><scope>llvm::json::OStream</scope><name>valueBegin</name></member>
+      <member refid="classllvm_1_1json_1_1_o_stream_1ae9b7de561c6d433f9123cbed7b3380da" prot="public" virt="non-virtual"><scope>llvm::json::OStream</scope><name>~OStream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

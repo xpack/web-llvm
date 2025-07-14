@@ -1,0 +1,1668 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_branch_inst" kind="class" language="C++" prot="public">
+    <compoundname>llvm::BranchInst</compoundname>
+    <basecompoundref refid="classllvm_1_1_instruction" prot="public" virt="non-virtual">llvm::Instruction</basecompoundref>
+    <includes refid="_instructions_8h" local="yes">llvm/IR/Instructions.h</includes>
+    <innerclass refid="structllvm_1_1_branch_inst_1_1const__succ__op__iterator" prot="public">llvm::BranchInst::const_succ_op_iterator</innerclass>
+    <innerclass refid="structllvm_1_1_branch_inst_1_1succ__op__iterator" prot="public">llvm::BranchInst::succ_op_iterator</innerclass>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_branch_inst_1a87273cb892a8182f137567e6b631695e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class Instruction</definition>
+        <argsstring></argsstring>
+        <name>Instruction</name>
+        <qualifiedname>llvm::BranchInst::Instruction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></type>
+        </param>
+        <briefdescription>
+<para>Iterator for <computeroutput><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></computeroutput>s in a `BasicBlock. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>/ \Returns an <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</para>
+<para>private: <ref refid="classllvm_1_1_basic_block" kindref="compound">llvm::BasicBlock</ref> *BB; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">llvm::BasicBlock::iterator</ref> It; Context *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</para>
+<para>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; <ndash/>*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; &quot;BBIterators in different context!&quot;); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *getNodeParent() const; };</para>
+<para>/ Contains a list of <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref>&apos;s. class <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> : public <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> { / Builds a graph that contains all values in <computeroutput>BB</computeroutput> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class Context; // For <computeroutput>buildBasicBlockFromIR</computeroutput> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3040" column="16" bodyfile="include/llvm/IR/Instructions.h" bodystart="3040" bodyend="-1"/>
+        <references refid="classllvm_1_1_branch_inst_1a6caa25d916f318fa81a44bdbbf51fcd4" compoundref="_instructions_8cpp" startline="4421" endline="4424">cloneImpl</references>
+        <references refid="classllvm_1_1_branch_inst_1a87273cb892a8182f137567e6b631695e" compoundref="_instructions_8h" startline="3040">Instruction</references>
+        <referencedby refid="classllvm_1_1_branch_inst_1a4ff84228c4e41f31dd35e8aac9654468" compoundref="_instructions_8h" startline="3134" endline="3136">classof</referencedby>
+        <referencedby refid="classllvm_1_1_branch_inst_1a87273cb892a8182f137567e6b631695e" compoundref="_instructions_8h" startline="3040">Instruction</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1ac0dc4dcd803741b389bf766fe750df24" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BranchInst::BranchInst</definition>
+        <argsstring>(const BranchInst &amp;BI, AllocInfo AllocInfo)</argsstring>
+        <name>BranchInst</name>
+        <qualifiedname>llvm::BranchInst::BranchInst</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_branch_inst" kindref="compound">BranchInst</ref> &amp;</type>
+          <declname>BI</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_user_1_1_alloc_info" kindref="compound">AllocInfo</ref></type>
+          <declname>AllocInfo</declname>
+        </param>
+        <briefdescription>
+<para>Ops list - Branches are strange. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The operands are ordered: [Cond, FalseDest,] TrueDest. This makes some accessors faster because they don&apos;t have to check for cond/uncond branchness. These are mostly accessed relative from <ref refid="classllvm_1_1_user_1af41f58e730804d10b91fcff39b035f74" kindref="member">op_end()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3021" column="3" bodyfile="lib/IR/Instructions.cpp" bodystart="1153" bodyend="1166"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a0daa623f56fd8f3d0ab87b491e162f95" prot="private" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BranchInst::BranchInst</definition>
+        <argsstring>(BasicBlock *IfTrue, AllocInfo AllocInfo, InsertPosition InsertBefore)</argsstring>
+        <name>BranchInst</name>
+        <qualifiedname>llvm::BranchInst::BranchInst</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>IfTrue</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_user_1_1_alloc_info" kindref="compound">AllocInfo</ref></type>
+          <declname>AllocInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_insert_position" kindref="compound">InsertPosition</ref></type>
+          <declname>InsertBefore</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3031" column="12" bodyfile="lib/IR/Instructions.cpp" bodystart="1132" bodyend="1138"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a29f02e107e377c9f6d06c92668406f48" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BranchInst::BranchInst</definition>
+        <argsstring>(BasicBlock *IfTrue, BasicBlock *IfFalse, Value *Cond, AllocInfo AllocInfo, InsertPosition InsertBefore)</argsstring>
+        <name>BranchInst</name>
+        <qualifiedname>llvm::BranchInst::BranchInst</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>IfTrue</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>IfFalse</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Cond</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_user_1_1_alloc_info" kindref="compound">AllocInfo</ref></type>
+          <declname>AllocInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_insert_position" kindref="compound">InsertPosition</ref></type>
+          <declname>InsertBefore</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3033" column="3" bodyfile="lib/IR/Instructions.cpp" bodystart="1140" bodyend="1151"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a96fa91c0c8bc1268c0f62d538b974428" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchInst::AssertOK</definition>
+        <argsstring>()</argsstring>
+        <name>AssertOK</name>
+        <qualifiedname>llvm::BranchInst::AssertOK</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3036" column="8" bodyfile="lib/IR/Instructions.cpp" bodystart="1126" bodyend="1130"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a6caa25d916f318fa81a44bdbbf51fcd4" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_branch_inst" kindref="compound">BranchInst</ref> *</type>
+        <definition>BranchInst * BranchInst::cloneImpl</definition>
+        <argsstring>() const</argsstring>
+        <name>cloneImpl</name>
+        <qualifiedname>llvm::BranchInst::cloneImpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3042" column="14" bodyfile="lib/IR/Instructions.cpp" bodystart="4421" bodyend="4424"/>
+        <references refid="classllvm_1_1_user_1addec638786f763d967811b45cb662f1f" compoundref="_i_r_2_user_8h" startline="250" endline="250">llvm::User::getNumOperands</references>
+        <referencedby refid="classllvm_1_1_branch_inst_1a87273cb892a8182f137567e6b631695e" compoundref="_instructions_8h" startline="3040">Instruction</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a9f40e42226cee617c16cb1c447b115c5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_branch_inst" kindref="compound">BranchInst</ref> *</type>
+        <definition>static BranchInst * llvm::BranchInst::Create</definition>
+        <argsstring>(BasicBlock *IfTrue, InsertPosition InsertBefore=nullptr)</argsstring>
+        <name>Create</name>
+        <qualifiedname>llvm::BranchInst::Create</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>IfTrue</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_insert_position" kindref="compound">InsertPosition</ref></type>
+          <declname>InsertBefore</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3072" column="21" bodyfile="include/llvm/IR/Instructions.h" bodystart="3072" bodyend="3076"/>
+        <references refid="classllvm_1_1_instruction_1af10fa975001cd000bc6aaa88267d970f" compoundref="_i_r_2_instruction_8h" startline="1046">llvm::Instruction::BasicBlock</references>
+        <referencedby refid="_i_r_outliner_8cpp_1a4fcb90c9c38b3381765a891d0a61c1ea" compoundref="_i_r_outliner_8cpp" startline="2069" endline="2113">alignOutputBlockWithAggFunc</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aea49493e2ae224d30cda2b3235d180b0" compoundref="_simple_loop_unswitch_8cpp" startline="1166" endline="1355">buildClonedLoopBlocks</referencedby>
+        <referencedby refid="structanonymous__namespace_02_open_m_p_opt_8cpp_03_1_1_a_a_kernel_info_function_1a16144b1e0f0bc86c81b262b2f82c44df" compoundref="_open_m_p_opt_8cpp" startline="4302" endline="4627">anonymous_namespace{OpenMPOpt.cpp}::AAKernelInfoFunction::buildCustomStateMachine</referencedby>
+        <referencedby refid="namespacellvm_1a2b3fdb09b0789963c439d41fe91e44a1" compoundref="_transforms_2_utils_2_local_8cpp" startline="2964" endline="2982">llvm::changeToCall</referencedby>
+        <referencedby refid="structanonymous__namespace_02_clone_function_8cpp_03_1_1_pruning_function_cloner_1a80ad3b35cf775718eb472f8810e73092" compoundref="_clone_function_8cpp" startline="509" endline="698">anonymous_namespace{CloneFunction.cpp}::PruningFunctionCloner::CloneBlock</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_basic_block_1a2ffeb0208ddb1c5cf8a4bfb2ef0c9008" compoundref="_v_plan_8cpp" startline="414" endline="448">llvm::VPBasicBlock::connectToPredecessors</referencedby>
+        <referencedby refid="classllvm_1_1_i_r_builder_base_1abab736a0141f903dc32a6f48828ad908" compoundref="_i_r_builder_8h" startline="1158" endline="1160">llvm::IRBuilderBase::CreateBr</referencedby>
+        <referencedby refid="classllvm_1_1_i_r_builder_base_1a22e193e6a0495abb240bbb128af58cfc" compoundref="_i_r_builder_8h" startline="1173" endline="1182">llvm::IRBuilderBase::CreateCondBr</referencedby>
+        <referencedby refid="classllvm_1_1_i_r_builder_base_1a972c30f044db799668bdcace5544edeb" compoundref="_i_r_builder_8h" startline="1164" endline="1169">llvm::IRBuilderBase::CreateCondBr</referencedby>
+        <referencedby refid="_lower_mem_intrinsics_8cpp_1af1d16783f6f4b4d20427e93da6dd606f" compoundref="_lower_mem_intrinsics_8cpp" startline="402" endline="651">createMemMoveLoopUnknownSize</referencedby>
+        <referencedby refid="_loop_flatten_8cpp_1a5e53eb62d81882a5586764e2a9378a49" compoundref="_loop_flatten_8cpp" startline="747" endline="836">DoFlattenLoopPair</referencedby>
+        <referencedby refid="namespacellvm_1a833a6084a93d5900e8bdd493b37bbbc7" compoundref="_basic_block_utils_8cpp" startline="833" endline="979">llvm::ehAwareSplitEdge</referencedby>
+        <referencedby refid="namespacellvm_1a5eeb42cfad58d947c605b1e21376e0b7" compoundref="_a_m_d_g_p_u_emit_printf_8cpp" startline="426" endline="534">llvm::emitAMDGPUPrintfCall</referencedby>
+        <referencedby refid="classllvm_1_1_epilogue_vectorizer_main_loop_1aeeb47f904372b9e25b9f7ba606158b25" compoundref="_loop_vectorize_8cpp" startline="7854" endline="7904">llvm::EpilogueVectorizerMainLoop::emitIterationCountCheck</referencedby>
+        <referencedby refid="classllvm_1_1_inner_loop_vectorizer_1a72c491cdf8cf0283d87008831431f917" compoundref="_loop_vectorize_8cpp" startline="2472" endline="2555">llvm::InnerLoopVectorizer::emitIterationCountCheck</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_vectorize_8cpp_03_1_1_generated_r_t_checks_1af15e3fefdfa2f5ea86ef5b8eacfa3517" compoundref="_loop_vectorize_8cpp" startline="2093" endline="2122">anonymous_namespace{LoopVectorize.cpp}::GeneratedRTChecks::emitMemRuntimeChecks</referencedby>
+        <referencedby refid="classllvm_1_1_epilogue_vectorizer_epilogue_loop_1a04c0081718b0f5113134aa563e1a56ca" compoundref="_loop_vectorize_8cpp" startline="7991" endline="8044">llvm::EpilogueVectorizerEpilogueLoop::emitMinimumVectorEpilogueIterCountCheck</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_vectorize_8cpp_03_1_1_generated_r_t_checks_1aa55563b1c40f6c6c94622a87dd7b5dcb" compoundref="_loop_vectorize_8cpp" startline="2056" endline="2088">anonymous_namespace{LoopVectorize.cpp}::GeneratedRTChecks::emitSCEVChecks</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_branch_on_mask_recipe_1aa11920a3a7cf966108b4137b9e1a4c8b" compoundref="_v_plan_recipes_8cpp" startline="2468" endline="2487">llvm::VPBranchOnMaskRecipe::execute</referencedby>
+        <referencedby refid="_jump_table_to_switch_8cpp_1ab930da454be280eb307c612727543eb6" compoundref="_jump_table_to_switch_8cpp" startline="93" endline="143">expandToSwitch</referencedby>
+        <referencedby refid="_i_r_outliner_8cpp_1a4e06ebf129ddfb3b33a64f1a456cfc24" compoundref="_i_r_outliner_8cpp" startline="2243" endline="2290">fillOverallFunction</referencedby>
+        <referencedby refid="_i_r_outliner_8cpp_1af30ff2458bb283e423c1fc242a468579" compoundref="_i_r_outliner_8cpp" startline="1540" endline="1582">findOrCreatePHIBlock</referencedby>
+        <referencedby refid="structanonymous__namespace_02_open_m_p_opt_8cpp_03_1_1_a_a_kernel_info_function_1aaffd2ef85a5bde3351bbc659c18c1ebe" compoundref="_open_m_p_opt_8cpp" startline="4172" endline="4222">anonymous_namespace{OpenMPOpt.cpp}::AAKernelInfoFunction::forceSingleThreadPerWorkgroupHelper</referencedby>
+        <referencedby refid="classanonymous__namespace_02_inline_function_8cpp_03_1_1_landing_pad_inlining_info_1adcbc4d7e8bf9926797b48a2b3603e3a4" compoundref="_inline_function_8cpp" startline="239" endline="252">anonymous_namespace{InlineFunction.cpp}::LandingPadInliningInfo::forwardResume</referencedby>
+        <referencedby refid="classanonymous__namespace_02_l_i_c_m_8cpp_03_1_1_control_flow_hoister_1ac2231bda91f0fdd79e476cb36e48d33b" compoundref="_l_i_c_m_8cpp" startline="765" endline="866">anonymous_namespace{LICM.cpp}::ControlFlowHoister::getOrCreateHoistedBlock</referencedby>
+        <referencedby refid="_a_m_d_g_p_u_emit_printf_8cpp_1af8ebafc2930bf25dfa6887c4b5bc2c33" compoundref="_a_m_d_g_p_u_emit_printf_8cpp" startline="87" endline="152">getStrlenWithNull</referencedby>
+        <referencedby refid="namespacellvm_1ab5a3ac0a249da0743dac1bd816d8e5d5" compoundref="_inline_function_8cpp" startline="2460" endline="3387">llvm::InlineFunction</referencedby>
+        <referencedby refid="_bounds_checking_8cpp_1a045ddd9cf89c401caf98eb3acad6b1a7" compoundref="_bounds_checking_8cpp" startline="144" endline="172">insertBoundsCheck</referencedby>
+        <referencedby refid="structanonymous__namespace_02_open_m_p_opt_8cpp_03_1_1_a_a_kernel_info_function_1ad822c761168baefbdcd6c0d9fd928a6d" compoundref="_open_m_p_opt_8cpp" startline="3949" endline="4170">anonymous_namespace{OpenMPOpt.cpp}::AAKernelInfoFunction::insertInstructionGuardsHelper</referencedby>
+        <referencedby refid="_loop_simplify_8cpp_1ae72984cd3577f73b7880883b12808a8c" compoundref="_loop_simplify_8cpp" startline="355" endline="472">insertUniqueBackedgeBlock</referencedby>
+        <referencedby refid="structanonymous__namespace_02_address_sanitizer_8cpp_03_1_1_address_sanitizer_1a9b79beccbeb33ff89c797f5ac7b3fce3" compoundref="_address_sanitizer_8cpp" startline="1847" endline="1931">anonymous_namespace{AddressSanitizer.cpp}::AddressSanitizer::instrumentAddress</referencedby>
+        <referencedby refid="structanonymous__namespace_02_attributor_attributes_8cpp_03_1_1_a_a_heap_to_stack_function_1a7d3aee2fc33ae5d5ffe0085711f601bf" compoundref="_attributor_attributes_8cpp" startline="6742" endline="6843">anonymous_namespace{AttributorAttributes.cpp}::AAHeapToStackFunction::manifest</referencedby>
+        <referencedby refid="structanonymous__namespace_02_attributor_attributes_8cpp_03_1_1_a_a_indirect_call_info_call_site_1afc99e48bf0eed3b2fc9a2c3b25e3bd73" compoundref="_attributor_attributes_8cpp" startline="12333" endline="12483">anonymous_namespace{AttributorAttributes.cpp}::AAIndirectCallInfoCallSite::manifest</referencedby>
+        <referencedby refid="_transforms_2_utils_2_local_8cpp_1a0af4594038f5cb46e7a4c86713520c95" compoundref="_transforms_2_utils_2_local_8cpp" startline="3027" endline="3223">markAliveBlocks</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a1f70470f7a7722fd55c58c81358107f2" compoundref="_simplify_c_f_g_8cpp" startline="5504" endline="5534">mergeCleanupPad</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1acc8066950deec241b4fafe0700ff5f2c" compoundref="_simplify_c_f_g_8cpp" startline="2844" endline="2974">mergeCompatibleInvokesImpl</referencedby>
+        <referencedby refid="classllvm_1_1_insert_c_f_g_strategy_1a4a797db667ae87ab16b62a35de4f4a01" compoundref="_i_r_mutator_8cpp" startline="423" endline="495">llvm::InsertCFGStrategy::mutate</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_lower_switch_8cpp_03_1a77bc86cd5c15b83afe922fa7bbfe0f11" compoundref="_lower_switch_8cpp" startline="154" endline="219">anonymous_namespace{LowerSwitch.cpp}::NewLeafBlock</referencedby>
+        <referencedby refid="_simplify_c_f_g_pass_8cpp_1aec97a6e447a45c9027b71a487f5732ec" compoundref="_simplify_c_f_g_pass_8cpp" startline="91" endline="163">performBlockTailMerging</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1abbc2deb942b00a9d0d19a6613e374168" compoundref="_jump_threading_8cpp" startline="948" endline="1143">llvm::JumpThreadingPass::processBlock</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1ac06e19670a4cb86b0c885cf67bdb1bc4" compoundref="_jump_threading_8cpp" startline="1145" endline="1208">llvm::JumpThreadingPass::processImpliedCondition</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_lower_switch_8cpp_03_1a5770d604e68e48d1b8f1e7aa4c89a034" compoundref="_lower_switch_8cpp" startline="349" endline="533">anonymous_namespace{LowerSwitch.cpp}::ProcessSwitchInst</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1a96191c096e61f77ea0a6771263bdb5e1" compoundref="_jump_threading_8cpp" startline="1540" endline="1716">llvm::JumpThreadingPass::processThreadableEdges</referencedby>
+        <referencedby refid="_o_m_p_i_r_builder_8cpp_1a3057c2b7e1e25de160497b1ef3985c2a" compoundref="_o_m_p_i_r_builder_8cpp" startline="300" endline="313">redirectTo</referencedby>
+        <referencedby refid="_control_flow_utils_8cpp_1a73660474ea469de5320aec1e4f7c6e4c" compoundref="_control_flow_utils_8cpp" startline="35" endline="61">redirectToHub</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_c_p_solver_1ab1e7a17f7727ff9a32ffc2a1efdb7bcc" compoundref="_s_c_c_p_solver_8cpp" startline="259" endline="352">llvm::SCCPSolver::removeNonFeasibleEdges</referencedby>
+        <referencedby refid="structanonymous__namespace_02_whole_program_devirt_8cpp_03_1_1_virtual_call_site_1a06e083d4358f4e44f6d6319347a81cfb" compoundref="_whole_program_devirt_8cpp" startline="464" endline="479">anonymous_namespace{WholeProgramDevirt.cpp}::VirtualCallSite::replaceAndErase</referencedby>
+        <referencedby refid="_lower_constant_intrinsics_8cpp_1aa39118ddf6c73ece724a5c5e93d0db1e" compoundref="_lower_constant_intrinsics_8cpp" startline="53" endline="99">replaceConditionalBranchesOnConstant</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_m_d_g_p_u_unify_divergent_exit_nodes_8cpp_03_1_1_a_m_d_g_p_u_unify_divergent_exit_nodes_impl_1a9779d04b57fa01538e274e830110337f" compoundref="_a_m_d_g_p_u_unify_divergent_exit_nodes_8cpp" startline="187" endline="328">anonymous_namespace{AMDGPUUnifyDivergentExitNodes.cpp}::AMDGPUUnifyDivergentExitNodesImpl::run</referencedby>
+        <referencedby refid="_indirect_br_expand_pass_8cpp_1a241c916e6342b5f14a7492f1b91cc715" compoundref="_indirect_br_expand_pass_8cpp" startline="102" endline="278">runImpl</referencedby>
+        <referencedby refid="_lower_global_dtors_8cpp_1aa2a67dbc6220273da3430b0a15735487" compoundref="_lower_global_dtors_8cpp" startline="77" endline="233">runImpl</referencedby>
+        <referencedby refid="_control_flow_utils_8cpp_1a0fafeb4f9eaccefdd578d45fa0fd1f9f" compoundref="_control_flow_utils_8cpp" startline="68" endline="82">setupBranchForGuard</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a40f7c70fc970f25f1c32e8b2c28662ec" compoundref="_simplify_c_f_g_8cpp" startline="4644" endline="4864">SimplifyCondBranchToCondBranch</referencedby>
+        <referencedby refid="_coro_split_8cpp_1a9f3928b341e4412b8b66b794896014f0" compoundref="_coro_split_8cpp" startline="1304" endline="1361">simplifySuspendPoint</referencedby>
+        <referencedby refid="namespacellvm_1a78e14f66d8a8405c6882b5ff6a3b7617" compoundref="_o_m_p_i_r_builder_8cpp" startline="315" endline="326">llvm::spliceBB</referencedby>
+        <referencedby refid="namespacellvm_1ac950ae90e1bea2697f515628f7704b2a" compoundref="_basic_block_utils_8cpp" startline="1650" endline="1729">llvm::SplitBlockAndInsertIfThenElse</referencedby>
+        <referencedby refid="namespacellvm_1_1fuzzerop_1a32b5360bb5f3831163d348fc96fc1198" compoundref="_operations_8cpp" startline="166" endline="196">llvm::fuzzerop::splitBlockDescriptor</referencedby>
+        <referencedby refid="_basic_block_utils_8cpp_1a02eb00498005806a0e45ac2b5b13fc70" compoundref="_basic_block_utils_8cpp" startline="1330" endline="1417">SplitBlockPredecessorsImpl</referencedby>
+        <referencedby refid="namespacellvm_1a4ab89e1812569bb89edf9e25c3582913" compoundref="_break_critical_edges_8cpp" startline="111" endline="306">llvm::SplitKnownCriticalEdge</referencedby>
+        <referencedby refid="_basic_block_utils_8cpp_1ae2c617685e87af2501e3d53323f91df7" compoundref="_basic_block_utils_8cpp" startline="1437" endline="1537">SplitLandingPadPredecessorsImpl</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_lower_switch_8cpp_03_1ab9fe9fd51104da9e7faa88a213b74b9b" compoundref="_lower_switch_8cpp" startline="226" endline="302">anonymous_namespace{LowerSwitch.cpp}::SwitchConvert</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1afe4c82c6f42e62e67ce856488751517d" compoundref="_jump_threading_8cpp" startline="2369" endline="2453">llvm::JumpThreadingPass::threadEdge</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_d_f_a_jump_threading_8cpp_03_1a37fd6f31f78116956f457b105ab4513c" compoundref="_d_f_a_jump_threading_8cpp" startline="190" endline="345">anonymous_namespace{DFAJumpThreading.cpp}::unfold</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1a7f1482a3531f0a99f5481d84bae6127e" compoundref="_jump_threading_8cpp" startline="2750" endline="2811">llvm::JumpThreadingPass::unfoldSelectInstr</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_unify_function_exit_nodes_8cpp_03_1a06b5d6856fd9067830ab0477c0b13f31" compoundref="_unify_function_exit_nodes_8cpp" startline="45" endline="85">anonymous_namespace{UnifyFunctionExitNodes.cpp}::unifyReturnBlocks</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_m_d_g_p_u_unify_divergent_exit_nodes_8cpp_03_1_1_a_m_d_g_p_u_unify_divergent_exit_nodes_impl_1adb133e739b469808feb3635786aeaa01" compoundref="_a_m_d_g_p_u_unify_divergent_exit_nodes_8cpp" startline="139" endline="185">anonymous_namespace{AMDGPUUnifyDivergentExitNodes.cpp}::AMDGPUUnifyDivergentExitNodesImpl::unifyReturnBlockSet</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_unify_function_exit_nodes_8cpp_03_1af51c1104ae401b16bf1787ef769b356c" compoundref="_unify_function_exit_nodes_8cpp" startline="23" endline="43">anonymous_namespace{UnifyFunctionExitNodes.cpp}::unifyUnreachableBlocks</referencedby>
+        <referencedby refid="namespacellvm_1ae45123597a5abb30853572614c1b2d4b" compoundref="_loop_unroll_and_jam_8cpp" startline="215" endline="622">llvm::UnrollAndJamLoop</referencedby>
+        <referencedby refid="namespacellvm_1af78eb969de6e17fe20fa8834d3e9c9aa" compoundref="_loop_unroll_8cpp" startline="458" endline="1084">llvm::UnrollLoop</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aae4261fb86bc9023c3383785afa66b9a" compoundref="_simple_loop_unswitch_8cpp" startline="2175" endline="2652">unswitchNontrivialInvariants</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1a6a082aa2e05f44f7dab89e2ff8c582ff" compoundref="_simple_loop_unswitch_8cpp" startline="509" endline="715">unswitchTrivialBranch</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aadf6036e1d19c8ba91242af6ec48d40b" compoundref="_simple_loop_unswitch_8cpp" startline="743" endline="1033">unswitchTrivialSwitch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a33901f0ae7fea18fad9358970e01eeb3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_branch_inst" kindref="compound">BranchInst</ref> *</type>
+        <definition>static BranchInst * llvm::BranchInst::Create</definition>
+        <argsstring>(BasicBlock *IfTrue, BasicBlock *IfFalse, Value *Cond, InsertPosition InsertBefore=nullptr)</argsstring>
+        <name>Create</name>
+        <qualifiedname>llvm::BranchInst::Create</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>IfTrue</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>IfFalse</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Cond</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_insert_position" kindref="compound">InsertPosition</ref></type>
+          <declname>InsertBefore</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3078" column="21" bodyfile="include/llvm/IR/Instructions.h" bodystart="3078" bodyend="3084"/>
+        <references refid="classllvm_1_1_instruction_1af10fa975001cd000bc6aaa88267d970f" compoundref="_i_r_2_instruction_8h" startline="1046">llvm::Instruction::BasicBlock</references>
+        <references refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a193847098793cdbab306803186676899" compoundref="_r_i_s_c_v_redundant_copy_elimination_8cpp" startline="75">Cond</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a4ff84228c4e41f31dd35e8aac9654468" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::BranchInst::classof</definition>
+        <argsstring>(const Instruction *I)</argsstring>
+        <name>classof</name>
+        <qualifiedname>llvm::BranchInst::classof</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3134" column="15" bodyfile="include/llvm/IR/Instructions.h" bodystart="3134" bodyend="3136"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_branch_inst_1a87273cb892a8182f137567e6b631695e" compoundref="_instructions_8h" startline="3040">Instruction</references>
+        <referencedby refid="classllvm_1_1_branch_inst_1a9ec14a6005aa968e8e71c48c1936a2f9" compoundref="_instructions_8h" startline="3137" endline="3139">classof</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a9ec14a6005aa968e8e71c48c1936a2f9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::BranchInst::classof</definition>
+        <argsstring>(const Value *V)</argsstring>
+        <name>classof</name>
+        <qualifiedname>llvm::BranchInst::classof</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3137" column="15" bodyfile="include/llvm/IR/Instructions.h" bodystart="3137" bodyend="3139"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_branch_inst_1a4ff84228c4e41f31dd35e8aac9654468" compoundref="_instructions_8h" startline="3134" endline="3136">classof</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a15c12c62063c41b5dc31efa378b49618" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BranchInst::DECLARE_TRANSPARENT_OPERAND_ACCESSORS</definition>
+        <argsstring>(Value)</argsstring>
+        <name>DECLARE_TRANSPARENT_OPERAND_ACCESSORS</name>
+        <qualifiedname>llvm::BranchInst::DECLARE_TRANSPARENT_OPERAND_ACCESSORS</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref></type>
+        </param>
+        <briefdescription>
+<para>Transparently provide more efficient getOperand methods. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3087" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1ad56f6a9b5cd05940017c4544df48bc30" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::BranchInst::isUnconditional</definition>
+        <argsstring>() const</argsstring>
+        <name>isUnconditional</name>
+        <qualifiedname>llvm::BranchInst::isUnconditional</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3089" column="8" bodyfile="include/llvm/IR/Instructions.h" bodystart="3089" bodyend="3089"/>
+        <references refid="classllvm_1_1_user_1addec638786f763d967811b45cb662f1f" compoundref="_i_r_2_user_8h" startline="250" endline="250">llvm::User::getNumOperands</references>
+        <referencedby refid="_loop_term_fold_8cpp_1a0e67dc55f94f7419d24a39fa5b79c42f" compoundref="_loop_term_fold_8cpp" startline="52" endline="228">canFoldTermCondOfLoop</referencedby>
+        <referencedby refid="_loop_flatten_8cpp_1af4f43e9c3f0bc709f58c5c9a2d92eed5" compoundref="_loop_flatten_8cpp" startline="553" endline="609">checkOuterLoopInsts</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1ac14ea98bd0e870e467ae0ddc75a9fa87" compoundref="_jump_threading_8cpp" startline="2614" endline="2743">llvm::JumpThreadingPass::duplicateCondBranchOnPHIIntoPred</referencedby>
+        <referencedby refid="classanonymous__namespace_02_inductive_range_check_elimination_8cpp_03_1_1_inductive_range_check_1a715a08cb04246d426e200c8196ecf0ea" compoundref="_inductive_range_check_elimination_8cpp" startline="519" endline="569">anonymous_namespace{InductiveRangeCheckElimination.cpp}::InductiveRangeCheck::extractRangeChecksFromBranch</referencedby>
+        <referencedby refid="namespacellvm_1ad600d9077d7e1eadff1334ee14f7f25a" compoundref="_simplify_c_f_g_8cpp" startline="4133" endline="4256">llvm::foldBranchToCommonDest</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a2fc50d227d302eb98914f04bcc6634e1" compoundref="_instruction_combining_8cpp" startline="1770" endline="1938">llvm::InstCombinerImpl::foldOpIntoPhi</referencedby>
+        <referencedby refid="structllvm_1_1_dense_map_info_3_01const_01_switch_succ_wrapper_01_5_01_4_1ade1da0b29f5e3cb310ac591da00699c3" compoundref="_simplify_c_f_g_8cpp" startline="7515" endline="7539">llvm::DenseMapInfo&lt; const SwitchSuccWrapper * &gt;::getHashValue</referencedby>
+        <referencedby refid="classllvm_1_1_loop_1a580a6361a2bad87e6071ecc795bdae96" compoundref="_loop_info_8cpp" startline="368" endline="410">llvm::Loop::getLoopGuardBranch</referencedby>
+        <referencedby refid="_lower_expect_intrinsic_8cpp_1a390dfaf67ef6d58f12f5a19ee938c60f" compoundref="_lower_expect_intrinsic_8cpp" startline="357" endline="362">handleBranchExpect</referencedby>
+        <referencedby refid="_lower_expect_intrinsic_8cpp_1aea5dd05a61257355d99f96d8d6dc9f94" compoundref="_lower_expect_intrinsic_8cpp" startline="116" endline="273">handlePhiDef</referencedby>
+        <referencedby refid="_partial_inlining_8cpp_1a8884a3765a9cdbc730400587d4a3192c" compoundref="_partial_inlining_8cpp" startline="663" endline="675">hasProfileData</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1aefc772d1808d513abc142b59844cfe45" compoundref="_scalar_evolution_8cpp" startline="11621" endline="11718">llvm::ScalarEvolution::isBasicBlockEntryGuardedByCond</referencedby>
+        <referencedby refid="structllvm_1_1_dense_map_info_3_01const_01_switch_succ_wrapper_01_5_01_4_1afd0535a9a9691fbeaf8a97077837bff9" compoundref="_simplify_c_f_g_8cpp" startline="7540" endline="7573">llvm::DenseMapInfo&lt; const SwitchSuccWrapper * &gt;::isEqual</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1a710878a88d68a9169313249bfd52862a" compoundref="_jump_threading_8cpp" startline="2116" endline="2255">llvm::JumpThreadingPass::maybethreadThroughTwoBasicBlocks</referencedby>
+        <referencedby refid="namespacellvm_1aa76a2cf19b821f320ab439d5659ef4b9" compoundref="_basic_block_utils_8cpp" startline="180" endline="337">llvm::MergeBlockIntoPredecessor</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a9d9df487d54cc5567b4e0b1c8e0120a8" compoundref="_inst_combine_load_store_alloca_8cpp" startline="1448" endline="1568">llvm::InstCombinerImpl::mergeStoreIntoSuccessor</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1af04adca83664ebd947723470c4da58aa" compoundref="_simplify_c_f_g_8cpp" startline="8309" endline="8369">removeUndefIntroducingPredecessor</referencedby>
+        <referencedby refid="_lower_constant_intrinsics_8cpp_1aa39118ddf6c73ece724a5c5e93d0db1e" compoundref="_lower_constant_intrinsics_8cpp" startline="53" endline="99">replaceConditionalBranchesOnConstant</referencedby>
+        <referencedby refid="classllvm_1_1_fast_i_sel_1ab30094b924bc7333b5bf134d7985ca18" compoundref="_fast_i_sel_8cpp" startline="1794" endline="1929">llvm::FastISel::selectOperator</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1ae4ca9bfe94c6cc3d952413c7907db47f" compoundref="_jump_threading_8cpp" startline="2851" endline="2888">llvm::JumpThreadingPass::tryToUnfoldSelect</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1aa0555f067de530264e995e433ebb7e42" compoundref="_jump_threading_8cpp" startline="2813" endline="2837">llvm::JumpThreadingPass::tryToUnfoldSelect</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_d_f_a_jump_threading_8cpp_03_1a37fd6f31f78116956f457b105ab4513c" compoundref="_d_f_a_jump_threading_8cpp" startline="190" endline="345">anonymous_namespace{DFAJumpThreading.cpp}::unfold</referencedby>
+        <referencedby refid="namespacellvm_1ae45123597a5abb30853572614c1b2d4b" compoundref="_loop_unroll_and_jam_8cpp" startline="215" endline="622">llvm::UnrollAndJamLoop</referencedby>
+        <referencedby refid="namespacellvm_1acd628d451ca9d9b021876d59f46e670b" compoundref="_loop_unroll_runtime_8cpp" startline="581" endline="1037">llvm::UnrollRuntimeLoopRemainder</referencedby>
+        <referencedby refid="classanonymous__namespace_02_inline_cost_8cpp_03_1_1_call_analyzer_1a070509ca4afed69062174feb05ef7022" compoundref="_inline_cost_8cpp" startline="2395" endline="2403">anonymous_namespace{InlineCost.cpp}::CallAnalyzer::visitBranchInst</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1aea9ba5a362fb88bd97349a302133dd03" compoundref="_instruction_combining_8cpp" startline="3744" endline="3824">llvm::InstCombinerImpl::visitBranchInst</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a6ab9ce3ba2b714edf23aa74567ba4540" compoundref="_instruction_combining_8cpp" startline="3639" endline="3666">llvm::InstCombinerImpl::visitUnconditionalBranchInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a7e4be8b16fbd68c9045a388904044e01" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::BranchInst::isConditional</definition>
+        <argsstring>() const</argsstring>
+        <name>isConditional</name>
+        <qualifiedname>llvm::BranchInst::isConditional</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3090" column="8" bodyfile="include/llvm/IR/Instructions.h" bodystart="3090" bodyend="3090"/>
+        <references refid="classllvm_1_1_user_1addec638786f763d967811b45cb662f1f" compoundref="_i_r_2_user_8h" startline="250" endline="250">llvm::User::getNumOperands</references>
+        <referencedby refid="classllvm_1_1_predicate_info_builder_1aaaff3f60426ede3ce93de105f66cb581" compoundref="_predicate_info_8cpp" startline="497" endline="522">llvm::PredicateInfoBuilder::buildPredicateInfo</referencedby>
+        <referencedby refid="_loop_rotation_utils_8cpp_1a20d58a0069048b80461676a4132ad1d4" compoundref="_loop_rotation_utils_8cpp" startline="238" endline="274">canRotateDeoptimizingLatchExit</referencedby>
+        <referencedby refid="_control_height_reduction_8cpp_1af10d0fccdcb58cbd2e3932e630d24dfa" compoundref="_control_height_reduction_8cpp" startline="628" endline="654">checkBiasedBranch</referencedby>
+        <referencedby refid="namespacellvm_1ae1a030c9a70b99fced16cc726e1ef9f9" compoundref="_clone_function_8cpp" startline="703" endline="996">llvm::CloneAndPruneIntoFromInst</referencedby>
+        <referencedby refid="_branch_probability_info_8cpp_1ade155905429b0a259a1030f418c04ad9" compoundref="_branch_probability_info_8cpp" startline="542" endline="642">computeUnlikelySuccessors</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a0775987674a0fc922481db1966a5fdf5" compoundref="_loop_vectorize_8cpp" startline="8124" endline="8170">llvm::VPRecipeBuilder::createEdgeMask</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1af67eef9e8d101756a1a0164e63eb4556" compoundref="_simplify_c_f_g_8cpp" startline="424" endline="488">dominatesMergePoint</referencedby>
+        <referencedby refid="_loop_flatten_8cpp_1a6ff25bdf0db077015fe35d4a82b4b6dc" compoundref="_loop_flatten_8cpp" startline="904" endline="993">FlattenLoopPair</referencedby>
+        <referencedby refid="namespacellvm_1ad600d9077d7e1eadff1334ee14f7f25a" compoundref="_simplify_c_f_g_8cpp" startline="4133" endline="4256">llvm::foldBranchToCommonDest</referencedby>
+        <referencedby refid="_code_gen_prepare_8cpp_1a98c59bcf49cb7343886e8f425d6d877b" compoundref="_code_gen_prepare_8cpp" startline="1851" endline="1917">foldICmpWithDominatingICmp</referencedby>
+        <referencedby refid="_p_g_o_instrumentation_8cpp_1af0e4d9315f1815020f42edec6a27ad1f" compoundref="_p_g_o_instrumentation_8cpp" startline="403" endline="431">getBranchCondString</referencedby>
+        <referencedby refid="structllvm_1_1_loop_1_1_loop_bounds_1acfa250dd5ec97448681f9833e22d50cf" compoundref="_loop_info_8cpp" startline="233" endline="273">llvm::Loop::LoopBounds::getCanonicalPredicate</referencedby>
+        <referencedby refid="classllvm_1_1_branch_inst_1aebd4af5642453ce3169094f08dd3d7b8" compoundref="_instructions_8h" startline="3092" endline="3095">getCondition</referencedby>
+        <referencedby refid="namespacellvm_1a1a5751a2dd7306ff9a59eae6c1de8925" compoundref="_basic_block_utils_8cpp" startline="1804" endline="1894">llvm::GetIfCondition</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1a556ec90a0fa1e168a9f22db1deb1fee6" compoundref="_loop_vectorize_8cpp" startline="6384" endline="6823">llvm::LoopVectorizationCostModel::getInstructionCost</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1afb9fd1f991a7503fe4fd7dc16bda6f30" compoundref="_simplify_c_f_g_8cpp" startline="3542" endline="3558">getKnownValueOnEdge</referencedby>
+        <referencedby refid="classllvm_1_1_branch_inst_1a96b8f11f6f21ca0321294669dab83b35" compoundref="_instructions_8h" startline="3102" endline="3102">getNumSuccessors</referencedby>
+        <referencedby refid="_loop_nest_analysis_8cpp_1a1324f8c4f6c399fbb6c4fae0404a47ca" compoundref="_loop_nest_analysis_8cpp" startline="52" endline="68">getOuterLoopLatchCmp</referencedby>
+        <referencedby refid="_lower_expect_intrinsic_8cpp_1aea5dd05a61257355d99f96d8d6dc9f94" compoundref="_lower_expect_intrinsic_8cpp" startline="116" endline="273">handlePhiDef</referencedby>
+        <referencedby refid="_structurize_c_f_g_8cpp_1ad1d9e6fe4974ee0754beaf3d7756bf20" compoundref="_structurize_c_f_g_8cpp" startline="1195" endline="1250">hasOnlyUniformBranches</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a8b617baf7fc5914d8a245e702ea65a7d" compoundref="_scalar_evolution_8cpp" startline="11515" endline="11619">llvm::ScalarEvolution::isLoopBackedgeGuardedByCond</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_interchange_8cpp_03_1_1_loop_interchange_legality_1ade3ca81f3a303345f66492c713c0e4ec" compoundref="_loop_interchange_8cpp" startline="633" endline="722">anonymous_namespace{LoopInterchange.cpp}::LoopInterchangeLegality::isLoopStructureUnderstood</referencedby>
+        <referencedby refid="_loop_idiom_recognize_8cpp_1a0334b7852f3d535571315a1c2a90a085" compoundref="_loop_idiom_recognize_8cpp" startline="1501" endline="1525">matchCondition</referencedby>
+        <referencedby refid="_loop_idiom_recognize_8cpp_1ab57bfa30e7fbef3fb394f7bd5cfa6d0a" compoundref="_loop_idiom_recognize_8cpp" startline="1531" endline="1553">matchShiftULTCondition</referencedby>
+        <referencedby refid="classanonymous__namespace_02_safepoint_i_r_verifier_8cpp_03_1_1_c_f_g_deadness_1a9bcd938340c81deac2844875dfd6086e" compoundref="_safepoint_i_r_verifier_8cpp" startline="125" endline="155">anonymous_namespace{SafepointIRVerifier.cpp}::CFGDeadness::processFunction</referencedby>
+        <referencedby refid="_loop_rotation_utils_8cpp_1a7fdcbbf4a72726c120dc9d33b6ee13bb" compoundref="_loop_rotation_utils_8cpp" startline="213" endline="230">profitableToRotateLoopExitingLatch</referencedby>
+        <referencedby refid="classllvm_1_1_dom_condition_cache_1ac105333da6ce958e6a88367557e798ae" compoundref="_dom_condition_cache_8cpp" startline="19" endline="28">llvm::DomConditionCache::registerBranch</referencedby>
+        <referencedby refid="classanonymous__namespace_02_l_i_c_m_8cpp_03_1_1_control_flow_hoister_1a90cb1c8c28c96b3e0abcd1dc070a7d87" compoundref="_l_i_c_m_8cpp" startline="671" endline="725">anonymous_namespace{LICM.cpp}::ControlFlowHoister::registerPossiblyHoistableBranch</referencedby>
+        <referencedby refid="classanonymous__namespace_02_scalar_evolution_8cpp_03_1_1_s_c_e_v_backedge_condition_folder_1a9692f2f6a4683b75235d1e2e90ecb8f8" compoundref="_scalar_evolution_8cpp" startline="4952" endline="4969">anonymous_namespace{ScalarEvolution.cpp}::SCEVBackedgeConditionFolder::rewrite</referencedby>
+        <referencedby refid="classllvm_1_1_branch_inst_1a3505dab06f59c36142a234321cdc3411" compoundref="_instructions_8h" startline="3097" endline="3100">setCondition</referencedby>
+        <referencedby refid="classanonymous__namespace_02_structurize_c_f_g_8cpp_03_1_1_cond_branch_weights_1a6107a708fd27cbf780738c2491c8de4e" compoundref="_structurize_c_f_g_8cpp" startline="109" endline="116">anonymous_namespace{StructurizeCFG.cpp}::CondBranchWeights::setMetadata</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a1c4994ac805321b7fa03617dff656ad8" compoundref="_simplify_c_f_g_8cpp" startline="3971" endline="4008">shouldFoldCondBranchesToCommonDestination</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a40f7c70fc970f25f1c32e8b2c28662ec" compoundref="_simplify_c_f_g_8cpp" startline="4644" endline="4864">SimplifyCondBranchToCondBranch</referencedby>
+        <referencedby refid="_instruction_combining_8cpp_1a45bde60377059fca310bb78e5d3a3ccb" compoundref="_instruction_combining_8cpp" startline="1730" endline="1768">simplifyInstructionWithPHI</referencedby>
+        <referencedby refid="_loop_simplify_8cpp_1ad54a3c6c671e583284ff935bfde3368c" compoundref="_loop_simplify_8cpp" startline="475" endline="695">simplifyOneLoop</referencedby>
+        <referencedby refid="classllvm_1_1_branch_inst_1a254b2cfabe80269ee4f53f6698452db6" compoundref="_instructions_8h" startline="3121" endline="3125">successors</referencedby>
+        <referencedby refid="classllvm_1_1_branch_inst_1af1b864f41057ebc4d889b1b31f71bc18" compoundref="_instructions_8h" startline="3127" endline="3131">successors</referencedby>
+        <referencedby refid="classllvm_1_1_branch_inst_1a6550fe5bd437c1c3c6e237d726e36b90" compoundref="_instructions_8cpp" startline="1168" endline="1176">swapSuccessors</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1afed5e8a79fa550920f638708cc257bdf" compoundref="_jump_threading_8cpp" startline="3047" endline="3120">llvm::JumpThreadingPass::threadGuard</referencedby>
+        <referencedby refid="classanonymous__namespace_02_structurize_c_f_g_8cpp_03_1_1_cond_branch_weights_1aba3ebc82320c756584510146c07e8139" compoundref="_structurize_c_f_g_8cpp" startline="99" endline="107">anonymous_namespace{StructurizeCFG.cpp}::CondBranchWeights::tryParse</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1ae4ca9bfe94c6cc3d952413c7907db47f" compoundref="_jump_threading_8cpp" startline="2851" endline="2888">llvm::JumpThreadingPass::tryToUnfoldSelect</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aae4261fb86bc9023c3383785afa66b9a" compoundref="_simple_loop_unswitch_8cpp" startline="2175" endline="2652">unswitchNontrivialInvariants</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1a6a082aa2e05f44f7dab89e2ff8c582ff" compoundref="_simple_loop_unswitch_8cpp" startline="509" endline="715">unswitchTrivialBranch</referencedby>
+        <referencedby refid="_jump_threading_8cpp_1ae5a9dfd216e7560889e2366f34ddd9f1" compoundref="_jump_threading_8cpp" startline="147" endline="234">updatePredecessorProfileMetadata</referencedby>
+        <referencedby refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_visitor_1adf082e94ccc4332efdb2faac54861040" compoundref="_data_flow_sanitizer_8cpp" startline="2955" endline="2960">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanVisitor::visitBranchInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1aebd4af5642453ce3169094f08dd3d7b8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * llvm::BranchInst::getCondition</definition>
+        <argsstring>() const</argsstring>
+        <name>getCondition</name>
+        <qualifiedname>llvm::BranchInst::getCondition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3092" column="9" bodyfile="include/llvm/IR/Instructions.h" bodystart="3092" bodyend="3095"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_branch_inst_1a7e4be8b16fbd68c9045a388904044e01" compoundref="_instructions_8h" startline="3090" endline="3090">isConditional</references>
+        <referencedby refid="_scalar_evolution_8cpp_1a341358b4e9c3ffb463182ea3280b2016" compoundref="_scalar_evolution_8cpp" startline="5948" endline="5976">BrPHIToSelect</referencedby>
+        <referencedby refid="_loop_term_fold_8cpp_1a0e67dc55f94f7419d24a39fa5b79c42f" compoundref="_loop_term_fold_8cpp" startline="52" endline="228">canFoldTermCondOfLoop</referencedby>
+        <referencedby refid="namespacellvm_1a465bf95ad9ca82a4541555d837aec85f" compoundref="_loop_bound_split_8cpp" startline="178" endline="220">llvm::canSplitLoopBound</referencedby>
+        <referencedby refid="classanonymous__namespace_02_code_mover_utils_8cpp_03_1_1_control_conditions_1a866163a9dbd27133c221fc2569333ddb" compoundref="_code_mover_utils_8cpp" startline="108" endline="166">anonymous_namespace{CodeMoverUtils.cpp}::ControlConditions::collectControlConditions</referencedby>
+        <referencedby refid="_branch_probability_info_8cpp_1ade155905429b0a259a1030f418c04ad9" compoundref="_branch_probability_info_8cpp" startline="542" endline="642">computeUnlikelySuccessors</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a0775987674a0fc922481db1966a5fdf5" compoundref="_loop_vectorize_8cpp" startline="8124" endline="8170">llvm::VPRecipeBuilder::createEdgeMask</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1abba5b02b3dfb44e87915fcf6af38e3fb" compoundref="_ind_var_simplify_8cpp" startline="1188" endline="1195">createFoldedExitCond</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a741f7bb1cc23d5c9d8917e1c7970c732" compoundref="_ind_var_simplify_8cpp" startline="1243" endline="1259">createInvariantCond</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1a52374e76082ee94158724e5695a88a02" compoundref="_simple_loop_unswitch_8cpp" startline="3317" endline="3466">findBestNonTrivialUnswitchCandidate</referencedby>
+        <referencedby refid="_loop_flatten_8cpp_1a6ff25bdf0db077015fe35d4a82b4b6dc" compoundref="_loop_flatten_8cpp" startline="904" endline="993">FlattenLoopPair</referencedby>
+        <referencedby refid="namespacellvm_1ad600d9077d7e1eadff1334ee14f7f25a" compoundref="_simplify_c_f_g_8cpp" startline="4133" endline="4256">llvm::foldBranchToCommonDest</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ac0fb2da7eaa616e8ef8a8f52b981334b" compoundref="_simplify_c_f_g_8cpp" startline="3564" endline="3719">foldCondBranchOnValueKnownInPredecessorImpl</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a92fe4b2aa97a12f4a947e5ce99f05b15" compoundref="_simplify_c_f_g_8cpp" startline="3737" endline="3929">foldTwoEntryPHINode</referencedby>
+        <referencedby refid="_p_g_o_instrumentation_8cpp_1af0e4d9315f1815020f42edec6a27ad1f" compoundref="_p_g_o_instrumentation_8cpp" startline="403" endline="431">getBranchCondString</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ad3e63520dcd2b8f8aa1b2e66e734a575" compoundref="_simplify_c_f_g_8cpp" startline="1079" endline="1094">getBranchWeights</referencedby>
+        <referencedby refid="structllvm_1_1_loop_1_1_loop_bounds_1acfa250dd5ec97448681f9833e22d50cf" compoundref="_loop_info_8cpp" startline="233" endline="273">llvm::Loop::LoopBounds::getCanonicalPredicate</referencedby>
+        <referencedby refid="_loop_nest_analysis_8cpp_1a410517ee51b91e86b7908a3895138054" compoundref="_loop_nest_analysis_8cpp" startline="70" endline="82">getInnerLoopGuardCmp</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1afb9fd1f991a7503fe4fd7dc16bda6f30" compoundref="_simplify_c_f_g_8cpp" startline="3542" endline="3558">getKnownValueOnEdge</referencedby>
+        <referencedby refid="classanonymous__namespace_02_l_i_c_m_8cpp_03_1_1_control_flow_hoister_1ac2231bda91f0fdd79e476cb36e48d33b" compoundref="_l_i_c_m_8cpp" startline="765" endline="866">anonymous_namespace{LICM.cpp}::ControlFlowHoister::getOrCreateHoistedBlock</referencedby>
+        <referencedby refid="_loop_nest_analysis_8cpp_1a1324f8c4f6c399fbb6c4fae0404a47ca" compoundref="_loop_nest_analysis_8cpp" startline="52" endline="68">getOuterLoopLatchCmp</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_attributor_attributes_8cpp_03_1a3aaf79ae3bce520f7cb4d573292922e9" compoundref="_attributor_attributes_8cpp" startline="4719" endline="4741">anonymous_namespace{AttributorAttributes.cpp}::identifyAliveSuccessors</referencedby>
+        <referencedby refid="namespacellvm_1a70cdc32fcfc8ba3feaf026f4959e2c2a" compoundref="_basic_block_utils_8cpp" startline="1896" endline="1908">llvm::InvertBranch</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1aefc772d1808d513abc142b59844cfe45" compoundref="_scalar_evolution_8cpp" startline="11621" endline="11718">llvm::ScalarEvolution::isBasicBlockEntryGuardedByCond</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a8b617baf7fc5914d8a245e702ea65a7d" compoundref="_scalar_evolution_8cpp" startline="11515" endline="11619">llvm::ScalarEvolution::isLoopBackedgeGuardedByCond</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a23d78b7d4dbea0ecc84dc55313ad1f25" compoundref="_ind_var_simplify_8cpp" startline="699" endline="708">isLoopExitTestBasedOn</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_interchange_8cpp_03_1_1_loop_interchange_legality_1ade3ca81f3a303345f66492c713c0e4ec" compoundref="_loop_interchange_8cpp" startline="633" endline="722">anonymous_namespace{LoopInterchange.cpp}::LoopInterchangeLegality::isLoopStructureUnderstood</referencedby>
+        <referencedby refid="_loop_idiom_recognize_8cpp_1a0334b7852f3d535571315a1c2a90a085" compoundref="_loop_idiom_recognize_8cpp" startline="1501" endline="1525">matchCondition</referencedby>
+        <referencedby refid="_loop_idiom_recognize_8cpp_1ab57bfa30e7fbef3fb394f7bd5cfa6d0a" compoundref="_loop_idiom_recognize_8cpp" startline="1531" endline="1553">matchShiftULTCondition</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ad9d19d00519eec89a553d376d72c9520" compoundref="_simplify_c_f_g_8cpp" startline="7954" endline="8021">mergeNestedCondBranch</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a6a2f2b3d9153487f51dae119c07f8461" compoundref="_ind_var_simplify_8cpp" startline="712" endline="757">needsLFTR</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a740a442f349b36821071c21e265e23e1" compoundref="_ind_var_simplify_8cpp" startline="1319" endline="1421">optimizeLoopExitWithUnknownExitCount</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a31a4e5663521fd6944605496cbc32bbb" compoundref="_simplify_c_f_g_8cpp" startline="4010" endline="4120">performBranchToCommonDestFolding</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_writer_8cpp_03_1_1_assembly_writer_1a27130c5f74c2f20dd183f5ab83f54e6c" compoundref="_asm_writer_8cpp" startline="4258" endline="4691">anonymous_namespace{AsmWriter.cpp}::AssemblyWriter::printInstruction</referencedby>
+        <referencedby refid="classanonymous__namespace_02_safepoint_i_r_verifier_8cpp_03_1_1_c_f_g_deadness_1a9bcd938340c81deac2844875dfd6086e" compoundref="_safepoint_i_r_verifier_8cpp" startline="125" endline="155">anonymous_namespace{SafepointIRVerifier.cpp}::CFGDeadness::processFunction</referencedby>
+        <referencedby refid="classllvm_1_1_dom_condition_cache_1ac105333da6ce958e6a88367557e798ae" compoundref="_dom_condition_cache_8cpp" startline="19" endline="28">llvm::DomConditionCache::registerBranch</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1af04adca83664ebd947723470c4da58aa" compoundref="_simplify_c_f_g_8cpp" startline="8309" endline="8369">removeUndefIntroducingPredecessor</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a16b4faf9802df251058f89443ca35a6c" compoundref="_ind_var_simplify_8cpp" startline="1178" endline="1186">replaceExitCond</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ad75372cc26ff6f641159aed90d5fc11e" compoundref="_simplify_c_f_g_8cpp" startline="6846" endline="6906">reuseTableCompare</referencedby>
+        <referencedby refid="classanonymous__namespace_02_scalar_evolution_8cpp_03_1_1_s_c_e_v_backedge_condition_folder_1a9692f2f6a4683b75235d1e2e90ecb8f8" compoundref="_scalar_evolution_8cpp" startline="4952" endline="4969">anonymous_namespace{ScalarEvolution.cpp}::SCEVBackedgeConditionFolder::rewrite</referencedby>
+        <referencedby refid="_loop_term_fold_8cpp_1ae78c54dce6798892e47ca90660f9a8f6" compoundref="_loop_term_fold_8cpp" startline="230" endline="300">RunTermFold</referencedby>
+        <referencedby refid="namespacellvm_1a63f2a772f8b7a673be8aa85f4ea406d7" compoundref="_transforms_2_utils_2_guard_utils_8cpp" startline="108" endline="126">llvm::setWidenableBranchCond</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a40f7c70fc970f25f1c32e8b2c28662ec" compoundref="_simplify_c_f_g_8cpp" startline="4644" endline="4864">SimplifyCondBranchToCondBranch</referencedby>
+        <referencedby refid="_instruction_combining_8cpp_1a45bde60377059fca310bb78e5d3a3ccb" compoundref="_instruction_combining_8cpp" startline="1730" endline="1768">simplifyInstructionWithPHI</referencedby>
+        <referencedby refid="_loop_simplify_8cpp_1ad54a3c6c671e583284ff935bfde3368c" compoundref="_loop_simplify_8cpp" startline="475" endline="695">simplifyOneLoop</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1afed5e8a79fa550920f638708cc257bdf" compoundref="_jump_threading_8cpp" startline="3047" endline="3120">llvm::JumpThreadingPass::threadGuard</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aae4261fb86bc9023c3383785afa66b9a" compoundref="_simple_loop_unswitch_8cpp" startline="2175" endline="2652">unswitchNontrivialInvariants</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1a6a082aa2e05f44f7dab89e2ff8c582ff" compoundref="_simple_loop_unswitch_8cpp" startline="509" endline="715">unswitchTrivialBranch</referencedby>
+        <referencedby refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_visitor_1adf082e94ccc4332efdb2faac54861040" compoundref="_data_flow_sanitizer_8cpp" startline="2955" endline="2960">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanVisitor::visitBranchInst</referencedby>
+        <referencedby refid="classanonymous__namespace_02_inline_cost_8cpp_03_1_1_call_analyzer_1a070509ca4afed69062174feb05ef7022" compoundref="_inline_cost_8cpp" startline="2395" endline="2403">anonymous_namespace{InlineCost.cpp}::CallAnalyzer::visitBranchInst</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1aea9ba5a362fb88bd97349a302133dd03" compoundref="_instruction_combining_8cpp" startline="3744" endline="3824">llvm::InstCombinerImpl::visitBranchInst</referencedby>
+        <referencedby refid="namespacellvm_1a27f63a779f3bcae1f300371e33227bed" compoundref="_transforms_2_utils_2_guard_utils_8cpp" startline="82" endline="106">llvm::widenWidenableBranch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a3505dab06f59c36142a234321cdc3411" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BranchInst::setCondition</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>setCondition</name>
+        <qualifiedname>llvm::BranchInst::setCondition</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3097" column="8" bodyfile="include/llvm/IR/Instructions.h" bodystart="3097" bodyend="3100"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_branch_inst_1a7e4be8b16fbd68c9045a388904044e01" compoundref="_instructions_8h" startline="3090" endline="3090">isConditional</references>
+        <referencedby refid="_loop_flatten_8cpp_1a6ff25bdf0db077015fe35d4a82b4b6dc" compoundref="_loop_flatten_8cpp" startline="904" endline="993">FlattenLoopPair</referencedby>
+        <referencedby refid="namespacellvm_1a70cdc32fcfc8ba3feaf026f4959e2c2a" compoundref="_basic_block_utils_8cpp" startline="1896" endline="1908">llvm::InvertBranch</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ad9d19d00519eec89a553d376d72c9520" compoundref="_simplify_c_f_g_8cpp" startline="7954" endline="8021">mergeNestedCondBranch</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a31a4e5663521fd6944605496cbc32bbb" compoundref="_simplify_c_f_g_8cpp" startline="4010" endline="4120">performBranchToCommonDestFolding</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a16b4faf9802df251058f89443ca35a6c" compoundref="_ind_var_simplify_8cpp" startline="1178" endline="1186">replaceExitCond</referencedby>
+        <referencedby refid="_loop_term_fold_8cpp_1ae78c54dce6798892e47ca90660f9a8f6" compoundref="_loop_term_fold_8cpp" startline="230" endline="300">RunTermFold</referencedby>
+        <referencedby refid="namespacellvm_1a63f2a772f8b7a673be8aa85f4ea406d7" compoundref="_transforms_2_utils_2_guard_utils_8cpp" startline="108" endline="126">llvm::setWidenableBranchCond</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a40f7c70fc970f25f1c32e8b2c28662ec" compoundref="_simplify_c_f_g_8cpp" startline="4644" endline="4864">SimplifyCondBranchToCondBranch</referencedby>
+        <referencedby refid="namespacellvm_1a2776b4c8cd41fd60781f7b9e18af9edb" compoundref="_loop_bound_split_8cpp" startline="287" endline="470">llvm::splitLoopBound</referencedby>
+        <referencedby refid="namespacellvm_1acd628d451ca9d9b021876d59f46e670b" compoundref="_loop_unroll_runtime_8cpp" startline="581" endline="1037">llvm::UnrollRuntimeLoopRemainder</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aae4261fb86bc9023c3383785afa66b9a" compoundref="_simple_loop_unswitch_8cpp" startline="2175" endline="2652">unswitchNontrivialInvariants</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1a6a082aa2e05f44f7dab89e2ff8c582ff" compoundref="_simple_loop_unswitch_8cpp" startline="509" endline="715">unswitchTrivialBranch</referencedby>
+        <referencedby refid="namespacellvm_1a27f63a779f3bcae1f300371e33227bed" compoundref="_transforms_2_utils_2_guard_utils_8cpp" startline="82" endline="106">llvm::widenWidenableBranch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a96b8f11f6f21ca0321294669dab83b35" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BranchInst::getNumSuccessors</definition>
+        <argsstring>() const</argsstring>
+        <name>getNumSuccessors</name>
+        <qualifiedname>llvm::BranchInst::getNumSuccessors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3102" column="12" bodyfile="include/llvm/IR/Instructions.h" bodystart="3102" bodyend="3102"/>
+        <references refid="classllvm_1_1_branch_inst_1a7e4be8b16fbd68c9045a388904044e01" compoundref="_instructions_8h" startline="3090" endline="3090">isConditional</references>
+        <referencedby refid="_loop_utils_8cpp_1a74712012450beeec949c228fd21d10a6" compoundref="_loop_utils_8cpp" startline="805" endline="819">getExpectedExitLoopLatchBranch</referencedby>
+        <referencedby refid="structllvm_1_1_dense_map_info_3_01const_01_switch_succ_wrapper_01_5_01_4_1ade1da0b29f5e3cb310ac591da00699c3" compoundref="_simplify_c_f_g_8cpp" startline="7515" endline="7539">llvm::DenseMapInfo&lt; const SwitchSuccWrapper * &gt;::getHashValue</referencedby>
+        <referencedby refid="classllvm_1_1_branch_inst_1aa05da2b94b366573d1651d5b163c521e" compoundref="_instructions_8h" startline="3104" endline="3107">getSuccessor</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_attributor_attributes_8cpp_03_1a3aaf79ae3bce520f7cb4d573292922e9" compoundref="_attributor_attributes_8cpp" startline="4719" endline="4741">anonymous_namespace{AttributorAttributes.cpp}::identifyAliveSuccessors</referencedby>
+        <referencedby refid="_i_r_outliner_8cpp_1a8e5c4577c64728c435eca5f4f7e163ab" compoundref="_i_r_outliner_8cpp" startline="220" endline="245">replaceTargetsFromPHINode</referencedby>
+        <referencedby refid="classllvm_1_1_branch_inst_1adc5e7f9c460c68455e826783d77f9a99" compoundref="_instructions_8h" startline="3109" endline="3112">setSuccessor</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1afed5e8a79fa550920f638708cc257bdf" compoundref="_jump_threading_8cpp" startline="3047" endline="3120">llvm::JumpThreadingPass::threadGuard</referencedby>
+        <referencedby refid="namespacellvm_1ae45123597a5abb30853572614c1b2d4b" compoundref="_loop_unroll_and_jam_8cpp" startline="215" endline="622">llvm::UnrollAndJamLoop</referencedby>
+        <referencedby refid="_loop_peel_8cpp_1a7d391dbabb8fc073db875548184a768d" compoundref="_loop_peel_8cpp" startline="514" endline="532">violatesLegacyMultiExitLoopCheck</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1aa05da2b94b366573d1651d5b163c521e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+        <definition>BasicBlock * llvm::BranchInst::getSuccessor</definition>
+        <argsstring>(unsigned i) const</argsstring>
+        <name>getSuccessor</name>
+        <qualifiedname>llvm::BranchInst::getSuccessor</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3104" column="14" bodyfile="include/llvm/IR/Instructions.h" bodystart="3104" bodyend="3107"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_instruction_1af10fa975001cd000bc6aaa88267d970f" compoundref="_i_r_2_instruction_8h" startline="1046">llvm::Instruction::BasicBlock</references>
+        <references refid="namespacellvm_1a3e627c32543ca70720c4270a8b11da3f" compoundref="_casting_8h" startline="720" endline="722">llvm::cast_or_null</references>
+        <references refid="namespacellvm_1a73257f51950d9ea50955e3fb9c724a25" compoundref="_pointer_int_pair_8h" startline="270" endline="276">llvm::get</references>
+        <references refid="classllvm_1_1_branch_inst_1a96b8f11f6f21ca0321294669dab83b35" compoundref="_instructions_8h" startline="3102" endline="3102">getNumSuccessors</references>
+        <referencedby refid="namespaceanonymous__namespace_02_hot_cold_splitting_8cpp_03_1aa5755510005963e0d33f000914c5489d" compoundref="_hot_cold_splitting_8cpp" startline="111" endline="135">anonymous_namespace{HotColdSplitting.cpp}::analyzeProfMetadata</referencedby>
+        <referencedby refid="_scalar_evolution_8cpp_1a341358b4e9c3ffb463182ea3280b2016" compoundref="_scalar_evolution_8cpp" startline="5948" endline="5976">BrPHIToSelect</referencedby>
+        <referencedby refid="classllvm_1_1_predicate_info_builder_1aaaff3f60426ede3ce93de105f66cb581" compoundref="_predicate_info_8cpp" startline="497" endline="522">llvm::PredicateInfoBuilder::buildPredicateInfo</referencedby>
+        <referencedby refid="_loop_rotation_utils_8cpp_1a20d58a0069048b80461676a4132ad1d4" compoundref="_loop_rotation_utils_8cpp" startline="238" endline="274">canRotateDeoptimizingLatchExit</referencedby>
+        <referencedby refid="_control_height_reduction_8cpp_1af10d0fccdcb58cbd2e3932e630d24dfa" compoundref="_control_height_reduction_8cpp" startline="628" endline="654">checkBiasedBranch</referencedby>
+        <referencedby refid="_loop_flatten_8cpp_1af4f43e9c3f0bc709f58c5c9a2d92eed5" compoundref="_loop_flatten_8cpp" startline="553" endline="609">checkOuterLoopInsts</referencedby>
+        <referencedby refid="namespacellvm_1ae1a030c9a70b99fced16cc726e1ef9f9" compoundref="_clone_function_8cpp" startline="703" endline="996">llvm::CloneAndPruneIntoFromInst</referencedby>
+        <referencedby refid="classanonymous__namespace_02_code_mover_utils_8cpp_03_1_1_control_conditions_1a866163a9dbd27133c221fc2569333ddb" compoundref="_code_mover_utils_8cpp" startline="108" endline="166">anonymous_namespace{CodeMoverUtils.cpp}::ControlConditions::collectControlConditions</referencedby>
+        <referencedby refid="_branch_probability_info_8cpp_1ade155905429b0a259a1030f418c04ad9" compoundref="_branch_probability_info_8cpp" startline="542" endline="642">computeUnlikelySuccessors</referencedby>
+        <referencedby refid="classllvm_1_1_v_p_recipe_builder_1a0775987674a0fc922481db1966a5fdf5" compoundref="_loop_vectorize_8cpp" startline="8124" endline="8170">llvm::VPRecipeBuilder::createEdgeMask</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1af67eef9e8d101756a1a0164e63eb4556" compoundref="_simplify_c_f_g_8cpp" startline="424" endline="488">dominatesMergePoint</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1ac14ea98bd0e870e467ae0ddc75a9fa87" compoundref="_jump_threading_8cpp" startline="2614" endline="2743">llvm::JumpThreadingPass::duplicateCondBranchOnPHIIntoPred</referencedby>
+        <referencedby refid="classanonymous__namespace_02_inductive_range_check_elimination_8cpp_03_1_1_inductive_range_check_1a715a08cb04246d426e200c8196ecf0ea" compoundref="_inductive_range_check_elimination_8cpp" startline="519" endline="569">anonymous_namespace{InductiveRangeCheckElimination.cpp}::InductiveRangeCheck::extractRangeChecksFromBranch</referencedby>
+        <referencedby refid="_loop_predication_8cpp_1ad459fdaea6898de5c02c8ed651ae50c9" compoundref="_loop_predication_8cpp" startline="973" endline="998">FindWidenableTerminatorAboveLoop</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ac0fb2da7eaa616e8ef8a8f52b981334b" compoundref="_simplify_c_f_g_8cpp" startline="3564" endline="3719">foldCondBranchOnValueKnownInPredecessorImpl</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a92fe4b2aa97a12f4a947e5ce99f05b15" compoundref="_simplify_c_f_g_8cpp" startline="3737" endline="3929">foldTwoEntryPHINode</referencedby>
+        <referencedby refid="structllvm_1_1_loop_1_1_loop_bounds_1acfa250dd5ec97448681f9833e22d50cf" compoundref="_loop_info_8cpp" startline="233" endline="273">llvm::Loop::LoopBounds::getCanonicalPredicate</referencedby>
+        <referencedby refid="_loop_utils_8cpp_1a0d49831d7116d82b2d53c2bbb81cd12d" compoundref="_loop_utils_8cpp" startline="823" endline="847">getEstimatedTripCount</referencedby>
+        <referencedby refid="_loop_utils_8cpp_1a74712012450beeec949c228fd21d10a6" compoundref="_loop_utils_8cpp" startline="805" endline="819">getExpectedExitLoopLatchBranch</referencedby>
+        <referencedby refid="structllvm_1_1_dense_map_info_3_01const_01_switch_succ_wrapper_01_5_01_4_1ade1da0b29f5e3cb310ac591da00699c3" compoundref="_simplify_c_f_g_8cpp" startline="7515" endline="7539">llvm::DenseMapInfo&lt; const SwitchSuccWrapper * &gt;::getHashValue</referencedby>
+        <referencedby refid="namespacellvm_1a1a5751a2dd7306ff9a59eae6c1de8925" compoundref="_basic_block_utils_8cpp" startline="1804" endline="1894">llvm::GetIfCondition</referencedby>
+        <referencedby refid="classllvm_1_1_loop_vectorization_cost_model_1a556ec90a0fa1e168a9f22db1deb1fee6" compoundref="_loop_vectorize_8cpp" startline="6384" endline="6823">llvm::LoopVectorizationCostModel::getInstructionCost</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1afb9fd1f991a7503fe4fd7dc16bda6f30" compoundref="_simplify_c_f_g_8cpp" startline="3542" endline="3558">getKnownValueOnEdge</referencedby>
+        <referencedby refid="classllvm_1_1_loop_1a580a6361a2bad87e6071ecc795bdae96" compoundref="_loop_info_8cpp" startline="368" endline="410">llvm::Loop::getLoopGuardBranch</referencedby>
+        <referencedby refid="classanonymous__namespace_02_l_i_c_m_8cpp_03_1_1_control_flow_hoister_1ac2231bda91f0fdd79e476cb36e48d33b" compoundref="_l_i_c_m_8cpp" startline="765" endline="866">anonymous_namespace{LICM.cpp}::ControlFlowHoister::getOrCreateHoistedBlock</referencedby>
+        <referencedby refid="_lower_expect_intrinsic_8cpp_1aea5dd05a61257355d99f96d8d6dc9f94" compoundref="_lower_expect_intrinsic_8cpp" startline="116" endline="273">handlePhiDef</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_attributor_attributes_8cpp_03_1a3aaf79ae3bce520f7cb4d573292922e9" compoundref="_attributor_attributes_8cpp" startline="4719" endline="4741">anonymous_namespace{AttributorAttributes.cpp}::identifyAliveSuccessors</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1aefc772d1808d513abc142b59844cfe45" compoundref="_scalar_evolution_8cpp" startline="11621" endline="11718">llvm::ScalarEvolution::isBasicBlockEntryGuardedByCond</referencedby>
+        <referencedby refid="structllvm_1_1_dense_map_info_3_01const_01_switch_succ_wrapper_01_5_01_4_1afd0535a9a9691fbeaf8a97077837bff9" compoundref="_simplify_c_f_g_8cpp" startline="7540" endline="7573">llvm::DenseMapInfo&lt; const SwitchSuccWrapper * &gt;::isEqual</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_1a8b617baf7fc5914d8a245e702ea65a7d" compoundref="_scalar_evolution_8cpp" startline="11515" endline="11619">llvm::ScalarEvolution::isLoopBackedgeGuardedByCond</referencedby>
+        <referencedby refid="namespacellvm_1af65a1289341b6d2b3c37541e1cb55bdd" compoundref="_loop_bound_split_8cpp" startline="222" endline="240">llvm::isProfitableToTransform</referencedby>
+        <referencedby refid="_loop_idiom_recognize_8cpp_1a0334b7852f3d535571315a1c2a90a085" compoundref="_loop_idiom_recognize_8cpp" startline="1501" endline="1525">matchCondition</referencedby>
+        <referencedby refid="_loop_idiom_recognize_8cpp_1ab57bfa30e7fbef3fb394f7bd5cfa6d0a" compoundref="_loop_idiom_recognize_8cpp" startline="1531" endline="1553">matchShiftULTCondition</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1a710878a88d68a9169313249bfd52862a" compoundref="_jump_threading_8cpp" startline="2116" endline="2255">llvm::JumpThreadingPass::maybethreadThroughTwoBasicBlocks</referencedby>
+        <referencedby refid="namespacellvm_1aa76a2cf19b821f320ab439d5659ef4b9" compoundref="_basic_block_utils_8cpp" startline="180" endline="337">llvm::MergeBlockIntoPredecessor</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a6a58dfc629e1b208cdd7b2bd76203184" compoundref="_simplify_c_f_g_8cpp" startline="4475" endline="4582">mergeConditionalStores</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ad9d19d00519eec89a553d376d72c9520" compoundref="_simplify_c_f_g_8cpp" startline="7954" endline="8021">mergeNestedCondBranch</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a9d9df487d54cc5567b4e0b1c8e0120a8" compoundref="_inst_combine_load_store_alloca_8cpp" startline="1448" endline="1568">llvm::InstCombinerImpl::mergeStoreIntoSuccessor</referencedby>
+        <referencedby refid="_ind_var_simplify_8cpp_1a740a442f349b36821071c21e265e23e1" compoundref="_ind_var_simplify_8cpp" startline="1319" endline="1421">optimizeLoopExitWithUnknownExitCount</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a31a4e5663521fd6944605496cbc32bbb" compoundref="_simplify_c_f_g_8cpp" startline="4010" endline="4120">performBranchToCommonDestFolding</referencedby>
+        <referencedby refid="classanonymous__namespace_02_asm_writer_8cpp_03_1_1_assembly_writer_1a27130c5f74c2f20dd183f5ab83f54e6c" compoundref="_asm_writer_8cpp" startline="4258" endline="4691">anonymous_namespace{AsmWriter.cpp}::AssemblyWriter::printInstruction</referencedby>
+        <referencedby refid="classanonymous__namespace_02_safepoint_i_r_verifier_8cpp_03_1_1_c_f_g_deadness_1a9bcd938340c81deac2844875dfd6086e" compoundref="_safepoint_i_r_verifier_8cpp" startline="125" endline="155">anonymous_namespace{SafepointIRVerifier.cpp}::CFGDeadness::processFunction</referencedby>
+        <referencedby refid="_loop_rotation_utils_8cpp_1a7fdcbbf4a72726c120dc9d33b6ee13bb" compoundref="_loop_rotation_utils_8cpp" startline="213" endline="230">profitableToRotateLoopExitingLatch</referencedby>
+        <referencedby refid="classanonymous__namespace_02_l_i_c_m_8cpp_03_1_1_control_flow_hoister_1a90cb1c8c28c96b3e0abcd1dc070a7d87" compoundref="_l_i_c_m_8cpp" startline="671" endline="725">anonymous_namespace{LICM.cpp}::ControlFlowHoister::registerPossiblyHoistableBranch</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1af04adca83664ebd947723470c4da58aa" compoundref="_simplify_c_f_g_8cpp" startline="8309" endline="8369">removeUndefIntroducingPredecessor</referencedby>
+        <referencedby refid="_lower_constant_intrinsics_8cpp_1aa39118ddf6c73ece724a5c5e93d0db1e" compoundref="_lower_constant_intrinsics_8cpp" startline="53" endline="99">replaceConditionalBranchesOnConstant</referencedby>
+        <referencedby refid="_i_r_outliner_8cpp_1a8e5c4577c64728c435eca5f4f7e163ab" compoundref="_i_r_outliner_8cpp" startline="220" endline="245">replaceTargetsFromPHINode</referencedby>
+        <referencedby refid="classanonymous__namespace_02_scalar_evolution_8cpp_03_1_1_s_c_e_v_backedge_condition_folder_1a9692f2f6a4683b75235d1e2e90ecb8f8" compoundref="_scalar_evolution_8cpp" startline="4952" endline="4969">anonymous_namespace{ScalarEvolution.cpp}::SCEVBackedgeConditionFolder::rewrite</referencedby>
+        <referencedby refid="_loop_term_fold_8cpp_1ae78c54dce6798892e47ca90660f9a8f6" compoundref="_loop_term_fold_8cpp" startline="230" endline="300">RunTermFold</referencedby>
+        <referencedby refid="classllvm_1_1_fast_i_sel_1ab30094b924bc7333b5bf134d7985ca18" compoundref="_fast_i_sel_8cpp" startline="1794" endline="1929">llvm::FastISel::selectOperator</referencedby>
+        <referencedby refid="namespacellvm_1aad7cd933f586fc0c66656a4751ac069f" compoundref="_loop_utils_8cpp" startline="868" endline="898">llvm::setLoopEstimatedTripCount</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a1c4994ac805321b7fa03617dff656ad8" compoundref="_simplify_c_f_g_8cpp" startline="3971" endline="4008">shouldFoldCondBranchesToCommonDestination</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1af08d593d99b84298decf28611dd32f50" compoundref="_simple_loop_unswitch_8cpp" startline="3043" endline="3062">shouldTryInjectBasingOnMetadata</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a40f7c70fc970f25f1c32e8b2c28662ec" compoundref="_simplify_c_f_g_8cpp" startline="4644" endline="4864">SimplifyCondBranchToCondBranch</referencedby>
+        <referencedby refid="_instruction_combining_8cpp_1a45bde60377059fca310bb78e5d3a3ccb" compoundref="_instruction_combining_8cpp" startline="1730" endline="1768">simplifyInstructionWithPHI</referencedby>
+        <referencedby refid="_loop_simplify_8cpp_1ad54a3c6c671e583284ff935bfde3368c" compoundref="_loop_simplify_8cpp" startline="475" endline="695">simplifyOneLoop</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1afed5e8a79fa550920f638708cc257bdf" compoundref="_jump_threading_8cpp" startline="3047" endline="3120">llvm::JumpThreadingPass::threadGuard</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1accef1dd983ed3831858fe41c90fcc214" compoundref="_jump_threading_8cpp" startline="2257" endline="2327">llvm::JumpThreadingPass::threadThroughTwoBasicBlocks</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ad98f06eded5a01ee8704f7d7d9ca4c5b" compoundref="_simplify_c_f_g_8cpp" startline="4587" endline="4638">tryWidenCondBranchToCondBranch</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1af3ac46dde637293a34d0ff7b619a656b" compoundref="_simple_loop_unswitch_8cpp" startline="2762" endline="2803">turnGuardIntoBranch</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_d_f_a_jump_threading_8cpp_03_1a37fd6f31f78116956f457b105ab4513c" compoundref="_d_f_a_jump_threading_8cpp" startline="190" endline="345">anonymous_namespace{DFAJumpThreading.cpp}::unfold</referencedby>
+        <referencedby refid="namespacellvm_1ae45123597a5abb30853572614c1b2d4b" compoundref="_loop_unroll_and_jam_8cpp" startline="215" endline="622">llvm::UnrollAndJamLoop</referencedby>
+        <referencedby refid="namespacellvm_1acd628d451ca9d9b021876d59f46e670b" compoundref="_loop_unroll_runtime_8cpp" startline="581" endline="1037">llvm::UnrollRuntimeLoopRemainder</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aae4261fb86bc9023c3383785afa66b9a" compoundref="_simple_loop_unswitch_8cpp" startline="2175" endline="2652">unswitchNontrivialInvariants</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1a6a082aa2e05f44f7dab89e2ff8c582ff" compoundref="_simple_loop_unswitch_8cpp" startline="509" endline="715">unswitchTrivialBranch</referencedby>
+        <referencedby refid="_jump_threading_8cpp_1ae5a9dfd216e7560889e2366f34ddd9f1" compoundref="_jump_threading_8cpp" startline="147" endline="234">updatePredecessorProfileMetadata</referencedby>
+        <referencedby refid="_loop_peel_8cpp_1a7d391dbabb8fc073db875548184a768d" compoundref="_loop_peel_8cpp" startline="514" endline="532">violatesLegacyMultiExitLoopCheck</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1aea9ba5a362fb88bd97349a302133dd03" compoundref="_instruction_combining_8cpp" startline="3744" endline="3824">llvm::InstCombinerImpl::visitBranchInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1adc5e7f9c460c68455e826783d77f9a99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::BranchInst::setSuccessor</definition>
+        <argsstring>(unsigned idx, BasicBlock *NewSucc)</argsstring>
+        <name>setSuccessor</name>
+        <qualifiedname>llvm::BranchInst::setSuccessor</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+          <declname>NewSucc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3109" column="8" bodyfile="include/llvm/IR/Instructions.h" bodystart="3109" bodyend="3112"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_instruction_1af10fa975001cd000bc6aaa88267d970f" compoundref="_i_r_2_instruction_8h" startline="1046">llvm::Instruction::BasicBlock</references>
+        <references refid="classllvm_1_1_branch_inst_1a96b8f11f6f21ca0321294669dab83b35" compoundref="_instructions_8h" startline="3102" endline="3102">getNumSuccessors</references>
+        <referencedby refid="classllvm_1_1_v_p_branch_on_mask_recipe_1aa11920a3a7cf966108b4137b9e1a4c8b" compoundref="_v_plan_recipes_8cpp" startline="2468" endline="2487">llvm::VPBranchOnMaskRecipe::execute</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ac0fb2da7eaa616e8ef8a8f52b981334b" compoundref="_simplify_c_f_g_8cpp" startline="3564" endline="3719">foldCondBranchOnValueKnownInPredecessorImpl</referencedby>
+        <referencedby refid="namespacellvm_1aa76a2cf19b821f320ab439d5659ef4b9" compoundref="_basic_block_utils_8cpp" startline="180" endline="337">llvm::MergeBlockIntoPredecessor</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ad9d19d00519eec89a553d376d72c9520" compoundref="_simplify_c_f_g_8cpp" startline="7954" endline="8021">mergeNestedCondBranch</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a31a4e5663521fd6944605496cbc32bbb" compoundref="_simplify_c_f_g_8cpp" startline="4010" endline="4120">performBranchToCommonDestFolding</referencedby>
+        <referencedby refid="_i_r_outliner_8cpp_1a8e5c4577c64728c435eca5f4f7e163ab" compoundref="_i_r_outliner_8cpp" startline="220" endline="245">replaceTargetsFromPHINode</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1a40f7c70fc970f25f1c32e8b2c28662ec" compoundref="_simplify_c_f_g_8cpp" startline="4644" endline="4864">SimplifyCondBranchToCondBranch</referencedby>
+        <referencedby refid="_simplify_c_f_g_8cpp_1ad98f06eded5a01ee8704f7d7d9ca4c5b" compoundref="_simplify_c_f_g_8cpp" startline="4587" endline="4638">tryWidenCondBranchToCondBranch</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_d_f_a_jump_threading_8cpp_03_1a37fd6f31f78116956f457b105ab4513c" compoundref="_d_f_a_jump_threading_8cpp" startline="190" endline="345">anonymous_namespace{DFAJumpThreading.cpp}::unfold</referencedby>
+        <referencedby refid="namespacellvm_1ae45123597a5abb30853572614c1b2d4b" compoundref="_loop_unroll_and_jam_8cpp" startline="215" endline="622">llvm::UnrollAndJamLoop</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1aae4261fb86bc9023c3383785afa66b9a" compoundref="_simple_loop_unswitch_8cpp" startline="2175" endline="2652">unswitchNontrivialInvariants</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1a6a082aa2e05f44f7dab89e2ff8c582ff" compoundref="_simple_loop_unswitch_8cpp" startline="509" endline="715">unswitchTrivialBranch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a6550fe5bd437c1c3c6e237d726e36b90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BranchInst::swapSuccessors</definition>
+        <argsstring>()</argsstring>
+        <name>swapSuccessors</name>
+        <qualifiedname>llvm::BranchInst::swapSuccessors</qualifiedname>
+        <briefdescription>
+<para>Swap the successors of this branch instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Swaps the successors of the branch instruction. This also swaps any branch weight metadata associated with the instruction so that it continues to map correctly to each operand. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3119" column="8" bodyfile="lib/IR/Instructions.cpp" bodystart="1168" bodyend="1176"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_branch_inst_1a7e4be8b16fbd68c9045a388904044e01" compoundref="_instructions_8h" startline="3090" endline="3090">isConditional</references>
+        <references refid="classllvm_1_1_instruction_1a6e324daba99cb1d67713a562f9a778d2" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="1319" endline="1340">llvm::Instruction::swapProfMetadata</references>
+        <referencedby refid="_code_gen_prepare_8cpp_1a98c59bcf49cb7343886e8f425d6d877b" compoundref="_code_gen_prepare_8cpp" startline="1851" endline="1917">foldICmpWithDominatingICmp</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1af8c1d39848b445bea8e307b53f81c481" compoundref="_instruction_combining_8cpp" startline="1368" endline="1397">llvm::InstCombinerImpl::freelyInvertAllUsersOf</referencedby>
+        <referencedby refid="namespacellvm_1a70cdc32fcfc8ba3feaf026f4959e2c2a" compoundref="_basic_block_utils_8cpp" startline="1896" endline="1908">llvm::InvertBranch</referencedby>
+        <referencedby refid="_loop_term_fold_8cpp_1ae78c54dce6798892e47ca90660f9a8f6" compoundref="_loop_term_fold_8cpp" startline="230" endline="300">RunTermFold</referencedby>
+        <referencedby refid="_simple_loop_unswitch_8cpp_1af3ac46dde637293a34d0ff7b619a656b" compoundref="_simple_loop_unswitch_8cpp" startline="2762" endline="2803">turnGuardIntoBranch</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1aea9ba5a362fb88bd97349a302133dd03" compoundref="_instruction_combining_8cpp" startline="3744" endline="3824">llvm::InstCombinerImpl::visitBranchInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1a254b2cfabe80269ee4f53f6698452db6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; <ref refid="structllvm_1_1_branch_inst_1_1succ__op__iterator" kindref="compound">succ_op_iterator</ref> &gt;</type>
+        <definition>iterator_range&lt; succ_op_iterator &gt; llvm::BranchInst::successors</definition>
+        <argsstring>()</argsstring>
+        <name>successors</name>
+        <qualifiedname>llvm::BranchInst::successors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3121" column="18" bodyfile="include/llvm/IR/Instructions.h" bodystart="3121" bodyend="3125"/>
+        <references refid="classllvm_1_1_branch_inst_1a7e4be8b16fbd68c9045a388904044e01" compoundref="_instructions_8h" startline="3090" endline="3090">isConditional</references>
+        <references refid="namespacellvm_1a341215803e83773a3e97860dc291f121" compoundref="iterator__range_8h" startline="77" endline="79">llvm::make_range</references>
+        <references refid="classllvm_1_1_user_1ad93396a26f6fd589ed400bb280319836" compoundref="_i_r_2_user_8h" startline="306" endline="308">llvm::User::value_op_begin</references>
+        <references refid="classllvm_1_1_user_1a5d1730a173d0a69624b80e1e22e6d225" compoundref="_i_r_2_user_8h" startline="309" endline="311">llvm::User::value_op_end</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_branch_inst_1af1b864f41057ebc4d889b1b31f71bc18" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; <ref refid="structllvm_1_1_branch_inst_1_1const__succ__op__iterator" kindref="compound">const_succ_op_iterator</ref> &gt;</type>
+        <definition>iterator_range&lt; const_succ_op_iterator &gt; llvm::BranchInst::successors</definition>
+        <argsstring>() const</argsstring>
+        <name>successors</name>
+        <qualifiedname>llvm::BranchInst::successors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/Instructions.h" line="3127" column="18" bodyfile="include/llvm/IR/Instructions.h" bodystart="3127" bodyend="3131"/>
+        <references refid="classllvm_1_1_branch_inst_1a7e4be8b16fbd68c9045a388904044e01" compoundref="_instructions_8h" startline="3090" endline="3090">isConditional</references>
+        <references refid="namespacellvm_1a341215803e83773a3e97860dc291f121" compoundref="iterator__range_8h" startline="77" endline="79">llvm::make_range</references>
+        <references refid="classllvm_1_1_user_1ad93396a26f6fd589ed400bb280319836" compoundref="_i_r_2_user_8h" startline="306" endline="308">llvm::User::value_op_begin</references>
+        <references refid="classllvm_1_1_user_1a5d1730a173d0a69624b80e1e22e6d225" compoundref="_i_r_2_user_8h" startline="309" endline="311">llvm::User::value_op_end</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Conditional or Unconditional Branch instruction. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="18">
+        <label>OptionsT::node_base_type</label>
+      </node>
+      <node id="8">
+        <label>ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::BranchInst</label>
+        <link refid="classllvm_1_1_branch_inst"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::Instruction</label>
+        <link refid="classllvm_1_1_instruction"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::User</label>
+        <link refid="classllvm_1_1_user"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Value</label>
+        <link refid="classllvm_1_1_value"/>
+      </node>
+      <node id="14">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="10">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="13">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="12">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="16">
+        <label>llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+      </node>
+      <node id="19">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::ilist_node&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::ilist_node&lt; Instruction, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="20" relation="template-instance">
+          <edgelabel>&lt; Instruction, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::ilist_node&lt; NodeTy, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+        <childnode refid="20" relation="template-instance">
+          <edgelabel>&lt; NodeTy, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::ilist_node_impl&lt; OptionsT &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="18" relation="private-inheritance">
+        </childnode>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="8" relation="private-inheritance">
+        </childnode>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="27" relation="private-inheritance">
+        </childnode>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="22" relation="private-inheritance">
+        </childnode>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::ilist_node_with_parent&lt; Instruction, BasicBlock, ilist_iterator_bits&lt; true &gt;, ilist_parent&lt; BasicBlock &gt; &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24" relation="template-instance">
+          <edgelabel>&lt; Instruction, BasicBlock, ilist_iterator_bits&lt; true &gt;, ilist_parent&lt; BasicBlock &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="20">
+        <label>OptionsT::node_base_type</label>
+      </node>
+      <node id="10">
+        <label>ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="39">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::list_base_type</label>
+        <link refid="classllvm_1_1ilist__base"/>
+        <childnode refid="34" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>ilist_detail::compute_node_options&lt; llvm::DbgRecord, Options... &gt;::type::list_base_type</label>
+        <link refid="classllvm_1_1ilist__base"/>
+        <childnode refid="34" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::BranchInst</label>
+        <link refid="classllvm_1_1_branch_inst"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::DbgMarker</label>
+        <link refid="classllvm_1_1_dbg_marker"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>MarkedInstr</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>StoredDbgRecords</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>EmptyDbgMarker</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::Instruction</label>
+        <link refid="classllvm_1_1_instruction"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>DebugMarker</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::User</label>
+        <link refid="classllvm_1_1_user"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Value</label>
+        <link refid="classllvm_1_1_value"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>HasDescriptor</edgelabel>
+          <edgelabel>HasHungOffUses</edgelabel>
+          <edgelabel>HasMetadata</edgelabel>
+          <edgelabel>HasName</edgelabel>
+          <edgelabel>IsUsedByMD</edgelabel>
+          <edgelabel>MaxAlignmentExponent</edgelabel>
+          <edgelabel>NumUserOperands</edgelabel>
+          <edgelabel>SubclassOptionalData</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>MaximumAlignment</edgelabel>
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm::ilist_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__base"/>
+      </node>
+      <node id="36">
+        <label>llvm::ilist_detail::NodeAccess</label>
+        <link refid="structllvm_1_1ilist__detail_1_1_node_access"/>
+      </node>
+      <node id="37">
+        <label>llvm::ilist_detail::SpecificNodeAccess&lt; OptionsT &gt;</label>
+        <link refid="structllvm_1_1ilist__detail_1_1_specific_node_access"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm::ilist_detail::SpecificNodeAccess&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="structllvm_1_1ilist__detail_1_1_specific_node_access"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+        <childnode refid="37" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm::ilist_detail::SpecificNodeAccess&lt; ilist_detail::compute_node_options&lt; llvm::DbgRecord, Options... &gt;::type &gt;</label>
+        <link refid="structllvm_1_1ilist__detail_1_1_specific_node_access"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+        <childnode refid="37" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; llvm::DbgRecord, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="12">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="15">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="14">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+        <childnode refid="15" relation="template-instance">
+          <edgelabel>&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="18">
+        <label>llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+      </node>
+      <node id="21">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::ilist_node&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::ilist_node&lt; Instruction, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22" relation="template-instance">
+          <edgelabel>&lt; Instruction, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>llvm::ilist_node&lt; NodeTy, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22" relation="template-instance">
+          <edgelabel>&lt; NodeTy, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::ilist_node_impl&lt; OptionsT &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="20" relation="private-inheritance">
+        </childnode>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="10" relation="private-inheritance">
+        </childnode>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="29" relation="private-inheritance">
+        </childnode>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="24" relation="private-inheritance">
+        </childnode>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::ilist_node_with_parent&lt; Instruction, BasicBlock, ilist_iterator_bits&lt; true &gt;, ilist_parent&lt; BasicBlock &gt; &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="26" relation="template-instance">
+          <edgelabel>&lt; Instruction, BasicBlock, ilist_iterator_bits&lt; true &gt;, ilist_parent&lt; BasicBlock &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm::simple_ilist&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1simple__ilist"/>
+        <childnode refid="39" relation="private-inheritance">
+        </childnode>
+        <childnode refid="40" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>llvm::simple_ilist&lt; llvm::DbgRecord &gt;</label>
+        <link refid="classllvm_1_1simple__ilist"/>
+        <childnode refid="33" relation="private-inheritance">
+        </childnode>
+        <childnode refid="35" relation="private-inheritance">
+        </childnode>
+        <childnode refid="38" relation="template-instance">
+          <edgelabel>&lt; llvm::DbgRecord &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>uint64_t</label>
+        <link refid="classuint64__t"/>
+      </node>
+      <node id="5">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/IR/Instructions.h" line="3016" column="1" bodyfile="include/llvm/IR/Instructions.h" bodystart="3016" bodyend="3140"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_instruction_1a6762e9e611c29b13a5c94bf8488fe798" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>addAnnotationMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1a9a7c63edb94ce4fab2a5bb34dbf6079a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>addAnnotationMetadata</name></member>
+      <member refid="classllvm_1_1_value_1aa1b0638c63ba711320b3bb9c69367ed6" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>addMetadata</name></member>
+      <member refid="classllvm_1_1_value_1a97df41793a6441c58ab81b883ef106fa" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>addMetadata</name></member>
+      <member refid="classllvm_1_1_value_1aa8c61025e1632cf57e24e59163e3df9c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>addUse</name></member>
+      <member refid="classllvm_1_1_instruction_1a998c60b1d33c7964e9fa7f6be1393b06" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>adoptDbgRecords</name></member>
+      <member refid="classllvm_1_1_instruction_1a04f5e8259cfe79c39de8db8dd73747cb" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>AlignmentBitfieldElementT</name></member>
+      <member refid="classllvm_1_1_user_1a1f1febd65726339f65bf604c66f908c0" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>allocHungoffUses</name></member>
+      <member refid="classllvm_1_1_instruction_1a4ea9acbe7fd20332ea6ccdb0183d6395" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>andIRFlags</name></member>
+      <member refid="classllvm_1_1_instruction_1ae88ca601f663c55cafa95cf742076aad" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>applyMergedLocation</name></member>
+      <member refid="classllvm_1_1_value_1a3279672b4ef05895858df6f4b05c0de8" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>assertModuleIsMaterialized</name></member>
+      <member refid="classllvm_1_1_value_1a2986c3fbc5cdd954a818288692245b0d" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>assertModuleIsMaterializedImpl</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a96fa91c0c8bc1268c0f62d538b974428" prot="private" virt="non-virtual"><scope>llvm::BranchInst</scope><name>AssertOK</name></member>
+      <member refid="classllvm_1_1_instruction_1a1ff5195448fd2558e384c94cb605cbaa" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>AtomicOrderingBitfieldElementT</name></member>
+      <member refid="classllvm_1_1_instruction_1ac26154a24f393f523c87cc5f8239f36c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>BinaryOps</name></member>
+      <member refid="classllvm_1_1_instruction_1a5575a4d18b30d5812be34d337378bf01" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>BoolBitfieldElementT</name></member>
+      <member refid="classllvm_1_1_branch_inst_1ac0dc4dcd803741b389bf766fe750df24" prot="private" virt="non-virtual"><scope>llvm::BranchInst</scope><name>BranchInst</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a0daa623f56fd8f3d0ab87b491e162f95" prot="private" virt="non-virtual"><scope>llvm::BranchInst</scope><name>BranchInst</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a29f02e107e377c9f6d06c92668406f48" prot="private" virt="non-virtual"><scope>llvm::BranchInst</scope><name>BranchInst</name></member>
+      <member refid="classllvm_1_1_value_1a7b4d048a84149ece45db862333dea428" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>canBeFreed</name></member>
+      <member refid="classllvm_1_1_instruction_1afa0b2fa29ba074f2b6ec9ac11163f2d9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>CastOps</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a4ff84228c4e41f31dd35e8aac9654468" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>classof</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a9ec14a6005aa968e8e71c48c1936a2f9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>classof</name></member>
+      <member refid="classllvm_1_1_value_1ad151fceb9a0e77a8a8017d4f68791811" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>clearMetadata</name></member>
+      <member refid="classllvm_1_1_value_1a48790dc28d4007833380faed30c9f44c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>clearSubclassOptionalData</name></member>
+      <member refid="classllvm_1_1_instruction_1a0a4d51e372293abe5e5f6dac133e80a6" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>clone</name></member>
+      <member refid="classllvm_1_1_instruction_1a2c89a7c3adbeaf3cc5d02a41401801fb" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>cloneDebugInfoFrom</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a6caa25d916f318fa81a44bdbbf51fcd4" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>cloneImpl</name></member>
+      <member refid="classllvm_1_1_instruction_1a784097fca76abad9e815cf1692de79c4" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>comesBefore</name></member>
+      <member refid="classllvm_1_1_instruction_1aa7d8c7b3481309b28659543d1efdb41da78bdb3b677bd78b8f1f0f680f59a049b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>CompareIgnoringAlignment</name></member>
+      <member refid="classllvm_1_1_instruction_1aa7d8c7b3481309b28659543d1efdb41dacf591df2f648de38effb4c1a274d0d37" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>CompareUsingIntersectedAttrs</name></member>
+      <member refid="classllvm_1_1_instruction_1aa7d8c7b3481309b28659543d1efdb41da9160004f266e276236ea4be972957d3b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>CompareUsingScalarTypes</name></member>
+      <member refid="classllvm_1_1_user_1a670a0fc44293ba68935a3cff3b871893" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>const_op_iterator</name></member>
+      <member refid="classllvm_1_1_user_1a00c91d41d6da00a839684a27eff9b717" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>const_op_range</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1a5d9f729fc5a6da4e689f24e7b28fc37e" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>const_reverse_self_iterator</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1a062ff5e5271611eab47e721ed04fb5e6" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>const_self_iterator</name></member>
+      <member refid="classllvm_1_1_value_1a1ef85ed36696cbc1a79882afb4e00d88" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>const_use_iterator</name></member>
+      <member refid="classllvm_1_1_value_1a146665db2d7a79fa164098370a3a34c4" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>const_user_iterator</name></member>
+      <member refid="classllvm_1_1_instruction_1a24a7664d83746bcda035bddeb773eaae" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>copyFastMathFlags</name></member>
+      <member refid="classllvm_1_1_instruction_1ab637365777e388d026ec0a7b404fd5f9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>copyFastMathFlags</name></member>
+      <member refid="classllvm_1_1_instruction_1a3e6d2896c39a84cfa6c47f34cdc584ff" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>copyIRFlags</name></member>
+      <member refid="classllvm_1_1_instruction_1aec6eaa1e49f48c178e0ab9c030b5971e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>copyMetadata</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a9f40e42226cee617c16cb1c447b115c5" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>Create</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a33901f0ae7fea18fad9358970e01eeb3" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>Create</name></member>
+      <member refid="classllvm_1_1_instruction_1a0172245e9f9a9097b5d403ab70348bdd" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>DebugMarker</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a15c12c62063c41b5dc31efa378b49618" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>DECLARE_TRANSPARENT_OPERAND_ACCESSORS</name></member>
+      <member refid="classllvm_1_1_value_1a99d640257f7689aa8095dccfb111e50c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>deleteValue</name></member>
+      <member refid="classllvm_1_1_value_1a159bf794249e0567baf2a2a714d5c679" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>DoPHITranslation</name></member>
+      <member refid="classllvm_1_1_value_1ab1948efb247cc6e24d34a083f8c742b4" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>DoPHITranslation</name></member>
+      <member refid="classllvm_1_1_user_1a48ec5fcee6d2c17c723e8e67f169f948" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropAllReferences</name></member>
+      <member refid="classllvm_1_1_instruction_1aef0129d256feb019adf09cd86b32ce91" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropDbgRecords</name></member>
+      <member refid="classllvm_1_1_value_1a44beb55f865ee8a8e42c3a9adeb599e2" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropDroppableUse</name></member>
+      <member refid="classllvm_1_1_value_1aa1fda0e425c4102e16fe73928efcd750" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropDroppableUses</name></member>
+      <member refid="classllvm_1_1_value_1a731895a3f577718bbaec9b180eb2a6bb" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropDroppableUsesIn</name></member>
+      <member refid="classllvm_1_1_instruction_1a4576d69ed1543b06e5c41eb43b630bf1" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropLocation</name></member>
+      <member refid="classllvm_1_1_instruction_1a71583800b3bd19509d34cb223bef0aab" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropOneDbgRecord</name></member>
+      <member refid="classllvm_1_1_instruction_1a98ad976ff75d19b336e5315a2fdef8c5" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropPoisonGeneratingAnnotations</name></member>
+      <member refid="classllvm_1_1_instruction_1ad4613def4002aa69721553e567ca4187" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropPoisonGeneratingFlags</name></member>
+      <member refid="classllvm_1_1_instruction_1ac2736cd830f7195cee466b7199217461" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropPoisonGeneratingMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1a5dcbbcb6c022f6f2c8b46a3e0a4821b5" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropPoisonGeneratingReturnAttributes</name></member>
+      <member refid="classllvm_1_1_instruction_1a7cdb2c2c02ea6d97b993be4c2bd099e6" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropUBImplyingAttrsAndMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1ad73fe7caaafbee5d307aaef54b5f6ea7" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropUBImplyingAttrsAndUnknownMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1a9c5f771f232bbd4cf6ec230bd78f9174" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dropUnknownNonDebugMetadata</name></member>
+      <member refid="classllvm_1_1_value_1af7dca9a9e816ef69fd9e9467f64f72b4" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_instruction_1a601ee49a4c4e0babf29bd1cf09036570" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>eraseFromParent</name></member>
+      <member refid="classllvm_1_1_value_1a9d88e21e9caa53945e903fd8c8700b4f" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>eraseMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1af5b08506925637f8addbc11e2190dde6" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>eraseMetadataIf</name></member>
+      <member refid="classllvm_1_1_instruction_1a51d5735829e1f043630dd403f01d4219" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>extractProfTotalWeight</name></member>
+      <member refid="classllvm_1_1_instruction_1a40bc45469579b3adf3e4eb9383ec025f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>FuncletPadOps</name></member>
+      <member refid="classllvm_1_1_instruction_1aade703948f2fdabdc65868bdf42d3141" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getAAMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1a765d7abba7daa905e301027dd2fd1086" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getAccessType</name></member>
+      <member refid="classllvm_1_1_instruction_1aad11fd49455cd391b69667d5bcbc5df1" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getAllMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1ab025fe91d5f5c6ff951cb7e1f5c2bf64" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getAllMetadataOtherThanDebugLoc</name></member>
+      <member refid="classllvm_1_1_branch_inst_1aebd4af5642453ce3169094f08dd3d7b8" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getCondition</name></member>
+      <member refid="classllvm_1_1_value_1ab3fc0225d8aaf8434026c3573f961f2c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getContext</name></member>
+      <member refid="classllvm_1_1_instruction_1af65afd02332c4f21c2fab7d217d6600f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getDataLayout</name></member>
+      <member refid="classllvm_1_1_instruction_1a431be97c0e4d03f713d927197cdcfff0" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getDbgRecordRange</name></member>
+      <member refid="classllvm_1_1_instruction_1ad99db073c46dd0de2c530c64baf77cb7" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getDbgReinsertionPosition</name></member>
+      <member refid="classllvm_1_1_instruction_1a4b8faae4ff9e7434a1d226d03d15dcd2" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getDebugLoc</name></member>
+      <member refid="classllvm_1_1_user_1a0d4a83cd78f12aa1ab452c4d94b9cb7b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getDescriptor</name></member>
+      <member refid="classllvm_1_1_user_1a068b54eba6b02473bb14f3b13b85d086" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getDescriptor</name></member>
+      <member refid="classllvm_1_1_instruction_1a9a167f91db810097d281b1ed627f4575" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getFastMathFlags</name></member>
+      <member refid="classllvm_1_1_instruction_1a6a66ebb3aa12757479a3c88de77d78f8" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getFunction</name></member>
+      <member refid="classllvm_1_1_instruction_1a37fa134791b478ff5564bbb05255ca94" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getFunction</name></member>
+      <member refid="classllvm_1_1_instruction_1ad2b97a10a92351d0df82c9759ad1ee07" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getInsertionPointAfterDef</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1af719fc783be6589465137d997701a432" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getIterator</name></member>
+      <member refid="classllvm_1_1_instruction_1a6c09737e146b2d816c911a047ac67ba4" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1aacd004fda4b063f84d19f53ca2f058cd" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getMetadata</name></member>
+      <member refid="classllvm_1_1_value_1aa8b1bc6f9347dade1932d5e0a0be7904" prot="protected" virt="non-virtual" ambiguityscope="llvm::User::"><scope>llvm::BranchInst</scope><name>getMetadata</name></member>
+      <member refid="classllvm_1_1_value_1af580f3203cd4b561487e08bb1fd1d1ae" prot="protected" virt="non-virtual" ambiguityscope="llvm::User::"><scope>llvm::BranchInst</scope><name>getMetadata</name></member>
+      <member refid="classllvm_1_1_value_1a59e5e9e741eead6d5b460cd28c473039" prot="protected" virt="non-virtual" ambiguityscope="llvm::User::"><scope>llvm::BranchInst</scope><name>getMetadataImpl</name></member>
+      <member refid="classllvm_1_1_instruction_1a4ba3a5be6c0e9b9e8a525de055836733" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getModule</name></member>
+      <member refid="classllvm_1_1_instruction_1a57dc99c7685e4c2fa6c27ba7e9d26d87" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getModule</name></member>
+      <member refid="classllvm_1_1_value_1adb5c319f5905c1d3ca9eb5df546388c5" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getName</name></member>
+      <member refid="classllvm_1_1_value_1a391ffe96dd8c686b0d2620c7fb25f8a5" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getNameOrAsOperand</name></member>
+      <member refid="classllvm_1_1ilist__node__with__parent_1a62ee7ece4986606d41363bc1f70d5ab2" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getNextNode</name></member>
+      <member refid="classllvm_1_1_instruction_1a91bd28adea418a08cec78b72413d9d45" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getNextNonDebugInstruction</name></member>
+      <member refid="classllvm_1_1_instruction_1a475658532adbdbbba2c62d48e9b8d1f1" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getNextNonDebugInstruction</name></member>
+      <member refid="classllvm_1_1_user_1addec638786f763d967811b45cb662f1f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getNumOperands</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a96b8f11f6f21ca0321294669dab83b35" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getNumSuccessors</name></member>
+      <member refid="classllvm_1_1_value_1aba0055050d741f60b6e0523507a2c79f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getNumUses</name></member>
+      <member refid="classllvm_1_1_instruction_1ab4e05d690df389b8b1477c90387b575f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getOpcode</name></member>
+      <member refid="classllvm_1_1_instruction_1a9affd129d19aae669647eb0d1c91f793" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getOpcodeName</name></member>
+      <member refid="classllvm_1_1_instruction_1a5695ce86ca3854c8b1ad5020c3aa71ee" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getOpcodeName</name></member>
+      <member refid="classllvm_1_1_user_1aa0a2cb1582d1cec317bd205085469ca1" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getOperand</name></member>
+      <member refid="classllvm_1_1_user_1a024c7e10ce431a93ffdb4e5e6401e0be" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getOperandList</name></member>
+      <member refid="classllvm_1_1_user_1a6155b029eaffe271cf2a711141fbd0e3" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getOperandList</name></member>
+      <member refid="classllvm_1_1_user_1a3f3b252f63d32a9a6e05208ce26562bf" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getOperandUse</name></member>
+      <member refid="classllvm_1_1_user_1a6b69f170344729a16c5f3bbf89aea84d" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getOperandUse</name></member>
+      <member refid="classllvm_1_1ilist__detail_1_1node__parent__access_1a7e19e7508415378ad9523e0339b23e22" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getParent</name></member>
+      <member refid="classllvm_1_1_value_1a47f5c74e1b14ba4a61db057400644acc" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getPointerAlignment</name></member>
+      <member refid="classllvm_1_1_value_1acfdc7354dccb27bc092d9ac8c92b76c7" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getPointerDereferenceableBytes</name></member>
+      <member refid="classllvm_1_1_value_1ac5e4e131889dc27ebec32f382c835971" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getPointerOffsetFrom</name></member>
+      <member refid="classllvm_1_1ilist__node__with__parent_1a1dfdcf6998ec28bfd2f8d2cdebc984a9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getPrevNode</name></member>
+      <member refid="classllvm_1_1_instruction_1a512494b857b0644c1f722531e3ee5495" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getPrevNonDebugInstruction</name></member>
+      <member refid="classllvm_1_1_instruction_1a880c796a9f81d3a377a3a8886ec88f62" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getPrevNonDebugInstruction</name></member>
+      <member refid="classllvm_1_1_value_1a3408c3cf2cef0f378bab40f6660c3341" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getRawSubclassOptionalData</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1ad4bb544993573a6677d97cf5413110c7" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getReverseIterator</name></member>
+      <member refid="classllvm_1_1_value_1a7ae600e148910c49a1772ce51754141c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getSingleUndroppableUse</name></member>
+      <member refid="classllvm_1_1_value_1acb7cde93d3843abb013fe880c58e7f83" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getSingleUndroppableUse</name></member>
+      <member refid="classllvm_1_1_instruction_1a00fe6a3df205f2bb5b21ac4ef7a2dca1" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getStableDebugLoc</name></member>
+      <member refid="classllvm_1_1_instruction_1a041694a1ea45996587ef9712d9a2bb1f" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getSubclassData</name></member>
+      <member refid="classllvm_1_1_branch_inst_1aa05da2b94b366573d1651d5b163c521e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getSuccessor</name></member>
+      <member refid="classllvm_1_1_value_1a0344a49526443edf90cc0aef3abd3337" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getType</name></member>
+      <member refid="classllvm_1_1_value_1a93270009c3358fba0a61654a9376ab4c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getUniqueUndroppableUser</name></member>
+      <member refid="classllvm_1_1_value_1a28ed67ff84559f2ca8a0b5975d03cbce" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getUniqueUndroppableUser</name></member>
+      <member refid="classllvm_1_1_value_1a4a6ca5a5b87bd84231be9d8dbec46c1a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getValueID</name></member>
+      <member refid="classllvm_1_1_value_1a99f268730c076a9546009ede05e0dc41" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>getValueName</name></member>
+      <member refid="classllvm_1_1_user_1af834e5d5dd096241c0bcc01c5a9c0902" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>growHungoffUses</name></member>
+      <member refid="classllvm_1_1_instruction_1acf73620764d7168629631e3681499f4f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>handleMarkerRemoval</name></member>
+      <member refid="classllvm_1_1_instruction_1adf69200e2ae35a69c5eeecd4c0ee4d1c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasAllowContract</name></member>
+      <member refid="classllvm_1_1_instruction_1aed565a1dfd056c37a481581db8cdbedd" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasAllowReassoc</name></member>
+      <member refid="classllvm_1_1_instruction_1a76908359b5b01e49efdd43d1d6e08c21" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasAllowReciprocal</name></member>
+      <member refid="classllvm_1_1_instruction_1aa11ca53210de69609754994339179e10" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasApproxFunc</name></member>
+      <member refid="classllvm_1_1_instruction_1ab7e43783656ce7aae69f3da31509ff88" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasAtomicLoad</name></member>
+      <member refid="classllvm_1_1_instruction_1a409415e274680c5d72d3272a1cee3d95" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasAtomicStore</name></member>
+      <member refid="classllvm_1_1_instruction_1afe42f1bdb9f76c2a852dea0238408f99" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasDbgRecords</name></member>
+      <member refid="classllvm_1_1_value_1ae534948f447c9e41a6890b01a8c13f0a" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>HasDescriptor</name></member>
+      <member refid="classllvm_1_1_value_1abe68086704afcf3325b6b9b14ca4b625" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>HasHungOffUses</name></member>
+      <member refid="classllvm_1_1_value_1a9eb4a52a4675976293ae4f77c982667b" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>HasMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1a565f546ad95bd3a9bbe9a1e5040803f0" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1a18993ec84b78442c34fefdd6d3b3f693" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1a23ce9747bfbb053cf7ac18abbe4a1006" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1a54867ca5f252be2c60176e14e7240391" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasMetadataOtherThanDebugLoc</name></member>
+      <member refid="classllvm_1_1_value_1a174c05075799a1b8213851ca52e9567c" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>HasName</name></member>
+      <member refid="classllvm_1_1_value_1ad9d88ae321b98d8a3b7f394977ae6d7f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasName</name></member>
+      <member refid="classllvm_1_1_instruction_1a10d8839494fe8385aa1ddbca6f801d79" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasNoInfs</name></member>
+      <member refid="classllvm_1_1_instruction_1a0d4bb13ba43d71cfe58184ab1bb4abd1" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasNoNaNs</name></member>
+      <member refid="classllvm_1_1_instruction_1aa0d082032f91d90c9978c66286f8dbfd" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasNonDebugLocLoopMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1a87716cd594c6fcb3861a4044e7b594db" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasNonNeg</name></member>
+      <member refid="classllvm_1_1_instruction_1a350f4fdc01c770b5cf6a8be2624ae3e5" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasNoSignedWrap</name></member>
+      <member refid="classllvm_1_1_instruction_1a2c8498183c5bce88fb4f651ee4169611" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasNoSignedZeros</name></member>
+      <member refid="classllvm_1_1_instruction_1a100c666f9253331dd1d166a863248326" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasNoUnsignedWrap</name></member>
+      <member refid="classllvm_1_1_value_1af2480ba07d44a392d73449bd7269bcc4" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasNUndroppableUses</name></member>
+      <member refid="classllvm_1_1_value_1a2b32d493aada47e4eff2cd28f0753be8" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasNUndroppableUsesOrMore</name></member>
+      <member refid="classllvm_1_1_value_1a7c779ce2ba55bc94f52014fc25f3d520" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasNUses</name></member>
+      <member refid="classllvm_1_1_value_1a72fb137716cff838d389e392b9729dc9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasNUsesOrMore</name></member>
+      <member refid="classllvm_1_1_value_1a3a402430a1bbe70a9282dcb0e0b6a2cd" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasOneUse</name></member>
+      <member refid="classllvm_1_1_value_1a2e987c6af902aad6baa39bd5b7ef322c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasOneUser</name></member>
+      <member refid="classllvm_1_1_instruction_1a8374600731c31968debc9eb3de4c37bc" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasPoisonGeneratingAnnotations</name></member>
+      <member refid="classllvm_1_1_instruction_1a8d57cfab4f6b4461e8ddddaeb2a28128" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasPoisonGeneratingFlags</name></member>
+      <member refid="classllvm_1_1_instruction_1ae59c6449e1b577942315f4365ab5aa89" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasPoisonGeneratingMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1a2ecc41326c89789bcdbd9c9a0295bde7" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasPoisonGeneratingReturnAttributes</name></member>
+      <member refid="classllvm_1_1_instruction_1a566048bdbd8bade381b6a52ed0244621" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasSameSpecialState</name></member>
+      <member refid="classllvm_1_1_value_1aa48638782e724669238a05c0859b35e0" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasSameSubclassOptionalData</name></member>
+      <member refid="classllvm_1_1_value_1ab978072498608d7bd344804926c2a91a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>hasValueHandle</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1a01609a46da35cca87e8ada6f7de40d23" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>ilist_node_impl</name></member>
+      <member refid="classllvm_1_1ilist__node__with__parent_1af7bbc12015222bdafcbffb722485be04" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>ilist_node_with_parent</name></member>
+      <member refid="classllvm_1_1_instruction_1af09e4096de244d2fb345891328714a63" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>insertAfter</name></member>
+      <member refid="classllvm_1_1_instruction_1a6347142480e7de8e6e26fb8f291e47f0" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>insertAfter</name></member>
+      <member refid="classllvm_1_1_instruction_1a482498a1c760122fd33c7fc8190dd277" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>insertBefore</name></member>
+      <member refid="classllvm_1_1_instruction_1a5bf2824185d7a1f3a86683efb7e525e9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>insertBefore</name></member>
+      <member refid="classllvm_1_1_instruction_1a299df85ca0809906003361ccdf1d7bd2" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>insertBefore</name></member>
+      <member refid="classllvm_1_1_instruction_1afcd9d2ea284c4d90541291ff9c47d332" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>insertInto</name></member>
+      <member refid="classllvm_1_1_instruction_1af8523456fa135c84e55314de2108f76a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>InstListType</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a87273cb892a8182f137567e6b631695e" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>Instruction</name></member>
+      <member refid="classllvm_1_1_instruction_1ae70f02adcd410ca9c8429fa8d7711965" prot="public" virt="non-virtual" ambiguityscope="llvm::Instruction::"><scope>llvm::BranchInst</scope><name>Instruction</name></member>
+      <member refid="classllvm_1_1_instruction_1a37bc1006b02fd1e93dfd862976fb2d35" prot="protected" virt="non-virtual" ambiguityscope="llvm::Instruction::"><scope>llvm::BranchInst</scope><name>Instruction</name></member>
+      <member refid="classllvm_1_1_instruction_1a1ef1466270a3df7919d1f6111447997e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isArithmeticShift</name></member>
+      <member refid="classllvm_1_1_instruction_1a4f0027b9d05b27206b1882976fce9038" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isAssociative</name></member>
+      <member refid="classllvm_1_1_instruction_1a58c0f69b2d18b94c651b13d8e7fd9ebc" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isAssociative</name></member>
+      <member refid="classllvm_1_1_instruction_1a57efb022f2ee2e19e4cdf582f4d27f2d" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isAtomic</name></member>
+      <member refid="classllvm_1_1_instruction_1a5c88132322ca3f46f242f7c023a57010" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isBinaryOp</name></member>
+      <member refid="classllvm_1_1_instruction_1a19a7026c9bfca302daa96fff1445910a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isBinaryOp</name></member>
+      <member refid="classllvm_1_1_instruction_1a2d0036d2d7b30f510927731ba7a4f4b9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isBitwiseLogicOp</name></member>
+      <member refid="classllvm_1_1_instruction_1ac3376e3bd632ad72252638ae43295ce4" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isBitwiseLogicOp</name></member>
+      <member refid="classllvm_1_1_instruction_1a27997849d8982bf226891024fd68daee" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isCast</name></member>
+      <member refid="classllvm_1_1_instruction_1a47e931b4753c5d32baf9a2f8de1e2d92" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isCast</name></member>
+      <member refid="classllvm_1_1_instruction_1a55743bd32282bf6f87aeb49237b1fb68" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isCommutative</name></member>
+      <member refid="classllvm_1_1_instruction_1a48dd504e040ba9c89e802af96c78dd25" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isCommutative</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a7e4be8b16fbd68c9045a388904044e01" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isConditional</name></member>
+      <member refid="classllvm_1_1_instruction_1a323444895ce923a737f0a7af82a30f54" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isDebugOrPseudoInst</name></member>
+      <member refid="classllvm_1_1_user_1af6a49991304b167c94f4a9756d3fd48f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isDroppable</name></member>
+      <member refid="classllvm_1_1_instruction_1a5d3d315f678bc76e43b27d18e5d72829" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isEHPad</name></member>
+      <member refid="classllvm_1_1_instruction_1a689a03df5b4ae094d6a3a1bd13dac574" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isExact</name></member>
+      <member refid="classllvm_1_1_instruction_1a60311aae406df2143c650f3bce27e036" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isFast</name></member>
+      <member refid="classllvm_1_1_instruction_1aced8559a5380b3759af251428f024c02" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isFenceLike</name></member>
+      <member refid="classllvm_1_1_instruction_1a9f25788548135c3b2bee0f5d37becd77" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isFPDivRem</name></member>
+      <member refid="classllvm_1_1_instruction_1a257920a1e7211884082cc6e599f4bd7f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isFPDivRem</name></member>
+      <member refid="classllvm_1_1_instruction_1a70c1f2d69b2ea2f6d7e83bb17bb9ba0a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isFuncletPad</name></member>
+      <member refid="classllvm_1_1_instruction_1ab1d8db0294e807c6834618d54d2fb6bc" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isFuncletPad</name></member>
+      <member refid="classllvm_1_1_instruction_1aeba4ff92fbdb591fb2a1090dbda31691" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isIdempotent</name></member>
+      <member refid="classllvm_1_1_instruction_1a6761fd11adc4d27f569d339c3c0c8c40" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isIdempotent</name></member>
+      <member refid="classllvm_1_1_instruction_1ad848bd0184fc7bcb7b71e19248f08f34" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isIdenticalTo</name></member>
+      <member refid="classllvm_1_1_instruction_1a602468cf8d0763769b6b39ece1117ad7" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isIdenticalToWhenDefined</name></member>
+      <member refid="classllvm_1_1_instruction_1af9c2825ab53adf1bf8c9fa19ec89d986" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isIntDivRem</name></member>
+      <member refid="classllvm_1_1_instruction_1aea89163a72302081fba69821b3a5bf13" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isIntDivRem</name></member>
+      <member refid="classllvm_1_1_instruction_1adda9304aaf3716109938d9479b2d2dbc" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isLaunderOrStripInvariantGroup</name></member>
+      <member refid="classllvm_1_1_instruction_1a185bafe1e8f07def76a3bac154a23e7a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isLifetimeStartOrEnd</name></member>
+      <member refid="classllvm_1_1_instruction_1aadb443634ecdb8f3e6aa001e6d436122" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isLogicalShift</name></member>
+      <member refid="classllvm_1_1_instruction_1a902c3b08cb9808fddc542ff284c28edb" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isNilpotent</name></member>
+      <member refid="classllvm_1_1_instruction_1ab8528558d235e86bddc040ae8580746b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isNilpotent</name></member>
+      <member refid="classllvm_1_1_instruction_1a42a7168411751df6f6bc19cf5f3724d1" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isOnlyUserOfAnyOperand</name></member>
+      <member refid="classllvm_1_1_instruction_1af92eae2af65e24114a8767cc10c8795e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isSafeToRemove</name></member>
+      <member refid="classllvm_1_1_instruction_1a25175390eaee0646bcb8b30990ab723b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isSameOperationAs</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1a0570092282570244c4d7af86003f0aa9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isSentinel</name></member>
+      <member refid="classllvm_1_1_instruction_1ac5984d6827f6e6922bed00bf03ba9552" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isShift</name></member>
+      <member refid="classllvm_1_1_instruction_1a345db67ae3444fc10db37ff34cf4166e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isShift</name></member>
+      <member refid="classllvm_1_1_instruction_1afcb56ab491984549c6f734b0f5b4f925" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isSpecialTerminator</name></member>
+      <member refid="classllvm_1_1_instruction_1a3c1f1a7ac43254d4242048c2a92d6734" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isSpecialTerminator</name></member>
+      <member refid="classllvm_1_1_value_1a98897a3d01f6a4d7f10a5ac8fe862c82" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isSwiftError</name></member>
+      <member refid="classllvm_1_1_instruction_1a7653277511df1034148a37520a585bb5" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isTerminator</name></member>
+      <member refid="classllvm_1_1_instruction_1aca1cfb64ba31b4b2eb24b5bb0f4a03b3" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isTerminator</name></member>
+      <member refid="classllvm_1_1_instruction_1ae6249022aded13ad98775c11881bc117" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isUnaryOp</name></member>
+      <member refid="classllvm_1_1_instruction_1ab3506fee8672213803272ce81e15eb43" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isUnaryOp</name></member>
+      <member refid="classllvm_1_1_branch_inst_1ad56f6a9b5cd05940017c4544df48bc30" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isUnconditional</name></member>
+      <member refid="classllvm_1_1_value_1a0e7ed12d09bbe90b2061208177e2a3ba" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>IsUsedByMD</name></member>
+      <member refid="classllvm_1_1_value_1a6cfd8c0f6033a51197c2ef2b00beeca6" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isUsedByMetadata</name></member>
+      <member refid="classllvm_1_1_value_1a55bba6bcd9b098e1c227011e6cd66300" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isUsedInBasicBlock</name></member>
+      <member refid="classllvm_1_1_instruction_1a91dbffd0cc6b209fd2bfe9a0236d779c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isUsedOutsideOfBlock</name></member>
+      <member refid="classllvm_1_1_instruction_1a92599976668e8eec0d73b986ad3e7732" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>isVolatile</name></member>
+      <member refid="classllvm_1_1_value_1a7ad234db7c28b66de3845bb86249cac2" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>materialized_use_begin</name></member>
+      <member refid="classllvm_1_1_value_1a07a316b721bb6a1794140cd580f5b031" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>materialized_use_begin</name></member>
+      <member refid="classllvm_1_1_value_1a60a98b54fc834c577a61e455e7157b2b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>materialized_use_empty</name></member>
+      <member refid="classllvm_1_1_value_1acf1d82a256748288e01404b1903f762b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>materialized_user_begin</name></member>
+      <member refid="classllvm_1_1_value_1ae5f5400d4e88bcef211808e582a0be27" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>materialized_user_begin</name></member>
+      <member refid="classllvm_1_1_value_1a0104cde53b84260b50b2557f1f718d96" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>materialized_users</name></member>
+      <member refid="classllvm_1_1_value_1a24d8aaa6a925b40c09fdbf6d7ab332fd" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>materialized_users</name></member>
+      <member refid="classllvm_1_1_value_1a1e05a5aed47fc02cbb7f252d489b405c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>materialized_uses</name></member>
+      <member refid="classllvm_1_1_value_1a8a8eddca4c6b9167400f54beb8786343" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>materialized_uses</name></member>
+      <member refid="classllvm_1_1_value_1ab5941ebb386c8b46a569d1d8dbfe0c8c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>MaxAlignmentExponent</name></member>
+      <member refid="classllvm_1_1_value_1a089e46429cea4cfcd2ba23a6fc6aa676" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>MaximumAlignment</name></member>
+      <member refid="classllvm_1_1_instruction_1a6ea260be710ac7b61309534308da3147" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>mayHaveSideEffects</name></member>
+      <member refid="classllvm_1_1_instruction_1a9149819221d66953ac6c2938b87f0136" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>mayReadFromMemory</name></member>
+      <member refid="classllvm_1_1_instruction_1a2d77b9d450543e86acb394ff6dda6b53" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>mayReadOrWriteMemory</name></member>
+      <member refid="classllvm_1_1_instruction_1a0501e3b4084693092efc0be8b02c1b6b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>mayThrow</name></member>
+      <member refid="classllvm_1_1_instruction_1a383175f96316074965ad115706bd49d7" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>mayWriteToMemory</name></member>
+      <member refid="classllvm_1_1_instruction_1a0a89b738faa92ee71304cbc8d9229633" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>MemoryOps</name></member>
+      <member refid="classllvm_1_1_instruction_1a2711d3bc7c6c769a8f34c7fc3937169d" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>mergeDIAssignID</name></member>
+      <member refid="classllvm_1_1_instruction_1a54507f01d7d06127068ee0663233511d" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>moveAfter</name></member>
+      <member refid="classllvm_1_1_instruction_1ae6189d19092044a37414c05526874a06" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>moveAfter</name></member>
+      <member refid="classllvm_1_1_instruction_1ab2c07ffbd0e823cbd49ec9873c724961" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>moveAfterPreserving</name></member>
+      <member refid="classllvm_1_1_instruction_1af67d1f3a518964d80a109bb3d9d5cf1e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>moveBefore</name></member>
+      <member refid="classllvm_1_1_instruction_1a56d0f00463a6a160af0a6966cc5ed885" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>moveBefore</name></member>
+      <member refid="classllvm_1_1_instruction_1a850566850f6c034f3d39773112b0427b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>moveBefore</name></member>
+      <member refid="classllvm_1_1_instruction_1ae3c2accff1fc7b0c4fc5ab15915573af" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>moveBeforePreserving</name></member>
+      <member refid="classllvm_1_1_instruction_1af53129f70dd4f0dae21bb5099ebecedc" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>moveBeforePreserving</name></member>
+      <member refid="classllvm_1_1_instruction_1a28c50733b8b3ed88997ca245cd0d6a3b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>moveBeforePreserving</name></member>
+      <member refid="classllvm_1_1_value_1ac0f09c2c9951158f9eecfaf7068d7b20" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>mutateType</name></member>
+      <member refid="classllvm_1_1_value_1ab9ef1cd0d25962bbb4785ae14258ed5d" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>NumUserOperands</name></member>
+      <member refid="classllvm_1_1_value_1a19833a77591e9d860373ab7fc4793044a6050aee72ddd23b6d91ec3f126679fec" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>NumUserOperandsBits</name></member>
+      <member refid="classllvm_1_1_user_1a72f80871b9f46788c255158fbab96879" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>Op</name></member>
+      <member refid="classllvm_1_1_user_1acba04f54d37b4a11c622d3772236b7cb" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>Op</name></member>
+      <member refid="classllvm_1_1_user_1a2eeb1c7ed1cfe403f2ae0470e36c07e2" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>op_begin</name></member>
+      <member refid="classllvm_1_1_user_1a418704eb3b3a706e679e0a2d42b5dc7c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>op_begin</name></member>
+      <member refid="classllvm_1_1_user_1af41f58e730804d10b91fcff39b035f74" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>op_end</name></member>
+      <member refid="classllvm_1_1_user_1a49d32fbcf8305d76cfff528214a4eca0" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>op_end</name></member>
+      <member refid="classllvm_1_1_user_1a0126e6f10273e8db07142833979a0c8f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>op_iterator</name></member>
+      <member refid="classllvm_1_1_user_1a917548288129e24325af275795e4622f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>op_range</name></member>
+      <member refid="classllvm_1_1_instruction_1acba4015ba8311eac7812dac3086e1b64" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>OpaqueField</name></member>
+      <member refid="classllvm_1_1_user_1ae9c77e5d2298423b0699e93642d17f0c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operand_values</name></member>
+      <member refid="classllvm_1_1_user_1ac493cefe3e5d3113828e0720bb16b85f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operand_values</name></member>
+      <member refid="classllvm_1_1_user_1a0b931781aa589c6ebe64a76c1447e5b2" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operands</name></member>
+      <member refid="classllvm_1_1_user_1acbac91af886d94a4cd0b41c506f7051b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operands</name></member>
+      <member refid="classllvm_1_1_instruction_1aa7d8c7b3481309b28659543d1efdb41d" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>OperationEquivalenceFlags</name></member>
+      <member refid="classllvm_1_1_user_1a96c162b315ccc10487a1359cb15f8c98" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operator delete</name></member>
+      <member refid="classllvm_1_1_user_1a247006d94472c8d80b5cf143a9c5a2b9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operator delete</name></member>
+      <member refid="classllvm_1_1_user_1a3ba87e798a0df56e983d393e0a1abc1a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operator delete</name></member>
+      <member refid="classllvm_1_1_user_1acb6e60cad24aed54fa19ce71074c7ecb" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operator delete</name></member>
+      <member refid="classllvm_1_1_user_1a6fe0552bc8842bffe58e1d7873346f7b" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operator new</name></member>
+      <member refid="classllvm_1_1_user_1ad379730885bf082d40fd8aa4af1e553d" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operator new</name></member>
+      <member refid="classllvm_1_1_user_1a1324a54e2b6221c9dc2e74725a3570c1" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operator new</name></member>
+      <member refid="classllvm_1_1_user_1aee898f8818ca582daae5d35eaf92f4cf" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operator new</name></member>
+      <member refid="classllvm_1_1_instruction_1a5253ec4f437838a8729fcf3d4f840bb2" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_value_1abd5773aff310a001b58365f1298afb1b" prot="public" virt="non-virtual" ambiguityscope="llvm::User::"><scope>llvm::BranchInst</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_user_1a9f3fe741b6c50ae123d7452a2222e271" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>OpFrom</name></member>
+      <member refid="classllvm_1_1_instruction_1a92db6d5865b9492ef8eeedad41235d0a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>OtherOps</name></member>
+      <member refid="classllvm_1_1_value_1a1e56c814d11206720cc23059b871128d" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>print</name></member>
+      <member refid="classllvm_1_1_value_1a7ba690234245eaba66ec19c429aaa7b3" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>print</name></member>
+      <member refid="classllvm_1_1_value_1a62213d5211c9d944e5ede1f0059a6ae2" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>printAsOperand</name></member>
+      <member refid="classllvm_1_1_value_1a71c852fe821d8efa8a9cb0c359380ac7" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>printAsOperand</name></member>
+      <member refid="classllvm_1_1_instruction_1a0fd53f63d349dc8a7c5fc0cdd7a94c8d" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>removeFromParent</name></member>
+      <member refid="classllvm_1_1_value_1a3ab5fc45117b450e8bb04e564cb6e5f2" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>replaceAllUsesWith</name></member>
+      <member refid="classllvm_1_1_value_1ae0f750cccc69c91465adea3e30ee2165" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>replaceNonMetadataUsesWith</name></member>
+      <member refid="classllvm_1_1_instruction_1a657e5d1f0907b46daf10219e2b9b5ae5" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>replaceSuccessorWith</name></member>
+      <member refid="classllvm_1_1_user_1a1600c7959045cb6b6a5f5a1d427ec67e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>replaceUsesOfWith</name></member>
+      <member refid="classllvm_1_1_value_1aa56e7093b552d99d48d66c5ae781236a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>replaceUsesOutsideBlock</name></member>
+      <member refid="classllvm_1_1_value_1a7e8dad1701aa6445be4a29f654b0473c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>replaceUsesWithIf</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1ad170cf283717735d286c0d6975a9ccfa" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>reverse_self_iterator</name></member>
+      <member refid="classllvm_1_1_value_1a25fd4916e8bb37be03d9f9b1279d5abc" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>reverseUseList</name></member>
+      <member refid="classllvm_1_1ilist__node__impl_1a69f57da2cbacc606919dd017badf7da1" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>self_iterator</name></member>
+      <member refid="classllvm_1_1_instruction_1a4dd9b6c5bb93e01393c47dbe60f8b23f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setAAMetadata</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a3505dab06f59c36142a234321cdc3411" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setCondition</name></member>
+      <member refid="classllvm_1_1_instruction_1ae8f5bf5cc06f696b52c709677df00fbf" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setDebugLoc</name></member>
+      <member refid="classllvm_1_1_instruction_1aecf2ba7921a07e6b24434554e02c8106" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setFast</name></member>
+      <member refid="classllvm_1_1_instruction_1a5ca8aa62fa8b3fe5bc0e8fbe5d8b8b7a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setFastMathFlags</name></member>
+      <member refid="classllvm_1_1_instruction_1a3ea5d2b89cd3be3e0f07b97c466fe341" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setHasAllowContract</name></member>
+      <member refid="classllvm_1_1_instruction_1a5b5ee2f5097a11b4f6fc135a1d147de4" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setHasAllowReassoc</name></member>
+      <member refid="classllvm_1_1_instruction_1acdb7b321e4ed4c3d80f4fa5fdc2c4a48" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setHasAllowReciprocal</name></member>
+      <member refid="classllvm_1_1_instruction_1a542bbbf2a886b74cd2407c216ae06106" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setHasApproxFunc</name></member>
+      <member refid="classllvm_1_1_instruction_1a94eaf07edb6829da0be0e8681375ac4e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setHasNoInfs</name></member>
+      <member refid="classllvm_1_1_instruction_1a4ef005763ae33d1f581c7809d7de1a4c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setHasNoNaNs</name></member>
+      <member refid="classllvm_1_1_instruction_1a4166b451a572b1e5d3fea7250af53653" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setHasNoSignedWrap</name></member>
+      <member refid="classllvm_1_1_instruction_1a27d07a2504f0f592823ee21311099249" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setHasNoSignedZeros</name></member>
+      <member refid="classllvm_1_1_instruction_1a0c03b71c79206ec41270dc3788183e0d" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setHasNoUnsignedWrap</name></member>
+      <member refid="classllvm_1_1_instruction_1ac01940f561517355e394911c203bcedf" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setIsExact</name></member>
+      <member refid="classllvm_1_1_instruction_1a9247a212ea89acc9573fa7e7f557eaba" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setMetadata</name></member>
+      <member refid="classllvm_1_1_instruction_1a695a53ce0b9f537880373b4ea1824a6b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setMetadata</name></member>
+      <member refid="classllvm_1_1_value_1a35ee267850af7c235474a8c46c7ac5af" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setName</name></member>
+      <member refid="classllvm_1_1_instruction_1a75e5beda8f609473a08473e574511de8" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setNonNeg</name></member>
+      <member refid="classllvm_1_1_instruction_1a959c782ed643a36be7d7264e379025d1" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setNoSanitizeMetadata</name></member>
+      <member refid="classllvm_1_1_user_1a715e8009737f71c4b3d2ea7d2abc33c4" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setNumHungOffUseOperands</name></member>
+      <member refid="classllvm_1_1_user_1a5fa9b8e1842b354f64c1ba6be0a4a17f" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setOperand</name></member>
+      <member refid="classllvm_1_1ilist__detail_1_1node__parent__access_1ad4cf5562c8c361844baaeb6a8b5cfb7e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setParent</name></member>
+      <member refid="classllvm_1_1_instruction_1afbb5877d4ac72148b232c8fedb08bba5" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setSubclassData</name></member>
+      <member refid="classllvm_1_1_branch_inst_1adc5e7f9c460c68455e826783d77f9a99" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setSuccessor</name></member>
+      <member refid="classllvm_1_1_value_1a924b832eebd603551f849b631c8e5566" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>setValueName</name></member>
+      <member refid="classllvm_1_1_value_1a44e27e6f869703f42ebd1b050a75a121" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>sortUseList</name></member>
+      <member refid="classllvm_1_1_value_1a23c582e2452eeb2b2cf6e0c43eca617e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripAndAccumulateConstantOffsets</name></member>
+      <member refid="classllvm_1_1_value_1a551ea28693c8f39b40d76f5255ca930d" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripAndAccumulateConstantOffsets</name></member>
+      <member refid="classllvm_1_1_value_1a14f27b1cef50a1f887650a8c79dbb436" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripAndAccumulateInBoundsConstantOffsets</name></member>
+      <member refid="classllvm_1_1_value_1a574f86d538a28119d082be202fedb615" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripAndAccumulateInBoundsConstantOffsets</name></member>
+      <member refid="classllvm_1_1_value_1a3711f4a2446d9e9302ebfa2fb1180883" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripInBoundsConstantOffsets</name></member>
+      <member refid="classllvm_1_1_value_1acab7642aedd7e0d2e7b5857d99328c25" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripInBoundsConstantOffsets</name></member>
+      <member refid="classllvm_1_1_value_1a3ed745230c0e6c52f4b1ec0dae8c07fb" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripInBoundsOffsets</name></member>
+      <member refid="classllvm_1_1_value_1a0443930d9dd02213bbc46588a7af488d" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripInBoundsOffsets</name></member>
+      <member refid="classllvm_1_1_value_1a966eb231e7d4e572874d2cb49b18faea" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripPointerCasts</name></member>
+      <member refid="classllvm_1_1_value_1a08ad28e3c7d7c2f0c2ecb5ddcd1da355" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripPointerCasts</name></member>
+      <member refid="classllvm_1_1_value_1a3111ed9ce005478f88fbf8d102a89fe9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripPointerCastsAndAliases</name></member>
+      <member refid="classllvm_1_1_value_1a559c1ffcea756dea87714e5d51ed82f4" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripPointerCastsAndAliases</name></member>
+      <member refid="classllvm_1_1_value_1af7ce93500c8d9a8fbd0a40e461f3b780" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripPointerCastsForAliasAnalysis</name></member>
+      <member refid="classllvm_1_1_value_1ac433d0ecf347d8fc3d4786002f31d7e9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripPointerCastsForAliasAnalysis</name></member>
+      <member refid="classllvm_1_1_value_1a9a0f0124982d06eda91a2ab22cc1534c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripPointerCastsSameRepresentation</name></member>
+      <member refid="classllvm_1_1_value_1ae20551fe1b3fb3429d78ac77b4f81a54" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>stripPointerCastsSameRepresentation</name></member>
+      <member refid="classllvm_1_1_value_1a21e38886795ed32ec28d4eb5dc92b6a4" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>SubclassOptionalData</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a254b2cfabe80269ee4f53f6698452db6" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>successors</name></member>
+      <member refid="classllvm_1_1_branch_inst_1af1b864f41057ebc4d889b1b31f71bc18" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>successors</name></member>
+      <member refid="classllvm_1_1_instruction_1a6e324daba99cb1d67713a562f9a778d2" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>swapProfMetadata</name></member>
+      <member refid="classllvm_1_1_branch_inst_1a6550fe5bd437c1c3c6e237d726e36b90" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>swapSuccessors</name></member>
+      <member refid="classllvm_1_1_value_1ae855357b6c5e6e7ed1869272708a3a84" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>takeName</name></member>
+      <member refid="classllvm_1_1_instruction_1ac9422ce2b7c1a541da2e14f637cb4c10" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>TermOps</name></member>
+      <member refid="classllvm_1_1_instruction_1af9f57a32b08304fea642871735717f24" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>UnaryOps</name></member>
+      <member refid="classllvm_1_1_instruction_1ae2bf20cca6e2a10783f868d80a7c0400" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>updateLocationAfterHoist</name></member>
+      <member refid="classllvm_1_1_value_1a413abcab8dbc3900fc2fde96a5d8fca6" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>use_begin</name></member>
+      <member refid="classllvm_1_1_value_1a24018b06ac0d956553428c86d5af7d5e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>use_begin</name></member>
+      <member refid="classllvm_1_1_value_1a9d7de807ebdfe1819df3ff6cb0f16158" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>use_empty</name></member>
+      <member refid="classllvm_1_1_value_1ad86469939d2a8bdd4169be9403b89f5a" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>use_end</name></member>
+      <member refid="classllvm_1_1_value_1ac124783761e79d74db1e97d38224216b" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>use_end</name></member>
+      <member refid="classllvm_1_1_value_1a91de4dfc49ed35db2100baf2faadc4e3" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>use_iterator</name></member>
+      <member refid="classllvm_1_1_user_1a282fa3e9586425313e0a954c18deee15" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>User</name></member>
+      <member refid="classllvm_1_1_user_1abcc26789f64ec564961893b4ddba5c24" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>User</name></member>
+      <member refid="classllvm_1_1_instruction_1a6609528bd67d5506a9bf9a2cce2d6f58" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>user_back</name></member>
+      <member refid="classllvm_1_1_instruction_1a9c799bce3238ef2d8b7b2da3e03745d6" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>user_back</name></member>
+      <member refid="classllvm_1_1_value_1a158da2b6d3d938aaa15b6acd00150e2c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>user_begin</name></member>
+      <member refid="classllvm_1_1_value_1affbc364be263e23ef9f54686c947ca6c" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>user_begin</name></member>
+      <member refid="classllvm_1_1_value_1af21f61086e696a788f549768fdc26a93" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>user_empty</name></member>
+      <member refid="classllvm_1_1_value_1aa22118b2b3f206bfda2ffab4cda94d64" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>user_end</name></member>
+      <member refid="classllvm_1_1_value_1ae9d0fa4bc2ba8b0bdbf059790c055340" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>user_end</name></member>
+      <member refid="classllvm_1_1_value_1acd2fbee42afeb868be98aaae56528636" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>user_iterator</name></member>
+      <member refid="classllvm_1_1_value_1a411cf3e3932f209ce3374cb31adc1da6" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>users</name></member>
+      <member refid="classllvm_1_1_value_1a47e5062f8da90137678150d09bb17751" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>users</name></member>
+      <member refid="classllvm_1_1_value_1abf855b7cd63a0cd7f73759e396f280c9" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>uses</name></member>
+      <member refid="classllvm_1_1_value_1a224d0ab04e6510402fb5c7221666efed" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>uses</name></member>
+      <member refid="classllvm_1_1_value_1a18dbfcb332af7515599ee795cf462843" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>Value</name></member>
+      <member refid="classllvm_1_1_value_1a89fb6f29d69f077a86d811c6331681d1" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>Value</name></member>
+      <member refid="classllvm_1_1_user_1ad93396a26f6fd589ed400bb280319836" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>value_op_begin</name></member>
+      <member refid="classllvm_1_1_user_1a7018c8ee154176141c4c5c055bd341c6" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>value_op_begin</name></member>
+      <member refid="classllvm_1_1_user_1a5d1730a173d0a69624b80e1e22e6d225" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>value_op_end</name></member>
+      <member refid="classllvm_1_1_user_1af4e94f12cf6145d21c3acc13c4f557ab" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>value_op_end</name></member>
+      <member refid="classllvm_1_1_value_1af6d11b38374c4f9e6ba3a6407da2dee0" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>ValueTy</name></member>
+      <member refid="classllvm_1_1_instruction_1aa03e017ef451ba2f6f504b0d40c2da2e" prot="public" virt="non-virtual"><scope>llvm::BranchInst</scope><name>willReturn</name></member>
+      <member refid="classllvm_1_1_instruction_1a26eb634480beff1ad7a20235c11f521d" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>~Instruction</name></member>
+      <member refid="classllvm_1_1_user_1aa56ec414c4256c8435f4c97ec192019a" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>~User</name></member>
+      <member refid="classllvm_1_1_value_1a3a578f458da8a4ab67052dba0f7bffdd" prot="protected" virt="non-virtual"><scope>llvm::BranchInst</scope><name>~Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

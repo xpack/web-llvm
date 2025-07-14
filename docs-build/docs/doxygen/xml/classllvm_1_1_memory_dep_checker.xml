@@ -1,0 +1,826 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_memory_dep_checker" kind="class" language="C++" prot="public">
+    <compoundname>llvm::MemoryDepChecker</compoundname>
+    <includes refid="_loop_access_analysis_8h" local="yes">llvm/Analysis/LoopAccessAnalysis.h</includes>
+    <innerclass refid="structllvm_1_1_memory_dep_checker_1_1_dep_distance_stride_and_size_info" prot="private">llvm::MemoryDepChecker::DepDistanceStrideAndSizeInfo</innerclass>
+    <innerclass refid="structllvm_1_1_memory_dep_checker_1_1_dependence" prot="public">llvm::MemoryDepChecker::Dependence</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_memory_dep_checker_1ac661dd363bcde8b1e9516390eff1c400" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>VectorizationSafetyStatus</name>
+        <qualifiedname>llvm::MemoryDepChecker::VectorizationSafetyStatus</qualifiedname>
+        <enumvalue id="classllvm_1_1_memory_dep_checker_1ac661dd363bcde8b1e9516390eff1c400ac6eea0560cd6f377e78dff2c85cc9122" prot="public">
+          <name>Safe</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_memory_dep_checker_1ac661dd363bcde8b1e9516390eff1c400ad1b0fb720d53739ff1265c71d6977de8" prot="public">
+          <name>PossiblySafeWithRtChecks</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_memory_dep_checker_1ac661dd363bcde8b1e9516390eff1c400ad3d57868b6ff9839eff631d2cc8acbce" prot="public">
+          <name>Unsafe</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> to keep track of the status of the dependence check. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The order of the elements is important and has to be from most permissive to least permissive. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="100" column="3" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="100" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_memory_dep_checker_1adb2762f61b5d5d514cdb7f650e23f617" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_pointer_int_pair" kindref="compound">PointerIntPair</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, 1, <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+        <definition>typedef PointerIntPair&lt;Value *, 1, bool&gt; llvm::MemoryDepChecker::MemAccessInfo</definition>
+        <argsstring></argsstring>
+        <name>MemAccessInfo</name>
+        <qualifiedname>llvm::MemoryDepChecker::MemAccessInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="92" column="26" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_memory_dep_checker_1abc943f0e03dddf08da437eab00bcd8e6" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_memory_dep_checker_1adb2762f61b5d5d514cdb7f650e23f617" kindref="member">MemAccessInfo</ref>, 8 &gt;</type>
+        <definition>typedef SmallVector&lt;MemAccessInfo, 8&gt; llvm::MemoryDepChecker::MemAccessInfoList</definition>
+        <argsstring></argsstring>
+        <name>MemAccessInfoList</name>
+        <qualifiedname>llvm::MemoryDepChecker::MemAccessInfoList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="93" column="23" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_memory_dep_checker_1a4eb0c14b923c59b75a82bc41e03c2575" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_equivalence_classes" kindref="compound">EquivalenceClasses</ref>&lt; <ref refid="classllvm_1_1_memory_dep_checker_1adb2762f61b5d5d514cdb7f650e23f617" kindref="member">MemAccessInfo</ref> &gt;</type>
+        <definition>typedef EquivalenceClasses&lt;MemAccessInfo&gt; llvm::MemoryDepChecker::DepCandidates</definition>
+        <argsstring></argsstring>
+        <name>DepCandidates</name>
+        <qualifiedname>llvm::MemoryDepChecker::DepCandidates</qualifiedname>
+        <briefdescription>
+<para>Set of potential dependent memory accesses. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="95" column="30" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1a8e702110a5b6038b4bbfcb53db983ea6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_predicated_scalar_evolution" kindref="compound">PredicatedScalarEvolution</ref> &amp;</type>
+        <definition>PredicatedScalarEvolution&amp; llvm::MemoryDepChecker::PSE</definition>
+        <argsstring></argsstring>
+        <name>PSE</name>
+        <qualifiedname>llvm::MemoryDepChecker::PSE</qualifiedname>
+        <briefdescription>
+<para>A wrapper around <ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref>, used to add runtime <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> checks, and applies dynamic knowledge to simplify <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expressions and convert them to a more usable form. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We need this in case assumptions about <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expressions need to be made in order to avoid unknown dependences. For example we might assume a unit stride for a pointer in order to prove that a memory access is strided and doesn&apos;t wrap. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="280" column="29" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1a1b49bdd1f17113b0e7199a6a67ed2760" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+        <definition>const Loop* llvm::MemoryDepChecker::InnermostLoop</definition>
+        <argsstring></argsstring>
+        <name>InnermostLoop</name>
+        <qualifiedname>llvm::MemoryDepChecker::InnermostLoop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="281" column="14" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1a09bd44b3337b35b2c3661c2a3f970dcc" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> * &gt; &amp;</type>
+        <definition>const DenseMap&lt;Value *, const SCEV *&gt;&amp; llvm::MemoryDepChecker::SymbolicStrides</definition>
+        <argsstring></argsstring>
+        <name>SymbolicStrides</name>
+        <qualifiedname>llvm::MemoryDepChecker::SymbolicStrides</qualifiedname>
+        <briefdescription>
+<para>Reference to map of pointer values to their stride symbols, if they have a symbolic stride. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="285" column="18" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1a14384bff745334cdefb5a307a41d609c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_memory_dep_checker_1adb2762f61b5d5d514cdb7f650e23f617" kindref="member">MemAccessInfo</ref>, std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt;</type>
+        <definition>DenseMap&lt;MemAccessInfo, std::vector&lt;unsigned&gt; &gt; llvm::MemoryDepChecker::Accesses</definition>
+        <argsstring></argsstring>
+        <name>Accesses</name>
+        <qualifiedname>llvm::MemoryDepChecker::Accesses</qualifiedname>
+        <briefdescription>
+<para>Maps access locations (ptr, read/write) to program order. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="288" column="12" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1ac62360143e8a33bd3c96c77971ad0fbc" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, 16 &gt;</type>
+        <definition>SmallVector&lt;Instruction *, 16&gt; llvm::MemoryDepChecker::InstMap</definition>
+        <argsstring></argsstring>
+        <name>InstMap</name>
+        <qualifiedname>llvm::MemoryDepChecker::InstMap</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1sys_1_1_memory" kindref="compound">Memory</ref> access instructions in program order. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="291" column="15" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1a8bd3038586aa2b47701fcdf90405ad4e" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::MemoryDepChecker::AccessIdx</definition>
+        <argsstring></argsstring>
+        <name>AccessIdx</name>
+        <qualifiedname>llvm::MemoryDepChecker::AccessIdx</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The program order index to be used for the next instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="294" column="12" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1a23801138e343fc0836e546cf1a05fff9" prot="private" static="no" mutable="no">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::MemoryDepChecker::MinDepDistBytes</definition>
+        <argsstring></argsstring>
+        <name>MinDepDistBytes</name>
+        <qualifiedname>llvm::MemoryDepChecker::MinDepDistBytes</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The smallest dependence distance in bytes in the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This may not be the same as the maximum number of bytes that are safe to operate on simultaneously. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="299" column="12" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1ac95d20df703b7cf86864aeed21d99799" prot="private" static="no" mutable="no">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::MemoryDepChecker::MaxSafeVectorWidthInBits</definition>
+        <argsstring></argsstring>
+        <name>MaxSafeVectorWidthInBits</name>
+        <qualifiedname>llvm::MemoryDepChecker::MaxSafeVectorWidthInBits</qualifiedname>
+        <initializer>= -1U</initializer>
+        <briefdescription>
+<para>Number of elements (from consecutive iterations) that are safe to operate on simultaneously, multiplied by the size of the element in bits. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The size of the element is taken from the memory access that is most restrictive. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="305" column="12" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1a8a2e32ccb94c76be878c607fcc137705" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemoryDepChecker::FoundNonConstantDistanceDependence</definition>
+        <argsstring></argsstring>
+        <name>FoundNonConstantDistanceDependence</name>
+        <qualifiedname>llvm::MemoryDepChecker::FoundNonConstantDistanceDependence</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>If we see a non-constant dependence distance we can still try to vectorize this loop with runtime checks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="309" column="8" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1ac35839297be1a74cec461ee42e314f01" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_memory_dep_checker_1ac661dd363bcde8b1e9516390eff1c400" kindref="member">VectorizationSafetyStatus</ref></type>
+        <definition>VectorizationSafetyStatus llvm::MemoryDepChecker::Status</definition>
+        <argsstring></argsstring>
+        <name>Status</name>
+        <qualifiedname>llvm::MemoryDepChecker::Status</qualifiedname>
+        <initializer>= <ref refid="classllvm_1_1_memory_dep_checker_1ac661dd363bcde8b1e9516390eff1c400ac6eea0560cd6f377e78dff2c85cc9122" kindref="member">VectorizationSafetyStatus::Safe</ref></initializer>
+        <briefdescription>
+<para>Result of the dependence checks, indicating whether the checked dependences are safe for vectorization, require RT checks or are known to be unsafe. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="314" column="29" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1a39e3c8772b520587cb7e2d7fa06c743a" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemoryDepChecker::RecordDependences</definition>
+        <argsstring></argsstring>
+        <name>RecordDependences</name>
+        <qualifiedname>llvm::MemoryDepChecker::RecordDependences</qualifiedname>
+        <initializer>= <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="319" column="8" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="319" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1aba2f7b101c71ea9d0fae6ac8439fab47" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_memory_dep_checker_1_1_dependence" kindref="compound">Dependence</ref>, 8 &gt;</type>
+        <definition>SmallVector&lt;Dependence, 8&gt; llvm::MemoryDepChecker::Dependences</definition>
+        <argsstring></argsstring>
+        <name>Dependences</name>
+        <qualifiedname>llvm::MemoryDepChecker::Dependences</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1sys_1_1_memory" kindref="compound">Memory</ref> dependences collected during the analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Only valid if RecordDependences is true. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="323" column="15" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1a45b913ea0c21c016337a92b6c47809d4" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::MemoryDepChecker::MaxTargetVectorWidthInBits</definition>
+        <argsstring></argsstring>
+        <name>MaxTargetVectorWidthInBits</name>
+        <qualifiedname>llvm::MemoryDepChecker::MaxTargetVectorWidthInBits</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The maximum width of a target&apos;s vector registers multiplied by 2 to also roughly account for additional interleaving. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Is used to decide if a backwards dependence with non-constant stride should be classified as backwards-vectorizable or unknown (triggering a runtime check). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="329" column="12" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1a5b8e2f63be16a1bd5d80e45749ad0ab5" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *, <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> * &gt;, std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> * &gt; &gt;</type>
+        <definition>DenseMap&lt;std::pair&lt;const SCEV *, Type *&gt;, std::pair&lt;const SCEV *, const SCEV *&gt; &gt; llvm::MemoryDepChecker::PointerBounds</definition>
+        <argsstring></argsstring>
+        <name>PointerBounds</name>
+        <qualifiedname>llvm::MemoryDepChecker::PointerBounds</qualifiedname>
+        <briefdescription>
+<para>Mapping of <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expressions to their expanded pointer bounds (pair of start and end pointer expressions). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="335" column="7" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_memory_dep_checker_1a053bc112e38de6453deafe3034bdba7f" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classllvm_1_1_scalar_evolution_1_1_loop_guards" kindref="compound">ScalarEvolution::LoopGuards</ref> &gt;</type>
+        <definition>std::optional&lt;ScalarEvolution::LoopGuards&gt; llvm::MemoryDepChecker::LoopGuards</definition>
+        <argsstring></argsstring>
+        <name>LoopGuards</name>
+        <qualifiedname>llvm::MemoryDepChecker::LoopGuards</qualifiedname>
+        <briefdescription>
+<para>Cache for the loop guards of InnermostLoop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="338" column="17" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="338" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a7610f9bf36472cdb43096b7bcafd0a89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MemoryDepChecker::MemoryDepChecker</definition>
+        <argsstring>(PredicatedScalarEvolution &amp;PSE, const Loop *L, const DenseMap&lt; Value *, const SCEV * &gt; &amp;SymbolicStrides, unsigned MaxTargetVectorWidthInBits)</argsstring>
+        <name>MemoryDepChecker</name>
+        <qualifiedname>llvm::MemoryDepChecker::MemoryDepChecker</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_predicated_scalar_evolution" kindref="compound">PredicatedScalarEvolution</ref> &amp;</type>
+          <declname>PSE</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> * &gt; &amp;</type>
+          <declname>SymbolicStrides</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>MaxTargetVectorWidthInBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="181" column="3" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="181" bodyend="185"/>
+        <referencedby refid="structllvm_1_1_memory_dep_checker_1_1_dependence_1a29795bb317fb25a2cb114309a80a19f2" compoundref="_loop_access_analysis_8h" startline="924" endline="927">llvm::MemoryDepChecker::Dependence::getDestination</referencedby>
+        <referencedby refid="structllvm_1_1_memory_dep_checker_1_1_dependence_1a587c4bfaaf058747310f58b2f8d14f1c" compoundref="_loop_access_analysis_8h" startline="919" endline="922">llvm::MemoryDepChecker::Dependence::getSource</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1ace2c5efcbecfc5bb3e16f3948ed87a13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryDepChecker::addAccess</definition>
+        <argsstring>(StoreInst *SI)</argsstring>
+        <name>addAccess</name>
+        <qualifiedname>llvm::MemoryDepChecker::addAccess</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_store_inst" kindref="compound">StoreInst</ref> *</type>
+          <declname>SI</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_register" kindref="compound">Register</ref> the location (instructions are given increasing numbers) of a write access. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="189" column="8" bodyfile="lib/Analysis/LoopAccessAnalysis.cpp" bodystart="1658" bodyend="1665"/>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+        <references refid="_loop_access_analysis_8cpp_1a99bbdbd6641e69bcad8fda4bf1726525" compoundref="_loop_access_analysis_8cpp" startline="828" endline="849">visitPointers</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1ac35e34e7ae9695a3d616ee7a311d0e54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryDepChecker::addAccess</definition>
+        <argsstring>(LoadInst *LI)</argsstring>
+        <name>addAccess</name>
+        <qualifiedname>llvm::MemoryDepChecker::addAccess</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> *</type>
+          <declname>LI</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_register" kindref="compound">Register</ref> the location (instructions are given increasing numbers) of a write access. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="193" column="8" bodyfile="lib/Analysis/LoopAccessAnalysis.cpp" bodystart="1667" bodyend="1674"/>
+        <references refid="classllvm_1_1_load_inst_1a2d1ff28d6923802e165905b8d1766e76" compoundref="_instructions_8h" startline="255" endline="255">llvm::LoadInst::getPointerOperand</references>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+        <references refid="_loop_access_analysis_8cpp_1a99bbdbd6641e69bcad8fda4bf1726525" compoundref="_loop_access_analysis_8cpp" startline="828" endline="849">visitPointers</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a2e54d4cd15784b0f0480ca88bcf3165f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MemoryDepChecker::areDepsSafe</definition>
+        <argsstring>(const DepCandidates &amp;AccessSets, const MemAccessInfoList &amp;CheckDeps)</argsstring>
+        <name>areDepsSafe</name>
+        <qualifiedname>llvm::MemoryDepChecker::areDepsSafe</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_dep_checker_1a4eb0c14b923c59b75a82bc41e03c2575" kindref="member">DepCandidates</ref> &amp;</type>
+          <declname>AccessSets</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_dep_checker_1abc943f0e03dddf08da437eab00bcd8e6" kindref="member">MemAccessInfoList</ref> &amp;</type>
+          <declname>CheckDeps</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> whether the dependencies between the accesses are safe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Only checks sets with elements in <computeroutput>CheckDeps</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="198" column="8" bodyfile="lib/Analysis/LoopAccessAnalysis.cpp" bodystart="2253" bodyend="2327"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a1f475b0df44ebd7169e720fa1bf9169e" compoundref="_small_ptr_set_8h" startline="452" endline="454">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_equivalence_classes_1a08a0899420552a8b2359ed963c77daa8" compoundref="_equivalence_classes_8h" startline="184" endline="186">llvm::EquivalenceClasses&lt; ElemTy, Compare &gt;::findValue</references>
+        <references refid="classllvm_1_1_equivalence_classes_1ac0ff4be03ce0a4d0b5b60c713db9aef3" compoundref="_equivalence_classes_8h" startline="191" endline="195">llvm::EquivalenceClasses&lt; ElemTy, Compare &gt;::getLeaderValue</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="structllvm_1_1_memory_dep_checker_1_1_dependence_1af7e624cd937996851e961d72cdca670d" compoundref="_loop_access_analysis_8cpp" startline="1677" endline="1693">llvm::MemoryDepChecker::Dependence::isSafeForVectorization</references>
+        <references refid="classllvm_1_1_memory_dep_checker_1a9a1dd88272c6bc2aafa940a5fd149630" compoundref="_loop_access_analysis_8h" startline="203" endline="205">isSafeForVectorization</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_loop_access_analysis_8cpp_1a140e23deb724dfd731f7daa5dfa125a9">MaxDependences</references>
+        <references refid="classllvm_1_1_equivalence_classes_1a9b2fb7a349a72d78d495c7a6af9150b2" compoundref="_equivalence_classes_8h" startline="174" endline="177">llvm::EquivalenceClasses&lt; ElemTy, Compare &gt;::member_begin</references>
+        <references refid="classllvm_1_1_equivalence_classes_1a355ac386262a099693abd5b51c60e137" compoundref="_equivalence_classes_8h" startline="178" endline="180">llvm::EquivalenceClasses&lt; ElemTy, Compare &gt;::member_end</references>
+        <references refid="structllvm_1_1_memory_dep_checker_1_1_dependence_1ae336b0e8514b99a44e73c3e2494c3ceaae12470995d757ddbebbd627f397fe349" compoundref="_loop_access_analysis_8h" startline="115">llvm::MemoryDepChecker::Dependence::NoDep</references>
+        <references refid="namespacestd_1ab8424022895aee3e366fb9a32f2883cb" compoundref="_bit_vector_8h" startline="860" endline="860">std::swap</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a9a1dd88272c6bc2aafa940a5fd149630" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemoryDepChecker::isSafeForVectorization</definition>
+        <argsstring>() const</argsstring>
+        <name>isSafeForVectorization</name>
+        <qualifiedname>llvm::MemoryDepChecker::isSafeForVectorization</qualifiedname>
+        <briefdescription>
+<para>No memory dependence was encountered that would inhibit vectorization. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="203" column="8" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="203" bodyend="205"/>
+        <references refid="classllvm_1_1_memory_dep_checker_1ac661dd363bcde8b1e9516390eff1c400ac6eea0560cd6f377e78dff2c85cc9122" compoundref="_loop_access_analysis_8h" startline="103">Safe</references>
+        <referencedby refid="classllvm_1_1_memory_dep_checker_1a2e54d4cd15784b0f0480ca88bcf3165f" compoundref="_loop_access_analysis_8cpp" startline="2253" endline="2327">areDepsSafe</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a2ac812c9eca9442425b23a9cd74f14be" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemoryDepChecker::isSafeForAnyVectorWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>isSafeForAnyVectorWidth</name>
+        <qualifiedname>llvm::MemoryDepChecker::isSafeForAnyVectorWidth</qualifiedname>
+        <briefdescription>
+<para>Return true if the number of elements that are safe to operate on simultaneously is not bounded. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="209" column="8" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="209" bodyend="211"/>
+        <referencedby refid="classllvm_1_1_loop_access_info_1a8acfde41662b7ec9d592d905da1dbb22" compoundref="_loop_access_analysis_8cpp" startline="3035" endline="3081">llvm::LoopAccessInfo::print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a934d4913d1fb6daff3365593fbf40aea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::MemoryDepChecker::getMaxSafeVectorWidthInBits</definition>
+        <argsstring>() const</argsstring>
+        <name>getMaxSafeVectorWidthInBits</name>
+        <qualifiedname>llvm::MemoryDepChecker::getMaxSafeVectorWidthInBits</qualifiedname>
+        <briefdescription>
+<para>Return the number of elements that are safe to operate on simultaneously, multiplied by the size of the element in bits. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="215" column="12" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="215" bodyend="217"/>
+        <referencedby refid="classllvm_1_1_loop_access_info_1a8acfde41662b7ec9d592d905da1dbb22" compoundref="_loop_access_analysis_8cpp" startline="3035" endline="3081">llvm::LoopAccessInfo::print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1ac97acd1d293e89564fef069fff1ffdb2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemoryDepChecker::shouldRetryWithRuntimeCheck</definition>
+        <argsstring>() const</argsstring>
+        <name>shouldRetryWithRuntimeCheck</name>
+        <qualifiedname>llvm::MemoryDepChecker::shouldRetryWithRuntimeCheck</qualifiedname>
+        <briefdescription>
+<para>In same cases when the dependency check fails we can still vectorize the loop with a dynamic array access check. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="221" column="8" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="221" bodyend="224"/>
+        <references refid="classllvm_1_1_memory_dep_checker_1ac661dd363bcde8b1e9516390eff1c400ad1b0fb720d53739ff1265c71d6977de8" compoundref="_loop_access_analysis_8h" startline="105">PossiblySafeWithRtChecks</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a9dabe7c42f40c5555034785d247b7ce1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="structllvm_1_1_memory_dep_checker_1_1_dependence" kindref="compound">Dependence</ref> &gt; *</type>
+        <definition>const SmallVectorImpl&lt; Dependence &gt; * llvm::MemoryDepChecker::getDependences</definition>
+        <argsstring>() const</argsstring>
+        <name>getDependences</name>
+        <qualifiedname>llvm::MemoryDepChecker::getDependences</qualifiedname>
+        <briefdescription>
+<para>Returns the memory dependences. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If null is returned we exceeded the MaxDependences threshold and this information is not available. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="229" column="25" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="229" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a67819b448429b42f3558c9b2e4ae4b45" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::MemoryDepChecker::clearDependences</definition>
+        <argsstring>()</argsstring>
+        <name>clearDependences</name>
+        <qualifiedname>llvm::MemoryDepChecker::clearDependences</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="233" column="8" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="233" bodyend="233"/>
+        <referencedby refid="classanonymous__namespace_02_loop_access_analysis_8cpp_03_1_1_access_analysis_1ad8d62e07caf887e918be3dd7929db6ef" compoundref="_loop_access_analysis_8cpp" startline="707" endline="710">anonymous_namespace{LoopAccessAnalysis.cpp}::AccessAnalysis::resetDepChecks</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a77779b1cb3dd7968c598f9d6de68282e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> * &gt; &amp;</type>
+        <definition>const SmallVectorImpl&lt; Instruction * &gt; &amp; llvm::MemoryDepChecker::getMemoryInstructions</definition>
+        <argsstring>() const</argsstring>
+        <name>getMemoryInstructions</name>
+        <qualifiedname>llvm::MemoryDepChecker::getMemoryInstructions</qualifiedname>
+        <briefdescription>
+<para>The vector of memory access instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The indices are used as instruction identifiers in the <ref refid="structllvm_1_1_memory_dep_checker_1_1_dependence" kindref="compound">Dependence</ref> class. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="237" column="25" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="237" bodyend="239"/>
+        <referencedby refid="structllvm_1_1_memory_dep_checker_1_1_dependence_1a29795bb317fb25a2cb114309a80a19f2" compoundref="_loop_access_analysis_8h" startline="924" endline="927">llvm::MemoryDepChecker::Dependence::getDestination</referencedby>
+        <referencedby refid="structllvm_1_1_memory_dep_checker_1_1_dependence_1a587c4bfaaf058747310f58b2f8d14f1c" compoundref="_loop_access_analysis_8h" startline="919" endline="922">llvm::MemoryDepChecker::Dependence::getSource</referencedby>
+        <referencedby refid="classanonymous__namespace_02_loop_distribute_8cpp_03_1_1_loop_distribute_for_loop_1a3c63565a36daca6f3bae8a75238ffd50" compoundref="_loop_distribute_8cpp" startline="657" endline="851">anonymous_namespace{LoopDistribute.cpp}::LoopDistributeForLoop::processLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1af82d4d9d9329f2e8cac85ea493d42c09" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>DenseMap&lt; Instruction *, unsigned &gt; llvm::MemoryDepChecker::generateInstructionOrderMap</definition>
+        <argsstring>() const</argsstring>
+        <name>generateInstructionOrderMap</name>
+        <qualifiedname>llvm::MemoryDepChecker::generateInstructionOrderMap</qualifiedname>
+        <briefdescription>
+<para>Generate a mapping between the memory instructions and their indices according to program order. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="243" column="12" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="243" bodyend="250"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1ac340403e4c2fd9116b74b7c2eb95633f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, 4 &gt;</type>
+        <definition>SmallVector&lt; Instruction *, 4 &gt; MemoryDepChecker::getInstructionsForAccess</definition>
+        <argsstring>(Value *Ptr, bool isWrite) const</argsstring>
+        <name>getInstructionsForAccess</name>
+        <qualifiedname>llvm::MemoryDepChecker::getInstructionsForAccess</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>isWrite</declname>
+        </param>
+        <briefdescription>
+<para>Find the set of instructions that read or write via <computeroutput>Ptr</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="253" column="15" bodyfile="lib/Analysis/LoopAccessAnalysis.cpp" bodystart="2330" bodyend="2339"/>
+        <references refid="_d_x_i_l_resource_access_8cpp_1adb4fa2b9065093d32736f78ea43a8c8a" compoundref="_d_x_i_l_resource_access_8cpp" startline="296">Access</references>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+        <references refid="namespacellvm_1a615619b0b2879029152b9a20e96624bc" compoundref="_s_t_l_extras_8h" startline="1952" endline="1954">llvm::transform</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a130cee137466543e1484c8c8545f90c9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>ArrayRef&lt; unsigned &gt; llvm::MemoryDepChecker::getOrderForAccess</definition>
+        <argsstring>(Value *Ptr, bool IsWrite) const</argsstring>
+        <name>getOrderForAccess</name>
+        <qualifiedname>llvm::MemoryDepChecker::getOrderForAccess</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsWrite</declname>
+        </param>
+        <briefdescription>
+<para>Return the program order indices for the access location (Ptr, IsWrite). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an empty <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref> if there are no accesses for the location. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="258" column="12" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="258" bodyend="263"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a87e45de3357999f3f66d85031022d82a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> *</type>
+        <definition>const Loop * llvm::MemoryDepChecker::getInnermostLoop</definition>
+        <argsstring>() const</argsstring>
+        <name>getInnermostLoop</name>
+        <qualifiedname>llvm::MemoryDepChecker::getInnermostLoop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="265" column="14" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="265" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1aabd2e14335ab61ef497866aeb6d606db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *, <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> * &gt;, std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> * &gt; &gt; &amp;</type>
+        <definition>DenseMap&lt; std::pair&lt; const SCEV *, Type * &gt;, std::pair&lt; const SCEV *, const SCEV * &gt; &gt; &amp; llvm::MemoryDepChecker::getPointerBounds</definition>
+        <argsstring>()</argsstring>
+        <name>getPointerBounds</name>
+        <qualifiedname>llvm::MemoryDepChecker::getPointerBounds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="269" column="3" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="269" bodyend="271"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a38cc31094ed54fccc8089be343bf12d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_memory_dep_checker_1_1_dependence_1ae336b0e8514b99a44e73c3e2494c3cea" kindref="member">Dependence::DepType</ref></type>
+        <definition>MemoryDepChecker::Dependence::DepType MemoryDepChecker::isDependent</definition>
+        <argsstring>(const MemAccessInfo &amp;A, unsigned AIdx, const MemAccessInfo &amp;B, unsigned BIdx)</argsstring>
+        <name>isDependent</name>
+        <qualifiedname>llvm::MemoryDepChecker::isDependent</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_dep_checker_1adb2762f61b5d5d514cdb7f650e23f617" kindref="member">MemAccessInfo</ref> &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>AIdx</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_dep_checker_1adb2762f61b5d5d514cdb7f650e23f617" kindref="member">MemAccessInfo</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BIdx</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> whether there is a plausible dependence between the two accesses. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Access <computeroutput>A</computeroutput> must happen before <computeroutput>B</computeroutput> in program order. The two indices identify the index into the program order map.</para>
+<para>This function checks whether there is a plausible dependence (or the absence of such can&apos;t be proved) between the two accesses. If there is a plausible dependence but the dependence distance is bigger than one element access it records this distance in <computeroutput>MinDepDistBytes</computeroutput> (if this distance is smaller than any other distance encountered so far). Otherwise, this function returns true signaling a possible dependence. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="352" column="23" bodyfile="lib/Analysis/LoopAccessAnalysis.cpp" bodystart="2014" bodyend="2251"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a0b59be331ab8ff4d1adce10a3a04add6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MemoryDepChecker::couldPreventStoreLoadForward</definition>
+        <argsstring>(uint64_t Distance, uint64_t TypeByteSize)</argsstring>
+        <name>couldPreventStoreLoadForward</name>
+        <qualifiedname>llvm::MemoryDepChecker::couldPreventStoreLoadForward</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Distance</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>TypeByteSize</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> whether the data dependence could prevent store-load forwarding. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>false if we shouldn&apos;t vectorize at all or avoid larger vectorization factors by limiting MinDepDistBytes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="360" column="8" bodyfile="lib/Analysis/LoopAccessAnalysis.cpp" bodystart="1733" bodyend="1775"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a703b6d9d03ea80a0a7f81bbcb83883c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemoryDepChecker::mergeInStatus</definition>
+        <argsstring>(VectorizationSafetyStatus S)</argsstring>
+        <name>mergeInStatus</name>
+        <qualifiedname>llvm::MemoryDepChecker::mergeInStatus</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_dep_checker_1ac661dd363bcde8b1e9516390eff1c400" kindref="member">VectorizationSafetyStatus</ref></type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+<para>Updates the current safety status with <computeroutput>S</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We can go from Safe to either PossiblySafeWithRtChecks or Unsafe and from PossiblySafeWithRtChecks to Unsafe. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="365" column="8" bodyfile="lib/Analysis/LoopAccessAnalysis.cpp" bodystart="1777" bodyend="1780"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_memory_dep_checker_1a931e0e5a507e69b39f01cb2ad63eb1fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::variant&lt; <ref refid="structllvm_1_1_memory_dep_checker_1_1_dependence_1ae336b0e8514b99a44e73c3e2494c3cea" kindref="member">Dependence::DepType</ref>, DepDistanceStrideAndSizeInfo &gt;</type>
+        <definition>std::variant&lt; MemoryDepChecker::Dependence::DepType, MemoryDepChecker::DepDistanceStrideAndSizeInfo &gt; MemoryDepChecker::getDependenceDistanceStrideAndSize</definition>
+        <argsstring>(const MemAccessInfo &amp;A, Instruction *AInst, const MemAccessInfo &amp;B, Instruction *BInst)</argsstring>
+        <name>getDependenceDistanceStrideAndSize</name>
+        <qualifiedname>llvm::MemoryDepChecker::getDependenceDistanceStrideAndSize</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_dep_checker_1adb2762f61b5d5d514cdb7f650e23f617" kindref="member">MemAccessInfo</ref> &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>AInst</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_dep_checker_1adb2762f61b5d5d514cdb7f650e23f617" kindref="member">MemAccessInfo</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>BInst</declname>
+        </param>
+        <briefdescription>
+<para>Get the dependence distance, strides, type size and whether it is a write for the dependence between A and B. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a DepType, if we can prove there&apos;s no dependence or the analysis fails. Outlined to lambda to limit he scope of various temporary variables, like A/BPtr, StrideA/BPtr and others. Returns either the dependence result, if it could already be determined, or a struct containing (Distance, Stride, <ref refid="classllvm_1_1_type_size" kindref="compound">TypeSize</ref>, AIsWrite, BIsWrite). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="400" column="3" bodyfile="lib/Analysis/LoopAccessAnalysis.cpp" bodystart="1884" bodyend="2011"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Checks memory dependences among accesses to the same underlying object to determine whether there vectorization is legal or not (and at which vectorization factor). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Note: This class will compute a conservative dependence for access to different underlying pointers. Clients, such as the loop vectorizer, will sometimes deal these potential dependencies by emitting runtime checks.</para>
+<para>We use the <ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> framework to symbolically evalutate access functions pairs. Since we currently don&apos;t restructure the loop we can rely on the program order of memory accesses to determine their safety. At the moment we will only deem accesses as safe for:<itemizedlist>
+<listitem><para>A negative constant distance assuming program order.</para>
+<para>Safe: tmp = a[i + 1]; OR a[i + 1] = x; a[i] = tmp; y = a[i];</para>
+<para>The latter case is safe because later checks guarantuee that there can&apos;t be a cycle through a phi node (that is, we check that &quot;x&quot; and &quot;y&quot; is not the same variable: a header phi can only be an induction or a reduction, a reduction can&apos;t have a memory sink, an induction can&apos;t have a memory source). This is important and must not be violated (or we have to resort to checking for cycles through memory).</para>
+</listitem><listitem><para>A positive constant distance assuming program order that is bigger than the biggest memory access.</para>
+<para>tmp = a[i] OR b[i] = x a[i+2] = tmp y = b[i+2];</para>
+<para>Safe distance: 2 x sizeof(a[0]), and 2 x sizeof(b[0]), respectively.</para>
+</listitem><listitem><para>Zero distances and all accesses have the same size. </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="include/llvm/Analysis/LoopAccessAnalysis.h" line="90" column="1" bodyfile="include/llvm/Analysis/LoopAccessAnalysis.h" bodystart="90" bodyend="403"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_memory_dep_checker_1a14384bff745334cdefb5a307a41d609c" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>Accesses</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a8bd3038586aa2b47701fcdf90405ad4e" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>AccessIdx</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1ace2c5efcbecfc5bb3e16f3948ed87a13" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>addAccess</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1ac35e34e7ae9695a3d616ee7a311d0e54" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>addAccess</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a2e54d4cd15784b0f0480ca88bcf3165f" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>areDepsSafe</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a67819b448429b42f3558c9b2e4ae4b45" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>clearDependences</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a0b59be331ab8ff4d1adce10a3a04add6" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>couldPreventStoreLoadForward</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a4eb0c14b923c59b75a82bc41e03c2575" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>DepCandidates</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1aba2f7b101c71ea9d0fae6ac8439fab47" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>Dependences</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a8a2e32ccb94c76be878c607fcc137705" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>FoundNonConstantDistanceDependence</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1af82d4d9d9329f2e8cac85ea493d42c09" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>generateInstructionOrderMap</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a931e0e5a507e69b39f01cb2ad63eb1fc" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>getDependenceDistanceStrideAndSize</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a9dabe7c42f40c5555034785d247b7ce1" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>getDependences</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a87e45de3357999f3f66d85031022d82a" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>getInnermostLoop</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1ac340403e4c2fd9116b74b7c2eb95633f" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>getInstructionsForAccess</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a934d4913d1fb6daff3365593fbf40aea" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>getMaxSafeVectorWidthInBits</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a77779b1cb3dd7968c598f9d6de68282e" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>getMemoryInstructions</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a130cee137466543e1484c8c8545f90c9" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>getOrderForAccess</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1aabd2e14335ab61ef497866aeb6d606db" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>getPointerBounds</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a1b49bdd1f17113b0e7199a6a67ed2760" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>InnermostLoop</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1ac62360143e8a33bd3c96c77971ad0fbc" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>InstMap</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a38cc31094ed54fccc8089be343bf12d2" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>isDependent</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a2ac812c9eca9442425b23a9cd74f14be" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>isSafeForAnyVectorWidth</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a9a1dd88272c6bc2aafa940a5fd149630" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>isSafeForVectorization</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a053bc112e38de6453deafe3034bdba7f" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>LoopGuards</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1ac95d20df703b7cf86864aeed21d99799" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>MaxSafeVectorWidthInBits</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a45b913ea0c21c016337a92b6c47809d4" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>MaxTargetVectorWidthInBits</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1adb2762f61b5d5d514cdb7f650e23f617" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>MemAccessInfo</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1abc943f0e03dddf08da437eab00bcd8e6" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>MemAccessInfoList</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a7610f9bf36472cdb43096b7bcafd0a89" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>MemoryDepChecker</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a703b6d9d03ea80a0a7f81bbcb83883c9" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>mergeInStatus</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a23801138e343fc0836e546cf1a05fff9" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>MinDepDistBytes</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a5b8e2f63be16a1bd5d80e45749ad0ab5" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>PointerBounds</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a8e702110a5b6038b4bbfcb53db983ea6" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>PSE</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a39e3c8772b520587cb7e2d7fa06c743a" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>RecordDependences</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1ac97acd1d293e89564fef069fff1ffdb2" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>shouldRetryWithRuntimeCheck</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1ac35839297be1a74cec461ee42e314f01" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>Status</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1a09bd44b3337b35b2c3661c2a3f970dcc" prot="private" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>SymbolicStrides</name></member>
+      <member refid="classllvm_1_1_memory_dep_checker_1ac661dd363bcde8b1e9516390eff1c400" prot="public" virt="non-virtual"><scope>llvm::MemoryDepChecker</scope><name>VectorizationSafetyStatus</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

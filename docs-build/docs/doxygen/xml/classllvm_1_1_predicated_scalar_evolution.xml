@@ -1,0 +1,570 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_predicated_scalar_evolution" kind="class" language="C++" prot="public">
+    <compoundname>llvm::PredicatedScalarEvolution</compoundname>
+    <includes refid="_scalar_evolution_8h" local="yes">llvm/Analysis/ScalarEvolution.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_predicated_scalar_evolution_1ad5de77ee377aee71f0a0a3d6650462e6" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> * &gt;</type>
+        <definition>using llvm::PredicatedScalarEvolution::RewriteEntry =  std::pair&lt;unsigned, const SCEV *&gt;</definition>
+        <argsstring></argsstring>
+        <name>RewriteEntry</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::RewriteEntry</qualifiedname>
+        <briefdescription>
+<para>Holds a <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> and the version number of the <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> predicate used to perform the rewrite of the expression. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2443" column="3" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2443" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_predicated_scalar_evolution_1aca7f54a2245a31bbd96e21aa2e3bb092" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *, RewriteEntry &gt;</type>
+        <definition>DenseMap&lt;const SCEV *, RewriteEntry&gt; llvm::PredicatedScalarEvolution::RewriteMap</definition>
+        <argsstring></argsstring>
+        <name>RewriteMap</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::RewriteMap</qualifiedname>
+        <briefdescription>
+<para>Maps a <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> to the rewrite result of that <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> at a certain version number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If this number doesn&apos;t match the current Generation, we will need to do a rewrite. To preserve the transformation order of previous rewrites, we will rewrite the previous result instead of the original <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2450" column="12" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2450" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_predicated_scalar_evolution_1a783e7f140e48e06deef562824f097b07" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_value_map" kindref="compound">ValueMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref> &gt;</type>
+        <definition>ValueMap&lt;Value *, SCEVWrapPredicate::IncrementWrapFlags&gt; llvm::PredicatedScalarEvolution::FlagsMap</definition>
+        <argsstring></argsstring>
+        <name>FlagsMap</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::FlagsMap</qualifiedname>
+        <briefdescription>
+<para>Records what NoWrap flags we&apos;ve added to a <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2453" column="12" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2453" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_predicated_scalar_evolution_1a92fadf36e058280250e65768b82ab121" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> &amp;</type>
+        <definition>ScalarEvolution&amp; llvm::PredicatedScalarEvolution::SE</definition>
+        <argsstring></argsstring>
+        <name>SE</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::SE</qualifiedname>
+        <briefdescription>
+<para>The <ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2456" column="19" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2456" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_predicated_scalar_evolution_1a21b40ced9a059f31ede87232a7f74619" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> &amp;</type>
+        <definition>const Loop&amp; llvm::PredicatedScalarEvolution::L</definition>
+        <argsstring></argsstring>
+        <name>L</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::L</qualifiedname>
+        <briefdescription>
+<para>The analyzed <ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2459" column="14" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2459" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_predicated_scalar_evolution_1ac354a58a85eda10ecdfd209f70d5f232" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_s_c_e_v_union_predicate" kindref="compound">SCEVUnionPredicate</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;SCEVUnionPredicate&gt; llvm::PredicatedScalarEvolution::Preds</definition>
+        <argsstring></argsstring>
+        <name>Preds</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::Preds</qualifiedname>
+        <briefdescription>
+<para>The <ref refid="classllvm_1_1_s_c_e_v_predicate" kindref="compound">SCEVPredicate</ref> that forms our context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We will rewrite all expressions assuming that this predicate true. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2463" column="19" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2463" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_predicated_scalar_evolution_1a9c19ab07280d9152155dbf96e2a840f0" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::PredicatedScalarEvolution::Generation</definition>
+        <argsstring></argsstring>
+        <name>Generation</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::Generation</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Marks the version of the <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> predicate used. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When rewriting a <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expression we mark it with the version of the predicate. We use this to figure out if the predicate has changed from the last rewrite of the <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref>. If so, we need to perform a new rewrite. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2469" column="12" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2469" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_predicated_scalar_evolution_1ac52a78f5fdeaa198c7522937070250fe" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *</type>
+        <definition>const SCEV* llvm::PredicatedScalarEvolution::BackedgeCount</definition>
+        <argsstring></argsstring>
+        <name>BackedgeCount</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::BackedgeCount</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>The backedge taken count. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2472" column="14" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_predicated_scalar_evolution_1a17a1f3b0b6c06e85cf0cca3805c9d6a2" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *</type>
+        <definition>const SCEV* llvm::PredicatedScalarEvolution::SymbolicMaxBackedgeCount</definition>
+        <argsstring></argsstring>
+        <name>SymbolicMaxBackedgeCount</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::SymbolicMaxBackedgeCount</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>The symbolic backedge taken count. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2475" column="14" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2475" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_predicated_scalar_evolution_1af74b7bbc644ab57d4162eb1fa1042df3" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::optional&lt;unsigned&gt; llvm::PredicatedScalarEvolution::SmallConstantMaxTripCount</definition>
+        <argsstring></argsstring>
+        <name>SmallConstantMaxTripCount</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::SmallConstantMaxTripCount</qualifiedname>
+        <briefdescription>
+<para>The constant max trip count for the loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2478" column="17" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2478" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1aa2b11e914798a4e54c7e640722f1b08d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PredicatedScalarEvolution::PredicatedScalarEvolution</definition>
+        <argsstring>(ScalarEvolution &amp;SE, Loop &amp;L)</argsstring>
+        <name>PredicatedScalarEvolution</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::PredicatedScalarEvolution</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> &amp;</type>
+          <declname>SE</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref> &amp;</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2385" column="3" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15099" bodyend="15104"/>
+        <references refid="_type_hashing_8cpp_1a066f917f4a73ce07260b0e4262be92ba" compoundref="_type_hashing_8cpp" startline="17" endline="17">DenseMapInfo&lt; LocallyHashedType &gt;::Empty</references>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1aad1b5b2fb366e23d7693b5953feff806" compoundref="_scalar_evolution_8cpp" startline="15237" endline="15245">PredicatedScalarEvolution</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1a12a8ac8838fb851a2de5dc5275307bb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v_predicate" kindref="compound">SCEVPredicate</ref> &amp;</type>
+        <definition>const SCEVPredicate &amp; PredicatedScalarEvolution::getPredicate</definition>
+        <argsstring>() const</argsstring>
+        <name>getPredicate</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::getPredicate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2387" column="23" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15176" bodyend="15178"/>
+        <referencedby refid="structllvm_1_1_loop_vectorize_pass_1a160afa01e95095aa0c8115b6e0e6f4a6" compoundref="_loop_vectorize_8cpp" startline="10327" endline="10756">llvm::LoopVectorizePass::processLoop</referencedby>
+        <referencedby refid="namespaceanonymous__namespace_02_loop_versioning_8cpp_03_1aed4891b5f4ab2e016fc238f42dfd939e" compoundref="_loop_versioning_8cpp" startline="259" endline="295">anonymous_namespace{LoopVersioning.cpp}::runImpl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1ae0994d8207b94ad22ecebc1a6bc580f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *</type>
+        <definition>const SCEV * PredicatedScalarEvolution::getSCEV</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>getSCEV</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::getSCEV</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Returns the <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expression of V, in the context of the current <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> predicate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The order of transformations applied on the expression of V returned by <ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> is guaranteed to be preserved, even when adding new predicates. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2393" column="14" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15116" bodyend="15133"/>
+        <referencedby refid="_loop_vectorize_8cpp_1ad27a81251d238dbfdc4d0253a64d6267" compoundref="_loop_vectorize_8cpp" startline="5587" endline="5610">getAddressAccessSCEV</referencedby>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1aa364810e8fe30937277d9dd8a301c4c9" compoundref="_scalar_evolution_8cpp" startline="15222" endline="15235">getAsAddRec</referencedby>
+        <referencedby refid="_i_v_descriptors_8cpp_1a1890db236ee0485fd31d3d99d6ad09b5" compoundref="_i_v_descriptors_8cpp" startline="1396" endline="1467">getCastsForInductionPHI</referencedby>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1a6fb96c9b4d017d69818db581dae5bd96" compoundref="_scalar_evolution_8cpp" startline="15206" endline="15220">hasNoOverflow</referencedby>
+        <referencedby refid="structanonymous__namespace_02_loop_load_elimination_8cpp_03_1_1_store_to_load_forwarding_candidate_1af7b88a2a7449e4edc75721e2ab686d9e" compoundref="_loop_load_elimination_8cpp" startline="92" endline="133">anonymous_namespace{LoopLoadElimination.cpp}::StoreToLoadForwardingCandidate::isDependenceDistanceOfOne</referencedby>
+        <referencedby refid="classllvm_1_1_induction_descriptor_1a5ed1bebb4f59394ccf2d92d0d73336bf" compoundref="_i_v_descriptors_8cpp" startline="1469" endline="1511">llvm::InductionDescriptor::isInductionPHI</referencedby>
+        <referencedby refid="_loop_access_analysis_8cpp_1a7f4bd2b45f0af65f9dd7ac1b949b528e" compoundref="_loop_access_analysis_8cpp" startline="817" endline="826">isNoWrap</referencedby>
+        <referencedby refid="_loop_access_analysis_8cpp_1a9d9847ba3ad2bc2837b041581277a8fb" compoundref="_loop_access_analysis_8cpp" startline="1387" endline="1435">isNoWrapAddRec</referencedby>
+        <referencedby refid="namespacellvm_1aaec5d8efaa82dedb3a3b23f4482f31eb" compoundref="_loop_access_analysis_8cpp" startline="154" endline="181">llvm::replaceSymbolicStrideSCEV</referencedby>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1a757ce31dd838b17c024287ce9d17c4c2" compoundref="_scalar_evolution_8cpp" startline="15190" endline="15204">setNoOverflow</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1ada1db826f3d2266fe2c4d06218d8d342" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *</type>
+        <definition>const SCEV * PredicatedScalarEvolution::getBackedgeTakenCount</definition>
+        <argsstring>()</argsstring>
+        <name>getBackedgeTakenCount</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::getBackedgeTakenCount</qualifiedname>
+        <briefdescription>
+<para>Get the (predicated) backedge count for the analyzed loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2396" column="14" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15135" bodyend="15143"/>
+        <references refid="classllvm_1_1_predicated_scalar_evolution_1a0b369e991301543c2120405809119d36" compoundref="_scalar_evolution_8cpp" startline="15166" endline="15174">addPredicate</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <referencedby refid="_loop_vectorize_8cpp_1adeb41c907ebde15846bc643325909f95" compoundref="_loop_vectorize_8cpp" startline="9946" endline="10007">processLoopInVPlanNativePath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1adbabf05e94f95f775d59497b6b1004d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> *</type>
+        <definition>const SCEV * PredicatedScalarEvolution::getSymbolicMaxBackedgeTakenCount</definition>
+        <argsstring>()</argsstring>
+        <name>getSymbolicMaxBackedgeTakenCount</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::getSymbolicMaxBackedgeTakenCount</qualifiedname>
+        <briefdescription>
+<para>Get the (predicated) symbolic max backedge count for the analyzed loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2399" column="14" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15145" bodyend="15154"/>
+        <references refid="classllvm_1_1_predicated_scalar_evolution_1a0b369e991301543c2120405809119d36" compoundref="_scalar_evolution_8cpp" startline="15166" endline="15174">addPredicate</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <referencedby refid="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" compoundref="_v_plan_8cpp" startline="844" endline="921">llvm::VPlan::createInitialVPlan</referencedby>
+        <referencedby refid="classllvm_1_1_runtime_pointer_checking_1abe6c75313479a0d0d8dd63b870faeeac" compoundref="_loop_access_analysis_8cpp" startline="250" endline="263">llvm::RuntimePointerChecking::insert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1aacf376f9963d73732052a7362c5afabd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned PredicatedScalarEvolution::getSmallConstantMaxTripCount</definition>
+        <argsstring>()</argsstring>
+        <name>getSmallConstantMaxTripCount</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::getSmallConstantMaxTripCount</qualifiedname>
+        <briefdescription>
+<para>Returns the upper bound of the loop trip count as a normal unsigned value, or 0 if the trip count is unknown. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2403" column="12" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15156" bodyend="15164"/>
+        <references refid="classllvm_1_1_predicated_scalar_evolution_1a0b369e991301543c2120405809119d36" compoundref="_scalar_evolution_8cpp" startline="15166" endline="15174">addPredicate</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <referencedby refid="_loop_vectorize_8cpp_1a84375e6536d9214c7895013078055aff" compoundref="_loop_vectorize_8cpp" startline="420" endline="439">getSmallBestKnownTC</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1a0b369e991301543c2120405809119d36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PredicatedScalarEvolution::addPredicate</definition>
+        <argsstring>(const SCEVPredicate &amp;Pred)</argsstring>
+        <name>addPredicate</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::addPredicate</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v_predicate" kindref="compound">SCEVPredicate</ref> &amp;</type>
+          <declname>Pred</declname>
+        </param>
+        <briefdescription>
+<para>Adds a new predicate. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2406" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15166" bodyend="15174"/>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1aa364810e8fe30937277d9dd8a301c4c9" compoundref="_scalar_evolution_8cpp" startline="15222" endline="15235">getAsAddRec</referencedby>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1ada1db826f3d2266fe2c4d06218d8d342" compoundref="_scalar_evolution_8cpp" startline="15135" endline="15143">getBackedgeTakenCount</referencedby>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1aacf376f9963d73732052a7362c5afabd" compoundref="_scalar_evolution_8cpp" startline="15156" endline="15164">getSmallConstantMaxTripCount</referencedby>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1adbabf05e94f95f775d59497b6b1004d8" compoundref="_scalar_evolution_8cpp" startline="15145" endline="15154">getSymbolicMaxBackedgeTakenCount</referencedby>
+        <referencedby refid="namespacellvm_1aaec5d8efaa82dedb3a3b23f4482f31eb" compoundref="_loop_access_analysis_8cpp" startline="154" endline="181">llvm::replaceSymbolicStrideSCEV</referencedby>
+        <referencedby refid="classllvm_1_1_predicated_scalar_evolution_1a757ce31dd838b17c024287ce9d17c4c2" compoundref="_scalar_evolution_8cpp" startline="15190" endline="15204">setNoOverflow</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1aa364810e8fe30937277d9dd8a301c4c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v_add_rec_expr" kindref="compound">SCEVAddRecExpr</ref> *</type>
+        <definition>const SCEVAddRecExpr * PredicatedScalarEvolution::getAsAddRec</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>getAsAddRec</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::getAsAddRec</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Attempts to produce an AddRecExpr for V by adding additional <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> predicates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If we can&apos;t transform the expression into an AddRecExpr we return nullptr and not add additional <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> predicates to the current context. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2412" column="24" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15222" bodyend="15235"/>
+        <references refid="classllvm_1_1_predicated_scalar_evolution_1a0b369e991301543c2120405809119d36" compoundref="_scalar_evolution_8cpp" startline="15166" endline="15174">addPredicate</references>
+        <references refid="classllvm_1_1_predicated_scalar_evolution_1ae0994d8207b94ad22ecebc1a6bc580f1" compoundref="_scalar_evolution_8cpp" startline="15116" endline="15133">getSCEV</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <referencedby refid="namespacellvm_1a8021a49018596bcbea563e6d5cac9a70" compoundref="_loop_access_analysis_8cpp" startline="1439" endline="1537">llvm::getPtrStride</referencedby>
+        <referencedby refid="_loop_access_analysis_8cpp_1a2d58e737d5b362a238d1b9cfbd961532" compoundref="_loop_access_analysis_8cpp" startline="799" endline="814">hasComputableBounds</referencedby>
+        <referencedby refid="classllvm_1_1_induction_descriptor_1a5ed1bebb4f59394ccf2d92d0d73336bf" compoundref="_i_v_descriptors_8cpp" startline="1469" endline="1511">llvm::InductionDescriptor::isInductionPHI</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1a757ce31dd838b17c024287ce9d17c4c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PredicatedScalarEvolution::setNoOverflow</definition>
+        <argsstring>(Value *V, SCEVWrapPredicate::IncrementWrapFlags Flags)</argsstring>
+        <name>setNoOverflow</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::setNoOverflow</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <briefdescription>
+<para>Proves that V doesn&apos;t overflow by adding <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> predicate. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2415" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15190" bodyend="15204"/>
+        <references refid="classllvm_1_1_predicated_scalar_evolution_1a0b369e991301543c2120405809119d36" compoundref="_scalar_evolution_8cpp" startline="15166" endline="15174">addPredicate</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a6075abe0816f373cb741561866f3eefa" compoundref="_scalar_evolution_8h" startline="351" endline="357">llvm::SCEVWrapPredicate::clearFlags</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a76a888bd97f7b7bb6b43eb4bdb9dc3bc" compoundref="_scalar_evolution_8cpp" startline="15027" endline="15045">llvm::SCEVWrapPredicate::getImpliedFlags</references>
+        <references refid="classllvm_1_1_predicated_scalar_evolution_1ae0994d8207b94ad22ecebc1a6bc580f1" compoundref="_scalar_evolution_8cpp" startline="15116" endline="15133">getSCEV</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1ac5804672fc0850438d63caec770647f8" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">II</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a3db937ba78ab75aa91d72c8678a28b78" compoundref="_scalar_evolution_8h" startline="368" endline="375">llvm::SCEVWrapPredicate::setFlags</references>
+        <referencedby refid="namespacellvm_1a8021a49018596bcbea563e6d5cac9a70" compoundref="_loop_access_analysis_8cpp" startline="1439" endline="1537">llvm::getPtrStride</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1a6fb96c9b4d017d69818db581dae5bd96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PredicatedScalarEvolution::hasNoOverflow</definition>
+        <argsstring>(Value *V, SCEVWrapPredicate::IncrementWrapFlags Flags)</argsstring>
+        <name>hasNoOverflow</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::hasNoOverflow</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70" kindref="member">SCEVWrapPredicate::IncrementWrapFlags</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if we&apos;ve proved that V doesn&apos;t wrap by means of a <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> predicate. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2419" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15206" bodyend="15220"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a6075abe0816f373cb741561866f3eefa" compoundref="_scalar_evolution_8h" startline="351" endline="357">llvm::SCEVWrapPredicate::clearFlags</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a76a888bd97f7b7bb6b43eb4bdb9dc3bc" compoundref="_scalar_evolution_8cpp" startline="15027" endline="15045">llvm::SCEVWrapPredicate::getImpliedFlags</references>
+        <references refid="classllvm_1_1_predicated_scalar_evolution_1ae0994d8207b94ad22ecebc1a6bc580f1" compoundref="_scalar_evolution_8cpp" startline="15116" endline="15133">getSCEV</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1ac5804672fc0850438d63caec770647f8" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">II</references>
+        <references refid="classllvm_1_1_s_c_e_v_wrap_predicate_1a0cfd938ff9c572d287e5e7923624db70a11c850531be360193c9473b4fe240c1d" compoundref="_scalar_evolution_8h" startline="342">llvm::SCEVWrapPredicate::IncrementAnyWrap</references>
+        <referencedby refid="_loop_access_analysis_8cpp_1a7f4bd2b45f0af65f9dd7ac1b949b528e" compoundref="_loop_access_analysis_8cpp" startline="817" endline="826">isNoWrap</referencedby>
+        <referencedby refid="_loop_access_analysis_8cpp_1a9d9847ba3ad2bc2837b041581277a8fb" compoundref="_loop_access_analysis_8cpp" startline="1387" endline="1435">isNoWrapAddRec</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1a10ca5eacc61b5669880de2f8b0cff33c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> *</type>
+        <definition>ScalarEvolution * llvm::PredicatedScalarEvolution::getSE</definition>
+        <argsstring>() const</argsstring>
+        <name>getSE</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::getSE</qualifiedname>
+        <briefdescription>
+<para>Returns the <ref refid="classllvm_1_1_scalar_evolution" kindref="compound">ScalarEvolution</ref> analysis used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2422" column="19" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2422" bodyend="2422"/>
+        <referencedby refid="_a_r_m_target_transform_info_8cpp_1a786a99e437c617417c56b4b4678138b9" compoundref="_a_r_m_target_transform_info_8cpp" startline="2347" endline="2435">canTailPredicateLoop</referencedby>
+        <referencedby refid="classllvm_1_1_v_plan_1a5a956378c8f267d4b2afc6e036a08d42" compoundref="_v_plan_8cpp" startline="844" endline="921">llvm::VPlan::createInitialVPlan</referencedby>
+        <referencedby refid="_loop_access_analysis_8cpp_1afe024d2bcdcaa9644b7270f84edd74a5" compoundref="_loop_access_analysis_8cpp" startline="1023" endline="1045">findForkedPointer</referencedby>
+        <referencedby refid="namespacellvm_1adf87a16be872504ce4d0ab9714dc6217" compoundref="_loop_vectorization_legality_8cpp" startline="1093" endline="1161">llvm::findHistogram</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1ad27a81251d238dbfdc4d0253a64d6267" compoundref="_loop_vectorize_8cpp" startline="5587" endline="5610">getAddressAccessSCEV</referencedby>
+        <referencedby refid="namespacellvm_1a8021a49018596bcbea563e6d5cac9a70" compoundref="_loop_access_analysis_8cpp" startline="1439" endline="1537">llvm::getPtrStride</referencedby>
+        <referencedby refid="_loop_vectorize_8cpp_1a84375e6536d9214c7895013078055aff" compoundref="_loop_vectorize_8cpp" startline="420" endline="439">getSmallBestKnownTC</referencedby>
+        <referencedby refid="_loop_access_analysis_8cpp_1a2d58e737d5b362a238d1b9cfbd961532" compoundref="_loop_access_analysis_8cpp" startline="799" endline="814">hasComputableBounds</referencedby>
+        <referencedby refid="classllvm_1_1_runtime_pointer_checking_1abe6c75313479a0d0d8dd63b870faeeac" compoundref="_loop_access_analysis_8cpp" startline="250" endline="263">llvm::RuntimePointerChecking::insert</referencedby>
+        <referencedby refid="structanonymous__namespace_02_loop_load_elimination_8cpp_03_1_1_store_to_load_forwarding_candidate_1af7b88a2a7449e4edc75721e2ab686d9e" compoundref="_loop_load_elimination_8cpp" startline="92" endline="133">anonymous_namespace{LoopLoadElimination.cpp}::StoreToLoadForwardingCandidate::isDependenceDistanceOfOne</referencedby>
+        <referencedby refid="classllvm_1_1_induction_descriptor_1a5ed1bebb4f59394ccf2d92d0d73336bf" compoundref="_i_v_descriptors_8cpp" startline="1469" endline="1511">llvm::InductionDescriptor::isInductionPHI</referencedby>
+        <referencedby refid="_loop_access_analysis_8cpp_1a7f4bd2b45f0af65f9dd7ac1b949b528e" compoundref="_loop_access_analysis_8cpp" startline="817" endline="826">isNoWrap</referencedby>
+        <referencedby refid="structllvm_1_1_v_plan_transforms_1af25d938764b8634e70e95ff3f0c35129" compoundref="_v_plan_transforms_8cpp" startline="978" endline="1051">llvm::VPlanTransforms::optimizeForVFAndUF</referencedby>
+        <referencedby refid="namespacellvm_1aaec5d8efaa82dedb3a3b23f4482f31eb" compoundref="_loop_access_analysis_8cpp" startline="154" endline="181">llvm::replaceSymbolicStrideSCEV</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1aad1b5b2fb366e23d7693b5953feff806" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PredicatedScalarEvolution::PredicatedScalarEvolution</definition>
+        <argsstring>(const PredicatedScalarEvolution &amp;)</argsstring>
+        <name>PredicatedScalarEvolution</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::PredicatedScalarEvolution</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_predicated_scalar_evolution" kindref="compound">PredicatedScalarEvolution</ref> &amp;</type>
+          <defname>Init</defname>
+        </param>
+        <briefdescription>
+<para>We need to explicitly define the copy constructor because of FlagsMap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2425" column="3" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15237" bodyend="15245"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_predicated_scalar_evolution_1aa2b11e914798a4e54c7e640722f1b08d" compoundref="_scalar_evolution_8cpp" startline="15099" endline="15104">PredicatedScalarEvolution</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1a84e9b8947377b33bf66815f86269e6ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PredicatedScalarEvolution::print</definition>
+        <argsstring>(raw_ostream &amp;OS, unsigned Depth) const</argsstring>
+        <name>print</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::print</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Depth</declname>
+        </param>
+        <briefdescription>
+<para>Print the <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> mappings done by the Predicated Scalar Evolution. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The printed text is indented by <computeroutput>Depth</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2429" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15247" bodyend="15268"/>
+        <references refid="namespacellvm_1a1eb5609345b906d024fbf9e4bc1adc06afe578efb7ca235af77fb0eef7edcf639" compoundref="_s_i_machine_scheduler_8h" startline="36">llvm::Depth</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1ac5804672fc0850438d63caec770647f8" compoundref="_n_v_v_m_intr_range_8cpp" startline="51">II</references>
+        <references refid="classllvm_1_1raw__ostream_1a8fdf5cdf041c8aded7e3308c1c3efacc" compoundref="raw__ostream_8cpp" startline="495" endline="497">llvm::raw_ostream::indent</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1aa1aac224801967b8ca7361a4a71b36f7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PredicatedScalarEvolution::areAddRecsEqualWithPreds</definition>
+        <argsstring>(const SCEVAddRecExpr *AR1, const SCEVAddRecExpr *AR2) const</argsstring>
+        <name>areAddRecsEqualWithPreds</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::areAddRecsEqualWithPreds</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v_add_rec_expr" kindref="compound">SCEVAddRecExpr</ref> *</type>
+          <declname>AR1</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_c_e_v_add_rec_expr" kindref="compound">SCEVAddRecExpr</ref> *</type>
+          <declname>AR2</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if <computeroutput>AR1</computeroutput> and <computeroutput>AR2</computeroutput> are equal, while taking into account Equal predicates in Preds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2433" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="5703" bodyend="5720"/>
+        <references refid="classllvm_1_1_s_c_e_v_add_rec_expr_1a19c13fe96d59c787e900b7bbf7173263" compoundref="_scalar_evolution_expressions_8h" startline="358" endline="358">llvm::SCEVAddRecExpr::getStart</references>
+        <references refid="classllvm_1_1_s_c_e_v_add_rec_expr_1a4049f7040a4628b15f182c3c9aaf802a" compoundref="_scalar_evolution_expressions_8h" startline="365" endline="371">llvm::SCEVAddRecExpr::getStepRecurrence</references>
+        <referencedby refid="_i_v_descriptors_8cpp_1a1890db236ee0485fd31d3d99d6ad09b5" compoundref="_i_v_descriptors_8cpp" startline="1396" endline="1467">getCastsForInductionPHI</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_predicated_scalar_evolution_1ae477116bd023e4bf6b22d455372f0a9b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PredicatedScalarEvolution::updateGeneration</definition>
+        <argsstring>()</argsstring>
+        <name>updateGeneration</name>
+        <qualifiedname>llvm::PredicatedScalarEvolution::updateGeneration</qualifiedname>
+        <briefdescription>
+<para>Increments the version number of the predicate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This needs to be called every time the <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> predicate changes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ScalarEvolution.h" line="2439" column="8" bodyfile="lib/Analysis/ScalarEvolution.cpp" bodystart="15180" bodyend="15188"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>An interface layer with <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> used to manage how we see <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expressions for values in the context of existing predicates. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>We can add new predicates, but we cannot remove them.</para>
+<para>This layer has multiple purposes:<itemizedlist>
+<listitem><para>provides a simple interface for <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> versioning.</para>
+</listitem><listitem><para>guarantees that the order of transformations applied on a <ref refid="classllvm_1_1_s_c_e_v" kindref="compound">SCEV</ref> expression for a single <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> is consistent across two different getSCEV calls. This means that, for example, once we&apos;ve obtained an AddRec expression for a certain value through expression rewriting, we will continue to get an AddRec expression for that <ref refid="classllvm_1_1_value" kindref="compound">Value</ref>.</para>
+</listitem><listitem><para>lowers the number of expression rewrites. </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="include/llvm/Analysis/ScalarEvolution.h" line="2383" column="1" bodyfile="include/llvm/Analysis/ScalarEvolution.h" bodystart="2383" bodyend="2479"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1a0b369e991301543c2120405809119d36" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>addPredicate</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1aa1aac224801967b8ca7361a4a71b36f7" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>areAddRecsEqualWithPreds</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1ac52a78f5fdeaa198c7522937070250fe" prot="private" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>BackedgeCount</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1a783e7f140e48e06deef562824f097b07" prot="private" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>FlagsMap</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1a9c19ab07280d9152155dbf96e2a840f0" prot="private" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>Generation</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1aa364810e8fe30937277d9dd8a301c4c9" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>getAsAddRec</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1ada1db826f3d2266fe2c4d06218d8d342" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>getBackedgeTakenCount</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1a12a8ac8838fb851a2de5dc5275307bb6" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>getPredicate</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1ae0994d8207b94ad22ecebc1a6bc580f1" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>getSCEV</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1a10ca5eacc61b5669880de2f8b0cff33c" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>getSE</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1aacf376f9963d73732052a7362c5afabd" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>getSmallConstantMaxTripCount</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1adbabf05e94f95f775d59497b6b1004d8" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>getSymbolicMaxBackedgeTakenCount</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1a6fb96c9b4d017d69818db581dae5bd96" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>hasNoOverflow</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1a21b40ced9a059f31ede87232a7f74619" prot="private" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>L</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1aa2b11e914798a4e54c7e640722f1b08d" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>PredicatedScalarEvolution</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1aad1b5b2fb366e23d7693b5953feff806" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>PredicatedScalarEvolution</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1ac354a58a85eda10ecdfd209f70d5f232" prot="private" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>Preds</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1a84e9b8947377b33bf66815f86269e6ce" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>print</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1ad5de77ee377aee71f0a0a3d6650462e6" prot="private" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>RewriteEntry</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1aca7f54a2245a31bbd96e21aa2e3bb092" prot="private" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>RewriteMap</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1a92fadf36e058280250e65768b82ab121" prot="private" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>SE</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1a757ce31dd838b17c024287ce9d17c4c2" prot="public" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>setNoOverflow</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1af74b7bbc644ab57d4162eb1fa1042df3" prot="private" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>SmallConstantMaxTripCount</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1a17a1f3b0b6c06e85cf0cca3805c9d6a2" prot="private" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>SymbolicMaxBackedgeCount</name></member>
+      <member refid="classllvm_1_1_predicated_scalar_evolution_1ae477116bd023e4bf6b22d455372f0a9b" prot="private" virt="non-virtual"><scope>llvm::PredicatedScalarEvolution</scope><name>updateGeneration</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_exit_codes_8h" kind="file" language="C++">
+    <compoundname>ExitCodes.h</compoundname>
+    <includes local="yes">llvm/Config/llvm-config.h</includes>
+    <includedby refid="_crash_recovery_context_8cpp" local="yes">lib/Support/CrashRecoveryContext.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/ExitCodes.h</label>
+        <link refid="_exit_codes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/ExitCodes.h</label>
+        <link refid="_exit_codes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Support/CrashRecoveryContext.cpp</label>
+        <link refid="_crash_recovery_context_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+<para>This file contains definitions of exit codes for exit() function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>They are either defined by sysexits.h if it is supported, or defined here if sysexits.h is not supported. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===--<sp/>llvm/Support/ExitCodes.h<sp/>-<sp/>Exit<sp/>codes<sp/>for<sp/>exit()<sp/><sp/>-------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">///<sp/>\file</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">///<sp/>This<sp/>file<sp/>contains<sp/>definitions<sp/>of<sp/>exit<sp/>codes<sp/>for<sp/>exit()<sp/>function.<sp/>They<sp/>are</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">///<sp/>either<sp/>defined<sp/>by<sp/>sysexits.h<sp/>if<sp/>it<sp/>is<sp/>supported,<sp/>or<sp/>defined<sp/>here<sp/>if</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">///<sp/>sysexits.h<sp/>is<sp/>not<sp/>supported.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_SUPPORT_EXITCODES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_SUPPORT_EXITCODES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;llvm/Config/llvm-config.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>HAVE_SYSEXITS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sysexits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>__MVS__<sp/>||<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;sysexits.h&gt;<sp/>does<sp/>not<sp/>exist<sp/>on<sp/>z/OS<sp/>and<sp/>Windows.<sp/>The<sp/>only<sp/>value<sp/>used<sp/>in<sp/>LLVM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>is<sp/>EX_IOERR,<sp/>which<sp/>is<sp/>used<sp/>to<sp/>signal<sp/>a<sp/>special<sp/>error<sp/>condition<sp/>(broken<sp/>pipe).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Define<sp/>the<sp/>macro<sp/>with<sp/>its<sp/>usual<sp/>value<sp/>from<sp/>BSD<sp/>systems,<sp/>which<sp/>is<sp/>chosen<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>not<sp/>clash<sp/>with<sp/>more<sp/>standard<sp/>exit<sp/>codes<sp/>like<sp/>1.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EX_IOERR<sp/>74</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>LLVM_ON_UNIX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>Exit<sp/>code<sp/>EX_IOERR<sp/>not<sp/>available</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Support/ExitCodes.h"/>
+  </compounddef>
+</doxygen>

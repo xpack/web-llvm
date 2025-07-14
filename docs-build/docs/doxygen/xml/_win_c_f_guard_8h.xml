@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_win_c_f_guard_8h" kind="file" language="C++">
+    <compoundname>WinCFGuard.h</compoundname>
+    <includes refid="_asm_printer_handler_8h" local="yes">llvm/CodeGen/AsmPrinterHandler.h</includes>
+    <includes refid="_compiler_8h" local="yes">llvm/Support/Compiler.h</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="_asm_printer_8cpp" local="yes">lib/CodeGen/AsmPrinter/AsmPrinter.cpp</includedby>
+    <includedby refid="_win_c_f_guard_8cpp" local="yes">lib/CodeGen/AsmPrinter/WinCFGuard.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm/CodeGen/AsmPrinterHandler.h</label>
+        <link refid="_asm_printer_handler_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm/Support/DataTypes.h</label>
+        <link refid="llvm_2_support_2_data_types_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>lib/CodeGen/AsmPrinter/WinCFGuard.h</label>
+        <link refid="_win_c_f_guard_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>inttypes.h</label>
+      </node>
+      <node id="9">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="10">
+        <label>stddef.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="7">
+        <label>sys/types.h</label>
+      </node>
+      <node id="11">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>lib/CodeGen/AsmPrinter/AsmPrinter.cpp</label>
+        <link refid="_asm_printer_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/CodeGen/AsmPrinter/WinCFGuard.cpp</label>
+        <link refid="_win_c_f_guard_8cpp"/>
+      </node>
+      <node id="1">
+        <label>lib/CodeGen/AsmPrinter/WinCFGuard.h</label>
+        <link refid="_win_c_f_guard_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1_win_c_f_guard" prot="public">llvm::WinCFGuard</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===--<sp/>WinCFGuard.h<sp/>-<sp/>Windows<sp/>Control<sp/>Flow<sp/>Guard<sp/>Handling<sp/>----*-<sp/>C++<sp/>-*--===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>contains<sp/>support<sp/>for<sp/>writing<sp/>the<sp/>metadata<sp/>for<sp/>Windows<sp/>Control<sp/>Flow</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Guard,<sp/>including<sp/>address-taken<sp/>functions,<sp/>and<sp/>valid<sp/>longjmp<sp/>targets.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_LIB_CODEGEN_ASMPRINTER_WINCFGUARD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_LIB_CODEGEN_ASMPRINTER_WINCFGUARD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_asm_printer_handler_8h" kindref="compound">llvm/CodeGen/AsmPrinterHandler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_compiler_8h" kindref="compound">llvm/Support/Compiler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classllvm_1_1_win_c_f_guard" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_compiler_8h_1a662e21bcce5c9c71b6cc511fa04f900f" kindref="member">LLVM_LIBRARY_VISIBILITY</ref><sp/><ref refid="classllvm_1_1_win_c_f_guard_1a09d0b47e336ca75d0919ad4463ceb553" kindref="member">WinCFGuard</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_asm_printer_handler" kindref="compound">AsmPrinterHandler</ref><sp/>{</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/>///<sp/>Target<sp/>of<sp/>directive<sp/>emission.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_asm_printer" kindref="compound">AsmPrinter</ref><sp/>*Asm;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>std::vector&lt;const<sp/>MCSymbol<sp/>*&gt;<sp/>LongjmpTargets;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref><sp/>*lookupImpSymbol(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref><sp/>*Sym);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_win_c_f_guard_1a09d0b47e336ca75d0919ad4463ceb553" kindref="member">WinCFGuard</ref>(<ref refid="classllvm_1_1_asm_printer" kindref="compound">AsmPrinter</ref><sp/>*<ref refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72" kindref="member">A</ref>);</highlight></codeline>
+<codeline lineno="31" refid="classllvm_1_1_win_c_f_guard_1ad98438e11c66be4ae18b8f5c2cd159b9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_win_c_f_guard_1ad98438e11c66be4ae18b8f5c2cd159b9" kindref="member">~WinCFGuard</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/>///<sp/>Emit<sp/>the<sp/>Control<sp/>Flow<sp/>Guard<sp/>function<sp/>ID<sp/>table.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_win_c_f_guard_1a94bbf914eeb964dd21e71c6b0b77410e" kindref="member">endModule</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/>///<sp/>Gather<sp/>pre-function<sp/>debug<sp/>information.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/>///<sp/>Every<sp/>beginFunction(MF)<sp/>call<sp/>should<sp/>be<sp/>followed<sp/>by<sp/>an<sp/>endFunction(MF)</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/>///<sp/>call.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classllvm_1_1_win_c_f_guard_1a20c86dc68138a524306a1e5b5f341805" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_win_c_f_guard_1a20c86dc68138a524306a1e5b5f341805" kindref="member">beginFunction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref><sp/>*MF)</highlight><highlight class="keyword"><sp/>override<sp/></highlight><highlight class="normal">{}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/>///<sp/>Gather<sp/>post-function<sp/>debug<sp/>information.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/>///<sp/>Please<sp/>note<sp/>that<sp/>some<sp/>AsmPrinter<sp/>implementations<sp/>may<sp/>not<sp/>call</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/>///<sp/>beginFunction<sp/>at<sp/>all.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>endFunction(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref><sp/>*MF)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="lib/CodeGen/AsmPrinter/WinCFGuard.h"/>
+  </compounddef>
+</doxygen>

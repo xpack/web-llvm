@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_reg_alloc_score_8h" kind="file" language="C++">
+    <compoundname>RegAllocScore.h</compoundname>
+    <includes refid="_s_t_l_functional_extras_8h" local="yes">llvm/ADT/STLFunctionalExtras.h</includes>
+    <includedby refid="_reg_alloc_score_8cpp" local="yes">lib/CodeGen/RegAllocScore.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>lib/CodeGen/RegAllocScore.h</label>
+        <link refid="_reg_alloc_score_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>cstdint</label>
+      </node>
+      <node id="7">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="4">
+        <label>optional</label>
+      </node>
+      <node id="8">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>type_traits</label>
+      </node>
+      <node id="10">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>lib/CodeGen/RegAllocScore.cpp</label>
+        <link refid="_reg_alloc_score_8cpp"/>
+      </node>
+      <node id="1">
+        <label>lib/CodeGen/RegAllocScore.h</label>
+        <link refid="_reg_alloc_score_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1_reg_alloc_score" prot="public">llvm::RegAllocScore</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//==-<sp/>RegAllocScore.h<sp/>-<sp/>evaluate<sp/>regalloc<sp/>policy<sp/>quality<sp/><sp/>----------*-C++-*-==//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment">///<sp/>Calculate<sp/>a<sp/>measure<sp/>of<sp/>the<sp/>register<sp/>allocation<sp/>policy<sp/>quality.<sp/>This<sp/>is<sp/>used</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">///<sp/>to<sp/>construct<sp/>a<sp/>reward<sp/>for<sp/>the<sp/>training<sp/>of<sp/>the<sp/>ML-driven<sp/>allocation<sp/>policy.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">///<sp/>Currently,<sp/>the<sp/>score<sp/>is<sp/>the<sp/>sum<sp/>of<sp/>the<sp/>machine<sp/>basic<sp/>block<sp/>frequency-weighed</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">///<sp/>number<sp/>of<sp/>loads,<sp/>stores,<sp/>copies,<sp/>and<sp/>remat<sp/>instructions,<sp/>each<sp/>factored<sp/>with</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">///<sp/>a<sp/>relative<sp/>weight.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_CODEGEN_REGALLOCSCORE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_CODEGEN_REGALLOCSCORE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_t_l_functional_extras_8h" kindref="compound">llvm/ADT/STLFunctionalExtras.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_machine_block_frequency_info" kindref="compound">MachineBlockFrequencyInfo</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="27"><highlight class="comment">///<sp/>Regalloc<sp/>score.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classllvm_1_1_reg_alloc_score" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_reg_alloc_score_1a8aeb01055fc53019c96df6b114693469" kindref="member">RegAllocScore</ref><sp/>final<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CopyCounts<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>LoadCounts<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>StoreCounts<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CheapRematCounts<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>LoadStoreCounts<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ExpensiveRematCounts<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37" refid="classllvm_1_1_reg_alloc_score_1a8aeb01055fc53019c96df6b114693469" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a8aeb01055fc53019c96df6b114693469" kindref="member">RegAllocScore</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38" refid="classllvm_1_1_reg_alloc_score_1af69b82ee75c7d2ebfc880ef0d3c0cffc" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_reg_alloc_score_1af69b82ee75c7d2ebfc880ef0d3c0cffc" kindref="member">RegAllocScore</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a8aeb01055fc53019c96df6b114693469" kindref="member">RegAllocScore</ref><sp/>&amp;)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classllvm_1_1_reg_alloc_score_1a38a996e5f54f15e00b9ce0a32bd3ce1a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a38a996e5f54f15e00b9ce0a32bd3ce1a" kindref="member">copyCounts</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CopyCounts;<sp/>}</highlight></codeline>
+<codeline lineno="41" refid="classllvm_1_1_reg_alloc_score_1afa2dab86bbcf55a5c9f330d8cf577b28" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1afa2dab86bbcf55a5c9f330d8cf577b28" kindref="member">loadCounts</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>LoadCounts;<sp/>}</highlight></codeline>
+<codeline lineno="42" refid="classllvm_1_1_reg_alloc_score_1a8f7952e0f49b14aadc35f4df463dceb8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a8f7952e0f49b14aadc35f4df463dceb8" kindref="member">storeCounts</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>StoreCounts;<sp/>}</highlight></codeline>
+<codeline lineno="43" refid="classllvm_1_1_reg_alloc_score_1aeae716cc706d64885a5255216750417d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1aeae716cc706d64885a5255216750417d" kindref="member">loadStoreCounts</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>LoadStoreCounts;<sp/>}</highlight></codeline>
+<codeline lineno="44" refid="classllvm_1_1_reg_alloc_score_1ab510e9950d38785f3c495dc3942affc6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1ab510e9950d38785f3c495dc3942affc6" kindref="member">expensiveRematCounts</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ExpensiveRematCounts;<sp/>}</highlight></codeline>
+<codeline lineno="45" refid="classllvm_1_1_reg_alloc_score_1a673fa62253c2c4e8b4b43522c56926fa" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a673fa62253c2c4e8b4b43522c56926fa" kindref="member">cheapRematCounts</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CheapRematCounts;<sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classllvm_1_1_reg_alloc_score_1ac13d33eaa29bab4aeb2de16c8d53b07b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1ac13d33eaa29bab4aeb2de16c8d53b07b" kindref="member">onCopy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Freq)<sp/>{<sp/>CopyCounts<sp/>+=<sp/>Freq;<sp/>}</highlight></codeline>
+<codeline lineno="48" refid="classllvm_1_1_reg_alloc_score_1af06dd441ce90f13f065f71141bd3ea9f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1af06dd441ce90f13f065f71141bd3ea9f" kindref="member">onLoad</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Freq)<sp/>{<sp/>LoadCounts<sp/>+=<sp/>Freq;<sp/>}</highlight></codeline>
+<codeline lineno="49" refid="classllvm_1_1_reg_alloc_score_1a7b5425577bbc6d429f026bf65439963c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a7b5425577bbc6d429f026bf65439963c" kindref="member">onStore</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Freq)<sp/>{<sp/>StoreCounts<sp/>+=<sp/>Freq;<sp/>}</highlight></codeline>
+<codeline lineno="50" refid="classllvm_1_1_reg_alloc_score_1a38b9302f81a0be3b56e20d028bd4c1b0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a38b9302f81a0be3b56e20d028bd4c1b0" kindref="member">onLoadStore</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Freq)<sp/>{<sp/>LoadStoreCounts<sp/>+=<sp/>Freq;<sp/>}</highlight></codeline>
+<codeline lineno="51" refid="classllvm_1_1_reg_alloc_score_1a99dcd27d31c4708a2847076b51c5eff6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a99dcd27d31c4708a2847076b51c5eff6" kindref="member">onExpensiveRemat</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Freq)<sp/>{<sp/>ExpensiveRematCounts<sp/>+=<sp/>Freq;<sp/>}</highlight></codeline>
+<codeline lineno="52" refid="classllvm_1_1_reg_alloc_score_1a4e4f01f7bde0f7f05840f724fee2a0c6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a4e4f01f7bde0f7f05840f724fee2a0c6" kindref="member">onCheapRemat</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Freq)<sp/>{<sp/>CheapRematCounts<sp/>+=<sp/>Freq;<sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_reg_alloc_score" kindref="compound">RegAllocScore</ref><sp/>&amp;<ref refid="classllvm_1_1_reg_alloc_score_1a396a065f8c4e2f3ebb4cc74ff474a1a6" kindref="member">operator+=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score" kindref="compound">RegAllocScore</ref><sp/>&amp;<ref refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387" kindref="member">Other</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a37f9c8f2856ef9ad382afea8a1de50cb" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score" kindref="compound">RegAllocScore</ref><sp/>&amp;<ref refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387" kindref="member">Other</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a56ff0baabf0ce513316b583f9e04c88d" kindref="member">operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score" kindref="compound">RegAllocScore</ref><sp/>&amp;<ref refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387" kindref="member">Other</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_reg_alloc_score_1a96a14d5b9b697269c92d373e2887e3fa" kindref="member">getScore</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="60"><highlight class="comment">///<sp/>Calculate<sp/>a<sp/>score.<sp/>When<sp/>comparing<sp/>2<sp/>scores<sp/>for<sp/>the<sp/>same<sp/>function<sp/>but</highlight></codeline>
+<codeline lineno="61"><highlight class="comment">///<sp/>different<sp/>policies,<sp/>the<sp/>better<sp/>policy<sp/>would<sp/>have<sp/>a<sp/>smaller<sp/>score.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment">///<sp/>The<sp/>implementation<sp/>is<sp/>the<sp/>overload<sp/>below<sp/>(which<sp/>is<sp/>also<sp/>easily<sp/>unittestable)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">RegAllocScore<sp/><ref refid="namespacellvm_1a5d3e4802f0929af81173430c0786d52a" kindref="member">calculateRegAllocScore</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MachineFunction<sp/>&amp;MF,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MachineBlockFrequencyInfo<sp/>&amp;MBFI);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="66"><highlight class="comment">///<sp/>Implementation<sp/>of<sp/>the<sp/>above,<sp/>which<sp/>is<sp/>also<sp/>more<sp/>easily<sp/>unittestable.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">RegAllocScore<sp/><ref refid="namespacellvm_1a5d3e4802f0929af81173430c0786d52a" kindref="member">calculateRegAllocScore</ref>(</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MachineFunction<sp/>&amp;MF,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1function__ref" kindref="compound">llvm::function_ref</ref>&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MachineBasicBlock<sp/>&amp;)&gt;<sp/>GetBBFreq,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1function__ref" kindref="compound">llvm::function_ref</ref>&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MachineInstr<sp/>&amp;)&gt;<sp/>IsTriviallyRematerializable);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_CODEGEN_REGALLOCSCORE_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/CodeGen/RegAllocScore.h"/>
+  </compounddef>
+</doxygen>

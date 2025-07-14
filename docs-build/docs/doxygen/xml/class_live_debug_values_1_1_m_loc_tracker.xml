@@ -1,0 +1,1838 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="class_live_debug_values_1_1_m_loc_tracker" kind="class" language="C++" prot="public">
+    <compoundname>LiveDebugValues::MLocTracker</compoundname>
+    <includes refid="_instr_ref_based_impl_8h" local="yes">CodeGen/LiveDebugValues/InstrRefBasedImpl.h</includes>
+    <innerclass refid="class_live_debug_values_1_1_m_loc_tracker_1_1_m_loc_iterator" prot="public">LiveDebugValues::MLocTracker::MLocIterator</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_live_debug_values_1_1_m_loc_tracker_1ab0b01eec8f769336a32dacc18974c2c9" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_indexed_map" kindref="compound">IndexedMap</ref>&lt; <ref refid="class_live_debug_values_1_1_value_i_d_num" kindref="compound">ValueIDNum</ref>, <ref refid="class_live_debug_values_1_1_loc_idx_to_index_functor" kindref="compound">LocIdxToIndexFunctor</ref> &gt;</type>
+        <definition>using LiveDebugValues::MLocTracker::LocToValueType =  IndexedMap&lt;ValueIDNum, LocIdxToIndexFunctor&gt;</definition>
+        <argsstring></argsstring>
+        <name>LocToValueType</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::LocToValueType</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_indexed_map" kindref="compound">IndexedMap</ref> type, mapping from <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> to <ref refid="class_live_debug_values_1_1_value_i_d_num" kindref="compound">ValueIDNum</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="700" column="3" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="700" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_live_debug_values_1_1_m_loc_tracker_1a758eab2c8cea4d5486874624dba188b4" prot="public" static="no">
+        <type>std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> short, <ref refid="classunsigned" kindref="compound">unsigned</ref> short &gt;</type>
+        <definition>typedef std::pair&lt;unsigned short, unsigned short&gt; LiveDebugValues::MLocTracker::StackSlotPos</definition>
+        <argsstring></argsstring>
+        <name>StackSlotPos</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::StackSlotPos</qualifiedname>
+        <briefdescription>
+<para>Pair for describing a position within a stack slot <ndash/> first the size in bits, then the offset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="748" column="21" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="748" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1ae1a29742ce2fd47f4b4769dfe5a44f9e" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+        <definition>MachineFunction&amp; LiveDebugValues::MLocTracker::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::MF</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="694" column="19" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="694" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a88fd52c520cef6a03af97c37c308ae78" compoundref="_instr_ref_based_impl_8cpp" startline="1189" endline="1358">emitLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a00b889b10d5eaeb7be44d959e67263c6" compoundref="_instr_ref_based_impl_8h" startline="983" endline="993">getLocSizeInBits</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1a7bcfe28f8a994ea7a5fff050f1c09fd2" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> &amp;</type>
+        <definition>const TargetInstrInfo&amp; LiveDebugValues::MLocTracker::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::TII</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="695" column="25" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="695" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a88fd52c520cef6a03af97c37c308ae78" compoundref="_instr_ref_based_impl_8cpp" startline="1189" endline="1358">emitLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1a3870dfac7df420149911b3e81c6c155a" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> &amp;</type>
+        <definition>const TargetRegisterInfo&amp; LiveDebugValues::MLocTracker::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::TRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="696" column="28" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="696" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a88fd52c520cef6a03af97c37c308ae78" compoundref="_instr_ref_based_impl_8cpp" startline="1189" endline="1358">emitLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a1e7aca955e2c1f76d2f20f4475fe716d" compoundref="_instr_ref_based_impl_8h" startline="802" endline="806">getLocID</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a00b889b10d5eaeb7be44d959e67263c6" compoundref="_instr_ref_based_impl_8h" startline="983" endline="993">getLocSizeInBits</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1afe9d19d27dd82ae73f86937cb41c3d8b" compoundref="_instr_ref_based_impl_8cpp" startline="1151" endline="1164">LocIdxToName</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1a2ceb7dab8f0063eec8dff6df6d2a3eda" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_lowering" kindref="compound">TargetLowering</ref> &amp;</type>
+        <definition>const TargetLowering&amp; LiveDebugValues::MLocTracker::TLI</definition>
+        <argsstring></argsstring>
+        <name>TLI</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::TLI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="697" column="24" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="697" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" prot="public" static="no" mutable="no">
+        <type><ref refid="class_live_debug_values_1_1_m_loc_tracker_1ab0b01eec8f769336a32dacc18974c2c9" kindref="member">LocToValueType</ref></type>
+        <definition>LocToValueType LiveDebugValues::MLocTracker::LocIdxToIDNum</definition>
+        <argsstring></argsstring>
+        <name>LocIdxToIDNum</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::LocIdxToIDNum</qualifiedname>
+        <briefdescription>
+<para>Map of LocIdxes to the ValueIDNums that they store. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is tightly packed, entries only exist for locations that are being tracked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="704" column="18" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="704" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a3ac227f75996b7c2ab468a3faa25711c" compoundref="_instr_ref_based_impl_8h" startline="995" endline="995">begin</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1aaef75d1e01cf50cbf889096d2a6f3f89" compoundref="_instr_ref_based_impl_8h" startline="878" endline="890">clear</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ad4b28d7abd903bca80aebdd56d893e8b" compoundref="_instr_ref_based_impl_8h" startline="924" endline="929">defReg</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a303e01bf517a6275123cfb03d0703f08" compoundref="_instr_ref_based_impl_8h" startline="997" endline="999">end</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a48b9880cdbbdc53b8e5446db5dede09b" compoundref="_instr_ref_based_impl_8h" startline="847" endline="847">getNumLocs</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a0ec8c44bc2b0efa41c2a6583f9d75f21" compoundref="_instr_ref_based_impl_8cpp" startline="1124" endline="1149">getOrTrackSpillLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ab8ae8456399284b13679782065ee5dfc" compoundref="_instr_ref_based_impl_8h" startline="899" endline="902">readMLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1acb5a8547e6be549b193c89c9202889df" compoundref="_instr_ref_based_impl_8h" startline="939" endline="943">readReg</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a8ed8c7355168afd27f9f47f505026c54" compoundref="_instr_ref_based_impl_8h" startline="893" endline="896">setMLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a5f3e7fca669ee92300565d5e78098311" compoundref="_instr_ref_based_impl_8h" startline="933" endline="937">setReg</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae0c12fcc919645ec5ae40a9763d756ba" compoundref="_instr_ref_based_impl_8cpp" startline="1088" endline="1108">trackRegister</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a8c013a9da07953941f1e4e464d75db00" compoundref="_instr_ref_based_impl_8h" startline="949" endline="953">wipeRegister</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1a9b700e192036873e9756f231c9213a34" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> &gt;</type>
+        <definition>std::vector&lt;LocIdx&gt; LiveDebugValues::MLocTracker::LocIDToLocIdx</definition>
+        <argsstring></argsstring>
+        <name>LocIDToLocIdx</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::LocIDToLocIdx</qualifiedname>
+        <briefdescription>
+<para>&quot;Map&quot; of machine location IDs (i.e., raw register or spill number) to the <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> key / number for that location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There are always at least as many as the number of registers on the target <ndash/> if the value in the register is not being tracked, then the <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> value will be zero. New entries are appended if a new spill slot begins being tracked. This, and the corresponding reverse map persist for the analysis of the whole function, and is necessarying for decoding various vectors of values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="714" column="15" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="714" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1aaef75d1e01cf50cbf889096d2a6f3f89" compoundref="_instr_ref_based_impl_8h" startline="878" endline="890">clear</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a0ec8c44bc2b0efa41c2a6583f9d75f21" compoundref="_instr_ref_based_impl_8cpp" startline="1124" endline="1149">getOrTrackSpillLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a88df5839a1471739fba42290c3a8279a" compoundref="_instr_ref_based_impl_8h" startline="956" endline="961">getRegMLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1afd78a5b47f366715a6871891a6ad5fb0" compoundref="_instr_ref_based_impl_8h" startline="974" endline="977">getSpillMLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a0975fbd8e22dcc611900504cbe982610" compoundref="_instr_ref_based_impl_8h" startline="916" endline="919">isRegisterTracked</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a5c7000ce75181a4ad413b79566e11eea" compoundref="_instr_ref_based_impl_8h" startline="908" endline="913">lookupOrTrackRegister</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a8c013a9da07953941f1e4e464d75db00" compoundref="_instr_ref_based_impl_8h" startline="949" endline="953">wipeRegister</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1a12a921bb359eb2ab39e43e4c4ba780f3" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_indexed_map" kindref="compound">IndexedMap</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="class_live_debug_values_1_1_loc_idx_to_index_functor" kindref="compound">LocIdxToIndexFunctor</ref> &gt;</type>
+        <definition>IndexedMap&lt;unsigned, LocIdxToIndexFunctor&gt; LiveDebugValues::MLocTracker::LocIdxToLocID</definition>
+        <argsstring></argsstring>
+        <name>LocIdxToLocID</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::LocIdxToLocID</qualifiedname>
+        <briefdescription>
+<para><ref refid="structllvm_1_1_inverse" kindref="compound">Inverse</ref> map of LocIDToLocIdx. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="717" column="14" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="717" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1aaef75d1e01cf50cbf889096d2a6f3f89" compoundref="_instr_ref_based_impl_8h" startline="878" endline="890">clear</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a88fd52c520cef6a03af97c37c308ae78" compoundref="_instr_ref_based_impl_8cpp" startline="1189" endline="1358">emitLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a00b889b10d5eaeb7be44d959e67263c6" compoundref="_instr_ref_based_impl_8h" startline="983" endline="993">getLocSizeInBits</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a0ec8c44bc2b0efa41c2a6583f9d75f21" compoundref="_instr_ref_based_impl_8cpp" startline="1124" endline="1149">getOrTrackSpillLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a87fc8660fb193f626f9e9a6f0244108e" compoundref="_instr_ref_based_impl_8h" startline="980" endline="980">isSpill</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1afe9d19d27dd82ae73f86937cb41c3d8b" compoundref="_instr_ref_based_impl_8cpp" startline="1151" endline="1164">LocIdxToName</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae0c12fcc919645ec5ae40a9763d756ba" compoundref="_instr_ref_based_impl_8cpp" startline="1088" endline="1108">trackRegister</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a73d25ebef02d1312bd901c694d7321ee" compoundref="_instr_ref_based_impl_8cpp" startline="1110" endline="1122">writeRegMask</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1a2773f3976918a270bac316739f66ffd5" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_set" kindref="compound">SmallSet</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, 8 &gt;</type>
+        <definition>SmallSet&lt;Register, 8&gt; LiveDebugValues::MLocTracker::SPAliases</definition>
+        <argsstring></argsstring>
+        <name>SPAliases</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::SPAliases</qualifiedname>
+        <briefdescription>
+<para>When clobbering register masks, we chose to not believe the machine model and don&apos;t clobber SP. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Do the same for SP aliases, and for efficiency, keep a set of them here. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="722" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="722" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a73d25ebef02d1312bd901c694d7321ee" compoundref="_instr_ref_based_impl_8cpp" startline="1110" endline="1122">writeRegMask</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1ab8795e147779aed8a5d0af6783babaa0" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_unique_vector" kindref="compound">UniqueVector</ref>&lt; <ref refid="struct_live_debug_values_1_1_spill_loc" kindref="compound">SpillLoc</ref> &gt;</type>
+        <definition>UniqueVector&lt;SpillLoc&gt; LiveDebugValues::MLocTracker::SpillLocs</definition>
+        <argsstring></argsstring>
+        <name>SpillLocs</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::SpillLocs</qualifiedname>
+        <briefdescription>
+<para>Unique-ification of spill. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used to number them <ndash/> their LocID number is the index in SpillLocs minus one plus NumRegs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="726" column="16" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="726" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1aaef75d1e01cf50cbf889096d2a6f3f89" compoundref="_instr_ref_based_impl_8h" startline="878" endline="890">clear</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a88fd52c520cef6a03af97c37c308ae78" compoundref="_instr_ref_based_impl_8cpp" startline="1189" endline="1358">emitLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a0ec8c44bc2b0efa41c2a6583f9d75f21" compoundref="_instr_ref_based_impl_8cpp" startline="1124" endline="1149">getOrTrackSpillLoc</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1a2017e35cd152cf2e3885ea8ed8e3d8f5" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned LiveDebugValues::MLocTracker::CurBB</definition>
+        <argsstring></argsstring>
+        <name>CurBB</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::CurBB</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="730" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="730" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a0ec8c44bc2b0efa41c2a6583f9d75f21" compoundref="_instr_ref_based_impl_8cpp" startline="1124" endline="1149">getOrTrackSpillLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a0f6a2afd0fe02e3fcfcc5d75d186c21b" compoundref="_instr_ref_based_impl_8h" startline="860" endline="866">loadFromArray</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1abc84cf80598821cf657ee831fce024bc" compoundref="_instr_ref_based_impl_8h" startline="852" endline="856">setMPhis</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae0c12fcc919645ec5ae40a9763d756ba" compoundref="_instr_ref_based_impl_8cpp" startline="1088" endline="1108">trackRegister</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a73d25ebef02d1312bd901c694d7321ee" compoundref="_instr_ref_based_impl_8cpp" startline="1110" endline="1122">writeRegMask</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned LiveDebugValues::MLocTracker::NumRegs</definition>
+        <argsstring></argsstring>
+        <name>NumRegs</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::NumRegs</qualifiedname>
+        <briefdescription>
+<para>Cached local copy of the number of registers the target has. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="733" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="733" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1aaef75d1e01cf50cbf889096d2a6f3f89" compoundref="_instr_ref_based_impl_8h" startline="878" endline="890">clear</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a88fd52c520cef6a03af97c37c308ae78" compoundref="_instr_ref_based_impl_8cpp" startline="1189" endline="1358">emitLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a223c8809c8643ad30bae41da7699b608" compoundref="_instr_ref_based_impl_8h" startline="811" endline="818">getLocID</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a1c44cbd0dca6d3e9736ce4f240af2e25" compoundref="_instr_ref_based_impl_8h" startline="822" endline="828">getSpillIDWithIdx</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a87fc8660fb193f626f9e9a6f0244108e" compoundref="_instr_ref_based_impl_8h" startline="980" endline="980">isSpill</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a63cf4d79a939e187701ac667cb07f5d7" compoundref="_instr_ref_based_impl_8h" startline="831" endline="837">locIDToSpill</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1af39200a4599a5fc61a89ca83ce64598a" compoundref="_instr_ref_based_impl_8h" startline="840" endline="845">locIDToSpillIdx</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1afe9d19d27dd82ae73f86937cb41c3d8b" compoundref="_instr_ref_based_impl_8cpp" startline="1151" endline="1164">LocIdxToName</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a73d25ebef02d1312bd901c694d7321ee" compoundref="_instr_ref_based_impl_8cpp" startline="1110" endline="1122">writeRegMask</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1ab2d1c5bd4bf56e5b4124fa4088f5c5d9" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned LiveDebugValues::MLocTracker::NumSlotIdxes</definition>
+        <argsstring></argsstring>
+        <name>NumSlotIdxes</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::NumSlotIdxes</qualifiedname>
+        <briefdescription>
+<para>Number of slot indexes the target has <ndash/> distinct segments of a stack slot that can take on the value of a subregister, when a super-register is written to the stack. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="738" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="738" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a223c8809c8643ad30bae41da7699b608" compoundref="_instr_ref_based_impl_8h" startline="811" endline="818">getLocID</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a0ec8c44bc2b0efa41c2a6583f9d75f21" compoundref="_instr_ref_based_impl_8cpp" startline="1124" endline="1149">getOrTrackSpillLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a1c44cbd0dca6d3e9736ce4f240af2e25" compoundref="_instr_ref_based_impl_8h" startline="822" endline="828">getSpillIDWithIdx</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a63cf4d79a939e187701ac667cb07f5d7" compoundref="_instr_ref_based_impl_8h" startline="831" endline="837">locIDToSpill</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1af39200a4599a5fc61a89ca83ce64598a" compoundref="_instr_ref_based_impl_8h" startline="840" endline="845">locIDToSpillIdx</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1afe9d19d27dd82ae73f86937cb41c3d8b" compoundref="_instr_ref_based_impl_8cpp" startline="1151" endline="1164">LocIdxToName</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1ab115d98ec0127b8b019aae3e5e296efc" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;, 32 &gt;</type>
+        <definition>SmallVector&lt;std::pair&lt;const MachineOperand *, unsigned&gt;, 32&gt; LiveDebugValues::MLocTracker::Masks</definition>
+        <argsstring></argsstring>
+        <name>Masks</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::Masks</qualifiedname>
+        <briefdescription>
+<para>Collection of register mask operands that have been observed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Second part of pair indicates the instruction that they happened in. Used to reconstruct where defs happened if we start tracking a location later on. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="744" column="15" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="744" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a66a31574ce11e5d8dc78ed9a845305c2" compoundref="_instr_ref_based_impl_8h" startline="869" endline="874">reset</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae0c12fcc919645ec5ae40a9763d756ba" compoundref="_instr_ref_based_impl_8cpp" startline="1088" endline="1108">trackRegister</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a73d25ebef02d1312bd901c694d7321ee" compoundref="_instr_ref_based_impl_8cpp" startline="1110" endline="1122">writeRegMask</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1a5afcbfb84f0bb09c726e9a777d9f01e7" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="class_live_debug_values_1_1_m_loc_tracker_1a758eab2c8cea4d5486874624dba188b4" kindref="member">StackSlotPos</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>DenseMap&lt;StackSlotPos, unsigned&gt; LiveDebugValues::MLocTracker::StackSlotIdxes</definition>
+        <argsstring></argsstring>
+        <name>StackSlotIdxes</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::StackSlotIdxes</qualifiedname>
+        <briefdescription>
+<para>Map from a size/offset pair describing a position in a stack slot, to a numeric identifier for that position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows easier identification of individual positions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="753" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="753" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1aaef75d1e01cf50cbf889096d2a6f3f89" compoundref="_instr_ref_based_impl_8h" startline="878" endline="890">clear</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a223c8809c8643ad30bae41da7699b608" compoundref="_instr_ref_based_impl_8h" startline="811" endline="818">getLocID</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_live_debug_values_1_1_m_loc_tracker_1a6fa795efcfec488fc9683b69b1f9a4d3" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="class_live_debug_values_1_1_m_loc_tracker_1a758eab2c8cea4d5486874624dba188b4" kindref="member">StackSlotPos</ref> &gt;</type>
+        <definition>DenseMap&lt;unsigned, StackSlotPos&gt; LiveDebugValues::MLocTracker::StackIdxesToPos</definition>
+        <argsstring></argsstring>
+        <name>StackIdxesToPos</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::StackIdxesToPos</qualifiedname>
+        <briefdescription>
+<para><ref refid="structllvm_1_1_inverse" kindref="compound">Inverse</ref> of StackSlotIdxes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="756" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="756" bodyend="-1"/>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1aaef75d1e01cf50cbf889096d2a6f3f89" compoundref="_instr_ref_based_impl_8h" startline="878" endline="890">clear</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1af39200a4599a5fc61a89ca83ce64598a" compoundref="_instr_ref_based_impl_8h" startline="840" endline="845">locIDToSpillIdx</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MLocTracker::MLocTracker</definition>
+        <argsstring>(MachineFunction &amp;MF, const TargetInstrInfo &amp;TII, const TargetRegisterInfo &amp;TRI, const TargetLowering &amp;TLI)</argsstring>
+        <name>MLocTracker</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::MLocTracker</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> &amp;</type>
+          <declname>TII</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> &amp;</type>
+          <declname>TRI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_lowering" kindref="compound">TargetLowering</ref> &amp;</type>
+          <declname>TLI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="791" column="3" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.cpp" bodystart="1020" bodyend="1086"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2a28f143303b39650c069b1ce0925287" compoundref="_instr_ref_based_impl_8h" startline="797" endline="797">getLocID</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_m_c_reg_alias_iterator_1ac336c049c12ead7be5b86e6d046f8ab0" compoundref="_m_c_register_info_8h" startline="763" endline="763">llvm::MCRegAliasIterator::isValid</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a9b700e192036873e9756f231c9213a34" compoundref="_instr_ref_based_impl_8h" startline="714">LocIDToLocIdx</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a12a921bb359eb2ab39e43e4c4ba780f3" compoundref="_instr_ref_based_impl_8h" startline="717">LocIdxToLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a5c7000ce75181a4ad413b79566e11eea" compoundref="_instr_ref_based_impl_8h" startline="908" endline="913">lookupOrTrackRegister</references>
+        <references refid="class_live_debug_values_1_1_loc_idx_1a8567f7c20eae6b2f5beabaa440df1097" compoundref="_instr_ref_based_impl_8h" startline="94" endline="94">LiveDebugValues::LocIdx::MakeIllegalLoc</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ae1a29742ce2fd47f4b4769dfe5a44f9e" compoundref="_instr_ref_based_impl_8h" startline="694">MF</references>
+        <references refid="_instr_ref_based_impl_8h_1a09551aadf1cfb2c7160bcd6314b9f748" compoundref="_instr_ref_based_impl_8h" startline="89">NUM_LOC_BITS</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" compoundref="_instr_ref_based_impl_8h" startline="733">NumRegs</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab2d1c5bd4bf56e5b4124fa4088f5c5d9" compoundref="_instr_ref_based_impl_8h" startline="738">NumSlotIdxes</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a66a31574ce11e5d8dc78ed9a845305c2" compoundref="_instr_ref_based_impl_8h" startline="869" endline="874">reset</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2773f3976918a270bac316739f66ffd5" compoundref="_instr_ref_based_impl_8h" startline="722">SPAliases</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a6fa795efcfec488fc9683b69b1f9a4d3" compoundref="_instr_ref_based_impl_8h" startline="756">StackIdxesToPos</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a5afcbfb84f0bb09c726e9a777d9f01e7" compoundref="_instr_ref_based_impl_8h" startline="753">StackSlotIdxes</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a7bcfe28f8a994ea7a5fff050f1c09fd2" compoundref="_instr_ref_based_impl_8h" startline="695">TII</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2ceb7dab8f0063eec8dff6df6d2a3eda" compoundref="_instr_ref_based_impl_8h" startline="697">TLI</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3870dfac7df420149911b3e81c6c155a" compoundref="_instr_ref_based_impl_8h" startline="696">TRI</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a2a28f143303b39650c069b1ce0925287" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned LiveDebugValues::MLocTracker::getLocID</definition>
+        <argsstring>(Register Reg)</argsstring>
+        <name>getLocID</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::getLocID</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Produce location <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> number for a <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides some small amount of type safety. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Reg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The register we&apos;re looking up. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="797" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="797" bodyend="797"/>
+        <references refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" compoundref="_machine_sink_8cpp" startline="2028">Reg</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ad4b28d7abd903bca80aebdd56d893e8b" compoundref="_instr_ref_based_impl_8h" startline="924" endline="929">defReg</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a1e7aca955e2c1f76d2f20f4475fe716d" compoundref="_instr_ref_based_impl_8h" startline="802" endline="806">getLocID</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a88df5839a1471739fba42290c3a8279a" compoundref="_instr_ref_based_impl_8h" startline="956" endline="961">getRegMLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1acb5a8547e6be549b193c89c9202889df" compoundref="_instr_ref_based_impl_8h" startline="939" endline="943">readReg</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a5f3e7fca669ee92300565d5e78098311" compoundref="_instr_ref_based_impl_8h" startline="933" endline="937">setReg</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a8c013a9da07953941f1e4e464d75db00" compoundref="_instr_ref_based_impl_8h" startline="949" endline="953">wipeRegister</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a1e7aca955e2c1f76d2f20f4475fe716d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned LiveDebugValues::MLocTracker::getLocID</definition>
+        <argsstring>(SpillLocationNo Spill, unsigned SpillSubReg)</argsstring>
+        <name>getLocID</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::getLocID</qualifiedname>
+        <param>
+          <type><ref refid="class_live_debug_values_1_1_spill_location_no" kindref="compound">SpillLocationNo</ref></type>
+          <declname>Spill</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>SpillSubReg</declname>
+        </param>
+        <briefdescription>
+<para>Produce location <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> number for a spill position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Spill</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of the spill we&apos;re fetching the location for. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SpillSubReg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Subregister within the spill we&apos;re addressing. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="802" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="802" bodyend="806"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2a28f143303b39650c069b1ce0925287" compoundref="_instr_ref_based_impl_8h" startline="797" endline="797">getLocID</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3870dfac7df420149911b3e81c6c155a" compoundref="_instr_ref_based_impl_8h" startline="696">TRI</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a223c8809c8643ad30bae41da7699b608" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned LiveDebugValues::MLocTracker::getLocID</definition>
+        <argsstring>(SpillLocationNo Spill, StackSlotPos Idx)</argsstring>
+        <name>getLocID</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::getLocID</qualifiedname>
+        <param>
+          <type><ref refid="class_live_debug_values_1_1_spill_location_no" kindref="compound">SpillLocationNo</ref></type>
+          <declname>Spill</declname>
+        </param>
+        <param>
+          <type><ref refid="class_live_debug_values_1_1_m_loc_tracker_1a758eab2c8cea4d5486874624dba188b4" kindref="member">StackSlotPos</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <briefdescription>
+<para>Produce location <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> number for a spill position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Spill</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of the spill we&apos;re fetching the location for. \apram SpillIdx size/offset within the spill slot to be addressed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="811" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="811" bodyend="818"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" compoundref="_instr_ref_based_impl_8h" startline="733">NumRegs</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab2d1c5bd4bf56e5b4124fa4088f5c5d9" compoundref="_instr_ref_based_impl_8h" startline="738">NumSlotIdxes</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a5afcbfb84f0bb09c726e9a777d9f01e7" compoundref="_instr_ref_based_impl_8h" startline="753">StackSlotIdxes</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a1c44cbd0dca6d3e9736ce4f240af2e25" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned LiveDebugValues::MLocTracker::getSpillIDWithIdx</definition>
+        <argsstring>(SpillLocationNo Spill, unsigned Idx)</argsstring>
+        <name>getSpillIDWithIdx</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::getSpillIDWithIdx</qualifiedname>
+        <param>
+          <type><ref refid="class_live_debug_values_1_1_spill_location_no" kindref="compound">SpillLocationNo</ref></type>
+          <declname>Spill</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <briefdescription>
+<para>Given a spill number, and a slot within the spill, calculate the <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> number for that location. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="822" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="822" bodyend="828"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" compoundref="_instr_ref_based_impl_8h" startline="733">NumRegs</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab2d1c5bd4bf56e5b4124fa4088f5c5d9" compoundref="_instr_ref_based_impl_8h" startline="738">NumSlotIdxes</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a0ec8c44bc2b0efa41c2a6583f9d75f21" compoundref="_instr_ref_based_impl_8cpp" startline="1124" endline="1149">getOrTrackSpillLoc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a63cf4d79a939e187701ac667cb07f5d7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_live_debug_values_1_1_spill_location_no" kindref="compound">SpillLocationNo</ref></type>
+        <definition>SpillLocationNo LiveDebugValues::MLocTracker::locIDToSpill</definition>
+        <argsstring>(unsigned ID) const</argsstring>
+        <name>locIDToSpill</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::locIDToSpill</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ID</declname>
+        </param>
+        <briefdescription>
+<para>Return the spill number that a location <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> corresponds to. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="831" column="19" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="831" bodyend="837"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" compoundref="_instr_ref_based_impl_8h" startline="733">NumRegs</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab2d1c5bd4bf56e5b4124fa4088f5c5d9" compoundref="_instr_ref_based_impl_8h" startline="738">NumSlotIdxes</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a88fd52c520cef6a03af97c37c308ae78" compoundref="_instr_ref_based_impl_8cpp" startline="1189" endline="1358">emitLoc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1af39200a4599a5fc61a89ca83ce64598a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_live_debug_values_1_1_m_loc_tracker_1a758eab2c8cea4d5486874624dba188b4" kindref="member">StackSlotPos</ref></type>
+        <definition>StackSlotPos LiveDebugValues::MLocTracker::locIDToSpillIdx</definition>
+        <argsstring>(unsigned ID) const</argsstring>
+        <name>locIDToSpillIdx</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::locIDToSpillIdx</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ID</declname>
+        </param>
+        <briefdescription>
+<para>Returns the spill-slot size/offs that a location <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> corresponds to. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="840" column="16" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="840" bodyend="845"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" compoundref="_instr_ref_based_impl_8h" startline="733">NumRegs</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab2d1c5bd4bf56e5b4124fa4088f5c5d9" compoundref="_instr_ref_based_impl_8h" startline="738">NumSlotIdxes</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a6fa795efcfec488fc9683b69b1f9a4d3" compoundref="_instr_ref_based_impl_8h" startline="756">StackIdxesToPos</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a88fd52c520cef6a03af97c37c308ae78" compoundref="_instr_ref_based_impl_8cpp" startline="1189" endline="1358">emitLoc</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a00b889b10d5eaeb7be44d959e67263c6" compoundref="_instr_ref_based_impl_8h" startline="983" endline="993">getLocSizeInBits</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1afe9d19d27dd82ae73f86937cb41c3d8b" compoundref="_instr_ref_based_impl_8cpp" startline="1151" endline="1164">LocIdxToName</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a48b9880cdbbdc53b8e5446db5dede09b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned LiveDebugValues::MLocTracker::getNumLocs</definition>
+        <argsstring>() const</argsstring>
+        <name>getNumLocs</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::getNumLocs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="847" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="847" bodyend="847"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1abc84cf80598821cf657ee831fce024bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveDebugValues::MLocTracker::setMPhis</definition>
+        <argsstring>(unsigned NewCurBB)</argsstring>
+        <name>setMPhis</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::setMPhis</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NewCurBB</declname>
+        </param>
+        <briefdescription>
+<para>Reset all locations to contain a PHI value at the designated block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used sometimes for actual PHI values, othertimes to indicate the block entry value (before any more information is known). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="852" column="8" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="852" bodyend="856"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2017e35cd152cf2e3885ea8ed8e3d8f5" compoundref="_instr_ref_based_impl_8h" startline="730">CurBB</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a217987fff459e088b64f179204e120f1" compoundref="_instr_ref_based_impl_8h" startline="1002" endline="1004">locations</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a0f6a2afd0fe02e3fcfcc5d75d186c21b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveDebugValues::MLocTracker::loadFromArray</definition>
+        <argsstring>(ValueTable &amp;Locs, unsigned NewCurBB)</argsstring>
+        <name>loadFromArray</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::loadFromArray</qualifiedname>
+        <param>
+          <type><ref refid="namespace_live_debug_values_1a7697a3c717033a44ba7f9b272c1d5331" kindref="member">ValueTable</ref> &amp;</type>
+          <declname>Locs</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NewCurBB</declname>
+        </param>
+        <briefdescription>
+<para>Load values for each location from array of ValueIDNums. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Take current bbnum just in case we read a value from a hitherto untouched register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="860" column="8" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="860" bodyend="866"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2017e35cd152cf2e3885ea8ed8e3d8f5" compoundref="_instr_ref_based_impl_8h" startline="730">CurBB</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a217987fff459e088b64f179204e120f1" compoundref="_instr_ref_based_impl_8h" startline="1002" endline="1004">locations</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a66a31574ce11e5d8dc78ed9a845305c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveDebugValues::MLocTracker::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::reset</qualifiedname>
+        <briefdescription>
+<para>Wipe any un-necessary location records after traversing a block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="869" column="8" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="869" bodyend="874"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab115d98ec0127b8b019aae3e5e296efc" compoundref="_instr_ref_based_impl_8h" startline="744">Masks</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1aaef75d1e01cf50cbf889096d2a6f3f89" compoundref="_instr_ref_based_impl_8h" startline="878" endline="890">clear</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1aaef75d1e01cf50cbf889096d2a6f3f89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveDebugValues::MLocTracker::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::clear</qualifiedname>
+        <briefdescription>
+<para>Clear all data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys the LocID &lt;=&gt; <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> map, which makes most of the information in this pass uninterpretable. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="878" column="8" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="878" bodyend="890"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a9b700e192036873e9756f231c9213a34" compoundref="_instr_ref_based_impl_8h" startline="714">LocIDToLocIdx</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a12a921bb359eb2ab39e43e4c4ba780f3" compoundref="_instr_ref_based_impl_8h" startline="717">LocIdxToLocID</references>
+        <references refid="class_live_debug_values_1_1_loc_idx_1a8567f7c20eae6b2f5beabaa440df1097" compoundref="_instr_ref_based_impl_8h" startline="94" endline="94">LiveDebugValues::LocIdx::MakeIllegalLoc</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" compoundref="_instr_ref_based_impl_8h" startline="733">NumRegs</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a66a31574ce11e5d8dc78ed9a845305c2" compoundref="_instr_ref_based_impl_8h" startline="869" endline="874">reset</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab8795e147779aed8a5d0af6783babaa0" compoundref="_instr_ref_based_impl_8h" startline="726">SpillLocs</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a6fa795efcfec488fc9683b69b1f9a4d3" compoundref="_instr_ref_based_impl_8h" startline="756">StackIdxesToPos</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a5afcbfb84f0bb09c726e9a777d9f01e7" compoundref="_instr_ref_based_impl_8h" startline="753">StackSlotIdxes</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a8ed8c7355168afd27f9f47f505026c54" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveDebugValues::MLocTracker::setMLoc</definition>
+        <argsstring>(LocIdx L, ValueIDNum Num)</argsstring>
+        <name>setMLoc</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::setMLoc</qualifiedname>
+        <param>
+          <type><ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref></type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type><ref refid="class_live_debug_values_1_1_value_i_d_num" kindref="compound">ValueIDNum</ref></type>
+          <declname>Num</declname>
+        </param>
+        <briefdescription>
+<para>Set a locaiton to a certain value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="893" column="8" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="893" bodyend="896"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1ab8ae8456399284b13679782065ee5dfc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_live_debug_values_1_1_value_i_d_num" kindref="compound">ValueIDNum</ref></type>
+        <definition>ValueIDNum LiveDebugValues::MLocTracker::readMLoc</definition>
+        <argsstring>(LocIdx L)</argsstring>
+        <name>readMLoc</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::readMLoc</qualifiedname>
+        <param>
+          <type><ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref></type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Read the value of a particular location. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="899" column="14" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="899" bodyend="902"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1ae0c12fcc919645ec5ae40a9763d756ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref></type>
+        <definition>LocIdx MLocTracker::trackRegister</definition>
+        <argsstring>(unsigned ID)</argsstring>
+        <name>trackRegister</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::trackRegister</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ID</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> for an untracked register <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize it to either an mphi value representing a live-in, or a recent register mask clobber. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="906" column="10" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.cpp" bodystart="1088" bodyend="1108"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2017e35cd152cf2e3885ea8ed8e3d8f5" compoundref="_instr_ref_based_impl_8h" startline="730">CurBB</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a12a921bb359eb2ab39e43e4c4ba780f3" compoundref="_instr_ref_based_impl_8h" startline="717">LocIdxToLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab115d98ec0127b8b019aae3e5e296efc" compoundref="_instr_ref_based_impl_8h" startline="744">Masks</references>
+        <references refid="namespacellvm_1a6b0ac1fa4f05de76413c5e0ca6334035" compoundref="_s_t_l_extras_8h" startline="420" endline="426">llvm::reverse</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a5c7000ce75181a4ad413b79566e11eea" compoundref="_instr_ref_based_impl_8h" startline="908" endline="913">lookupOrTrackRegister</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a5c7000ce75181a4ad413b79566e11eea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref></type>
+        <definition>LocIdx LiveDebugValues::MLocTracker::lookupOrTrackRegister</definition>
+        <argsstring>(unsigned ID)</argsstring>
+        <name>lookupOrTrackRegister</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::lookupOrTrackRegister</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="908" column="10" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="908" bodyend="913"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a9b700e192036873e9756f231c9213a34" compoundref="_instr_ref_based_impl_8h" startline="714">LocIDToLocIdx</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ae0c12fcc919645ec5ae40a9763d756ba" compoundref="_instr_ref_based_impl_8cpp" startline="1088" endline="1108">trackRegister</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ad4b28d7abd903bca80aebdd56d893e8b" compoundref="_instr_ref_based_impl_8h" startline="924" endline="929">defReg</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" compoundref="_instr_ref_based_impl_8cpp" startline="1020" endline="1086">MLocTracker</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1acb5a8547e6be549b193c89c9202889df" compoundref="_instr_ref_based_impl_8h" startline="939" endline="943">readReg</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a5f3e7fca669ee92300565d5e78098311" compoundref="_instr_ref_based_impl_8h" startline="933" endline="937">setReg</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a0975fbd8e22dcc611900504cbe982610" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool LiveDebugValues::MLocTracker::isRegisterTracked</definition>
+        <argsstring>(Register R)</argsstring>
+        <name>isRegisterTracked</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::isRegisterTracked</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+<para>Is register R currently tracked by <ref refid="class_live_debug_values_1_1_m_loc_tracker" kindref="compound">MLocTracker</ref>? </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="916" column="8" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="916" bodyend="919"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a9b700e192036873e9756f231c9213a34" compoundref="_instr_ref_based_impl_8h" startline="714">LocIDToLocIdx</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1ad4b28d7abd903bca80aebdd56d893e8b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveDebugValues::MLocTracker::defReg</definition>
+        <argsstring>(Register R, unsigned BB, unsigned Inst)</argsstring>
+        <name>defReg</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::defReg</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Inst</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> a definition of the specified register at the given block / inst. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This doesn&apos;t take a <ref refid="class_live_debug_values_1_1_value_i_d_num" kindref="compound">ValueIDNum</ref>, because the definition and its location are synonymous. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="924" column="8" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="924" bodyend="929"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2a28f143303b39650c069b1ce0925287" compoundref="_instr_ref_based_impl_8h" startline="797" endline="797">getLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a5c7000ce75181a4ad413b79566e11eea" compoundref="_instr_ref_based_impl_8h" startline="908" endline="913">lookupOrTrackRegister</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a73d25ebef02d1312bd901c694d7321ee" compoundref="_instr_ref_based_impl_8cpp" startline="1110" endline="1122">writeRegMask</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a5f3e7fca669ee92300565d5e78098311" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveDebugValues::MLocTracker::setReg</definition>
+        <argsstring>(Register R, ValueIDNum ValueID)</argsstring>
+        <name>setReg</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::setReg</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="class_live_debug_values_1_1_value_i_d_num" kindref="compound">ValueIDNum</ref></type>
+          <declname>ValueID</declname>
+        </param>
+        <briefdescription>
+<para>Set a register to a value number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To be used if the value number is known in advance. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="933" column="8" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="933" bodyend="937"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2a28f143303b39650c069b1ce0925287" compoundref="_instr_ref_based_impl_8h" startline="797" endline="797">getLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a5c7000ce75181a4ad413b79566e11eea" compoundref="_instr_ref_based_impl_8h" startline="908" endline="913">lookupOrTrackRegister</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1acb5a8547e6be549b193c89c9202889df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_live_debug_values_1_1_value_i_d_num" kindref="compound">ValueIDNum</ref></type>
+        <definition>ValueIDNum LiveDebugValues::MLocTracker::readReg</definition>
+        <argsstring>(Register R)</argsstring>
+        <name>readReg</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::readReg</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="939" column="14" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="939" bodyend="943"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2a28f143303b39650c069b1ce0925287" compoundref="_instr_ref_based_impl_8h" startline="797" endline="797">getLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a5c7000ce75181a4ad413b79566e11eea" compoundref="_instr_ref_based_impl_8h" startline="908" endline="913">lookupOrTrackRegister</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a8c013a9da07953941f1e4e464d75db00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LiveDebugValues::MLocTracker::wipeRegister</definition>
+        <argsstring>(Register R)</argsstring>
+        <name>wipeRegister</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::wipeRegister</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+<para>Reset a register value to zero / empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Needed to replicate the VarLoc implementation where a copy to/from a register effectively clears the contents of the source register. (Values can only have one machine location in VarLocBasedImpl). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="949" column="8" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="949" bodyend="953"/>
+        <references refid="class_live_debug_values_1_1_value_i_d_num_1a98d44bec6b754ac8786ab97f219f06f1" compoundref="_instr_ref_based_impl_8h" startline="207">LiveDebugValues::ValueIDNum::EmptyValue</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2a28f143303b39650c069b1ce0925287" compoundref="_instr_ref_based_impl_8h" startline="797" endline="797">getLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a9b700e192036873e9756f231c9213a34" compoundref="_instr_ref_based_impl_8h" startline="714">LocIDToLocIdx</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a88df5839a1471739fba42290c3a8279a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref></type>
+        <definition>LocIdx LiveDebugValues::MLocTracker::getRegMLoc</definition>
+        <argsstring>(Register R)</argsstring>
+        <name>getRegMLoc</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::getRegMLoc</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+<para>Determine the <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> of an existing register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="956" column="10" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="956" bodyend="961"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2a28f143303b39650c069b1ce0925287" compoundref="_instr_ref_based_impl_8h" startline="797" endline="797">getLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a9b700e192036873e9756f231c9213a34" compoundref="_instr_ref_based_impl_8h" startline="714">LocIDToLocIdx</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a73d25ebef02d1312bd901c694d7321ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MLocTracker::writeRegMask</definition>
+        <argsstring>(const MachineOperand *MO, unsigned CurBB, unsigned InstID)</argsstring>
+        <name>writeRegMask</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::writeRegMask</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> *</type>
+          <declname>MO</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CurBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>InstID</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> a RegMask operand being executed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Defs any register we currently track, stores a pointer to the mask in case we have to account for it later. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="966" column="8" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.cpp" bodystart="1110" bodyend="1122"/>
+        <references refid="classllvm_1_1_machine_operand_1ae4ecf5483b94e2bb72967b80cc2008d2" compoundref="_machine_operand_8h" startline="646" endline="651">llvm::MachineOperand::clobbersPhysReg</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2017e35cd152cf2e3885ea8ed8e3d8f5" compoundref="_instr_ref_based_impl_8h" startline="730">CurBB</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ad4b28d7abd903bca80aebdd56d893e8b" compoundref="_instr_ref_based_impl_8h" startline="924" endline="929">defReg</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a217987fff459e088b64f179204e120f1" compoundref="_instr_ref_based_impl_8h" startline="1002" endline="1004">locations</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a12a921bb359eb2ab39e43e4c4ba780f3" compoundref="_instr_ref_based_impl_8h" startline="717">LocIdxToLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab115d98ec0127b8b019aae3e5e296efc" compoundref="_instr_ref_based_impl_8h" startline="744">Masks</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" compoundref="_instr_ref_based_impl_8h" startline="733">NumRegs</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2773f3976918a270bac316739f66ffd5" compoundref="_instr_ref_based_impl_8h" startline="722">SPAliases</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a0ec8c44bc2b0efa41c2a6583f9d75f21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="class_live_debug_values_1_1_spill_location_no" kindref="compound">SpillLocationNo</ref> &gt;</type>
+        <definition>std::optional&lt; SpillLocationNo &gt; MLocTracker::getOrTrackSpillLoc</definition>
+        <argsstring>(SpillLoc L)</argsstring>
+        <name>getOrTrackSpillLoc</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::getOrTrackSpillLoc</qualifiedname>
+        <param>
+          <type><ref refid="struct_live_debug_values_1_1_spill_loc" kindref="compound">SpillLoc</ref></type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Find <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> for <ref refid="struct_live_debug_values_1_1_spill_loc" kindref="compound">SpillLoc</ref> <computeroutput>L</computeroutput>, creating a new one if it&apos;s not tracked. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns std::nullopt when in scenarios where a spill slot could be tracked, but we would likely run into resource limitations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="971" column="17" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.cpp" bodystart="1124" bodyend="1149"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a2017e35cd152cf2e3885ea8ed8e3d8f5" compoundref="_instr_ref_based_impl_8h" startline="730">CurBB</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a1c44cbd0dca6d3e9736ce4f240af2e25" compoundref="_instr_ref_based_impl_8h" startline="822" endline="828">getSpillIDWithIdx</references>
+        <references refid="class_live_debug_values_1_1_spill_location_no_1a2e309fd3b79f17ba6213f7eb9d637329" compoundref="_instr_ref_based_impl_8h" startline="297" endline="297">LiveDebugValues::SpillLocationNo::id</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a9b700e192036873e9756f231c9213a34" compoundref="_instr_ref_based_impl_8h" startline="714">LocIDToLocIdx</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a12a921bb359eb2ab39e43e4c4ba780f3" compoundref="_instr_ref_based_impl_8h" startline="717">LocIdxToLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab2d1c5bd4bf56e5b4124fa4088f5c5d9" compoundref="_instr_ref_based_impl_8h" startline="738">NumSlotIdxes</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab8795e147779aed8a5d0af6783babaa0" compoundref="_instr_ref_based_impl_8h" startline="726">SpillLocs</references>
+        <references refid="_instr_ref_based_impl_8cpp_1ad6ba0b6b6e6515414554417edb06e073">StackWorkingSetLimit</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1afd78a5b47f366715a6871891a6ad5fb0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref></type>
+        <definition>LocIdx LiveDebugValues::MLocTracker::getSpillMLoc</definition>
+        <argsstring>(unsigned SpillID)</argsstring>
+        <name>getSpillMLoc</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::getSpillMLoc</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>SpillID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="974" column="10" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="974" bodyend="977"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a9b700e192036873e9756f231c9213a34" compoundref="_instr_ref_based_impl_8h" startline="714">LocIDToLocIdx</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a87fc8660fb193f626f9e9a6f0244108e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool LiveDebugValues::MLocTracker::isSpill</definition>
+        <argsstring>(LocIdx Idx) const</argsstring>
+        <name>isSpill</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::isSpill</qualifiedname>
+        <param>
+          <type><ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <briefdescription>
+<para>Return true if Idx is a spill machine location. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="980" column="8" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="980" bodyend="980"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a12a921bb359eb2ab39e43e4c4ba780f3" compoundref="_instr_ref_based_impl_8h" startline="717">LocIdxToLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" compoundref="_instr_ref_based_impl_8h" startline="733">NumRegs</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a00b889b10d5eaeb7be44d959e67263c6" compoundref="_instr_ref_based_impl_8h" startline="983" endline="993">getLocSizeInBits</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a00b889b10d5eaeb7be44d959e67263c6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned LiveDebugValues::MLocTracker::getLocSizeInBits</definition>
+        <argsstring>(LocIdx L) const</argsstring>
+        <name>getLocSizeInBits</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::getLocSizeInBits</qualifiedname>
+        <param>
+          <type><ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref></type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>How large is this location (aka, how wide is a value defined there?). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="983" column="12" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="983" bodyend="993"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a87fc8660fb193f626f9e9a6f0244108e" compoundref="_instr_ref_based_impl_8h" startline="980" endline="980">isSpill</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1af39200a4599a5fc61a89ca83ce64598a" compoundref="_instr_ref_based_impl_8h" startline="840" endline="845">locIDToSpillIdx</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a12a921bb359eb2ab39e43e4c4ba780f3" compoundref="_instr_ref_based_impl_8h" startline="717">LocIdxToLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ae1a29742ce2fd47f4b4769dfe5a44f9e" compoundref="_instr_ref_based_impl_8h" startline="694">MF</references>
+        <references refid="_mem2_reg_8cpp_1a6fde3eb6ca09ddf2fd76432176d817bb" compoundref="_mem2_reg_8cpp" startline="110">Register</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3870dfac7df420149911b3e81c6c155a" compoundref="_instr_ref_based_impl_8h" startline="696">TRI</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a88fd52c520cef6a03af97c37c308ae78" compoundref="_instr_ref_based_impl_8cpp" startline="1189" endline="1358">emitLoc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a3ac227f75996b7c2ab468a3faa25711c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_live_debug_values_1_1_m_loc_tracker_1_1_m_loc_iterator" kindref="compound">MLocIterator</ref></type>
+        <definition>MLocIterator LiveDebugValues::MLocTracker::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="995" column="16" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="995" bodyend="995"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a217987fff459e088b64f179204e120f1" compoundref="_instr_ref_based_impl_8h" startline="1002" endline="1004">locations</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a303e01bf517a6275123cfb03d0703f08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_live_debug_values_1_1_m_loc_tracker_1_1_m_loc_iterator" kindref="compound">MLocIterator</ref></type>
+        <definition>MLocIterator LiveDebugValues::MLocTracker::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="997" column="16" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="997" bodyend="999"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" compoundref="_instr_ref_based_impl_8h" startline="704">LocIdxToIDNum</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a217987fff459e088b64f179204e120f1" compoundref="_instr_ref_based_impl_8h" startline="1002" endline="1004">locations</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a217987fff459e088b64f179204e120f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; <ref refid="class_live_debug_values_1_1_m_loc_tracker_1_1_m_loc_iterator" kindref="compound">MLocIterator</ref> &gt;</type>
+        <definition>iterator_range&lt; MLocIterator &gt; LiveDebugValues::MLocTracker::locations</definition>
+        <argsstring>()</argsstring>
+        <name>locations</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::locations</qualifiedname>
+        <briefdescription>
+<para>Return a range over all locations currently tracked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="1002" column="18" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="1002" bodyend="1004"/>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3ac227f75996b7c2ab468a3faa25711c" compoundref="_instr_ref_based_impl_8h" startline="995" endline="995">begin</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a303e01bf517a6275123cfb03d0703f08" compoundref="_instr_ref_based_impl_8h" startline="997" endline="999">end</references>
+        <references refid="namespacellvm_1a341215803e83773a3e97860dc291f121" compoundref="iterator__range_8h" startline="77" endline="79">llvm::make_range</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ad60ba0b6dcb54a7fe37863ceb0165626" compoundref="_instr_ref_based_impl_8cpp" startline="1172" endline="1178">dump</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1af0c9cdac0acbe1745277e6e9544aa575" compoundref="_instr_ref_based_impl_8cpp" startline="1180" endline="1185">dump_mloc_map</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a0f6a2afd0fe02e3fcfcc5d75d186c21b" compoundref="_instr_ref_based_impl_8h" startline="860" endline="866">loadFromArray</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1abc84cf80598821cf657ee831fce024bc" compoundref="_instr_ref_based_impl_8h" startline="852" endline="856">setMPhis</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a73d25ebef02d1312bd901c694d7321ee" compoundref="_instr_ref_based_impl_8cpp" startline="1110" endline="1122">writeRegMask</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1afe9d19d27dd82ae73f86937cb41c3d8b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string MLocTracker::LocIdxToName</definition>
+        <argsstring>(LocIdx Idx) const</argsstring>
+        <name>LocIdxToName</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::LocIdxToName</qualifiedname>
+        <param>
+          <type><ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="1006" column="15" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.cpp" bodystart="1151" bodyend="1164"/>
+        <references refid="namespacellvm_1a52ff73f5c87e0fb78fbdca0465300c95" compoundref="_s_t_l_extras_8h" startline="1192" endline="1197">llvm::concat</references>
+        <references refid="classllvm_1_1_twine_1a529bd775f25e1c6ea4a96b34a5d8bde6" compoundref="_twine_8h" startline="525" endline="552">llvm::Twine::concat</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1af39200a4599a5fc61a89ca83ce64598a" compoundref="_instr_ref_based_impl_8h" startline="840" endline="845">locIDToSpillIdx</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a12a921bb359eb2ab39e43e4c4ba780f3" compoundref="_instr_ref_based_impl_8h" startline="717">LocIdxToLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" compoundref="_instr_ref_based_impl_8h" startline="733">NumRegs</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab2d1c5bd4bf56e5b4124fa4088f5c5d9" compoundref="_instr_ref_based_impl_8h" startline="738">NumSlotIdxes</references>
+        <references refid="classllvm_1_1_twine_1a4c1c1093a7749409c70838678514cc7c" compoundref="_twine_8cpp" startline="17" endline="30">llvm::Twine::str</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3870dfac7df420149911b3e81c6c155a" compoundref="_instr_ref_based_impl_8h" startline="696">TRI</references>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1ad60ba0b6dcb54a7fe37863ceb0165626" compoundref="_instr_ref_based_impl_8cpp" startline="1172" endline="1178">dump</referencedby>
+        <referencedby refid="struct_live_debug_values_1_1_resolved_dbg_op_1ae0c00dfb25229694b92d71199bfaca22" compoundref="_instr_ref_based_impl_8cpp" startline="976" endline="982">LiveDebugValues::ResolvedDbgOp::dump</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1af0c9cdac0acbe1745277e6e9544aa575" compoundref="_instr_ref_based_impl_8cpp" startline="1180" endline="1185">dump_mloc_map</referencedby>
+        <referencedby refid="class_live_debug_values_1_1_m_loc_tracker_1a70d5f445ba9f76ce9d0a11bc11e8e1a9" compoundref="_instr_ref_based_impl_8cpp" startline="1166" endline="1169">IDAsString</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a70d5f445ba9f76ce9d0a11bc11e8e1a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string MLocTracker::IDAsString</definition>
+        <argsstring>(const ValueIDNum &amp;Num) const</argsstring>
+        <name>IDAsString</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::IDAsString</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_live_debug_values_1_1_value_i_d_num" kindref="compound">ValueIDNum</ref> &amp;</type>
+          <declname>Num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="1008" column="15" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.cpp" bodystart="1166" bodyend="1169"/>
+        <references refid="class_live_debug_values_1_1_value_i_d_num_1a9313c0181a7f6ea6097163d55a4a7694" compoundref="_instr_ref_based_impl_8h" startline="195" endline="205">LiveDebugValues::ValueIDNum::asString</references>
+        <references refid="class_live_debug_values_1_1_value_i_d_num_1af0ee865517c9747fa74f9eb3ed54578a" compoundref="_instr_ref_based_impl_8h" startline="174" endline="174">LiveDebugValues::ValueIDNum::getLoc</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1afe9d19d27dd82ae73f86937cb41c3d8b" compoundref="_instr_ref_based_impl_8cpp" startline="1151" endline="1164">LocIdxToName</references>
+        <referencedby refid="struct_live_debug_values_1_1_dbg_op_1a645a31ec228d2d3f5ec064b726514cd2" compoundref="_instr_ref_based_impl_8cpp" startline="983" endline="989">LiveDebugValues::DbgOp::dump</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1ad60ba0b6dcb54a7fe37863ceb0165626" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" kindref="member">LLVM_DUMP_METHOD</ref> void</type>
+        <definition>LLVM_DUMP_METHOD void MLocTracker::dump</definition>
+        <argsstring>()</argsstring>
+        <name>dump</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::dump</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="1011" column="25" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.cpp" bodystart="1172" bodyend="1178"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" compoundref="_compiler_8h" startline="622">LLVM_DUMP_METHOD</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a217987fff459e088b64f179204e120f1" compoundref="_instr_ref_based_impl_8h" startline="1002" endline="1004">locations</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1afe9d19d27dd82ae73f86937cb41c3d8b" compoundref="_instr_ref_based_impl_8cpp" startline="1151" endline="1164">LocIdxToName</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1af0c9cdac0acbe1745277e6e9544aa575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" kindref="member">LLVM_DUMP_METHOD</ref> void</type>
+        <definition>LLVM_DUMP_METHOD void MLocTracker::dump_mloc_map</definition>
+        <argsstring>()</argsstring>
+        <name>dump_mloc_map</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::dump_mloc_map</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="1013" column="25" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.cpp" bodystart="1180" bodyend="1185"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_compiler_8h_1aa863693eef567397d9c292da5bf22d34" compoundref="_compiler_8h" startline="622">LLVM_DUMP_METHOD</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a217987fff459e088b64f179204e120f1" compoundref="_instr_ref_based_impl_8h" startline="1002" endline="1004">locations</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1afe9d19d27dd82ae73f86937cb41c3d8b" compoundref="_instr_ref_based_impl_8cpp" startline="1151" endline="1164">LocIdxToName</references>
+      </memberdef>
+      <memberdef kind="function" id="class_live_debug_values_1_1_m_loc_tracker_1a88fd52c520cef6a03af97c37c308ae78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr_builder" kindref="compound">MachineInstrBuilder</ref></type>
+        <definition>MachineInstrBuilder MLocTracker::emitLoc</definition>
+        <argsstring>(const SmallVectorImpl&lt; ResolvedDbgOp &gt; &amp;DbgOps, const DebugVariable &amp;Var, const DILocation *DILoc, const DbgValueProperties &amp;Properties)</argsstring>
+        <name>emitLoc</name>
+        <qualifiedname>LiveDebugValues::MLocTracker::emitLoc</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="struct_live_debug_values_1_1_resolved_dbg_op" kindref="compound">ResolvedDbgOp</ref> &gt; &amp;</type>
+          <declname>DbgOps</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_debug_variable" kindref="compound">DebugVariable</ref> &amp;</type>
+          <declname>Var</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_d_i_location" kindref="compound">DILocation</ref> *</type>
+          <declname>DILoc</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_live_debug_values_1_1_dbg_value_properties" kindref="compound">DbgValueProperties</ref> &amp;</type>
+          <declname>Properties</declname>
+        </param>
+        <briefdescription>
+<para>Create a DBG_VALUE based on debug operands <computeroutput>DbgOps</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Qualify it with the information in \pProperties, for variable Var. Don&apos;t insert it anywhere, just return the builder for it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="1019" column="23" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.cpp" bodystart="1189" bodyend="1358"/>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="classllvm_1_1_d_i_expression_1a5f48305fa7d23161515c94bca7c2beb6" compoundref="_debug_info_metadata_8cpp" startline="1858" endline="1891">llvm::DIExpression::appendOpsToArg</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a38c50aa8e3e9588f4f968c2e03a0cee0" compoundref="_small_vector_8h" startline="704" endline="718">llvm::SmallVectorImpl&lt; T &gt;::assign</references>
+        <references refid="namespacellvm_1_1sampleprof_1a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41" compoundref="_discriminator_8h" startline="58">llvm::sampleprof::Base</references>
+        <references refid="namespacellvm_1a17e04afcf0c5efeb0eb6a9a45287b5e4" compoundref="_machine_instr_builder_8h" startline="373" endline="378">llvm::BuildMI</references>
+        <references refid="classllvm_1_1_small_vector_impl_1aac0ea55010b7b1a301e65a0baea057aa" compoundref="_small_vector_8h" startline="610" endline="613">llvm::SmallVectorImpl&lt; T &gt;::clear</references>
+        <references refid="classllvm_1_1_machine_operand_1af2c351dad09a71aa08e1d85c67ae6e53" compoundref="_machine_operand_8h" startline="838" endline="862">llvm::MachineOperand::CreateReg</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">llvm::dwarf_linker::DebugLoc</references>
+        <references refid="class_live_debug_values_1_1_dbg_value_properties_1a87d598e34086fb45a3a64638bdc6097e" compoundref="_instr_ref_based_impl_8h" startline="346">LiveDebugValues::DbgValueProperties::DIExpr</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_debug_variable_1adcfb72c9275acde495226af4ad12e180" compoundref="_debug_info_metadata_8h" startline="4051" endline="4051">llvm::DebugVariable::getFragment</references>
+        <references refid="class_live_debug_values_1_1_dbg_value_properties_1ae1a6cd7bbbd214de5c1990def99b1c57" compoundref="_instr_ref_based_impl_8h" startline="342" endline="344">LiveDebugValues::DbgValueProperties::getLocationOpCount</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a00b889b10d5eaeb7be44d959e67263c6" compoundref="_instr_ref_based_impl_8h" startline="983" endline="993">getLocSizeInBits</references>
+        <references refid="classllvm_1_1_d_i_variable_1a6b5977deeb9f99e156685e190de78403" compoundref="_debug_info_metadata_8cpp" startline="1331" endline="1352">llvm::DIVariable::getSizeInBits</references>
+        <references refid="classllvm_1_1_debug_variable_1af2ca096ab72c055f6c2c7e3ffbe5d6bf" compoundref="_debug_info_metadata_8h" startline="4050" endline="4050">llvm::DebugVariable::getVariable</references>
+        <references refid="class_live_debug_values_1_1_spill_location_no_1a2e309fd3b79f17ba6213f7eb9d637329" compoundref="_instr_ref_based_impl_8h" startline="297" endline="297">LiveDebugValues::SpillLocationNo::id</references>
+        <references refid="class_live_debug_values_1_1_dbg_value_properties_1a7f88fbb422e5e0d5c0e227b3df0bd8a8" compoundref="_instr_ref_based_impl_8h" startline="347">LiveDebugValues::DbgValueProperties::Indirect</references>
+        <references refid="classllvm_1_1_d_i_expression_1a7926734793677673e68d8cff410552ec" compoundref="_debug_info_metadata_8cpp" startline="1540" endline="1561">llvm::DIExpression::isComplex</references>
+        <references refid="classllvm_1_1_d_i_expression_1a40cd3c3332ecc579f7a92924714d6d5c" compoundref="_debug_info_metadata_8cpp" startline="1521" endline="1538">llvm::DIExpression::isImplicit</references>
+        <references refid="classllvm_1_1_d_i_expression_1ac9a4fe1aa8e698aa8cd6a24751a80d91" compoundref="_debug_info_metadata_8cpp" startline="1563" endline="1581">llvm::DIExpression::isSingleLocationExpression</references>
+        <references refid="class_live_debug_values_1_1_dbg_value_properties_1aebaf15eb5116df110c1de27c5c8901a2" compoundref="_instr_ref_based_impl_8h" startline="348">LiveDebugValues::DbgValueProperties::IsVariadic</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a63cf4d79a939e187701ac667cb07f5d7" compoundref="_instr_ref_based_impl_8h" startline="831" endline="837">locIDToSpill</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1af39200a4599a5fc61a89ca83ce64598a" compoundref="_instr_ref_based_impl_8h" startline="840" endline="845">locIDToSpillIdx</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a12a921bb359eb2ab39e43e4c4ba780f3" compoundref="_instr_ref_based_impl_8h" startline="717">LocIdxToLocID</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ae1a29742ce2fd47f4b4769dfe5a44f9e" compoundref="_instr_ref_based_impl_8h" startline="694">MF</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" compoundref="_instr_ref_based_impl_8h" startline="733">NumRegs</references>
+        <references refid="namespacellvm_1a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4" compoundref="_d_w_p_8cpp" startline="480">llvm::Offset</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" compoundref="_small_vector_8h" startline="78" endline="78">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1ab8795e147779aed8a5d0af6783babaa0" compoundref="_instr_ref_based_impl_8h" startline="726">SpillLocs</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a7bcfe28f8a994ea7a5fff050f1c09fd2" compoundref="_instr_ref_based_impl_8h" startline="695">TII</references>
+        <references refid="class_live_debug_values_1_1_m_loc_tracker_1a3870dfac7df420149911b3e81c6c155a" compoundref="_instr_ref_based_impl_8h" startline="696">TRI</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Tracker for what values are in machine locations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Listens to the Things being Done by various instructions, and maintains a table of what machine locations have what values (as defined by a <ref refid="class_live_debug_values_1_1_value_i_d_num" kindref="compound">ValueIDNum</ref>).</para>
+<para>There are potentially a much larger number of machine locations on the target machine than the actual working-set size of the function. On x86 for example, we&apos;re extremely unlikely to want to track values through control or debug registers. To avoid doing so, <ref refid="class_live_debug_values_1_1_m_loc_tracker" kindref="compound">MLocTracker</ref> has several layers of indirection going on, described below, to avoid unnecessarily tracking any location.</para>
+<para>Here&apos;s a sort of diagram of the indexes, read from the bottom up: <verbatim>      Size on stack   Offset on stack
+            \              /
+     Stack Idx (Where in slot is this?)
+                    /
+                   /
+</verbatim> Slot Num (stack.0) / FrameIdx =&gt; SpillNum / \ / SpillID (int) <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> number (int) \ / LocationID =&gt; <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> | <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> =&gt; <ref refid="class_live_debug_values_1_1_value_i_d_num" kindref="compound">ValueIDNum</ref></para>
+<para>The aim here is that the <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> =&gt; <ref refid="class_live_debug_values_1_1_value_i_d_num" kindref="compound">ValueIDNum</ref> vector is just an array of values in numbered locations, so that later analyses can ignore whether the location is a register or otherwise. To map a register / spill location to a <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref>, you have to use the (sparse) LocationID =&gt; <ref refid="class_live_debug_values_1_1_loc_idx" kindref="compound">LocIdx</ref> map. And to build a LocationID for a stack slot, you need to combine identifiers for which stack slot it is and where within that slot is being described.</para>
+<para><ref refid="classllvm_1_1_register" kindref="compound">Register</ref> mask operands cause trouble by technically defining every register; various hacks are used to avoid tracking registers that are never read and only written by regmasks. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>LiveDebugValues::MLocTracker</label>
+        <link refid="class_live_debug_values_1_1_m_loc_tracker"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>MF</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>TII</edgelabel>
+        </childnode>
+        <childnode refid="36" relation="usage">
+          <edgelabel>TRI</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>TLI</edgelabel>
+        </childnode>
+        <childnode refid="40" relation="usage">
+          <edgelabel>LocIdxToIDNum</edgelabel>
+        </childnode>
+        <childnode refid="42" relation="usage">
+          <edgelabel>LocIDToLocIdx</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>LocIdxToLocID</edgelabel>
+        </childnode>
+        <childnode refid="44" relation="usage">
+          <edgelabel>SPAliases</edgelabel>
+        </childnode>
+        <childnode refid="46" relation="usage">
+          <edgelabel>SpillLocs</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>CurBB</edgelabel>
+          <edgelabel>NumRegs</edgelabel>
+          <edgelabel>NumSlotIdxes</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>Masks</edgelabel>
+        </childnode>
+        <childnode refid="55" relation="usage">
+          <edgelabel>StackSlotIdxes</edgelabel>
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>StackIdxesToPos</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Size_T</label>
+      </node>
+      <node id="23">
+        <label>SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_machine_function_1_1_debug_substitution_01_4"/>
+      </node>
+      <node id="53">
+        <label>SmallVectorSizeType&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt; &gt;</label>
+        <link refid="class_small_vector_size_type_3_01std_1_1pair_3_01const_01llvm_1_1_machine_operand_01_5_00_01unsigned_01_4_01_4"/>
+      </node>
+      <node id="11">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="13">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="31">
+        <label>llvm::DebugEpochBase</label>
+        <link refid="classllvm_1_1_debug_epoch_base"/>
+      </node>
+      <node id="32">
+        <label>llvm::DenseMap&lt; KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>llvm::DenseMap&lt; StackSlotPos, unsigned &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="56" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="template-instance">
+          <edgelabel>&lt; StackSlotPos, unsigned &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="57">
+        <label>llvm::DenseMap&lt; unsigned, StackSlotPos &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="58" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="template-instance">
+          <edgelabel>&lt; unsigned, StackSlotPos &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm::DenseMap&lt; unsigned, llvm::MachineFunction::DebugPHIRegallocPos &gt;</label>
+        <link refid="classllvm_1_1_dense_map"/>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="template-instance">
+          <edgelabel>&lt; unsigned, llvm::MachineFunction::DebugPHIRegallocPos &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;</label>
+        <link refid="classllvm_1_1_dense_map_base"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm::IndexedMap&lt; T, ToIndexT &gt;</label>
+        <link refid="classllvm_1_1_indexed_map"/>
+      </node>
+      <node id="40">
+        <label>llvm::IndexedMap&lt; ValueIDNum, LocIdxToIndexFunctor &gt;</label>
+        <link refid="classllvm_1_1_indexed_map"/>
+        <childnode refid="41" relation="template-instance">
+          <edgelabel>&lt; ValueIDNum, LocIdxToIndexFunctor &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm::IndexedMap&lt; unsigned, LiveDebugValues::LocIdxToIndexFunctor &gt;</label>
+        <link refid="classllvm_1_1_indexed_map"/>
+        <childnode refid="41" relation="template-instance">
+          <edgelabel>&lt; unsigned, LiveDebugValues::LocIdxToIndexFunctor &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm::MCInstrInfo</label>
+        <link refid="classllvm_1_1_m_c_instr_info"/>
+      </node>
+      <node id="37">
+        <label>llvm::MCRegisterInfo</label>
+        <link refid="classllvm_1_1_m_c_register_info"/>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunction</label>
+        <link refid="classllvm_1_1_machine_function"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>VariableDbgInfos</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>DebugInstrNumberingCount</edgelabel>
+          <edgelabel>DebugOperandMemNumber</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>DebugValueSubstitutions</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>DebugPHIPositions</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>UseDebugInstrRef</edgelabel>
+        </childnode>
+      </node>
+      <node id="45">
+        <label>llvm::SmallSet&lt; T, N, C &gt;</label>
+        <link refid="classllvm_1_1_small_set"/>
+      </node>
+      <node id="44">
+        <label>llvm::SmallSet&lt; llvm::Register, 8 &gt;</label>
+        <link refid="classllvm_1_1_small_set"/>
+        <childnode refid="45" relation="template-instance">
+          <edgelabel>&lt; llvm::Register, 8 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::SmallVector&lt; VariableDbgInfo, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="private-inheritance">
+        </childnode>
+        <childnode refid="14" relation="template-instance">
+          <edgelabel>&lt; VariableDbgInfo, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::SmallVector&lt; llvm::MachineFunction::DebugSubstitution, 8 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+        <childnode refid="27" relation="private-inheritance">
+        </childnode>
+        <childnode refid="14" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution, 8 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="48">
+        <label>llvm::SmallVector&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt;, 32 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+        <childnode refid="54" relation="private-inheritance">
+        </childnode>
+        <childnode refid="14" relation="template-instance">
+          <edgelabel>&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt;, 32 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="8" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::MachineFunction::DebugSubstitution &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="52">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt; &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="53" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::SmallVectorImpl&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+        <childnode refid="26" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="49">
+        <label>llvm::SmallVectorImpl&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+        <childnode refid="26" relation="template-instance">
+          <edgelabel>&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>llvm::SmallVectorStorage&lt; llvm::MachineFunction::DebugSubstitution, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="54">
+        <label>llvm::SmallVectorStorage&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt;, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="template-instance">
+          <edgelabel>&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt;, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="50">
+        <label>llvm::SmallVectorTemplateBase&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="template-instance">
+          <edgelabel>&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::MachineFunction::DebugSubstitution &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24" relation="template-instance">
+          <edgelabel>&lt; llvm::MachineFunction::DebugSubstitution &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="51">
+        <label>llvm::SmallVectorTemplateCommon&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24" relation="template-instance">
+          <edgelabel>&lt; std::pair&lt; const llvm::MachineOperand *, unsigned &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm::TargetInstrInfo</label>
+        <link refid="classllvm_1_1_target_instr_info"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>CommuteAnyOperandIndex</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm::TargetLowering</label>
+        <link refid="classllvm_1_1_target_lowering"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>llvm::TargetLoweringBase</label>
+        <link refid="classllvm_1_1_target_lowering_base"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>GatherAllAliasesMaxDepth</edgelabel>
+          <edgelabel>MaxGluedStoresPerMemcpy</edgelabel>
+          <edgelabel>MaxLoadsPerMemcmp</edgelabel>
+          <edgelabel>MaxLoadsPerMemcmpOptSize</edgelabel>
+          <edgelabel>MaxStoresPerMemcpy</edgelabel>
+          <edgelabel>MaxStoresPerMemcpyOptSize</edgelabel>
+          <edgelabel>MaxStoresPerMemmove</edgelabel>
+          <edgelabel>MaxStoresPerMemmoveOptSize</edgelabel>
+          <edgelabel>MaxStoresPerMemset</edgelabel>
+          <edgelabel>MaxStoresPerMemsetOptSize</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>EnableExtLdPromotion</edgelabel>
+          <edgelabel>IsStrictFPEnabled</edgelabel>
+          <edgelabel>PredictableSelectIsExpensive</edgelabel>
+        </childnode>
+      </node>
+      <node id="36">
+        <label>llvm::TargetRegisterInfo</label>
+        <link refid="classllvm_1_1_target_register_info"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm::UniqueVector&lt; T &gt;</label>
+        <link refid="classllvm_1_1_unique_vector"/>
+      </node>
+      <node id="46">
+        <label>llvm::UniqueVector&lt; LiveDebugValues::SpillLoc &gt;</label>
+        <link refid="classllvm_1_1_unique_vector"/>
+        <childnode refid="47" relation="template-instance">
+          <edgelabel>&lt; LiveDebugValues::SpillLoc &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="42">
+        <label>vector&lt; LiveDebugValues::LocIdx &gt;</label>
+      </node>
+      <node id="17">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+      <node id="9">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" line="692" column="1" bodyfile="lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.h" bodystart="692" bodyend="1022"/>
+    <listofallmembers>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a3ac227f75996b7c2ab468a3faa25711c" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>begin</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1aaef75d1e01cf50cbf889096d2a6f3f89" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>clear</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a2017e35cd152cf2e3885ea8ed8e3d8f5" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>CurBB</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1ad4b28d7abd903bca80aebdd56d893e8b" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>defReg</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1ad60ba0b6dcb54a7fe37863ceb0165626" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>dump</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1af0c9cdac0acbe1745277e6e9544aa575" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>dump_mloc_map</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a88fd52c520cef6a03af97c37c308ae78" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>emitLoc</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a303e01bf517a6275123cfb03d0703f08" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>end</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a2a28f143303b39650c069b1ce0925287" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>getLocID</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a1e7aca955e2c1f76d2f20f4475fe716d" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>getLocID</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a223c8809c8643ad30bae41da7699b608" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>getLocID</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a00b889b10d5eaeb7be44d959e67263c6" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>getLocSizeInBits</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a48b9880cdbbdc53b8e5446db5dede09b" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>getNumLocs</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a0ec8c44bc2b0efa41c2a6583f9d75f21" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>getOrTrackSpillLoc</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a88df5839a1471739fba42290c3a8279a" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>getRegMLoc</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a1c44cbd0dca6d3e9736ce4f240af2e25" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>getSpillIDWithIdx</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1afd78a5b47f366715a6871891a6ad5fb0" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>getSpillMLoc</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a70d5f445ba9f76ce9d0a11bc11e8e1a9" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>IDAsString</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a0975fbd8e22dcc611900504cbe982610" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>isRegisterTracked</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a87fc8660fb193f626f9e9a6f0244108e" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>isSpill</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a0f6a2afd0fe02e3fcfcc5d75d186c21b" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>loadFromArray</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a217987fff459e088b64f179204e120f1" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>locations</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a9b700e192036873e9756f231c9213a34" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>LocIDToLocIdx</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a63cf4d79a939e187701ac667cb07f5d7" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>locIDToSpill</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1af39200a4599a5fc61a89ca83ce64598a" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>locIDToSpillIdx</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a91fd5d450920e56cbde71ab8708fbab9" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>LocIdxToIDNum</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a12a921bb359eb2ab39e43e4c4ba780f3" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>LocIdxToLocID</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1afe9d19d27dd82ae73f86937cb41c3d8b" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>LocIdxToName</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1ab0b01eec8f769336a32dacc18974c2c9" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>LocToValueType</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a5c7000ce75181a4ad413b79566e11eea" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>lookupOrTrackRegister</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1ab115d98ec0127b8b019aae3e5e296efc" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>Masks</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1ae1a29742ce2fd47f4b4769dfe5a44f9e" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>MF</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1ae118b50388837cac4d807896b91f111e" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>MLocTracker</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a3d106e52bda90530904b18edf24f2286" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>NumRegs</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1ab2d1c5bd4bf56e5b4124fa4088f5c5d9" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>NumSlotIdxes</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1ab8ae8456399284b13679782065ee5dfc" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>readMLoc</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1acb5a8547e6be549b193c89c9202889df" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>readReg</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a66a31574ce11e5d8dc78ed9a845305c2" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>reset</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a8ed8c7355168afd27f9f47f505026c54" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>setMLoc</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1abc84cf80598821cf657ee831fce024bc" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>setMPhis</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a5f3e7fca669ee92300565d5e78098311" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>setReg</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a2773f3976918a270bac316739f66ffd5" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>SPAliases</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1ab8795e147779aed8a5d0af6783babaa0" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>SpillLocs</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a6fa795efcfec488fc9683b69b1f9a4d3" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>StackIdxesToPos</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a5afcbfb84f0bb09c726e9a777d9f01e7" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>StackSlotIdxes</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a758eab2c8cea4d5486874624dba188b4" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>StackSlotPos</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a7bcfe28f8a994ea7a5fff050f1c09fd2" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>TII</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a2ceb7dab8f0063eec8dff6df6d2a3eda" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>TLI</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1ae0c12fcc919645ec5ae40a9763d756ba" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>trackRegister</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a3870dfac7df420149911b3e81c6c155a" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>TRI</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a8c013a9da07953941f1e4e464d75db00" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>wipeRegister</name></member>
+      <member refid="class_live_debug_values_1_1_m_loc_tracker_1a73d25ebef02d1312bd901c694d7321ee" prot="public" virt="non-virtual"><scope>LiveDebugValues::MLocTracker</scope><name>writeRegMask</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

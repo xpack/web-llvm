@@ -1,0 +1,477 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1codeview_1_1_merging_type_table_builder" kind="class" language="C++" prot="public">
+    <compoundname>llvm::codeview::MergingTypeTableBuilder</compoundname>
+    <basecompoundref refid="classllvm_1_1codeview_1_1_type_collection" prot="public" virt="non-virtual">llvm::codeview::TypeCollection</basecompoundref>
+    <includes refid="_merging_type_table_builder_8h" local="yes">llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1abcd14a3b8454fe0bda65eb1e274a3988" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1a8e612822d4ba7bb36c9c79582a567108" kindref="member">BumpPtrAllocator</ref> &amp;</type>
+        <definition>BumpPtrAllocator&amp; llvm::codeview::MergingTypeTableBuilder::RecordStorage</definition>
+        <argsstring></argsstring>
+        <name>RecordStorage</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::RecordStorage</qualifiedname>
+        <briefdescription>
+<para>Storage for records. These need to outlive the TypeTableBuilder. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="30" column="20" bodyfile="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1ab39d9a6f8f534a51fd5cf6beaa261d0d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1codeview_1_1_simple_type_serializer" kindref="compound">SimpleTypeSerializer</ref></type>
+        <definition>SimpleTypeSerializer llvm::codeview::MergingTypeTableBuilder::SimpleSerializer</definition>
+        <argsstring></argsstring>
+        <name>SimpleSerializer</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::SimpleSerializer</qualifiedname>
+        <briefdescription>
+<para>A serializer that can write non-continuation leaf types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Only used as a convenience function so that we can provide an interface method to write an unserialized record. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="35" column="24" bodyfile="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a3958d9c3705f522323d1074cb614db7f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="structllvm_1_1codeview_1_1_locally_hashed_type" kindref="compound">LocallyHashedType</ref>, <ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref> &gt;</type>
+        <definition>DenseMap&lt;LocallyHashedType, TypeIndex&gt; llvm::codeview::MergingTypeTableBuilder::HashedRecords</definition>
+        <argsstring></argsstring>
+        <name>HashedRecords</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::HashedRecords</qualifiedname>
+        <briefdescription>
+<para>Hash table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="38" column="12" bodyfile="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1acbd3cf6ffb1560b4ed1e2083db1bb9ab" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt;, 2 &gt;</type>
+        <definition>SmallVector&lt;ArrayRef&lt;uint8_t&gt;, 2&gt; llvm::codeview::MergingTypeTableBuilder::SeenRecords</definition>
+        <argsstring></argsstring>
+        <name>SeenRecords</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::SeenRecords</qualifiedname>
+        <briefdescription>
+<para>Contains a list of all records indexed by <ref refid="classllvm_1_1codeview_1_1_type_index_1a6eccd1cad00a0755981c9110bccfdfb9" kindref="member">TypeIndex.toArrayIndex()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="41" column="15" bodyfile="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a49538d797e3bcbdce980d7abbdbdf87d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MergingTypeTableBuilder::MergingTypeTableBuilder</definition>
+        <argsstring>(BumpPtrAllocator &amp;Storage)</argsstring>
+        <name>MergingTypeTableBuilder</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::MergingTypeTableBuilder</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1a8e612822d4ba7bb36c9c79582a567108" kindref="member">BumpPtrAllocator</ref> &amp;</type>
+          <declname>Storage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="44" column="12" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1aaa0e502b69c6266ccf7014f9ae50f229" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MergingTypeTableBuilder::~MergingTypeTableBuilder</definition>
+        <argsstring>()</argsstring>
+        <name>~MergingTypeTableBuilder</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::~MergingTypeTableBuilder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="45" column="3"/>
+        <references refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" compoundref="_instr_prof_8h" startline="189">llvm::Data</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a3a9a32e32e2349f0a1156520e38549be" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::optional&lt; <ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref> &gt;</type>
+        <definition>std::optional&lt; TypeIndex &gt; MergingTypeTableBuilder::getFirst</definition>
+        <argsstring>() override</argsstring>
+        <name>getFirst</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::getFirst</qualifiedname>
+        <reimplements refid="classllvm_1_1codeview_1_1_type_collection_1ab7e7958dd04137d7bb32ad4ea99bf1b6">getFirst</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="48" column="17" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="34" bodyend="39"/>
+        <references refid="classllvm_1_1codeview_1_1_type_collection_1a2bcb19947300f2d1a271e6f182f65c88" compoundref="_type_collection_8h" startline="22" endline="22">llvm::codeview::TypeCollection::empty</references>
+        <references refid="classllvm_1_1codeview_1_1_type_index_1a79c2f8f476f8287d14a1c154d9eae2e7" compoundref="_type_index_8h" startline="98">llvm::codeview::TypeIndex::FirstNonSimpleIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a742d772cccd53878533f087c373dbfd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::optional&lt; <ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref> &gt;</type>
+        <definition>std::optional&lt; TypeIndex &gt; MergingTypeTableBuilder::getNext</definition>
+        <argsstring>(TypeIndex Prev) override</argsstring>
+        <name>getNext</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::getNext</qualifiedname>
+        <reimplements refid="classllvm_1_1codeview_1_1_type_collection_1a126fab1f5d4dea0027bf04ba6e98761c">getNext</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref></type>
+          <declname>Prev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="49" column="17" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="41" bodyend="45"/>
+        <references refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a5cec69c7f75798c246ea68c8b1509084" compoundref="_merging_type_table_builder_8cpp" startline="23" endline="25">nextTypeIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a2bd4ce706a2888e634ba4f1a78085f83" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespacellvm_1_1codeview_1a238eda31f74c0f0f3224f71b50b7d165" kindref="member">CVType</ref></type>
+        <definition>CVType MergingTypeTableBuilder::getType</definition>
+        <argsstring>(TypeIndex Index) override</argsstring>
+        <name>getType</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::getType</qualifiedname>
+        <reimplements refid="classllvm_1_1codeview_1_1_type_collection_1a65f5a1ad9e3510575bbbe0fe104e742d">getType</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref></type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="50" column="10" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="47" bodyend="50"/>
+        <references refid="_itanium_demangle_8h_1a88ee8e4eea43084bd8964682683da88caa1fa27779242b4902f7ae3bdd5c6d508" compoundref="_itanium_demangle_8h" startline="1227">Type</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a7ac0fa563307f7e4e745d2979ead1a6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef MergingTypeTableBuilder::getTypeName</definition>
+        <argsstring>(TypeIndex Index) override</argsstring>
+        <name>getTypeName</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::getTypeName</qualifiedname>
+        <reimplements refid="classllvm_1_1codeview_1_1_type_collection_1af99520c2bfa91b0baa1bd876a81c6abf">getTypeName</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref></type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="51" column="13" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="52" bodyend="54"/>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a5e2e5a3e633552b8a3938b0d1d8790e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MergingTypeTableBuilder::contains</definition>
+        <argsstring>(TypeIndex Index) override</argsstring>
+        <name>contains</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::contains</qualifiedname>
+        <reimplements refid="classllvm_1_1codeview_1_1_type_collection_1aa2d8da3e4dc6210ae4bbc2e214f899fc">contains</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref></type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="52" column="8" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a9b32b263b93268e79bf09319ccb100be" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t MergingTypeTableBuilder::size</definition>
+        <argsstring>() override</argsstring>
+        <name>size</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::size</qualifiedname>
+        <reimplements refid="classllvm_1_1codeview_1_1_type_collection_1af26748bb50cc267bda9ab7f9c609bed1">size</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="53" column="12" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1aba77273523fea80c7d66b64e599f7a2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t MergingTypeTableBuilder::capacity</definition>
+        <argsstring>() override</argsstring>
+        <name>capacity</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::capacity</qualifiedname>
+        <reimplements refid="classllvm_1_1codeview_1_1_type_collection_1aa3b6b6aabb2df5f0395f359d3a8fd294">capacity</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="54" column="12" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1aa948dfdffdb254c7b98e5457cb8e7798" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MergingTypeTableBuilder::replaceType</definition>
+        <argsstring>(TypeIndex &amp;Index, CVType Data, bool Stabilize) override</argsstring>
+        <name>replaceType</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::replaceType</qualifiedname>
+        <reimplements refid="classllvm_1_1codeview_1_1_type_collection_1a272c8ebc2341d970847d9127497e3104">replaceType</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref> &amp;</type>
+          <declname>Index</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1codeview_1a238eda31f74c0f0f3224f71b50b7d165" kindref="member">CVType</ref></type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Stabilize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="55" column="8" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="120" bodyend="145"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" compoundref="_instr_prof_8h" startline="189">llvm::Data</references>
+        <references refid="namespacellvm_1a0e2e479cf4860dc8a00614e36ee3d5e9" compoundref="_a_p_fixed_point_8h" startline="136" endline="138">llvm::hash_value</references>
+        <references refid="_appending_type_table_builder_8cpp_1aa69f6dc0f79ddc38844c8585a439c2b1" compoundref="_appending_type_table_builder_8cpp" startline="69" endline="74">stabilize</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a9674e0762ef9c405f31662e262ba54dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MergingTypeTableBuilder::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="58" column="8" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a5cec69c7f75798c246ea68c8b1509084" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref></type>
+        <definition>TypeIndex MergingTypeTableBuilder::nextTypeIndex</definition>
+        <argsstring>() const</argsstring>
+        <name>nextTypeIndex</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::nextTypeIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="59" column="13" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="23" bodyend="25"/>
+        <references refid="classllvm_1_1codeview_1_1_type_index_1a07d13e00998a0b341376f2fbd3a0ed54" compoundref="_type_index_8h" startline="123" endline="125">llvm::codeview::TypeIndex::fromArrayIndex</references>
+        <referencedby refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a742d772cccd53878533f087c373dbfd6" compoundref="_merging_type_table_builder_8cpp" startline="41" endline="45">getNext</referencedby>
+        <referencedby refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1aad94b5131f12cd45dc37c68101eea159" compoundref="_merging_type_table_builder_8cpp" startline="111" endline="118">insertRecord</referencedby>
+        <referencedby refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a9bf65e7f391ff7849881f3b4ffcef70a" compoundref="_merging_type_table_builder_8cpp" startline="83" endline="103">insertRecordAs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a86fe2fbc933dc866bdef65851d79d8d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1a8e612822d4ba7bb36c9c79582a567108" kindref="member">BumpPtrAllocator</ref> &amp;</type>
+        <definition>BumpPtrAllocator &amp; llvm::codeview::MergingTypeTableBuilder::getAllocator</definition>
+        <argsstring>()</argsstring>
+        <name>getAllocator</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::getAllocator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="61" column="20" bodyfile="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a34ef30984d4af089de24753ff84d4b40" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt; &gt;</type>
+        <definition>ArrayRef&lt; ArrayRef&lt; uint8_t &gt; &gt; MergingTypeTableBuilder::records</definition>
+        <argsstring>() const</argsstring>
+        <name>records</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::records</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="63" column="12" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a9bf65e7f391ff7849881f3b4ffcef70a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref></type>
+        <definition>TypeIndex MergingTypeTableBuilder::insertRecordAs</definition>
+        <argsstring>(hash_code Hash, ArrayRef&lt; uint8_t &gt; &amp;Record)</argsstring>
+        <name>insertRecordAs</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::insertRecordAs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1hash__code" kindref="compound">hash_code</ref></type>
+          <declname>Hash</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt; &amp;</type>
+          <declname>Record</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="65" column="13" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="83" bodyend="103"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a5cec69c7f75798c246ea68c8b1509084" compoundref="_merging_type_table_builder_8cpp" startline="23" endline="25">nextTypeIndex</references>
+        <references refid="_appending_type_table_builder_8cpp_1aa69f6dc0f79ddc38844c8585a439c2b1" compoundref="_appending_type_table_builder_8cpp" startline="69" endline="74">stabilize</references>
+        <references refid="classllvm_1_1codeview_1_1_type_index_1a6eccd1cad00a0755981c9110bccfdfb9" compoundref="_type_index_8h" startline="118" endline="121">llvm::codeview::TypeIndex::toArrayIndex</references>
+        <referencedby refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1ad300eb782e81f6077c8259c7e1076626" compoundref="_merging_type_table_builder_8cpp" startline="106" endline="108">insertRecordBytes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1ad300eb782e81f6077c8259c7e1076626" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref></type>
+        <definition>TypeIndex MergingTypeTableBuilder::insertRecordBytes</definition>
+        <argsstring>(ArrayRef&lt; uint8_t &gt; &amp;Record)</argsstring>
+        <name>insertRecordBytes</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::insertRecordBytes</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classuint8__t" kindref="compound">uint8_t</ref> &gt; &amp;</type>
+          <declname>Record</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="66" column="13" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="106" bodyend="108"/>
+        <references refid="namespacellvm_1a0e2e479cf4860dc8a00614e36ee3d5e9" compoundref="_a_p_fixed_point_8h" startline="136" endline="138">llvm::hash_value</references>
+        <references refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a9bf65e7f391ff7849881f3b4ffcef70a" compoundref="_merging_type_table_builder_8cpp" startline="83" endline="103">insertRecordAs</references>
+        <referencedby refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1aad94b5131f12cd45dc37c68101eea159" compoundref="_merging_type_table_builder_8cpp" startline="111" endline="118">insertRecord</referencedby>
+        <referencedby refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a68a4f32d29aeef34202fa9cae1f84404" compoundref="_merging_type_table_builder_8h" startline="69" endline="72">writeLeafType</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1aad94b5131f12cd45dc37c68101eea159" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref></type>
+        <definition>TypeIndex MergingTypeTableBuilder::insertRecord</definition>
+        <argsstring>(ContinuationRecordBuilder &amp;Builder)</argsstring>
+        <name>insertRecord</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::insertRecord</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1codeview_1_1_continuation_record_builder" kindref="compound">ContinuationRecordBuilder</ref> &amp;</type>
+          <declname>Builder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="67" column="13" bodyfile="lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp" bodystart="111" bodyend="118"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1codeview_1af3d64ff2173fb2f45fdc714699cad09fab821443b8a8aa7b5999343c8c3148868" compoundref="_code_view_8h" startline="147">llvm::codeview::C</references>
+        <references refid="classllvm_1_1codeview_1_1_continuation_record_builder_1a315b005fd28fb91606126f127019a376" compoundref="_continuation_record_builder_8cpp" startline="173" endline="241">llvm::codeview::ContinuationRecordBuilder::end</references>
+        <references refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1ad300eb782e81f6077c8259c7e1076626" compoundref="_merging_type_table_builder_8cpp" startline="106" endline="108">insertRecordBytes</references>
+        <references refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a5cec69c7f75798c246ea68c8b1509084" compoundref="_merging_type_table_builder_8cpp" startline="23" endline="25">nextTypeIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1codeview_1_1_merging_type_table_builder_1a68a4f32d29aeef34202fa9cae1f84404" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classllvm_1_1codeview_1_1_type_index" kindref="compound">TypeIndex</ref></type>
+        <definition>TypeIndex llvm::codeview::MergingTypeTableBuilder::writeLeafType</definition>
+        <argsstring>(T &amp;Record)</argsstring>
+        <name>writeLeafType</name>
+        <qualifiedname>llvm::codeview::MergingTypeTableBuilder::writeLeafType</qualifiedname>
+        <param>
+          <type><ref refid="class_t" kindref="compound">T</ref> &amp;</type>
+          <declname>Record</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="69" column="25" bodyfile="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" bodystart="69" bodyend="72"/>
+        <references refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" compoundref="_instr_prof_8h" startline="189">llvm::Data</references>
+        <references refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1ad300eb782e81f6077c8259c7e1076626" compoundref="_merging_type_table_builder_8cpp" startline="106" endline="108">insertRecordBytes</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::codeview::MergingTypeTableBuilder</label>
+        <link refid="classllvm_1_1codeview_1_1_merging_type_table_builder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::codeview::TypeCollection</label>
+        <link refid="classllvm_1_1codeview_1_1_type_collection"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::codeview::MergingTypeTableBuilder</label>
+        <link refid="classllvm_1_1codeview_1_1_merging_type_table_builder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::codeview::TypeCollection</label>
+        <link refid="classllvm_1_1codeview_1_1_type_collection"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" line="28" column="1" bodyfile="include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h" bodystart="28" bodyend="73"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1aba77273523fea80c7d66b64e599f7a2c" prot="public" virt="virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>capacity</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a5e2e5a3e633552b8a3938b0d1d8790e1" prot="public" virt="virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>contains</name></member>
+      <member refid="classllvm_1_1codeview_1_1_type_collection_1a2bcb19947300f2d1a271e6f182f65c88" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>empty</name></member>
+      <member refid="classllvm_1_1codeview_1_1_type_collection_1a93c8fc98bf04894bafc99e7869fa35e8" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>ForEachRecord</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a86fe2fbc933dc866bdef65851d79d8d8" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>getAllocator</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a3a9a32e32e2349f0a1156520e38549be" prot="public" virt="virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>getFirst</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a742d772cccd53878533f087c373dbfd6" prot="public" virt="virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>getNext</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a2bd4ce706a2888e634ba4f1a78085f83" prot="public" virt="virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>getType</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a7ac0fa563307f7e4e745d2979ead1a6a" prot="public" virt="virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>getTypeName</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a3958d9c3705f522323d1074cb614db7f" prot="private" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>HashedRecords</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1aad94b5131f12cd45dc37c68101eea159" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>insertRecord</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a9bf65e7f391ff7849881f3b4ffcef70a" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>insertRecordAs</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1ad300eb782e81f6077c8259c7e1076626" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>insertRecordBytes</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a49538d797e3bcbdce980d7abbdbdf87d" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>MergingTypeTableBuilder</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a5cec69c7f75798c246ea68c8b1509084" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>nextTypeIndex</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a34ef30984d4af089de24753ff84d4b40" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>records</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1abcd14a3b8454fe0bda65eb1e274a3988" prot="private" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>RecordStorage</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1aa948dfdffdb254c7b98e5457cb8e7798" prot="public" virt="virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>replaceType</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a9674e0762ef9c405f31662e262ba54dc" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>reset</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1acbd3cf6ffb1560b4ed1e2083db1bb9ab" prot="private" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>SeenRecords</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1ab39d9a6f8f534a51fd5cf6beaa261d0d" prot="private" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>SimpleSerializer</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a9b32b263b93268e79bf09319ccb100be" prot="public" virt="virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>size</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1a68a4f32d29aeef34202fa9cae1f84404" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>writeLeafType</name></member>
+      <member refid="classllvm_1_1codeview_1_1_merging_type_table_builder_1aaa0e502b69c6266ccf7014f9ae50f229" prot="public" virt="non-virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>~MergingTypeTableBuilder</name></member>
+      <member refid="classllvm_1_1codeview_1_1_type_collection_1af223e7041de38e809c37319511b594ca" prot="public" virt="virtual"><scope>llvm::codeview::MergingTypeTableBuilder</scope><name>~TypeCollection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

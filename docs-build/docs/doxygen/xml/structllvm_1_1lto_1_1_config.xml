@@ -1,0 +1,1421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1lto_1_1_config" kind="struct" language="C++" prot="public">
+    <compoundname>llvm::lto::Config</compoundname>
+    <includes refid="_config_8h" local="yes">llvm/LTO/Config.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structllvm_1_1lto_1_1_config_1a6df1c201fe73a270f67a7c153c42c0be" prot="public" static="no" strong="no">
+        <type></type>
+        <name>VisScheme</name>
+        <qualifiedname>llvm::lto::Config::VisScheme</qualifiedname>
+        <enumvalue id="structllvm_1_1lto_1_1_config_1a6df1c201fe73a270f67a7c153c42c0beab75f3c598a19a49547d5fa7456d64e1a" prot="public">
+          <name>FromPrevailing</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1lto_1_1_config_1a6df1c201fe73a270f67a7c153c42c0bea89d9995963600df8c6854372881cbbb7" prot="public">
+          <name>ELF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="42" column="3" bodyfile="include/llvm/LTO/Config.h" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structllvm_1_1lto_1_1_config_1a2ac2a2331097ef0392e387a01a0844ec" prot="public" static="no">
+        <type>std::function&lt; <ref refid="classbool" kindref="compound">bool</ref>(<ref refid="classunsigned" kindref="compound">unsigned</ref> Task, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;)&gt;</type>
+        <definition>using llvm::lto::Config::ModuleHookFn =  std::function&lt;bool(unsigned Task, const Module &amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ModuleHookFn</name>
+        <qualifiedname>llvm::lto::Config::ModuleHookFn</qualifiedname>
+        <briefdescription>
+<para>The following callbacks deal with tasks, which normally represent the entire optimization and code generation pipeline for what will become a single native object file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each task has a unique identifier between 0 and getMaxTasks()-1, which is supplied to the callback via the Task parameter. A task represents the entire pipeline for ThinLTO and regular (non-parallel) <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref>, but a parallel code generation task will be split into N tasks before code generation, where N is the parallelism level.</para>
+<para><ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref> may decide to stop processing a task at any time, for example if the module is empty or if a module hook (see below) returns false. For this reason, the client should not expect to receive exactly getMaxTasks() native object files. A module hook may be used by a linker to perform actions during the <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref> pipeline. For example, a linker may use this function to implement -save-temps. If this function returns false, any further processing for that task is aborted.</para>
+<para><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> hooks must be thread safe with respect to the linker&apos;s internal data structures. A module hook will never be called concurrently from multiple threads with the same task <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>, or the same module.</para>
+<para>Note that in out-of-process backend scenarios, none of the hooks will be called for ThinLTO tasks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="224" column="3" bodyfile="include/llvm/LTO/Config.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structllvm_1_1lto_1_1_config_1adfaa4b815344424627948d3bff41ad5b" prot="public" static="no">
+        <type>std::function&lt; <ref refid="classbool" kindref="compound">bool</ref>( <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_module_summary_index" kindref="compound">ModuleSummaryIndex</ref> &amp;Index, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="classllvm_1_1_global_value_1a3af0428ec6e48cb2f05c199b7b9f7e07" kindref="member">GlobalValue::GUID</ref> &gt; &amp;GUIDPreservedSymbols)&gt;</type>
+        <definition>using llvm::lto::Config::CombinedIndexHookFn =  std::function&lt;bool(
+      const ModuleSummaryIndex &amp;Index,
+      const DenseSet&lt;GlobalValue::GUID&gt; &amp;GUIDPreservedSymbols)&gt;</definition>
+        <argsstring></argsstring>
+        <name>CombinedIndexHookFn</name>
+        <qualifiedname>llvm::lto::Config::CombinedIndexHookFn</qualifiedname>
+        <briefdescription>
+<para>A combined index hook is called after all per-module indexes have been combined (ThinLTO-specific). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It can be used to implement -save-temps for the combined index.</para>
+<para>If this function returns false, any further processing for ThinLTO tasks is aborted.</para>
+<para>It is called regardless of whether the backend is in-process, although it is not called from individual backend processes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="257" column="3" bodyfile="include/llvm/LTO/Config.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a787c0462fab83a3c31d543240378fe78" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::CPU</definition>
+        <argsstring></argsstring>
+        <name>CPU</name>
+        <qualifiedname>llvm::lto::Config::CPU</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="48" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1a020a49618af317a9da7a8193a54338e5" compoundref="_l_t_o_backend_8cpp" startline="204" endline="234">createTargetMachine</referencedby>
+        <referencedby refid="classanonymous__namespace_02_thin_l_t_o_code_generator_8cpp_03_1_1_module_cache_entry_1aea61f7d56840b1a92477a55f4a526de0" compoundref="_thin_l_t_o_code_generator_8cpp" startline="356" endline="390">anonymous_namespace{ThinLTOCodeGenerator.cpp}::ModuleCacheEntry::ModuleCacheEntry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1aa2df4a4590f315d98041339341d9e469" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_target_options" kindref="compound">TargetOptions</ref></type>
+        <definition>TargetOptions llvm::lto::Config::Options</definition>
+        <argsstring></argsstring>
+        <name>Options</name>
+        <qualifiedname>llvm::lto::Config::Options</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="49" column="17" bodyfile="include/llvm/LTO/Config.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1a020a49618af317a9da7a8193a54338e5" compoundref="_l_t_o_backend_8cpp" startline="204" endline="234">createTargetMachine</referencedby>
+        <referencedby refid="classanonymous__namespace_02_thin_l_t_o_code_generator_8cpp_03_1_1_module_cache_entry_1aea61f7d56840b1a92477a55f4a526de0" compoundref="_thin_l_t_o_code_generator_8cpp" startline="356" endline="390">anonymous_namespace{ThinLTOCodeGenerator.cpp}::ModuleCacheEntry::ModuleCacheEntry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a5a1e8e55e81b4c203d49bbbd0bce8a51" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; llvm::lto::Config::MAttrs</definition>
+        <argsstring></argsstring>
+        <name>MAttrs</name>
+        <qualifiedname>llvm::lto::Config::MAttrs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="50" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1a020a49618af317a9da7a8193a54338e5" compoundref="_l_t_o_backend_8cpp" startline="204" endline="234">createTargetMachine</referencedby>
+        <referencedby refid="classanonymous__namespace_02_thin_l_t_o_code_generator_8cpp_03_1_1_module_cache_entry_1aea61f7d56840b1a92477a55f4a526de0" compoundref="_thin_l_t_o_code_generator_8cpp" startline="356" endline="390">anonymous_namespace{ThinLTOCodeGenerator.cpp}::ModuleCacheEntry::ModuleCacheEntry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a602290924408156b5beb6e7cd6f8f4ab" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; llvm::lto::Config::MllvmArgs</definition>
+        <argsstring></argsstring>
+        <name>MllvmArgs</name>
+        <qualifiedname>llvm::lto::Config::MllvmArgs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="51" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1addd6c05e7f9781702cd583680b21da07" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; llvm::lto::Config::PassPlugins</definition>
+        <argsstring></argsstring>
+        <name>PassPlugins</name>
+        <qualifiedname>llvm::lto::Config::PassPlugins</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="52" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a534b265d050d27ea55a86b1a473b9515" prot="public" static="no" mutable="no">
+        <type>std::function&lt; void(<ref refid="classllvm_1_1legacy_1_1_pass_manager" kindref="compound">legacy::PassManager</ref> &amp;)&gt;</type>
+        <definition>std::function&lt;void(legacy::PassManager &amp;)&gt; llvm::lto::Config::PreCodeGenPassesHook</definition>
+        <argsstring></argsstring>
+        <name>PreCodeGenPassesHook</name>
+        <qualifiedname>llvm::lto::Config::PreCodeGenPassesHook</qualifiedname>
+        <briefdescription>
+<para>For adding passes that run right before codegen. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="54" column="17" bodyfile="include/llvm/LTO/Config.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1a889b75e55af23f854f7f597b0e912b98" compoundref="_l_t_o_backend_8cpp" startline="396" endline="458">codegen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1ae561eb0b1d21dcefd1c59988684fe403" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="namespacellvm_1_1_reloc_1af59f6dc86e80aaf56f1afd155eebf568" kindref="member">Reloc::Model</ref> &gt;</type>
+        <definition>std::optional&lt;Reloc::Model&gt; llvm::lto::Config::RelocModel</definition>
+        <argsstring></argsstring>
+        <name>RelocModel</name>
+        <qualifiedname>llvm::lto::Config::RelocModel</qualifiedname>
+        <initializer>= <ref refid="namespacellvm_1_1_reloc_1af59f6dc86e80aaf56f1afd155eebf568adc2075e13a68142b26e05ac08bbfc320" kindref="member">Reloc::PIC_</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="55" column="17" bodyfile="include/llvm/LTO/Config.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1a020a49618af317a9da7a8193a54338e5" compoundref="_l_t_o_backend_8cpp" startline="204" endline="234">createTargetMachine</referencedby>
+        <referencedby refid="classanonymous__namespace_02_thin_l_t_o_code_generator_8cpp_03_1_1_module_cache_entry_1aea61f7d56840b1a92477a55f4a526de0" compoundref="_thin_l_t_o_code_generator_8cpp" startline="356" endline="390">anonymous_namespace{ThinLTOCodeGenerator.cpp}::ModuleCacheEntry::ModuleCacheEntry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a4a143b2765089504057036d723110b48" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="namespacellvm_1_1_code_model_1afc59396a9e5809fc92938e203d91a8df" kindref="member">CodeModel::Model</ref> &gt;</type>
+        <definition>std::optional&lt;CodeModel::Model&gt; llvm::lto::Config::CodeModel</definition>
+        <argsstring></argsstring>
+        <name>CodeModel</name>
+        <qualifiedname>llvm::lto::Config::CodeModel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="56" column="17" bodyfile="include/llvm/LTO/Config.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1a020a49618af317a9da7a8193a54338e5" compoundref="_l_t_o_backend_8cpp" startline="204" endline="234">createTargetMachine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a6783034dde920cf6c0187877581c72ce" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1a8ec1bf8d7b792ca9fac56f8514db18d2" kindref="member">CodeGenOptLevel</ref></type>
+        <definition>CodeGenOptLevel llvm::lto::Config::CGOptLevel</definition>
+        <argsstring></argsstring>
+        <name>CGOptLevel</name>
+        <qualifiedname>llvm::lto::Config::CGOptLevel</qualifiedname>
+        <initializer>= <ref refid="namespacellvm_1a8ec1bf8d7b792ca9fac56f8514db18d2a7a1920d61156abc05a60135aefe8bc67" kindref="member">CodeGenOptLevel::Default</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="57" column="19" bodyfile="include/llvm/LTO/Config.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1a020a49618af317a9da7a8193a54338e5" compoundref="_l_t_o_backend_8cpp" startline="204" endline="234">createTargetMachine</referencedby>
+        <referencedby refid="classanonymous__namespace_02_thin_l_t_o_code_generator_8cpp_03_1_1_module_cache_entry_1aea61f7d56840b1a92477a55f4a526de0" compoundref="_thin_l_t_o_code_generator_8cpp" startline="356" endline="390">anonymous_namespace{ThinLTOCodeGenerator.cpp}::ModuleCacheEntry::ModuleCacheEntry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1af31b6979bcc0505621c4d905ec5c6a2a" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1a73b761f8d40500a5a28889569526b260" kindref="member">CodeGenFileType</ref></type>
+        <definition>CodeGenFileType llvm::lto::Config::CGFileType</definition>
+        <argsstring></argsstring>
+        <name>CGFileType</name>
+        <qualifiedname>llvm::lto::Config::CGFileType</qualifiedname>
+        <initializer>= <ref refid="namespacellvm_1a73b761f8d40500a5a28889569526b260a95aca07e95d9459c1bb31f4e7f9fda10" kindref="member">CodeGenFileType::ObjectFile</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="58" column="19" bodyfile="include/llvm/LTO/Config.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1a889b75e55af23f854f7f597b0e912b98" compoundref="_l_t_o_backend_8cpp" startline="396" endline="458">codegen</referencedby>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1ad583f6a59d2c6c9debe64279846d7123" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::lto::Config::OptLevel</definition>
+        <argsstring></argsstring>
+        <name>OptLevel</name>
+        <qualifiedname>llvm::lto::Config::OptLevel</qualifiedname>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="59" column="12" bodyfile="include/llvm/LTO/Config.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="classanonymous__namespace_02_thin_l_t_o_code_generator_8cpp_03_1_1_module_cache_entry_1aea61f7d56840b1a92477a55f4a526de0" compoundref="_thin_l_t_o_code_generator_8cpp" startline="356" endline="390">anonymous_namespace{ThinLTOCodeGenerator.cpp}::ModuleCacheEntry::ModuleCacheEntry</referencedby>
+        <referencedby refid="namespacellvm_1_1lto_1ae3dc87f8d2d7b79aa7da2d3224f3f63d" compoundref="_l_t_o_backend_8cpp" startline="362" endline="394">llvm::lto::opt</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a647ccc8efe422fa8ac5d5242ccf8bbdb" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::VerifyEach</definition>
+        <argsstring></argsstring>
+        <name>VerifyEach</name>
+        <qualifiedname>llvm::lto::Config::VerifyEach</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="60" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a59454d5a628381f0c1ce63819aa25b25" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::DisableVerify</definition>
+        <argsstring></argsstring>
+        <name>DisableVerify</name>
+        <qualifiedname>llvm::lto::Config::DisableVerify</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="61" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1af662fcf728cd50f9a546a5a3ba7c1961" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::Freestanding</definition>
+        <argsstring></argsstring>
+        <name>Freestanding</name>
+        <qualifiedname>llvm::lto::Config::Freestanding</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Flag to indicate that the optimizer should not assume builtins are present on the target. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="65" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="classanonymous__namespace_02_thin_l_t_o_code_generator_8cpp_03_1_1_module_cache_entry_1aea61f7d56840b1a92477a55f4a526de0" compoundref="_thin_l_t_o_code_generator_8cpp" startline="356" endline="390">anonymous_namespace{ThinLTOCodeGenerator.cpp}::ModuleCacheEntry::ModuleCacheEntry</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a55bf412b26277e61d0a5e6f8ccd10985" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::CodeGenOnly</definition>
+        <argsstring></argsstring>
+        <name>CodeGenOnly</name>
+        <qualifiedname>llvm::lto::Config::CodeGenOnly</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Disable entirely the optimizer, including importing for ThinLTO. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="68" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1ac05157b80afde0ee192d5be6978c5dba" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::RunCSIRInstr</definition>
+        <argsstring></argsstring>
+        <name>RunCSIRInstr</name>
+        <qualifiedname>llvm::lto::Config::RunCSIRInstr</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Run PGO context sensitive IR instrumentation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="71" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1aeb2fc95c3f63546728703c4e587e46cc" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::PGOWarnMismatch</definition>
+        <argsstring></argsstring>
+        <name>PGOWarnMismatch</name>
+        <qualifiedname>llvm::lto::Config::PGOWarnMismatch</qualifiedname>
+        <initializer>= <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></initializer>
+        <briefdescription>
+<para>Turn on/off the warning about a hash mismatch in the PGO profile data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="74" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a130b60c6ba64af6fe241affbafdcf1ba" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::HasWholeProgramVisibility</definition>
+        <argsstring></argsstring>
+        <name>HasWholeProgramVisibility</name>
+        <qualifiedname>llvm::lto::Config::HasWholeProgramVisibility</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Asserts whether we can assume whole program visibility during the <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref> link. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="78" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a142b2de143644a1ca51d28a0fd6d5a05" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::ValidateAllVtablesHaveTypeInfos</definition>
+        <argsstring></argsstring>
+        <name>ValidateAllVtablesHaveTypeInfos</name>
+        <qualifiedname>llvm::lto::Config::ValidateAllVtablesHaveTypeInfos</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>We&apos;re validating that all native vtables have corresponding type infos. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="81" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1aa24c924121088ad5844c88699344a7d3" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::AllVtablesHaveTypeInfos</definition>
+        <argsstring></argsstring>
+        <name>AllVtablesHaveTypeInfos</name>
+        <qualifiedname>llvm::lto::Config::AllVtablesHaveTypeInfos</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>If all native vtables have corresponding type infos, allow usage of RTTI to block devirtualization on types used in native files. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="84" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a77d6eab1341b63721ae4ea07cbf4cc7a" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::AlwaysEmitRegularLTOObj</definition>
+        <argsstring></argsstring>
+        <name>AlwaysEmitRegularLTOObj</name>
+        <qualifiedname>llvm::lto::Config::AlwaysEmitRegularLTOObj</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Always emit a Regular <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref> object even when it is empty because no Regular <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref> modules were linked. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This option is useful for some build system which want to know a priori all possible output files. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="89" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a1ed3ed67f7ab274e3d086aa3488a3093" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::KeepSymbolNameCopies</definition>
+        <argsstring></argsstring>
+        <name>KeepSymbolNameCopies</name>
+        <qualifiedname>llvm::lto::Config::KeepSymbolNameCopies</qualifiedname>
+        <initializer>= <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></initializer>
+        <briefdescription>
+<para>If true, the <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref> instance creates copies of the symbol names for <ref refid="classllvm_1_1lto_1_1_l_t_o_1ada5eca1803d5afcb1005ea05ffc62636" kindref="member">LTO::run</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The lld linker uses string saver to keep symbol names alive and doesn&apos;t need to create copies, so it can set this field to false. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="94" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a901ca2ceffdd3815fd527e0d994ea4a0" prot="public" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1lto_1_1_config_1a6df1c201fe73a270f67a7c153c42c0be" kindref="member">VisScheme</ref></type>
+        <definition>VisScheme llvm::lto::Config::VisibilityScheme</definition>
+        <argsstring></argsstring>
+        <name>VisibilityScheme</name>
+        <qualifiedname>llvm::lto::Config::VisibilityScheme</qualifiedname>
+        <initializer>= <ref refid="structllvm_1_1lto_1_1_config_1a6df1c201fe73a270f67a7c153c42c0beab75f3c598a19a49547d5fa7456d64e1a" kindref="member">FromPrevailing</ref></initializer>
+        <briefdescription>
+<para>Allows non-imported definitions to get the potentially more constraining visibility from the prevailing definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>FromPrevailing is the default because it works for many binary formats. <ref refid="namespacellvm_1_1_e_l_f" kindref="compound">ELF</ref> can use the more optimized &apos;<ref refid="namespacellvm_1_1_e_l_f" kindref="compound">ELF</ref>&apos; scheme. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="100" column="13" bodyfile="include/llvm/LTO/Config.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1abe426c024bc5082714ea582cd739210e" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::OptPipeline</definition>
+        <argsstring></argsstring>
+        <name>OptPipeline</name>
+        <qualifiedname>llvm::lto::Config::OptPipeline</qualifiedname>
+        <briefdescription>
+<para>If this field is set, the set of passes run in the middle-end optimizer will be the one specified by the string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Only works with the new pass manager as the old one doesn&apos;t have this ability. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="105" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a4c0096e74a84beee8fa9676008520c87" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::AAPipeline</definition>
+        <argsstring></argsstring>
+        <name>AAPipeline</name>
+        <qualifiedname>llvm::lto::Config::AAPipeline</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="110" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a99a4165a613772f6ae3b807c4e361a36" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::OverrideTriple</definition>
+        <argsstring></argsstring>
+        <name>OverrideTriple</name>
+        <qualifiedname>llvm::lto::Config::OverrideTriple</qualifiedname>
+        <briefdescription>
+<para>Setting this field will replace target triples in input files with this triple. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="114" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="114" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a7230a2bd41c69c49110f5000222515d4" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::DefaultTriple</definition>
+        <argsstring></argsstring>
+        <name>DefaultTriple</name>
+        <qualifiedname>llvm::lto::Config::DefaultTriple</qualifiedname>
+        <briefdescription>
+<para>Setting this field will replace unspecified target triples in input files with this triple. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="118" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="118" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1adffa7a90c82e1d7aa0aead0e6f74786b" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::CSIRProfile</definition>
+        <argsstring></argsstring>
+        <name>CSIRProfile</name>
+        <qualifiedname>llvm::lto::Config::CSIRProfile</qualifiedname>
+        <briefdescription>
+<para>Context Sensitive PGO profile path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="121" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1afd1d4183a0d4ae2e704610be044010b0" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::SampleProfile</definition>
+        <argsstring></argsstring>
+        <name>SampleProfile</name>
+        <qualifiedname>llvm::lto::Config::SampleProfile</qualifiedname>
+        <briefdescription>
+<para>Sample PGO profile path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="124" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="124" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a9dc5e1dacdffb8158529596000b3b411" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::ProfileRemapping</definition>
+        <argsstring></argsstring>
+        <name>ProfileRemapping</name>
+        <qualifiedname>llvm::lto::Config::ProfileRemapping</qualifiedname>
+        <briefdescription>
+<para>Name remapping file for profile data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="127" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="127" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a7c554b4240d5088684a7ab7637749d93" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::DwoDir</definition>
+        <argsstring></argsstring>
+        <name>DwoDir</name>
+        <qualifiedname>llvm::lto::Config::DwoDir</qualifiedname>
+        <briefdescription>
+<para>The directory to store .dwo files. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="130" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="130" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1a889b75e55af23f854f7f597b0e912b98" compoundref="_l_t_o_backend_8cpp" startline="396" endline="458">codegen</referencedby>
+        <referencedby refid="namespacellvm_1acded9a0ef045f4502147ee746817bbd9" compoundref="_l_t_o_8cpp" startline="99" endline="347">llvm::computeLTOCacheKey</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1aa4f390c0f5cbd46df4734ccd229f36ec" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::SplitDwarfFile</definition>
+        <argsstring></argsstring>
+        <name>SplitDwarfFile</name>
+        <qualifiedname>llvm::lto::Config::SplitDwarfFile</qualifiedname>
+        <briefdescription>
+<para>The name for the split debug info file used for the DW_AT_[GNU_]dwo_name attribute in the skeleton <ref refid="namespace_c_u" kindref="compound">CU</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This should generally only be used when running an individual backend directly via <ref refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" kindref="member">thinBackend()</ref>, as otherwise all objects would use the same .dwo file. Not used as output path. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="136" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="136" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1a889b75e55af23f854f7f597b0e912b98" compoundref="_l_t_o_backend_8cpp" startline="396" endline="458">codegen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1aacd13a77ae60a12f2f22018c0b7bd719" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::SplitDwarfOutput</definition>
+        <argsstring></argsstring>
+        <name>SplitDwarfOutput</name>
+        <qualifiedname>llvm::lto::Config::SplitDwarfOutput</qualifiedname>
+        <briefdescription>
+<para>The path to write a .dwo file to. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This should generally only be used when running an individual backend directly via <ref refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" kindref="member">thinBackend()</ref>, as otherwise all .dwo files will be written to the same path. Not used in skeleton <ref refid="namespace_c_u" kindref="compound">CU</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="141" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="141" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1a889b75e55af23f854f7f597b0e912b98" compoundref="_l_t_o_backend_8cpp" startline="396" endline="458">codegen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a7f5add25ae56d0b0c8c3486115a6f825" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::RemarksFilename</definition>
+        <argsstring></argsstring>
+        <name>RemarksFilename</name>
+        <qualifiedname>llvm::lto::Config::RemarksFilename</qualifiedname>
+        <briefdescription>
+<para>Optimization remarks file path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="144" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="144" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" compoundref="_l_t_o_backend_8cpp" startline="587" endline="716">llvm::lto::thinBackend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1ab6be094bc919f0a88daf638a87f35ed2" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::RemarksPasses</definition>
+        <argsstring></argsstring>
+        <name>RemarksPasses</name>
+        <qualifiedname>llvm::lto::Config::RemarksPasses</qualifiedname>
+        <briefdescription>
+<para>Optimization remarks pass filter. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="147" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="147" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" compoundref="_l_t_o_backend_8cpp" startline="587" endline="716">llvm::lto::thinBackend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1ad722bd2d07c784bdf48e98d88a25b214" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::RemarksWithHotness</definition>
+        <argsstring></argsstring>
+        <name>RemarksWithHotness</name>
+        <qualifiedname>llvm::lto::Config::RemarksWithHotness</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Whether to emit optimization remarks with hotness informations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="150" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="150" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" compoundref="_l_t_o_backend_8cpp" startline="587" endline="716">llvm::lto::thinBackend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a3fb18e2c1449a48f3ce809e398c8496c" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>std::optional&lt;uint64_t&gt; llvm::lto::Config::RemarksHotnessThreshold</definition>
+        <argsstring></argsstring>
+        <name>RemarksHotnessThreshold</name>
+        <qualifiedname>llvm::lto::Config::RemarksHotnessThreshold</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The minimum hotness value a diagnostic needs in order to be included in optimization diagnostics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The threshold is an Optional value, which maps to one of the 3 states:<orderedlist>
+<listitem><para>0 =&gt; threshold disabled. All emarks will be printed.</para>
+</listitem><listitem><para>positive int =&gt; manual threshold by user. Remarks with hotness exceed threshold will be printed.</para>
+</listitem><listitem><para>None =&gt; &apos;auto&apos; threshold by user. The actual value is not available at command line, but will be synced with hotness threhold from profile summary during compilation.</para>
+</listitem></orderedlist>
+</para>
+<para>If threshold option is not specified, it is disabled by default. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="165" column="17" bodyfile="include/llvm/LTO/Config.h" bodystart="165" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" compoundref="_l_t_o_backend_8cpp" startline="587" endline="716">llvm::lto::thinBackend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1afdc99ed0043add37ba2764446dbe225e" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::RemarksFormat</definition>
+        <argsstring></argsstring>
+        <name>RemarksFormat</name>
+        <qualifiedname>llvm::lto::Config::RemarksFormat</qualifiedname>
+        <briefdescription>
+<para>The format used for serializing remarks (default: YAML). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="168" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="168" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" compoundref="_l_t_o_backend_8cpp" startline="587" endline="716">llvm::lto::thinBackend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a2e7d3a91d656d9f1d3c374429f883166" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::DebugPassManager</definition>
+        <argsstring></argsstring>
+        <name>DebugPassManager</name>
+        <qualifiedname>llvm::lto::Config::DebugPassManager</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Whether to emit the pass manager debuggging informations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="171" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="171" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a482472b6897cbf42c20bcb04d2e879d0" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::lto::Config::StatsFile</definition>
+        <argsstring></argsstring>
+        <name>StatsFile</name>
+        <qualifiedname>llvm::lto::Config::StatsFile</qualifiedname>
+        <briefdescription>
+<para>Statistics output file path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="174" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a61bae81cc9f92b3a346515bfb107fe3c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; llvm::lto::Config::ThinLTOModulesToCompile</definition>
+        <argsstring></argsstring>
+        <name>ThinLTOModulesToCompile</name>
+        <qualifiedname>llvm::lto::Config::ThinLTOModulesToCompile</qualifiedname>
+        <briefdescription>
+<para>Specific thinLTO modules to compile. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="177" column="15" bodyfile="include/llvm/LTO/Config.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1aadf60658a6fcb26aeb35654d64e81d7d" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::TimeTraceEnabled</definition>
+        <argsstring></argsstring>
+        <name>TimeTraceEnabled</name>
+        <qualifiedname>llvm::lto::Config::TimeTraceEnabled</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Time trace enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="180" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1ad529c2f007e8133b4a8582d5963923aa" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::lto::Config::TimeTraceGranularity</definition>
+        <argsstring></argsstring>
+        <name>TimeTraceGranularity</name>
+        <qualifiedname>llvm::lto::Config::TimeTraceGranularity</qualifiedname>
+        <initializer>= 500</initializer>
+        <briefdescription>
+<para>Time trace granularity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="183" column="12" bodyfile="include/llvm/LTO/Config.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1ae82637c19542651480df96b56531c3e0" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::ShouldDiscardValueNames</definition>
+        <argsstring></argsstring>
+        <name>ShouldDiscardValueNames</name>
+        <qualifiedname>llvm::lto::Config::ShouldDiscardValueNames</qualifiedname>
+        <initializer>= <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="185" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="185" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1lto_1_1_config_1a4395f06e55f4b727fe0b685074821644" compoundref="_l_t_o_backend_8cpp" startline="88" endline="180">addSaveTemps</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a0bb4ceaedab73c92426a241147cdabba" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1a1d9ed2529f1248d760979b7b53a64394" kindref="member">DiagnosticHandlerFunction</ref></type>
+        <definition>DiagnosticHandlerFunction llvm::lto::Config::DiagHandler</definition>
+        <argsstring></argsstring>
+        <name>DiagHandler</name>
+        <qualifiedname>llvm::lto::Config::DiagHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="186" column="29" bodyfile="include/llvm/LTO/Config.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a345a10e4235f0a90822f39c3cbe56ae8" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::lto::Config::AddFSDiscriminator</definition>
+        <argsstring></argsstring>
+        <name>AddFSDiscriminator</name>
+        <qualifiedname>llvm::lto::Config::AddFSDiscriminator</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Add FSAFDO discriminators. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="189" column="8" bodyfile="include/llvm/LTO/Config.h" bodystart="189" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a719ecf03772af7ca6a1a7cc1bc43c65b" prot="public" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;raw_ostream&gt; llvm::lto::Config::ResolutionFile</definition>
+        <argsstring></argsstring>
+        <name>ResolutionFile</name>
+        <qualifiedname>llvm::lto::Config::ResolutionFile</qualifiedname>
+        <briefdescription>
+<para>If this field is set, <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref> will write input file paths and symbol resolutions here in llvm-lto2 command line flag format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be used for testing and for running the <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref> pipeline outside of the linker with llvm-lto2. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="195" column="19" bodyfile="include/llvm/LTO/Config.h" bodystart="195" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1lto_1_1_config_1a4395f06e55f4b727fe0b685074821644" compoundref="_l_t_o_backend_8cpp" startline="88" endline="180">addSaveTemps</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a6c489480556941aaffb99ac11d530ceb" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_pipeline_tuning_options" kindref="compound">PipelineTuningOptions</ref></type>
+        <definition>PipelineTuningOptions llvm::lto::Config::PTO</definition>
+        <argsstring></argsstring>
+        <name>PTO</name>
+        <qualifiedname>llvm::lto::Config::PTO</qualifiedname>
+        <briefdescription>
+<para>Tunable parameters for passes in the default pipelines. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="198" column="25" bodyfile="include/llvm/LTO/Config.h" bodystart="198" bodyend="-1"/>
+        <referencedby refid="_l_t_o_backend_8cpp_1af5d1d807d38250523b2335cec221c2f1" compoundref="_l_t_o_backend_8cpp" startline="236" endline="352">runNewPMPasses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a496d67358c7f1e3a328e3ba2cda26268" prot="public" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1lto_1_1_config_1a2ac2a2331097ef0392e387a01a0844ec" kindref="member">ModuleHookFn</ref></type>
+        <definition>ModuleHookFn llvm::lto::Config::PreOptModuleHook</definition>
+        <argsstring></argsstring>
+        <name>PreOptModuleHook</name>
+        <qualifiedname>llvm::lto::Config::PreOptModuleHook</qualifiedname>
+        <briefdescription>
+<para>This module hook is called after linking (regular <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref>) or loading (ThinLTO) the module, before modifying it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="228" column="16" bodyfile="include/llvm/LTO/Config.h" bodystart="228" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1lto_1_1_config_1a4395f06e55f4b727fe0b685074821644" compoundref="_l_t_o_backend_8cpp" startline="88" endline="180">addSaveTemps</referencedby>
+        <referencedby refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" compoundref="_l_t_o_backend_8cpp" startline="587" endline="716">llvm::lto::thinBackend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a929cce8a073bdcefff79d854deedb7ed" prot="public" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1lto_1_1_config_1a2ac2a2331097ef0392e387a01a0844ec" kindref="member">ModuleHookFn</ref></type>
+        <definition>ModuleHookFn llvm::lto::Config::PostPromoteModuleHook</definition>
+        <argsstring></argsstring>
+        <name>PostPromoteModuleHook</name>
+        <qualifiedname>llvm::lto::Config::PostPromoteModuleHook</qualifiedname>
+        <briefdescription>
+<para>This hook is called after promoting any internal functions (ThinLTO-specific). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="232" column="16" bodyfile="include/llvm/LTO/Config.h" bodystart="232" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1lto_1_1_config_1a4395f06e55f4b727fe0b685074821644" compoundref="_l_t_o_backend_8cpp" startline="88" endline="180">addSaveTemps</referencedby>
+        <referencedby refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" compoundref="_l_t_o_backend_8cpp" startline="587" endline="716">llvm::lto::thinBackend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1ace0039edf4791c66d2eb99dab50fe8f9" prot="public" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1lto_1_1_config_1a2ac2a2331097ef0392e387a01a0844ec" kindref="member">ModuleHookFn</ref></type>
+        <definition>ModuleHookFn llvm::lto::Config::PostInternalizeModuleHook</definition>
+        <argsstring></argsstring>
+        <name>PostInternalizeModuleHook</name>
+        <qualifiedname>llvm::lto::Config::PostInternalizeModuleHook</qualifiedname>
+        <briefdescription>
+<para>This hook is called after internalizing the module. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="235" column="16" bodyfile="include/llvm/LTO/Config.h" bodystart="235" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1lto_1_1_config_1a4395f06e55f4b727fe0b685074821644" compoundref="_l_t_o_backend_8cpp" startline="88" endline="180">addSaveTemps</referencedby>
+        <referencedby refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" compoundref="_l_t_o_backend_8cpp" startline="587" endline="716">llvm::lto::thinBackend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1ad5f3c0f8fbd4bf85381e96cc672beb13" prot="public" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1lto_1_1_config_1a2ac2a2331097ef0392e387a01a0844ec" kindref="member">ModuleHookFn</ref></type>
+        <definition>ModuleHookFn llvm::lto::Config::PostImportModuleHook</definition>
+        <argsstring></argsstring>
+        <name>PostImportModuleHook</name>
+        <qualifiedname>llvm::lto::Config::PostImportModuleHook</qualifiedname>
+        <briefdescription>
+<para>This hook is called after importing from other modules (ThinLTO-specific). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="238" column="16" bodyfile="include/llvm/LTO/Config.h" bodystart="238" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1lto_1_1_config_1a4395f06e55f4b727fe0b685074821644" compoundref="_l_t_o_backend_8cpp" startline="88" endline="180">addSaveTemps</referencedby>
+        <referencedby refid="namespacellvm_1_1lto_1ae6ff75e89240b2f2c01d3be088ca6014" compoundref="_l_t_o_backend_8cpp" startline="587" endline="716">llvm::lto::thinBackend</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1ab380a759b3e8d32fc59b8f88b52fe198" prot="public" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1lto_1_1_config_1a2ac2a2331097ef0392e387a01a0844ec" kindref="member">ModuleHookFn</ref></type>
+        <definition>ModuleHookFn llvm::lto::Config::PostOptModuleHook</definition>
+        <argsstring></argsstring>
+        <name>PostOptModuleHook</name>
+        <qualifiedname>llvm::lto::Config::PostOptModuleHook</qualifiedname>
+        <briefdescription>
+<para>This module hook is called after optimization is complete. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="241" column="16" bodyfile="include/llvm/LTO/Config.h" bodystart="241" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1lto_1_1_config_1a4395f06e55f4b727fe0b685074821644" compoundref="_l_t_o_backend_8cpp" startline="88" endline="180">addSaveTemps</referencedby>
+        <referencedby refid="namespacellvm_1_1lto_1ae3dc87f8d2d7b79aa7da2d3224f3f63d" compoundref="_l_t_o_backend_8cpp" startline="362" endline="394">llvm::lto::opt</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1ae36f72183fdb505c21cc4ca6bd48a860" prot="public" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1lto_1_1_config_1a2ac2a2331097ef0392e387a01a0844ec" kindref="member">ModuleHookFn</ref></type>
+        <definition>ModuleHookFn llvm::lto::Config::PreCodeGenModuleHook</definition>
+        <argsstring></argsstring>
+        <name>PreCodeGenModuleHook</name>
+        <qualifiedname>llvm::lto::Config::PreCodeGenModuleHook</qualifiedname>
+        <briefdescription>
+<para>This module hook is called before code generation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is similar to the PostOptModuleHook, but for parallel code generation it is called after splitting the module. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="246" column="16" bodyfile="include/llvm/LTO/Config.h" bodystart="246" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1lto_1_1_config_1a4395f06e55f4b727fe0b685074821644" compoundref="_l_t_o_backend_8cpp" startline="88" endline="180">addSaveTemps</referencedby>
+        <referencedby refid="_l_t_o_backend_8cpp_1a889b75e55af23f854f7f597b0e912b98" compoundref="_l_t_o_backend_8cpp" startline="396" endline="458">codegen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1lto_1_1_config_1a49ab8afb39328f912dd54a942fbdc5c1" prot="public" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1lto_1_1_config_1adfaa4b815344424627948d3bff41ad5b" kindref="member">CombinedIndexHookFn</ref></type>
+        <definition>CombinedIndexHookFn llvm::lto::Config::CombinedIndexHook</definition>
+        <argsstring></argsstring>
+        <name>CombinedIndexHook</name>
+        <qualifiedname>llvm::lto::Config::CombinedIndexHook</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="260" column="23" bodyfile="include/llvm/LTO/Config.h" bodystart="260" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1lto_1_1_config_1a4395f06e55f4b727fe0b685074821644" compoundref="_l_t_o_backend_8cpp" startline="88" endline="180">addSaveTemps</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structllvm_1_1lto_1_1_config_1a4395f06e55f4b727fe0b685074821644" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error Config::addSaveTemps</definition>
+        <argsstring>(std::string OutputFileName, bool UseInputModulePath=false, const DenseSet&lt; StringRef &gt; &amp;SaveTempsArgs={})</argsstring>
+        <name>addSaveTemps</name>
+        <qualifiedname>llvm::lto::Config::addSaveTemps</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>OutputFileName</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>UseInputModulePath</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref> &gt; &amp;</type>
+          <declname>SaveTempsArgs</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>This is a convenience function that configures this <ref refid="structllvm_1_1lto_1_1_config" kindref="compound">Config</ref> object to write temporary files named after the given OutputFileName for each of the <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref> phases to disk. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A client can use this function to implement -save-temps.</para>
+<para>FIXME: Temporary files derived from ThinLTO backends are currently named after the input file name, rather than the output file name, when UseInputModulePath is set to true.</para>
+<para>Specifically, it (1) sets each of the above module hooks and the combined index hook to a function that calls the hook function (if any) that was present in the appropriate field when the addSaveTemps function was called, and writes the module to a bitcode file with a name prefixed by the given output file name, and (2) creates a resolution file whose name is prefixed by the given output file name and sets ResolutionFile to its file handle.</para>
+<para>SaveTempsArgs can be specified to select which temps to save. If SaveTempsArgs is not provided, all temps are saved. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/LTO/Config.h" line="280" column="9" bodyfile="lib/LTO/LTOBackend.cpp" bodystart="88" bodyend="180"/>
+        <references refid="structllvm_1_1lto_1_1_config_1a49ab8afb39328f912dd54a942fbdc5c1" compoundref="_config_8h" startline="260">CombinedIndexHook</references>
+        <references refid="classllvm_1_1detail_1_1_dense_set_impl_1ad409c2de8502b94c8a0b1193307c63b6" compoundref="_dense_set_8h" startline="193" endline="195">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::contains</references>
+        <references refid="classllvm_1_1detail_1_1_dense_set_impl_1a9a3c9d867ff6bde97841c2b7983f5c70" compoundref="_dense_set_8h" startline="80" endline="80">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::empty</references>
+        <references refid="namespacellvm_1ad10875fd499e8e285aaeef615e9b11aa" compoundref="_testing_2_support_2_error_8cpp" startline="111" endline="115">llvm::errorCodeToError</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a662978c0cdf81de0d448032f142a3695a8ae6a0a158ab49e5bbe92cbc2cabcbcd" compoundref="_file_system_8h" startline="750">llvm::sys::fs::OF_None</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a662978c0cdf81de0d448032f142a3695a6118bd1b7164f1f8f02470a5cb6a538b" compoundref="_file_system_8h" startline="754">llvm::sys::fs::OF_Text</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a662978c0cdf81de0d448032f142a3695ab505c2c79499fbe180989bffbf108a50" compoundref="_file_system_8h" startline="763">llvm::sys::fs::OF_TextWithCRLF</references>
+        <references refid="structllvm_1_1lto_1_1_config_1ad5f3c0f8fbd4bf85381e96cc672beb13" compoundref="_config_8h" startline="238">PostImportModuleHook</references>
+        <references refid="structllvm_1_1lto_1_1_config_1ace0039edf4791c66d2eb99dab50fe8f9" compoundref="_config_8h" startline="235">PostInternalizeModuleHook</references>
+        <references refid="structllvm_1_1lto_1_1_config_1ab380a759b3e8d32fc59b8f88b52fe198" compoundref="_config_8h" startline="241">PostOptModuleHook</references>
+        <references refid="structllvm_1_1lto_1_1_config_1a929cce8a073bdcefff79d854deedb7ed" compoundref="_config_8h" startline="232">PostPromoteModuleHook</references>
+        <references refid="structllvm_1_1lto_1_1_config_1ae36f72183fdb505c21cc4ca6bd48a860" compoundref="_config_8h" startline="246">PreCodeGenModuleHook</references>
+        <references refid="structllvm_1_1lto_1_1_config_1a496d67358c7f1e3a328e3ba2cda26268" compoundref="_config_8h" startline="228">PreOptModuleHook</references>
+        <references refid="_l_t_o_backend_8cpp_1a041e682560afc980462e5ca47deb1f24" compoundref="_l_t_o_backend_8cpp" startline="82" endline="86">reportOpenError</references>
+        <references refid="structllvm_1_1lto_1_1_config_1a719ecf03772af7ca6a1a7cc1bc43c65b" compoundref="_config_8h" startline="195">ResolutionFile</references>
+        <references refid="structllvm_1_1lto_1_1_config_1ae82637c19542651480df96b56531c3e0" compoundref="_config_8h" startline="185">ShouldDiscardValueNames</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="namespacellvm_1a41972fe6f3fab862543b7b835a714f9b" compoundref="_string_extras_8h" startline="320" endline="333">llvm::utostr</references>
+        <references refid="namespacellvm_1a199eb3a521b35ac20b20b7460bf2dabb" compoundref="_bitcode_writer_8cpp" startline="5371" endline="5398">llvm::WriteBitcodeToFile</references>
+        <references refid="namespacellvm_1a5858c9c8d861a0d36e7c8f99b8faf7fe" compoundref="_bitcode_writer_8cpp" startline="5418" endline="5430">llvm::writeIndexToFile</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref> configuration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A linker can configure <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">LTO</ref> by setting fields in this data structure and passing it to the <ref refid="classllvm_1_1lto_1_1_l_t_o" kindref="compound">lto::LTO</ref> constructor. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="8">
+        <label>BasicBlockSection</label>
+      </node>
+      <node id="28">
+        <label>CodeGenFileType</label>
+      </node>
+      <node id="27">
+        <label>CodeGenOptLevel</label>
+      </node>
+      <node id="22">
+        <label>DebugCompressionType</label>
+      </node>
+      <node id="14">
+        <label>DebuggerKind</label>
+      </node>
+      <node id="21">
+        <label>DwarfDirectory</label>
+      </node>
+      <node id="13">
+        <label>EABI</label>
+      </node>
+      <node id="19">
+        <label>EmitDwarfUnwindType</label>
+      </node>
+      <node id="15">
+        <label>ExceptionHandling</label>
+      </node>
+      <node id="11">
+        <label>FPOpFusionMode</label>
+      </node>
+      <node id="10">
+        <label>ABIType</label>
+      </node>
+      <node id="6">
+        <label>GlobalISelAbortMode</label>
+      </node>
+      <node id="7">
+        <label>SwiftAsyncFramePointerMode</label>
+      </node>
+      <node id="12">
+        <label>Model</label>
+      </node>
+      <node id="29">
+        <label>VisScheme</label>
+      </node>
+      <node id="17">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="20">
+        <label>int</label>
+      </node>
+      <node id="16">
+        <label>llvm::MCTargetOptions</label>
+        <link refid="classllvm_1_1_m_c_target_options"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>AsmVerbose</edgelabel>
+          <edgelabel>Crel</edgelabel>
+          <edgelabel>Dwarf64</edgelabel>
+          <edgelabel>EmitCompactUnwindNonCanonical</edgelabel>
+          <edgelabel>FDPIC</edgelabel>
+          <edgelabel>ImplicitMapSyms</edgelabel>
+          <edgelabel>MCFatalWarnings</edgelabel>
+          <edgelabel>MCIncrementalLinkerCompatible</edgelabel>
+          <edgelabel>MCNoDeprecatedWarn</edgelabel>
+          <edgelabel>MCNoExecStack</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>OutputAsmVariant</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>EmitDwarfUnwind</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>DwarfVersion</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>MCUseDwarfDirectory</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>CompressDebugSections</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>ABIName</edgelabel>
+          <edgelabel>Argv0</edgelabel>
+          <edgelabel>AsSecureLogFile</edgelabel>
+          <edgelabel>AssemblyLanguage</edgelabel>
+          <edgelabel>CommandlineArgs</edgelabel>
+          <edgelabel>SplitDwarfFile</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>IASSearchPaths</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>llvm::PipelineTuningOptions</label>
+        <link refid="classllvm_1_1_pipeline_tuning_options"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>CallGraphProfile</edgelabel>
+          <edgelabel>EagerlyInvalidateAnalyses</edgelabel>
+          <edgelabel>ForgetAllSCEVInLoopUnroll</edgelabel>
+          <edgelabel>LoopInterleaving</edgelabel>
+          <edgelabel>LoopUnrolling</edgelabel>
+          <edgelabel>LoopVectorization</edgelabel>
+          <edgelabel>MergeFunctions</edgelabel>
+          <edgelabel>SLPVectorization</edgelabel>
+          <edgelabel>UnifiedLTO</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>LicmMssaNoAccForPromotionCap</edgelabel>
+          <edgelabel>LicmMssaOptCap</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>InlinerThreshold</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::TargetOptions</label>
+        <link refid="classllvm_1_1_target_options"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>BinutilsVersion</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ApproxFuncFPMath</edgelabel>
+          <edgelabel>BBAddrMap</edgelabel>
+          <edgelabel>DataSections</edgelabel>
+          <edgelabel>DebugStrictDwarf</edgelabel>
+          <edgelabel>DisableIntegratedAS</edgelabel>
+          <edgelabel>EmitAddrsig</edgelabel>
+          <edgelabel>EmitCallSiteInfo</edgelabel>
+          <edgelabel>EmitStackSizeSection</edgelabel>
+          <edgelabel>EmulatedTLS</edgelabel>
+          <edgelabel>EnableAIXExtendedAltivecABI</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>GlobalISelAbort</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>SwiftAsyncFramePointer</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>BBSections</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>BBSectionsFuncListBuf</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>ObjectFilenameForDebug</edgelabel>
+          <edgelabel>StackUsageOutput</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>FloatABIType</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>AllowFPOpFusion</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>ThreadModel</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>EABIVersion</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>DebuggerTuning</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>ExceptionModel</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>MCOptions</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::lto::Config</label>
+        <link refid="structllvm_1_1lto_1_1_config"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>AAPipeline</edgelabel>
+          <edgelabel>CPU</edgelabel>
+          <edgelabel>CSIRProfile</edgelabel>
+          <edgelabel>DefaultTriple</edgelabel>
+          <edgelabel>DwoDir</edgelabel>
+          <edgelabel>OptPipeline</edgelabel>
+          <edgelabel>OverrideTriple</edgelabel>
+          <edgelabel>ProfileRemapping</edgelabel>
+          <edgelabel>RemarksFilename</edgelabel>
+          <edgelabel>RemarksFormat</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Options</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>MAttrs</edgelabel>
+          <edgelabel>MllvmArgs</edgelabel>
+          <edgelabel>PassPlugins</edgelabel>
+          <edgelabel>ThinLTOModulesToCompile</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>PreCodeGenPassesHook</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>RelocModel</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>CodeModel</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>CGOptLevel</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>CGFileType</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>OptLevel</edgelabel>
+          <edgelabel>TimeTraceGranularity</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>AddFSDiscriminator</edgelabel>
+          <edgelabel>AllVtablesHaveTypeInfos</edgelabel>
+          <edgelabel>AlwaysEmitRegularLTOObj</edgelabel>
+          <edgelabel>CodeGenOnly</edgelabel>
+          <edgelabel>DebugPassManager</edgelabel>
+          <edgelabel>DisableVerify</edgelabel>
+          <edgelabel>Freestanding</edgelabel>
+          <edgelabel>HasWholeProgramVisibility</edgelabel>
+          <edgelabel>KeepSymbolNameCopies</edgelabel>
+          <edgelabel>PGOWarnMismatch</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>VisibilityScheme</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>RemarksHotnessThreshold</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>DiagHandler</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>ResolutionFile</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>PTO</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>PostImportModuleHook</edgelabel>
+          <edgelabel>PostInternalizeModuleHook</edgelabel>
+          <edgelabel>PostOptModuleHook</edgelabel>
+          <edgelabel>PostPromoteModuleHook</edgelabel>
+          <edgelabel>PreCodeGenModuleHook</edgelabel>
+          <edgelabel>PreOptModuleHook</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>CombinedIndexHook</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>function&lt; bool(const ModuleSummaryIndex &amp;Index, const DenseSet&lt; GlobalValue::GUID &gt; &amp;GUIDPreservedSymbols)&gt;</label>
+      </node>
+      <node id="34">
+        <label>function&lt; bool(unsigned Task, const Module &amp;)&gt;</label>
+      </node>
+      <node id="31">
+        <label>function&lt; void(const DiagnosticInfo &amp;)&gt;</label>
+      </node>
+      <node id="24">
+        <label>function&lt; void(llvm::legacy::PassManager &amp;)&gt;</label>
+      </node>
+      <node id="26">
+        <label>optional&lt; CodeModel::Model &gt;</label>
+      </node>
+      <node id="25">
+        <label>optional&lt; Reloc::Model &gt;</label>
+      </node>
+      <node id="30">
+        <label>optional&lt; uint64_t &gt;</label>
+      </node>
+      <node id="18">
+        <label>optional&lt; unsigned &gt;</label>
+      </node>
+      <node id="4">
+        <label>pair&lt; int, int &gt;</label>
+      </node>
+      <node id="9">
+        <label>shared_ptr&lt; llvm::MemoryBuffer &gt;</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="32">
+        <label>unique_ptr&lt; llvm::raw_ostream &gt;</label>
+      </node>
+      <node id="23">
+        <label>vector&lt; std::string &gt;</label>
+      </node>
+      <node id="5">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/LTO/Config.h" line="41" column="1" bodyfile="include/llvm/LTO/Config.h" bodystart="41" bodyend="283"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1lto_1_1_config_1a4c0096e74a84beee8fa9676008520c87" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>AAPipeline</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a345a10e4235f0a90822f39c3cbe56ae8" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>AddFSDiscriminator</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a4395f06e55f4b727fe0b685074821644" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>addSaveTemps</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1aa24c924121088ad5844c88699344a7d3" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>AllVtablesHaveTypeInfos</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a77d6eab1341b63721ae4ea07cbf4cc7a" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>AlwaysEmitRegularLTOObj</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1af31b6979bcc0505621c4d905ec5c6a2a" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>CGFileType</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a6783034dde920cf6c0187877581c72ce" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>CGOptLevel</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a55bf412b26277e61d0a5e6f8ccd10985" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>CodeGenOnly</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a4a143b2765089504057036d723110b48" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>CodeModel</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a49ab8afb39328f912dd54a942fbdc5c1" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>CombinedIndexHook</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1adfaa4b815344424627948d3bff41ad5b" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>CombinedIndexHookFn</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a787c0462fab83a3c31d543240378fe78" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>CPU</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1adffa7a90c82e1d7aa0aead0e6f74786b" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>CSIRProfile</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a2e7d3a91d656d9f1d3c374429f883166" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>DebugPassManager</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a7230a2bd41c69c49110f5000222515d4" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>DefaultTriple</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a0bb4ceaedab73c92426a241147cdabba" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>DiagHandler</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a59454d5a628381f0c1ce63819aa25b25" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>DisableVerify</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a7c554b4240d5088684a7ab7637749d93" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>DwoDir</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a6df1c201fe73a270f67a7c153c42c0bea89d9995963600df8c6854372881cbbb7" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>ELF</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1af662fcf728cd50f9a546a5a3ba7c1961" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>Freestanding</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a6df1c201fe73a270f67a7c153c42c0beab75f3c598a19a49547d5fa7456d64e1a" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>FromPrevailing</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a130b60c6ba64af6fe241affbafdcf1ba" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>HasWholeProgramVisibility</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a1ed3ed67f7ab274e3d086aa3488a3093" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>KeepSymbolNameCopies</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a5a1e8e55e81b4c203d49bbbd0bce8a51" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>MAttrs</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a602290924408156b5beb6e7cd6f8f4ab" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>MllvmArgs</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a2ac2a2331097ef0392e387a01a0844ec" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>ModuleHookFn</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1aa2df4a4590f315d98041339341d9e469" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>Options</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1ad583f6a59d2c6c9debe64279846d7123" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>OptLevel</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1abe426c024bc5082714ea582cd739210e" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>OptPipeline</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a99a4165a613772f6ae3b807c4e361a36" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>OverrideTriple</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1addd6c05e7f9781702cd583680b21da07" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>PassPlugins</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1aeb2fc95c3f63546728703c4e587e46cc" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>PGOWarnMismatch</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1ad5f3c0f8fbd4bf85381e96cc672beb13" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>PostImportModuleHook</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1ace0039edf4791c66d2eb99dab50fe8f9" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>PostInternalizeModuleHook</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1ab380a759b3e8d32fc59b8f88b52fe198" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>PostOptModuleHook</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a929cce8a073bdcefff79d854deedb7ed" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>PostPromoteModuleHook</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1ae36f72183fdb505c21cc4ca6bd48a860" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>PreCodeGenModuleHook</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a534b265d050d27ea55a86b1a473b9515" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>PreCodeGenPassesHook</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a496d67358c7f1e3a328e3ba2cda26268" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>PreOptModuleHook</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a9dc5e1dacdffb8158529596000b3b411" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>ProfileRemapping</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a6c489480556941aaffb99ac11d530ceb" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>PTO</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1ae561eb0b1d21dcefd1c59988684fe403" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>RelocModel</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a7f5add25ae56d0b0c8c3486115a6f825" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>RemarksFilename</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1afdc99ed0043add37ba2764446dbe225e" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>RemarksFormat</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a3fb18e2c1449a48f3ce809e398c8496c" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>RemarksHotnessThreshold</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1ab6be094bc919f0a88daf638a87f35ed2" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>RemarksPasses</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1ad722bd2d07c784bdf48e98d88a25b214" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>RemarksWithHotness</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a719ecf03772af7ca6a1a7cc1bc43c65b" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>ResolutionFile</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1ac05157b80afde0ee192d5be6978c5dba" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>RunCSIRInstr</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1afd1d4183a0d4ae2e704610be044010b0" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>SampleProfile</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1ae82637c19542651480df96b56531c3e0" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>ShouldDiscardValueNames</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1aa4f390c0f5cbd46df4734ccd229f36ec" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>SplitDwarfFile</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1aacd13a77ae60a12f2f22018c0b7bd719" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>SplitDwarfOutput</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a482472b6897cbf42c20bcb04d2e879d0" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>StatsFile</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a61bae81cc9f92b3a346515bfb107fe3c" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>ThinLTOModulesToCompile</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1aadf60658a6fcb26aeb35654d64e81d7d" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>TimeTraceEnabled</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1ad529c2f007e8133b4a8582d5963923aa" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>TimeTraceGranularity</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a142b2de143644a1ca51d28a0fd6d5a05" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>ValidateAllVtablesHaveTypeInfos</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a647ccc8efe422fa8ac5d5242ccf8bbdb" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>VerifyEach</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a901ca2ceffdd3815fd527e0d994ea4a0" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>VisibilityScheme</name></member>
+      <member refid="structllvm_1_1lto_1_1_config_1a6df1c201fe73a270f67a7c153c42c0be" prot="public" virt="non-virtual"><scope>llvm::lto::Config</scope><name>VisScheme</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,801 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_execution_domain_fix" kind="class" language="C++" prot="public">
+    <compoundname>llvm::ExecutionDomainFix</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_function_pass" prot="public" virt="non-virtual">llvm::MachineFunctionPass</basecompoundref>
+    <derivedcompoundref refid="classanonymous__namespace_02_a_r_m_target_machine_8cpp_03_1_1_a_r_m_execution_domain_fix" prot="public" virt="non-virtual">anonymous_namespace{ARMTargetMachine.cpp}::ARMExecutionDomainFix</derivedcompoundref>
+    <derivedcompoundref refid="classanonymous__namespace_02_x86_target_machine_8cpp_03_1_1_x86_execution_domain_fix" prot="public" virt="non-virtual">anonymous_namespace{X86TargetMachine.cpp}::X86ExecutionDomainFix</derivedcompoundref>
+    <includes refid="_execution_domain_fix_8h" local="yes">llvm/CodeGen/ExecutionDomainFix.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_execution_domain_fix_1a29f50c014d318f7bd5391a8811537340" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> * &gt;</type>
+        <definition>using llvm::ExecutionDomainFix::LiveRegsDVInfo =  std::vector&lt;DomainValue *&gt;</definition>
+        <argsstring></argsstring>
+        <name>LiveRegsDVInfo</name>
+        <qualifiedname>llvm::ExecutionDomainFix::LiveRegsDVInfo</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> currently in each register, or NULL when no value is being tracked. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This counts as a <ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> reference. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="128" column="3" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_execution_domain_fix_1aa2e6cc750e2f33af7e57b6be3486fea1" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; LiveRegsDVInfo, 4 &gt;</type>
+        <definition>using llvm::ExecutionDomainFix::OutRegsInfoMap =  SmallVector&lt;LiveRegsDVInfo, 4&gt;</definition>
+        <argsstring></argsstring>
+        <name>OutRegsInfoMap</name>
+        <qualifiedname>llvm::ExecutionDomainFix::OutRegsInfoMap</qualifiedname>
+        <briefdescription>
+<para>Keeps domain information for all registers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that this is different from the usual definition notion of liveness. The CPU doesn&apos;t care whether or not we consider a register killed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="133" column="3" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_execution_domain_fix_1ad57efbfcc86a44fdaccebab62edd7d21" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_specific_bump_ptr_allocator" kindref="compound">SpecificBumpPtrAllocator</ref>&lt; <ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> &gt;</type>
+        <definition>SpecificBumpPtrAllocator&lt;DomainValue&gt; llvm::ExecutionDomainFix::Allocator</definition>
+        <argsstring></argsstring>
+        <name>Allocator</name>
+        <qualifiedname>llvm::ExecutionDomainFix::Allocator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="117" column="28" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_execution_domain_fix_1ae9b26ba6e924487d496ad64d201ed9fc" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> *, 16 &gt;</type>
+        <definition>SmallVector&lt;DomainValue *, 16&gt; llvm::ExecutionDomainFix::Avail</definition>
+        <argsstring></argsstring>
+        <name>Avail</name>
+        <qualifiedname>llvm::ExecutionDomainFix::Avail</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="118" column="15" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_execution_domain_fix_1a71f4c2abb1abc62912cbea8715da04e5" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_class" kindref="compound">TargetRegisterClass</ref> *<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref></type>
+        <definition>const TargetRegisterClass* const llvm::ExecutionDomainFix::RC</definition>
+        <argsstring></argsstring>
+        <name>RC</name>
+        <qualifiedname>llvm::ExecutionDomainFix::RC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="120" column="35" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_execution_domain_fix_1ae2dde57530820d1cffd1c6bc0c950c0e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>MachineFunction* llvm::ExecutionDomainFix::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>llvm::ExecutionDomainFix::MF</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="121" column="19" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_execution_domain_fix_1a16cbffbdd7e05ab58b34968371b2515e" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> *</type>
+        <definition>const TargetInstrInfo* llvm::ExecutionDomainFix::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>llvm::ExecutionDomainFix::TII</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="122" column="25" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_execution_domain_fix_1a213e635a34296f752d449ca546a35e0a" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+        <definition>const TargetRegisterInfo* llvm::ExecutionDomainFix::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>llvm::ExecutionDomainFix::TRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="123" column="28" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_execution_domain_fix_1af5f1e2fcdcf23cbfde704f60450dec4e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; int, 1 &gt; &gt;</type>
+        <definition>std::vector&lt;SmallVector&lt;int, 1&gt; &gt; llvm::ExecutionDomainFix::AliasMap</definition>
+        <argsstring></argsstring>
+        <name>AliasMap</name>
+        <qualifiedname>llvm::ExecutionDomainFix::AliasMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="124" column="15" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_execution_domain_fix_1a6a44bc02029bdc1ef8fb82007db8605e" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>const unsigned llvm::ExecutionDomainFix::NumRegs</definition>
+        <argsstring></argsstring>
+        <name>NumRegs</name>
+        <qualifiedname>llvm::ExecutionDomainFix::NumRegs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="125" column="18" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_execution_domain_fix_1afc059e613d50df38d2951e91f194ff09" prot="private" static="no" mutable="no">
+        <type>LiveRegsDVInfo</type>
+        <definition>LiveRegsDVInfo llvm::ExecutionDomainFix::LiveRegs</definition>
+        <argsstring></argsstring>
+        <name>LiveRegs</name>
+        <qualifiedname>llvm::ExecutionDomainFix::LiveRegs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="129" column="18" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_execution_domain_fix_1a3f3d3735964451a6b9a3ffa2ed8f2812" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">OutRegsInfoMap</ref></type>
+        <definition>OutRegsInfoMap llvm::ExecutionDomainFix::MBBOutRegsInfos</definition>
+        <argsstring></argsstring>
+        <name>MBBOutRegsInfos</name>
+        <qualifiedname>llvm::ExecutionDomainFix::MBBOutRegsInfos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="134" column="18" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_execution_domain_fix_1a3ed79c45b6858f755f2931c575626b3f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_reaching_def_analysis" kindref="compound">ReachingDefAnalysis</ref> *</type>
+        <definition>ReachingDefAnalysis* llvm::ExecutionDomainFix::RDA</definition>
+        <argsstring></argsstring>
+        <name>RDA</name>
+        <qualifiedname>llvm::ExecutionDomainFix::RDA</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="136" column="23" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a141030b45949448836e2a786e89ba216" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ExecutionDomainFix::ExecutionDomainFix</definition>
+        <argsstring>(char &amp;PassID, const TargetRegisterClass &amp;RC)</argsstring>
+        <name>ExecutionDomainFix</name>
+        <qualifiedname>llvm::ExecutionDomainFix::ExecutionDomainFix</qualifiedname>
+        <param>
+          <type><ref refid="classchar" kindref="compound">char</ref> &amp;</type>
+          <declname>PassID</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_class" kindref="compound">TargetRegisterClass</ref> &amp;</type>
+          <declname>RC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="139" column="3" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="139" bodyend="140"/>
+        <references refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" compoundref="_machine_function_pass_8h" startline="41" endline="41">llvm::MachineFunctionPass::MachineFunctionPass</references>
+        <referencedby refid="classanonymous__namespace_02_a_r_m_target_machine_8cpp_03_1_1_a_r_m_execution_domain_fix_1ac551188827dc9a9a97f0061938b113b9" compoundref="_a_r_m_target_machine_8cpp" startline="397" endline="397">anonymous_namespace{ARMTargetMachine.cpp}::ARMExecutionDomainFix::ARMExecutionDomainFix</referencedby>
+        <referencedby refid="classanonymous__namespace_02_x86_target_machine_8cpp_03_1_1_x86_execution_domain_fix_1a8ec6526dc54d92ef45d87c845b27c869" compoundref="_x86_target_machine_8cpp" startline="439" endline="439">anonymous_namespace{X86TargetMachine.cpp}::X86ExecutionDomainFix::X86ExecutionDomainFix</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a101879a381eb818b929145a3354575b8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::ExecutionDomainFix::getAnalysisUsage</definition>
+        <argsstring>(AnalysisUsage &amp;AU) const override</argsstring>
+        <name>getAnalysisUsage</name>
+        <qualifiedname>llvm::ExecutionDomainFix::getAnalysisUsage</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1a6590d0486104165ca40c7df0707f7b9e">getAnalysisUsage</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_analysis_usage" kindref="compound">AnalysisUsage</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>getAnalysisUsage - This function should be overriden by passes that need analysis information to do their job. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If a pass specifies that it uses a particular analysis result to this function, it can then use the <ref refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" kindref="member">getAnalysis&lt;AnalysisType&gt;()</ref> function, below. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="142" column="8" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="142" bodyend="146"/>
+        <references refid="classllvm_1_1_analysis_usage_1ae0adcccca08fb686c9ce00f9397b660c" compoundref="_pass_analysis_support_8h" startline="75" endline="77">llvm::AnalysisUsage::addRequired</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e" compoundref="_machine_function_pass_8cpp" startline="169" endline="190">llvm::MachineFunctionPass::getAnalysisUsage</references>
+        <references refid="classllvm_1_1_analysis_usage_1af22b06a6a4f9df80454071685a0d6a02" compoundref="_pass_analysis_support_8h" startline="130" endline="130">llvm::AnalysisUsage::setPreservesAll</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1aa90dd7f08ca467a5d6dc3215fb98ee51" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ExecutionDomainFix::runOnMachineFunction</definition>
+        <argsstring>(MachineFunction &amp;MF) override</argsstring>
+        <name>runOnMachineFunction</name>
+        <qualifiedname>llvm::ExecutionDomainFix::runOnMachineFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1abb98ed32e4e5acae62ef3edd7bf04fb5">runOnMachineFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="148" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="413" bodyend="470"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" compoundref="_pass_analysis_support_8h" startline="230" endline="233">llvm::Pass::getAnalysis</references>
+        <references refid="classllvm_1_1_machine_function_1a977ddce262de45c645be23d951066351" compoundref="_machine_function_8h" startline="704" endline="704">llvm::MachineFunction::getFunction</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1acd858ed72f11db9444617740c3622608" compoundref="_target_subtarget_info_8h" startline="97" endline="97">llvm::TargetSubtargetInfo::getInstrInfo</references>
+        <references refid="classllvm_1_1_machine_function_1aa22424ba23740b6a748e8d0c239b7e4c" compoundref="_machine_function_8h" startline="876" endline="876">llvm::MachineFunction::getNumBlockIDs</references>
+        <references refid="classllvm_1_1_machine_function_1a810234b6b3d223b7c74a4253fcc5ea5e" compoundref="_machine_function_8h" startline="743" endline="743">llvm::MachineFunction::getRegInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classllvm_1_1_m_c_reg_alias_iterator_1ac336c049c12ead7be5b86e6d046f8ab0" compoundref="_m_c_register_info_8h" startline="763" endline="763">llvm::MCRegAliasIterator::isValid</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="namespacellvm_1a650dea4533083a886cec9f16d80356d9a123fead50246387983ee340507115ef4" compoundref="_atomic_ordering_8h" startline="32">llvm::release</references>
+        <references refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" compoundref="_sandbox_i_r_2_pass_8cpp" startline="178" endline="190">llvm::FunctionPass::skipFunction</references>
+        <references refid="classllvm_1_1_loop_traversal_1a87cd9704fc800af5dddb87f26badfb3a" compoundref="_loop_traversal_8cpp" startline="24" endline="75">llvm::LoopTraversal::traverse</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a26657d3f8a330b3b43c90710cdc98cdf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_function_properties" kindref="compound">MachineFunctionProperties</ref></type>
+        <definition>MachineFunctionProperties llvm::ExecutionDomainFix::getRequiredProperties</definition>
+        <argsstring>() const override</argsstring>
+        <name>getRequiredProperties</name>
+        <qualifiedname>llvm::ExecutionDomainFix::getRequiredProperties</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1af0f2f06a3a773431ee9813351d609c4d">getRequiredProperties</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="150" column="29" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="150" bodyend="153"/>
+        <references refid="classllvm_1_1_machine_function_properties_1ad85237c6c667e4713efe8921e9c32ac1a72f7d830dd5ddb30f06d8e9639558ac3" compoundref="_machine_function_8h" startline="191">llvm::MachineFunctionProperties::NoVRegs</references>
+        <references refid="classllvm_1_1_machine_function_properties_1aa7780563d7ca260d0ae67d957b56427f" compoundref="_machine_function_8h" startline="207" endline="210">llvm::MachineFunctionProperties::set</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a24c67bf36c726ef85915a890ac0b64ca" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">iterator_range</ref>&lt; <ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; int &gt;<ref refid="classllvm_1_1_small_vector_impl" kindref="compound">::const_iterator</ref> &gt;</type>
+        <definition>iterator_range&lt; SmallVectorImpl&lt; int &gt;::const_iterator &gt; ExecutionDomainFix::regIndices</definition>
+        <argsstring>(unsigned Reg) const</argsstring>
+        <name>regIndices</name>
+        <qualifiedname>llvm::ExecutionDomainFix::regIndices</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Translate TRI register number to a list of indices into our smaller tables of interesting registers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="159" column="3" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="19" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a1efd873c13e7037f49bc7ca26b2e4b78" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> *</type>
+        <definition>DomainValue * ExecutionDomainFix::alloc</definition>
+        <argsstring>(int domain=-1)</argsstring>
+        <name>alloc</name>
+        <qualifiedname>llvm::ExecutionDomainFix::alloc</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>domain</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+<para><ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> allocation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="162" column="15" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="25" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a0fdf6cfe6a3994a00b5ed44acf65df63" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> *</type>
+        <definition>DomainValue * llvm::ExecutionDomainFix::retain</definition>
+        <argsstring>(DomainValue *DV)</argsstring>
+        <name>retain</name>
+        <qualifiedname>llvm::ExecutionDomainFix::retain</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> *</type>
+          <declname>DV</declname>
+        </param>
+        <briefdescription>
+<para>Add reference to DV. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="165" column="15" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="165" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1af0d16e49bab6bec162f627047e734f83" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExecutionDomainFix::release</definition>
+        <argsstring>(DomainValue *)</argsstring>
+        <name>release</name>
+        <qualifiedname>llvm::ExecutionDomainFix::release</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> *</type>
+          <defname>DV</defname>
+        </param>
+        <briefdescription>
+<para>Release a reference to DV. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When the last reference is released, collapse if needed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="173" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="35" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1ad96ee03ab1de2d3bf79bc76c1c640119" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> *</type>
+        <definition>DomainValue * ExecutionDomainFix::resolve</definition>
+        <argsstring>(DomainValue *&amp;)</argsstring>
+        <name>resolve</name>
+        <qualifiedname>llvm::ExecutionDomainFix::resolve</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> *&amp;</type>
+          <defname>DVRef</defname>
+        </param>
+        <briefdescription>
+<para>Follow the chain of dead DomainValues until a live <ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> is reached. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Update the referenced pointer when necessary. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="177" column="15" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="53" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a1c6f9efac38759ed27b7b3751daf72c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExecutionDomainFix::setLiveReg</definition>
+        <argsstring>(int rx, DomainValue *DV)</argsstring>
+        <name>setLiveReg</name>
+        <qualifiedname>llvm::ExecutionDomainFix::setLiveReg</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>rx</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> *</type>
+          <declname>DV</declname>
+        </param>
+        <briefdescription>
+<para>Set LiveRegs[rx] = dv, updating reference counts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="180" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="70" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1afb991635b24d9344a48a3abbf8cc3283" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExecutionDomainFix::kill</definition>
+        <argsstring>(int rx)</argsstring>
+        <name>kill</name>
+        <qualifiedname>llvm::ExecutionDomainFix::kill</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>rx</declname>
+        </param>
+        <briefdescription>
+<para>Kill register rx, recycle or collapse any <ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="183" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="81" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a64d238d8385deab7b4cd62450a3b2eca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExecutionDomainFix::force</definition>
+        <argsstring>(int rx, unsigned domain)</argsstring>
+        <name>force</name>
+        <qualifiedname>llvm::ExecutionDomainFix::force</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>rx</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>domain</declname>
+        </param>
+        <briefdescription>
+<para>Force register rx into domain. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="186" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="91" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1af1401bd55ffdf7647dff0b5d9cbc92ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExecutionDomainFix::collapse</definition>
+        <argsstring>(DomainValue *dv, unsigned domain)</argsstring>
+        <name>collapse</name>
+        <qualifiedname>llvm::ExecutionDomainFix::collapse</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> *</type>
+          <declname>dv</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>domain</declname>
+        </param>
+        <briefdescription>
+<para>Collapse open <ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> into given domain. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If there are multiple registers using dv, they each get a unique collapsed <ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="190" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="112" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a400099433f030ba48a87545288e89fc6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ExecutionDomainFix::merge</definition>
+        <argsstring>(DomainValue *A, DomainValue *B)</argsstring>
+        <name>merge</name>
+        <qualifiedname>llvm::ExecutionDomainFix::merge</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> *</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_domain_value" kindref="compound">DomainValue</ref> *</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+<para>All instructions and registers in B are moved to A, and B is released. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="193" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="127" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a73ebbcd41ae4ba16e860d985bb59c8ab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExecutionDomainFix::enterBasicBlock</definition>
+        <argsstring>(const LoopTraversal::TraversedMBBInfo &amp;TraversedMBB)</argsstring>
+        <name>enterBasicBlock</name>
+        <qualifiedname>llvm::ExecutionDomainFix::enterBasicBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_loop_traversal_1_1_traversed_m_b_b_info" kindref="compound">LoopTraversal::TraversedMBBInfo</ref> &amp;</type>
+          <declname>TraversedMBB</declname>
+        </param>
+        <briefdescription>
+<para>Set up LiveRegs by merging predecessor live-out values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="196" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="152" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a07eacb5daf93153c00a71a7ee0c54684" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExecutionDomainFix::leaveBasicBlock</definition>
+        <argsstring>(const LoopTraversal::TraversedMBBInfo &amp;TraversedMBB)</argsstring>
+        <name>leaveBasicBlock</name>
+        <qualifiedname>llvm::ExecutionDomainFix::leaveBasicBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_loop_traversal_1_1_traversed_m_b_b_info" kindref="compound">LoopTraversal::TraversedMBBInfo</ref> &amp;</type>
+          <declname>TraversedMBB</declname>
+        </param>
+        <briefdescription>
+<para>Update live-out values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="199" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="208" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a70ebfad844448c105d6354ee046e8fd4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExecutionDomainFix::processBasicBlock</definition>
+        <argsstring>(const LoopTraversal::TraversedMBBInfo &amp;TraversedMBB)</argsstring>
+        <name>processBasicBlock</name>
+        <qualifiedname>llvm::ExecutionDomainFix::processBasicBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_loop_traversal_1_1_traversed_m_b_b_info" kindref="compound">LoopTraversal::TraversedMBBInfo</ref> &amp;</type>
+          <declname>TraversedMBB</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1sys_1_1_process" kindref="compound">Process</ref> he given basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="202" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="395" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1ac048d5afb6d98aef4e3f9bb3618ea0e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ExecutionDomainFix::visitInstr</definition>
+        <argsstring>(MachineInstr *)</argsstring>
+        <name>visitInstr</name>
+        <qualifiedname>llvm::ExecutionDomainFix::visitInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <defname>MI</defname>
+        </param>
+        <briefdescription>
+<para>Visit given insturcion. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="205" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="222" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1ac954eac09919ac86f73491d2fff582f9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExecutionDomainFix::processDefs</definition>
+        <argsstring>(MachineInstr *, bool Kill)</argsstring>
+        <name>processDefs</name>
+        <qualifiedname>llvm::ExecutionDomainFix::processDefs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <defname>MI</defname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Kill</declname>
+        </param>
+        <briefdescription>
+<para>Update def-ages for registers defined by MI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If Kill is set, also kill off DomainValues clobbered by the defs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="209" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="235" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1a53321cb004793dde847dd9ebc35d08d3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExecutionDomainFix::visitSoftInstr</definition>
+        <argsstring>(MachineInstr *, unsigned mask)</argsstring>
+        <name>visitSoftInstr</name>
+        <qualifiedname>llvm::ExecutionDomainFix::visitSoftInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <defname>mi</defname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+<para>A soft instruction can be changed to work in other domains given by mask. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="212" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="282" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_execution_domain_fix_1af4f2c26ac2dc3cd5a5190845f6ea1aa4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExecutionDomainFix::visitHardInstr</definition>
+        <argsstring>(MachineInstr *, unsigned domain)</argsstring>
+        <name>visitHardInstr</name>
+        <qualifiedname>llvm::ExecutionDomainFix::visitHardInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <defname>mi</defname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>domain</declname>
+        </param>
+        <briefdescription>
+<para>A hard instruction only works in one domain. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All input registers will be forced into that domain. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="216" column="8" bodyfile="lib/CodeGen/ExecutionDomainFix.cpp" bodystart="257" bodyend="280"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>anonymous_namespace{ARMTargetMachine.cpp}::ARMExecutionDomainFix</label>
+        <link refid="classanonymous__namespace_02_a_r_m_target_machine_8cpp_03_1_1_a_r_m_execution_domain_fix"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>anonymous_namespace{X86TargetMachine.cpp}::X86ExecutionDomainFix</label>
+        <link refid="classanonymous__namespace_02_x86_target_machine_8cpp_03_1_1_x86_execution_domain_fix"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::ExecutionDomainFix</label>
+        <link refid="classllvm_1_1_execution_domain_fix"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::ExecutionDomainFix</label>
+        <link refid="classllvm_1_1_execution_domain_fix"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/CodeGen/ExecutionDomainFix.h" line="116" column="1" bodyfile="include/llvm/CodeGen/ExecutionDomainFix.h" bodystart="116" bodyend="217"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_execution_domain_fix_1af5f1e2fcdcf23cbfde704f60450dec4e" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>AliasMap</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a1efd873c13e7037f49bc7ca26b2e4b78" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>alloc</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1ad57efbfcc86a44fdaccebab62edd7d21" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>Allocator</name></member>
+      <member refid="classllvm_1_1_function_pass_1a748922f143f2da9a13b0b15ff6a3dd22" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>assignPassManager</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1ae9b26ba6e924487d496ad64d201ed9fc" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>Avail</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1af1401bd55ffdf7647dff0b5d9cbc92ed" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>collapse</name></member>
+      <member refid="classllvm_1_1_pass_1a2ed7d79d79dffe7368c3d3cdf40dd80e" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>createPass</name></member>
+      <member refid="classllvm_1_1_pass_1ac7811985250c75d7e2a244292d615fff" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>doFinalization</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a204ffdf4717a340f8cbe1fd1341a8148" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>doInitialization</name></member>
+      <member refid="classllvm_1_1_pass_1a1a60731eeff800b39fca7280a5a167ae" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_pass_1ad2f0576ef7c9c4af40e35001c81f4922" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>dumpPassStructure</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a73ebbcd41ae4ba16e860d985bb59c8ab" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>enterBasicBlock</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a141030b45949448836e2a786e89ba216" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>ExecutionDomainFix</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a64d238d8385deab7b4cd62450a3b2eca" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>force</name></member>
+      <member refid="classllvm_1_1_function_pass_1a7691d83e3561f781cae4ce4a01bdfa93" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>FunctionPass</name></member>
+      <member refid="classllvm_1_1_pass_1a03d3a81b1c46aff7c38ef3a6750ba225" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>getAdjustedAnalysisPointer</name></member>
+      <member refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a560d384c0cef7f62836884fdbbd1fe66" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a6613f29d3e54ce175ac33fb9ba264fae" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1a2190247edbacb33b4e8a3d409fa2d99e" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>getAnalysisIfAvailable</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a101879a381eb818b929145a3354575b8" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>getAnalysisUsage</name></member>
+      <member refid="classllvm_1_1_pass_1ae31759fd992cddb1f2d62ab0df85834a" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>getAsImmutablePass</name></member>
+      <member refid="classllvm_1_1_pass_1a626b77ef8abdfa9f53c697ad129a6e5a" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>getAsPMDataManager</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a22bc7c91051dca8dc211c3afe9929603" prot="protected" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>getClearedProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a63192e749ba4a0ee29336a59d6a19647" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>getPassID</name></member>
+      <member refid="classllvm_1_1_pass_1a9de4db62e6884f2e5efea6793af30d99" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>getPassKind</name></member>
+      <member refid="classllvm_1_1_pass_1ad729b39eacf070a9bca84533b3c743bf" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>getPassName</name></member>
+      <member refid="classllvm_1_1_function_pass_1a68517706d9801aec6d20c32a424ed152" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>getPotentialPassManagerType</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a26657d3f8a330b3b43c90710cdc98cdf" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>getRequiredProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a969c082f66671df288441bbad9ca87db" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>getResolver</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a8fbedd15c1c809e6050f3fd3ccd3338e" prot="protected" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>getSetProperties</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1afb991635b24d9344a48a3abbf8cc3283" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>kill</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a07eacb5daf93153c00a71a7ee0c54684" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>leaveBasicBlock</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1afc059e613d50df38d2951e91f194ff09" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>LiveRegs</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a29f50c014d318f7bd5391a8811537340" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>LiveRegsDVInfo</name></member>
+      <member refid="classllvm_1_1_pass_1aab174263c400ece13a7278990e102fa6" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_pass_1a992ff669acca94459037cfb1f41cb9dc" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" prot="protected" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>MachineFunctionPass</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a3f3d3735964451a6b9a3ffa2ed8f2812" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>MBBOutRegsInfos</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a400099433f030ba48a87545288e89fc6" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>merge</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1ae2dde57530820d1cffd1c6bc0c950c0e" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>MF</name></member>
+      <member refid="classllvm_1_1_pass_1a0b4a511579939b07831db90c3fc98996" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>mustPreserveAnalysisID</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a6a44bc02029bdc1ef8fb82007db8605e" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>NumRegs</name></member>
+      <member refid="classllvm_1_1_pass_1af468a2aeb0d98e3dbeda38176ce516d3" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1aa2e6cc750e2f33af7e57b6be3486fea1" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>OutRegsInfoMap</name></member>
+      <member refid="classllvm_1_1_pass_1a16baa169d062524be5a6b67609266174" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1ad40d19ce644ec38c52ea00be59016cd5" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1aa5f61a8789f87816c5f494d42a70f01f" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>preparePassManager</name></member>
+      <member refid="classllvm_1_1_pass_1a061b4c01e9c189208dbfd3c77fdb9a5c" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>print</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a70ebfad844448c105d6354ee046e8fd4" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>processBasicBlock</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1ac954eac09919ac86f73491d2fff582f9" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>processDefs</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a71f4c2abb1abc62912cbea8715da04e5" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>RC</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a3ed79c45b6858f755f2931c575626b3f" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>RDA</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a24c67bf36c726ef85915a890ac0b64ca" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>regIndices</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1af0d16e49bab6bec162f627047e734f83" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>release</name></member>
+      <member refid="classllvm_1_1_pass_1aeb6e74b0f36a0acd1d20149ef088715a" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>releaseMemory</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1ad96ee03ab1de2d3bf79bc76c1c640119" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>resolve</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a0fdf6cfe6a3994a00b5ed44acf65df63" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>retain</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1aa90dd7f08ca467a5d6dc3215fb98ee51" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>runOnMachineFunction</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a1c6f9efac38759ed27b7b3751daf72c5" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>setLiveReg</name></member>
+      <member refid="classllvm_1_1_pass_1a2423fcc912a698d4f36c9c9380b53a50" prot="public" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>setResolver</name></member>
+      <member refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" prot="protected" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>skipFunction</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a16cbffbdd7e05ab58b34968371b2515e" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>TII</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a213e635a34296f752d449ca546a35e0a" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>TRI</name></member>
+      <member refid="classllvm_1_1_pass_1ac8ef6f57d4ec869a7f1007aeddf2b169" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>verifyAnalysis</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1af4f2c26ac2dc3cd5a5190845f6ea1aa4" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>visitHardInstr</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1ac048d5afb6d98aef4e3f9bb3618ea0e5" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>visitInstr</name></member>
+      <member refid="classllvm_1_1_execution_domain_fix_1a53321cb004793dde847dd9ebc35d08d3" prot="private" virt="non-virtual"><scope>llvm::ExecutionDomainFix</scope><name>visitSoftInstr</name></member>
+      <member refid="classllvm_1_1_pass_1abe2fe9b29d21424fe4b410fc8e98606c" prot="public" virt="virtual"><scope>llvm::ExecutionDomainFix</scope><name>~Pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_listening_socket" kind="class" language="C++" prot="public">
+    <compoundname>llvm::ListeningSocket</compoundname>
+    <includes refid="raw__socket__stream_8h" local="yes">llvm/Support/raw_socket_stream.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_listening_socket_1a558f10cb44ab6fee366ae1c7daa44e9f" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; int &gt;</type>
+        <definition>std::atomic&lt;int&gt; llvm::ListeningSocket::FD</definition>
+        <argsstring></argsstring>
+        <name>FD</name>
+        <qualifiedname>llvm::ListeningSocket::FD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/raw_socket_stream.h" line="61" column="15" bodyfile="include/llvm/Support/raw_socket_stream.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_listening_socket_1afe93f0a026bd14fb4a68e8dc0cf04b3d" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::ListeningSocket::SocketPath</definition>
+        <argsstring></argsstring>
+        <name>SocketPath</name>
+        <qualifiedname>llvm::ListeningSocket::SocketPath</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/raw_socket_stream.h" line="62" column="15" bodyfile="include/llvm/Support/raw_socket_stream.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_listening_socket_1a0a6a79b58c1c9217b7d5f049ec67e478" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int llvm::ListeningSocket::PipeFD[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>PipeFD</name>
+        <qualifiedname>llvm::ListeningSocket::PipeFD</qualifiedname>
+        <briefdescription>
+<para>If a separate thread calls <ref refid="classllvm_1_1_listening_socket_1a682299af2a92a43ba340ce4a0ce736ba" kindref="member">ListeningSocket::shutdown</ref>, the <ref refid="classllvm_1_1_listening_socket" kindref="compound">ListeningSocket</ref> file descriptor (FD) could be closed while ::poll is waiting for it to be ready to perform a I/O operations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>::poll will continue to block even after FD is closed so use a self-pipe mechanism to get ::poll to return </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/raw_socket_stream.h" line="68" column="7" bodyfile="include/llvm/Support/raw_socket_stream.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_listening_socket_1a6aa35ac319fb45c790661ac10d5d1ca7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ListeningSocket::ListeningSocket</definition>
+        <argsstring>(int SocketFD, StringRef SocketPath, int PipeFD[2])</argsstring>
+        <name>ListeningSocket</name>
+        <qualifiedname>llvm::ListeningSocket::ListeningSocket</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>SocketFD</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>SocketPath</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>PipeFD</declname>
+          <array>[2]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/raw_socket_stream.h" line="70" column="3" bodyfile="lib/Support/raw_socket_stream.cpp" bodystart="96" bodyend="98"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_listening_socket_1aab6af2845a3e2eacf99fe9a593660142" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ListeningSocket::~ListeningSocket</definition>
+        <argsstring>()</argsstring>
+        <name>~ListeningSocket</name>
+        <qualifiedname>llvm::ListeningSocket::~ListeningSocket</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/raw_socket_stream.h" line="77" column="3" bodyfile="lib/Support/raw_socket_stream.cpp" bodystart="296" bodyend="308"/>
+        <references refid="classllvm_1_1_listening_socket_1a682299af2a92a43ba340ce4a0ce736ba" compoundref="raw__socket__stream_8cpp" startline="274" endline="294">shutdown</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_listening_socket_1a00e7ab1ab38cc68f656ce8a425d536bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ListeningSocket::ListeningSocket</definition>
+        <argsstring>(ListeningSocket &amp;&amp;LS)</argsstring>
+        <name>ListeningSocket</name>
+        <qualifiedname>llvm::ListeningSocket::ListeningSocket</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_listening_socket" kindref="compound">ListeningSocket</ref> &amp;&amp;</type>
+          <declname>LS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/raw_socket_stream.h" line="78" column="3" bodyfile="lib/Support/raw_socket_stream.cpp" bodystart="100" bodyend="108"/>
+        <references refid="_a_m_d_g_p_u_mark_last_scratch_load_8cpp_1a8a3fe89940744b94ffe5dacd6704c2be" compoundref="_a_m_d_g_p_u_mark_last_scratch_load_8cpp" startline="142">load</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_listening_socket_1a3e74f90491fae9cdd0088d3f9718c561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ListeningSocket::ListeningSocket</definition>
+        <argsstring>(const ListeningSocket &amp;LS)=delete</argsstring>
+        <name>ListeningSocket</name>
+        <qualifiedname>llvm::ListeningSocket::ListeningSocket</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_listening_socket" kindref="compound">ListeningSocket</ref> &amp;</type>
+          <declname>LS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/raw_socket_stream.h" line="79" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_listening_socket_1a5e7b840e64fa22c48b1be27826bfe843" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_listening_socket" kindref="compound">ListeningSocket</ref> &amp;</type>
+        <definition>ListeningSocket &amp; llvm::ListeningSocket::operator=</definition>
+        <argsstring>(const ListeningSocket &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::ListeningSocket::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_listening_socket" kindref="compound">ListeningSocket</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/raw_socket_stream.h" line="80" column="19"/>
+        <references refid="namespacellvm_1a00440f10281348fd9f7be52e23c7c874" compoundref="_threading_8h" startline="184" endline="188">llvm::hardware_concurrency</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_listening_socket_1a682299af2a92a43ba340ce4a0ce736ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ListeningSocket::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>llvm::ListeningSocket::shutdown</qualifiedname>
+        <briefdescription>
+<para>Closes the FD, unlinks the socket file, and writes to PipeFD. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>After the construction of the <ref refid="classllvm_1_1_listening_socket" kindref="compound">ListeningSocket</ref>, shutdown is signal safe if it is called during the lifetime of the object. shutdown can be called concurrently with <ref refid="classllvm_1_1_listening_socket_1ac080084a7f9f9a2d530621e41a309967" kindref="member">ListeningSocket::accept</ref> as writing to PipeFD will cause a blocking call to ::poll to return.</para>
+<para>Once shutdown is called there is no way to reinitialize <ref refid="classllvm_1_1_listening_socket" kindref="compound">ListeningSocket</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/raw_socket_stream.h" line="90" column="8" bodyfile="lib/Support/raw_socket_stream.cpp" bodystart="274" bodyend="294"/>
+        <references refid="namespacellvm_1a7363e46d4dd6c78affffabaea0de482b" compoundref="_d_w_p_8cpp" startline="625" endline="945">llvm::write</references>
+        <referencedby refid="classllvm_1_1_listening_socket_1aab6af2845a3e2eacf99fe9a593660142" compoundref="raw__socket__stream_8cpp" startline="296" endline="308">~ListeningSocket</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_listening_socket_1ac080084a7f9f9a2d530621e41a309967" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1raw__socket__stream" kindref="compound">raw_socket_stream</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; raw_socket_stream &gt; &gt; ListeningSocket::accept</definition>
+        <argsstring>(const std::chrono::milliseconds &amp;Timeout=std::chrono::milliseconds(-1))</argsstring>
+        <name>accept</name>
+        <qualifiedname>llvm::ListeningSocket::accept</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::chrono::milliseconds &amp;</type>
+          <declname>Timeout</declname>
+          <defval>std::chrono::milliseconds(-1)</defval>
+        </param>
+        <briefdescription>
+<para>Accepts an incoming connection on the listening socket. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method can optionally either block until a connection is available or timeout after a specified amount of time has passed. By default the method will block until the socket has recieved a connection. If the accept timesout this method will return std::errc:timed_out</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An optional timeout duration in milliseconds. Setting Timeout to a negative number causes <ref refid="classllvm_1_1_listening_socket_1ac080084a7f9f9a2d530621e41a309967" kindref="member">accept</ref> to block indefinitely </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/raw_socket_stream.h" line="101" column="12" bodyfile="lib/Support/raw_socket_stream.cpp" bodystart="254" bodyend="272"/>
+        <references refid="classllvm_1_1_listening_socket_1ac080084a7f9f9a2d530621e41a309967" compoundref="raw__socket__stream_8cpp" startline="254" endline="272">accept</references>
+        <references refid="raw__socket__stream_8cpp_1a962923a59c6a9e8ab55ec73dc320f68f" compoundref="raw__socket__stream_8cpp" startline="56" endline="62">getLastSocketErrorCode</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="raw__socket__stream_8cpp_1ab48a833c4f2a5ebcee2b8abada3e0ac5" compoundref="raw__socket__stream_8cpp" startline="190" endline="251">manageTimeout</references>
+        <referencedby refid="classllvm_1_1_listening_socket_1ac080084a7f9f9a2d530621e41a309967" compoundref="raw__socket__stream_8cpp" startline="254" endline="272">accept</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_listening_socket_1a22cd57e089541409aa05153237a44729" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1_listening_socket" kindref="compound">ListeningSocket</ref> &gt;</type>
+        <definition>Expected&lt; ListeningSocket &gt; ListeningSocket::createUnix</definition>
+        <argsstring>(StringRef SocketPath, int MaxBacklog=llvm::hardware_concurrency().compute_thread_count())</argsstring>
+        <name>createUnix</name>
+        <qualifiedname>llvm::ListeningSocket::createUnix</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>SocketPath</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>MaxBacklog</declname>
+          <defval><ref refid="namespacellvm_1a00440f10281348fd9f7be52e23c7c874" kindref="member">llvm::hardware_concurrency</ref>().compute_thread_count()</defval>
+        </param>
+        <briefdescription>
+<para>Creates a listening socket bound to the specified file system path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Handles the socket creation, binding, and immediately starts listening for incoming connections.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SocketPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file system path where the socket will be created </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>MaxBacklog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The max number of connections in a socket&apos;s backlog </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/raw_socket_stream.h" line="111" column="19" bodyfile="lib/Support/raw_socket_stream.cpp" bodystart="110" bodyend="178"/>
+        <references refid="_hexagon_m_c_code_emitter_8cpp_1ae4dfd7b0d66121016d6466d2ff10e8ba" compoundref="_hexagon_m_c_code_emitter_8cpp" startline="46">_</references>
+        <references refid="namespacellvm_1aee0e70be66536b9ef7b65ae2e5a45959" compoundref="llvm_2_support_2_error_8h" startline="1069" endline="1071">llvm::consumeError</references>
+        <references refid="namespacellvm_1_1sys_1_1fs_1a645a607ffcccb12f16a5736db991e7d9" compoundref="_path_8cpp" startline="1077" endline="1079">llvm::sys::fs::exists</references>
+        <references refid="raw__socket__stream_8cpp_1a962923a59c6a9e8ab55ec73dc320f68f" compoundref="raw__socket__stream_8cpp" startline="56" endline="62">getLastSocketErrorCode</references>
+        <references refid="raw__socket__stream_8cpp_1a01d53f471176148059cb8cd09dffe690" compoundref="raw__socket__stream_8cpp" startline="72" endline="94">getSocketFD</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="raw__socket__stream_8cpp_1ac93e3301780b206d83d8a7c768ce4992" compoundref="raw__socket__stream_8cpp" startline="64" endline="70">setSocketAddr</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Manages a passive (i.e., listening) UNIX domain socket. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classllvm_1_1_listening_socket" kindref="compound">ListeningSocket</ref> class encapsulates a UNIX domain socket that can listen and accept incoming connections. <ref refid="classllvm_1_1_listening_socket" kindref="compound">ListeningSocket</ref> is portable and supports Windows builds begining with Insider Build 17063. <ref refid="classllvm_1_1_listening_socket" kindref="compound">ListeningSocket</ref> is designed for server-side operations, working alongside <computeroutput>raw_socket_streams</computeroutput> that function as client connections.</para>
+<para>Usage example: <programlisting filename=".cpp"><codeline><highlight class="normal">std::string<sp/><ref refid="namespacellvm_1_1pdb_1ac10322dc19a928c2dbb83ec9689dc23caac70412e939d72a9234cdebb1af5867b" kindref="member">Path</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/path/to/socket&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">Expected&lt;ListeningSocket&gt;<sp/>S<sp/>=<sp/><ref refid="classllvm_1_1_listening_socket_1a22cd57e089541409aa05153237a44729" kindref="member">ListeningSocket::createUnix</ref>(Path);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(S)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Expected&lt;std::unique_ptr&lt;raw_socket_stream&gt;&gt;<sp/>connection<sp/>=<sp/>S-&gt;accept();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(connection)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Use<sp/>the<sp/>accepted<sp/>raw_socket_stream<sp/>for<sp/>communication.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <location file="include/llvm/Support/raw_socket_stream.h" line="59" column="1" bodyfile="include/llvm/Support/raw_socket_stream.h" bodystart="59" bodyend="114"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_listening_socket_1ac080084a7f9f9a2d530621e41a309967" prot="public" virt="non-virtual"><scope>llvm::ListeningSocket</scope><name>accept</name></member>
+      <member refid="classllvm_1_1_listening_socket_1a22cd57e089541409aa05153237a44729" prot="public" virt="non-virtual"><scope>llvm::ListeningSocket</scope><name>createUnix</name></member>
+      <member refid="classllvm_1_1_listening_socket_1a558f10cb44ab6fee366ae1c7daa44e9f" prot="private" virt="non-virtual"><scope>llvm::ListeningSocket</scope><name>FD</name></member>
+      <member refid="classllvm_1_1_listening_socket_1a6aa35ac319fb45c790661ac10d5d1ca7" prot="private" virt="non-virtual"><scope>llvm::ListeningSocket</scope><name>ListeningSocket</name></member>
+      <member refid="classllvm_1_1_listening_socket_1a00e7ab1ab38cc68f656ce8a425d536bf" prot="public" virt="non-virtual"><scope>llvm::ListeningSocket</scope><name>ListeningSocket</name></member>
+      <member refid="classllvm_1_1_listening_socket_1a3e74f90491fae9cdd0088d3f9718c561" prot="public" virt="non-virtual"><scope>llvm::ListeningSocket</scope><name>ListeningSocket</name></member>
+      <member refid="classllvm_1_1_listening_socket_1a5e7b840e64fa22c48b1be27826bfe843" prot="public" virt="non-virtual"><scope>llvm::ListeningSocket</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_listening_socket_1a0a6a79b58c1c9217b7d5f049ec67e478" prot="private" virt="non-virtual"><scope>llvm::ListeningSocket</scope><name>PipeFD</name></member>
+      <member refid="classllvm_1_1_listening_socket_1a682299af2a92a43ba340ce4a0ce736ba" prot="public" virt="non-virtual"><scope>llvm::ListeningSocket</scope><name>shutdown</name></member>
+      <member refid="classllvm_1_1_listening_socket_1afe93f0a026bd14fb4a68e8dc0cf04b3d" prot="private" virt="non-virtual"><scope>llvm::ListeningSocket</scope><name>SocketPath</name></member>
+      <member refid="classllvm_1_1_listening_socket_1aab6af2845a3e2eacf99fe9a593660142" prot="public" virt="non-virtual"><scope>llvm::ListeningSocket</scope><name>~ListeningSocket</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

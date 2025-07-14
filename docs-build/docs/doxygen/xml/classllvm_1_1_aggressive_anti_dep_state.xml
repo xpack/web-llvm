@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_aggressive_anti_dep_state" kind="class" language="C++" prot="public">
+    <compoundname>llvm::AggressiveAntiDepState</compoundname>
+    <includes refid="_aggressive_anti_dep_breaker_8h" local="yes">CodeGen/AggressiveAntiDepBreaker.h</includes>
+    <innerclass refid="structllvm_1_1_aggressive_anti_dep_state_1_1_register_reference" prot="public">llvm::AggressiveAntiDepState::RegisterReference</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_aggressive_anti_dep_state_1ae5db545f6beb24a07508ca78e298ac8e" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>const unsigned llvm::AggressiveAntiDepState::NumTargetRegs</definition>
+        <argsstring></argsstring>
+        <name>NumTargetRegs</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::NumTargetRegs</qualifiedname>
+        <briefdescription>
+<para>Number of non-virtual target registers (i.e. TRI-&gt;getNumRegs()). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="53" column="20" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_aggressive_anti_dep_state_1afaba3c4975e36e28e0690523f941a99b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::vector&lt;unsigned&gt; llvm::AggressiveAntiDepState::GroupNodes</definition>
+        <argsstring></argsstring>
+        <name>GroupNodes</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::GroupNodes</qualifiedname>
+        <briefdescription>
+<para>Implements a disjoint-union data structure to form register groups. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A node is represented by an index into the vector. A node can &quot;point to&quot; itself to indicate that it is the parent of a group, or point to another node to indicate that it is a member of the same group as that node. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="60" column="17" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_aggressive_anti_dep_state_1a99e6548530387ebf4d1da726cedcd6e7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::vector&lt;unsigned&gt; llvm::AggressiveAntiDepState::GroupNodeIndices</definition>
+        <argsstring></argsstring>
+        <name>GroupNodeIndices</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::GroupNodeIndices</qualifiedname>
+        <briefdescription>
+<para>For each register, the index of the GroupNode currently representing the group that the register belongs to. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classllvm_1_1_register" kindref="compound">Register</ref> 0 is always represented by the 0 group, a group composed of registers that are not eligible for anti-aliasing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="66" column="17" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_aggressive_anti_dep_state_1a86dcd1edf8abe41a93ae427c565f8cb0" prot="private" static="no" mutable="no">
+        <type>std::multimap&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="structllvm_1_1_aggressive_anti_dep_state_1_1_register_reference" kindref="compound">RegisterReference</ref> &gt;</type>
+        <definition>std::multimap&lt;unsigned, RegisterReference&gt; llvm::AggressiveAntiDepState::RegRefs</definition>
+        <argsstring></argsstring>
+        <name>RegRefs</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::RegRefs</qualifiedname>
+        <briefdescription>
+<para>Map registers to all their references within a live range. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="69" column="19" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_aggressive_anti_dep_state_1a780e217952c6283bde75d4aed214af89" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::vector&lt;unsigned&gt; llvm::AggressiveAntiDepState::KillIndices</definition>
+        <argsstring></argsstring>
+        <name>KillIndices</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::KillIndices</qualifiedname>
+        <briefdescription>
+<para>The index of the most recent kill (proceeding bottom-up), or ~0u if the register is not live. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="73" column="17" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_aggressive_anti_dep_state_1a7b5b44878a3c8bd51838458ec5f6ed35" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::vector&lt;unsigned&gt; llvm::AggressiveAntiDepState::DefIndices</definition>
+        <argsstring></argsstring>
+        <name>DefIndices</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::DefIndices</qualifiedname>
+        <briefdescription>
+<para>The index of the most recent complete def (proceeding bottom up), or ~0u if the register is live. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="77" column="17" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_aggressive_anti_dep_state_1a0c8e899a88a4162aeeaca5461012bb78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AggressiveAntiDepState::AggressiveAntiDepState</definition>
+        <argsstring>(const unsigned TargetRegs, MachineBasicBlock *BB)</argsstring>
+        <name>AggressiveAntiDepState</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::AggressiveAntiDepState</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>TargetRegs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="80" column="5" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.cpp" bodystart="54" bodyend="68"/>
+        <references refid="classllvm_1_1_machine_basic_block_1adbff55f335d303816547f35eb6edb948" compoundref="_machine_basic_block_8h" startline="334" endline="334">llvm::MachineBasicBlock::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_aggressive_anti_dep_state_1acc262ecf92c28647ff8a46216e82c0c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+        <definition>std::vector&lt; unsigned &gt; &amp; llvm::AggressiveAntiDepState::GetKillIndices</definition>
+        <argsstring>()</argsstring>
+        <name>GetKillIndices</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::GetKillIndices</qualifiedname>
+        <briefdescription>
+<para>Return the kill indices. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="83" column="17" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.h" bodystart="83" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_aggressive_anti_dep_state_1a6258f0ca25623f12e1c543467ad51f68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+        <definition>std::vector&lt; unsigned &gt; &amp; llvm::AggressiveAntiDepState::GetDefIndices</definition>
+        <argsstring>()</argsstring>
+        <name>GetDefIndices</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::GetDefIndices</qualifiedname>
+        <briefdescription>
+<para>Return the define indices. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="86" column="17" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.h" bodystart="86" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_aggressive_anti_dep_state_1a8c1f0778f56b17cb4ae959934b0a95b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::multimap&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="structllvm_1_1_aggressive_anti_dep_state_1_1_register_reference" kindref="compound">RegisterReference</ref> &gt; &amp;</type>
+        <definition>std::multimap&lt; unsigned, RegisterReference &gt; &amp; llvm::AggressiveAntiDepState::GetRegRefs</definition>
+        <argsstring>()</argsstring>
+        <name>GetRegRefs</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::GetRegRefs</qualifiedname>
+        <briefdescription>
+<para>Return the RegRefs map. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="89" column="19" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.h" bodystart="89" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_aggressive_anti_dep_state_1a8875a9b7c0c6feb3448437e75b9356f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned AggressiveAntiDepState::GetGroup</definition>
+        <argsstring>(unsigned Reg)</argsstring>
+        <name>GetGroup</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::GetGroup</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="93" column="14" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.cpp" bodystart="70" bodyend="76"/>
+        <referencedby refid="classllvm_1_1_aggressive_anti_dep_state_1a560eaba05729f660add3032185f9fbfb" compoundref="_aggressive_anti_dep_breaker_8cpp" startline="78" endline="87">GetGroupRegs</referencedby>
+        <referencedby refid="classllvm_1_1_aggressive_anti_dep_state_1ac2acf6127130067c40e3b47fd632d127" compoundref="_aggressive_anti_dep_breaker_8cpp" startline="89" endline="102">UnionGroups</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_aggressive_anti_dep_state_1a560eaba05729f660add3032185f9fbfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AggressiveAntiDepState::GetGroupRegs</definition>
+        <argsstring>(unsigned Group, std::vector&lt; unsigned &gt; &amp;Regs, std::multimap&lt; unsigned, AggressiveAntiDepState::RegisterReference &gt; *RegRefs)</argsstring>
+        <name>GetGroupRegs</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::GetGroupRegs</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Group</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <declname>Regs</declname>
+        </param>
+        <param>
+          <type>std::multimap&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="structllvm_1_1_aggressive_anti_dep_state_1_1_register_reference" kindref="compound">AggressiveAntiDepState::RegisterReference</ref> &gt; *</type>
+          <declname>RegRefs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="97" column="10" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.cpp" bodystart="78" bodyend="87"/>
+        <references refid="classllvm_1_1_aggressive_anti_dep_state_1a8875a9b7c0c6feb3448437e75b9356f5" compoundref="_aggressive_anti_dep_breaker_8cpp" startline="70" endline="76">GetGroup</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_aggressive_anti_dep_state_1ac2acf6127130067c40e3b47fd632d127" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned AggressiveAntiDepState::UnionGroups</definition>
+        <argsstring>(unsigned Reg1, unsigned Reg2)</argsstring>
+        <name>UnionGroups</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::UnionGroups</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Reg1</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Reg2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="105" column="14" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.cpp" bodystart="89" bodyend="102"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_aggressive_anti_dep_state_1a8875a9b7c0c6feb3448437e75b9356f5" compoundref="_aggressive_anti_dep_breaker_8cpp" startline="70" endline="76">GetGroup</references>
+        <references refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387" compoundref="_mod_ref_8h" startline="65">llvm::Other</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_aggressive_anti_dep_state_1a744b242deb550943b03c470134020f52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned AggressiveAntiDepState::LeaveGroup</definition>
+        <argsstring>(unsigned Reg)</argsstring>
+        <name>LeaveGroup</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::LeaveGroup</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="110" column="14" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.cpp" bodystart="104" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_aggressive_anti_dep_state_1aa6eff8804ae39a7820d75f2c87fa5598" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool AggressiveAntiDepState::IsLive</definition>
+        <argsstring>(unsigned Reg)</argsstring>
+        <name>IsLive</name>
+        <qualifiedname>llvm::AggressiveAntiDepState::IsLive</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Return true if Reg is live. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="113" column="10" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.cpp" bodystart="114" bodyend="118"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Contains all the state necessary for anti-dep breaking. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/AggressiveAntiDepBreaker.h" line="40" column="1" bodyfile="lib/CodeGen/AggressiveAntiDepBreaker.h" bodystart="40" bodyend="114"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1a0c8e899a88a4162aeeaca5461012bb78" prot="public" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>AggressiveAntiDepState</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1a7b5b44878a3c8bd51838458ec5f6ed35" prot="private" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>DefIndices</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1a6258f0ca25623f12e1c543467ad51f68" prot="public" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>GetDefIndices</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1a8875a9b7c0c6feb3448437e75b9356f5" prot="public" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>GetGroup</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1a560eaba05729f660add3032185f9fbfb" prot="public" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>GetGroupRegs</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1acc262ecf92c28647ff8a46216e82c0c1" prot="public" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>GetKillIndices</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1a8c1f0778f56b17cb4ae959934b0a95b2" prot="public" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>GetRegRefs</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1a99e6548530387ebf4d1da726cedcd6e7" prot="private" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>GroupNodeIndices</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1afaba3c4975e36e28e0690523f941a99b" prot="private" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>GroupNodes</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1aa6eff8804ae39a7820d75f2c87fa5598" prot="public" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>IsLive</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1a780e217952c6283bde75d4aed214af89" prot="private" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>KillIndices</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1a744b242deb550943b03c470134020f52" prot="public" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>LeaveGroup</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1ae5db545f6beb24a07508ca78e298ac8e" prot="private" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>NumTargetRegs</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1a86dcd1edf8abe41a93ae427c565f8cb0" prot="private" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>RegRefs</name></member>
+      <member refid="classllvm_1_1_aggressive_anti_dep_state_1ac2acf6127130067c40e3b47fd632d127" prot="public" virt="non-virtual"><scope>llvm::AggressiveAntiDepState</scope><name>UnionGroups</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

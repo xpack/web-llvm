@@ -1,0 +1,2867 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_loop_extractor_8cpp" kind="file" language="C++">
+    <compoundname>LoopExtractor.cpp</compoundname>
+    <includes refid="_loop_extractor_8h" local="yes">llvm/Transforms/IPO/LoopExtractor.h</includes>
+    <includes refid="_statistic_8h" local="yes">llvm/ADT/Statistic.h</includes>
+    <includes refid="_assumption_cache_8h" local="yes">llvm/Analysis/AssumptionCache.h</includes>
+    <includes refid="_loop_info_8h" local="yes">llvm/Analysis/LoopInfo.h</includes>
+    <includes refid="_dominators_8h" local="yes">llvm/IR/Dominators.h</includes>
+    <includes refid="_instructions_8h" local="yes">llvm/IR/Instructions.h</includes>
+    <includes refid="_i_r_2_module_8h" local="yes">llvm/IR/Module.h</includes>
+    <includes refid="_i_r_2_pass_manager_8h" local="yes">llvm/IR/PassManager.h</includes>
+    <includes refid="_initialize_passes_8h" local="yes">llvm/InitializePasses.h</includes>
+    <includes refid="_pass_8h" local="yes">llvm/Pass.h</includes>
+    <includes refid="_i_p_o_8h" local="yes">llvm/Transforms/IPO.h</includes>
+    <includes refid="_transforms_2_utils_8h" local="yes">llvm/Transforms/Utils.h</includes>
+    <includes refid="_code_extractor_8h" local="yes">llvm/Transforms/Utils/CodeExtractor.h</includes>
+    <incdepgraph>
+      <node id="30">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>llvm-c/Error.h</label>
+        <link refid="llvm-c_2_error_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>llvm-c/ExternC.h</label>
+        <link refid="_extern_c_8h"/>
+      </node>
+      <node id="73">
+        <label>llvm-c/Types.h</label>
+        <link refid="_types_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm/ADT/ADL.h</label>
+        <link refid="_a_d_l_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="161">
+        <label>llvm/ADT/APInt.h</label>
+        <link refid="_a_p_int_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>llvm/ADT/ArrayRef.h</label>
+        <link refid="_array_ref_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>llvm/ADT/BitVector.h</label>
+        <link refid="_bit_vector_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>llvm/ADT/Bitfields.h</label>
+        <link refid="_bitfields_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="133">
+        <label>llvm/ADT/BitmaskEnum.h</label>
+        <link refid="_bitmask_enum_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm/ADT/DenseMap.h</label>
+        <link refid="_dense_map_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm/ADT/DenseMapInfo.h</label>
+        <link refid="_dense_map_info_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>llvm/ADT/DenseSet.h</label>
+        <link refid="_dense_set_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="163">
+        <label>llvm/ADT/DepthFirstIterator.h</label>
+        <link refid="_depth_first_iterator_8h"/>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm/ADT/EpochTracker.h</label>
+        <link refid="_epoch_tracker_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>llvm/ADT/GraphTraits.h</label>
+        <link refid="_graph_traits_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm/ADT/Hashing.h</label>
+        <link refid="_hashing_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>llvm/ADT/MapVector.h</label>
+        <link refid="_map_vector_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>llvm/ADT/PointerIntPair.h</label>
+        <link refid="_pointer_int_pair_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>llvm/ADT/PointerUnion.h</label>
+        <link refid="_pointer_union_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="153">
+        <label>llvm/ADT/PostOrderIterator.h</label>
+        <link refid="_post_order_iterator_8h"/>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>llvm/ADT/STLExtras.h</label>
+        <link refid="_s_t_l_extras_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="136">
+        <label>llvm/ADT/Sequence.h</label>
+        <link refid="_sequence_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="155">
+        <label>llvm/ADT/SetOperations.h</label>
+        <link refid="_set_operations_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="176">
+        <label>llvm/ADT/SetVector.h</label>
+        <link refid="_set_vector_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>llvm/ADT/SmallPtrSet.h</label>
+        <link refid="_small_ptr_set_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>llvm/ADT/SmallVector.h</label>
+        <link refid="_small_vector_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>llvm/ADT/Statistic.h</label>
+        <link refid="_statistic_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>llvm/ADT/StringMap.h</label>
+        <link refid="_a_d_t_2_string_map_8h"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>llvm/ADT/StringMapEntry.h</label>
+        <link refid="_a_d_t_2_string_map_entry_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>llvm/ADT/StringRef.h</label>
+        <link refid="_string_ref_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>llvm/ADT/TinyPtrVector.h</label>
+        <link refid="_tiny_ptr_vector_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>llvm/ADT/Twine.h</label>
+        <link refid="_twine_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm/ADT/bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>llvm/ADT/ilist.h</label>
+        <link refid="ilist_8h"/>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>llvm/ADT/ilist_base.h</label>
+        <link refid="ilist__base_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>llvm/ADT/ilist_iterator.h</label>
+        <link refid="ilist__iterator_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>llvm/ADT/ilist_node.h</label>
+        <link refid="ilist__node_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>llvm/ADT/ilist_node_base.h</label>
+        <link refid="ilist__node__base_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>llvm/ADT/ilist_node_options.h</label>
+        <link refid="ilist__node__options_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm/ADT/iterator.h</label>
+        <link refid="iterator_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>llvm/ADT/iterator_range.h</label>
+        <link refid="iterator__range_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>llvm/ADT/simple_ilist.h</label>
+        <link refid="simple__ilist_8h"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>llvm/Analysis/AssumptionCache.h</label>
+        <link refid="_assumption_cache_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>llvm/Analysis/LoopInfo.h</label>
+        <link refid="_loop_info_8h"/>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>llvm/IR/Analysis.h</label>
+        <link refid="llvm_2_i_r_2_analysis_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>llvm/IR/Argument.h</label>
+        <link refid="_i_r_2_argument_8h"/>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>llvm/IR/Attributes.h</label>
+        <link refid="_attributes_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>llvm/IR/BasicBlock.h</label>
+        <link refid="_i_r_2_basic_block_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>llvm/IR/CFG.h</label>
+        <link refid="_i_r_2_c_f_g_8h"/>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="138">
+        <label>llvm/IR/CallingConv.h</label>
+        <link refid="_calling_conv_8h"/>
+      </node>
+      <node id="145">
+        <label>llvm/IR/CmpPredicate.h</label>
+        <link refid="_cmp_predicate_8h"/>
+        <childnode refid="146" relation="include">
+        </childnode>
+      </node>
+      <node id="165">
+        <label>llvm/IR/Comdat.h</label>
+        <link refid="llvm_2_i_r_2_comdat_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="119">
+        <label>llvm/IR/Constant.h</label>
+        <link refid="_i_r_2_constant_8h"/>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>llvm/IR/DataLayout.h</label>
+        <link refid="_data_layout_8h"/>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>llvm/IR/DbgVariableFragmentInfo.h</label>
+        <link refid="_dbg_variable_fragment_info_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>llvm/IR/DebugLoc.h</label>
+        <link refid="_debug_loc_8h"/>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>llvm/IR/DebugProgramInstruction.h</label>
+        <link refid="_debug_program_instruction_8h"/>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="139">
+        <label>llvm/IR/DerivedTypes.h</label>
+        <link refid="_derived_types_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="122">
+        <label>llvm/IR/DiagnosticHandler.h</label>
+        <link refid="_diagnostic_handler_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="160">
+        <label>llvm/IR/Dominators.h</label>
+        <link refid="_dominators_8h"/>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="147">
+        <label>llvm/IR/FMF.h</label>
+        <link refid="_f_m_f_8h"/>
+      </node>
+      <node id="129">
+        <label>llvm/IR/Function.h</label>
+        <link refid="_i_r_2_function_8h"/>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>llvm/IR/GEPNoWrapFlags.h</label>
+        <link refid="_g_e_p_no_wrap_flags_8h"/>
+        <childnode refid="149" relation="include">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>llvm/IR/GlobalAlias.h</label>
+        <link refid="_global_alias_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>llvm/IR/GlobalIFunc.h</label>
+        <link refid="_global_i_func_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="142">
+        <label>llvm/IR/GlobalObject.h</label>
+        <link refid="_global_object_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="143">
+        <label>llvm/IR/GlobalValue.h</label>
+        <link refid="_global_value_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="170">
+        <label>llvm/IR/GlobalVariable.h</label>
+        <link refid="_global_variable_8h"/>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>llvm/IR/InstrTypes.h</label>
+        <link refid="_instr_types_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+      </node>
+      <node id="125">
+        <label>llvm/IR/Instruction.h</label>
+        <link refid="_i_r_2_instruction_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>llvm/IR/Instructions.h</label>
+        <link refid="_instructions_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="150">
+        <label>llvm/IR/Intrinsics.h</label>
+        <link refid="_intrinsics_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>llvm/IR/LLVMContext.h</label>
+        <link refid="_l_l_v_m_context_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>llvm/IR/Metadata.h</label>
+        <link refid="_metadata_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+      </node>
+      <node id="164">
+        <label>llvm/IR/Module.h</label>
+        <link refid="_i_r_2_module_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="144">
+        <label>llvm/IR/OperandTraits.h</label>
+        <link refid="_operand_traits_8h"/>
+        <childnode refid="120" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm/IR/PassManager.h</label>
+        <link refid="_i_r_2_pass_manager_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>llvm/IR/PassManagerInternal.h</label>
+        <link refid="_pass_manager_internal_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="171">
+        <label>llvm/IR/ProfileSummary.h</label>
+        <link refid="_profile_summary_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>llvm/IR/SymbolTableListTraits.h</label>
+        <link refid="_symbol_table_list_traits_8h"/>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>llvm/IR/TrackingMDRef.h</label>
+        <link refid="_tracking_m_d_ref_8h"/>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="140">
+        <label>llvm/IR/Type.h</label>
+        <link refid="_i_r_2_type_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>llvm/IR/Use.h</label>
+        <link refid="_i_r_2_use_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>llvm/IR/User.h</label>
+        <link refid="_i_r_2_user_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>llvm/IR/Value.h</label>
+        <link refid="_i_r_2_value_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>llvm/IR/ValueHandle.h</label>
+        <link refid="_value_handle_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="172">
+        <label>llvm/InitializePasses.h</label>
+        <link refid="_initialize_passes_8h"/>
+      </node>
+      <node id="79">
+        <label>llvm/Pass.h</label>
+        <link refid="_pass_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>llvm/PassAnalysisSupport.h</label>
+        <link refid="_pass_analysis_support_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>llvm/PassInfo.h</label>
+        <link refid="_pass_info_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>llvm/PassRegistry.h</label>
+        <link refid="_pass_registry_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>llvm/PassSupport.h</label>
+        <link refid="_pass_support_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm/Support/AlignOf.h</label>
+        <link refid="_align_of_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>llvm/Support/Alignment.h</label>
+        <link refid="_alignment_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="156">
+        <label>llvm/Support/Allocator.h</label>
+        <link refid="_allocator_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>llvm/Support/AllocatorBase.h</label>
+        <link refid="_allocator_base_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>llvm/Support/Atomic.h</label>
+        <link refid="_support_2_atomic_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="127">
+        <label>llvm/Support/AtomicOrdering.h</label>
+        <link refid="_atomic_ordering_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>llvm/Support/CBindingWrapping.h</label>
+        <link refid="_c_binding_wrapping_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>llvm/Support/CFGDiff.h</label>
+        <link refid="_c_f_g_diff_8h"/>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="159">
+        <label>llvm/Support/CFGUpdate.h</label>
+        <link refid="_c_f_g_update_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>llvm/Support/Casting.h</label>
+        <link refid="_casting_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="134">
+        <label>llvm/Support/CodeGen.h</label>
+        <link refid="_code_gen_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm/Support/DataTypes.h</label>
+        <link refid="llvm_2_support_2_data_types_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>llvm/Support/Debug.h</label>
+        <link refid="_debug_8h"/>
+      </node>
+      <node id="93">
+        <label>llvm/Support/Error.h</label>
+        <link refid="llvm_2_support_2_error_8h"/>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm/Support/ErrorHandling.h</label>
+        <link refid="llvm_2_support_2_error_handling_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>llvm/Support/ErrorOr.h</label>
+        <link refid="_error_or_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>llvm/Support/Format.h</label>
+        <link refid="_format_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="157">
+        <label>llvm/Support/GenericDomTree.h</label>
+        <link refid="_generic_dom_tree_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="152">
+        <label>llvm/Support/GenericLoopInfo.h</label>
+        <link refid="_generic_loop_info_8h"/>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm/Support/MathExtras.h</label>
+        <link refid="_math_extras_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm/Support/MemAlloc.h</label>
+        <link refid="_mem_alloc_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>llvm/Support/ModRef.h</label>
+        <link refid="_mod_ref_8h"/>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm/Support/PointerLikeTypeTraits.h</label>
+        <link refid="_pointer_like_type_traits_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>llvm/Support/RWMutex.h</label>
+        <link refid="_r_w_mutex_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>llvm/Support/ReverseIteration.h</label>
+        <link refid="_reverse_iteration_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>llvm/Support/SwapByteOrder.h</label>
+        <link refid="_swap_byte_order_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>llvm/Support/Threading.h</label>
+        <link refid="_threading_8h"/>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+      </node>
+      <node id="167">
+        <label>llvm/Support/TrailingObjects.h</label>
+        <link refid="_trailing_objects_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>llvm/Support/TypeName.h</label>
+        <link refid="_type_name_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="141">
+        <label>llvm/Support/TypeSize.h</label>
+        <link refid="_type_size_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>llvm/Support/float128.h</label>
+        <link refid="float128_8h"/>
+      </node>
+      <node id="64">
+        <label>llvm/Support/raw_ostream.h</label>
+        <link refid="raw__ostream_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm/Support/type_traits.h</label>
+        <link refid="type__traits_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="173">
+        <label>llvm/Transforms/IPO.h</label>
+        <link refid="_i_p_o_8h"/>
+      </node>
+      <node id="2">
+        <label>llvm/Transforms/IPO/LoopExtractor.h</label>
+        <link refid="_loop_extractor_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="174">
+        <label>llvm/Transforms/Utils.h</label>
+        <link refid="_transforms_2_utils_8h"/>
+      </node>
+      <node id="175">
+        <label>llvm/Transforms/Utils/CodeExtractor.h</label>
+        <link refid="_code_extractor_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>lib/Transforms/IPO/LoopExtractor.cpp</label>
+        <link refid="_loop_extractor_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>algorithm</label>
+      </node>
+      <node id="56">
+        <label>array</label>
+      </node>
+      <node id="149">
+        <label>assert.h</label>
+      </node>
+      <node id="69">
+        <label>atomic</label>
+      </node>
+      <node id="6">
+        <label>cassert</label>
+      </node>
+      <node id="23">
+        <label>climits</label>
+      </node>
+      <node id="7">
+        <label>cstddef</label>
+      </node>
+      <node id="8">
+        <label>cstdint</label>
+      </node>
+      <node id="99">
+        <label>cstdio</label>
+      </node>
+      <node id="26">
+        <label>cstdlib</label>
+      </node>
+      <node id="21">
+        <label>cstring</label>
+      </node>
+      <node id="49">
+        <label>functional</label>
+      </node>
+      <node id="36">
+        <label>initializer_list</label>
+      </node>
+      <node id="31">
+        <label>inttypes.h</label>
+      </node>
+      <node id="37">
+        <label>iterator</label>
+      </node>
+      <node id="20">
+        <label>limits</label>
+      </node>
+      <node id="67">
+        <label>list</label>
+      </node>
+      <node id="13">
+        <label>llvm/Config/abi-breaking.h</label>
+      </node>
+      <node id="16">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="137">
+        <label>llvm/IR/Attributes.inc</label>
+      </node>
+      <node id="123">
+        <label>llvm/IR/FixedMetadataKinds.def</label>
+      </node>
+      <node id="128">
+        <label>llvm/IR/Instruction.def</label>
+      </node>
+      <node id="151">
+        <label>llvm/IR/IntrinsicEnums.inc</label>
+      </node>
+      <node id="124">
+        <label>llvm/IR/Metadata.def</label>
+      </node>
+      <node id="78">
+        <label>llvm/IR/Value.def</label>
+      </node>
+      <node id="22">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="50">
+        <label>memory</label>
+      </node>
+      <node id="91">
+        <label>mutex</label>
+      </node>
+      <node id="38">
+        <label>new</label>
+      </node>
+      <node id="44">
+        <label>optional</label>
+      </node>
+      <node id="154">
+        <label>set</label>
+      </node>
+      <node id="92">
+        <label>shared_mutex</label>
+      </node>
+      <node id="17">
+        <label>stddef.h</label>
+      </node>
+      <node id="32">
+        <label>stdint.h</label>
+      </node>
+      <node id="45">
+        <label>string</label>
+      </node>
+      <node id="52">
+        <label>string_view</label>
+      </node>
+      <node id="33">
+        <label>sys/types.h</label>
+      </node>
+      <node id="65">
+        <label>system_error</label>
+      </node>
+      <node id="9">
+        <label>tuple</label>
+      </node>
+      <node id="10">
+        <label>type_traits</label>
+      </node>
+      <node id="11">
+        <label>utility</label>
+      </node>
+      <node id="57">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass" prot="public">anonymous_namespace{LoopExtractor.cpp}::LoopExtractorLegacyPass</innerclass>
+    <innerclass refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor" prot="public">anonymous_namespace{LoopExtractor.cpp}::LoopExtractor</innerclass>
+    <innerclass refid="structfalse_1_1_single_loop_extractor" prot="public">false::SingleLoopExtractor</innerclass>
+    <innernamespace refid="namespaceanonymous__namespace_02_loop_extractor_8cpp_03">anonymous_namespace{LoopExtractor.cpp}</innernamespace>
+    <innernamespace refid="namespacefalse">false</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="_loop_extractor_8cpp_1ad78e062f62e0d6e453941fb4ca843e4d" prot="public" static="no">
+        <name>DEBUG_TYPE</name>
+        <initializer>&quot;loop-extract&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/LoopExtractor.cpp" line="31" column="9" bodyfile="lib/Transforms/IPO/LoopExtractor.cpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="_loop_extractor_8cpp_1a84dff14934298a71113ab11312c243f6" prot="public" static="no" mutable="no">
+        <type>loop</type>
+        <definition>loop extract</definition>
+        <argsstring></argsstring>
+        <name>extract</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/LoopExtractor.cpp" line="92" column="6" bodyfile="lib/Transforms/IPO/LoopExtractor.cpp" bodystart="92" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1_1mdconst_1a28b74e2f39993aedb95e57c013e451b6" compoundref="_metadata_8h" startline="675" endline="677">llvm::mdconst::extract</referencedby>
+        <referencedby refid="classllvm_1_1_d_w_a_r_f_debug_aranges_1acc33f3dabfc507904e9fdfa7b0d81b51" compoundref="_d_w_a_r_f_debug_aranges_8cpp" startline="46" endline="73">llvm::DWARFDebugAranges::generate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_loop_extractor_8cpp_1ac6229e61e0214888a5ad66ac60cb36ec" prot="public" static="no" mutable="no">
+        <type>loop Extract <ref refid="_loop_info_8cpp_1a49ae40a9c91d665793aaed656c26ca30" kindref="member">loops</ref> into new</type>
+        <definition>loop Extract loops into new functions</definition>
+        <argsstring></argsstring>
+        <name>functions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/LoopExtractor.cpp" line="93" column="44" bodyfile="lib/Transforms/IPO/LoopExtractor.cpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_loop_extractor_8cpp_1ac76e9cd3c296701fa8da9d1f2f458ba1" prot="public" static="no" mutable="no">
+        <type>loop Extract <ref refid="_loop_info_8cpp_1a49ae40a9c91d665793aaed656c26ca30" kindref="member">loops</ref> into new</type>
+        <definition>loop Extract loops into new false</definition>
+        <argsstring></argsstring>
+        <name>false</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/LoopExtractor.cpp" line="93" column="54" bodyfile="lib/Transforms/IPO/LoopExtractor.cpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_loop_extractor_8cpp_1a1ca0a9db205f5f26f76559b44c346427" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>STATISTIC</definition>
+        <argsstring>(NumExtracted, &quot;Number of loops extracted&quot;)</argsstring>
+        <name>STATISTIC</name>
+        <param>
+          <type>NumExtracted</type>
+        </param>
+        <param>
+          <type>&quot;Number of <ref refid="_loop_info_8cpp_1a49ae40a9c91d665793aaed656c26ca30" kindref="member">loops</ref> extracted&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/LoopExtractor.cpp" line="33" column="1" declfile="lib/Transforms/IPO/LoopExtractor.cpp" declline="33" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_loop_extractor_8cpp_1a3e75b43fc855af806f16b3faff0930f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>INITIALIZE_PASS_BEGIN</definition>
+        <argsstring>(LoopExtractorLegacyPass, &quot;loop-extract&quot;, &quot;Extract loops into new functions&quot;, false, false) INITIALIZE_PASS_END(LoopExtractorLegacyPass</argsstring>
+        <name>INITIALIZE_PASS_BEGIN</name>
+        <param>
+          <type><ref refid="class_loop_extractor_legacy_pass" kindref="compound">LoopExtractorLegacyPass</ref></type>
+        </param>
+        <param>
+          <type>&quot;loop-extract&quot;</type>
+        </param>
+        <param>
+          <type>&quot;Extract <ref refid="_loop_info_8cpp_1a49ae40a9c91d665793aaed656c26ca30" kindref="member">loops</ref> into new functions&quot;</type>
+        </param>
+        <param>
+          <type>false</type>
+        </param>
+        <param>
+          <type>false</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/LoopExtractor.cpp" line="86" column="1"/>
+        <references refid="_pass_support_8h_1a14724f1ccf528e73bb29bc9230737967" compoundref="_pass_support_8h" startline="55">INITIALIZE_PASS_DEPENDENCY</references>
+      </memberdef>
+      <memberdef kind="function" id="_loop_extractor_8cpp_1af26076f0367907e4c92c64280dfffc96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>INITIALIZE_PASS</definition>
+        <argsstring>(SingleLoopExtractor, &quot;loop-extract-single&quot;, &quot;Extract at most one loop into a new function&quot;, false, false) Pass *llvm</argsstring>
+        <name>INITIALIZE_PASS</name>
+        <param>
+          <type>SingleLoopExtractor</type>
+        </param>
+        <param>
+          <type>&quot;loop-<ref refid="_loop_extractor_8cpp_1a84dff14934298a71113ab11312c243f6" kindref="member">extract</ref>-single&quot;</type>
+        </param>
+        <param>
+          <type>&quot;Extract at most one loop into a new function&quot;</type>
+        </param>
+        <param>
+          <type>false</type>
+        </param>
+        <param>
+          <type>false</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/IPO/LoopExtractor.cpp" line="104" column="1" bodyfile="lib/Transforms/IPO/LoopExtractor.cpp" bodystart="104" bodyend="110"/>
+        <references refid="namespacellvm_1a7e40163bd082d49b8c375b3b4dde1e5f">llvm::createLoopExtractorPass</references>
+        <references refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1ac708cf6ddd7c434fb2ce92d8deba5bc6" compoundref="_loop_extractor_8cpp" startline="41" endline="44">anonymous_namespace{LoopExtractor.cpp}::LoopExtractorLegacyPass::LoopExtractorLegacyPass</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>LoopExtractor.cpp<sp/>-<sp/>Extract<sp/>each<sp/>loop<sp/>into<sp/>a<sp/>new<sp/>function<sp/>----------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>A<sp/>pass<sp/>wrapper<sp/>around<sp/>the<sp/>ExtractLoop()<sp/>scalar<sp/>transformation<sp/>to<sp/>extract<sp/>each</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>top-level<sp/>loop<sp/>into<sp/>its<sp/>own<sp/>new<sp/>function.<sp/>If<sp/>the<sp/>loop<sp/>is<sp/>the<sp/>ONLY<sp/>loop<sp/>in<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>given<sp/>function,<sp/>it<sp/>is<sp/>not<sp/>touched.<sp/>This<sp/>is<sp/>a<sp/>pass<sp/>most<sp/>useful<sp/>for<sp/>debugging</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>via<sp/>bugpoint.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_loop_extractor_8h" kindref="compound">llvm/Transforms/IPO/LoopExtractor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_statistic_8h" kindref="compound">llvm/ADT/Statistic.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_assumption_cache_8h" kindref="compound">llvm/Analysis/AssumptionCache.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_loop_info_8h" kindref="compound">llvm/Analysis/LoopInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_dominators_8h" kindref="compound">llvm/IR/Dominators.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_instructions_8h" kindref="compound">llvm/IR/Instructions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_i_r_2_module_8h" kindref="compound">llvm/IR/Module.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_i_r_2_pass_manager_8h" kindref="compound">llvm/IR/PassManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_initialize_passes_8h" kindref="compound">llvm/InitializePasses.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_pass_8h" kindref="compound">llvm/Pass.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_i_p_o_8h" kindref="compound">llvm/Transforms/IPO.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_transforms_2_utils_8h" kindref="compound">llvm/Transforms/Utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_code_extractor_8h" kindref="compound">llvm/Transforms/Utils/CodeExtractor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="_loop_extractor_8cpp_1ad78e062f62e0d6e453941fb4ca843e4d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBUG_TYPE<sp/>&quot;loop-extract&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="_loop_extractor_8cpp_1a1ca0a9db205f5f26f76559b44c346427" refkind="member"><highlight class="normal"><ref refid="_statistic_8h_1ad6117415b93e5675d5a6c8e1855b3b2f" kindref="member">STATISTIC</ref>(NumExtracted,<sp/></highlight><highlight class="stringliteral">&quot;Number<sp/>of<sp/>loops<sp/>extracted&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="namespaceanonymous__namespace_02_loop_extractor_8cpp_03" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36" refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1ac708cf6ddd7c434fb2ce92d8deba5bc6" kindref="member">LoopExtractorLegacyPass</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_module_pass_1a723659a08d210f4f566887bda3f9f976" kindref="member">ModulePass</ref><sp/>{</highlight></codeline>
+<codeline lineno="37" refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1a4733517b0952aa5f593e0a52ae2966d8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1a4733517b0952aa5f593e0a52ae2966d8" kindref="member">ID</ref>;<sp/></highlight><highlight class="comment">//<sp/>Pass<sp/>identification,<sp/>replacement<sp/>for<sp/>typeid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1a5ae3cadcbbbacf6f3d425dd74ddda1bf" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1a5ae3cadcbbbacf6f3d425dd74ddda1bf" kindref="member">NumLoops</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1ac708cf6ddd7c434fb2ce92d8deba5bc6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1ac708cf6ddd7c434fb2ce92d8deba5bc6" kindref="member">LoopExtractorLegacyPass</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1a5ae3cadcbbbacf6f3d425dd74ddda1bf" kindref="member">NumLoops</ref><sp/>=<sp/>~0)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classllvm_1_1_module_pass_1a723659a08d210f4f566887bda3f9f976" kindref="member">ModulePass</ref>(<ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1a4733517b0952aa5f593e0a52ae2966d8" kindref="member">ID</ref>),<sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1a5ae3cadcbbbacf6f3d425dd74ddda1bf" kindref="member">NumLoops</ref>(<ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1a5ae3cadcbbbacf6f3d425dd74ddda1bf" kindref="member">NumLoops</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1a0b136e442bc4125be0a2fbdde88d5df3" kindref="member">initializeLoopExtractorLegacyPassPass</ref>(*<ref refid="classllvm_1_1_pass_registry_1a05a729900b76c89e808c6c3094921b2f" kindref="member">PassRegistry::getPassRegistry</ref>());</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>runOnModule(<ref refid="classllvm_1_1_module" kindref="compound">Module</ref><sp/>&amp;M)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1ab2e454c9a32974fd2c4f6f3cd70ab231" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1ab2e454c9a32974fd2c4f6f3cd70ab231" kindref="member">getAnalysisUsage</ref>(<ref refid="classllvm_1_1_analysis_usage" kindref="compound">AnalysisUsage</ref><sp/>&amp;AU)</highlight><highlight class="keyword"><sp/>const<sp/>override<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>AU.<ref refid="classllvm_1_1_analysis_usage_1a053677ebc731b47a534f841b11b5cf0c" kindref="member">addRequiredID</ref>(<ref refid="namespacellvm_1ac39b40d3d53e73764f8328bc22eea839" kindref="member">BreakCriticalEdgesID</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>AU.<ref refid="classllvm_1_1_analysis_usage_1ae0adcccca08fb686c9ce00f9397b660c" kindref="member">addRequired</ref>&lt;<ref refid="classllvm_1_1_dominator_tree_wrapper_pass" kindref="compound">DominatorTreeWrapperPass</ref>&gt;();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>AU.<ref refid="classllvm_1_1_analysis_usage_1ae0adcccca08fb686c9ce00f9397b660c" kindref="member">addRequired</ref>&lt;<ref refid="classllvm_1_1_loop_info_wrapper_pass" kindref="compound">LoopInfoWrapperPass</ref>&gt;();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>AU.<ref refid="classllvm_1_1_analysis_usage_1ae9356b720f6fbab112d809738dcc4f2a" kindref="member">addPreserved</ref>&lt;<ref refid="classllvm_1_1_loop_info_wrapper_pass" kindref="compound">LoopInfoWrapperPass</ref>&gt;();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>AU.<ref refid="classllvm_1_1_analysis_usage_1a053677ebc731b47a534f841b11b5cf0c" kindref="member">addRequiredID</ref>(<ref refid="namespacellvm_1a472515fc67a5fb572afeb00aa2609cca" kindref="member">LoopSimplifyID</ref>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>AU.<ref refid="classllvm_1_1_analysis_usage_1aaeddaf79040291b6f3e0db57943aac39" kindref="member">addUsedIfAvailable</ref>&lt;<ref refid="classllvm_1_1_assumption_cache_tracker" kindref="compound">AssumptionCacheTracker</ref>&gt;();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_1ac7a9af0f438a439db167d7e6c12f0199" kindref="member">LoopExtractor</ref><sp/>{</highlight></codeline>
+<codeline lineno="59" refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_1ac7a9af0f438a439db167d7e6c12f0199" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_1ac7a9af0f438a439db167d7e6c12f0199" kindref="member">LoopExtractor</ref>(</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumLoops,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;<ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>&amp;(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;)&gt;<sp/>LookupDomTree,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;<ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref><sp/>&amp;(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;)&gt;<sp/>LookupLoopInfo,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;<ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref><sp/>*(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;)&gt;<sp/>LookupAssumptionCache)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>NumLoops(NumLoops),<sp/>LookupDomTree(LookupDomTree),</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LookupLoopInfo(LookupLoopInfo),</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LookupAssumptionCache(LookupAssumptionCache)<sp/>{}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>runOnModule(<ref refid="classllvm_1_1_module" kindref="compound">Module</ref><sp/>&amp;M);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>number<sp/>of<sp/>natural<sp/>loops<sp/>to<sp/>extract<sp/>from<sp/>the<sp/>program<sp/>into<sp/>functions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>NumLoops;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;<ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>&amp;(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;)&gt;<sp/>LookupDomTree;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;<ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref><sp/>&amp;(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;)&gt;<sp/>LookupLoopInfo;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;<ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref><sp/>*(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;)&gt;<sp/>LookupAssumptionCache;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_entry_exit_instrumenter_8cpp_1a3985f1f39349428d17f0d2b81ebc6349" kindref="member">runOnFunction</ref>(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>extractLoops(<ref refid="classllvm_1_1_loop_base_1a72e879f0ce9d0a27682764a646e4e39b" kindref="member">Loop::iterator</ref><sp/>From,<sp/><ref refid="classllvm_1_1_loop_base_1a72e879f0ce9d0a27682764a646e4e39b" kindref="member">Loop::iterator</ref><sp/>To,<sp/><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref><sp/>&amp;LI,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>&amp;DT);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>extractLoop(<ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref><sp/>*L,<sp/><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref><sp/>&amp;LI,<sp/><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>&amp;DT);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1a4733517b0952aa5f593e0a52ae2966d8" kindref="member">LoopExtractorLegacyPass::ID</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="86" refid="_loop_extractor_8cpp_1a3e75b43fc855af806f16b3faff0930f7" refkind="member"><highlight class="normal"><ref refid="_pass_support_8h_1aaa970fc931c1c63037a8182e028d04b1" kindref="member">INITIALIZE_PASS_BEGIN</ref>(<ref refid="class_loop_extractor_legacy_pass" kindref="compound">LoopExtractorLegacyPass</ref>,<sp/></highlight><highlight class="stringliteral">&quot;loop-extract&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Extract<sp/>loops<sp/>into<sp/>new<sp/>functions&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="_pass_support_8h_1a14724f1ccf528e73bb29bc9230737967" kindref="member">INITIALIZE_PASS_DEPENDENCY</ref>(BreakCriticalEdges)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><ref refid="_pass_support_8h_1a14724f1ccf528e73bb29bc9230737967" kindref="member">INITIALIZE_PASS_DEPENDENCY</ref>(<ref refid="classllvm_1_1_dominator_tree_wrapper_pass" kindref="compound">DominatorTreeWrapperPass</ref>)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="_pass_support_8h_1a14724f1ccf528e73bb29bc9230737967" kindref="member">INITIALIZE_PASS_DEPENDENCY</ref>(<ref refid="classllvm_1_1_loop_info_wrapper_pass" kindref="compound">LoopInfoWrapperPass</ref>)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><ref refid="_pass_support_8h_1a14724f1ccf528e73bb29bc9230737967" kindref="member">INITIALIZE_PASS_DEPENDENCY</ref>(LoopSimplify)</highlight></codeline>
+<codeline lineno="92" refid="_loop_extractor_8cpp_1a84dff14934298a71113ab11312c243f6" refkind="member"><highlight class="normal"><ref refid="_pass_support_8h_1a74ce8276b89067e806f67c45a6d92575" kindref="member">INITIALIZE_PASS_END</ref>(<ref refid="class_loop_extractor_legacy_pass" kindref="compound">LoopExtractorLegacyPass</ref>,<sp/></highlight><highlight class="stringliteral">&quot;loop-extract&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="93" refid="_loop_extractor_8cpp_1ac76e9cd3c296701fa8da9d1f2f458ba1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Extract<sp/>loops<sp/>into<sp/>new<sp/>functions&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacefalse" kindref="compound">false</ref>,<sp/><ref refid="namespacefalse" kindref="compound">false</ref>)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">namespace<sp/>{</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/>///<sp/>SingleLoopExtractor<sp/>-<sp/>For<sp/>bugpoint.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="structfalse_1_1_single_loop_extractor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structfalse_1_1_single_loop_extractor_1a5680ae1a3654be3ef4626c16d3ff4d57" kindref="member">SingleLoopExtractor</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_loop_extractor_legacy_pass" kindref="compound">LoopExtractorLegacyPass</ref><sp/>{</highlight></codeline>
+<codeline lineno="98" refid="structfalse_1_1_single_loop_extractor_1a5299843d816b3cbd083ca72f5f4f0d45" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structfalse_1_1_single_loop_extractor_1a5299843d816b3cbd083ca72f5f4f0d45" kindref="member">ID</ref>;<sp/></highlight><highlight class="comment">//<sp/>Pass<sp/>identification,<sp/>replacement<sp/>for<sp/>typeid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="structfalse_1_1_single_loop_extractor_1a5680ae1a3654be3ef4626c16d3ff4d57" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structfalse_1_1_single_loop_extractor_1a5680ae1a3654be3ef4626c16d3ff4d57" kindref="member">SingleLoopExtractor</ref>()<sp/>:<sp/><ref refid="class_loop_extractor_legacy_pass" kindref="compound">LoopExtractorLegacyPass</ref>(1)<sp/>{}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>End<sp/>anonymous<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>SingleLoopExtractor::ID<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="104" refid="_loop_extractor_8cpp_1af26076f0367907e4c92c64280dfffc96" refkind="member"><highlight class="normal"><ref refid="_pass_support_8h_1af807c9595d50b45c0008924c4679c85c" kindref="member">INITIALIZE_PASS</ref>(SingleLoopExtractor,<sp/></highlight><highlight class="stringliteral">&quot;loop-extract-single&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Extract<sp/>at<sp/>most<sp/>one<sp/>loop<sp/>into<sp/>a<sp/>new<sp/>function&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">//<sp/>createLoopExtractorPass<sp/>-<sp/>This<sp/>pass<sp/>extracts<sp/>all<sp/>natural<sp/>loops<sp/>from<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">//<sp/>program<sp/>into<sp/>a<sp/>function<sp/>if<sp/>it<sp/>can.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><ref refid="classllvm_1_1_pass" kindref="compound">Pass</ref><sp/>*<ref refid="namespacellvm" kindref="compound">llvm</ref>::<ref refid="namespacellvm_1a7e40163bd082d49b8c375b3b4dde1e5f" kindref="member">createLoopExtractorPass</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1ac708cf6ddd7c434fb2ce92d8deba5bc6" kindref="member">LoopExtractorLegacyPass</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1aff0c08d4d1a9e1e89c177378d7b2d21d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1aff0c08d4d1a9e1e89c177378d7b2d21d" kindref="member">LoopExtractorLegacyPass::runOnModule</ref>(<ref refid="classllvm_1_1_module" kindref="compound">Module</ref><sp/>&amp;M)<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_module_pass_1ab0f92e1d06aa28c44dc236c73460ba7a" kindref="member">skipModule</ref>(M))</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>LookupDomTree<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>)<sp/>-&gt;<sp/><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>&amp;<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" kindref="member">getAnalysis&lt;DominatorTreeWrapperPass&gt;</ref>(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>).getDomTree();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>LookupLoopInfo<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>](<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>)<sp/>-&gt;<sp/><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref><sp/>&amp;<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" kindref="member">getAnalysis&lt;LoopInfoWrapperPass&gt;</ref>(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>,<sp/>&amp;<ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>).getLoopInfo();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>LookupACT<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>)<sp/>-&gt;<sp/><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref><sp/>*<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*ACT<sp/>=<sp/>this-&gt;<ref refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" kindref="member">getAnalysisIfAvailable&lt;AssumptionCacheTracker&gt;</ref>())</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ACT-&gt;lookupAssumptionCache(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor" kindref="compound">LoopExtractor</ref>(<ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_legacy_pass_1a5ae3cadcbbbacf6f3d425dd74ddda1bf" kindref="member">NumLoops</ref>,<sp/>LookupDomTree,<sp/>LookupLoopInfo,<sp/>LookupACT)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_1a9d062bd5715f142ba7b0f20cb278fc4d" kindref="member">runOnModule</ref>(M)<sp/>||</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_1a9d062bd5715f142ba7b0f20cb278fc4d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structanonymous__namespace_02_loop_extractor_8cpp_03_1_1_loop_extractor_1a9d062bd5715f142ba7b0f20cb278fc4d" kindref="member">LoopExtractor::runOnModule</ref>(<ref refid="classllvm_1_1_module" kindref="compound">Module</ref><sp/>&amp;M)<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(M.empty())</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!NumLoops)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>end<sp/>of<sp/>the<sp/>function<sp/>list<sp/>may<sp/>change<sp/>(new<sp/>functions<sp/>will<sp/>be<sp/>added<sp/>at<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>end),<sp/>so<sp/>we<sp/>run<sp/>from<sp/>the<sp/>first<sp/>to<sp/>the<sp/>current<sp/>last.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref><sp/>=<sp/>M.begin(),<sp/>E<sp/>=<sp/>--M.end();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref><sp/>=<sp/>*<ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref>;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>|=<sp/>runOnFunction(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!NumLoops)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>this<sp/>is<sp/>the<sp/>last<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref><sp/>==<sp/>E)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" kindref="member">I</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>LoopExtractor::runOnFunction(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>modify<sp/>`optnone`<sp/>functions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>.hasOptNone())</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>.empty())</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref><sp/>&amp;LI<sp/>=<sp/>LookupLoopInfo(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>there<sp/>are<sp/>no<sp/>loops<sp/>in<sp/>the<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(LI.<ref refid="classllvm_1_1_loop_info_base_1a83d8036930a033b196409ced5c9409e5" kindref="member">empty</ref>())</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>&amp;DT<sp/>=<sp/>LookupDomTree(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>there<sp/>is<sp/>more<sp/>than<sp/>one<sp/>top-level<sp/>loop<sp/>in<sp/>this<sp/>function,<sp/>extract<sp/>all<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>loops.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::next(LI.<ref refid="classllvm_1_1_loop_info_base_1ab447b41b9c51151b5c6ef497a60689ae" kindref="member">begin</ref>())<sp/>!=<sp/>LI.<ref refid="classllvm_1_1_loop_info_base_1a4f728602e7d377829675f13446cf6647" kindref="member">end</ref>())</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>|<sp/>extractLoops(LI.<ref refid="classllvm_1_1_loop_info_base_1ab447b41b9c51151b5c6ef497a60689ae" kindref="member">begin</ref>(),<sp/>LI.<ref refid="classllvm_1_1_loop_info_base_1a4f728602e7d377829675f13446cf6647" kindref="member">end</ref>(),<sp/>LI,<sp/>DT);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Otherwise<sp/>there<sp/>is<sp/>exactly<sp/>one<sp/>top-level<sp/>loop.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref><sp/>*TLL<sp/>=<sp/>*LI.<ref refid="classllvm_1_1_loop_info_base_1ab447b41b9c51151b5c6ef497a60689ae" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>loop<sp/>is<sp/>in<sp/>LoopSimplify<sp/>form,<sp/>then<sp/>extract<sp/>it<sp/>only<sp/>if<sp/>this<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>is<sp/>more<sp/>than<sp/>a<sp/>minimal<sp/>wrapper<sp/>around<sp/>the<sp/>loop.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(TLL-&gt;<ref refid="classllvm_1_1_loop_1ac233a2693163ed58305215ca2f6921e3" kindref="member">isLoopSimplifyForm</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ShouldExtractLoop<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>the<sp/>loop<sp/>if<sp/>the<sp/>entry<sp/>block<sp/>doesn&apos;t<sp/>branch<sp/>to<sp/>the<sp/>loop<sp/>header.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref><sp/>*EntryTI<sp/>=<sp/><ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>.getEntryBlock().getTerminator();</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" kindref="member">isa&lt;BranchInst&gt;</ref>(EntryTI)<sp/>||</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!<ref refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" kindref="member">cast&lt;BranchInst&gt;</ref>(EntryTI)-&gt;isUnconditional()<sp/>||</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EntryTI-&gt;<ref refid="classllvm_1_1_instruction_1a6e5d2e18c81baaeec7dadc81a0dea993" kindref="member">getSuccessor</ref>(0)<sp/>!=<sp/>TLL-&gt;<ref refid="classllvm_1_1_loop_base_1a4a75755081e9a3803d2f4ccf6f0cb1f8" kindref="member">getHeader</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ShouldExtractLoop<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>to<sp/>see<sp/>if<sp/>any<sp/>exits<sp/>from<sp/>the<sp/>loop<sp/>are<sp/>more<sp/>than<sp/>just<sp/>return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>blocks.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector&lt;BasicBlock *, 8&gt;</ref><sp/>ExitBlocks;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>TLL-&gt;<ref refid="classllvm_1_1_loop_base_1a1d9238c61483c12dce660bae4c8cc2d2" kindref="member">getExitBlocks</ref>(ExitBlocks);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*ExitBlock<sp/>:<sp/>ExitBlocks)</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" kindref="member">isa&lt;ReturnInst&gt;</ref>(ExitBlock-&gt;getTerminator()))<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShouldExtractLoop<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ShouldExtractLoop)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>|<sp/>extractLoop(TLL,<sp/>LI,<sp/>DT);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Okay,<sp/>this<sp/>function<sp/>is<sp/>a<sp/>minimal<sp/>container<sp/>around<sp/>the<sp/>specified<sp/>loop.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>we<sp/>extract<sp/>the<sp/>loop,<sp/>we<sp/>will<sp/>continue<sp/>to<sp/>just<sp/>keep<sp/>extracting<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>infinitely...<sp/>so<sp/>don&apos;t<sp/>extract<sp/>it.<sp/>However,<sp/>if<sp/>the<sp/>loop<sp/>contains<sp/>any</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>sub-loops,<sp/>extract<sp/>them.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>|<sp/>extractLoops(TLL-&gt;<ref refid="classllvm_1_1_loop_base_1af2f81059dc7566164b018aac6555eb1a" kindref="member">begin</ref>(),<sp/>TLL-&gt;<ref refid="classllvm_1_1_loop_base_1a98eb0888f30e7a27151a7b02fa053205" kindref="member">end</ref>(),<sp/>LI,<sp/>DT);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>LoopExtractor::extractLoops(<ref refid="classllvm_1_1_loop_base_1a72e879f0ce9d0a27682764a646e4e39b" kindref="member">Loop::iterator</ref><sp/>From,<sp/><ref refid="classllvm_1_1_loop_base_1a72e879f0ce9d0a27682764a646e4e39b" kindref="member">Loop::iterator</ref><sp/>To,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref><sp/>&amp;LI,<sp/><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>&amp;DT)<sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector&lt;Loop *, 8&gt;</ref><sp/><ref refid="_hexagon_hardware_loops_8cpp_1ada7c1594a393ede3ce32602d64d7ddb2" kindref="member">Loops</ref>;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Save<sp/>the<sp/>list<sp/>of<sp/>loops,<sp/>as<sp/>it<sp/>may<sp/>change.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><ref refid="_hexagon_hardware_loops_8cpp_1ada7c1594a393ede3ce32602d64d7ddb2" kindref="member">Loops</ref>.assign(From,<sp/>To);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref><sp/>*L<sp/>:<sp/><ref refid="_hexagon_hardware_loops_8cpp_1ada7c1594a393ede3ce32602d64d7ddb2" kindref="member">Loops</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>LoopSimplify<sp/>form<sp/>is<sp/>not<sp/>available,<sp/>stay<sp/>out<sp/>of<sp/>trouble.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="namespacellvm_1_1_m68k_1ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587" kindref="member">L</ref>-&gt;isLoopSimplifyForm())</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>|=<sp/>extractLoop(L,<sp/>LI,<sp/>DT);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!NumLoops)</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>LoopExtractor::extractLoop(<ref refid="classllvm_1_1_loop" kindref="compound">Loop</ref><sp/>*L,<sp/><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref><sp/>&amp;LI,<sp/><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>&amp;DT)<sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(NumLoops<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;<ref refid="namespacellvm_1_1rdf_1ad43aeb5ac76bcef25986fbb0918d1165" kindref="member">Func</ref><sp/>=<sp/>*<ref refid="namespacellvm_1_1_m68k_1ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587" kindref="member">L</ref>-&gt;getHeader()-&gt;getParent();</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref><sp/>*AC<sp/>=<sp/>LookupAssumptionCache(Func);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_code_extractor_analysis_cache" kindref="compound">CodeExtractorAnalysisCache</ref><sp/>CEAC(Func);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_code_extractor" kindref="compound">CodeExtractor</ref><sp/>Extractor(<ref refid="namespacellvm_1_1_m68k_1ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587" kindref="member">L</ref>-&gt;getBlocks(),<sp/>&amp;DT,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>AC);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Extractor.extractCodeRegion(CEAC))<sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>LI.<ref refid="classllvm_1_1_loop_info_1ab508a6297bcb823ca9d561facc241470" kindref="member">erase</ref>(L);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>--NumLoops;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>++NumExtracted;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="comment">//<sp/>createSingleLoopExtractorPass<sp/>-<sp/>This<sp/>pass<sp/>extracts<sp/>one<sp/>natural<sp/>loop<sp/>from<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="comment">//<sp/>program<sp/>into<sp/>a<sp/>function<sp/>if<sp/>it<sp/>can.<sp/><sp/>This<sp/>is<sp/>used<sp/>by<sp/>bugpoint.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257" refid="namespacellvm_1a7e59712594721d4fcfea4ffe36e942d4" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1_pass" kindref="compound">Pass</ref><sp/>*<ref refid="namespacellvm_1a7e59712594721d4fcfea4ffe36e942d4" kindref="member">llvm::createSingleLoopExtractorPass</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>SingleLoopExtractor();</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261" refid="structllvm_1_1_loop_extractor_pass_1ac1cd83190da80057c6903402d80cc1f7" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1_preserved_analyses" kindref="compound">PreservedAnalyses</ref><sp/><ref refid="structllvm_1_1_loop_extractor_pass_1ac1cd83190da80057c6903402d80cc1f7" kindref="member">LoopExtractorPass::run</ref>(<ref refid="classllvm_1_1_module" kindref="compound">Module</ref><sp/>&amp;M,<sp/><ref refid="namespacellvm_1af9c9208365fd9ce11392b4d79485e259" kindref="member">ModuleAnalysisManager</ref><sp/>&amp;AM)<sp/>{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<ref refid="_pass_builder_bindings_8cpp_1a83c7e5ca51099e4efa895791a02fb0ed" kindref="member">FAM</ref><sp/>=<sp/>AM.<ref refid="classllvm_1_1_analysis_manager_1aaab1fad63e4f3b8679469720a873fedd" kindref="member">getResult</ref>&lt;<ref refid="namespacellvm_1a4143e067711d3c7795276b225a8d6eb9" kindref="member">FunctionAnalysisManagerModuleProxy</ref>&gt;(M).getManager();</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>LookupDomTree<sp/>=<sp/>[&amp;<ref refid="_pass_builder_bindings_8cpp_1a83c7e5ca51099e4efa895791a02fb0ed" kindref="member">FAM</ref>](<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>)<sp/>-&gt;<sp/><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref><sp/>&amp;<sp/>{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_pass_builder_bindings_8cpp_1a83c7e5ca51099e4efa895791a02fb0ed" kindref="member">FAM</ref>.getResult&lt;<ref refid="classllvm_1_1_dominator_tree_analysis" kindref="compound">DominatorTreeAnalysis</ref>&gt;(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>LookupLoopInfo<sp/>=<sp/>[&amp;<ref refid="_pass_builder_bindings_8cpp_1a83c7e5ca51099e4efa895791a02fb0ed" kindref="member">FAM</ref>](<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>)<sp/>-&gt;<sp/><ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref><sp/>&amp;<sp/>{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_pass_builder_bindings_8cpp_1a83c7e5ca51099e4efa895791a02fb0ed" kindref="member">FAM</ref>.getResult&lt;<ref refid="classllvm_1_1_loop_analysis" kindref="compound">LoopAnalysis</ref>&gt;(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>LookupAssumptionCache<sp/>=<sp/>[&amp;<ref refid="_pass_builder_bindings_8cpp_1a83c7e5ca51099e4efa895791a02fb0ed" kindref="member">FAM</ref>](<ref refid="classllvm_1_1_function" kindref="compound">Function</ref><sp/>&amp;<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>)<sp/>-&gt;<sp/><ref refid="classllvm_1_1_assumption_cache" kindref="compound">AssumptionCache</ref><sp/>*<sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_pass_builder_bindings_8cpp_1a83c7e5ca51099e4efa895791a02fb0ed" kindref="member">FAM</ref>.getCachedResult&lt;<ref refid="classllvm_1_1_assumption_analysis" kindref="compound">AssumptionAnalysis</ref>&gt;(<ref refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" kindref="member">F</ref>);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!LoopExtractor(NumLoops,<sp/>LookupDomTree,<sp/>LookupLoopInfo,</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LookupAssumptionCache)</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.runOnModule(M))</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_preserved_analyses_1a1258a1ff55557c27684010ebd7283712" kindref="member">PreservedAnalyses::all</ref>();</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_preserved_analyses" kindref="compound">PreservedAnalyses</ref><sp/>PA;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/>PA.<ref refid="classllvm_1_1_preserved_analyses_1ad966bea18aa62ffb9e040509adc7c99f" kindref="member">preserve</ref>&lt;<ref refid="classllvm_1_1_loop_analysis" kindref="compound">LoopAnalysis</ref>&gt;();</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>PA;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282" refid="structllvm_1_1_loop_extractor_pass_1ab942d102186236bc1650fcb325440b28" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_loop_extractor_pass_1ab942d102186236bc1650fcb325440b28" kindref="member">LoopExtractorPass::printPipeline</ref>(</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref><sp/>&amp;OS,<sp/><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt;<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>)&gt;<sp/>MapClassName2PassName)<sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="structllvm_1_1_pass_info_mixin" kindref="compound">PassInfoMixin&lt;LoopExtractorPass&gt;</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="keyword">this</highlight><highlight class="normal">)-&gt;<ref refid="structllvm_1_1_loop_extractor_pass_1ab942d102186236bc1650fcb325440b28" kindref="member">printPipeline</ref>(</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>OS,<sp/>MapClassName2PassName);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/>OS<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;&lt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(NumLoops<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>OS<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;single&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/>OS<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="lib/Transforms/IPO/LoopExtractor.cpp"/>
+  </compounddef>
+</doxygen>

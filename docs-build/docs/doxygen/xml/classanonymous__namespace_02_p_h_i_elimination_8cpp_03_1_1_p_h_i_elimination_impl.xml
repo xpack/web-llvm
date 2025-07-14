@@ -1,0 +1,455 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</compoundname>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a2fdf3757a00213c352e964a74c6595e8" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt;</type>
+        <definition>using anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::BBVRegPair =  std::pair&lt;unsigned, Register&gt;</definition>
+        <argsstring></argsstring>
+        <name>BBVRegPair</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::BBVRegPair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="102" column="3" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a397e1d8b7fd81502e1d5ca78d3ea6d1f" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; BBVRegPair, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>using anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::VRegPHIUse =  DenseMap&lt;BBVRegPair, unsigned&gt;</definition>
+        <argsstring></argsstring>
+        <name>VRegPHIUse</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::VRegPHIUse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="103" column="3" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1ad99f5e46184a4ad7e3d46ab00b18ef93" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="structllvm_1_1_machine_instr_expression_trait" kindref="compound">MachineInstrExpressionTrait</ref> &gt;</type>
+        <definition>using anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::LoweredPHIMap = 
+      DenseMap&lt;MachineInstr *, unsigned, MachineInstrExpressionTrait&gt;</definition>
+        <argsstring></argsstring>
+        <name>LoweredPHIMap</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::LoweredPHIMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="112" column="3" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a22b37b338568f086b35e0f13a9e457b7" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> *</type>
+        <definition>MachineRegisterInfo* anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::MRI</definition>
+        <argsstring></argsstring>
+        <name>MRI</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::MRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="70" column="23" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a8fe6f53683e1bfde0110bb645339fe9d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_live_variables" kindref="compound">LiveVariables</ref> *</type>
+        <definition>LiveVariables* anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::LV</definition>
+        <argsstring></argsstring>
+        <name>LV</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::LV</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="71" column="17" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a1c1075154fe85f77bdaead1d519f44a6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_live_intervals" kindref="compound">LiveIntervals</ref> *</type>
+        <definition>LiveIntervals* anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::LIS</definition>
+        <argsstring></argsstring>
+        <name>LIS</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::LIS</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="72" column="17" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1aef39e5ac65fb34023ffd67931ca9436c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_loop_info" kindref="compound">MachineLoopInfo</ref> *</type>
+        <definition>MachineLoopInfo* anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::MLI</definition>
+        <argsstring></argsstring>
+        <name>MLI</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::MLI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="73" column="19" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a33e6b1121e4b77e526a7d2fa71c6d84b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> *</type>
+        <definition>MachineDominatorTree* anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::MDT</definition>
+        <argsstring></argsstring>
+        <name>MDT</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::MDT</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="74" column="24" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a3327ff4428976d00ed04f6c40613ea82" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">VRegPHIUse</ref></type>
+        <definition>VRegPHIUse anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::VRegPHIUseCount</definition>
+        <argsstring></argsstring>
+        <name>VRegPHIUseCount</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::VRegPHIUseCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="106" column="14" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1afa9176043e57fc97184aa155a11fdcb8" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, 4 &gt;</type>
+        <definition>SmallPtrSet&lt;MachineInstr *, 4&gt; anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::ImpDefs</definition>
+        <argsstring></argsstring>
+        <name>ImpDefs</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::ImpDefs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="109" column="15" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a389337a07e5c8a8db07221fb9826fd73" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">LoweredPHIMap</ref></type>
+        <definition>LoweredPHIMap anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::LoweredPHIs</definition>
+        <argsstring></argsstring>
+        <name>LoweredPHIs</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::LoweredPHIs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="114" column="17" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1ac7d7cbac750075f720e82318ed3b0de6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function_pass" kindref="compound">MachineFunctionPass</ref> *</type>
+        <definition>MachineFunctionPass* anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::P</definition>
+        <argsstring></argsstring>
+        <name>P</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::P</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="116" column="23" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a04a618c25d8edf4bc2276caf77c5efd5" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1a064825a8817522ca733ac413a7122d36" kindref="member">MachineFunctionAnalysisManager</ref> *</type>
+        <definition>MachineFunctionAnalysisManager* anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::MFAM</definition>
+        <argsstring></argsstring>
+        <name>MFAM</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::MFAM</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="117" column="34" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a5e735c461cb86a65ea2e65c990b260d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PHIEliminationImpl::EliminatePHINodes</definition>
+        <argsstring>(MachineFunction &amp;MF, MachineBasicBlock &amp;MBB)</argsstring>
+        <name>EliminatePHINodes</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::EliminatePHINodes</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+<para>EliminatePHINodes - Eliminate phi nodes by inserting copy instructions in predecessor basic blocks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="78" column="8" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="295" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1aa8bfcfd9c426f17b0c1964f86ce7d020" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PHIEliminationImpl::LowerPHINode</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator LastPHIIt, bool AllEdgesCritical)</argsstring>
+        <name>LowerPHINode</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::LowerPHINode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+          <declname>LastPHIIt</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>AllEdgesCritical</declname>
+        </param>
+        <briefdescription>
+<para>LowerPHINode - Lower the PHI node at the top of the specified block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="80" column="8" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="343" bodyend="740"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1aba072ccd2fb21f8e24bd71aadf70f3ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PHIEliminationImpl::analyzePHINodes</definition>
+        <argsstring>(const MachineFunction &amp;MF)</argsstring>
+        <name>analyzePHINodes</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::analyzePHINodes</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>analyzePHINodes - Gather information about the PHI nodes in here. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In particular, we want to map the number of uses of a virtual register which is used in a PHI node. We map that to the BB the vreg is coming from. This is used later to determine when the vreg is killed in the BB. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="89" column="8" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="746" bodyend="760"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a496df826643052010007acc0bbc21ab0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PHIEliminationImpl::SplitPHIEdges</definition>
+        <argsstring>(MachineFunction &amp;MF, MachineBasicBlock &amp;MBB, MachineLoopInfo *MLI, std::vector&lt; SparseBitVector&lt;&gt; &gt; *LiveInSets, MachineDomTreeUpdater &amp;MDTU)</argsstring>
+        <name>SplitPHIEdges</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::SplitPHIEdges</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_loop_info" kindref="compound">MachineLoopInfo</ref> *</type>
+          <declname>MLI</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_sparse_bit_vector" kindref="compound">SparseBitVector</ref>&lt;&gt; &gt; *</type>
+          <declname>LiveInSets</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_dom_tree_updater" kindref="compound">MachineDomTreeUpdater</ref> &amp;</type>
+          <declname>MDTU</declname>
+        </param>
+        <briefdescription>
+<para>Split critical edges where necessary for good coalescer performance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="92" column="8" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="762" bodyend="841"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a10ff67dadc6d8f907a3b02a87c52fd1c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PHIEliminationImpl::isLiveIn</definition>
+        <argsstring>(Register Reg, const MachineBasicBlock *MBB)</argsstring>
+        <name>isLiveIn</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::isLiveIn</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="99" column="8" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="843" bodyend="850"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a544acf00fe24efa608dc918d19949aba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PHIEliminationImpl::isLiveOutPastPHIs</definition>
+        <argsstring>(Register Reg, const MachineBasicBlock *MBB)</argsstring>
+        <name>isLiveOutPastPHIs</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::isLiveOutPastPHIs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="100" column="8" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="852" bodyend="870"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1aba6e49d59266f311a4ec8bb6574d13ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::PHIEliminationImpl</definition>
+        <argsstring>(MachineFunctionPass *P)</argsstring>
+        <name>PHIEliminationImpl</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::PHIEliminationImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function_pass" kindref="compound">MachineFunctionPass</ref> *</type>
+          <declname>P</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="120" column="3" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="120" bodyend="130"/>
+        <references refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" compoundref="_pass_analysis_support_8h" startline="211" endline="224">llvm::Pass::getAnalysisIfAvailable</references>
+        <references refid="classllvm_1_1_machine_dominator_tree_wrapper_pass_1afef72b0efb7c933e73f6bcdaefab2d05" compoundref="_machine_dominators_8h" startline="141" endline="141">llvm::MachineDominatorTreeWrapperPass::getDomTree</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a5c39315f3801026890a055f3d42bf5e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::PHIEliminationImpl</definition>
+        <argsstring>(MachineFunction &amp;MF, MachineFunctionAnalysisManager &amp;AM)</argsstring>
+        <name>PHIEliminationImpl</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::PHIEliminationImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1a064825a8817522ca733ac413a7122d36" kindref="member">MachineFunctionAnalysisManager</ref> &amp;</type>
+          <declname>AM</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="132" column="3" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="132" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1aab3db5c9e390ca00331b7d432c735dcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool PHIEliminationImpl::run</definition>
+        <argsstring>(MachineFunction &amp;MF)</argsstring>
+        <name>run</name>
+        <qualifiedname>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl::run</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PHIElimination.cpp" line="138" column="8" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="205" bodyend="291"/>
+        <references refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2373">Changed</references>
+        <references refid="_a_arch64_expand_pseudo_insts_8cpp_1ad3ece0ac2421637044624c9b01c42466" compoundref="_a_arch64_expand_pseudo_insts_8cpp" startline="113">DefMI</references>
+        <references refid="_p_h_i_elimination_8cpp_1a8908e161a958ed01720e4196b0078c5b">DisableEdgeSplitting</references>
+        <references refid="classllvm_1_1_machine_dominator_tree_wrapper_pass_1afef72b0efb7c933e73f6bcdaefab2d05" compoundref="_machine_dominators_8h" startline="141" endline="141">llvm::MachineDominatorTreeWrapperPass::getDomTree</references>
+        <references refid="classllvm_1_1_machine_function_1ac1f888bba00f32cb4f9a0010c958f397" compoundref="_machine_function_8h" startline="824" endline="824">llvm::MachineFunction::getProperties</references>
+        <references refid="classllvm_1_1_machine_function_1a810234b6b3d223b7c74a4253fcc5ea5e" compoundref="_machine_function_8h" startline="743" endline="743">llvm::MachineFunction::getRegInfo</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_register_1a1979c563289f871907832e419889f979" compoundref="_register_8h" startline="84" endline="87">llvm::Register::index2VirtReg</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_machine_function_properties_1ad85237c6c667e4713efe8921e9c32ac1a76eece0bfd57256980609b66faaef22c" compoundref="_machine_function_8h" startline="189">llvm::MachineFunctionProperties::NoPHIs</references>
+        <references refid="classllvm_1_1_machine_function_properties_1aa7780563d7ca260d0ae67d957b56427f" compoundref="_machine_function_8h" startline="207" endline="210">llvm::MachineFunctionProperties::set</references>
+        <references refid="classllvm_1_1_machine_function_1a7d2ce2106f9f7cf8f45c7c3c116ef43d" compoundref="_machine_function_8h" startline="957" endline="957">llvm::MachineFunction::size</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/PHIElimination.cpp" line="69" column="1" bodyfile="lib/CodeGen/PHIElimination.cpp" bodystart="69" bodyend="139"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1aba072ccd2fb21f8e24bd71aadf70f3ff" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>analyzePHINodes</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a2fdf3757a00213c352e964a74c6595e8" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>BBVRegPair</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a5e735c461cb86a65ea2e65c990b260d1" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>EliminatePHINodes</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1afa9176043e57fc97184aa155a11fdcb8" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>ImpDefs</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a10ff67dadc6d8f907a3b02a87c52fd1c" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>isLiveIn</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a544acf00fe24efa608dc918d19949aba" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>isLiveOutPastPHIs</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a1c1075154fe85f77bdaead1d519f44a6" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>LIS</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1ad99f5e46184a4ad7e3d46ab00b18ef93" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>LoweredPHIMap</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a389337a07e5c8a8db07221fb9826fd73" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>LoweredPHIs</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1aa8bfcfd9c426f17b0c1964f86ce7d020" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>LowerPHINode</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a8fe6f53683e1bfde0110bb645339fe9d" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>LV</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a33e6b1121e4b77e526a7d2fa71c6d84b" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>MDT</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a04a618c25d8edf4bc2276caf77c5efd5" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>MFAM</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1aef39e5ac65fb34023ffd67931ca9436c" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>MLI</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a22b37b338568f086b35e0f13a9e457b7" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>MRI</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1ac7d7cbac750075f720e82318ed3b0de6" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>P</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1aba6e49d59266f311a4ec8bb6574d13ad" prot="public" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>PHIEliminationImpl</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a5c39315f3801026890a055f3d42bf5e7" prot="public" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>PHIEliminationImpl</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1aab3db5c9e390ca00331b7d432c735dcd" prot="public" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>run</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a496df826643052010007acc0bbc21ab0" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>SplitPHIEdges</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a397e1d8b7fd81502e1d5ca78d3ea6d1f" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>VRegPHIUse</name></member>
+      <member refid="classanonymous__namespace_02_p_h_i_elimination_8cpp_03_1_1_p_h_i_elimination_impl_1a3327ff4428976d00ed04f6c40613ea82" prot="private" virt="non-virtual"><scope>anonymous_namespace{PHIElimination.cpp}::PHIEliminationImpl</scope><name>VRegPHIUseCount</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

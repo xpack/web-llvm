@@ -1,0 +1,735 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_system_z_hazard_recognizer" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SystemZHazardRecognizer</compoundname>
+    <basecompoundref refid="classllvm_1_1_schedule_hazard_recognizer" prot="public" virt="non-virtual">llvm::ScheduleHazardRecognizer</basecompoundref>
+    <includes refid="_system_z_hazard_recognizer_8h" local="yes">Target/SystemZ/SystemZHazardRecognizer.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_system_z_hazard_recognizer_1aa4a429442fab944d9d737027ea5f6d81" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_system_z_instr_info" kindref="compound">SystemZInstrInfo</ref> *</type>
+        <definition>const SystemZInstrInfo* llvm::SystemZHazardRecognizer::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::TII</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="47" column="26" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_hazard_recognizer_1ae8069310005736745d95dd603f8ae459" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_sched_model" kindref="compound">TargetSchedModel</ref> *</type>
+        <definition>const TargetSchedModel* llvm::SystemZHazardRecognizer::SchedModel</definition>
+        <argsstring></argsstring>
+        <name>SchedModel</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::SchedModel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="48" column="26" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_hazard_recognizer_1ab439539e4d60f2f1a209431de606b951" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SystemZHazardRecognizer::CurrGroupSize</definition>
+        <argsstring></argsstring>
+        <name>CurrGroupSize</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::CurrGroupSize</qualifiedname>
+        <briefdescription>
+<para>Keep track of the number of decoder slots used in the current decoder group. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="52" column="12" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_hazard_recognizer_1adb87b55493fd0fad87a147643bf3fec9" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SystemZHazardRecognizer::CurrGroupHas4RegOps</definition>
+        <argsstring></argsstring>
+        <name>CurrGroupHas4RegOps</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::CurrGroupHas4RegOps</qualifiedname>
+        <briefdescription>
+<para>True if an instruction with four reg operands have been scheduled into the current decoder group. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="56" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_hazard_recognizer_1aa26f64ed9c85aded2324baf7a3cf9749" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; int, 0 &gt;</type>
+        <definition>SmallVector&lt;int, 0&gt; llvm::SystemZHazardRecognizer::ProcResourceCounters</definition>
+        <argsstring></argsstring>
+        <name>ProcResourceCounters</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::ProcResourceCounters</qualifiedname>
+        <briefdescription>
+<para>The tracking of resources here are quite similar to the common code use of a critical resource. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>However, z13 differs in the way that it has two processor sides which may be interesting to model in the future (a work in progress). Counters for the number of uops scheduled per processor resource. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="65" column="15" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_hazard_recognizer_1a9de0b11a4016bc65d42441c9846aae78" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SystemZHazardRecognizer::CriticalResourceIdx</definition>
+        <argsstring></argsstring>
+        <name>CriticalResourceIdx</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::CriticalResourceIdx</qualifiedname>
+        <briefdescription>
+<para>This is the resource with the greatest queue, which the scheduler tries to avoid. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="69" column="12" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_hazard_recognizer_1a37ba805975fb51a310d1675a887548c7" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SystemZHazardRecognizer::LastFPdOpCycleIdx</definition>
+        <argsstring></argsstring>
+        <name>LastFPdOpCycleIdx</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::LastFPdOpCycleIdx</qualifiedname>
+        <briefdescription>
+<para>LastFPdOpCycleIdx stores the numbeer returned by getCurrCycleIdx() when a stalling operation is scheduled (which uses the FPd resource). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="89" column="12" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_hazard_recognizer_1a580bd67c37b922dff8c7b04403b0ae55" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SystemZHazardRecognizer::GrpCount</definition>
+        <argsstring></argsstring>
+        <name>GrpCount</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::GrpCount</qualifiedname>
+        <briefdescription>
+<para>A counter of decoder groups scheduled. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="92" column="12" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_system_z_hazard_recognizer_1a3de114d1fd3003d0aae841f14bb83a45" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr* llvm::SystemZHazardRecognizer::LastEmittedMI</definition>
+        <argsstring></argsstring>
+        <name>LastEmittedMI</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::LastEmittedMI</qualifiedname>
+        <briefdescription>
+<para>Last emitted instruction or nullptr. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="107" column="16" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_system_z_hazard_recognizer_1ad3166d0d38a2703ccf2c03230c12df70" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::SystemZHazardRecognizer::CurGroupDbg</definition>
+        <argsstring></argsstring>
+        <name>CurGroupDbg</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::CurGroupDbg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="146" column="15" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="146" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1a55f00177f4ea5d09fa4d4d88ee3cbc2b" compoundref="_system_z_hazard_recognizer_8cpp" startline="451" endline="463">copyState</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1ab00ec78da7d69f1c482ceaa59c677fa0" compoundref="_system_z_hazard_recognizer_8cpp" startline="208" endline="221">dumpCurrGroup</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1ae8b6eb92a49f95a3bc79199f0768de4a" compoundref="_system_z_hazard_recognizer_8cpp" startline="271" endline="338">EmitInstruction</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1a5f2640beef5b132e6c14d9db42e06dd1" compoundref="_system_z_hazard_recognizer_8cpp" startline="81" endline="89">Reset</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1a4cd673a97fe8746af526c05f03154849" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned SystemZHazardRecognizer::getNumDecoderSlots</definition>
+        <argsstring>(SUnit *SU) const</argsstring>
+        <name>getNumDecoderSlots</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::getNumDecoderSlots</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>Return the number of decoder slots MI requires. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="72" column="19" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="46" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1ab9e1a00841b526c5dd7592cf1aa9db5f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SystemZHazardRecognizer::fitsIntoCurrentGroup</definition>
+        <argsstring>(SUnit *SU) const</argsstring>
+        <name>fitsIntoCurrentGroup</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::fitsIntoCurrentGroup</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>Return true if MI fits into current decoder group. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="75" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="92" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1ada7467f520d9b075d7f5d3115369cc1d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SystemZHazardRecognizer::has4RegOps</definition>
+        <argsstring>(const MachineInstr *MI) const</argsstring>
+        <name>has4RegOps</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::has4RegOps</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Return true if this instruction has four register operands. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="78" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="117" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1ad4e535f0aa753fa6102e686d1fc03d2a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned SystemZHazardRecognizer::getCurrCycleIdx</definition>
+        <argsstring>(SUnit *SU=nullptr) const</argsstring>
+        <name>getCurrCycleIdx</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::getCurrCycleIdx</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Two decoder groups per cycle are formed (for z13), meaning 2x3 instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function returns a number between 0 and 5, representing the current decoder slot of the current cycle. If an SU is passed which will begin a new decoder group, the returned value is the cycle index of the next group. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="85" column="12" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="61" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1ad44d438949333878af469740467a5800" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SystemZHazardRecognizer::getCurrGroupSize</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrGroupSize</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::getCurrGroupSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="94" column="12" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="94" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1ae7b58504cc9b3d03e08a966a00dbe830" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemZHazardRecognizer::nextGroup</definition>
+        <argsstring>()</argsstring>
+        <name>nextGroup</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::nextGroup</qualifiedname>
+        <briefdescription>
+<para>Start next decoder group. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="97" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="134" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1a7e629e6b3fc64e9e58991888cc261e97" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemZHazardRecognizer::clearProcResCounters</definition>
+        <argsstring>()</argsstring>
+        <name>clearProcResCounters</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::clearProcResCounters</qualifiedname>
+        <briefdescription>
+<para>Clear all counters for processor resources. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="100" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="259" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1a84b599fcbdefc8f76b236a35cdd6847e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool SystemZHazardRecognizer::isFPdOpPreferred_distance</definition>
+        <argsstring>(SUnit *SU) const</argsstring>
+        <name>isFPdOpPreferred_distance</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::isFPdOpPreferred_distance</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>With the goal of alternating processor sides for stalling (FPd) ops, return true if it seems good to schedule an FPd op next. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="104" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="371" bodyend="384"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1af9591637d45b2fd9b6af0d7ad576b2e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SystemZHazardRecognizer::SystemZHazardRecognizer</definition>
+        <argsstring>(const SystemZInstrInfo *tii, const TargetSchedModel *SM)</argsstring>
+        <name>SystemZHazardRecognizer</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::SystemZHazardRecognizer</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_system_z_instr_info" kindref="compound">SystemZInstrInfo</ref> *</type>
+          <declname>tii</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_sched_model" kindref="compound">TargetSchedModel</ref> *</type>
+          <declname>SM</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="110" column="3" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="110" bodyend="114"/>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1a5f2640beef5b132e6c14d9db42e06dd1" compoundref="_system_z_hazard_recognizer_8cpp" startline="81" endline="89">Reset</references>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1a55f00177f4ea5d09fa4d4d88ee3cbc2b" compoundref="_system_z_hazard_recognizer_8cpp" startline="451" endline="463">copyState</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1a93f9e5c48a726c5f26603735a3e0a08e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_schedule_hazard_recognizer_1a9bec0e329b12bbc503d08db497d43267" kindref="member">HazardType</ref></type>
+        <definition>ScheduleHazardRecognizer::HazardType SystemZHazardRecognizer::getHazardType</definition>
+        <argsstring>(SUnit *SU, int Stalls=0) override</argsstring>
+        <name>getHazardType</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::getHazardType</qualifiedname>
+        <reimplements refid="classllvm_1_1_schedule_hazard_recognizer_1ae5c28a180502d1923c854952292cf5f6">getHazardType</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>Stalls</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>getHazardType - Return the hazard type of emitting this node. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There are three possible results. Either:<itemizedlist>
+<listitem><para>NoHazard: it is legal to issue this instruction on this cycle.</para>
+</listitem><listitem><para>Hazard: issuing this instruction would stall the machine. If some other instruction is available, issue it first.</para>
+</listitem><listitem><para>NoopHazard: issuing this instruction would break the program. If some other instruction can be issued, do so, otherwise issue a noop. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="116" column="14" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="77" bodyend="79"/>
+        <references refid="classllvm_1_1_schedule_hazard_recognizer_1a9bec0e329b12bbc503d08db497d43267aad25e3975650edcc9c6fb2917a61dd37" compoundref="_schedule_hazard_recognizer_8h" startline="39">llvm::ScheduleHazardRecognizer::Hazard</references>
+        <references refid="classllvm_1_1_schedule_hazard_recognizer_1a9bec0e329b12bbc503d08db497d43267a4e42ac50bfd060349e49904842121cf1" compoundref="_schedule_hazard_recognizer_8h" startline="38">llvm::ScheduleHazardRecognizer::NoHazard</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1a5f2640beef5b132e6c14d9db42e06dd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SystemZHazardRecognizer::Reset</definition>
+        <argsstring>() override</argsstring>
+        <name>Reset</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::Reset</qualifiedname>
+        <reimplements refid="classllvm_1_1_schedule_hazard_recognizer_1a3c5a10c0a8121d68c2a8eef15395ee41">Reset</reimplements>
+        <briefdescription>
+<para>Reset - This callback is invoked when a new block of instructions is about to be schedule. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The hazard state should be set to an initialized state. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="117" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="81" bodyend="89"/>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1ad3166d0d38a2703ccf2c03230c12df70" compoundref="_system_z_hazard_recognizer_8h" startline="146">CurGroupDbg</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1ae8b6eb92a49f95a3bc79199f0768de4a" compoundref="_system_z_hazard_recognizer_8cpp" startline="271" endline="338">EmitInstruction</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1af9591637d45b2fd9b6af0d7ad576b2e7" compoundref="_system_z_hazard_recognizer_8h" startline="110" endline="114">SystemZHazardRecognizer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1ae8b6eb92a49f95a3bc79199f0768de4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SystemZHazardRecognizer::EmitInstruction</definition>
+        <argsstring>(SUnit *SU) override</argsstring>
+        <name>EmitInstruction</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::EmitInstruction</qualifiedname>
+        <reimplements refid="classllvm_1_1_schedule_hazard_recognizer_1a65ae92267671fb17362151734e12e5bd">EmitInstruction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        </param>
+        <briefdescription>
+<para>EmitInstruction - This callback is invoked when an instruction is emitted, to advance the hazard state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="118" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="271" bodyend="338"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1ad3166d0d38a2703ccf2c03230c12df70" compoundref="_system_z_hazard_recognizer_8h" startline="146">CurGroupDbg</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1ab00ec78da7d69f1c482ceaa59c677fa0" compoundref="_system_z_hazard_recognizer_8cpp" startline="208" endline="221">dumpCurrGroup</references>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1a8a2ae56dfdc087ade919e8712369134a" compoundref="_system_z_hazard_recognizer_8cpp" startline="167" endline="206">dumpSU</references>
+        <references refid="classllvm_1_1_s_unit_1afc98c2c5417cad1a90fc4fe241fe8ba4" compoundref="_schedule_d_a_g_8h" startline="390" endline="394">llvm::SUnit::getInstr</references>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1a4a0f2858cdd379056abfa2531e7da961" compoundref="_system_z_hazard_recognizer_8h" startline="121" endline="125">getSchedClass</references>
+        <references refid="classllvm_1_1_s_unit_1a0be1f84d53e90c247d75f2ed63636761" compoundref="_schedule_d_a_g_8h" startline="287">llvm::SUnit::isCall</references>
+        <references refid="classllvm_1_1_s_unit_1a4ac4d36cb59a4bbf5d93513dad0ff0e9" compoundref="_schedule_d_a_g_8h" startline="300">llvm::SUnit::isUnbuffered</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_system_z_hazard_recognizer_8cpp_1add988a82ac573f98a34f87d2029aba06">ProcResCostLim</references>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1a5f2640beef5b132e6c14d9db42e06dd1" compoundref="_system_z_hazard_recognizer_8cpp" startline="81" endline="89">Reset</references>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1a47377e7e9aaf5a00affe4f4d8ec61f3e" compoundref="_system_z_hazard_recognizer_8cpp" startline="410" endline="448">emitInstruction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1a4a0f2858cdd379056abfa2531e7da961" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_m_c_sched_class_desc" kindref="compound">MCSchedClassDesc</ref> *</type>
+        <definition>const MCSchedClassDesc * llvm::SystemZHazardRecognizer::getSchedClass</definition>
+        <argsstring>(SUnit *SU) const</argsstring>
+        <name>getSchedClass</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::getSchedClass</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>Resolves and cache a resolved scheduling class for an <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="121" column="26" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="121" bodyend="125"/>
+        <references refid="classllvm_1_1_s_unit_1afc98c2c5417cad1a90fc4fe241fe8ba4" compoundref="_schedule_d_a_g_8h" startline="390" endline="394">llvm::SUnit::getInstr</references>
+        <references refid="classllvm_1_1_s_unit_1a2b2c6049e5141829267f4f9193b475d4" compoundref="_schedule_d_a_g_8h" startline="255">llvm::SUnit::SchedClass</references>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1a8a2ae56dfdc087ade919e8712369134a" compoundref="_system_z_hazard_recognizer_8cpp" startline="167" endline="206">dumpSU</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1ae8b6eb92a49f95a3bc79199f0768de4a" compoundref="_system_z_hazard_recognizer_8cpp" startline="271" endline="338">EmitInstruction</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1a0fdaca7e15aaaa6d903d0498220b8cc1" compoundref="_system_z_hazard_recognizer_8cpp" startline="340" endline="369">groupingCost</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1ab727fc0077d4f6ff1ad7b34cc5d2f069" compoundref="_system_z_hazard_recognizer_8cpp" startline="387" endline="408">resourcesCost</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1a47377e7e9aaf5a00affe4f4d8ec61f3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemZHazardRecognizer::emitInstruction</definition>
+        <argsstring>(MachineInstr *MI, bool TakenBranch=false)</argsstring>
+        <name>emitInstruction</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::emitInstruction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>TakenBranch</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Wrap a non-scheduled instruction in an SU and emit it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="128" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="410" bodyend="448"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1ae8b6eb92a49f95a3bc79199f0768de4a" compoundref="_system_z_hazard_recognizer_8cpp" startline="271" endline="338">EmitInstruction</references>
+        <references refid="classllvm_1_1_s_unit_1ab76e4a602699ddc57019efaba62a92b6" compoundref="_schedule_d_a_g_8h" startline="301">llvm::SUnit::hasReservedResource</references>
+        <references refid="_system_z_hazard_recognizer_8cpp_1a542f07d77adca7a09ec232fb9d8b512b" compoundref="_system_z_hazard_recognizer_8cpp" startline="264" endline="267">isBranchRetTrap</references>
+        <references refid="classllvm_1_1_s_unit_1a0be1f84d53e90c247d75f2ed63636761" compoundref="_schedule_d_a_g_8h" startline="287">llvm::SUnit::isCall</references>
+        <references refid="classllvm_1_1_s_unit_1a4ac4d36cb59a4bbf5d93513dad0ff0e9" compoundref="_schedule_d_a_g_8h" startline="300">llvm::SUnit::isUnbuffered</references>
+        <references refid="namespacellvm_1a341215803e83773a3e97860dc291f121" compoundref="iterator__range_8h" startline="77" endline="79">llvm::make_range</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1a0fdaca7e15aaaa6d903d0498220b8cc1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SystemZHazardRecognizer::groupingCost</definition>
+        <argsstring>(SUnit *SU) const</argsstring>
+        <name>groupingCost</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::groupingCost</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>Return the cost of decoder grouping for SU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If SU must start a new decoder group, this is negative if this fits the schedule or positive if it would mean ending a group prematurely. For normal instructions this returns 0. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="137" column="7" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="340" bodyend="369"/>
+        <references refid="classllvm_1_1_s_unit_1afc98c2c5417cad1a90fc4fe241fe8ba4" compoundref="_schedule_d_a_g_8h" startline="390" endline="394">llvm::SUnit::getInstr</references>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1a4a0f2858cdd379056abfa2531e7da961" compoundref="_system_z_hazard_recognizer_8h" startline="121" endline="125">getSchedClass</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1ab727fc0077d4f6ff1ad7b34cc5d2f069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SystemZHazardRecognizer::resourcesCost</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>resourcesCost</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::resourcesCost</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>Return the cost of SU in regards to processor resources usage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A positive value means it would be better to wait with SU, while a negative value means it would be good to schedule SU next. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="142" column="7" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="387" bodyend="408"/>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1a4a0f2858cdd379056abfa2531e7da961" compoundref="_system_z_hazard_recognizer_8h" startline="121" endline="125">getSchedClass</references>
+        <references refid="classllvm_1_1_s_unit_1a4ac4d36cb59a4bbf5d93513dad0ff0e9" compoundref="_schedule_d_a_g_8h" startline="300">llvm::SUnit::isUnbuffered</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1a8a2ae56dfdc087ade919e8712369134a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemZHazardRecognizer::dumpSU</definition>
+        <argsstring>(SUnit *SU, raw_ostream &amp;OS) const</argsstring>
+        <name>dumpSU</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::dumpSU</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="147" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="167" bodyend="206"/>
+        <references refid="classllvm_1_1_s_unit_1afc98c2c5417cad1a90fc4fe241fe8ba4" compoundref="_schedule_d_a_g_8h" startline="390" endline="394">llvm::SUnit::getInstr</references>
+        <references refid="classllvm_1_1_machine_instr_1a0363204b5fbab08a46f5a7cd7f376f78" compoundref="_machine_instr_8h" startline="577" endline="577">llvm::MachineInstr::getOpcode</references>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1a4a0f2858cdd379056abfa2531e7da961" compoundref="_system_z_hazard_recognizer_8h" startline="121" endline="125">getSchedClass</references>
+        <references refid="classllvm_1_1_s_unit_1a4ac4d36cb59a4bbf5d93513dad0ff0e9" compoundref="_schedule_d_a_g_8h" startline="300">llvm::SUnit::isUnbuffered</references>
+        <references refid="structllvm_1_1_m_c_proc_resource_desc_1a51dc4747a7d39650884bcf19daaf5f54" compoundref="_m_c_schedule_8h" startline="35">llvm::MCProcResourceDesc::Name</references>
+        <references refid="classllvm_1_1_s_unit_1a3f708b119627541f144d703a1d183202" compoundref="_schedule_d_a_g_8h" startline="270">llvm::SUnit::NodeNum</references>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1ae8b6eb92a49f95a3bc79199f0768de4a" compoundref="_system_z_hazard_recognizer_8cpp" startline="271" endline="338">EmitInstruction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1ab00ec78da7d69f1c482ceaa59c677fa0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemZHazardRecognizer::dumpCurrGroup</definition>
+        <argsstring>(std::string Msg=&quot;&quot;) const</argsstring>
+        <name>dumpCurrGroup</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::dumpCurrGroup</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>Msg</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="148" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="208" bodyend="221"/>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1ad3166d0d38a2703ccf2c03230c12df70" compoundref="_system_z_hazard_recognizer_8h" startline="146">CurGroupDbg</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1ad0f9d37195903c86ebbb9119e9e26fc0" compoundref="_system_z_hazard_recognizer_8cpp" startline="248" endline="255">dumpState</referencedby>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1ae8b6eb92a49f95a3bc79199f0768de4a" compoundref="_system_z_hazard_recognizer_8cpp" startline="271" endline="338">EmitInstruction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1a0fe3df1038d3bb4ac86cb76e6b5649fe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemZHazardRecognizer::dumpProcResourceCounters</definition>
+        <argsstring>() const</argsstring>
+        <name>dumpProcResourceCounters</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::dumpProcResourceCounters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="149" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="223" bodyend="246"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <referencedby refid="classllvm_1_1_system_z_hazard_recognizer_1ad0f9d37195903c86ebbb9119e9e26fc0" compoundref="_system_z_hazard_recognizer_8cpp" startline="248" endline="255">dumpState</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1ad0f9d37195903c86ebbb9119e9e26fc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemZHazardRecognizer::dumpState</definition>
+        <argsstring>() const</argsstring>
+        <name>dumpState</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::dumpState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="150" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="248" bodyend="255"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1ab00ec78da7d69f1c482ceaa59c677fa0" compoundref="_system_z_hazard_recognizer_8cpp" startline="208" endline="221">dumpCurrGroup</references>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1a0fe3df1038d3bb4ac86cb76e6b5649fe" compoundref="_system_z_hazard_recognizer_8cpp" startline="223" endline="246">dumpProcResourceCounters</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1aa7b41e365774a047ff8decb963b72033" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block_1ae34c996b58df9b9ce6695a0c8b70c533" kindref="member">MachineBasicBlock::iterator</ref></type>
+        <definition>MachineBasicBlock::iterator llvm::SystemZHazardRecognizer::getLastEmittedMI</definition>
+        <argsstring>()</argsstring>
+        <name>getLastEmittedMI</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::getLastEmittedMI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="153" column="31" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="153" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_system_z_hazard_recognizer_1a55f00177f4ea5d09fa4d4d88ee3cbc2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemZHazardRecognizer::copyState</definition>
+        <argsstring>(SystemZHazardRecognizer *Incoming)</argsstring>
+        <name>copyState</name>
+        <qualifiedname>llvm::SystemZHazardRecognizer::copyState</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_system_z_hazard_recognizer" kindref="compound">SystemZHazardRecognizer</ref> *</type>
+          <declname>Incoming</declname>
+        </param>
+        <briefdescription>
+<para>Copy counters from end of single predecessor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="156" column="8" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.cpp" bodystart="451" bodyend="463"/>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1ad3166d0d38a2703ccf2c03230c12df70" compoundref="_system_z_hazard_recognizer_8h" startline="146">CurGroupDbg</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_system_z_hazard_recognizer_1af9591637d45b2fd9b6af0d7ad576b2e7" compoundref="_system_z_hazard_recognizer_8h" startline="110" endline="114">SystemZHazardRecognizer</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1_system_z_hazard_recognizer" kindref="compound">SystemZHazardRecognizer</ref> maintains the state for one MBB during scheduling. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::ScheduleHazardRecognizer</label>
+        <link refid="classllvm_1_1_schedule_hazard_recognizer"/>
+      </node>
+      <node id="1">
+        <label>llvm::SystemZHazardRecognizer</label>
+        <link refid="classllvm_1_1_system_z_hazard_recognizer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>llvm::ScheduleHazardRecognizer</label>
+        <link refid="classllvm_1_1_schedule_hazard_recognizer"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>MaxLookAhead</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::SystemZHazardRecognizer</label>
+        <link refid="classllvm_1_1_system_z_hazard_recognizer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>CurGroupDbg</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/SystemZ/SystemZHazardRecognizer.h" line="45" column="1" bodyfile="lib/Target/SystemZ/SystemZHazardRecognizer.h" bodystart="45" bodyend="157"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1ad54a4120d2dfe3212b807c1f3ad80255" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>AdvanceCycle</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a8d57f996bd3d69e4f0674a54c5d62426" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>atIssueLimit</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a7e629e6b3fc64e9e58991888cc261e97" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>clearProcResCounters</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a55f00177f4ea5d09fa4d4d88ee3cbc2b" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>copyState</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a9de0b11a4016bc65d42441c9846aae78" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>CriticalResourceIdx</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ad3166d0d38a2703ccf2c03230c12df70" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>CurGroupDbg</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1adb87b55493fd0fad87a147643bf3fec9" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>CurrGroupHas4RegOps</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ab439539e4d60f2f1a209431de606b951" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>CurrGroupSize</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ab00ec78da7d69f1c482ceaa59c677fa0" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>dumpCurrGroup</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a0fe3df1038d3bb4ac86cb76e6b5649fe" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>dumpProcResourceCounters</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ad0f9d37195903c86ebbb9119e9e26fc0" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>dumpState</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a8a2ae56dfdc087ade919e8712369134a" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>dumpSU</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ae8b6eb92a49f95a3bc79199f0768de4a" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>EmitInstruction</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a3e223632a0644d8e0bca84139208e848" prot="public" virt="virtual" ambiguityscope="llvm::ScheduleHazardRecognizer::"><scope>llvm::SystemZHazardRecognizer</scope><name>EmitInstruction</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a47377e7e9aaf5a00affe4f4d8ec61f3e" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>emitInstruction</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1ab8cd949a59a859d00c4d0043009d4126" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>EmitNoop</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1af15b23b48c3d7e7e7b39b4f204520349" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>EmitNoops</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ab9e1a00841b526c5dd7592cf1aa9db5f" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>fitsIntoCurrentGroup</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ad4e535f0aa753fa6102e686d1fc03d2a" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>getCurrCycleIdx</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ad44d438949333878af469740467a5800" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>getCurrGroupSize</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a93f9e5c48a726c5f26603735a3e0a08e" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>getHazardType</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1aa7b41e365774a047ff8decb963b72033" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>getLastEmittedMI</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a01f781fc999200779e9b3d56da7e759a" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>getMaxLookAhead</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a4cd673a97fe8746af526c05f03154849" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>getNumDecoderSlots</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a4a0f2858cdd379056abfa2531e7da961" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>getSchedClass</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a0fdaca7e15aaaa6d903d0498220b8cc1" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>groupingCost</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a580bd67c37b922dff8c7b04403b0ae55" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>GrpCount</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ada7467f520d9b075d7f5d3115369cc1d" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>has4RegOps</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a9bec0e329b12bbc503d08db497d43267aad25e3975650edcc9c6fb2917a61dd37" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>Hazard</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a9bec0e329b12bbc503d08db497d43267" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>HazardType</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1afdc96245b9e4eb55ce1e8aa73c72c2d6" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>isEnabled</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a84b599fcbdefc8f76b236a35cdd6847e" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>isFPdOpPreferred_distance</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a3de114d1fd3003d0aae841f14bb83a45" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>LastEmittedMI</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a37ba805975fb51a310d1675a887548c7" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>LastFPdOpCycleIdx</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a6acf461721a59cf5cf404b80b5f57f86" prot="protected" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>MaxLookAhead</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ae7b58504cc9b3d03e08a966a00dbe830" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>nextGroup</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a9bec0e329b12bbc503d08db497d43267a4e42ac50bfd060349e49904842121cf1" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>NoHazard</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a9bec0e329b12bbc503d08db497d43267a578b582cca14a34e75b2afc3a1cd00a5" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>NoopHazard</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1aea4423b99e356d0ad170024f736fb4f1" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>PreEmitNoops</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a6f8ab351167274e82518e80298841bd8" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>PreEmitNoops</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1aa26f64ed9c85aded2324baf7a3cf9749" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>ProcResourceCounters</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a1286d92cd3db196a33f8ee0ef2c1daf5" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>RecedeCycle</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1a5f2640beef5b132e6c14d9db42e06dd1" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>Reset</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ab727fc0077d4f6ff1ad7b34cc5d2f069" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>resourcesCost</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1ae8069310005736745d95dd603f8ae459" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>SchedModel</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1aca503c68356ae08204c66afbc498504f" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>ScheduleHazardRecognizer</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a8e1b9c34eac5882a1e8e6e834222d3be" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>ShouldPreferAnother</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1af9591637d45b2fd9b6af0d7ad576b2e7" prot="public" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>SystemZHazardRecognizer</name></member>
+      <member refid="classllvm_1_1_system_z_hazard_recognizer_1aa4a429442fab944d9d737027ea5f6d81" prot="private" virt="non-virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>TII</name></member>
+      <member refid="classllvm_1_1_schedule_hazard_recognizer_1a83a591f94a4af77da751b849c0158d2f" prot="public" virt="virtual"><scope>llvm::SystemZHazardRecognizer</scope><name>~ScheduleHazardRecognizer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

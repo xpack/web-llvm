@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1_basic_block_info" kind="struct" language="C++" prot="public">
+    <compoundname>llvm::BasicBlockInfo</compoundname>
+    <includes refid="_a_r_m_basic_block_info_8h" local="yes">Target/ARM/ARMBasicBlockInfo.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structllvm_1_1_basic_block_info_1acadf079e9232969cd61ca5744b10dd16" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BasicBlockInfo::Offset</definition>
+        <argsstring></argsstring>
+        <name>Offset</name>
+        <qualifiedname>llvm::BasicBlockInfo::Offset</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Offset - Distance from the beginning of the function to the beginning of this basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Offsets are computed assuming worst case padding before an aligned block. This means that subtracting basic block offsets always gives a conservative estimate of the real distance which may be smaller.</para>
+<para>Because worst case padding is used, the computed offset of an aligned block may not actually be aligned. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMBasicBlockInfo.h" line="51" column="12" bodyfile="lib/Target/ARM/ARMBasicBlockInfo.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_basic_block_info_1a96d35759d0115509c273fbdfd8fe011a" compoundref="_a_r_m_basic_block_info_8h" startline="90" endline="97">postOffset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_basic_block_info_1a1b26f2a8fbde15592af8af3fb950d8fc" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BasicBlockInfo::Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <qualifiedname>llvm::BasicBlockInfo::Size</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Size - Size of the basic block in bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the block contains inline assembly, this is a worst case estimate.</para>
+<para>The size does not include any alignment padding whether from the beginning of the block, or from an aligned jump table at the end. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMBasicBlockInfo.h" line="58" column="12" bodyfile="lib/Target/ARM/ARMBasicBlockInfo.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_r_m_basic_block_utils_1a96fd72530daba07f5a05b8f467d2cf14" compoundref="_a_r_m_basic_block_info_8cpp" startline="44" endline="67">llvm::ARMBasicBlockUtils::computeBlockSize</referencedby>
+        <referencedby refid="structllvm_1_1_basic_block_info_1a5f264104cc3a87ed07dd196d281ccd2c" compoundref="_a_r_m_basic_block_info_8h" startline="78" endline="85">internalKnownBits</referencedby>
+        <referencedby refid="structllvm_1_1_basic_block_info_1a96d35759d0115509c273fbdfd8fe011a" compoundref="_a_r_m_basic_block_info_8h" startline="90" endline="97">postOffset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_basic_block_info_1a57a9e20cafe54e922aeead667cdd73ff" prot="public" static="no" mutable="no">
+        <type><ref refid="classuint8__t" kindref="compound">uint8_t</ref></type>
+        <definition>uint8_t llvm::BasicBlockInfo::KnownBits</definition>
+        <argsstring></argsstring>
+        <name>KnownBits</name>
+        <qualifiedname>llvm::BasicBlockInfo::KnownBits</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para><ref refid="structllvm_1_1_known_bits" kindref="compound">KnownBits</ref> - The number of low bits in Offset that are known to be exact. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The remaining bits of Offset are an upper bound. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMBasicBlockInfo.h" line="62" column="11" bodyfile="lib/Target/ARM/ARMBasicBlockInfo.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_basic_block_info_1a5f264104cc3a87ed07dd196d281ccd2c" compoundref="_a_r_m_basic_block_info_8h" startline="78" endline="85">internalKnownBits</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_basic_block_info_1aadef2620c9e7d116fda27a2d9edbd125" prot="public" static="no" mutable="no">
+        <type><ref refid="classuint8__t" kindref="compound">uint8_t</ref></type>
+        <definition>uint8_t llvm::BasicBlockInfo::Unalign</definition>
+        <argsstring></argsstring>
+        <name>Unalign</name>
+        <qualifiedname>llvm::BasicBlockInfo::Unalign</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Unalign - When non-zero, the block contains instructions (inline asm) of unknown size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The real size may be smaller than Size bytes by a multiple of 1 &lt;&lt; Unalign. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMBasicBlockInfo.h" line="67" column="11" bodyfile="lib/Target/ARM/ARMBasicBlockInfo.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_r_m_basic_block_utils_1a96fd72530daba07f5a05b8f467d2cf14" compoundref="_a_r_m_basic_block_info_8cpp" startline="44" endline="67">llvm::ARMBasicBlockUtils::computeBlockSize</referencedby>
+        <referencedby refid="structllvm_1_1_basic_block_info_1a5f264104cc3a87ed07dd196d281ccd2c" compoundref="_a_r_m_basic_block_info_8h" startline="78" endline="85">internalKnownBits</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_basic_block_info_1a3322f1dcf981856028e4ec195de0024d" prot="public" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1_align" kindref="compound">Align</ref></type>
+        <definition>Align llvm::BasicBlockInfo::PostAlign</definition>
+        <argsstring></argsstring>
+        <name>PostAlign</name>
+        <qualifiedname>llvm::BasicBlockInfo::PostAlign</qualifiedname>
+        <briefdescription>
+<para>PostAlign - When &gt; 1, the block terminator contains a .align directive, so the end of the block is aligned to PostAlign bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMBasicBlockInfo.h" line="71" column="9" bodyfile="lib/Target/ARM/ARMBasicBlockInfo.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_a_r_m_basic_block_utils_1a96fd72530daba07f5a05b8f467d2cf14" compoundref="_a_r_m_basic_block_info_8cpp" startline="44" endline="67">llvm::ARMBasicBlockUtils::computeBlockSize</referencedby>
+        <referencedby refid="structllvm_1_1_basic_block_info_1a9fcaddb16aceac174b38bb7bc118bdfe" compoundref="_a_r_m_basic_block_info_8h" startline="104" endline="106">postKnownBits</referencedby>
+        <referencedby refid="structllvm_1_1_basic_block_info_1a96d35759d0115509c273fbdfd8fe011a" compoundref="_a_r_m_basic_block_info_8h" startline="90" endline="97">postOffset</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structllvm_1_1_basic_block_info_1a6fec3f0b886c81f10897cccfba57e904" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::BasicBlockInfo::BasicBlockInfo</definition>
+        <argsstring>()=default</argsstring>
+        <name>BasicBlockInfo</name>
+        <qualifiedname>llvm::BasicBlockInfo::BasicBlockInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMBasicBlockInfo.h" line="73" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_basic_block_info_1a5f264104cc3a87ed07dd196d281ccd2c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BasicBlockInfo::internalKnownBits</definition>
+        <argsstring>() const</argsstring>
+        <name>internalKnownBits</name>
+        <qualifiedname>llvm::BasicBlockInfo::internalKnownBits</qualifiedname>
+        <briefdescription>
+<para>Compute the number of known offset bits internally to this block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This number should be used to predict worst case padding when splitting the block. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMBasicBlockInfo.h" line="78" column="12" bodyfile="lib/Target/ARM/ARMBasicBlockInfo.h" bodystart="78" bodyend="85"/>
+        <references refid="namespacellvm_1a57d2f9ee99e9e68cff564d0d579c8163" compoundref="bit_8h" startline="215" endline="219">llvm::countr_zero</references>
+        <references refid="structllvm_1_1_basic_block_info_1a57a9e20cafe54e922aeead667cdd73ff" compoundref="_a_r_m_basic_block_info_8h" startline="62">KnownBits</references>
+        <references refid="structllvm_1_1_basic_block_info_1a1b26f2a8fbde15592af8af3fb950d8fc" compoundref="_a_r_m_basic_block_info_8h" startline="58">Size</references>
+        <references refid="structllvm_1_1_basic_block_info_1aadef2620c9e7d116fda27a2d9edbd125" compoundref="_a_r_m_basic_block_info_8h" startline="67">Unalign</references>
+        <referencedby refid="structllvm_1_1_basic_block_info_1a9fcaddb16aceac174b38bb7bc118bdfe" compoundref="_a_r_m_basic_block_info_8h" startline="104" endline="106">postKnownBits</referencedby>
+        <referencedby refid="structllvm_1_1_basic_block_info_1a96d35759d0115509c273fbdfd8fe011a" compoundref="_a_r_m_basic_block_info_8h" startline="90" endline="97">postOffset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_basic_block_info_1a96d35759d0115509c273fbdfd8fe011a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BasicBlockInfo::postOffset</definition>
+        <argsstring>(Align Alignment=Align(1)) const</argsstring>
+        <name>postOffset</name>
+        <qualifiedname>llvm::BasicBlockInfo::postOffset</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_align" kindref="compound">Align</ref></type>
+          <declname>Alignment</declname>
+          <defval><ref refid="structllvm_1_1_align" kindref="compound">Align</ref>(1)</defval>
+        </param>
+        <briefdescription>
+<para>Compute the offset immediately following this block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="structllvm_1_1_align" kindref="compound">Align</ref> is specified, return the offset the successor block will get if it has this alignment. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMBasicBlockInfo.h" line="90" column="12" bodyfile="lib/Target/ARM/ARMBasicBlockInfo.h" bodystart="90" bodyend="97"/>
+        <references refid="structllvm_1_1_basic_block_info_1a5f264104cc3a87ed07dd196d281ccd2c" compoundref="_a_r_m_basic_block_info_8h" startline="78" endline="85">internalKnownBits</references>
+        <references refid="structllvm_1_1_basic_block_info_1acadf079e9232969cd61ca5744b10dd16" compoundref="_a_r_m_basic_block_info_8h" startline="51">Offset</references>
+        <references refid="structllvm_1_1_basic_block_info_1a3322f1dcf981856028e4ec195de0024d" compoundref="_a_r_m_basic_block_info_8h" startline="71">PostAlign</references>
+        <references refid="structllvm_1_1_basic_block_info_1a1b26f2a8fbde15592af8af3fb950d8fc" compoundref="_a_r_m_basic_block_info_8h" startline="58">Size</references>
+        <references refid="namespacellvm_1aca36878e37b708e22ace80dececead61" compoundref="_a_r_m_basic_block_info_8h" startline="33" endline="37">llvm::UnknownPadding</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_basic_block_info_1a9fcaddb16aceac174b38bb7bc118bdfe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::BasicBlockInfo::postKnownBits</definition>
+        <argsstring>(Align Align=llvm::Align(1)) const</argsstring>
+        <name>postKnownBits</name>
+        <qualifiedname>llvm::BasicBlockInfo::postKnownBits</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_align" kindref="compound">Align</ref></type>
+          <declname>Align</declname>
+          <defval><ref refid="structllvm_1_1_align" kindref="compound">llvm::Align</ref>(1)</defval>
+        </param>
+        <briefdescription>
+<para>Compute the number of known low bits of postOffset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If this block contains inline asm, the number of known bits drops to the instruction alignment. An aligned terminator may increase the number of know bits. If LogAlign is given, also consider the alignment of the next block. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMBasicBlockInfo.h" line="104" column="12" bodyfile="lib/Target/ARM/ARMBasicBlockInfo.h" bodystart="104" bodyend="106"/>
+        <references refid="structllvm_1_1_basic_block_info_1a5f264104cc3a87ed07dd196d281ccd2c" compoundref="_a_r_m_basic_block_info_8h" startline="78" endline="85">internalKnownBits</references>
+        <references refid="namespacellvm_1ad82de9da62635df78a534de0f16c1129" compoundref="_alignment_8h" startline="208" endline="208">llvm::Log2</references>
+        <references refid="structllvm_1_1_basic_block_info_1a3322f1dcf981856028e4ec195de0024d" compoundref="_a_r_m_basic_block_info_8h" startline="71">PostAlign</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="structllvm_1_1_basic_block_info" kindref="compound">BasicBlockInfo</ref> - Information about the offset and size of a single basic block. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>llvm::Align</label>
+        <link refid="structllvm_1_1_align"/>
+      </node>
+      <node id="1">
+        <label>llvm::BasicBlockInfo</label>
+        <link refid="structllvm_1_1_basic_block_info"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Offset</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>KnownBits</edgelabel>
+          <edgelabel>Unalign</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>PostAlign</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>uint8_t</label>
+        <link refid="classuint8__t"/>
+      </node>
+      <node id="2">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/ARM/ARMBasicBlockInfo.h" line="41" column="1" bodyfile="lib/Target/ARM/ARMBasicBlockInfo.h" bodystart="41" bodyend="107"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1_basic_block_info_1a6fec3f0b886c81f10897cccfba57e904" prot="public" virt="non-virtual"><scope>llvm::BasicBlockInfo</scope><name>BasicBlockInfo</name></member>
+      <member refid="structllvm_1_1_basic_block_info_1a5f264104cc3a87ed07dd196d281ccd2c" prot="public" virt="non-virtual"><scope>llvm::BasicBlockInfo</scope><name>internalKnownBits</name></member>
+      <member refid="structllvm_1_1_basic_block_info_1a57a9e20cafe54e922aeead667cdd73ff" prot="public" virt="non-virtual"><scope>llvm::BasicBlockInfo</scope><name>KnownBits</name></member>
+      <member refid="structllvm_1_1_basic_block_info_1acadf079e9232969cd61ca5744b10dd16" prot="public" virt="non-virtual"><scope>llvm::BasicBlockInfo</scope><name>Offset</name></member>
+      <member refid="structllvm_1_1_basic_block_info_1a3322f1dcf981856028e4ec195de0024d" prot="public" virt="non-virtual"><scope>llvm::BasicBlockInfo</scope><name>PostAlign</name></member>
+      <member refid="structllvm_1_1_basic_block_info_1a9fcaddb16aceac174b38bb7bc118bdfe" prot="public" virt="non-virtual"><scope>llvm::BasicBlockInfo</scope><name>postKnownBits</name></member>
+      <member refid="structllvm_1_1_basic_block_info_1a96d35759d0115509c273fbdfd8fe011a" prot="public" virt="non-virtual"><scope>llvm::BasicBlockInfo</scope><name>postOffset</name></member>
+      <member refid="structllvm_1_1_basic_block_info_1a1b26f2a8fbde15592af8af3fb950d8fc" prot="public" virt="non-virtual"><scope>llvm::BasicBlockInfo</scope><name>Size</name></member>
+      <member refid="structllvm_1_1_basic_block_info_1aadef2620c9e7d116fda27a2d9edbd125" prot="public" virt="non-virtual"><scope>llvm::BasicBlockInfo</scope><name>Unalign</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="saved-model-to-tflite_8py" kind="file" language="Python">
+    <compoundname>saved-model-to-tflite.py</compoundname>
+    <innernamespace refid="namespacesaved-model-to-tflite">saved-model-to-tflite</innernamespace>
+    <innernamespace refid="namespacesaved">saved</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacesaved" refkind="compound"><highlight class="stringliteral">&quot;&quot;&quot;Convert<sp/>a<sp/>saved<sp/>model<sp/>to<sp/>tflite<sp/>model.</highlight></codeline>
+<codeline lineno="2"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral">Usage:<sp/>python3<sp/>saved-model-to-tflite.py<sp/>&lt;mlgo<sp/>saved_model_dir&gt;<sp/>&lt;tflite<sp/>dest_dir&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">The<sp/>&lt;tflite<sp/>dest_dir&gt;<sp/>will<sp/>contain:</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral"><sp/><sp/>model.tflite:<sp/>this<sp/>is<sp/>the<sp/>converted<sp/>saved<sp/>model</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral"><sp/><sp/>output_spec.json:<sp/>the<sp/>output<sp/>spec,<sp/>copied<sp/>from<sp/>the<sp/>saved_model<sp/>dir.</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>tensorflow<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>tf</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>tf_agents.policies<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>greedy_policy</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="namespacesaved-model-to-tflite_1aa274d2db6246f2e882e5c84f664c5bfc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacesaved-model-to-tflite_1aa274d2db6246f2e882e5c84f664c5bfc" kindref="member">main</ref>(argv):</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>len(argv)<sp/>==<sp/>3</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>sm_dir<sp/>=<sp/>argv[1]</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>tfl_dir<sp/>=<sp/>argv[2]</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>tf.io.gfile.makedirs(tfl_dir)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>tfl_path<sp/>=<sp/>os.path.join(tfl_dir,<sp/></highlight><highlight class="stringliteral">&quot;model.tflite&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>converter<sp/>=<sp/>tf.lite.TFLiteConverter.from_saved_model(sm_dir)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>converter.target_spec.supported_ops<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tf.lite.OpsSet.TFLITE_BUILTINS,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>tfl_model<sp/>=<sp/>converter.convert()</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">with</highlight><highlight class="normal"><sp/>tf.io.gfile.GFile(tfl_path,<sp/></highlight><highlight class="stringliteral">&quot;wb&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>f:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f.write(tfl_model)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>json_file<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;output_spec.json&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>src_json<sp/>=<sp/>os.path.join(sm_dir,<sp/>json_file)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>tf.io.gfile.exists(src_json):</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tf.io.gfile.copy(src_json,<sp/>os.path.join(tfl_dir,<sp/>json_file))</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacesaved-model-to-tflite_1aa274d2db6246f2e882e5c84f664c5bfc" kindref="member">main</ref>(sys.argv)</highlight></codeline>
+    </programlisting>
+    <location file="lib/Analysis/models/saved-model-to-tflite.py"/>
+  </compounddef>
+</doxygen>

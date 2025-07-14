@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_g_v_materializer_8h" kind="file" language="C++">
+    <compoundname>GVMaterializer.h</compoundname>
+    <includes local="no">vector</includes>
+    <includedby refid="_bitcode_reader_8cpp" local="yes">lib/Bitcode/Reader/BitcodeReader.cpp</includedby>
+    <includedby refid="_debug_info_8cpp" local="yes">lib/IR/DebugInfo.cpp</includedby>
+    <includedby refid="_g_v_materializer_8cpp" local="yes">lib/IR/GVMaterializer.cpp</includedby>
+    <includedby refid="_i_r_mover_8cpp" local="yes">lib/Linker/IRMover.cpp</includedby>
+    <includedby refid="_sandbox_i_r_2_module_8cpp" local="yes">lib/SandboxIR/Module.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/IR/GVMaterializer.h</label>
+        <link refid="_g_v_materializer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/IR/GVMaterializer.h</label>
+        <link refid="_g_v_materializer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Bitcode/Reader/BitcodeReader.cpp</label>
+        <link refid="_bitcode_reader_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/IR/DebugInfo.cpp</label>
+        <link refid="_debug_info_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/IR/GVMaterializer.cpp</label>
+        <link refid="_g_v_materializer_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/Linker/IRMover.cpp</label>
+        <link refid="_i_r_mover_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/SandboxIR/Module.cpp</label>
+        <link refid="_sandbox_i_r_2_module_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1_g_v_materializer" prot="public">llvm::GVMaterializer</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>GVMaterializer.h<sp/>-<sp/>Interface<sp/>for<sp/>GV<sp/>materializers<sp/>--------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>provides<sp/>an<sp/>abstract<sp/>interface<sp/>for<sp/>loading<sp/>a<sp/>module<sp/>from<sp/>some</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>place.<sp/><sp/>This<sp/>interface<sp/>allows<sp/>incremental<sp/>or<sp/>random<sp/>access<sp/>loading<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>functions<sp/>from<sp/>the<sp/>file.<sp/><sp/>This<sp/>is<sp/>useful<sp/>for<sp/>applications<sp/>like<sp/>JIT<sp/>compilers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>or<sp/>interprocedural<sp/>optimizers<sp/>that<sp/>do<sp/>not<sp/>need<sp/>the<sp/>entire<sp/>program<sp/>in<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>at<sp/>the<sp/>same<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_IR_GVMATERIALIZER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_IR_GVMATERIALIZER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_error" kindref="compound">Error</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_struct_type" kindref="compound">StructType</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classllvm_1_1_g_v_materializer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_g_v_materializer_1aed0cb222305061a063dc22a665c95115" kindref="member">GVMaterializer</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30" refid="classllvm_1_1_g_v_materializer_1aed0cb222305061a063dc22a665c95115" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_g_v_materializer_1aed0cb222305061a063dc22a665c95115" kindref="member">GVMaterializer</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33" refid="classllvm_1_1_g_v_materializer_1ae103c9efa32d3363623b4ed9fdd07fec" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_g_v_materializer_1ae103c9efa32d3363623b4ed9fdd07fec" kindref="member">~GVMaterializer</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/>///<sp/>Make<sp/>sure<sp/>the<sp/>given<sp/>GlobalValue<sp/>is<sp/>fully<sp/>read.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/>///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classllvm_1_1_g_v_materializer_1a9a5da35fb95c69a15f9b1b6f686fcba3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_error" kindref="compound">Error</ref><sp/><ref refid="classllvm_1_1_g_v_materializer_1a9a5da35fb95c69a15f9b1b6f686fcba3" kindref="member">materialize</ref>(<ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref><sp/>*GV)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/>///<sp/>Make<sp/>sure<sp/>the<sp/>entire<sp/>Module<sp/>has<sp/>been<sp/>completely<sp/>read.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/>///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classllvm_1_1_g_v_materializer_1a60f913e127ffea57effa8118547c0e4b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_error" kindref="compound">Error</ref><sp/><ref refid="classllvm_1_1_g_v_materializer_1a60f913e127ffea57effa8118547c0e4b" kindref="member">materializeModule</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classllvm_1_1_g_v_materializer_1a80d2177cbd490f8b7afbb464ee8bbf10" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_error" kindref="compound">Error</ref><sp/><ref refid="classllvm_1_1_g_v_materializer_1a80d2177cbd490f8b7afbb464ee8bbf10" kindref="member">materializeMetadata</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44" refid="classllvm_1_1_g_v_materializer_1a3fe7e2ff7e80f59547544557045a0c24" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_g_v_materializer_1a3fe7e2ff7e80f59547544557045a0c24" kindref="member">setStripDebugInfo</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="classllvm_1_1_g_v_materializer_1ae88d366ab283bef55ae666c3f03c9992" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::vector&lt;StructType<sp/>*&gt;<sp/><ref refid="classllvm_1_1_g_v_materializer_1ae88d366ab283bef55ae666c3f03c9992" kindref="member">getIdentifiedStructTypes</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_IR_GVMATERIALIZER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/IR/GVMaterializer.h"/>
+  </compounddef>
+</doxygen>

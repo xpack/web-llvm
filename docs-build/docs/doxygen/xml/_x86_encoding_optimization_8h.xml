@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_x86_encoding_optimization_8h" kind="file" language="C++">
+    <compoundname>X86EncodingOptimization.h</compoundname>
+    <includedby refid="_x86_asm_parser_8cpp" local="yes">lib/Target/X86/AsmParser/X86AsmParser.cpp</includedby>
+    <includedby refid="_x86_asm_backend_8cpp" local="yes">lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp</includedby>
+    <includedby refid="_x86_encoding_optimization_8cpp" local="yes">lib/Target/X86/MCTargetDesc/X86EncodingOptimization.cpp</includedby>
+    <includedby refid="_x86_m_c_inst_lower_8cpp" local="yes">lib/Target/X86/X86MCInstLower.cpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>lib/Target/X86/AsmParser/X86AsmParser.cpp</label>
+        <link refid="_x86_asm_parser_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp</label>
+        <link refid="_x86_asm_backend_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Target/X86/MCTargetDesc/X86EncodingOptimization.cpp</label>
+        <link refid="_x86_encoding_optimization_8cpp"/>
+      </node>
+      <node id="1">
+        <label>lib/Target/X86/MCTargetDesc/X86EncodingOptimization.h</label>
+        <link refid="_x86_encoding_optimization_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>lib/Target/X86/X86MCInstLower.cpp</label>
+        <link refid="_x86_m_c_inst_lower_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <innernamespace refid="namespacellvm_1_1_x86">llvm::X86</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===--<sp/>X86EncodingOptimization.h<sp/>-<sp/>X86<sp/>Encoding<sp/>optimization<sp/>---*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>contains<sp/>the<sp/>declarations<sp/>of<sp/>the<sp/>X86<sp/>encoding<sp/>optimization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_LIB_TARGET_X86_X86ENCODINGOPTIMIZATION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_LIB_TARGET_X86_X86ENCODINGOPTIMIZATION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_instr_desc" kindref="compound">MCInstrDesc</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm_1_1_x86" kindref="compound">X86</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_x86_1aade8574cba756ffdc426344718ada414" kindref="member">optimizeInstFromVEX3ToVEX2</ref>(MCInst<sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MCInstrDesc<sp/>&amp;<ref refid="namespacellvm_1a4de98a9acffcef5bb4b31862cb8c72ac" kindref="member">Desc</ref>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_x86_1a88575ba0f198af79c61ba3a8c27a69d8" kindref="member">optimizeShiftRotateWithImmediateOne</ref>(MCInst<sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_x86_1a76d5022aceb3599fdcaf0ef25ee3ce73" kindref="member">optimizeVPCMPWithImmediateOneOrSix</ref>(MCInst<sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_x86_1a690516c8cb802c97acc69f6363735984" kindref="member">optimizeMOVSX</ref>(MCInst<sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_x86_1ae0e27cbc3acd22d76564e1f3ac9b8311" kindref="member">optimizeINCDEC</ref>(MCInst<sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>In64BitMode);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_x86_1a3e5a30d596e5e8933a926e2d14d5227f" kindref="member">optimizeMOV</ref>(MCInst<sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>In64BitMode);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_x86_1a0256d671ff2830d0ada28b07b9c7ab25" kindref="member">optimizeToFixedRegisterOrShortImmediateForm</ref>(MCInst<sp/>&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_x86_1af62df4b10560106717f6147a74bf446d" kindref="member">getOpcodeForShortImmediateForm</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Opcode);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_x86_1ab4ef8f6d88ba8604aa83ce35440fd8fb" kindref="member">getOpcodeForLongImmediateForm</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Opcode);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>X86</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="lib/Target/X86/MCTargetDesc/X86EncodingOptimization.h"/>
+  </compounddef>
+</doxygen>

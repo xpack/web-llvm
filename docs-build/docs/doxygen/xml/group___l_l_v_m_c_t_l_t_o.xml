@@ -1,0 +1,475 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group___l_l_v_m_c_t_l_t_o" kind="group">
+    <compoundname>LLVMCTLTO</compoundname>
+    <title>ThinLTO</title>
+    <innerclass refid="struct_l_t_o_object_buffer" prot="public">LTOObjectBuffer</innerclass>
+    <innergroup refid="group___l_l_v_m_c_t_l_t_o___c_a_c_h_i_n_g">ThinLTO Cache Control</innergroup>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1ga8ed1f0fc73822da5f1d749dffa8d8071" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+        <definition>thinlto_code_gen_t thinlto_create_codegen</definition>
+        <argsstring>(void)</argsstring>
+        <name>thinlto_create_codegen</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Instantiates a ThinLTO code generator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns NULL on error (check <ref refid="group___l_l_v_m_c_l_t_o_1gae09912101ce40de1049e5bf6355f6137" kindref="member">lto_get_error_message()</ref> for details).</para>
+<para>The ThinLTOCodeGenerator is not intended to be reuse for multiple compilation: the model is that the client adds modules to the generator and ask to perform the ThinLTO optimizations / codegen, and finally destroys the codegenerator.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="687" column="27" declfile="include/llvm-c/lto.h" declline="687" declcolumn="27"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1gafa8eb4c3e5fa635e51c92a913fc19aca" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thinlto_codegen_dispose</definition>
+        <argsstring>(thinlto_code_gen_t cg)</argsstring>
+        <name>thinlto_codegen_dispose</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <briefdescription>
+<para>Frees the generator and all memory it internally allocated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Upon return the <ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref> is no longer valid.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="695" column="13" declfile="include/llvm-c/lto.h" declline="695" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1gaa9e95873812d6c95eaed4669f5a8e218" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thinlto_codegen_add_module</definition>
+        <argsstring>(thinlto_code_gen_t cg, const char *identifier, const char *data, int length)</argsstring>
+        <name>thinlto_codegen_add_module</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>identifier</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Add a module to a ThinLTO code generator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Identifier has to be unique among all the modules in a code generator. The data buffer stays owned by the client, and is expected to be available for the entire lifetime of the <ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref> it is added to.</para>
+<para>On failure, returns NULL (check <ref refid="group___l_l_v_m_c_l_t_o_1gae09912101ce40de1049e5bf6355f6137" kindref="member">lto_get_error_message()</ref> for details).</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="708" column="13" declfile="include/llvm-c/lto.h" declline="708" declcolumn="13"/>
+        <references refid="_static_data_splitter_8cpp_1ad2fefd8832b4b1ea3dbb1f621063bbff" compoundref="_static_data_splitter_8cpp" startline="176">data</references>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1gac2ddec507ad62cf885d333152a80bd9f" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thinlto_codegen_process</definition>
+        <argsstring>(thinlto_code_gen_t cg)</argsstring>
+        <name>thinlto_codegen_process</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <briefdescription>
+<para>Optimize and codegen all the modules added to the codegenerator using ThinLTO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Resulting objects are accessible using <ref refid="group___l_l_v_m_c_t_l_t_o_1ga55822450a0ed1d0c2706c9bf194adb63" kindref="member">thinlto_module_get_object()</ref>.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="718" column="13" declfile="include/llvm-c/lto.h" declline="718" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1ga4b0d79fbe2182463fd0a8549669f661d" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref> int</type>
+        <definition>unsigned int thinlto_module_get_num_objects</definition>
+        <argsstring>(thinlto_code_gen_t cg)</argsstring>
+        <name>thinlto_module_get_num_objects</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of object files produced by the ThinLTO CodeGenerator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It usually matches the number of input files, but this is not a guarantee of the API and may change in future implementation, so the client should not assume it.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="729" column="21" declfile="include/llvm-c/lto.h" declline="729" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1ga55822450a0ed1d0c2706c9bf194adb63" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_l_t_o_object_buffer" kindref="compound">LTOObjectBuffer</ref></type>
+        <definition>LTOObjectBuffer thinlto_module_get_object</definition>
+        <argsstring>(thinlto_code_gen_t cg, unsigned int index)</argsstring>
+        <name>thinlto_module_get_object</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Returns a reference to the ith object file produced by the ThinLTO CodeGenerator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Client should use <computeroutput><ref refid="group___l_l_v_m_c_t_l_t_o_1ga4b0d79fbe2182463fd0a8549669f661d" kindref="member">thinlto_module_get_num_objects()</ref></computeroutput> to get the number of available objects.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="740" column="24" declfile="include/llvm-c/lto.h" declline="740" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1gab2701c474a2e855b522647d4403bc735" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref> int</type>
+        <definition>unsigned int thinlto_module_get_num_object_files</definition>
+        <argsstring>(thinlto_code_gen_t cg)</argsstring>
+        <name>thinlto_module_get_num_object_files</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of object files produced by the ThinLTO CodeGenerator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It usually matches the number of input files, but this is not a guarantee of the API and may change in future implementation, so the client should not assume it.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=21 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="752" column="14" declfile="include/llvm-c/lto.h" declline="752" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1ga6a623a3136782e9ae1a4b168c8231b67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>const char * thinlto_module_get_object_file</definition>
+        <argsstring>(thinlto_code_gen_t cg, unsigned int index)</argsstring>
+        <name>thinlto_module_get_object_file</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Returns the path to the ith object file produced by the ThinLTO CodeGenerator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Client should use <computeroutput><ref refid="group___l_l_v_m_c_t_l_t_o_1gab2701c474a2e855b522647d4403bc735" kindref="member">thinlto_module_get_num_object_files()</ref></computeroutput> to get the number of available objects.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=21 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="763" column="12" declfile="include/llvm-c/lto.h" declline="763" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1ga1bdfd6ec585a2b80fbaef4d1c7d3141e" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="llvm-c_2_l_t_o_8h_1a1f863f3727405a63300a2eaab9719e7a" kindref="member">lto_bool_t</ref></type>
+        <definition>lto_bool_t thinlto_codegen_set_pic_model</definition>
+        <argsstring>(thinlto_code_gen_t cg, lto_codegen_model)</argsstring>
+        <name>thinlto_codegen_set_pic_model</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gad17a28f0ff971d0c201f4716b25948a4" kindref="member">lto_codegen_model</ref></type>
+        </param>
+        <briefdescription>
+<para>Sets which PIC code model to generate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true on error (check <ref refid="group___l_l_v_m_c_l_t_o_1gae09912101ce40de1049e5bf6355f6137" kindref="member">lto_get_error_message()</ref> for details).</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="772" column="19" declfile="include/llvm-c/lto.h" declline="772" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1ga3ec329f8acd2712922566a82b84ed896" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thinlto_codegen_set_savetemps_dir</definition>
+        <argsstring>(thinlto_code_gen_t cg, const char *save_temps_dir)</argsstring>
+        <name>thinlto_codegen_set_savetemps_dir</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>save_temps_dir</declname>
+        </param>
+        <briefdescription>
+<para>Sets the path to a directory to use as a storage for temporary bitcode files. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The intention is to make the bitcode files available for debugging at various stage of the pipeline.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="782" column="13" declfile="include/llvm-c/lto.h" declline="782" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1ga6fd04a0b513b9eb915d5bc33a4a51945" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thinlto_set_generated_objects_dir</definition>
+        <argsstring>(thinlto_code_gen_t cg, const char *save_temps_dir)</argsstring>
+        <name>thinlto_set_generated_objects_dir</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>save_temps_dir</declname>
+        </param>
+        <briefdescription>
+<para>Set the path to a directory where to save generated object files. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This path can be used by a linker to request on-disk files instead of in-memory buffers. When set, results are available through <ref refid="group___l_l_v_m_c_t_l_t_o_1ga6a623a3136782e9ae1a4b168c8231b67" kindref="member">thinlto_module_get_object_file()</ref> instead of <ref refid="group___l_l_v_m_c_t_l_t_o_1ga55822450a0ed1d0c2706c9bf194adb63" kindref="member">thinlto_module_get_object()</ref>.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=21 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="793" column="6" declfile="include/llvm-c/lto.h" declline="793" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1ga88be70959374f7c525b310713abe574d" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thinlto_codegen_set_cpu</definition>
+        <argsstring>(thinlto_code_gen_t cg, const char *cpu)</argsstring>
+        <name>thinlto_codegen_set_cpu</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>cpu</declname>
+        </param>
+        <briefdescription>
+<para>Sets the cpu to generate code for. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="801" column="13" declfile="include/llvm-c/lto.h" declline="801" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1ga22eabf983805c0999e0a9f76ac4fe38f" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thinlto_codegen_disable_codegen</definition>
+        <argsstring>(thinlto_code_gen_t cg, lto_bool_t disable)</argsstring>
+        <name>thinlto_codegen_disable_codegen</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <param>
+          <type><ref refid="llvm-c_2_l_t_o_8h_1a1f863f3727405a63300a2eaab9719e7a" kindref="member">lto_bool_t</ref></type>
+          <declname>disable</declname>
+        </param>
+        <briefdescription>
+<para>Disable CodeGen, only run the stages till codegen and stop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The output will be bitcode.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=19 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="809" column="13" declfile="include/llvm-c/lto.h" declline="809" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1gad4ac940c874be5090130f2b93ebe99ea" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thinlto_codegen_set_codegen_only</definition>
+        <argsstring>(thinlto_code_gen_t cg, lto_bool_t codegen_only)</argsstring>
+        <name>thinlto_codegen_set_codegen_only</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <param>
+          <type><ref refid="llvm-c_2_l_t_o_8h_1a1f863f3727405a63300a2eaab9719e7a" kindref="member">lto_bool_t</ref></type>
+          <declname>codegen_only</declname>
+        </param>
+        <briefdescription>
+<para>Perform CodeGen only: disable all other stages. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>LTO_API_VERSION=19 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="817" column="13" declfile="include/llvm-c/lto.h" declline="817" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1ga26b2637e824b47093a7ef6987c3854a3" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thinlto_debug_options</definition>
+        <argsstring>(const char *const *options, int number)</argsstring>
+        <name>thinlto_debug_options</name>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> *</type>
+          <declname>options</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>number</declname>
+        </param>
+        <briefdescription>
+<para>Parse -mllvm style debug options. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="825" column="13" declfile="include/llvm-c/lto.h" declline="825" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1gab4ebc07d5540166b4aeedfbbd2720757" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="llvm-c_2_l_t_o_8h_1a1f863f3727405a63300a2eaab9719e7a" kindref="member">lto_bool_t</ref></type>
+        <definition>lto_bool_t lto_module_is_thinlto</definition>
+        <argsstring>(lto_module_t mod)</argsstring>
+        <name>lto_module_is_thinlto</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1ga3ce415fd9e8109d4835461c6de1b9d82" kindref="member">lto_module_t</ref></type>
+          <declname>mod</declname>
+        </param>
+        <briefdescription>
+<para>Test if a module has support for ThinLTO linking. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="832" column="19" declfile="include/llvm-c/lto.h" declline="832" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1gaac473108a947da1a6b02d8bb32d50e23" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thinlto_codegen_add_must_preserve_symbol</definition>
+        <argsstring>(thinlto_code_gen_t cg, const char *name, int length)</argsstring>
+        <name>thinlto_codegen_add_must_preserve_symbol</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Adds a symbol to the list of global symbols that must exist in the final generated code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If a function is not listed there, it might be inlined into every usage and optimized away. For every single module, the functions referenced from code outside of the ThinLTO modules need to be added here.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="842" column="13" declfile="include/llvm-c/lto.h" declline="842" declcolumn="13"/>
+        <references refid="_s_m_e_a_b_i_pass_8cpp_1a8f8f80d37794cde9472343e4487ba3eb" compoundref="_s_m_e_a_b_i_pass_8cpp" startline="46">name</references>
+      </memberdef>
+      <memberdef kind="function" id="group___l_l_v_m_c_t_l_t_o_1ga04d8f6924e666ac75b707c5159935056" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thinlto_codegen_add_cross_referenced_symbol</definition>
+        <argsstring>(thinlto_code_gen_t cg, const char *name, int length)</argsstring>
+        <name>thinlto_codegen_add_cross_referenced_symbol</name>
+        <param>
+          <type><ref refid="group___l_l_v_m_c_l_t_o_1gaad92d29c62685dde82e298596453c415" kindref="member">thinlto_code_gen_t</ref></type>
+          <declname>cg</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Adds a symbol to the list of global symbols that are cross-referenced between ThinLTO files. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the ThinLTO CodeGenerator can ensure that every references from a ThinLTO module to this symbol is optimized away, then the symbol can be discarded.</para>
+<para><simplesect kind="since"><para>LTO_API_VERSION=18 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm-c/lto.h" line="854" column="13" declfile="include/llvm-c/lto.h" declline="854" declcolumn="13"/>
+        <references refid="_s_m_e_a_b_i_pass_8cpp_1a8f8f80d37794cde9472343e4487ba3eb" compoundref="_s_m_e_a_b_i_pass_8cpp" startline="46">name</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>// endgoup LLVMCLTO </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,729 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_i_r_outliner" kind="class" language="C++" prot="public">
+    <compoundname>llvm::IROutliner</compoundname>
+    <includes refid="_i_r_outliner_8h" local="yes">llvm/Transforms/IPO/IROutliner.h</includes>
+    <innerclass refid="structllvm_1_1_i_r_outliner_1_1_instruction_allowed" prot="private">llvm::IROutliner::InstructionAllowed</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_i_r_outliner_1a717a443b3e21b0442a79b4677d2b0d5d" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::IROutliner::OutlineFromLinkODRs</definition>
+        <argsstring></argsstring>
+        <name>OutlineFromLinkODRs</name>
+        <qualifiedname>llvm::IROutliner::OutlineFromLinkODRs</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>If true, enables us to outline from functions that have LinkOnceFromODR linkages. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="317" column="8" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="317" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_i_r_outliner_1aa875337f62c7fc51a5ec11eebf47f0df" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::IROutliner::CostModel</definition>
+        <argsstring></argsstring>
+        <name>CostModel</name>
+        <qualifiedname>llvm::IROutliner::CostModel</qualifiedname>
+        <initializer>= <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></initializer>
+        <briefdescription>
+<para>If false, we do not worry if the cost is greater than the benefit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is for debugging and testing, so that we can test small cases to ensure that the outlining is being done correctly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="322" column="8" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_i_r_outliner_1af245aff2ce32c3502c60297f833938f8" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>DenseSet&lt;unsigned&gt; llvm::IROutliner::Outlined</definition>
+        <argsstring></argsstring>
+        <name>Outlined</name>
+        <qualifiedname>llvm::IROutliner::Outlined</qualifiedname>
+        <briefdescription>
+<para>The set of outlined Instructions, identified by their location in the sequential ordering of instructions in a <ref refid="classllvm_1_1_module" kindref="compound">Module</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="326" column="12" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_i_r_outliner_1aacb55c75e23073b0e5ca05a6d9addf2c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; <ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> &amp;(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;)&gt;</type>
+        <definition>function_ref&lt;TargetTransformInfo &amp;(Function &amp;)&gt; llvm::IROutliner::getTTI</definition>
+        <argsstring></argsstring>
+        <name>getTTI</name>
+        <qualifiedname>llvm::IROutliner::getTTI</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> lambda for target specific information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="329" column="16" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_i_r_outliner_1a9e197a45c8d9c6f5bcdf6b1bf8fef36c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt;</type>
+        <definition>DenseMap&lt;Value *, Value *&gt; llvm::IROutliner::OutputMappings</definition>
+        <argsstring></argsstring>
+        <name>OutputMappings</name>
+        <qualifiedname>llvm::IROutliner::OutputMappings</qualifiedname>
+        <briefdescription>
+<para>A mapping from newly created reloaded output values to the original value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If an value is replace by an output from an outlined region, this maps that <ref refid="classllvm_1_1_value" kindref="compound">Value</ref>, back to its original <ref refid="classllvm_1_1_value" kindref="compound">Value</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="334" column="12" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="334" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_i_r_outliner_1ab85476e0fa1ff28fc071d308877a5569" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; <ref refid="classllvm_1_1_i_r_similarity_1_1_i_r_similarity_identifier" kindref="compound">IRSimilarityIdentifier</ref> &amp;(<ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;)&gt;</type>
+        <definition>function_ref&lt;IRSimilarityIdentifier &amp;(Module &amp;)&gt; llvm::IROutliner::getIRSI</definition>
+        <argsstring></argsstring>
+        <name>getIRSI</name>
+        <qualifiedname>llvm::IROutliner::getIRSI</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_i_r_similarity_1_1_i_r_similarity_identifier" kindref="compound">IRSimilarityIdentifier</ref> lambda to retrieve <ref refid="classllvm_1_1_i_r_similarity_1_1_i_r_similarity_identifier" kindref="compound">IRSimilarityIdentifier</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="337" column="16" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_i_r_outliner_1ae2681979717de9e17c318eb2b4ec30d7" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; <ref refid="classllvm_1_1_optimization_remark_emitter" kindref="compound">OptimizationRemarkEmitter</ref> &amp;(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;)&gt;</type>
+        <definition>function_ref&lt;OptimizationRemarkEmitter &amp;(Function &amp;)&gt; llvm::IROutliner::getORE</definition>
+        <argsstring></argsstring>
+        <name>getORE</name>
+        <qualifiedname>llvm::IROutliner::getORE</qualifiedname>
+        <briefdescription>
+<para>The optimization remark emitter for the pass. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="340" column="16" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="340" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_i_r_outliner_1a7d939a73571c6d16cb579c2f2d18331c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_specific_bump_ptr_allocator" kindref="compound">SpecificBumpPtrAllocator</ref>&lt; <ref refid="classllvm_1_1_code_extractor" kindref="compound">CodeExtractor</ref> &gt;</type>
+        <definition>SpecificBumpPtrAllocator&lt;CodeExtractor&gt; llvm::IROutliner::ExtractorAllocator</definition>
+        <argsstring></argsstring>
+        <name>ExtractorAllocator</name>
+        <qualifiedname>llvm::IROutliner::ExtractorAllocator</qualifiedname>
+        <briefdescription>
+<para>The memory allocator used to allocate the CodeExtractors. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="343" column="28" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_i_r_outliner_1a430ba6ec6814dc27841b18730191a783" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_specific_bump_ptr_allocator" kindref="compound">SpecificBumpPtrAllocator</ref>&lt; <ref refid="structllvm_1_1_outlinable_region" kindref="compound">OutlinableRegion</ref> &gt;</type>
+        <definition>SpecificBumpPtrAllocator&lt;OutlinableRegion&gt; llvm::IROutliner::RegionAllocator</definition>
+        <argsstring></argsstring>
+        <name>RegionAllocator</name>
+        <qualifiedname>llvm::IROutliner::RegionAllocator</qualifiedname>
+        <briefdescription>
+<para>The memory allocator used to allocate the OutlinableRegions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="346" column="28" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_i_r_outliner_1aabf5b8081c2017ad2aa57c333e256b1d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_specific_bump_ptr_allocator" kindref="compound">SpecificBumpPtrAllocator</ref>&lt; <ref refid="structllvm_1_1_i_r_similarity_1_1_i_r_instruction_data" kindref="compound">IRInstructionData</ref> &gt;</type>
+        <definition>SpecificBumpPtrAllocator&lt;IRInstructionData&gt; llvm::IROutliner::InstDataAllocator</definition>
+        <argsstring></argsstring>
+        <name>InstDataAllocator</name>
+        <qualifiedname>llvm::IROutliner::InstDataAllocator</qualifiedname>
+        <briefdescription>
+<para>The memory allocator used to allocate new <ref refid="structllvm_1_1_i_r_similarity_1_1_i_r_instruction_data" kindref="compound">IRInstructionData</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="349" column="28" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="349" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_i_r_outliner_1a410fe16b0a243b46ba902cb9a5c9ad3e" prot="private" static="no" mutable="no">
+        <type>InstructionAllowed</type>
+        <definition>InstructionAllowed llvm::IROutliner::InstructionClassifier</definition>
+        <argsstring></argsstring>
+        <name>InstructionClassifier</name>
+        <qualifiedname>llvm::IROutliner::InstructionClassifier</qualifiedname>
+        <briefdescription>
+<para>A <ref refid="classllvm_1_1_inst_visitor" kindref="compound">InstVisitor</ref> used to exclude certain instructions from being outlined. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="440" column="22" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="440" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1a4dfb1b9b4add772840b18038df972d59" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::IROutliner::IROutliner</definition>
+        <argsstring>(function_ref&lt; TargetTransformInfo &amp;(Function &amp;)&gt; GTTI, function_ref&lt; IRSimilarityIdentifier &amp;(Module &amp;)&gt; GIRSI, function_ref&lt; OptimizationRemarkEmitter &amp;(Function &amp;)&gt; GORE)</argsstring>
+        <name>IROutliner</name>
+        <qualifiedname>llvm::IROutliner::IROutliner</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; <ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> &amp;(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;)&gt;</type>
+          <declname>GTTI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; <ref refid="classllvm_1_1_i_r_similarity_1_1_i_r_similarity_identifier" kindref="compound">IRSimilarityIdentifier</ref> &amp;(<ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;)&gt;</type>
+          <declname>GIRSI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; <ref refid="classllvm_1_1_optimization_remark_emitter" kindref="compound">OptimizationRemarkEmitter</ref> &amp;(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;)&gt;</type>
+          <declname>GORE</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="201" column="3" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="201" bodyend="211"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="structanonymous__namespace_02_g_v_n_sink_8cpp_03_1_1_dense_map_info_1a1423601a8e4ec304e0756df4e761ebbb" compoundref="_g_v_n_sink_8cpp" startline="341" endline="344">anonymous_namespace{GVNSink.cpp}::DenseMapInfo&lt; ModelledPHI &gt;::getEmptyKey</references>
+        <references refid="structanonymous__namespace_02_g_v_n_sink_8cpp_03_1_1_dense_map_info_1a9571e26b946751eaf015a9b8dc508be9" compoundref="_g_v_n_sink_8cpp" startline="346" endline="349">anonymous_namespace{GVNSink.cpp}::DenseMapInfo&lt; ModelledPHI &gt;::getTombstoneKey</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1adc7588dad82317423eb5949ca4bac107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool IROutliner::run</definition>
+        <argsstring>(Module &amp;M)</argsstring>
+        <name>run</name>
+        <qualifiedname>llvm::IROutliner::run</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="212" column="8" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="3013" bodyend="3018"/>
+        <references refid="_i_r_outliner_8cpp_1a415af6f4421aa68820b3279b48acd928">EnableLinkOnceODRIROutlining</references>
+        <references refid="_i_r_outliner_8cpp_1a2dfbf70cabc04c37f6f46b2c312b2506">NoCostModel</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1a2c8e647be2f0b5d2efe1241cc288e6fa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned IROutliner::doOutline</definition>
+        <argsstring>(Module &amp;M)</argsstring>
+        <name>doOutline</name>
+        <qualifiedname>llvm::IROutliner::doOutline</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+<para>Find repeated similar code sequences in <computeroutput>M</computeroutput> and outline them into new Functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">M</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The module to outline from. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of Functions created. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="220" column="12" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="2783" bodyend="3011"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1ac16fb7a3ce7c2dc2f6de30a354558937" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool IROutliner::isCompatibleWithAlreadyOutlinedCode</definition>
+        <argsstring>(const OutlinableRegion &amp;Region)</argsstring>
+        <name>isCompatibleWithAlreadyOutlinedCode</name>
+        <qualifiedname>llvm::IROutliner::isCompatibleWithAlreadyOutlinedCode</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_outlinable_region" kindref="compound">OutlinableRegion</ref> &amp;</type>
+          <declname>Region</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> whether an <ref refid="structllvm_1_1_outlinable_region" kindref="compound">OutlinableRegion</ref> is incompatible with code already outlined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>OutlinableRegions are incomptaible when there are overlapping instructions, or code that has not been recorded has been added to the instructions.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in"><ref refid="classllvm_1_1_region" kindref="compound">Region</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The <ref refid="structllvm_1_1_outlinable_region" kindref="compound">OutlinableRegion</ref> to check for conflicts with already outlined code. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the region can safely be outlined. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="230" column="8" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="2360" bodyend="2396"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1a33eec4f23ed70e97a15aeab286c9a139" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IROutliner::pruneIncompatibleRegions</definition>
+        <argsstring>(std::vector&lt; IRSimilarityCandidate &gt; &amp;CandidateVec, OutlinableGroup &amp;CurrentGroup)</argsstring>
+        <name>pruneIncompatibleRegions</name>
+        <qualifiedname>llvm::IROutliner::pruneIncompatibleRegions</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_i_r_similarity_1_1_i_r_similarity_candidate" kindref="compound">IRSimilarityCandidate</ref> &gt; &amp;</type>
+          <declname>CandidateVec</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_outlinable_group" kindref="compound">OutlinableGroup</ref> &amp;</type>
+          <declname>CurrentGroup</declname>
+        </param>
+        <briefdescription>
+<para>Remove all the IRSimilarityCandidates from <computeroutput>CandidateVec</computeroutput> that have instructions contained in a previously outlined region and put the remaining regions in <computeroutput>CurrentGroup</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">CandidateVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- List of similarity candidates for regions with the same similarity structure. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">CurrentGroup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Contains the potential sections to be outlined. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="241" column="3" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="2398" bodyend="2479"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1aabf3efc0bd728a533caeebeee17bff6b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+        <definition>Function * IROutliner::createFunction</definition>
+        <argsstring>(Module &amp;M, OutlinableGroup &amp;CG, unsigned FunctionNameSuffix)</argsstring>
+        <name>createFunction</name>
+        <qualifiedname>llvm::IROutliner::createFunction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_outlinable_group" kindref="compound">OutlinableGroup</ref> &amp;</type>
+          <declname>CG</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>FunctionNameSuffix</declname>
+        </param>
+        <briefdescription>
+<para>Create the function based on the overall types found in the current regions being outlined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>M</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The module to outline from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">CG</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The <ref refid="struct_outlinable_group" kindref="compound">OutlinableGroup</ref> for the regions to be outlined. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">FunctionNameSuffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- How many functions have we previously created. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the newly created function. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="252" column="12" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="629" bodyend="699"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1ac7d3729a389ea80fc6da20686dc12049" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IROutliner::findAddInputsOutputs</definition>
+        <argsstring>(Module &amp;M, OutlinableRegion &amp;Region, DenseSet&lt; unsigned &gt; &amp;NotSame)</argsstring>
+        <name>findAddInputsOutputs</name>
+        <qualifiedname>llvm::IROutliner::findAddInputsOutputs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_outlinable_region" kindref="compound">OutlinableRegion</ref> &amp;</type>
+          <declname>Region</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <declname>NotSame</declname>
+        </param>
+        <briefdescription>
+<para>Identify the needed extracted inputs in a section, and add to the overall function if needed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">M</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The module to outline from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout"><ref refid="classllvm_1_1_region" kindref="compound">Region</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The region to be extracted. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">NotSame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The global value numbers of the Values in the region that do not have the same <ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> in each strucutrally similar region. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="262" column="8" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="1400" bodyend="1418"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1acfe342420c2f533448508bf5c75a31c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref></type>
+        <definition>InstructionCost IROutliner::findBenefitFromAllRegions</definition>
+        <argsstring>(OutlinableGroup &amp;CurrentGroup)</argsstring>
+        <name>findBenefitFromAllRegions</name>
+        <qualifiedname>llvm::IROutliner::findBenefitFromAllRegions</qualifiedname>
+        <param>
+          <type><ref refid="struct_outlinable_group" kindref="compound">OutlinableGroup</ref> &amp;</type>
+          <declname>CurrentGroup</declname>
+        </param>
+        <briefdescription>
+<para>Find the number of instructions that will be removed by extracting the OutlinableRegions in <computeroutput>CurrentGroup</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">CurrentGroup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The collection of OutlinableRegions to be analyzed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of outlined instructions across all regions. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="271" column="19" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="2482" bodyend="2494"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1ada668b50e24e19eb5489c84afd53c13c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction_cost" kindref="compound">InstructionCost</ref></type>
+        <definition>InstructionCost IROutliner::findCostOutputReloads</definition>
+        <argsstring>(OutlinableGroup &amp;CurrentGroup)</argsstring>
+        <name>findCostOutputReloads</name>
+        <qualifiedname>llvm::IROutliner::findCostOutputReloads</qualifiedname>
+        <param>
+          <type><ref refid="struct_outlinable_group" kindref="compound">OutlinableGroup</ref> &amp;</type>
+          <declname>CurrentGroup</declname>
+        </param>
+        <briefdescription>
+<para>Find the number of instructions that will be added by reloading arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">CurrentGroup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The collection of OutlinableRegions to be analyzed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of added reload instructions across all regions. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="278" column="19" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="2526" bodyend="2546"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1a9667df89d348ad2b31d37699743fc694" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IROutliner::findCostBenefit</definition>
+        <argsstring>(Module &amp;M, OutlinableGroup &amp;CurrentGroup)</argsstring>
+        <name>findCostBenefit</name>
+        <qualifiedname>llvm::IROutliner::findCostBenefit</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_outlinable_group" kindref="compound">OutlinableGroup</ref> &amp;</type>
+          <declname>CurrentGroup</declname>
+        </param>
+        <briefdescription>
+<para>Find the cost and the benefit of <computeroutput>CurrentGroup</computeroutput> and save it back to <computeroutput>CurrentGroup</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">M</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The module being analyzed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">CurrentGroup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The overall outlined section </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="285" column="8" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="2629" bodyend="2674"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1ae72068274b82e22d746d4b039d2a842e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IROutliner::updateOutputMapping</definition>
+        <argsstring>(OutlinableRegion &amp;Region, ArrayRef&lt; Value * &gt; Outputs, LoadInst *LI)</argsstring>
+        <name>updateOutputMapping</name>
+        <qualifiedname>llvm::IROutliner::updateOutputMapping</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_outlinable_region" kindref="compound">OutlinableRegion</ref> &amp;</type>
+          <declname>Region</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt;</type>
+          <declname>Outputs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_load_inst" kindref="compound">LoadInst</ref> *</type>
+          <declname>LI</declname>
+        </param>
+        <briefdescription>
+<para>Update the output mapping based on the load instruction, and the outputs of the extracted function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classllvm_1_1_region" kindref="compound">Region</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The region extracted </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Outputs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The outputs from the extracted function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>LI</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The load instruction used to update the mapping. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="293" column="8" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="2676" bodyend="2706"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1a364079371163c9d5daf4edad11f9357b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool IROutliner::extractSection</definition>
+        <argsstring>(OutlinableRegion &amp;Region)</argsstring>
+        <name>extractSection</name>
+        <qualifiedname>llvm::IROutliner::extractSection</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_outlinable_region" kindref="compound">OutlinableRegion</ref> &amp;</type>
+          <declname>Region</declname>
+        </param>
+        <briefdescription>
+<para>Extract <computeroutput><ref refid="classllvm_1_1_region" kindref="compound">Region</ref></computeroutput> into its own function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in"><ref refid="classllvm_1_1_region" kindref="compound">Region</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The region to be extracted into its own function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if it was successfully outlined. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="300" column="8" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="2708" bodyend="2781"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_i_r_outliner_1a53a98d3c5abcb4f9ea22b1b688681da5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IROutliner::deduplicateExtractedSections</definition>
+        <argsstring>(Module &amp;M, OutlinableGroup &amp;CurrentGroup, std::vector&lt; Function * &gt; &amp;FuncsToRemove, unsigned &amp;OutlinedFunctionNum)</argsstring>
+        <name>deduplicateExtractedSections</name>
+        <qualifiedname>llvm::IROutliner::deduplicateExtractedSections</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_outlinable_group" kindref="compound">OutlinableGroup</ref> &amp;</type>
+          <declname>CurrentGroup</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> * &gt; &amp;</type>
+          <declname>FuncsToRemove</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>OutlinedFunctionNum</declname>
+        </param>
+        <briefdescription>
+<para>For the similarities found, and the extracted sections, create a single outlined function with appropriate output blocks as necessary. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">M</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The module to outline from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">CurrentGroup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The set of extracted sections to consolidate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">FuncsToRemove</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- List of functions to remove from the module after outlining is completed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">OutlinedFunctionNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the number of new outlined functions. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/IROutliner.h" line="311" column="8" bodyfile="lib/Transforms/IPO/IROutliner.cpp" bodystart="2292" bodyend="2329"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class is a pass that identifies similarity in a <ref refid="classllvm_1_1_module" kindref="compound">Module</ref>, extracts instances of the similarity, and then consolidating the similar regions in an effort to reduce code size. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It uses the <ref refid="classllvm_1_1_i_r_similarity_1_1_i_r_similarity_identifier" kindref="compound">IRSimilarityIdentifier</ref> pass to identify the similar regions of code, and then extracts the similar sections into a single function. See the above for an example as to how code is extracted and consolidated into a single function. </para>
+    </detaileddescription>
+    <location file="include/llvm/Transforms/IPO/IROutliner.h" line="199" column="1" bodyfile="include/llvm/Transforms/IPO/IROutliner.h" bodystart="199" bodyend="441"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_i_r_outliner_1aa875337f62c7fc51a5ec11eebf47f0df" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>CostModel</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1aabf3efc0bd728a533caeebeee17bff6b" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>createFunction</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1a53a98d3c5abcb4f9ea22b1b688681da5" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>deduplicateExtractedSections</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1a2c8e647be2f0b5d2efe1241cc288e6fa" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>doOutline</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1a7d939a73571c6d16cb579c2f2d18331c" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>ExtractorAllocator</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1a364079371163c9d5daf4edad11f9357b" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>extractSection</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1ac7d3729a389ea80fc6da20686dc12049" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>findAddInputsOutputs</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1acfe342420c2f533448508bf5c75a31c1" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>findBenefitFromAllRegions</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1a9667df89d348ad2b31d37699743fc694" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>findCostBenefit</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1ada668b50e24e19eb5489c84afd53c13c" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>findCostOutputReloads</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1ab85476e0fa1ff28fc071d308877a5569" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>getIRSI</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1ae2681979717de9e17c318eb2b4ec30d7" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>getORE</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1aacb55c75e23073b0e5ca05a6d9addf2c" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>getTTI</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1aabf5b8081c2017ad2aa57c333e256b1d" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>InstDataAllocator</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1a410fe16b0a243b46ba902cb9a5c9ad3e" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>InstructionClassifier</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1a4dfb1b9b4add772840b18038df972d59" prot="public" virt="non-virtual"><scope>llvm::IROutliner</scope><name>IROutliner</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1ac16fb7a3ce7c2dc2f6de30a354558937" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>isCompatibleWithAlreadyOutlinedCode</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1af245aff2ce32c3502c60297f833938f8" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>Outlined</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1a717a443b3e21b0442a79b4677d2b0d5d" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>OutlineFromLinkODRs</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1a9e197a45c8d9c6f5bcdf6b1bf8fef36c" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>OutputMappings</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1a33eec4f23ed70e97a15aeab286c9a139" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>pruneIncompatibleRegions</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1a430ba6ec6814dc27841b18730191a783" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>RegionAllocator</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1adc7588dad82317423eb5949ca4bac107" prot="public" virt="non-virtual"><scope>llvm::IROutliner</scope><name>run</name></member>
+      <member refid="classllvm_1_1_i_r_outliner_1ae72068274b82e22d746d4b039d2a842e" prot="private" virt="non-virtual"><scope>llvm::IROutliner</scope><name>updateOutputMapping</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</compoundname>
+    <basecompoundref refid="classllvm_1_1_j_i_t_event_listener" prot="public" virt="non-virtual">llvm::JITEventListener</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1a880da7403e190a8d68234ffd1ba19825" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1_1sys_1a52d48084c5b60251870b6118e4670fee" kindref="member">sys::Mutex</ref></type>
+        <definition>sys::Mutex anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::JITDebugLock</definition>
+        <argsstring></argsstring>
+        <name>JITDebugLock</name>
+        <qualifiedname>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::JITDebugLock</qualifiedname>
+        <briefdescription>
+<para>Lock used to serialize all jit registration events, since they modify global variables. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Only a single instance of <ref refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener" kindref="compound">GDBJITRegistrationListener</ref> is ever created, and so the lock can be a member variable of that instance. This ensures destructors are run in the correct order. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/GDBRegistrationListener.cpp" line="98" column="14" bodyfile="lib/ExecutionEngine/GDBRegistrationListener.cpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1abd444151e9d80786fd5ad31619bade7b" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1ad24beec920a5d33ddb8f0d2af143b376" kindref="member">RegisteredObjectBufferMap</ref></type>
+        <definition>RegisteredObjectBufferMap anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::ObjectBufferMap</definition>
+        <argsstring></argsstring>
+        <name>ObjectBufferMap</name>
+        <qualifiedname>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::ObjectBufferMap</qualifiedname>
+        <briefdescription>
+<para>A map of in-memory object files that have been registered with the JIT interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/GDBRegistrationListener.cpp" line="102" column="29" bodyfile="lib/ExecutionEngine/GDBRegistrationListener.cpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1abfc8b002958ca498ceaeb864ee156dd3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::GDBJITRegistrationListener</definition>
+        <argsstring>()=default</argsstring>
+        <name>GDBJITRegistrationListener</name>
+        <qualifiedname>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::GDBJITRegistrationListener</qualifiedname>
+        <briefdescription>
+<para>Instantiates the JIT service. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/GDBRegistrationListener.cpp" line="105" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1a4fe8ec178b276bf2cc56801053e83143" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::~GDBJITRegistrationListener</definition>
+        <argsstring>() override</argsstring>
+        <name>~GDBJITRegistrationListener</name>
+        <qualifiedname>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::~GDBJITRegistrationListener</qualifiedname>
+        <briefdescription>
+<para>Unregisters each object that was previously registered and releases all internal resources. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/GDBRegistrationListener.cpp" line="109" column="3" bodyfile="lib/ExecutionEngine/GDBRegistrationListener.cpp" bodystart="151" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1a07a7f51743d4d481fc59a2cce24c9d6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::deregisterObjectInternal</definition>
+        <argsstring>(RegisteredObjectBufferMap::iterator I)</argsstring>
+        <name>deregisterObjectInternal</name>
+        <qualifiedname>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::deregisterObjectInternal</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map_base_1a214e872d61db2ea8cb023f127cafd0b9" kindref="member">RegisteredObjectBufferMap::iterator</ref></type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Deregister the debug info for the given object file from the debugger and delete any temporary copies. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This private method does not remove the function from Map so that it can be called while iterating over Map. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/GDBRegistrationListener.cpp" line="132" column="8" bodyfile="lib/ExecutionEngine/GDBRegistrationListener.cpp" bodystart="205" bodyend="236"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1a02ab9f0e6bafa6a158c61ca0a442f1cd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener" kindref="compound">GDBJITRegistrationListener</ref> &amp;</type>
+        <definition>static GDBJITRegistrationListener &amp; anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::instance</definition>
+        <argsstring>()</argsstring>
+        <name>instance</name>
+        <qualifiedname>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::instance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/GDBRegistrationListener.cpp" line="112" column="37" bodyfile="lib/ExecutionEngine/GDBRegistrationListener.cpp" bodystart="112" bodyend="115"/>
+        <referencedby refid="classllvm_1_1_j_i_t_event_listener_1a004abbb5a0d48ac376dfbe3e3c97c306" compoundref="_g_d_b_registration_listener_8cpp" startline="242" endline="244">llvm::JITEventListener::createGDBRegistrationListener</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1ae41608a898388d10b4a7d39b4f94e32e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::notifyObjectLoaded</definition>
+        <argsstring>(ObjectKey K, const ObjectFile &amp;Obj, const RuntimeDyld::LoadedObjectInfo &amp;L) override</argsstring>
+        <name>notifyObjectLoaded</name>
+        <qualifiedname>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::notifyObjectLoaded</qualifiedname>
+        <reimplements refid="classllvm_1_1_j_i_t_event_listener_1a3a6eea839cd80cdbc1c9ce2baeecef74">notifyObjectLoaded</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_j_i_t_event_listener_1aefc8c6bb6d8f5a09e48f4b9db9c10024" kindref="member">ObjectKey</ref></type>
+          <declname>K</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1object_1_1_object_file" kindref="compound">ObjectFile</ref> &amp;</type>
+          <declname>Obj</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_runtime_dyld_1_1_loaded_object_info" kindref="compound">RuntimeDyld::LoadedObjectInfo</ref> &amp;</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Creates an entry in the JIT registry for the buffer <computeroutput>Object</computeroutput>, which must contain an object file in executable memory with any debug information for the debugger. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/GDBRegistrationListener.cpp" line="120" column="8" bodyfile="lib/ExecutionEngine/GDBRegistrationListener.cpp" bodystart="164" bodyend="193"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1object_1_1_owning_binary_1a3f6d33585a43bad491af78cc5c07f605" compoundref="_binary_8h" startline="236" endline="238">llvm::object::OwningBinary&lt; T &gt;::getBinary</references>
+        <references refid="namespaceanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1ac04610af527ea2371b9c4aad7a11b539" compoundref="_g_d_b_registration_listener_8cpp" startline="136" endline="149">anonymous_namespace{GDBRegistrationListener.cpp}::NotifyDebugger</references>
+        <references refid="structanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_registered_object_info_1a395959a81a363d412506d58dc7901eb5">anonymous_namespace{GDBRegistrationListener.cpp}::RegisteredObjectInfo::RegisteredObjectInfo</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <references refid="structjit__code__entry_1a60186e403eff321111fb57d7b461b618" compoundref="_j_i_t_loader_g_d_b_8h" startline="32">jit_code_entry::symfile_addr</references>
+        <references refid="structjit__code__entry_1aad8fa2b15fe70092d6fdd41ff48e1f76" compoundref="_j_i_t_loader_g_d_b_8h" startline="33">jit_code_entry::symfile_size</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1a46a08fb4e12d95ae18f3a656f1210d0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::notifyFreeingObject</definition>
+        <argsstring>(ObjectKey K) override</argsstring>
+        <name>notifyFreeingObject</name>
+        <qualifiedname>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener::notifyFreeingObject</qualifiedname>
+        <reimplements refid="classllvm_1_1_j_i_t_event_listener_1a1d9dbef6d1a1a97e5fadd0bdcd5ba954">notifyFreeingObject</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_j_i_t_event_listener_1aefc8c6bb6d8f5a09e48f4b9db9c10024" kindref="member">ObjectKey</ref></type>
+          <declname>K</declname>
+        </param>
+        <briefdescription>
+<para>Removes the internal registration of <computeroutput>Object</computeroutput>, and frees associated resources. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if <computeroutput>Object</computeroutput> was found in ObjectBufferMap. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/GDBRegistrationListener.cpp" line="126" column="8" bodyfile="lib/ExecutionEngine/GDBRegistrationListener.cpp" bodystart="195" bodyend="203"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Global access point for the JIT debugging interface designed for use with a singleton toolbox. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Handles thread-safe registration and deregistration of object files that are in executable memory managed by the client of this class. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</label>
+        <link refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::JITEventListener</label>
+        <link refid="classllvm_1_1_j_i_t_event_listener"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</label>
+        <link refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::JITEventListener</label>
+        <link refid="classllvm_1_1_j_i_t_event_listener"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/ExecutionEngine/GDBRegistrationListener.cpp" line="91" column="1" bodyfile="lib/ExecutionEngine/GDBRegistrationListener.cpp" bodystart="91" bodyend="133"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_j_i_t_event_listener_1a004abbb5a0d48ac376dfbe3e3c97c306" prot="public" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>createGDBRegistrationListener</name></member>
+      <member refid="classllvm_1_1_j_i_t_event_listener_1a8fc9cd1088989682b3d72a2560d0c577" prot="public" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>createIntelJITEventListener</name></member>
+      <member refid="classllvm_1_1_j_i_t_event_listener_1ab75def1bbc1bc1c95434203e0f9d8aa5" prot="public" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>createIntelJITEventListener</name></member>
+      <member refid="classllvm_1_1_j_i_t_event_listener_1ada1f87075221bc4d64d42c15b6e47e54" prot="public" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>createOProfileJITEventListener</name></member>
+      <member refid="classllvm_1_1_j_i_t_event_listener_1ae6edb3f85d8874b0a22884c28b59c366" prot="public" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>createOProfileJITEventListener</name></member>
+      <member refid="classllvm_1_1_j_i_t_event_listener_1acaa6e4061784b1c2064eafe1adaef7e5" prot="public" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>createPerfJITEventListener</name></member>
+      <member refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1a07a7f51743d4d481fc59a2cce24c9d6f" prot="private" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>deregisterObjectInternal</name></member>
+      <member refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1abfc8b002958ca498ceaeb864ee156dd3" prot="private" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>GDBJITRegistrationListener</name></member>
+      <member refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1a02ab9f0e6bafa6a158c61ca0a442f1cd" prot="public" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>instance</name></member>
+      <member refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1a880da7403e190a8d68234ffd1ba19825" prot="private" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>JITDebugLock</name></member>
+      <member refid="classllvm_1_1_j_i_t_event_listener_1a01ee72597bbb2b490cf27892d4509add" prot="public" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>JITEventListener</name></member>
+      <member refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1a46a08fb4e12d95ae18f3a656f1210d0b" prot="public" virt="virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>notifyFreeingObject</name></member>
+      <member refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1ae41608a898388d10b4a7d39b4f94e32e" prot="public" virt="virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>notifyObjectLoaded</name></member>
+      <member refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1abd444151e9d80786fd5ad31619bade7b" prot="private" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>ObjectBufferMap</name></member>
+      <member refid="classllvm_1_1_j_i_t_event_listener_1aefc8c6bb6d8f5a09e48f4b9db9c10024" prot="public" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>ObjectKey</name></member>
+      <member refid="classanonymous__namespace_02_g_d_b_registration_listener_8cpp_03_1_1_g_d_b_j_i_t_registration_listener_1a4fe8ec178b276bf2cc56801053e83143" prot="private" virt="non-virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>~GDBJITRegistrationListener</name></member>
+      <member refid="classllvm_1_1_j_i_t_event_listener_1af307eac43ee37915727a0d239d9f8f66" prot="public" virt="virtual"><scope>anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</scope><name>~JITEventListener</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

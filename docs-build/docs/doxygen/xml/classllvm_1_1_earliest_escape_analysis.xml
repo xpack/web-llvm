@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_earliest_escape_analysis" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>llvm::EarliestEscapeAnalysis</compoundname>
+    <basecompoundref refid="structllvm_1_1_capture_analysis" prot="public" virt="non-virtual">llvm::CaptureAnalysis</basecompoundref>
+    <includes refid="_alias_analysis_8h" local="yes">llvm/Analysis/AliasAnalysis.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_earliest_escape_analysis_1aa8670d7970c5a0683576519b2d44a012" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+        <definition>DominatorTree&amp; llvm::EarliestEscapeAnalysis::DT</definition>
+        <argsstring></argsstring>
+        <name>DT</name>
+        <qualifiedname>llvm::EarliestEscapeAnalysis::DT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="174" column="17" bodyfile="include/llvm/Analysis/AliasAnalysis.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_earliest_escape_analysis_1a93c3153d0902f2969aad31ad47f04c39" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> *</type>
+        <definition>const LoopInfo* llvm::EarliestEscapeAnalysis::LI</definition>
+        <argsstring></argsstring>
+        <name>LI</name>
+        <qualifiedname>llvm::EarliestEscapeAnalysis::LI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="175" column="18" bodyfile="include/llvm/Analysis/AliasAnalysis.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_earliest_escape_analysis_1a6f7d09baee799dac7ed5b1c631df4b5d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> * &gt;</type>
+        <definition>DenseMap&lt;const Value *, Instruction *&gt; llvm::EarliestEscapeAnalysis::EarliestEscapes</definition>
+        <argsstring></argsstring>
+        <name>EarliestEscapes</name>
+        <qualifiedname>llvm::EarliestEscapeAnalysis::EarliestEscapes</qualifiedname>
+        <briefdescription>
+<para>Map from identified local object to an instruction before which it does not escape, or nullptr if it never escapes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The &quot;earliest&quot; instruction may be a conservative approximation, e.g. the first instruction in the function is always a legal choice. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="181" column="12" bodyfile="include/llvm/Analysis/AliasAnalysis.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_earliest_escape_analysis_1adab81b30e563efd45abf47273fa17fe6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *, <ref refid="classllvm_1_1_tiny_ptr_vector" kindref="compound">TinyPtrVector</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &gt;</type>
+        <definition>DenseMap&lt;Instruction *, TinyPtrVector&lt;const Value *&gt; &gt; llvm::EarliestEscapeAnalysis::Inst2Obj</definition>
+        <argsstring></argsstring>
+        <name>Inst2Obj</name>
+        <qualifiedname>llvm::EarliestEscapeAnalysis::Inst2Obj</qualifiedname>
+        <briefdescription>
+<para>Reverse map from instruction to the objects it is the earliest escape for. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is used for cache invalidation purposes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="185" column="12" bodyfile="include/llvm/Analysis/AliasAnalysis.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_earliest_escape_analysis_1aaa8f09c225658e54a0cedaeccd54efc9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::EarliestEscapeAnalysis::EarliestEscapeAnalysis</definition>
+        <argsstring>(DominatorTree &amp;DT, const LoopInfo *LI=nullptr)</argsstring>
+        <name>EarliestEscapeAnalysis</name>
+        <qualifiedname>llvm::EarliestEscapeAnalysis::EarliestEscapeAnalysis</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> &amp;</type>
+          <declname>DT</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_loop_info" kindref="compound">LoopInfo</ref> *</type>
+          <declname>LI</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="188" column="3" bodyfile="include/llvm/Analysis/AliasAnalysis.h" bodystart="188" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_earliest_escape_analysis_1a7c3074603b84ea51ddaa985117ebce55" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool EarliestEscapeAnalysis::isNotCapturedBefore</definition>
+        <argsstring>(const Value *Object, const Instruction *I, bool OrAt) override</argsstring>
+        <name>isNotCapturedBefore</name>
+        <qualifiedname>llvm::EarliestEscapeAnalysis::isNotCapturedBefore</qualifiedname>
+        <reimplements refid="structllvm_1_1_capture_analysis_1aa5a5f80196908b2cc81274b59bb264a4">isNotCapturedBefore</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Object</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>OrAt</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> whether Object is not captured before instruction I. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If OrAt is true, captures by instruction I itself are also considered.</para>
+<para>If I is nullptr, then captures at any point will be considered. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="191" column="8" bodyfile="lib/Analysis/BasicAliasAnalysis.cpp" bodystart="213" bodyend="244"/>
+        <references refid="namespacellvm_1aa4e19c0182383b430a2e2b94808e0a89" compoundref="_capture_tracking_8cpp" startline="261" endline="275">llvm::FindEarliestCapture</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1abe71bc4610a9dc7aa3a6c6e0e28fc14a" compoundref="_alias_analysis_8cpp" startline="825" endline="827">llvm::isIdentifiedFunctionLocal</references>
+        <references refid="_basic_alias_analysis_8cpp_1a878ce10ca89edf5ebef798cc4871b6bf" compoundref="_basic_alias_analysis_8cpp" startline="205" endline="211">isNotInCycle</references>
+        <references refid="namespacellvm_1affedc93ead6b25c57a7196d32ff11e89" compoundref="_c_f_g_8cpp" startline="281" endline="324">llvm::isPotentiallyReachable</references>
+        <referencedby refid="namespaceanonymous__namespace_02_dead_store_elimination_8cpp_03_1acc93b6f7cc7a5092de1098c7f27a1a48" compoundref="_dead_store_elimination_8cpp" startline="2266" endline="2271">anonymous_namespace{DeadStoreElimination.cpp}::isFuncLocalAndNotCaptured</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_earliest_escape_analysis_1a10803865d951fa0a0d56f4d0ecc700ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EarliestEscapeAnalysis::removeInstruction</definition>
+        <argsstring>(Instruction *I)</argsstring>
+        <name>removeInstruction</name>
+        <qualifiedname>llvm::EarliestEscapeAnalysis::removeInstruction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/AliasAnalysis.h" line="194" column="8" bodyfile="lib/Analysis/BasicAliasAnalysis.cpp" bodystart="246" bodyend="253"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Context-sensitive <ref refid="structllvm_1_1_capture_analysis" kindref="compound">CaptureAnalysis</ref> provider, which computes and caches the earliest common dominator closure of all captures. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It provides a good approximation to a precise &quot;captures before&quot; analysis. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::CaptureAnalysis</label>
+        <link refid="structllvm_1_1_capture_analysis"/>
+      </node>
+      <node id="1">
+        <label>llvm::EarliestEscapeAnalysis</label>
+        <link refid="classllvm_1_1_earliest_escape_analysis"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>llvm::CaptureAnalysis</label>
+        <link refid="structllvm_1_1_capture_analysis"/>
+      </node>
+      <node id="1">
+        <label>llvm::EarliestEscapeAnalysis</label>
+        <link refid="classllvm_1_1_earliest_escape_analysis"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Analysis/AliasAnalysis.h" line="173" column="1" bodyfile="include/llvm/Analysis/AliasAnalysis.h" bodystart="173" bodyend="195"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_earliest_escape_analysis_1aa8670d7970c5a0683576519b2d44a012" prot="private" virt="non-virtual"><scope>llvm::EarliestEscapeAnalysis</scope><name>DT</name></member>
+      <member refid="classllvm_1_1_earliest_escape_analysis_1aaa8f09c225658e54a0cedaeccd54efc9" prot="public" virt="non-virtual"><scope>llvm::EarliestEscapeAnalysis</scope><name>EarliestEscapeAnalysis</name></member>
+      <member refid="classllvm_1_1_earliest_escape_analysis_1a6f7d09baee799dac7ed5b1c631df4b5d" prot="private" virt="non-virtual"><scope>llvm::EarliestEscapeAnalysis</scope><name>EarliestEscapes</name></member>
+      <member refid="classllvm_1_1_earliest_escape_analysis_1adab81b30e563efd45abf47273fa17fe6" prot="private" virt="non-virtual"><scope>llvm::EarliestEscapeAnalysis</scope><name>Inst2Obj</name></member>
+      <member refid="classllvm_1_1_earliest_escape_analysis_1a7c3074603b84ea51ddaa985117ebce55" prot="public" virt="virtual"><scope>llvm::EarliestEscapeAnalysis</scope><name>isNotCapturedBefore</name></member>
+      <member refid="classllvm_1_1_earliest_escape_analysis_1a93c3153d0902f2969aad31ad47f04c39" prot="private" virt="non-virtual"><scope>llvm::EarliestEscapeAnalysis</scope><name>LI</name></member>
+      <member refid="classllvm_1_1_earliest_escape_analysis_1a10803865d951fa0a0d56f4d0ecc700ca" prot="public" virt="non-virtual"><scope>llvm::EarliestEscapeAnalysis</scope><name>removeInstruction</name></member>
+      <member refid="structllvm_1_1_capture_analysis_1aa1f86a513f51b0d1efc8c40f1e832d39" prot="public" virt="pure-virtual"><scope>llvm::EarliestEscapeAnalysis</scope><name>~CaptureAnalysis</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

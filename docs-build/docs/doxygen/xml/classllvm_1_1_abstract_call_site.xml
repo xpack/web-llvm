@@ -1,0 +1,468 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_abstract_call_site" kind="class" language="C++" prot="public">
+    <compoundname>llvm::AbstractCallSite</compoundname>
+    <includes refid="_abstract_call_site_8h" local="yes">llvm/IR/AbstractCallSite.h</includes>
+    <innerclass refid="structllvm_1_1_abstract_call_site_1_1_callback_info" prot="public">llvm::AbstractCallSite::CallbackInfo</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_abstract_call_site_1a42ff0e00e94a4c78fc910510e45aa9b4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref> *</type>
+        <definition>CallBase* llvm::AbstractCallSite::CB</definition>
+        <argsstring></argsstring>
+        <name>CB</name>
+        <qualifiedname>llvm::AbstractCallSite::CB</qualifiedname>
+        <briefdescription>
+<para>The underlying call site: caller -&gt; callee, if this is a direct or indirect call site caller -&gt; broker function, if this is a callback call site. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="76" column="12" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_abstract_call_site_1a7a147a69d769fd0a682b878442202a65" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1_abstract_call_site_1_1_callback_info" kindref="compound">CallbackInfo</ref></type>
+        <definition>CallbackInfo llvm::AbstractCallSite::CI</definition>
+        <argsstring></argsstring>
+        <name>CI</name>
+        <qualifiedname>llvm::AbstractCallSite::CI</qualifiedname>
+        <briefdescription>
+<para>The encoding of a callback with regards to the underlying instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="79" column="16" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a582d0050c740c1f23bce6bc0c8c5b189" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AbstractCallSite::AbstractCallSite</definition>
+        <argsstring>(const Use *U)</argsstring>
+        <name>AbstractCallSite</name>
+        <qualifiedname>llvm::AbstractCallSite::AbstractCallSite</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> *</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+<para>Sole constructor for abstract call sites (ACS). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Create an abstract call site from a use.</para>
+<para>An abstract call site can only be constructed through a <ref refid="classllvm_1_1_use" kindref="compound">llvm::Use</ref> because each operand (=use) of an instruction could potentially be a different abstract call site. Furthermore, even if the value of the <ref refid="classllvm_1_1_use" kindref="compound">llvm::Use</ref> is the same, and the user is as well, the abstract call sites might not be.</para>
+<para>If a use is not associated with an abstract call site the constructed ACS will evaluate to false if converted to a boolean.</para>
+<para>If the use is the callee use of a call or invoke instruction, the constructed abstract call site will behave as a llvm::CallSite would.</para>
+<para>If the use is not a callee use of a call or invoke instruction, the callback metadata is used to determine the argument &lt;-&gt; parameter mapping as well as the callee of the abstract call site. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="98" column="3" bodyfile="lib/IR/AbstractCallSite.cpp" bodystart="55" bodyend="153"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_m_d_operand_1ac5d52549f5e52702a331fbc4bd7eb512" compoundref="_metadata_8h" startline="924" endline="924">llvm::MDOperand::get</references>
+        <references refid="classllvm_1_1_m_d_node_1aa4068e37ec583962685e3567dc102ae5" compoundref="_metadata_8h" startline="1440" endline="1440">llvm::MDNode::getNumOperands</references>
+        <references refid="classllvm_1_1_m_d_node_1a42409838a49255a3770da1469872f20b" compoundref="_metadata_8h" startline="1434" endline="1437">llvm::MDNode::getOperand</references>
+        <references refid="_pass_builder_bindings_8cpp_1acdfbcf188e2d4a80837e89de2ccdffab" compoundref="_pass_builder_bindings_8cpp" startline="64" endline="71">if</references>
+        <references refid="classllvm_1_1_m_d_node_1a571612461ea4af620bc4c441d61579a3" compoundref="_metadata_8h" startline="1432" endline="1432">llvm::MDNode::operands</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a849dee873893038338c06b0829b41ca4" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::AbstractCallSite::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <qualifiedname>llvm::AbstractCallSite::operator bool</qualifiedname>
+        <briefdescription>
+<para>Conversion operator to conveniently check for a valid/initialized ACS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="109" column="12" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="109" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a1d97fd714e72a72bd6d96a8b1ebf62ea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref> *</type>
+        <definition>CallBase * llvm::AbstractCallSite::getInstruction</definition>
+        <argsstring>() const</argsstring>
+        <name>getInstruction</name>
+        <qualifiedname>llvm::AbstractCallSite::getInstruction</qualifiedname>
+        <briefdescription>
+<para>Return the underlying instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="112" column="12" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="112" bodyend="112"/>
+        <referencedby refid="structllvm_1_1_i_r_position_1a882f8f4551f4267174aa36b7e3b68a97" compoundref="_attributor_8h" startline="666" endline="675">llvm::IRPosition::callsite_argument</referencedby>
+        <referencedby refid="structllvm_1_1_attributor_1a8d0a2ebeeedeb0bd16a52affb7f6ed88" compoundref="_attributor_8cpp" startline="1878" endline="1978">llvm::Attributor::checkForAllCallSites</referencedby>
+        <referencedby refid="structanonymous__namespace_02_attributor_attributes_8cpp_03_1_1_a_a_privatizable_ptr_argument_1af05ad96486c97ea7158a65507aaee0ef" compoundref="_attributor_attributes_8cpp" startline="7538" endline="7573">anonymous_namespace{AttributorAttributes.cpp}::AAPrivatizablePtrArgument::createReplacementValues</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a377c884b7ab6a21ce8f1113da49094f1" compoundref="_abstract_call_site_8h" startline="202" endline="207">getCalleeUseForCallback</referencedby>
+        <referencedby refid="structllvm_1_1_attributor_1a273e9b97fc0dfec8df7cf4294d9b87fe" compoundref="_attributor_8cpp" startline="2845" endline="2912">llvm::Attributor::isValidFunctionSignatureRewrite</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a27b382e987878c9f338d79220acc06b2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AbstractCallSite::isDirectCall</definition>
+        <argsstring>() const</argsstring>
+        <name>isDirectCall</name>
+        <qualifiedname>llvm::AbstractCallSite::isDirectCall</qualifiedname>
+        <briefdescription>
+<para>Return true if this ACS represents a direct call. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="115" column="8" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="115" bodyend="117"/>
+        <references refid="classllvm_1_1_abstract_call_site_1a2300cb53451591b87c7c5621c31643a2" compoundref="_abstract_call_site_8h" startline="125" endline="129">isCallbackCall</references>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a61d314ffacb9684d0b278e034f2d517a" compoundref="_abstract_call_site_8h" startline="183" endline="190">getCallArgOperand</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a5a2fe9e8614a228a5dcf747c4574c815" compoundref="_abstract_call_site_8h" startline="169" endline="174">getCallArgOperandNo</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a91e818b6c5395b706e4d6ec60f636800" compoundref="_abstract_call_site_8h" startline="210" endline="214">getCalledOperand</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1ab8b5e4f9ae59fedfc0f0be8395992ea3" compoundref="_abstract_call_site_8h" startline="154" endline="159">getNumArgOperands</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a186e1b3785876bc1827f2c352f831a36" compoundref="_abstract_call_site_8h" startline="137" endline="151">isCallee</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a31b793fd30a35a9db6bbd8ead7796ba0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AbstractCallSite::isIndirectCall</definition>
+        <argsstring>() const</argsstring>
+        <name>isIndirectCall</name>
+        <qualifiedname>llvm::AbstractCallSite::isIndirectCall</qualifiedname>
+        <briefdescription>
+<para>Return true if this ACS represents an indirect call. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="120" column="8" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="120" bodyend="122"/>
+        <references refid="classllvm_1_1_abstract_call_site_1a2300cb53451591b87c7c5621c31643a2" compoundref="_abstract_call_site_8h" startline="125" endline="129">isCallbackCall</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a2300cb53451591b87c7c5621c31643a2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AbstractCallSite::isCallbackCall</definition>
+        <argsstring>() const</argsstring>
+        <name>isCallbackCall</name>
+        <qualifiedname>llvm::AbstractCallSite::isCallbackCall</qualifiedname>
+        <briefdescription>
+<para>Return true if this ACS represents a callback call. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="125" column="8" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="125" bodyend="129"/>
+        <referencedby refid="structllvm_1_1_attributor_1a8d0a2ebeeedeb0bd16a52affb7f6ed88" compoundref="_attributor_8cpp" startline="1878" endline="1978">llvm::Attributor::checkForAllCallSites</referencedby>
+        <referencedby refid="namespacellvm_1a2fbc912ee1cbb5ddcaea71940aa33685" compoundref="_abstract_call_site_8h" startline="226" endline="234">llvm::forEachCallbackCallSite</referencedby>
+        <referencedby refid="structllvm_1_1_i_r_position_1a265735d2c2edc0a1a03611e7aadd24cd" compoundref="_attributor_8cpp" startline="995" endline="1047">llvm::IRPosition::getAssociatedArgument</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a08682577ed47d8887ffb956192aa379d" compoundref="_abstract_call_site_8h" startline="194" endline="198">getCallArgOperandNoForCallee</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a27b382e987878c9f338d79220acc06b2" compoundref="_abstract_call_site_8h" startline="115" endline="117">isDirectCall</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a31b793fd30a35a9db6bbd8ead7796ba0" compoundref="_abstract_call_site_8h" startline="120" endline="122">isIndirectCall</referencedby>
+        <referencedby refid="structllvm_1_1_attributor_1a273e9b97fc0dfec8df7cf4294d9b87fe" compoundref="_attributor_8cpp" startline="2845" endline="2912">llvm::Attributor::isValidFunctionSignatureRewrite</referencedby>
+        <referencedby refid="structanonymous__namespace_02_attributor_attributes_8cpp_03_1_1_a_a_privatizable_ptr_argument_1a5714820dd8c18b0cf570124cd752b8f7" compoundref="_attributor_attributes_8cpp" startline="7308" endline="7483">anonymous_namespace{AttributorAttributes.cpp}::AAPrivatizablePtrArgument::updateImpl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a5c967c8ed9f20b937ad425a0992eab81" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AbstractCallSite::isCallee</definition>
+        <argsstring>(Value::const_user_iterator UI) const</argsstring>
+        <name>isCallee</name>
+        <qualifiedname>llvm::AbstractCallSite::isCallee</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value_1a146665db2d7a79fa164098370a3a34c4" kindref="member">Value::const_user_iterator</ref></type>
+          <declname>UI</declname>
+        </param>
+        <briefdescription>
+<para>Return true if <computeroutput>UI</computeroutput> is the use that defines the callee of this ACS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="132" column="8" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="132" bodyend="134"/>
+        <references refid="classllvm_1_1_abstract_call_site_1a5c967c8ed9f20b937ad425a0992eab81" compoundref="_abstract_call_site_8h" startline="132" endline="134">isCallee</references>
+        <referencedby refid="structllvm_1_1_attributor_1a8d0a2ebeeedeb0bd16a52affb7f6ed88" compoundref="_attributor_8cpp" startline="1878" endline="1978">llvm::Attributor::checkForAllCallSites</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a5c967c8ed9f20b937ad425a0992eab81" compoundref="_abstract_call_site_8h" startline="132" endline="134">isCallee</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a186e1b3785876bc1827f2c352f831a36" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AbstractCallSite::isCallee</definition>
+        <argsstring>(const Use *U) const</argsstring>
+        <name>isCallee</name>
+        <qualifiedname>llvm::AbstractCallSite::isCallee</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> *</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+<para>Return true if <computeroutput>U</computeroutput> is the use that defines the callee of this ACS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="137" column="8" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="137" bodyend="151"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_abstract_call_site_1a27b382e987878c9f338d79220acc06b2" compoundref="_abstract_call_site_8h" startline="115" endline="117">isDirectCall</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1ab8b5e4f9ae59fedfc0f0be8395992ea3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::AbstractCallSite::getNumArgOperands</definition>
+        <argsstring>() const</argsstring>
+        <name>getNumArgOperands</name>
+        <qualifiedname>llvm::AbstractCallSite::getNumArgOperands</qualifiedname>
+        <briefdescription>
+<para>Return the number of parameters of the callee. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="154" column="12" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="154" bodyend="159"/>
+        <references refid="classllvm_1_1_abstract_call_site_1a27b382e987878c9f338d79220acc06b2" compoundref="_abstract_call_site_8h" startline="115" endline="117">isDirectCall</references>
+        <referencedby refid="structllvm_1_1_i_r_position_1a882f8f4551f4267174aa36b7e3b68a97" compoundref="_attributor_8h" startline="666" endline="675">llvm::IRPosition::callsite_argument</referencedby>
+        <referencedby refid="structllvm_1_1_attributor_1a8d0a2ebeeedeb0bd16a52affb7f6ed88" compoundref="_attributor_8cpp" startline="1878" endline="1978">llvm::Attributor::checkForAllCallSites</referencedby>
+        <referencedby refid="structllvm_1_1_i_r_position_1a265735d2c2edc0a1a03611e7aadd24cd" compoundref="_attributor_8cpp" startline="995" endline="1047">llvm::IRPosition::getAssociatedArgument</referencedby>
+        <referencedby refid="structllvm_1_1_attributor_1a273e9b97fc0dfec8df7cf4294d9b87fe" compoundref="_attributor_8cpp" startline="2845" endline="2912">llvm::Attributor::isValidFunctionSignatureRewrite</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a7e8ae04873ef7a72fbad37852333d290" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::AbstractCallSite::getCallArgOperandNo</definition>
+        <argsstring>(Argument &amp;Arg) const</argsstring>
+        <name>getCallArgOperandNo</name>
+        <qualifiedname>llvm::AbstractCallSite::getCallArgOperandNo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_argument" kindref="compound">Argument</ref> &amp;</type>
+          <declname>Arg</declname>
+        </param>
+        <briefdescription>
+<para>Return the operand index of the underlying instruction associated with <computeroutput>Arg</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="163" column="7" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="163" bodyend="165"/>
+        <references refid="classllvm_1_1_argument_1ab205d366b1137026c32f5678f7cc2726" compoundref="_i_r_2_argument_8h" startline="49" endline="52">llvm::Argument::getArgNo</references>
+        <references refid="classllvm_1_1_abstract_call_site_1a7e8ae04873ef7a72fbad37852333d290" compoundref="_abstract_call_site_8h" startline="163" endline="165">getCallArgOperandNo</references>
+        <referencedby refid="structllvm_1_1_i_r_position_1a882f8f4551f4267174aa36b7e3b68a97" compoundref="_attributor_8h" startline="666" endline="675">llvm::IRPosition::callsite_argument</referencedby>
+        <referencedby refid="structllvm_1_1_i_r_position_1a265735d2c2edc0a1a03611e7aadd24cd" compoundref="_attributor_8cpp" startline="995" endline="1047">llvm::IRPosition::getAssociatedArgument</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a7e8ae04873ef7a72fbad37852333d290" compoundref="_abstract_call_site_8h" startline="163" endline="165">getCallArgOperandNo</referencedby>
+        <referencedby refid="structanonymous__namespace_02_attributor_attributes_8cpp_03_1_1_a_a_privatizable_ptr_argument_1a5714820dd8c18b0cf570124cd752b8f7" compoundref="_attributor_attributes_8cpp" startline="7308" endline="7483">anonymous_namespace{AttributorAttributes.cpp}::AAPrivatizablePtrArgument::updateImpl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a5a2fe9e8614a228a5dcf747c4574c815" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::AbstractCallSite::getCallArgOperandNo</definition>
+        <argsstring>(unsigned ArgNo) const</argsstring>
+        <name>getCallArgOperandNo</name>
+        <qualifiedname>llvm::AbstractCallSite::getCallArgOperandNo</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ArgNo</declname>
+        </param>
+        <briefdescription>
+<para>Return the operand index of the underlying instruction associated with the function parameter number <computeroutput>ArgNo</computeroutput> or -1 if there is none. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="169" column="7" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="169" bodyend="174"/>
+        <references refid="classllvm_1_1_abstract_call_site_1a27b382e987878c9f338d79220acc06b2" compoundref="_abstract_call_site_8h" startline="115" endline="117">isDirectCall</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a6066aaa9c2bcca469acdce4369e03712" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * llvm::AbstractCallSite::getCallArgOperand</definition>
+        <argsstring>(Argument &amp;Arg) const</argsstring>
+        <name>getCallArgOperand</name>
+        <qualifiedname>llvm::AbstractCallSite::getCallArgOperand</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_argument" kindref="compound">Argument</ref> &amp;</type>
+          <declname>Arg</declname>
+        </param>
+        <briefdescription>
+<para>Return the operand of the underlying instruction associated with <computeroutput>Arg</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="177" column="9" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="177" bodyend="179"/>
+        <references refid="classllvm_1_1_argument_1ab205d366b1137026c32f5678f7cc2726" compoundref="_i_r_2_argument_8h" startline="49" endline="52">llvm::Argument::getArgNo</references>
+        <references refid="classllvm_1_1_abstract_call_site_1a6066aaa9c2bcca469acdce4369e03712" compoundref="_abstract_call_site_8h" startline="177" endline="179">getCallArgOperand</references>
+        <referencedby refid="structllvm_1_1_attributor_1a8d0a2ebeeedeb0bd16a52affb7f6ed88" compoundref="_attributor_8cpp" startline="1878" endline="1978">llvm::Attributor::checkForAllCallSites</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a6066aaa9c2bcca469acdce4369e03712" compoundref="_abstract_call_site_8h" startline="177" endline="179">getCallArgOperand</referencedby>
+        <referencedby refid="structanonymous__namespace_02_attributor_attributes_8cpp_03_1_1_a_a_privatizable_ptr_argument_1a5714820dd8c18b0cf570124cd752b8f7" compoundref="_attributor_attributes_8cpp" startline="7308" endline="7483">anonymous_namespace{AttributorAttributes.cpp}::AAPrivatizablePtrArgument::updateImpl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a61d314ffacb9684d0b278e034f2d517a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * llvm::AbstractCallSite::getCallArgOperand</definition>
+        <argsstring>(unsigned ArgNo) const</argsstring>
+        <name>getCallArgOperand</name>
+        <qualifiedname>llvm::AbstractCallSite::getCallArgOperand</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ArgNo</declname>
+        </param>
+        <briefdescription>
+<para>Return the operand of the underlying instruction associated with the function parameter number <computeroutput>ArgNo</computeroutput> or nullptr if there is none. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="183" column="9" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="183" bodyend="190"/>
+        <references refid="classllvm_1_1_abstract_call_site_1a27b382e987878c9f338d79220acc06b2" compoundref="_abstract_call_site_8h" startline="115" endline="117">isDirectCall</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a08682577ed47d8887ffb956192aa379d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int llvm::AbstractCallSite::getCallArgOperandNoForCallee</definition>
+        <argsstring>() const</argsstring>
+        <name>getCallArgOperandNoForCallee</name>
+        <qualifiedname>llvm::AbstractCallSite::getCallArgOperandNoForCallee</qualifiedname>
+        <briefdescription>
+<para>Return the operand index of the underlying instruction associated with the callee of this ACS. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Only valid for callback calls! </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="194" column="7" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="194" bodyend="198"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_abstract_call_site_1a2300cb53451591b87c7c5621c31643a2" compoundref="_abstract_call_site_8h" startline="125" endline="129">isCallbackCall</references>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a91e818b6c5395b706e4d6ec60f636800" compoundref="_abstract_call_site_8h" startline="210" endline="214">getCalledOperand</referencedby>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1a377c884b7ab6a21ce8f1113da49094f1" compoundref="_abstract_call_site_8h" startline="202" endline="207">getCalleeUseForCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a377c884b7ab6a21ce8f1113da49094f1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> &amp;</type>
+        <definition>const Use &amp; llvm::AbstractCallSite::getCalleeUseForCallback</definition>
+        <argsstring>() const</argsstring>
+        <name>getCalleeUseForCallback</name>
+        <qualifiedname>llvm::AbstractCallSite::getCalleeUseForCallback</qualifiedname>
+        <briefdescription>
+<para>Return the use of the callee value in the underlying instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Only valid for callback calls! </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="202" column="13" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="202" bodyend="207"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_abstract_call_site_1a08682577ed47d8887ffb956192aa379d" compoundref="_abstract_call_site_8h" startline="194" endline="198">getCallArgOperandNoForCallee</references>
+        <references refid="classllvm_1_1_abstract_call_site_1a1d97fd714e72a72bd6d96a8b1ebf62ea" compoundref="_abstract_call_site_8h" startline="112" endline="112">getInstruction</references>
+        <references refid="classllvm_1_1_user_1a3f3b252f63d32a9a6e05208ce26562bf" compoundref="_i_r_2_user_8h" startline="241" endline="244">llvm::User::getOperandUse</references>
+        <referencedby refid="structllvm_1_1_attributor_1a8d0a2ebeeedeb0bd16a52affb7f6ed88" compoundref="_attributor_8cpp" startline="1878" endline="1978">llvm::Attributor::checkForAllCallSites</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a91e818b6c5395b706e4d6ec60f636800" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * llvm::AbstractCallSite::getCalledOperand</definition>
+        <argsstring>() const</argsstring>
+        <name>getCalledOperand</name>
+        <qualifiedname>llvm::AbstractCallSite::getCalledOperand</qualifiedname>
+        <briefdescription>
+<para>Return the pointer to function that is being called. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="210" column="9" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="210" bodyend="214"/>
+        <references refid="classllvm_1_1_abstract_call_site_1a08682577ed47d8887ffb956192aa379d" compoundref="_abstract_call_site_8h" startline="194" endline="198">getCallArgOperandNoForCallee</references>
+        <references refid="classllvm_1_1_abstract_call_site_1a27b382e987878c9f338d79220acc06b2" compoundref="_abstract_call_site_8h" startline="115" endline="117">isDirectCall</references>
+        <referencedby refid="classllvm_1_1_abstract_call_site_1abe5141e594e4351ab2b1f5e73c736733" compoundref="_abstract_call_site_8h" startline="218" endline="221">getCalledFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1abe5141e594e4351ab2b1f5e73c736733" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+        <definition>Function * llvm::AbstractCallSite::getCalledFunction</definition>
+        <argsstring>() const</argsstring>
+        <name>getCalledFunction</name>
+        <qualifiedname>llvm::AbstractCallSite::getCalledFunction</qualifiedname>
+        <briefdescription>
+<para>Return the function being called if this is a direct call, otherwise return null (if it&apos;s an indirect call). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="218" column="12" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="218" bodyend="221"/>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_abstract_call_site_1a91e818b6c5395b706e4d6ec60f636800" compoundref="_abstract_call_site_8h" startline="210" endline="214">getCalledOperand</references>
+        <referencedby refid="structllvm_1_1_attributor_1a8d0a2ebeeedeb0bd16a52affb7f6ed88" compoundref="_attributor_8cpp" startline="1878" endline="1978">llvm::Attributor::checkForAllCallSites</referencedby>
+        <referencedby refid="namespacellvm_1aa273a7c3463d96e7f545c205ff3b50e3" compoundref="_abstract_call_site_8h" startline="238" endline="243">llvm::forEachCallbackFunction</referencedby>
+        <referencedby refid="structllvm_1_1_i_r_position_1a265735d2c2edc0a1a03611e7aadd24cd" compoundref="_attributor_8cpp" startline="995" endline="1047">llvm::IRPosition::getAssociatedArgument</referencedby>
+        <referencedby refid="structllvm_1_1_attributor_1a273e9b97fc0dfec8df7cf4294d9b87fe" compoundref="_attributor_8cpp" startline="2845" endline="2912">llvm::Attributor::isValidFunctionSignatureRewrite</referencedby>
+        <referencedby refid="structanonymous__namespace_02_attributor_attributes_8cpp_03_1_1_a_a_privatizable_ptr_argument_1a5714820dd8c18b0cf570124cd752b8f7" compoundref="_attributor_attributes_8cpp" startline="7308" endline="7483">anonymous_namespace{AttributorAttributes.cpp}::AAPrivatizablePtrArgument::updateImpl</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_abstract_call_site_1a401e244b78386047c64edc64f80ba9c0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AbstractCallSite::getCallbackUses</definition>
+        <argsstring>(const CallBase &amp;CB, SmallVectorImpl&lt; const Use * &gt; &amp;CallbackUses)</argsstring>
+        <name>getCallbackUses</name>
+        <qualifiedname>llvm::AbstractCallSite::getCallbackUses</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_call_base" kindref="compound">CallBase</ref> &amp;</type>
+          <declname>CB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> * &gt; &amp;</type>
+          <declname>CallbackUses</declname>
+        </param>
+        <briefdescription>
+<para>Add operand uses of <computeroutput>CB</computeroutput> that represent callback uses into <computeroutput>CallbackUses</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All uses added to <computeroutput>CallbackUses</computeroutput> can be used to create abstract call sites for which <ref refid="classllvm_1_1_abstract_call_site_1a2300cb53451591b87c7c5621c31643a2" kindref="member">AbstractCallSite::isCallbackCall()</ref> will return true. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/AbstractCallSite.h" line="105" column="15" bodyfile="lib/IR/AbstractCallSite.cpp" bodystart="34" bodyend="52"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_m_d_node_1a42409838a49255a3770da1469872f20b" compoundref="_metadata_8h" startline="1434" endline="1437">llvm::MDNode::getOperand</references>
+        <references refid="classllvm_1_1_m_d_node_1a571612461ea4af620bc4c441d61579a3" compoundref="_metadata_8h" startline="1432" endline="1432">llvm::MDNode::operands</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <referencedby refid="namespacellvm_1a2fbc912ee1cbb5ddcaea71940aa33685" compoundref="_abstract_call_site_8h" startline="226" endline="234">llvm::forEachCallbackCallSite</referencedby>
+        <referencedby refid="structllvm_1_1_i_r_position_1a265735d2c2edc0a1a03611e7aadd24cd" compoundref="_attributor_8cpp" startline="995" endline="1047">llvm::IRPosition::getAssociatedArgument</referencedby>
+        <referencedby refid="structanonymous__namespace_02_attributor_attributes_8cpp_03_1_1_a_a_call_edges_call_site_1a827970be0131200af76c14c9e1a24b15" compoundref="_attributor_attributes_8cpp" startline="10550" endline="10611">anonymous_namespace{AttributorAttributes.cpp}::AACallEdgesCallSite::updateImpl</referencedby>
+        <referencedby refid="structanonymous__namespace_02_attributor_attributes_8cpp_03_1_1_a_a_privatizable_ptr_argument_1a5714820dd8c18b0cf570124cd752b8f7" compoundref="_attributor_attributes_8cpp" startline="7308" endline="7483">anonymous_namespace{AttributorAttributes.cpp}::AAPrivatizablePtrArgument::updateImpl</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1_abstract_call_site" kindref="compound">AbstractCallSite</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>An abstract call site is a wrapper that allows to treat direct, indirect, and callback calls the same. If an abstract call site represents a direct or indirect call site it behaves like a stripped down version of a normal call site object. The abstract call site can also represent a callback call, thus the fact that the initially called function (=broker) may invoke a third one (=callback callee). In this case, the abstract call site hides the middle man, hence the broker function. The result is a representation of the callback call, inside the broker, but in the context of the original call to the broker.</para>
+<para>There are up to three functions involved when we talk about callback call sites. The caller (1), which invokes the broker function. The broker function (2), that will invoke the callee zero or more times. And finally the callee (3), which is the target of the callback call.</para>
+<para>The abstract call site will handle the mapping from parameters to arguments depending on the semantic of the broker function. However, it is important to note that the mapping is often partial. Thus, some arguments of the call/invoke instruction are mapped to parameters of the callee while others are not. </para>
+    </detaileddescription>
+    <location file="include/llvm/IR/AbstractCallSite.h" line="50" column="1" bodyfile="include/llvm/IR/AbstractCallSite.h" bodystart="50" bodyend="222"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_abstract_call_site_1a582d0050c740c1f23bce6bc0c8c5b189" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>AbstractCallSite</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a42ff0e00e94a4c78fc910510e45aa9b4" prot="private" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>CB</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a7a147a69d769fd0a682b878442202a65" prot="private" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>CI</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a6066aaa9c2bcca469acdce4369e03712" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>getCallArgOperand</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a61d314ffacb9684d0b278e034f2d517a" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>getCallArgOperand</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a7e8ae04873ef7a72fbad37852333d290" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>getCallArgOperandNo</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a5a2fe9e8614a228a5dcf747c4574c815" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>getCallArgOperandNo</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a08682577ed47d8887ffb956192aa379d" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>getCallArgOperandNoForCallee</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a401e244b78386047c64edc64f80ba9c0" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>getCallbackUses</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1abe5141e594e4351ab2b1f5e73c736733" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>getCalledFunction</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a91e818b6c5395b706e4d6ec60f636800" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>getCalledOperand</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a377c884b7ab6a21ce8f1113da49094f1" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>getCalleeUseForCallback</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a1d97fd714e72a72bd6d96a8b1ebf62ea" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>getInstruction</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1ab8b5e4f9ae59fedfc0f0be8395992ea3" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>getNumArgOperands</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a2300cb53451591b87c7c5621c31643a2" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>isCallbackCall</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a5c967c8ed9f20b937ad425a0992eab81" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>isCallee</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a186e1b3785876bc1827f2c352f831a36" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>isCallee</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a27b382e987878c9f338d79220acc06b2" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>isDirectCall</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a31b793fd30a35a9db6bbd8ead7796ba0" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>isIndirectCall</name></member>
+      <member refid="classllvm_1_1_abstract_call_site_1a849dee873893038338c06b0829b41ca4" prot="public" virt="non-virtual"><scope>llvm::AbstractCallSite</scope><name>operator bool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

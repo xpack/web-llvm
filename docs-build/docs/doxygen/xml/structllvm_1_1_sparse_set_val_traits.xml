@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1_sparse_set_val_traits" kind="struct" language="C++" prot="public">
+    <compoundname>llvm::SparseSetValTraits</compoundname>
+    <includes refid="_sparse_set_8h" local="yes">llvm/ADT/SparseSet.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename <ref refid="class_value_t" kindref="compound">ValueT</ref></type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structllvm_1_1_sparse_set_val_traits_1a933585c9ca05122d9fc6e234f3f3a212" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>static unsigned llvm::SparseSetValTraits&lt; ValueT &gt;::getValIndex</definition>
+        <argsstring>(const ValueT &amp;Val)</argsstring>
+        <name>getValIndex</name>
+        <qualifiedname>llvm::SparseSetValTraits::getValIndex</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_value_t" kindref="compound">ValueT</ref> &amp;</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseSet.h" line="58" column="19" bodyfile="include/llvm/ADT/SparseSet.h" bodystart="58" bodyend="60"/>
+        <referencedby refid="structllvm_1_1_sparse_set_val_functor_1a04a0c5526098b1af513719abb6c82823" compoundref="_sparse_set_8h" startline="69" endline="71">llvm::SparseSetValFunctor&lt; KeyT, ValueT, KeyFunctorT &gt;::operator()</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="structllvm_1_1_sparse_set_val_traits" kindref="compound">SparseSetValTraits</ref> - Objects in a <ref refid="classllvm_1_1_sparse_set" kindref="compound">SparseSet</ref> are identified by keys that can be uniquely converted to a small integer less than the set&apos;s universe. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class allows the set to hold values that differ from the set&apos;s key type as long as an index can still be derived from the value. <ref refid="classllvm_1_1_sparse_set" kindref="compound">SparseSet</ref> never directly compares <ref refid="class_value_t" kindref="compound">ValueT</ref>, only their indices, so it can map keys to arbitrary values. <ref refid="structllvm_1_1_sparse_set_val_traits" kindref="compound">SparseSetValTraits</ref> computes the index from the value object. To compute the index from a key, <ref refid="classllvm_1_1_sparse_set" kindref="compound">SparseSet</ref> uses a separate KeyFunctorT template argument.</para>
+<para>A simple type declaration, <ref refid="classllvm_1_1_sparse_set" kindref="compound">SparseSet&lt;Type&gt;</ref>, handles these cases:<itemizedlist>
+<listitem><para>unsigned key, identity index, identity value</para>
+</listitem><listitem><para>unsigned key, identity index, fat value providing getSparseSetIndex()</para>
+</listitem></itemizedlist>
+</para>
+<para>The type declaration <ref refid="classllvm_1_1_sparse_set" kindref="compound">SparseSet&lt;Type, UnaryFunction&gt;</ref> handles:<itemizedlist>
+<listitem><para>unsigned key, remapped index, identity value (virtual registers)</para>
+</listitem><listitem><para>pointer key, pointer-derived index, identity value (node+ID)</para>
+</listitem><listitem><para>pointer key, pointer-derived index, fat value with getSparseSetIndex()</para>
+</listitem></itemizedlist>
+</para>
+<para>Only other, unexpected cases require specializing <ref refid="structllvm_1_1_sparse_set_val_traits" kindref="compound">SparseSetValTraits</ref>.</para>
+<para>For best results, <ref refid="class_value_t" kindref="compound">ValueT</ref> should not require a destructor. </para>
+    </detaileddescription>
+    <location file="include/llvm/ADT/SparseSet.h" line="57" column="1" bodyfile="include/llvm/ADT/SparseSet.h" bodystart="57" bodyend="61"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1_sparse_set_val_traits_1a933585c9ca05122d9fc6e234f3f3a212" prot="public" virt="non-virtual"><scope>llvm::SparseSetValTraits</scope><name>getValIndex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

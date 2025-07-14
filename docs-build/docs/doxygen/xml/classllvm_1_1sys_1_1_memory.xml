@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1sys_1_1_memory" kind="class" language="C++" prot="public">
+    <compoundname>llvm::sys::Memory</compoundname>
+    <includes refid="_memory_8h" local="yes">llvm/Support/Memory.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ProtectionFlags</name>
+        <qualifiedname>llvm::sys::Memory::ProtectionFlags</qualifiedname>
+        <enumvalue id="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417" prot="public">
+          <name>MF_READ</name>
+          <initializer>= 0x1000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a83e34a8267f7acd88563e9d5a3ee7c25" prot="public">
+          <name>MF_WRITE</name>
+          <initializer>= 0x2000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a72200d7026f0978efe86fc34f4cba76e" prot="public">
+          <name>MF_EXEC</name>
+          <initializer>= 0x4000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a04baa4ca0e4ca865eba075daf1e551f3" prot="public">
+          <name>MF_RWE_MASK</name>
+          <initializer>= 0x7000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a1f8e817d37e6406698e099531487e3db" prot="public">
+          <name>MF_HUGE_HINT</name>
+          <initializer>= 0x0000001</initializer>
+          <briefdescription>
+<para>The <computeroutput>MF_HUGE_HINT</computeroutput> flag is used to indicate that the request for a memory block should be satisfied with large pages if possible. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This is only a hint and small pages will be used as fallback.</para>
+<para>The presence or absence of this flag in the returned memory block is (at least currently) <emphasis>not</emphasis> a reliable indicator that the memory block will use or will not use large pages. On some systems a request without this flag can be backed by large pages without this flag being set, and on some other systems a request with this flag can fallback to small pages without this flag being cleared. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Memory.h" line="55" column="5" bodyfile="include/llvm/Support/Memory.h" bodystart="55" bodyend="72"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1sys_1_1_memory_1a1326dd13b23711e68ade413fbc57b9f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref></type>
+        <definition>static MemoryBlock llvm::sys::Memory::allocateMappedMemory</definition>
+        <argsstring>(size_t NumBytes, const MemoryBlock *const NearBlock, unsigned Flags, std::error_code &amp;EC)</argsstring>
+        <name>allocateMappedMemory</name>
+        <qualifiedname>llvm::sys::Memory::allocateMappedMemory</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>NumBytes</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref> *<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref></type>
+          <declname>NearBlock</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <param>
+          <type>std::error_code &amp;</type>
+          <declname>EC</declname>
+        </param>
+        <briefdescription>
+<para>This method allocates a block of memory that is suitable for loading dynamically generated code (e.g. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>JIT). An attempt to allocate <computeroutput>NumBytes</computeroutput> bytes of virtual memory is made. <computeroutput>NearBlock</computeroutput> may point to an existing allocation in which case an attempt is made to allocate more memory near the existing block. The actual allocated address is not guaranteed to be near the requested address. <computeroutput>Flags</computeroutput> is used to set the initial protection flags for the block of the memory. <computeroutput>EC</computeroutput> [out] returns an object describing any error that occurs.</para>
+<para>This method may allocate more than the number of bytes requested. The actual number of bytes allocated is indicated in the returned <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref>.</para>
+<para>The start of the allocated block must be aligned with the system allocation granularity (64K on Windows, page size on Linux). If the address following <computeroutput>NearBlock</computeroutput> is not so aligned, it will be rounded up to the next allocation granularity boundary.</para>
+<para>\r a non-null <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref> if the function was successful, otherwise a null <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref> is with <computeroutput>EC</computeroutput> describing the error.</para>
+<para>Allocate mapped memory. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Memory.h" line="98" column="24"/>
+        <referencedby refid="classllvm_1_1jitlink_1_1_in_process_memory_manager_1a9f8e852fe43d6fd7d73092c820f89981" compoundref="_j_i_t_link_memory_manager_8cpp" startline="345" endline="442">llvm::jitlink::InProcessMemoryManager::allocate</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1rt__bootstrap_1_1_simple_executor_memory_manager_1a71f5d58b4df8b116ebda816fd6b29a61" compoundref="_simple_executor_memory_manager_8cpp" startline="24" endline="34">llvm::orc::rt_bootstrap::SimpleExecutorMemoryManager::allocate</referencedby>
+        <referencedby refid="classllvm_1_1anonymous__namespace_02_section_memory_manager_8cpp_03_1_1_default_m_mapper_1ae4e4ae90301d45b22f7c283d13a2e832" compoundref="_section_memory_manager_8cpp" startline="250" endline="254">llvm::anonymous_namespace{SectionMemoryManager.cpp}::DefaultMMapper::allocateMappedMemory</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_local_indirect_stubs_info_1ae74fd50627af3f80c098c4d8737c846d" compoundref="_indirection_utils_8h" startline="325" endline="356">llvm::orc::LocalIndirectStubsInfo&lt; ORCABI &gt;::create</referencedby>
+        <referencedby refid="_file_output_buffer_8cpp_1ab567e593dcf755d782527311e9b300fa" compoundref="_file_output_buffer_8cpp" startline="118" endline="125">createInMemoryBuffer</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_in_process_memory_mapper_1a7567e026468fa261fb6186a2d30115ff" compoundref="_memory_mapper_8cpp" startline="43" endline="59">llvm::orc::InProcessMemoryMapper::reserve</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sys_1_1_memory_1a042d24349a4b6a5ce475309cce529ae0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>static std::error_code llvm::sys::Memory::releaseMappedMemory</definition>
+        <argsstring>(MemoryBlock &amp;Block)</argsstring>
+        <name>releaseMappedMemory</name>
+        <qualifiedname>llvm::sys::Memory::releaseMappedMemory</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref> &amp;</type>
+          <declname>Block</declname>
+        </param>
+        <briefdescription>
+<para>This method releases a block of memory that was allocated with the allocateMappedMemory method. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It should not be used to release any memory block allocated any other way. <computeroutput>Block</computeroutput> describes the memory to be released.</para>
+<para>\r error_success if the function was successful, or an error_code describing the failure if an error occurred.</para>
+<para>Release mapped memory. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Memory.h" line="112" column="28"/>
+        <references refid="namespacellvm_1a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2" compoundref="_pseudo_probe_8h" startline="29">llvm::Block</references>
+        <referencedby refid="classllvm_1_1jitlink_1_1_in_process_memory_manager_1_1_i_p_in_flight_alloc_1a2306347d88aa77c28391f5ab7c0585f1" compoundref="_j_i_t_link_memory_manager_8cpp" startline="287" endline="302">llvm::jitlink::InProcessMemoryManager::IPInFlightAlloc::abandon</referencedby>
+        <referencedby refid="classllvm_1_1jitlink_1_1_in_process_memory_manager_1a5599aaf8c94c775d12080e3401796fd2" compoundref="_j_i_t_link_memory_manager_8cpp" startline="444" endline="482">llvm::jitlink::InProcessMemoryManager::deallocate</referencedby>
+        <referencedby refid="classllvm_1_1jitlink_1_1_in_process_memory_manager_1_1_i_p_in_flight_alloc_1aff3f5ff953c804874134986a08d84cec" compoundref="_j_i_t_link_memory_manager_8cpp" startline="254" endline="285">llvm::jitlink::InProcessMemoryManager::IPInFlightAlloc::finalize</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1rt__bootstrap_1_1_simple_executor_memory_manager_1a0c3a2679314fcbd29c249386447c8ba4" compoundref="_simple_executor_memory_manager_8cpp" startline="36" endline="149">llvm::orc::rt_bootstrap::SimpleExecutorMemoryManager::finalize</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_in_process_memory_mapper_1ae7b7c908c1016860ed8c53965f8f167a" compoundref="_memory_mapper_8cpp" startline="140" endline="175">llvm::orc::InProcessMemoryMapper::release</referencedby>
+        <referencedby refid="classllvm_1_1sys_1_1_owning_memory_block_1af7a38c875a7d4a357b3091ffe97a3bde" compoundref="_memory_8h" startline="160" endline="167">llvm::sys::OwningMemoryBlock::release</referencedby>
+        <referencedby refid="classllvm_1_1anonymous__namespace_02_section_memory_manager_8cpp_03_1_1_default_m_mapper_1abe6722b1a014fa1278361232a6a8ccc1" compoundref="_section_memory_manager_8cpp" startline="261" endline="263">llvm::anonymous_namespace{SectionMemoryManager.cpp}::DefaultMMapper::releaseMappedMemory</referencedby>
+        <referencedby refid="classllvm_1_1sys_1_1_owning_memory_block_1aa88884bb3af957b96bab31e1ebe8f1d9" compoundref="_memory_8h" startline="151" endline="154">llvm::sys::OwningMemoryBlock::~OwningMemoryBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sys_1_1_memory_1ae27409ddee7e191f33392283ca826703" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::error_code</type>
+        <definition>static std::error_code llvm::sys::Memory::protectMappedMemory</definition>
+        <argsstring>(const MemoryBlock &amp;Block, unsigned Flags)</argsstring>
+        <name>protectMappedMemory</name>
+        <qualifiedname>llvm::sys::Memory::protectMappedMemory</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref> &amp;</type>
+          <declname>Block</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <briefdescription>
+<para>This method sets the protection flags for a block of memory to the state specified by /p Flags. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The behavior is not specified if the memory was not allocated using the allocateMappedMemory method. <computeroutput>Block</computeroutput> describes the memory block to be protected. <computeroutput>Flags</computeroutput> specifies the new protection state to be assigned to the block.</para>
+<para>If <computeroutput>Flags</computeroutput> is MF_WRITE, the actual behavior varies with the operating system (i.e. MF_READ | MF_WRITE on Windows) and the target architecture (i.e. MF_WRITE -&gt; MF_READ | MF_WRITE on i386).</para>
+<para>\r error_success if the function was successful, or an error_code describing the failure if an error occurred.</para>
+<para>Set memory protection state. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Memory.h" line="128" column="28"/>
+        <references refid="namespacellvm_1a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2" compoundref="_pseudo_probe_8h" startline="29">llvm::Block</references>
+        <referencedby refid="classllvm_1_1orc_1_1_local_indirect_stubs_info_1ae74fd50627af3f80c098c4d8737c846d" compoundref="_indirection_utils_8h" startline="325" endline="356">llvm::orc::LocalIndirectStubsInfo&lt; ORCABI &gt;::create</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_in_process_memory_mapper_1ac501a4fc8b8826d6451a9ae117ca3e0b" compoundref="_memory_mapper_8cpp" startline="110" endline="138">llvm::orc::InProcessMemoryMapper::deinitialize</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1rt__bootstrap_1_1_simple_executor_memory_manager_1a0c3a2679314fcbd29c249386447c8ba4" compoundref="_simple_executor_memory_manager_8cpp" startline="36" endline="149">llvm::orc::rt_bootstrap::SimpleExecutorMemoryManager::finalize</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_in_process_memory_mapper_1a492e4d6b2bf660e7c499e22f85b72440" compoundref="_memory_mapper_8cpp" startline="65" endline="108">llvm::orc::InProcessMemoryMapper::initialize</referencedby>
+        <referencedby refid="classllvm_1_1anonymous__namespace_02_section_memory_manager_8cpp_03_1_1_default_m_mapper_1a7f9c28a81a61c5f292d14dbd7a9b2766" compoundref="_section_memory_manager_8cpp" startline="256" endline="259">llvm::anonymous_namespace{SectionMemoryManager.cpp}::DefaultMMapper::protectMappedMemory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sys_1_1_memory_1a5cfd4d2a8227a3f9ca0667f42f05f20b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void llvm::sys::Memory::InvalidateInstructionCache</definition>
+        <argsstring>(const void *Addr, size_t Len)</argsstring>
+        <name>InvalidateInstructionCache</name>
+        <qualifiedname>llvm::sys::Memory::InvalidateInstructionCache</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> void *</type>
+          <declname>Addr</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Len</declname>
+        </param>
+        <briefdescription>
+<para>InvalidateInstructionCache - Before the JIT can run a block of code that has been emitted it must invalidate the instruction cache on some platforms. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Memory.h" line="134" column="17"/>
+        <referencedby refid="classllvm_1_1orc_1_1rt__bootstrap_1_1_simple_executor_memory_manager_1a0c3a2679314fcbd29c249386447c8ba4" compoundref="_simple_executor_memory_manager_8cpp" startline="36" endline="149">llvm::orc::rt_bootstrap::SimpleExecutorMemoryManager::finalize</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1_in_process_memory_mapper_1a492e4d6b2bf660e7c499e22f85b72440" compoundref="_memory_mapper_8cpp" startline="65" endline="108">llvm::orc::InProcessMemoryMapper::initialize</referencedby>
+        <referencedby refid="classllvm_1_1orc_1_1rt__bootstrap_1_1_executor_shared_memory_mapper_service_1af7f72f04af2ffe1b66adfecb7f881b02" compoundref="_executor_shared_memory_mapper_service_8cpp" startline="140" endline="203">llvm::orc::rt_bootstrap::ExecutorSharedMemoryMapperService::initialize</referencedby>
+        <referencedby refid="classllvm_1_1_section_memory_manager_1a64835973f93c4f018aa377870e15ee97" compoundref="_section_memory_manager_8cpp" startline="227" endline="231">llvm::SectionMemoryManager::invalidateInstructionCache</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class provides various memory handling functions that manipulate <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref> instances. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="since"><para>1.4 An abstraction for memory operations. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="include/llvm/Support/Memory.h" line="53" column="3" bodyfile="include/llvm/Support/Memory.h" bodystart="53" bodyend="135"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1sys_1_1_memory_1a1326dd13b23711e68ade413fbc57b9f6" prot="public" virt="non-virtual"><scope>llvm::sys::Memory</scope><name>allocateMappedMemory</name></member>
+      <member refid="classllvm_1_1sys_1_1_memory_1a5cfd4d2a8227a3f9ca0667f42f05f20b" prot="public" virt="non-virtual"><scope>llvm::sys::Memory</scope><name>InvalidateInstructionCache</name></member>
+      <member refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a72200d7026f0978efe86fc34f4cba76e" prot="public" virt="non-virtual"><scope>llvm::sys::Memory</scope><name>MF_EXEC</name></member>
+      <member refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a1f8e817d37e6406698e099531487e3db" prot="public" virt="non-virtual"><scope>llvm::sys::Memory</scope><name>MF_HUGE_HINT</name></member>
+      <member refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417" prot="public" virt="non-virtual"><scope>llvm::sys::Memory</scope><name>MF_READ</name></member>
+      <member refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a04baa4ca0e4ca865eba075daf1e551f3" prot="public" virt="non-virtual"><scope>llvm::sys::Memory</scope><name>MF_RWE_MASK</name></member>
+      <member refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395a83e34a8267f7acd88563e9d5a3ee7c25" prot="public" virt="non-virtual"><scope>llvm::sys::Memory</scope><name>MF_WRITE</name></member>
+      <member refid="classllvm_1_1sys_1_1_memory_1a548f317b89dc0bba738b89e5ce791395" prot="public" virt="non-virtual"><scope>llvm::sys::Memory</scope><name>ProtectionFlags</name></member>
+      <member refid="classllvm_1_1sys_1_1_memory_1ae27409ddee7e191f33392283ca826703" prot="public" virt="non-virtual"><scope>llvm::sys::Memory</scope><name>protectMappedMemory</name></member>
+      <member refid="classllvm_1_1sys_1_1_memory_1a042d24349a4b6a5ce475309cce529ae0" prot="public" virt="non-virtual"><scope>llvm::sys::Memory</scope><name>releaseMappedMemory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1493 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_reaching_def_analysis" kind="class" language="C++" prot="public">
+    <compoundname>llvm::ReachingDefAnalysis</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_function_pass" prot="public" virt="non-virtual">llvm::MachineFunctionPass</basecompoundref>
+    <includes refid="_reaching_def_analysis_8h" local="yes">llvm/CodeGen/ReachingDefAnalysis.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_reaching_def_analysis_1a2a6823b697832f797208d6fa083f6d71" prot="private" static="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>using llvm::ReachingDefAnalysis::LiveRegsDefInfo =  std::vector&lt;int&gt;</definition>
+        <argsstring></argsstring>
+        <name>LiveRegsDefInfo</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::LiveRegsDefInfo</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> that defined each register, relative to the beginning of the current basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When a LiveRegsDefInfo is used to represent a live-out register, this value is relative to the end of the basic block, so it will be a negative number. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="123" column="3" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_reaching_def_analysis_1a40f81e54ba908c24cd4889533e6f558f" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; LiveRegsDefInfo, 4 &gt;</type>
+        <definition>using llvm::ReachingDefAnalysis::OutRegsInfoMap =  SmallVector&lt;LiveRegsDefInfo, 4&gt;</definition>
+        <argsstring></argsstring>
+        <name>OutRegsInfoMap</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::OutRegsInfoMap</qualifiedname>
+        <briefdescription>
+<para>Keeps clearance information for all registers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that this is different from the usual definition notion of liveness. The CPU doesn&apos;t care whether or not we consider a register killed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="129" column="3" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_reaching_def_analysis_1af006c287439f2f408b6ee5ebb951b738" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt;</type>
+        <definition>using llvm::ReachingDefAnalysis::InstSet =  SmallPtrSetImpl&lt;MachineInstr*&gt;</definition>
+        <argsstring></argsstring>
+        <name>InstSet</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::InstSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="145" column="3" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_reaching_def_analysis_1af24d904aaeee62f20d15371bd78c88bb" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;</type>
+        <definition>using llvm::ReachingDefAnalysis::BlockSet =  SmallPtrSetImpl&lt;MachineBasicBlock*&gt;</definition>
+        <argsstring></argsstring>
+        <name>BlockSet</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::BlockSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="146" column="3" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_reaching_def_analysis_1a12043721f3b4b96fb4648f1e48e4137c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>MachineFunction* llvm::ReachingDefAnalysis::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::MF</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="115" column="19" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_reaching_def_analysis_1a988bfa3400feab20b9001ca3503f2ae4" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+        <definition>const TargetRegisterInfo* llvm::ReachingDefAnalysis::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::TRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="116" column="28" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_reaching_def_analysis_1afc99fb880e4e52108eaac241b762219f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_loop_traversal_1adb30e4144436f66defa2ce2454e0fde8" kindref="member">LoopTraversal::TraversalOrder</ref></type>
+        <definition>LoopTraversal::TraversalOrder llvm::ReachingDefAnalysis::TraversedMBBOrder</definition>
+        <argsstring></argsstring>
+        <name>TraversedMBBOrder</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::TraversedMBBOrder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="117" column="33" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_reaching_def_analysis_1a5dc196ee7f67a649431e57267cdd3271" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ReachingDefAnalysis::NumRegUnits</definition>
+        <argsstring></argsstring>
+        <name>NumRegUnits</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::NumRegUnits</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="118" column="12" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_reaching_def_analysis_1a496734e38cf07444333f80cda0163e7d" prot="private" static="no" mutable="no">
+        <type>LiveRegsDefInfo</type>
+        <definition>LiveRegsDefInfo llvm::ReachingDefAnalysis::LiveRegs</definition>
+        <argsstring></argsstring>
+        <name>LiveRegs</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::LiveRegs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="124" column="19" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_reaching_def_analysis_1afd1bfc0bd7379333aada63e1be5f629b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">OutRegsInfoMap</ref></type>
+        <definition>OutRegsInfoMap llvm::ReachingDefAnalysis::MBBOutRegsInfos</definition>
+        <argsstring></argsstring>
+        <name>MBBOutRegsInfos</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::MBBOutRegsInfos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="130" column="18" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_reaching_def_analysis_1a1e6a5bd3420fafb5f6eec4981748aa63" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int llvm::ReachingDefAnalysis::CurInstr</definition>
+        <argsstring></argsstring>
+        <name>CurInstr</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::CurInstr</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+<para>Current instruction number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The first instruction in each basic block is 0. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="134" column="7" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_reaching_def_analysis_1a38a070111b5a9015acf139de4212e169" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, int &gt;</type>
+        <definition>DenseMap&lt;MachineInstr *, int&gt; llvm::ReachingDefAnalysis::InstIds</definition>
+        <argsstring></argsstring>
+        <name>InstIds</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::InstIds</qualifiedname>
+        <briefdescription>
+<para>Maps instructions to their instruction Ids, relative to the beginning of their basic blocks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="138" column="12" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_reaching_def_analysis_1a45dc3370cadeca5b66fc7ee14864983e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_m_b_b_reaching_defs_info" kindref="compound">MBBReachingDefsInfo</ref></type>
+        <definition>MBBReachingDefsInfo llvm::ReachingDefAnalysis::MBBReachingDefs</definition>
+        <argsstring></argsstring>
+        <name>MBBReachingDefs</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::MBBReachingDefs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="140" column="23" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_reaching_def_analysis_1a8336a52f50f8bd8a78041ac57f863e64" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> int</type>
+        <definition>const int llvm::ReachingDefAnalysis::ReachingDefDefaultVal</definition>
+        <argsstring></argsstring>
+        <name>ReachingDefDefaultVal</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::ReachingDefDefaultVal</qualifiedname>
+        <initializer>= -(1 &lt;&lt; 21)</initializer>
+        <briefdescription>
+<para>Default values are &apos;nothing happened a long time ago&apos;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="143" column="13" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_reaching_def_analysis_1a818bf37052162dd21baf91ecd2ffd4b6" prot="public" static="yes" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>char ReachingDefAnalysis::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::ID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="149" column="15" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="149" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a8f0413c573fa106fd0977f9992a0b9e4" compoundref="_reaching_def_analysis_8h" startline="151" endline="153">ReachingDefAnalysis</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a8f0413c573fa106fd0977f9992a0b9e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ReachingDefAnalysis::ReachingDefAnalysis</definition>
+        <argsstring>()</argsstring>
+        <name>ReachingDefAnalysis</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::ReachingDefAnalysis</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="151" column="3" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="151" bodyend="153"/>
+        <references refid="classllvm_1_1_pass_registry_1a05a729900b76c89e808c6c3094921b2f" compoundref="_pass_registry_8cpp" startline="24" endline="27">llvm::PassRegistry::getPassRegistry</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a818bf37052162dd21baf91ecd2ffd4b6" compoundref="_reaching_def_analysis_8h" startline="149">ID</references>
+        <references refid="namespacellvm_1a53c222c021b25ea32d7b52979d709bfb">llvm::initializeReachingDefAnalysisPass</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" compoundref="_machine_function_pass_8h" startline="41" endline="41">llvm::MachineFunctionPass::MachineFunctionPass</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a299fef476019ab8771773d7d4e664f2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::releaseMemory</definition>
+        <argsstring>() override</argsstring>
+        <name>releaseMemory</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::releaseMemory</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1aeb6e74b0f36a0acd1d20149ef088715a">releaseMemory</reimplements>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_reaching_def_analysis_1a299fef476019ab8771773d7d4e664f2d" kindref="member">releaseMemory()</ref> - This member can be implemented by a pass if it wants to be able to release its memory when it is no longer needed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default behavior of passes is to hold onto memory for the entire duration of their lifetime (which is the entire compile time). For pipelined passes, this is not a big deal because that memory gets recycled every time the pass is invoked on another program unit. For IP passes, it is more important to free memory when it is unused.</para>
+<para>Optionally implement this function to release pass memory when it is no longer used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="154" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="221" bodyend="227"/>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a39c852d6cd394007a2af6cc47012f295" compoundref="_reaching_def_analysis_8cpp" startline="229" endline="233">reset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a55b5dbb2a8d0bc48a7867741fb7bdebd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void llvm::ReachingDefAnalysis::getAnalysisUsage</definition>
+        <argsstring>(AnalysisUsage &amp;AU) const override</argsstring>
+        <name>getAnalysisUsage</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getAnalysisUsage</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e">getAnalysisUsage</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_analysis_usage" kindref="compound">AnalysisUsage</ref> &amp;</type>
+          <declname>AU</declname>
+        </param>
+        <briefdescription>
+<para>getAnalysisUsage - Subclasses that override getAnalysisUsage must call this. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For MachineFunctionPasses, calling AU.preservesCFG() indicates that the pass does not modify the <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> CFG. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="156" column="8" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="156" bodyend="159"/>
+        <references refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e" compoundref="_machine_function_pass_8cpp" startline="169" endline="190">llvm::MachineFunctionPass::getAnalysisUsage</references>
+        <references refid="classllvm_1_1_analysis_usage_1af22b06a6a4f9df80454071685a0d6a02" compoundref="_pass_analysis_support_8h" startline="130" endline="130">llvm::AnalysisUsage::setPreservesAll</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1af7d89916d0369e37e6cbfbca7219cbb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::runOnMachineFunction</definition>
+        <argsstring>(MachineFunction &amp;MF) override</argsstring>
+        <name>runOnMachineFunction</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::runOnMachineFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1abb98ed32e4e5acae62ef3edd7bf04fb5">runOnMachineFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="161" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="212" bodyend="219"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1a43c530c830206ecf5ad3359364634c75" compoundref="_target_subtarget_info_8h" startline="129" endline="129">llvm::TargetSubtargetInfo::getRegisterInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a5418eaa6c605a696a952bf86c829fe71" compoundref="_reaching_def_analysis_8cpp" startline="235" endline="242">init</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a07b847f56e0b64fc3d3f0bc89a876e8f" compoundref="_reaching_def_analysis_8cpp" startline="244" endline="261">traverse</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1ad96c8d05f6a14c1009a4db5a7e710f8b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_function_properties" kindref="compound">MachineFunctionProperties</ref></type>
+        <definition>MachineFunctionProperties llvm::ReachingDefAnalysis::getRequiredProperties</definition>
+        <argsstring>() const override</argsstring>
+        <name>getRequiredProperties</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getRequiredProperties</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1af0f2f06a3a773431ee9813351d609c4d">getRequiredProperties</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="163" column="29" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="163" bodyend="167"/>
+        <references refid="classllvm_1_1_machine_function_properties_1ad85237c6c667e4713efe8921e9c32ac1a72f7d830dd5ddb30f06d8e9639558ac3" compoundref="_machine_function_8h" startline="191">llvm::MachineFunctionProperties::NoVRegs</references>
+        <references refid="classllvm_1_1_machine_function_properties_1aa7780563d7ca260d0ae67d957b56427f" compoundref="_machine_function_8h" startline="207" endline="210">llvm::MachineFunctionProperties::set</references>
+        <references refid="classllvm_1_1_machine_function_properties_1ad85237c6c667e4713efe8921e9c32ac1a0020348b08bb4cccecf3241eac999d8a" compoundref="_machine_function_8h" startline="190">llvm::MachineFunctionProperties::TracksLiveness</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a39c852d6cd394007a2af6cc47012f295" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::reset</qualifiedname>
+        <briefdescription>
+<para>Re-run the analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="170" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="229" bodyend="233"/>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a5418eaa6c605a696a952bf86c829fe71" compoundref="_reaching_def_analysis_8cpp" startline="235" endline="242">init</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a299fef476019ab8771773d7d4e664f2d" compoundref="_reaching_def_analysis_8cpp" startline="221" endline="227">releaseMemory</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a07b847f56e0b64fc3d3f0bc89a876e8f" compoundref="_reaching_def_analysis_8cpp" startline="244" endline="261">traverse</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a5418eaa6c605a696a952bf86c829fe71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::init</qualifiedname>
+        <briefdescription>
+<para>Initialize data structures. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="173" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="235" bodyend="242"/>
+        <references refid="classllvm_1_1_loop_traversal_1a87cd9704fc800af5dddb87f26badfb3a" compoundref="_loop_traversal_8cpp" startline="24" endline="75">llvm::LoopTraversal::traverse</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a39c852d6cd394007a2af6cc47012f295" compoundref="_reaching_def_analysis_8cpp" startline="229" endline="233">reset</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1af7d89916d0369e37e6cbfbca7219cbb6" compoundref="_reaching_def_analysis_8cpp" startline="212" endline="219">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a07b847f56e0b64fc3d3f0bc89a876e8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::traverse</definition>
+        <argsstring>()</argsstring>
+        <name>traverse</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::traverse</qualifiedname>
+        <briefdescription>
+<para>Traverse the machine function, mapping definitions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="176" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="244" bodyend="261"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a39c852d6cd394007a2af6cc47012f295" compoundref="_reaching_def_analysis_8cpp" startline="229" endline="233">reset</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1af7d89916d0369e37e6cbfbca7219cbb6" compoundref="_reaching_def_analysis_8cpp" startline="212" endline="219">runOnMachineFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a4d88bf4454485733ba7b4c725a9ccf51" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ReachingDefAnalysis::getReachingDef</definition>
+        <argsstring>(MachineInstr *MI, Register Reg) const</argsstring>
+        <name>getReachingDef</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getReachingDef</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Provides the instruction id of the closest reaching def instruction of Reg that reaches MI, relative to the begining of MI&apos;s basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="180" column="7" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="263" bodyend="280"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a95984ce0fa3263ce9a7c7992245a5e2c" compoundref="_reaching_def_analysis_8cpp" startline="319" endline="322">getClearance</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1abbea737b469ca04dfced1aa6c87d55c8" compoundref="_reaching_def_analysis_8cpp" startline="353" endline="369">getLiveInUses</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a063cf42159fd59dccd371d78ceff4a01" compoundref="_reaching_def_analysis_8cpp" startline="519" endline="536">getLocalLiveOutMIDef</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a9e75c05a36cfe323cef8d3cceeb63c0b" compoundref="_reaching_def_analysis_8cpp" startline="324" endline="327">hasLocalDefBefore</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1ad1c18d22cd9c352cea5a957c89cf3f7c" compoundref="_reaching_def_analysis_8cpp" startline="289" endline="297">hasSameReachingDef</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1ab8aeae4e97e230dfac7bb530acd16eb0" compoundref="_reaching_def_analysis_8cpp" startline="498" endline="517">isReachingDefLiveOut</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1ad74018294c98676ea265ee12521fb7e7" compoundref="_reaching_def_analysis_8cpp" startline="484" endline="496">isRegDefinedAfter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1ad1c18d22cd9c352cea5a957c89cf3f7c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::hasSameReachingDef</definition>
+        <argsstring>(MachineInstr *A, MachineInstr *B, Register Reg) const</argsstring>
+        <name>hasSameReachingDef</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::hasSameReachingDef</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Return whether A and B use the same def of Reg. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="183" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="289" bodyend="297"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a4d88bf4454485733ba7b4c725a9ccf51" compoundref="_reaching_def_analysis_8cpp" startline="263" endline="280">getReachingDef</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1ab8aeae4e97e230dfac7bb530acd16eb0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::isReachingDefLiveOut</definition>
+        <argsstring>(MachineInstr *MI, Register Reg) const</argsstring>
+        <name>isReachingDefLiveOut</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::isReachingDefLiveOut</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Return whether the reaching def for MI also is live out of its parent block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="187" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="498" bodyend="517"/>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a4d88bf4454485733ba7b4c725a9ccf51" compoundref="_reaching_def_analysis_8cpp" startline="263" endline="280">getReachingDef</references>
+        <references refid="_reaching_def_analysis_8cpp_1aa524a697f0c6f94cef4d7a1f48f856e9" compoundref="_reaching_def_analysis_8cpp" startline="44" endline="49">isValidRegDefOf</references>
+        <references refid="namespacellvm_1ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b" compoundref="_pseudo_probe_8h" startline="27">llvm::Last</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1abbea737b469ca04dfced1aa6c87d55c8" compoundref="_reaching_def_analysis_8cpp" startline="353" endline="369">getLiveInUses</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a063cf42159fd59dccd371d78ceff4a01" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * ReachingDefAnalysis::getLocalLiveOutMIDef</definition>
+        <argsstring>(MachineBasicBlock *MBB, Register Reg) const</argsstring>
+        <name>getLocalLiveOutMIDef</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getLocalLiveOutMIDef</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Return the local MI that produces the live out value for Reg, or nullptr for a non-live out or non-local def. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="191" column="16" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="519" bodyend="536"/>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a4d88bf4454485733ba7b4c725a9ccf51" compoundref="_reaching_def_analysis_8cpp" startline="263" endline="280">getReachingDef</references>
+        <references refid="_reaching_def_analysis_8cpp_1aa524a697f0c6f94cef4d7a1f48f856e9" compoundref="_reaching_def_analysis_8cpp" startline="44" endline="49">isValidRegDefOf</references>
+        <references refid="namespacellvm_1ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b" compoundref="_pseudo_probe_8h" startline="27">llvm::Last</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a5594932b56f2e0629b440a3c14de9eda" compoundref="_reaching_def_analysis_8cpp" startline="371" endline="394">getGlobalUses</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a8a6fbbe8151eaf22fac6f748d6d55b6e" compoundref="_reaching_def_analysis_8cpp" startline="413" endline="430">getLiveOuts</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1ad74018294c98676ea265ee12521fb7e7" compoundref="_reaching_def_analysis_8cpp" startline="484" endline="496">isRegDefinedAfter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1adf38674f9ee35a7d177066a78027aa56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * ReachingDefAnalysis::getUniqueReachingMIDef</definition>
+        <argsstring>(MachineInstr *MI, Register Reg) const</argsstring>
+        <name>getUniqueReachingMIDef</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getUniqueReachingMIDef</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>If a single <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> creates the reaching definition, then return it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Otherwise return null. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="196" column="16" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="432" bodyend="450"/>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a8a6fbbe8151eaf22fac6f748d6d55b6e" compoundref="_reaching_def_analysis_8cpp" startline="413" endline="430">getLiveOuts</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_machine_basic_block_1addd80df79ba902914c7d8a52e3896b79" compoundref="_machine_basic_block_8h" startline="447" endline="449">llvm::MachineBasicBlock::predecessors</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1ae53ede66334f07735b415d87d177ff38" compoundref="_reaching_def_analysis_8cpp" startline="396" endline="405">getGlobalReachingDefs</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1ad0d350086d0170ad8429e57516ba5a17" compoundref="_reaching_def_analysis_8cpp" startline="458" endline="462">getMIOperand</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a36f4fc1556edfb50cca3fe85fcc05e93" compoundref="_reaching_def_analysis_8cpp" startline="452" endline="456">getMIOperand</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a36f4fc1556edfb50cca3fe85fcc05e93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * ReachingDefAnalysis::getMIOperand</definition>
+        <argsstring>(MachineInstr *MI, unsigned Idx) const</argsstring>
+        <name>getMIOperand</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getMIOperand</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <briefdescription>
+<para>If a single <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> creates the reaching definition, for MIs operand at Idx, then return it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Otherwise return null. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="200" column="16" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="452" bodyend="456"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1adf38674f9ee35a7d177066a78027aa56" compoundref="_reaching_def_analysis_8cpp" startline="432" endline="450">getUniqueReachingMIDef</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a67391278875db8d144d4b6bb6e6a09b8" compoundref="_reaching_def_analysis_8cpp" startline="641" endline="671">collectKilledOperands</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1ad0d350086d0170ad8429e57516ba5a17" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * ReachingDefAnalysis::getMIOperand</definition>
+        <argsstring>(MachineInstr *MI, MachineOperand &amp;MO) const</argsstring>
+        <name>getMIOperand</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getMIOperand</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> &amp;</type>
+          <declname>MO</declname>
+        </param>
+        <briefdescription>
+<para>If a single <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> creates the reaching definition, for MIs MO, then return it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Otherwise return null. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="204" column="16" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="458" bodyend="462"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_machine_operand_1ac0035d7c1c860501c877c20e6e93297b" compoundref="_machine_operand_8h" startline="369" endline="372">llvm::MachineOperand::getReg</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1adf38674f9ee35a7d177066a78027aa56" compoundref="_reaching_def_analysis_8cpp" startline="432" endline="450">getUniqueReachingMIDef</references>
+        <references refid="classllvm_1_1_machine_operand_1a4c9594c955fec80c73ddd964b5efd554" compoundref="_machine_operand_8h" startline="329" endline="329">llvm::MachineOperand::isReg</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a9e75c05a36cfe323cef8d3cceeb63c0b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::hasLocalDefBefore</definition>
+        <argsstring>(MachineInstr *MI, Register Reg) const</argsstring>
+        <name>hasLocalDefBefore</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::hasLocalDefBefore</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Provide whether the register has been defined in the same basic block as, and before, MI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="208" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="324" bodyend="327"/>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a4d88bf4454485733ba7b4c725a9ccf51" compoundref="_reaching_def_analysis_8cpp" startline="263" endline="280">getReachingDef</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a11578546fb4cd061fedf4838313d1f97" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::isRegUsedAfter</definition>
+        <argsstring>(MachineInstr *MI, Register Reg) const</argsstring>
+        <name>isRegUsedAfter</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::isRegUsedAfter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Return whether the given register is used after MI, whether it&apos;s a local use or a live out. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="212" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="464" bodyend="482"/>
+        <references refid="namespacellvm_1a90f68a1fc5d44bb06164dc2188b8e486" compoundref="_machine_basic_block_8h" startline="1463" endline="1468">llvm::instructionsWithoutDebug</references>
+        <references refid="namespacellvm_1ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b" compoundref="_pseudo_probe_8h" startline="27">llvm::Last</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1ac153a9af74f3b0bb72e5f95a7654574e" compoundref="_reaching_def_analysis_8cpp" startline="679" endline="705">isSafeToDefRegAt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1ad74018294c98676ea265ee12521fb7e7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::isRegDefinedAfter</definition>
+        <argsstring>(MachineInstr *MI, Register Reg) const</argsstring>
+        <name>isRegDefinedAfter</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::isRegDefinedAfter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Return whether the given register is defined after MI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="215" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="484" bodyend="496"/>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a063cf42159fd59dccd371d78ceff4a01" compoundref="_reaching_def_analysis_8cpp" startline="519" endline="536">getLocalLiveOutMIDef</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a4d88bf4454485733ba7b4c725a9ccf51" compoundref="_reaching_def_analysis_8cpp" startline="263" endline="280">getReachingDef</references>
+        <references refid="namespacellvm_1ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b" compoundref="_pseudo_probe_8h" startline="27">llvm::Last</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1ac153a9af74f3b0bb72e5f95a7654574e" compoundref="_reaching_def_analysis_8cpp" startline="679" endline="705">isSafeToDefRegAt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a95984ce0fa3263ce9a7c7992245a5e2c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ReachingDefAnalysis::getClearance</definition>
+        <argsstring>(MachineInstr *MI, Register Reg) const</argsstring>
+        <name>getClearance</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getClearance</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Provides the clearance - the number of instructions since the closest reaching def instuction of Reg that reaches MI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="219" column="7" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="319" bodyend="322"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a4d88bf4454485733ba7b4c725a9ccf51" compoundref="_reaching_def_analysis_8cpp" startline="263" endline="280">getReachingDef</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1ad474bae3c06f9ecee664f61b236e2ffb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::getReachingLocalUses</definition>
+        <argsstring>(MachineInstr *MI, Register Reg, InstSet &amp;Uses) const</argsstring>
+        <name>getReachingLocalUses</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getReachingLocalUses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>Uses</declname>
+        </param>
+        <briefdescription>
+<para>Provides the uses, in the same block as MI, of register that MI defines. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This does not consider live-outs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="223" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="329" bodyend="351"/>
+        <references refid="_reaching_def_analysis_8cpp_1a0ca5780a94eb690d0ccf6cdda9c16df9" compoundref="_reaching_def_analysis_8cpp" startline="33" endline="38">isValidRegUseOf</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_remove_loads_into_fake_uses_8cpp_1a0b427ca665b192edbeb8d6ca3c8f19fd" compoundref="_remove_loads_into_fake_uses_8cpp" startline="75">Uses</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a5594932b56f2e0629b440a3c14de9eda" compoundref="_reaching_def_analysis_8cpp" startline="371" endline="394">getGlobalUses</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a8a6fbbe8151eaf22fac6f748d6d55b6e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::getLiveOuts</definition>
+        <argsstring>(MachineBasicBlock *MBB, Register Reg, InstSet &amp;Defs, BlockSet &amp;VisitedBBs) const</argsstring>
+        <name>getLiveOuts</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getLiveOuts</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>Defs</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">BlockSet</ref> &amp;</type>
+          <declname>VisitedBBs</declname>
+        </param>
+        <briefdescription>
+<para>Search MBB for a definition of Reg and insert it into Defs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If no definition is found, recursively search the predecessor blocks for them. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="228" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="413" bodyend="430"/>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a1f475b0df44ebd7169e720fa1bf9169e" compoundref="_small_ptr_set_8h" startline="452" endline="454">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a8a6fbbe8151eaf22fac6f748d6d55b6e" compoundref="_reaching_def_analysis_8cpp" startline="413" endline="430">getLiveOuts</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a063cf42159fd59dccd371d78ceff4a01" compoundref="_reaching_def_analysis_8cpp" startline="519" endline="536">getLocalLiveOutMIDef</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1ae53ede66334f07735b415d87d177ff38" compoundref="_reaching_def_analysis_8cpp" startline="396" endline="405">getGlobalReachingDefs</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a1e73391b90930eb7a6e346ca07a570b4" compoundref="_reaching_def_analysis_8cpp" startline="407" endline="411">getLiveOuts</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a8a6fbbe8151eaf22fac6f748d6d55b6e" compoundref="_reaching_def_analysis_8cpp" startline="413" endline="430">getLiveOuts</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1adf38674f9ee35a7d177066a78027aa56" compoundref="_reaching_def_analysis_8cpp" startline="432" endline="450">getUniqueReachingMIDef</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a1e73391b90930eb7a6e346ca07a570b4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::getLiveOuts</definition>
+        <argsstring>(MachineBasicBlock *MBB, Register Reg, InstSet &amp;Defs) const</argsstring>
+        <name>getLiveOuts</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getLiveOuts</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>Defs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="230" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="407" bodyend="411"/>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a8a6fbbe8151eaf22fac6f748d6d55b6e" compoundref="_reaching_def_analysis_8cpp" startline="413" endline="430">getLiveOuts</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1abbea737b469ca04dfced1aa6c87d55c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::getLiveInUses</definition>
+        <argsstring>(MachineBasicBlock *MBB, Register Reg, InstSet &amp;Uses) const</argsstring>
+        <name>getLiveInUses</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getLiveInUses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>Uses</declname>
+        </param>
+        <briefdescription>
+<para>For the given block, collect the instructions that use the live-in value of the provided register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return whether the value is still live on exit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="235" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="353" bodyend="369"/>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a4d88bf4454485733ba7b4c725a9ccf51" compoundref="_reaching_def_analysis_8cpp" startline="263" endline="280">getReachingDef</references>
+        <references refid="namespacellvm_1a90f68a1fc5d44bb06164dc2188b8e486" compoundref="_machine_basic_block_8h" startline="1463" endline="1468">llvm::instructionsWithoutDebug</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1ab8aeae4e97e230dfac7bb530acd16eb0" compoundref="_reaching_def_analysis_8cpp" startline="498" endline="517">isReachingDefLiveOut</references>
+        <references refid="_reaching_def_analysis_8cpp_1a0ca5780a94eb690d0ccf6cdda9c16df9" compoundref="_reaching_def_analysis_8cpp" startline="33" endline="38">isValidRegUseOf</references>
+        <references refid="namespacellvm_1ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b" compoundref="_pseudo_probe_8h" startline="27">llvm::Last</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_remove_loads_into_fake_uses_8cpp_1a0b427ca665b192edbeb8d6ca3c8f19fd" compoundref="_remove_loads_into_fake_uses_8cpp" startline="75">Uses</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a5594932b56f2e0629b440a3c14de9eda" compoundref="_reaching_def_analysis_8cpp" startline="371" endline="394">getGlobalUses</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a5594932b56f2e0629b440a3c14de9eda" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::getGlobalUses</definition>
+        <argsstring>(MachineInstr *MI, Register Reg, InstSet &amp;Uses) const</argsstring>
+        <name>getGlobalUses</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getGlobalUses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>Uses</declname>
+        </param>
+        <briefdescription>
+<para>Collect the users of the value stored in Reg, which is defined by MI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="239" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="371" bodyend="394"/>
+        <references refid="namespacellvm_1a39d3d23a084c4544ee5903203db10e8a" compoundref="_s_t_l_extras_8h" startline="2115" endline="2117">llvm::append_range</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a1f475b0df44ebd7169e720fa1bf9169e" compoundref="_small_ptr_set_8h" startline="452" endline="454">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1abbea737b469ca04dfced1aa6c87d55c8" compoundref="_reaching_def_analysis_8cpp" startline="353" endline="369">getLiveInUses</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a063cf42159fd59dccd371d78ceff4a01" compoundref="_reaching_def_analysis_8cpp" startline="519" endline="536">getLocalLiveOutMIDef</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1ad474bae3c06f9ecee664f61b236e2ffb" compoundref="_reaching_def_analysis_8cpp" startline="329" endline="351">getReachingLocalUses</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a0c8ffe664a36e30d49c84d0aded2fe08" compoundref="_small_vector_8h" startline="673" endline="677">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val</references>
+        <references refid="_remove_loads_into_fake_uses_8cpp_1a0b427ca665b192edbeb8d6ca3c8f19fd" compoundref="_remove_loads_into_fake_uses_8cpp" startline="75">Uses</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a67391278875db8d144d4b6bb6e6a09b8" compoundref="_reaching_def_analysis_8cpp" startline="641" endline="671">collectKilledOperands</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1ac153a9af74f3b0bb72e5f95a7654574e" compoundref="_reaching_def_analysis_8cpp" startline="679" endline="705">isSafeToDefRegAt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1ae53ede66334f07735b415d87d177ff38" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::getGlobalReachingDefs</definition>
+        <argsstring>(MachineInstr *MI, Register Reg, InstSet &amp;Defs) const</argsstring>
+        <name>getGlobalReachingDefs</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getGlobalReachingDefs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>Defs</declname>
+        </param>
+        <briefdescription>
+<para>Collect all possible definitions of the value stored in Reg, which is used by MI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="243" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="396" bodyend="405"/>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a8a6fbbe8151eaf22fac6f748d6d55b6e" compoundref="_reaching_def_analysis_8cpp" startline="413" endline="430">getLiveOuts</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1adf38674f9ee35a7d177066a78027aa56" compoundref="_reaching_def_analysis_8cpp" startline="432" endline="450">getUniqueReachingMIDef</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a09e2271431de53cc4cc5057148c18c93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::isSafeToMoveForwards</definition>
+        <argsstring>(MachineInstr *From, MachineInstr *To) const</argsstring>
+        <name>isSafeToMoveForwards</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::isSafeToMoveForwards</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>From</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>To</declname>
+        </param>
+        <briefdescription>
+<para>Return whether From can be moved forwards to just before To. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="247" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="577" bodyend="585"/>
+        <references refid="classllvm_1_1_machine_basic_block_1acbc921830578e2741be6549db716c0ce" compoundref="_machine_basic_block_8h" startline="366" endline="366">llvm::MachineBasicBlock::end</references>
+        <references refid="classllvm_1_1_machine_instr_1a1e855100f407ca4be098d0050be403b0" compoundref="_machine_instr_8h" startline="349" endline="349">llvm::MachineInstr::getParent</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a7bc46cb4bc77e9715066c204bd98e309" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::isSafeToMoveBackwards</definition>
+        <argsstring>(MachineInstr *From, MachineInstr *To) const</argsstring>
+        <name>isSafeToMoveBackwards</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::isSafeToMoveBackwards</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>From</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>To</declname>
+        </param>
+        <briefdescription>
+<para>Return whether From can be moved backwards to just after To. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="250" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="587" bodyend="595"/>
+        <references refid="classllvm_1_1_machine_instr_1a1e855100f407ca4be098d0050be403b0" compoundref="_machine_instr_8h" startline="349" endline="349">llvm::MachineInstr::getParent</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a2a25c462b91ac5da41f4ab7edc32b650" compoundref="_machine_basic_block_8h" startline="374" endline="374">llvm::MachineBasicBlock::rend</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a67391278875db8d144d4b6bb6e6a09b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::collectKilledOperands</definition>
+        <argsstring>(MachineInstr *MI, InstSet &amp;Dead) const</argsstring>
+        <name>collectKilledOperands</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::collectKilledOperands</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>Dead</declname>
+        </param>
+        <briefdescription>
+<para>Assuming MI is dead, recursively search the incoming operands which are killed by MI and collect those that would become dead. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="254" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="641" bodyend="671"/>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a67391278875db8d144d4b6bb6e6a09b8" compoundref="_reaching_def_analysis_8cpp" startline="641" endline="671">collectKilledOperands</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a5594932b56f2e0629b440a3c14de9eda" compoundref="_reaching_def_analysis_8cpp" startline="371" endline="394">getGlobalUses</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a36f4fc1556edfb50cca3fe85fcc05e93" compoundref="_reaching_def_analysis_8cpp" startline="452" endline="456">getMIOperand</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a979659ec464cee64a84df219494fc2ea" compoundref="_s_i_lower_control_flow_8cpp" startline="176">IsDead</references>
+        <references refid="_reaching_def_analysis_8cpp_1a8710828eaf6aafddaeb91b5bcdc236da" compoundref="_reaching_def_analysis_8cpp" startline="40" endline="42">isValidRegDef</references>
+        <references refid="_reaching_def_analysis_8cpp_1ac3b2a46d9d056196ea4b3d2be7b1dcb8" compoundref="_reaching_def_analysis_8cpp" startline="29" endline="31">isValidRegUse</references>
+        <references refid="_reaching_def_analysis_8cpp_1a460ee2e3823cbcd577daa94230fb17a8" compoundref="_reaching_def_analysis_8cpp" startline="538" endline="542">mayHaveSideEffects</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1a38740a7e3fde66312240ec2cbf003fc2" compoundref="_set_operations_8h" startline="151" endline="158">llvm::set_is_subset</references>
+        <references refid="_remove_loads_into_fake_uses_8cpp_1a0b427ca665b192edbeb8d6ca3c8f19fd" compoundref="_remove_loads_into_fake_uses_8cpp" startline="75">Uses</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a67391278875db8d144d4b6bb6e6a09b8" compoundref="_reaching_def_analysis_8cpp" startline="641" endline="671">collectKilledOperands</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a2f90013f33dac170acc9c62907d99e44" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::isSafeToRemove</definition>
+        <argsstring>(MachineInstr *MI, InstSet &amp;ToRemove) const</argsstring>
+        <name>isSafeToRemove</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::isSafeToRemove</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>ToRemove</declname>
+        </param>
+        <briefdescription>
+<para>Return whether removing this instruction will have no effect on the program, returning the redundant use-def chain. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="258" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="597" bodyend="602"/>
+        <references refid="_a_r_m_low_overhead_loops_8cpp_1aee9acb24ef4f057644a7cf7217922eaa" compoundref="_a_r_m_low_overhead_loops_8cpp" startline="531" endline="573">Ignore</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a2f90013f33dac170acc9c62907d99e44" compoundref="_reaching_def_analysis_8cpp" startline="597" endline="602">isSafeToRemove</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_r_m_low_overhead_loops_8cpp_1a3bf42baf773b375802538951c88d8e12" compoundref="_a_r_m_low_overhead_loops_8cpp" startline="531">ToRemove</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a2f90013f33dac170acc9c62907d99e44" compoundref="_reaching_def_analysis_8cpp" startline="597" endline="602">isSafeToRemove</referencedby>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1a90cebb38d9bd176e0efbc97c9bf33c2d" compoundref="_reaching_def_analysis_8cpp" startline="605" endline="609">isSafeToRemove</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a90cebb38d9bd176e0efbc97c9bf33c2d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::isSafeToRemove</definition>
+        <argsstring>(MachineInstr *MI, InstSet &amp;ToRemove, InstSet &amp;Ignore) const</argsstring>
+        <name>isSafeToRemove</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::isSafeToRemove</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>ToRemove</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>Ignore</declname>
+        </param>
+        <briefdescription>
+<para>Return whether removing this instruction will have no effect on the program, ignoring the possible effects on some instructions, returning the redundant use-def chain. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="263" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="605" bodyend="609"/>
+        <references refid="_a_r_m_low_overhead_loops_8cpp_1aee9acb24ef4f057644a7cf7217922eaa" compoundref="_a_r_m_low_overhead_loops_8cpp" startline="531" endline="573">Ignore</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a2f90013f33dac170acc9c62907d99e44" compoundref="_reaching_def_analysis_8cpp" startline="597" endline="602">isSafeToRemove</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_a_r_m_low_overhead_loops_8cpp_1a3bf42baf773b375802538951c88d8e12" compoundref="_a_r_m_low_overhead_loops_8cpp" startline="531">ToRemove</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1abd1c3cbea21aa15aed845a4c163fe62c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::isSafeToDefRegAt</definition>
+        <argsstring>(MachineInstr *MI, Register Reg) const</argsstring>
+        <name>isSafeToDefRegAt</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::isSafeToDefRegAt</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Return whether a <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> could be inserted at MI and safely define the given register without affecting the program. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="268" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="673" bodyend="677"/>
+        <references refid="_a_r_m_low_overhead_loops_8cpp_1aee9acb24ef4f057644a7cf7217922eaa" compoundref="_a_r_m_low_overhead_loops_8cpp" startline="531" endline="573">Ignore</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1abd1c3cbea21aa15aed845a4c163fe62c" compoundref="_reaching_def_analysis_8cpp" startline="673" endline="677">isSafeToDefRegAt</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_reaching_def_analysis_1abd1c3cbea21aa15aed845a4c163fe62c" compoundref="_reaching_def_analysis_8cpp" startline="673" endline="677">isSafeToDefRegAt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1ac153a9af74f3b0bb72e5f95a7654574e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::isSafeToDefRegAt</definition>
+        <argsstring>(MachineInstr *MI, Register Reg, InstSet &amp;Ignore) const</argsstring>
+        <name>isSafeToDefRegAt</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::isSafeToDefRegAt</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>Ignore</declname>
+        </param>
+        <briefdescription>
+<para>Return whether a <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> could be inserted at MI and safely define the given register without affecting the program, ignoring any effects on the provided instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="273" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="679" bodyend="705"/>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a5594932b56f2e0629b440a3c14de9eda" compoundref="_reaching_def_analysis_8cpp" startline="371" endline="394">getGlobalUses</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_a_r_m_low_overhead_loops_8cpp_1aee9acb24ef4f057644a7cf7217922eaa" compoundref="_a_r_m_low_overhead_loops_8cpp" startline="531" endline="573">Ignore</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1ad74018294c98676ea265ee12521fb7e7" compoundref="_reaching_def_analysis_8cpp" startline="484" endline="496">isRegDefinedAfter</references>
+        <references refid="classllvm_1_1_reaching_def_analysis_1a11578546fb4cd061fedf4838313d1f97" compoundref="_reaching_def_analysis_8cpp" startline="464" endline="482">isRegUsedAfter</references>
+        <references refid="_reaching_def_analysis_8cpp_1aa524a697f0c6f94cef4d7a1f48f856e9" compoundref="_reaching_def_analysis_8cpp" startline="44" endline="49">isValidRegDefOf</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1a38740a7e3fde66312240ec2cbf003fc2" compoundref="_set_operations_8h" startline="151" endline="158">llvm::set_is_subset</references>
+        <references refid="_remove_loads_into_fake_uses_8cpp_1a0b427ca665b192edbeb8d6ca3c8f19fd" compoundref="_remove_loads_into_fake_uses_8cpp" startline="75">Uses</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a43859808ee99bdb8b2cc6e5b8c7a1020" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::enterBasicBlock</definition>
+        <argsstring>(MachineBasicBlock *MBB)</argsstring>
+        <name>enterBasicBlock</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::enterBasicBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+<para>Set up LiveRegs by merging predecessor live-out values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="277" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="51" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a63eb401f65fa9655642cb865cc7a2f8c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::leaveBasicBlock</definition>
+        <argsstring>(MachineBasicBlock *MBB)</argsstring>
+        <name>leaveBasicBlock</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::leaveBasicBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+<para>Update live-out values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="280" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="103" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1ad922e9ce9738b3aa693664971d9d81a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::processBasicBlock</definition>
+        <argsstring>(const LoopTraversal::TraversedMBBInfo &amp;TraversedMBB)</argsstring>
+        <name>processBasicBlock</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::processBasicBlock</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_loop_traversal_1_1_traversed_m_b_b_info" kindref="compound">LoopTraversal::TraversedMBBInfo</ref> &amp;</type>
+          <declname>TraversedMBB</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1sys_1_1_process" kindref="compound">Process</ref> he given basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="283" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="192" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a1618ce4ec28ec3239ac8d57a0f7cc534" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::reprocessBasicBlock</definition>
+        <argsstring>(MachineBasicBlock *MBB)</argsstring>
+        <name>reprocessBasicBlock</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::reprocessBasicBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1sys_1_1_process" kindref="compound">Process</ref> block that is part of a loop again. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="286" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="147" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a6193dc3adc4e2b2779876e31f9e8bed8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReachingDefAnalysis::processDefs</definition>
+        <argsstring>(MachineInstr *)</argsstring>
+        <name>processDefs</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::processDefs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <defname>MI</defname>
+        </param>
+        <briefdescription>
+<para>Update def-ages for registers defined by MI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Also break dependencies on partial defs and undef uses. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="290" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="121" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1ab3100c944028d50dacdc41f3e725c2d9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Iterator</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::isSafeToMove</definition>
+        <argsstring>(MachineInstr *From, MachineInstr *To) const</argsstring>
+        <name>isSafeToMove</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::isSafeToMove</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>From</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>To</declname>
+        </param>
+        <briefdescription>
+<para>Utility function for isSafeToMoveForwards/Backwards. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="294" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="548" bodyend="575"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1afef608e89623bd7646435888a07446aa" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ReachingDefAnalysis::isSafeToRemove</definition>
+        <argsstring>(MachineInstr *MI, InstSet &amp;Visited, InstSet &amp;ToRemove, InstSet &amp;Ignore) const</argsstring>
+        <name>isSafeToRemove</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::isSafeToRemove</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>Visited</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>ToRemove</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">InstSet</ref> &amp;</type>
+          <declname>Ignore</declname>
+        </param>
+        <briefdescription>
+<para>Return whether removing this instruction will have no effect on the program, ignoring the possible effects on some instructions, returning the redundant use-def chain. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="299" column="8" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="612" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1ac218cd2bc1d3011f05b88f60588d843c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * ReachingDefAnalysis::getInstFromId</definition>
+        <argsstring>(MachineBasicBlock *MBB, int InstId) const</argsstring>
+        <name>getInstFromId</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getInstFromId</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>InstId</declname>
+        </param>
+        <briefdescription>
+<para>Provides the MI, from the given block, corresponding to the Id or a nullptr if the id does not refer to the block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="304" column="16" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="299" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_reaching_def_analysis_1a6e31fd43bdb706d29716a5bb5365a446" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+        <definition>MachineInstr * ReachingDefAnalysis::getReachingLocalMIDef</definition>
+        <argsstring>(MachineInstr *MI, Register Reg) const</argsstring>
+        <name>getReachingLocalMIDef</name>
+        <qualifiedname>llvm::ReachingDefAnalysis::getReachingLocalMIDef</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Provides the instruction of the closest reaching def instruction of Reg that reaches MI, relative to the begining of MI&apos;s basic block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="308" column="16" bodyfile="lib/CodeGen/ReachingDefAnalysis.cpp" bodystart="282" bodyend="287"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class provides the reaching def analysis. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+      <node id="1">
+        <label>llvm::ReachingDefAnalysis</label>
+        <link refid="classllvm_1_1_reaching_def_analysis"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+      <node id="1">
+        <label>llvm::ReachingDefAnalysis</label>
+        <link refid="classllvm_1_1_reaching_def_analysis"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/CodeGen/ReachingDefAnalysis.h" line="113" column="1" bodyfile="include/llvm/CodeGen/ReachingDefAnalysis.h" bodystart="113" bodyend="309"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_function_pass_1a748922f143f2da9a13b0b15ff6a3dd22" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>assignPassManager</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1af24d904aaeee62f20d15371bd78c88bb" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>BlockSet</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a67391278875db8d144d4b6bb6e6a09b8" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>collectKilledOperands</name></member>
+      <member refid="classllvm_1_1_pass_1a2ed7d79d79dffe7368c3d3cdf40dd80e" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>createPass</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a1e6a5bd3420fafb5f6eec4981748aa63" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>CurInstr</name></member>
+      <member refid="classllvm_1_1_pass_1ac7811985250c75d7e2a244292d615fff" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>doFinalization</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a204ffdf4717a340f8cbe1fd1341a8148" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>doInitialization</name></member>
+      <member refid="classllvm_1_1_pass_1a1a60731eeff800b39fca7280a5a167ae" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_pass_1ad2f0576ef7c9c4af40e35001c81f4922" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>dumpPassStructure</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a43859808ee99bdb8b2cc6e5b8c7a1020" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>enterBasicBlock</name></member>
+      <member refid="classllvm_1_1_function_pass_1a7691d83e3561f781cae4ce4a01bdfa93" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>FunctionPass</name></member>
+      <member refid="classllvm_1_1_pass_1a03d3a81b1c46aff7c38ef3a6750ba225" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getAdjustedAnalysisPointer</name></member>
+      <member refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a560d384c0cef7f62836884fdbbd1fe66" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a6613f29d3e54ce175ac33fb9ba264fae" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1a2190247edbacb33b4e8a3d409fa2d99e" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getAnalysisIfAvailable</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a55b5dbb2a8d0bc48a7867741fb7bdebd" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getAnalysisUsage</name></member>
+      <member refid="classllvm_1_1_pass_1ae31759fd992cddb1f2d62ab0df85834a" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getAsImmutablePass</name></member>
+      <member refid="classllvm_1_1_pass_1a626b77ef8abdfa9f53c697ad129a6e5a" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getAsPMDataManager</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a95984ce0fa3263ce9a7c7992245a5e2c" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getClearance</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a22bc7c91051dca8dc211c3afe9929603" prot="protected" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getClearedProperties</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1ae53ede66334f07735b415d87d177ff38" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getGlobalReachingDefs</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a5594932b56f2e0629b440a3c14de9eda" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getGlobalUses</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1ac218cd2bc1d3011f05b88f60588d843c" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getInstFromId</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1abbea737b469ca04dfced1aa6c87d55c8" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getLiveInUses</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a8a6fbbe8151eaf22fac6f748d6d55b6e" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getLiveOuts</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a1e73391b90930eb7a6e346ca07a570b4" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getLiveOuts</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a063cf42159fd59dccd371d78ceff4a01" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getLocalLiveOutMIDef</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a36f4fc1556edfb50cca3fe85fcc05e93" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getMIOperand</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1ad0d350086d0170ad8429e57516ba5a17" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getMIOperand</name></member>
+      <member refid="classllvm_1_1_pass_1a63192e749ba4a0ee29336a59d6a19647" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getPassID</name></member>
+      <member refid="classllvm_1_1_pass_1a9de4db62e6884f2e5efea6793af30d99" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getPassKind</name></member>
+      <member refid="classllvm_1_1_pass_1ad729b39eacf070a9bca84533b3c743bf" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getPassName</name></member>
+      <member refid="classllvm_1_1_function_pass_1a68517706d9801aec6d20c32a424ed152" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getPotentialPassManagerType</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a4d88bf4454485733ba7b4c725a9ccf51" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getReachingDef</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a6e31fd43bdb706d29716a5bb5365a446" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getReachingLocalMIDef</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1ad474bae3c06f9ecee664f61b236e2ffb" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getReachingLocalUses</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1ad96c8d05f6a14c1009a4db5a7e710f8b" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getRequiredProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a969c082f66671df288441bbad9ca87db" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getResolver</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a8fbedd15c1c809e6050f3fd3ccd3338e" prot="protected" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getSetProperties</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1adf38674f9ee35a7d177066a78027aa56" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>getUniqueReachingMIDef</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a9e75c05a36cfe323cef8d3cceeb63c0b" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>hasLocalDefBefore</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1ad1c18d22cd9c352cea5a957c89cf3f7c" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>hasSameReachingDef</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a818bf37052162dd21baf91ecd2ffd4b6" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>ID</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a5418eaa6c605a696a952bf86c829fe71" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>init</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a38a070111b5a9015acf139de4212e169" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>InstIds</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1af006c287439f2f408b6ee5ebb951b738" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>InstSet</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1ab8aeae4e97e230dfac7bb530acd16eb0" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>isReachingDefLiveOut</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1ad74018294c98676ea265ee12521fb7e7" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>isRegDefinedAfter</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a11578546fb4cd061fedf4838313d1f97" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>isRegUsedAfter</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1abd1c3cbea21aa15aed845a4c163fe62c" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>isSafeToDefRegAt</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1ac153a9af74f3b0bb72e5f95a7654574e" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>isSafeToDefRegAt</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1ab3100c944028d50dacdc41f3e725c2d9" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>isSafeToMove</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a7bc46cb4bc77e9715066c204bd98e309" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>isSafeToMoveBackwards</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a09e2271431de53cc4cc5057148c18c93" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>isSafeToMoveForwards</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a2f90013f33dac170acc9c62907d99e44" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>isSafeToRemove</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a90cebb38d9bd176e0efbc97c9bf33c2d" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>isSafeToRemove</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1afef608e89623bd7646435888a07446aa" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>isSafeToRemove</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a63eb401f65fa9655642cb865cc7a2f8c" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>leaveBasicBlock</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a496734e38cf07444333f80cda0163e7d" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>LiveRegs</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a2a6823b697832f797208d6fa083f6d71" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>LiveRegsDefInfo</name></member>
+      <member refid="classllvm_1_1_pass_1aab174263c400ece13a7278990e102fa6" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_pass_1a992ff669acca94459037cfb1f41cb9dc" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" prot="protected" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>MachineFunctionPass</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1afd1bfc0bd7379333aada63e1be5f629b" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>MBBOutRegsInfos</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a45dc3370cadeca5b66fc7ee14864983e" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>MBBReachingDefs</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a12043721f3b4b96fb4648f1e48e4137c" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>MF</name></member>
+      <member refid="classllvm_1_1_pass_1a0b4a511579939b07831db90c3fc98996" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>mustPreserveAnalysisID</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a5dc196ee7f67a649431e57267cdd3271" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>NumRegUnits</name></member>
+      <member refid="classllvm_1_1_pass_1af468a2aeb0d98e3dbeda38176ce516d3" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a40f81e54ba908c24cd4889533e6f558f" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>OutRegsInfoMap</name></member>
+      <member refid="classllvm_1_1_pass_1a16baa169d062524be5a6b67609266174" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1ad40d19ce644ec38c52ea00be59016cd5" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1aa5f61a8789f87816c5f494d42a70f01f" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>preparePassManager</name></member>
+      <member refid="classllvm_1_1_pass_1a061b4c01e9c189208dbfd3c77fdb9a5c" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>print</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1ad922e9ce9738b3aa693664971d9d81a1" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>processBasicBlock</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a6193dc3adc4e2b2779876e31f9e8bed8" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>processDefs</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a8f0413c573fa106fd0977f9992a0b9e4" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>ReachingDefAnalysis</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a8336a52f50f8bd8a78041ac57f863e64" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>ReachingDefDefaultVal</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a299fef476019ab8771773d7d4e664f2d" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>releaseMemory</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a1618ce4ec28ec3239ac8d57a0f7cc534" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>reprocessBasicBlock</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a39c852d6cd394007a2af6cc47012f295" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>reset</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1af7d89916d0369e37e6cbfbca7219cbb6" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>runOnMachineFunction</name></member>
+      <member refid="classllvm_1_1_pass_1a2423fcc912a698d4f36c9c9380b53a50" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>setResolver</name></member>
+      <member refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" prot="protected" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>skipFunction</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a07b847f56e0b64fc3d3f0bc89a876e8f" prot="public" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>traverse</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1afc99fb880e4e52108eaac241b762219f" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>TraversedMBBOrder</name></member>
+      <member refid="classllvm_1_1_reaching_def_analysis_1a988bfa3400feab20b9001ca3503f2ae4" prot="private" virt="non-virtual"><scope>llvm::ReachingDefAnalysis</scope><name>TRI</name></member>
+      <member refid="classllvm_1_1_pass_1ac8ef6f57d4ec869a7f1007aeddf2b169" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>verifyAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1abe2fe9b29d21424fe4b410fc8e98606c" prot="public" virt="virtual"><scope>llvm::ReachingDefAnalysis</scope><name>~Pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

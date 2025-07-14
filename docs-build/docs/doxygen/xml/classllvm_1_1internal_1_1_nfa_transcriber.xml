@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1internal_1_1_nfa_transcriber" kind="class" language="C++" prot="public">
+    <compoundname>llvm::internal::NfaTranscriber</compoundname>
+    <includes refid="_automaton_8h" local="yes">llvm/Support/Automaton.h</includes>
+    <innerclass refid="structllvm_1_1internal_1_1_nfa_transcriber_1_1_path_segment" prot="private">llvm::internal::NfaTranscriber::PathSegment</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1internal_1_1_nfa_transcriber_1ae910acd0f2641531f00efb92be8b01cc" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1_nfa_state_pair" kindref="compound">NfaStatePair</ref> &gt;</type>
+        <definition>ArrayRef&lt;NfaStatePair&gt; llvm::internal::NfaTranscriber::TransitionInfo</definition>
+        <argsstring></argsstring>
+        <name>TransitionInfo</name>
+        <qualifiedname>llvm::internal::NfaTranscriber::TransitionInfo</qualifiedname>
+        <briefdescription>
+<para>Cached transition table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a table of NfaStatePairs that contains zero-terminated sequences pointed to by DFA transitions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="62" column="12" bodyfile="include/llvm/Support/Automaton.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1internal_1_1_nfa_transcriber_1a03a6b6347fc32650c23afb87f90ff36b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_specific_bump_ptr_allocator" kindref="compound">SpecificBumpPtrAllocator</ref>&lt; PathSegment &gt;</type>
+        <definition>SpecificBumpPtrAllocator&lt;PathSegment&gt; llvm::internal::NfaTranscriber::Allocator</definition>
+        <argsstring></argsstring>
+        <name>Allocator</name>
+        <qualifiedname>llvm::internal::NfaTranscriber::Allocator</qualifiedname>
+        <briefdescription>
+<para>We allocate segment objects frequently. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocate them upfront and dispose at the end of a traversal rather than hammering the system allocator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="74" column="28" bodyfile="include/llvm/Support/Automaton.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1internal_1_1_nfa_transcriber_1a484bbf196c155e8c405612770a006657" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; PathSegment * &gt;</type>
+        <definition>std::deque&lt;PathSegment *&gt; llvm::internal::NfaTranscriber::Heads</definition>
+        <argsstring></argsstring>
+        <name>Heads</name>
+        <qualifiedname>llvm::internal::NfaTranscriber::Heads</qualifiedname>
+        <briefdescription>
+<para>Heads of each tracked path. These are not ordered. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="77" column="14" bodyfile="include/llvm/Support/Automaton.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1internal_1_1_nfa_transcriber_1a16685509bf38f04a77d7e22f1355afc1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="namespacellvm_1a7c51673db3dd1c6d2088fc30224393d3" kindref="member">NfaPath</ref>, 4 &gt;</type>
+        <definition>SmallVector&lt;NfaPath, 4&gt; llvm::internal::NfaTranscriber::Paths</definition>
+        <argsstring></argsstring>
+        <name>Paths</name>
+        <qualifiedname>llvm::internal::NfaTranscriber::Paths</qualifiedname>
+        <briefdescription>
+<para>The returned paths. This is populated during getPaths. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="80" column="15" bodyfile="include/llvm/Support/Automaton.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1internal_1_1_nfa_transcriber_1a4718c51d3a54de28c0e89b0b158721b8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PathSegment *</type>
+        <definition>PathSegment * llvm::internal::NfaTranscriber::makePathSegment</definition>
+        <argsstring>(uint64_t State, PathSegment *Tail)</argsstring>
+        <name>makePathSegment</name>
+        <qualifiedname>llvm::internal::NfaTranscriber::makePathSegment</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>State</declname>
+        </param>
+        <param>
+          <type>PathSegment *</type>
+          <declname>Tail</declname>
+        </param>
+        <briefdescription>
+<para>Create a new segment and return it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="83" column="15" bodyfile="include/llvm/Support/Automaton.h" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1internal_1_1_nfa_transcriber_1a4075c9fd9821c3d073523cac1ac6ca6a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::internal::NfaTranscriber::transition</definition>
+        <argsstring>(ArrayRef&lt; NfaStatePair &gt; Pairs)</argsstring>
+        <name>transition</name>
+        <qualifiedname>llvm::internal::NfaTranscriber::transition</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1_nfa_state_pair" kindref="compound">NfaStatePair</ref> &gt;</type>
+          <declname>Pairs</declname>
+        </param>
+        <briefdescription>
+<para>Pairs defines a sequence of possible NFA transitions for a single DFA transition. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="91" column="8" bodyfile="include/llvm/Support/Automaton.h" bodystart="91" bodyend="110"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1internal_1_1_nfa_transcriber_1a2155035192d28d93e1ffe01da1cd0dc9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::internal::NfaTranscriber::NfaTranscriber</definition>
+        <argsstring>(ArrayRef&lt; NfaStatePair &gt; TransitionInfo)</argsstring>
+        <name>NfaTranscriber</name>
+        <qualifiedname>llvm::internal::NfaTranscriber::NfaTranscriber</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1_nfa_state_pair" kindref="compound">NfaStatePair</ref> &gt;</type>
+          <declname>TransitionInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="113" column="3" bodyfile="include/llvm/Support/Automaton.h" bodystart="113" bodyend="116"/>
+        <references refid="classllvm_1_1internal_1_1_nfa_transcriber_1accf58263d4f716a4c46278f360647a49" compoundref="_automaton_8h" startline="122" endline="128">reset</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1internal_1_1_nfa_transcriber_1af6ccee9b562b94ba3372ddfaed335cda" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="structllvm_1_1_nfa_state_pair" kindref="compound">NfaStatePair</ref> &gt;</type>
+        <definition>ArrayRef&lt; NfaStatePair &gt; llvm::internal::NfaTranscriber::getTransitionInfo</definition>
+        <argsstring>() const</argsstring>
+        <name>getTransitionInfo</name>
+        <qualifiedname>llvm::internal::NfaTranscriber::getTransitionInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="118" column="12" bodyfile="include/llvm/Support/Automaton.h" bodystart="118" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1internal_1_1_nfa_transcriber_1accf58263d4f716a4c46278f360647a49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::internal::NfaTranscriber::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>llvm::internal::NfaTranscriber::reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="122" column="8" bodyfile="include/llvm/Support/Automaton.h" bodystart="122" bodyend="128"/>
+        <referencedby refid="classllvm_1_1internal_1_1_nfa_transcriber_1a2155035192d28d93e1ffe01da1cd0dc9" compoundref="_automaton_8h" startline="113" endline="116">NfaTranscriber</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1internal_1_1_nfa_transcriber_1ac4c21ecdcd8d6aa8735d3dc78c4d7a9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::internal::NfaTranscriber::transition</definition>
+        <argsstring>(unsigned TransitionInfoIdx)</argsstring>
+        <name>transition</name>
+        <qualifiedname>llvm::internal::NfaTranscriber::transition</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>TransitionInfoIdx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="130" column="8" bodyfile="include/llvm/Support/Automaton.h" bodystart="130" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1internal_1_1_nfa_transcriber_1aa3f872f94eff26283d42e942d703b39d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="namespacellvm_1a7c51673db3dd1c6d2088fc30224393d3" kindref="member">NfaPath</ref> &gt;</type>
+        <definition>ArrayRef&lt; NfaPath &gt; llvm::internal::NfaTranscriber::getPaths</definition>
+        <argsstring>()</argsstring>
+        <name>getPaths</name>
+        <qualifiedname>llvm::internal::NfaTranscriber::getPaths</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/Automaton.h" line="139" column="12" bodyfile="include/llvm/Support/Automaton.h" bodystart="139" bodyend="151"/>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The internal class that maintains all possible paths through an NFA based on a path through the DFA. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Support/Automaton.h" line="58" column="1" bodyfile="include/llvm/Support/Automaton.h" bodystart="58" bodyend="152"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1internal_1_1_nfa_transcriber_1a03a6b6347fc32650c23afb87f90ff36b" prot="private" virt="non-virtual"><scope>llvm::internal::NfaTranscriber</scope><name>Allocator</name></member>
+      <member refid="classllvm_1_1internal_1_1_nfa_transcriber_1aa3f872f94eff26283d42e942d703b39d" prot="public" virt="non-virtual"><scope>llvm::internal::NfaTranscriber</scope><name>getPaths</name></member>
+      <member refid="classllvm_1_1internal_1_1_nfa_transcriber_1af6ccee9b562b94ba3372ddfaed335cda" prot="public" virt="non-virtual"><scope>llvm::internal::NfaTranscriber</scope><name>getTransitionInfo</name></member>
+      <member refid="classllvm_1_1internal_1_1_nfa_transcriber_1a484bbf196c155e8c405612770a006657" prot="private" virt="non-virtual"><scope>llvm::internal::NfaTranscriber</scope><name>Heads</name></member>
+      <member refid="classllvm_1_1internal_1_1_nfa_transcriber_1a4718c51d3a54de28c0e89b0b158721b8" prot="private" virt="non-virtual"><scope>llvm::internal::NfaTranscriber</scope><name>makePathSegment</name></member>
+      <member refid="classllvm_1_1internal_1_1_nfa_transcriber_1a2155035192d28d93e1ffe01da1cd0dc9" prot="public" virt="non-virtual"><scope>llvm::internal::NfaTranscriber</scope><name>NfaTranscriber</name></member>
+      <member refid="classllvm_1_1internal_1_1_nfa_transcriber_1a16685509bf38f04a77d7e22f1355afc1" prot="private" virt="non-virtual"><scope>llvm::internal::NfaTranscriber</scope><name>Paths</name></member>
+      <member refid="classllvm_1_1internal_1_1_nfa_transcriber_1accf58263d4f716a4c46278f360647a49" prot="public" virt="non-virtual"><scope>llvm::internal::NfaTranscriber</scope><name>reset</name></member>
+      <member refid="classllvm_1_1internal_1_1_nfa_transcriber_1a4075c9fd9821c3d073523cac1ac6ca6a" prot="private" virt="non-virtual"><scope>llvm::internal::NfaTranscriber</scope><name>transition</name></member>
+      <member refid="classllvm_1_1internal_1_1_nfa_transcriber_1ac4c21ecdcd8d6aa8735d3dc78c4d7a9e" prot="public" virt="non-virtual"><scope>llvm::internal::NfaTranscriber</scope><name>transition</name></member>
+      <member refid="classllvm_1_1internal_1_1_nfa_transcriber_1ae910acd0f2641531f00efb92be8b01cc" prot="private" virt="non-virtual"><scope>llvm::internal::NfaTranscriber</scope><name>TransitionInfo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

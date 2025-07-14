@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1_legacy_legalize_actions" kind="namespace" language="C++">
+    <compoundname>llvm::LegacyLegalizeActions</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078" prot="public" static="no" strong="no">
+        <type>std::uint8_t</type>
+        <name>LegacyLegalizeAction</name>
+        <qualifiedname>llvm::LegacyLegalizeActions::LegacyLegalizeAction</qualifiedname>
+        <enumvalue id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078a2d949fba71eeb09f438bde429c97f73b" prot="public">
+          <name>Legal</name>
+          <briefdescription>
+<para>The operation is expected to be selectable directly by the target, and no transformation is necessary. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078a5449e96e0fbabdf17da10f550e73fef7" prot="public">
+          <name>NarrowScalar</name>
+          <briefdescription>
+<para>The operation should be synthesized from multiple instructions acting on a narrower scalar base-type. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>For example a 64-bit add might be implemented in terms of 32-bit add-with-carry. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078af024bf463bed5cbd23fd03a1499b4b48" prot="public">
+          <name>WidenScalar</name>
+          <briefdescription>
+<para>The operation should be implemented in terms of a wider scalar base-type. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>For example a &lt;2 x s8&gt; add could be implemented as a &lt;2 x s32&gt; add (ignoring the high bits). </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078a4f494c23358a431c763a6dc593381c78" prot="public">
+          <name>FewerElements</name>
+          <briefdescription>
+<para>The (vector) operation should be implemented by splitting it into sub-vectors where the operation is legal. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>For example a &lt;8 x s64&gt; add might be implemented as 4 separate &lt;2 x s64&gt; adds. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078a2c6b35e9cd746d28ac9625e5f1694539" prot="public">
+          <name>MoreElements</name>
+          <briefdescription>
+<para>The (vector) operation should be implemented by widening the input vector and ignoring the lanes added by doing so. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>For example &lt;2 x i8&gt; is rarely legal, but you might perform an &lt;8 x i8&gt; and then only look at the first two results. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078a031174d0f974cf1041a9cadb84f0dcbf" prot="public">
+          <name>Bitcast</name>
+          <briefdescription>
+<para>Perform the operation on a different, but equivalently sized type. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078a70d6bbaf9c336f6503bed0cee8421b29" prot="public">
+          <name>Lower</name>
+          <briefdescription>
+<para>The operation itself must be expressed in terms of simpler actions on this target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>E.g. a SREM replaced by an SDIV and subtraction. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078af57e86597132ffdc2f10aa179c8d522b" prot="public">
+          <name>Libcall</name>
+          <briefdescription>
+<para>The operation should be implemented as a call to some kind of runtime support library. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>For example this usually happens on machines that don&apos;t support floating-point operations natively. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078a77dcc0b01e20bc9215e0ce22d81aca98" prot="public">
+          <name>Custom</name>
+          <briefdescription>
+<para>The target wants to do something special with this combination of operand and type. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>A callback will be issued when it is needed. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078a5118e62994caf312467b5e5539a9e39b" prot="public">
+          <name>Unsupported</name>
+          <briefdescription>
+<para>This operation is completely unsupported on the target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>A programming error has occurred. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_legacy_legalize_actions_1ad25716c86372dafbf624b34891685078aa2a0de09ad7131649f5caf2ca1093396" prot="public">
+          <name>NotFound</name>
+          <briefdescription>
+<para>Sentinel value for when no action was found in the specified table. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/LegacyLegalizerInfo.h" line="28" column="1" bodyfile="include/llvm/CodeGen/GlobalISel/LegacyLegalizerInfo.h" bodystart="28" bodyend="76"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/CodeGen/GlobalISel/LegacyLegalizerInfo.h" line="27" column="1"/>
+  </compounddef>
+</doxygen>

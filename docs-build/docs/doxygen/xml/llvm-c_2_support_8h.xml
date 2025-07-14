@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="llvm-c_2_support_8h" kind="file" language="C++">
+    <compoundname>Support.h</compoundname>
+    <includes refid="llvm-c_2_data_types_8h" local="yes">llvm-c/DataTypes.h</includes>
+    <includes refid="_extern_c_8h" local="yes">llvm-c/ExternC.h</includes>
+    <includes refid="_types_8h" local="yes">llvm-c/Types.h</includes>
+    <includedby refid="_command_line_8cpp" local="yes">lib/Support/CommandLine.cpp</includedby>
+    <includedby refid="_dynamic_library_8cpp" local="yes">lib/Support/DynamicLibrary.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm-c/ExternC.h</label>
+        <link refid="_extern_c_8h"/>
+      </node>
+      <node id="1">
+        <label>include/llvm-c/Support.h</label>
+        <link refid="llvm-c_2_support_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm-c/Types.h</label>
+        <link refid="_types_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>inttypes.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>sys/types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm-c/Support.h</label>
+        <link refid="llvm-c_2_support_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Support/CommandLine.cpp</label>
+        <link refid="_command_line_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Support/DynamicLibrary.cpp</label>
+        <link refid="_dynamic_library_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <member refid="group___l_l_v_m_c_core_1ga6fc1331c1a6d2cc6f0fda94f4a4636f9" kind="function"><name>LLVMLoadLibraryPermanently</name></member>
+      <member refid="group___l_l_v_m_c_core_1ga81494b4c1a36f4eb0aae2c1225ede0e4" kind="function"><name>LLVMParseCommandLineOptions</name></member>
+      <member refid="group___l_l_v_m_c_core_1ga9361c91b1806a646e7c019ee82f927f2" kind="function"><name>LLVMSearchForAddressOfSymbol</name></member>
+      <member refid="group___l_l_v_m_c_core_1ga8706a6e4aa81193f97cf40c1dd8c0d3a" kind="function"><name>LLVMAddSymbol</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*===--<sp/>llvm-c/Support.h<sp/>-<sp/>Support<sp/>C<sp/>Interface<sp/>--------------------*-<sp/>C<sp/>-*-===*\</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">|*<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">|*<sp/>Exceptions.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">|*<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">|*<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">|*===----------------------------------------------------------------------===*|</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">|*<sp/>This<sp/>file<sp/>defines<sp/>the<sp/>C<sp/>interface<sp/>to<sp/>the<sp/>LLVM<sp/>support<sp/>library.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">|*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*|</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">\*===----------------------------------------------------------------------===*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_C_SUPPORT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_C_SUPPORT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="llvm-c_2_data_types_8h" kindref="compound">llvm-c/DataTypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_extern_c_8h" kindref="compound">llvm-c/ExternC.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_types_8h" kindref="compound">llvm-c/Types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="_extern_c_8h_1a4789aaabaa5bf3b7a549171b47cc4d4a" kindref="member">LLVM_C_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="23"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>@addtogroup<sp/>LLVMCCore</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>@{</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="29"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>permanently<sp/>loads<sp/>the<sp/>dynamic<sp/>library<sp/>at<sp/>the<sp/>given<sp/>path.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>It<sp/>is<sp/>safe<sp/>to<sp/>call<sp/>this<sp/>function<sp/>multiple<sp/>times<sp/>for<sp/>the<sp/>same<sp/>library.</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@see<sp/>sys::DynamicLibrary::LoadLibraryPermanently()</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="group___l_l_v_m_c_support_types_1ga209de0bceb13179a973c6a45211617bd" kindref="member">LLVMBool</ref><sp/><ref refid="group___l_l_v_m_c_core_1ga6fc1331c1a6d2cc6f0fda94f4a4636f9" kindref="member">LLVMLoadLibraryPermanently</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>Filename);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="37"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>parses<sp/>the<sp/>given<sp/>arguments<sp/>using<sp/>the<sp/>LLVM<sp/>command<sp/>line<sp/>parser.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>Note<sp/>that<sp/>the<sp/>only<sp/>stable<sp/>thing<sp/>about<sp/>this<sp/>function<sp/>is<sp/>its<sp/>signature;<sp/>you</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>cannot<sp/>rely<sp/>on<sp/>any<sp/>particular<sp/>set<sp/>of<sp/>command<sp/>line<sp/>arguments<sp/>being<sp/>interpreted</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>the<sp/>same<sp/>way<sp/>across<sp/>LLVM<sp/>versions.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>@see<sp/>llvm::cl::ParseCommandLineOptions()</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___l_l_v_m_c_core_1ga81494b4c1a36f4eb0aae2c1225ede0e4" kindref="member">LLVMParseCommandLineOptions</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*argv,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*Overview);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>will<sp/>search<sp/>through<sp/>all<sp/>previously<sp/>loaded<sp/>dynamic</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>libraries<sp/>for<sp/>the<sp/>symbol<sp/>\p<sp/>symbolName.<sp/>If<sp/>it<sp/>is<sp/>found,<sp/>the<sp/>address<sp/>of</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>that<sp/>symbol<sp/>is<sp/>returned.<sp/>If<sp/>not,<sp/>null<sp/>is<sp/>returned.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>@see<sp/>sys::DynamicLibrary::SearchForAddressOfSymbol()</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="group___l_l_v_m_c_core_1ga9361c91b1806a646e7c019ee82f927f2" kindref="member">LLVMSearchForAddressOfSymbol</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*symbolName);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="57"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>This<sp/>functions<sp/>permanently<sp/>adds<sp/>the<sp/>symbol<sp/>\p<sp/>symbolName<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>value<sp/>\p<sp/>symbolValue.<sp/><sp/>These<sp/>symbols<sp/>are<sp/>searched<sp/>before<sp/>any</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>libraries.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>@see<sp/>sys::DynamicLibrary::AddSymbol()</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___l_l_v_m_c_core_1ga8706a6e4aa81193f97cf40c1dd8c0d3a" kindref="member">LLVMAddSymbol</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*symbolName,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*symbolValue);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="66"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>@}</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><ref refid="_extern_c_8h_1ae016a3733553fe3990c8dfcec10d9d3a" kindref="member">LLVM_C_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm-c/Support.h"/>
+  </compounddef>
+</doxygen>

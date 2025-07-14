@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1sampleprof_1_1_default_function_pruning_strategy" kind="class" language="C++" prot="public">
+    <compoundname>llvm::sampleprof::DefaultFunctionPruningStrategy</compoundname>
+    <basecompoundref refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy" prot="public" virt="non-virtual">llvm::sampleprof::FunctionPruningStrategy</basecompoundref>
+    <includes refid="_sample_prof_writer_8h" local="yes">llvm/ProfileData/SampleProfWriter.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1sampleprof_1_1_default_function_pruning_strategy_1a764465285e52f0e65df8c30cd6ad64a0" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespacellvm_1_1sampleprof_1a8418041ee57fb1966c79fb7d54643d90" kindref="member">NameFunctionSamples</ref> &gt;</type>
+        <definition>std::vector&lt;NameFunctionSamples&gt; llvm::sampleprof::DefaultFunctionPruningStrategy::SortedFunctions</definition>
+        <argsstring></argsstring>
+        <name>SortedFunctions</name>
+        <qualifiedname>llvm::sampleprof::DefaultFunctionPruningStrategy::SortedFunctions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/SampleProfWriter.h" line="69" column="15" bodyfile="include/llvm/ProfileData/SampleProfWriter.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1sampleprof_1_1_default_function_pruning_strategy_1a064d283609c9be796770a8a411b0ddb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DefaultFunctionPruningStrategy::DefaultFunctionPruningStrategy</definition>
+        <argsstring>(SampleProfileMap &amp;ProfileMap, size_t OutputSizeLimit)</argsstring>
+        <name>DefaultFunctionPruningStrategy</name>
+        <qualifiedname>llvm::sampleprof::DefaultFunctionPruningStrategy::DefaultFunctionPruningStrategy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1sampleprof_1_1_sample_profile_map" kindref="compound">SampleProfileMap</ref> &amp;</type>
+          <declname>ProfileMap</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>OutputSizeLimit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/SampleProfWriter.h" line="72" column="3" bodyfile="lib/ProfileData/SampleProfWriter.cpp" bodystart="70" bodyend="74"/>
+        <references refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy_1a6be976c54f94894b624c258569f67bcb" compoundref="_sample_prof_writer_8h" startline="52" endline="53">llvm::sampleprof::FunctionPruningStrategy::FunctionPruningStrategy</references>
+        <references refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy_1ad3809dcbffabed1814b07e6add7bac2c" compoundref="_sample_prof_writer_8h" startline="45">llvm::sampleprof::FunctionPruningStrategy::OutputSizeLimit</references>
+        <references refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy_1a91a31cd495fea709940239ebcbb10a4c" compoundref="_sample_prof_writer_8h" startline="44">llvm::sampleprof::FunctionPruningStrategy::ProfileMap</references>
+        <references refid="namespacellvm_1_1sampleprof_1a11f675e2f1396d64eefeaf67cdce624e" compoundref="_sample_prof_8cpp" startline="202" endline="214">llvm::sampleprof::sortFuncProfiles</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1sampleprof_1_1_default_function_pruning_strategy_1a8abb143feff2f640ccc483ba91019c1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void DefaultFunctionPruningStrategy::Erase</definition>
+        <argsstring>(size_t CurrentOutputSize) override</argsstring>
+        <name>Erase</name>
+        <qualifiedname>llvm::sampleprof::DefaultFunctionPruningStrategy::Erase</qualifiedname>
+        <reimplements refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy_1a3bb7affe9c405afd71075e2e56513db4">Erase</reimplements>
+        <param>
+          <type>size_t</type>
+          <declname>CurrentOutputSize</declname>
+        </param>
+        <briefdescription>
+<para>In this default implementation, functions with fewest samples are dropped first. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Since the exact size of the output cannot be easily calculated due to compression, we use a heuristic to remove as many functions as necessary but not too many, aiming to minimize the number of write iterations. Empirically, functions with larger total sample count contain linearly more sample entries, meaning it takes linearly more space to write them. The cumulative length is therefore quadratic if all functions are sorted by total sample count. TODO: Find better heuristic. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ProfileData/SampleProfWriter.h" line="85" column="8" bodyfile="lib/ProfileData/SampleProfWriter.cpp" bodystart="76" bodyend="88"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1a6a9f043784cf87001c84980afa76da82">D</references>
+        <references refid="namespacellvm_1a02981de53fb6ffd384d39addc4d25f37" compoundref="_s_t_l_extras_8h" startline="329" endline="332">llvm::drop_begin</references>
+        <references refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy_1ad3809dcbffabed1814b07e6add7bac2c" compoundref="_sample_prof_writer_8h" startline="45">llvm::sampleprof::FunctionPruningStrategy::OutputSizeLimit</references>
+        <references refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy_1a91a31cd495fea709940239ebcbb10a4c" compoundref="_sample_prof_writer_8h" startline="44">llvm::sampleprof::FunctionPruningStrategy::ProfileMap</references>
+        <references refid="xxhash_8cpp_1ae4e947c75dafebd71b8de03cd0dbf5d6" compoundref="xxhash_8cpp" startline="80" endline="85">round</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::sampleprof::DefaultFunctionPruningStrategy</label>
+        <link refid="classllvm_1_1sampleprof_1_1_default_function_pruning_strategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::sampleprof::FunctionPruningStrategy</label>
+        <link refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>MapT&lt; decltype(hash_value(KeyT())), ValueT, MapTArgs... &gt;</label>
+        <link refid="class_map_t"/>
+      </node>
+      <node id="1">
+        <label>llvm::sampleprof::DefaultFunctionPruningStrategy</label>
+        <link refid="classllvm_1_1sampleprof_1_1_default_function_pruning_strategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::sampleprof::FunctionPruningStrategy</label>
+        <link refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ProfileMap</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>OutputSizeLimit</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::sampleprof::HashKeyMap&lt; MapT, KeyT, ValueT, MapTArgs &gt;</label>
+        <link refid="classllvm_1_1sampleprof_1_1_hash_key_map"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::sampleprof::HashKeyMap&lt; std::unordered_map, SampleContext, FunctionSamples &gt;</label>
+        <link refid="classllvm_1_1sampleprof_1_1_hash_key_map"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="template-instance">
+          <edgelabel>&lt; std::unordered_map, SampleContext, FunctionSamples &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::sampleprof::SampleProfileMap</label>
+        <link refid="classllvm_1_1sampleprof_1_1_sample_profile_map"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>size_t</label>
+        <link refid="classsize__t"/>
+      </node>
+      <node id="5">
+        <label>std::unordered_map&lt; decltype(hash_value(SampleContext())), FunctionSamples, MapTArgs... &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/ProfileData/SampleProfWriter.h" line="68" column="1" bodyfile="include/llvm/ProfileData/SampleProfWriter.h" bodystart="68" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1sampleprof_1_1_default_function_pruning_strategy_1a064d283609c9be796770a8a411b0ddb1" prot="public" virt="non-virtual"><scope>llvm::sampleprof::DefaultFunctionPruningStrategy</scope><name>DefaultFunctionPruningStrategy</name></member>
+      <member refid="classllvm_1_1sampleprof_1_1_default_function_pruning_strategy_1a8abb143feff2f640ccc483ba91019c1b" prot="public" virt="virtual"><scope>llvm::sampleprof::DefaultFunctionPruningStrategy</scope><name>Erase</name></member>
+      <member refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy_1a6be976c54f94894b624c258569f67bcb" prot="public" virt="non-virtual"><scope>llvm::sampleprof::DefaultFunctionPruningStrategy</scope><name>FunctionPruningStrategy</name></member>
+      <member refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy_1ad3809dcbffabed1814b07e6add7bac2c" prot="protected" virt="non-virtual"><scope>llvm::sampleprof::DefaultFunctionPruningStrategy</scope><name>OutputSizeLimit</name></member>
+      <member refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy_1a91a31cd495fea709940239ebcbb10a4c" prot="protected" virt="non-virtual"><scope>llvm::sampleprof::DefaultFunctionPruningStrategy</scope><name>ProfileMap</name></member>
+      <member refid="classllvm_1_1sampleprof_1_1_default_function_pruning_strategy_1a764465285e52f0e65df8c30cd6ad64a0" prot="private" virt="non-virtual"><scope>llvm::sampleprof::DefaultFunctionPruningStrategy</scope><name>SortedFunctions</name></member>
+      <member refid="classllvm_1_1sampleprof_1_1_function_pruning_strategy_1a55afaa165cb1dd2484c5d81c28d89f9d" prot="public" virt="virtual"><scope>llvm::sampleprof::DefaultFunctionPruningStrategy</scope><name>~FunctionPruningStrategy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

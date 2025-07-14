@@ -1,0 +1,1754 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</compoundname>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1ebf815ab381e6f8a73223e1c9de76d0" prot="private" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</qualifiedname>
+        <enumvalue id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1ebf815ab381e6f8a73223e1c9de76d0a22d5e85e39fac901f3b97a4f0b83151d" prot="private">
+          <name>ShadowWidthBits</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1ebf815ab381e6f8a73223e1c9de76d0affd08317864d6ecab37057dd339b4f49" prot="private">
+          <name>ShadowWidthBytes</name>
+          <initializer>= ShadowWidthBits / 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="422" column="3" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="422" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="enum" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3119efb83d6a32654d1cfcc2c8f54e1e" prot="private" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</qualifiedname>
+        <enumvalue id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3119efb83d6a32654d1cfcc2c8f54e1eae72029d71011c8bf3bd0bfe393f9d18b" prot="private">
+          <name>OriginWidthBits</name>
+          <initializer>= 32</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3119efb83d6a32654d1cfcc2c8f54e1eaf812dc0aa9ec3457c94d0f3d7d4615a4" prot="private">
+          <name>OriginWidthBytes</name>
+          <initializer>= OriginWidthBits / 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="424" column="3" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="424" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="enum" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4ed6624b8550ac7c386a035b071bb146" prot="private" static="no" strong="no">
+        <type></type>
+        <name>WrapperKind</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::WrapperKind</qualifiedname>
+        <enumvalue id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4ed6624b8550ac7c386a035b071bb146aa9d9fe93b4ffc14d7bcd009a4e0c1c85" prot="private">
+          <name>WK_Warning</name>
+          <briefdescription>
+<para>This function is present in an uninstrumented form but we don&apos;t know how it should be handled. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Print a warning and call the function anyway. Don&apos;t label the return value. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4ed6624b8550ac7c386a035b071bb146ae21cdf092a1c9a3dd67444232c6458f3" prot="private">
+          <name>WK_Discard</name>
+          <briefdescription>
+<para>This function does not write to (user-accessible) memory, and its return value is unlabelled. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4ed6624b8550ac7c386a035b071bb146ac4b2abb51dd422c4447f0c9b55aefb3f" prot="private">
+          <name>WK_Functional</name>
+          <briefdescription>
+<para>This function does not write to (user-accessible) memory, and the label of its return value is the union of the label of its arguments. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4ed6624b8550ac7c386a035b071bb146a4eb81fef5a997ecfa8847ac9ec75d8b1" prot="private">
+          <name>WK_Custom</name>
+          <briefdescription>
+<para>Instead of calling the function, a custom wrapper __dfsw_F is called, where F is the name of the function. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This function may wrap the original function or provide its own implementation. WK_Custom uses an extra pointer argument to return the shadow. This allows the wrapped form of the function type to be expressed in C. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>How should calls to uninstrumented functions be handled? </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="427" column="3" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="427" bodyend="447"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1dec59d71404a456614a683add0bfe3d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct</type>
+        <definition>friend struct DFSanFunction</definition>
+        <argsstring></argsstring>
+        <name>DFSanFunction</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanFunction</qualifiedname>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_function" kindref="compound">DFSanFunction</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="419" column="17" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="419" bodyend="-1"/>
+        <references refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1dec59d71404a456614a683add0bfe3d" compoundref="_data_flow_sanitizer_8cpp" startline="419">DFSanFunction</references>
+        <referencedby refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1dec59d71404a456614a683add0bfe3d" compoundref="_data_flow_sanitizer_8cpp" startline="419">DFSanFunction</referencedby>
+        <referencedby refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ab4d94a2774e8420abe5e331d94334cec" compoundref="_data_flow_sanitizer_8cpp" startline="1496" endline="1787">runImpl</referencedby>
+      </memberdef>
+      <memberdef kind="friend" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aceb263f615e22f971042423416ae3fa6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class DFSanVisitor</definition>
+        <argsstring></argsstring>
+        <name>DFSanVisitor</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanVisitor</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_visitor" kindref="compound">DFSanVisitor</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="420" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="420" bodyend="-1"/>
+        <references refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aceb263f615e22f971042423416ae3fa6" compoundref="_data_flow_sanitizer_8cpp" startline="420">DFSanVisitor</references>
+        <referencedby refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aceb263f615e22f971042423416ae3fa6" compoundref="_data_flow_sanitizer_8cpp" startline="420">DFSanVisitor</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9be38cbf6d9d176d75f73ea76757a645" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> *</type>
+        <definition>Module* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::Mod</definition>
+        <argsstring></argsstring>
+        <name>Mod</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::Mod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="449" column="10" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="449" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3f71a42dbee90806a6127bf9563bd0e1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_l_l_v_m_context" kindref="compound">LLVMContext</ref> *</type>
+        <definition>LLVMContext* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::Ctx</definition>
+        <argsstring></argsstring>
+        <name>Ctx</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::Ctx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="450" column="15" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="450" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a78c53ddcb677ad201ecf6b06b836908f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+        <definition>Type* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::Int8Ptr</definition>
+        <argsstring></argsstring>
+        <name>Int8Ptr</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::Int8Ptr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="451" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="451" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ab3a632aa46c6335a7bd5eb393b168864" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_integer_type" kindref="compound">IntegerType</ref> *</type>
+        <definition>IntegerType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::OriginTy</definition>
+        <argsstring></argsstring>
+        <name>OriginTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::OriginTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="452" column="15" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="452" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a01a0cdb014344908472a12e96b792e13" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_pointer_type" kindref="compound">PointerType</ref> *</type>
+        <definition>PointerType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::OriginPtrTy</definition>
+        <argsstring></argsstring>
+        <name>OriginPtrTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::OriginPtrTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="453" column="15" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="453" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a105da1ec96c4003a297daa273ab0569f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_constant_int" kindref="compound">ConstantInt</ref> *</type>
+        <definition>ConstantInt* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ZeroOrigin</definition>
+        <argsstring></argsstring>
+        <name>ZeroOrigin</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ZeroOrigin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="454" column="15" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="454" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a7aa88e99846e00e913a27fa6b659cdd4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_integer_type" kindref="compound">IntegerType</ref> *</type>
+        <definition>IntegerType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::PrimitiveShadowTy</definition>
+        <argsstring></argsstring>
+        <name>PrimitiveShadowTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::PrimitiveShadowTy</qualifiedname>
+        <briefdescription>
+<para>The shadow type for all primitive types and vector types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="456" column="15" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="456" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a09d291e9558aae491c304b1e0e7e1254" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_pointer_type" kindref="compound">PointerType</ref> *</type>
+        <definition>PointerType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::PrimitiveShadowPtrTy</definition>
+        <argsstring></argsstring>
+        <name>PrimitiveShadowPtrTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::PrimitiveShadowPtrTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="457" column="15" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="457" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a60eb4e909b5e5017959ec7193ab9404a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_integer_type" kindref="compound">IntegerType</ref> *</type>
+        <definition>IntegerType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::IntptrTy</definition>
+        <argsstring></argsstring>
+        <name>IntptrTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::IntptrTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="458" column="15" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="458" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a0cd2cb89ed013a9214b666285511fa95" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_constant_int" kindref="compound">ConstantInt</ref> *</type>
+        <definition>ConstantInt* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ZeroPrimitiveShadow</definition>
+        <argsstring></argsstring>
+        <name>ZeroPrimitiveShadow</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ZeroPrimitiveShadow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="459" column="15" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="459" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a0e32165418c0b5618783ce02b9d7d063" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *</type>
+        <definition>Constant* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ArgTLS</definition>
+        <argsstring></argsstring>
+        <name>ArgTLS</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ArgTLS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="460" column="12" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="460" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aba8d3bd2a719922a7a033442fb8ff487" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_array_type" kindref="compound">ArrayType</ref> *</type>
+        <definition>ArrayType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ArgOriginTLSTy</definition>
+        <argsstring></argsstring>
+        <name>ArgOriginTLSTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ArgOriginTLSTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="461" column="13" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="461" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a307b327ef42107291ce985623e2686cf" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *</type>
+        <definition>Constant* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ArgOriginTLS</definition>
+        <argsstring></argsstring>
+        <name>ArgOriginTLS</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ArgOriginTLS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="462" column="12" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="462" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a0a3b9b0d136feafb7433109c81e19ad7" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *</type>
+        <definition>Constant* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::RetvalTLS</definition>
+        <argsstring></argsstring>
+        <name>RetvalTLS</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::RetvalTLS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="463" column="12" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="463" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a5982672197efeb4b9349e97c0d79320d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *</type>
+        <definition>Constant* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::RetvalOriginTLS</definition>
+        <argsstring></argsstring>
+        <name>RetvalOriginTLS</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::RetvalOriginTLS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="464" column="12" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="464" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3a5ddaf3411b59477743700af3e0c76d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanUnionLoadFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanUnionLoadFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanUnionLoadFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="465" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="465" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ab7051237998b6dd9201258965173c1da" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanLoadLabelAndOriginFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanLoadLabelAndOriginFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanLoadLabelAndOriginFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="466" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="466" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa565ee9bff9514cc5fd044def4f70fbe" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanUnimplementedFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanUnimplementedFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanUnimplementedFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="467" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="467" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a659633b195011e193817d980369c8940" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanWrapperExternWeakNullFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanWrapperExternWeakNullFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanWrapperExternWeakNullFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="468" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="468" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a41aa2900bc50a5b4fb0e97f98758dc74" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanSetLabelFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanSetLabelFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanSetLabelFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="469" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="469" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ac4526ab454491eae39c026c266ca4add" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanNonzeroLabelFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanNonzeroLabelFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanNonzeroLabelFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="470" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="470" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a8b951f4043ce57f020392c6759a5d83e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanVarargWrapperFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanVarargWrapperFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanVarargWrapperFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="471" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="471" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9fe5607a03d2db1d16a475640d43c16f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanConditionalCallbackFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanConditionalCallbackFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanConditionalCallbackFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="472" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a5f2cab8c3f573d7d1e5d5ef5e3332e3d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanConditionalCallbackOriginFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanConditionalCallbackOriginFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanConditionalCallbackOriginFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="473" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="473" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a65ab4aa062cee5f6be59f7b61e643f2c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanReachesFunctionCallbackFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanReachesFunctionCallbackFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanReachesFunctionCallbackFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="474" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="474" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ac1b202c1b37761bccb6e39dae6d00736" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanReachesFunctionCallbackOriginFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanReachesFunctionCallbackOriginFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanReachesFunctionCallbackOriginFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="475" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="475" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1726082357b084bb5032353097f6bf30" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanCmpCallbackFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanCmpCallbackFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanCmpCallbackFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="476" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="476" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa920d2ee0c3aa8e10b8f5996b26a1d03" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanLoadStoreCallbackFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanLoadStoreCallbackFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanLoadStoreCallbackFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="477" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="477" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a54a6563a8515ed806490c315d6d965ca" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemTransferCallbackFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanMemTransferCallbackFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemTransferCallbackFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="478" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="478" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a460c87abe71c22056f01ae0440c04f97" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanChainOriginFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanChainOriginFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanChainOriginFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="479" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="479" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a40b5a0050ac85c5e8e891b11673a22fb" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanChainOriginIfTaintedFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanChainOriginIfTaintedFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanChainOriginIfTaintedFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="480" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="480" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a563daf57b3b28e378910c63eb604fbd1" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemOriginTransferFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanMemOriginTransferFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemOriginTransferFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="481" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="481" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ae370a86944bc7138beb8c02218848254" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemShadowOriginTransferFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanMemShadowOriginTransferFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemShadowOriginTransferFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="482" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="482" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a7aae8f1fee6f80ecbf9c1f9a752c1052" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemShadowOriginConditionalExchangeFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanMemShadowOriginConditionalExchangeFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemShadowOriginConditionalExchangeFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="483" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="483" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a2a7318379e35a762b57c7df397f4d8d9" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+        <definition>FunctionType* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMaybeStoreOriginFnTy</definition>
+        <argsstring></argsstring>
+        <name>DFSanMaybeStoreOriginFnTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMaybeStoreOriginFnTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="484" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="484" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1add9687cb5553f9b049808c0be2dfd215" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanUnionLoadFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanUnionLoadFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanUnionLoadFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="485" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="485" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1af427203f922e9feb29f8baba261f5835" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanLoadLabelAndOriginFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanLoadLabelAndOriginFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanLoadLabelAndOriginFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="486" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="486" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a13d07eeaa0039c9c510a4171e545e0e2" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanUnimplementedFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanUnimplementedFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanUnimplementedFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="487" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="487" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ae9c0e6782c1547d8db81542a9097a496" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanWrapperExternWeakNullFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanWrapperExternWeakNullFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanWrapperExternWeakNullFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="488" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="488" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ae067f1a6b6d0df05d7ad3ab56e12eb2b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanSetLabelFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanSetLabelFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanSetLabelFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="489" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="489" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1df6bb2bf43ae5a6bb4f11acd7f622c9" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanNonzeroLabelFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanNonzeroLabelFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanNonzeroLabelFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="490" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="490" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1af79b16cfbc76d1900051a86a437ac94b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanVarargWrapperFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanVarargWrapperFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanVarargWrapperFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="491" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="491" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3df7553b4a56b49f1f6e7dfb0c44853d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanLoadCallbackFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanLoadCallbackFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanLoadCallbackFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="492" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="492" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa813fd587185ad9aaa4bba6e21cd16f5" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanStoreCallbackFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanStoreCallbackFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanStoreCallbackFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="493" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="493" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa2d54bf2c3f0e632486c44369765c77a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemTransferCallbackFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanMemTransferCallbackFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemTransferCallbackFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="494" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="494" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a7a2ebdb16c25e4bb8812c71dea9893d9" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanConditionalCallbackFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanConditionalCallbackFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanConditionalCallbackFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="495" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="495" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a6e89e5aab591dcb37bf8920f89403039" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanConditionalCallbackOriginFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanConditionalCallbackOriginFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanConditionalCallbackOriginFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="496" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="496" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a61602215158e8f62fb2e0be06deb4cd9" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanReachesFunctionCallbackFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanReachesFunctionCallbackFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanReachesFunctionCallbackFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="497" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="497" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ac8752a046bc4d1104da886f6b2bcdda0" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanReachesFunctionCallbackOriginFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanReachesFunctionCallbackOriginFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanReachesFunctionCallbackOriginFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="498" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="498" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a431b97f6ec0e0f164d70c70e8e3a9ec8" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanCmpCallbackFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanCmpCallbackFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanCmpCallbackFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="499" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="499" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a14e2c43ceba9fed9eeb2c0043c58e8b5" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanChainOriginFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanChainOriginFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanChainOriginFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="500" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="500" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3d9b427678985573d4aaf4c1592b8266" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanChainOriginIfTaintedFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanChainOriginIfTaintedFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanChainOriginIfTaintedFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="501" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="501" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4534554a4e54c960fe3a9ccf5c034c63" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemOriginTransferFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanMemOriginTransferFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemOriginTransferFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="502" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="502" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a2395ca0c401d0a34c9ef0d8ce5d28673" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemShadowOriginTransferFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanMemShadowOriginTransferFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemShadowOriginTransferFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="503" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="503" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1abbde488bb6401e2bb87b4eff2c1e13a2" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemShadowOriginConditionalExchangeFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanMemShadowOriginConditionalExchangeFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMemShadowOriginConditionalExchangeFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="504" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="504" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4dbfc38bf97c263aa58716c9905e18bd" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_function_callee" kindref="compound">FunctionCallee</ref></type>
+        <definition>FunctionCallee anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMaybeStoreOriginFn</definition>
+        <argsstring></argsstring>
+        <name>DFSanMaybeStoreOriginFn</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanMaybeStoreOriginFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="505" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="505" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a84894464ef513590a0f7d014bcf22c29" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, 16 &gt;</type>
+        <definition>SmallPtrSet&lt;Value *, 16&gt; anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanRuntimeFunctions</definition>
+        <argsstring></argsstring>
+        <name>DFSanRuntimeFunctions</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DFSanRuntimeFunctions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="506" column="15" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="506" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ae6ea0dce190e0d9b3820f56d94884435" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_m_d_node" kindref="compound">MDNode</ref> *</type>
+        <definition>MDNode* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ColdCallWeights</definition>
+        <argsstring></argsstring>
+        <name>ColdCallWeights</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ColdCallWeights</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="507" column="10" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="507" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a6d939c6a77939f9c3eeed4c000893397" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_m_d_node" kindref="compound">MDNode</ref> *</type>
+        <definition>MDNode* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::OriginStoreWeights</definition>
+        <argsstring></argsstring>
+        <name>OriginStoreWeights</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::OriginStoreWeights</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="508" column="10" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="508" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a13b1ec79d8281c95610a252e42df32db" prot="private" static="no" mutable="no">
+        <type><ref refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_a_b_i_list" kindref="compound">DFSanABIList</ref></type>
+        <definition>DFSanABIList anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ABIList</definition>
+        <argsstring></argsstring>
+        <name>ABIList</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ABIList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="509" column="16" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="509" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4690109abbb15632ff41d1979d05541a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> * &gt;</type>
+        <definition>DenseMap&lt;Value *, Function *&gt; anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::UnwrappedFnMap</definition>
+        <argsstring></argsstring>
+        <name>UnwrappedFnMap</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::UnwrappedFnMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="510" column="12" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="510" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a6edb169b4ba85db9039f7728195272c6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_attribute_mask" kindref="compound">AttributeMask</ref></type>
+        <definition>AttributeMask anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ReadOnlyNoneAttrs</definition>
+        <argsstring></argsstring>
+        <name>ReadOnlyNoneAttrs</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::ReadOnlyNoneAttrs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="511" column="17" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="511" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a823393766361afefde5b59f58d7d8968" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_set" kindref="compound">StringSet</ref></type>
+        <definition>StringSet anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::CombineTaintLookupTableNames</definition>
+        <argsstring></argsstring>
+        <name>CombineTaintLookupTableNames</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::CombineTaintLookupTableNames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="512" column="4" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="512" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ab879196c418458ea2ce935152bfda1e1" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_memory_map_params" kindref="compound">MemoryMapParams</ref> *</type>
+        <definition>const MemoryMapParams* anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::MapParams</definition>
+        <argsstring></argsstring>
+        <name>MapParams</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::MapParams</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1sys_1_1_memory" kindref="compound">Memory</ref> map parameters used in calculation mapping application addresses to shadow addresses and origin addresses. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="516" column="25" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="516" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a7fb08b62f22af10df04fd460b5cb4494" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>const uint64_t anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::NumOfElementsInArgOrgTLS</definition>
+        <argsstring></argsstring>
+        <name>NumOfElementsInArgOrgTLS</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::NumOfElementsInArgOrgTLS</qualifiedname>
+        <initializer>= <ref refid="_data_flow_sanitizer_8cpp_1ad30c696cca6f4b772507385a14bbfdfe" kindref="member">ArgTLSSize</ref> / OriginWidthBytes</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="572" column="18" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="572" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aaf6731a1898359749cdedf238ac1e894" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * DataFlowSanitizer::getShadowOffset</definition>
+        <argsstring>(Value *Addr, IRBuilder&lt;&gt; &amp;IRB)</argsstring>
+        <name>getShadowOffset</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::getShadowOffset</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Addr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_i_r_builder" kindref="compound">IRBuilder</ref>&lt;&gt; &amp;</type>
+          <declname>IRB</declname>
+        </param>
+        <briefdescription>
+<para>Compute the integer shadow offset that corresponds to a given application address. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Offset = (Addr &amp; ~AndMask) ^ XorMask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="518" column="9" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1900" bodyend="1913"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1abcb011db9998768c26a2290896a9bd5c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * DataFlowSanitizer::getShadowAddress</definition>
+        <argsstring>(Value *Addr, BasicBlock::iterator Pos)</argsstring>
+        <name>getShadowAddress</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::getShadowAddress</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Addr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>Pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="519" column="9" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1954" bodyend="1959"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aced4af9c5c975627a7af594c0fa20c46" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * DataFlowSanitizer::getShadowAddress</definition>
+        <argsstring>(Value *Addr, BasicBlock::iterator Pos, Value *ShadowOffset)</argsstring>
+        <name>getShadowAddress</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::getShadowAddress</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Addr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>Pos</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>ShadowOffset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="520" column="9" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1947" bodyend="1952"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a0d2f7f1ea8bed18220b87f1df9d6aaea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt;</type>
+        <definition>std::pair&lt; Value *, Value * &gt; DataFlowSanitizer::getShadowOriginAddress</definition>
+        <argsstring>(Value *Addr, Align InstAlignment, BasicBlock::iterator Pos)</argsstring>
+        <name>getShadowOriginAddress</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::getShadowOriginAddress</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>Addr</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_align" kindref="compound">Align</ref></type>
+          <declname>InstAlignment</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>Pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="522" column="13" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1916" bodyend="1945"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1abf94e45972cd254a2a3c2357628a84a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DataFlowSanitizer::isInstrumented</definition>
+        <argsstring>(const Function *F)</argsstring>
+        <name>isInstrumented</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::isInstrumented</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="525" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1236" bodyend="1238"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a56af0944bb63f10741c1ebb3925a44cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DataFlowSanitizer::isInstrumented</definition>
+        <argsstring>(const GlobalAlias *GA)</argsstring>
+        <name>isInstrumented</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::isInstrumented</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_global_alias" kindref="compound">GlobalAlias</ref> *</type>
+          <declname>GA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="526" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1240" bodyend="1242"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a732af76e7162e9bb2d3031b88448d0ec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DataFlowSanitizer::isForceZeroLabels</definition>
+        <argsstring>(const Function *F)</argsstring>
+        <name>isForceZeroLabels</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::isForceZeroLabels</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="527" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1244" bodyend="1246"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3d88b1fc86674d83660da0270c178162" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_transformed_function" kindref="compound">TransformedFunction</ref></type>
+        <definition>TransformedFunction DataFlowSanitizer::getCustomFunctionType</definition>
+        <argsstring>(FunctionType *T)</argsstring>
+        <name>getCustomFunctionType</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::getCustomFunctionType</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+          <declname>T</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="528" column="23" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="881" bodyend="914"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a55593fe2cb0ef59e919d4a80b4b5ab9c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>WrapperKind</type>
+        <definition>DataFlowSanitizer::WrapperKind DataFlowSanitizer::getWrapperKind</definition>
+        <argsstring>(Function *F)</argsstring>
+        <name>getWrapperKind</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::getWrapperKind</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="529" column="15" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1248" bodyend="1257"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9093a83183ca97ed3ee2eca49b2b5590" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DataFlowSanitizer::addGlobalNameSuffix</definition>
+        <argsstring>(GlobalValue *GV)</argsstring>
+        <name>addGlobalNameSuffix</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::addGlobalNameSuffix</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> *</type>
+          <declname>GV</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="530" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1259" bodyend="1281"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1217c19ba21e7f38e61aea20e7d99384" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DataFlowSanitizer::buildExternWeakCheckIfNeeded</definition>
+        <argsstring>(IRBuilder&lt;&gt; &amp;IRB, Function *F)</argsstring>
+        <name>buildExternWeakCheckIfNeeded</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::buildExternWeakCheckIfNeeded</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_i_r_builder" kindref="compound">IRBuilder</ref>&lt;&gt; &amp;</type>
+          <declname>IRB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="531" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1283" bodyend="1298"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a46874a8a72ff18a48442d92d3d0d411a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+        <definition>Function * DataFlowSanitizer::buildWrapperFunction</definition>
+        <argsstring>(Function *F, StringRef NewFName, GlobalValue::LinkageTypes NewFLink, FunctionType *NewFT)</argsstring>
+        <name>buildWrapperFunction</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::buildWrapperFunction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>NewFName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_global_value_1aedfa75f0c85c4aa85b257f066fbea57c" kindref="member">GlobalValue::LinkageTypes</ref></type>
+          <declname>NewFLink</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_function_type" kindref="compound">FunctionType</ref> *</type>
+          <declname>NewFT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="532" column="12" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1301" bodyend="1329"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9fed08bc4bd40a9e4a3eeafe8ad3a454" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DataFlowSanitizer::initializeCallbackFunctions</definition>
+        <argsstring>(Module &amp;M)</argsstring>
+        <name>initializeCallbackFunctions</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::initializeCallbackFunctions</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="535" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1446" bodyend="1494"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a05b2a1c1e427b673588435715eeb593c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DataFlowSanitizer::initializeRuntimeFunctions</definition>
+        <argsstring>(Module &amp;M)</argsstring>
+        <name>initializeRuntimeFunctions</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::initializeRuntimeFunctions</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="536" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1332" bodyend="1443"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ae8f178cde96fc04cffd36a6d1f1953ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DataFlowSanitizer::initializeModule</definition>
+        <argsstring>(Module &amp;M)</argsstring>
+        <name>initializeModule</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::initializeModule</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="537" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1129" bodyend="1234"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aac3591ead82d5fc91e01cdf41c10b811" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * DataFlowSanitizer::loadNextOrigin</definition>
+        <argsstring>(BasicBlock::iterator Pos, Align OriginAlign, Value **OriginAddr)</argsstring>
+        <name>loadNextOrigin</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::loadNextOrigin</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">BasicBlock::iterator</ref></type>
+          <declname>Pos</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_align" kindref="compound">Align</ref></type>
+          <declname>OriginAlign</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> **</type>
+          <declname>OriginAddr</declname>
+        </param>
+        <briefdescription>
+<para>Advances <computeroutput>OriginAddr</computeroutput> to point to the next 32-bit origin and then loads from it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the origin&apos;s loaded value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="541" column="9" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="2138" bodyend="2145"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa0991b5578a63e4be6906c33c707df2f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DataFlowSanitizer::hasLoadSizeForFastPath</definition>
+        <argsstring>(uint64_t Size)</argsstring>
+        <name>hasLoadSizeForFastPath</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::hasLoadSizeForFastPath</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Size</declname>
+        </param>
+        <briefdescription>
+<para>Returns whether the given load byte size is amenable to inlined optimization patterns. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="546" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="927" bodyend="930"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa5a308220a3406dda0fb6941b8371182" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DataFlowSanitizer::shouldTrackOrigins</definition>
+        <argsstring>()</argsstring>
+        <name>shouldTrackOrigins</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::shouldTrackOrigins</qualifiedname>
+        <briefdescription>
+<para>Returns whether the pass tracks origins. Supports only TLS ABI mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="549" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="932" bodyend="935"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9b3b464b378246a9357a508953aa4b5c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *</type>
+        <definition>Constant * DataFlowSanitizer::getZeroShadow</definition>
+        <argsstring>(Type *OrigTy)</argsstring>
+        <name>getZeroShadow</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::getZeroShadow</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>OrigTy</declname>
+        </param>
+        <briefdescription>
+<para>Returns a zero constant with the shadow type of OrigTy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>getZeroShadow({T1,T2,...}) = {getZeroShadow(T1),getZeroShadow(T2,...} getZeroShadow([n x T]) = [n x getZeroShadow(T)] getZeroShadow(other type) = i16(0) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="556" column="12" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="937" bodyend="942"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9e237c595da05006442e9aa0d617639b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *</type>
+        <definition>Constant * DataFlowSanitizer::getZeroShadow</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>getZeroShadow</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::getZeroShadow</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Returns a zero constant with the shadow type of V&apos;s type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="558" column="12" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="944" bodyend="946"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ac4521f978d4e97584adef4f0109e04e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DataFlowSanitizer::isZeroShadow</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>isZeroShadow</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::isZeroShadow</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Checks if V is a zero shadow. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="561" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="916" bodyend="925"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a43cfb1acb3e88dfdd1333b628c63fdaf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+        <definition>Type * DataFlowSanitizer::getShadowTy</definition>
+        <argsstring>(Type *OrigTy)</argsstring>
+        <name>getShadowTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::getShadowTy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>OrigTy</declname>
+        </param>
+        <briefdescription>
+<para>Returns the shadow type of OrigTy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>getShadowTy({T1,T2,...}) = {getShadowTy(T1),getShadowTy(T2),...} getShadowTy([n x T]) = [n x getShadowTy(T)] getShadowTy(other type) = i16 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="568" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1106" bodyend="1123"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a14a2759cdc3ad78f6bfe33963403c596" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+        <definition>Type * DataFlowSanitizer::getShadowTy</definition>
+        <argsstring>(Value *V)</argsstring>
+        <name>getShadowTy</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::getShadowTy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+<para>Returns the shadow type of V&apos;s type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="570" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1125" bodyend="1127"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a991cf3988b07a606932e1d69f8f8507f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DataFlowSanitizer::DataFlowSanitizer</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;ABIListFiles)</argsstring>
+        <name>DataFlowSanitizer</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::DataFlowSanitizer</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; std::string &gt; &amp;</type>
+          <declname>ABIListFiles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="575" column="3" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="869" bodyend="879"/>
+        <references refid="namespacellvm_1a39d3d23a084c4544ee5903203db10e8a" compoundref="_s_t_l_extras_8h" startline="2115" endline="2117">llvm::append_range</references>
+        <references refid="_data_flow_sanitizer_8cpp_1a512552844843860182e5376df0ff2e15">ClABIListFiles</references>
+        <references refid="_data_flow_sanitizer_8cpp_1a38e9edcb526a3647ecb73a1eabab237b">ClCombineTaintLookupTables</references>
+        <references refid="classllvm_1_1_special_case_list_1a6c0343ae2b29d3a9882c0cfc4bee8c03" compoundref="_special_case_list_8cpp" startline="99" endline="105">llvm::SpecialCaseList::createOrDie</references>
+        <references refid="namespacellvm_1_1vfs_1a9878c6a5a53d24e17c7c1002be31364c" compoundref="_virtual_file_system_8cpp" startline="399" endline="402">llvm::vfs::getRealFileSystem</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ab4d94a2774e8420abe5e331d94334cec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool DataFlowSanitizer::runImpl</definition>
+        <argsstring>(Module &amp;M, llvm::function_ref&lt; TargetLibraryInfo &amp;(Function &amp;)&gt; GetTLI)</argsstring>
+        <name>runImpl</name>
+        <qualifiedname>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer::runImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">llvm::function_ref</ref>&lt; <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> &amp;(<ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;)&gt;</type>
+          <declname>GetTLI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="577" column="8" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="1496" bodyend="1787"/>
+        <references refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_function_1ac04b6d4e5d3715d33fee0cf6c80a15c8" compoundref="_data_flow_sanitizer_8cpp" startline="1067" endline="1104">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanFunction::addReachesFunctionCallbacksIfEnabled</references>
+        <references refid="_data_flow_sanitizer_8cpp_1ad30c696cca6f4b772507385a14bbfdfe" compoundref="_data_flow_sanitizer_8cpp" startline="129">ArgTLSSize</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_basic_block_1a0ed5f3ab3c2e4196ee0cffffa080c062" compoundref="_i_r_2_basic_block_8h" startline="461" endline="468">llvm::BasicBlock::begin</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2373">Changed</references>
+        <references refid="_data_flow_sanitizer_8cpp_1a60271da6df28421978d5ab731d16173c">ClDebugNonzeroLabels</references>
+        <references refid="_data_flow_sanitizer_8cpp_1a7338d768a449232c93e9ab354031a800">ClIgnorePersonalityRoutine</references>
+        <references refid="_data_flow_sanitizer_8cpp_1a5780a333f75f22ac7d0c24e0a8e29b3a">ClReachesFunctionCallbacks</references>
+        <references refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_function_1a4b65c40648346b8d99dd58a2d3d318e9" compoundref="_data_flow_sanitizer_8cpp" startline="1031" endline="1047">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanFunction::collapseToPrimitiveShadow</references>
+        <references refid="namespacellvm_1a845e08be4b0320d66901a66b0c0e9509" compoundref="_instr_prof_8h" startline="139">llvm::Count</references>
+        <references refid="classllvm_1_1detail_1_1_dense_set_impl_1afe504aa31a6a354cec13f5b32d0b1d9d" compoundref="_dense_set_8h" startline="95" endline="95">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::count</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a1f475b0df44ebd7169e720fa1bf9169e" compoundref="_small_ptr_set_8h" startline="452" endline="454">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1ab086c5b9f9563eda0cdd703f454e041e" compoundref="_i_r_builder_8h" startline="2449" endline="2458">llvm::IRBuilderBase::CreateCall</references>
+        <references refid="classllvm_1_1_i_r_builder_base_1a6ef1729b04a4fbd6c6f27787cdd0e813" compoundref="_i_r_builder_8h" startline="2274" endline="2276">llvm::IRBuilderBase::CreateICmpNE</references>
+        <references refid="namespacellvm_1ad6e19a09aeed4c56617c284e099c81de" compoundref="_depth_first_iterator_8h" startline="233" endline="235">llvm::depth_first</references>
+        <references refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_function_1ae5891c006deae56c728ecb8f22aec419" compoundref="_data_flow_sanitizer_8cpp" startline="582">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanFunction::DFS</references>
+        <references refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1dec59d71404a456614a683add0bfe3d" compoundref="_data_flow_sanitizer_8cpp" startline="419">DFSanFunction</references>
+        <references refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_visitor_1a403f79ea06f5abde47b80bd865d9a020" compoundref="_data_flow_sanitizer_8cpp" startline="789" endline="789">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanVisitor::DFSanVisitor</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="namespacellvm_1a60a348350395aef11d68f58111bcf499" compoundref="_s_t_l_extras_8h" startline="2107" endline="2109">llvm::erase</references>
+        <references refid="classllvm_1_1_global_alias_1a09b07d472515f1d307c0e8229f6856fb" compoundref="_globals_8cpp" startline="587" endline="587">llvm::GlobalAlias::eraseFromParent</references>
+        <references refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_function_1a95173e429ac64ad7584ff95a36d39b98" compoundref="_data_flow_sanitizer_8cpp" startline="583">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanFunction::F</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_basic_block_1a63cfb2a0dae69153fd961eb335949caa" compoundref="_i_r_2_basic_block_8h" startline="484" endline="484">llvm::BasicBlock::front</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="classllvm_1_1_array_type_1a309fed0882f9d27038ff2df2afed7a00">llvm::ArrayType::get</references>
+        <references refid="classllvm_1_1_global_alias_1a311a097af4f0f77da22ac7acddc496f5" compoundref="_globals_8cpp" startline="595" endline="598">llvm::GlobalAlias::getAliaseeObject</references>
+        <references refid="classllvm_1_1_function_1a169f0c26ef46161741fdd120a806f853" compoundref="_i_r_2_function_8h" startline="809" endline="809">llvm::Function::getEntryBlock</references>
+        <references refid="classllvm_1_1_type_1a05186fa23e4d11b9855a9599ba87a4b7" compoundref="_sandbox_i_r_2_type_8cpp" startline="288" endline="288">llvm::Type::getInt64Ty</references>
+        <references refid="classllvm_1_1_global_value_1a3547d58a060ee2e4a29cbea85bef91af" compoundref="_global_value_8h" startline="547" endline="547">llvm::GlobalValue::getLinkage</references>
+        <references refid="classllvm_1_1ilist__node__with__parent_1a62ee7ece4986606d41363bc1f70d5ab2" compoundref="ilist__node_8h" startline="353" endline="359">llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;::getNextNode</references>
+        <references refid="classllvm_1_1_function_type_1a104d6154321899b53e40455e71d8e83a" compoundref="_derived_types_8h" startline="144" endline="144">llvm::FunctionType::getNumParams</references>
+        <references refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_function_1a9e596bf4044aed2cf004290fe49a1a03" compoundref="_data_flow_sanitizer_8cpp" startline="1808" endline="1831">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanFunction::getOrigin</references>
+        <references refid="classllvm_1_1_function_type_1ad65790aa94dd4678a1d339d8304e1965" compoundref="_derived_types_8h" startline="126" endline="126">llvm::FunctionType::getReturnType</references>
+        <references refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_function_1a7b7b17b8c343bd803b7381e95331701c" compoundref="_data_flow_sanitizer_8cpp" startline="1872" endline="1889">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanFunction::getShadow</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_global_value_1a05c6b3b9372b56d130e005db4837da62a92e26a4a1218d351f5a91e7385a3a320" compoundref="_global_value_8h" startline="200">llvm::GlobalValue::InitialExecTLSModel</references>
+        <references refid="classllvm_1_1_small_ptr_set_impl_1a9d834ae3da8c62c2b668dada51335eb0" compoundref="_small_ptr_set_8h" startline="384" endline="387">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</references>
+        <references refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" compoundref="_casting_8h" startline="548" endline="550">llvm::isa</references>
+        <references refid="classllvm_1_1_instruction_1a7653277511df1034148a37520a585bb5" compoundref="_i_r_2_instruction_8h" startline="313" endline="313">llvm::Instruction::isTerminator</references>
+        <references refid="classllvm_1_1_function_type_1aa9d770048c7ab9e08222a50b7bc1be1c" compoundref="_derived_types_8h" startline="125" endline="125">llvm::FunctionType::isVarArg</references>
+        <references refid="classllvm_1_1_type_1ae8eaa0b4eeac52a2b2282cb1bfd981ae" compoundref="_i_r_2_type_8h" startline="139" endline="139">llvm::Type::isVoidTy</references>
+        <references refid="namespaceanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1ab27c518b9b08626cf7d724c26cb0856b" compoundref="_data_flow_sanitizer_8cpp" startline="847" endline="865">anonymous_namespace{DataFlowSanitizer.cpp}::LibAtomicFunction</references>
+        <references refid="classllvm_1_1_global_value_1aedfa75f0c85c4aa85b257f066fbea57caf2b592edf18170e7aff4e8f3bae3360c" compoundref="_global_value_8h" startline="55">llvm::GlobalValue::LinkOnceODRLinkage</references>
+        <references refid="namespacellvm_1a3d2cdc4a0db233678e7141c9d6ea3419" compoundref="_s_t_l_extras_8h" startline="657" endline="662">llvm::make_early_inc_range</references>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="namespacellvm_1ab13c360340346d082b959b8cd79f2c1a" compoundref="_instr_prof_8h" startline="141">llvm::Next</references>
+        <references refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_function_1a76b93b5c0d047eba65daf2d3afcf31b9" compoundref="_data_flow_sanitizer_8cpp" startline="603">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanFunction::NonZeroChecks</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_function_1aefe636103263c2f6bb2f30b56cc339d0" compoundref="_data_flow_sanitizer_8cpp" startline="600">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanFunction::PHIFixups</references>
+        <references refid="classllvm_1_1_function_1a6875de46fcb2a74ca95bce67edd215a0" compoundref="_sandbox_i_r_2_function_8cpp" startline="697" endline="699">llvm::Function::removeFnAttrs</references>
+        <references refid="namespacellvm_1aec88b7682025edff7984c3b6c8da8ac9" compoundref="_transforms_2_utils_2_local_8cpp" startline="3263" endline="3298">llvm::removeUnreachableBlocks</references>
+        <references refid="classllvm_1_1_value_1a3ab5fc45117b450e8bb04e564cb6e5f2" compoundref="_sandbox_i_r_2_value_8cpp" startline="534" endline="536">llvm::Value::replaceAllUsesWith</references>
+        <references refid="_data_flow_sanitizer_8cpp_1ae113878cee8d330c91e109f381fe6d2b" compoundref="_data_flow_sanitizer_8cpp" startline="130">RetvalTLSSize</references>
+        <references refid="structanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_function_1ae661edba632a774dfa41217e00b02300" compoundref="_data_flow_sanitizer_8cpp" startline="602">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanFunction::SkipInsts</references>
+        <references refid="namespacellvm_1ad957413955739c91204c96e33e0cc933" compoundref="_basic_block_utils_8cpp" startline="1609" endline="1620">llvm::SplitBlockAndInsertIfThen</references>
+        <references refid="classllvm_1_1_value_1ae855357b6c5e6e7ed1869272708a3a84" compoundref="_sandbox_i_r_2_value_8cpp" startline="383" endline="442">llvm::Value::takeName</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" line="418" column="1" bodyfile="lib/Transforms/Instrumentation/DataFlowSanitizer.cpp" bodystart="418" bodyend="579"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a13b1ec79d8281c95610a252e42df32db" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>ABIList</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9093a83183ca97ed3ee2eca49b2b5590" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>addGlobalNameSuffix</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a307b327ef42107291ce985623e2686cf" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>ArgOriginTLS</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aba8d3bd2a719922a7a033442fb8ff487" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>ArgOriginTLSTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a0e32165418c0b5618783ce02b9d7d063" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>ArgTLS</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1217c19ba21e7f38e61aea20e7d99384" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>buildExternWeakCheckIfNeeded</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a46874a8a72ff18a48442d92d3d0d411a" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>buildWrapperFunction</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ae6ea0dce190e0d9b3820f56d94884435" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>ColdCallWeights</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a823393766361afefde5b59f58d7d8968" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>CombineTaintLookupTableNames</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3f71a42dbee90806a6127bf9563bd0e1" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>Ctx</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a991cf3988b07a606932e1d69f8f8507f" prot="public" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DataFlowSanitizer</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a14e2c43ceba9fed9eeb2c0043c58e8b5" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanChainOriginFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a460c87abe71c22056f01ae0440c04f97" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanChainOriginFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3d9b427678985573d4aaf4c1592b8266" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanChainOriginIfTaintedFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a40b5a0050ac85c5e8e891b11673a22fb" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanChainOriginIfTaintedFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a431b97f6ec0e0f164d70c70e8e3a9ec8" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanCmpCallbackFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1726082357b084bb5032353097f6bf30" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanCmpCallbackFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a7a2ebdb16c25e4bb8812c71dea9893d9" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanConditionalCallbackFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9fe5607a03d2db1d16a475640d43c16f" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanConditionalCallbackFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a6e89e5aab591dcb37bf8920f89403039" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanConditionalCallbackOriginFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a5f2cab8c3f573d7d1e5d5ef5e3332e3d" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanConditionalCallbackOriginFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1dec59d71404a456614a683add0bfe3d" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanFunction</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3df7553b4a56b49f1f6e7dfb0c44853d" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanLoadCallbackFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1af427203f922e9feb29f8baba261f5835" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanLoadLabelAndOriginFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ab7051237998b6dd9201258965173c1da" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanLoadLabelAndOriginFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa920d2ee0c3aa8e10b8f5996b26a1d03" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanLoadStoreCallbackFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4dbfc38bf97c263aa58716c9905e18bd" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanMaybeStoreOriginFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a2a7318379e35a762b57c7df397f4d8d9" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanMaybeStoreOriginFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4534554a4e54c960fe3a9ccf5c034c63" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanMemOriginTransferFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a563daf57b3b28e378910c63eb604fbd1" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanMemOriginTransferFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1abbde488bb6401e2bb87b4eff2c1e13a2" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanMemShadowOriginConditionalExchangeFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a7aae8f1fee6f80ecbf9c1f9a752c1052" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanMemShadowOriginConditionalExchangeFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a2395ca0c401d0a34c9ef0d8ce5d28673" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanMemShadowOriginTransferFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ae370a86944bc7138beb8c02218848254" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanMemShadowOriginTransferFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa2d54bf2c3f0e632486c44369765c77a" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanMemTransferCallbackFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a54a6563a8515ed806490c315d6d965ca" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanMemTransferCallbackFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1df6bb2bf43ae5a6bb4f11acd7f622c9" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanNonzeroLabelFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ac4526ab454491eae39c026c266ca4add" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanNonzeroLabelFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a61602215158e8f62fb2e0be06deb4cd9" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanReachesFunctionCallbackFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a65ab4aa062cee5f6be59f7b61e643f2c" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanReachesFunctionCallbackFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ac8752a046bc4d1104da886f6b2bcdda0" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanReachesFunctionCallbackOriginFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ac1b202c1b37761bccb6e39dae6d00736" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanReachesFunctionCallbackOriginFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a84894464ef513590a0f7d014bcf22c29" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanRuntimeFunctions</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ae067f1a6b6d0df05d7ad3ab56e12eb2b" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanSetLabelFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a41aa2900bc50a5b4fb0e97f98758dc74" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanSetLabelFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa813fd587185ad9aaa4bba6e21cd16f5" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanStoreCallbackFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a13d07eeaa0039c9c510a4171e545e0e2" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanUnimplementedFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa565ee9bff9514cc5fd044def4f70fbe" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanUnimplementedFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1add9687cb5553f9b049808c0be2dfd215" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanUnionLoadFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3a5ddaf3411b59477743700af3e0c76d" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanUnionLoadFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1af79b16cfbc76d1900051a86a437ac94b" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanVarargWrapperFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a8b951f4043ce57f020392c6759a5d83e" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanVarargWrapperFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aceb263f615e22f971042423416ae3fa6" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanVisitor</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ae9c0e6782c1547d8db81542a9097a496" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanWrapperExternWeakNullFn</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a659633b195011e193817d980369c8940" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>DFSanWrapperExternWeakNullFnTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3d88b1fc86674d83660da0270c178162" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>getCustomFunctionType</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1abcb011db9998768c26a2290896a9bd5c" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>getShadowAddress</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aced4af9c5c975627a7af594c0fa20c46" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>getShadowAddress</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aaf6731a1898359749cdedf238ac1e894" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>getShadowOffset</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a0d2f7f1ea8bed18220b87f1df9d6aaea" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>getShadowOriginAddress</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a43cfb1acb3e88dfdd1333b628c63fdaf" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>getShadowTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a14a2759cdc3ad78f6bfe33963403c596" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>getShadowTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a55593fe2cb0ef59e919d4a80b4b5ab9c" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>getWrapperKind</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9b3b464b378246a9357a508953aa4b5c" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>getZeroShadow</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9e237c595da05006442e9aa0d617639b" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>getZeroShadow</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa0991b5578a63e4be6906c33c707df2f" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>hasLoadSizeForFastPath</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9fed08bc4bd40a9e4a3eeafe8ad3a454" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>initializeCallbackFunctions</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ae8f178cde96fc04cffd36a6d1f1953ca" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>initializeModule</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a05b2a1c1e427b673588435715eeb593c" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>initializeRuntimeFunctions</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a78c53ddcb677ad201ecf6b06b836908f" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>Int8Ptr</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a60eb4e909b5e5017959ec7193ab9404a" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>IntptrTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a732af76e7162e9bb2d3031b88448d0ec" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>isForceZeroLabels</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1abf94e45972cd254a2a3c2357628a84a6" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>isInstrumented</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a56af0944bb63f10741c1ebb3925a44cd" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>isInstrumented</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ac4521f978d4e97584adef4f0109e04e5" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>isZeroShadow</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aac3591ead82d5fc91e01cdf41c10b811" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>loadNextOrigin</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ab879196c418458ea2ce935152bfda1e1" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>MapParams</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a9be38cbf6d9d176d75f73ea76757a645" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>Mod</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a7fb08b62f22af10df04fd460b5cb4494" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>NumOfElementsInArgOrgTLS</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a01a0cdb014344908472a12e96b792e13" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>OriginPtrTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a6d939c6a77939f9c3eeed4c000893397" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>OriginStoreWeights</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ab3a632aa46c6335a7bd5eb393b168864" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>OriginTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3119efb83d6a32654d1cfcc2c8f54e1eae72029d71011c8bf3bd0bfe393f9d18b" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>OriginWidthBits</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a3119efb83d6a32654d1cfcc2c8f54e1eaf812dc0aa9ec3457c94d0f3d7d4615a4" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>OriginWidthBytes</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a09d291e9558aae491c304b1e0e7e1254" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>PrimitiveShadowPtrTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a7aa88e99846e00e913a27fa6b659cdd4" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>PrimitiveShadowTy</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a6edb169b4ba85db9039f7728195272c6" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>ReadOnlyNoneAttrs</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a5982672197efeb4b9349e97c0d79320d" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>RetvalOriginTLS</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a0a3b9b0d136feafb7433109c81e19ad7" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>RetvalTLS</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1ab4d94a2774e8420abe5e331d94334cec" prot="public" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>runImpl</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1ebf815ab381e6f8a73223e1c9de76d0a22d5e85e39fac901f3b97a4f0b83151d" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>ShadowWidthBits</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a1ebf815ab381e6f8a73223e1c9de76d0affd08317864d6ecab37057dd339b4f49" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>ShadowWidthBytes</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1aa5a308220a3406dda0fb6941b8371182" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>shouldTrackOrigins</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4690109abbb15632ff41d1979d05541a" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>UnwrappedFnMap</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4ed6624b8550ac7c386a035b071bb146a4eb81fef5a997ecfa8847ac9ec75d8b1" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>WK_Custom</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4ed6624b8550ac7c386a035b071bb146ae21cdf092a1c9a3dd67444232c6458f3" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>WK_Discard</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4ed6624b8550ac7c386a035b071bb146ac4b2abb51dd422c4447f0c9b55aefb3f" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>WK_Functional</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4ed6624b8550ac7c386a035b071bb146aa9d9fe93b4ffc14d7bcd009a4e0c1c85" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>WK_Warning</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a4ed6624b8550ac7c386a035b071bb146" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>WrapperKind</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a105da1ec96c4003a297daa273ab0569f" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>ZeroOrigin</name></member>
+      <member refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_data_flow_sanitizer_1a0cd2cb89ed013a9214b666285511fa95" prot="private" virt="non-virtual"><scope>anonymous_namespace{DataFlowSanitizer.cpp}::DataFlowSanitizer</scope><name>ZeroPrimitiveShadow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

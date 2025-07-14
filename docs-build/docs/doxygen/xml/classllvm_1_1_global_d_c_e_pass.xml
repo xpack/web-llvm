@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_global_d_c_e_pass" kind="class" language="C++" prot="public">
+    <compoundname>llvm::GlobalDCEPass</compoundname>
+    <basecompoundref refid="structllvm_1_1_pass_info_mixin" prot="public" virt="non-virtual">llvm::PassInfoMixin&lt; GlobalDCEPass &gt;</basecompoundref>
+    <includes refid="_global_d_c_e_8h" local="yes">llvm/Transforms/IPO/GlobalDCE.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_global_d_c_e_pass_1ad1994dc1989fd9ff21d4f2425e2e5b4f" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GlobalDCEPass::InLTOPostLink</definition>
+        <argsstring></argsstring>
+        <name>InLTOPostLink</name>
+        <qualifiedname>llvm::GlobalDCEPass::InLTOPostLink</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="46" column="8" bodyfile="include/llvm/Transforms/IPO/GlobalDCE.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_global_d_c_e_pass_1a82143d35da5daa1cd085db5faa73f212" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> *, 32 &gt;</type>
+        <definition>SmallPtrSet&lt;GlobalValue*, 32&gt; llvm::GlobalDCEPass::AliveGlobals</definition>
+        <argsstring></argsstring>
+        <name>AliveGlobals</name>
+        <qualifiedname>llvm::GlobalDCEPass::AliveGlobals</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="48" column="15" bodyfile="include/llvm/Transforms/IPO/GlobalDCE.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_global_d_c_e_pass_1a201af7c1ba99e1f255af2565f108d3c4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> *, <ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> *, 4 &gt; &gt;</type>
+        <definition>DenseMap&lt;GlobalValue *, SmallPtrSet&lt;GlobalValue *, 4&gt; &gt; llvm::GlobalDCEPass::GVDependencies</definition>
+        <argsstring></argsstring>
+        <name>GVDependencies</name>
+        <qualifiedname>llvm::GlobalDCEPass::GVDependencies</qualifiedname>
+        <briefdescription>
+<para>Global -&gt; Global that uses this global. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="51" column="12" bodyfile="include/llvm/Transforms/IPO/GlobalDCE.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_global_d_c_e_pass_1ad5d52e5b5529f2df19016d4795ddde4e" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> *, <ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> *, 8 &gt; &gt;</type>
+        <definition>std::unordered_map&lt;Constant *, SmallPtrSet&lt;GlobalValue *, 8&gt; &gt; llvm::GlobalDCEPass::ConstantDependenciesCache</definition>
+        <argsstring></argsstring>
+        <name>ConstantDependenciesCache</name>
+        <qualifiedname>llvm::GlobalDCEPass::ConstantDependenciesCache</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_constant" kindref="compound">Constant</ref> -&gt; Globals that use this global cache. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="55" column="7" bodyfile="include/llvm/Transforms/IPO/GlobalDCE.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_global_d_c_e_pass_1a9c494e227e215b2d52da033f7139e25d" prot="private" static="no" mutable="no">
+        <type>std::unordered_multimap&lt; <ref refid="classllvm_1_1_comdat" kindref="compound">Comdat</ref> *, <ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> * &gt;</type>
+        <definition>std::unordered_multimap&lt;Comdat *, GlobalValue *&gt; llvm::GlobalDCEPass::ComdatMembers</definition>
+        <argsstring></argsstring>
+        <name>ComdatMembers</name>
+        <qualifiedname>llvm::GlobalDCEPass::ComdatMembers</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_comdat" kindref="compound">Comdat</ref> -&gt; Globals in that <ref refid="classllvm_1_1_comdat" kindref="compound">Comdat</ref> section. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="58" column="27" bodyfile="include/llvm/Transforms/IPO/GlobalDCE.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_global_d_c_e_pass_1a167a40492adf3f78d76e0b85ffbf3af7" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> *, <ref refid="classllvm_1_1_small_set" kindref="compound">SmallSet</ref>&lt; std::pair&lt; <ref refid="classllvm_1_1_global_variable" kindref="compound">GlobalVariable</ref> *, <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;, 4 &gt; &gt;</type>
+        <definition>DenseMap&lt;Metadata *, SmallSet&lt;std::pair&lt;GlobalVariable *, uint64_t&gt;, 4&gt; &gt; llvm::GlobalDCEPass::TypeIdMap</definition>
+        <argsstring></argsstring>
+        <name>TypeIdMap</name>
+        <qualifiedname>llvm::GlobalDCEPass::TypeIdMap</qualifiedname>
+        <briefdescription>
+<para>!type metadata -&gt; set of (vtable, offset) pairs </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="62" column="7" bodyfile="include/llvm/Transforms/IPO/GlobalDCE.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_global_d_c_e_pass_1aaa8300a0d579e8598e0f7098cbf26c62" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set" kindref="compound">SmallPtrSet</ref>&lt; <ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> *, 32 &gt;</type>
+        <definition>SmallPtrSet&lt;GlobalValue *, 32&gt; llvm::GlobalDCEPass::VFESafeVTables</definition>
+        <argsstring></argsstring>
+        <name>VFESafeVTables</name>
+        <qualifiedname>llvm::GlobalDCEPass::VFESafeVTables</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="66" column="15" bodyfile="include/llvm/Transforms/IPO/GlobalDCE.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_global_d_c_e_pass_1ad0b178be358872e3d9fc7330351d61ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::GlobalDCEPass::GlobalDCEPass</definition>
+        <argsstring>(bool InLTOPostLink=false)</argsstring>
+        <name>GlobalDCEPass</name>
+        <qualifiedname>llvm::GlobalDCEPass::GlobalDCEPass</qualifiedname>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>InLTOPostLink</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="38" column="3" bodyfile="include/llvm/Transforms/IPO/GlobalDCE.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_global_d_c_e_pass_1ae98558816f50b4a9f6f7244b2deadd53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_preserved_analyses" kindref="compound">PreservedAnalyses</ref></type>
+        <definition>PreservedAnalyses GlobalDCEPass::run</definition>
+        <argsstring>(Module &amp;M, ModuleAnalysisManager &amp;)</argsstring>
+        <name>run</name>
+        <qualifiedname>llvm::GlobalDCEPass::run</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1af9c9208365fd9ce11392b4d79485e259" kindref="member">ModuleAnalysisManager</ref> &amp;</type>
+          <defname>MAM</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="40" column="21" bodyfile="lib/Transforms/IPO/GlobalDCE.cpp" bodystart="249" bodyend="418"/>
+        <references refid="classllvm_1_1_preserved_analyses_1a1258a1ff55557c27684010ebd7283712" compoundref="llvm_2_i_r_2_analysis_8h" startline="117" endline="121">llvm::PreservedAnalyses::all</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2373">Changed</references>
+        <references refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" compoundref="_small_vector_8h" startline="81" endline="81">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</references>
+        <references refid="classllvm_1_1_global_value_1a7c733400ba8d113fd2976d4fea0db981" compoundref="_globals_8cpp" startline="91" endline="101">llvm::GlobalValue::eraseFromParent</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_constant_pointer_null_1a96f5c85e4022e369266541b2db3fda69" compoundref="_constants_8cpp" startline="1826" endline="1833">llvm::ConstantPointerNull::get</references>
+        <references refid="classllvm_1_1_global_value_1a43721e1e88567116e8fca545125d86bf" compoundref="_globals_8cpp" startline="199" endline="210">llvm::GlobalValue::getComdat</references>
+        <references refid="_global_d_c_e_8cpp_1a7510b70799a0e939f76ca33b6d05c925" compoundref="_global_d_c_e_8cpp" startline="44" endline="57">isEmptyFunction</references>
+        <references refid="namespacellvm_1a6b369f94d5ebc6e107a988f17b42b3eb" compoundref="_global_status_8cpp" startline="43" endline="62">llvm::isSafeToDestroyConstant</references>
+        <references refid="_pass_builder_bindings_8cpp_1a85bddafa659a93a7a67c9094648259be" compoundref="_pass_builder_bindings_8cpp" startline="63">MAM</references>
+        <references refid="classllvm_1_1_preserved_analyses_1a03797a73044a81cbc6a3409d6c72ee8f" compoundref="llvm_2_i_r_2_analysis_8h" startline="114" endline="114">llvm::PreservedAnalyses::none</references>
+        <references refid="namespacellvm_1a71b27c25d18516bdcb3f3a44ebf6185b" compoundref="_ctor_utils_8cpp" startline="110" endline="151">llvm::optimizeGlobalCtorsList</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a0c8ffe664a36e30d49c84d0aded2fe08" compoundref="_small_vector_8h" startline="673" endline="677">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val</references>
+        <references refid="classllvm_1_1_constant_1a960620248182018e566b095f06a605df" compoundref="_constants_8cpp" startline="739" endline="764">llvm::Constant::removeDeadConstantUsers</references>
+        <references refid="namespacellvm_1adb95b461a284d8670fc10d24d56cbf56" compoundref="_type_metadata_utils_8cpp" startline="255" endline="262">llvm::replaceRelativePointerUsersWithZero</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_global_d_c_e_pass_1a8826f287bdb4166b59a1f3f9644a9741" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalDCEPass::printPipeline</definition>
+        <argsstring>(raw_ostream &amp;OS, function_ref&lt; StringRef(StringRef)&gt; MapClassName2PassName)</argsstring>
+        <name>printPipeline</name>
+        <qualifiedname>llvm::GlobalDCEPass::printPipeline</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; <ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>)&gt;</type>
+          <declname>MapClassName2PassName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="42" column="8" bodyfile="lib/Transforms/IPO/GlobalDCE.cpp" bodystart="420" bodyend="426"/>
+        <references refid="classllvm_1_1_global_d_c_e_pass_1a8826f287bdb4166b59a1f3f9644a9741" compoundref="_global_d_c_e_8cpp" startline="420" endline="426">printPipeline</references>
+        <referencedby refid="classllvm_1_1_global_d_c_e_pass_1a8826f287bdb4166b59a1f3f9644a9741" compoundref="_global_d_c_e_8cpp" startline="420" endline="426">printPipeline</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_global_d_c_e_pass_1afb730e2b29d512e50fc1ed9095f920ec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalDCEPass::UpdateGVDependencies</definition>
+        <argsstring>(GlobalValue &amp;GV)</argsstring>
+        <name>UpdateGVDependencies</name>
+        <qualifiedname>llvm::GlobalDCEPass::UpdateGVDependencies</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> &amp;</type>
+          <declname>GV</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="68" column="8" bodyfile="lib/Transforms/IPO/GlobalDCE.cpp" bodystart="83" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_global_d_c_e_pass_1a9e6cda3bea3705699fcd36b98cd32748" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalDCEPass::MarkLive</definition>
+        <argsstring>(GlobalValue &amp;GV, SmallVectorImpl&lt; GlobalValue * &gt; *Updates=nullptr)</argsstring>
+        <name>MarkLive</name>
+        <qualifiedname>llvm::GlobalDCEPass::MarkLive</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> &amp;</type>
+          <declname>GV</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> * &gt; *</type>
+          <declname>Updates</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Mark Global value as Live. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="69" column="8" bodyfile="lib/Transforms/IPO/GlobalDCE.cpp" bodystart="103" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_global_d_c_e_pass_1a60514627816ec439cfbeb6ed5cce2147" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalDCEPass::AddVirtualFunctionDependencies</definition>
+        <argsstring>(Module &amp;M)</argsstring>
+        <name>AddVirtualFunctionDependencies</name>
+        <qualifiedname>llvm::GlobalDCEPass::AddVirtualFunctionDependencies</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="73" column="8" bodyfile="lib/Transforms/IPO/GlobalDCE.cpp" bodystart="222" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_global_d_c_e_pass_1ac8b42c76a2020856ece2ee6b1249d276" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalDCEPass::ScanVTables</definition>
+        <argsstring>(Module &amp;M)</argsstring>
+        <name>ScanVTables</name>
+        <qualifiedname>llvm::GlobalDCEPass::ScanVTables</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="74" column="8" bodyfile="lib/Transforms/IPO/GlobalDCE.cpp" bodystart="119" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_global_d_c_e_pass_1a2c475e09b477874dd8a2cc85957f2b0b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalDCEPass::ScanTypeCheckedLoadIntrinsics</definition>
+        <argsstring>(Module &amp;M)</argsstring>
+        <name>ScanTypeCheckedLoadIntrinsics</name>
+        <qualifiedname>llvm::GlobalDCEPass::ScanTypeCheckedLoadIntrinsics</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_module" kindref="compound">Module</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="75" column="8" bodyfile="lib/Transforms/IPO/GlobalDCE.cpp" bodystart="186" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_global_d_c_e_pass_1a009f6bd3248be29f4a77d37a7838c352" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalDCEPass::ScanVTableLoad</definition>
+        <argsstring>(Function *Caller, Metadata *TypeId, uint64_t CallOffset)</argsstring>
+        <name>ScanVTableLoad</name>
+        <qualifiedname>llvm::GlobalDCEPass::ScanVTableLoad</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+          <declname>Caller</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_metadata" kindref="compound">Metadata</ref> *</type>
+          <declname>TypeId</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>CallOffset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="76" column="8" bodyfile="lib/Transforms/IPO/GlobalDCE.cpp" bodystart="158" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_global_d_c_e_pass_1a2eb2fe6ff158cc3c28511dd67f87f93d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalDCEPass::ComputeDependencies</definition>
+        <argsstring>(Value *V, SmallPtrSetImpl&lt; GlobalValue * &gt; &amp;U)</argsstring>
+        <name>ComputeDependencies</name>
+        <qualifiedname>llvm::GlobalDCEPass::ComputeDependencies</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> * &gt; &amp;</type>
+          <declname>U</declname>
+          <defname>Deps</defname>
+        </param>
+        <briefdescription>
+<para>Compute the set of <ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> that depends from V. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The recursion stops as soon as a <ref refid="classllvm_1_1_global_value" kindref="compound">GlobalValue</ref> is met. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="78" column="8" bodyfile="lib/Transforms/IPO/GlobalDCE.cpp" bodystart="61" bodyend="81"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1_pass" kindref="compound">Pass</ref> to remove unused function declarations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::GlobalDCEPass</label>
+        <link refid="classllvm_1_1_global_d_c_e_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::PassInfoMixin&lt; DerivedT &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+      </node>
+      <node id="2">
+        <label>llvm::PassInfoMixin&lt; GlobalDCEPass &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; GlobalDCEPass &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>llvm::GlobalDCEPass</label>
+        <link refid="classllvm_1_1_global_d_c_e_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::PassInfoMixin&lt; DerivedT &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+      </node>
+      <node id="2">
+        <label>llvm::PassInfoMixin&lt; GlobalDCEPass &gt;</label>
+        <link refid="structllvm_1_1_pass_info_mixin"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; GlobalDCEPass &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Transforms/IPO/GlobalDCE.h" line="36" column="1" bodyfile="include/llvm/Transforms/IPO/GlobalDCE.h" bodystart="36" bodyend="79"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1a60514627816ec439cfbeb6ed5cce2147" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>AddVirtualFunctionDependencies</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1a82143d35da5daa1cd085db5faa73f212" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>AliveGlobals</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1a9c494e227e215b2d52da033f7139e25d" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>ComdatMembers</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1a2eb2fe6ff158cc3c28511dd67f87f93d" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>ComputeDependencies</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1ad5d52e5b5529f2df19016d4795ddde4e" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>ConstantDependenciesCache</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1ad0b178be358872e3d9fc7330351d61ce" prot="public" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>GlobalDCEPass</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1a201af7c1ba99e1f255af2565f108d3c4" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>GVDependencies</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1ad1994dc1989fd9ff21d4f2425e2e5b4f" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>InLTOPostLink</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1a9e6cda3bea3705699fcd36b98cd32748" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>MarkLive</name></member>
+      <member refid="structllvm_1_1_pass_info_mixin_1a630e2eac0694bcbcfed653c6a7f616e3" prot="public" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>name</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1a8826f287bdb4166b59a1f3f9644a9741" prot="public" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>printPipeline</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1ae98558816f50b4a9f6f7244b2deadd53" prot="public" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>run</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1a2c475e09b477874dd8a2cc85957f2b0b" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>ScanTypeCheckedLoadIntrinsics</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1a009f6bd3248be29f4a77d37a7838c352" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>ScanVTableLoad</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1ac8b42c76a2020856ece2ee6b1249d276" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>ScanVTables</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1a167a40492adf3f78d76e0b85ffbf3af7" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>TypeIdMap</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1afb730e2b29d512e50fc1ed9095f920ec" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>UpdateGVDependencies</name></member>
+      <member refid="classllvm_1_1_global_d_c_e_pass_1aaa8300a0d579e8598e0f7098cbf26c62" prot="private" virt="non-virtual"><scope>llvm::GlobalDCEPass</scope><name>VFESafeVTables</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

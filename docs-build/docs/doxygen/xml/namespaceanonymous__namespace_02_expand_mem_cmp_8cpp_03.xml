@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespaceanonymous__namespace_02_expand_mem_cmp_8cpp_03" kind="namespace" language="C++">
+    <compoundname>anonymous_namespace{ExpandMemCmp.cpp}</compoundname>
+    <innerclass refid="classanonymous__namespace_02_expand_mem_cmp_8cpp_03_1_1_expand_mem_cmp_legacy_pass" prot="public">anonymous_namespace{ExpandMemCmp.cpp}::ExpandMemCmpLegacyPass</innerclass>
+    <innerclass refid="classanonymous__namespace_02_expand_mem_cmp_8cpp_03_1_1_mem_cmp_expansion" prot="public">anonymous_namespace{ExpandMemCmp.cpp}::MemCmpExpansion</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_expand_mem_cmp_8cpp_03_1aa507b512719f5e8d2b31c99f5534541b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool anonymous_namespace{ExpandMemCmp.cpp}::expandMemCmp</definition>
+        <argsstring>(CallInst *CI, const TargetTransformInfo *TTI, const TargetLowering *TLI, const DataLayout *DL, ProfileSummaryInfo *PSI, BlockFrequencyInfo *BFI, DomTreeUpdater *DTU, const bool IsBCmp)</argsstring>
+        <name>expandMemCmp</name>
+        <qualifiedname>anonymous_namespace{ExpandMemCmp.cpp}::expandMemCmp</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_call_inst" kindref="compound">CallInst</ref> *</type>
+          <declname>CI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+          <declname>TTI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_lowering" kindref="compound">TargetLowering</ref> *</type>
+          <declname>TLI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> *</type>
+          <declname>DL</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+          <declname>PSI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_block_frequency_info" kindref="compound">BlockFrequencyInfo</ref> *</type>
+          <declname>BFI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dom_tree_updater" kindref="compound">DomTreeUpdater</ref> *</type>
+          <declname>DTU</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsBCmp</declname>
+        </param>
+        <briefdescription>
+<para>We want to transform: call = call signext i32 @memcmp(i8* %0, i8* %1, i64 15) To: loadbb: %0 = bitcast i32* buffer2 to i8* %1 = bitcast i32* buffer1 to i8* %2 = bitcast i8* %1 to i64* %3 = bitcast i8* %0 to i64* %4 = load i64, i64* %2 %5 = load i64, i64* %3 %6 = call i64 @llvm.bswap.i64(i64 %4) %7 = call i64 @llvm.bswap.i64(i64 %5) %8 = sub i64 %6, %7 %9 = icmp ne i64 %8, 0 br i1 %9, label res_block, label loadbb1 res_block: ; preds = loadbb2, loadbb1, loadbb phi.src1 = phi i64 [ %6, loadbb ], [ %22, loadbb1 ], [ %36, loadbb2 ] phi.src2 = phi i64 [ %7, loadbb ], [ %23, loadbb1 ], [ %37, loadbb2 ] %10 = icmp ult i64 phi.src1, phi.src2 %11 = select i1 %10, i32 -1, i32 1 br label endblock loadbb1: ; preds = loadbb %12 = bitcast i32* buffer2 to i8* %13 = bitcast i32* buffer1 to i8* %14 = bitcast i8* %13 to i32* %15 = bitcast i8* %12 to i32* %16 = getelementptr i32, i32* %14, i32 2 %17 = getelementptr i32, i32* %15, i32 2 %18 = load i32, i32* %16 %19 = load i32, i32* %17 %20 = call i32 @llvm.bswap.i32(i32 %18) %21 = call i32 @llvm.bswap.i32(i32 %19) %22 = zext i32 %20 to i64 %23 = zext i32 %21 to i64 %24 = sub i64 %22, %23 %25 = icmp ne i64 %24, 0 br i1 %25, label res_block, label loadbb2 loadbb2: ; preds = loadbb1 %26 = bitcast i32* buffer2 to i8* %27 = bitcast i32* buffer1 to i8* %28 = bitcast i8* %27 to i16* %29 = bitcast i8* %26 to i16* %30 = getelementptr i16, i16* %28, i16 6 %31 = getelementptr i16, i16* %29, i16 6 %32 = load i16, i16* %30 %33 = load i16, i16* %31 %34 = call i16 @llvm.bswap.i16(i16 %32) %35 = call i16 @llvm.bswap.i16(i16 %33) %36 = zext i16 %34 to i64 %37 = zext i16 %35 to i64 %38 = sub i64 %36, %37 %39 = icmp ne i64 %38, 0 br i1 %39, label res_block, label loadbb3 loadbb3: ; preds = loadbb2 %40 = bitcast i32* buffer2 to i8* %41 = bitcast i32* buffer1 to i8* %42 = getelementptr i8, i8* %41, i8 14 %43 = getelementptr i8, i8* %40, i8 14 %44 = load i8, i8* %42 %45 = load i8, i8* %43 %46 = zext i8 %44 to i32 %47 = zext i8 %45 to i32 %48 = sub i32 %46, %47 br label endblock endblock: ; preds = res_block, loadbb3 phi.res = phi i32 [ %48, loadbb3 ], [ %11, res_block ] ret i32 phi.res. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/ExpandMemCmp.cpp" line="830" column="13" bodyfile="lib/CodeGen/ExpandMemCmp.cpp" bodystart="830" bodyend="887"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="classllvm_1_1_instruction_1a601ee49a4c4e0babf29bd1cf09036570" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="94" endline="97">llvm::Instruction::eraseFromParent</references>
+        <references refid="_d_x_i_l_intrinsic_expansion_8cpp_1a085f53470d0661bff051248317d06cd6" compoundref="_d_x_i_l_intrinsic_expansion_8cpp" startline="630">Expansion</references>
+        <references refid="classllvm_1_1_call_base_1aabd76e6a8a23a5af1ce4d3c310d88bcd" compoundref="_instr_types_8h" startline="1286" endline="1289">llvm::CallBase::getArgOperand</references>
+        <references refid="classllvm_1_1_instruction_1a6a66ebb3aa12757479a3c88de77d78f8" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="72" endline="74">llvm::Instruction::getFunction</references>
+        <references refid="classllvm_1_1ilist__detail_1_1node__parent__access_1a7e19e7508415378ad9523e0339b23e22" compoundref="ilist__node_8h" startline="32" endline="34">llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;::getParent</references>
+        <references refid="classllvm_1_1_constant_int_1ac09a21c371a9c535cbc13e8f82503aec" compoundref="_constants_8h" startline="157" endline="157">llvm::ConstantInt::getZExtValue</references>
+        <references refid="classllvm_1_1_function_1a548cfb9440f36ba67fc5566b8e967fc6" compoundref="_i_r_2_function_8h" startline="704" endline="704">llvm::Function::hasMinSize</references>
+        <references refid="namespacellvm_1a1c4687f9c44e149d4893bd81b7ddce3b" compoundref="_value_tracking_8cpp" startline="273" endline="278">llvm::isOnlyUsedInZeroEqualityComparison</references>
+        <references refid="_expand_mem_cmp_8cpp_1a51790d9628455ee57b760bde7bd6fd8c">MaxLoadsPerMemcmp</references>
+        <references refid="_expand_mem_cmp_8cpp_1a1ad14dfca7a03c8e70aa21a325592025">MaxLoadsPerMemcmpOptSize</references>
+        <references refid="_expand_mem_cmp_8cpp_1a750c724c24f5a348d38e97c930193499">MemCmpEqZeroNumLoadsPerBlock</references>
+        <references refid="_l_v_options_8cpp_1ab4088b7a11f3cbc38ac16a6e9c72494e" compoundref="_l_v_options_8cpp" startline="25">Options</references>
+        <references refid="classllvm_1_1_value_1a3ab5fc45117b450e8bb04e564cb6e5f2" compoundref="_sandbox_i_r_2_value_8cpp" startline="534" endline="536">llvm::Value::replaceAllUsesWith</references>
+        <references refid="namespacellvm_1a3af72f14ea20f2c762c751d2d49e5ea3" compoundref="_machine_size_opts_8cpp" startline="27" endline="34">llvm::shouldOptimizeForSize</references>
+        <referencedby refid="namespaceanonymous__namespace_02_expand_mem_cmp_8cpp_03_1ab8309872ede007a47eebce4974ab341c" compoundref="_expand_mem_cmp_8cpp" startline="945" endline="962">runOnBlock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_expand_mem_cmp_8cpp_03_1ab8309872ede007a47eebce4974ab341c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ExpandMemCmp.cpp}::runOnBlock</definition>
+        <argsstring>(BasicBlock &amp;BB, const TargetLibraryInfo *TLI, const TargetTransformInfo *TTI, const TargetLowering *TL, const DataLayout &amp;DL, ProfileSummaryInfo *PSI, BlockFrequencyInfo *BFI, DomTreeUpdater *DTU)</argsstring>
+        <name>runOnBlock</name>
+        <qualifiedname>anonymous_namespace{ExpandMemCmp.cpp}::runOnBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> &amp;</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+          <declname>TLI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+          <declname>TTI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_lowering" kindref="compound">TargetLowering</ref> *</type>
+          <declname>TL</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+          <declname>PSI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_block_frequency_info" kindref="compound">BlockFrequencyInfo</ref> *</type>
+          <declname>BFI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dom_tree_updater" kindref="compound">DomTreeUpdater</ref> *</type>
+          <declname>DTU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/ExpandMemCmp.cpp" line="945" column="6" bodyfile="lib/CodeGen/ExpandMemCmp.cpp" bodystart="945" bodyend="962" declfile="lib/CodeGen/ExpandMemCmp.cpp" declline="890" declcolumn="13"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="namespaceanonymous__namespace_02_expand_mem_cmp_8cpp_03_1aa507b512719f5e8d2b31c99f5534541b" compoundref="_expand_mem_cmp_8cpp" startline="830" endline="887">expandMemCmp</references>
+        <references refid="classllvm_1_1_target_library_info_1a97cfbbed8869e3582142012a071a9052" compoundref="_target_library_info_8h" startline="345" endline="347">llvm::TargetLibraryInfo::getLibFunc</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="namespaceanonymous__namespace_02_expand_mem_cmp_8cpp_03_1a1ed6e9933878fa5790bdacff6d5a907b" compoundref="_expand_mem_cmp_8cpp" startline="964" endline="992">runImpl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceanonymous__namespace_02_expand_mem_cmp_8cpp_03_1a1ed6e9933878fa5790bdacff6d5a907b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_preserved_analyses" kindref="compound">PreservedAnalyses</ref></type>
+        <definition>PreservedAnalyses anonymous_namespace{ExpandMemCmp.cpp}::runImpl</definition>
+        <argsstring>(Function &amp;F, const TargetLibraryInfo *TLI, const TargetTransformInfo *TTI, const TargetLowering *TL, ProfileSummaryInfo *PSI, BlockFrequencyInfo *BFI, DominatorTree *DT)</argsstring>
+        <name>runImpl</name>
+        <qualifiedname>anonymous_namespace{ExpandMemCmp.cpp}::runImpl</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_function" kindref="compound">Function</ref> &amp;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_library_info" kindref="compound">TargetLibraryInfo</ref> *</type>
+          <declname>TLI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+          <declname>TTI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_lowering" kindref="compound">TargetLowering</ref> *</type>
+          <declname>TL</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+          <declname>PSI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_block_frequency_info" kindref="compound">BlockFrequencyInfo</ref> *</type>
+          <declname>BFI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dominator_tree" kindref="compound">DominatorTree</ref> *</type>
+          <declname>DT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/ExpandMemCmp.cpp" line="964" column="19" bodyfile="lib/CodeGen/ExpandMemCmp.cpp" bodystart="964" bodyend="992" declfile="lib/CodeGen/ExpandMemCmp.cpp" declline="895" declcolumn="26"/>
+        <references refid="classllvm_1_1_preserved_analyses_1a1258a1ff55557c27684010ebd7283712" compoundref="llvm_2_i_r_2_analysis_8h" startline="117" endline="121">llvm::PreservedAnalyses::all</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="classllvm_1_1_preserved_analyses_1ad966bea18aa62ffb9e040509adc7c99f" compoundref="llvm_2_i_r_2_analysis_8h" startline="131" endline="131">llvm::PreservedAnalyses::preserve</references>
+        <references refid="namespaceanonymous__namespace_02_expand_mem_cmp_8cpp_03_1ab8309872ede007a47eebce4974ab341c" compoundref="_expand_mem_cmp_8cpp" startline="945" endline="962">runOnBlock</references>
+        <references refid="namespacellvm_1a42108fe3c2695cb429e6fe312908fa0d" compoundref="_transforms_2_utils_2_local_8cpp" startline="737" endline="771">llvm::SimplifyInstructionsInBlock</references>
+        <referencedby refid="classanonymous__namespace_02_expand_mem_cmp_8cpp_03_1_1_expand_mem_cmp_legacy_pass_1a744c97bd2b03802d78ec941f5c7b9d16" compoundref="_expand_mem_cmp_8cpp" startline="909" endline="932">anonymous_namespace{ExpandMemCmp.cpp}::ExpandMemCmpLegacyPass::runOnFunction</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/ExpandMemCmp.cpp" line="63" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,524 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_constraint_system" kind="class" language="C++" prot="public">
+    <compoundname>llvm::ConstraintSystem</compoundname>
+    <includes refid="_constraint_system_8h" local="yes">llvm/Analysis/ConstraintSystem.h</includes>
+    <innerclass refid="structllvm_1_1_constraint_system_1_1_entry" prot="private">llvm::ConstraintSystem::Entry</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_constraint_system_1aaf49413c89aa144c38191eed3465ad84" prot="private" static="no" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::ConstraintSystem::NumVariables</definition>
+        <argsstring></argsstring>
+        <name>NumVariables</name>
+        <qualifiedname>llvm::ConstraintSystem::NumVariables</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="45" column="10" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_constraint_system_1a5a00f60f548f9a32044efcf00a161e8d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; Entry, 8 &gt;, 4 &gt;</type>
+        <definition>SmallVector&lt;SmallVector&lt;Entry, 8&gt;, 4&gt; llvm::ConstraintSystem::Constraints</definition>
+        <argsstring></argsstring>
+        <name>Constraints</name>
+        <qualifiedname>llvm::ConstraintSystem::Constraints</qualifiedname>
+        <briefdescription>
+<para>Current linear constraints in the system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>An entry of the form c0, c1, ... cn represents the following constraint: c0 &gt;= v0 * c1 + .... + v{n-1} * cn </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="50" column="15" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_constraint_system_1ad3a0855f4f605656e1878d79ebdb6ec3" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>DenseMap&lt;Value *, unsigned&gt; llvm::ConstraintSystem::Value2Index</definition>
+        <argsstring></argsstring>
+        <name>Value2Index</name>
+        <qualifiedname>llvm::ConstraintSystem::Value2Index</qualifiedname>
+        <briefdescription>
+<para>A map of variables (IR values) to their corresponding index in the constraint system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="54" column="12" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1accc280024930cd4b8df473a0bdaa2315" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classint64__t" kindref="compound">int64_t</ref></type>
+        <definition>static int64_t llvm::ConstraintSystem::getConstPart</definition>
+        <argsstring>(const Entry &amp;E)</argsstring>
+        <name>getConstPart</name>
+        <qualifiedname>llvm::ConstraintSystem::getConstPart</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> Entry &amp;</type>
+          <declname>E</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="31" column="18" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="31" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a6be5f8518113d2c5196966b526ccbd39" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classint64__t" kindref="compound">int64_t</ref></type>
+        <definition>static int64_t llvm::ConstraintSystem::getLastCoefficient</definition>
+        <argsstring>(ArrayRef&lt; Entry &gt; Row, uint16_t Id)</argsstring>
+        <name>getLastCoefficient</name>
+        <qualifiedname>llvm::ConstraintSystem::getLastCoefficient</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; Entry &gt;</type>
+          <declname>Row</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+          <declname>Id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="37" column="18" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="37" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a47a05668ebe0a7ae1d85c764acf7a980" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ConstraintSystem::eliminateUsingFM</definition>
+        <argsstring>()</argsstring>
+        <name>eliminateUsingFM</name>
+        <qualifiedname>llvm::ConstraintSystem::eliminateUsingFM</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="57" column="8" bodyfile="lib/Analysis/ConstraintSystem.cpp" bodystart="22" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1acdbd7aee2afb3c36899afa22197881ac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ConstraintSystem::mayHaveSolutionImpl</definition>
+        <argsstring>()</argsstring>
+        <name>mayHaveSolutionImpl</name>
+        <qualifiedname>llvm::ConstraintSystem::mayHaveSolutionImpl</qualifiedname>
+        <briefdescription>
+<para>Returns true if there may be a solution for the constraints in the system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="60" column="8" bodyfile="lib/Analysis/ConstraintSystem.cpp" bodystart="123" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a040263047fa3a3e3b4089f40d810a5e8" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::string &gt;</type>
+        <definition>SmallVector&lt; std::string &gt; ConstraintSystem::getVarNamesList</definition>
+        <argsstring>() const</argsstring>
+        <name>getVarNamesList</name>
+        <qualifiedname>llvm::ConstraintSystem::getVarNamesList</qualifiedname>
+        <briefdescription>
+<para>Get list of variable names from the Value2Index map. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="63" column="15" bodyfile="lib/Analysis/ConstraintSystem.cpp" bodystart="141" bodyend="154"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a2d1f5e355121a9562c50519f211c858c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ConstraintSystem::ConstraintSystem</definition>
+        <argsstring>()</argsstring>
+        <name>ConstraintSystem</name>
+        <qualifiedname>llvm::ConstraintSystem::ConstraintSystem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="66" column="3" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1aeb648e3658a39e3b9db30676cb6cb728" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ConstraintSystem::ConstraintSystem</definition>
+        <argsstring>(ArrayRef&lt; Value * &gt; FunctionArgs)</argsstring>
+        <name>ConstraintSystem</name>
+        <qualifiedname>llvm::ConstraintSystem::ConstraintSystem</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt;</type>
+          <declname>FunctionArgs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="67" column="3" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="67" bodyend="72"/>
+        <references refid="classllvm_1_1_array_ref_1a85ffb6531d4cda988ea81f18d4e56fb7" compoundref="_array_ref_8h" startline="168" endline="168">llvm::ArrayRef&lt; T &gt;::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a6d7819de29b64093ec154c4c5487d3e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::ConstraintSystem::ConstraintSystem</definition>
+        <argsstring>(const DenseMap&lt; Value *, unsigned &gt; &amp;Value2Index)</argsstring>
+        <name>ConstraintSystem</name>
+        <qualifiedname>llvm::ConstraintSystem::ConstraintSystem</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+          <declname>Value2Index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="73" column="3" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="73" bodyend="74"/>
+        <references refid="classllvm_1_1_constraint_system_1a5fd4ede35bf2fce287033e37c9b227fc" compoundref="_constraint_system_8h" startline="163" endline="163">size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a99319f2e8aa6e8cab000ff18e3eb2e2d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::ConstraintSystem::addVariableRow</definition>
+        <argsstring>(ArrayRef&lt; int64_t &gt; R)</argsstring>
+        <name>addVariableRow</name>
+        <qualifiedname>llvm::ConstraintSystem::addVariableRow</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref> &gt;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="76" column="8" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="76" bodyend="93"/>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="classllvm_1_1_small_vector_impl_1a396fcfee6914c76974b73c3d203da6a5" compoundref="_small_vector_8h" startline="937" endline="944">llvm::SmallVectorImpl&lt; T &gt;::emplace_back</references>
+        <references refid="namespacellvm_1a206e2134ddd2312c3488d0632d98f554" compoundref="_s_t_l_extras_8h" startline="2448" endline="2461">llvm::enumerate</references>
+        <referencedby refid="classllvm_1_1_constraint_system_1ae284e6b687fd189af53bfc795839dbfe" compoundref="_constraint_system_8h" startline="100" endline="108">addVariableRowFill</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a177e0a51c77de2d23a76dbf7f13e3d8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+        <definition>DenseMap&lt; Value *, unsigned &gt; &amp; llvm::ConstraintSystem::getValue2Index</definition>
+        <argsstring>()</argsstring>
+        <name>getValue2Index</name>
+        <qualifiedname>llvm::ConstraintSystem::getValue2Index</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="95" column="12" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1abc16ed85a7cd959bd9943e65cdb33df6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+        <definition>const DenseMap&lt; Value *, unsigned &gt; &amp; llvm::ConstraintSystem::getValue2Index</definition>
+        <argsstring>() const</argsstring>
+        <name>getValue2Index</name>
+        <qualifiedname>llvm::ConstraintSystem::getValue2Index</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="96" column="18" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1ae284e6b687fd189af53bfc795839dbfe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::ConstraintSystem::addVariableRowFill</definition>
+        <argsstring>(ArrayRef&lt; int64_t &gt; R)</argsstring>
+        <name>addVariableRowFill</name>
+        <qualifiedname>llvm::ConstraintSystem::addVariableRowFill</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref> &gt;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="100" column="8" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="100" bodyend="108"/>
+        <references refid="classllvm_1_1_constraint_system_1a99319f2e8aa6e8cab000ff18e3eb2e2d" compoundref="_constraint_system_8h" startline="76" endline="93">addVariableRow</references>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <referencedby refid="_constraint_elimination_8cpp_1a465a15dab7346a93354585da51dd2574" compoundref="_constraint_elimination_8cpp" startline="928" endline="933">dumpConstraint</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a3dcb59b98c46971585de2b9f963daadd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ConstraintSystem::mayHaveSolution</definition>
+        <argsstring>()</argsstring>
+        <name>mayHaveSolution</name>
+        <qualifiedname>llvm::ConstraintSystem::mayHaveSolution</qualifiedname>
+        <briefdescription>
+<para>Returns true if there may be a solution for the constraints in the system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="111" column="8" bodyfile="lib/Analysis/ConstraintSystem.cpp" bodystart="183" bodyend="189"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_constraint_system_1ae3c3559c5cf840283a4b2402fe8e699a" compoundref="_constraint_system_8cpp" startline="156" endline="181">dump</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a4d0933126663b0f02653245bc9a10df4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ConstraintSystem::isConditionImplied</definition>
+        <argsstring>(SmallVector&lt; int64_t, 8 &gt; R) const</argsstring>
+        <name>isConditionImplied</name>
+        <qualifiedname>llvm::ConstraintSystem::isConditionImplied</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref>, 8 &gt;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="146" column="8" bodyfile="lib/Analysis/ConstraintSystem.cpp" bodystart="191" bodyend="206"/>
+        <references refid="namespacellvm_1a0d10fe510ced2849a8074fe81e5d04ce" compoundref="_s_t_l_extras_8h" startline="1739" endline="1741">llvm::all_of</references>
+        <references refid="namespacellvm_1ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</references>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="classllvm_1_1_constraint_system_1a3abc97468a2007e79f9f06e2c63d8618" compoundref="_constraint_system_8h" startline="113" endline="120">negate</references>
+        <referencedby refid="classanonymous__namespace_02_constraint_elimination_8cpp_03_1_1_constraint_info_1abaa19788b067ffa50f5f61f67530f0f3" compoundref="_constraint_elimination_8cpp" startline="862" endline="867">anonymous_namespace{ConstraintElimination.cpp}::ConstraintInfo::doesHold</referencedby>
+        <referencedby refid="structanonymous__namespace_02_constraint_elimination_8cpp_03_1_1_constraint_ty_1a52b12a68f9a9a8ad3ba867a3205265e3" compoundref="_constraint_elimination_8cpp" startline="819" endline="860">anonymous_namespace{ConstraintElimination.cpp}::ConstraintTy::isImpliedBy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a9794109116e566f7a08c566064aec66e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref> &gt;</type>
+        <definition>SmallVector&lt; int64_t &gt; llvm::ConstraintSystem::getLastConstraint</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastConstraint</name>
+        <qualifiedname>llvm::ConstraintSystem::getLastConstraint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="148" column="15" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="148" bodyend="154"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a21f2f7c23dc242e4a8d8f3f80ff7ebe1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::ConstraintSystem::popLastConstraint</definition>
+        <argsstring>()</argsstring>
+        <name>popLastConstraint</name>
+        <qualifiedname>llvm::ConstraintSystem::popLastConstraint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="156" column="8" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="156" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1aa6bdcd92da3382da904f006eb5aeb33c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::ConstraintSystem::popLastNVariables</definition>
+        <argsstring>(unsigned N)</argsstring>
+        <name>popLastNVariables</name>
+        <qualifiedname>llvm::ConstraintSystem::popLastNVariables</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="157" column="8" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="157" bodyend="160"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a5fd4ede35bf2fce287033e37c9b227fc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::ConstraintSystem::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <qualifiedname>llvm::ConstraintSystem::size</qualifiedname>
+        <briefdescription>
+<para>Returns the number of rows in the constraint system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="163" column="12" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="163" bodyend="163"/>
+        <referencedby refid="classllvm_1_1_constraint_system_1a6d7819de29b64093ec154c4c5487d3e8" compoundref="_constraint_system_8h" startline="73" endline="74">ConstraintSystem</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1ae3c3559c5cf840283a4b2402fe8e699a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConstraintSystem::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <qualifiedname>llvm::ConstraintSystem::dump</qualifiedname>
+        <briefdescription>
+<para>Print the constraints in the system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="166" column="8" bodyfile="lib/Analysis/ConstraintSystem.cpp" bodystart="156" bodyend="181"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1aa1fd1719afe5b07ebe55f1d105c98916" compoundref="_string_extras_8h" startline="489" endline="492">llvm::join</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <referencedby refid="_constraint_elimination_8cpp_1a465a15dab7346a93354585da51dd2574" compoundref="_constraint_elimination_8cpp" startline="928" endline="933">dumpConstraint</referencedby>
+        <referencedby refid="classllvm_1_1_constraint_system_1a3dcb59b98c46971585de2b9f963daadd" compoundref="_constraint_system_8cpp" startline="183" endline="189">mayHaveSolution</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a3abc97468a2007e79f9f06e2c63d8618" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref>, 8 &gt;</type>
+        <definition>static SmallVector&lt; int64_t, 8 &gt; llvm::ConstraintSystem::negate</definition>
+        <argsstring>(SmallVector&lt; int64_t, 8 &gt; R)</argsstring>
+        <name>negate</name>
+        <qualifiedname>llvm::ConstraintSystem::negate</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref>, 8 &gt;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="113" column="22" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="113" bodyend="120"/>
+        <references refid="namespacellvm_1ad67c6622d517b525fc5d420330d8b3f2" compoundref="_math_extras_8h" startline="702" endline="723">llvm::AddOverflow</references>
+        <references refid="classllvm_1_1_constraint_system_1aaee87e0be7be4679dbd53c9c078ba558" compoundref="_constraint_system_8h" startline="126" endline="132">negateOrEqual</references>
+        <referencedby refid="classllvm_1_1_constraint_system_1a4d0933126663b0f02653245bc9a10df4" compoundref="_constraint_system_8cpp" startline="191" endline="206">isConditionImplied</referencedby>
+        <referencedby refid="structanonymous__namespace_02_constraint_elimination_8cpp_03_1_1_constraint_ty_1a52b12a68f9a9a8ad3ba867a3205265e3" compoundref="_constraint_elimination_8cpp" startline="819" endline="860">anonymous_namespace{ConstraintElimination.cpp}::ConstraintTy::isImpliedBy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1aaee87e0be7be4679dbd53c9c078ba558" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref>, 8 &gt;</type>
+        <definition>static SmallVector&lt; int64_t, 8 &gt; llvm::ConstraintSystem::negateOrEqual</definition>
+        <argsstring>(SmallVector&lt; int64_t, 8 &gt; R)</argsstring>
+        <name>negateOrEqual</name>
+        <qualifiedname>llvm::ConstraintSystem::negateOrEqual</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref>, 8 &gt;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+<para>Multiplies each coefficient in the given vector by -1. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Does not modify the original vector.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector of coefficients to be negated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="126" column="22" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="126" bodyend="132"/>
+        <references refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" compoundref="_calling_conv_8h" startline="34">llvm::CallingConv::C</references>
+        <references refid="namespacellvm_1a073e9e9c9d16980286268ddb7cf3e2d9" compoundref="_math_extras_8h" startline="754" endline="780">llvm::MulOverflow</references>
+        <referencedby refid="structanonymous__namespace_02_constraint_elimination_8cpp_03_1_1_constraint_ty_1a52b12a68f9a9a8ad3ba867a3205265e3" compoundref="_constraint_elimination_8cpp" startline="819" endline="860">anonymous_namespace{ConstraintElimination.cpp}::ConstraintTy::isImpliedBy</referencedby>
+        <referencedby refid="classllvm_1_1_constraint_system_1a3abc97468a2007e79f9f06e2c63d8618" compoundref="_constraint_system_8h" startline="113" endline="120">negate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_constraint_system_1a98447a3557d6098abda1172412db1bb4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref>, 8 &gt;</type>
+        <definition>static SmallVector&lt; int64_t, 8 &gt; llvm::ConstraintSystem::toStrictLessThan</definition>
+        <argsstring>(SmallVector&lt; int64_t, 8 &gt; R)</argsstring>
+        <name>toStrictLessThan</name>
+        <qualifiedname>llvm::ConstraintSystem::toStrictLessThan</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classint64__t" kindref="compound">int64_t</ref>, 8 &gt;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+<para>Converts the given vector to form a strict less than inequality. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Does not modify the original vector.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector of coefficients to be converted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/ConstraintSystem.h" line="138" column="22" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="138" bodyend="144"/>
+        <references refid="namespacellvm_1add3b47639a79f68bc108a2c491f579f8" compoundref="_math_extras_8h" startline="728" endline="749">llvm::SubOverflow</references>
+        <referencedby refid="structanonymous__namespace_02_constraint_elimination_8cpp_03_1_1_constraint_ty_1a52b12a68f9a9a8ad3ba867a3205265e3" compoundref="_constraint_elimination_8cpp" startline="819" endline="860">anonymous_namespace{ConstraintElimination.cpp}::ConstraintTy::isImpliedBy</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Analysis/ConstraintSystem.h" line="22" column="1" bodyfile="include/llvm/Analysis/ConstraintSystem.h" bodystart="22" bodyend="167"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_constraint_system_1a99319f2e8aa6e8cab000ff18e3eb2e2d" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>addVariableRow</name></member>
+      <member refid="classllvm_1_1_constraint_system_1ae284e6b687fd189af53bfc795839dbfe" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>addVariableRowFill</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a5a00f60f548f9a32044efcf00a161e8d" prot="private" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>Constraints</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a2d1f5e355121a9562c50519f211c858c" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>ConstraintSystem</name></member>
+      <member refid="classllvm_1_1_constraint_system_1aeb648e3658a39e3b9db30676cb6cb728" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>ConstraintSystem</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a6d7819de29b64093ec154c4c5487d3e8" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>ConstraintSystem</name></member>
+      <member refid="classllvm_1_1_constraint_system_1ae3c3559c5cf840283a4b2402fe8e699a" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a47a05668ebe0a7ae1d85c764acf7a980" prot="private" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>eliminateUsingFM</name></member>
+      <member refid="classllvm_1_1_constraint_system_1accc280024930cd4b8df473a0bdaa2315" prot="private" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>getConstPart</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a6be5f8518113d2c5196966b526ccbd39" prot="private" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>getLastCoefficient</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a9794109116e566f7a08c566064aec66e" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>getLastConstraint</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a177e0a51c77de2d23a76dbf7f13e3d8d" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>getValue2Index</name></member>
+      <member refid="classllvm_1_1_constraint_system_1abc16ed85a7cd959bd9943e65cdb33df6" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>getValue2Index</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a040263047fa3a3e3b4089f40d810a5e8" prot="private" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>getVarNamesList</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a4d0933126663b0f02653245bc9a10df4" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>isConditionImplied</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a3dcb59b98c46971585de2b9f963daadd" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>mayHaveSolution</name></member>
+      <member refid="classllvm_1_1_constraint_system_1acdbd7aee2afb3c36899afa22197881ac" prot="private" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>mayHaveSolutionImpl</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a3abc97468a2007e79f9f06e2c63d8618" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>negate</name></member>
+      <member refid="classllvm_1_1_constraint_system_1aaee87e0be7be4679dbd53c9c078ba558" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>negateOrEqual</name></member>
+      <member refid="classllvm_1_1_constraint_system_1aaf49413c89aa144c38191eed3465ad84" prot="private" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>NumVariables</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a21f2f7c23dc242e4a8d8f3f80ff7ebe1" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>popLastConstraint</name></member>
+      <member refid="classllvm_1_1_constraint_system_1aa6bdcd92da3382da904f006eb5aeb33c" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>popLastNVariables</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a5fd4ede35bf2fce287033e37c9b227fc" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>size</name></member>
+      <member refid="classllvm_1_1_constraint_system_1a98447a3557d6098abda1172412db1bb4" prot="public" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>toStrictLessThan</name></member>
+      <member refid="classllvm_1_1_constraint_system_1ad3a0855f4f605656e1878d79ebdb6ec3" prot="private" virt="non-virtual"><scope>llvm::ConstraintSystem</scope><name>Value2Index</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

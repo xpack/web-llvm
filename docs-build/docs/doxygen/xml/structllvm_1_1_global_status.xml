@@ -1,0 +1,731 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1_global_status" kind="struct" language="C++" prot="public">
+    <compoundname>llvm::GlobalStatus</compoundname>
+    <includes refid="_global_status_8h" local="yes">llvm/Transforms/Utils/GlobalStatus.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7" prot="public" static="no" strong="no">
+        <type></type>
+        <name>StoredType</name>
+        <qualifiedname>llvm::GlobalStatus::StoredType</qualifiedname>
+        <enumvalue id="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7ae2ae8bccbba8e261ad5d71d3a84ce295" prot="public">
+          <name>NotStored</name>
+          <briefdescription>
+<para>There is no store to this global. It can thus be marked constant. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7adcbfa969dc654b5812a05827152a42c5" prot="public">
+          <name>InitializerStored</name>
+          <briefdescription>
+<para>This global is stored to, but the only thing stored is the constant it was initialized with. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This is only tracked for scalar globals. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7aecd55f74522361f4b8056f8b6b745699" prot="public">
+          <name>StoredOnce</name>
+          <briefdescription>
+<para>This global is stored to, but only its initializer and one other value is ever stored to it. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>If this global isStoredOnce, we track the value stored to it via StoredOnceStore below. This is only tracked for scalar globals. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7a3b94935998fa471818fb34bceb4c1357" prot="public">
+          <name>Stored</name>
+          <briefdescription>
+<para>This global is stored to by multiple values or something else that we cannot track. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Keep track of what stores to the global look like. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="42" column="3" bodyfile="include/llvm/Transforms/Utils/GlobalStatus.h" bodystart="42" bodyend="59"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structllvm_1_1_global_status_1a793ea7e324427fc88ccdf62294b63fad" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GlobalStatus::IsCompared</definition>
+        <argsstring></argsstring>
+        <name>IsCompared</name>
+        <qualifiedname>llvm::GlobalStatus::IsCompared</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>True if the global&apos;s address is used in a comparison. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="32" column="8" bodyfile="include/llvm/Transforms/Utils/GlobalStatus.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_global_status_1a0371d896aba2b285da63fca3b700b169" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GlobalStatus::IsLoaded</definition>
+        <argsstring></argsstring>
+        <name>IsLoaded</name>
+        <qualifiedname>llvm::GlobalStatus::IsLoaded</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>True if the global is ever loaded. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the global isn&apos;t ever loaded it can be deleted. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="36" column="8" bodyfile="include/llvm/Transforms/Utils/GlobalStatus.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_global_status_1a3a373858349bc2e52452b818cbe2bff5" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::GlobalStatus::NumStores</definition>
+        <argsstring></argsstring>
+        <name>NumStores</name>
+        <qualifiedname>llvm::GlobalStatus::NumStores</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Number of stores to the global. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="39" column="12" bodyfile="include/llvm/Transforms/Utils/GlobalStatus.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_global_status_1a8661beacd5ed3a854cd3c98e565ee89e" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7" kindref="member">llvm::GlobalStatus::StoredType</ref></type>
+        <definition>enum llvm::GlobalStatus::StoredType llvm::GlobalStatus::StoredType</definition>
+        <argsstring></argsstring>
+        <name>StoredType</name>
+        <qualifiedname>llvm::GlobalStatus::StoredType</qualifiedname>
+        <initializer>= <ref refid="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7ae2ae8bccbba8e261ad5d71d3a84ce295" kindref="member">NotStored</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="59" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_global_status_1a68be203655db8e678f567ff41e559500" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_store_inst" kindref="compound">StoreInst</ref> *</type>
+        <definition>const StoreInst* llvm::GlobalStatus::StoredOnceStore</definition>
+        <argsstring></argsstring>
+        <name>StoredOnceStore</name>
+        <qualifiedname>llvm::GlobalStatus::StoredOnceStore</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>If only one value (besides the initializer constant) is ever stored to this global, keep track of what value it is via the store instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="63" column="19" bodyfile="include/llvm/Transforms/Utils/GlobalStatus.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="structllvm_1_1_global_status_1a878825b35bf0b197646751b36b74a2a1" compoundref="_global_status_8h" startline="67" endline="71">getStoredOnceValue</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_global_status_1abdf22b304eab8994314a2a89c00103fc" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *</type>
+        <definition>const Function* llvm::GlobalStatus::AccessingFunction</definition>
+        <argsstring></argsstring>
+        <name>AccessingFunction</name>
+        <qualifiedname>llvm::GlobalStatus::AccessingFunction</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>These start out null/false. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When the first accessing function is noticed, it is recorded. When a second different accessing function is noticed, HasMultipleAccessingFunctions is set to true. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="76" column="18" bodyfile="include/llvm/Transforms/Utils/GlobalStatus.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_global_status_1a31d0dff181f81a41bb701e89600fe324" prot="public" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GlobalStatus::HasMultipleAccessingFunctions</definition>
+        <argsstring></argsstring>
+        <name>HasMultipleAccessingFunctions</name>
+        <qualifiedname>llvm::GlobalStatus::HasMultipleAccessingFunctions</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="77" column="8" bodyfile="include/llvm/Transforms/Utils/GlobalStatus.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_global_status_1a1b1ce5881588fec97dfaaf3845b04640" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1a9bccbe67aaab722783ca4e7c504aaaa7" kindref="member">AtomicOrdering</ref></type>
+        <definition>AtomicOrdering llvm::GlobalStatus::Ordering</definition>
+        <argsstring></argsstring>
+        <name>Ordering</name>
+        <qualifiedname>llvm::GlobalStatus::Ordering</qualifiedname>
+        <initializer>= <ref refid="namespacellvm_1a9bccbe67aaab722783ca4e7c504aaaa7a56a57d29a3f9dda8671b4d6490a94b08" kindref="member">AtomicOrdering::NotAtomic</ref></initializer>
+        <briefdescription>
+<para>Set to the strongest atomic ordering requirement. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="80" column="18" bodyfile="include/llvm/Transforms/Utils/GlobalStatus.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structllvm_1_1_global_status_1a878825b35bf0b197646751b36b74a2a1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * llvm::GlobalStatus::getStoredOnceValue</definition>
+        <argsstring>() const</argsstring>
+        <name>getStoredOnceValue</name>
+        <qualifiedname>llvm::GlobalStatus::getStoredOnceValue</qualifiedname>
+        <briefdescription>
+<para>If only one value (besides the initializer constant) is ever stored to this global return the stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="67" column="9" bodyfile="include/llvm/Transforms/Utils/GlobalStatus.h" bodystart="67" bodyend="71"/>
+        <references refid="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7aecd55f74522361f4b8056f8b6b745699" compoundref="_global_status_8h" startline="54">StoredOnce</references>
+        <references refid="structllvm_1_1_global_status_1a68be203655db8e678f567ff41e559500" compoundref="_global_status_8h" startline="63">StoredOnceStore</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_global_status_1a66343ec7ee95f372f485d76945263189" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GlobalStatus::GlobalStatus</definition>
+        <argsstring>()</argsstring>
+        <name>GlobalStatus</name>
+        <qualifiedname>llvm::GlobalStatus::GlobalStatus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="82" column="3"/>
+        <references refid="structllvm_1_1_global_status_1a66343ec7ee95f372f485d76945263189">GlobalStatus</references>
+        <referencedby refid="structllvm_1_1_global_status_1ae58ea7b3b03443e976cbef09ac25cf00" compoundref="_global_status_8cpp" startline="196" endline="199">analyzeGlobal</referencedby>
+        <referencedby refid="structllvm_1_1_global_status_1a66343ec7ee95f372f485d76945263189">GlobalStatus</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structllvm_1_1_global_status_1ae58ea7b3b03443e976cbef09ac25cf00" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool GlobalStatus::analyzeGlobal</definition>
+        <argsstring>(const Value *V, GlobalStatus &amp;GS)</argsstring>
+        <name>analyzeGlobal</name>
+        <qualifiedname>llvm::GlobalStatus::analyzeGlobal</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1_global_status" kindref="compound">GlobalStatus</ref> &amp;</type>
+          <declname>GS</declname>
+        </param>
+        <briefdescription>
+<para>Look at all uses of the global and fill in the <ref refid="structllvm_1_1_global_status" kindref="compound">GlobalStatus</ref> structure. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the global has its address taken, return true to indicate we can&apos;t do anything with it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="87" column="15" bodyfile="lib/Transforms/Utils/GlobalStatus.cpp" bodystart="196" bodyend="199"/>
+        <references refid="_global_status_8cpp_1a17a474b70329d911e0b4f13e552dc99f" compoundref="_global_status_8cpp" startline="64" endline="192">analyzeGlobalAux</references>
+        <references refid="structllvm_1_1_global_status_1a66343ec7ee95f372f485d76945263189">GlobalStatus</references>
+        <referencedby refid="_global_opt_8cpp_1a5cb8771722bfd8bcbdeb391b17e6cfd6" compoundref="_global_opt_8cpp" startline="1632" endline="1668">processGlobal</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>As we analyze each global or thread-local variable, keep track of some information about it. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>If we find out that the address of the global is taken, none of this info will be accurate. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="55">
+        <label>AtomicOrdering</label>
+      </node>
+      <node id="23">
+        <label>OptionsT::node_base_type</label>
+      </node>
+      <node id="3">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="2">
+        <label>StoredType</label>
+      </node>
+      <node id="53">
+        <label>ilist_detail::compute_node_options&lt; Function, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="32">
+        <label>ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="42">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::list_base_type</label>
+        <link refid="classllvm_1_1ilist__base"/>
+        <childnode refid="37" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="36">
+        <label>ilist_detail::compute_node_options&lt; llvm::DbgRecord, Options... &gt;::type::list_base_type</label>
+        <link refid="classllvm_1_1ilist__base"/>
+        <childnode refid="37" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="50">
+        <label>llvm::Comdat</label>
+        <link refid="classllvm_1_1_comdat"/>
+      </node>
+      <node id="47">
+        <label>llvm::Constant</label>
+        <link refid="classllvm_1_1_constant"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm::DbgMarker</label>
+        <link refid="classllvm_1_1_dbg_marker"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>MarkedInstr</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>StoredDbgRecords</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>EmptyDbgMarker</edgelabel>
+        </childnode>
+      </node>
+      <node id="44">
+        <label>llvm::Function</label>
+        <link refid="classllvm_1_1_function"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>IsNewDbgInfoFormat</edgelabel>
+        </childnode>
+      </node>
+      <node id="45">
+        <label>llvm::GlobalObject</label>
+        <link refid="classllvm_1_1_global_object"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+        <childnode refid="50" relation="usage">
+          <edgelabel>ObjComdat</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>GlobalObjectSubClassDataBits</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::GlobalStatus</label>
+        <link refid="structllvm_1_1_global_status"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>StoredType</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>HasMultipleAccessingFunctions</edgelabel>
+          <edgelabel>IsCompared</edgelabel>
+          <edgelabel>IsLoaded</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>NumStores</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>StoredOnceStore</edgelabel>
+        </childnode>
+        <childnode refid="44" relation="usage">
+          <edgelabel>AccessingFunction</edgelabel>
+        </childnode>
+        <childnode refid="55" relation="usage">
+          <edgelabel>Ordering</edgelabel>
+        </childnode>
+      </node>
+      <node id="46">
+        <label>llvm::GlobalValue</label>
+        <link refid="classllvm_1_1_global_value"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>ValueType</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>DllStorageClass</edgelabel>
+          <edgelabel>GlobalValueSubClassDataBits</edgelabel>
+          <edgelabel>HasLLVMReservedName</edgelabel>
+          <edgelabel>HasPartition</edgelabel>
+          <edgelabel>HasSanitizerMetadata</edgelabel>
+          <edgelabel>IntID</edgelabel>
+          <edgelabel>IsDSOLocal</edgelabel>
+          <edgelabel>Linkage</edgelabel>
+          <edgelabel>ThreadLocal</edgelabel>
+          <edgelabel>UnnamedAddrVal</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="usage">
+          <edgelabel>Parent</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::Instruction</label>
+        <link refid="classllvm_1_1_instruction"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>DebugMarker</edgelabel>
+        </childnode>
+      </node>
+      <node id="49">
+        <label>llvm::Module</label>
+        <link refid="classllvm_1_1_module"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>IsNewDbgInfoFormat</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::StoreInst</label>
+        <link refid="classllvm_1_1_store_inst"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>llvm::Type</label>
+        <link refid="classllvm_1_1_type"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>NumContainedTys</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>ContainedTys</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::User</label>
+        <link refid="classllvm_1_1_user"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::Value</label>
+        <link refid="classllvm_1_1_value"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>HasDescriptor</edgelabel>
+          <edgelabel>HasHungOffUses</edgelabel>
+          <edgelabel>HasMetadata</edgelabel>
+          <edgelabel>HasName</edgelabel>
+          <edgelabel>IsUsedByMD</edgelabel>
+          <edgelabel>MaxAlignmentExponent</edgelabel>
+          <edgelabel>NumUserOperands</edgelabel>
+          <edgelabel>SubclassOptionalData</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>MaximumAlignment</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>llvm::ilist_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__base"/>
+      </node>
+      <node id="39">
+        <label>llvm::ilist_detail::NodeAccess</label>
+        <link refid="structllvm_1_1ilist__detail_1_1_node_access"/>
+      </node>
+      <node id="40">
+        <label>llvm::ilist_detail::SpecificNodeAccess&lt; OptionsT &gt;</label>
+        <link refid="structllvm_1_1ilist__detail_1_1_specific_node_access"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>llvm::ilist_detail::SpecificNodeAccess&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="structllvm_1_1ilist__detail_1_1_specific_node_access"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+        <childnode refid="40" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm::ilist_detail::SpecificNodeAccess&lt; ilist_detail::compute_node_options&lt; llvm::DbgRecord, Options... &gt;::type &gt;</label>
+        <link refid="structllvm_1_1ilist__detail_1_1_specific_node_access"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+        <childnode refid="40" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; llvm::DbgRecord, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="15">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="18">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="17">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="21">
+        <label>llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+      </node>
+      <node id="24">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="21" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="54">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Function, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; Function, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="21" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Function, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; Function, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="21" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="21" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="21" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::ilist_node&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>llvm::ilist_node&lt; Function &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+        <childnode refid="25" relation="template-instance">
+          <edgelabel>&lt; Function &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>llvm::ilist_node&lt; Instruction, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+        <childnode refid="25" relation="template-instance">
+          <edgelabel>&lt; Instruction, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm::ilist_node&lt; NodeTy, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+        <childnode refid="25" relation="template-instance">
+          <edgelabel>&lt; NodeTy, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::ilist_node_impl&lt; OptionsT &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="23" relation="private-inheritance">
+        </childnode>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Function, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="53" relation="private-inheritance">
+        </childnode>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; Function, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="13" relation="private-inheritance">
+        </childnode>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; Instruction, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="32" relation="private-inheritance">
+        </childnode>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="27" relation="private-inheritance">
+        </childnode>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::ilist_node_with_parent&lt; Instruction, BasicBlock, ilist_iterator_bits&lt; true &gt;, ilist_parent&lt; BasicBlock &gt; &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="29" relation="template-instance">
+          <edgelabel>&lt; Instruction, BasicBlock, ilist_iterator_bits&lt; true &gt;, ilist_parent&lt; BasicBlock &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm::simple_ilist&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1simple__ilist"/>
+        <childnode refid="42" relation="private-inheritance">
+        </childnode>
+        <childnode refid="43" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm::simple_ilist&lt; llvm::DbgRecord &gt;</label>
+        <link refid="classllvm_1_1simple__ilist"/>
+        <childnode refid="36" relation="private-inheritance">
+        </childnode>
+        <childnode refid="38" relation="private-inheritance">
+        </childnode>
+        <childnode refid="41" relation="template-instance">
+          <edgelabel>&lt; llvm::DbgRecord &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>uint64_t</label>
+        <link refid="classuint64__t"/>
+      </node>
+      <node id="4">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Transforms/Utils/GlobalStatus.h" line="30" column="1" bodyfile="include/llvm/Transforms/Utils/GlobalStatus.h" bodystart="30" bodyend="88"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1_global_status_1abdf22b304eab8994314a2a89c00103fc" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>AccessingFunction</name></member>
+      <member refid="structllvm_1_1_global_status_1ae58ea7b3b03443e976cbef09ac25cf00" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>analyzeGlobal</name></member>
+      <member refid="structllvm_1_1_global_status_1a878825b35bf0b197646751b36b74a2a1" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>getStoredOnceValue</name></member>
+      <member refid="structllvm_1_1_global_status_1a66343ec7ee95f372f485d76945263189" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>GlobalStatus</name></member>
+      <member refid="structllvm_1_1_global_status_1a31d0dff181f81a41bb701e89600fe324" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>HasMultipleAccessingFunctions</name></member>
+      <member refid="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7adcbfa969dc654b5812a05827152a42c5" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>InitializerStored</name></member>
+      <member refid="structllvm_1_1_global_status_1a793ea7e324427fc88ccdf62294b63fad" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>IsCompared</name></member>
+      <member refid="structllvm_1_1_global_status_1a0371d896aba2b285da63fca3b700b169" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>IsLoaded</name></member>
+      <member refid="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7ae2ae8bccbba8e261ad5d71d3a84ce295" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>NotStored</name></member>
+      <member refid="structllvm_1_1_global_status_1a3a373858349bc2e52452b818cbe2bff5" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>NumStores</name></member>
+      <member refid="structllvm_1_1_global_status_1a1b1ce5881588fec97dfaaf3845b04640" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>Ordering</name></member>
+      <member refid="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7a3b94935998fa471818fb34bceb4c1357" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>Stored</name></member>
+      <member refid="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7aecd55f74522361f4b8056f8b6b745699" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>StoredOnce</name></member>
+      <member refid="structllvm_1_1_global_status_1a68be203655db8e678f567ff41e559500" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>StoredOnceStore</name></member>
+      <member refid="structllvm_1_1_global_status_1abe8cd5e07daf1b2bf532174823523ee7" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>StoredType</name></member>
+      <member refid="structllvm_1_1_global_status_1a8661beacd5ed3a854cd3c98e565ee89e" prot="public" virt="non-virtual"><scope>llvm::GlobalStatus</scope><name>StoredType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

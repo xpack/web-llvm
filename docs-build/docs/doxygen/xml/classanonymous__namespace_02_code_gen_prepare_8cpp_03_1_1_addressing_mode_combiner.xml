@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</compoundname>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a1b28ecf9179667dc73d11453929c71e1" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt;</type>
+        <definition>typedef DenseMap&lt;Value *, Value *&gt; anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::FoldAddrToValueMapping</definition>
+        <argsstring></argsstring>
+        <name>FoldAddrToValueMapping</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::FoldAddrToValueMapping</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4073" column="20" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4073" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a3e916b59cafed070b30cbd8614712d5e" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *, <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> * &gt;</type>
+        <definition>typedef std::pair&lt;PHINode *, PHINode *&gt; anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::PHIPair</definition>
+        <argsstring></argsstring>
+        <name>PHIPair</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::PHIPair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4074" column="21" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4074" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a8303dbf9f0483b7f0a950ff1038cf65e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode" kindref="compound">ExtAddrMode</ref>, 16 &gt;</type>
+        <definition>SmallVector&lt;ExtAddrMode, 16&gt; anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::AddrModes</definition>
+        <argsstring></argsstring>
+        <name>AddrModes</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::AddrModes</qualifiedname>
+        <briefdescription>
+<para>The addressing modes we&apos;ve collected. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4078" column="15" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4078" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a54fa444e173b68e7ab0d38366b6c1935" prot="private" static="no" mutable="no">
+        <type><ref refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode_1a10aef7c4018bbcd7beefca2dcf4e3c3b" kindref="member">ExtAddrMode::FieldName</ref></type>
+        <definition>ExtAddrMode::FieldName anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::DifferentField</definition>
+        <argsstring></argsstring>
+        <name>DifferentField</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::DifferentField</qualifiedname>
+        <initializer>= <ref refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode_1a10aef7c4018bbcd7beefca2dcf4e3c3bade3fdafc2a520488937de65060546976" kindref="member">ExtAddrMode::NoField</ref></initializer>
+        <briefdescription>
+<para>The field in which the AddrModes differ, when we have more than one. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4081" column="26" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4081" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a36ce47b3102dc454305f24d6c1dd3746" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::AllAddrModesTrivial</definition>
+        <argsstring></argsstring>
+        <name>AllAddrModesTrivial</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::AllAddrModesTrivial</qualifiedname>
+        <initializer>= <ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></initializer>
+        <briefdescription>
+<para>Are the AddrModes that we have all just equal to their original values? </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4084" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4084" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1ae4f34793b9517138b8da263f8a8919dd" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+        <definition>Type* anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::CommonType</definition>
+        <argsstring></argsstring>
+        <name>CommonType</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::CommonType</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Common <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> for all different fields in addressing modes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4087" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4087" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a1c5f80fa986b1a15fabbfb4653847af0" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref> &amp;</type>
+        <definition>const SimplifyQuery&amp; anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::SQ</definition>
+        <argsstring></argsstring>
+        <name>SQ</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::SQ</qualifiedname>
+        <briefdescription>
+<para><ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref> for simplifyInstruction utility. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4090" column="23" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4090" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a93d365101ee4c4352162cb59af079a56" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value* anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::Original</definition>
+        <argsstring></argsstring>
+        <name>Original</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::Original</qualifiedname>
+        <briefdescription>
+<para>Original Address. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4093" column="9" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4093" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1affc9fddac9f3760872a8a2a6d566912e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value* anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::CommonValue</definition>
+        <argsstring></argsstring>
+        <name>CommonValue</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::CommonValue</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Common value among addresses. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4096" column="9" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4096" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a12d7bf62cc9469dcc8776c045ad91169" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::AddressingModeCombiner</definition>
+        <argsstring>(const SimplifyQuery &amp;_SQ, Value *OriginalValue)</argsstring>
+        <name>AddressingModeCombiner</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::AddressingModeCombiner</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_simplify_query" kindref="compound">SimplifyQuery</ref> &amp;</type>
+          <declname>_SQ</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>OriginalValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4099" column="3" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4099" bodyend="4100"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a11b3fca9e6b5a0a86f833919280c8d6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::~AddressingModeCombiner</definition>
+        <argsstring>()</argsstring>
+        <name>~AddressingModeCombiner</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::~AddressingModeCombiner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4102" column="3" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4102" bodyend="4102"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1ad554dafe341161df27c6e4762ce5ac82" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode" kindref="compound">ExtAddrMode</ref> &amp;</type>
+        <definition>const ExtAddrMode &amp; anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::getAddrMode</definition>
+        <argsstring>() const</argsstring>
+        <name>getAddrMode</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::getAddrMode</qualifiedname>
+        <briefdescription>
+<para>Get the combined <ref refid="_m_s_p430_disassembler_8cpp_1abf132b4ad93f3557cd3956577592ba68" kindref="member">AddrMode</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4105" column="21" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4105" bodyend="4105"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a68677e52356488f3516d001f127588a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::addNewAddrMode</definition>
+        <argsstring>(ExtAddrMode &amp;NewAddrMode)</argsstring>
+        <name>addNewAddrMode</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::addNewAddrMode</qualifiedname>
+        <param>
+          <type><ref refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode" kindref="compound">ExtAddrMode</ref> &amp;</type>
+          <declname>NewAddrMode</declname>
+        </param>
+        <briefdescription>
+<para>Add a new <ref refid="_m_s_p430_disassembler_8cpp_1abf132b4ad93f3557cd3956577592ba68" kindref="member">AddrMode</ref> if it&apos;s compatible with the AddrModes we already have. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True iff we succeeded in doing so. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4110" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4110" bodyend="4158"/>
+        <references refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode_1a10aef7c4018bbcd7beefca2dcf4e3c3baf4d9622b8e7495cb65099c1333085a24" compoundref="_code_gen_prepare_8cpp" startline="3065">anonymous_namespace{CodeGenPrepare.cpp}::ExtAddrMode::BaseGVField</references>
+        <references refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode_1a10aef7c4018bbcd7beefca2dcf4e3c3ba00291a866d6acfad336e7606f1c17c92" compoundref="_code_gen_prepare_8cpp" startline="3066">anonymous_namespace{CodeGenPrepare.cpp}::ExtAddrMode::BaseOffsField</references>
+        <references refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode_1af16961a6894c56bc7f08641a2538167d" compoundref="_code_gen_prepare_8cpp" startline="3124" endline="3130">anonymous_namespace{CodeGenPrepare.cpp}::ExtAddrMode::isTrivial</references>
+        <references refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode_1a10aef7c4018bbcd7beefca2dcf4e3c3ba487a1fc3c02e9df7cb63a01968499611" compoundref="_code_gen_prepare_8cpp" startline="3069">anonymous_namespace{CodeGenPrepare.cpp}::ExtAddrMode::MultipleFields</references>
+        <references refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode_1a10aef7c4018bbcd7beefca2dcf4e3c3bade3fdafc2a520488937de65060546976" compoundref="_code_gen_prepare_8cpp" startline="3063">anonymous_namespace{CodeGenPrepare.cpp}::ExtAddrMode::NoField</references>
+        <references refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode_1ab3efdd9ffd185b09958bdb0f6697c3eb" compoundref="_code_gen_prepare_8cpp" startline="3058">anonymous_namespace{CodeGenPrepare.cpp}::ExtAddrMode::ScaledReg</references>
+        <references refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode_1a10aef7c4018bbcd7beefca2dcf4e3c3bad9eaab024b6516aae7cd2912a8ed4101" compoundref="_code_gen_prepare_8cpp" startline="3068">anonymous_namespace{CodeGenPrepare.cpp}::ExtAddrMode::ScaleField</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a063d1fe1021fb19338b10705adb5f075" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::combineAddrModes</definition>
+        <argsstring>()</argsstring>
+        <name>combineAddrModes</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::combineAddrModes</qualifiedname>
+        <briefdescription>
+<para>Combine the addressing modes we&apos;ve collected into a single addressing mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True iff we successfully combined them or we only had one so didn&apos;t need to combine them anyway. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4164" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4164" bodyend="4192"/>
+        <references refid="structanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_ext_addr_mode_1a10aef7c4018bbcd7beefca2dcf4e3c3bade3fdafc2a520488937de65060546976" compoundref="_code_gen_prepare_8cpp" startline="3063">anonymous_namespace{CodeGenPrepare.cpp}::ExtAddrMode::NoField</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a4d66e18ef90b94b6d6df3902353e9e23" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::eraseCommonValueIfDead</definition>
+        <argsstring>()</argsstring>
+        <name>eraseCommonValueIfDead</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::eraseCommonValueIfDead</qualifiedname>
+        <briefdescription>
+<para><computeroutput>CommonValue</computeroutput> may be a placeholder inserted by us. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the placeholder is not used, we should remove this dead instruction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4197" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4197" bodyend="4201"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a7f19775e63e43977f53d7e586d82bc2b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::initializeMap</definition>
+        <argsstring>(FoldAddrToValueMapping &amp;Map)</argsstring>
+        <name>initializeMap</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::initializeMap</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">FoldAddrToValueMapping</ref> &amp;</type>
+          <declname>Map</declname>
+        </param>
+        <briefdescription>
+<para>Initialize Map with anchor values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For address seen we set the value of different field saw in this address. At the same time we find a common type for different field we will use to create new Phi/Select nodes. Keep it in CommonType field. Return false if there is no common type found. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4208" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4208" bodyend="4229"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a892ca606369f593fecbb6a459d55feef" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+        <definition>Value * anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::findCommon</definition>
+        <argsstring>(FoldAddrToValueMapping &amp;Map)</argsstring>
+        <name>findCommon</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::findCommon</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">FoldAddrToValueMapping</ref> &amp;</type>
+          <declname>Map</declname>
+        </param>
+        <briefdescription>
+<para>We have mapping between value A and other value B where B was a field in addressing mode represented by A. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Also we have an original value C representing an address we start with. Traversing from C through phi and selects we ended up with A&apos;s in a map. This utility function tries to find a value V which is a field in addressing mode C and traversing through phi nodes and selects we will end up in corresponded values B in a map. The utility will create a new Phi/Selects if needed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4254" column="9" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4254" bodyend="4290"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1aac861197af1708f2e86f42c3b993344d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::MatchPhiNode</definition>
+        <argsstring>(PHINode *PHI, PHINode *Candidate, SmallSetVector&lt; PHIPair, 8 &gt; &amp;Matcher, PhiNodeSet &amp;PhiNodesToMatch)</argsstring>
+        <name>MatchPhiNode</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::MatchPhiNode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *</type>
+          <declname>PHI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> *</type>
+          <declname>Candidate</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">SmallSetVector</ref>&lt; PHIPair, 8 &gt; &amp;</type>
+          <declname>Matcher</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_phi_node_set" kindref="compound">PhiNodeSet</ref> &amp;</type>
+          <declname>PhiNodesToMatch</declname>
+        </param>
+        <briefdescription>
+<para>Try to match PHI node to Candidate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Matcher tracks the matched Phi nodes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4294" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4294" bodyend="4342"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1ae695cf315e4383c36383d0b46650ceac" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::MatchPhiSet</definition>
+        <argsstring>(SimplificationTracker &amp;ST, bool AllowNewPhiNodes, unsigned &amp;PhiNotMatchedCount)</argsstring>
+        <name>MatchPhiSet</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::MatchPhiSet</qualifiedname>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_simplification_tracker" kindref="compound">SimplificationTracker</ref> &amp;</type>
+          <declname>ST</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>AllowNewPhiNodes</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>PhiNotMatchedCount</declname>
+        </param>
+        <briefdescription>
+<para>For the given set of PHI nodes (in the <ref refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_simplification_tracker" kindref="compound">SimplificationTracker</ref>) try to find their equivalents. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns false if this matching fails and creation of new Phi is disabled. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4347" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4347" bodyend="4393"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a2e7310590b72a93cf2b01b3fef16e8dc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::FillPlaceholders</definition>
+        <argsstring>(FoldAddrToValueMapping &amp;Map, SmallVectorImpl&lt; Value * &gt; &amp;TraverseOrder, SimplificationTracker &amp;ST)</argsstring>
+        <name>FillPlaceholders</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::FillPlaceholders</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">FoldAddrToValueMapping</ref> &amp;</type>
+          <declname>Map</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>TraverseOrder</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_simplification_tracker" kindref="compound">SimplificationTracker</ref> &amp;</type>
+          <declname>ST</declname>
+        </param>
+        <briefdescription>
+<para>Fill the placeholders with values from predecessors and simplify them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4395" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4395" bodyend="4424"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a712660a2483aec5a62591f70ae98b7e8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::InsertPlaceholders</definition>
+        <argsstring>(FoldAddrToValueMapping &amp;Map, SmallVectorImpl&lt; Value * &gt; &amp;TraverseOrder, SimplificationTracker &amp;ST)</argsstring>
+        <name>InsertPlaceholders</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::InsertPlaceholders</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">FoldAddrToValueMapping</ref> &amp;</type>
+          <declname>Map</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> * &gt; &amp;</type>
+          <declname>TraverseOrder</declname>
+        </param>
+        <param>
+          <type><ref refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_simplification_tracker" kindref="compound">SimplificationTracker</ref> &amp;</type>
+          <declname>ST</declname>
+        </param>
+        <briefdescription>
+<para>Starting from original value recursively iterates over def-use chain up to known ending values represented in a map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For each traversed phi/select inserts a placeholder Phi or Select. Reports all new created Phi/Select nodes by adding them to set. Also reports and order in what values have been traversed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4431" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4431" bodyend="4471"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a651750639f76e3c6f9173e4ee5b31a8e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::addrModeCombiningAllowed</definition>
+        <argsstring>()</argsstring>
+        <name>addrModeCombiningAllowed</name>
+        <qualifiedname>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner::addrModeCombiningAllowed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4473" column="8" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4473" bodyend="4488"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A helper class for combining addressing modes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CodeGen/CodeGenPrepare.cpp" line="4072" column="1" bodyfile="lib/CodeGen/CodeGenPrepare.cpp" bodystart="4072" bodyend="4489"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a68677e52356488f3516d001f127588a5" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>addNewAddrMode</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a12d7bf62cc9469dcc8776c045ad91169" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>AddressingModeCombiner</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a651750639f76e3c6f9173e4ee5b31a8e" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>addrModeCombiningAllowed</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a8303dbf9f0483b7f0a950ff1038cf65e" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>AddrModes</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a36ce47b3102dc454305f24d6c1dd3746" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>AllAddrModesTrivial</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a063d1fe1021fb19338b10705adb5f075" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>combineAddrModes</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1ae4f34793b9517138b8da263f8a8919dd" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>CommonType</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1affc9fddac9f3760872a8a2a6d566912e" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>CommonValue</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a54fa444e173b68e7ab0d38366b6c1935" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>DifferentField</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a4d66e18ef90b94b6d6df3902353e9e23" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>eraseCommonValueIfDead</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a2e7310590b72a93cf2b01b3fef16e8dc" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>FillPlaceholders</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a892ca606369f593fecbb6a459d55feef" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>findCommon</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a1b28ecf9179667dc73d11453929c71e1" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>FoldAddrToValueMapping</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1ad554dafe341161df27c6e4762ce5ac82" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>getAddrMode</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a7f19775e63e43977f53d7e586d82bc2b" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>initializeMap</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a712660a2483aec5a62591f70ae98b7e8" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>InsertPlaceholders</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1aac861197af1708f2e86f42c3b993344d" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>MatchPhiNode</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1ae695cf315e4383c36383d0b46650ceac" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>MatchPhiSet</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a93d365101ee4c4352162cb59af079a56" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>Original</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a3e916b59cafed070b30cbd8614712d5e" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>PHIPair</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a1c5f80fa986b1a15fabbfb4653847af0" prot="private" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>SQ</name></member>
+      <member refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_addressing_mode_combiner_1a11b3fca9e6b5a0a86f833919280c8d6d" prot="public" virt="non-virtual"><scope>anonymous_namespace{CodeGenPrepare.cpp}::AddressingModeCombiner</scope><name>~AddressingModeCombiner</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

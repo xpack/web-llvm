@@ -1,0 +1,849 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_r600_sched_strategy" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>llvm::R600SchedStrategy</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_sched_strategy" prot="public" virt="non-virtual">llvm::MachineSchedStrategy</basecompoundref>
+    <includes refid="_r600_machine_scheduler_8h" local="yes">Target/AMDGPU/R600MachineScheduler.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1_r600_sched_strategy_1a702cd77626ecb5f226036578d3478a81" prot="private" static="no" strong="no">
+        <type></type>
+        <name>InstKind</name>
+        <qualifiedname>llvm::R600SchedStrategy::InstKind</qualifiedname>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a702cd77626ecb5f226036578d3478a81a57d9968ef102c0486aff9f678abb2944" prot="private">
+          <name>IDAlu</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a702cd77626ecb5f226036578d3478a81a855d5953047a7027168951838f19ca6a" prot="private">
+          <name>IDFetch</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a702cd77626ecb5f226036578d3478a81ad5cd17466cd3e23fc9934444e6839db4" prot="private">
+          <name>IDOther</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a702cd77626ecb5f226036578d3478a81acc641dcbfe21d56d2d08803233c19d21" prot="private">
+          <name>IDLast</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="31" column="3" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="31" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="enum" id="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42d" prot="private" static="no" strong="no">
+        <type></type>
+        <name>AluKind</name>
+        <qualifiedname>llvm::R600SchedStrategy::AluKind</qualifiedname>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da2b0c80eff676552c89299002f0f0820c" prot="private">
+          <name>AluAny</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da2994b4cc6634d8db2e9335b47b28df21" prot="private">
+          <name>AluT_X</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42dab70cf8eac80d154ce9d989b29596ade6" prot="private">
+          <name>AluT_Y</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da631602c8556387c79eb9ddae514b4c39" prot="private">
+          <name>AluT_Z</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42dac6069442ab9f68e2fb3e88edc9eb1c86" prot="private">
+          <name>AluT_W</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da5c1bf86820b4cdc84d1e53cad4592ec9" prot="private">
+          <name>AluT_XYZW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da2b980ec6e1618c80e2906bfaebbb2da9" prot="private">
+          <name>AluPredX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42dab3468b14606ad55c2c355b36f568759a" prot="private">
+          <name>AluTrans</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da34c804b0f49b5ba1e175149f5e33bdea" prot="private">
+          <name>AluDiscarded</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42daa59a38a9a73624057af8769e31b7cab3" prot="private">
+          <name>AluLast</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="38" column="3" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="38" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a3d4053f3ad05495854ae829d36630339" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_schedule_d_a_g_m_i_live" kindref="compound">ScheduleDAGMILive</ref> *</type>
+        <definition>const ScheduleDAGMILive* llvm::R600SchedStrategy::DAG</definition>
+        <argsstring></argsstring>
+        <name>DAG</name>
+        <qualifiedname>llvm::R600SchedStrategy::DAG</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="26" column="27" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1ab207363eb73ed08c2f243125059e3a32" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_r600_instr_info" kindref="compound">R600InstrInfo</ref> *</type>
+        <definition>const R600InstrInfo* llvm::R600SchedStrategy::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>llvm::R600SchedStrategy::TII</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="27" column="23" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a47de27516dcacfdb55c251284f73d36a" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1_r600_register_info" kindref="compound">R600RegisterInfo</ref> *</type>
+        <definition>const R600RegisterInfo* llvm::R600SchedStrategy::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>llvm::R600SchedStrategy::TRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="28" column="26" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a6400a47d8a71d8aee220831d0abb9e45" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> *</type>
+        <definition>MachineRegisterInfo* llvm::R600SchedStrategy::MRI</definition>
+        <argsstring></argsstring>
+        <name>MRI</name>
+        <qualifiedname>llvm::R600SchedStrategy::MRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="29" column="23" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a1889268eb2535153445ca21726e89dda" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt;</type>
+        <definition>std::vector&lt;SUnit *&gt; llvm::R600SchedStrategy::Available[IDLast]</definition>
+        <argsstring>[IDLast]</argsstring>
+        <name>Available</name>
+        <qualifiedname>llvm::R600SchedStrategy::Available</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="51" column="15" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1aad27dceab1a594c6994896327defb24f" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt;</type>
+        <definition>std::vector&lt;SUnit *&gt; llvm::R600SchedStrategy::Pending[IDLast]</definition>
+        <argsstring>[IDLast]</argsstring>
+        <name>Pending</name>
+        <qualifiedname>llvm::R600SchedStrategy::Pending</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="51" column="25" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a16c30108ca0caa1cc03661a26b5bd39f" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt;</type>
+        <definition>std::vector&lt;SUnit *&gt; llvm::R600SchedStrategy::AvailableAlus[AluLast]</definition>
+        <argsstring>[AluLast]</argsstring>
+        <name>AvailableAlus</name>
+        <qualifiedname>llvm::R600SchedStrategy::AvailableAlus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="52" column="15" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a206d20c2bfa0d8490f78fcb9219b3a24" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt;</type>
+        <definition>std::vector&lt;SUnit *&gt; llvm::R600SchedStrategy::PhysicalRegCopy</definition>
+        <argsstring></argsstring>
+        <name>PhysicalRegCopy</name>
+        <qualifiedname>llvm::R600SchedStrategy::PhysicalRegCopy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="53" column="15" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a5311c625e01cf6f35634e950ccc8c377" prot="private" static="no" mutable="no">
+        <type>InstKind</type>
+        <definition>InstKind llvm::R600SchedStrategy::CurInstKind</definition>
+        <argsstring></argsstring>
+        <name>CurInstKind</name>
+        <qualifiedname>llvm::R600SchedStrategy::CurInstKind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="55" column="12" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a2663359e474584df0c6ccafb0af09380" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int llvm::R600SchedStrategy::CurEmitted</definition>
+        <argsstring></argsstring>
+        <name>CurEmitted</name>
+        <qualifiedname>llvm::R600SchedStrategy::CurEmitted</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="56" column="7" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1aecceef520c92e7d4f3c152e89ce4a63b" prot="private" static="no" mutable="no">
+        <type>InstKind</type>
+        <definition>InstKind llvm::R600SchedStrategy::NextInstKind</definition>
+        <argsstring></argsstring>
+        <name>NextInstKind</name>
+        <qualifiedname>llvm::R600SchedStrategy::NextInstKind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="57" column="12" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a315a07dee2ac718a98bff74a08269eb6" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::R600SchedStrategy::AluInstCount</definition>
+        <argsstring></argsstring>
+        <name>AluInstCount</name>
+        <qualifiedname>llvm::R600SchedStrategy::AluInstCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="59" column="12" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1aeb3260086eb396cb436e7664c13dd460" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::R600SchedStrategy::FetchInstCount</definition>
+        <argsstring></argsstring>
+        <name>FetchInstCount</name>
+        <qualifiedname>llvm::R600SchedStrategy::FetchInstCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="60" column="12" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1ac0bd691448f0ba0e9726cafb6b1c7964" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int llvm::R600SchedStrategy::InstKindLimit[IDLast]</definition>
+        <argsstring>[IDLast]</argsstring>
+        <name>InstKindLimit</name>
+        <qualifiedname>llvm::R600SchedStrategy::InstKindLimit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="62" column="7" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a7ca730c3e5792a692cd8311d0e261039" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int llvm::R600SchedStrategy::OccupiedSlotsMask</definition>
+        <argsstring></argsstring>
+        <name>OccupiedSlotsMask</name>
+        <qualifiedname>llvm::R600SchedStrategy::OccupiedSlotsMask</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="64" column="7" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a72930dcd659acfbef792bf1d7742e626" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt;</type>
+        <definition>std::vector&lt;MachineInstr *&gt; llvm::R600SchedStrategy::InstructionsGroupCandidate</definition>
+        <argsstring></argsstring>
+        <name>InstructionsGroupCandidate</name>
+        <qualifiedname>llvm::R600SchedStrategy::InstructionsGroupCandidate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="77" column="15" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_r600_sched_strategy_1a0781c6e05c2e237cb01ce5ac57a62649" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::R600SchedStrategy::VLIW5</definition>
+        <argsstring></argsstring>
+        <name>VLIW5</name>
+        <qualifiedname>llvm::R600SchedStrategy::VLIW5</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="78" column="8" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a84f28eec0ae860dcec435f0bd06f6b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::R600SchedStrategy::R600SchedStrategy</definition>
+        <argsstring>()=default</argsstring>
+        <name>R600SchedStrategy</name>
+        <qualifiedname>llvm::R600SchedStrategy::R600SchedStrategy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="67" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a03ab1a42b1533a2c912925f9bd8cadba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::R600SchedStrategy::~R600SchedStrategy</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~R600SchedStrategy</name>
+        <qualifiedname>llvm::R600SchedStrategy::~R600SchedStrategy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="68" column="3"/>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" compoundref="_machine_sink_8cpp" startline="2028">Reg</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a2c1760a96cdc9e6f584b99740060fcee" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void R600SchedStrategy::initialize</definition>
+        <argsstring>(ScheduleDAGMI *dag) override</argsstring>
+        <name>initialize</name>
+        <qualifiedname>llvm::R600SchedStrategy::initialize</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1a42eed718d961aaef1f3715e91e3ccaf7">initialize</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_schedule_d_a_g_m_i" kindref="compound">ScheduleDAGMI</ref> *</type>
+          <declname>DAG</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the strategy after building the DAG for a new region. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="70" column="8" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="22" bodyend="38"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_schedule_d_a_g_m_i_1a78c0f3feb8a81ca338f843494cff564e" compoundref="_machine_scheduler_8h" startline="330" endline="330">llvm::ScheduleDAGMI::hasVRegLiveness</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a3351536ef89bb6fe156f754d2ee7c24c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * R600SchedStrategy::pickNode</definition>
+        <argsstring>(bool &amp;IsTopNode) override</argsstring>
+        <name>pickNode</name>
+        <qualifiedname>llvm::R600SchedStrategy::pickNode</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1ab8f81fac35fcedf80a58ef268409d328">pickNode</reimplements>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>IsTopNode</declname>
+        </param>
+        <briefdescription>
+<para>Pick the next node to schedule, or return NULL. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set IsTopNode to true to schedule the node at the top of the unscheduled region. Otherwise it will be scheduled at the bottom. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="71" column="9" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="52" bodyend="133"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_r600_machine_scheduler_8cpp_1a2f6f6af2f9b25d2bd1d436e3cba97a57" compoundref="_r600_machine_scheduler_8cpp" startline="47" endline="50">getWFCountLimitedByGPR</references>
+        <references refid="classllvm_1_1_s_unit_1a8c201d7a769bda1cd75d8d6788123068" compoundref="_schedule_d_a_g_8h" startline="296">llvm::SUnit::isScheduled</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_n_v_v_m_reflect_8cpp_1ac934769d93af95250952646a3829df4c">size</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1abe1c22281512c39286cbb9bca97ae7b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void R600SchedStrategy::schedNode</definition>
+        <argsstring>(SUnit *SU, bool IsTopNode) override</argsstring>
+        <name>schedNode</name>
+        <qualifiedname>llvm::R600SchedStrategy::schedNode</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1a3be6a6d3b879d048d8df6ae13c7b9698">schedNode</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsTopNode</declname>
+        </param>
+        <briefdescription>
+<para>Notify <ref refid="classllvm_1_1_machine_sched_strategy" kindref="compound">MachineSchedStrategy</ref> that <ref refid="classllvm_1_1_schedule_d_a_g_m_i" kindref="compound">ScheduleDAGMI</ref> has scheduled an instruction and updated scheduled/remaining flags in the DAG nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="72" column="8" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="135" bodyend="172"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_s_unit_1afc98c2c5417cad1a90fc4fe241fe8ba4" compoundref="_schedule_d_a_g_8h" startline="390" endline="394">llvm::SUnit::getInstr</references>
+        <references refid="classllvm_1_1_machine_operand_1ac0035d7c1c860501c877c20e6e93297b" compoundref="_machine_operand_8h" startline="369" endline="372">llvm::MachineOperand::getReg</references>
+        <references refid="classllvm_1_1_machine_operand_1a4c9594c955fec80c73ddd964b5efd554" compoundref="_machine_operand_8h" startline="329" endline="329">llvm::MachineOperand::isReg</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="classllvm_1_1_machine_instr_1a0037ac891190e1408b04a48156c3368c" compoundref="_machine_instr_8h" startline="687" endline="687">llvm::MachineInstr::operands_begin</references>
+        <references refid="classllvm_1_1_machine_instr_1a6e6014fca5895fa5f9487ff7c79678b0" compoundref="_machine_instr_8h" startline="688" endline="688">llvm::MachineInstr::operands_end</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1aa3c3bb2e44bfef1d9e7c5ea8d3f8be60" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void R600SchedStrategy::releaseTopNode</definition>
+        <argsstring>(SUnit *SU) override</argsstring>
+        <name>releaseTopNode</name>
+        <qualifiedname>llvm::R600SchedStrategy::releaseTopNode</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1a870625307391612fc91db410cf9820b0">releaseTopNode</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>When all predecessor dependencies have been resolved, free this node for top-down scheduling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="73" column="8" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="182" bodyend="184"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a4ae49efe3ba813f5cb7a746245b9b0e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void R600SchedStrategy::releaseBottomNode</definition>
+        <argsstring>(SUnit *SU) override</argsstring>
+        <name>releaseBottomNode</name>
+        <qualifiedname>llvm::R600SchedStrategy::releaseBottomNode</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_sched_strategy_1aee56664b72ea174c22ef095dc828a0b5">releaseBottomNode</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+<para>When all successor dependencies have been resolved, free this node for bottom-up scheduling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="74" column="8" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="186" bodyend="201"/>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_s_unit_1afc98c2c5417cad1a90fc4fe241fe8ba4" compoundref="_schedule_d_a_g_8h" startline="390" endline="394">llvm::SUnit::getInstr</references>
+        <references refid="_r600_machine_scheduler_8cpp_1a36a05e9e7b987965c35b08b2a864502f" compoundref="_r600_machine_scheduler_8cpp" startline="175" endline="180">isPhysicalRegCopy</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a65aa8604f1e36cd7a272539c106438af" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int R600SchedStrategy::getInstKind</definition>
+        <argsstring>(SUnit *SU)</argsstring>
+        <name>getInstKind</name>
+        <qualifiedname>llvm::R600SchedStrategy::getInstKind</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="80" column="7" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="284" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a99d8b8e84e59cb9efece5526298d615f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool R600SchedStrategy::regBelongsToClass</definition>
+        <argsstring>(Register Reg, const TargetRegisterClass *RC) const</argsstring>
+        <name>regBelongsToClass</name>
+        <qualifiedname>llvm::R600SchedStrategy::regBelongsToClass</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_class" kindref="compound">TargetRegisterClass</ref> *</type>
+          <declname>RC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="81" column="8" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="203" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a0be7bd915de546519a4b7c87179d33d2" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>AluKind</type>
+        <definition>R600SchedStrategy::AluKind R600SchedStrategy::getAluKind</definition>
+        <argsstring>(SUnit *SU) const</argsstring>
+        <name>getAluKind</name>
+        <qualifiedname>llvm::R600SchedStrategy::getAluKind</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+          <declname>SU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="82" column="11" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="210" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1ad391f732fcdc61aa03e9dd1679753b8c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void R600SchedStrategy::LoadAlu</definition>
+        <argsstring>()</argsstring>
+        <name>LoadAlu</name>
+        <qualifiedname>llvm::R600SchedStrategy::LoadAlu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="83" column="8" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="326" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a7dd941dda5dcc03a4c46d3613cec5792" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned R600SchedStrategy::AvailablesAluCount</definition>
+        <argsstring>() const</argsstring>
+        <name>AvailablesAluCount</name>
+        <qualifiedname>llvm::R600SchedStrategy::AvailablesAluCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="84" column="12" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="384" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a8598a95e86ec98f702fbbf196e398f01" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * R600SchedStrategy::AttemptFillSlot</definition>
+        <argsstring>(unsigned Slot, bool AnyAlu)</argsstring>
+        <name>AttemptFillSlot</name>
+        <qualifiedname>llvm::R600SchedStrategy::AttemptFillSlot</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Slot</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>AnyAlu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="85" column="9" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="373" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a03dfeb2e7868b3095cb7dfec1ca2e7c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void R600SchedStrategy::PrepareNextSlot</definition>
+        <argsstring>()</argsstring>
+        <name>PrepareNextSlot</name>
+        <qualifiedname>llvm::R600SchedStrategy::PrepareNextSlot</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="86" column="8" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="335" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a40d029acc501fa964c1e1afc14cab22f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * R600SchedStrategy::PopInst</definition>
+        <argsstring>(std::vector&lt; SUnit * &gt; &amp;Q, bool AnyALU)</argsstring>
+        <name>PopInst</name>
+        <qualifiedname>llvm::R600SchedStrategy::PopInst</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt; &amp;</type>
+          <declname>Q</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>AnyALU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="87" column="9" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="308" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1ab335946effc777325c390e6a5fae5926" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void R600SchedStrategy::AssignSlot</definition>
+        <argsstring>(MachineInstr *MI, unsigned Slot)</argsstring>
+        <name>AssignSlot</name>
+        <qualifiedname>llvm::R600SchedStrategy::AssignSlot</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Slot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="89" column="8" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="345" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a304f98b219053f78f8e00f543c89e143" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * R600SchedStrategy::pickAlu</definition>
+        <argsstring>()</argsstring>
+        <name>pickAlu</name>
+        <qualifiedname>llvm::R600SchedStrategy::pickAlu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="90" column="9" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="392" bodyend="437"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1a241019749dda9397ad7e8de19d80c492" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> *</type>
+        <definition>SUnit * R600SchedStrategy::pickOther</definition>
+        <argsstring>(int QID)</argsstring>
+        <name>pickOther</name>
+        <qualifiedname>llvm::R600SchedStrategy::pickOther</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>QID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="91" column="9" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="439" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_r600_sched_strategy_1ab722870014bbeb1695208b7bf4767282" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void R600SchedStrategy::MoveUnits</definition>
+        <argsstring>(std::vector&lt; SUnit * &gt; &amp;QSrc, std::vector&lt; SUnit * &gt; &amp;QDst)</argsstring>
+        <name>MoveUnits</name>
+        <qualifiedname>llvm::R600SchedStrategy::MoveUnits</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt; &amp;</type>
+          <declname>QSrc</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_s_unit" kindref="compound">SUnit</ref> * &gt; &amp;</type>
+          <declname>QDst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="92" column="8" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.cpp" bodystart="40" bodyend="45"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::MachineSchedStrategy</label>
+        <link refid="classllvm_1_1_machine_sched_strategy"/>
+      </node>
+      <node id="1">
+        <label>llvm::R600SchedStrategy</label>
+        <link refid="classllvm_1_1_r600_sched_strategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>llvm::MachineSchedStrategy</label>
+        <link refid="classllvm_1_1_machine_sched_strategy"/>
+      </node>
+      <node id="1">
+        <label>llvm::R600SchedStrategy</label>
+        <link refid="classllvm_1_1_r600_sched_strategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/AMDGPU/R600MachineScheduler.h" line="25" column="1" bodyfile="lib/Target/AMDGPU/R600MachineScheduler.h" bodystart="25" bodyend="93"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da2b0c80eff676552c89299002f0f0820c" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluAny</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da34c804b0f49b5ba1e175149f5e33bdea" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluDiscarded</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a315a07dee2ac718a98bff74a08269eb6" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluInstCount</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42d" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluKind</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42daa59a38a9a73624057af8769e31b7cab3" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluLast</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da2b980ec6e1618c80e2906bfaebbb2da9" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluPredX</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42dac6069442ab9f68e2fb3e88edc9eb1c86" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluT_W</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da2994b4cc6634d8db2e9335b47b28df21" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluT_X</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da5c1bf86820b4cdc84d1e53cad4592ec9" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluT_XYZW</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42dab70cf8eac80d154ce9d989b29596ade6" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluT_Y</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42da631602c8556387c79eb9ddae514b4c39" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluT_Z</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a109787d2623034cafdef80ceba50e42dab3468b14606ad55c2c355b36f568759a" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AluTrans</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1ab335946effc777325c390e6a5fae5926" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AssignSlot</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a8598a95e86ec98f702fbbf196e398f01" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AttemptFillSlot</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a1889268eb2535153445ca21726e89dda" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>Available</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a16c30108ca0caa1cc03661a26b5bd39f" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AvailableAlus</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a7dd941dda5dcc03a4c46d3613cec5792" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>AvailablesAluCount</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a2663359e474584df0c6ccafb0af09380" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>CurEmitted</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a5311c625e01cf6f35634e950ccc8c377" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>CurInstKind</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a3d4053f3ad05495854ae829d36630339" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>DAG</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a9b216890fb3108d84248b54044fe2670" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>doMBBSchedRegionsTopDown</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a9671665fa833900c1b7d4dafe8f7c93e" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>dumpPolicy</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a2ecebd8a29fabb301a5799dc4d034667" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>enterMBB</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1aeb3260086eb396cb436e7664c13dd460" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>FetchInstCount</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a0be7bd915de546519a4b7c87179d33d2" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>getAluKind</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a65aa8604f1e36cd7a272539c106438af" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>getInstKind</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a4f4eb9938f16f954935e4cb393a78c23" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>getPolicy</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a702cd77626ecb5f226036578d3478a81a57d9968ef102c0486aff9f678abb2944" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>IDAlu</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a702cd77626ecb5f226036578d3478a81a855d5953047a7027168951838f19ca6a" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>IDFetch</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a702cd77626ecb5f226036578d3478a81acc641dcbfe21d56d2d08803233c19d21" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>IDLast</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a702cd77626ecb5f226036578d3478a81ad5cd17466cd3e23fc9934444e6839db4" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>IDOther</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a2c1760a96cdc9e6f584b99740060fcee" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>initialize</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1ae3ec4fd225f0e252e6dfabc03d0903bf" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>initPolicy</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a702cd77626ecb5f226036578d3478a81" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>InstKind</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1ac0bd691448f0ba0e9726cafb6b1c7964" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>InstKindLimit</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a72930dcd659acfbef792bf1d7742e626" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>InstructionsGroupCandidate</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a1767939c59515562b576fc23075ef7df" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>leaveMBB</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1ad391f732fcdc61aa03e9dd1679753b8c" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>LoadAlu</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1ab722870014bbeb1695208b7bf4767282" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>MoveUnits</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a6400a47d8a71d8aee220831d0abb9e45" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1aecceef520c92e7d4f3c152e89ce4a63b" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>NextInstKind</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a7ca730c3e5792a692cd8311d0e261039" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>OccupiedSlotsMask</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1aad27dceab1a594c6994896327defb24f" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>Pending</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a206d20c2bfa0d8490f78fcb9219b3a24" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>PhysicalRegCopy</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a304f98b219053f78f8e00f543c89e143" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>pickAlu</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a3351536ef89bb6fe156f754d2ee7c24c" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>pickNode</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a241019749dda9397ad7e8de19d80c492" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>pickOther</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a40d029acc501fa964c1e1afc14cab22f" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>PopInst</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a03dfeb2e7868b3095cb7dfec1ca2e7c1" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>PrepareNextSlot</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a84f28eec0ae860dcec435f0bd06f6b64" prot="public" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>R600SchedStrategy</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a99d8b8e84e59cb9efece5526298d615f" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>regBelongsToClass</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1af9b2f5ad8048d175fc88cbd6684ac720" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>registerRoots</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a4ae49efe3ba813f5cb7a746245b9b0e1" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>releaseBottomNode</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1aa3c3bb2e44bfef1d9e7c5ea8d3f8be60" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>releaseTopNode</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1abe1c22281512c39286cbb9bca97ae7b8" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>schedNode</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a3a8386beb0371134711bb85e91c5e616" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>scheduleTree</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1af1f5d487c749cd8b3fe868e48b80a84d" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>shouldTrackLaneMasks</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a0ee5c4dca10fa653801aa73cf1723f84" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>shouldTrackPressure</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1ab207363eb73ed08c2f243125059e3a32" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>TII</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a47de27516dcacfdb55c251284f73d36a" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>TRI</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a0781c6e05c2e237cb01ce5ac57a62649" prot="private" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>VLIW5</name></member>
+      <member refid="classllvm_1_1_machine_sched_strategy_1a3d07f24fe972db3fc65bd905a95a5bdb" prot="public" virt="virtual"><scope>llvm::R600SchedStrategy</scope><name>~MachineSchedStrategy</name></member>
+      <member refid="classllvm_1_1_r600_sched_strategy_1a03ab1a42b1533a2c912925f9bd8cadba" prot="public" virt="non-virtual"><scope>llvm::R600SchedStrategy</scope><name>~R600SchedStrategy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

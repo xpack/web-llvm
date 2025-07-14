@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_localizer" kind="class" language="C++" prot="public">
+    <compoundname>llvm::Localizer</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_function_pass" prot="public" virt="non-virtual">llvm::MachineFunctionPass</basecompoundref>
+    <includes refid="_localizer_8h" local="yes">llvm/CodeGen/GlobalISel/Localizer.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_localizer_1abe1771a19d6f71400fc7f8cc6381d66e" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">SmallSetVector</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, 32 &gt;</type>
+        <definition>typedef SmallSetVector&lt;MachineInstr *, 32&gt; llvm::Localizer::LocalizedSetVecT</definition>
+        <argsstring></argsstring>
+        <name>LocalizedSetVecT</name>
+        <qualifiedname>llvm::Localizer::LocalizedSetVecT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="68" column="26" bodyfile="include/llvm/CodeGen/GlobalISel/Localizer.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_localizer_1a713ac9ef75a7879d29aa5be8543c3d1e" prot="public" static="yes" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>char Localizer::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>llvm::Localizer::ID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="45" column="15" bodyfile="include/llvm/CodeGen/GlobalISel/Localizer.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_localizer_1a6ed62833729b6206b3bb80e3349ae642" compoundref="_localizer_8cpp" startline="36" endline="37">Localizer</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_localizer_1a686fc304b2b5394ae73e72533a1410d8" prot="private" static="no" mutable="no">
+        <type>std::function&lt; <ref refid="classbool" kindref="compound">bool</ref>(<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;)&gt;</type>
+        <definition>std::function&lt;bool(const MachineFunction &amp;)&gt; llvm::Localizer::DoNotRunPass</definition>
+        <argsstring></argsstring>
+        <name>DoNotRunPass</name>
+        <qualifiedname>llvm::Localizer::DoNotRunPass</qualifiedname>
+        <briefdescription>
+<para>An input function to decide if the pass should run or not on the given <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="50" column="17" bodyfile="include/llvm/CodeGen/GlobalISel/Localizer.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_localizer_1aff66000142c4e49afc28c4d1aaf5074e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> *</type>
+        <definition>MachineRegisterInfo* llvm::Localizer::MRI</definition>
+        <argsstring></argsstring>
+        <name>MRI</name>
+        <qualifiedname>llvm::Localizer::MRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>MRI contains all the register class/bank information that this pass uses and updates. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="54" column="23" bodyfile="include/llvm/CodeGen/GlobalISel/Localizer.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_localizer_1a21dd467b797d500ce369987ae9a3f1e4" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_target_transform_info" kindref="compound">TargetTransformInfo</ref> *</type>
+        <definition>TargetTransformInfo* llvm::Localizer::TTI</definition>
+        <argsstring></argsstring>
+        <name>TTI</name>
+        <qualifiedname>llvm::Localizer::TTI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para><ref refid="namespacellvm_1aa0d69e81725c10fa5407f0bf34462068" kindref="member">TTI</ref> used for getting remat costs for instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="56" column="23" bodyfile="include/llvm/CodeGen/GlobalISel/Localizer.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classllvm_1_1_localizer_1a926a3ff8d2a08d4320e57696dca8eaef" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool Localizer::isLocalUse</definition>
+        <argsstring>(MachineOperand &amp;MOUse, const MachineInstr &amp;Def, MachineBasicBlock *&amp;InsertMBB)</argsstring>
+        <name>isLocalUse</name>
+        <qualifiedname>llvm::Localizer::isLocalUse</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> &amp;</type>
+          <declname>MOUse</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>Def</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *&amp;</type>
+          <declname>InsertMBB</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if <computeroutput>MOUse</computeroutput> is used in the same basic block as <computeroutput>Def</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the use is in the same block, we say it is local. When the use is not local, <computeroutput>InsertMBB</computeroutput> will contain the basic block when to insert <computeroutput>Def</computeroutput> to have a local use. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="62" column="15" bodyfile="lib/CodeGen/GlobalISel/Localizer.cpp" bodystart="53" bodyend="60"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_localizer_1a52e1aad970003f18fe7cbea73349ec43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Localizer::init</definition>
+        <argsstring>(MachineFunction &amp;MF)</argsstring>
+        <name>init</name>
+        <qualifiedname>llvm::Localizer::init</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the field members using <computeroutput>MF</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="66" column="8" bodyfile="lib/CodeGen/GlobalISel/Localizer.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_localizer_1a425cfcb6dc81337235d12c132d408da3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned Localizer::getNumPhiUses</definition>
+        <argsstring>(MachineOperand &amp;Op) const</argsstring>
+        <name>getNumPhiUses</name>
+        <qualifiedname>llvm::Localizer::getNumPhiUses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> &amp;</type>
+          <declname>Op</declname>
+        </param>
+        <briefdescription>
+<para>If <computeroutput><ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref></computeroutput> is a reg operand of a PHI, return the number of total operands in the PHI that are the same as <computeroutput><ref refid="namespacellvm_1ab471937b9a227e70c7fe8bd9604014d6" kindref="member">Op</ref></computeroutput>, including itself. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="72" column="12" bodyfile="lib/CodeGen/GlobalISel/Localizer.cpp" bodystart="62" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_localizer_1a4e4e932289e9e91c3d72bea4fcc793ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool Localizer::localizeInterBlock</definition>
+        <argsstring>(MachineFunction &amp;MF, LocalizedSetVecT &amp;LocalizedInstrs)</argsstring>
+        <name>localizeInterBlock</name>
+        <qualifiedname>llvm::Localizer::localizeInterBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">LocalizedSetVecT</ref> &amp;</type>
+          <declname>LocalizedInstrs</declname>
+        </param>
+        <briefdescription>
+<para>Do inter-block localization from the entry block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="75" column="8" bodyfile="lib/CodeGen/GlobalISel/Localizer.cpp" bodystart="76" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_localizer_1a99c35f5fa597ae26e9b41e02c66d87e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool Localizer::localizeIntraBlock</definition>
+        <argsstring>(LocalizedSetVecT &amp;LocalizedInstrs)</argsstring>
+        <name>localizeIntraBlock</name>
+        <qualifiedname>llvm::Localizer::localizeIntraBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_small_set_vector" kindref="compound">LocalizedSetVecT</ref> &amp;</type>
+          <declname>LocalizedInstrs</declname>
+        </param>
+        <briefdescription>
+<para>Do intra-block localization of already localized instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="79" column="8" bodyfile="lib/CodeGen/GlobalISel/Localizer.cpp" bodystart="151" bodyend="202"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_localizer_1a62ba443c3e6872953f937aaca117c8ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Localizer::Localizer</definition>
+        <argsstring>()</argsstring>
+        <name>Localizer</name>
+        <qualifiedname>llvm::Localizer::Localizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="82" column="3" bodyfile="lib/CodeGen/GlobalISel/Localizer.cpp" bodystart="39" bodyend="40"/>
+        <references refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" compoundref="_a_arch64_promote_constant_8cpp" startline="230">const</references>
+        <references refid="classllvm_1_1_localizer_1a62ba443c3e6872953f937aaca117c8ba" compoundref="_localizer_8cpp" startline="39" endline="40">Localizer</references>
+        <referencedby refid="classllvm_1_1_localizer_1a62ba443c3e6872953f937aaca117c8ba" compoundref="_localizer_8cpp" startline="39" endline="40">Localizer</referencedby>
+        <referencedby refid="classllvm_1_1_localizer_1a6ed62833729b6206b3bb80e3349ae642" compoundref="_localizer_8cpp" startline="36" endline="37">Localizer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_localizer_1a6ed62833729b6206b3bb80e3349ae642" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Move duplicate certain instructions close to their false Localizer::Localizer</definition>
+        <argsstring>(std::function&lt; bool(const MachineFunction &amp;)&gt;)</argsstring>
+        <name>Localizer</name>
+        <qualifiedname>llvm::Localizer::Localizer</qualifiedname>
+        <param>
+          <type>std::function&lt; <ref refid="classbool" kindref="compound">bool</ref>(<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;)&gt;</type>
+          <defname>F</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="83" column="3" bodyfile="lib/CodeGen/GlobalISel/Localizer.cpp" bodystart="36" bodyend="37"/>
+        <references refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" compoundref="_a_arch64_promote_constant_8cpp" startline="230">const</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <references refid="_region_printer_8cpp_1aa37fbbce2360106772fd97ed06455d55">function</references>
+        <references refid="classllvm_1_1_localizer_1a713ac9ef75a7879d29aa5be8543c3d1e" compoundref="_localizer_8h" startline="45">ID</references>
+        <references refid="classllvm_1_1_localizer_1a62ba443c3e6872953f937aaca117c8ba" compoundref="_localizer_8cpp" startline="39" endline="40">Localizer</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" compoundref="_machine_function_pass_8h" startline="41" endline="41">llvm::MachineFunctionPass::MachineFunctionPass</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_localizer_1af8782a79032a77de5c58bb4cb3ee2432" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef llvm::Localizer::getPassName</definition>
+        <argsstring>() const override</argsstring>
+        <name>getPassName</name>
+        <qualifiedname>llvm::Localizer::getPassName</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1ad729b39eacf070a9bca84533b3c743bf">getPassName</reimplements>
+        <briefdescription>
+<para>getPassName - Return a nice clean name for a pass. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This usually implemented in terms of the name that is registered by one of the Registration templates, but can be overloaded directly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="85" column="13" bodyfile="include/llvm/CodeGen/GlobalISel/Localizer.h" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_localizer_1a813d394fbe924136a6f5b60c45e35046" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_function_properties" kindref="compound">MachineFunctionProperties</ref></type>
+        <definition>MachineFunctionProperties llvm::Localizer::getRequiredProperties</definition>
+        <argsstring>() const override</argsstring>
+        <name>getRequiredProperties</name>
+        <qualifiedname>llvm::Localizer::getRequiredProperties</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1af0f2f06a3a773431ee9813351d609c4d">getRequiredProperties</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="87" column="29" bodyfile="include/llvm/CodeGen/GlobalISel/Localizer.h" bodystart="87" bodyend="90"/>
+        <references refid="classllvm_1_1_machine_function_properties_1ad85237c6c667e4713efe8921e9c32ac1a4fc3b812627e58da17a703f73013db96" compoundref="_machine_function_8h" startline="188">llvm::MachineFunctionProperties::IsSSA</references>
+        <references refid="classllvm_1_1_machine_function_properties_1aa7780563d7ca260d0ae67d957b56427f" compoundref="_machine_function_8h" startline="207" endline="210">llvm::MachineFunctionProperties::set</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_localizer_1a0f9298248f028bcd2339d3b057b94b9b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Localizer::getAnalysisUsage</definition>
+        <argsstring>(AnalysisUsage &amp;AU) const override</argsstring>
+        <name>getAnalysisUsage</name>
+        <qualifiedname>llvm::Localizer::getAnalysisUsage</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1a6590d0486104165ca40c7df0707f7b9e">getAnalysisUsage</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_analysis_usage" kindref="compound">AnalysisUsage</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>getAnalysisUsage - This function should be overriden by passes that need analysis information to do their job. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If a pass specifies that it uses a particular analysis result to this function, it can then use the <ref refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" kindref="member">getAnalysis&lt;AnalysisType&gt;()</ref> function, below. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="92" column="8" bodyfile="lib/CodeGen/GlobalISel/Localizer.cpp" bodystart="47" bodyend="51"/>
+        <references refid="classllvm_1_1_analysis_usage_1ae0adcccca08fb686c9ce00f9397b660c" compoundref="_pass_analysis_support_8h" startline="75" endline="77">llvm::AnalysisUsage::addRequired</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e" compoundref="_machine_function_pass_8cpp" startline="169" endline="190">llvm::MachineFunctionPass::getAnalysisUsage</references>
+        <references refid="namespacellvm_1aa353f9585311abf1b6f698049f5a29b7" compoundref="_code_gen_2_global_i_sel_2_utils_8cpp" startline="1168" endline="1170">llvm::getSelectionDAGFallbackAnalysisUsage</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_localizer_1ac696e5096a6db4c18e884c119cb50446" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool Localizer::runOnMachineFunction</definition>
+        <argsstring>(MachineFunction &amp;MF) override</argsstring>
+        <name>runOnMachineFunction</name>
+        <qualifiedname>llvm::Localizer::runOnMachineFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1abb98ed32e4e5acae62ef3edd7bf04fb5">runOnMachineFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="94" column="8" bodyfile="lib/CodeGen/GlobalISel/Localizer.cpp" bodystart="204" bodyend="225"/>
+        <references refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2373">Changed</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_machine_function_properties_1ad85237c6c667e4713efe8921e9c32ac1a8014afd87e04236365d1796e38bc15f5" compoundref="_machine_function_8h" startline="192">llvm::MachineFunctionProperties::FailedISel</references>
+        <references refid="classllvm_1_1_machine_function_1a3d142c9e7c066059e15232c56dec9e2e" compoundref="_machine_function_8cpp" startline="645" endline="647">llvm::MachineFunction::getName</references>
+        <references refid="classllvm_1_1_machine_function_1ac1f888bba00f32cb4f9a0010c958f397" compoundref="_machine_function_8h" startline="824" endline="824">llvm::MachineFunction::getProperties</references>
+        <references refid="classllvm_1_1_machine_function_properties_1aacef05f16d3e71703f08bb4677e1d7a2" compoundref="_machine_function_8h" startline="203" endline="205">llvm::MachineFunctionProperties::hasProperty</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This pass implements the localization mechanism described at the top of this file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>One specificity of the implementation is that it will materialize one and only one instance of a constant per basic block, thus enabling reuse of that constant within that block. Moreover, it only materializes constants in blocks where they are used. PHI uses are considered happening at the end of the related predecessor. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::Localizer</label>
+        <link refid="classllvm_1_1_localizer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::Localizer</label>
+        <link refid="classllvm_1_1_localizer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/CodeGen/GlobalISel/Localizer.h" line="43" column="1" bodyfile="include/llvm/CodeGen/GlobalISel/Localizer.h" bodystart="43" bodyend="95"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_function_pass_1a748922f143f2da9a13b0b15ff6a3dd22" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>assignPassManager</name></member>
+      <member refid="classllvm_1_1_pass_1a2ed7d79d79dffe7368c3d3cdf40dd80e" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>createPass</name></member>
+      <member refid="classllvm_1_1_pass_1ac7811985250c75d7e2a244292d615fff" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>doFinalization</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a204ffdf4717a340f8cbe1fd1341a8148" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>doInitialization</name></member>
+      <member refid="classllvm_1_1_localizer_1a686fc304b2b5394ae73e72533a1410d8" prot="private" virt="non-virtual"><scope>llvm::Localizer</scope><name>DoNotRunPass</name></member>
+      <member refid="classllvm_1_1_pass_1a1a60731eeff800b39fca7280a5a167ae" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_pass_1ad2f0576ef7c9c4af40e35001c81f4922" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>dumpPassStructure</name></member>
+      <member refid="classllvm_1_1_function_pass_1a7691d83e3561f781cae4ce4a01bdfa93" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>FunctionPass</name></member>
+      <member refid="classllvm_1_1_pass_1a03d3a81b1c46aff7c38ef3a6750ba225" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>getAdjustedAnalysisPointer</name></member>
+      <member refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a560d384c0cef7f62836884fdbbd1fe66" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a6613f29d3e54ce175ac33fb9ba264fae" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1a2190247edbacb33b4e8a3d409fa2d99e" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>getAnalysisIfAvailable</name></member>
+      <member refid="classllvm_1_1_localizer_1a0f9298248f028bcd2339d3b057b94b9b" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>getAnalysisUsage</name></member>
+      <member refid="classllvm_1_1_pass_1ae31759fd992cddb1f2d62ab0df85834a" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>getAsImmutablePass</name></member>
+      <member refid="classllvm_1_1_pass_1a626b77ef8abdfa9f53c697ad129a6e5a" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>getAsPMDataManager</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a22bc7c91051dca8dc211c3afe9929603" prot="protected" virt="virtual"><scope>llvm::Localizer</scope><name>getClearedProperties</name></member>
+      <member refid="classllvm_1_1_localizer_1a425cfcb6dc81337235d12c132d408da3" prot="private" virt="non-virtual"><scope>llvm::Localizer</scope><name>getNumPhiUses</name></member>
+      <member refid="classllvm_1_1_pass_1a63192e749ba4a0ee29336a59d6a19647" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>getPassID</name></member>
+      <member refid="classllvm_1_1_pass_1a9de4db62e6884f2e5efea6793af30d99" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>getPassKind</name></member>
+      <member refid="classllvm_1_1_localizer_1af8782a79032a77de5c58bb4cb3ee2432" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>getPassName</name></member>
+      <member refid="classllvm_1_1_function_pass_1a68517706d9801aec6d20c32a424ed152" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>getPotentialPassManagerType</name></member>
+      <member refid="classllvm_1_1_localizer_1a813d394fbe924136a6f5b60c45e35046" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>getRequiredProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a969c082f66671df288441bbad9ca87db" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>getResolver</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a8fbedd15c1c809e6050f3fd3ccd3338e" prot="protected" virt="virtual"><scope>llvm::Localizer</scope><name>getSetProperties</name></member>
+      <member refid="classllvm_1_1_localizer_1a713ac9ef75a7879d29aa5be8543c3d1e" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>ID</name></member>
+      <member refid="classllvm_1_1_localizer_1a52e1aad970003f18fe7cbea73349ec43" prot="private" virt="non-virtual"><scope>llvm::Localizer</scope><name>init</name></member>
+      <member refid="classllvm_1_1_localizer_1a926a3ff8d2a08d4320e57696dca8eaef" prot="private" virt="non-virtual"><scope>llvm::Localizer</scope><name>isLocalUse</name></member>
+      <member refid="classllvm_1_1_localizer_1abe1771a19d6f71400fc7f8cc6381d66e" prot="private" virt="non-virtual"><scope>llvm::Localizer</scope><name>LocalizedSetVecT</name></member>
+      <member refid="classllvm_1_1_localizer_1a4e4e932289e9e91c3d72bea4fcc793ed" prot="private" virt="non-virtual"><scope>llvm::Localizer</scope><name>localizeInterBlock</name></member>
+      <member refid="classllvm_1_1_localizer_1a99c35f5fa597ae26e9b41e02c66d87e8" prot="private" virt="non-virtual"><scope>llvm::Localizer</scope><name>localizeIntraBlock</name></member>
+      <member refid="classllvm_1_1_localizer_1a62ba443c3e6872953f937aaca117c8ba" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>Localizer</name></member>
+      <member refid="classllvm_1_1_localizer_1a6ed62833729b6206b3bb80e3349ae642" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>Localizer</name></member>
+      <member refid="classllvm_1_1_pass_1aab174263c400ece13a7278990e102fa6" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_pass_1a992ff669acca94459037cfb1f41cb9dc" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" prot="protected" virt="non-virtual"><scope>llvm::Localizer</scope><name>MachineFunctionPass</name></member>
+      <member refid="classllvm_1_1_localizer_1aff66000142c4e49afc28c4d1aaf5074e" prot="private" virt="non-virtual"><scope>llvm::Localizer</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1_pass_1a0b4a511579939b07831db90c3fc98996" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>mustPreserveAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af468a2aeb0d98e3dbeda38176ce516d3" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_pass_1a16baa169d062524be5a6b67609266174" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1ad40d19ce644ec38c52ea00be59016cd5" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1aa5f61a8789f87816c5f494d42a70f01f" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>preparePassManager</name></member>
+      <member refid="classllvm_1_1_pass_1a061b4c01e9c189208dbfd3c77fdb9a5c" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>print</name></member>
+      <member refid="classllvm_1_1_pass_1aeb6e74b0f36a0acd1d20149ef088715a" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>releaseMemory</name></member>
+      <member refid="classllvm_1_1_localizer_1ac696e5096a6db4c18e884c119cb50446" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>runOnMachineFunction</name></member>
+      <member refid="classllvm_1_1_pass_1a2423fcc912a698d4f36c9c9380b53a50" prot="public" virt="non-virtual"><scope>llvm::Localizer</scope><name>setResolver</name></member>
+      <member refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" prot="protected" virt="non-virtual"><scope>llvm::Localizer</scope><name>skipFunction</name></member>
+      <member refid="classllvm_1_1_localizer_1a21dd467b797d500ce369987ae9a3f1e4" prot="private" virt="non-virtual"><scope>llvm::Localizer</scope><name>TTI</name></member>
+      <member refid="classllvm_1_1_pass_1ac8ef6f57d4ec869a7f1007aeddf2b169" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>verifyAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1abe2fe9b29d21424fe4b410fc8e98606c" prot="public" virt="virtual"><scope>llvm::Localizer</scope><name>~Pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

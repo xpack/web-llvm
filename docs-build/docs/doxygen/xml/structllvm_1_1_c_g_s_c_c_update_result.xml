@@ -1,0 +1,491 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1_c_g_s_c_c_update_result" kind="struct" language="C++" prot="public">
+    <compoundname>llvm::CGSCCUpdateResult</compoundname>
+    <includes refid="_c_g_s_c_c_pass_manager_8h" local="yes">llvm/Analysis/CGSCCPassManager.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structllvm_1_1_c_g_s_c_c_update_result_1a277c9d45b3b20308e166249fd56598ed" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_priority_worklist" kindref="compound">SmallPriorityWorklist</ref>&lt; <ref refid="classllvm_1_1_lazy_call_graph_1_1_s_c_c" kindref="compound">LazyCallGraph::SCC</ref> *, 1 &gt; &amp;</type>
+        <definition>SmallPriorityWorklist&lt;LazyCallGraph::SCC *, 1&gt;&amp; llvm::CGSCCUpdateResult::CWorklist</definition>
+        <argsstring></argsstring>
+        <name>CWorklist</name>
+        <qualifiedname>llvm::CGSCCUpdateResult::CWorklist</qualifiedname>
+        <briefdescription>
+<para>Worklist of the SCCs queued for processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When a pass refines the graph and creates new SCCs or causes them to have a different shape or set of component functions it should add the SCCs to this worklist so that we visit them in the refined form.</para>
+<para>Note that if the SCCs are part of a RefSCC that is added to the <computeroutput>RCWorklist</computeroutput>, they don&apos;t need to be added here as visiting the RefSCC will be sufficient to re-visit the SCCs within it.</para>
+<para>This worklist is in reverse post-order, as we pop off the back in order to observe SCCs in post-order. When adding SCCs, clients should add them in reverse post-order. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CGSCCPassManager.h" line="245" column="25" bodyfile="include/llvm/Analysis/CGSCCPassManager.h" bodystart="245" bodyend="-1"/>
+        <referencedby refid="_c_g_s_c_c_pass_manager_8cpp_1aa64f6bcd5ace031369edc14aa406d745" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="813" endline="872">incorporateNewSCCRange</referencedby>
+        <referencedby refid="structllvm_1_1_coro_split_pass_1a47f6589634ad33a13369ace133b9f4b2" compoundref="_coro_split_8cpp" startline="2219" endline="2290">llvm::CoroSplitPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_inliner_pass_1a78e09cea341cfdf58869920175c52d82" compoundref="_inliner_8cpp" startline="205" endline="575">llvm::InlinerPass::run</referencedby>
+        <referencedby refid="_c_g_s_c_c_pass_manager_8cpp_1a490117b63072462d035a6933fdb94c1f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="874" endline="1174">updateCGAndAnalysisManagerForPass</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_c_g_s_c_c_update_result_1a6822f3e4bf1d3a55c967bf74b7419704" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_ptr_set_impl" kindref="compound">SmallPtrSetImpl</ref>&lt; <ref refid="classllvm_1_1_lazy_call_graph_1_1_s_c_c" kindref="compound">LazyCallGraph::SCC</ref> * &gt; &amp;</type>
+        <definition>SmallPtrSetImpl&lt;LazyCallGraph::SCC *&gt;&amp; llvm::CGSCCUpdateResult::InvalidatedSCCs</definition>
+        <argsstring></argsstring>
+        <name>InvalidatedSCCs</name>
+        <qualifiedname>llvm::CGSCCUpdateResult::InvalidatedSCCs</qualifiedname>
+        <briefdescription>
+<para>The set of invalidated SCCs which should be skipped if they are found in <computeroutput>CWorklist</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is used to quickly prune out SCCs when they get deleted and happen to already be on the worklist. We use this primarily to avoid scanning the list and removing entries from it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CGSCCPassManager.h" line="253" column="19" bodyfile="include/llvm/Analysis/CGSCCPassManager.h" bodystart="253" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_devirt_s_c_c_repeated_pass_1a11597e1847c3156c4866aa0a43a1b71b" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="358" endline="503">llvm::DevirtSCCRepeatedPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_inliner_pass_1a78e09cea341cfdf58869920175c52d82" compoundref="_inliner_8cpp" startline="205" endline="575">llvm::InlinerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_module_to_post_order_c_g_s_c_c_pass_adaptor_1a0ff99def687659818bdb4a25afd82c94" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="134" endline="356">llvm::ModuleToPostOrderCGSCCPassAdaptor::run</referencedby>
+        <referencedby refid="classllvm_1_1_pass_manager_1a6d74effaad77f6ecb91e1806993cda8f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="61" endline="131">llvm::PassManager&lt; LazyCallGraph::SCC, CGSCCAnalysisManager, LazyCallGraph &amp;, CGSCCUpdateResult &amp; &gt;::run</referencedby>
+        <referencedby refid="_c_g_s_c_c_pass_manager_8cpp_1a490117b63072462d035a6933fdb94c1f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="874" endline="1174">updateCGAndAnalysisManagerForPass</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_c_g_s_c_c_update_result_1ab4eb37646445da693553b9728143f31c" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_lazy_call_graph_1_1_s_c_c" kindref="compound">LazyCallGraph::SCC</ref> *</type>
+        <definition>LazyCallGraph::SCC* llvm::CGSCCUpdateResult::UpdatedC</definition>
+        <argsstring></argsstring>
+        <name>UpdatedC</name>
+        <qualifiedname>llvm::CGSCCUpdateResult::UpdatedC</qualifiedname>
+        <briefdescription>
+<para>If non-null, the updated current <computeroutput>SCC</computeroutput> being processed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is set when a graph refinement takes place and the &quot;current&quot; point in the graph moves &quot;down&quot; or earlier in the post-order walk. This will often cause the &quot;current&quot; SCC to be a newly created SCC object and the old one to be added to the above worklist. When that happens, this pointer is non-null and can be used to continue processing the &quot;top&quot; of the post-order walk. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CGSCCPassManager.h" line="263" column="22" bodyfile="include/llvm/Analysis/CGSCCPassManager.h" bodystart="263" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_devirt_s_c_c_repeated_pass_1a11597e1847c3156c4866aa0a43a1b71b" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="358" endline="503">llvm::DevirtSCCRepeatedPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_module_to_post_order_c_g_s_c_c_pass_adaptor_1a0ff99def687659818bdb4a25afd82c94" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="134" endline="356">llvm::ModuleToPostOrderCGSCCPassAdaptor::run</referencedby>
+        <referencedby refid="classllvm_1_1_pass_manager_1a6d74effaad77f6ecb91e1806993cda8f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="61" endline="131">llvm::PassManager&lt; LazyCallGraph::SCC, CGSCCAnalysisManager, LazyCallGraph &amp;, CGSCCUpdateResult &amp; &gt;::run</referencedby>
+        <referencedby refid="_c_g_s_c_c_pass_manager_8cpp_1a490117b63072462d035a6933fdb94c1f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="874" endline="1174">updateCGAndAnalysisManagerForPass</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_c_g_s_c_c_update_result_1ac113dcaae09e52d6da7235e0757757f0" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_preserved_analyses" kindref="compound">PreservedAnalyses</ref></type>
+        <definition>PreservedAnalyses llvm::CGSCCUpdateResult::CrossSCCPA</definition>
+        <argsstring></argsstring>
+        <name>CrossSCCPA</name>
+        <qualifiedname>llvm::CGSCCUpdateResult::CrossSCCPA</qualifiedname>
+        <briefdescription>
+<para>Preserved analyses across SCCs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We specifically want to allow CGSCC passes to mutate ancestor IR (changing both the CG structure and the function IR itself). However, this means we need to take special care to correctly mark what analyses are preserved <emphasis>across</emphasis> SCCs. We have to track this out-of-band here because within the main <computeroutput><ref refid="classllvm_1_1_pass_manager" kindref="compound">PassManager</ref></computeroutput> infrastructure we need to mark everything within an SCC as preserved in order to avoid repeatedly invalidating the same analyses as we unnest pass managers and adaptors. So we track the cross-SCC version of the preserved analyses here from any code that does direct invalidation of SCC analyses, and then use it whenever we move forward in the post-order walk of SCCs before running passes over the new SCC. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CGSCCPassManager.h" line="278" column="21" bodyfile="include/llvm/Analysis/CGSCCPassManager.h" bodystart="278" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_module_to_post_order_c_g_s_c_c_pass_adaptor_1a0ff99def687659818bdb4a25afd82c94" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="134" endline="356">llvm::ModuleToPostOrderCGSCCPassAdaptor::run</referencedby>
+        <referencedby refid="classllvm_1_1_pass_manager_1a6d74effaad77f6ecb91e1806993cda8f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="61" endline="131">llvm::PassManager&lt; LazyCallGraph::SCC, CGSCCAnalysisManager, LazyCallGraph &amp;, CGSCCUpdateResult &amp; &gt;::run</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_c_g_s_c_c_update_result_1a500c2477bf6251954e52d6d9ef808e39" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_dense_set" kindref="compound">SmallDenseSet</ref>&lt; std::pair&lt; <ref refid="classllvm_1_1_lazy_call_graph_1_1_node" kindref="compound">LazyCallGraph::Node</ref> *, <ref refid="classllvm_1_1_lazy_call_graph_1_1_s_c_c" kindref="compound">LazyCallGraph::SCC</ref> * &gt;, 4 &gt; &amp;</type>
+        <definition>SmallDenseSet&lt;std::pair&lt;LazyCallGraph::Node *, LazyCallGraph::SCC *&gt;, 4&gt;&amp; llvm::CGSCCUpdateResult::InlinedInternalEdges</definition>
+        <argsstring></argsstring>
+        <name>InlinedInternalEdges</name>
+        <qualifiedname>llvm::CGSCCUpdateResult::InlinedInternalEdges</qualifiedname>
+        <briefdescription>
+<para>A hacky area where the inliner can retain history about inlining decisions that mutated the call graph&apos;s SCC structure in order to avoid infinite inlining. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See the comments in the inliner&apos;s CG update logic.</para>
+<para>FIXME: Keeping this here seems like a big layering issue, we should look for a better technique. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CGSCCPassManager.h" line="287" column="7" bodyfile="include/llvm/Analysis/CGSCCPassManager.h" bodystart="287" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_inliner_pass_1a78e09cea341cfdf58869920175c52d82" compoundref="_inliner_8cpp" startline="205" endline="575">llvm::InlinerPass::run</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_c_g_s_c_c_update_result_1a53676888f06cf2212c0126db2e9cf9dd" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_function" kindref="compound">Function</ref> *, 4 &gt; &amp;</type>
+        <definition>SmallVector&lt;Function *, 4&gt;&amp; llvm::CGSCCUpdateResult::DeadFunctions</definition>
+        <argsstring></argsstring>
+        <name>DeadFunctions</name>
+        <qualifiedname>llvm::CGSCCUpdateResult::DeadFunctions</qualifiedname>
+        <briefdescription>
+<para>Functions that a pass has considered to be dead to be removed at the end of the call graph walk in batch. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CGSCCPassManager.h" line="291" column="15" bodyfile="include/llvm/Analysis/CGSCCPassManager.h" bodystart="291" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_inliner_pass_1a78e09cea341cfdf58869920175c52d82" compoundref="_inliner_8cpp" startline="205" endline="575">llvm::InlinerPass::run</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_c_g_s_c_c_update_result_1a0a4386bac07827eaf6916d7da69a1cd4" prot="public" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1_small_map_vector" kindref="compound">SmallMapVector</ref>&lt; <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *, <ref refid="classllvm_1_1_weak_tracking_v_h" kindref="compound">WeakTrackingVH</ref>, 16 &gt;</type>
+        <definition>SmallMapVector&lt;Value *, WeakTrackingVH, 16&gt; llvm::CGSCCUpdateResult::IndirectVHs</definition>
+        <argsstring></argsstring>
+        <name>IndirectVHs</name>
+        <qualifiedname>llvm::CGSCCUpdateResult::IndirectVHs</qualifiedname>
+        <briefdescription>
+<para>Weak VHs to keep track of indirect calls for the purposes of detecting devirtualization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a map to avoid having duplicate entries. If a <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> is deallocated, its corresponding <ref refid="classllvm_1_1_weak_tracking_v_h" kindref="compound">WeakTrackingVH</ref> will be nulled out. When checking if a <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> is in the map or not, also check if the corresponding <ref refid="classllvm_1_1_weak_tracking_v_h" kindref="compound">WeakTrackingVH</ref> is null to avoid issues with a new <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> sharing the same address as a deallocated one. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CGSCCPassManager.h" line="301" column="18" bodyfile="include/llvm/Analysis/CGSCCPassManager.h" bodystart="301" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_devirt_s_c_c_repeated_pass_1a11597e1847c3156c4866aa0a43a1b71b" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="358" endline="503">llvm::DevirtSCCRepeatedPass::run</referencedby>
+        <referencedby refid="_c_g_s_c_c_pass_manager_8cpp_1a490117b63072462d035a6933fdb94c1f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="874" endline="1174">updateCGAndAnalysisManagerForPass</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Support structure for SCC passes to communicate updates the call graph back to the CGSCC pass manager infrastructure. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The CGSCC pass manager runs SCC passes which are allowed to update the call graph and SCC structures. This means the structure the pass manager works on is mutating underneath it. In order to support that, there needs to be careful communication about the precise nature and ramifications of these updates to the pass management infrastructure.</para>
+<para>All SCC passes will have to accept a reference to the management layer&apos;s update result struct and use it to reflect the results of any CG updates performed.</para>
+<para>Passes which do not change the call graph structure in any way can just ignore this argument to their run method. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="28">
+        <label>Size_T</label>
+      </node>
+      <node id="26">
+        <label>SmallVectorSizeType&lt; llvm::Function * &gt;</label>
+        <link refid="class_small_vector_size_type_3_01llvm_1_1_function_01_5_01_4"/>
+      </node>
+      <node id="12">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="36">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="10">
+        <label>const void **</label>
+      </node>
+      <node id="17">
+        <label>detail::DenseSetImpl&lt; std::pair&lt; llvm::LazyCallGraph::Node *, llvm::LazyCallGraph::SCC * &gt;, SmallDenseMap&lt; std::pair&lt; llvm::LazyCallGraph::Node *, llvm::LazyCallGraph::SCC * &gt;, detail::DenseSetEmpty, InlineBuckets, DenseMapInfo&lt;std::pair&lt; llvm::LazyCallGraph::Node *, llvm::LazyCallGraph::SCC * &gt;&gt;, detail::DenseSetPair&lt; std::pair&lt; llvm::LazyCallGraph::Node *, llvm::LazyCallGraph::SCC * &gt; &gt; &gt;, DenseMapInfo&lt;std::pair&lt; llvm::LazyCallGraph::Node *, llvm::LazyCallGraph::SCC * &gt;&gt; &gt;</label>
+      </node>
+      <node id="1">
+        <label>llvm::CGSCCUpdateResult</label>
+        <link refid="structllvm_1_1_c_g_s_c_c_update_result"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>CWorklist</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>InvalidatedSCCs</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>UpdatedC</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>CrossSCCPA</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>InlinedInternalEdges</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>DeadFunctions</edgelabel>
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>IndirectVHs</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::DebugEpochBase</label>
+        <link refid="classllvm_1_1_debug_epoch_base"/>
+      </node>
+      <node id="14">
+        <label>llvm::LazyCallGraph::SCC</label>
+        <link refid="classllvm_1_1_lazy_call_graph_1_1_s_c_c"/>
+      </node>
+      <node id="43">
+        <label>llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;</label>
+        <link refid="classllvm_1_1_map_vector"/>
+      </node>
+      <node id="45">
+        <label>llvm::MapVector&lt; KeyT, ValueT, SmallDenseMap&lt; KeyT, unsigned, N &gt;, SmallVector&lt; std::pair&lt; KeyT, ValueT &gt;, N &gt; &gt;</label>
+        <link refid="classllvm_1_1_map_vector"/>
+        <childnode refid="43" relation="template-instance">
+          <edgelabel>&lt; KeyT, ValueT, SmallDenseMap&lt; KeyT, unsigned, N &gt;, SmallVector&lt; std::pair&lt; KeyT, ValueT &gt;, N &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="42">
+        <label>llvm::MapVector&lt; llvm::Value *, llvm::WeakTrackingVH, SmallDenseMap&lt; llvm::Value *, unsigned, N &gt;, SmallVector&lt; std::pair&lt; llvm::Value *, llvm::WeakTrackingVH &gt;, N &gt; &gt;</label>
+        <link refid="classllvm_1_1_map_vector"/>
+        <childnode refid="43" relation="template-instance">
+          <edgelabel>&lt; llvm::Value *, llvm::WeakTrackingVH, SmallDenseMap&lt; llvm::Value *, unsigned, N &gt;, SmallVector&lt; std::pair&lt; llvm::Value *, llvm::WeakTrackingVH &gt;, N &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm::PreservedAnalyses</label>
+        <link refid="classllvm_1_1_preserved_analyses"/>
+      </node>
+      <node id="4">
+        <label>llvm::PriorityWorklist&lt; T, VectorT, MapT &gt;</label>
+        <link refid="classllvm_1_1_priority_worklist"/>
+      </node>
+      <node id="6">
+        <label>llvm::PriorityWorklist&lt; T, SmallVector&lt; T, N &gt;, SmallDenseMap&lt; T, ptrdiff_t &gt; &gt;</label>
+        <link refid="classllvm_1_1_priority_worklist"/>
+        <childnode refid="4" relation="template-instance">
+          <edgelabel>&lt; T, SmallVector&lt; T, N &gt;, SmallDenseMap&lt; T, ptrdiff_t &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::PriorityWorklist&lt; llvm::LazyCallGraph::SCC *, SmallVector&lt; llvm::LazyCallGraph::SCC *, N &gt;, SmallDenseMap&lt; llvm::LazyCallGraph::SCC *, ptrdiff_t &gt; &gt;</label>
+        <link refid="classllvm_1_1_priority_worklist"/>
+        <childnode refid="4" relation="template-instance">
+          <edgelabel>&lt; llvm::LazyCallGraph::SCC *, SmallVector&lt; llvm::LazyCallGraph::SCC *, N &gt;, SmallDenseMap&lt; llvm::LazyCallGraph::SCC *, ptrdiff_t &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::SmallDenseSet&lt; ValueT, InlineBuckets, ValueInfoT &gt;</label>
+        <link refid="classllvm_1_1_small_dense_set"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::SmallDenseSet&lt; std::pair&lt; llvm::LazyCallGraph::Node *, llvm::LazyCallGraph::SCC * &gt;, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_dense_set"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="18" relation="template-instance">
+          <edgelabel>&lt; std::pair&lt; llvm::LazyCallGraph::Node *, llvm::LazyCallGraph::SCC * &gt;, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="44">
+        <label>llvm::SmallMapVector&lt; KeyT, ValueT, N &gt;</label>
+        <link refid="structllvm_1_1_small_map_vector"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm::SmallMapVector&lt; llvm::Value *, llvm::WeakTrackingVH, 16 &gt;</label>
+        <link refid="structllvm_1_1_small_map_vector"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+        <childnode refid="44" relation="template-instance">
+          <edgelabel>&lt; llvm::Value *, llvm::WeakTrackingVH, 16 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::SmallPriorityWorklist&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_priority_worklist"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::SmallPriorityWorklist&lt; llvm::LazyCallGraph::SCC *, 1 &gt;</label>
+        <link refid="classllvm_1_1_small_priority_worklist"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="template-instance">
+          <edgelabel>&lt; llvm::LazyCallGraph::SCC *, 1 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::SmallPtrSetImpl&lt; PtrType &gt;</label>
+        <link refid="classllvm_1_1_small_ptr_set_impl"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::SmallPtrSetImpl&lt; llvm::LazyCallGraph::SCC * &gt;</label>
+        <link refid="classllvm_1_1_small_ptr_set_impl"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; llvm::LazyCallGraph::SCC * &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::SmallPtrSetImplBase</label>
+        <link refid="classllvm_1_1_small_ptr_set_impl_base"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>CurArray</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>CurArraySize</edgelabel>
+          <edgelabel>NumNonEmpty</edgelabel>
+          <edgelabel>NumTombstones</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>IsSmall</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+        <childnode refid="40" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::SmallVector&lt; llvm::Function *, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+        <childnode refid="35" relation="private-inheritance">
+        </childnode>
+        <childnode refid="38" relation="template-instance">
+          <edgelabel>&lt; llvm::Function *, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="27" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; llvm::Function * &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; llvm::Function * &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>llvm::SmallVectorImpl&lt; llvm::Function * &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+        <childnode refid="33" relation="template-instance">
+          <edgelabel>&lt; llvm::Function * &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="36" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="36" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm::SmallVectorStorage&lt; llvm::Function *, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="36" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="template-instance">
+          <edgelabel>&lt; llvm::Function *, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::SmallVectorTemplateBase&lt; llvm::Function * &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="template-instance">
+          <edgelabel>&lt; llvm::Function * &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::SmallVectorTemplateCommon&lt; llvm::Function * &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+        <childnode refid="29" relation="template-instance">
+          <edgelabel>&lt; llvm::Function * &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;</label>
+        <link refid="classllvm_1_1detail_1_1_dense_set_impl"/>
+      </node>
+      <node id="11">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+      <node id="25">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Analysis/CGSCCPassManager.h" line="231" column="1" bodyfile="include/llvm/Analysis/CGSCCPassManager.h" bodystart="231" bodyend="302"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1_c_g_s_c_c_update_result_1ac113dcaae09e52d6da7235e0757757f0" prot="public" virt="non-virtual"><scope>llvm::CGSCCUpdateResult</scope><name>CrossSCCPA</name></member>
+      <member refid="structllvm_1_1_c_g_s_c_c_update_result_1a277c9d45b3b20308e166249fd56598ed" prot="public" virt="non-virtual"><scope>llvm::CGSCCUpdateResult</scope><name>CWorklist</name></member>
+      <member refid="structllvm_1_1_c_g_s_c_c_update_result_1a53676888f06cf2212c0126db2e9cf9dd" prot="public" virt="non-virtual"><scope>llvm::CGSCCUpdateResult</scope><name>DeadFunctions</name></member>
+      <member refid="structllvm_1_1_c_g_s_c_c_update_result_1a0a4386bac07827eaf6916d7da69a1cd4" prot="public" virt="non-virtual"><scope>llvm::CGSCCUpdateResult</scope><name>IndirectVHs</name></member>
+      <member refid="structllvm_1_1_c_g_s_c_c_update_result_1a500c2477bf6251954e52d6d9ef808e39" prot="public" virt="non-virtual"><scope>llvm::CGSCCUpdateResult</scope><name>InlinedInternalEdges</name></member>
+      <member refid="structllvm_1_1_c_g_s_c_c_update_result_1a6822f3e4bf1d3a55c967bf74b7419704" prot="public" virt="non-virtual"><scope>llvm::CGSCCUpdateResult</scope><name>InvalidatedSCCs</name></member>
+      <member refid="structllvm_1_1_c_g_s_c_c_update_result_1ab4eb37646445da693553b9728143f31c" prot="public" virt="non-virtual"><scope>llvm::CGSCCUpdateResult</scope><name>UpdatedC</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,749 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="class_output_buffer" kind="class" language="C++" prot="public">
+    <compoundname>OutputBuffer</compoundname>
+    <includes refid="_demangle_2_utility_8h" local="yes">llvm/Demangle/Utility.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_output_buffer_1af69503e3974cf82e33b6e8f69b0ef5b8" prot="private" static="no" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>char* OutputBuffer::Buffer</definition>
+        <argsstring></argsstring>
+        <name>Buffer</name>
+        <qualifiedname>OutputBuffer::Buffer</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="33" column="8" bodyfile="include/llvm/Demangle/Utility.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_output_buffer_1a4b130653c3b609810dba8c95223d61a8" prot="private" static="no" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t OutputBuffer::CurrentPosition</definition>
+        <argsstring></argsstring>
+        <name>CurrentPosition</name>
+        <qualifiedname>OutputBuffer::CurrentPosition</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="34" column="10" bodyfile="include/llvm/Demangle/Utility.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_output_buffer_1af5b88565f210b5d311f01f009c6184b3" prot="private" static="no" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t OutputBuffer::BufferCapacity</definition>
+        <argsstring></argsstring>
+        <name>BufferCapacity</name>
+        <qualifiedname>OutputBuffer::BufferCapacity</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="35" column="10" bodyfile="include/llvm/Demangle/Utility.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_output_buffer_1a91a11bff1a9de8e7f249f21321232c87" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned OutputBuffer::CurrentPackIndex</definition>
+        <argsstring></argsstring>
+        <name>CurrentPackIndex</name>
+        <qualifiedname>OutputBuffer::CurrentPackIndex</qualifiedname>
+        <initializer>= std::numeric_limits&lt;<ref refid="classunsigned" kindref="compound">unsigned</ref>&gt;::max()</initializer>
+        <briefdescription>
+<para>If a <ref refid="class_parameter_pack_expansion" kindref="compound">ParameterPackExpansion</ref> (or similar type) is encountered, the offset into the pack that we&apos;re currently printing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="88" column="12" bodyfile="include/llvm/Demangle/Utility.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_output_buffer_1a8ca110bb2092c04e1c7932852f342ae1" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned OutputBuffer::CurrentPackMax</definition>
+        <argsstring></argsstring>
+        <name>CurrentPackMax</name>
+        <qualifiedname>OutputBuffer::CurrentPackMax</qualifiedname>
+        <initializer>= std::numeric_limits&lt;<ref refid="classunsigned" kindref="compound">unsigned</ref>&gt;::max()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="89" column="12" bodyfile="include/llvm/Demangle/Utility.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_output_buffer_1a54e2eee60cc11acef86c1ad01f2cf17c" prot="public" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned OutputBuffer::GtIsGt</definition>
+        <argsstring></argsstring>
+        <name>GtIsGt</name>
+        <qualifiedname>OutputBuffer::GtIsGt</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>When zero, we&apos;re printing template args and &apos;&gt;&apos; needs to be parenthesized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Use a counter so we can simply increment inside parentheses. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="93" column="12" bodyfile="include/llvm/Demangle/Utility.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="class_output_buffer_1ad0ac1ab307fb35e1abb1580341d97fab" compoundref="_demangle_2_utility_8h" startline="95" endline="95">isGtInsideTemplateArgs</referencedby>
+        <referencedby refid="class_output_buffer_1acbecb7400eab425bd754046f2f7ab415" compoundref="_demangle_2_utility_8h" startline="101" endline="104">printClose</referencedby>
+        <referencedby refid="class_output_buffer_1ae4bdd75f0df36a0f0343aad6ddffdff1" compoundref="_demangle_2_utility_8h" startline="97" endline="100">printOpen</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_output_buffer_1ab1aee4402bc3db190d394f2c54d98db4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OutputBuffer::grow</definition>
+        <argsstring>(size_t N)</argsstring>
+        <name>grow</name>
+        <qualifiedname>OutputBuffer::grow</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="38" column="8" bodyfile="include/llvm/Demangle/Utility.h" bodystart="38" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a314f17470111074b3e7615ad7f295c1c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::writeUnsigned</definition>
+        <argsstring>(uint64_t N, bool isNeg=false)</argsstring>
+        <name>writeUnsigned</name>
+        <qualifiedname>OutputBuffer::writeUnsigned</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>isNeg</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="54" column="16" bodyfile="include/llvm/Demangle/Utility.h" bodystart="54" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_output_buffer_1a4929740589c1d6555f06176074718906" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OutputBuffer::OutputBuffer</definition>
+        <argsstring>(char *StartBuf, size_t Size)</argsstring>
+        <name>OutputBuffer</name>
+        <qualifiedname>OutputBuffer::OutputBuffer</qualifiedname>
+        <param>
+          <type><ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>StartBuf</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="73" column="3" bodyfile="include/llvm/Demangle/Utility.h" bodystart="73" bodyend="74"/>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+        <referencedby refid="class_output_buffer_1ad4f456accebabbcbc6a5fd5bf44e1ff8" compoundref="_demangle_2_utility_8h" startline="115" endline="119">operator+=</referencedby>
+        <referencedby refid="class_output_buffer_1a21d8b544247c0f9bebfc3d3223e9ac0c" compoundref="_demangle_2_utility_8h" startline="106" endline="113">operator+=</referencedby>
+        <referencedby refid="class_output_buffer_1a6f5985ac3d097ad1ffaacabc1f2c9c2b" compoundref="_demangle_2_utility_8h" startline="134" endline="134">operator&lt;&lt;</referencedby>
+        <referencedby refid="class_output_buffer_1ab191048312ffbc7fed536f7544d5910a" compoundref="_demangle_2_utility_8h" startline="152" endline="154">operator&lt;&lt;</referencedby>
+        <referencedby refid="class_output_buffer_1abf3d890bf687463ffbaa9bf31a84be1d" compoundref="_demangle_2_utility_8h" startline="136" endline="138">operator&lt;&lt;</referencedby>
+        <referencedby refid="class_output_buffer_1aafe02c290e94eb230d7d73dbcb694213" compoundref="_demangle_2_utility_8h" startline="144" endline="146">operator&lt;&lt;</referencedby>
+        <referencedby refid="class_output_buffer_1a8fc022bbcd7c284db9694aa37304e0b0" compoundref="_demangle_2_utility_8h" startline="132" endline="132">operator&lt;&lt;</referencedby>
+        <referencedby refid="class_output_buffer_1af126aca0530071798774af05adfd87d5" compoundref="_demangle_2_utility_8h" startline="156" endline="158">operator&lt;&lt;</referencedby>
+        <referencedby refid="class_output_buffer_1a02ac79c12cb7d0f5eb135a578e018961" compoundref="_demangle_2_utility_8h" startline="140" endline="142">operator&lt;&lt;</referencedby>
+        <referencedby refid="class_output_buffer_1aed34311c0c80fafb227222866bd75a44" compoundref="_demangle_2_utility_8h" startline="148" endline="150">operator&lt;&lt;</referencedby>
+        <referencedby refid="class_output_buffer_1a7edcffe9292e5aec52b66240970b660d">operator=</referencedby>
+        <referencedby refid="class_output_buffer_1a6272052905c9a7b5c17e3638d93466c9" compoundref="_demangle_2_utility_8h" startline="75" endline="76">OutputBuffer</referencedby>
+        <referencedby refid="class_output_buffer_1a10fd90958f5e348d0119949d9bbc1b6e">OutputBuffer</referencedby>
+        <referencedby refid="class_output_buffer_1a84e19908b76c0b6925d891a1679d334d" compoundref="_demangle_2_utility_8h" startline="121" endline="130">prepend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a6272052905c9a7b5c17e3638d93466c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OutputBuffer::OutputBuffer</definition>
+        <argsstring>(char *StartBuf, size_t *SizePtr)</argsstring>
+        <name>OutputBuffer</name>
+        <qualifiedname>OutputBuffer::OutputBuffer</qualifiedname>
+        <param>
+          <type><ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>StartBuf</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref> *</type>
+          <declname>SizePtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="75" column="3" bodyfile="include/llvm/Demangle/Utility.h" bodystart="75" bodyend="76"/>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a0346c2f31ef3c3bc8c8d9ab98a18f077" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OutputBuffer::OutputBuffer</definition>
+        <argsstring>()=default</argsstring>
+        <name>OutputBuffer</name>
+        <qualifiedname>OutputBuffer::OutputBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="77" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a10fd90958f5e348d0119949d9bbc1b6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OutputBuffer::OutputBuffer</definition>
+        <argsstring>(const OutputBuffer &amp;)=delete</argsstring>
+        <name>OutputBuffer</name>
+        <qualifiedname>OutputBuffer::OutputBuffer</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="79" column="3"/>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a7edcffe9292e5aec52b66240970b660d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::operator=</definition>
+        <argsstring>(const OutputBuffer &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>OutputBuffer::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="80" column="16"/>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a0d10cd7045a70bb8baf01f673c8f9eae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>OutputBuffer::operator std::string_view</definition>
+        <argsstring>() const</argsstring>
+        <name>operator std::string_view</name>
+        <qualifiedname>OutputBuffer::string_view</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="82" column="3" bodyfile="include/llvm/Demangle/Utility.h" bodystart="82" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1ad0ac1ab307fb35e1abb1580341d97fab" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool OutputBuffer::isGtInsideTemplateArgs</definition>
+        <argsstring>() const</argsstring>
+        <name>isGtInsideTemplateArgs</name>
+        <qualifiedname>OutputBuffer::isGtInsideTemplateArgs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="95" column="8" bodyfile="include/llvm/Demangle/Utility.h" bodystart="95" bodyend="95"/>
+        <references refid="class_output_buffer_1a54e2eee60cc11acef86c1ad01f2cf17c" compoundref="_demangle_2_utility_8h" startline="93">GtIsGt</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1ae4bdd75f0df36a0f0343aad6ddffdff1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OutputBuffer::printOpen</definition>
+        <argsstring>(char Open=&apos;(&apos;)</argsstring>
+        <name>printOpen</name>
+        <qualifiedname>OutputBuffer::printOpen</qualifiedname>
+        <param>
+          <type><ref refid="classchar" kindref="compound">char</ref></type>
+          <declname>Open</declname>
+          <defval>&apos;(&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="97" column="8" bodyfile="include/llvm/Demangle/Utility.h" bodystart="97" bodyend="100"/>
+        <references refid="class_output_buffer_1a54e2eee60cc11acef86c1ad01f2cf17c" compoundref="_demangle_2_utility_8h" startline="93">GtIsGt</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1acbecb7400eab425bd754046f2f7ab415" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OutputBuffer::printClose</definition>
+        <argsstring>(char Close=&apos;)&apos;)</argsstring>
+        <name>printClose</name>
+        <qualifiedname>OutputBuffer::printClose</qualifiedname>
+        <param>
+          <type><ref refid="classchar" kindref="compound">char</ref></type>
+          <declname>Close</declname>
+          <defval>&apos;)&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="101" column="8" bodyfile="include/llvm/Demangle/Utility.h" bodystart="101" bodyend="104"/>
+        <references refid="class_output_buffer_1a54e2eee60cc11acef86c1ad01f2cf17c" compoundref="_demangle_2_utility_8h" startline="93">GtIsGt</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a21d8b544247c0f9bebfc3d3223e9ac0c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::operator+=</definition>
+        <argsstring>(std::string_view R)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>OutputBuffer::operator+=</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="106" column="16" bodyfile="include/llvm/Demangle/Utility.h" bodystart="106" bodyend="113"/>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1ad4f456accebabbcbc6a5fd5bf44e1ff8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::operator+=</definition>
+        <argsstring>(char C)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>OutputBuffer::operator+=</qualifiedname>
+        <param>
+          <type><ref refid="classchar" kindref="compound">char</ref></type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="115" column="16" bodyfile="include/llvm/Demangle/Utility.h" bodystart="115" bodyend="119"/>
+        <references refid="_builtin_g_cs_8cpp_1a1960c14773241d6a238d2db593abe552">C</references>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a84e19908b76c0b6925d891a1679d334d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::prepend</definition>
+        <argsstring>(std::string_view R)</argsstring>
+        <name>prepend</name>
+        <qualifiedname>OutputBuffer::prepend</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="121" column="16" bodyfile="include/llvm/Demangle/Utility.h" bodystart="121" bodyend="130"/>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+        <references refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" compoundref="_inline_order_8cpp" startline="25">Size</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a8fc022bbcd7c284db9694aa37304e0b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::operator&lt;&lt;</definition>
+        <argsstring>(std::string_view R)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>OutputBuffer::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="132" column="3" bodyfile="include/llvm/Demangle/Utility.h" bodystart="132" bodyend="132"/>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a6f5985ac3d097ad1ffaacabc1f2c9c2b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::operator&lt;&lt;</definition>
+        <argsstring>(char C)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>OutputBuffer::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classchar" kindref="compound">char</ref></type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="134" column="3" bodyfile="include/llvm/Demangle/Utility.h" bodystart="134" bodyend="134"/>
+        <references refid="_builtin_g_cs_8cpp_1a1960c14773241d6a238d2db593abe552">C</references>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1abf3d890bf687463ffbaa9bf31a84be1d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::operator&lt;&lt;</definition>
+        <argsstring>(long long N)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>OutputBuffer::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>long long</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="136" column="3" bodyfile="include/llvm/Demangle/Utility.h" bodystart="136" bodyend="138"/>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a02ac79c12cb7d0f5eb135a578e018961" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::operator&lt;&lt;</definition>
+        <argsstring>(unsigned long long N)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>OutputBuffer::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> long long</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="140" column="3" bodyfile="include/llvm/Demangle/Utility.h" bodystart="140" bodyend="142"/>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1aafe02c290e94eb230d7d73dbcb694213" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::operator&lt;&lt;</definition>
+        <argsstring>(long N)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>OutputBuffer::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>long</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="144" column="3" bodyfile="include/llvm/Demangle/Utility.h" bodystart="144" bodyend="146"/>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1aed34311c0c80fafb227222866bd75a44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::operator&lt;&lt;</definition>
+        <argsstring>(unsigned long N)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>OutputBuffer::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> long</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="148" column="3" bodyfile="include/llvm/Demangle/Utility.h" bodystart="148" bodyend="150"/>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1ab191048312ffbc7fed536f7544d5910a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::operator&lt;&lt;</definition>
+        <argsstring>(int N)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>OutputBuffer::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="152" column="3" bodyfile="include/llvm/Demangle/Utility.h" bodystart="152" bodyend="154"/>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1af126aca0530071798774af05adfd87d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_output_buffer" kindref="compound">OutputBuffer</ref> &amp;</type>
+        <definition>OutputBuffer &amp; OutputBuffer::operator&lt;&lt;</definition>
+        <argsstring>(unsigned int N)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>OutputBuffer::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="156" column="3" bodyfile="include/llvm/Demangle/Utility.h" bodystart="156" bodyend="158"/>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="class_output_buffer_1a4929740589c1d6555f06176074718906" compoundref="_demangle_2_utility_8h" startline="73" endline="74">OutputBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1ae8f0bd74643fb4035d3992af214b44a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OutputBuffer::insert</definition>
+        <argsstring>(size_t Pos, const char *S, size_t N)</argsstring>
+        <name>insert</name>
+        <qualifiedname>OutputBuffer::insert</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Pos</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="160" column="8" bodyfile="include/llvm/Demangle/Utility.h" bodystart="160" bodyend="168"/>
+        <references refid="_demangle_config_8h_1ac71d1b2a381f0070e426cf362f0ef7e2" compoundref="_demangle_config_8h" startline="91">DEMANGLE_ASSERT</references>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <referencedby refid="_rust_demangle_8cpp_1ad70908652bd5b04580fa8bd87c85f701" compoundref="_rust_demangle_8cpp" startline="1105" endline="1199">decodePunycode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1adae4954f6d152eb88c24622d8810c813" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t OutputBuffer::getCurrentPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentPosition</name>
+        <qualifiedname>OutputBuffer::getCurrentPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="170" column="10" bodyfile="include/llvm/Demangle/Utility.h" bodystart="170" bodyend="170"/>
+        <referencedby refid="_rust_demangle_8cpp_1ad70908652bd5b04580fa8bd87c85f701" compoundref="_rust_demangle_8cpp" startline="1105" endline="1199">decodePunycode</referencedby>
+        <referencedby refid="namespacellvm_1a7f56cfd37698f599f5bee9bbf4015ca1" compoundref="_d_lang_demangle_8cpp" startline="565" endline="594">llvm::dlangDemangle</referencedby>
+        <referencedby refid="_rust_demangle_8cpp_1a880d5f28abcbc9f6f2d6632bd8f93c4d" compoundref="_rust_demangle_8cpp" startline="1061" endline="1066">removeNullBytes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1acd4c9686ed303f299f1b5980efce07da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void OutputBuffer::setCurrentPosition</definition>
+        <argsstring>(size_t NewPos)</argsstring>
+        <name>setCurrentPosition</name>
+        <qualifiedname>OutputBuffer::setCurrentPosition</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>NewPos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="171" column="8" bodyfile="include/llvm/Demangle/Utility.h" bodystart="171" bodyend="171"/>
+        <referencedby refid="namespacellvm_1a7f56cfd37698f599f5bee9bbf4015ca1" compoundref="_d_lang_demangle_8cpp" startline="565" endline="594">llvm::dlangDemangle</referencedby>
+        <referencedby refid="_rust_demangle_8cpp_1a880d5f28abcbc9f6f2d6632bd8f93c4d" compoundref="_rust_demangle_8cpp" startline="1061" endline="1066">removeNullBytes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a7b0573aee384e0abdba1e452639a1f43" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>char OutputBuffer::back</definition>
+        <argsstring>() const</argsstring>
+        <name>back</name>
+        <qualifiedname>OutputBuffer::back</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="173" column="8" bodyfile="include/llvm/Demangle/Utility.h" bodystart="173" bodyend="176"/>
+        <references refid="_demangle_config_8h_1ac71d1b2a381f0070e426cf362f0ef7e2" compoundref="_demangle_config_8h" startline="91">DEMANGLE_ASSERT</references>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a22b1bd392c7159713e848e3f917b04b2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool OutputBuffer::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>OutputBuffer::empty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="178" column="8" bodyfile="include/llvm/Demangle/Utility.h" bodystart="178" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a8ab399f586318b61b6a38a18adbb098f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>char * OutputBuffer::getBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>getBuffer</name>
+        <qualifiedname>OutputBuffer::getBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="180" column="8" bodyfile="include/llvm/Demangle/Utility.h" bodystart="180" bodyend="180"/>
+        <referencedby refid="namespacellvm_1a7f56cfd37698f599f5bee9bbf4015ca1" compoundref="_d_lang_demangle_8cpp" startline="565" endline="594">llvm::dlangDemangle</referencedby>
+        <referencedby refid="_rust_demangle_8cpp_1a880d5f28abcbc9f6f2d6632bd8f93c4d" compoundref="_rust_demangle_8cpp" startline="1061" endline="1066">removeNullBytes</referencedby>
+        <referencedby refid="classanonymous__namespace_02_thin_l_t_o_code_generator_8cpp_03_1_1_module_cache_entry_1afc375cbf1e270a0914a82cba21fe3f10" compoundref="_thin_l_t_o_code_generator_8cpp" startline="411" endline="423">anonymous_namespace{ThinLTOCodeGenerator.cpp}::ModuleCacheEntry::write</referencedby>
+        <referencedby refid="group___set_1gacacf298ae33051bd387434c4ebdd2be7" compoundref="_thin_l_t_o_code_generator_8cpp" startline="923" endline="956">llvm::ThinLTOCodeGenerator::writeGeneratedObject</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a0243695bbe13782d978f7fb0c8df95d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>char * OutputBuffer::getBufferEnd</definition>
+        <argsstring>()</argsstring>
+        <name>getBufferEnd</name>
+        <qualifiedname>OutputBuffer::getBufferEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="181" column="8" bodyfile="include/llvm/Demangle/Utility.h" bodystart="181" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="class_output_buffer_1a2033d475304591909b8e8c86d1d8a082" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t OutputBuffer::getBufferCapacity</definition>
+        <argsstring>() const</argsstring>
+        <name>getBufferCapacity</name>
+        <qualifiedname>OutputBuffer::getBufferCapacity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Demangle/Utility.h" line="182" column="10" bodyfile="include/llvm/Demangle/Utility.h" bodystart="182" bodyend="182"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>OutputBuffer</label>
+        <link refid="class_output_buffer"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>CurrentPackIndex</edgelabel>
+          <edgelabel>CurrentPackMax</edgelabel>
+          <edgelabel>GtIsGt</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Demangle/Utility.h" line="32" column="1" bodyfile="include/llvm/Demangle/Utility.h" bodystart="32" bodyend="183"/>
+    <listofallmembers>
+      <member refid="class_output_buffer_1a7b0573aee384e0abdba1e452639a1f43" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>back</name></member>
+      <member refid="class_output_buffer_1af69503e3974cf82e33b6e8f69b0ef5b8" prot="private" virt="non-virtual"><scope>OutputBuffer</scope><name>Buffer</name></member>
+      <member refid="class_output_buffer_1af5b88565f210b5d311f01f009c6184b3" prot="private" virt="non-virtual"><scope>OutputBuffer</scope><name>BufferCapacity</name></member>
+      <member refid="class_output_buffer_1a91a11bff1a9de8e7f249f21321232c87" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>CurrentPackIndex</name></member>
+      <member refid="class_output_buffer_1a8ca110bb2092c04e1c7932852f342ae1" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>CurrentPackMax</name></member>
+      <member refid="class_output_buffer_1a4b130653c3b609810dba8c95223d61a8" prot="private" virt="non-virtual"><scope>OutputBuffer</scope><name>CurrentPosition</name></member>
+      <member refid="class_output_buffer_1a22b1bd392c7159713e848e3f917b04b2" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>empty</name></member>
+      <member refid="class_output_buffer_1a8ab399f586318b61b6a38a18adbb098f" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>getBuffer</name></member>
+      <member refid="class_output_buffer_1a2033d475304591909b8e8c86d1d8a082" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>getBufferCapacity</name></member>
+      <member refid="class_output_buffer_1a0243695bbe13782d978f7fb0c8df95d8" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>getBufferEnd</name></member>
+      <member refid="class_output_buffer_1adae4954f6d152eb88c24622d8810c813" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>getCurrentPosition</name></member>
+      <member refid="class_output_buffer_1ab1aee4402bc3db190d394f2c54d98db4" prot="private" virt="non-virtual"><scope>OutputBuffer</scope><name>grow</name></member>
+      <member refid="class_output_buffer_1a54e2eee60cc11acef86c1ad01f2cf17c" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>GtIsGt</name></member>
+      <member refid="class_output_buffer_1ae8f0bd74643fb4035d3992af214b44a3" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>insert</name></member>
+      <member refid="class_output_buffer_1ad0ac1ab307fb35e1abb1580341d97fab" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>isGtInsideTemplateArgs</name></member>
+      <member refid="class_output_buffer_1a0d10cd7045a70bb8baf01f673c8f9eae" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator std::string_view</name></member>
+      <member refid="class_output_buffer_1a21d8b544247c0f9bebfc3d3223e9ac0c" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator+=</name></member>
+      <member refid="class_output_buffer_1ad4f456accebabbcbc6a5fd5bf44e1ff8" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator+=</name></member>
+      <member refid="class_output_buffer_1a8fc022bbcd7c284db9694aa37304e0b0" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_output_buffer_1a6f5985ac3d097ad1ffaacabc1f2c9c2b" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_output_buffer_1abf3d890bf687463ffbaa9bf31a84be1d" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_output_buffer_1a02ac79c12cb7d0f5eb135a578e018961" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_output_buffer_1aafe02c290e94eb230d7d73dbcb694213" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_output_buffer_1aed34311c0c80fafb227222866bd75a44" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_output_buffer_1ab191048312ffbc7fed536f7544d5910a" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_output_buffer_1af126aca0530071798774af05adfd87d5" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_output_buffer_1a7edcffe9292e5aec52b66240970b660d" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>operator=</name></member>
+      <member refid="class_output_buffer_1a4929740589c1d6555f06176074718906" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>OutputBuffer</name></member>
+      <member refid="class_output_buffer_1a6272052905c9a7b5c17e3638d93466c9" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>OutputBuffer</name></member>
+      <member refid="class_output_buffer_1a0346c2f31ef3c3bc8c8d9ab98a18f077" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>OutputBuffer</name></member>
+      <member refid="class_output_buffer_1a10fd90958f5e348d0119949d9bbc1b6e" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>OutputBuffer</name></member>
+      <member refid="class_output_buffer_1a84e19908b76c0b6925d891a1679d334d" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>prepend</name></member>
+      <member refid="class_output_buffer_1acbecb7400eab425bd754046f2f7ab415" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>printClose</name></member>
+      <member refid="class_output_buffer_1ae4bdd75f0df36a0f0343aad6ddffdff1" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>printOpen</name></member>
+      <member refid="class_output_buffer_1acd4c9686ed303f299f1b5980efce07da" prot="public" virt="non-virtual"><scope>OutputBuffer</scope><name>setCurrentPosition</name></member>
+      <member refid="class_output_buffer_1a314f17470111074b3e7615ad7f295c1c" prot="private" virt="non-virtual"><scope>OutputBuffer</scope><name>writeUnsigned</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

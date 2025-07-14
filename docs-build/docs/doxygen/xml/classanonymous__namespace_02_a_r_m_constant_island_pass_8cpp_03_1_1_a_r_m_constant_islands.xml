@@ -1,0 +1,1352 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_function_pass" prot="public" virt="non-virtual">llvm::MachineFunctionPass</basecompoundref>
+    <innerclass refid="structanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1_1_c_p_entry" prot="private">anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::CPEntry</innerclass>
+    <innerclass refid="structanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1_1_c_p_user" prot="private">anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::CPUser</innerclass>
+    <innerclass refid="structanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1_1_imm_branch" prot="private">anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::ImmBranch</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a87abe235fd0b4caa9549a01f250b10d2" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;<ref refid="classllvm_1_1iplist" kindref="compound">::iterator</ref></type>
+        <definition>using anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::water_iterator =  std::vector&lt;MachineBasicBlock *&gt;::iterator</definition>
+        <argsstring></argsstring>
+        <name>water_iterator</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::water_iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="114" column="5" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a9eb99cca93ab051541c42391046d9daf" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_a_r_m_basic_block_utils" kindref="compound">ARMBasicBlockUtils</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ARMBasicBlockUtils&gt; anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::BBUtils</definition>
+        <argsstring></argsstring>
+        <name>BBUtils</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::BBUtils</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="103" column="21" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a610f64f4d5215f773f3604360c5c3639" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;</type>
+        <definition>std::vector&lt;MachineBasicBlock*&gt; anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::WaterList</definition>
+        <argsstring></argsstring>
+        <name>WaterList</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::WaterList</qualifiedname>
+        <briefdescription>
+<para>WaterList - A sorted list of basic blocks where islands could be placed (i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>blocks that don&apos;t fall through to the following block, due to a return, unreachable, or unconditional branch). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="108" column="17" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a5bcaaefb0325dd55841218c2b401a430" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_set" kindref="compound">SmallSet</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, 4 &gt;</type>
+        <definition>SmallSet&lt;MachineBasicBlock*, 4&gt; anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::NewWaterList</definition>
+        <argsstring></argsstring>
+        <name>NewWaterList</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::NewWaterList</qualifiedname>
+        <briefdescription>
+<para>NewWaterList - The subset of WaterList that was created since the previous iteration by inserting unconditional branches. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="112" column="14" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a26d4c5e9c9ef1d2abbb92300b5be8c38" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; CPUser &gt;</type>
+        <definition>std::vector&lt;CPUser&gt; anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::CPUsers</definition>
+        <argsstring></argsstring>
+        <name>CPUsers</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::CPUsers</qualifiedname>
+        <briefdescription>
+<para>CPUsers - Keep track of all of the machine instructions that use various constant pools and their max displacement. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="153" column="17" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a58a03308500573324cb3619b9e8f567d" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; CPEntry &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;CPEntry&gt; &gt; anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::CPEntries</definition>
+        <argsstring></argsstring>
+        <name>CPEntries</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::CPEntries</qualifiedname>
+        <briefdescription>
+<para>CPEntries - Keep track of all of the constant pool entry machine instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For each original constpool index (i.e. those that existed upon entry to this pass), it keeps a vector of entries. Original elements are cloned as we go along; the clones are put in the vector of the original element, but have distinct CPIs.</para>
+<para>The first half of CPEntries contains generic constants, the second half contains jump tables. <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> getCombinedIndex on a generic CPEMI to look up which vector it will be in here. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="176" column="17" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a28a2f6500d0e72e0bc875c66ab426533" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; int, int &gt;</type>
+        <definition>DenseMap&lt;int, int&gt; anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::JumpTableEntryIndices</definition>
+        <argsstring></argsstring>
+        <name>JumpTableEntryIndices</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::JumpTableEntryIndices</qualifiedname>
+        <briefdescription>
+<para>Maps a JT index to the offset in CPEntries containing copies of that table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The equivalent map for a CONSTPOOL_ENTRY is the identity. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="180" column="14" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aae272594f35c002c85edb799023a3245" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; int, int &gt;</type>
+        <definition>DenseMap&lt;int, int&gt; anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::JumpTableUserIndices</definition>
+        <argsstring></argsstring>
+        <name>JumpTableUserIndices</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::JumpTableUserIndices</qualifiedname>
+        <briefdescription>
+<para>Maps a JT index to the LEA that actually uses the index to calculate its base address. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="184" column="14" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a16ed371a9d5e8b194d6402fe0c699cdc" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, int &gt;</type>
+        <definition>DenseMap&lt;const MachineBasicBlock *, int&gt; anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::BlockJumpTableRefCount</definition>
+        <argsstring></argsstring>
+        <name>BlockJumpTableRefCount</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::BlockJumpTableRefCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="187" column="14" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1abd3dee94f255a59ef39503608f99c8a7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; ImmBranch &gt;</type>
+        <definition>std::vector&lt;ImmBranch&gt; anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::ImmBranches</definition>
+        <argsstring></argsstring>
+        <name>ImmBranches</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::ImmBranches</qualifiedname>
+        <briefdescription>
+<para>ImmBranches - Keep track of all the immediate branch instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="204" column="17" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aff8d08e657e6ed9c0c3ca1b1c179ac2c" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, 4 &gt;</type>
+        <definition>SmallVector&lt;MachineInstr*, 4&gt; anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::PushPopMIs</definition>
+        <argsstring></argsstring>
+        <name>PushPopMIs</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::PushPopMIs</qualifiedname>
+        <briefdescription>
+<para>PushPopMIs - Keep track of all the Thumb push / pop instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="207" column="17" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ab52de6115c0eb43c179e676c824715ac" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, 4 &gt;</type>
+        <definition>SmallVector&lt;MachineInstr*, 4&gt; anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::T2JumpTables</definition>
+        <argsstring></argsstring>
+        <name>T2JumpTables</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::T2JumpTables</qualifiedname>
+        <briefdescription>
+<para>T2JumpTables - Keep track of all the Thumb2 jumptable instructions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="210" column="17" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a7514c1eca73b9986376c81388f147e90" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+        <definition>MachineFunction* anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::MF</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="212" column="21" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ab0dbb8974ac506fa487d4dde50a93a3e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_constant_pool" kindref="compound">MachineConstantPool</ref> *</type>
+        <definition>MachineConstantPool* anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::MCP</definition>
+        <argsstring></argsstring>
+        <name>MCP</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::MCP</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="213" column="25" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a3bcf2a90f5b140ee4022487e495223bb" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_a_r_m_base_instr_info" kindref="compound">ARMBaseInstrInfo</ref> *</type>
+        <definition>const ARMBaseInstrInfo* anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::TII</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="214" column="28" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a17b3557c0c6fb8199fc5aba0e0c95005" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_a_r_m_subtarget" kindref="compound">ARMSubtarget</ref> *</type>
+        <definition>const ARMSubtarget* anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::STI</definition>
+        <argsstring></argsstring>
+        <name>STI</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::STI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="215" column="24" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a42aca0a2345c49cd96313d23761c915e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_a_r_m_function_info" kindref="compound">ARMFunctionInfo</ref> *</type>
+        <definition>ARMFunctionInfo* anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::AFI</definition>
+        <argsstring></argsstring>
+        <name>AFI</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::AFI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="216" column="21" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a72802551596a33d2c23777777622bbb6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> *</type>
+        <definition>MachineDominatorTree* anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::DT</definition>
+        <argsstring></argsstring>
+        <name>DT</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::DT</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="217" column="26" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a38178ec34aae8177faa51ec6fcc3fa3c" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isThumb</definition>
+        <argsstring></argsstring>
+        <name>isThumb</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isThumb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="218" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ab5ca62ffd88a506f49d21cbac3f02015" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isThumb1</definition>
+        <argsstring></argsstring>
+        <name>isThumb1</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isThumb1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="219" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aa7404870660d9bb7680f20e6a9d94313" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isThumb2</definition>
+        <argsstring></argsstring>
+        <name>isThumb2</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isThumb2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="220" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aceff4ac3539f2c9850610445e7176758" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isPositionIndependentOrROPI</definition>
+        <argsstring></argsstring>
+        <name>isPositionIndependentOrROPI</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isPositionIndependentOrROPI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="221" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="221" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a4809f4638bc964aa757bd1b47fff3f2c" prot="public" static="yes" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>char ARMConstantIslands::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::ID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="224" column="17" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="224" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a6ab5453e9f3f4ed83c6bb9e4ebd68b20" compoundref="_a_r_m_constant_island_pass_8cpp" startline="226" endline="226">ARMConstantIslands</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a6ab5453e9f3f4ed83c6bb9e4ebd68b20" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::ARMConstantIslands</definition>
+        <argsstring>()</argsstring>
+        <name>ARMConstantIslands</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::ARMConstantIslands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="226" column="5" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="226" bodyend="226"/>
+        <references refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a4809f4638bc964aa757bd1b47fff3f2c" compoundref="_a_r_m_constant_island_pass_8cpp" startline="224">ID</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" compoundref="_machine_function_pass_8h" startline="41" endline="41">llvm::MachineFunctionPass::MachineFunctionPass</references>
+        <referencedby refid="namespacellvm_1ab26ecc37dfb0700afd44f8648a34ab82" compoundref="_a_r_m_constant_island_pass_8cpp" startline="2534" endline="2536">llvm::createARMConstantIslandPass</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aaf4297850ccff6052205f45bc2ba2f87" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::runOnMachineFunction</definition>
+        <argsstring>(MachineFunction &amp;MF) override</argsstring>
+        <name>runOnMachineFunction</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::runOnMachineFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1abb98ed32e4e5acae62ef3edd7bf04fb5">runOnMachineFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>The next UID to take is the first unused one.</para>
+<para>Remove dead constant pool entries.</para>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="228" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="387" bodyend="531"/>
+        <references refid="_a_r_m_constant_island_pass_8cpp_1adc09bbb30c18788e0bc6ee68ad36a2e6">AdjustJumpTableBlocks</references>
+        <references refid="_a_r_m_constant_island_pass_8cpp_1aa71d343a68eaa436458cd76f349f399a" compoundref="_a_r_m_constant_island_pass_8cpp" startline="346" endline="385">AlignBlocks</references>
+        <references refid="_a_r_m_constant_island_pass_8cpp_1a15898f9a72ea6bb8b53d6695dac7f419">CPMaxIteration</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" compoundref="_pass_analysis_support_8h" startline="230" endline="233">llvm::Pass::getAnalysis</references>
+        <references refid="classllvm_1_1_machine_function_1aba1fee9e9c9b537fd2a02f33f714ca68" compoundref="_machine_function_8h" startline="765" endline="765">llvm::MachineFunction::getConstantPool</references>
+        <references refid="classllvm_1_1_a_r_m_subtarget_1a29e1a46e82adb0b55dc3fa6dd15c8984" compoundref="_a_r_m_subtarget_8h" startline="238" endline="240">llvm::ARMSubtarget::getInstrInfo</references>
+        <references refid="classllvm_1_1_machine_instr_1ad67c9230577a0b640c52852c75c93939" compoundref="_machine_instr_8h" startline="587" endline="590">llvm::MachineInstr::getOperand</references>
+        <references refid="classllvm_1_1_machine_operand_1a5b401e780c5eed0aca1cfbf44d36a545" compoundref="_machine_operand_8h" startline="341" endline="341">llvm::MachineOperand::isCPI</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1a7f2a3d4dcfee70225988aec53ff1e173" compoundref="_testing_2_support_2_error_8cpp" startline="167" endline="175">llvm::report_fatal_error</references>
+        <references refid="_n_v_v_m_reflect_8cpp_1ac934769d93af95250952646a3829df4c">size</references>
+        <references refid="_a_r_m_constant_island_pass_8cpp_1aac48e345c32279414b627382d349edd6">SynthesizeThumb1TBB</references>
+        <references refid="_p_p_c_c_t_r_loops_verify_8cpp_1a593cc2f204f7b2edc16ee222c37c3196" compoundref="_p_p_c_c_t_r_loops_verify_8cpp" startline="72">verify</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a225e3a366286304012ebb04ca6aee82d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::getAnalysisUsage</definition>
+        <argsstring>(AnalysisUsage &amp;AU) const override</argsstring>
+        <name>getAnalysisUsage</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::getAnalysisUsage</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1a6590d0486104165ca40c7df0707f7b9e">getAnalysisUsage</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_analysis_usage" kindref="compound">AnalysisUsage</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>getAnalysisUsage - This function should be overriden by passes that need analysis information to do their job. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If a pass specifies that it uses a particular analysis result to this function, it can then use the <ref refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" kindref="member">getAnalysis&lt;AnalysisType&gt;()</ref> function, below. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="230" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="230" bodyend="233"/>
+        <references refid="classllvm_1_1_analysis_usage_1ae0adcccca08fb686c9ce00f9397b660c" compoundref="_pass_analysis_support_8h" startline="75" endline="77">llvm::AnalysisUsage::addRequired</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e" compoundref="_machine_function_pass_8cpp" startline="169" endline="190">llvm::MachineFunctionPass::getAnalysisUsage</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a8e87361befd343a840e87d2ef988269e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_machine_function_properties" kindref="compound">MachineFunctionProperties</ref></type>
+        <definition>MachineFunctionProperties anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::getRequiredProperties</definition>
+        <argsstring>() const override</argsstring>
+        <name>getRequiredProperties</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::getRequiredProperties</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1af0f2f06a3a773431ee9813351d609c4d">getRequiredProperties</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="235" column="31" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="235" bodyend="238"/>
+        <references refid="classllvm_1_1_machine_function_properties_1ad85237c6c667e4713efe8921e9c32ac1a72f7d830dd5ddb30f06d8e9639558ac3" compoundref="_machine_function_8h" startline="191">llvm::MachineFunctionProperties::NoVRegs</references>
+        <references refid="classllvm_1_1_machine_function_properties_1aa7780563d7ca260d0ae67d957b56427f" compoundref="_machine_function_8h" startline="207" endline="210">llvm::MachineFunctionProperties::set</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aadaa10dcef3fe4481b60ff1fb9c34780" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::getPassName</definition>
+        <argsstring>() const override</argsstring>
+        <name>getPassName</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::getPassName</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1ad729b39eacf070a9bca84533b3c743bf">getPassName</reimplements>
+        <briefdescription>
+<para>getPassName - Return a nice clean name for a pass. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This usually implemented in terms of the name that is registered by one of the Registration templates, but can be overloaded directly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="240" column="15" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="240" bodyend="242"/>
+        <references refid="_a_r_m_constant_island_pass_8cpp_1af26b9cf82b47b3091a8d554edabaf714" compoundref="_a_r_m_constant_island_pass_8cpp" startline="62" endline="63">ARM_CP_ISLANDS_OPT_NAME</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a472523a060d0c5f613fdaf2edf880f5e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARMConstantIslands::doInitialConstPlacement</definition>
+        <argsstring>(std::vector&lt; MachineInstr * &gt; &amp;CPEMIs)</argsstring>
+        <name>doInitialConstPlacement</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::doInitialConstPlacement</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>CPEMIs</declname>
+        </param>
+        <briefdescription>
+<para>Perform the initial placement of the regular constant pool entries. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To start with, we put them all at the end of the function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="245" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="536" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a0d08a0032243809d891261111e6c4747" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARMConstantIslands::doInitialJumpTablePlacement</definition>
+        <argsstring>(std::vector&lt; MachineInstr * &gt; &amp;CPEMIs)</argsstring>
+        <name>doInitialJumpTablePlacement</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::doInitialJumpTablePlacement</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>CPEMIs</declname>
+        </param>
+        <briefdescription>
+<para>Do initial placement of the jump tables. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Because Thumb2&apos;s TBB and TBH instructions can be made more efficient if the jump table immediately follows the instruction, it&apos;s best to place them immediately next to their jumps to begin with. In almost all cases they&apos;ll never be moved from that position. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="246" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="603" bodyend="678"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ab648cc5da37b64781455162df55dd006" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::BBHasFallthrough</definition>
+        <argsstring>(MachineBasicBlock *MBB)</argsstring>
+        <name>BBHasFallthrough</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::BBHasFallthrough</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+<para>BBHasFallthrough - Return true if the specified basic block can fallthrough into the block immediately after it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="247" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="682" bodyend="699"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a7a29aeb2c25d3927e53dbcdec7531fc2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CPEntry *</type>
+        <definition>ARMConstantIslands::CPEntry * ARMConstantIslands::findConstPoolEntry</definition>
+        <argsstring>(unsigned CPI, const MachineInstr *CPEMI)</argsstring>
+        <name>findConstPoolEntry</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::findConstPoolEntry</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>findConstPoolEntry - Given the constpool index and CONSTPOOL_ENTRY MI, look up the corresponding CPEntry. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="248" column="13" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="704" bodyend="713"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a58eb0c9489392e69edfdab54bb9a2fba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_align" kindref="compound">Align</ref></type>
+        <definition>Align ARMConstantIslands::getCPEAlign</definition>
+        <argsstring>(const MachineInstr *CPEMI)</argsstring>
+        <name>getCPEAlign</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::getCPEAlign</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>getCPEAlign - Returns the required alignment of the constant pool entry represented by CPEMI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="249" column="11" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="717" bodyend="736"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a4995445c7a400cc68dc2e59587e68b7d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARMConstantIslands::scanFunctionJumpTables</definition>
+        <argsstring>()</argsstring>
+        <name>scanFunctionJumpTables</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::scanFunctionJumpTables</qualifiedname>
+        <briefdescription>
+<para>scanFunctionJumpTables - Do a scan of the function, building up information about the sizes of each block and the locations of all the jump tables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="250" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="749" bodyend="770"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aed78d2699a9d157c7ad08ae78fc48e14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARMConstantIslands::initializeFunctionInfo</definition>
+        <argsstring>(const std::vector&lt; MachineInstr * &gt; &amp;CPEMIs)</argsstring>
+        <name>initializeFunctionInfo</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::initializeFunctionInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>CPEMIs</declname>
+        </param>
+        <briefdescription>
+<para>initializeFunctionInfo - Do the initial scan of the function, building up information about the sizes of each block, the location of all the water, and finding all of the constant pool users. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="251" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="776" bodyend="963"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a2d0ff01e9af545b83667a6f3b1a309a3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * ARMConstantIslands::splitBlockBeforeInstr</definition>
+        <argsstring>(MachineInstr *MI)</argsstring>
+        <name>splitBlockBeforeInstr</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::splitBlockBeforeInstr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Split the basic block containing MI into two blocks, which are joined by an unconditional branch. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Update data structures and renumber blocks to account for this change and returns the newly created block. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="252" column="23" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="993" bodyend="1074"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ae9ee57208388fce44d1de2773ba04f75" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARMConstantIslands::updateForInsertedWaterBlock</definition>
+        <argsstring>(MachineBasicBlock *NewBB)</argsstring>
+        <name>updateForInsertedWaterBlock</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::updateForInsertedWaterBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>NewBB</declname>
+        </param>
+        <briefdescription>
+<para>updateForInsertedWaterBlock - When a block is newly inserted into the machine function, it upsets all of the block numbers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Renumber the blocks and update the arrays that parallel this numbering. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="253" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="975" bodyend="988"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a1132d26053b7c6b6945d4d05957cca6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::decrementCPEReferenceCount</definition>
+        <argsstring>(unsigned CPI, MachineInstr *CPEMI)</argsstring>
+        <name>decrementCPEReferenceCount</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::decrementCPEReferenceCount</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>decrementCPEReferenceCount - find the constant pool entry with index CPI and instruction CPEMI, and decrement its refcount. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the refcount becomes 0 remove the entry and instruction. Returns true if we removed the entry, false if we didn&apos;t. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="254" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1213" bodyend="1225"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ab524260c1fdfc45ca8c2b7ade897fafe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned ARMConstantIslands::getCombinedIndex</definition>
+        <argsstring>(const MachineInstr *CPEMI)</argsstring>
+        <name>getCombinedIndex</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::getCombinedIndex</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="255" column="14" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1227" bodyend="1232"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1abf0be587caca37c8589d2a60c6e59f24" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ARMConstantIslands::findInRangeCPEntry</definition>
+        <argsstring>(CPUser &amp;U, unsigned UserOffset)</argsstring>
+        <name>findInRangeCPEntry</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::findInRangeCPEntry</qualifiedname>
+        <param>
+          <type>CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <briefdescription>
+<para>LookForCPEntryInRange - see if the currently referenced CPE is in range; if not, see if an in-range clone of the CPE is in range, and if so, change the data structures so the user references the clone. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns: 0 = no existing entry found 1 = entry found, and there were no code insertions or deletions 2 = entry found, and there were code insertions or deletions </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="256" column="9" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1240" bodyend="1281"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a36a35b64e8ecf993c780868342ebc1f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::findAvailableWater</definition>
+        <argsstring>(CPUser &amp;U, unsigned UserOffset, water_iterator &amp;WaterIter, bool CloserWater)</argsstring>
+        <name>findAvailableWater</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::findAvailableWater</qualifiedname>
+        <param>
+          <type>CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type>water_iterator &amp;</type>
+          <declname>WaterIter</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>CloserWater</declname>
+        </param>
+        <briefdescription>
+<para>findAvailableWater - Look for an existing entry in the WaterList in which we can place the CPE referenced from U so it&apos;s within range of U&apos;s MI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if found, false if not. If it returns true, WaterIter is set to the WaterList entry. For Thumb, prefer water that will not introduce padding to water that will. To ensure that this pass terminates, the CPE location for a particular CPUser is only allowed to move to a lower address, so search backward from the end of the list and prefer the first water that is in range. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="257" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1306" bodyend="1364"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a9e4d3fe25445806bc4392836a75db579" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARMConstantIslands::createNewWater</definition>
+        <argsstring>(unsigned CPUserIndex, unsigned UserOffset, MachineBasicBlock *&amp;NewMBB)</argsstring>
+        <name>createNewWater</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::createNewWater</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPUserIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *&amp;</type>
+          <declname>NewMBB</declname>
+        </param>
+        <briefdescription>
+<para>createNewWater - No existing WaterList entry will work for CPUsers[CPUserIndex], so create a place to put the CPE. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The end of the block is used if in range, and the conditional branch munged so control flow is correct. Otherwise the block is split to create a hole with an unconditional branch around it. In either case NewMBB is set to a block following which the new island can be inserted (the WaterList is not adjusted). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="259" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1373" bodyend="1549"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1abdd480ce7b8dd317463fd4c3a73316fb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::handleConstantPoolUser</definition>
+        <argsstring>(unsigned CPUserIndex, bool CloserWater)</argsstring>
+        <name>handleConstantPoolUser</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::handleConstantPoolUser</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>CPUserIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>CloserWater</declname>
+        </param>
+        <briefdescription>
+<para>handleConstantPoolUser - Analyze the specified user, checking to see if it is out-of-range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If so, pick up the constant pool value and move it some place in-range. Return true if we changed any addresses (thus must run another pass of branch lengthening), false otherwise. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="261" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1555" bodyend="1662"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aa2fe1bbc38cd8de84461690fab233e9e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARMConstantIslands::removeDeadCPEMI</definition>
+        <argsstring>(MachineInstr *CPEMI)</argsstring>
+        <name>removeDeadCPEMI</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::removeDeadCPEMI</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <briefdescription>
+<para>removeDeadCPEMI - Remove a dead constant pool entry instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Update sizes and offsets of impacted basic blocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="262" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1666" bodyend="1689"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a8bda926b4776787d25d7b0a0112f0dfc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::removeUnusedCPEntries</definition>
+        <argsstring>()</argsstring>
+        <name>removeUnusedCPEntries</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::removeUnusedCPEntries</qualifiedname>
+        <briefdescription>
+<para>removeUnusedCPEntries - Remove constant pool entries whose refcounts are zero. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="263" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1693" bodyend="1705"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a015406c9be05ba875b6a6607a7b0d33f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::isCPEntryInRange</definition>
+        <argsstring>(MachineInstr *MI, unsigned UserOffset, MachineInstr *CPEMI, unsigned Disp, bool NegOk, bool DoDump=false)</argsstring>
+        <name>isCPEntryInRange</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isCPEntryInRange</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>CPEMI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Disp</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>NegOk</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>DoDump</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>isCPEntryInRange - Returns true if the distance between specific MI and specific ConstPool entry instruction can fit in MI&apos;s displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="264" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1169" bodyend="1190"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a22a6249ea0ff228890a3b2e326f8fe71" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::isWaterInRange</definition>
+        <argsstring>(unsigned UserOffset, MachineBasicBlock *Water, CPUser &amp;U, unsigned &amp;Growth)</argsstring>
+        <name>isWaterInRange</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isWaterInRange</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>Water</declname>
+        </param>
+        <param>
+          <type>CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>Growth</declname>
+        </param>
+        <briefdescription>
+<para>isWaterInRange - Returns true if a CPE placed after the specified Water (a basic block) will be in range for the specific MI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute how much the function will grow by inserting a CPE after Water. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="267" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1128" bodyend="1165"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aa5daae5ba9c59db3b92c4311b5d37473" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::fixupImmediateBr</definition>
+        <argsstring>(ImmBranch &amp;Br)</argsstring>
+        <name>fixupImmediateBr</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::fixupImmediateBr</qualifiedname>
+        <param>
+          <type>ImmBranch &amp;</type>
+          <declname>Br</declname>
+        </param>
+        <briefdescription>
+<para>fixupImmediateBr - Fix up an immediate branch whose destination is too far away to fit in its displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="269" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1710" bodyend="1721"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a831aa146b4f1dccd62bcd565a6eaa80f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::fixupConditionalBr</definition>
+        <argsstring>(ImmBranch &amp;Br)</argsstring>
+        <name>fixupConditionalBr</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::fixupConditionalBr</qualifiedname>
+        <param>
+          <type>ImmBranch &amp;</type>
+          <declname>Br</declname>
+        </param>
+        <briefdescription>
+<para>fixupConditionalBr - Fix up a conditional branch whose destination is too far away to fit in its displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is converted to an inverse conditional branch + an unconditional branch to the destination. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="270" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1754" bodyend="1842"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a1ecba595e94ff061660c8b22e8716f07" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::fixupUnconditionalBr</definition>
+        <argsstring>(ImmBranch &amp;Br)</argsstring>
+        <name>fixupUnconditionalBr</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::fixupUnconditionalBr</qualifiedname>
+        <param>
+          <type>ImmBranch &amp;</type>
+          <declname>Br</declname>
+        </param>
+        <briefdescription>
+<para>fixupUnconditionalBr - Fix up an unconditional branch whose destination is too far away to fit in its displacement field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the LR register has been spilled in the epilogue, then we can use BL to implement a far jump. Otherwise, add an intermediate branch instruction to a branch. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="271" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1728" bodyend="1748"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a9beafe176b49d8fd46daab6faca8ef02" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::optimizeThumb2Instructions</definition>
+        <argsstring>()</argsstring>
+        <name>optimizeThumb2Instructions</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::optimizeThumb2Instructions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="272" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1844" bodyend="1894"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a7dcb1f3b15c4c0e6501c2a28d78908cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::optimizeThumb2Branches</definition>
+        <argsstring>()</argsstring>
+        <name>optimizeThumb2Branches</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::optimizeThumb2Branches</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="273" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1897" bodyend="2078"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a44e9766216f49ba8b940fbb7c91abb78" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::reorderThumb2JumpTables</definition>
+        <argsstring>()</argsstring>
+        <name>reorderThumb2JumpTables</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::reorderThumb2JumpTables</qualifiedname>
+        <briefdescription>
+<para>reorderThumb2JumpTables - Adjust the function&apos;s block layout to ensure that jump tables always branch forwards, since that&apos;s what tbb and tbh need. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="274" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="2429" bodyend="2465"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a0e5a435a047ef3f277eec100c1ecf031" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::preserveBaseRegister</definition>
+        <argsstring>(MachineInstr *JumpMI, MachineInstr *LEAMI, unsigned &amp;DeadSize, bool &amp;CanDeleteLEA, bool &amp;BaseRegKill)</argsstring>
+        <name>preserveBaseRegister</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::preserveBaseRegister</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>JumpMI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>LEAMI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref> &amp;</type>
+          <declname>DeadSize</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>CanDeleteLEA</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>BaseRegKill</declname>
+        </param>
+        <briefdescription>
+<para>While trying to form a TBB/TBH instruction, we may (if the table doesn&apos;t immediately follow the BR_JT) need access to the start of the jump-table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We know one instruction that produces such a register; this function works out whether that definition can be preserved to the BR_JT, possibly by removing an intervening addition (which is usually needed to calculate the actual entry to jump to). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="275" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="2101" bodyend="2179"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1abad3b14f15be6b5e8dc1b4826f119696" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool ARMConstantIslands::optimizeThumb2JumpTables</definition>
+        <argsstring>()</argsstring>
+        <name>optimizeThumb2JumpTables</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::optimizeThumb2JumpTables</qualifiedname>
+        <briefdescription>
+<para>optimizeThumb2JumpTables - <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> tbb / tbh instructions to generate smaller jumptables when it&apos;s possible. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="278" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="2232" bodyend="2425"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a5d6bc8ba7bb705dba758eb13c5c08408" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * ARMConstantIslands::adjustJTTargetBlockForward</definition>
+        <argsstring>(unsigned JTI, MachineBasicBlock *BB, MachineBasicBlock *JTBB)</argsstring>
+        <name>adjustJTTargetBlockForward</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::adjustJTTargetBlockForward</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>JTI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>JTBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="279" column="23" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="2467" bodyend="2530"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1af7146125ff6a881a6b19fab8690e0091" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned ARMConstantIslands::getUserOffset</definition>
+        <argsstring>(CPUser &amp;) const</argsstring>
+        <name>getUserOffset</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::getUserOffset</qualifiedname>
+        <param>
+          <type>CPUser &amp;</type>
+          <defname>U</defname>
+        </param>
+        <briefdescription>
+<para>getUserOffset - Compute the offset of U.MI as seen by the hardware displacement computation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Update U.KnownAlignment to match its current basic block location. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="283" column="14" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="1079" bodyend="1100"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a97f3dc8c8f9649142b128882c6d68554" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>LLVM_DUMP_METHOD void ARMConstantIslands::dumpBBs</definition>
+        <argsstring>()</argsstring>
+        <name>dumpBBs</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::dumpBBs</qualifiedname>
+        <briefdescription>
+<para>print block size and offset information - debugging </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="284" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="329" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1afaf72e81e912fc9c1a2d7913ac48d670" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARMConstantIslands::verify</definition>
+        <argsstring>()</argsstring>
+        <name>verify</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::verify</qualifiedname>
+        <briefdescription>
+<para>verify - check BBOffsets, BBSizes, alignment of islands </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="285" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="301" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a9276d20e7ad345d71593d7995720afae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isOffsetInRange</definition>
+        <argsstring>(unsigned UserOffset, unsigned TrialOffset, unsigned Disp, bool NegativeOK, bool IsSoImm=false)</argsstring>
+        <name>isOffsetInRange</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isOffsetInRange</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>TrialOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Disp</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>NegativeOK</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsSoImm</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="287" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a98229bab8b53875bace6cdd43c0525fe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isOffsetInRange</definition>
+        <argsstring>(unsigned UserOffset, unsigned TrialOffset, const CPUser &amp;U)</argsstring>
+        <name>isOffsetInRange</name>
+        <qualifiedname>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands::isOffsetInRange</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>UserOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>TrialOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> CPUser &amp;</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="289" column="10" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="289" bodyend="293"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands" kindref="compound">ARMConstantIslands</ref> - Due to limited PC-relative displacements, <ref refid="namespacellvm_1_1_a_r_m" kindref="compound">ARM</ref> requires constant pool entries to be scattered among the instructions inside a function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>To do this, it completely ignores the normal LLVM constant pool; instead, it places constants wherever it feels like with special instructions.</para>
+<para>The terminology used in this pass includes: Islands - Clumps of constants placed in the function. Water - Potential places where an island could be formed. CPE - A constant pool entry that has been placed somewhere, which tracks a list of users. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</label>
+        <link refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</label>
+        <link refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/ARM/ARMConstantIslandPass.cpp" line="102" column="3" bodyfile="lib/Target/ARM/ARMConstantIslandPass.cpp" bodystart="102" bodyend="294"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a5d6bc8ba7bb705dba758eb13c5c08408" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>adjustJTTargetBlockForward</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a42aca0a2345c49cd96313d23761c915e" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>AFI</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a6ab5453e9f3f4ed83c6bb9e4ebd68b20" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>ARMConstantIslands</name></member>
+      <member refid="classllvm_1_1_function_pass_1a748922f143f2da9a13b0b15ff6a3dd22" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>assignPassManager</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ab648cc5da37b64781455162df55dd006" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>BBHasFallthrough</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a9eb99cca93ab051541c42391046d9daf" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>BBUtils</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a16ed371a9d5e8b194d6402fe0c699cdc" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>BlockJumpTableRefCount</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a58a03308500573324cb3619b9e8f567d" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>CPEntries</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a26d4c5e9c9ef1d2abbb92300b5be8c38" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>CPUsers</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a9e4d3fe25445806bc4392836a75db579" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>createNewWater</name></member>
+      <member refid="classllvm_1_1_pass_1a2ed7d79d79dffe7368c3d3cdf40dd80e" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>createPass</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a1132d26053b7c6b6945d4d05957cca6f" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>decrementCPEReferenceCount</name></member>
+      <member refid="classllvm_1_1_pass_1ac7811985250c75d7e2a244292d615fff" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>doFinalization</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a472523a060d0c5f613fdaf2edf880f5e" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>doInitialConstPlacement</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a204ffdf4717a340f8cbe1fd1341a8148" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>doInitialization</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a0d08a0032243809d891261111e6c4747" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>doInitialJumpTablePlacement</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a72802551596a33d2c23777777622bbb6" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>DT</name></member>
+      <member refid="classllvm_1_1_pass_1a1a60731eeff800b39fca7280a5a167ae" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>dump</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a97f3dc8c8f9649142b128882c6d68554" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>dumpBBs</name></member>
+      <member refid="classllvm_1_1_pass_1ad2f0576ef7c9c4af40e35001c81f4922" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>dumpPassStructure</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a36a35b64e8ecf993c780868342ebc1f8" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>findAvailableWater</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a7a29aeb2c25d3927e53dbcdec7531fc2" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>findConstPoolEntry</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1abf0be587caca37c8589d2a60c6e59f24" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>findInRangeCPEntry</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a831aa146b4f1dccd62bcd565a6eaa80f" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>fixupConditionalBr</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aa5daae5ba9c59db3b92c4311b5d37473" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>fixupImmediateBr</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a1ecba595e94ff061660c8b22e8716f07" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>fixupUnconditionalBr</name></member>
+      <member refid="classllvm_1_1_function_pass_1a7691d83e3561f781cae4ce4a01bdfa93" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>FunctionPass</name></member>
+      <member refid="classllvm_1_1_pass_1a03d3a81b1c46aff7c38ef3a6750ba225" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getAdjustedAnalysisPointer</name></member>
+      <member refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a560d384c0cef7f62836884fdbbd1fe66" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a6613f29d3e54ce175ac33fb9ba264fae" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1a2190247edbacb33b4e8a3d409fa2d99e" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getAnalysisIfAvailable</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a225e3a366286304012ebb04ca6aee82d" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getAnalysisUsage</name></member>
+      <member refid="classllvm_1_1_pass_1ae31759fd992cddb1f2d62ab0df85834a" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getAsImmutablePass</name></member>
+      <member refid="classllvm_1_1_pass_1a626b77ef8abdfa9f53c697ad129a6e5a" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getAsPMDataManager</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a22bc7c91051dca8dc211c3afe9929603" prot="protected" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getClearedProperties</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ab524260c1fdfc45ca8c2b7ade897fafe" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getCombinedIndex</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a58eb0c9489392e69edfdab54bb9a2fba" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getCPEAlign</name></member>
+      <member refid="classllvm_1_1_pass_1a63192e749ba4a0ee29336a59d6a19647" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getPassID</name></member>
+      <member refid="classllvm_1_1_pass_1a9de4db62e6884f2e5efea6793af30d99" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getPassKind</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aadaa10dcef3fe4481b60ff1fb9c34780" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getPassName</name></member>
+      <member refid="classllvm_1_1_function_pass_1a68517706d9801aec6d20c32a424ed152" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getPotentialPassManagerType</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a8e87361befd343a840e87d2ef988269e" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getRequiredProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a969c082f66671df288441bbad9ca87db" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getResolver</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a8fbedd15c1c809e6050f3fd3ccd3338e" prot="protected" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getSetProperties</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1af7146125ff6a881a6b19fab8690e0091" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>getUserOffset</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1abdd480ce7b8dd317463fd4c3a73316fb" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>handleConstantPoolUser</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a4809f4638bc964aa757bd1b47fff3f2c" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>ID</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1abd3dee94f255a59ef39503608f99c8a7" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>ImmBranches</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aed78d2699a9d157c7ad08ae78fc48e14" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>initializeFunctionInfo</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a015406c9be05ba875b6a6607a7b0d33f" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>isCPEntryInRange</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a9276d20e7ad345d71593d7995720afae" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>isOffsetInRange</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a98229bab8b53875bace6cdd43c0525fe" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>isOffsetInRange</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aceff4ac3539f2c9850610445e7176758" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>isPositionIndependentOrROPI</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a38178ec34aae8177faa51ec6fcc3fa3c" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>isThumb</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ab5ca62ffd88a506f49d21cbac3f02015" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>isThumb1</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aa7404870660d9bb7680f20e6a9d94313" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>isThumb2</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a22a6249ea0ff228890a3b2e326f8fe71" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>isWaterInRange</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a28a2f6500d0e72e0bc875c66ab426533" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>JumpTableEntryIndices</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aae272594f35c002c85edb799023a3245" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>JumpTableUserIndices</name></member>
+      <member refid="classllvm_1_1_pass_1aab174263c400ece13a7278990e102fa6" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_pass_1a992ff669acca94459037cfb1f41cb9dc" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>MachineFunctionPass</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ab0dbb8974ac506fa487d4dde50a93a3e" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>MCP</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a7514c1eca73b9986376c81388f147e90" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>MF</name></member>
+      <member refid="classllvm_1_1_pass_1a0b4a511579939b07831db90c3fc98996" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>mustPreserveAnalysisID</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a5bcaaefb0325dd55841218c2b401a430" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>NewWaterList</name></member>
+      <member refid="classllvm_1_1_pass_1af468a2aeb0d98e3dbeda38176ce516d3" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>operator=</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a7dcb1f3b15c4c0e6501c2a28d78908cf" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>optimizeThumb2Branches</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a9beafe176b49d8fd46daab6faca8ef02" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>optimizeThumb2Instructions</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1abad3b14f15be6b5e8dc1b4826f119696" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>optimizeThumb2JumpTables</name></member>
+      <member refid="classllvm_1_1_pass_1a16baa169d062524be5a6b67609266174" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1ad40d19ce644ec38c52ea00be59016cd5" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1aa5f61a8789f87816c5f494d42a70f01f" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>preparePassManager</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a0e5a435a047ef3f277eec100c1ecf031" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>preserveBaseRegister</name></member>
+      <member refid="classllvm_1_1_pass_1a061b4c01e9c189208dbfd3c77fdb9a5c" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>print</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aff8d08e657e6ed9c0c3ca1b1c179ac2c" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>PushPopMIs</name></member>
+      <member refid="classllvm_1_1_pass_1aeb6e74b0f36a0acd1d20149ef088715a" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>releaseMemory</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aa2fe1bbc38cd8de84461690fab233e9e" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>removeDeadCPEMI</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a8bda926b4776787d25d7b0a0112f0dfc" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>removeUnusedCPEntries</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a44e9766216f49ba8b940fbb7c91abb78" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>reorderThumb2JumpTables</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1aaf4297850ccff6052205f45bc2ba2f87" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>runOnMachineFunction</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a4995445c7a400cc68dc2e59587e68b7d" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>scanFunctionJumpTables</name></member>
+      <member refid="classllvm_1_1_pass_1a2423fcc912a698d4f36c9c9380b53a50" prot="public" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>setResolver</name></member>
+      <member refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>skipFunction</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a2d0ff01e9af545b83667a6f3b1a309a3" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>splitBlockBeforeInstr</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a17b3557c0c6fb8199fc5aba0e0c95005" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>STI</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ab52de6115c0eb43c179e676c824715ac" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>T2JumpTables</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a3bcf2a90f5b140ee4022487e495223bb" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>TII</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1ae9ee57208388fce44d1de2773ba04f75" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>updateForInsertedWaterBlock</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1afaf72e81e912fc9c1a2d7913ac48d670" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>verify</name></member>
+      <member refid="classllvm_1_1_pass_1ac8ef6f57d4ec869a7f1007aeddf2b169" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>verifyAnalysis</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a87abe235fd0b4caa9549a01f250b10d2" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>water_iterator</name></member>
+      <member refid="classanonymous__namespace_02_a_r_m_constant_island_pass_8cpp_03_1_1_a_r_m_constant_islands_1a610f64f4d5215f773f3604360c5c3639" prot="private" virt="non-virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>WaterList</name></member>
+      <member refid="classllvm_1_1_pass_1abe2fe9b29d21424fe4b410fc8e98606c" prot="public" virt="virtual"><scope>anonymous_namespace{ARMConstantIslandPass.cpp}::ARMConstantIslands</scope><name>~Pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

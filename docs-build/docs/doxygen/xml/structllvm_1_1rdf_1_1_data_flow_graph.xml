@@ -1,0 +1,1783 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1rdf_1_1_data_flow_graph" kind="struct" language="C++" prot="public">
+    <compoundname>llvm::rdf::DataFlowGraph</compoundname>
+    <includes refid="_r_d_f_graph_8h" local="yes">llvm/CodeGen/RDFGraph.h</includes>
+    <innerclass refid="structllvm_1_1rdf_1_1_data_flow_graph_1_1_config" prot="public">llvm::rdf::DataFlowGraph::Config</innerclass>
+    <innerclass refid="structllvm_1_1rdf_1_1_data_flow_graph_1_1_def_stack" prot="public">llvm::rdf::DataFlowGraph::DefStack</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structllvm_1_1rdf_1_1_data_flow_graph_1af9ba4adb1171c03b53e7c67ab59825ab" prot="public" static="no">
+        <type>std::unordered_map&lt; <ref refid="namespacellvm_1_1rdf_1ac7072dcf10008631e0ac026bc5f8beae" kindref="member">RegisterId</ref>, <ref refid="structllvm_1_1rdf_1_1_data_flow_graph_1_1_def_stack" kindref="compound">DefStack</ref> &gt;</type>
+        <definition>using llvm::rdf::DataFlowGraph::DefStackMap =  std::unordered_map&lt;RegisterId, DefStack&gt;</definition>
+        <argsstring></argsstring>
+        <name>DefStackMap</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::DefStackMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="772" column="3" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="772" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="structllvm_1_1rdf_1_1_data_flow_graph_1a70da8ad930312fdf8d627a78bacc4fec" prot="private" static="no">
+        <type><ref refid="structllvm_1_1rdf_1_1_register_aggr_map" kindref="compound">RegisterAggrMap</ref>&lt; <ref refid="namespacellvm_1_1rdf_1a9c5c1abf54c7f5aaf8add770214aba5d" kindref="member">NodeId</ref> &gt;</type>
+        <definition>using llvm::rdf::DataFlowGraph::BlockRefsMap =  RegisterAggrMap&lt;NodeId&gt;</definition>
+        <argsstring></argsstring>
+        <name>BlockRefsMap</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::BlockRefsMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="865" column="3" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="865" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1a7bac24a2593cf0ba78aba1b5ce16d05b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="structllvm_1_1rdf_1_1_target_operand_info" kindref="compound">TargetOperandInfo</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TargetOperandInfo&gt; llvm::rdf::DataFlowGraph::DefaultTOI</definition>
+        <argsstring></argsstring>
+        <name>DefaultTOI</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::DefaultTOI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="888" column="19" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="888" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1a32746e872d0c4bc7b0a30ce043b595ca" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+        <definition>MachineFunction&amp; llvm::rdf::DataFlowGraph::MF</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::MF</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="890" column="19" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="890" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1ac91ab379c5bf86a25604cfe80b9583d2" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> &amp;</type>
+        <definition>const TargetInstrInfo&amp; llvm::rdf::DataFlowGraph::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::TII</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="891" column="25" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="891" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1a684f3b76c26e54ea488075fe62fbde8b" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> &amp;</type>
+        <definition>const TargetRegisterInfo&amp; llvm::rdf::DataFlowGraph::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::TRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="892" column="28" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="892" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1a21d97b52b5758dbe183280724a7d835a" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1rdf_1_1_physical_register_info" kindref="compound">PhysicalRegisterInfo</ref></type>
+        <definition>const PhysicalRegisterInfo llvm::rdf::DataFlowGraph::PRI</definition>
+        <argsstring></argsstring>
+        <name>PRI</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::PRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="893" column="30" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="893" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1abcfe9d846ae55ff085e9b272bdbfceb5" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> &amp;</type>
+        <definition>const MachineDominatorTree&amp; llvm::rdf::DataFlowGraph::MDT</definition>
+        <argsstring></argsstring>
+        <name>MDT</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::MDT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="894" column="30" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="894" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1a2231c864afea6eec7591b6ee3b993b29" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_dominance_frontier" kindref="compound">MachineDominanceFrontier</ref> &amp;</type>
+        <definition>const MachineDominanceFrontier&amp; llvm::rdf::DataFlowGraph::MDF</definition>
+        <argsstring></argsstring>
+        <name>MDF</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::MDF</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="895" column="34" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="895" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1a56445a91ab0003593c22786f8360e8c8" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1rdf_1_1_target_operand_info" kindref="compound">TargetOperandInfo</ref> &amp;</type>
+        <definition>const TargetOperandInfo&amp; llvm::rdf::DataFlowGraph::TOI</definition>
+        <argsstring></argsstring>
+        <name>TOI</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::TOI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="896" column="27" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="896" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1acc20b0f238313f1ea24a0fec84d16d66" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1rdf_1_1_register_aggr" kindref="compound">RegisterAggr</ref></type>
+        <definition>RegisterAggr llvm::rdf::DataFlowGraph::LiveIns</definition>
+        <argsstring></argsstring>
+        <name>LiveIns</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::LiveIns</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="898" column="16" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="898" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1aef11930e159344e7a209835fe093b78d" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1_1rdf_1ad43aeb5ac76bcef25986fbb0918d1165" kindref="member">Func</ref></type>
+        <definition>Func llvm::rdf::DataFlowGraph::TheFunc</definition>
+        <argsstring></argsstring>
+        <name>TheFunc</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::TheFunc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="899" column="8" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="899" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1aa6df7d0610a945ab8663b5e6e2ad84d2" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1rdf_1_1_node_allocator" kindref="compound">NodeAllocator</ref></type>
+        <definition>NodeAllocator llvm::rdf::DataFlowGraph::Memory</definition>
+        <argsstring></argsstring>
+        <name>Memory</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::Memory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="900" column="17" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="900" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1a4ec227602630191edc1e368d312ea0ef" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, <ref refid="namespacellvm_1_1rdf_1a24b78e828e0547ee3eac4ac5b7089d35" kindref="member">Block</ref> &gt;</type>
+        <definition>std::map&lt;MachineBasicBlock *, Block&gt; llvm::rdf::DataFlowGraph::BlockNodes</definition>
+        <argsstring></argsstring>
+        <name>BlockNodes</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::BlockNodes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="902" column="12" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="902" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1a304334326dc4a33b8ebb66dc5080c610" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1rdf_1_1_lane_mask_index" kindref="compound">LaneMaskIndex</ref></type>
+        <definition>LaneMaskIndex llvm::rdf::DataFlowGraph::LMI</definition>
+        <argsstring></argsstring>
+        <name>LMI</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::LMI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="904" column="17" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="904" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1a15c30e38d2e4d603a821bd0467dc0caa" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1rdf_1_1_data_flow_graph_1_1_config" kindref="compound">Config</ref></type>
+        <definition>Config llvm::rdf::DataFlowGraph::BuildCfg</definition>
+        <argsstring></argsstring>
+        <name>BuildCfg</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::BuildCfg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="906" column="10" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="906" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1a8d692986a02d693615e109d32db75c85" prot="private" static="no" mutable="no">
+        <type>std::set&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::set&lt;unsigned&gt; llvm::rdf::DataFlowGraph::TrackedUnits</definition>
+        <argsstring></argsstring>
+        <name>TrackedUnits</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::TrackedUnits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="907" column="12" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="907" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1rdf_1_1_data_flow_graph_1ab8149a6e14d4f0fc0b8da64f2272152e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref></type>
+        <definition>BitVector llvm::rdf::DataFlowGraph::ReservedRegs</definition>
+        <argsstring></argsstring>
+        <name>ReservedRegs</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::ReservedRegs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="908" column="13" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="908" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a38fd70c7cf138c96283ce7c265a85b0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::rdf::DataFlowGraph::DataFlowGraph</definition>
+        <argsstring>(MachineFunction &amp;mf, const TargetInstrInfo &amp;tii, const TargetRegisterInfo &amp;tri, const MachineDominatorTree &amp;mdt, const MachineDominanceFrontier &amp;mdf)</argsstring>
+        <name>DataFlowGraph</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::DataFlowGraph</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> &amp;</type>
+          <declname>tii</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> &amp;</type>
+          <declname>tri</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> &amp;</type>
+          <declname>mdt</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_dominance_frontier" kindref="compound">MachineDominanceFrontier</ref> &amp;</type>
+          <declname>mdf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="661" column="3" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="636" bodyend="642"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1aef633ea27194c84482f39fb514608153" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::rdf::DataFlowGraph::DataFlowGraph</definition>
+        <argsstring>(MachineFunction &amp;mf, const TargetInstrInfo &amp;tii, const TargetRegisterInfo &amp;tri, const MachineDominatorTree &amp;mdt, const MachineDominanceFrontier &amp;mdf, const TargetOperandInfo &amp;toi)</argsstring>
+        <name>DataFlowGraph</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::DataFlowGraph</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> &amp;</type>
+          <declname>tii</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> &amp;</type>
+          <declname>tri</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> &amp;</type>
+          <declname>mdt</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_dominance_frontier" kindref="compound">MachineDominanceFrontier</ref> &amp;</type>
+          <declname>mdf</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1rdf_1_1_target_operand_info" kindref="compound">TargetOperandInfo</ref> &amp;</type>
+          <declname>toi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="664" column="3" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="644" bodyend="650"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1ad913e83d1b4439ce665f911348d7d616" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1rdf_1_1_node_base" kindref="compound">NodeBase</ref> *</type>
+        <definition>NodeBase * llvm::rdf::DataFlowGraph::ptr</definition>
+        <argsstring>(NodeId N) const</argsstring>
+        <name>ptr</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::ptr</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a9c5c1abf54c7f5aaf8add770214aba5d" kindref="member">NodeId</ref></type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="682" column="12" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="760" bodyend="764"/>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1aff0e0649aacc0cb7884acdb2caf3888c" compoundref="_r_d_f_graph_8h" startline="689" endline="691">addr</referencedby>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1a9ee71e8d993c1deb028f6299d055340f" compoundref="_r_d_f_graph_8h" startline="683" endline="685">ptr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a9ee71e8d993c1deb028f6299d055340f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_t" kindref="compound">T</ref></type>
+        <definition>T llvm::rdf::DataFlowGraph::ptr</definition>
+        <argsstring>(NodeId N) const</argsstring>
+        <name>ptr</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::ptr</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a9c5c1abf54c7f5aaf8add770214aba5d" kindref="member">NodeId</ref></type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="683" column="17" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="683" bodyend="685"/>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1ad913e83d1b4439ce665f911348d7d616" compoundref="_r_d_f_graph_8cpp" startline="760" endline="764">ptr</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a03dbe5b66a2fcf387596fc6b3c3fc33a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1a9c5c1abf54c7f5aaf8add770214aba5d" kindref="member">NodeId</ref></type>
+        <definition>NodeId llvm::rdf::DataFlowGraph::id</definition>
+        <argsstring>(const NodeBase *P) const</argsstring>
+        <name>id</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::id</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1rdf_1_1_node_base" kindref="compound">NodeBase</ref> *</type>
+          <declname>P</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="687" column="10" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="767" bodyend="771"/>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1aff0e0649aacc0cb7884acdb2caf3888c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structllvm_1_1rdf_1_1_node_addr" kindref="compound">NodeAddr</ref>&lt; <ref refid="class_t" kindref="compound">T</ref> &gt;</type>
+        <definition>NodeAddr&lt; T &gt; llvm::rdf::DataFlowGraph::addr</definition>
+        <argsstring>(NodeId N) const</argsstring>
+        <name>addr</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::addr</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a9c5c1abf54c7f5aaf8add770214aba5d" kindref="member">NodeId</ref></type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="689" column="24" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="689" bodyend="691"/>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1ad913e83d1b4439ce665f911348d7d616" compoundref="_r_d_f_graph_8cpp" startline="760" endline="764">ptr</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a5562ece880571d0c026d45af0a4bf7dc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1ad43aeb5ac76bcef25986fbb0918d1165" kindref="member">Func</ref></type>
+        <definition>Func llvm::rdf::DataFlowGraph::getFunc</definition>
+        <argsstring>() const</argsstring>
+        <name>getFunc</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getFunc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="693" column="8" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="693" bodyend="693"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a772157ecd8233578fc88b4c03e5a84a3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+        <definition>MachineFunction &amp; llvm::rdf::DataFlowGraph::getMF</definition>
+        <argsstring>() const</argsstring>
+        <name>getMF</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getMF</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="694" column="19" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="694" bodyend="694"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a821459d25ce1155f29f2cb3a94b1d016" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> &amp;</type>
+        <definition>const TargetInstrInfo &amp; llvm::rdf::DataFlowGraph::getTII</definition>
+        <argsstring>() const</argsstring>
+        <name>getTII</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getTII</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="695" column="25" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="695" bodyend="695"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1afd2f7d7ac1d171df6efaabdc99e3a9bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> &amp;</type>
+        <definition>const TargetRegisterInfo &amp; llvm::rdf::DataFlowGraph::getTRI</definition>
+        <argsstring>() const</argsstring>
+        <name>getTRI</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getTRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="696" column="28" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="696" bodyend="696"/>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1a0b52d2ebf631ded594b7311d1f2829e3" compoundref="_r_d_f_graph_8cpp" startline="857" endline="982">build</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1abec99855593657b93d529312c2d3885a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1rdf_1_1_physical_register_info" kindref="compound">PhysicalRegisterInfo</ref> &amp;</type>
+        <definition>const PhysicalRegisterInfo &amp; llvm::rdf::DataFlowGraph::getPRI</definition>
+        <argsstring>() const</argsstring>
+        <name>getPRI</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getPRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="697" column="30" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="697" bodyend="697"/>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1a0b52d2ebf631ded594b7311d1f2829e3" compoundref="_r_d_f_graph_8cpp" startline="857" endline="982">build</referencedby>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1a0cf45c81b2f8aaa8a8968e5e0a6cd68e" compoundref="_r_d_f_graph_8cpp" startline="1162" endline="1194">getNextRelated</referencedby>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1a1a41a96168b65e3d82f095f46ee9d9d6" compoundref="_r_d_f_graph_8cpp" startline="1772" endline="1774">isTracked</referencedby>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1a2db43a426340879bc67cffe68aa63c12" compoundref="_r_d_f_graph_8cpp" startline="992" endline="998">makeRegRef</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a6fb00ab66e3522120ac68c0a3f2aba5e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> &amp;</type>
+        <definition>const MachineDominatorTree &amp; llvm::rdf::DataFlowGraph::getDT</definition>
+        <argsstring>() const</argsstring>
+        <name>getDT</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getDT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="698" column="30" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="698" bodyend="698"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a5a64e4409d7fce1aa0df5b9685d1d735" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_dominance_frontier" kindref="compound">MachineDominanceFrontier</ref> &amp;</type>
+        <definition>const MachineDominanceFrontier &amp; llvm::rdf::DataFlowGraph::getDF</definition>
+        <argsstring>() const</argsstring>
+        <name>getDF</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getDF</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="699" column="34" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="699" bodyend="699"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a075bd3b473f35178716fa6804a580289" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1rdf_1_1_register_aggr" kindref="compound">RegisterAggr</ref> &amp;</type>
+        <definition>const RegisterAggr &amp; llvm::rdf::DataFlowGraph::getLiveIns</definition>
+        <argsstring>() const</argsstring>
+        <name>getLiveIns</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getLiveIns</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="700" column="22" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="700" bodyend="700"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a0b52d2ebf631ded594b7311d1f2829e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::build</definition>
+        <argsstring>(const Config &amp;config)</argsstring>
+        <name>build</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::build</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1rdf_1_1_data_flow_graph_1_1_config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="774" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="857" bodyend="982"/>
+        <references refid="structllvm_1_1rdf_1_1_code_node_1a5afff33fe198a8b00e021bf562a82dcb" compoundref="_r_d_f_graph_8cpp" startline="467" endline="477">llvm::rdf::CodeNode::addMember</references>
+        <references refid="structllvm_1_1rdf_1_1_node_addr_1a150c10db309dcfa7a1093dc0c698d663" compoundref="_r_d_f_graph_8h" startline="361">llvm::rdf::NodeAddr&lt; T &gt;::Addr</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_debugify_8cpp_1abbb93ba85eff4d25fd4c3919fddd779c">DM</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="structllvm_1_1rdf_1_1_register_aggr_1a8550509e5a44adcccec5d4c23b1536ec" compoundref="_r_d_f_registers_8h" startline="210" endline="210">llvm::rdf::RegisterAggr::empty</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1adb81b82d10d84e8dfd99c1e206f72766" compoundref="_r_d_f_graph_8h" startline="799" endline="799">findBlock</references>
+        <references refid="structllvm_1_1rdf_1_1_block_node_1ac31264a23924e7566514128d8b64b9a9" compoundref="_r_d_f_graph_8h" startline="644" endline="646">llvm::rdf::BlockNode::getCode</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1abec99855593657b93d529312c2d3885a" compoundref="_r_d_f_graph_8h" startline="697" endline="697">getPRI</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1afd2f7d7ac1d171df6efaabdc99e3a9bd" compoundref="_r_d_f_graph_8h" startline="696" endline="696">getTRI</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1a1a41a96168b65e3d82f095f46ee9d9d6" compoundref="_r_d_f_graph_8cpp" startline="1772" endline="1774">isTracked</references>
+        <references refid="structllvm_1_1rdf_1_1_build_options_1ae7c99d4ee46b611ce85b07006be760e5ae2a5bd0f0e3442f62c978d02d2ec5482" compoundref="_r_d_f_graph_8h" startline="339">llvm::rdf::BuildOptions::KeepDeadPhis</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a364ed6e68f92f797c0cd9e53ce5ea2a5" compoundref="_machine_basic_block_8h" startline="514" endline="516">llvm::MachineBasicBlock::liveins</references>
+        <references refid="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp_1aacd2ab195054a3e6a74bfbb9d5d571c8" compoundref="_a_arch64_adv_s_i_m_d_scalar_pass_8cpp" startline="105">MRI</references>
+        <references refid="structllvm_1_1rdf_1_1_build_options_1ae7c99d4ee46b611ce85b07006be760e5ab0366004added4b326831758a469cb96" compoundref="_r_d_f_graph_8h" startline="340">llvm::rdf::BuildOptions::OmitReserved</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <references refid="_pass_builder_bindings_8cpp_1afd1501c49c84f3addfd108c2484f5674">PB</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da1ec381406c0c91aef4a414bdba131112" compoundref="_r_d_f_graph_8h" startline="289">llvm::rdf::NodeAttrs::PhiRef</references>
+        <references refid="classllvm_1_1_machine_basic_block_1a877507fda31c207ec36a018784369708" compoundref="_machine_basic_block_8h" startline="429" endline="429">llvm::MachineBasicBlock::pred_empty</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da64fd1d9beb2a27391a05ee1d6d51b6e0" compoundref="_r_d_f_graph_8h" startline="290">llvm::rdf::NodeAttrs::Preserving</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="_n_v_v_m_intr_range_8cpp_1a34bd74317e3f04bfc4318c2d1a470877">Range</references>
+        <references refid="structllvm_1_1rdf_1_1_register_aggr_1a1506ec20a7c8917bd3ba56eaf56916e7" compoundref="_r_d_f_registers_8h" startline="276" endline="278">llvm::rdf::RegisterAggr::refs</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1afa816492d5310d33ee910f0808244e65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::build</definition>
+        <argsstring>()</argsstring>
+        <name>build</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::build</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="775" column="8" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="775" bodyend="775"/>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1afa816492d5310d33ee910f0808244e65" compoundref="_r_d_f_graph_8h" startline="775" endline="775">build</references>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1afa816492d5310d33ee910f0808244e65" compoundref="_r_d_f_graph_8h" startline="775" endline="775">build</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1afd79669de85357a98f3c352ba9209263" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::pushAllDefs</definition>
+        <argsstring>(Instr IA, DefStackMap &amp;DM)</argsstring>
+        <name>pushAllDefs</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::pushAllDefs</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a173a2217e059f21fb25908fa2bf796d6" kindref="member">Instr</ref></type>
+          <declname>IA</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_data_flow_graph_1af9ba4adb1171c03b53e7c67ab59825ab" kindref="member">DefStackMap</ref> &amp;</type>
+          <declname>DM</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="777" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1026" bodyend="1029"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1ad07faf4d1852a9a99b32a798edf6170d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::markBlock</definition>
+        <argsstring>(NodeId B, DefStackMap &amp;DefM)</argsstring>
+        <name>markBlock</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::markBlock</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a9c5c1abf54c7f5aaf8add770214aba5d" kindref="member">NodeId</ref></type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_data_flow_graph_1af9ba4adb1171c03b53e7c67ab59825ab" kindref="member">DefStackMap</ref> &amp;</type>
+          <declname>DefM</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="778" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1001" bodyend="1005"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a0b818af3f643e001a63611d86f2776c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::releaseBlock</definition>
+        <argsstring>(NodeId B, DefStackMap &amp;DefM)</argsstring>
+        <name>releaseBlock</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::releaseBlock</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a9c5c1abf54c7f5aaf8add770214aba5d" kindref="member">NodeId</ref></type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_data_flow_graph_1af9ba4adb1171c03b53e7c67ab59825ab" kindref="member">DefStackMap</ref> &amp;</type>
+          <declname>DefM</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="779" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1008" bodyend="1022"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a0cef8f9dc36d8b31cbca1f5f9aa9d443" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1rdf_1_1_packed_register_ref" kindref="compound">PackedRegisterRef</ref></type>
+        <definition>PackedRegisterRef llvm::rdf::DataFlowGraph::pack</definition>
+        <argsstring>(RegisterRef RR)</argsstring>
+        <name>pack</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::pack</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_register_ref" kindref="compound">RegisterRef</ref></type>
+          <declname>RR</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="781" column="21" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="781" bodyend="783"/>
+        <references refid="structllvm_1_1rdf_1_1_register_ref_1a5ad5cb9affeee19ca5894e5d950ea869" compoundref="_r_d_f_registers_8h" startline="90">llvm::rdf::RegisterRef::Mask</references>
+        <references refid="structllvm_1_1rdf_1_1_register_ref_1aff344ef4b411a5f449ef8839d98f1750" compoundref="_r_d_f_registers_8h" startline="89">llvm::rdf::RegisterRef::Reg</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a96b19879536810b447231e0efab10a5e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1rdf_1_1_packed_register_ref" kindref="compound">PackedRegisterRef</ref></type>
+        <definition>PackedRegisterRef llvm::rdf::DataFlowGraph::pack</definition>
+        <argsstring>(RegisterRef RR) const</argsstring>
+        <name>pack</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::pack</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_register_ref" kindref="compound">RegisterRef</ref></type>
+          <declname>RR</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="784" column="21" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="784" bodyend="786"/>
+        <references refid="structllvm_1_1rdf_1_1_register_ref_1a5ad5cb9affeee19ca5894e5d950ea869" compoundref="_r_d_f_registers_8h" startline="90">llvm::rdf::RegisterRef::Mask</references>
+        <references refid="structllvm_1_1rdf_1_1_register_ref_1aff344ef4b411a5f449ef8839d98f1750" compoundref="_r_d_f_registers_8h" startline="89">llvm::rdf::RegisterRef::Reg</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a21825ee3c5ced2b0878c0757333703e7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1rdf_1_1_register_ref" kindref="compound">RegisterRef</ref></type>
+        <definition>RegisterRef llvm::rdf::DataFlowGraph::unpack</definition>
+        <argsstring>(PackedRegisterRef PR) const</argsstring>
+        <name>unpack</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::unpack</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_packed_register_ref" kindref="compound">PackedRegisterRef</ref></type>
+          <declname>PR</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="787" column="15" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="787" bodyend="789"/>
+        <references refid="structllvm_1_1rdf_1_1_packed_register_ref_1a151d75db72311be1e5a0f94879adfa1b" compoundref="_r_d_f_graph_8h" startline="466">llvm::rdf::PackedRegisterRef::MaskId</references>
+        <references refid="structllvm_1_1rdf_1_1_packed_register_ref_1a1df78b78f3fb694804ad7472ea9a5226" compoundref="_r_d_f_graph_8h" startline="465">llvm::rdf::PackedRegisterRef::Reg</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a1ae2387cb76daa6d4328c2cc9ab5e850" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1rdf_1_1_register_ref" kindref="compound">RegisterRef</ref></type>
+        <definition>RegisterRef llvm::rdf::DataFlowGraph::makeRegRef</definition>
+        <argsstring>(unsigned Reg, unsigned Sub) const</argsstring>
+        <name>makeRegRef</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::makeRegRef</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Sub</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="791" column="15" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="984" bodyend="990"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="structllvm_1_1rdf_1_1_register_ref_1a7a6e00a1aed89e42fd185379d3309666" compoundref="_r_d_f_registers_8h" startline="119" endline="121">llvm::rdf::RegisterRef::isMaskId</references>
+        <references refid="structllvm_1_1rdf_1_1_register_ref_1a987ae88dea5396b51031fe9a52d8388a" compoundref="_r_d_f_registers_8h" startline="113" endline="115">llvm::rdf::RegisterRef::isRegId</references>
+        <references refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" compoundref="_machine_sink_8cpp" startline="2028">Reg</references>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1a2db43a426340879bc67cffe68aa63c12" compoundref="_r_d_f_graph_8cpp" startline="992" endline="998">makeRegRef</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a2db43a426340879bc67cffe68aa63c12" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1rdf_1_1_register_ref" kindref="compound">RegisterRef</ref></type>
+        <definition>RegisterRef llvm::rdf::DataFlowGraph::makeRegRef</definition>
+        <argsstring>(const MachineOperand &amp;Op) const</argsstring>
+        <name>makeRegRef</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::makeRegRef</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> &amp;</type>
+          <declname>Op</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="792" column="15" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="992" bodyend="998"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="structllvm_1_1_lane_bitmask_1a3714a639930eab71d7202da05ad82990" compoundref="_lane_bitmask_8h" startline="82" endline="82">llvm::LaneBitmask::getAll</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1abec99855593657b93d529312c2d3885a" compoundref="_r_d_f_graph_8h" startline="697" endline="697">getPRI</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1a1ae2387cb76daa6d4328c2cc9ab5e850" compoundref="_r_d_f_graph_8cpp" startline="984" endline="990">makeRegRef</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a0cf45c81b2f8aaa8a8968e5e0a6cd68e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1ad64ee563e178225490a0a8e262a4aba8" kindref="member">Ref</ref></type>
+        <definition>Ref llvm::rdf::DataFlowGraph::getNextRelated</definition>
+        <argsstring>(Instr IA, Ref RA) const</argsstring>
+        <name>getNextRelated</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getNextRelated</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a173a2217e059f21fb25908fa2bf796d6" kindref="member">Instr</ref></type>
+          <declname>IA</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1ad64ee563e178225490a0a8e262a4aba8" kindref="member">Ref</ref></type>
+          <declname>RA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="794" column="7" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1162" bodyend="1194"/>
+        <references refid="structllvm_1_1rdf_1_1_node_addr_1a150c10db309dcfa7a1093dc0c698d663" compoundref="_r_d_f_graph_8h" startline="361">llvm::rdf::NodeAddr&lt; T &gt;::Addr</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a193847098793cdbab306803186676899" compoundref="_r_i_s_c_v_redundant_copy_elimination_8cpp" startline="75">Cond</references>
+        <references refid="structllvm_1_1rdf_1_1_phi_use_node_1a61edd9a1eb4a1bfc93bf58ad5073b872" compoundref="_r_d_f_graph_8h" startline="602" endline="605">llvm::rdf::PhiUseNode::getPredecessor</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1abec99855593657b93d529312c2d3885a" compoundref="_r_d_f_graph_8h" startline="697" endline="697">getPRI</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da0ae60988901d9b6e0499d07f94e8fc00" compoundref="_r_d_f_graph_8h" startline="280">llvm::rdf::NodeAttrs::Phi</references>
+        <references refid="_s_i_optimize_exec_masking_pre_r_a_8cpp_1a3e47bdb3e296b00df96eff7896fa57bf" compoundref="_s_i_optimize_exec_masking_pre_r_a_8cpp" startline="71">RA</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da91376b865b14d172148590ff1c69e403" compoundref="_r_d_f_graph_8h" startline="281">llvm::rdf::NodeAttrs::Stmt</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121daf9dd39c923393e08fbf871e15cc530b2" compoundref="_r_d_f_graph_8h" startline="279">llvm::rdf::NodeAttrs::Use</references>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1a7010e9f697823cc5a40876345bab137e" compoundref="_r_d_f_graph_8cpp" startline="1135" endline="1145">getRelatedRefs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a4f334bed0e58d5470180436d28993035" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1ad64ee563e178225490a0a8e262a4aba8" kindref="member">Ref</ref></type>
+        <definition>Ref llvm::rdf::DataFlowGraph::getNextShadow</definition>
+        <argsstring>(Instr IA, Ref RA, bool Create)</argsstring>
+        <name>getNextShadow</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getNextShadow</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a173a2217e059f21fb25908fa2bf796d6" kindref="member">Instr</ref></type>
+          <declname>IA</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1ad64ee563e178225490a0a8e262a4aba8" kindref="member">Ref</ref></type>
+          <declname>RA</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>Create</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="795" column="7" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1224" bodyend="1240"/>
+        <references refid="structllvm_1_1rdf_1_1_node_addr_1a150c10db309dcfa7a1093dc0c698d663" compoundref="_r_d_f_graph_8h" startline="361">llvm::rdf::NodeAddr&lt; T &gt;::Addr</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_s_i_optimize_exec_masking_pre_r_a_8cpp_1a3e47bdb3e296b00df96eff7896fa57bf" compoundref="_s_i_optimize_exec_masking_pre_r_a_8cpp" startline="71">RA</references>
+        <references refid="structllvm_1_1rdf_1_1_node_base_1a0c6eec2ca178b22b6d5c09ffcc021e88" compoundref="_r_d_f_graph_8h" startline="499" endline="499">llvm::rdf::NodeBase::setFlags</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da6ffc2b2c02cab44f33a91b48bd374461" compoundref="_r_d_f_graph_8h" startline="287">llvm::rdf::NodeAttrs::Shadow</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a7010e9f697823cc5a40876345bab137e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1ad18ad8bc2c127dd4844b3186233d68f5" kindref="member">NodeList</ref></type>
+        <definition>NodeList llvm::rdf::DataFlowGraph::getRelatedRefs</definition>
+        <argsstring>(Instr IA, Ref RA) const</argsstring>
+        <name>getRelatedRefs</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getRelatedRefs</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a173a2217e059f21fb25908fa2bf796d6" kindref="member">Instr</ref></type>
+          <declname>IA</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1ad64ee563e178225490a0a8e262a4aba8" kindref="member">Ref</ref></type>
+          <declname>RA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="797" column="12" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1135" bodyend="1145"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1a0cf45c81b2f8aaa8a8968e5e0a6cd68e" compoundref="_r_d_f_graph_8cpp" startline="1162" endline="1194">getNextRelated</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="_s_i_optimize_exec_masking_pre_r_a_8cpp_1a3e47bdb3e296b00df96eff7896fa57bf" compoundref="_s_i_optimize_exec_masking_pre_r_a_8cpp" startline="71">RA</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1adb81b82d10d84e8dfd99c1e206f72766" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1a24b78e828e0547ee3eac4ac5b7089d35" kindref="member">Block</ref></type>
+        <definition>Block llvm::rdf::DataFlowGraph::findBlock</definition>
+        <argsstring>(MachineBasicBlock *BB) const</argsstring>
+        <name>findBlock</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::findBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="799" column="9" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="799" bodyend="799"/>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1a0b52d2ebf631ded594b7311d1f2829e3" compoundref="_r_d_f_graph_8cpp" startline="857" endline="982">build</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a06996b487189a734a367e0f1d101ed78" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::unlinkUse</definition>
+        <argsstring>(Use UA, bool RemoveFromOwner)</argsstring>
+        <name>unlinkUse</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::unlinkUse</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1abd774f5d3a81e00ffb690f4f5c0c82cf" kindref="member">Use</ref></type>
+          <declname>UA</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>RemoveFromOwner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="801" column="8" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="801" bodyend="805"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a707e4fe8684ad000cde8d9c302d0eca1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::unlinkDef</definition>
+        <argsstring>(Def DA, bool RemoveFromOwner)</argsstring>
+        <name>unlinkDef</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::unlinkDef</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a10793004faece2bb74d3363b5f6ce96f" kindref="member">Def</ref></type>
+          <declname>DA</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>RemoveFromOwner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="807" column="8" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="807" bodyend="811"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a1a41a96168b65e3d82f095f46ee9d9d6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::rdf::DataFlowGraph::isTracked</definition>
+        <argsstring>(RegisterRef RR) const</argsstring>
+        <name>isTracked</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::isTracked</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_register_ref" kindref="compound">RegisterRef</ref></type>
+          <declname>RR</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="813" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1772" bodyend="1774"/>
+        <references refid="namespacellvm_1_1rdf_1ae3b5e436afeb0d1e4781f4c47beee60d" compoundref="_r_d_f_registers_8h" startline="35" endline="47">llvm::rdf::disjoint</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1abec99855593657b93d529312c2d3885a" compoundref="_r_d_f_graph_8h" startline="697" endline="697">getPRI</references>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1a0b52d2ebf631ded594b7311d1f2829e3" compoundref="_r_d_f_graph_8cpp" startline="857" endline="982">build</referencedby>
+        <referencedby refid="structllvm_1_1rdf_1_1_data_flow_graph_1ae0d37a7eb6fa39a78f3bcb706766bd73" compoundref="_r_d_f_graph_8cpp" startline="1776" endline="1794">hasUntrackedRef</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1ae0d37a7eb6fa39a78f3bcb706766bd73" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::rdf::DataFlowGraph::hasUntrackedRef</definition>
+        <argsstring>(Stmt S, bool IgnoreReserved=true) const</argsstring>
+        <name>hasUntrackedRef</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::hasUntrackedRef</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a8c7e161293378ff6f6f82fc3c167870c" kindref="member">Stmt</ref></type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IgnoreReserved</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="814" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1776" bodyend="1794"/>
+        <references refid="_itanium_demangle_8h_1a926d7ce2143863b7a2afda0fca4d2b65" compoundref="_itanium_demangle_8h" startline="3351" endline="3431">AbstractManglingParser&lt; Derived, Alloc &gt;::Ops</references>
+        <references refid="structllvm_1_1rdf_1_1_node_addr_1a150c10db309dcfa7a1093dc0c698d663" compoundref="_r_d_f_graph_8h" startline="361">llvm::rdf::NodeAddr&lt; T &gt;::Addr</references>
+        <references refid="structllvm_1_1rdf_1_1_stmt_node_1ae16b26d08408d8aec231bbe13bc9e9f9" compoundref="_r_d_f_graph_8h" startline="638" endline="640">llvm::rdf::StmtNode::getCode</references>
+        <references refid="structllvm_1_1rdf_1_1_register_ref_1a05a3bdf2a3d5c33f370bc778fabaee9c" compoundref="_r_d_f_registers_8h" startline="102" endline="102">llvm::rdf::RegisterRef::idx</references>
+        <references refid="namespacellvm_1acd1cd968cb420c82d70926920fcdc7d7" compoundref="_s_t_l_extras_8h" startline="1903" endline="1911">llvm::is_contained</references>
+        <references refid="structllvm_1_1rdf_1_1_register_ref_1a6e855d6b2f844f3bdce575f3d0330bb5" compoundref="_r_d_f_registers_8h" startline="98" endline="98">llvm::rdf::RegisterRef::isReg</references>
+        <references refid="structllvm_1_1rdf_1_1_data_flow_graph_1a1a41a96168b65e3d82f095f46ee9d9d6" compoundref="_r_d_f_graph_8cpp" startline="1772" endline="1774">isTracked</references>
+        <references refid="structllvm_1_1rdf_1_1_code_node_1a59ca51e5707323e7ed6f1fa512b3f589" compoundref="_r_d_f_graph_8cpp" startline="519" endline="522">llvm::rdf::CodeNode::members</references>
+        <references refid="classllvm_1_1_machine_instr_1a999b8f3e58e7ca479f26445bae791a7c" compoundref="_machine_instr_8h" startline="693" endline="695">llvm::MachineInstr::operands</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a924c78446e6a6bca9371f02ae6c62b7b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+            <declname>Kind</declname>
+            <defname>Kind</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::rdf::DataFlowGraph::IsRef</definition>
+        <argsstring>(const Node BA)</argsstring>
+        <name>IsRef</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::IsRef</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1rdf_1ac54dd04d6e441d1b72195477e5bc1909" kindref="member">Node</ref></type>
+          <declname>BA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="817" column="27" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="817" bodyend="819"/>
+        <references refid="structllvm_1_1rdf_1_1_node_addr_1a150c10db309dcfa7a1093dc0c698d663" compoundref="_r_d_f_graph_8h" startline="361">llvm::rdf::NodeAddr&lt; T &gt;::Addr</references>
+        <references refid="structllvm_1_1rdf_1_1_node_base_1ad803998605d4a43c2eb44bd90ed19973" compoundref="_r_d_f_graph_8h" startline="493" endline="493">llvm::rdf::NodeBase::getKind</references>
+        <references refid="structllvm_1_1rdf_1_1_node_base_1a47f13a9bf570d95ac215312b5c77cc90" compoundref="_r_d_f_graph_8h" startline="492" endline="492">llvm::rdf::NodeBase::getType</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da1f251b754ed5bef25dc1f69e6bd845ea" compoundref="_r_d_f_graph_8h" startline="274">llvm::rdf::NodeAttrs::Ref</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1ac8b5aa2c1dd5ee4a4a8bf03730965c29" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+            <declname>Kind</declname>
+            <defname>Kind</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::rdf::DataFlowGraph::IsCode</definition>
+        <argsstring>(const Node BA)</argsstring>
+        <name>IsCode</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::IsCode</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1rdf_1ac54dd04d6e441d1b72195477e5bc1909" kindref="member">Node</ref></type>
+          <declname>BA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="821" column="27" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="821" bodyend="823"/>
+        <references refid="structllvm_1_1rdf_1_1_node_addr_1a150c10db309dcfa7a1093dc0c698d663" compoundref="_r_d_f_graph_8h" startline="361">llvm::rdf::NodeAddr&lt; T &gt;::Addr</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da3897c75682d603726fd11a4ce74fbfdf" compoundref="_r_d_f_graph_8h" startline="273">llvm::rdf::NodeAttrs::Code</references>
+        <references refid="structllvm_1_1rdf_1_1_node_base_1ad803998605d4a43c2eb44bd90ed19973" compoundref="_r_d_f_graph_8h" startline="493" endline="493">llvm::rdf::NodeBase::getKind</references>
+        <references refid="structllvm_1_1rdf_1_1_node_base_1a47f13a9bf570d95ac215312b5c77cc90" compoundref="_r_d_f_graph_8h" startline="492" endline="492">llvm::rdf::NodeBase::getType</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a264db9e61fcbc7db438de1f6a062a96a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::rdf::DataFlowGraph::IsDef</definition>
+        <argsstring>(const Node BA)</argsstring>
+        <name>IsDef</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::IsDef</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1rdf_1ac54dd04d6e441d1b72195477e5bc1909" kindref="member">Node</ref></type>
+          <declname>BA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="825" column="15" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="825" bodyend="828"/>
+        <references refid="structllvm_1_1rdf_1_1_node_addr_1a150c10db309dcfa7a1093dc0c698d663" compoundref="_r_d_f_graph_8h" startline="361">llvm::rdf::NodeAddr&lt; T &gt;::Addr</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121dacde70c4b68233671ba64c60b7ec08238" compoundref="_r_d_f_graph_8h" startline="278">llvm::rdf::NodeAttrs::Def</references>
+        <references refid="structllvm_1_1rdf_1_1_node_base_1ad803998605d4a43c2eb44bd90ed19973" compoundref="_r_d_f_graph_8h" startline="493" endline="493">llvm::rdf::NodeBase::getKind</references>
+        <references refid="structllvm_1_1rdf_1_1_node_base_1a47f13a9bf570d95ac215312b5c77cc90" compoundref="_r_d_f_graph_8h" startline="492" endline="492">llvm::rdf::NodeBase::getType</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da1f251b754ed5bef25dc1f69e6bd845ea" compoundref="_r_d_f_graph_8h" startline="274">llvm::rdf::NodeAttrs::Ref</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a9a057fa5769de2acccd16b02326468b3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::rdf::DataFlowGraph::IsUse</definition>
+        <argsstring>(const Node BA)</argsstring>
+        <name>IsUse</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::IsUse</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1rdf_1ac54dd04d6e441d1b72195477e5bc1909" kindref="member">Node</ref></type>
+          <declname>BA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="830" column="15" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="830" bodyend="833"/>
+        <references refid="structllvm_1_1rdf_1_1_node_addr_1a150c10db309dcfa7a1093dc0c698d663" compoundref="_r_d_f_graph_8h" startline="361">llvm::rdf::NodeAddr&lt; T &gt;::Addr</references>
+        <references refid="structllvm_1_1rdf_1_1_node_base_1ad803998605d4a43c2eb44bd90ed19973" compoundref="_r_d_f_graph_8h" startline="493" endline="493">llvm::rdf::NodeBase::getKind</references>
+        <references refid="structllvm_1_1rdf_1_1_node_base_1a47f13a9bf570d95ac215312b5c77cc90" compoundref="_r_d_f_graph_8h" startline="492" endline="492">llvm::rdf::NodeBase::getType</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da1f251b754ed5bef25dc1f69e6bd845ea" compoundref="_r_d_f_graph_8h" startline="274">llvm::rdf::NodeAttrs::Ref</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121daf9dd39c923393e08fbf871e15cc530b2" compoundref="_r_d_f_graph_8h" startline="279">llvm::rdf::NodeAttrs::Use</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a555e904e68d3d41e5f2db6beaabd49a9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::rdf::DataFlowGraph::IsPhi</definition>
+        <argsstring>(const Node BA)</argsstring>
+        <name>IsPhi</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::IsPhi</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1rdf_1ac54dd04d6e441d1b72195477e5bc1909" kindref="member">Node</ref></type>
+          <declname>BA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="835" column="15" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="835" bodyend="838"/>
+        <references refid="structllvm_1_1rdf_1_1_node_addr_1a150c10db309dcfa7a1093dc0c698d663" compoundref="_r_d_f_graph_8h" startline="361">llvm::rdf::NodeAddr&lt; T &gt;::Addr</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da3897c75682d603726fd11a4ce74fbfdf" compoundref="_r_d_f_graph_8h" startline="273">llvm::rdf::NodeAttrs::Code</references>
+        <references refid="structllvm_1_1rdf_1_1_node_base_1ad803998605d4a43c2eb44bd90ed19973" compoundref="_r_d_f_graph_8h" startline="493" endline="493">llvm::rdf::NodeBase::getKind</references>
+        <references refid="structllvm_1_1rdf_1_1_node_base_1a47f13a9bf570d95ac215312b5c77cc90" compoundref="_r_d_f_graph_8h" startline="492" endline="492">llvm::rdf::NodeBase::getType</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da0ae60988901d9b6e0499d07f94e8fc00" compoundref="_r_d_f_graph_8h" startline="280">llvm::rdf::NodeAttrs::Phi</references>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a67533efd5231172ec9eb37c4ff10aec1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>static bool llvm::rdf::DataFlowGraph::IsPreservingDef</definition>
+        <argsstring>(const Def DA)</argsstring>
+        <name>IsPreservingDef</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::IsPreservingDef</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1rdf_1a10793004faece2bb74d3363b5f6ce96f" kindref="member">Def</ref></type>
+          <declname>DA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="840" column="15" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="840" bodyend="843"/>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da64fd1d9beb2a27391a05ee1d6d51b6e0" compoundref="_r_d_f_graph_8h" startline="290">llvm::rdf::NodeAttrs::Preserving</references>
+        <references refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da19efcb0576040c1305e80dcc42758551" compoundref="_r_d_f_graph_8h" startline="292">llvm::rdf::NodeAttrs::Undef</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a6adad77c49bee969463a5fccb4f6cd2d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="846" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1148" bodyend="1154"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a2a39561fe4b1bfb6f59ce103a11a8206" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structllvm_1_1rdf_1_1_register_aggr" kindref="compound">RegisterAggr</ref></type>
+        <definition>RegisterAggr llvm::rdf::DataFlowGraph::getLandingPadLiveIns</definition>
+        <argsstring>() const</argsstring>
+        <name>getLandingPadLiveIns</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::getLandingPadLiveIns</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="848" column="16" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="743" bodyend="755"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a30db3e8a739ddfa562852c963c121b45" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1ac54dd04d6e441d1b72195477e5bc1909" kindref="member">Node</ref></type>
+        <definition>Node llvm::rdf::DataFlowGraph::newNode</definition>
+        <argsstring>(uint16_t Attrs)</argsstring>
+        <name>newNode</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::newNode</qualifiedname>
+        <param>
+          <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+          <declname>Attrs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="850" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="774" bodyend="779"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a8f29717fdef8fd2bf1bc0ec714faeef1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1ac54dd04d6e441d1b72195477e5bc1909" kindref="member">Node</ref></type>
+        <definition>Node llvm::rdf::DataFlowGraph::cloneNode</definition>
+        <argsstring>(const Node B)</argsstring>
+        <name>cloneNode</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::cloneNode</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1rdf_1ac54dd04d6e441d1b72195477e5bc1909" kindref="member">Node</ref></type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="851" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="783" bodyend="798"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a82a9894669fa66794cd30f244061a4fd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1abd774f5d3a81e00ffb690f4f5c0c82cf" kindref="member">Use</ref></type>
+        <definition>Use llvm::rdf::DataFlowGraph::newUse</definition>
+        <argsstring>(Instr Owner, MachineOperand &amp;Op, uint16_t Flags=NodeAttrs::None)</argsstring>
+        <name>newUse</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::newUse</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a173a2217e059f21fb25908fa2bf796d6" kindref="member">Instr</ref></type>
+          <declname>Owner</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> &amp;</type>
+          <declname>Op</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+          <declname>Flags</declname>
+          <defval><ref refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121dafbb338819a49cc97e98aaba2a6cd258b" kindref="member">NodeAttrs::None</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="852" column="7" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="802" bodyend="806"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1ac896a715108cd6feea3c72c553c4369a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1a61dda01f89004e5cfed5414e881d1af3" kindref="member">PhiUse</ref></type>
+        <definition>PhiUse llvm::rdf::DataFlowGraph::newPhiUse</definition>
+        <argsstring>(Phi Owner, RegisterRef RR, Block PredB, uint16_t Flags=NodeAttrs::PhiRef)</argsstring>
+        <name>newPhiUse</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::newPhiUse</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a379bee2dadbfd1d7a599f003c4275dd8" kindref="member">Phi</ref></type>
+          <declname>Owner</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_register_ref" kindref="compound">RegisterRef</ref></type>
+          <declname>RR</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a24b78e828e0547ee3eac4ac5b7089d35" kindref="member">Block</ref></type>
+          <declname>PredB</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+          <declname>Flags</declname>
+          <defval><ref refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da1ec381406c0c91aef4a414bdba131112" kindref="member">NodeAttrs::PhiRef</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="853" column="10" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="808" bodyend="815"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a5620d15236f6bd3ed6052c5557c98849" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1a10793004faece2bb74d3363b5f6ce96f" kindref="member">Def</ref></type>
+        <definition>Def llvm::rdf::DataFlowGraph::newDef</definition>
+        <argsstring>(Instr Owner, MachineOperand &amp;Op, uint16_t Flags=NodeAttrs::None)</argsstring>
+        <name>newDef</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::newDef</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a173a2217e059f21fb25908fa2bf796d6" kindref="member">Instr</ref></type>
+          <declname>Owner</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_operand" kindref="compound">MachineOperand</ref> &amp;</type>
+          <declname>Op</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+          <declname>Flags</declname>
+          <defval><ref refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121dafbb338819a49cc97e98aaba2a6cd258b" kindref="member">NodeAttrs::None</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="855" column="7" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="817" bodyend="821"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a6d02984e29158fb04e2404a416543a63" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1a10793004faece2bb74d3363b5f6ce96f" kindref="member">Def</ref></type>
+        <definition>Def llvm::rdf::DataFlowGraph::newDef</definition>
+        <argsstring>(Instr Owner, RegisterRef RR, uint16_t Flags=NodeAttrs::PhiRef)</argsstring>
+        <name>newDef</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::newDef</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a173a2217e059f21fb25908fa2bf796d6" kindref="member">Instr</ref></type>
+          <declname>Owner</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_register_ref" kindref="compound">RegisterRef</ref></type>
+          <declname>RR</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+          <declname>Flags</declname>
+          <defval><ref refid="structllvm_1_1rdf_1_1_node_attrs_1a96730c2fe7aaa0b753e7483d1e6a121da1ec381406c0c91aef4a414bdba131112" kindref="member">NodeAttrs::PhiRef</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="856" column="7" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="823" bodyend="828"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a9a15f10ed67c8e5deb855627ad29b5e2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1a379bee2dadbfd1d7a599f003c4275dd8" kindref="member">Phi</ref></type>
+        <definition>Phi llvm::rdf::DataFlowGraph::newPhi</definition>
+        <argsstring>(Block Owner)</argsstring>
+        <name>newPhi</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::newPhi</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a24b78e828e0547ee3eac4ac5b7089d35" kindref="member">Block</ref></type>
+          <declname>Owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="857" column="7" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="830" bodyend="834"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a70a8ca2a626fdf7ad0e38e94d7071dc3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1a8c7e161293378ff6f6f82fc3c167870c" kindref="member">Stmt</ref></type>
+        <definition>Stmt llvm::rdf::DataFlowGraph::newStmt</definition>
+        <argsstring>(Block Owner, MachineInstr *MI)</argsstring>
+        <name>newStmt</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::newStmt</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a24b78e828e0547ee3eac4ac5b7089d35" kindref="member">Block</ref></type>
+          <declname>Owner</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="858" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="836" bodyend="841"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a08bb7461bdc1960c948a3486df776b41" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1a24b78e828e0547ee3eac4ac5b7089d35" kindref="member">Block</ref></type>
+        <definition>Block llvm::rdf::DataFlowGraph::newBlock</definition>
+        <argsstring>(Func Owner, MachineBasicBlock *BB)</argsstring>
+        <name>newBlock</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::newBlock</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1ad43aeb5ac76bcef25986fbb0918d1165" kindref="member">Func</ref></type>
+          <declname>Owner</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="859" column="9" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="843" bodyend="848"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a732da27bd5b65b4cbb56f213fbed976e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1rdf_1ad43aeb5ac76bcef25986fbb0918d1165" kindref="member">Func</ref></type>
+        <definition>Func llvm::rdf::DataFlowGraph::newFunc</definition>
+        <argsstring>(MachineFunction *MF)</argsstring>
+        <name>newFunc</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::newFunc</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> *</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="860" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="850" bodyend="854"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a6f6756051edd4be23b92b43ba7cce021" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_predicate" kindref="compound">Predicate</ref></type>
+          </param>
+        </templateparamlist>
+        <type>std::pair&lt; <ref refid="namespacellvm_1_1rdf_1ad64ee563e178225490a0a8e262a4aba8" kindref="member">Ref</ref>, <ref refid="namespacellvm_1_1rdf_1ad64ee563e178225490a0a8e262a4aba8" kindref="member">Ref</ref> &gt;</type>
+        <definition>std::pair&lt; Ref, Ref &gt; llvm::rdf::DataFlowGraph::locateNextRef</definition>
+        <argsstring>(Instr IA, Ref RA, Predicate P) const</argsstring>
+        <name>locateNextRef</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::locateNextRef</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a173a2217e059f21fb25908fa2bf796d6" kindref="member">Instr</ref></type>
+          <declname>IA</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1ad64ee563e178225490a0a8e262a4aba8" kindref="member">Ref</ref></type>
+          <declname>RA</declname>
+        </param>
+        <param>
+          <type><ref refid="class_predicate" kindref="compound">Predicate</ref></type>
+          <declname>P</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="863" column="13" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1202" bodyend="1220"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a125776262a2b041e990dfd1cbab87df5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::buildStmt</definition>
+        <argsstring>(Block BA, MachineInstr &amp;In)</argsstring>
+        <name>buildStmt</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::buildStmt</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a24b78e828e0547ee3eac4ac5b7089d35" kindref="member">Block</ref></type>
+          <declname>BA</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>In</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="867" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1244" bodyend="1377"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a3c4dabe1a820445461262732fb9abdc5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::recordDefsForDF</definition>
+        <argsstring>(BlockRefsMap &amp;PhiM, Block BA)</argsstring>
+        <name>recordDefsForDF</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::recordDefsForDF</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_register_aggr_map" kindref="compound">BlockRefsMap</ref> &amp;</type>
+          <declname>PhiM</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a24b78e828e0547ee3eac4ac5b7089d35" kindref="member">Block</ref></type>
+          <declname>BA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="868" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1381" bodyend="1420"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a49b1c5d90376e1b638ac1a2eacb74fbe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::buildPhis</definition>
+        <argsstring>(BlockRefsMap &amp;PhiM, Block BA)</argsstring>
+        <name>buildPhis</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::buildPhis</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_register_aggr_map" kindref="compound">BlockRefsMap</ref> &amp;</type>
+          <declname>PhiM</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a24b78e828e0547ee3eac4ac5b7089d35" kindref="member">Block</ref></type>
+          <declname>BA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="869" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1424" bodyend="1449"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1ae2d2646041a1c1f7e05ea220e2b79dcf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::removeUnusedPhis</definition>
+        <argsstring>()</argsstring>
+        <name>removeUnusedPhis</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::removeUnusedPhis</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="870" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1452" bodyend="1500"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a1c7927bb0563f7b259b240139af1a076" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::pushClobbers</definition>
+        <argsstring>(Instr IA, DefStackMap &amp;DM)</argsstring>
+        <name>pushClobbers</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::pushClobbers</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a173a2217e059f21fb25908fa2bf796d6" kindref="member">Instr</ref></type>
+          <declname>IA</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_data_flow_graph_1af9ba4adb1171c03b53e7c67ab59825ab" kindref="member">DefStackMap</ref> &amp;</type>
+          <declname>DM</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="872" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1033" bodyend="1075"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1aa8013ce532a1a42ba6c4f55f058d89cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::pushDefs</definition>
+        <argsstring>(Instr IA, DefStackMap &amp;DM)</argsstring>
+        <name>pushDefs</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::pushDefs</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a173a2217e059f21fb25908fa2bf796d6" kindref="member">Instr</ref></type>
+          <declname>IA</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_data_flow_graph_1af9ba4adb1171c03b53e7c67ab59825ab" kindref="member">DefStackMap</ref> &amp;</type>
+          <declname>DM</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="873" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1079" bodyend="1131"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a35a6167085e3d68b677601e25985d72f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::linkRefUp</definition>
+        <argsstring>(Instr IA, NodeAddr&lt; T &gt; TA, DefStack &amp;DS)</argsstring>
+        <name>linkRefUp</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::linkRefUp</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a173a2217e059f21fb25908fa2bf796d6" kindref="member">Instr</ref></type>
+          <declname>IA</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_node_addr" kindref="compound">NodeAddr</ref>&lt; <ref refid="class_t" kindref="compound">T</ref> &gt;</type>
+          <declname>TA</declname>
+        </param>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_data_flow_graph_1_1_def_stack" kindref="compound">DefStack</ref> &amp;</type>
+          <declname>DS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="874" column="20" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1506" bodyend="1544"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a16cad01b04fee48457464d19bb98a4a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_predicate" kindref="compound">Predicate</ref></type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::linkStmtRefs</definition>
+        <argsstring>(DefStackMap &amp;DefM, Stmt SA, Predicate P)</argsstring>
+        <name>linkStmtRefs</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::linkStmtRefs</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_data_flow_graph_1af9ba4adb1171c03b53e7c67ab59825ab" kindref="member">DefStackMap</ref> &amp;</type>
+          <declname>DefM</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a8c7e161293378ff6f6f82fc3c167870c" kindref="member">Stmt</ref></type>
+          <declname>SA</declname>
+        </param>
+        <param>
+          <type><ref refid="class_predicate" kindref="compound">Predicate</ref></type>
+          <declname>P</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="876" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1548" bodyend="1575"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a845c59031ff947857332a5a11330c615" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::linkBlockRefs</definition>
+        <argsstring>(DefStackMap &amp;DefM, Block BA)</argsstring>
+        <name>linkBlockRefs</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::linkBlockRefs</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1rdf_1_1_data_flow_graph_1af9ba4adb1171c03b53e7c67ab59825ab" kindref="member">DefStackMap</ref> &amp;</type>
+          <declname>DefM</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a24b78e828e0547ee3eac4ac5b7089d35" kindref="member">Block</ref></type>
+          <declname>BA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="877" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1579" bodyend="1653"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1ac8055d9ece9d0b6729d20b9c88b2c514" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::unlinkUseDF</definition>
+        <argsstring>(Use UA)</argsstring>
+        <name>unlinkUseDF</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::unlinkUseDF</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1abd774f5d3a81e00ffb690f4f5c0c82cf" kindref="member">Use</ref></type>
+          <declname>UA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="879" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1656" bodyend="1680"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a8e26d6a179743154dd2920e3b131dcf8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::unlinkDefDF</definition>
+        <argsstring>(Def DA)</argsstring>
+        <name>unlinkDefDF</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::unlinkDefDF</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1a10793004faece2bb74d3363b5f6ce96f" kindref="member">Def</ref></type>
+          <declname>DA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="880" column="8" bodyfile="lib/CodeGen/RDFGraph.cpp" bodystart="1683" bodyend="1770"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1rdf_1_1_data_flow_graph_1a963bcbca3fecd1f5a2a4dea246e00b0f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::rdf::DataFlowGraph::removeFromOwner</definition>
+        <argsstring>(Ref RA)</argsstring>
+        <name>removeFromOwner</name>
+        <qualifiedname>llvm::rdf::DataFlowGraph::removeFromOwner</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1rdf_1ad64ee563e178225490a0a8e262a4aba8" kindref="member">Ref</ref></type>
+          <declname>RA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/CodeGen/RDFGraph.h" line="882" column="8" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="882" bodyend="885"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/CodeGen/RDFGraph.h" line="660" column="1" bodyfile="include/llvm/CodeGen/RDFGraph.h" bodystart="660" bodyend="909"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1aff0e0649aacc0cb7884acdb2caf3888c" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>addr</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a4ec227602630191edc1e368d312ea0ef" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>BlockNodes</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a70da8ad930312fdf8d627a78bacc4fec" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>BlockRefsMap</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a0b52d2ebf631ded594b7311d1f2829e3" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>build</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1afa816492d5310d33ee910f0808244e65" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>build</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a15c30e38d2e4d603a821bd0467dc0caa" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>BuildCfg</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a49b1c5d90376e1b638ac1a2eacb74fbe" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>buildPhis</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a125776262a2b041e990dfd1cbab87df5" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>buildStmt</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a8f29717fdef8fd2bf1bc0ec714faeef1" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>cloneNode</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a38fd70c7cf138c96283ce7c265a85b0e" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>DataFlowGraph</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1aef633ea27194c84482f39fb514608153" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>DataFlowGraph</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a7bac24a2593cf0ba78aba1b5ce16d05b" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>DefaultTOI</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1af9ba4adb1171c03b53e7c67ab59825ab" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>DefStackMap</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1adb81b82d10d84e8dfd99c1e206f72766" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>findBlock</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a5a64e4409d7fce1aa0df5b9685d1d735" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getDF</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a6fb00ab66e3522120ac68c0a3f2aba5e" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getDT</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a5562ece880571d0c026d45af0a4bf7dc" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getFunc</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a2a39561fe4b1bfb6f59ce103a11a8206" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getLandingPadLiveIns</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a075bd3b473f35178716fa6804a580289" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getLiveIns</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a772157ecd8233578fc88b4c03e5a84a3" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getMF</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a0cf45c81b2f8aaa8a8968e5e0a6cd68e" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getNextRelated</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a4f334bed0e58d5470180436d28993035" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getNextShadow</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1abec99855593657b93d529312c2d3885a" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getPRI</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a7010e9f697823cc5a40876345bab137e" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getRelatedRefs</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a821459d25ce1155f29f2cb3a94b1d016" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getTII</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1afd2f7d7ac1d171df6efaabdc99e3a9bd" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>getTRI</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1ae0d37a7eb6fa39a78f3bcb706766bd73" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>hasUntrackedRef</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a03dbe5b66a2fcf387596fc6b3c3fc33a" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>id</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1ac8b5aa2c1dd5ee4a4a8bf03730965c29" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>IsCode</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a264db9e61fcbc7db438de1f6a062a96a" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>IsDef</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a555e904e68d3d41e5f2db6beaabd49a9" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>IsPhi</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a67533efd5231172ec9eb37c4ff10aec1" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>IsPreservingDef</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a924c78446e6a6bca9371f02ae6c62b7b" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>IsRef</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a1a41a96168b65e3d82f095f46ee9d9d6" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>isTracked</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a9a057fa5769de2acccd16b02326468b3" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>IsUse</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a845c59031ff947857332a5a11330c615" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>linkBlockRefs</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a35a6167085e3d68b677601e25985d72f" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>linkRefUp</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a16cad01b04fee48457464d19bb98a4a8" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>linkStmtRefs</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1acc20b0f238313f1ea24a0fec84d16d66" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>LiveIns</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a304334326dc4a33b8ebb66dc5080c610" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>LMI</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a6f6756051edd4be23b92b43ba7cce021" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>locateNextRef</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a1ae2387cb76daa6d4328c2cc9ab5e850" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>makeRegRef</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a2db43a426340879bc67cffe68aa63c12" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>makeRegRef</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1ad07faf4d1852a9a99b32a798edf6170d" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>markBlock</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a2231c864afea6eec7591b6ee3b993b29" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>MDF</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1abcfe9d846ae55ff085e9b272bdbfceb5" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>MDT</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1aa6df7d0610a945ab8663b5e6e2ad84d2" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>Memory</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a32746e872d0c4bc7b0a30ce043b595ca" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>MF</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a08bb7461bdc1960c948a3486df776b41" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>newBlock</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a5620d15236f6bd3ed6052c5557c98849" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>newDef</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a6d02984e29158fb04e2404a416543a63" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>newDef</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a732da27bd5b65b4cbb56f213fbed976e" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>newFunc</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a30db3e8a739ddfa562852c963c121b45" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>newNode</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a9a15f10ed67c8e5deb855627ad29b5e2" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>newPhi</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1ac896a715108cd6feea3c72c553c4369a" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>newPhiUse</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a70a8ca2a626fdf7ad0e38e94d7071dc3" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>newStmt</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a82a9894669fa66794cd30f244061a4fd" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>newUse</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a0cef8f9dc36d8b31cbca1f5f9aa9d443" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>pack</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a96b19879536810b447231e0efab10a5e" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>pack</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a21d97b52b5758dbe183280724a7d835a" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>PRI</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1ad913e83d1b4439ce665f911348d7d616" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>ptr</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a9ee71e8d993c1deb028f6299d055340f" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>ptr</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1afd79669de85357a98f3c352ba9209263" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>pushAllDefs</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a1c7927bb0563f7b259b240139af1a076" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>pushClobbers</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1aa8013ce532a1a42ba6c4f55f058d89cb" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>pushDefs</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a3c4dabe1a820445461262732fb9abdc5" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>recordDefsForDF</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a0b818af3f643e001a63611d86f2776c8" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>releaseBlock</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a963bcbca3fecd1f5a2a4dea246e00b0f" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>removeFromOwner</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1ae2d2646041a1c1f7e05ea220e2b79dcf" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>removeUnusedPhis</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1ab8149a6e14d4f0fc0b8da64f2272152e" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>ReservedRegs</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a6adad77c49bee969463a5fccb4f6cd2d" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>reset</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1aef11930e159344e7a209835fe093b78d" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>TheFunc</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1ac91ab379c5bf86a25604cfe80b9583d2" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>TII</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a56445a91ab0003593c22786f8360e8c8" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>TOI</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a8d692986a02d693615e109d32db75c85" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>TrackedUnits</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a684f3b76c26e54ea488075fe62fbde8b" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>TRI</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a707e4fe8684ad000cde8d9c302d0eca1" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>unlinkDef</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a8e26d6a179743154dd2920e3b131dcf8" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>unlinkDefDF</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a06996b487189a734a367e0f1d101ed78" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>unlinkUse</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1ac8055d9ece9d0b6729d20b9c88b2c514" prot="private" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>unlinkUseDF</name></member>
+      <member refid="structllvm_1_1rdf_1_1_data_flow_graph_1a21825ee3c5ced2b0878c0757333703e7" prot="public" virt="non-virtual"><scope>llvm::rdf::DataFlowGraph</scope><name>unpack</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

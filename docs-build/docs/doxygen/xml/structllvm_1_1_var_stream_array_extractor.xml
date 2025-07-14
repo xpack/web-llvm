@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1_var_stream_array_extractor" kind="struct" language="C++" prot="public">
+    <compoundname>llvm::VarStreamArrayExtractor</compoundname>
+    <includes refid="_binary_stream_array_8h" local="yes">llvm/Support/BinaryStreamArray.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structllvm_1_1_var_stream_array_extractor_1a4e7a87abc173694df4fd4f9255636528" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error VarStreamArrayExtractor::operator()</definition>
+        <argsstring>(BinaryStreamRef Stream, uint32_t &amp;Len, T &amp;Item) const =delete</argsstring>
+        <name>operator()</name>
+        <qualifiedname>llvm::VarStreamArrayExtractor::operator()</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_binary_stream_ref" kindref="compound">BinaryStreamRef</ref></type>
+          <declname>Stream</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref> &amp;</type>
+          <declname>Len</declname>
+        </param>
+        <param>
+          <type><ref refid="class_t" kindref="compound">T</ref> &amp;</type>
+          <declname>Item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/BinaryStreamArray.h" line="50" column="9" bodyfile="lib/DebugInfo/CodeView/DebugChecksumsSubsection.cpp" bodystart="35" bodyend="49"/>
+        <references refid="namespacellvm_1ab102f0f12dd38aeea5906b1d80c792ff" compoundref="_alignment_8h" startline="155" endline="167">llvm::alignTo</references>
+        <references refid="structllvm_1_1codeview_1_1_file_checksum_entry_1af59eceeffd95dc0b17cfc7b3e0b4f5aa" compoundref="_debug_checksums_subsection_8h" startline="36">llvm::codeview::FileChecksumEntry::Checksum</references>
+        <references refid="namespacellvm_1_1codeview_1a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b" compoundref="_code_view_8h" startline="460">llvm::codeview::EC</references>
+        <references refid="structllvm_1_1codeview_1_1_file_checksum_entry_1a07a498fcd876bdc77f36ee3c29f98ce4" compoundref="_debug_checksums_subsection_8h" startline="34">llvm::codeview::FileChecksumEntry::FileNameOffset</references>
+        <references refid="structllvm_1_1codeview_1_1_file_checksum_entry_1a547715a93f80c48c1f0d683b81b334b1" compoundref="_debug_checksums_subsection_8h" startline="35">llvm::codeview::FileChecksumEntry::Kind</references>
+        <references refid="classllvm_1_1_binary_stream_reader_1a2d56063bcd6039c9372e485e609cf692" compoundref="_binary_stream_reader_8cpp" startline="36" endline="41">llvm::BinaryStreamReader::readBytes</references>
+        <references refid="classllvm_1_1_binary_stream_reader_1a07e25e055f92f545f94821c4a3cbded8" compoundref="_binary_stream_reader_8h" startline="160" endline="166">llvm::BinaryStreamReader::readObject</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="structllvm_1_1_var_stream_array_extractor" kindref="compound">VarStreamArrayExtractor</ref> is intended to be specialized to provide customized extraction logic. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>On input it receives a <ref refid="classllvm_1_1_binary_stream_ref" kindref="compound">BinaryStreamRef</ref> pointing to the beginning of the next record, but where the length of the record is not yet known. Upon completion, it should return an appropriate <ref refid="classllvm_1_1_error" kindref="compound">Error</ref> instance if a record could not be extracted, or if one could be extracted it should return success and set Len to the number of bytes this record occupied in the underlying stream, and it should fill out the fields of the value type Item appropriately to represent the current record.</para>
+<para>You can specialize this template for your own custom value types to avoid having to specify a second template argument to <ref refid="classllvm_1_1_var_stream_array" kindref="compound">VarStreamArray</ref> (documented below). </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::VarStreamArrayExtractor&lt; T &gt;</label>
+        <link refid="structllvm_1_1_var_stream_array_extractor"/>
+      </node>
+      <node id="2">
+        <label>llvm::VarStreamArrayExtractor&lt; ValueType &gt;</label>
+        <link refid="structllvm_1_1_var_stream_array_extractor"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; ValueType &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::VarStreamArrayExtractor&lt; codeview::CVRecord&lt; Kind &gt; &gt;</label>
+        <link refid="structllvm_1_1_var_stream_array_extractor_3_01codeview_1_1_c_v_record_3_01_kind_01_4_01_4"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; codeview::CVRecord&lt; Kind &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::VarStreamArrayExtractor&lt; codeview::CrossModuleImportItem &gt;</label>
+        <link refid="structllvm_1_1_var_stream_array_extractor_3_01codeview_1_1_cross_module_import_item_01_4"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; codeview::CrossModuleImportItem &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::VarStreamArrayExtractor&lt; codeview::DebugSubsectionRecord &gt;</label>
+        <link refid="structllvm_1_1_var_stream_array_extractor_3_01codeview_1_1_debug_subsection_record_01_4"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; codeview::DebugSubsectionRecord &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::VarStreamArrayExtractor&lt; codeview::FileChecksumEntry &gt;</label>
+        <link refid="structllvm_1_1_var_stream_array_extractor_3_01codeview_1_1_file_checksum_entry_01_4"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; codeview::FileChecksumEntry &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>llvm::VarStreamArrayExtractor&lt; codeview::InlineeSourceLine &gt;</label>
+        <link refid="structllvm_1_1_var_stream_array_extractor_3_01codeview_1_1_inlinee_source_line_01_4"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; codeview::InlineeSourceLine &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::VarStreamArrayExtractor&lt; llvm::pdb::DbiModuleDescriptor &gt;</label>
+        <link refid="structllvm_1_1_var_stream_array_extractor"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; llvm::pdb::DbiModuleDescriptor &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::VarStreamArrayExtractor&lt; pdb::DbiModuleDescriptor &gt;</label>
+        <link refid="structllvm_1_1_var_stream_array_extractor_3_01pdb_1_1_dbi_module_descriptor_01_4"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; pdb::DbiModuleDescriptor &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/llvm/Support/BinaryStreamArray.h" line="47" column="12" bodyfile="include/llvm/Support/BinaryStreamArray.h" bodystart="47" bodyend="52"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1_var_stream_array_extractor_1a4e7a87abc173694df4fd4f9255636528" prot="public" virt="non-virtual"><scope>llvm::VarStreamArrayExtractor</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

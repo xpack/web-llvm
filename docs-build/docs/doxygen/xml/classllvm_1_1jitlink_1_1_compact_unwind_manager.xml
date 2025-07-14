@@ -1,0 +1,656 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1jitlink_1_1_compact_unwind_manager" kind="class" language="C++" prot="public">
+    <compoundname>llvm::jitlink::CompactUnwindManager</compoundname>
+    <includes refid="_compact_unwind_support_8h" local="yes">ExecutionEngine/JITLink/CompactUnwindSupport.h</includes>
+    <innerclass refid="structllvm_1_1jitlink_1_1_compact_unwind_manager_1_1_compact_unwind_record" prot="private">llvm::jitlink::CompactUnwindManager::CompactUnwindRecord</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename CURecTraits</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1aecb00a70ea9bd3aca1486d1d0f2d4a58" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::MaxPersonalities</definition>
+        <argsstring></argsstring>
+        <name>MaxPersonalities</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::MaxPersonalities</qualifiedname>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="354" column="27" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a8cd6ce0a492d91f86a397a76b5798afd" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::PersonalityShift</definition>
+        <argsstring></argsstring>
+        <name>PersonalityShift</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::PersonalityShift</qualifiedname>
+        <initializer>= 28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="355" column="27" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1aa6cf31404b88a8da367aa3df5490b5e8" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::UnwindInfoSectionHeaderSize</definition>
+        <argsstring></argsstring>
+        <name>UnwindInfoSectionHeaderSize</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::UnwindInfoSectionHeaderSize</qualifiedname>
+        <initializer>= 4 * 7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="357" column="27" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a3bd9b360d4f1c0f14b0841bccbf1e8b3" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::PersonalityEntrySize</definition>
+        <argsstring></argsstring>
+        <name>PersonalityEntrySize</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::PersonalityEntrySize</qualifiedname>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="358" column="27" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="358" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a9fa4177079ba95eaa2df030b1d64537b" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::IndexEntrySize</definition>
+        <argsstring></argsstring>
+        <name>IndexEntrySize</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::IndexEntrySize</qualifiedname>
+        <initializer>= 3 * 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="359" column="27" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a5a929740a6e894608f2a6670e32d6302" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::LSDAEntrySize</definition>
+        <argsstring></argsstring>
+        <name>LSDAEntrySize</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::LSDAEntrySize</qualifiedname>
+        <initializer>= 2 * 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="360" column="27" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="360" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a87b2641db0772405caeecb8d885d34b4" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::SecondLevelPageSize</definition>
+        <argsstring></argsstring>
+        <name>SecondLevelPageSize</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::SecondLevelPageSize</qualifiedname>
+        <initializer>= 4096</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="361" column="27" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a5c3c12df2fd948604b4dd14f90a3a175" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::SecondLevelPageHeaderSize</definition>
+        <argsstring></argsstring>
+        <name>SecondLevelPageHeaderSize</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::SecondLevelPageHeaderSize</qualifiedname>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="362" column="27" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="362" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1aac66262e6e1ecc1496fdc6083c1636d8" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::SecondLevelPageEntrySize</definition>
+        <argsstring></argsstring>
+        <name>SecondLevelPageEntrySize</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::SecondLevelPageEntrySize</qualifiedname>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="363" column="27" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="363" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a72a0e045d6f5b74aecaf04f05138cc00" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::NumRecordsPerSecondLevelPage</definition>
+        <argsstring></argsstring>
+        <name>NumRecordsPerSecondLevelPage</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::NumRecordsPerSecondLevelPage</qualifiedname>
+        <initializer>=
+      (SecondLevelPageSize - SecondLevelPageHeaderSize) /
+      SecondLevelPageEntrySize</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="364" column="27" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="364" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1adca0e56bc23b6049e01c5a1d8155252f" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::CompactUnwindSectionName</definition>
+        <argsstring></argsstring>
+        <name>CompactUnwindSectionName</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::CompactUnwindSectionName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="665" column="13" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="665" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a449df257a759cc59a822d436d83a1d2a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::UnwindInfoSectionName</definition>
+        <argsstring></argsstring>
+        <name>UnwindInfoSectionName</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::UnwindInfoSectionName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="666" column="13" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="666" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a1bd67a2acedf372cbb98a1ede59d7e34" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::EHFrameSectionName</definition>
+        <argsstring></argsstring>
+        <name>EHFrameSectionName</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::EHFrameSectionName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="667" column="13" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="667" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a6294adb9950f2a1cf2aae1a521f5a7ef" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> *</type>
+        <definition>Symbol* llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::CompactUnwindBase</definition>
+        <argsstring></argsstring>
+        <name>CompactUnwindBase</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::CompactUnwindBase</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="668" column="10" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="668" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a9ee468b48bb7157f225620ade4fba880" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">orc::ExecutorAddr</ref></type>
+        <definition>orc::ExecutorAddr llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::EHFrameBase</definition>
+        <argsstring></argsstring>
+        <name>EHFrameBase</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::EHFrameBase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="669" column="21" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="669" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ad0a5cb10ce88199f2096b554973bd804" prot="private" static="no" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::NumLSDAs</definition>
+        <argsstring></argsstring>
+        <name>NumLSDAs</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::NumLSDAs</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="671" column="10" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="671" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ae0f55bb75ba88f857ad5a311141e597e" prot="private" static="no" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::NumSecondLevelPages</definition>
+        <argsstring></argsstring>
+        <name>NumSecondLevelPages</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::NumSecondLevelPages</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="672" column="10" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="672" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1af91816821b10c8ab51e89729135cd005" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> *, MaxPersonalities &gt;</type>
+        <definition>SmallVector&lt;Symbol *, MaxPersonalities&gt; llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::Personalities</definition>
+        <argsstring></argsstring>
+        <name>Personalities</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::Personalities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="673" column="15" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="673" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a6aa7e09e3b8f475e6f06709228ea2f71" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; CompactUnwindRecord &gt;</type>
+        <definition>SmallVector&lt;CompactUnwindRecord&gt; llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::Records</definition>
+        <argsstring></argsstring>
+        <name>Records</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::Records</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="674" column="15" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="674" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ad7e82e41c3000dfa3565ed8a20abc000" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::CompactUnwindManager</definition>
+        <argsstring>(StringRef CompactUnwindSectionName, StringRef UnwindInfoSectionName, StringRef EHFrameSectionName)</argsstring>
+        <name>CompactUnwindManager</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::CompactUnwindManager</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>CompactUnwindSectionName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>UnwindInfoSectionName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>EHFrameSectionName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="77" column="3" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="77" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ab91679cd4a3a613219f1835a2d25c3f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::prepareForPrune</definition>
+        <argsstring>(LinkGraph &amp;G)</argsstring>
+        <name>prepareForPrune</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::prepareForPrune</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="91" column="9" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="91" bodyend="212"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="classllvm_1_1jitlink_1_1_section_1a739ec54340b0cfa98110fc0ab250852c" compoundref="_j_i_t_link_8h" startline="768" endline="770">llvm::jitlink::Section::blocks</references>
+        <references refid="classllvm_1_1jitlink_1_1_section_1ac6efb8c9e1996aad8e31e874763a5efb" compoundref="_j_i_t_link_8h" startline="778" endline="778">llvm::jitlink::Section::blocks_size</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="classllvm_1_1jitlink_1_1_section_1a8ee75645721423d0424655332492453e" compoundref="_j_i_t_link_8h" startline="765" endline="765">llvm::jitlink::Section::empty</references>
+        <references refid="namespacellvm_1a653cce37b80c03eebe7a00520a8eabb6" compoundref="_format_variadic_8h" startline="252" endline="256">llvm::formatv</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="classllvm_1_1jitlink_1_1_symbol_1a37941163af977712e6ae68591327a0ad" compoundref="_j_i_t_link_8h" startline="518" endline="523">llvm::jitlink::Symbol::getName</references>
+        <references refid="classllvm_1_1jitlink_1_1_edge_1a3b3de5b4ff39b7e33837ddb9739c2a13" compoundref="_j_i_t_link_8h" startline="94" endline="94">llvm::jitlink::Edge::getTarget</references>
+        <references refid="classllvm_1_1jitlink_1_1_symbol_1a43970b0f29022d28a252b08004fd1985" compoundref="_j_i_t_link_8h" startline="531" endline="534">llvm::jitlink::Symbol::isDefined</references>
+        <references refid="classllvm_1_1jitlink_1_1_edge_1aa21629cef4aed37ffc47ef8681c46a99aa9b64b2f23ec4cf94410dcbad41796d6" compoundref="_j_i_t_link_8h" startline="74">llvm::jitlink::Edge::KeepAlive</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="classllvm_1_1jitlink_1_1_edge_1a70b5b486e3b543fc536803f3daf3b08b" compoundref="_j_i_t_link_8h" startline="95" endline="95">llvm::jitlink::Edge::setTarget</references>
+        <references refid="namespacellvm_1_1jitlink_1a6ac87d66a2396166f8ea3457900cb0df" compoundref="_compact_unwind_support_8cpp" startline="22" endline="100">llvm::jitlink::splitCompactUnwindBlocks</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ad17b2d982b9548edd3e533387aa216f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::processAndReserveUnwindInfo</definition>
+        <argsstring>(LinkGraph &amp;G)</argsstring>
+        <name>processAndReserveUnwindInfo</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::processAndReserveUnwindInfo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1sys_1_1_process" kindref="compound">Process</ref> all __compact_unwind records and reserve space for __unwind_info. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="215" column="9" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="215" bodyend="271"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1a653cce37b80c03eebe7a00520a8eabb6" compoundref="_format_variadic_8h" startline="252" endline="256">llvm::formatv</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="classllvm_1_1jitlink_1_1_edge_1aa21629cef4aed37ffc47ef8681c46a99aa9b64b2f23ec4cf94410dcbad41796d6" compoundref="_j_i_t_link_8h" startline="74">llvm::jitlink::Edge::KeepAlive</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="namespacellvm_1_1orc_1abdd6ae2070338087f3d5d54200d708d6a777f2725a7af3806c6bb86c58bc0b5c8" compoundref="_memory_flags_8h" startline="88">llvm::orc::NoAlloc</references>
+        <references refid="namespacellvm_1_1orc_1a2fbb59fad28934f72ede7ddc316dfc89a7a1a5f3e79fdc91edf2f5ead9d66abb4" compoundref="_memory_flags_8h" startline="29">llvm::orc::Read</references>
+        <references refid="classllvm_1_1jitlink_1_1_section_1aecb906a9c8128a69db3b0467d51df653" compoundref="_j_i_t_link_8h" startline="755" endline="755">llvm::jitlink::Section::setMemLifetime</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1af022b036126d33df3324995c04b55864" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::writeUnwindInfo</definition>
+        <argsstring>(LinkGraph &amp;G)</argsstring>
+        <name>writeUnwindInfo</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::writeUnwindInfo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="273" column="9" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="273" bodyend="350"/>
+        <references refid="classllvm_1_1iterator__range_1af5a020bd9dd7bc8487dd53ce443fdd8f" compoundref="iterator__range_8h" startline="64" endline="64">llvm::iterator_range&lt; IteratorT &gt;::begin</references>
+        <references refid="classllvm_1_1jitlink_1_1_section_1a739ec54340b0cfa98110fc0ab250852c" compoundref="_j_i_t_link_8h" startline="768" endline="770">llvm::jitlink::Section::blocks</references>
+        <references refid="classllvm_1_1jitlink_1_1_section_1ac6efb8c9e1996aad8e31e874763a5efb" compoundref="_j_i_t_link_8h" startline="778" endline="778">llvm::jitlink::Section::blocks_size</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1jitlink_1_1_section_1a8ee75645721423d0424655332492453e" compoundref="_j_i_t_link_8h" startline="765" endline="765">llvm::jitlink::Section::empty</references>
+        <references refid="namespacellvm_1a653cce37b80c03eebe7a00520a8eabb6" compoundref="_format_variadic_8h" startline="252" endline="256">llvm::formatv</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="classllvm_1_1_binary_stream_writer_1a2d1fbfecba0a643a1db961c9f9313b6e" compoundref="_binary_stream_writer_8h" startline="177" endline="177">llvm::BinaryStreamWriter::getOffset</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ad3e72f85660d1504fc22367531e6547b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::processCompactUnwind</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;CUSec)</argsstring>
+        <name>processCompactUnwind</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::processCompactUnwind</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>CUSec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="376" column="9" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="376" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a1b303946a0510292b1b491f4f7e46855" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::mergeRecords</definition>
+        <argsstring>()</argsstring>
+        <name>mergeRecords</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::mergeRecords</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="458" column="8" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="458" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a89bbea6aa487c5f2ff9107a09441ebcf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::writeHeader</definition>
+        <argsstring>(LinkGraph &amp;G, BinaryStreamWriter &amp;W)</argsstring>
+        <name>writeHeader</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::writeHeader</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_binary_stream_writer" kindref="compound">BinaryStreamWriter</ref> &amp;</type>
+          <declname>W</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="479" column="9" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="479" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a2db405ac335ec4dd1b55769e0268e8e6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::writePersonalities</definition>
+        <argsstring>(LinkGraph &amp;G, BinaryStreamWriter &amp;W)</argsstring>
+        <name>writePersonalities</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::writePersonalities</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_binary_stream_writer" kindref="compound">BinaryStreamWriter</ref> &amp;</type>
+          <declname>W</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="500" column="9" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="500" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ae655041d3931fee7ed8a76b2ded99f33" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::writeIndexes</definition>
+        <argsstring>(LinkGraph &amp;G, BinaryStreamWriter &amp;W, size_t SectionOffsetToLSDAs, size_t SectionOffsetToSecondLevelPages)</argsstring>
+        <name>writeIndexes</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::writeIndexes</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_binary_stream_writer" kindref="compound">BinaryStreamWriter</ref> &amp;</type>
+          <declname>W</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>SectionOffsetToLSDAs</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>SectionOffsetToSecondLevelPages</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="511" column="9" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="511" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a3070921a489c14eb4a926e583ca76f10" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::writeLSDAs</definition>
+        <argsstring>(LinkGraph &amp;G, BinaryStreamWriter &amp;W)</argsstring>
+        <name>writeLSDAs</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::writeLSDAs</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_binary_stream_writer" kindref="compound">BinaryStreamWriter</ref> &amp;</type>
+          <declname>W</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="559" column="9" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="559" bodyend="578"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1adcd389f7fe2799decb7736998f005bea" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::writeSecondLevelPages</definition>
+        <argsstring>(LinkGraph &amp;G, BinaryStreamWriter &amp;W)</argsstring>
+        <name>writeSecondLevelPages</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::writeSecondLevelPages</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_binary_stream_writer" kindref="compound">BinaryStreamWriter</ref> &amp;</type>
+          <declname>W</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="580" column="9" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="580" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a6bff1328ed186df235acc133d9547dfb" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::getOrCreateCompactUnwindBase</definition>
+        <argsstring>(LinkGraph &amp;G)</argsstring>
+        <name>getOrCreateCompactUnwindBase</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::getOrCreateCompactUnwindBase</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="634" column="9" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="634" bodyend="648"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a58898cde37a5103af1bd29d10cd9906c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::CompactUnwindManager&lt; CURecTraits &gt;::makePersonalityRangeError</definition>
+        <argsstring>(LinkGraph &amp;G, Symbol &amp;PSym)</argsstring>
+        <name>makePersonalityRangeError</name>
+        <qualifiedname>llvm::jitlink::CompactUnwindManager::makePersonalityRangeError</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>PSym</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="650" column="9" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="650" bodyend="663"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Architecture specific implementation of <ref refid="classllvm_1_1jitlink_1_1_compact_unwind_manager" kindref="compound">CompactUnwindManager</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" line="75" column="12" bodyfile="lib/ExecutionEngine/JITLink/CompactUnwindSupport.h" bodystart="75" bodyend="675"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a6294adb9950f2a1cf2aae1a521f5a7ef" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>CompactUnwindBase</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ad7e82e41c3000dfa3565ed8a20abc000" prot="public" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>CompactUnwindManager</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1adca0e56bc23b6049e01c5a1d8155252f" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>CompactUnwindSectionName</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a9ee468b48bb7157f225620ade4fba880" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>EHFrameBase</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a1bd67a2acedf372cbb98a1ede59d7e34" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>EHFrameSectionName</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a6bff1328ed186df235acc133d9547dfb" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>getOrCreateCompactUnwindBase</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a9fa4177079ba95eaa2df030b1d64537b" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>IndexEntrySize</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a5a929740a6e894608f2a6670e32d6302" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>LSDAEntrySize</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a58898cde37a5103af1bd29d10cd9906c" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>makePersonalityRangeError</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1aecb00a70ea9bd3aca1486d1d0f2d4a58" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>MaxPersonalities</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a1b303946a0510292b1b491f4f7e46855" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>mergeRecords</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ad0a5cb10ce88199f2096b554973bd804" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>NumLSDAs</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a72a0e045d6f5b74aecaf04f05138cc00" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>NumRecordsPerSecondLevelPage</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ae0f55bb75ba88f857ad5a311141e597e" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>NumSecondLevelPages</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1af91816821b10c8ab51e89729135cd005" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>Personalities</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a3bd9b360d4f1c0f14b0841bccbf1e8b3" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>PersonalityEntrySize</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a8cd6ce0a492d91f86a397a76b5798afd" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>PersonalityShift</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ab91679cd4a3a613219f1835a2d25c3f1" prot="public" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>prepareForPrune</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ad17b2d982b9548edd3e533387aa216f9" prot="public" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>processAndReserveUnwindInfo</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ad3e72f85660d1504fc22367531e6547b" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>processCompactUnwind</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a6aa7e09e3b8f475e6f06709228ea2f71" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>Records</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1aac66262e6e1ecc1496fdc6083c1636d8" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>SecondLevelPageEntrySize</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a5c3c12df2fd948604b4dd14f90a3a175" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>SecondLevelPageHeaderSize</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a87b2641db0772405caeecb8d885d34b4" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>SecondLevelPageSize</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1aa6cf31404b88a8da367aa3df5490b5e8" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>UnwindInfoSectionHeaderSize</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a449df257a759cc59a822d436d83a1d2a" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>UnwindInfoSectionName</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a89bbea6aa487c5f2ff9107a09441ebcf" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>writeHeader</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1ae655041d3931fee7ed8a76b2ded99f33" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>writeIndexes</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a3070921a489c14eb4a926e583ca76f10" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>writeLSDAs</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1a2db405ac335ec4dd1b55769e0268e8e6" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>writePersonalities</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1adcd389f7fe2799decb7736998f005bea" prot="private" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>writeSecondLevelPages</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_compact_unwind_manager_1af022b036126d33df3324995c04b55864" prot="public" virt="non-virtual"><scope>llvm::jitlink::CompactUnwindManager</scope><name>writeUnwindInfo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

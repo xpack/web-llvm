@@ -1,0 +1,875 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_web_assembly_inst_printer" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>llvm::WebAssemblyInstPrinter</compoundname>
+    <basecompoundref refid="classllvm_1_1_m_c_inst_printer" prot="public" virt="non-virtual">llvm::MCInstPrinter</basecompoundref>
+    <includes refid="_web_assembly_inst_printer_8h" local="yes">Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1_web_assembly_inst_printer_1a26a697a94c8df4f504a8c7f6750949bb" prot="private" static="no" strong="no">
+        <type></type>
+        <name>EHInstKind</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::EHInstKind</qualifiedname>
+        <enumvalue id="classllvm_1_1_web_assembly_inst_printer_1a26a697a94c8df4f504a8c7f6750949bba942b8f0befb8691397ffc3536d15ad7d" prot="private">
+          <name>TRY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_web_assembly_inst_printer_1a26a697a94c8df4f504a8c7f6750949bba82d50e5e121be773c309ebc1dcbeb770" prot="private">
+          <name>CATCH_LEGACY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_web_assembly_inst_printer_1a26a697a94c8df4f504a8c7f6750949bba88076b2db7116f67b6ada636972ca512" prot="private">
+          <name>CATCH_ALL_LEGACY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="31" column="3" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" bodystart="31" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_web_assembly_inst_printer_1a09e23fb9768a1d2a8c6b5cd4134ce2aa" prot="private" static="no" mutable="no">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::WebAssemblyInstPrinter::ControlFlowCounter</definition>
+        <argsstring></argsstring>
+        <name>ControlFlowCounter</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::ControlFlowCounter</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="27" column="12" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_web_assembly_inst_printer_1a1c6b954c9cba78484390dc906d81c52b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; std::pair&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref>, <ref refid="classbool" kindref="compound">bool</ref> &gt;, 4 &gt;</type>
+        <definition>SmallVector&lt;std::pair&lt;uint64_t, bool&gt;, 4&gt; llvm::WebAssemblyInstPrinter::ControlFlowStack</definition>
+        <argsstring></argsstring>
+        <name>ControlFlowStack</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::ControlFlowStack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="28" column="15" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_web_assembly_inst_printer_1a7baad0b52a2475a914263e48ea580f7e" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classuint64__t" kindref="compound">uint64_t</ref>, 4 &gt;</type>
+        <definition>SmallVector&lt;uint64_t, 4&gt; llvm::WebAssemblyInstPrinter::TryStack</definition>
+        <argsstring></argsstring>
+        <name>TryStack</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::TryStack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="29" column="15" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_web_assembly_inst_printer_1a69c6e5c5bf8989a23f010a94b1e3a6f6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; EHInstKind, 4 &gt;</type>
+        <definition>SmallVector&lt;EHInstKind, 4&gt; llvm::WebAssemblyInstPrinter::EHInstStack</definition>
+        <argsstring></argsstring>
+        <name>EHInstStack</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::EHInstStack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="32" column="15" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_web_assembly_inst_printer_1adbaa9608f865bf505ae05f19f510142a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WebAssemblyInstPrinter::WebAssemblyInstPrinter</definition>
+        <argsstring>(const MCAsmInfo &amp;MAI, const MCInstrInfo &amp;MII, const MCRegisterInfo &amp;MRI)</argsstring>
+        <name>WebAssemblyInstPrinter</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::WebAssemblyInstPrinter</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_asm_info" kindref="compound">MCAsmInfo</ref> &amp;</type>
+          <declname>MAI</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_instr_info" kindref="compound">MCInstrInfo</ref> &amp;</type>
+          <declname>MII</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_register_info" kindref="compound">MCRegisterInfo</ref> &amp;</type>
+          <declname>MRI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="35" column="3" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.cpp" bodystart="34" bodyend="37"/>
+        <references refid="classllvm_1_1_m_c_inst_printer_1aacb2bfbafa57a37e627bf1334d349bc6" compoundref="_m_c_inst_printer_8h" startline="52">llvm::MCInstPrinter::MAI</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1af0525fc87f3e2054109908599d21098d" compoundref="_m_c_inst_printer_8h" startline="90" endline="91">llvm::MCInstPrinter::MCInstPrinter</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1a41acdb280262403252bc72f6d3f23f7a" compoundref="_m_c_inst_printer_8h" startline="53">llvm::MCInstPrinter::MII</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1aaaeadf26b0e3ae38625c5469231bbce6" compoundref="_m_c_inst_printer_8h" startline="54">llvm::MCInstPrinter::MRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_web_assembly_inst_printer_1a4be1a6a79f3264e8f35ac342046322a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void WebAssemblyInstPrinter::printRegName</definition>
+        <argsstring>(raw_ostream &amp;OS, MCRegister Reg) override</argsstring>
+        <name>printRegName</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::printRegName</qualifiedname>
+        <reimplements refid="classllvm_1_1_m_c_inst_printer_1ad0ad5f0b1236badc25e0613d3b962997">printRegName</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_register" kindref="compound">MCRegister</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+<para>Print the assembler register name. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="38" column="8" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.cpp" bodystart="39" bodyend="43"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1_web_assembly_1a77bfe2fcd74307eb34fab682645aea2a" compoundref="_web_assembly_m_c_target_desc_8h" startline="615">llvm::WebAssembly::UnusedReg</references>
+        <referencedby refid="classllvm_1_1_web_assembly_inst_printer_1aa43bb54e111c5b87edb58a368175a352" compoundref="_web_assembly_inst_printer_8cpp" startline="313" endline="349">printOperand</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_web_assembly_inst_printer_1a7d7a0c71edec56b48ee2f53ccb92c58e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void WebAssemblyInstPrinter::printInst</definition>
+        <argsstring>(const MCInst *MI, uint64_t Address, StringRef Annot, const MCSubtargetInfo &amp;STI, raw_ostream &amp;OS) override</argsstring>
+        <name>printInst</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::printInst</qualifiedname>
+        <reimplements refid="classllvm_1_1_m_c_inst_printer_1ac297f3bc74269d7fe98eaf7300cba9fa">printInst</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Annot</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref> &amp;</type>
+          <declname>STI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+<para>Print the specified <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> to the specified <ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>Address</computeroutput> the address of current instruction on most targets, used to print a PC relative immediate as the target address. On targets where a PC relative immediate is relative to the next instruction and the length of a <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> is difficult to measure (e.g. x86), this is the address of the next instruction. If Address is 0, the immediate will be printed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="39" column="8" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.cpp" bodystart="45" bodyend="287"/>
+        <references refid="namespacellvm_1a8e02bbea14c70bab55fbc1384e1472d9add7bf230fde8d4836917806aff6a6b27" compoundref="_mod_ref_8h" startline="280">llvm::Address</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1a43f767b1fc960c3a7528055069b0ae97" compoundref="_m_c_inst_printer_8h" startline="51">llvm::MCInstPrinter::CommentStream</references>
+        <references refid="namespacellvm_1a1eb5609345b906d024fbf9e4bc1adc06afe578efb7ca235af77fb0eef7edcf639" compoundref="_s_i_machine_scheduler_8h" startline="36">llvm::Depth</references>
+        <references refid="classllvm_1_1_web_assembly_inst_printer_1a6a3efe9cfb79c6f5eb0d7e1ac74ebfd4">getMnemonic</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1a41acdb280262403252bc72f6d3f23f7a" compoundref="_m_c_inst_printer_8h" startline="53">llvm::MCInstPrinter::MII</references>
+        <references refid="namespacellvm_1_1_web_assembly_1aa5fb9c8405de3efed868f5de2d0ed4e8aabb0167f60f922020b8ebcea60c4c735" compoundref="_web_assembly_m_c_target_desc_8h" startline="51">llvm::WebAssembly::OPERAND_BASIC_BLOCK</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1aab90c946a08959c165433b2c125895ea" compoundref="_m_c_inst_printer_8cpp" startline="50" endline="61">llvm::MCInstPrinter::printAnnotation</references>
+        <references refid="classllvm_1_1_web_assembly_inst_printer_1a64610122aa74256b0a030f2e493e4833">printInstruction</references>
+        <references refid="classllvm_1_1_web_assembly_inst_printer_1aa43bb54e111c5b87edb58a368175a352" compoundref="_web_assembly_inst_printer_8cpp" startline="313" endline="349">printOperand</references>
+        <references refid="namespacellvm_1a41972fe6f3fab862543b7b835a714f9b" compoundref="_string_extras_8h" startline="320" endline="333">llvm::utostr</references>
+        <references refid="namespacellvm_1_1wasm_1a375966ac0e4dd9dfc317d2834f5e0f4ba3ca3ba67f4bcede39109b409811d8d83" compoundref="_binary_format_2_wasm_8h" startline="149">llvm::wasm::WASM_OPCODE_CATCH</references>
+        <references refid="namespacellvm_1_1wasm_1a375966ac0e4dd9dfc317d2834f5e0f4ba55e4b9989bc5f2f792e7d1b25048271b" compoundref="_binary_format_2_wasm_8h" startline="150">llvm::wasm::WASM_OPCODE_CATCH_REF</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_web_assembly_inst_printer_1aa43bb54e111c5b87edb58a368175a352" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebAssemblyInstPrinter::printOperand</definition>
+        <argsstring>(const MCInst *MI, unsigned OpNo, raw_ostream &amp;O, bool IsVariadicDef=false)</argsstring>
+        <name>printOperand</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::printOperand</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>OpNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsVariadicDef</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="43" column="8" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.cpp" bodystart="313" bodyend="349"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1_1_web_assembly_1ad3603fdd430b146d72370dd19afa46d6" compoundref="_web_assembly_m_c_target_desc_8h" startline="618" endline="621">llvm::WebAssembly::getWARegStackId</references>
+        <references refid="structllvm_1_1_a_p_float_base_1a6ba7c3d54a5a714f7a27861ee114cce3" compoundref="_a_p_float_8cpp" startline="258" endline="258">llvm::APFloatBase::IEEEdouble</references>
+        <references refid="structllvm_1_1_a_p_float_base_1a0c5765e9acba977f6e462c2917276d8f" compoundref="_a_p_float_8cpp" startline="257" endline="257">llvm::APFloatBase::IEEEsingle</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1aacb2bfbafa57a37e627bf1334d349bc6" compoundref="_m_c_inst_printer_8h" startline="52">llvm::MCInstPrinter::MAI</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classllvm_1_1_m_c_inst_printer_1a41acdb280262403252bc72f6d3f23f7a" compoundref="_m_c_inst_printer_8h" startline="53">llvm::MCInstPrinter::MII</references>
+        <references refid="classllvm_1_1_web_assembly_inst_printer_1a4be1a6a79f3264e8f35ac342046322a4" compoundref="_web_assembly_inst_printer_8cpp" startline="39" endline="43">printRegName</references>
+        <references refid="namespacellvm_1_1_web_assembly_1ab777621cd8cd052180667366c7191456" compoundref="_web_assembly_m_c_type_utilities_8cpp" startline="92" endline="99">llvm::WebAssembly::signatureToString</references>
+        <references refid="namespacellvm_1aba83a013c55b19255697393a10d9165e" compoundref="_string_extras_8h" startline="342" endline="349">llvm::toString</references>
+        <references refid="namespacellvm_1_1_web_assembly_1a77bfe2fcd74307eb34fab682645aea2a" compoundref="_web_assembly_m_c_target_desc_8h" startline="615">llvm::WebAssembly::UnusedReg</references>
+        <references refid="classllvm_1_1_m_c_symbol_ref_expr_1a5c463f6352570ee778c35c40949c4985a2fa9fd79289091758e4bdfbfb8c6ff9f" compoundref="_m_c_expr_8h" startline="339">llvm::MCSymbolRefExpr::VK_WASM_TYPEINDEX</references>
+        <referencedby refid="classllvm_1_1_web_assembly_inst_printer_1a7d7a0c71edec56b48ee2f53ccb92c58e" compoundref="_web_assembly_inst_printer_8cpp" startline="45" endline="287">printInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_web_assembly_inst_printer_1ac1ced6595a9772119bdac2a7decb1d59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebAssemblyInstPrinter::printBrList</definition>
+        <argsstring>(const MCInst *MI, unsigned OpNo, raw_ostream &amp;O)</argsstring>
+        <name>printBrList</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::printBrList</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>OpNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="45" column="8" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.cpp" bodystart="351" bodyend="360"/>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_web_assembly_inst_printer_1ad73b288f9c90f95eec52c24cc346b69b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebAssemblyInstPrinter::printWebAssemblyP2AlignOperand</definition>
+        <argsstring>(const MCInst *MI, unsigned OpNo, raw_ostream &amp;O)</argsstring>
+        <name>printWebAssemblyP2AlignOperand</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::printWebAssemblyP2AlignOperand</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>OpNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="46" column="8" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.cpp" bodystart="362" bodyend="369"/>
+        <references refid="namespacellvm_1_1_web_assembly_1a2a5d29a901287f6b88bf88e4d812f625" compoundref="_web_assembly_m_c_target_desc_8h" startline="285" endline="291">llvm::WebAssembly::GetDefaultP2Align</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_web_assembly_inst_printer_1a1e65050ef81c565f23ba4028e368c5fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebAssemblyInstPrinter::printWebAssemblySignatureOperand</definition>
+        <argsstring>(const MCInst *MI, unsigned OpNo, raw_ostream &amp;O)</argsstring>
+        <name>printWebAssemblySignatureOperand</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::printWebAssemblySignatureOperand</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>OpNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="48" column="8" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.cpp" bodystart="371" bodyend="389"/>
+        <references refid="namespacellvm_1_1_web_assembly_1ac4634f1f44bd5719bcbc73540b0e23e5" compoundref="_web_assembly_m_c_type_utilities_8cpp" startline="51" endline="76">llvm::WebAssembly::anyTypeToString</references>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1_1_web_assembly_1ab777621cd8cd052180667366c7191456" compoundref="_web_assembly_m_c_type_utilities_8cpp" startline="92" endline="99">llvm::WebAssembly::signatureToString</references>
+        <references refid="namespacellvm_1_1wasm_1a126deb4cb22aa8806e714b8e42b2647eac482647ad210ef3999a254f5a3e8b10b" compoundref="_binary_format_2_wasm_8h" startline="79">llvm::wasm::WASM_TYPE_NORESULT</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_web_assembly_inst_printer_1acc39fa43ddee9c26c911927bb0afee99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebAssemblyInstPrinter::printCatchList</definition>
+        <argsstring>(const MCInst *MI, unsigned OpNo, raw_ostream &amp;O)</argsstring>
+        <name>printCatchList</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::printCatchList</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>OpNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="50" column="8" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.cpp" bodystart="391" bodyend="435"/>
+        <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
+        <references refid="classllvm_1_1_m_c_symbol_1a57c7b2b9784361914262eeb0a6f0b18d" compoundref="_m_c_symbol_8h" startline="205" endline="210">llvm::MCSymbol::getName</references>
+        <references refid="classllvm_1_1_m_c_symbol_ref_expr_1a048f077746d95f142d02e56586862bf2" compoundref="_m_c_expr_8h" startline="411" endline="411">llvm::MCSymbolRefExpr::getSymbol</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="namespacellvm_1_1wasm_1a375966ac0e4dd9dfc317d2834f5e0f4ba3ca3ba67f4bcede39109b409811d8d83" compoundref="_binary_format_2_wasm_8h" startline="149">llvm::wasm::WASM_OPCODE_CATCH</references>
+        <references refid="namespacellvm_1_1wasm_1a375966ac0e4dd9dfc317d2834f5e0f4ba4b39201beb7db93f6711a5727d58504b" compoundref="_binary_format_2_wasm_8h" startline="151">llvm::wasm::WASM_OPCODE_CATCH_ALL</references>
+        <references refid="namespacellvm_1_1wasm_1a375966ac0e4dd9dfc317d2834f5e0f4ba1ace85fe6cc7decface159dafca204ea" compoundref="_binary_format_2_wasm_8h" startline="152">llvm::wasm::WASM_OPCODE_CATCH_ALL_REF</references>
+        <references refid="namespacellvm_1_1wasm_1a375966ac0e4dd9dfc317d2834f5e0f4ba55e4b9989bc5f2f792e7d1b25048271b" compoundref="_binary_format_2_wasm_8h" startline="150">llvm::wasm::WASM_OPCODE_CATCH_REF</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_web_assembly_inst_printer_1a6a3efe9cfb79c6f5eb0d7e1ac74ebfd4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::pair&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *, <ref refid="classuint64__t" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>std::pair&lt; const char *, uint64_t &gt; llvm::WebAssemblyInstPrinter::getMnemonic</definition>
+        <argsstring>(const MCInst &amp;MI) const override</argsstring>
+        <name>getMnemonic</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::getMnemonic</qualifiedname>
+        <reimplements refid="classllvm_1_1_m_c_inst_printer_1ad3e4ca8fe0215000850b46704e98a95d">getMnemonic</reimplements>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>Returns a pair containing the mnemonic for <computeroutput>MI</computeroutput> and the number of bits left for further processing by printInstruction (generated by tablegen). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="54" column="3"/>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_web_assembly_inst_printer_1a7d7a0c71edec56b48ee2f53ccb92c58e" compoundref="_web_assembly_inst_printer_8cpp" startline="45" endline="287">printInst</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_web_assembly_inst_printer_1a64610122aa74256b0a030f2e493e4833" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::WebAssemblyInstPrinter::printInstruction</definition>
+        <argsstring>(const MCInst *MI, uint64_t Address, raw_ostream &amp;O)</argsstring>
+        <name>printInstruction</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::printInstruction</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref> *</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="55" column="8"/>
+        <references refid="namespacellvm_1a8e02bbea14c70bab55fbc1384e1472d9add7bf230fde8d4836917806aff6a6b27" compoundref="_mod_ref_8h" startline="280">llvm::Address</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <referencedby refid="classllvm_1_1_web_assembly_inst_printer_1a7d7a0c71edec56b48ee2f53ccb92c58e" compoundref="_web_assembly_inst_printer_8cpp" startline="45" endline="287">printInst</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_web_assembly_inst_printer_1ac7e474d59356e83da891137d1f34ad97" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>static const char * llvm::WebAssemblyInstPrinter::getRegisterName</definition>
+        <argsstring>(MCRegister Reg)</argsstring>
+        <name>getRegisterName</name>
+        <qualifiedname>llvm::WebAssemblyInstPrinter::getRegisterName</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_m_c_register" kindref="compound">MCRegister</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="56" column="21"/>
+        <references refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" compoundref="_machine_sink_8cpp" startline="2028">Reg</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::MCInstPrinter</label>
+        <link refid="classllvm_1_1_m_c_inst_printer"/>
+      </node>
+      <node id="1">
+        <label>llvm::WebAssemblyInstPrinter</label>
+        <link refid="classllvm_1_1_web_assembly_inst_printer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>AsmCharLiteralSyntax</label>
+      </node>
+      <node id="14">
+        <label>ExceptionHandling</label>
+      </node>
+      <node id="21">
+        <label>Style</label>
+      </node>
+      <node id="12">
+        <label>LCOMMType</label>
+      </node>
+      <node id="13">
+        <label>MCSymbolAttr</label>
+      </node>
+      <node id="30">
+        <label>Size_T</label>
+      </node>
+      <node id="28">
+        <label>SmallVectorSizeType&lt; raw_ostream::Colors &gt;</label>
+        <link refid="class_small_vector_size_type_3_01raw__ostream_1_1_colors_01_4"/>
+      </node>
+      <node id="15">
+        <label>EncodingType</label>
+      </node>
+      <node id="7">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="8">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="5">
+        <label>llvm::MCAsmInfo</label>
+        <link refid="classllvm_1_1_m_c_asm_info"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>AssemblerDialect</edgelabel>
+          <edgelabel>CalleeSaveStackSlotSize</edgelabel>
+          <edgelabel>CodePointerSize</edgelabel>
+          <edgelabel>CommentColumn</edgelabel>
+          <edgelabel>MaxInstLength</edgelabel>
+          <edgelabel>MinInstAlignment</edgelabel>
+          <edgelabel>TextAlignFillValue</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>AlignmentIsInBytes</edgelabel>
+          <edgelabel>AllowAdditionalComments</edgelabel>
+          <edgelabel>AllowAtAtStartOfIdentifier</edgelabel>
+          <edgelabel>AllowAtInName</edgelabel>
+          <edgelabel>AllowDollarAtStartOfIdentifier</edgelabel>
+          <edgelabel>AllowQuestionAtStartOfIdentifier</edgelabel>
+          <edgelabel>AvoidWeakIfComdat</edgelabel>
+          <edgelabel>COMMDirectiveAlignmentIsInBytes</edgelabel>
+          <edgelabel>DollarIsPC</edgelabel>
+          <edgelabel>DwarfFDESymbolsUseAbsDiff</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>AsciiDirective</edgelabel>
+          <edgelabel>AscizDirective</edgelabel>
+          <edgelabel>Code16Directive</edgelabel>
+          <edgelabel>Code32Directive</edgelabel>
+          <edgelabel>Code64Directive</edgelabel>
+          <edgelabel>DTPRel32Directive</edgelabel>
+          <edgelabel>DTPRel64Directive</edgelabel>
+          <edgelabel>Data16bitsDirective</edgelabel>
+          <edgelabel>Data32bitsDirective</edgelabel>
+          <edgelabel>Data64bitsDirective</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>CommentString</edgelabel>
+          <edgelabel>LinkerPrivateGlobalPrefix</edgelabel>
+          <edgelabel>PrivateGlobalPrefix</edgelabel>
+          <edgelabel>PrivateLabelPrefix</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>CharacterLiteralSyntax</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>LCOMMDirectiveAlignmentType</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>ExportedVisibilityAttr</edgelabel>
+          <edgelabel>HiddenDeclarationVisibilityAttr</edgelabel>
+          <edgelabel>HiddenVisibilityAttr</edgelabel>
+          <edgelabel>MemtagAttr</edgelabel>
+          <edgelabel>ProtectedVisibilityAttr</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>ExceptionsType</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>WinEHEncodingType</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>InitialFrameState</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>BinutilsVersion</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MCInstPrinter</label>
+        <link refid="classllvm_1_1_m_c_inst_printer"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>CommentStream</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>MAI</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>MII</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>MRI</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>MIA</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>PrintAliases</edgelabel>
+          <edgelabel>PrintBranchImmAsAddress</edgelabel>
+          <edgelabel>PrintImmHex</edgelabel>
+          <edgelabel>SymbolizeOperands</edgelabel>
+          <edgelabel>UseColor</edgelabel>
+          <edgelabel>UseMarkup</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>PrintHexStyle</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>ColorStack</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::MCInstrAnalysis</label>
+        <link refid="classllvm_1_1_m_c_instr_analysis"/>
+        <childnode refid="18" relation="usage">
+          <edgelabel>Info</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm::MCInstrInfo</label>
+        <link refid="classllvm_1_1_m_c_instr_info"/>
+      </node>
+      <node id="19">
+        <label>llvm::MCRegisterInfo</label>
+        <link refid="classllvm_1_1_m_c_register_info"/>
+      </node>
+      <node id="39">
+        <label>llvm::SmallVector&lt; T, N &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+        <childnode refid="41" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::SmallVector&lt; raw_ostream::Colors, 4 &gt;</label>
+        <link refid="classllvm_1_1_small_vector"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="37" relation="private-inheritance">
+        </childnode>
+        <childnode refid="39" relation="template-instance">
+          <edgelabel>&lt; raw_ostream::Colors, 4 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm::SmallVectorBase&lt; Size_T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="27" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+      </node>
+      <node id="32">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; T &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="29" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; T &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm::SmallVectorBase&lt; SmallVectorSizeType&lt; raw_ostream::Colors &gt; &gt;</label>
+        <link refid="classllvm_1_1_small_vector_base"/>
+        <childnode refid="27" relation="usage">
+          <edgelabel>BeginX</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>Capacity</edgelabel>
+          <edgelabel>Size</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="template-instance">
+          <edgelabel>&lt; SmallVectorSizeType&lt; raw_ostream::Colors &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm::SmallVectorImpl&lt; T &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::SmallVectorImpl&lt; raw_ostream::Colors &gt;</label>
+        <link refid="classllvm_1_1_small_vector_impl"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+        <childnode refid="35" relation="template-instance">
+          <edgelabel>&lt; raw_ostream::Colors &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm::SmallVectorStorage&lt; T, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>llvm::SmallVectorStorage&lt; raw_ostream::Colors, N &gt;</label>
+        <link refid="structllvm_1_1_small_vector_storage"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>InlineElts</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="template-instance">
+          <edgelabel>&lt; raw_ostream::Colors, N &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="36">
+        <label>llvm::SmallVectorTemplateBase&lt; T, bool &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::SmallVectorTemplateBase&lt; raw_ostream::Colors &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_base"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>TakesParamByValue</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="template-instance">
+          <edgelabel>&lt; raw_ostream::Colors &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm::SmallVectorTemplateCommon&lt; T, typename &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::SmallVectorTemplateCommon&lt; raw_ostream::Colors &gt;</label>
+        <link refid="classllvm_1_1_small_vector_template_common"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+        <childnode refid="31" relation="template-instance">
+          <edgelabel>&lt; raw_ostream::Colors &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>llvm::StringRef</label>
+        <link refid="classllvm_1_1_string_ref"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>npos</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::WebAssemblyInstPrinter</label>
+        <link refid="classllvm_1_1_web_assembly_inst_printer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::raw_ostream</label>
+        <link refid="classllvm_1_1raw__ostream"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>BLACK</edgelabel>
+          <edgelabel>BLUE</edgelabel>
+          <edgelabel>BRIGHT_BLACK</edgelabel>
+          <edgelabel>BRIGHT_BLUE</edgelabel>
+          <edgelabel>BRIGHT_CYAN</edgelabel>
+          <edgelabel>BRIGHT_GREEN</edgelabel>
+          <edgelabel>BRIGHT_MAGENTA</edgelabel>
+          <edgelabel>BRIGHT_RED</edgelabel>
+          <edgelabel>BRIGHT_WHITE</edgelabel>
+          <edgelabel>BRIGHT_YELLOW</edgelabel>
+          <edgelabel>  ...</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>size_t</label>
+        <link refid="classsize__t"/>
+      </node>
+      <node id="4">
+        <label>static constexpr Colors</label>
+      </node>
+      <node id="17">
+        <label>pair&lt; int, int &gt;</label>
+      </node>
+      <node id="16">
+        <label>vector&lt; llvm::MCCFIInstruction &gt;</label>
+      </node>
+      <node id="6">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+      <node id="27">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" line="26" column="1" bodyfile="lib/Target/WebAssembly/MCTargetDesc/WebAssemblyInstPrinter.h" bodystart="26" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a363576a336d10dec34bf190017ffc68f" prot="public" virt="virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>applyTargetSpecificCLOption</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a26a697a94c8df4f504a8c7f6750949bba88076b2db7116f67b6ada636972ca512" prot="private" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>CATCH_ALL_LEGACY</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a26a697a94c8df4f504a8c7f6750949bba82d50e5e121be773c309ebc1dcbeb770" prot="private" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>CATCH_LEGACY</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a715c5d502c8de89fcfdf281ce964d6fe" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>ColorStack</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a43f767b1fc960c3a7528055069b0ae97" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>CommentStream</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a09e23fb9768a1d2a8c6b5cd4134ce2aa" prot="private" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>ControlFlowCounter</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a1c6b954c9cba78484390dc906d81c52b" prot="private" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>ControlFlowStack</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a26a697a94c8df4f504a8c7f6750949bb" prot="private" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>EHInstKind</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a69c6e5c5bf8989a23f010a94b1e3a6f6" prot="private" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>EHInstStack</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1aa062041642a7343958a53aa65564147e" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>formatDec</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a152eff13caf242abc99d47f5a197a4d9" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>formatHex</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ae984d0ef2a117d681fee8e563786c9b8" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>formatHex</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ab13fc5e3f3dc12bc75fe3d764b832812" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>formatImm</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a6a3efe9cfb79c6f5eb0d7e1ac74ebfd4" prot="public" virt="virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>getMnemonic</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a62c484cd2ea7bf71dad8fd6d223864bb" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>getOpcodeName</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a4957778d98023b01a166bc52820cbd4b" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>getPrintImmHex</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1ac7e474d59356e83da891137d1f34ad97" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>getRegisterName</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a2724fcd7769447ccd8459f7fe617a911" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>getUseColor</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ac29057263eeedcc271ae4ec3dfd2353d" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>getUseMarkup</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1aacb2bfbafa57a37e627bf1334d349bc6" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>MAI</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a4e0302b2f7a78c8741bc07ca7655b859" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>Markup</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a00c158b4d63bb4b8cc91e6cfb0150341" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>markup</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ae9677047c398a916ab4a5a6fabeb36e7" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>matchAliasPatterns</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1af0525fc87f3e2054109908599d21098d" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>MCInstPrinter</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1aea22be8e7b7e6922680a8369bcf7e3b7" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>MIA</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a41acdb280262403252bc72f6d3f23f7a" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>MII</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1aaaeadf26b0e3ae38625c5469231bbce6" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1afb00adba3dbd7afd9ee2b432c2edffbb" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>PrintAliases</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1aab90c946a08959c165433b2c125895ea" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>printAnnotation</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1acef595ffd1764f8c06f5347db94ee756" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>PrintBranchImmAsAddress</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1ac1ced6595a9772119bdac2a7decb1d59" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>printBrList</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1acc39fa43ddee9c26c911927bb0afee99" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>printCatchList</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1af9e5aa3371a52ac7283a2c8aa217b73b" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>PrintHexStyle</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a23492d33eb76ba85db3600115fed651b" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>PrintImmHex</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a7d7a0c71edec56b48ee2f53ccb92c58e" prot="public" virt="virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>printInst</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a64610122aa74256b0a030f2e493e4833" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>printInstruction</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1aa43bb54e111c5b87edb58a368175a352" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>printOperand</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a4be1a6a79f3264e8f35ac342046322a4" prot="public" virt="virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>printRegName</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1ad73b288f9c90f95eec52c24cc346b69b" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>printWebAssemblyP2AlignOperand</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a1e65050ef81c565f23ba4028e368c5fc" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>printWebAssemblySignatureOperand</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a3216205cbe92e7720a22058cf2d57676" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>setCommentStream</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a0a5ab1597f769f3c0016aaa98f00e27a" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>setMCInstrAnalysis</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a0389bf1c38ceac3d1bac5801f726c50b" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>setPrintBranchImmAsAddress</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ae555ad59948ec618ceb8f19d50bd1601" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>setPrintHexStyle</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a5315ee213d2bb70bfb0d581369c8bd47" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>setPrintImmHex</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a49e30b2456b2073db0e92ddc5a9d8191" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>setSymbolizeOperands</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a3aa0680085158cfb0c14163a07ce9515" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>setUseColor</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a93ea46134ac48f273fb38c88c4edde07" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>setUseMarkup</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a5151f8e39f6265b5528efed4b516bae7" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>SymbolizeOperands</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a26a697a94c8df4f504a8c7f6750949bba942b8f0befb8691397ffc3536d15ad7d" prot="private" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>TRY</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1a7baad0b52a2475a914263e48ea580f7e" prot="private" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>TryStack</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1ab98b5a4fbd0a43ca838ff5cbaef3f2d4" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>UseColor</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a0a1fa89c14ac7b72829c033469ec1fbd" prot="protected" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>UseMarkup</name></member>
+      <member refid="classllvm_1_1_web_assembly_inst_printer_1adbaa9608f865bf505ae05f19f510142a" prot="public" virt="non-virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>WebAssemblyInstPrinter</name></member>
+      <member refid="classllvm_1_1_m_c_inst_printer_1a55e82de41ab06366834cbef13e46ac6d" prot="public" virt="virtual"><scope>llvm::WebAssemblyInstPrinter</scope><name>~MCInstPrinter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

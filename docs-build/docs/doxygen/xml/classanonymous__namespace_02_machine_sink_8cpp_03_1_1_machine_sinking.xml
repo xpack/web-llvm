@@ -1,0 +1,1163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{MachineSink.cpp}::MachineSinking</compoundname>
+    <basecompoundref refid="classllvm_1_1_machine_function_pass" prot="public" virt="non-virtual">llvm::MachineFunctionPass</basecompoundref>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a826d8f2a8fda66d00b115fb6cabbfa99" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, 4 &gt; &gt;</type>
+        <definition>using anonymous_namespace{MachineSink.cpp}::MachineSinking::AllSuccsCache = 
+      SmallDenseMap&lt;MachineBasicBlock *, SmallVector&lt;MachineBasicBlock *, 4&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>AllSuccsCache</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::AllSuccsCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="154" column="3" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a17fbef6ab7b70db5ac9b235903ebb62a" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_pointer_int_pair" kindref="compound">PointerIntPair</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, 1 &gt;</type>
+        <definition>using anonymous_namespace{MachineSink.cpp}::MachineSinking::SeenDbgUser =  PointerIntPair&lt;MachineInstr *, 1&gt;</definition>
+        <argsstring></argsstring>
+        <name>SeenDbgUser</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::SeenDbgUser</qualifiedname>
+        <briefdescription>
+<para>DBG_VALUE pointer and flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The flag is true if this DBG_VALUE is post-dominated by another DBG_VALUE of the same variable location. This is necessary to detect sequences such as: %0 = someinst DBG_VALUE %0, !123, !DIExpression() %1 = anotherinst DBG_VALUE %1, !123, !DIExpression() Where if %0 were to sink, the DBG_VAUE should not sink with it, as that would re-order assignments. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="166" column="3" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1af172b5e648362ea32cb4e7eb89d9e736" prot="private" static="no">
+        <type>std::pair&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> *, <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;</type>
+        <definition>using anonymous_namespace{MachineSink.cpp}::MachineSinking::SinkItem =  std::pair&lt;MachineInstr *, MachineBasicBlock *&gt;</definition>
+        <argsstring></argsstring>
+        <name>SinkItem</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::SinkItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="168" column="3" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="168" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ac26b553972825fab1b58f51f3af93044" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_subtarget_info" kindref="compound">TargetSubtargetInfo</ref> *</type>
+        <definition>const TargetSubtargetInfo* anonymous_namespace{MachineSink.cpp}::MachineSinking::STI</definition>
+        <argsstring></argsstring>
+        <name>STI</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::STI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="122" column="29" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1afeb0ece4c4b36fb35ef962f41e358e71" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_instr_info" kindref="compound">TargetInstrInfo</ref> *</type>
+        <definition>const TargetInstrInfo* anonymous_namespace{MachineSink.cpp}::MachineSinking::TII</definition>
+        <argsstring></argsstring>
+        <name>TII</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::TII</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="123" column="25" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a1142977050b3064f8bca60a867d782a8" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_info" kindref="compound">TargetRegisterInfo</ref> *</type>
+        <definition>const TargetRegisterInfo* anonymous_namespace{MachineSink.cpp}::MachineSinking::TRI</definition>
+        <argsstring></argsstring>
+        <name>TRI</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::TRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="124" column="28" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ab1d5dd6994f6394fefa8d82baae9d835" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_register_info" kindref="compound">MachineRegisterInfo</ref> *</type>
+        <definition>MachineRegisterInfo* anonymous_namespace{MachineSink.cpp}::MachineSinking::MRI</definition>
+        <argsstring></argsstring>
+        <name>MRI</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::MRI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="125" column="23" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1af745e71f119e119f6d18de2b316f1ed5" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_dominator_tree" kindref="compound">MachineDominatorTree</ref> *</type>
+        <definition>MachineDominatorTree* anonymous_namespace{MachineSink.cpp}::MachineSinking::DT</definition>
+        <argsstring></argsstring>
+        <name>DT</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::DT</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="126" column="24" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ad774c0b8504caa71b21dc8808b058d67" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_post_dominator_tree" kindref="compound">MachinePostDominatorTree</ref> *</type>
+        <definition>MachinePostDominatorTree* anonymous_namespace{MachineSink.cpp}::MachineSinking::PDT</definition>
+        <argsstring></argsstring>
+        <name>PDT</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::PDT</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="127" column="28" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ab95444989701d6ab9e2917480f419f48" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1aee433bfa58b17266f2cff728e02fba26" kindref="member">MachineCycleInfo</ref> *</type>
+        <definition>MachineCycleInfo* anonymous_namespace{MachineSink.cpp}::MachineSinking::CI</definition>
+        <argsstring></argsstring>
+        <name>CI</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::CI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="128" column="20" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a37f5c56db5032a9700e80adb72849794" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_profile_summary_info" kindref="compound">ProfileSummaryInfo</ref> *</type>
+        <definition>ProfileSummaryInfo* anonymous_namespace{MachineSink.cpp}::MachineSinking::PSI</definition>
+        <argsstring></argsstring>
+        <name>PSI</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::PSI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="129" column="22" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ad993aef6390db447a16354d73439efd0" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_machine_block_frequency_info" kindref="compound">MachineBlockFrequencyInfo</ref> *</type>
+        <definition>MachineBlockFrequencyInfo* anonymous_namespace{MachineSink.cpp}::MachineSinking::MBFI</definition>
+        <argsstring></argsstring>
+        <name>MBFI</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::MBFI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="130" column="29" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a0a9eddf5ab31800c1f2031139d0c5df1" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_branch_probability_info" kindref="compound">MachineBranchProbabilityInfo</ref> *</type>
+        <definition>const MachineBranchProbabilityInfo* anonymous_namespace{MachineSink.cpp}::MachineSinking::MBPI</definition>
+        <argsstring></argsstring>
+        <name>MBPI</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::MBPI</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="131" column="38" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a9f125cbb0384fdb7fb21f2154eab0a2b" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1ae457f1cf451ed893666c4a384e58f8e5" kindref="member">AliasAnalysis</ref> *</type>
+        <definition>AliasAnalysis* anonymous_namespace{MachineSink.cpp}::MachineSinking::AA</definition>
+        <argsstring></argsstring>
+        <name>AA</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::AA</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="132" column="17" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a6f41e958a984c632ef24b6bc4e7cb599" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_register_class_info" kindref="compound">RegisterClassInfo</ref></type>
+        <definition>RegisterClassInfo anonymous_namespace{MachineSink.cpp}::MachineSinking::RegClassInfo</definition>
+        <argsstring></argsstring>
+        <name>RegClassInfo</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::RegClassInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="133" column="21" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a6cabcf16795c96e9aa316d9b4b9b341b" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_target_sched_model" kindref="compound">TargetSchedModel</ref></type>
+        <definition>TargetSchedModel anonymous_namespace{MachineSink.cpp}::MachineSinking::SchedModel</definition>
+        <argsstring></argsstring>
+        <name>SchedModel</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::SchedModel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="134" column="20" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a1dbfbaee257b5c6664d58d19eb9afb43" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_set" kindref="compound">SmallSet</ref>&lt; std::pair&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;, 8 &gt;</type>
+        <definition>SmallSet&lt;std::pair&lt;MachineBasicBlock *, MachineBasicBlock *&gt;, 8&gt; anonymous_namespace{MachineSink.cpp}::MachineSinking::CEBCandidates</definition>
+        <argsstring></argsstring>
+        <name>CEBCandidates</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::CEBCandidates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="138" column="7" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a0a9460bcd20f8ceca2b4c9cb59cfcc06" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; std::pair&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref>, <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;, <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;</type>
+        <definition>DenseMap&lt;std::pair&lt;Register, MachineBasicBlock *&gt;, MachineBasicBlock *&gt; anonymous_namespace{MachineSink.cpp}::MachineSinking::CEMergeCandidates</definition>
+        <argsstring></argsstring>
+        <name>CEMergeCandidates</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::CEMergeCandidates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="146" column="7" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1adb6d124cf719fd1b8da9d3d37d8fdc27" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_set_vector" kindref="compound">SetVector</ref>&lt; std::pair&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt; &gt;</type>
+        <definition>SetVector&lt;std::pair&lt;MachineBasicBlock *, MachineBasicBlock *&gt; &gt; anonymous_namespace{MachineSink.cpp}::MachineSinking::ToSplit</definition>
+        <argsstring></argsstring>
+        <name>ToSplit</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::ToSplit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="150" column="13" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a7ba7c7aed01cab5bf639023ce4d95584" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="classllvm_1_1_register" kindref="compound">Register</ref> &gt;</type>
+        <definition>DenseSet&lt;Register&gt; anonymous_namespace{MachineSink.cpp}::MachineSinking::RegsToClearKillFlags</definition>
+        <argsstring></argsstring>
+        <name>RegsToClearKillFlags</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::RegsToClearKillFlags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="152" column="12" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1aec545fedfb27f529656a7f3ebce065cd" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">SmallDenseMap</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classllvm_1_1_tiny_ptr_vector" kindref="compound">TinyPtrVector</ref>&lt; <ref refid="classllvm_1_1_pointer_int_pair" kindref="compound">SeenDbgUser</ref> &gt; &gt;</type>
+        <definition>SmallDenseMap&lt;unsigned, TinyPtrVector&lt;SeenDbgUser&gt; &gt; anonymous_namespace{MachineSink.cpp}::MachineSinking::SeenDbgUsers</definition>
+        <argsstring></argsstring>
+        <name>SeenDbgUsers</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::SeenDbgUsers</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> of DBG_VALUE uses of vregs in a block, so that we can identify debug instructions to sink. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="172" column="17" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a46b23caefb808b1fcea7105b162e9edf" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref>&lt; <ref refid="classllvm_1_1_debug_variable" kindref="compound">DebugVariable</ref> &gt;</type>
+        <definition>DenseSet&lt;DebugVariable&gt; anonymous_namespace{MachineSink.cpp}::MachineSinking::SeenDbgVars</definition>
+        <argsstring></argsstring>
+        <name>SeenDbgVars</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::SeenDbgVars</qualifiedname>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_record" kindref="compound">Record</ref> of debug variables that have had their locations set in the current block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="176" column="12" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ada91939069533a359c85d37e752820b7" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; std::pair&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;, <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+        <definition>DenseMap&lt;std::pair&lt;MachineBasicBlock *, MachineBasicBlock *&gt;, bool&gt; anonymous_namespace{MachineSink.cpp}::MachineSinking::HasStoreCache</definition>
+        <argsstring></argsstring>
+        <name>HasStoreCache</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::HasStoreCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="179" column="7" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a965740f93659c4c74779ff9e3f8964e6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; std::pair&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> * &gt;, <ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &gt;</type>
+        <definition>DenseMap&lt;std::pair&lt;MachineBasicBlock *, MachineBasicBlock *&gt;, SmallVector&lt;MachineInstr *&gt; &gt; anonymous_namespace{MachineSink.cpp}::MachineSinking::StoreInstrCache</definition>
+        <argsstring></argsstring>
+        <name>StoreInstrCache</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::StoreInstrCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="183" column="7" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1af6fa5d79afc632ba84929804836cb713" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &gt;</type>
+        <definition>DenseMap&lt;const MachineBasicBlock *, std::vector&lt;unsigned&gt; &gt; anonymous_namespace{MachineSink.cpp}::MachineSinking::CachedRegisterPressure</definition>
+        <argsstring></argsstring>
+        <name>CachedRegisterPressure</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::CachedRegisterPressure</qualifiedname>
+        <briefdescription>
+<para>Cached BB&apos;s register pressure. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="187" column="7" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1aed01abf2bcadc77e99e86d5ff428464b" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{MachineSink.cpp}::MachineSinking::EnableSinkAndFold</definition>
+        <argsstring></argsstring>
+        <name>EnableSinkAndFold</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::EnableSinkAndFold</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="189" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="189" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1adf042164222d2988000298fad4c7aea3" prot="public" static="yes" mutable="no">
+        <type><ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>char MachineSinking::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::ID</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="192" column="15" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="192" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a7eaa892247782f8364a7924e675e1ab7" compoundref="_machine_sink_8cpp" startline="194" endline="196">MachineSinking</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a7eaa892247782f8364a7924e675e1ab7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{MachineSink.cpp}::MachineSinking::MachineSinking</definition>
+        <argsstring>()</argsstring>
+        <name>MachineSinking</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::MachineSinking</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="194" column="3" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="194" bodyend="196"/>
+        <references refid="classllvm_1_1_pass_registry_1a05a729900b76c89e808c6c3094921b2f" compoundref="_pass_registry_8cpp" startline="24" endline="27">llvm::PassRegistry::getPassRegistry</references>
+        <references refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1adf042164222d2988000298fad4c7aea3" compoundref="_machine_sink_8cpp" startline="192">ID</references>
+        <references refid="namespacellvm_1a910d02b9b941c7232f370a3f7c345621">llvm::initializeMachineSinkingPass</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" compoundref="_machine_function_pass_8h" startline="41" endline="41">llvm::MachineFunctionPass::MachineFunctionPass</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1af56efb8509ab5b039fe9dcf0c4f5eccd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::runOnMachineFunction</definition>
+        <argsstring>(MachineFunction &amp;MF) override</argsstring>
+        <name>runOnMachineFunction</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::runOnMachineFunction</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1abb98ed32e4e5acae62ef3edd7bf04fb5">runOnMachineFunction</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref> &amp;</type>
+          <declname>MF</declname>
+        </param>
+        <briefdescription>
+<para>runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="198" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="731" bodyend="862"/>
+        <references refid="classllvm_1_1_dense_map_base_1adf4e7878fc0b3b8dcde545178564190d" compoundref="_dense_map_8h" startline="110" endline="144">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::clear</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" compoundref="_pass_analysis_support_8h" startline="230" endline="233">llvm::Pass::getAnalysis</references>
+        <references refid="classllvm_1_1_target_pass_config_1a49fdb99198ddc005e696a35f7abc7d22" compoundref="_target_pass_config_8h" startline="201" endline="201">llvm::TargetPassConfig::getEnableSinkAndFold</references>
+        <references refid="classllvm_1_1_machine_function_1a977ddce262de45c645be23d951066351" compoundref="_machine_function_8h" startline="704" endline="704">llvm::MachineFunction::getFunction</references>
+        <references refid="classllvm_1_1_target_subtarget_info_1acd858ed72f11db9444617740c3622608" compoundref="_target_subtarget_info_8h" startline="97" endline="97">llvm::TargetSubtargetInfo::getInstrInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a810234b6b3d223b7c74a4253fcc5ea5e" compoundref="_machine_function_8h" startline="743" endline="743">llvm::MachineFunction::getRegInfo</references>
+        <references refid="classllvm_1_1_machine_function_1a3825368aca2bc1550d173660df4da6a6" compoundref="_machine_function_8h" startline="733" endline="733">llvm::MachineFunction::getSubtarget</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="71">MBB</references>
+        <references refid="namespacellvm_1af7881286e3ea4d7f1c4a63c87c132dac" compoundref="_machine_basic_block_8cpp" startline="122" endline="124">llvm::printMBBReference</references>
+        <references refid="namespacellvm_1a6b0ac1fa4f05de76413c5e0ca6334035" compoundref="_s_t_l_extras_8h" startline="420" endline="426">llvm::reverse</references>
+        <references refid="_machine_sink_8cpp_1a33ac72ad86d97fe56d3ef6668df30680">SinkInstsIntoCycle</references>
+        <references refid="_machine_sink_8cpp_1a084ec12a6f4a9e62a9fef7d321250c12">SinkIntoCycleLimit</references>
+        <references refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" compoundref="_sandbox_i_r_2_pass_8cpp" startline="178" endline="190">llvm::FunctionPass::skipFunction</references>
+        <references refid="_machine_sink_8cpp_1ae8a57b53e1029a66423f1c8beeee72b8">UseBlockFreqInfo</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1aa7678b365028630e8b51cb7b43988523" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{MachineSink.cpp}::MachineSinking::getAnalysisUsage</definition>
+        <argsstring>(AnalysisUsage &amp;AU) const override</argsstring>
+        <name>getAnalysisUsage</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::getAnalysisUsage</qualifiedname>
+        <reimplements refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e">getAnalysisUsage</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_analysis_usage" kindref="compound">AnalysisUsage</ref> &amp;</type>
+          <declname>AU</declname>
+        </param>
+        <briefdescription>
+<para>getAnalysisUsage - Subclasses that override getAnalysisUsage must call this. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For MachineFunctionPasses, calling AU.preservesCFG() indicates that the pass does not modify the MachineBasicBlock CFG. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="200" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="200" bodyend="213"/>
+        <references refid="classllvm_1_1_analysis_usage_1ae9356b720f6fbab112d809738dcc4f2a" compoundref="_pass_analysis_support_8h" startline="98" endline="101">llvm::AnalysisUsage::addPreserved</references>
+        <references refid="classllvm_1_1_analysis_usage_1ae0adcccca08fb686c9ce00f9397b660c" compoundref="_pass_analysis_support_8h" startline="75" endline="77">llvm::AnalysisUsage::addRequired</references>
+        <references refid="classllvm_1_1_machine_function_pass_1a864fd57b4304ef933b3281d0ef85a88e" compoundref="_machine_function_pass_8cpp" startline="169" endline="190">llvm::MachineFunctionPass::getAnalysisUsage</references>
+        <references refid="_machine_sink_8cpp_1ae8a57b53e1029a66423f1c8beeee72b8">UseBlockFreqInfo</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a033b5a952489a6832d846fac0ec2a9e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void anonymous_namespace{MachineSink.cpp}::MachineSinking::releaseMemory</definition>
+        <argsstring>() override</argsstring>
+        <name>releaseMemory</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::releaseMemory</qualifiedname>
+        <reimplements refid="classllvm_1_1_pass_1aeb6e74b0f36a0acd1d20149ef088715a">releaseMemory</reimplements>
+        <briefdescription>
+<para><ref refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a033b5a952489a6832d846fac0ec2a9e6" kindref="member">releaseMemory()</ref> - This member can be implemented by a pass if it wants to be able to release its memory when it is no longer needed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default behavior of passes is to hold onto memory for the entire duration of their lifetime (which is the entire compile time). For pipelined passes, this is not a big deal because that memory gets recycled every time the pass is invoked on another program unit. For IP passes, it is more important to free memory when it is unused.</para>
+<para>Optionally implement this function to release pass memory when it is no longer used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="215" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="215" bodyend="218"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a291ec7334f98916550c75e42ddbc37b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::ProcessBlock</definition>
+        <argsstring>(MachineBasicBlock &amp;MBB)</argsstring>
+        <name>ProcessBlock</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::ProcessBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="221" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="864" bodyend="925"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a4182db5ab473eda2461a1ef35319101f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineSinking::ProcessDbgInst</definition>
+        <argsstring>(MachineInstr &amp;MI)</argsstring>
+        <name>ProcessDbgInst</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::ProcessDbgInst</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="222" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="927" bodyend="943"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a64a61ef016e14544c76a9258f6c9e9a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::isLegalToBreakCriticalEdge</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineBasicBlock *From, MachineBasicBlock *To, bool BreakPHIEdge)</argsstring>
+        <name>isLegalToBreakCriticalEdge</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::isLegalToBreakCriticalEdge</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>From</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>To</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>BreakPHIEdge</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="223" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1017" bodyend="1079"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a79fe5a01c4fe2c8c6b9097f8bd70c7ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::isWorthBreakingCriticalEdge</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineBasicBlock *From, MachineBasicBlock *To, MachineBasicBlock *&amp;DeferredFromBlock)</argsstring>
+        <name>isWorthBreakingCriticalEdge</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::isWorthBreakingCriticalEdge</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>From</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>To</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *&amp;</type>
+          <declname>DeferredFromBlock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="225" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="945" bodyend="1015"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a3ea4096abf607a26e20d8a16e46c1012" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::hasStoreBetween</definition>
+        <argsstring>(MachineBasicBlock *From, MachineBasicBlock *To, MachineInstr &amp;MI)</argsstring>
+        <name>hasStoreBetween</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::hasStoreBetween</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>From</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>To</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+<para>hasStoreBetween - check if there is store betweeen straight line blocks From and To. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="229" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1565" bodyend="1652"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1acab1b2aecc1d7cfd2e65a6455c7b0096" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::PostponeSplitCriticalEdge</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineBasicBlock *From, MachineBasicBlock *To, bool BreakPHIEdge)</argsstring>
+        <name>PostponeSplitCriticalEdge</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::PostponeSplitCriticalEdge</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>From</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>To</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>BreakPHIEdge</declname>
+        </param>
+        <briefdescription>
+<para>Postpone the splitting of the given critical edge (<computeroutput>From</computeroutput>, <computeroutput>To</computeroutput>). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We do not split the edges on the fly. Indeed, this invalidates the dominance information and thus triggers a lot of updates of that information underneath. Instead, we postpone all the splits after each iteration of the main loop. That way, the information is at least valid for the lifetime of an iteration.</para>
+<para><simplesect kind="return"><para>True if the edge is marked as toSplit, false otherwise. False can be returned if, for instance, this is not profitable. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="244" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1081" bodyend="1102"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a0620bd1bb6e1cf10aa0cc40ce9b7b634" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::SinkInstruction</definition>
+        <argsstring>(MachineInstr &amp;MI, bool &amp;SawStore, AllSuccsCache &amp;AllSuccessors)</argsstring>
+        <name>SinkInstruction</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::SinkInstruction</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>SawStore</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">AllSuccsCache</ref> &amp;</type>
+          <declname>AllSuccessors</declname>
+        </param>
+        <briefdescription>
+<para>SinkInstruction - Determine whether it is safe to sink the specified machine instruction out of its current block into a successor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="246" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1750" bodyend="1908"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a4f17ec5e469cb7c17039d5a0c94c9838" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineSinking::SalvageUnsunkDebugUsersOfCopy</definition>
+        <argsstring>(MachineInstr &amp;, MachineBasicBlock *TargetBlock)</argsstring>
+        <name>SalvageUnsunkDebugUsersOfCopy</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::SalvageUnsunkDebugUsersOfCopy</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <defname>MI</defname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>TargetBlock</declname>
+        </param>
+        <briefdescription>
+<para>If we sink a COPY inst, some debug users of it&apos;s destination may no longer be dominated by the COPY, and will eventually be dropped. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is easily rectified by forwarding the non-dominated debug uses to the copy source. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="253" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1910" bodyend="1949"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a6f11d66d0e5927e80907208055693311" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::AllUsesDominatedByBlock</definition>
+        <argsstring>(Register Reg, MachineBasicBlock *MBB, MachineBasicBlock *DefMBB, bool &amp;BreakPHIEdge, bool &amp;LocalUse) const</argsstring>
+        <name>AllUsesDominatedByBlock</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::AllUsesDominatedByBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>DefMBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>BreakPHIEdge</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>LocalUse</declname>
+        </param>
+        <briefdescription>
+<para>AllUsesDominatedByBlock - Return true if all uses of the specified register occur in blocks dominated by the specified block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If any use is in the definition block, then return false since it is never legal to move def after uses. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="255" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="614" bodyend="670"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a25e7e073107b316d34f0959360944f70" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+        <definition>MachineBasicBlock * MachineSinking::FindSuccToSinkTo</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineBasicBlock *MBB, bool &amp;BreakPHIEdge, AllSuccsCache &amp;AllSuccessors)</argsstring>
+        <name>FindSuccToSinkTo</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::FindSuccToSinkTo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref> &amp;</type>
+          <declname>BreakPHIEdge</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">AllSuccsCache</ref> &amp;</type>
+          <declname>AllSuccessors</declname>
+        </param>
+        <briefdescription>
+<para>FindSuccToSinkTo - Find a successor to sink this instruction to. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="258" column="21" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1319" bodyend="1417"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a6d959a030b18f6b88570d8b50593d123" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MachineSinking::FindCycleSinkCandidates</definition>
+        <argsstring>(MachineCycle *Cycle, MachineBasicBlock *BB, SmallVectorImpl&lt; MachineInstr * &gt; &amp;Candidates)</argsstring>
+        <name>FindCycleSinkCandidates</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::FindCycleSinkCandidates</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1af2582bc073a57bab10916632073e24cd" kindref="member">MachineCycle</ref> *</type>
+          <declname>Cycle</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>BB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>&lt; <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>Candidates</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="262" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="690" bodyend="729"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a45fff32dea35601b73bc9ddef9327257" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::aggressivelySinkIntoCycle</definition>
+        <argsstring>(MachineCycle *Cycle, MachineInstr &amp;I, DenseMap&lt; SinkItem, MachineInstr * &gt; &amp;SunkInstrs)</argsstring>
+        <name>aggressivelySinkIntoCycle</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::aggressivelySinkIntoCycle</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1af2582bc073a57bab10916632073e24cd" kindref="member">MachineCycle</ref> *</type>
+          <declname>Cycle</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; SinkItem, <ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> * &gt; &amp;</type>
+          <declname>SunkInstrs</declname>
+        </param>
+        <briefdescription>
+<para>Aggressively sink instructions into cycles. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This will aggressively try to sink all instructions in the top-most preheaders in an attempt to reduce RP. In particular, it will sink into multiple successor blocks without limits based on the amount of sinking, or the type of ops being sunk (so long as they are safe to sink). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="266" column="3" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1659" bodyend="1746"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ac0f92da19dcc3a53ce05b7d0ec195f11" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::isProfitableToSinkTo</definition>
+        <argsstring>(Register Reg, MachineInstr &amp;MI, MachineBasicBlock *MBB, MachineBasicBlock *SuccToSinkTo, AllSuccsCache &amp;AllSuccessors)</argsstring>
+        <name>isProfitableToSinkTo</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::isProfitableToSinkTo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>Reg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>SuccToSinkTo</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">AllSuccsCache</ref> &amp;</type>
+          <declname>AllSuccessors</declname>
+        </param>
+        <briefdescription>
+<para>isProfitableToSinkTo - Return true if it is profitable to sink MI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="269" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1177" bodyend="1272"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a75f212fbe95599879a79984e4a38ffe6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::PerformTrivialForwardCoalescing</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineBasicBlock *MBB)</argsstring>
+        <name>PerformTrivialForwardCoalescing</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::PerformTrivialForwardCoalescing</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="274" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="348" bodyend="378"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a68bd992da93ec888069d4fc6159148fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::PerformSinkAndFold</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineBasicBlock *MBB)</argsstring>
+        <name>PerformSinkAndFold</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::PerformSinkAndFold</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="277" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="380" bodyend="608"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1aa170a99d4165d729b0b452d67728034d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *, 4 &gt; &amp;</type>
+        <definition>SmallVector&lt; MachineBasicBlock *, 4 &gt; &amp; MachineSinking::GetAllSortedSuccessors</definition>
+        <argsstring>(MachineInstr &amp;MI, MachineBasicBlock *MBB, AllSuccsCache &amp;AllSuccessors) const</argsstring>
+        <name>GetAllSortedSuccessors</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::GetAllSortedSuccessors</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> *</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_small_dense_map" kindref="compound">AllSuccsCache</ref> &amp;</type>
+          <declname>AllSuccessors</declname>
+        </param>
+        <briefdescription>
+<para>Get the sorted sequence of successors for this <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref>, possibly computing it if it was not already cached. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="280" column="3" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1277" bodyend="1315"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a44f54ff013c57da1a6ee0499b221b6fb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt; &amp;</type>
+        <definition>std::vector&lt; unsigned &gt; &amp; MachineSinking::getBBRegisterPressure</definition>
+        <argsstring>(const MachineBasicBlock &amp;MBB, bool UseCache=true)</argsstring>
+        <name>getBBRegisterPressure</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::getBBRegisterPressure</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>UseCache</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="283" column="15" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1105" bodyend="1146"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a0e0bbb682494c2ba193d38711096d6d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::registerPressureSetExceedsLimit</definition>
+        <argsstring>(unsigned NRegs, const TargetRegisterClass *RC, const MachineBasicBlock &amp;MBB)</argsstring>
+        <name>registerPressureSetExceedsLimit</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::registerPressureSetExceedsLimit</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NRegs</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_target_register_class" kindref="compound">TargetRegisterClass</ref> *</type>
+          <declname>RC</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="286" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1148" bodyend="1159"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a4394403f3eae31e5160dd4ce15020a38" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool MachineSinking::registerPressureExceedsLimit</definition>
+        <argsstring>(const MachineBasicBlock &amp;MBB)</argsstring>
+        <name>registerPressureExceedsLimit</name>
+        <qualifiedname>anonymous_namespace{MachineSink.cpp}::MachineSinking::registerPressureExceedsLimit</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_machine_basic_block" kindref="compound">MachineBasicBlock</ref> &amp;</type>
+          <declname>MBB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/MachineSink.cpp" line="290" column="8" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="1162" bodyend="1174"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>anonymous_namespace{MachineSink.cpp}::MachineSinking</label>
+        <link refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>anonymous_namespace{MachineSink.cpp}::MachineSinking</label>
+        <link refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>char</label>
+        <link refid="classchar"/>
+      </node>
+      <node id="3">
+        <label>llvm::FunctionPass</label>
+        <link refid="classllvm_1_1_function_pass"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>llvm::MachineFunctionPass</label>
+        <link refid="classllvm_1_1_machine_function_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::Pass</label>
+        <link refid="classllvm_1_1_pass"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/CodeGen/MachineSink.cpp" line="121" column="1" bodyfile="lib/CodeGen/MachineSink.cpp" bodystart="121" bodyend="291"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a9f125cbb0384fdb7fb21f2154eab0a2b" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>AA</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a45fff32dea35601b73bc9ddef9327257" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>aggressivelySinkIntoCycle</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a826d8f2a8fda66d00b115fb6cabbfa99" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>AllSuccsCache</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a6f11d66d0e5927e80907208055693311" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>AllUsesDominatedByBlock</name></member>
+      <member refid="classllvm_1_1_function_pass_1a748922f143f2da9a13b0b15ff6a3dd22" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>assignPassManager</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1af6fa5d79afc632ba84929804836cb713" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>CachedRegisterPressure</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a1dbfbaee257b5c6664d58d19eb9afb43" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>CEBCandidates</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a0a9460bcd20f8ceca2b4c9cb59cfcc06" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>CEMergeCandidates</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ab95444989701d6ab9e2917480f419f48" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>CI</name></member>
+      <member refid="classllvm_1_1_pass_1a2ed7d79d79dffe7368c3d3cdf40dd80e" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>createPass</name></member>
+      <member refid="classllvm_1_1_pass_1ac7811985250c75d7e2a244292d615fff" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>doFinalization</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a204ffdf4717a340f8cbe1fd1341a8148" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>doInitialization</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1af745e71f119e119f6d18de2b316f1ed5" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>DT</name></member>
+      <member refid="classllvm_1_1_pass_1a1a60731eeff800b39fca7280a5a167ae" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>dump</name></member>
+      <member refid="classllvm_1_1_pass_1ad2f0576ef7c9c4af40e35001c81f4922" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>dumpPassStructure</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1aed01abf2bcadc77e99e86d5ff428464b" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>EnableSinkAndFold</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a6d959a030b18f6b88570d8b50593d123" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>FindCycleSinkCandidates</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a25e7e073107b316d34f0959360944f70" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>FindSuccToSinkTo</name></member>
+      <member refid="classllvm_1_1_function_pass_1a7691d83e3561f781cae4ce4a01bdfa93" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>FunctionPass</name></member>
+      <member refid="classllvm_1_1_pass_1a03d3a81b1c46aff7c38ef3a6750ba225" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getAdjustedAnalysisPointer</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1aa170a99d4165d729b0b452d67728034d" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>GetAllSortedSuccessors</name></member>
+      <member refid="classllvm_1_1_pass_1a4863e5e463fb79955269fbf7fbf52b80" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a560d384c0cef7f62836884fdbbd1fe66" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1a6613f29d3e54ce175ac33fb9ba264fae" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1a2190247edbacb33b4e8a3d409fa2d99e" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af94c014e968489e96c7d4353a84ad7f5" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getAnalysisIfAvailable</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1aa7678b365028630e8b51cb7b43988523" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getAnalysisUsage</name></member>
+      <member refid="classllvm_1_1_pass_1ae31759fd992cddb1f2d62ab0df85834a" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getAsImmutablePass</name></member>
+      <member refid="classllvm_1_1_pass_1a626b77ef8abdfa9f53c697ad129a6e5a" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getAsPMDataManager</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a44f54ff013c57da1a6ee0499b221b6fb" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getBBRegisterPressure</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a22bc7c91051dca8dc211c3afe9929603" prot="protected" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getClearedProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a63192e749ba4a0ee29336a59d6a19647" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getPassID</name></member>
+      <member refid="classllvm_1_1_pass_1a9de4db62e6884f2e5efea6793af30d99" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getPassKind</name></member>
+      <member refid="classllvm_1_1_pass_1ad729b39eacf070a9bca84533b3c743bf" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getPassName</name></member>
+      <member refid="classllvm_1_1_function_pass_1a68517706d9801aec6d20c32a424ed152" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getPotentialPassManagerType</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1af0f2f06a3a773431ee9813351d609c4d" prot="protected" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getRequiredProperties</name></member>
+      <member refid="classllvm_1_1_pass_1a969c082f66671df288441bbad9ca87db" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getResolver</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a8fbedd15c1c809e6050f3fd3ccd3338e" prot="protected" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>getSetProperties</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a3ea4096abf607a26e20d8a16e46c1012" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>hasStoreBetween</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ada91939069533a359c85d37e752820b7" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>HasStoreCache</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1adf042164222d2988000298fad4c7aea3" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>ID</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a64a61ef016e14544c76a9258f6c9e9a8" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>isLegalToBreakCriticalEdge</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ac0f92da19dcc3a53ce05b7d0ec195f11" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>isProfitableToSinkTo</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a79fe5a01c4fe2c8c6b9097f8bd70c7ae" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>isWorthBreakingCriticalEdge</name></member>
+      <member refid="classllvm_1_1_pass_1aab174263c400ece13a7278990e102fa6" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_pass_1a992ff669acca94459037cfb1f41cb9dc" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>lookupPassInfo</name></member>
+      <member refid="classllvm_1_1_machine_function_pass_1a29c81d2386f4a727c6d33413807530c8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>MachineFunctionPass</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a7eaa892247782f8364a7924e675e1ab7" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>MachineSinking</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ad993aef6390db447a16354d73439efd0" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>MBFI</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a0a9eddf5ab31800c1f2031139d0c5df1" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>MBPI</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ab1d5dd6994f6394fefa8d82baae9d835" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>MRI</name></member>
+      <member refid="classllvm_1_1_pass_1a0b4a511579939b07831db90c3fc98996" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>mustPreserveAnalysisID</name></member>
+      <member refid="classllvm_1_1_pass_1af468a2aeb0d98e3dbeda38176ce516d3" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_pass_1a16baa169d062524be5a6b67609266174" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>Pass</name></member>
+      <member refid="classllvm_1_1_pass_1ad40d19ce644ec38c52ea00be59016cd5" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>Pass</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ad774c0b8504caa71b21dc8808b058d67" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>PDT</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a68bd992da93ec888069d4fc6159148fc" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>PerformSinkAndFold</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a75f212fbe95599879a79984e4a38ffe6" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>PerformTrivialForwardCoalescing</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1acab1b2aecc1d7cfd2e65a6455c7b0096" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>PostponeSplitCriticalEdge</name></member>
+      <member refid="classllvm_1_1_pass_1aa5f61a8789f87816c5f494d42a70f01f" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>preparePassManager</name></member>
+      <member refid="classllvm_1_1_pass_1a061b4c01e9c189208dbfd3c77fdb9a5c" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>print</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a291ec7334f98916550c75e42ddbc37b9" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>ProcessBlock</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a4182db5ab473eda2461a1ef35319101f" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>ProcessDbgInst</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a37f5c56db5032a9700e80adb72849794" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>PSI</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a6f41e958a984c632ef24b6bc4e7cb599" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>RegClassInfo</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a4394403f3eae31e5160dd4ce15020a38" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>registerPressureExceedsLimit</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a0e0bbb682494c2ba193d38711096d6d1" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>registerPressureSetExceedsLimit</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a7ba7c7aed01cab5bf639023ce4d95584" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>RegsToClearKillFlags</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a033b5a952489a6832d846fac0ec2a9e6" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>releaseMemory</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1af56efb8509ab5b039fe9dcf0c4f5eccd" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>runOnMachineFunction</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a4f17ec5e469cb7c17039d5a0c94c9838" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>SalvageUnsunkDebugUsersOfCopy</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a6cabcf16795c96e9aa316d9b4b9b341b" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>SchedModel</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a17fbef6ab7b70db5ac9b235903ebb62a" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>SeenDbgUser</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1aec545fedfb27f529656a7f3ebce065cd" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>SeenDbgUsers</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a46b23caefb808b1fcea7105b162e9edf" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>SeenDbgVars</name></member>
+      <member refid="classllvm_1_1_pass_1a2423fcc912a698d4f36c9c9380b53a50" prot="public" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>setResolver</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a0620bd1bb6e1cf10aa0cc40ce9b7b634" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>SinkInstruction</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1af172b5e648362ea32cb4e7eb89d9e736" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>SinkItem</name></member>
+      <member refid="classllvm_1_1_function_pass_1af9f5f511d75e16f09a5520cb9444cfa8" prot="protected" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>skipFunction</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1ac26b553972825fab1b58f51f3af93044" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>STI</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a965740f93659c4c74779ff9e3f8964e6" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>StoreInstrCache</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1afeb0ece4c4b36fb35ef962f41e358e71" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>TII</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1adb6d124cf719fd1b8da9d3d37d8fdc27" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>ToSplit</name></member>
+      <member refid="classanonymous__namespace_02_machine_sink_8cpp_03_1_1_machine_sinking_1a1142977050b3064f8bca60a867d782a8" prot="private" virt="non-virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>TRI</name></member>
+      <member refid="classllvm_1_1_pass_1ac8ef6f57d4ec869a7f1007aeddf2b169" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>verifyAnalysis</name></member>
+      <member refid="classllvm_1_1_pass_1abe2fe9b29d21424fe4b410fc8e98606c" prot="public" virt="virtual"><scope>anonymous_namespace{MachineSink.cpp}::MachineSinking</scope><name>~Pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

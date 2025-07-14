@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="dir_f3f0a8af2a732984d43cfee43ea2024a" kind="dir">
+    <compoundname>lib/Support/BLAKE3</compoundname>
+    <innerfile refid="blake3_8c">blake3.c</innerfile>
+    <innerfile refid="blake3__avx2_8c">blake3_avx2.c</innerfile>
+    <innerfile refid="blake3__avx512_8c">blake3_avx512.c</innerfile>
+    <innerfile refid="blake3__dispatch_8c">blake3_dispatch.c</innerfile>
+    <innerfile refid="blake3__impl_8h">blake3_impl.h</innerfile>
+    <innerfile refid="blake3__neon_8c">blake3_neon.c</innerfile>
+    <innerfile refid="blake3__portable_8c">blake3_portable.c</innerfile>
+    <innerfile refid="blake3__sse2_8c">blake3_sse2.c</innerfile>
+    <innerfile refid="blake3__sse41_8c">blake3_sse41.c</innerfile>
+    <innerfile refid="llvm__blake3__prefix_8h">llvm_blake3_prefix.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Implementation of BLAKE3, originating from <ulink url="https://github.com/BLAKE3-team/BLAKE3/tree/1.3.1/c">https://github.com/BLAKE3-team/BLAKE3/tree/1.3.1/c</ulink></para>
+<sect1 id="/Users/ilg/MyProjects/xpack.github/docusaurus/web-llvm.git/llvm-project/llvm/lib/Support/BLAKE3/README.md_1autotoc_md70">
+<title>Example</title><para>An example program that hashes bytes from standard input and prints the result:</para>
+<para>Using the C++ API:</para>
+<para><programlisting filename=".c++"><codeline><highlight class="preprocessor">#include<sp/>&quot;<ref refid="llvm_2_support_2_b_l_a_k_e3_8h" kindref="compound">llvm/Support/BLAKE3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_errno_8h" kindref="compound">errno.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacegen-inline-oz-test-model_1a217f2ab6000d72ad475b25276d3e1ac9" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>hasher.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_b_l_a_k_e3" kindref="compound">llvm::BLAKE3</ref><sp/>hasher;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>input<sp/>bytes<sp/>from<sp/>stdin.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[65536];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ssize_t<sp/>n<sp/>=<sp/><ref refid="namespacellvm_1_1support_1_1endian_1acfdf941f45bc58470ed8423b98862486" kindref="member">read</ref>(STDIN_FILENO,<sp/>buf,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(buf));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>hasher.<ref refid="classllvm_1_1_b_l_a_k_e3_1ad247de2450380eeba2fab0e794d5e44f" kindref="member">update</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref>(buf,<sp/>n));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;read<sp/>failed:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>strerror(errno));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Finalize<sp/>the<sp/>hash.<sp/>Default<sp/>output<sp/>length<sp/>is<sp/>32<sp/>bytes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>output<sp/>=<sp/>hasher.<ref refid="classllvm_1_1_b_l_a_k_e3_1a006c25a3aced3ec5ff196b8141161592" kindref="member">final</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Print<sp/>the<sp/>hash<sp/>as<sp/>hexadecimal.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>:<sp/>output)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%02x&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>Using the C API:</para>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#include<sp/>&quot;<ref refid="llvm-c_2_b_l_a_k_e3_8h" kindref="compound">llvm-c/blake3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_errno_8h" kindref="compound">errno.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacegen-inline-oz-test-model_1a217f2ab6000d72ad475b25276d3e1ac9" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>hasher.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref><sp/>hasher;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1a8a051c13b70081b426f0c0693e6977af" kindref="member">llvm_blake3_hasher_init</ref>(&amp;hasher);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>input<sp/>bytes<sp/>from<sp/>stdin.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[65536];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ssize_t<sp/>n<sp/>=<sp/><ref refid="namespacellvm_1_1support_1_1endian_1acfdf941f45bc58470ed8423b98862486" kindref="member">read</ref>(STDIN_FILENO,<sp/>buf,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(buf));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1a75e25f25c6fc1db9056087bbc458a0bc" kindref="member">llvm_blake3_hasher_update</ref>(&amp;hasher,<sp/>buf,<sp/>n);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;read<sp/>failed:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>strerror(errno));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Finalize<sp/>the<sp/>hash.<sp/>LLVM_BLAKE3_OUT_LEN<sp/>is<sp/>the<sp/>default<sp/>output<sp/>length,<sp/>32<sp/>bytes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>output[<ref refid="llvm-c_2_b_l_a_k_e3_8h_1a9a7048b8a78d415916d028f4b8477cc3" kindref="member">LLVM_BLAKE3_OUT_LEN</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1a269ade5376073ccdb1307a0daddaa1de" kindref="member">llvm_blake3_hasher_finalize</ref>(&amp;hasher,<sp/>output,<sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1a9a7048b8a78d415916d028f4b8477cc3" kindref="member">LLVM_BLAKE3_OUT_LEN</ref>);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Print<sp/>the<sp/>hash<sp/>as<sp/>hexadecimal.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1a9a7048b8a78d415916d028f4b8477cc3" kindref="member">LLVM_BLAKE3_OUT_LEN</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%02x&quot;</highlight><highlight class="normal">,<sp/>output[i]);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="/Users/ilg/MyProjects/xpack.github/docusaurus/web-llvm.git/llvm-project/llvm/lib/Support/BLAKE3/README.md_1autotoc_md71">
+<title>API</title><sect2 id="/Users/ilg/MyProjects/xpack.github/docusaurus/web-llvm.git/llvm-project/llvm/lib/Support/BLAKE3/README.md_1autotoc_md72">
+<title>The Class/Struct</title><para><programlisting filename=".c++"><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="namespacellvm_1_1codeview_1a1ec06922412c1f297e72b2134072621da021508d03d4b477e1a922f793599d69f" kindref="member">BLAKE3</ref><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>API</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>llvm_blake3_hasher<sp/>Hasher;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> <programlisting filename=".c"><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>private<sp/>fields</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}<sp/><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref>;</highlight></codeline>
+</programlisting></para>
+<para>An incremental BLAKE3 hashing state, which can accept any number of updates. This implementation doesn&apos;t allocate any heap memory, but <computeroutput>sizeof(llvm_blake3_hasher)</computeroutput> itself is relatively large, currently 1912 bytes on x86-64. This size can be reduced by restricting the maximum input length, as described in Section 5.4 of <ulink url="https://github.com/BLAKE3-team/BLAKE3-specs/blob/master/blake3.pdf">the BLAKE3 spec</ulink>, but this implementation doesn&apos;t currently support that strategy.</para>
+</sect2>
+<sect2 id="/Users/ilg/MyProjects/xpack.github/docusaurus/web-llvm.git/llvm-project/llvm/lib/Support/BLAKE3/README.md_1autotoc_md73">
+<title>Common API Functions</title><para><programlisting filename=".c++"><codeline><highlight class="normal">BLAKE3::BLAKE3();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLAKE3::init();</highlight></codeline>
+</programlisting> <programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1a8a051c13b70081b426f0c0693e6977af" kindref="member">llvm_blake3_hasher_init</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref><sp/>*self);</highlight></codeline>
+</programlisting></para>
+<para>Initialize a <computeroutput><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref></computeroutput> in the default hashing mode.</para>
+<para><hruler/>
+</para>
+<para><programlisting filename=".c++"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLAKE3::update(ArrayRef&lt;uint8_t&gt;<sp/>Data);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLAKE3::update(StringRef<sp/>Str);</highlight></codeline>
+</programlisting> <programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1a75e25f25c6fc1db9056087bbc458a0bc" kindref="member">llvm_blake3_hasher_update</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref><sp/>*self,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*input,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_len);</highlight></codeline>
+</programlisting></para>
+<para>Add input to the hasher. This can be called any number of times.</para>
+<para><hruler/>
+</para>
+<para><programlisting filename=".c++"><codeline><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>NumBytes<sp/>=<sp/>LLVM_BLAKE3_OUT_LEN&gt;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacellvm_1a081d38a75bd71be1f6b2db493b46c70e" kindref="member">BLAKE3Result</ref><sp/>=<sp/>std::array&lt;uint8_t,<sp/>NumBytes&gt;;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>NumBytes<sp/>=<sp/>LLVM_BLAKE3_OUT_LEN&gt;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLAKE3::final(BLAKE3Result&lt;NumBytes&gt;<sp/>&amp;Result);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>NumBytes<sp/>=<sp/>LLVM_BLAKE3_OUT_LEN&gt;</highlight></codeline>
+<codeline><highlight class="normal">BLAKE3Result&lt;NumBytes&gt;<sp/>BLAKE3::final();</highlight></codeline>
+</programlisting> <programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1a269ade5376073ccdb1307a0daddaa1de" kindref="member">llvm_blake3_hasher_finalize</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref><sp/>*self,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>*out,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>out_len);</highlight></codeline>
+</programlisting></para>
+<para>Finalize the hasher and return an output of any length, given in bytes. This doesn&apos;t modify the hasher itself, and it&apos;s possible to finalize again after adding more input. The constant <computeroutput>LLVM_BLAKE3_OUT_LEN</computeroutput> provides the default output length, 32 bytes, which is recommended for most callers.</para>
+<para>Outputs shorter than the default length of 32 bytes (256 bits) provide less security. An N-bit BLAKE3 output is intended to provide N bits of first and second preimage resistance and N/2 bits of collision resistance, for any N up to 256. Longer outputs don&apos;t provide any additional security.</para>
+<para>Shorter BLAKE3 outputs are prefixes of longer ones. Explicitly requesting a short output is equivalent to truncating the default-length output. (Note that this is different between BLAKE2 and BLAKE3.)</para>
+</sect2>
+<sect2 id="/Users/ilg/MyProjects/xpack.github/docusaurus/web-llvm.git/llvm-project/llvm/lib/Support/BLAKE3/README.md_1autotoc_md76">
+<title>Less Common API Functions</title><para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1aaf8dcf7da9729af05bec0662d3873280" kindref="member">llvm_blake3_hasher_init_keyed</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref><sp/>*self,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>key[<ref refid="llvm-c_2_b_l_a_k_e3_8h_1ac6e51ba539cfceb419c6ba3f03338b47" kindref="member">LLVM_BLAKE3_KEY_LEN</ref>]);</highlight></codeline>
+</programlisting></para>
+<para>Initialize a <computeroutput><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref></computeroutput> in the keyed hashing mode. The key must be exactly 32 bytes.</para>
+<para><hruler/>
+</para>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1acd67a8b965297a5e15381f1fea23fce6" kindref="member">llvm_blake3_hasher_init_derive_key</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref><sp/>*self,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*context);</highlight></codeline>
+</programlisting></para>
+<para>Initialize a <computeroutput><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref></computeroutput> in the key derivation mode. The context string is given as an initialization parameter, and afterwards input key material should be given with <computeroutput>llvm_blake3_hasher_update</computeroutput>. The context string is a null-terminated C string which should be <bold>hardcoded, globally unique, and application-specific</bold>. The context string should not include any dynamic input like salts, nonces, or identifiers read from a database at runtime. A good default format for the context string is <computeroutput>&quot;[application] [commit timestamp] [purpose]&quot;</computeroutput>, e.g., <computeroutput>&quot;example.com
+2019-12-25 16:18:03 session tokens v1&quot;</computeroutput>.</para>
+<para>This function is intended for application code written in C. For language bindings, see <computeroutput>llvm_blake3_hasher_init_derive_key_raw</computeroutput> below.</para>
+<para><hruler/>
+</para>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1ae9a8ac402d13484bcb44c12d572fecb8" kindref="member">llvm_blake3_hasher_init_derive_key_raw</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref><sp/>*self,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*context,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>context_len);</highlight></codeline>
+</programlisting></para>
+<para>As <computeroutput>llvm_blake3_hasher_init_derive_key</computeroutput> above, except that the context string is given as a pointer to an array of arbitrary bytes with a provided length. This is intended for writing language bindings, where C string conversion would add unnecessary overhead and new error cases. Unicode strings should be encoded as UTF-8.</para>
+<para>Application code in C should prefer <computeroutput>llvm_blake3_hasher_init_derive_key</computeroutput>, which takes the context as a C string. If you need to use arbitrary bytes as a context string in application code, consider whether you&apos;re violating the requirement that context strings should be hardcoded.</para>
+<para><hruler/>
+</para>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1ad3added645a514c2976352a72152c472" kindref="member">llvm_blake3_hasher_finalize_seek</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref><sp/>*self,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/>seek,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/>*out,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>out_len);</highlight></codeline>
+</programlisting></para>
+<para>The same as <computeroutput>llvm_blake3_hasher_finalize</computeroutput>, but with an additional <computeroutput>seek</computeroutput> parameter for the starting byte position in the output stream. To efficiently stream a large output without allocating memory, call this function in a loop, incrementing <computeroutput>seek</computeroutput> by the output length each time.</para>
+<para><hruler/>
+</para>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="llvm-c_2_b_l_a_k_e3_8h_1a368118adf27068d9bf7b8f34b8f9be7a" kindref="member">llvm_blake3_hasher_reset</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref><sp/>*self);</highlight></codeline>
+</programlisting></para>
+<para>Reset the hasher to its initial state, prior to any calls to <computeroutput>llvm_blake3_hasher_update</computeroutput>. Currently this is no different from calling <computeroutput>llvm_blake3_hasher_init</computeroutput> or similar again. However, if this implementation gains multithreading support in the future, and if <computeroutput><ref refid="structllvm__blake3__hasher" kindref="compound">llvm_blake3_hasher</ref></computeroutput> holds (optional) threading resources, this function will reuse those resources.</para>
+</sect2>
+</sect1>
+<sect1 id="/Users/ilg/MyProjects/xpack.github/docusaurus/web-llvm.git/llvm-project/llvm/lib/Support/BLAKE3/README.md_1autotoc_md81">
+<title>Building</title><para>This implementation is just C and assembly files.</para>
+<sect2 id="/Users/ilg/MyProjects/xpack.github/docusaurus/web-llvm.git/llvm-project/llvm/lib/Support/BLAKE3/README.md_1autotoc_md82">
+<title>x86</title><para>Dynamic dispatch is enabled by default on x86. The implementation will query the CPU at runtime to detect SIMD support, and it will use the widest instruction set available. By default, <computeroutput><ref refid="blake3__dispatch_8c" kindref="compound">blake3_dispatch.c</ref></computeroutput> expects to be linked with code for five different instruction sets: portable C, SSE2, SSE4.1, AVX2, and AVX-512.</para>
+<para>For each of the x86 SIMD instruction sets, four versions are available: three flavors of assembly (Unix, Windows MSVC, and Windows GNU) and one version using C intrinsics. The assembly versions are generally preferred. They perform better, they perform more consistently across different compilers, and they build more quickly. On the other hand, the assembly versions are x86_64-only, and you need to select the right flavor for your target platform.</para>
+</sect2>
+<sect2 id="/Users/ilg/MyProjects/xpack.github/docusaurus/web-llvm.git/llvm-project/llvm/lib/Support/BLAKE3/README.md_1autotoc_md83">
+<title>ARM NEON</title><para>The NEON implementation is enabled by default on AArch64, but not on other ARM targets, since not all of them support it. To enable it, set <computeroutput>BLAKE3_USE_NEON=1</computeroutput>.</para>
+<para>To explicitiy disable using NEON instructions on AArch64, set <computeroutput>BLAKE3_USE_NEON=0</computeroutput>.</para>
+</sect2>
+<sect2 id="/Users/ilg/MyProjects/xpack.github/docusaurus/web-llvm.git/llvm-project/llvm/lib/Support/BLAKE3/README.md_1autotoc_md84">
+<title>Other Platforms</title><para>The portable implementation should work on most other architectures.</para>
+</sect2>
+</sect1>
+<sect1 id="/Users/ilg/MyProjects/xpack.github/docusaurus/web-llvm.git/llvm-project/llvm/lib/Support/BLAKE3/README.md_1autotoc_md85">
+<title>Multithreading</title><para>The implementation doesn&apos;t currently support multithreading. </para>
+</sect1>
+    </detaileddescription>
+    <location file="lib/Support/BLAKE3/"/>
+  </compounddef>
+</doxygen>

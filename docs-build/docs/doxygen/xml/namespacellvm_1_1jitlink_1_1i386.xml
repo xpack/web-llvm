@@ -1,0 +1,476 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1jitlink_1_1i386" kind="namespace" language="C++">
+    <compoundname>llvm::jitlink::i386</compoundname>
+    <innerclass refid="classllvm_1_1jitlink_1_1i386_1_1_g_o_t_table_manager" prot="public">llvm::jitlink::i386::GOTTableManager</innerclass>
+    <innerclass refid="classllvm_1_1jitlink_1_1i386_1_1_p_l_t_table_manager" prot="public">llvm::jitlink::i386::PLTTableManager</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4" prot="public" static="no" strong="no">
+        <type><ref refid="classllvm_1_1jitlink_1_1_edge_1af18145da213e6c4033b368d657e80baa" kindref="member">Edge::Kind</ref></type>
+        <name>EdgeKind_i386</name>
+        <qualifiedname>llvm::jitlink::i386::EdgeKind_i386</qualifiedname>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a54fe5e0c95650c41d0257689b94d8786" prot="public">
+          <name>None</name>
+          <initializer>= Edge::FirstRelocation</initializer>
+          <briefdescription>
+<para>None. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ad4dd07c25270ad41112bab2f6144e5b8" prot="public">
+          <name>Pointer32</name>
+          <briefdescription>
+<para>A plain 32-bit pointer value relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : uint32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The target must reside in the low 32-bits of the address space, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a47d10bc81ee8242157fe8e01b342b73a" prot="public">
+          <name>PCRel32</name>
+          <briefdescription>
+<para>A 32-bit PC-relative relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Represents a data/control flow instruction using PC-relative addressing to a target.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ae9aae291a294099fd9442fbab0b4d1b0" prot="public">
+          <name>Pointer16</name>
+          <briefdescription>
+<para>A plain 16-bit pointer value relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : uint16</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The target must reside in the low 16-bits of the address space, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a9461d47b61aeb45c0ae578c1f47257d5" prot="public">
+          <name>PCRel16</name>
+          <briefdescription>
+<para>A 16-bit PC-relative relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Represents a data/control flow instruction using PC-relative addressing to a target.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int16</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int16, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a5e468cc52cc2a56b6aadd5c67fac81b7" prot="public">
+          <name>Delta32</name>
+          <briefdescription>
+<para>A 32-bit delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from the fixup to the target.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a4733cbd257ce44d81ff8e234dd9c3ca0" prot="public">
+          <name>Delta32FromGOT</name>
+          <briefdescription>
+<para>A 32-bit GOT delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from the global offset table to the target.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - GOTSymbol + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to a null pointer GOTSymbol, which the GOT section symbol was not been defined. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4aa8133be772984451fd00483f26395c24" prot="public">
+          <name>RequestGOTAndTransformToDelta32FromGOT</name>
+          <briefdescription>
+<para>A GOT entry offset within GOT getter/constructor, transformed to Delta32FromGOT pointing at the GOT entry for the original target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a Delta32FromGOT targeting the GOT entry for the edge&apos;s current target, maintaining the same addend. A GOT entry for the target should be created if one does not already exist.</para>
+<para>Edges of this kind are usually handled by a GOT builder pass inserted by default</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ab909c856e2b968674b459c652db52d21" prot="public">
+          <name>BranchPCRel32</name>
+          <briefdescription>
+<para>A 32-bit PC-relative branch. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Represents a PC-relative call or branch to a target. This can be used to identify, record, and/or patch call sites.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a645439244937f896e50b86e2de4f90a0" prot="public">
+          <name>BranchPCRel32ToPtrJumpStub</name>
+          <briefdescription>
+<para>A 32-bit PC-relative branch to a pointer jump stub. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The target of this relocation should be a pointer jump stub of the form:</para>
+<para><programlisting filename=".s"><codeline><highlight class="normal">.text</highlight></codeline>
+<codeline><highlight class="normal">jmp<sp/>*tgtptr</highlight></codeline>
+<codeline><highlight class="normal">;<sp/>...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">.data</highlight></codeline>
+<codeline><highlight class="normal">tgtptr:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>.quad<sp/>0</highlight></codeline>
+</programlisting></para>
+<para>This edge kind has the same fixup expression as BranchPCRel32, but further identifies the call/branch as being to a pointer jump stub. For edges of this kind the jump stub should not be bypassed (use BranchPCRel32ToPtrJumpStubBypassable for that), but the pointer location target may be recorded to allow manipulation at runtime.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a032d3ec55a73bf3dd3dde3c7c15cd1d8" prot="public">
+          <name>BranchPCRel32ToPtrJumpStubBypassable</name>
+          <briefdescription>
+<para>A relaxable version of BranchPCRel32ToPtrJumpStub. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The edge kind has the same fixup expression as BranchPCRel32ToPtrJumpStub, but identifies the call/branch as being to a pointer jump stub that may be bypassed with a direct jump to the ultimate target if the ultimate target is within range of the fixup location.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Represets <ref refid="namespacellvm_1_1jitlink_1_1i386" kindref="compound">i386</ref> fixups. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/i386.h" line="21" column="1" bodyfile="include/llvm/ExecutionEngine/JITLink/i386.h" bodystart="21" bodyend="178"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacellvm_1_1jitlink_1_1i386_1a60a470b8f4a62ef8353485a3570d0591" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t llvm::jitlink::i386::PointerSize</definition>
+        <argsstring></argsstring>
+        <name>PointerSize</name>
+        <qualifiedname>llvm::jitlink::i386::PointerSize</qualifiedname>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1jitlink_1_1i386" kindref="compound">i386</ref> pointer size. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/i386.h" line="261" column="20" bodyfile="include/llvm/ExecutionEngine/JITLink/i386.h" bodystart="261" bodyend="-1"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1i386_1ac007f2f0fe33b64e019817ec931a4b79" compoundref="i386_8h" startline="283" endline="291">createAnonymousPointer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacellvm_1_1jitlink_1_1i386_1abbd7edaafeb4fa06c154ac15f86d7ec0" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>const char llvm::jitlink::i386::NullPointerContent</definition>
+        <argsstring>[PointerSize]</argsstring>
+        <name>NullPointerContent</name>
+        <qualifiedname>llvm::jitlink::i386::NullPointerContent</qualifiedname>
+        <initializer>= {0x00, 0x00, 0x00, 0x00}</initializer>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1jitlink_1_1i386" kindref="compound">i386</ref> null pointer content. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/i386.cpp" line="48" column="12" bodyfile="lib/ExecutionEngine/JITLink/i386.cpp" bodystart="48" bodyend="48" declfile="include/llvm/ExecutionEngine/JITLink/i386.h" declline="264" declcolumn="19"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1i386_1ac007f2f0fe33b64e019817ec931a4b79" compoundref="i386_8h" startline="283" endline="291">createAnonymousPointer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacellvm_1_1jitlink_1_1i386_1aa9431605d4e7f6a9d3296938180284ea" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>const char llvm::jitlink::i386::PointerJumpStubContent</definition>
+        <argsstring>[6]</argsstring>
+        <name>PointerJumpStubContent</name>
+        <qualifiedname>llvm::jitlink::i386::PointerJumpStubContent</qualifiedname>
+        <initializer>= {
+    static_cast&lt;<ref refid="classchar" kindref="compound">char</ref>&gt;(0xFFu), 0x25, 0x00, 0x00, 0x00, 0x00}</initializer>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1jitlink_1_1i386" kindref="compound">i386</ref> pointer jump stub content. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Contains the instruction sequence for an indirect jump via an in-memory pointer: jmpq *ptr </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/i386.cpp" line="50" column="12" bodyfile="lib/ExecutionEngine/JITLink/i386.cpp" bodystart="50" bodyend="51" declfile="include/llvm/ExecutionEngine/JITLink/i386.h" declline="271" declcolumn="19"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1i386_1a10c6b85409593a97182da9d8018eb8b2" compoundref="i386_8h" startline="299" endline="309">createPointerJumpStubBlock</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1i386_1a877b3d728be6b7084aef27f92242f8bf" compoundref="i386_8cpp" startline="53" endline="89">optimizeGOTAndStubAccesses</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1i386_1af34d9ccf9d307a0f17db132d098383ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>const char * llvm::jitlink::i386::getEdgeKindName</definition>
+        <argsstring>(Edge::Kind K)</argsstring>
+        <name>getEdgeKindName</name>
+        <qualifiedname>llvm::jitlink::i386::getEdgeKindName</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_edge_1af18145da213e6c4033b368d657e80baa" kindref="member">Edge::Kind</ref></type>
+          <declname>K</declname>
+        </param>
+        <briefdescription>
+<para>Returns a string name for the given <ref refid="namespacellvm_1_1jitlink_1_1i386" kindref="compound">i386</ref> edge. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For debugging purposes only </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/i386.cpp" line="19" column="12" bodyfile="lib/ExecutionEngine/JITLink/i386.cpp" bodystart="19" bodyend="46" declfile="include/llvm/ExecutionEngine/JITLink/i386.h" declline="182" declcolumn="12"/>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ab909c856e2b968674b459c652db52d21" compoundref="i386_8h" startline="132">BranchPCRel32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a645439244937f896e50b86e2de4f90a0" compoundref="i386_8h" startline="161">BranchPCRel32ToPtrJumpStub</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a032d3ec55a73bf3dd3dde3c7c15cd1d8" compoundref="i386_8h" startline="177">BranchPCRel32ToPtrJumpStubBypassable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a5e468cc52cc2a56b6aadd5c67fac81b7" compoundref="i386_8h" startline="86">Delta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a4733cbd257ce44d81ff8e234dd9c3ca0" compoundref="i386_8h" startline="98">Delta32FromGOT</references>
+        <references refid="namespacellvm_1_1jitlink_1a06eee57acde48953ffd29ae8d337202e" compoundref="_j_i_t_link_8cpp" startline="61" endline="70">llvm::jitlink::getGenericEdgeKindName</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a54fe5e0c95650c41d0257689b94d8786" compoundref="i386_8h" startline="24">None</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a9461d47b61aeb45c0ae578c1f47257d5" compoundref="i386_8h" startline="74">PCRel16</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a47d10bc81ee8242157fe8e01b342b73a" compoundref="i386_8h" startline="49">PCRel32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ae9aae291a294099fd9442fbab0b4d1b0" compoundref="i386_8h" startline="60">Pointer16</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ad4dd07c25270ad41112bab2f6144e5b8" compoundref="i386_8h" startline="35">Pointer32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4aa8133be772984451fd00483f26395c24" compoundref="i386_8h" startline="118">RequestGOTAndTransformToDelta32FromGOT</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1i386_1a1cf84875ae743236d8dd98fd56af9f7b" compoundref="i386_8h" startline="185" endline="258">applyFixup</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1i386_1a877b3d728be6b7084aef27f92242f8bf" compoundref="i386_8cpp" startline="53" endline="89">optimizeGOTAndStubAccesses</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1i386_1a1cf84875ae743236d8dd98fd56af9f7b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::i386::applyFixup</definition>
+        <argsstring>(LinkGraph &amp;G, Block &amp;B, const Edge &amp;E, const Symbol *GOTSymbol)</argsstring>
+        <name>applyFixup</name>
+        <qualifiedname>llvm::jitlink::i386::applyFixup</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_block" kindref="compound">Block</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1jitlink_1_1_edge" kindref="compound">Edge</ref> &amp;</type>
+          <declname>E</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> *</type>
+          <declname>GOTSymbol</declname>
+        </param>
+        <briefdescription>
+<para>Apply fixup expression for edge to block content. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/i386.h" line="185" column="14" bodyfile="include/llvm/ExecutionEngine/JITLink/i386.h" bodystart="185" bodyend="258"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ab909c856e2b968674b459c652db52d21" compoundref="i386_8h" startline="132">BranchPCRel32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a645439244937f896e50b86e2de4f90a0" compoundref="i386_8h" startline="161">BranchPCRel32ToPtrJumpStub</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a032d3ec55a73bf3dd3dde3c7c15cd1d8" compoundref="i386_8h" startline="177">BranchPCRel32ToPtrJumpStubBypassable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a5e468cc52cc2a56b6aadd5c67fac81b7" compoundref="i386_8h" startline="86">Delta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a4733cbd257ce44d81ff8e234dd9c3ca0" compoundref="i386_8h" startline="98">Delta32FromGOT</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="classllvm_1_1jitlink_1_1_symbol_1a9266b50b560808e8f69eb394690d79c4" compoundref="_j_i_t_link_8h" startline="602" endline="602">llvm::jitlink::Symbol::getAddress</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1af34d9ccf9d307a0f17db132d098383ec" compoundref="i386_8cpp" startline="19" endline="46">getEdgeKindName</references>
+        <references refid="namespacellvm_1a1a1e51a5952c3afa00875df90e7ae6f8" compoundref="_math_extras_8h" startline="170" endline="183">llvm::isInt</references>
+        <references refid="namespacellvm_1a87e65296f2a6d9570117a852af342764" compoundref="_math_extras_8h" startline="194" endline="207">llvm::isUInt</references>
+        <references refid="_compiler_8h_1ae5b35beb6f127e5f47269e9124b886fb" compoundref="_compiler_8h" startline="319">LLVM_LIKELY</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="namespacellvm_1_1jitlink_1a061c97aa3532f0b4a2390febaa911a65" compoundref="_j_i_t_link_8cpp" startline="416" endline="450">llvm::jitlink::makeTargetOutOfRangeError</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a54fe5e0c95650c41d0257689b94d8786" compoundref="i386_8h" startline="24">None</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a9461d47b61aeb45c0ae578c1f47257d5" compoundref="i386_8h" startline="74">PCRel16</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a47d10bc81ee8242157fe8e01b342b73a" compoundref="i386_8h" startline="49">PCRel32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ae9aae291a294099fd9442fbab0b4d1b0" compoundref="i386_8h" startline="60">Pointer16</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ad4dd07c25270ad41112bab2f6144e5b8" compoundref="i386_8h" startline="35">Pointer32</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1i386_1ac007f2f0fe33b64e019817ec931a4b79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+        <definition>Symbol &amp; llvm::jitlink::i386::createAnonymousPointer</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;PointerSection, Symbol *InitialTarget=nullptr, uint64_t InitialAddend=0)</argsstring>
+        <name>createAnonymousPointer</name>
+        <qualifiedname>llvm::jitlink::i386::createAnonymousPointer</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>PointerSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> *</type>
+          <declname>InitialTarget</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>InitialAddend</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Creates a new pointer block in the given section and returns an anonymous symbol pointing to it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If InitialTarget is given then an Pointer32 relocation will be added to the block pointing at InitialTarget.</para>
+<para>The pointer block will have the following default values: alignment: 32-bit alignment-offset: 0 address: highest allowable (~7U) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/i386.h" line="283" column="15" bodyfile="include/llvm/ExecutionEngine/JITLink/i386.h" bodystart="283" bodyend="291"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1abbd7edaafeb4fa06c154ac15f86d7ec0" compoundref="i386_8cpp" startline="48" endline="48">NullPointerContent</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ad4dd07c25270ad41112bab2f6144e5b8" compoundref="i386_8h" startline="35">Pointer32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1a60a470b8f4a62ef8353485a3570d0591" compoundref="i386_8h" startline="261">PointerSize</references>
+        <referencedby refid="classllvm_1_1jitlink_1_1i386_1_1_g_o_t_table_manager_1a94c61145b5bde0fda636f90d48ee9c3e" compoundref="i386_8h" startline="355" endline="357">llvm::jitlink::i386::GOTTableManager::createEntry</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1af86dbecbbb47825e36f9af37bd6868ca" compoundref="_j_i_t_link_8cpp" startline="461" endline="475">llvm::jitlink::getAnonymousPointerCreator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1i386_1a10c6b85409593a97182da9d8018eb8b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_block" kindref="compound">Block</ref> &amp;</type>
+        <definition>Block &amp; llvm::jitlink::i386::createPointerJumpStubBlock</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;StubSection, Symbol &amp;PointerSymbol)</argsstring>
+        <name>createPointerJumpStubBlock</name>
+        <qualifiedname>llvm::jitlink::i386::createPointerJumpStubBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>StubSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>PointerSymbol</declname>
+        </param>
+        <briefdescription>
+<para>Create a jump stub block that jumps via the pointer at the given symbol. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The stub block will have the following default values: alignment: 8-bit alignment-offset: 0 address: highest allowable: (~5U) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/i386.h" line="299" column="14" bodyfile="include/llvm/ExecutionEngine/JITLink/i386.h" bodystart="299" bodyend="309"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ad4dd07c25270ad41112bab2f6144e5b8" compoundref="i386_8h" startline="35">Pointer32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1aa9431605d4e7f6a9d3296938180284ea" compoundref="i386_8cpp" startline="50" endline="51">PointerJumpStubContent</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1i386_1a32b1c39140fb137040c2fa749b1aa300" compoundref="i386_8h" startline="315" endline="321">createAnonymousPointerJumpStub</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1i386_1a32b1c39140fb137040c2fa749b1aa300" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+        <definition>Symbol &amp; llvm::jitlink::i386::createAnonymousPointerJumpStub</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;StubSection, Symbol &amp;PointerSymbol)</argsstring>
+        <name>createAnonymousPointerJumpStub</name>
+        <qualifiedname>llvm::jitlink::i386::createAnonymousPointerJumpStub</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>StubSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>PointerSymbol</declname>
+        </param>
+        <briefdescription>
+<para>Create a jump stub that jumps via the pointer at the given symbol and an anonymous symbol pointing to it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the anonymous symbol.</para>
+<para>The stub block will be created by createPointerJumpStubBlock. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/i386.h" line="315" column="15" bodyfile="include/llvm/ExecutionEngine/JITLink/i386.h" bodystart="315" bodyend="321"/>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1a10c6b85409593a97182da9d8018eb8b2" compoundref="i386_8h" startline="299" endline="309">createPointerJumpStubBlock</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <referencedby refid="classllvm_1_1jitlink_1_1i386_1_1_p_l_t_table_manager_1a56803ca2f0e3841ac19d4a3405a46704" compoundref="i386_8h" startline="392" endline="395">llvm::jitlink::i386::PLTTableManager::createEntry</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1a6e58d27e8cd9ba5dadc9194100b69be4" compoundref="_j_i_t_link_8cpp" startline="477" endline="491">llvm::jitlink::getPointerJumpStubCreator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1i386_1a877b3d728be6b7084aef27f92242f8bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::i386::optimizeGOTAndStubAccesses</definition>
+        <argsstring>(LinkGraph &amp;G)</argsstring>
+        <name>optimizeGOTAndStubAccesses</name>
+        <qualifiedname>llvm::jitlink::i386::optimizeGOTAndStubAccesses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+<para>Optimize the GOT and Stub relocations if the edge target address is in range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>PCRel32GOTLoadRelaxable. For this edge kind, if the target is in range, then replace GOT load with lea. (THIS IS UNIMPLEMENTED RIGHT NOW!)</para>
+</listitem><listitem><para>BranchPCRel32ToPtrJumpStubRelaxable. For this edge kind, if the target is in range, replace a indirect jump by plt stub with a direct jump to the target </para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/i386.cpp" line="53" column="7" bodyfile="lib/ExecutionEngine/JITLink/i386.cpp" bodystart="53" bodyend="89" declfile="include/llvm/ExecutionEngine/JITLink/i386.h" declline="415" declcolumn="7"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4ab909c856e2b968674b459c652db52d21" compoundref="i386_8h" startline="132">BranchPCRel32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1ab5b12c7ab25aac492521ed299ab357d4a032d3ec55a73bf3dd3dde3c7c15cd1d8" compoundref="i386_8h" startline="177">BranchPCRel32ToPtrJumpStubBypassable</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1af34d9ccf9d307a0f17db132d098383ec" compoundref="i386_8cpp" startline="19" endline="46">getEdgeKindName</references>
+        <references refid="namespacellvm_1a1a1e51a5952c3afa00875df90e7ae6f8" compoundref="_math_extras_8h" startline="170" endline="183">llvm::isInt</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1_1jitlink_1_1i386_1aa9431605d4e7f6a9d3296938180284ea" compoundref="i386_8cpp" startline="50" endline="51">PointerJumpStubContent</references>
+        <references refid="namespacellvm_1_1jitlink_1ad21474fff99853c3d22abfe6634ee9ed" compoundref="_j_i_t_link_8cpp" startline="132" endline="161">llvm::jitlink::printEdge</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <referencedby refid="classllvm_1_1jitlink_1_1_e_l_f_j_i_t_linker__i386_1a66686ad596abff4d3e45943c0bee6bc0" compoundref="_e_l_f__i386_8cpp" startline="42">llvm::jitlink::ELFJITLinker_i386::JITLinker&lt; ELFJITLinker_i386 &gt;</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/ExecutionEngine/JITLink/i386.h" line="19" column="1"/>
+  </compounddef>
+</doxygen>

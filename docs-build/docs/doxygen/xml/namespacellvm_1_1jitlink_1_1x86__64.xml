@@ -1,0 +1,828 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1jitlink_1_1x86__64" kind="namespace" language="C++">
+    <compoundname>llvm::jitlink::x86_64</compoundname>
+    <innerclass refid="classllvm_1_1jitlink_1_1x86__64_1_1_g_o_t_table_manager" prot="public">llvm::jitlink::x86_64::GOTTableManager</innerclass>
+    <innerclass refid="classllvm_1_1jitlink_1_1x86__64_1_1_p_l_t_table_manager" prot="public">llvm::jitlink::x86_64::PLTTableManager</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1" prot="public" static="no" strong="no">
+        <type><ref refid="classllvm_1_1jitlink_1_1_edge_1af18145da213e6c4033b368d657e80baa" kindref="member">Edge::Kind</ref></type>
+        <name>EdgeKind_x86_64</name>
+        <qualifiedname>llvm::jitlink::x86_64::EdgeKind_x86_64</qualifiedname>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1aa9b0fce35f44572f2bddf0fe8a2c64e4" prot="public">
+          <name>Pointer64</name>
+          <initializer>= Edge::FirstRelocation</initializer>
+          <briefdescription>
+<para>A plain 64-bit pointer value relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : uint64 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a12f965819db53282535bd5766d5783e3" prot="public">
+          <name>Pointer32</name>
+          <briefdescription>
+<para>A plain 32-bit pointer value relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : uint32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The target must reside in the low 32-bits of the address space, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a34c4628fc868b9a8285b84ac203ff65f" prot="public">
+          <name>Pointer32Signed</name>
+          <briefdescription>
+<para>A signed 32-bit pointer value relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The target must reside in the signed 32-bits([-2**31, 2**32 - 1]) of the address space, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a9373b13e8458a9e8381f56fc053a90fb" prot="public">
+          <name>Pointer16</name>
+          <briefdescription>
+<para>A plain 16-bit pointer value relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : uint16</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The target must reside in the low 16-bits of the address space, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a21a771aa9e28a965fcfc0f7116afdb52" prot="public">
+          <name>Pointer8</name>
+          <briefdescription>
+<para>A plain 8-bit pointer value relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : uint8</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The target must reside in the low 8-bits of the address space, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a0813e2e217bec0a3795f7e0bf463bbdc" prot="public">
+          <name>Delta64</name>
+          <briefdescription>
+<para>A 64-bit delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from the fixup to the target.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int64 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1ae8b3d9d60bcce88f74377f0b3a845a3c" prot="public">
+          <name>Delta32</name>
+          <briefdescription>
+<para>A 32-bit delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from the fixup to the target.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a07c726345490ba4b773b1a3f4d82d58f" prot="public">
+          <name>Delta16</name>
+          <briefdescription>
+<para>A 16-bit delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from the fixup to the target.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int16</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int16, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1af668cb8ac335e5d9af3fc8e311b6e0aa" prot="public">
+          <name>Delta8</name>
+          <briefdescription>
+<para>An 8-bit delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from the fixup to the target.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend : int8</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int8, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a839d55b90b99a051adaac5b1acff9916" prot="public">
+          <name>NegDelta64</name>
+          <briefdescription>
+<para>A 64-bit negative delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from target back to the fixup.</para>
+<para>Fixup expression: Fixup &lt;- Fixup - <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : int64 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1abd3d0bdbcb54e70a617ffa080e3befee" prot="public">
+          <name>NegDelta32</name>
+          <briefdescription>
+<para>A 32-bit negative delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from the target back to the fixup.</para>
+<para>Fixup expression: Fixup &lt;- Fixup - <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a8234b7c99627f2565403c5ae878c2fca" prot="public">
+          <name>Size64</name>
+          <briefdescription>
+<para>A 64-bit size relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression: Fixup &lt;- Size + Addend : uint64 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1aaa0c7a1bad5278edf861978dd8ee784b" prot="public">
+          <name>Size32</name>
+          <briefdescription>
+<para>A 32-bit size relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Fixup expression: Fixup &lt;- Size + Addend : uint32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an uint32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a01de57a850e4e1dcca112b0916082457" prot="public">
+          <name>Delta64FromGOT</name>
+          <briefdescription>
+<para>A 64-bit GOT delta. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta from the global offset table to the target</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - GOTSymbol + Addend : int64</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to a null pointer GOTSymbol, which the GOT section symbol was not been defined. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a34ef37c952f50f08ba132f992af9bba4" prot="public">
+          <name>BranchPCRel32</name>
+          <briefdescription>
+<para>A 32-bit PC-relative branch. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Represents a PC-relative call or branch to a target. This can be used to identify, record, and/or patch call sites.</para>
+<para>The fixup expression for this kind includes an implicit offset to account for the PC (unlike the Delta edges) so that a Branch32PCRel with a target T and addend zero is a call/branch to the start (offset zero) of T.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - (Fixup + 4) + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a7cb0483abb6a27356f946cb706c696a9" prot="public">
+          <name>PCRel32</name>
+          <briefdescription>
+<para>A 32-bit PC-relative relocation. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Represents a data/control flow instruction using PC-relative addressing to a target.</para>
+<para>The fixup expression for this kind includes an implicit offset to account for the PC (unlike the Delta edges) so that a PCRel32 with a target T and addend zero is a call/branch to the start (offset zero) of T.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - (Fixup + 4) + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1ab397b16e783227e075cdb27c9afbcdc4" prot="public">
+          <name>BranchPCRel32ToPtrJumpStub</name>
+          <briefdescription>
+<para>A 32-bit PC-relative branch to a pointer jump stub. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The target of this relocation should be a pointer jump stub of the form:</para>
+<para><programlisting filename=".s"><codeline><highlight class="normal">.text</highlight></codeline>
+<codeline><highlight class="normal">jmpq<sp/>*tgtptr(%rip)</highlight></codeline>
+<codeline><highlight class="normal">;<sp/>...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">.data</highlight></codeline>
+<codeline><highlight class="normal">tgtptr:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>.quad<sp/>0</highlight></codeline>
+</programlisting></para>
+<para>This edge kind has the same fixup expression as BranchPCRel32, but further identifies the call/branch as being to a pointer jump stub. For edges of this kind the jump stub should not be bypassed (use BranchPCRel32ToPtrJumpStubBypassable for that), but the pointer location target may be recorded to allow manipulation at runtime.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend - 4 : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1abbcdf6b67a662a9bd7b37181b24a3c6f" prot="public">
+          <name>BranchPCRel32ToPtrJumpStubBypassable</name>
+          <briefdescription>
+<para>A relaxable version of BranchPCRel32ToPtrJumpStub. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The edge kind has the same fixup expression as BranchPCRel32ToPtrJumpStub, but identifies the call/branch as being to a pointer jump stub that may be bypassed with a direct jump to the ultimate target if the ultimate target is within range of the fixup location.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - Fixup + Addend - 4: int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a1b3a2e2ef0509b193690450206228b2b" prot="public">
+          <name>RequestGOTAndTransformToDelta32</name>
+          <briefdescription>
+<para>A GOT entry getter/constructor, transformed to Delta32 pointing at the GOT entry for the original target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a Delta32 targeting the GOT entry for the edge&apos;s current target, maintaining the same addend. A GOT entry for the target should be created if one does not already exist.</para>
+<para>Edges of this kind are usually handled by a GOT builder pass inserted by default.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a60f7bd35a2ff8c19770fee91581e3929" prot="public">
+          <name>RequestGOTAndTransformToDelta64</name>
+          <briefdescription>
+<para>A GOT entry getter/constructor, transformed to Delta64 pointing at the GOT entry for the original target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a Delta64 targeting the GOT entry for the edge&apos;s current target, maintaining the same addend. A GOT entry for the target should be created if one does not already exist.</para>
+<para>Edges of this kind are usually handled by a GOT builder pass inserted by default.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a75c226be11a3474c2fec6ed507d60a12" prot="public">
+          <name>RequestGOTAndTransformToDelta64FromGOT</name>
+          <briefdescription>
+<para>A GOT entry offset within GOT getter/constructor, transformed to Delta64FromGOT pointing at the GOT entry for the original target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a Delta64FromGOT targeting the GOT entry for the edge&apos;s current target, maintaining the same addend. A GOT entry for the target should be created if one does not already exist.</para>
+<para>Edges of this kind are usually handled by a GOT builder pass inserted by default</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a2669dc43fc00ceeba47db937ae286b4b" prot="public">
+          <name>PCRel32GOTLoadRelaxable</name>
+          <briefdescription>
+<para>A PC-relative load of a GOT entry, relaxable if GOT entry target is in-range of the fixup. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>TODO: Explain the optimization</para>
+<para>Fixup expression Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - (Fixup + 4) + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a81bb18739548bc2a716e15d451114be1" prot="public">
+          <name>PCRel32GOTLoadREXRelaxable</name>
+          <briefdescription>
+<para>A PC-relative REX load of a GOT entry, relaxable if GOT entry target is in-range of the fixup. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>If the GOT entry target is in-range of the fixup then the load from the GOT may be replaced with a direct memory address calculation.</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - (Fixup + 4) + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1ab5f29838f6d74e9a4bb9453ac240204d" prot="public">
+          <name>RequestGOTAndTransformToPCRel32GOTLoadREXRelaxable</name>
+          <briefdescription>
+<para>A GOT entry getter/constructor, transformed to PCRel32ToGOTLoadREXRelaxable pointing at the GOT entry for the original target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be lowered to a PC32ToGOTLoadREXRelaxable targeting the GOT entry for the edge&apos;s current target, maintaining the same addend. A GOT entry for the target should be created if one does not already exist.</para>
+<para>Edges of this kind are usually lowered by a GOT builder pass inserted by default.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1aa6cfcfc8b35fd783c173adbaf7cb0dd6" prot="public">
+          <name>RequestGOTAndTransformToPCRel32GOTLoadRelaxable</name>
+          <briefdescription>
+<para>A GOT entry getter/constructor, transformed to PCRel32ToGOTLoadRelaxable pointing at the GOT entry for the original target. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be lowered to a PC32ToGOTLoadRelaxable targeting the GOT entry for the edge&apos;s current target, maintaining the same addend. A GOT entry for the target should be created if one does not already exist.</para>
+<para>Edges of this kind are usually lowered by a GOT builder pass inserted by default.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a78ad01c24da93121cfe0a5249a1ece6d" prot="public">
+          <name>PCRel32TLVPLoadREXRelaxable</name>
+          <briefdescription>
+<para>A PC-relative REX load of a Thread Local Variable Pointer (TLVP) entry, relaxable if the TLVP entry target is in-range of the fixup. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>If the TLVP entry target is in-range of the fixup then the load from the TLVP may be replaced with a direct memory address calculation.</para>
+<para>The target of this edge must be a thread local variable entry of the form .quad &lt;tlv getter thunk&gt; .quad &lt;tlv key&gt; .quad &lt;tlv initializer&gt;</para>
+<para>Fixup expression: Fixup &lt;- <ref refid="classllvm_1_1_target" kindref="compound">Target</ref> - (Fixup + 4) + Addend : int32</para>
+<para>Errors:<itemizedlist>
+<listitem><para>The result of the fixup expression must fit into an int32, otherwise an out-of-range error will be returned.</para>
+</listitem><listitem><para>The target must be either external, or a TLV entry of the required form, otherwise a malformed TLV entry error will be returned. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a11eeb5ae49b11ea2ebf2a6ac6c4c7bd8" prot="public">
+          <name>RequestTLSDescInGOTAndTransformToDelta32</name>
+          <briefdescription>
+<para>TODO: Explain the generic edge kind. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a746f39ee3f37365c07571ccce236198d" prot="public">
+          <name>RequestTLVPAndTransformToPCRel32TLVPLoadREXRelaxable</name>
+          <briefdescription>
+<para>A TLVP entry getter/constructor, transformed to Delta32ToTLVPLoadREXRelaxable. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Indicates that this edge should be transformed into a Delta32ToTLVPLoadREXRelaxable targeting the TLVP entry for the edge&apos;s current target. A TLVP entry for the target should be created if one does not already exist.</para>
+<para>Fixup expression: NONE</para>
+<para>Errors:<itemizedlist>
+<listitem><para><emphasis>ASSERTION</emphasis> Failure to handle edges of this kind prior to the fixup phase will result in an assert/unreachable during the fixup phase. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1add715d49e2474eaf459ccdfa6cc7e9f8" prot="public">
+          <name>FirstPlatformRelocation</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Represents x86-64 fixups and other x86-64-specific edge kinds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/x86_64.h" line="24" column="1" bodyfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" bodystart="24" bodyend="431"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacellvm_1_1jitlink_1_1x86__64_1a73a3b0ce55e5217546f5140e284e5ae3" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t llvm::jitlink::x86_64::PointerSize</definition>
+        <argsstring></argsstring>
+        <name>PointerSize</name>
+        <qualifiedname>llvm::jitlink::x86_64::PointerSize</qualifiedname>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1jitlink_1_1x86__64" kindref="compound">x86_64</ref> pointer size. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/x86_64.h" line="586" column="20" bodyfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" bodystart="586" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1jitlink_1_1_mach_o_j_i_t_linker__x86__64_1a101116d137e537d1396ce74e4cb3ca6d" compoundref="_mach_o__x86__64_8cpp" startline="476">llvm::jitlink::MachOJITLinker_x86_64::JITLinker&lt; MachOJITLinker_x86_64 &gt;</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1ae07f62502c521dbfc05720327b722c17" compoundref="_e_l_f__x86__64_8cpp" startline="359" endline="394">llvm::jitlink::link_ELF_x86_64</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacellvm_1_1jitlink_1_1x86__64_1aa49410e3ce0c5b98847f643624370778" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>const char llvm::jitlink::x86_64::NullPointerContent</definition>
+        <argsstring>[PointerSize]</argsstring>
+        <name>NullPointerContent</name>
+        <qualifiedname>llvm::jitlink::x86_64::NullPointerContent</qualifiedname>
+        <initializer>= {0x00, 0x00, 0x00, 0x00,
+                                              0x00, 0x00, 0x00, 0x00}</initializer>
+        <briefdescription>
+<para>x86-64 null pointer content. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/x86_64.cpp" line="82" column="12" bodyfile="lib/ExecutionEngine/JITLink/x86_64.cpp" bodystart="82" bodyend="83" declfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" declline="589" declcolumn="19"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1x86__64_1a895327287e36f2118e7d50fdef340700" compoundref="x86__64_8h" startline="608" endline="616">createAnonymousPointer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacellvm_1_1jitlink_1_1x86__64_1acd96e0def723945c3f358d87e5d7a054" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>const char llvm::jitlink::x86_64::PointerJumpStubContent</definition>
+        <argsstring>[6]</argsstring>
+        <name>PointerJumpStubContent</name>
+        <qualifiedname>llvm::jitlink::x86_64::PointerJumpStubContent</qualifiedname>
+        <initializer>= {
+    static_cast&lt;<ref refid="classchar" kindref="compound">char</ref>&gt;(0xFFu), 0x25, 0x00, 0x00, 0x00, 0x00}</initializer>
+        <briefdescription>
+<para>x86-64 pointer jump stub content. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Contains the instruction sequence for an indirect jump via an in-memory pointer: jmpq *ptr(rip) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/x86_64.cpp" line="85" column="12" bodyfile="lib/ExecutionEngine/JITLink/x86_64.cpp" bodystart="85" bodyend="86" declfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" declline="596" declcolumn="19"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1x86__64_1a8b140dca7fc910c208b9bc103461f24e" compoundref="x86__64_8h" startline="624" endline="630">createPointerJumpStubBlock</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1x86__64_1ac61404d428edea90fb2c5b180daf5361" compoundref="x86__64_8cpp" startline="112" endline="223">optimizeGOTAndStubAccesses</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacellvm_1_1jitlink_1_1x86__64_1acb329db9130636bd0da16c88649d3268" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref></type>
+        <definition>const char llvm::jitlink::x86_64::ReentryTrampolineContent</definition>
+        <argsstring>[5]</argsstring>
+        <name>ReentryTrampolineContent</name>
+        <qualifiedname>llvm::jitlink::x86_64::ReentryTrampolineContent</qualifiedname>
+        <initializer>= {
+  static_cast&lt;<ref refid="classchar" kindref="compound">char</ref>&gt;(0xe8), 0x00, 0x00, 0x00, 0x00
+}</initializer>
+        <briefdescription>
+<para>x86-64 reentry trampoline. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Contains the instruction sequence for a trampoline that stores its return address on the stack and calls &lt;reentry-symbol&gt;: call &lt;reentry-symbol&gt; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/x86_64.cpp" line="88" column="12" bodyfile="lib/ExecutionEngine/JITLink/x86_64.cpp" bodystart="88" bodyend="90" declfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" declline="649" declcolumn="19"/>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1x86__64_1a53467f0fe1d815298a88cb6c0d7b8420" compoundref="x86__64_8h" startline="661" endline="667">createAnonymousReentryTrampoline</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1x86__64_1a37ac1d2bccf8bda89eb237edc25a74c0" compoundref="x86__64_8h" startline="652" endline="659">createReentryTrampolineBlock</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1x86__64_1a2b9b4bde645a27a83435303ac1e06e69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>const char * llvm::jitlink::x86_64::getEdgeKindName</definition>
+        <argsstring>(Edge::Kind K)</argsstring>
+        <name>getEdgeKindName</name>
+        <qualifiedname>llvm::jitlink::x86_64::getEdgeKindName</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_edge_1af18145da213e6c4033b368d657e80baa" kindref="member">Edge::Kind</ref></type>
+          <declname>K</declname>
+        </param>
+        <briefdescription>
+<para>Returns a string name for the given x86-64 edge. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For debugging purposes only. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/x86_64.cpp" line="21" column="12" bodyfile="lib/ExecutionEngine/JITLink/x86_64.cpp" bodystart="21" bodyend="80" declfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" declline="435" declcolumn="12"/>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a34ef37c952f50f08ba132f992af9bba4" compoundref="x86__64_8h" startline="191">BranchPCRel32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1ab397b16e783227e075cdb27c9afbcdc4" compoundref="x86__64_8h" startline="238">BranchPCRel32ToPtrJumpStub</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1abbcdf6b67a662a9bd7b37181b24a3c6f" compoundref="x86__64_8h" startline="254">BranchPCRel32ToPtrJumpStubBypassable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a07c726345490ba4b773b1a3f4d82d58f" compoundref="x86__64_8h" startline="109">Delta16</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1ae8b3d9d60bcce88f74377f0b3a845a3c" compoundref="x86__64_8h" startline="96">Delta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a0813e2e217bec0a3795f7e0bf463bbdc" compoundref="x86__64_8h" startline="83">Delta64</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a01de57a850e4e1dcca112b0916082457" compoundref="x86__64_8h" startline="173">Delta64FromGOT</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1af668cb8ac335e5d9af3fc8e311b6e0aa" compoundref="x86__64_8h" startline="122">Delta8</references>
+        <references refid="namespacellvm_1_1jitlink_1a06eee57acde48953ffd29ae8d337202e" compoundref="_j_i_t_link_8cpp" startline="61" endline="70">llvm::jitlink::getGenericEdgeKindName</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1abd3d0bdbcb54e70a617ffa080e3befee" compoundref="x86__64_8h" startline="143">NegDelta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a839d55b90b99a051adaac5b1acff9916" compoundref="x86__64_8h" startline="131">NegDelta64</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a7cb0483abb6a27356f946cb706c696a9" compoundref="x86__64_8h" startline="209">PCRel32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a2669dc43fc00ceeba47db937ae286b4b" compoundref="x86__64_8h" startline="329">PCRel32GOTLoadRelaxable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a81bb18739548bc2a716e15d451114be1" compoundref="x86__64_8h" startline="344">PCRel32GOTLoadREXRelaxable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a78ad01c24da93121cfe0a5249a1ece6d" compoundref="x86__64_8h" startline="408">PCRel32TLVPLoadREXRelaxable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a9373b13e8458a9e8381f56fc053a90fb" compoundref="x86__64_8h" startline="63">Pointer16</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a12f965819db53282535bd5766d5783e3" compoundref="x86__64_8h" startline="42">Pointer32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a34c4628fc868b9a8285b84ac203ff65f" compoundref="x86__64_8h" startline="52">Pointer32Signed</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1aa9b0fce35f44572f2bddf0fe8a2c64e4" compoundref="x86__64_8h" startline="31">Pointer64</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a21a771aa9e28a965fcfc0f7116afdb52" compoundref="x86__64_8h" startline="74">Pointer8</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a1b3a2e2ef0509b193690450206228b2b" compoundref="x86__64_8h" startline="274">RequestGOTAndTransformToDelta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a60f7bd35a2ff8c19770fee91581e3929" compoundref="x86__64_8h" startline="294">RequestGOTAndTransformToDelta64</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a75c226be11a3474c2fec6ed507d60a12" compoundref="x86__64_8h" startline="315">RequestGOTAndTransformToDelta64FromGOT</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1aa6cfcfc8b35fd783c173adbaf7cb0dd6" compoundref="x86__64_8h" startline="386">RequestGOTAndTransformToPCRel32GOTLoadRelaxable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1ab5f29838f6d74e9a4bb9453ac240204d" compoundref="x86__64_8h" startline="365">RequestGOTAndTransformToPCRel32GOTLoadREXRelaxable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a746f39ee3f37365c07571ccce236198d" compoundref="x86__64_8h" startline="428">RequestTLVPAndTransformToPCRel32TLVPLoadREXRelaxable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1aaa0c7a1bad5278edf861978dd8ee784b" compoundref="x86__64_8h" startline="161">Size32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a8234b7c99627f2565403c5ae878c2fca" compoundref="x86__64_8h" startline="150">Size64</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1x86__64_1a4640b55f4a0124796c017fc725e87add" compoundref="x86__64_8h" startline="438" endline="583">applyFixup</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1aea6b603e2ebc1d8020432d707a3075df" compoundref="_c_o_f_f__x86__64_8cpp" startline="255" endline="270">llvm::jitlink::getCOFFX86RelocationKindName</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1x86__64_1ac61404d428edea90fb2c5b180daf5361" compoundref="x86__64_8cpp" startline="112" endline="223">optimizeGOTAndStubAccesses</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1x86__64_1a4640b55f4a0124796c017fc725e87add" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::x86_64::applyFixup</definition>
+        <argsstring>(LinkGraph &amp;G, Block &amp;B, const Edge &amp;E, const Symbol *GOTSymbol)</argsstring>
+        <name>applyFixup</name>
+        <qualifiedname>llvm::jitlink::x86_64::applyFixup</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_block" kindref="compound">Block</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1jitlink_1_1_edge" kindref="compound">Edge</ref> &amp;</type>
+          <declname>E</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> *</type>
+          <declname>GOTSymbol</declname>
+        </param>
+        <briefdescription>
+<para>Apply fixup expression for edge to block content. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/x86_64.h" line="438" column="14" bodyfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" bodystart="438" bodyend="583"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a34ef37c952f50f08ba132f992af9bba4" compoundref="x86__64_8h" startline="191">BranchPCRel32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1ab397b16e783227e075cdb27c9afbcdc4" compoundref="x86__64_8h" startline="238">BranchPCRel32ToPtrJumpStub</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1abbcdf6b67a662a9bd7b37181b24a3c6f" compoundref="x86__64_8h" startline="254">BranchPCRel32ToPtrJumpStubBypassable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a07c726345490ba4b773b1a3f4d82d58f" compoundref="x86__64_8h" startline="109">Delta16</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1ae8b3d9d60bcce88f74377f0b3a845a3c" compoundref="x86__64_8h" startline="96">Delta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a0813e2e217bec0a3795f7e0bf463bbdc" compoundref="x86__64_8h" startline="83">Delta64</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a01de57a850e4e1dcca112b0916082457" compoundref="x86__64_8h" startline="173">Delta64FromGOT</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1af668cb8ac335e5d9af3fc8e311b6e0aa" compoundref="x86__64_8h" startline="122">Delta8</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="classllvm_1_1jitlink_1_1_symbol_1a9266b50b560808e8f69eb394690d79c4" compoundref="_j_i_t_link_8h" startline="602" endline="602">llvm::jitlink::Symbol::getAddress</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1a2b9b4bde645a27a83435303ac1e06e69" compoundref="x86__64_8cpp" startline="21" endline="80">getEdgeKindName</references>
+        <references refid="namespacellvm_1a1a1e51a5952c3afa00875df90e7ae6f8" compoundref="_math_extras_8h" startline="170" endline="183">llvm::isInt</references>
+        <references refid="namespacellvm_1a87e65296f2a6d9570117a852af342764" compoundref="_math_extras_8h" startline="194" endline="207">llvm::isUInt</references>
+        <references refid="_compiler_8h_1ae5b35beb6f127e5f47269e9124b886fb" compoundref="_compiler_8h" startline="319">LLVM_LIKELY</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+        <references refid="namespacellvm_1_1jitlink_1a061c97aa3532f0b4a2390febaa911a65" compoundref="_j_i_t_link_8cpp" startline="416" endline="450">llvm::jitlink::makeTargetOutOfRangeError</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1abd3d0bdbcb54e70a617ffa080e3befee" compoundref="x86__64_8h" startline="143">NegDelta32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a839d55b90b99a051adaac5b1acff9916" compoundref="x86__64_8h" startline="131">NegDelta64</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a7cb0483abb6a27356f946cb706c696a9" compoundref="x86__64_8h" startline="209">PCRel32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a2669dc43fc00ceeba47db937ae286b4b" compoundref="x86__64_8h" startline="329">PCRel32GOTLoadRelaxable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a81bb18739548bc2a716e15d451114be1" compoundref="x86__64_8h" startline="344">PCRel32GOTLoadREXRelaxable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a78ad01c24da93121cfe0a5249a1ece6d" compoundref="x86__64_8h" startline="408">PCRel32TLVPLoadREXRelaxable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a9373b13e8458a9e8381f56fc053a90fb" compoundref="x86__64_8h" startline="63">Pointer16</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a12f965819db53282535bd5766d5783e3" compoundref="x86__64_8h" startline="42">Pointer32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a34c4628fc868b9a8285b84ac203ff65f" compoundref="x86__64_8h" startline="52">Pointer32Signed</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1aa9b0fce35f44572f2bddf0fe8a2c64e4" compoundref="x86__64_8h" startline="31">Pointer64</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a21a771aa9e28a965fcfc0f7116afdb52" compoundref="x86__64_8h" startline="74">Pointer8</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1aaa0c7a1bad5278edf861978dd8ee784b" compoundref="x86__64_8h" startline="161">Size32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a8234b7c99627f2565403c5ae878c2fca" compoundref="x86__64_8h" startline="150">Size64</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1x86__64_1a895327287e36f2118e7d50fdef340700" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+        <definition>Symbol &amp; llvm::jitlink::x86_64::createAnonymousPointer</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;PointerSection, Symbol *InitialTarget=nullptr, uint64_t InitialAddend=0)</argsstring>
+        <name>createAnonymousPointer</name>
+        <qualifiedname>llvm::jitlink::x86_64::createAnonymousPointer</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>PointerSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> *</type>
+          <declname>InitialTarget</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>InitialAddend</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Creates a new pointer block in the given section and returns an anonymous symbol pointing to it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If InitialTarget is given then an Pointer64 relocation will be added to the block pointing at InitialTarget.</para>
+<para>The pointer block will have the following default values: alignment: 64-bit alignment-offset: 0 address: highest allowable (~7U) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/x86_64.h" line="608" column="15" bodyfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" bodystart="608" bodyend="616"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aa49410e3ce0c5b98847f643624370778" compoundref="x86__64_8cpp" startline="82" endline="83">NullPointerContent</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1aa9b0fce35f44572f2bddf0fe8a2c64e4" compoundref="x86__64_8h" startline="31">Pointer64</references>
+        <referencedby refid="classllvm_1_1jitlink_1_1x86__64_1_1_g_o_t_table_manager_1a6fcfa4e41f60a2eff5ae2d8e6f6f1882" compoundref="x86__64_8h" startline="718" endline="720">llvm::jitlink::x86_64::GOTTableManager::createEntry</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1af86dbecbbb47825e36f9af37bd6868ca" compoundref="_j_i_t_link_8cpp" startline="461" endline="475">llvm::jitlink::getAnonymousPointerCreator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1x86__64_1a8b140dca7fc910c208b9bc103461f24e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_block" kindref="compound">Block</ref> &amp;</type>
+        <definition>Block &amp; llvm::jitlink::x86_64::createPointerJumpStubBlock</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;StubSection, Symbol &amp;PointerSymbol)</argsstring>
+        <name>createPointerJumpStubBlock</name>
+        <qualifiedname>llvm::jitlink::x86_64::createPointerJumpStubBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>StubSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>PointerSymbol</declname>
+        </param>
+        <briefdescription>
+<para>Create a jump stub block that jumps via the pointer at the given symbol. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The stub block will have the following default values: alignment: 8-bit alignment-offset: 0 address: highest allowable: (~5U) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/x86_64.h" line="624" column="14" bodyfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" bodystart="624" bodyend="630"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a34ef37c952f50f08ba132f992af9bba4" compoundref="x86__64_8h" startline="191">BranchPCRel32</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1acd96e0def723945c3f358d87e5d7a054" compoundref="x86__64_8cpp" startline="85" endline="86">PointerJumpStubContent</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1x86__64_1aef00497bf1e3eecf0e6565364ad15c24" compoundref="x86__64_8h" startline="636" endline="642">createAnonymousPointerJumpStub</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1x86__64_1aef00497bf1e3eecf0e6565364ad15c24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+        <definition>Symbol &amp; llvm::jitlink::x86_64::createAnonymousPointerJumpStub</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;StubSection, Symbol &amp;PointerSymbol)</argsstring>
+        <name>createAnonymousPointerJumpStub</name>
+        <qualifiedname>llvm::jitlink::x86_64::createAnonymousPointerJumpStub</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>StubSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>PointerSymbol</declname>
+        </param>
+        <briefdescription>
+<para>Create a jump stub that jumps via the pointer at the given symbol and an anonymous symbol pointing to it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the anonymous symbol.</para>
+<para>The stub block will be created by createPointerJumpStubBlock. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/x86_64.h" line="636" column="15" bodyfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" bodystart="636" bodyend="642"/>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1a8b140dca7fc910c208b9bc103461f24e" compoundref="x86__64_8h" startline="624" endline="630">createPointerJumpStubBlock</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <referencedby refid="classllvm_1_1jitlink_1_1x86__64_1_1_p_l_t_table_manager_1a7d421a5c7f5d50c66e9d27e3b83b7031" compoundref="x86__64_8h" startline="760" endline="763">llvm::jitlink::x86_64::PLTTableManager::createEntry</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1a6e58d27e8cd9ba5dadc9194100b69be4" compoundref="_j_i_t_link_8cpp" startline="477" endline="491">llvm::jitlink::getPointerJumpStubCreator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1x86__64_1a37ac1d2bccf8bda89eb237edc25a74c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_block" kindref="compound">Block</ref> &amp;</type>
+        <definition>Block &amp; llvm::jitlink::x86_64::createReentryTrampolineBlock</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;TrampolineSection, Symbol &amp;ReentrySymbol)</argsstring>
+        <name>createReentryTrampolineBlock</name>
+        <qualifiedname>llvm::jitlink::x86_64::createReentryTrampolineBlock</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>TrampolineSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>ReentrySymbol</declname>
+        </param>
+        <briefdescription>
+<para>Create a block of N reentry trampolines. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/x86_64.h" line="652" column="14" bodyfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" bodystart="652" bodyend="659"/>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a34ef37c952f50f08ba132f992af9bba4" compoundref="x86__64_8h" startline="191">BranchPCRel32</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1acb329db9130636bd0da16c88649d3268" compoundref="x86__64_8cpp" startline="88" endline="90">ReentryTrampolineContent</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1_1x86__64_1a53467f0fe1d815298a88cb6c0d7b8420" compoundref="x86__64_8h" startline="661" endline="667">createAnonymousReentryTrampoline</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1x86__64_1a53467f0fe1d815298a88cb6c0d7b8420" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+        <definition>Symbol &amp; llvm::jitlink::x86_64::createAnonymousReentryTrampoline</definition>
+        <argsstring>(LinkGraph &amp;G, Section &amp;TrampolineSection, Symbol &amp;ReentrySymbol)</argsstring>
+        <name>createAnonymousReentryTrampoline</name>
+        <qualifiedname>llvm::jitlink::x86_64::createAnonymousReentryTrampoline</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>TrampolineSection</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>ReentrySymbol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/JITLink/x86_64.h" line="661" column="15" bodyfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" bodystart="661" bodyend="667"/>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1a37ac1d2bccf8bda89eb237edc25a74c0" compoundref="x86__64_8h" startline="652" endline="659">createReentryTrampolineBlock</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1acb329db9130636bd0da16c88649d3268" compoundref="x86__64_8cpp" startline="88" endline="90">ReentryTrampolineContent</references>
+        <referencedby refid="classllvm_1_1orc_1_1_j_i_t_link_reentry_trampolines_1a65b27dfd43dad3af09bd244752f7eadf" compoundref="_j_i_t_link_reentry_trampolines_8cpp" startline="86" endline="106">llvm::orc::JITLinkReentryTrampolines::Create</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1jitlink_1_1x86__64_1ac61404d428edea90fb2c5b180daf5361" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::x86_64::optimizeGOTAndStubAccesses</definition>
+        <argsstring>(LinkGraph &amp;G)</argsstring>
+        <name>optimizeGOTAndStubAccesses</name>
+        <qualifiedname>llvm::jitlink::x86_64::optimizeGOTAndStubAccesses</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+<para>Optimize the GOT and Stub relocations if the edge target address is in range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>PCRel32GOTLoadRelaxable. For this edge kind, if the target is in range, then replace GOT load with lea</para>
+</listitem><listitem><para>BranchPCRel32ToPtrJumpStubRelaxable. For this edge kind, if the target is in range, replace a indirect jump by plt stub with a direct jump to the target </para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/x86_64.cpp" line="112" column="7" bodyfile="lib/ExecutionEngine/JITLink/x86_64.cpp" bodystart="112" bodyend="223" declfile="include/llvm/ExecutionEngine/JITLink/x86_64.h" declline="785" declcolumn="7"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1ae76959fe811ba090de4cba69ac00f1da">B</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a34ef37c952f50f08ba132f992af9bba4" compoundref="x86__64_8h" startline="191">BranchPCRel32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1abbcdf6b67a662a9bd7b37181b24a3c6f" compoundref="x86__64_8h" startline="254">BranchPCRel32ToPtrJumpStubBypassable</references>
+        <references refid="_static_data_splitter_8cpp_1ad2fefd8832b4b1ea3dbb1f621063bbff" compoundref="_static_data_splitter_8cpp" startline="176">data</references>
+        <references refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" compoundref="_debug_8cpp" startline="163" endline="181">llvm::dbgs</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1ae8b3d9d60bcce88f74377f0b3a845a3c" compoundref="x86__64_8h" startline="96">Delta32</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="_m_d5_8cpp_1ad96b7cf3182ce2ba85e5a7a93b12c441" compoundref="_m_d5_8cpp" startline="56">G</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1a2b9b4bde645a27a83435303ac1e06e69" compoundref="x86__64_8cpp" startline="21" endline="80">getEdgeKindName</references>
+        <references refid="classllvm_1_1orc_1_1_executor_addr_1a4ee908fb9052f020e3c50e3f1a7d81c5" compoundref="_executor_address_8h" startline="136" endline="136">llvm::orc::ExecutorAddr::getValue</references>
+        <references refid="namespacellvm_1a1a1e51a5952c3afa00875df90e7ae6f8" compoundref="_math_extras_8h" startline="170" endline="183">llvm::isInt</references>
+        <references refid="namespacellvm_1a87e65296f2a6d9570117a852af342764" compoundref="_math_extras_8h" startline="194" endline="207">llvm::isUInt</references>
+        <references refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" compoundref="_debug_8h" startline="106">LLVM_DEBUG</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a2669dc43fc00ceeba47db937ae286b4b" compoundref="x86__64_8h" startline="329">PCRel32GOTLoadRelaxable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a81bb18739548bc2a716e15d451114be1" compoundref="x86__64_8h" startline="344">PCRel32GOTLoadREXRelaxable</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1aebb5822f6bda55afbca20f322d73a2a1a12f965819db53282535bd5766d5783e3" compoundref="x86__64_8h" startline="42">Pointer32</references>
+        <references refid="namespacellvm_1_1jitlink_1_1x86__64_1acd96e0def723945c3f358d87e5d7a054" compoundref="x86__64_8cpp" startline="85" endline="86">PointerJumpStubContent</references>
+        <references refid="namespacellvm_1_1jitlink_1ad21474fff99853c3d22abfe6634ee9ed" compoundref="_j_i_t_link_8cpp" startline="132" endline="161">llvm::jitlink::printEdge</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <referencedby refid="namespacellvm_1_1jitlink_1ae07f62502c521dbfc05720327b722c17" compoundref="_e_l_f__x86__64_8cpp" startline="359" endline="394">llvm::jitlink::link_ELF_x86_64</referencedby>
+        <referencedby refid="namespacellvm_1_1jitlink_1a8fe40b19af9c9f98b39e9c2f954e8d54" compoundref="_mach_o__x86__64_8cpp" startline="530" endline="584">llvm::jitlink::link_MachO_x86_64</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/ExecutionEngine/JITLink/x86_64.h" line="21" column="1"/>
+  </compounddef>
+</doxygen>

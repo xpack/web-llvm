@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_copy_rewriter" kind="class" language="C++" prot="public">
+    <compoundname>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter</compoundname>
+    <basecompoundref refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter" prot="public" virt="non-virtual">anonymous_namespace{PeepholeOptimizer.cpp}::Rewriter</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_copy_rewriter_1aad38fdd50746fc9bc7e8f08e886415d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter::CopyRewriter</definition>
+        <argsstring>(MachineInstr &amp;MI)</argsstring>
+        <name>CopyRewriter</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter::CopyRewriter</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_machine_instr" kindref="compound">MachineInstr</ref> &amp;</type>
+          <declname>MI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="197" column="3" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="197" bodyend="199"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
+        <references refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter_1a33607cdfed7a2110695c526b7520d224" compoundref="_peephole_optimizer_8cpp" startline="158" endline="158">anonymous_namespace{PeepholeOptimizer.cpp}::Rewriter::Rewriter</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_copy_rewriter_1a1010de8183acda10ae33d13c5168dd19" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter::~CopyRewriter</definition>
+        <argsstring>()=default</argsstring>
+        <name>~CopyRewriter</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter::~CopyRewriter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="200" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_copy_rewriter_1af6a7bff7d1f79439d9cef76fd17c6688" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter::getNextRewritableSource</definition>
+        <argsstring>(RegSubRegPair &amp;Src, RegSubRegPair &amp;Dst) override</argsstring>
+        <name>getNextRewritableSource</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter::getNextRewritableSource</qualifiedname>
+        <reimplements refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter_1a3fa829354b3f8b782d40175469540cab">getNextRewritableSource</reimplements>
+        <param>
+          <type><ref refid="_machine_sink_8cpp_1a16005492b382a6a76abae848b4af2b83" kindref="member">RegSubRegPair</ref> &amp;</type>
+          <declname>Src</declname>
+        </param>
+        <param>
+          <type><ref refid="_machine_sink_8cpp_1a16005492b382a6a76abae848b4af2b83" kindref="member">RegSubRegPair</ref> &amp;</type>
+          <declname>Dst</declname>
+        </param>
+        <briefdescription>
+<para>Get the next rewritable source (SrcReg, SrcSubReg) and the related value that it affects (DstReg, DstSubReg). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A source is considered rewritable if its register class and the register class of the related DstReg may not be register coalescer friendly. In other words, given a copy-like instruction not all the arguments may be returned at rewritable source, since some arguments are none to be register coalescer friendly.</para>
+<para>Each call of this method moves the current source to the next rewritable source. For instance, let CopyLike be the instruction to rewrite. CopyLike has one definition and one source: dst.dstSubIdx = CopyLike src.srcSubIdx.</para>
+<para>The first call will give the first rewritable source, i.e., the only source this instruction has: (SrcReg, SrcSubReg) = (src, srcSubIdx). This source defines the whole definition, i.e., (DstReg, DstSubReg) = (dst, dstSubIdx).</para>
+<para>The second and subsequent calls will return false, as there is only one rewritable source.</para>
+<para><simplesect kind="return"><para>True if a rewritable source has been found, false otherwise. The output arguments are valid if and only if true is returned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="202" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="202" bodyend="217"/>
+        <references refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter_1a1ab74e93e550820b697e99a0dc9fdbbd" compoundref="_peephole_optimizer_8cpp" startline="155">anonymous_namespace{PeepholeOptimizer.cpp}::Rewriter::CopyLike</references>
+        <references refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter_1ac58143cbdf601d044e69002face8a19b" compoundref="_peephole_optimizer_8cpp" startline="156">anonymous_namespace{PeepholeOptimizer.cpp}::Rewriter::CurrentSrcIdx</references>
+        <references refid="classllvm_1_1_machine_operand_1ac0035d7c1c860501c877c20e6e93297b" compoundref="_machine_operand_8h" startline="369" endline="372">llvm::MachineOperand::getReg</references>
+        <references refid="classllvm_1_1_machine_operand_1a028a8c5113d40d8c3f4427053bf36738" compoundref="_machine_operand_8h" startline="374" endline="377">llvm::MachineOperand::getSubReg</references>
+      </memberdef>
+      <memberdef kind="function" id="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_copy_rewriter_1a50cda2940b3e3a92753c912202296de4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter::RewriteCurrentSource</definition>
+        <argsstring>(Register NewReg, unsigned NewSubReg) override</argsstring>
+        <name>RewriteCurrentSource</name>
+        <qualifiedname>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter::RewriteCurrentSource</qualifiedname>
+        <reimplements refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter_1ac8009fc29123ba030ea30157cf18c62d">RewriteCurrentSource</reimplements>
+        <param>
+          <type><ref refid="classllvm_1_1_register" kindref="compound">Register</ref></type>
+          <declname>NewReg</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>NewSubReg</declname>
+        </param>
+        <briefdescription>
+<para>Rewrite the current source with <computeroutput>NewReg</computeroutput> and <computeroutput>NewSubReg</computeroutput> if possible. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the rewriting was possible, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="219" column="8" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="219" bodyend="226"/>
+        <references refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter_1a1ab74e93e550820b697e99a0dc9fdbbd" compoundref="_peephole_optimizer_8cpp" startline="155">anonymous_namespace{PeepholeOptimizer.cpp}::Rewriter::CopyLike</references>
+        <references refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter_1ac58143cbdf601d044e69002face8a19b" compoundref="_peephole_optimizer_8cpp" startline="156">anonymous_namespace{PeepholeOptimizer.cpp}::Rewriter::CurrentSrcIdx</references>
+        <references refid="classllvm_1_1_machine_operand_1a682ba82f42f7903d0000ffbb13ea3b57" compoundref="_machine_operand_8cpp" startline="61" endline="81">llvm::MachineOperand::setReg</references>
+        <references refid="classllvm_1_1_machine_operand_1a001d31fcea92be51d2999826b806606f" compoundref="_machine_operand_8h" startline="490" endline="494">llvm::MachineOperand::setSubReg</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter" kindref="compound">Rewriter</ref> for COPY instructions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter</label>
+        <link refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_copy_rewriter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>anonymous_namespace{PeepholeOptimizer.cpp}::Rewriter</label>
+        <link refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="17">
+        <label>OptionsT::node_base_type</label>
+      </node>
+      <node id="1">
+        <label>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter</label>
+        <link refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_copy_rewriter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>anonymous_namespace{PeepholeOptimizer.cpp}::Rewriter</label>
+        <link refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>CopyLike</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>CurrentSrcIdx</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>ilist_detail::compute_node_options&lt; T, Options... &gt;::type::node_base_type</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; enable_sentinel_tracking, parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::MachineInstr</label>
+        <link refid="classllvm_1_1_machine_instr"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="9">
+        <label>llvm::ilist_detail::node_base_parent&lt; ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__parent"/>
+      </node>
+      <node id="12">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="11">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;, EnableSentinelTracking &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>llvm::ilist_detail::node_base_prevnext&lt; NodeBase, EnableSentinelTracking &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__base__prevnext"/>
+      </node>
+      <node id="15">
+        <label>llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+      </node>
+      <node id="18">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="15" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; OptionsT &gt;, OptionsT::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="15" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="15" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>llvm::ilist_detail::node_parent_access&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</label>
+        <link refid="classllvm_1_1ilist__detail_1_1node__parent__access"/>
+        <childnode refid="15" relation="template-instance">
+          <edgelabel>&lt; ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;, ilist_detail::compute_node_options&lt; T, Options... &gt;::type::parent_ty &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm::ilist_node&lt; T, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::ilist_node&lt; MachineInstr, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="template-instance">
+          <edgelabel>&lt; MachineInstr, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>llvm::ilist_node&lt; NodeTy, Options... &gt;</label>
+        <link refid="classllvm_1_1ilist__node"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="template-instance">
+          <edgelabel>&lt; NodeTy, Options... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>llvm::ilist_node_base&lt; EnableSentinelTracking, ParentTy &gt;</label>
+        <link refid="classllvm_1_1ilist__node__base"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>llvm::ilist_node_impl&lt; OptionsT &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="17" relation="private-inheritance">
+        </childnode>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="7" relation="private-inheritance">
+        </childnode>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; MachineInstr, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="26" relation="private-inheritance">
+        </childnode>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; NodeTy, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>llvm::ilist_node_impl&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</label>
+        <link refid="classllvm_1_1ilist__node__impl"/>
+        <childnode refid="21" relation="private-inheritance">
+        </childnode>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="template-instance">
+          <edgelabel>&lt; ilist_detail::compute_node_options&lt; T, Options... &gt;::type &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::ilist_node_with_parent&lt; MachineInstr, MachineBasicBlock, ilist_sentinel_tracking&lt; true &gt; &gt;</label>
+        <link refid="classllvm_1_1ilist__node__with__parent"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="23" relation="template-instance">
+          <edgelabel>&lt; MachineInstr, MachineBasicBlock, ilist_sentinel_tracking&lt; true &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>unsigned</label>
+        <link refid="classunsigned"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/CodeGen/PeepholeOptimizer.cpp" line="195" column="1" bodyfile="lib/CodeGen/PeepholeOptimizer.cpp" bodystart="195" bodyend="227"/>
+    <listofallmembers>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter_1a1ab74e93e550820b697e99a0dc9fdbbd" prot="protected" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter</scope><name>CopyLike</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_copy_rewriter_1aad38fdd50746fc9bc7e8f08e886415d5" prot="public" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter</scope><name>CopyRewriter</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter_1ac58143cbdf601d044e69002face8a19b" prot="protected" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter</scope><name>CurrentSrcIdx</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_copy_rewriter_1af6a7bff7d1f79439d9cef76fd17c6688" prot="public" virt="virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter</scope><name>getNextRewritableSource</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_copy_rewriter_1a50cda2940b3e3a92753c912202296de4" prot="public" virt="virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter</scope><name>RewriteCurrentSource</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter_1a33607cdfed7a2110695c526b7520d224" prot="public" virt="non-virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter</scope><name>Rewriter</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_copy_rewriter_1a1010de8183acda10ae33d13c5168dd19" prot="public" virt="virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter</scope><name>~CopyRewriter</name></member>
+      <member refid="classanonymous__namespace_02_peephole_optimizer_8cpp_03_1_1_rewriter_1ad2bfa5ae4bc00ede215508c597f2e543" prot="public" virt="virtual"><scope>anonymous_namespace{PeepholeOptimizer.cpp}::CopyRewriter</scope><name>~Rewriter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

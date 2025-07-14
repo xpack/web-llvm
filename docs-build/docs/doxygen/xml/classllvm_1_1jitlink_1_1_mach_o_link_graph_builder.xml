@@ -1,0 +1,884 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>llvm::jitlink::MachOLinkGraphBuilder</compoundname>
+    <derivedcompoundref refid="classanonymous__namespace_02_mach_o__arm64_8cpp_03_1_1_mach_o_link_graph_builder__arm64" prot="public" virt="non-virtual">anonymous_namespace{MachO_arm64.cpp}::MachOLinkGraphBuilder_arm64</derivedcompoundref>
+    <derivedcompoundref refid="classanonymous__namespace_02_mach_o__x86__64_8cpp_03_1_1_mach_o_link_graph_builder__x86__64" prot="public" virt="non-virtual">anonymous_namespace{MachO_x86_64.cpp}::MachOLinkGraphBuilder_x86_64</derivedcompoundref>
+    <includes refid="_mach_o_link_graph_builder_8h" local="yes">ExecutionEngine/JITLink/MachOLinkGraphBuilder.h</includes>
+    <innerclass refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section" prot="protected">llvm::jitlink::MachOLinkGraphBuilder::NormalizedSection</innerclass>
+    <innerclass refid="structllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_symbol" prot="protected">llvm::jitlink::MachOLinkGraphBuilder::NormalizedSymbol</innerclass>
+    <sectiondef kind="protected-type">
+      <memberdef kind="typedef" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a69dad8e4923828e8561d86dc4818cc81" prot="protected" static="no">
+        <type>std::function&lt; <ref refid="classllvm_1_1_error" kindref="compound">Error</ref>(<ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section" kindref="compound">NormalizedSection</ref> &amp;S)&gt;</type>
+        <definition>using llvm::jitlink::MachOLinkGraphBuilder::SectionParserFunction =  std::function&lt;Error(NormalizedSection &amp;S)&gt;</definition>
+        <argsstring></argsstring>
+        <name>SectionParserFunction</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::SectionParserFunction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="84" column="3" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a657f3d7c1aac1e6d7bf69be1f044c72e" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacellvm_1a8e612822d4ba7bb36c9c79582a567108" kindref="member">BumpPtrAllocator</ref></type>
+        <definition>BumpPtrAllocator llvm::jitlink::MachOLinkGraphBuilder::Allocator</definition>
+        <argsstring></argsstring>
+        <name>Allocator</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::Allocator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="226" column="20" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a84eba3eaceeaa90b7185675f7c044614" prot="private" static="no" mutable="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1object_1_1_mach_o_object_file" kindref="compound">object::MachOObjectFile</ref> &amp;</type>
+        <definition>const object::MachOObjectFile&amp; llvm::jitlink::MachOLinkGraphBuilder::Obj</definition>
+        <argsstring></argsstring>
+        <name>Obj</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::Obj</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="228" column="33" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a677fab4194bef58d6a1b9e8d06c12c2b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;LinkGraph&gt; llvm::jitlink::MachOLinkGraphBuilder::G</definition>
+        <argsstring></argsstring>
+        <name>G</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::G</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="229" column="19" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a8eed8f1782875460f345b9f973db61fc" prot="private" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::jitlink::MachOLinkGraphBuilder::SubsectionsViaSymbols</definition>
+        <argsstring></argsstring>
+        <name>SubsectionsViaSymbols</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::SubsectionsViaSymbols</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="231" column="8" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a10b59adc39ef76237caa68b2b1aed390" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section" kindref="compound">NormalizedSection</ref> &gt;</type>
+        <definition>DenseMap&lt;unsigned, NormalizedSection&gt; llvm::jitlink::MachOLinkGraphBuilder::IndexToSection</definition>
+        <argsstring></argsstring>
+        <name>IndexToSection</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::IndexToSection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="232" column="12" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ae9d1eaddf856385fc72d42415463eb53" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> *</type>
+        <definition>Section* llvm::jitlink::MachOLinkGraphBuilder::CommonSection</definition>
+        <argsstring></argsstring>
+        <name>CommonSection</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::CommonSection</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="233" column="11" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a752a2d07d73eead164aad90ba2bcf9da" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classuint32__t" kindref="compound">uint32_t</ref>, <ref refid="structllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_symbol" kindref="compound">NormalizedSymbol</ref> * &gt;</type>
+        <definition>DenseMap&lt;uint32_t, NormalizedSymbol *&gt; llvm::jitlink::MachOLinkGraphBuilder::IndexToSymbol</definition>
+        <argsstring></argsstring>
+        <name>IndexToSymbol</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::IndexToSymbol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="235" column="12" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a3c4765bc3a2ed3ea847d8e765030f6c6" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_string_map" kindref="compound">StringMap</ref>&lt; <ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a69dad8e4923828e8561d86dc4818cc81" kindref="member">SectionParserFunction</ref> &gt;</type>
+        <definition>StringMap&lt;SectionParserFunction&gt; llvm::jitlink::MachOLinkGraphBuilder::CustomSectionParserFunctions</definition>
+        <argsstring></argsstring>
+        <name>CustomSectionParserFunctions</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::CustomSectionParserFunctions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="236" column="13" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a4abaccbb6a8bed1ec337b121c532a046" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>llvm::jitlink::MachOLinkGraphBuilder::~MachOLinkGraphBuilder</definition>
+        <argsstring>()</argsstring>
+        <name>~MachOLinkGraphBuilder</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::~MachOLinkGraphBuilder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="31" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a819bd17560946f0e61a5ae8667bf28cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &gt; &gt;</type>
+        <definition>Expected&lt; std::unique_ptr&lt; LinkGraph &gt; &gt; llvm::jitlink::MachOLinkGraphBuilder::buildGraph</definition>
+        <argsstring>()</argsstring>
+        <name>buildGraph</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::buildGraph</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="32" column="12" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="27" bodyend="49"/>
+        <references refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a590998169889df51d1a7b166a61720be">addRelocations</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a858d2c17dbc7a1306b127b648693a4a8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::jitlink::MachOLinkGraphBuilder::MachOLinkGraphBuilder</definition>
+        <argsstring>(const object::MachOObjectFile &amp;Obj, std::shared_ptr&lt; orc::SymbolStringPool &gt; SSP, Triple TT, SubtargetFeatures Features, LinkGraph::GetEdgeKindNameFunction GetEdgeKindName)</argsstring>
+        <name>MachOLinkGraphBuilder</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::MachOLinkGraphBuilder</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1object_1_1_mach_o_object_file" kindref="compound">object::MachOObjectFile</ref> &amp;</type>
+          <declname>Obj</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classllvm_1_1orc_1_1_symbol_string_pool" kindref="compound">orc::SymbolStringPool</ref> &gt;</type>
+          <declname>SSP</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_triple" kindref="compound">Triple</ref></type>
+          <declname>TT</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_subtarget_features" kindref="compound">SubtargetFeatures</ref></type>
+          <declname>Features</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_link_graph_1ab689952831ce5e7f898c8d961bf37f22" kindref="member">LinkGraph::GetEdgeKindNameFunction</ref></type>
+          <declname>GetEdgeKindName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="86" column="3" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="51" bodyend="62"/>
+        <references refid="_code_view_y_a_m_l_debug_sections_8cpp_1a7a04a5d6f4e7be81af7a33aa3ba25a5e" compoundref="_code_view_y_a_m_l_debug_sections_8cpp" startline="553" endline="560">getFileName</references>
+        <references refid="namespacellvm_1_1_mach_o_1a56796c840e08337bb5693b43bf17360caf6603f58bda7e4bd0c905219ff2aa726" compoundref="_binary_format_2_mach_o_8h" startline="73">llvm::MachO::MH_SUBSECTIONS_VIA_SYMBOLS</references>
+        <references refid="namespacellvm_1abfc9c7ecf70f66901e439f7c04ef3dbb" compoundref="_s_t_l_extras_8h" startline="1873" endline="1875">llvm::move</references>
+        <referencedby refid="classanonymous__namespace_02_mach_o__arm64_8cpp_03_1_1_mach_o_link_graph_builder__arm64_1aa29a349bf83d4092aaeb36e2af537784" compoundref="_mach_o__arm64_8cpp" startline="31" endline="36">anonymous_namespace{MachO_arm64.cpp}::MachOLinkGraphBuilder_arm64::MachOLinkGraphBuilder_arm64</referencedby>
+        <referencedby refid="classanonymous__namespace_02_mach_o__x86__64_8cpp_03_1_1_mach_o_link_graph_builder__x86__64_1ad569a429fb4f5a808a850747c4c4d1fa" compoundref="_mach_o__x86__64_8cpp" startline="31" endline="36">anonymous_namespace{MachO_x86_64.cpp}::MachOLinkGraphBuilder_x86_64::MachOLinkGraphBuilder_x86_64</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a80c784d6fdea9bb6695b0513a389a3ab" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_link_graph" kindref="compound">LinkGraph</ref> &amp;</type>
+        <definition>LinkGraph &amp; llvm::jitlink::MachOLinkGraphBuilder::getGraph</definition>
+        <argsstring>() const</argsstring>
+        <name>getGraph</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::getGraph</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="90" column="13" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="90" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a46960668254b082475a10618630cb737" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1object_1_1_mach_o_object_file" kindref="compound">object::MachOObjectFile</ref> &amp;</type>
+        <definition>const object::MachOObjectFile &amp; llvm::jitlink::MachOLinkGraphBuilder::getObject</definition>
+        <argsstring>() const</argsstring>
+        <name>getObject</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::getObject</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="92" column="33" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="92" bodyend="92"/>
+        <referencedby refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ad63fca6e6e001f3e97eebaa2c397ffc9" compoundref="_mach_o_link_graph_builder_8h" startline="169" endline="180">getRelocationInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a206a08ef5dd4f6e0e78246565738c097" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::jitlink::MachOLinkGraphBuilder::addCustomSectionParser</definition>
+        <argsstring>(StringRef SectionName, SectionParserFunction Parse)</argsstring>
+        <name>addCustomSectionParser</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::addCustomSectionParser</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>SectionName</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a69dad8e4923828e8561d86dc4818cc81" kindref="member">SectionParserFunction</ref></type>
+          <declname>Parse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="94" column="8" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="64" bodyend="69"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a590998169889df51d1a7b166a61720be" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>virtual Error llvm::jitlink::MachOLinkGraphBuilder::addRelocations</definition>
+        <argsstring>()=0</argsstring>
+        <name>addRelocations</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::addRelocations</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_mach_o__arm64_8cpp_03_1_1_mach_o_link_graph_builder__arm64_1a89b5eecb3b69024d9731d967476aaac7">addRelocations</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_mach_o__x86__64_8cpp_03_1_1_mach_o_link_graph_builder__x86__64_1ac53cfd9995ef6d3dbf7657744a8ad908">addRelocations</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="97" column="17"/>
+        <referencedby refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a819bd17560946f0e61a5ae8667bf28cb" compoundref="_mach_o_link_graph_builder_8cpp" startline="27" endline="49">buildGraph</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ab023790ae58223ae54d21897313d1e52" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>ArgTs</declname>
+            <defname>ArgTs</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_symbol" kindref="compound">NormalizedSymbol</ref> &amp;</type>
+        <definition>NormalizedSymbol &amp; llvm::jitlink::MachOLinkGraphBuilder::createNormalizedSymbol</definition>
+        <argsstring>(ArgTs &amp;&amp;... Args)</argsstring>
+        <name>createNormalizedSymbol</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::createNormalizedSymbol</qualifiedname>
+        <param>
+          <type>ArgTs &amp;&amp;...</type>
+          <declname>Args</declname>
+        </param>
+        <briefdescription>
+<para>Create a symbol. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="101" column="20" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="101" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a83cc2a0b1b4cbee216d6f45af0c70f0b" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section" kindref="compound">NormalizedSection</ref> &amp;</type>
+        <definition>NormalizedSection &amp; llvm::jitlink::MachOLinkGraphBuilder::getSectionByIndex</definition>
+        <argsstring>(unsigned Index)</argsstring>
+        <name>getSectionByIndex</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::getSectionByIndex</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+<para>Index is zero-based (<ref refid="namespacellvm_1_1_mach_o" kindref="compound">MachO</ref> section indexes are usually one-based) and assumed to be in-range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Client is responsible for checking. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="110" column="21" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="110" bodyend="114"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1adf3ea735d9da67f05bf77c19aa613e66" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section" kindref="compound">NormalizedSection</ref> &amp; &gt;</type>
+        <definition>Expected&lt; NormalizedSection &amp; &gt; llvm::jitlink::MachOLinkGraphBuilder::findSectionByIndex</definition>
+        <argsstring>(unsigned Index)</argsstring>
+        <name>findSectionByIndex</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::findSectionByIndex</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+<para>Try to get the section at the given index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Will return an error if the given index is out of range, or if no section has been added for the given index. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="119" column="12" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="119" bodyend="125"/>
+        <references refid="namespacellvm_1a653cce37b80c03eebe7a00520a8eabb6" compoundref="_format_variadic_8h" startline="252" endline="256">llvm::formatv</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a7a5ae0e2b04f4857cd1af9eabdfb1521" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="structllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_symbol" kindref="compound">NormalizedSymbol</ref> &amp; &gt;</type>
+        <definition>Expected&lt; NormalizedSymbol &amp; &gt; llvm::jitlink::MachOLinkGraphBuilder::findSymbolByIndex</definition>
+        <argsstring>(uint64_t Index)</argsstring>
+        <name>findSymbolByIndex</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::findSymbolByIndex</qualifiedname>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+<para>Try to get the symbol at the given index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Will return an error if the given index is out of range, or if no symbol has been added for the given index. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="130" column="12" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="130" bodyend="137"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a653cce37b80c03eebe7a00520a8eabb6" compoundref="_format_variadic_8h" startline="252" endline="256">llvm::formatv</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ab5df00c94ee2bf69f5d36cec652ae135" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> *</type>
+        <definition>Symbol * llvm::jitlink::MachOLinkGraphBuilder::getSymbolByAddress</definition>
+        <argsstring>(NormalizedSection &amp;NSec, orc::ExecutorAddr Address)</argsstring>
+        <name>getSymbolByAddress</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::getSymbolByAddress</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section" kindref="compound">NormalizedSection</ref> &amp;</type>
+          <declname>NSec</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">orc::ExecutorAddr</ref></type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Returns the symbol with the highest address not greater than the search address, or null if no such symbol exists. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="141" column="10" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="141" bodyend="147"/>
+        <references refid="namespacellvm_1a8e02bbea14c70bab55fbc1384e1472d9add7bf230fde8d4836917806aff6a6b27" compoundref="_mod_ref_8h" startline="280">llvm::Address</references>
+        <references refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section_1ab956f6f090c643137751955f0e66c5ee" compoundref="_mach_o_link_graph_builder_8h" startline="81">llvm::jitlink::MachOLinkGraphBuilder::NormalizedSection::CanonicalSymbols</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <referencedby refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a6f213aa1b9ed4fc9c350af11553596dd" compoundref="_mach_o_link_graph_builder_8h" startline="151" endline="159">findSymbolByAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a6f213aa1b9ed4fc9c350af11553596dd" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp; &gt;</type>
+        <definition>Expected&lt; Symbol &amp; &gt; llvm::jitlink::MachOLinkGraphBuilder::findSymbolByAddress</definition>
+        <argsstring>(NormalizedSection &amp;NSec, orc::ExecutorAddr Address)</argsstring>
+        <name>findSymbolByAddress</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::findSymbolByAddress</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section" kindref="compound">NormalizedSection</ref> &amp;</type>
+          <declname>NSec</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">orc::ExecutorAddr</ref></type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Returns the symbol with the highest address not greater than the search address, or an error if no such symbol exists. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="151" column="12" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="151" bodyend="159"/>
+        <references refid="namespacellvm_1a8e02bbea14c70bab55fbc1384e1472d9add7bf230fde8d4836917806aff6a6b27" compoundref="_mod_ref_8h" startline="280">llvm::Address</references>
+        <references refid="namespacellvm_1a653cce37b80c03eebe7a00520a8eabb6" compoundref="_format_variadic_8h" startline="252" endline="256">llvm::formatv</references>
+        <references refid="_s_r_o_a_8cpp_1a4a30a3fae601106b8b33c0871aa3069d" compoundref="_s_r_o_a_8cpp" startline="5023" endline="5027">getAddress</references>
+        <references refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ab5df00c94ee2bf69f5d36cec652ae135" compoundref="_mach_o_link_graph_builder_8h" startline="141" endline="147">getSymbolByAddress</references>
+        <references refid="namespacellvm_1a9999bd897fc8a1648bd69b36fee2d357" compoundref="llvm_2_support_2_error_8h" startline="341" endline="343">llvm::make_error</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ad63fca6e6e001f3e97eebaa2c397ffc9" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1_mach_o_1_1relocation__info" kindref="compound">MachO::relocation_info</ref></type>
+        <definition>MachO::relocation_info llvm::jitlink::MachOLinkGraphBuilder::getRelocationInfo</definition>
+        <argsstring>(const object::relocation_iterator RelItr)</argsstring>
+        <name>getRelocationInfo</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::getRelocationInfo</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="namespacellvm_1_1object_1acc360db994cbcc482937196bf406df98" kindref="member">object::relocation_iterator</ref></type>
+          <declname>RelItr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="169" column="3" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="169" bodyend="180"/>
+        <references refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a46960668254b082475a10618630cb737" compoundref="_mach_o_link_graph_builder_8h" startline="92" endline="92">getObject</references>
+        <references refid="classllvm_1_1object_1_1_relocation_ref_1acd93a9353f94b029cdfa295b88874b38" compoundref="_object_file_8h" startline="636" endline="638">llvm::object::RelocationRef::getRawDataRefImpl</references>
+        <references refid="classllvm_1_1object_1_1_mach_o_object_file_1aaacf649b0759051f6c5327e44b82f8aa" compoundref="_mach_o_object_file_8cpp" startline="4780" endline="4804">llvm::object::MachOObjectFile::getRelocation</references>
+        <references refid="structllvm_1_1_mach_o_1_1relocation__info_1afae7745c0dbeaba604d0e6871ff6ff94" compoundref="_binary_format_2_mach_o_8h" startline="980">llvm::MachO::relocation_info::r_address</references>
+        <references refid="structllvm_1_1_mach_o_1_1relocation__info_1a2e5895317d1febfec8fd6cf44069ca30" compoundref="_binary_format_2_mach_o_8h" startline="981">llvm::MachO::relocation_info::r_extern</references>
+        <references refid="structllvm_1_1_mach_o_1_1relocation__info_1ad718c499097adbe1f3b1906f6cbf79f5" compoundref="_binary_format_2_mach_o_8h" startline="981">llvm::MachO::relocation_info::r_length</references>
+        <references refid="structllvm_1_1_mach_o_1_1relocation__info_1a2036c0144fe63c94a74720c7c105cbd5" compoundref="_binary_format_2_mach_o_8h" startline="981">llvm::MachO::relocation_info::r_pcrel</references>
+        <references refid="structllvm_1_1_mach_o_1_1relocation__info_1ae8634f4afac899abde624f4f32698a9d" compoundref="_binary_format_2_mach_o_8h" startline="981">llvm::MachO::relocation_info::r_symbolnum</references>
+        <references refid="structllvm_1_1_mach_o_1_1relocation__info_1a564ac171976e46aeee433cb4e2c7d34e" compoundref="_binary_format_2_mach_o_8h" startline="982">llvm::MachO::relocation_info::r_type</references>
+        <references refid="structllvm_1_1_mach_o_1_1any__relocation__info_1a2c1c46bbe4b0ef3065fe91d3e9ca806e" compoundref="_binary_format_2_mach_o_8h" startline="998">llvm::MachO::any_relocation_info::r_word0</references>
+        <references refid="structllvm_1_1_mach_o_1_1any__relocation__info_1aff97edf4109298178b12aca5621bd6ec" compoundref="_binary_format_2_mach_o_8h" startline="998">llvm::MachO::any_relocation_info::r_word1</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ab0eab99e318dd8caa8a3451211d0f1c1" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1jitlink_1abee99c9c75d23a0304e5e58e3128a55f" kindref="member">Linkage</ref></type>
+        <definition>Linkage llvm::jitlink::MachOLinkGraphBuilder::getLinkage</definition>
+        <argsstring>(uint16_t Desc)</argsstring>
+        <name>getLinkage</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::getLinkage</qualifiedname>
+        <param>
+          <type><ref refid="classuint16__t" kindref="compound">uint16_t</ref></type>
+          <declname>Desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="161" column="18" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="71" bodyend="75"/>
+        <references refid="namespacellvm_1_1_mach_o_1a8566ffd52ce0223e6ecc4298a438a721a28ba3855aefcfc5bf5bdf4e9f75562a4" compoundref="_binary_format_2_mach_o_8h" startline="346">llvm::MachO::N_WEAK_DEF</references>
+        <references refid="namespacellvm_1_1_mach_o_1a8566ffd52ce0223e6ecc4298a438a721ae26e92b75aa9de849f70b2efba5bfba5" compoundref="_binary_format_2_mach_o_8h" startline="345">llvm::MachO::N_WEAK_REF</references>
+        <references refid="namespacellvm_1_1jitlink_1abee99c9c75d23a0304e5e58e3128a55fac43e0fd449c758dab8f891d8e19eb1a9" compoundref="_j_i_t_link_8h" startline="396">llvm::jitlink::Strong</references>
+        <references refid="namespacellvm_1_1jitlink_1abee99c9c75d23a0304e5e58e3128a55fa7324e3727807d95037eb19d304fd91ec" compoundref="_j_i_t_link_8h" startline="397">llvm::jitlink::Weak</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a6c75d5f3493bf8a17cc1f66ac18dbee7" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1_1jitlink_1adb322dc6826cf005531ccfdf666260fd" kindref="member">Scope</ref></type>
+        <definition>Scope llvm::jitlink::MachOLinkGraphBuilder::getScope</definition>
+        <argsstring>(StringRef Name, uint8_t Type)</argsstring>
+        <name>getScope</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::getScope</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint8__t" kindref="compound">uint8_t</ref></type>
+          <declname>Type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="162" column="16" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="77" bodyend="85"/>
+        <references refid="namespacellvm_1_1jitlink_1adb322dc6826cf005531ccfdf666260fda7a1920d61156abc05a60135aefe8bc67" compoundref="_j_i_t_link_8h" startline="412">llvm::jitlink::Default</references>
+        <references refid="namespacellvm_1_1jitlink_1adb322dc6826cf005531ccfdf666260fda7acdf85c69cc3c5305456a293524386e" compoundref="_j_i_t_link_8h" startline="412">llvm::jitlink::Hidden</references>
+        <references refid="namespacellvm_1_1jitlink_1adb322dc6826cf005531ccfdf666260fda509820290d57f333403f490dde7316f4" compoundref="_j_i_t_link_8h" startline="412">llvm::jitlink::Local</references>
+        <references refid="namespacellvm_1_1_mach_o_1ad152fa3b2aff735d4a2e4b644dc93b11a8bc1bbfcee7206480576072973724a1a" compoundref="_binary_format_2_mach_o_8h" startline="310">llvm::MachO::N_EXT</references>
+        <references refid="namespacellvm_1_1_mach_o_1ad152fa3b2aff735d4a2e4b644dc93b11aa76667ab09bbf06002b68e0c1a015806" compoundref="_binary_format_2_mach_o_8h" startline="308">llvm::MachO::N_PEXT</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ad3924d512564c3a6c9b831d067812e88" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::jitlink::MachOLinkGraphBuilder::isAltEntry</definition>
+        <argsstring>(const NormalizedSymbol &amp;NSym)</argsstring>
+        <name>isAltEntry</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::isAltEntry</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_symbol" kindref="compound">NormalizedSymbol</ref> &amp;</type>
+          <declname>NSym</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="163" column="15" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="87" bodyend="89"/>
+        <references refid="structllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_symbol_1aab82f6a4190bccfb654e803797eb3de6" compoundref="_mach_o_link_graph_builder_8h" startline="58">llvm::jitlink::MachOLinkGraphBuilder::NormalizedSymbol::Desc</references>
+        <references refid="namespacellvm_1_1_mach_o_1a8566ffd52ce0223e6ecc4298a438a721adab2a4fabc3b22af3e2f7fa7bf034ffc" compoundref="_binary_format_2_mach_o_8h" startline="348">llvm::MachO::N_ALT_ENTRY</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a07bee760ea66298eae2600beff1debd0" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::jitlink::MachOLinkGraphBuilder::isDebugSection</definition>
+        <argsstring>(const NormalizedSection &amp;NSec)</argsstring>
+        <name>isDebugSection</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::isDebugSection</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section" kindref="compound">NormalizedSection</ref> &amp;</type>
+          <declname>NSec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="165" column="15" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="91" bodyend="94"/>
+        <references refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section_1a804f1edb27860163729435349ad6069f" compoundref="_mach_o_link_graph_builder_8h" startline="78">llvm::jitlink::MachOLinkGraphBuilder::NormalizedSection::Flags</references>
+        <references refid="namespacellvm_1_1_mach_o_1ae48d3339087b2fd4771ddadae550b334a194b9b14fac1e84995be68484867a709" compoundref="_binary_format_2_mach_o_8h" startline="207">llvm::MachO::S_ATTR_DEBUG</references>
+        <references refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section_1ad3eec9b8c6d8172b52090bf396a7d76e" compoundref="_mach_o_link_graph_builder_8h" startline="74">llvm::jitlink::MachOLinkGraphBuilder::NormalizedSection::SegName</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a6dd808596b12afe282f02c7f17e31be8" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::jitlink::MachOLinkGraphBuilder::isZeroFillSection</definition>
+        <argsstring>(const NormalizedSection &amp;NSec)</argsstring>
+        <name>isZeroFillSection</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::isZeroFillSection</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section" kindref="compound">NormalizedSection</ref> &amp;</type>
+          <declname>NSec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="166" column="15" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="96" bodyend="105"/>
+        <references refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section_1a804f1edb27860163729435349ad6069f" compoundref="_mach_o_link_graph_builder_8h" startline="78">llvm::jitlink::MachOLinkGraphBuilder::NormalizedSection::Flags</references>
+        <references refid="namespacellvm_1_1_mach_o_1a48b52b2439385a6f96a6e50defb27409a18315ad92b87c2abc1ff1a795b4119c0" compoundref="_binary_format_2_mach_o_8h" startline="155">llvm::MachO::S_GB_ZEROFILL</references>
+        <references refid="namespacellvm_1_1_mach_o_1a48b52b2439385a6f96a6e50defb27409a30ad04b8f551f61de19b8756ab76eae2" compoundref="_binary_format_2_mach_o_8h" startline="169">llvm::MachO::S_THREAD_LOCAL_ZEROFILL</references>
+        <references refid="namespacellvm_1_1_mach_o_1a48b52b2439385a6f96a6e50defb27409a901e329f9c215482ab4877d7efec0768" compoundref="_binary_format_2_mach_o_8h" startline="129">llvm::MachO::S_ZEROFILL</references>
+        <references refid="namespacellvm_1_1_mach_o_1a03740c22238cbe574a5d3aaf3cd5d198afcc0f8ee030bc9729199d678956638b3" compoundref="_binary_format_2_mach_o_8h" startline="114">llvm::MachO::SECTION_TYPE</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a29207440459ed84131f56e52b45dc11a" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>static unsigned llvm::jitlink::MachOLinkGraphBuilder::getPointerSize</definition>
+        <argsstring>(const object::MachOObjectFile &amp;Obj)</argsstring>
+        <name>getPointerSize</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::getPointerSize</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1object_1_1_mach_o_object_file" kindref="compound">object::MachOObjectFile</ref> &amp;</type>
+          <declname>Obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="183" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a87906c522e2b594e09ad4c175cab76d0" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacellvm_1ae1e26e57357947b25e392fd18ab000db" kindref="member">llvm::endianness</ref></type>
+        <definition>static llvm::endianness llvm::jitlink::MachOLinkGraphBuilder::getEndianness</definition>
+        <argsstring>(const object::MachOObjectFile &amp;Obj)</argsstring>
+        <name>getEndianness</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::getEndianness</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1object_1_1_mach_o_object_file" kindref="compound">object::MachOObjectFile</ref> &amp;</type>
+          <declname>Obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="184" column="27"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a8b6f1bfdb2f5fcb7715fce56a85c013a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::jitlink::MachOLinkGraphBuilder::setCanonicalSymbol</definition>
+        <argsstring>(NormalizedSection &amp;NSec, Symbol &amp;Sym)</argsstring>
+        <name>setCanonicalSymbol</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::setCanonicalSymbol</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section" kindref="compound">NormalizedSection</ref> &amp;</type>
+          <declname>NSec</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+          <declname>Sym</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="186" column="8" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="186" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a23c8005a57ff444c89a5de4c325f1309" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+        <definition>Section &amp; llvm::jitlink::MachOLinkGraphBuilder::getCommonSection</definition>
+        <argsstring>()</argsstring>
+        <name>getCommonSection</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::getCommonSection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="196" column="11" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="107" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a1c1340d504ccf2587a58061822c9dd77" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::jitlink::MachOLinkGraphBuilder::addSectionStartSymAndBlock</definition>
+        <argsstring>(unsigned SecIndex, Section &amp;GraphSec, orc::ExecutorAddr Address, const char *Data, orc::ExecutorAddrDiff Size, uint32_t Alignment, bool IsLive)</argsstring>
+        <name>addSectionStartSymAndBlock</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::addSectionStartSymAndBlock</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>SecIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_section" kindref="compound">Section</ref> &amp;</type>
+          <declname>GraphSec</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1orc_1_1_executor_addr" kindref="compound">orc::ExecutorAddr</ref></type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacellvm_1_1orc_1a59b5f232ad8ec6bf405ddc77c3d6d752" kindref="member">orc::ExecutorAddrDiff</ref></type>
+          <declname>Size</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint32__t" kindref="compound">uint32_t</ref></type>
+          <declname>Alignment</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsLive</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="197" column="8" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="319" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a606af6f8e5e0c72501875625a394d2c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::MachOLinkGraphBuilder::createNormalizedSections</definition>
+        <argsstring>()</argsstring>
+        <name>createNormalizedSections</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::createNormalizedSections</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="202" column="9" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="114" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a741f6761c185765864624567da7cc04a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::MachOLinkGraphBuilder::createNormalizedSymbols</definition>
+        <argsstring>()</argsstring>
+        <name>createNormalizedSymbols</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::createNormalizedSymbols</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="203" column="9" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="227" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a408e6e1593341d81bcae913d09428828" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::MachOLinkGraphBuilder::graphifyRegularSymbols</definition>
+        <argsstring>()</argsstring>
+        <name>graphifyRegularSymbols</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::graphifyRegularSymbols</qualifiedname>
+        <briefdescription>
+<para>Create graph blocks and symbols for externals, absolutes, commons and all defined symbols in sections without custom parsers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>We only have 256 section indexes: <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> a vector rather than a map.</para>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="207" column="9" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="336" bodyend="565"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a70d8be5f387e6f16019dc085ab129939" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1jitlink_1_1_symbol" kindref="compound">Symbol</ref> &amp;</type>
+        <definition>Symbol &amp; llvm::jitlink::MachOLinkGraphBuilder::createStandardGraphSymbol</definition>
+        <argsstring>(NormalizedSymbol &amp;Sym, Block &amp;B, size_t Size, bool IsText, bool IsNoDeadStrip, bool IsCanonical)</argsstring>
+        <name>createStandardGraphSymbol</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::createStandardGraphSymbol</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_symbol" kindref="compound">NormalizedSymbol</ref> &amp;</type>
+          <declname>Sym</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_block" kindref="compound">Block</ref> &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Size</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsText</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsNoDeadStrip</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IsCanonical</declname>
+        </param>
+        <briefdescription>
+<para>Create and return a graph symbol for the given normalized symbol. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>NSym&apos;s GraphSymbol member will be updated to point at the newly created symbol. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="213" column="10" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="567" bodyend="601"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a134a0b2259d79c40de92c1c0536f82b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::MachOLinkGraphBuilder::graphifySectionsWithCustomParsers</definition>
+        <argsstring>()</argsstring>
+        <name>graphifySectionsWithCustomParsers</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::graphifySectionsWithCustomParsers</qualifiedname>
+        <briefdescription>
+<para>Create graph blocks and symbols for all sections. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="218" column="9" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="603" bodyend="621"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1aeeec63348a75b763c6abf9974c591805" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::jitlink::MachOLinkGraphBuilder::graphifyCStringSection</definition>
+        <argsstring>(NormalizedSection &amp;NSec, std::vector&lt; NormalizedSymbol * &gt; NSyms)</argsstring>
+        <name>graphifyCStringSection</name>
+        <qualifiedname>llvm::jitlink::MachOLinkGraphBuilder::graphifyCStringSection</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_section" kindref="compound">NormalizedSection</ref> &amp;</type>
+          <declname>NSec</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="structllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1_1_normalized_symbol" kindref="compound">NormalizedSymbol</ref> * &gt;</type>
+          <declname>NSyms</declname>
+        </param>
+        <briefdescription>
+<para>Graphify cstring section. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Sort into reverse order to use as a stack.</para>
+        </inbodydescription>
+        <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="221" column="9" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.cpp" bodystart="623" bodyend="734"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>anonymous_namespace{MachO_arm64.cpp}::MachOLinkGraphBuilder_arm64</label>
+        <link refid="classanonymous__namespace_02_mach_o__arm64_8cpp_03_1_1_mach_o_link_graph_builder__arm64"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>anonymous_namespace{MachO_x86_64.cpp}::MachOLinkGraphBuilder_x86_64</label>
+        <link refid="classanonymous__namespace_02_mach_o__x86__64_8cpp_03_1_1_mach_o_link_graph_builder__x86__64"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::jitlink::MachOLinkGraphBuilder</label>
+        <link refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder"/>
+      </node>
+    </inheritancegraph>
+    <location file="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" line="29" column="1" bodyfile="lib/ExecutionEngine/JITLink/MachOLinkGraphBuilder.h" bodystart="29" bodyend="237"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a206a08ef5dd4f6e0e78246565738c097" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>addCustomSectionParser</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a590998169889df51d1a7b166a61720be" prot="protected" virt="pure-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>addRelocations</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a1c1340d504ccf2587a58061822c9dd77" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>addSectionStartSymAndBlock</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a657f3d7c1aac1e6d7bf69be1f044c72e" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>Allocator</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a819bd17560946f0e61a5ae8667bf28cb" prot="public" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>buildGraph</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ae9d1eaddf856385fc72d42415463eb53" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>CommonSection</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a606af6f8e5e0c72501875625a394d2c1" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>createNormalizedSections</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ab023790ae58223ae54d21897313d1e52" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>createNormalizedSymbol</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a741f6761c185765864624567da7cc04a" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>createNormalizedSymbols</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a70d8be5f387e6f16019dc085ab129939" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>createStandardGraphSymbol</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a3c4765bc3a2ed3ea847d8e765030f6c6" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>CustomSectionParserFunctions</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1adf3ea735d9da67f05bf77c19aa613e66" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>findSectionByIndex</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a6f213aa1b9ed4fc9c350af11553596dd" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>findSymbolByAddress</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a7a5ae0e2b04f4857cd1af9eabdfb1521" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>findSymbolByIndex</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a677fab4194bef58d6a1b9e8d06c12c2b" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>G</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a23c8005a57ff444c89a5de4c325f1309" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>getCommonSection</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a87906c522e2b594e09ad4c175cab76d0" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>getEndianness</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a80c784d6fdea9bb6695b0513a389a3ab" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>getGraph</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ab0eab99e318dd8caa8a3451211d0f1c1" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>getLinkage</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a46960668254b082475a10618630cb737" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>getObject</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a29207440459ed84131f56e52b45dc11a" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>getPointerSize</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ad63fca6e6e001f3e97eebaa2c397ffc9" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>getRelocationInfo</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a6c75d5f3493bf8a17cc1f66ac18dbee7" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>getScope</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a83cc2a0b1b4cbee216d6f45af0c70f0b" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>getSectionByIndex</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ab5df00c94ee2bf69f5d36cec652ae135" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>getSymbolByAddress</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1aeeec63348a75b763c6abf9974c591805" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>graphifyCStringSection</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a408e6e1593341d81bcae913d09428828" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>graphifyRegularSymbols</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a134a0b2259d79c40de92c1c0536f82b5" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>graphifySectionsWithCustomParsers</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a10b59adc39ef76237caa68b2b1aed390" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>IndexToSection</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a752a2d07d73eead164aad90ba2bcf9da" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>IndexToSymbol</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1ad3924d512564c3a6c9b831d067812e88" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>isAltEntry</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a07bee760ea66298eae2600beff1debd0" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>isDebugSection</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a6dd808596b12afe282f02c7f17e31be8" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>isZeroFillSection</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a858d2c17dbc7a1306b127b648693a4a8" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>MachOLinkGraphBuilder</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a84eba3eaceeaa90b7185675f7c044614" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>Obj</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a69dad8e4923828e8561d86dc4818cc81" prot="protected" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>SectionParserFunction</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a8b6f1bfdb2f5fcb7715fce56a85c013a" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>setCanonicalSymbol</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a8eed8f1782875460f345b9f973db61fc" prot="private" virt="non-virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>SubsectionsViaSymbols</name></member>
+      <member refid="classllvm_1_1jitlink_1_1_mach_o_link_graph_builder_1a4abaccbb6a8bed1ec337b121c532a046" prot="public" virt="virtual"><scope>llvm::jitlink::MachOLinkGraphBuilder</scope><name>~MachOLinkGraphBuilder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,582 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_mem_dep_result" kind="class" language="C++" prot="public">
+    <compoundname>llvm::MemDepResult</compoundname>
+    <includes refid="_memory_dependence_analysis_8h" local="yes">llvm/Analysis/MemoryDependenceAnalysis.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classllvm_1_1_mem_dep_result_1ab9298a0662bef8856087aae491e84790" prot="private" static="no" strong="no">
+        <type></type>
+        <name>DepType</name>
+        <qualifiedname>llvm::MemDepResult::DepType</qualifiedname>
+        <enumvalue id="classllvm_1_1_mem_dep_result_1ab9298a0662bef8856087aae491e84790a7cb2cbf4079b61ed98784f9fe153c9aa" prot="private">
+          <name>Invalid</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Clients of MemDep never see this. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Entries with this marker occur in a LocalDeps map or NonLocalDeps map when the instruction they previously referenced was removed from MemDep. In either case, the entry may include an instruction pointer. If so, the pointer is an instruction in the block where scanning can start from, saving some work.</para>
+<para>In a default-constructed <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> object, the type will be Invalid and the instruction pointer will be null. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_mem_dep_result_1ab9298a0662bef8856087aae491e84790a22789038753868da92742bca54389f13" prot="private">
+          <name>Clobber</name>
+          <briefdescription>
+<para>This is a dependence on the specified instruction which clobbers the desired value. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The pointer member of the <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> pair holds the instruction that clobbers the memory. For example, this occurs when we see a may-aliased store to the memory location we care about.</para>
+<para>There are several cases that may be interesting here:<orderedlist>
+<listitem><para>Loads are clobbered by may-alias stores.</para>
+</listitem><listitem><para>Loads are considered clobbered by partially-aliased loads. The client may choose to analyze deeper into these cases. </para>
+</listitem></orderedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_mem_dep_result_1ab9298a0662bef8856087aae491e84790a1761e14f49db6d6f5c342ad4d0117b37" prot="private">
+          <name>Def</name>
+          <briefdescription>
+<para>This is a dependence on the specified instruction which defines or produces the desired memory location. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The pointer member of the <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> pair holds the instruction that defines the memory.</para>
+<para>Cases of interest:<orderedlist>
+<listitem><para>This could be a load or store for dependence queries on load/store. The value loaded or stored is the produced value. Note that the pointer operand may be different than that of the queried pointer due to must aliases and phi translation. Note that the def may not be the same type as the query, the pointers may just be must aliases.</para>
+</listitem><listitem><para>For loads and stores, this could be an allocation instruction. In this case, the load is loading an undef value or a store is the first store to (that part of) the allocation.</para>
+</listitem><listitem><para><ref refid="classllvm_1_1_dependence" kindref="compound">Dependence</ref> queries on calls return Def only when they are readonly calls or memory use intrinsics with identical callees and no intervening clobbers. No validation is done that the operands to the calls are the same.</para>
+</listitem><listitem><para>For loads and stores, this could be a select instruction that defines pointer to this memory location. In this case, users can find non-clobbered Defs for both select values that are reaching </para>
+</listitem></orderedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_mem_dep_result_1ab9298a0662bef8856087aae491e84790aaa9b5488803947feba51dd5f638d9727" prot="private">
+          <name>Other</name>
+          <briefdescription>
+<para>This marker indicates that the query has no known dependency in the specified block. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>More detailed state info is encoded in the upper part of the pair (i.e. the Instruction*) </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="37" column="3" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="37" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="enum" id="classllvm_1_1_mem_dep_result_1ae5e9de11544c9532c492be1bcff8b2d7" prot="private" static="no" strong="no">
+        <type></type>
+        <name>OtherType</name>
+        <qualifiedname>llvm::MemDepResult::OtherType</qualifiedname>
+        <enumvalue id="classllvm_1_1_mem_dep_result_1ae5e9de11544c9532c492be1bcff8b2d7a65afdebdf3f85d40f7d820a0053ad5f2" prot="private">
+          <name>NonLocal</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>This marker indicates that the query has no dependency in the specified block. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>To find out more, the client should query other predecessor blocks. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_mem_dep_result_1ae5e9de11544c9532c492be1bcff8b2d7ab477dfce95da90a912d1d60cedf4f03b" prot="private">
+          <name>NonFuncLocal</name>
+          <briefdescription>
+<para>This marker indicates that the query has no dependency in the specified function. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_mem_dep_result_1ae5e9de11544c9532c492be1bcff8b2d7a85de94931b71d99e58399555e1e9e729" prot="private">
+          <name>Unknown</name>
+          <briefdescription>
+<para>This marker indicates that the query dependency is unknown. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>If DepType is &quot;Other&quot;, the upper part of the sum type is an encoding of the following more detailed type information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="96" column="3" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="96" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_mem_dep_result_1a626ce759bbdafd97b9a1f4ebbb5ce92a" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_pointer_sum_type" kindref="compound">PointerSumType</ref>&lt; DepType, <ref refid="structllvm_1_1_pointer_sum_type_member" kindref="compound">PointerSumTypeMember</ref>&lt; <ref refid="namespacellvm_1af59335be18fa802d111a646be658b7d0a68a576ae5bab85b26f5e5a947d3b41e8" kindref="member">Invalid</ref>, <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> * &gt;, <ref refid="structllvm_1_1_pointer_sum_type_member" kindref="compound">PointerSumTypeMember</ref>&lt; Clobber, <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> * &gt;, <ref refid="structllvm_1_1_pointer_sum_type_member" kindref="compound">PointerSumTypeMember</ref>&lt; Def, <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> * &gt;, <ref refid="structllvm_1_1_pointer_sum_type_member" kindref="compound">PointerSumTypeMember</ref>&lt; <ref refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387" kindref="member">Other</ref>, <ref refid="classllvm_1_1_pointer_embedded_int" kindref="compound">PointerEmbeddedInt</ref>&lt; OtherType, 3 &gt; &gt; &gt;</type>
+        <definition>using llvm::MemDepResult::ValueTy =  PointerSumType&lt;
+      DepType, PointerSumTypeMember&lt;Invalid, Instruction *&gt;,
+      PointerSumTypeMember&lt;Clobber, Instruction *&gt;,
+      PointerSumTypeMember&lt;Def, Instruction *&gt;,
+      PointerSumTypeMember&lt;Other, PointerEmbeddedInt&lt;OtherType, 3&gt;&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>ValueTy</name>
+        <qualifiedname>llvm::MemDepResult::ValueTy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="109" column="3" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_mem_dep_result_1a152e00edeb4b8c1595754ebe864307f7" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_pointer_sum_type" kindref="compound">ValueTy</ref></type>
+        <definition>ValueTy llvm::MemDepResult::Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <qualifiedname>llvm::MemDepResult::Value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="114" column="11" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_mem_dep_result_1a532bf6813cfad427c793ef4678216b9d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class MemoryDependenceResults</definition>
+        <argsstring></argsstring>
+        <name>MemoryDependenceResults</name>
+        <qualifiedname>llvm::MemDepResult::MemoryDependenceResults</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_memory_dependence_results" kindref="compound">MemoryDependenceResults</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="192" column="16" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="192" bodyend="-1"/>
+        <references refid="classllvm_1_1_mem_dep_result_1a532bf6813cfad427c793ef4678216b9d" compoundref="_memory_dependence_analysis_8h" startline="192">MemoryDependenceResults</references>
+        <referencedby refid="classllvm_1_1_mem_dep_result_1a532bf6813cfad427c793ef4678216b9d" compoundref="_memory_dependence_analysis_8h" startline="192">MemoryDependenceResults</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a8fe0f4a827f2a5236ca96c9d6e0e004d" prot="private" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MemDepResult::MemDepResult</definition>
+        <argsstring>(ValueTy V)</argsstring>
+        <name>MemDepResult</name>
+        <qualifiedname>llvm::MemDepResult::MemDepResult</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_pointer_sum_type" kindref="compound">ValueTy</ref></type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="116" column="12" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="116" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a94413fe1c3ef468e891d75e02aed00f8" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemDepResult::isDirty</definition>
+        <argsstring>() const</argsstring>
+        <name>isDirty</name>
+        <qualifiedname>llvm::MemDepResult::isDirty</qualifiedname>
+        <briefdescription>
+<para>Tests if this is a <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> in its dirty/invalid. state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="195" column="8" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="195" bodyend="195"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1aa7a2ee4897b77650c8af536a9b0c02a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::MemDepResult::MemDepResult</definition>
+        <argsstring>()=default</argsstring>
+        <name>MemDepResult</name>
+        <qualifiedname>llvm::MemDepResult::MemDepResult</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="119" column="3"/>
+        <referencedby refid="classllvm_1_1_mem_dep_result_1a6acfd94bce56e2812f8e5d7626dd9b8f" compoundref="_memory_dependence_analysis_8h" startline="127" endline="130">getClobber</referencedby>
+        <referencedby refid="classllvm_1_1_mem_dep_result_1ae4760893fa2bd86ce4460d3171fb9a82" compoundref="_memory_dependence_analysis_8h" startline="123" endline="126">getDef</referencedby>
+        <referencedby refid="classllvm_1_1_mem_dep_result_1adfd696331e43abcbcf5060bf0cd506e4" compoundref="_memory_dependence_analysis_8h" startline="134" endline="136">getNonFuncLocal</referencedby>
+        <referencedby refid="classllvm_1_1_mem_dep_result_1a465c166d520399ff2b114c8aac5e7f3d" compoundref="_memory_dependence_analysis_8h" startline="131" endline="133">getNonLocal</referencedby>
+        <referencedby refid="classllvm_1_1_mem_dep_result_1a87800772e5bbce0b8e0cb23b54e47f58" compoundref="_memory_dependence_analysis_8h" startline="137" endline="139">getUnknown</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a01bfb86ab31d9f9a92f926aba4a463dc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemDepResult::isClobber</definition>
+        <argsstring>() const</argsstring>
+        <name>isClobber</name>
+        <qualifiedname>llvm::MemDepResult::isClobber</qualifiedname>
+        <briefdescription>
+<para>Tests if this <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> represents a query that is an instruction clobber dependency. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="143" column="8" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="143" bodyend="143"/>
+        <referencedby refid="classllvm_1_1_mem_dep_result_1aa9284c7b4e7cfa1baabc14bf877b29f8" compoundref="_memory_dependence_analysis_8h" startline="150" endline="150">isLocal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a70bfd297fb0ed3a5fa0ef09b5a47b496" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemDepResult::isDef</definition>
+        <argsstring>() const</argsstring>
+        <name>isDef</name>
+        <qualifiedname>llvm::MemDepResult::isDef</qualifiedname>
+        <briefdescription>
+<para>Tests if this <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> represents a query that is an instruction definition dependency. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="147" column="8" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="147" bodyend="147"/>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a3928622cecd7b474f1c959b50897fae4" compoundref="_memory_dependence_analysis_8cpp" startline="240" endline="266">llvm::MemoryDependenceResults::getPointerDependencyFrom</referencedby>
+        <referencedby refid="classllvm_1_1_mem_dep_result_1aa9284c7b4e7cfa1baabc14bf877b29f8" compoundref="_memory_dependence_analysis_8h" startline="150" endline="150">isLocal</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_m_d_g_p_u_rewrite_out_arguments_8cpp_03_1_1_a_m_d_g_p_u_rewrite_out_arguments_1af9d46a08167454a31f6a9157eb65a44a" compoundref="_a_m_d_g_p_u_rewrite_out_arguments_8cpp" startline="175" endline="401">anonymous_namespace{AMDGPURewriteOutArguments.cpp}::AMDGPURewriteOutArguments::runOnFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1aa9284c7b4e7cfa1baabc14bf877b29f8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemDepResult::isLocal</definition>
+        <argsstring>() const</argsstring>
+        <name>isLocal</name>
+        <qualifiedname>llvm::MemDepResult::isLocal</qualifiedname>
+        <briefdescription>
+<para>Tests if this <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> represents a valid local query (Clobber/Def). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="150" column="8" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="150" bodyend="150"/>
+        <references refid="classllvm_1_1_mem_dep_result_1a01bfb86ab31d9f9a92f926aba4a463dc" compoundref="_memory_dependence_analysis_8h" startline="143" endline="143">isClobber</references>
+        <references refid="classllvm_1_1_mem_dep_result_1a70bfd297fb0ed3a5fa0ef09b5a47b496" compoundref="_memory_dependence_analysis_8h" startline="147" endline="147">isDef</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a2b6159ef05223f67e8dd0a178377f06b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemDepResult::isNonLocal</definition>
+        <argsstring>() const</argsstring>
+        <name>isNonLocal</name>
+        <qualifiedname>llvm::MemDepResult::isNonLocal</qualifiedname>
+        <briefdescription>
+<para>Tests if this <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> represents a query that is transparent to the start of the block, but where a non-local hasn&apos;t been done. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="154" column="8" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="154" bodyend="156"/>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1aa7240503037f0c0499222a41a5f22d06" compoundref="_memory_dependence_analysis_8cpp" startline="718" endline="840">llvm::MemoryDependenceResults::getNonLocalCallDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a3928622cecd7b474f1c959b50897fae4" compoundref="_memory_dependence_analysis_8cpp" startline="240" endline="266">llvm::MemoryDependenceResults::getPointerDependencyFrom</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a47504af508f66b8f52d3f100d32326fc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemDepResult::isNonFuncLocal</definition>
+        <argsstring>() const</argsstring>
+        <name>isNonFuncLocal</name>
+        <qualifiedname>llvm::MemDepResult::isNonFuncLocal</qualifiedname>
+        <briefdescription>
+<para>Tests if this <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> represents a query that is transparent to the start of the function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="160" column="8" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="160" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1aad752ec517a6efc823355c1e2fc21abb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemDepResult::isUnknown</definition>
+        <argsstring>() const</argsstring>
+        <name>isUnknown</name>
+        <qualifiedname>llvm::MemDepResult::isUnknown</qualifiedname>
+        <briefdescription>
+<para>Tests if this <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> represents a query which cannot and/or will not be computed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="166" column="8" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="166" bodyend="168"/>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a3928622cecd7b474f1c959b50897fae4" compoundref="_memory_dependence_analysis_8cpp" startline="240" endline="266">llvm::MemoryDependenceResults::getPointerDependencyFrom</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1ae824fe970b941b6bafc9b41d65cb4799" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+        <definition>Instruction * llvm::MemDepResult::getInst</definition>
+        <argsstring>() const</argsstring>
+        <name>getInst</name>
+        <qualifiedname>llvm::MemDepResult::getInst</qualifiedname>
+        <briefdescription>
+<para>If this is a normal dependency, returns the instruction that is depended on. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Otherwise, returns null. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="172" column="15" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="172" bodyend="184"/>
+        <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1aa5c238ef927795521aeb232b467a6cd1" compoundref="_memory_dependence_analysis_8cpp" startline="647" endline="703">llvm::MemoryDependenceResults::getDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1aa7240503037f0c0499222a41a5f22d06" compoundref="_memory_dependence_analysis_8cpp" startline="718" endline="840">llvm::MemoryDependenceResults::getNonLocalCallDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a4082748189dc3460ea7130cd8d7790b5" compoundref="_memory_dependence_analysis_8cpp" startline="1490" endline="1656">llvm::MemoryDependenceResults::removeInstruction</referencedby>
+        <referencedby refid="_g_v_n_8cpp_1a160dacda9f89b4c190ff303c6f4ed15e" compoundref="_g_v_n_8cpp" startline="1174" endline="1232">reportMayClobberedLoad</referencedby>
+        <referencedby refid="classanonymous__namespace_02_a_m_d_g_p_u_rewrite_out_arguments_8cpp_03_1_1_a_m_d_g_p_u_rewrite_out_arguments_1af9d46a08167454a31f6a9157eb65a44a" compoundref="_a_m_d_g_p_u_rewrite_out_arguments_8cpp" startline="175" endline="401">anonymous_namespace{AMDGPURewriteOutArguments.cpp}::AMDGPURewriteOutArguments::runOnFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a86d5331fe3f7e2bc481057a5c7560b8a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemDepResult::operator==</definition>
+        <argsstring>(const MemDepResult &amp;M) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>llvm::MemDepResult::operator==</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="186" column="8" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="186" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a1f76f839925005473d8bafecc0edd69d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemDepResult::operator!=</definition>
+        <argsstring>(const MemDepResult &amp;M) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>llvm::MemDepResult::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="187" column="8" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="187" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a9e6f43b4f03c10a544c5de9ddf4f2a31" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemDepResult::operator&lt;</definition>
+        <argsstring>(const MemDepResult &amp;M) const</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>llvm::MemDepResult::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="188" column="3" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="188" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a60fe973bfe754cec02dff33319d81888" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::MemDepResult::operator&gt;</definition>
+        <argsstring>(const MemDepResult &amp;M) const</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>llvm::MemDepResult::operator&gt;</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="189" column="8" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="189" bodyend="189"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1ae4760893fa2bd86ce4460d3171fb9a82" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref></type>
+        <definition>static MemDepResult llvm::MemDepResult::getDef</definition>
+        <argsstring>(Instruction *Inst)</argsstring>
+        <name>getDef</name>
+        <qualifiedname>llvm::MemDepResult::getDef</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <briefdescription>
+<para>get methods: These are static ctor methods for creating various <ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref> kinds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="123" column="23" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="123" bodyend="126"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_pointer_sum_type_1a822f3a6433ac1dbaaead6a3143675fd0" compoundref="_pointer_sum_type_8h" startline="110" endline="114">llvm::PointerSumType&lt; DepType, PointerSumTypeMember&lt; Invalid, Instruction * &gt;, PointerSumTypeMember&lt; Clobber, Instruction * &gt;, PointerSumTypeMember&lt; Def, Instruction * &gt;, PointerSumTypeMember&lt; Other, PointerEmbeddedInt&lt; OtherType, 3 &gt; &gt; &gt;::create</references>
+        <references refid="classllvm_1_1_mem_dep_result_1aa7a2ee4897b77650c8af536a9b0c02a8">MemDepResult</references>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a81ed5939e93e21552b452f5f82a73a38" compoundref="_memory_dependence_analysis_8cpp" startline="277" endline="332">llvm::MemoryDependenceResults::getInvariantGroupPointerDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a10168569b54ede5f3a15b05463db9495" compoundref="_memory_dependence_analysis_8cpp" startline="367" endline="645">llvm::MemoryDependenceResults::getSimplePointerDependencyFrom</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a6acfd94bce56e2812f8e5d7626dd9b8f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref></type>
+        <definition>static MemDepResult llvm::MemDepResult::getClobber</definition>
+        <argsstring>(Instruction *Inst)</argsstring>
+        <name>getClobber</name>
+        <qualifiedname>llvm::MemDepResult::getClobber</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="127" column="23" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="127" bodyend="130"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_pointer_sum_type_1a822f3a6433ac1dbaaead6a3143675fd0" compoundref="_pointer_sum_type_8h" startline="110" endline="114">llvm::PointerSumType&lt; DepType, PointerSumTypeMember&lt; Invalid, Instruction * &gt;, PointerSumTypeMember&lt; Clobber, Instruction * &gt;, PointerSumTypeMember&lt; Def, Instruction * &gt;, PointerSumTypeMember&lt; Other, PointerEmbeddedInt&lt; OtherType, 3 &gt; &gt; &gt;::create</references>
+        <references refid="classllvm_1_1_mem_dep_result_1aa7a2ee4897b77650c8af536a9b0c02a8">MemDepResult</references>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a10168569b54ede5f3a15b05463db9495" compoundref="_memory_dependence_analysis_8cpp" startline="367" endline="645">llvm::MemoryDependenceResults::getSimplePointerDependencyFrom</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a465c166d520399ff2b114c8aac5e7f3d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref></type>
+        <definition>static MemDepResult llvm::MemDepResult::getNonLocal</definition>
+        <argsstring>()</argsstring>
+        <name>getNonLocal</name>
+        <qualifiedname>llvm::MemDepResult::getNonLocal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="131" column="23" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="131" bodyend="133"/>
+        <references refid="classllvm_1_1_pointer_sum_type_1a822f3a6433ac1dbaaead6a3143675fd0" compoundref="_pointer_sum_type_8h" startline="110" endline="114">llvm::PointerSumType&lt; DepType, PointerSumTypeMember&lt; Invalid, Instruction * &gt;, PointerSumTypeMember&lt; Clobber, Instruction * &gt;, PointerSumTypeMember&lt; Def, Instruction * &gt;, PointerSumTypeMember&lt; Other, PointerEmbeddedInt&lt; OtherType, 3 &gt; &gt; &gt;::create</references>
+        <references refid="classllvm_1_1_mem_dep_result_1aa7a2ee4897b77650c8af536a9b0c02a8">MemDepResult</references>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1aa5c238ef927795521aeb232b467a6cd1" compoundref="_memory_dependence_analysis_8cpp" startline="647" endline="703">llvm::MemoryDependenceResults::getDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a81ed5939e93e21552b452f5f82a73a38" compoundref="_memory_dependence_analysis_8cpp" startline="277" endline="332">llvm::MemoryDependenceResults::getInvariantGroupPointerDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1aa7240503037f0c0499222a41a5f22d06" compoundref="_memory_dependence_analysis_8cpp" startline="718" endline="840">llvm::MemoryDependenceResults::getNonLocalCallDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a10168569b54ede5f3a15b05463db9495" compoundref="_memory_dependence_analysis_8cpp" startline="367" endline="645">llvm::MemoryDependenceResults::getSimplePointerDependencyFrom</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1adfd696331e43abcbcf5060bf0cd506e4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref></type>
+        <definition>static MemDepResult llvm::MemDepResult::getNonFuncLocal</definition>
+        <argsstring>()</argsstring>
+        <name>getNonFuncLocal</name>
+        <qualifiedname>llvm::MemDepResult::getNonFuncLocal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="134" column="23" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="134" bodyend="136"/>
+        <references refid="classllvm_1_1_pointer_sum_type_1a822f3a6433ac1dbaaead6a3143675fd0" compoundref="_pointer_sum_type_8h" startline="110" endline="114">llvm::PointerSumType&lt; DepType, PointerSumTypeMember&lt; Invalid, Instruction * &gt;, PointerSumTypeMember&lt; Clobber, Instruction * &gt;, PointerSumTypeMember&lt; Def, Instruction * &gt;, PointerSumTypeMember&lt; Other, PointerEmbeddedInt&lt; OtherType, 3 &gt; &gt; &gt;::create</references>
+        <references refid="classllvm_1_1_mem_dep_result_1aa7a2ee4897b77650c8af536a9b0c02a8">MemDepResult</references>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1aa5c238ef927795521aeb232b467a6cd1" compoundref="_memory_dependence_analysis_8cpp" startline="647" endline="703">llvm::MemoryDependenceResults::getDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1aa7240503037f0c0499222a41a5f22d06" compoundref="_memory_dependence_analysis_8cpp" startline="718" endline="840">llvm::MemoryDependenceResults::getNonLocalCallDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a10168569b54ede5f3a15b05463db9495" compoundref="_memory_dependence_analysis_8cpp" startline="367" endline="645">llvm::MemoryDependenceResults::getSimplePointerDependencyFrom</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a87800772e5bbce0b8e0cb23b54e47f58" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref></type>
+        <definition>static MemDepResult llvm::MemDepResult::getUnknown</definition>
+        <argsstring>()</argsstring>
+        <name>getUnknown</name>
+        <qualifiedname>llvm::MemDepResult::getUnknown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="137" column="23" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="137" bodyend="139"/>
+        <references refid="classllvm_1_1_pointer_sum_type_1a822f3a6433ac1dbaaead6a3143675fd0" compoundref="_pointer_sum_type_8h" startline="110" endline="114">llvm::PointerSumType&lt; DepType, PointerSumTypeMember&lt; Invalid, Instruction * &gt;, PointerSumTypeMember&lt; Clobber, Instruction * &gt;, PointerSumTypeMember&lt; Def, Instruction * &gt;, PointerSumTypeMember&lt; Other, PointerEmbeddedInt&lt; OtherType, 3 &gt; &gt; &gt;::create</references>
+        <references refid="classllvm_1_1_mem_dep_result_1aa7a2ee4897b77650c8af536a9b0c02a8">MemDepResult</references>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1aa5c238ef927795521aeb232b467a6cd1" compoundref="_memory_dependence_analysis_8cpp" startline="647" endline="703">llvm::MemoryDependenceResults::getDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a81ed5939e93e21552b452f5f82a73a38" compoundref="_memory_dependence_analysis_8cpp" startline="277" endline="332">llvm::MemoryDependenceResults::getInvariantGroupPointerDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1ab46fb372d99dc0562d09cfdcd041d5ab" compoundref="_memory_dependence_analysis_8cpp" startline="842" endline="898">llvm::MemoryDependenceResults::getNonLocalPointerDependency</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a3928622cecd7b474f1c959b50897fae4" compoundref="_memory_dependence_analysis_8cpp" startline="240" endline="266">llvm::MemoryDependenceResults::getPointerDependencyFrom</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_results_1a10168569b54ede5f3a15b05463db9495" compoundref="_memory_dependence_analysis_8cpp" startline="367" endline="645">llvm::MemoryDependenceResults::getSimplePointerDependencyFrom</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classllvm_1_1_mem_dep_result_1a7cf1e438f2ec9e65b143bd4c5a0821cd" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_mem_dep_result" kindref="compound">MemDepResult</ref></type>
+        <definition>static MemDepResult llvm::MemDepResult::getDirty</definition>
+        <argsstring>(Instruction *Inst)</argsstring>
+        <name>getDirty</name>
+        <qualifiedname>llvm::MemDepResult::getDirty</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref> *</type>
+          <declname>Inst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="197" column="23" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="197" bodyend="199"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A memory dependence query can return one of three different answers. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Analysis/MemoryDependenceAnalysis.h" line="36" column="1" bodyfile="include/llvm/Analysis/MemoryDependenceAnalysis.h" bodystart="36" bodyend="200"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_mem_dep_result_1ab9298a0662bef8856087aae491e84790a22789038753868da92742bca54389f13" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>Clobber</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1ab9298a0662bef8856087aae491e84790a1761e14f49db6d6f5c342ad4d0117b37" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>Def</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1ab9298a0662bef8856087aae491e84790" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>DepType</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a6acfd94bce56e2812f8e5d7626dd9b8f" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>getClobber</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1ae4760893fa2bd86ce4460d3171fb9a82" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>getDef</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a7cf1e438f2ec9e65b143bd4c5a0821cd" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>getDirty</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1ae824fe970b941b6bafc9b41d65cb4799" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>getInst</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1adfd696331e43abcbcf5060bf0cd506e4" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>getNonFuncLocal</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a465c166d520399ff2b114c8aac5e7f3d" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>getNonLocal</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a87800772e5bbce0b8e0cb23b54e47f58" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>getUnknown</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1ab9298a0662bef8856087aae491e84790a7cb2cbf4079b61ed98784f9fe153c9aa" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>Invalid</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a01bfb86ab31d9f9a92f926aba4a463dc" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>isClobber</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a70bfd297fb0ed3a5fa0ef09b5a47b496" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>isDef</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a94413fe1c3ef468e891d75e02aed00f8" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>isDirty</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1aa9284c7b4e7cfa1baabc14bf877b29f8" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>isLocal</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a47504af508f66b8f52d3f100d32326fc" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>isNonFuncLocal</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a2b6159ef05223f67e8dd0a178377f06b" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>isNonLocal</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1aad752ec517a6efc823355c1e2fc21abb" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>isUnknown</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a8fe0f4a827f2a5236ca96c9d6e0e004d" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>MemDepResult</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1aa7a2ee4897b77650c8af536a9b0c02a8" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>MemDepResult</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a532bf6813cfad427c793ef4678216b9d" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>MemoryDependenceResults</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1ae5e9de11544c9532c492be1bcff8b2d7ab477dfce95da90a912d1d60cedf4f03b" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>NonFuncLocal</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1ae5e9de11544c9532c492be1bcff8b2d7a65afdebdf3f85d40f7d820a0053ad5f2" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>NonLocal</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a1f76f839925005473d8bafecc0edd69d" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>operator!=</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a9e6f43b4f03c10a544c5de9ddf4f2a31" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>operator&lt;</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a86d5331fe3f7e2bc481057a5c7560b8a" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>operator==</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a60fe973bfe754cec02dff33319d81888" prot="public" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>operator&gt;</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1ab9298a0662bef8856087aae491e84790aaa9b5488803947feba51dd5f638d9727" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>Other</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1ae5e9de11544c9532c492be1bcff8b2d7" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>OtherType</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1ae5e9de11544c9532c492be1bcff8b2d7a85de94931b71d99e58399555e1e9e729" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>Unknown</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a152e00edeb4b8c1595754ebe864307f7" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>Value</name></member>
+      <member refid="classllvm_1_1_mem_dep_result_1a626ce759bbdafd97b9a1f4ebbb5ce92a" prot="private" virt="non-virtual"><scope>llvm::MemDepResult</scope><name>ValueTy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

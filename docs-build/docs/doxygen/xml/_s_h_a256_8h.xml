@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_s_h_a256_8h" kind="file" language="C++">
+    <compoundname>SHA256.h</compoundname>
+    <includes local="no">array</includes>
+    <includes local="no">cstdint</includes>
+    <includedby refid="_mach_o_writer_8cpp" local="yes">lib/ObjCopy/MachO/MachOWriter.cpp</includedby>
+    <includedby refid="_s_h_a256_8cpp" local="yes">lib/Support/SHA256.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/SHA256.h</label>
+        <link refid="_s_h_a256_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>array</label>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/SHA256.h</label>
+        <link refid="_s_h_a256_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/ObjCopy/MachO/MachOWriter.cpp</label>
+        <link refid="_mach_o_writer_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Support/SHA256.cpp</label>
+        <link refid="_s_h_a256_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1_s_h_a256" prot="public">llvm::SHA256</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//====-<sp/>SHA256.cpp<sp/>-<sp/>SHA256<sp/>implementation<sp/>---*-<sp/>C++<sp/>-*<sp/>======//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>SHA-256<sp/>Secure<sp/>Hash<sp/>Standard<sp/>was<sp/>published<sp/>by<sp/>NIST<sp/>in<sp/>2002.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>http://csrc.nist.gov/publications/fips/fips180-2/fips180-2.pdf</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/>The<sp/>implementation<sp/>is<sp/>based<sp/>on<sp/>nacl&apos;s<sp/>sha256<sp/>implementation<sp/>[0]<sp/>and<sp/>LLVM&apos;s</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>pre-exsiting<sp/>SHA1<sp/>code<sp/>[1].</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/><sp/>[0]<sp/>https://hyperelliptic.org/nacl/nacl-20110221.tar.bz2<sp/>(public<sp/>domain</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>code)</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/>[1]<sp/>llvm/lib/Support/SHA1.{h,cpp}</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_SUPPORT_SHA256_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_SUPPORT_SHA256_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classllvm_1_1_s_h_a256" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_s_h_a256_1a54a653063881a7e9ac08426342074e8b" kindref="member">SHA256</ref><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35" refid="classllvm_1_1_s_h_a256_1a54a653063881a7e9ac08426342074e8b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_s_h_a256_1a54a653063881a7e9ac08426342074e8b" kindref="member">SHA256</ref>()<sp/>{<sp/><ref refid="classllvm_1_1_s_h_a256_1a04258411fa38df1f7ebfb371ceb3654e" kindref="member">init</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/>///<sp/>Reinitialize<sp/>the<sp/>internal<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_s_h_a256_1a04258411fa38df1f7ebfb371ceb3654e" kindref="member">init</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/>///<sp/>Digest<sp/>more<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_s_h_a256_1a8085b46c447eb45cf02de25f782e97a6" kindref="member">update</ref>(<ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;uint8_t&gt;</ref><sp/><ref refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" kindref="member">Data</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/>///<sp/>Digest<sp/>more<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_s_h_a256_1a8085b46c447eb45cf02de25f782e97a6" kindref="member">update</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>Str);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/>///<sp/>Return<sp/>the<sp/>current<sp/>raw<sp/>256-bits<sp/>SHA256<sp/>for<sp/>the<sp/>digested</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/>///<sp/>data<sp/>since<sp/>the<sp/>last<sp/>call<sp/>to<sp/>init().<sp/>This<sp/>call<sp/>will<sp/>add<sp/>data<sp/>to<sp/>the</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/>///<sp/>internal<sp/>state<sp/>and<sp/>as<sp/>such<sp/>is<sp/>not<sp/>suited<sp/>for<sp/>getting<sp/>an<sp/>intermediate</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/>///<sp/>result<sp/>(see<sp/>result()).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>std::array&lt;uint8_t,<sp/>32&gt;<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/>///<sp/>Return<sp/>the<sp/>current<sp/>raw<sp/>256-bits<sp/>SHA256<sp/>for<sp/>the<sp/>digested</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/>///<sp/>data<sp/>since<sp/>the<sp/>last<sp/>call<sp/>to<sp/>init().<sp/>This<sp/>is<sp/>suitable<sp/>for<sp/>getting<sp/>the</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/>///<sp/>SHA256<sp/>at<sp/>any<sp/>time<sp/>without<sp/>invalidating<sp/>the<sp/>internal<sp/>state<sp/>so<sp/>that<sp/>more</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/>///<sp/>calls<sp/>can<sp/>be<sp/>made<sp/>into<sp/>update.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>std::array&lt;uint8_t,<sp/>32&gt;<sp/><ref refid="classllvm_1_1_s_h_a256_1a8ac286c9418760c89bbe7ae6d19a453c" kindref="member">result</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/>///<sp/>Returns<sp/>a<sp/>raw<sp/>256-bit<sp/>SHA256<sp/>hash<sp/>for<sp/>the<sp/>given<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::array&lt;uint8_t,<sp/>32&gt;<sp/><ref refid="classllvm_1_1_s_h_a256_1a672c5a514f7d6ca492335b0b284fd931" kindref="member">hash</ref>(<ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;uint8_t&gt;</ref><sp/><ref refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" kindref="member">Data</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/>///<sp/>Define<sp/>some<sp/>constants.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/>///<sp/>&quot;static<sp/>constexpr&quot;<sp/>would<sp/>be<sp/>cleaner<sp/>but<sp/>MSVC<sp/>does<sp/>not<sp/>support<sp/>it<sp/>yet.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{<sp/>BLOCK_LENGTH<sp/>=<sp/>64<sp/>};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{<sp/>HASH_LENGTH<sp/>=<sp/>32<sp/>};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>State</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70" refid="classllvm_1_1_s_h_a256_1a1f95614e553f87abecb5b1cbab26d7ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classllvm_1_1_s_h_a256_1a1f95614e553f87abecb5b1cbab26d7ed" kindref="member">C</ref>[BLOCK_LENGTH];</highlight></codeline>
+<codeline lineno="71" refid="classllvm_1_1_s_h_a256_1ae1dfebc8101c470b5fcbfc71cf19fd5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="classllvm_1_1_s_h_a256_1ae1dfebc8101c470b5fcbfc71cf19fd5f" kindref="member">L</ref>[BLOCK_LENGTH<sp/>/<sp/>4];</highlight></codeline>
+<codeline lineno="72" refid="classllvm_1_1_s_h_a256_1a6f290b0e51f69f5b12e4d02068005683" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="classllvm_1_1_s_h_a256_1a6f290b0e51f69f5b12e4d02068005683" kindref="member">Buffer</ref>;</highlight></codeline>
+<codeline lineno="73" refid="classllvm_1_1_s_h_a256_1a135a3c04922110f3521d8cae13a4fa01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="classllvm_1_1_s_h_a256_1a135a3c04922110f3521d8cae13a4fa01" kindref="member">State</ref>[HASH_LENGTH<sp/>/<sp/>4];</highlight></codeline>
+<codeline lineno="74" refid="classllvm_1_1_s_h_a256_1abdab7bef7066f6e46989b71d51a97c62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="classllvm_1_1_s_h_a256_1abdab7bef7066f6e46989b71d51a97c62" kindref="member">ByteCount</ref>;</highlight></codeline>
+<codeline lineno="75" refid="classllvm_1_1_s_h_a256_1ab8c2a419a9a0a770e7727e8146a82867" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classllvm_1_1_s_h_a256_1ab8c2a419a9a0a770e7727e8146a82867" kindref="member">BufferOffset</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>}<sp/>InternalState;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>writebyte(<ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="_static_data_splitter_8cpp_1ad2fefd8832b4b1ea3dbb1f621063bbff" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hashBlock();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addUncounted(<ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="_static_data_splitter_8cpp_1ad2fefd8832b4b1ea3dbb1f621063bbff" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tar_writer_8cpp_1a498738d65e5a3c57d210f97b7a475d54" kindref="member">pad</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">(std::array&lt;<ref refid="classuint32__t" kindref="compound">uint32_t</ref>,<sp/>HASH_LENGTH<sp/>/<sp/>4&gt;<sp/>&amp;HashResult);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_SUPPORT_SHA256_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Support/SHA256.h"/>
+  </compounddef>
+</doxygen>

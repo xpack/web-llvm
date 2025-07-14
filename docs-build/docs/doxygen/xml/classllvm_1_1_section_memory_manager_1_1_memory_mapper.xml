@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_section_memory_manager_1_1_memory_mapper" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>llvm::SectionMemoryManager::MemoryMapper</compoundname>
+    <derivedcompoundref refid="classllvm_1_1anonymous__namespace_02_section_memory_manager_8cpp_03_1_1_default_m_mapper" prot="public" virt="non-virtual">llvm::anonymous_namespace{SectionMemoryManager.cpp}::DefaultMMapper</derivedcompoundref>
+    <includes refid="_section_memory_manager_8h" local="yes">llvm/ExecutionEngine/SectionMemoryManager.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1_1_memory_mapper_1adde0a4f446b881cf0417f861d025066f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">sys::MemoryBlock</ref></type>
+        <definition>virtual sys::MemoryBlock llvm::SectionMemoryManager::MemoryMapper::allocateMappedMemory</definition>
+        <argsstring>(AllocationPurpose Purpose, size_t NumBytes, const sys::MemoryBlock *const NearBlock, unsigned Flags, std::error_code &amp;EC)=0</argsstring>
+        <name>allocateMappedMemory</name>
+        <qualifiedname>llvm::SectionMemoryManager::MemoryMapper::allocateMappedMemory</qualifiedname>
+        <reimplementedby refid="classllvm_1_1anonymous__namespace_02_section_memory_manager_8cpp_03_1_1_default_m_mapper_1ae4e4ae90301d45b22f7c283d13a2e832">allocateMappedMemory</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1_section_memory_manager_1a0cdbe52ddf56f7c9188174848e9423a4" kindref="member">AllocationPurpose</ref></type>
+          <declname>Purpose</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>NumBytes</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">sys::MemoryBlock</ref> *<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref></type>
+          <declname>NearBlock</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <param>
+          <type>std::error_code &amp;</type>
+          <declname>EC</declname>
+        </param>
+        <briefdescription>
+<para>This method attempts to allocate <computeroutput>NumBytes</computeroutput> bytes of virtual memory for <computeroutput>Purpose</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>NearBlock</computeroutput> may point to an existing allocation, in which case an attempt is made to allocate more memory near the existing block. The actual allocated address is not guaranteed to be near the requested address. <computeroutput>Flags</computeroutput> is used to set the initial protection flags for the block of the memory. <computeroutput>EC</computeroutput> [out] returns an object describing any error that occurs.</para>
+<para>This method may allocate more than the number of bytes requested. The actual number of bytes allocated is indicated in the returned <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref>.</para>
+<para>The start of the allocated block must be aligned with the system allocation granularity (64K on Windows, page size on Linux). If the address following <computeroutput>NearBlock</computeroutput> is not so aligned, it will be rounded up to the next allocation granularity boundary.</para>
+<para>\r a non-null <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref> if the function was successful, otherwise a null <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">MemoryBlock</ref> with <computeroutput>EC</computeroutput> describing the error. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="73" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1_1_memory_mapper_1a1f7f6733e8af2f2911c2ff4832b5d693" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::error_code</type>
+        <definition>virtual std::error_code llvm::SectionMemoryManager::MemoryMapper::protectMappedMemory</definition>
+        <argsstring>(const sys::MemoryBlock &amp;Block, unsigned Flags)=0</argsstring>
+        <name>protectMappedMemory</name>
+        <qualifiedname>llvm::SectionMemoryManager::MemoryMapper::protectMappedMemory</qualifiedname>
+        <reimplementedby refid="classllvm_1_1anonymous__namespace_02_section_memory_manager_8cpp_03_1_1_default_m_mapper_1a7f9c28a81a61c5f292d14dbd7a9b2766">protectMappedMemory</reimplementedby>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">sys::MemoryBlock</ref> &amp;</type>
+          <declname>Block</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Flags</declname>
+        </param>
+        <briefdescription>
+<para>This method sets the protection flags for a block of memory to the state specified by <computeroutput>Flags</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The behavior is not specified if the memory was not allocated using the allocateMappedMemory method. <computeroutput>Block</computeroutput> describes the memory block to be protected. <computeroutput>Flags</computeroutput> specifies the new protection state to be assigned to the block.</para>
+<para>If <computeroutput>Flags</computeroutput> is MF_WRITE, the actual behavior varies with the operating system (i.e. MF_READ | MF_WRITE on Windows) and the target architecture (i.e. MF_WRITE -&gt; MF_READ | MF_WRITE on i386).</para>
+<para>\r error_success if the function was successful, or an error_code describing the failure if an error occurred. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="89" column="29"/>
+        <references refid="namespacellvm_1a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2" compoundref="_pseudo_probe_8h" startline="29">llvm::Block</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1_1_memory_mapper_1aae2a1c0635ac55f4ca9fc83bb46463ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::error_code</type>
+        <definition>virtual std::error_code llvm::SectionMemoryManager::MemoryMapper::releaseMappedMemory</definition>
+        <argsstring>(sys::MemoryBlock &amp;M)=0</argsstring>
+        <name>releaseMappedMemory</name>
+        <qualifiedname>llvm::SectionMemoryManager::MemoryMapper::releaseMappedMemory</qualifiedname>
+        <reimplementedby refid="classllvm_1_1anonymous__namespace_02_section_memory_manager_8cpp_03_1_1_default_m_mapper_1abe6722b1a014fa1278361232a6a8ccc1">releaseMappedMemory</reimplementedby>
+        <param>
+          <type><ref refid="classllvm_1_1sys_1_1_memory_block" kindref="compound">sys::MemoryBlock</ref> &amp;</type>
+          <declname>M</declname>
+        </param>
+        <briefdescription>
+<para>This method releases a block of memory that was allocated with the allocateMappedMemory method. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It should not be used to release any memory block allocated any other way. <computeroutput>Block</computeroutput> describes the memory to be released.</para>
+<para>\r error_success if the function was successful, or an error_code describing the failure if an error occurred. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="99" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_section_memory_manager_1_1_memory_mapper_1a4d89f052a2a35640380e0f5e13c770c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>llvm::SectionMemoryManager::MemoryMapper::~MemoryMapper</definition>
+        <argsstring>()</argsstring>
+        <name>~MemoryMapper</name>
+        <qualifiedname>llvm::SectionMemoryManager::MemoryMapper::~MemoryMapper</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="101" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Implementations of this interface are used by <ref refid="classllvm_1_1_section_memory_manager" kindref="compound">SectionMemoryManager</ref> to request pages from the operating system. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>llvm::SectionMemoryManager::MemoryMapper</label>
+        <link refid="classllvm_1_1_section_memory_manager_1_1_memory_mapper"/>
+      </node>
+      <node id="2">
+        <label>llvm::anonymous_namespace{SectionMemoryManager.cpp}::DefaultMMapper</label>
+        <link refid="classllvm_1_1anonymous__namespace_02_section_memory_manager_8cpp_03_1_1_default_m_mapper"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/llvm/ExecutionEngine/SectionMemoryManager.h" line="51" column="3" bodyfile="include/llvm/ExecutionEngine/SectionMemoryManager.h" bodystart="51" bodyend="102"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_section_memory_manager_1_1_memory_mapper_1adde0a4f446b881cf0417f861d025066f" prot="public" virt="pure-virtual"><scope>llvm::SectionMemoryManager::MemoryMapper</scope><name>allocateMappedMemory</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1_1_memory_mapper_1a1f7f6733e8af2f2911c2ff4832b5d693" prot="public" virt="pure-virtual"><scope>llvm::SectionMemoryManager::MemoryMapper</scope><name>protectMappedMemory</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1_1_memory_mapper_1aae2a1c0635ac55f4ca9fc83bb46463ac" prot="public" virt="pure-virtual"><scope>llvm::SectionMemoryManager::MemoryMapper</scope><name>releaseMappedMemory</name></member>
+      <member refid="classllvm_1_1_section_memory_manager_1_1_memory_mapper_1a4d89f052a2a35640380e0f5e13c770c8" prot="public" virt="virtual"><scope>llvm::SectionMemoryManager::MemoryMapper</scope><name>~MemoryMapper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

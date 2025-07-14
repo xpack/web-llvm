@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_enumerated_array_8h" kind="file" language="C++">
+    <compoundname>EnumeratedArray.h</compoundname>
+    <includes local="no">cassert</includes>
+    <includes local="no">iterator</includes>
+    <includedby refid="_dependence_graph_builder_8cpp" local="yes">lib/Analysis/DependenceGraphBuilder.cpp</includedby>
+    <includedby refid="_open_m_p_opt_8cpp" local="yes">lib/Transforms/IPO/OpenMPOpt.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/ADT/EnumeratedArray.h</label>
+        <link refid="_enumerated_array_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cassert</label>
+      </node>
+      <node id="3">
+        <label>iterator</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/ADT/EnumeratedArray.h</label>
+        <link refid="_enumerated_array_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Analysis/DependenceGraphBuilder.cpp</label>
+        <link refid="_dependence_graph_builder_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Transforms/IPO/OpenMPOpt.cpp</label>
+        <link refid="_open_m_p_opt_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1_enumerated_array" prot="public">llvm::EnumeratedArray</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+<para>This file defines an array type that can be indexed using scoped enum values. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===-<sp/>llvm/ADT/EnumeratedArray.h<sp/>-<sp/>Enumerated<sp/>Array-------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">///<sp/>\file</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">///<sp/>This<sp/>file<sp/>defines<sp/>an<sp/>array<sp/>type<sp/>that<sp/>can<sp/>be<sp/>indexed<sp/>using<sp/>scoped<sp/>enum</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">///<sp/>values.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_ADT_ENUMERATEDARRAY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_ADT_ENUMERATEDARRAY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iterator&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref>,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Enumeration,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Enumeration<sp/>LargestEnum<sp/>=<sp/>Enumeration::Last,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>IndexType<sp/>=<sp/>int,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IndexType<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>=<sp/>1<sp/>+<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">IndexType</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(LargestEnum)&gt;</highlight></codeline>
+<codeline lineno="26" refid="classllvm_1_1_enumerated_array" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_enumerated_array_1a5ba58a584cebcdb27daff1a1b6096782" kindref="member">EnumeratedArray</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28" refid="classllvm_1_1_enumerated_array_1a524e186b35322b64ebfc000f65db7137" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_enumerated_array_1a524e186b35322b64ebfc000f65db7137" kindref="member">iterator</ref><sp/>=<sp/><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref><sp/>*;</highlight></codeline>
+<codeline lineno="29" refid="classllvm_1_1_enumerated_array_1ab9db34dd9301aa04235da357d5be204f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_enumerated_array_1ab9db34dd9301aa04235da357d5be204f" kindref="member">const_iterator</ref><sp/>=<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref><sp/>*;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classllvm_1_1_enumerated_array_1ab0f4136bb93949402ef37d435e2fbded" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_enumerated_array_1ab0f4136bb93949402ef37d435e2fbded" kindref="member">const_reverse_iterator</ref><sp/>=<sp/>std::reverse_iterator&lt;const_iterator&gt;;</highlight></codeline>
+<codeline lineno="32" refid="classllvm_1_1_enumerated_array_1a54261e1bbb3627adcace879c82a37b89" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_enumerated_array_1a54261e1bbb3627adcace879c82a37b89" kindref="member">reverse_iterator</ref><sp/>=<sp/>std::reverse_iterator&lt;iterator&gt;;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classllvm_1_1_enumerated_array_1a4886d837a0c939baff19de344744f14e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_enumerated_array_1a4886d837a0c939baff19de344744f14e" kindref="member">value_type</ref><sp/>=<sp/><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref>;</highlight></codeline>
+<codeline lineno="35" refid="classllvm_1_1_enumerated_array_1abef524c21519d985cfca14ce040a4caa" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_enumerated_array_1abef524c21519d985cfca14ce040a4caa" kindref="member">reference</ref><sp/>=<sp/><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref><sp/>&amp;;</highlight></codeline>
+<codeline lineno="36" refid="classllvm_1_1_enumerated_array_1a2edfa8346a1a74be284455b66e328069" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_enumerated_array_1a2edfa8346a1a74be284455b66e328069" kindref="member">const_reference</ref><sp/>=<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref><sp/>&amp;;</highlight></codeline>
+<codeline lineno="37" refid="classllvm_1_1_enumerated_array_1aaad4dc74d547f35d0611e5eacf4a4148" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_enumerated_array_1aaad4dc74d547f35d0611e5eacf4a4148" kindref="member">pointer</ref><sp/>=<sp/><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref><sp/>*;</highlight></codeline>
+<codeline lineno="38" refid="classllvm_1_1_enumerated_array_1a219e4fb88976047a2ef73d2da50d9ed8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_enumerated_array_1a219e4fb88976047a2ef73d2da50d9ed8" kindref="member">const_pointer</ref><sp/>=<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref><sp/>*;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classllvm_1_1_enumerated_array_1a5ba58a584cebcdb27daff1a1b6096782" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_enumerated_array_1a5ba58a584cebcdb27daff1a1b6096782" kindref="member">EnumeratedArray</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41" refid="classllvm_1_1_enumerated_array_1a663c2a0e3fbb34eabe288c2ad7be2879" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_enumerated_array_1a663c2a0e3fbb34eabe288c2ad7be2879" kindref="member">EnumeratedArray</ref>(<ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref><sp/>V)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(IndexType<sp/>IX<sp/>=<sp/>0;<sp/>IX<sp/>&lt;<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>;<sp/>++IX)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Underlying[IX]<sp/>=<sp/>V;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46" refid="classllvm_1_1_enumerated_array_1a03a7080895b4deff785d25b3fe98edb7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_enumerated_array_1a03a7080895b4deff785d25b3fe98edb7" kindref="member">EnumeratedArray</ref>(std::initializer_list&lt;ValueType&gt;<sp/><ref refid="classllvm_1_1_init" kindref="compound">Init</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="classllvm_1_1_init" kindref="compound">Init</ref>.size()<sp/>==<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Incorrect<sp/>initializer<sp/>size&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(IndexType<sp/>IX<sp/>=<sp/>0;<sp/>IX<sp/>&lt;<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>;<sp/>++IX)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Underlying[IX]<sp/>=<sp/>*(<ref refid="classllvm_1_1_init" kindref="compound">Init</ref>.begin()<sp/>+<sp/>IX);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classllvm_1_1_enumerated_array_1a6beadf942436101bc7f83903b16d6339" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref><sp/>&amp;<ref refid="classllvm_1_1_enumerated_array_1a6beadf942436101bc7f83903b16d6339" kindref="member">operator[]</ref>(Enumeration<sp/>Index)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>IX<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">IndexType</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(Index);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(IX<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>IX<sp/>&lt;<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref><sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Index<sp/>is<sp/>out<sp/>of<sp/>bounds.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Underlying[IX];</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58" refid="classllvm_1_1_enumerated_array_1a87929802608afef6d0060fdf7519f0d2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref><sp/>&amp;<ref refid="classllvm_1_1_enumerated_array_1a87929802608afef6d0060fdf7519f0d2" kindref="member">operator[]</ref>(Enumeration<sp/>Index)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="normal"><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref><sp/>&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keyword">const<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_enumerated_array_1a5ba58a584cebcdb27daff1a1b6096782" kindref="member">EnumeratedArray</ref>&lt;<ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref>,<sp/>Enumeration,<sp/>LargestEnum,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IndexType,<sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal"><sp/>&amp;&gt;(*this)[Index]);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63" refid="classllvm_1_1_enumerated_array_1ace843200fc883ce68b21ca2b04c87fea" refkind="member"><highlight class="normal"><sp/><sp/>IndexType<sp/><ref refid="classllvm_1_1_enumerated_array_1ace843200fc883ce68b21ca2b04c87fea" kindref="member">size</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="64" refid="classllvm_1_1_enumerated_array_1a02857734c7744f486e5abacc1c42c9af" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_enumerated_array_1a02857734c7744f486e5abacc1c42c9af" kindref="member">empty</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_n_v_v_m_reflect_8cpp_1ac934769d93af95250952646a3829df4c" kindref="member">size</ref>()<sp/>==<sp/>0;<sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classllvm_1_1_enumerated_array_1aa51ed432c68847084b159c1ba332b045" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_enumerated_array_1a524e186b35322b64ebfc000f65db7137" kindref="member">iterator</ref><sp/><ref refid="classllvm_1_1_enumerated_array_1aa51ed432c68847084b159c1ba332b045" kindref="member">begin</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Underlying;<sp/>}</highlight></codeline>
+<codeline lineno="67" refid="classllvm_1_1_enumerated_array_1a106c78e4bfa5ad63675d9d970b86cefa" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_enumerated_array_1ab9db34dd9301aa04235da357d5be204f" kindref="member">const_iterator</ref><sp/><ref refid="classllvm_1_1_enumerated_array_1a106c78e4bfa5ad63675d9d970b86cefa" kindref="member">begin</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Underlying;<sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classllvm_1_1_enumerated_array_1ad66b8012f0670c77b38b883a8d84a6b3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_enumerated_array_1a524e186b35322b64ebfc000f65db7137" kindref="member">iterator</ref><sp/><ref refid="classllvm_1_1_enumerated_array_1ad66b8012f0670c77b38b883a8d84a6b3" kindref="member">end</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_enumerated_array_1aa51ed432c68847084b159c1ba332b045" kindref="member">begin</ref>()<sp/>+<sp/><ref refid="_n_v_v_m_reflect_8cpp_1ac934769d93af95250952646a3829df4c" kindref="member">size</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="70" refid="classllvm_1_1_enumerated_array_1a704be463fa5f355a6c70f65c3d8b21d6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_enumerated_array_1ab9db34dd9301aa04235da357d5be204f" kindref="member">const_iterator</ref><sp/><ref refid="classllvm_1_1_enumerated_array_1a704be463fa5f355a6c70f65c3d8b21d6" kindref="member">end</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_enumerated_array_1aa51ed432c68847084b159c1ba332b045" kindref="member">begin</ref>()<sp/>+<sp/><ref refid="_n_v_v_m_reflect_8cpp_1ac934769d93af95250952646a3829df4c" kindref="member">size</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classllvm_1_1_enumerated_array_1afa2c973b4883eb5b2fea3d35cc59e66f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_enumerated_array_1a54261e1bbb3627adcace879c82a37b89" kindref="member">reverse_iterator</ref><sp/><ref refid="classllvm_1_1_enumerated_array_1afa2c973b4883eb5b2fea3d35cc59e66f" kindref="member">rbegin</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_enumerated_array_1a54261e1bbb3627adcace879c82a37b89" kindref="member">reverse_iterator</ref>(<ref refid="classllvm_1_1_enumerated_array_1ad66b8012f0670c77b38b883a8d84a6b3" kindref="member">end</ref>());<sp/>}</highlight></codeline>
+<codeline lineno="73" refid="classllvm_1_1_enumerated_array_1a2e28dd1639e995b2c43203662cf92a41" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_enumerated_array_1ab0f4136bb93949402ef37d435e2fbded" kindref="member">const_reverse_iterator</ref><sp/><ref refid="classllvm_1_1_enumerated_array_1a2e28dd1639e995b2c43203662cf92a41" kindref="member">rbegin</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_enumerated_array_1ab0f4136bb93949402ef37d435e2fbded" kindref="member">const_reverse_iterator</ref>(<ref refid="classllvm_1_1_enumerated_array_1ad66b8012f0670c77b38b883a8d84a6b3" kindref="member">end</ref>());</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76" refid="classllvm_1_1_enumerated_array_1a8ad71d06e2570c4993b21ac2b0885ced" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_enumerated_array_1a54261e1bbb3627adcace879c82a37b89" kindref="member">reverse_iterator</ref><sp/><ref refid="classllvm_1_1_enumerated_array_1a8ad71d06e2570c4993b21ac2b0885ced" kindref="member">rend</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_enumerated_array_1a54261e1bbb3627adcace879c82a37b89" kindref="member">reverse_iterator</ref>(<ref refid="classllvm_1_1_enumerated_array_1aa51ed432c68847084b159c1ba332b045" kindref="member">begin</ref>());<sp/>}</highlight></codeline>
+<codeline lineno="77" refid="classllvm_1_1_enumerated_array_1ab48f0410e18208e12d89fe8883244776" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_enumerated_array_1ab0f4136bb93949402ef37d435e2fbded" kindref="member">const_reverse_iterator</ref><sp/><ref refid="classllvm_1_1_enumerated_array_1ab48f0410e18208e12d89fe8883244776" kindref="member">rend</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_enumerated_array_1ab0f4136bb93949402ef37d435e2fbded" kindref="member">const_reverse_iterator</ref>(<ref refid="classllvm_1_1_enumerated_array_1aa51ed432c68847084b159c1ba332b045" kindref="member">begin</ref>());</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1ad18871060ac1b051c7322cc6ad71e11c" kindref="member">ValueType</ref><sp/>Underlying[<ref refid="_inline_order_8cpp_1a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719" kindref="member">Size</ref>];</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_ADT_ENUMERATEDARRAY_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/ADT/EnumeratedArray.h"/>
+  </compounddef>
+</doxygen>

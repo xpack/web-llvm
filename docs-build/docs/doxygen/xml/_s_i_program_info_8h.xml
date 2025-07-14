@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_s_i_program_info_8h" kind="file" language="C++">
+    <compoundname>SIProgramInfo.h</compoundname>
+    <includes refid="_calling_conv_8h" local="yes">llvm/IR/CallingConv.h</includes>
+    <includes refid="_compiler_8h" local="yes">llvm/Support/Compiler.h</includes>
+    <includes local="no">cstdint</includes>
+    <includedby refid="_a_m_d_g_p_u_asm_printer_8h" local="yes">lib/Target/AMDGPU/AMDGPUAsmPrinter.h</includedby>
+    <includedby refid="_a_m_d_g_p_u_h_s_a_metadata_streamer_8cpp" local="yes">lib/Target/AMDGPU/AMDGPUHSAMetadataStreamer.cpp</includedby>
+    <includedby refid="_s_i_program_info_8cpp" local="yes">lib/Target/AMDGPU/SIProgramInfo.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>llvm/IR/CallingConv.h</label>
+        <link refid="_calling_conv_8h"/>
+      </node>
+      <node id="3">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>lib/Target/AMDGPU/SIProgramInfo.h</label>
+        <link refid="_s_i_program_info_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="5">
+        <label>stddef.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>lib/Target/AMDGPU/AMDGPUAsmPrinter.cpp</label>
+        <link refid="_a_m_d_g_p_u_asm_printer_8cpp"/>
+      </node>
+      <node id="2">
+        <label>lib/Target/AMDGPU/AMDGPUAsmPrinter.h</label>
+        <link refid="_a_m_d_g_p_u_asm_printer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>lib/Target/AMDGPU/AMDGPUHSAMetadataStreamer.cpp</label>
+        <link refid="_a_m_d_g_p_u_h_s_a_metadata_streamer_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Target/AMDGPU/AMDGPUMCInstLower.cpp</label>
+        <link refid="_a_m_d_g_p_u_m_c_inst_lower_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/Target/AMDGPU/SIProgramInfo.cpp</label>
+        <link refid="_s_i_program_info_8cpp"/>
+      </node>
+      <node id="1">
+        <label>lib/Target/AMDGPU/SIProgramInfo.h</label>
+        <link refid="_s_i_program_info_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structllvm_1_1_s_i_program_info" prot="public">llvm::SIProgramInfo</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+<para>Defines struct to track resource usage and hardware flags for kernels and entry functions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===---<sp/>SIProgramInfo.h<sp/>----------------------------------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">///<sp/>\file</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">///<sp/>Defines<sp/>struct<sp/>to<sp/>track<sp/>resource<sp/>usage<sp/>and<sp/>hardware<sp/>flags<sp/>for<sp/>kernels<sp/>and</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">///<sp/>entry<sp/>functions.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_LIB_TARGET_AMDGPU_SIPROGRAMINFO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_LIB_TARGET_AMDGPU_SIPROGRAMINFO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_calling_conv_8h" kindref="compound">llvm/IR/CallingConv.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_compiler_8h" kindref="compound">llvm/Support/Compiler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_g_c_n_subtarget" kindref="compound">GCNSubtarget</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="30"><highlight class="comment">///<sp/>Track<sp/>resource<sp/>usage<sp/>for<sp/>kernels<sp/>/<sp/>entry<sp/>functions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="structllvm_1_1_s_i_program_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="_compiler_8h_1adeb6f14d9f377993d79fae2efb34ecac" kindref="member">LLVM_EXTERNAL_VISIBILITY</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a98c356d31810e2e705f15b1b3b058872" kindref="member">SIProgramInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Fields<sp/>set<sp/>in<sp/>PGM_RSRC1<sp/>pm4<sp/>packet.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="structllvm_1_1_s_i_program_info_1a3688ae99640628e4a97f11753bcab0c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a3688ae99640628e4a97f11753bcab0c9" kindref="member">VGPRBlocks</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34" refid="structllvm_1_1_s_i_program_info_1aa590ea054ee40115a9612e345df72146" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1aa590ea054ee40115a9612e345df72146" kindref="member">SGPRBlocks</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35" refid="structllvm_1_1_s_i_program_info_1a3977267b8b812445d53063e0182fd891" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a3977267b8b812445d53063e0182fd891" kindref="member">Priority</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="36" refid="structllvm_1_1_s_i_program_info_1a5dfd735278d1730ed3cffdb755ede0d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a5dfd735278d1730ed3cffdb755ede0d2" kindref="member">FloatMode</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="37" refid="structllvm_1_1_s_i_program_info_1a02e8df47424dd56e889739b63859838a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a02e8df47424dd56e889739b63859838a" kindref="member">Priv</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="38" refid="structllvm_1_1_s_i_program_info_1ab1f897a9290b5c279ed238deced93619" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1ab1f897a9290b5c279ed238deced93619" kindref="member">DX10Clamp</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39" refid="structllvm_1_1_s_i_program_info_1a318ee6169e857c53dd1dc7472a14cdb0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a318ee6169e857c53dd1dc7472a14cdb0" kindref="member">DebugMode</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="40" refid="structllvm_1_1_s_i_program_info_1ab70748f1e7c51f2ea41b9057f5b4c829" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1ab70748f1e7c51f2ea41b9057f5b4c829" kindref="member">IEEEMode</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="41" refid="structllvm_1_1_s_i_program_info_1ac559e84953a041d04f27c9a1063a1c59" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1ac559e84953a041d04f27c9a1063a1c59" kindref="member">WgpMode</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>GFX10+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="structllvm_1_1_s_i_program_info_1af398e438530ebe1daa0614d7e7e799b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1af398e438530ebe1daa0614d7e7e799b8" kindref="member">MemOrdered</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>GFX10+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="structllvm_1_1_s_i_program_info_1a22d671c4238537a22dfe82266e71c16c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a22d671c4238537a22dfe82266e71c16c" kindref="member">RrWgMode</ref><sp/>=<sp/>0;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GFX12+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="structllvm_1_1_s_i_program_info_1ac3752448069c8c6edb67b57e0ac92f85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1ac3752448069c8c6edb67b57e0ac92f85" kindref="member">ScratchSize</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>State<sp/>used<sp/>to<sp/>calculate<sp/>fields<sp/>set<sp/>in<sp/>PGM_RSRC2<sp/>pm4<sp/>packet.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="structllvm_1_1_s_i_program_info_1a34d631fd6083ae4bbbee5024eb00867a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a34d631fd6083ae4bbbee5024eb00867a" kindref="member">LDSBlocks</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="48" refid="structllvm_1_1_s_i_program_info_1a403f09379ebb1045ef45a83925a0ed70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a403f09379ebb1045ef45a83925a0ed70" kindref="member">ScratchBlocks</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Fields<sp/>set<sp/>in<sp/>PGM_RSRC2<sp/>pm4<sp/>packet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="structllvm_1_1_s_i_program_info_1a772aff37f042ff311ff9c8d3af5e3f5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a772aff37f042ff311ff9c8d3af5e3f5f" kindref="member">ScratchEnable</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52" refid="structllvm_1_1_s_i_program_info_1a59acec45cbd34d0a113b177c4b2ccbae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a59acec45cbd34d0a113b177c4b2ccbae" kindref="member">UserSGPR</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="53" refid="structllvm_1_1_s_i_program_info_1a71ed738417d64ca247cfdbfcf5165b07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a71ed738417d64ca247cfdbfcf5165b07" kindref="member">TrapHandlerEnable</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="54" refid="structllvm_1_1_s_i_program_info_1ab35b3af4fafc168fbce390b14d8d7c1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1ab35b3af4fafc168fbce390b14d8d7c1d" kindref="member">TGIdXEnable</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="55" refid="structllvm_1_1_s_i_program_info_1aee9920690b34cda0c1b7c6e1726f7bd0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1aee9920690b34cda0c1b7c6e1726f7bd0" kindref="member">TGIdYEnable</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="56" refid="structllvm_1_1_s_i_program_info_1a337ffd0352d50d9047725b0bff184106" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a337ffd0352d50d9047725b0bff184106" kindref="member">TGIdZEnable</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57" refid="structllvm_1_1_s_i_program_info_1ad3f34d529ea36932d1daad83cb0f8806" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1ad3f34d529ea36932d1daad83cb0f8806" kindref="member">TGSizeEnable</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="58" refid="structllvm_1_1_s_i_program_info_1a1d9d692d70a3cefe821356b7bc77ae0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a1d9d692d70a3cefe821356b7bc77ae0e" kindref="member">TIdIGCompCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="59" refid="structllvm_1_1_s_i_program_info_1ae4aba4a78b1ad27400e6848896387b88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1ae4aba4a78b1ad27400e6848896387b88" kindref="member">EXCPEnMSB</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="60" refid="structllvm_1_1_s_i_program_info_1a9e3ecd7aff6a81fb011bc32cde4cde1b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a9e3ecd7aff6a81fb011bc32cde4cde1b" kindref="member">LdsSize</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="61" refid="structllvm_1_1_s_i_program_info_1a4121a9a2cc6c5455abb250cca03eb76c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1a4121a9a2cc6c5455abb250cca03eb76c" kindref="member">EXCPEnable</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="structllvm_1_1_s_i_program_info_1a2726c754bff1649eb44f467f0e3b25c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a2726c754bff1649eb44f467f0e3b25c3" kindref="member">ComputePGMRSrc3GFX90A</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="structllvm_1_1_s_i_program_info_1aad1837db2b83530ed07c95b6bac0744b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1aad1837db2b83530ed07c95b6bac0744b" kindref="member">NumVGPR</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66" refid="structllvm_1_1_s_i_program_info_1a27e3860d5b04a57cde52d2bffad6138c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a27e3860d5b04a57cde52d2bffad6138c" kindref="member">NumArchVGPR</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67" refid="structllvm_1_1_s_i_program_info_1a98ea97b3ad31203bdf6769b105caa624" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a98ea97b3ad31203bdf6769b105caa624" kindref="member">NumAccVGPR</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68" refid="structllvm_1_1_s_i_program_info_1a89a57c3dc5eea14cd27e6db65d14bc32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a89a57c3dc5eea14cd27e6db65d14bc32" kindref="member">AccumOffset</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69" refid="structllvm_1_1_s_i_program_info_1ad97de4ab417f94b2cdca16c80bbcfc62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1ad97de4ab417f94b2cdca16c80bbcfc62" kindref="member">TgSplit</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="70" refid="structllvm_1_1_s_i_program_info_1a0a030caf65eb1d46c0fc1045e197e0ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a0a030caf65eb1d46c0fc1045e197e0ed" kindref="member">NumSGPR</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71" refid="structllvm_1_1_s_i_program_info_1a095bee11d087163ba9b7edc3a55310f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_s_i_program_info_1a095bee11d087163ba9b7edc3a55310f7" kindref="member">SGPRSpill</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="72" refid="structllvm_1_1_s_i_program_info_1af02e81a66cc884be2f44db9572bf9d79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_s_i_program_info_1af02e81a66cc884be2f44db9572bf9d79" kindref="member">VGPRSpill</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="73" refid="structllvm_1_1_s_i_program_info_1abf43be02eb6dd6450cf63b501f0f8f34" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="structllvm_1_1_s_i_program_info_1abf43be02eb6dd6450cf63b501f0f8f34" kindref="member">LDSSize</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="74" refid="structllvm_1_1_s_i_program_info_1a70a0d44841a613a758bdd61ccccd0d42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a70a0d44841a613a758bdd61ccccd0d42" kindref="member">FlatUsed</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Number<sp/>of<sp/>SGPRs<sp/>that<sp/>meets<sp/>number<sp/>of<sp/>waves<sp/>per<sp/>execution<sp/>unit<sp/>request.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="structllvm_1_1_s_i_program_info_1accfcf1299fb2b19aeba31bc533560e59" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1accfcf1299fb2b19aeba31bc533560e59" kindref="member">NumSGPRsForWavesPerEU</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Number<sp/>of<sp/>VGPRs<sp/>that<sp/>meets<sp/>number<sp/>of<sp/>waves<sp/>per<sp/>execution<sp/>unit<sp/>request.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="structllvm_1_1_s_i_program_info_1aa8ccab82d407519b9d648b03505332de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1aa8ccab82d407519b9d648b03505332de" kindref="member">NumVGPRsForWavesPerEU</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Final<sp/>occupancy.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="structllvm_1_1_s_i_program_info_1abfc73b7fe494d43b1b5d5ee421823a28" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1abfc73b7fe494d43b1b5d5ee421823a28" kindref="member">Occupancy</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Whether<sp/>there<sp/>is<sp/>recursion,<sp/>dynamic<sp/>allocas,<sp/>indirect<sp/>calls<sp/>or<sp/>some<sp/>other</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reason<sp/>there<sp/>may<sp/>be<sp/>statically<sp/>unknown<sp/>stack<sp/>usage.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="structllvm_1_1_s_i_program_info_1a9e3a05260c49da2e5a9401472ca63d77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a9e3a05260c49da2e5a9401472ca63d77" kindref="member">DynamicCallStack</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bonus<sp/>information<sp/>for<sp/>debugging.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="structllvm_1_1_s_i_program_info_1a55c703813acc50a1147c33ba50fe9bfb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a55c703813acc50a1147c33ba50fe9bfb" kindref="member">VCCUsed</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="structllvm_1_1_s_i_program_info_1a98c356d31810e2e705f15b1b3b058872" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structllvm_1_1_s_i_program_info_1a98c356d31810e2e705f15b1b3b058872" kindref="member">SIProgramInfo</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>constructor<sp/>sets<sp/>the<sp/>values<sp/>for<sp/>each<sp/>member<sp/>as<sp/>shown<sp/>in<sp/>the<sp/>struct.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>However,<sp/>setting<sp/>the<sp/>MCExpr<sp/>members<sp/>to<sp/>their<sp/>zero<sp/>value<sp/>equivalent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>happens<sp/>in<sp/>reset<sp/>together<sp/>with<sp/>(duplicated)<sp/>value<sp/>re-set<sp/>for<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>non-MCExpr<sp/>members.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1_s_i_program_info_1ae72726562d2c74f257bb14d331c90300" kindref="member">reset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref><sp/>&amp;MF);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/>///<sp/>Compute<sp/>the<sp/>value<sp/>of<sp/>the<sp/>ComputePGMRsrc1<sp/>register.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a4c73e82c5082e2f77d5647e1034eb81d" kindref="member">getComputePGMRSrc1</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_g_c_n_subtarget" kindref="compound">GCNSubtarget</ref><sp/>&amp;ST,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;Ctx)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1abe52a78f5c8a6b91ae15c4635ccf564e" kindref="member">getPGMRSrc1</ref>(<ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">CallingConv::ID</ref><sp/><ref refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a77c69067ae8279bc00ab8757731e90d7" kindref="member">CC</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_g_c_n_subtarget" kindref="compound">GCNSubtarget</ref><sp/>&amp;ST,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;Ctx)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/><sp/><sp/>///<sp/>Compute<sp/>the<sp/>value<sp/>of<sp/>the<sp/>ComputePGMRsrc2<sp/>register.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a318d26ac513db990b9466b1ce9380032" kindref="member">getComputePGMRSrc2</ref>(<ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;Ctx)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*<ref refid="structllvm_1_1_s_i_program_info_1a15f8b9a5641db8dcff762d1190a285dc" kindref="member">getPGMRSrc2</ref>(<ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">CallingConv::ID</ref><sp/><ref refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a77c69067ae8279bc00ab8757731e90d7" kindref="member">CC</ref>,<sp/><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;Ctx)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_LIB_TARGET_AMDGPU_SIPROGRAMINFO_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/Target/AMDGPU/SIProgramInfo.h"/>
+  </compounddef>
+</doxygen>

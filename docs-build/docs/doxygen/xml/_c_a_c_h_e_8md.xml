@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_c_a_c_h_e_8md" kind="file" language="Markdown">
+    <compoundname>CACHE.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Thread<sp/>caches</highlight></codeline>
+<codeline><highlight class="normal">rpmalloc<sp/>has<sp/>a<sp/>thread<sp/>cache<sp/>of<sp/>free<sp/>memory<sp/>blocks<sp/>which<sp/>can<sp/>be<sp/>used<sp/>in<sp/>allocations<sp/>without<sp/>interfering<sp/>with<sp/>other<sp/>threads<sp/>or<sp/>going<sp/>to<sp/>system<sp/>to<sp/>map<sp/>more<sp/>memory,<sp/>as<sp/>well<sp/>as<sp/>a<sp/>global<sp/>cache<sp/>shared<sp/>by<sp/>all<sp/>threads<sp/>to<sp/>let<sp/>spans<sp/>of<sp/>memory<sp/>pages<sp/>flow<sp/>between<sp/>threads.<sp/>Configuring<sp/>the<sp/>size<sp/>of<sp/>these<sp/>caches<sp/>can<sp/>be<sp/>crucial<sp/>to<sp/>obtaining<sp/>good<sp/>performance<sp/>while<sp/>minimizing<sp/>memory<sp/>overhead<sp/>blowup.<sp/>Below<sp/>is<sp/>a<sp/>simple<sp/>case<sp/>study<sp/>using<sp/>the<sp/>benchmark<sp/>tool<sp/>to<sp/>compare<sp/>different<sp/>thread<sp/>cache<sp/>configurations<sp/>for<sp/>rpmalloc.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>rpmalloc<sp/>thread<sp/>cache<sp/>is<sp/>configured<sp/>to<sp/>be<sp/>unlimited,<sp/>performance<sp/>oriented<sp/>as<sp/>meaning<sp/>default<sp/>values,<sp/>size<sp/>oriented<sp/>where<sp/>both<sp/>thread<sp/>cache<sp/>and<sp/>global<sp/>cache<sp/>is<sp/>reduced<sp/>significantly,<sp/>or<sp/>disabled<sp/>where<sp/>both<sp/>thread<sp/>and<sp/>global<sp/>caches<sp/>are<sp/>disabled<sp/>and<sp/>completely<sp/>free<sp/>pages<sp/>are<sp/>directly<sp/>unmapped.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>benchmark<sp/>is<sp/>configured<sp/>to<sp/>run<sp/>threads<sp/>allocating<sp/>150000<sp/>blocks<sp/>distributed<sp/>in<sp/>the<sp/>`[16,<sp/>16000]`<sp/>bytes<sp/>range<sp/>with<sp/>a<sp/>linear<sp/>falloff<sp/>probability.<sp/>It<sp/>runs<sp/>1000<sp/>loops,<sp/>and<sp/>every<sp/>iteration<sp/>75000<sp/>blocks<sp/>(50%)<sp/>are<sp/>freed<sp/>and<sp/>allocated<sp/>in<sp/>a<sp/>scattered<sp/>pattern.<sp/>There<sp/>are<sp/>no<sp/>cross<sp/>thread<sp/>allocations/deallocations.<sp/>Parameters:<sp/>`benchmark<sp/>n<sp/>0<sp/>0<sp/>0<sp/>1000<sp/>150000<sp/>75000<sp/>16<sp/>16000`.<sp/>The<sp/>benchmarks<sp/>are<sp/>run<sp/>on<sp/>an<sp/>Ubuntu<sp/>16.10<sp/>machine<sp/>with<sp/>8<sp/>cores<sp/>(4<sp/>physical,<sp/>HT)<sp/>and<sp/>12GiB<sp/>RAM.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>benchmark<sp/>also<sp/>includes<sp/>results<sp/>for<sp/>the<sp/>standard<sp/>library<sp/>malloc<sp/>implementation<sp/>as<sp/>a<sp/>reference<sp/>for<sp/>comparison<sp/>with<sp/>the<sp/>nocache<sp/>setting.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![Ubuntu<sp/>16.10<sp/>random<sp/>[16,<sp/>16000]<sp/>bytes,<sp/>8<sp/>cores](https://docs.google.com/spreadsheets/d/1NWNuar1z0uPCB5iVS_Cs6hSo2xPkTmZf0KsgWS_Fb_4/pubchart?oid=387883204&amp;format=image)</highlight></codeline>
+<codeline><highlight class="normal">![Ubuntu<sp/>16.10<sp/>random<sp/>[16,<sp/>16000]<sp/>bytes,<sp/>8<sp/>cores](https://docs.google.com/spreadsheets/d/1NWNuar1z0uPCB5iVS_Cs6hSo2xPkTmZf0KsgWS_Fb_4/pubchart?oid=1644710241&amp;format=image)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>single<sp/>threaded<sp/>case<sp/>the<sp/>unlimited<sp/>cache<sp/>and<sp/>performance<sp/>oriented<sp/>cache<sp/>settings<sp/>have<sp/>identical<sp/>performance<sp/>and<sp/>memory<sp/>overhead,<sp/>indicating<sp/>that<sp/>the<sp/>memory<sp/>pages<sp/>fit<sp/>in<sp/>the<sp/>combined<sp/>thread<sp/>and<sp/>global<sp/>cache.<sp/>As<sp/>number<sp/>of<sp/>threads<sp/>increase<sp/>to<sp/>2-4<sp/>threads,<sp/>the<sp/>performance<sp/>settings<sp/>have<sp/>slightly<sp/>higher<sp/>performance<sp/>which<sp/>can<sp/>seem<sp/>odd<sp/>at<sp/>first,<sp/>but<sp/>can<sp/>be<sp/>explained<sp/>by<sp/>low<sp/>contention<sp/>on<sp/>the<sp/>global<sp/>cache<sp/>where<sp/>some<sp/>memory<sp/>pages<sp/>can<sp/>flow<sp/>between<sp/>threads<sp/>without<sp/>stalling,<sp/>reducing<sp/>the<sp/>overall<sp/>number<sp/>of<sp/>calls<sp/>to<sp/>map<sp/>new<sp/>memory<sp/>pages<sp/>(also<sp/>indicated<sp/>by<sp/>the<sp/>slightly<sp/>lower<sp/>memory<sp/>overhead).<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">As<sp/>threads<sp/>increase<sp/>even<sp/>more<sp/>to<sp/>5-10<sp/>threads,<sp/>the<sp/>increased<sp/>contention<sp/>and<sp/>eventual<sp/>limit<sp/>of<sp/>global<sp/>cache<sp/>cause<sp/>the<sp/>unlimited<sp/>setting<sp/>to<sp/>gain<sp/>a<sp/>slight<sp/>advantage<sp/>in<sp/>performance.<sp/>As<sp/>expected<sp/>the<sp/>memory<sp/>overhead<sp/>remains<sp/>constant<sp/>for<sp/>unlimited<sp/>caches,<sp/>while<sp/>going<sp/>down<sp/>for<sp/>performance<sp/>setting<sp/>when<sp/>number<sp/>of<sp/>threads<sp/>increases.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>size<sp/>oriented<sp/>setting<sp/>maintain<sp/>good<sp/>performance<sp/>compared<sp/>to<sp/>the<sp/>standard<sp/>library<sp/>while<sp/>reducing<sp/>the<sp/>memory<sp/>overhead<sp/>compared<sp/>to<sp/>the<sp/>performance<sp/>setting<sp/>with<sp/>a<sp/>decent<sp/>amount.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>nocache<sp/>setting<sp/>still<sp/>outperforms<sp/>the<sp/>reference<sp/>standard<sp/>library<sp/>allocator<sp/>for<sp/>workloads<sp/>up<sp/>to<sp/>6<sp/>threads<sp/>while<sp/>maintaining<sp/>a<sp/>near<sp/>zero<sp/>memory<sp/>overhead,<sp/>which<sp/>is<sp/>even<sp/>slightly<sp/>lower<sp/>than<sp/>the<sp/>standard<sp/>library.<sp/>For<sp/>use<sp/>case<sp/>scenarios<sp/>where<sp/>number<sp/>of<sp/>allocation<sp/>of<sp/>each<sp/>size<sp/>class<sp/>is<sp/>lower<sp/>the<sp/>overhead<sp/>in<sp/>rpmalloc<sp/>from<sp/>the<sp/>64KiB<sp/>span<sp/>size<sp/>will<sp/>of<sp/>course<sp/>increase.</highlight></codeline>
+    </programlisting>
+    <location file="lib/Support/rpmalloc/CACHE.md"/>
+  </compounddef>
+</doxygen>

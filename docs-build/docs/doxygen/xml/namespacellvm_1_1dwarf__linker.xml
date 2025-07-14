@@ -1,0 +1,449 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacellvm_1_1dwarf__linker" kind="namespace" language="C++">
+    <compoundname>llvm::dwarf_linker</compoundname>
+    <innerclass refid="classllvm_1_1dwarf__linker_1_1_addresses_map" prot="public">llvm::dwarf_linker::AddressesMap</innerclass>
+    <innerclass refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_file" prot="public">llvm::dwarf_linker::DWARFFile</innerclass>
+    <innerclass refid="classllvm_1_1dwarf__linker_1_1_d_w_a_r_f_linker_base" prot="public">llvm::dwarf_linker::DWARFLinkerBase</innerclass>
+    <innerclass refid="classllvm_1_1dwarf__linker_1_1_indexed_values_map" prot="public">llvm::dwarf_linker::IndexedValuesMap</innerclass>
+    <innerclass refid="classllvm_1_1dwarf__linker_1_1_string_pool" prot="public">llvm::dwarf_linker::StringPool</innerclass>
+    <innerclass refid="classllvm_1_1dwarf__linker_1_1_string_pool_entry_info" prot="public">llvm::dwarf_linker::StringPoolEntryInfo</innerclass>
+    <innernamespace refid="namespacellvm_1_1dwarf__linker_1_1classic">llvm::dwarf_linker::classic</innernamespace>
+    <innernamespace refid="namespacellvm_1_1dwarf__linker_1_1parallel">llvm::dwarf_linker::parallel</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24" prot="public" static="no" strong="yes">
+        <type><ref refid="classuint8__t" kindref="compound">uint8_t</ref></type>
+        <name>DebugSectionKind</name>
+        <qualifiedname>llvm::dwarf_linker::DebugSectionKind</qualifiedname>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24af6f6931771db95a6bffec131b856bd50" prot="public">
+          <name>DebugInfo</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a64dbaf07475300f47afcfd402de0a403" prot="public">
+          <name>DebugLine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24af10a68fc1fe9d1ce73395130849d4269" prot="public">
+          <name>DebugFrame</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a558f46094c3e1ffac3dba6928d34c2b9" prot="public">
+          <name>DebugRange</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ab09a90abca61cf08407bb116fdc3b75d" prot="public">
+          <name>DebugRngLists</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" prot="public">
+          <name>DebugLoc</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a0b4ec7dfa0beee39e0d09a0cf5c09f54" prot="public">
+          <name>DebugLocLists</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a422efaefecbe9d2217dbee8ea8dc812c" prot="public">
+          <name>DebugARanges</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a67fcda65761299e9cc1cf923fe1bc751" prot="public">
+          <name>DebugAbbrev</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a2a7a1d32129c0c2cd671b7456920a8fd" prot="public">
+          <name>DebugMacinfo</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac8a9bc90088014d33564a1f67dc6243e" prot="public">
+          <name>DebugMacro</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24aef3096c553fe7abacddd617a1c377330" prot="public">
+          <name>DebugAddr</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ad46cdbe68b494ca6f426b0ca5269f6a4" prot="public">
+          <name>DebugStr</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac627686806c4fab189ff691f8331f01e" prot="public">
+          <name>DebugLineStr</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24aff29b8418c7593f015431386cf40b181" prot="public">
+          <name>DebugStrOffsets</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ab9f0ac5cd82959dfec84a8c1e8bf6aaf" prot="public">
+          <name>DebugPubNames</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ab177be5746b8cbbce9ae68af24455c98" prot="public">
+          <name>DebugPubTypes</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a20f18d4a28570b83b8f5bd6c9d26d7b8" prot="public">
+          <name>DebugNames</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a4b28d128dbdad12e4407e5632cefdb19" prot="public">
+          <name>AppleNames</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a99af17d0ec1a04c04d4f1d5813abac1a" prot="public">
+          <name>AppleNamespaces</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a7d5ee33d695df637fdd33d81513c6ac2" prot="public">
+          <name>AppleObjC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a0ecb25f167d49c0869bea3f18310fe88" prot="public">
+          <name>AppleTypes</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ae00bffb62ecb4c9192a8df7f113894c5" prot="public">
+          <name>NumberOfEnumEntries</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>List of tracked debug tables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/DWARFLinkerBase.h" line="27" column="1" bodyfile="include/llvm/DWARFLinker/DWARFLinkerBase.h" bodystart="27" bodyend="51"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacellvm_1_1dwarf__linker_1ae78c275f724455ea9876fb2de879bec6" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_address_ranges_map" kindref="compound">AddressRangesMap</ref></type>
+        <definition>using llvm::dwarf_linker::RangesTy =  AddressRangesMap</definition>
+        <argsstring></argsstring>
+        <name>RangesTy</name>
+        <qualifiedname>llvm::dwarf_linker::RangesTy</qualifiedname>
+        <briefdescription>
+<para>Mapped value in the address map is the offset to apply to the linked address. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/AddressesMap.h" line="24" column="1" bodyfile="include/llvm/DWARFLinker/AddressesMap.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacellvm_1_1dwarf__linker_1a0b0094f2370abd91cc57b6d5476a599b" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_string_map_entry" kindref="compound">StringMapEntry</ref>&lt; std::nullopt_t &gt;</type>
+        <definition>using llvm::dwarf_linker::StringEntry =  StringMapEntry&lt;std::nullopt_t&gt;</definition>
+        <argsstring></argsstring>
+        <name>StringEntry</name>
+        <qualifiedname>llvm::dwarf_linker::StringEntry</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespacellvm_1_1dwarf__linker_1a0b0094f2370abd91cc57b6d5476a599b" kindref="member">StringEntry</ref> keeps data of the string: the length, external offset and a string body which is placed right after <ref refid="namespacellvm_1_1dwarf__linker_1a0b0094f2370abd91cc57b6d5476a599b" kindref="member">StringEntry</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/StringPool.h" line="23" column="1" bodyfile="include/llvm/DWARFLinker/StringPool.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacellvm_1_1dwarf__linker_1a736c2f4f2d709c7b8159cbad577a3121" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::dwarf_linker::SectionKindsNum</definition>
+        <argsstring></argsstring>
+        <name>SectionKindsNum</name>
+        <qualifiedname>llvm::dwarf_linker::SectionKindsNum</qualifiedname>
+        <initializer>=
+    static_cast&lt;<ref refid="classsize__t" kindref="compound">size_t</ref>&gt;(<ref refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ae00bffb62ecb4c9192a8df7f113894c5" kindref="member">DebugSectionKind::NumberOfEnumEntries</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/DWARFLinkerBase.h" line="53" column="25" bodyfile="include/llvm/DWARFLinker/DWARFLinkerBase.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacellvm_1_1dwarf__linker_1a0f886fd1f1f18036b775a0cbe4c15bc6" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="classllvm_1_1_string_literal" kindref="compound">StringLiteral</ref></type>
+        <definition>StringLiteral llvm::dwarf_linker::SectionNames[SectionKindsNum]</definition>
+        <argsstring>[SectionKindsNum]</argsstring>
+        <name>SectionNames</name>
+        <qualifiedname>llvm::dwarf_linker::SectionNames</qualifiedname>
+        <initializer>= {
+    &quot;debug_info&quot;,     &quot;debug_line&quot;,     &quot;debug_frame&quot;,       &quot;debug_ranges&quot;,
+    &quot;debug_rnglists&quot;, &quot;debug_loc&quot;,      &quot;debug_loclists&quot;,    &quot;debug_aranges&quot;,
+    &quot;debug_abbrev&quot;,   &quot;debug_macinfo&quot;,  &quot;debug_macro&quot;,       &quot;debug_addr&quot;,
+    &quot;debug_str&quot;,      &quot;debug_line_str&quot;, &quot;debug_str_offsets&quot;, &quot;debug_pubnames&quot;,
+    &quot;debug_pubtypes&quot;, &quot;debug_names&quot;,    &quot;apple_names&quot;,       &quot;apple_namespac&quot;,
+    &quot;apple_objc&quot;,     &quot;apple_types&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/DWARFLinkerBase.h" line="56" column="32" bodyfile="include/llvm/DWARFLinker/DWARFLinkerBase.h" bodystart="56" bodyend="62"/>
+        <referencedby refid="classllvm_1_1_d_w_a_r_f_form_value_1a0bdd3a234a4ad4d695aea54ddb2b92bf" compoundref="_d_w_a_r_f_form_value_8cpp" startline="367" endline="380">llvm::DWARFFormValue::dumpAddressSection</referencedby>
+        <referencedby refid="namespacellvm_1_1dwarf__linker_1a2da32c7f0735e4bcb64c34222a79a6c1" compoundref="_d_w_a_r_f_linker_base_8h" startline="66" endline="68">getSectionName</referencedby>
+        <referencedby refid="classanonymous__namespace_02_structural_hash_8cpp_03_1_1_structural_hash_impl_1ac9720fa4fb8bcc62c98a125f0b09fe9e" compoundref="_i_r_2_structural_hash_8cpp" startline="80" endline="106">anonymous_namespace{StructuralHash.cpp}::StructuralHashImpl::hashGlobalVariable</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacellvm_1_1dwarf__linker_1a2da32c7f0735e4bcb64c34222a79a6c1" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_string_literal" kindref="compound">StringLiteral</ref> &amp;</type>
+        <definition>static constexpr const StringLiteral &amp; llvm::dwarf_linker::getSectionName</definition>
+        <argsstring>(DebugSectionKind SectionKind)</argsstring>
+        <name>getSectionName</name>
+        <qualifiedname>llvm::dwarf_linker::getSectionName</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24" kindref="member">DebugSectionKind</ref></type>
+          <declname>SectionKind</declname>
+        </param>
+        <briefdescription>
+<para>Return the name of the section. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/DWARFLinkerBase.h" line="66" column="1" bodyfile="include/llvm/DWARFLinker/DWARFLinkerBase.h" bodystart="66" bodyend="68"/>
+        <references refid="namespacellvm_1_1dwarf__linker_1a0f886fd1f1f18036b775a0cbe4c15bc6" compoundref="_d_w_a_r_f_linker_base_8h" startline="56" endline="62">SectionNames</references>
+        <referencedby refid="structllvm_1_1dwarf__linker_1_1parallel_1_1_section_descriptor_base_1acae1250eb874c6b97e4e6e9ee3c9177e" compoundref="_parallel_2_d_w_a_r_f_linker_8h" startline="103" endline="103">llvm::dwarf_linker::parallel::SectionDescriptorBase::getName</referencedby>
+        <referencedby refid="classllvm_1_1dwarf__linker_1_1parallel_1_1_output_sections_1ad2dd1e063f59535f2cbf1a790119f904" compoundref="_output_sections_8h" startline="332" endline="344">llvm::dwarf_linker::parallel::OutputSections::getSectionDescriptor</referencedby>
+        <referencedby refid="classllvm_1_1dwarf__linker_1_1parallel_1_1_output_sections_1ac346e762c5e3e2f8f8e97162b0afd05a" compoundref="_output_sections_8h" startline="317" endline="327">llvm::dwarf_linker::parallel::OutputSections::getSectionDescriptor</referencedby>
+        <referencedby refid="classllvm_1_1object_1_1_e_l_f_file_1ad1657b415560e76194871821263f1273" compoundref="_object_2_e_l_f_8h" startline="1323" endline="1332">llvm::object::ELFFile&lt; ELFT &gt;::getSectionName</referencedby>
+        <referencedby refid="classanonymous__namespace_02_sanitizer_coverage_8cpp_03_1_1_module_sanitizer_coverage_1a00b535566c2050fdc979d248b4dae4b8" compoundref="_sanitizer_coverage_8cpp" startline="390" endline="556">anonymous_namespace{SanitizerCoverage.cpp}::ModuleSanitizerCoverage::instrumentModule</referencedby>
+        <referencedby refid="classllvm_1_1object_1_1_e_l_f_object_file_1ae62484c71e9b9ab034fe9a10717fa718" compoundref="_e_l_f_object_file_8h" startline="1012" endline="1022">llvm::object::ELFObjectFile&lt; ELFT &gt;::isDebugSection</referencedby>
+        <referencedby refid="namespacellvm_1_1dwarf__linker_1a112b0124ddda89fd041dbdbc53016275" compoundref="_d_w_a_r_f_linker_base_8cpp" startline="16" endline="64">parseDebugTableName</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1dwarf__linker_1a112b0124ddda89fd041dbdbc53016275" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24" kindref="member">DebugSectionKind</ref> &gt;</type>
+        <definition>std::optional&lt; DebugSectionKind &gt; llvm::dwarf_linker::parseDebugTableName</definition>
+        <argsstring>(StringRef Name)</argsstring>
+        <name>parseDebugTableName</name>
+        <qualifiedname>llvm::dwarf_linker::parseDebugTableName</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Name</declname>
+          <defname>SecName</defname>
+        </param>
+        <briefdescription>
+<para>Recognise the table name and match it with the <ref refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24" kindref="member">DebugSectionKind</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/DWARFLinkerBase.h" line="71" column="15" bodyfile="lib/DWARFLinker/DWARFLinkerBase.cpp" bodystart="16" bodyend="64" declfile="include/llvm/DWARFLinker/DWARFLinkerBase.h" declline="71" declcolumn="15"/>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a4b28d128dbdad12e4407e5632cefdb19" compoundref="_d_w_a_r_f_linker_base_8h" startline="46">AppleNames</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a99af17d0ec1a04c04d4f1d5813abac1a" compoundref="_d_w_a_r_f_linker_base_8h" startline="47">AppleNamespaces</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a7d5ee33d695df637fdd33d81513c6ac2" compoundref="_d_w_a_r_f_linker_base_8h" startline="48">AppleObjC</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a0ecb25f167d49c0869bea3f18310fe88" compoundref="_d_w_a_r_f_linker_base_8h" startline="49">AppleTypes</references>
+        <references refid="classllvm_1_1_string_switch_1a3de12858bdbbd0b3da179d508ff2be75" compoundref="_string_switch_8h" startline="69" endline="74">llvm::StringSwitch&lt; T, R &gt;::Case</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a67fcda65761299e9cc1cf923fe1bc751" compoundref="_d_w_a_r_f_linker_base_8h" startline="36">DebugAbbrev</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24aef3096c553fe7abacddd617a1c377330" compoundref="_d_w_a_r_f_linker_base_8h" startline="39">DebugAddr</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a422efaefecbe9d2217dbee8ea8dc812c" compoundref="_d_w_a_r_f_linker_base_8h" startline="35">DebugARanges</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24af10a68fc1fe9d1ce73395130849d4269" compoundref="_d_w_a_r_f_linker_base_8h" startline="30">DebugFrame</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24af6f6931771db95a6bffec131b856bd50" compoundref="_d_w_a_r_f_linker_base_8h" startline="28">DebugInfo</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a64dbaf07475300f47afcfd402de0a403" compoundref="_d_w_a_r_f_linker_base_8h" startline="29">DebugLine</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac627686806c4fab189ff691f8331f01e" compoundref="_d_w_a_r_f_linker_base_8h" startline="41">DebugLineStr</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a" compoundref="_d_w_a_r_f_linker_base_8h" startline="33">DebugLoc</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a0b4ec7dfa0beee39e0d09a0cf5c09f54" compoundref="_d_w_a_r_f_linker_base_8h" startline="34">DebugLocLists</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a2a7a1d32129c0c2cd671b7456920a8fd" compoundref="_d_w_a_r_f_linker_base_8h" startline="37">DebugMacinfo</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ac8a9bc90088014d33564a1f67dc6243e" compoundref="_d_w_a_r_f_linker_base_8h" startline="38">DebugMacro</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a20f18d4a28570b83b8f5bd6c9d26d7b8" compoundref="_d_w_a_r_f_linker_base_8h" startline="45">DebugNames</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ab9f0ac5cd82959dfec84a8c1e8bf6aaf" compoundref="_d_w_a_r_f_linker_base_8h" startline="43">DebugPubNames</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ab177be5746b8cbbce9ae68af24455c98" compoundref="_d_w_a_r_f_linker_base_8h" startline="44">DebugPubTypes</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24a558f46094c3e1ffac3dba6928d34c2b9" compoundref="_d_w_a_r_f_linker_base_8h" startline="31">DebugRange</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ab09a90abca61cf08407bb116fdc3b75d" compoundref="_d_w_a_r_f_linker_base_8h" startline="32">DebugRngLists</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24ad46cdbe68b494ca6f426b0ca5269f6a4" compoundref="_d_w_a_r_f_linker_base_8h" startline="40">DebugStr</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a463a58e257d5f6fb2c39eb9a2474fc24aff29b8418c7593f015431386cf40b181" compoundref="_d_w_a_r_f_linker_base_8h" startline="42">DebugStrOffsets</references>
+        <references refid="classllvm_1_1_string_switch_1a7f0e82e8a818ca43926fceb49be81661" compoundref="_string_switch_8h" startline="182" endline="186">llvm::StringSwitch&lt; T, R &gt;::Default</references>
+        <references refid="classllvm_1_1_string_ref_1ae851887270f35d2a2670a79b9833d45b" compoundref="_string_ref_8cpp" startline="253" endline="255">llvm::StringRef::find_first_not_of</references>
+        <references refid="namespacellvm_1_1dwarf__linker_1a2da32c7f0735e4bcb64c34222a79a6c1" compoundref="_d_w_a_r_f_linker_base_8h" startline="66" endline="68">getSectionName</references>
+        <references refid="classllvm_1_1_string_ref_1a25f1fd81f2132805676c82ab8ae0c109" compoundref="_string_ref_8h" startline="571" endline="575">llvm::StringRef::substr</references>
+        <referencedby refid="structllvm_1_1dwarf__linker_1_1parallel_1_1_section_descriptor_1a0756e89d8eafc4bc2503dd3976765f61" compoundref="_output_sections_8cpp" startline="78" endline="114">llvm::dwarf_linker::parallel::SectionDescriptor::setSizesForSectionCreatedByAsmPrinter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1dwarf__linker_1a98a8554492a59019e487d750863f96f2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">Error</ref></type>
+        <definition>Error llvm::dwarf_linker::finiteLoop</definition>
+        <argsstring>(function_ref&lt; Expected&lt; bool &gt;()&gt; Iteration, size_t MaxCounter=100000)</argsstring>
+        <name>finiteLoop</name>
+        <qualifiedname>llvm::dwarf_linker::finiteLoop</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1function__ref" kindref="compound">function_ref</ref>&lt; <ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="classbool" kindref="compound">bool</ref> &gt;()&gt;</type>
+          <declname>Iteration</declname>
+        </param>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>MaxCounter</declname>
+          <defval>100000</defval>
+        </param>
+        <briefdescription>
+<para>This function calls <computeroutput>Iteration()</computeroutput> until it returns false. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If number of iterations exceeds <computeroutput>MaxCounter</computeroutput> then an <ref refid="classllvm_1_1_error" kindref="compound">Error</ref> is returned. This function should be used for loops which assumed to have number of iterations significantly smaller than <computeroutput>MaxCounter</computeroutput> to avoid infinite looping in error cases. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Utils.h" line="26" column="14" bodyfile="include/llvm/DWARFLinker/Utils.h" bodystart="26" bodyend="37"/>
+        <references refid="namespacellvm_1a4d2fd926089a58d482fb67a362e11bad" compoundref="llvm_2_support_2_error_8h" startline="1291" endline="1296">llvm::createStringError</references>
+        <references refid="classllvm_1_1_expected_1ad26ecbb6920f4ea55f5ed4f64e52342d" compoundref="llvm_2_support_2_error_8h" startline="578" endline="581">llvm::Expected&lt; T &gt;::get</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="classllvm_1_1_expected_1a94789df4ebd03dc008e8adebaa66ac1f" compoundref="llvm_2_support_2_error_8h" startline="608" endline="613">llvm::Expected&lt; T &gt;::takeError</references>
+        <referencedby refid="_accelerator_records_saver_8cpp_1a9301753b7bb43fbe58a0c9ea05711537" compoundref="_accelerator_records_saver_8cpp" startline="18" endline="61">hashFullyQualifiedName</referencedby>
+        <referencedby refid="structllvm_1_1dwarf__linker_1_1parallel_1_1_d_w_a_r_f_linker_impl_1_1_link_context_1ad06d8aa0d7980827ad6f0a8543657f73" compoundref="_d_w_a_r_f_linker_impl_8cpp" startline="447" endline="589">llvm::dwarf_linker::parallel::DWARFLinkerImpl::LinkContext::link</referencedby>
+        <referencedby refid="structllvm_1_1dwarf__linker_1_1parallel_1_1_d_w_a_r_f_linker_impl_1_1_link_context_1a8d0aeeed6972f179a2b97439943e7629" compoundref="_d_w_a_r_f_linker_impl_8cpp" startline="591" endline="707">llvm::dwarf_linker::parallel::DWARFLinkerImpl::LinkContext::linkSingleCompileUnit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1dwarf__linker_1a0e06d133446b7cfbee6b1800f3d993f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+        <definition>StringRef llvm::dwarf_linker::guessDeveloperDir</definition>
+        <argsstring>(StringRef SysRoot)</argsstring>
+        <name>guessDeveloperDir</name>
+        <qualifiedname>llvm::dwarf_linker::guessDeveloperDir</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>SysRoot</declname>
+        </param>
+        <briefdescription>
+<para>Make a best effort to guess the Xcode.app/Contents/Developer path from an SDK path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Utils.h" line="41" column="18" bodyfile="include/llvm/DWARFLinker/Utils.h" bodystart="41" bodyend="74"/>
+        <references refid="classllvm_1_1_string_ref_1a7b0fa1a82461032cdf16b7f6c59f0a6a" compoundref="_string_ref_8h" startline="144" endline="144">llvm::StringRef::data</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1ae116bcdf5fac57d6da943935fb6c547a">llvm::sys::path::rbegin</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1a2bc70cc8c5a83b940ed7c948b28dc512">llvm::sys::path::rend</references>
+        <referencedby refid="namespacellvm_1ad1a874181e3007dcd2735f381c3db6d8" compoundref="_classic_2_d_w_a_r_f_linker_8cpp" startline="191" endline="233">llvm::analyzeImportedModule</referencedby>
+        <referencedby refid="classllvm_1_1dwarf__linker_1_1parallel_1_1_compile_unit_1a188e713b7044fc7477fa27c6f4efc662" compoundref="_parallel_2_d_w_a_r_f_linker_compile_unit_8cpp" startline="253" endline="301">llvm::dwarf_linker::parallel::CompileUnit::analyzeImportedModule</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1dwarf__linker_1a85aa80526a5484cfab745ec2440b1a9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::dwarf_linker::isInToolchainDir</definition>
+        <argsstring>(StringRef Path)</argsstring>
+        <name>isInToolchainDir</name>
+        <qualifiedname>llvm::dwarf_linker::isInToolchainDir</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
+          <declname>Path</declname>
+        </param>
+        <briefdescription>
+<para>Make a best effort to determine whether Path is inside a toolchain. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Utils.h" line="77" column="13" bodyfile="include/llvm/DWARFLinker/Utils.h" bodystart="77" bodyend="96"/>
+        <references refid="namespacellvm_1_1sys_1_1path_1ae116bcdf5fac57d6da943935fb6c547a">llvm::sys::path::rbegin</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1a2bc70cc8c5a83b940ed7c948b28dc512">llvm::sys::path::rend</references>
+        <referencedby refid="namespacellvm_1ad1a874181e3007dcd2735f381c3db6d8" compoundref="_classic_2_d_w_a_r_f_linker_8cpp" startline="191" endline="233">llvm::analyzeImportedModule</referencedby>
+        <referencedby refid="classllvm_1_1dwarf__linker_1_1parallel_1_1_compile_unit_1a188e713b7044fc7477fa27c6f4efc662" compoundref="_parallel_2_d_w_a_r_f_linker_compile_unit_8cpp" startline="253" endline="301">llvm::dwarf_linker::parallel::CompileUnit::analyzeImportedModule</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacellvm_1_1dwarf__linker_1aba60ebbb0330f9e5e713c887d90a40ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::dwarf_linker::isPathAbsoluteOnWindowsOrPosix</definition>
+        <argsstring>(const Twine &amp;Path)</argsstring>
+        <name>isPathAbsoluteOnWindowsOrPosix</name>
+        <qualifiedname>llvm::dwarf_linker::isPathAbsoluteOnWindowsOrPosix</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DWARFLinker/Utils.h" line="98" column="13" bodyfile="include/llvm/DWARFLinker/Utils.h" bodystart="98" bodyend="104"/>
+        <references refid="namespacellvm_1_1sys_1_1path_1ac35ec1dacb408d4c65d55249c0e02474" compoundref="_path_8cpp" startline="671" endline="679">llvm::sys::path::is_absolute</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1a58cfd8a47c0ef96db27b451c2d6ec49fa950616e5405e4ef51a87d384180e7aa1" compoundref="_path_8h" startline="29">llvm::sys::path::posix</references>
+        <references refid="namespacellvm_1_1sys_1_1path_1a58cfd8a47c0ef96db27b451c2d6ec49fa0f4137ed1502b5045d6083aa258b5c42" compoundref="_path_8h" startline="32">llvm::sys::path::windows</references>
+        <referencedby refid="classllvm_1_1dwarf__linker_1_1parallel_1_1_compile_unit_1a53949973d752a1d918687b758424714a" compoundref="_parallel_2_d_w_a_r_f_linker_compile_unit_8cpp" startline="1688" endline="1772">llvm::dwarf_linker::parallel::CompileUnit::getDirAndFilenameFromLineTable</referencedby>
+        <referencedby refid="structllvm_1_1_d_w_a_r_f_debug_line_1_1_prologue_1aa47cad32e9eb34704f1ce2ead863e518" compoundref="_d_w_a_r_f_debug_line_8cpp" startline="1448" endline="1499">llvm::DWARFDebugLine::Prologue::getFileNameByIndex</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/DebugInfo/DWARF/DWARFDebugMacro.h" line="22" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1_source_mgr_1_1_src_buffer" kind="struct" language="C++" prot="private">
+    <compoundname>llvm::SourceMgr::SrcBuffer</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structllvm_1_1_source_mgr_1_1_src_buffer_1ae3aacf5513840bf3c2aa0eb44f7ead20" prot="public" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_buffer" kindref="compound">MemoryBuffer</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MemoryBuffer&gt; llvm::SourceMgr::SrcBuffer::Buffer</definition>
+        <argsstring></argsstring>
+        <name>Buffer</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::Buffer</qualifiedname>
+        <briefdescription>
+<para>The memory buffer for the file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="48" column="21" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_source_mgr_1_1_src_buffer_1a7b57b33884ffb95baa982169cd5b0af8" prot="public" static="no" mutable="yes">
+        <type>void *</type>
+        <definition>void* llvm::SourceMgr::SrcBuffer::OffsetCache</definition>
+        <argsstring></argsstring>
+        <name>OffsetCache</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::OffsetCache</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Vector of offsets into Buffer at which there are line-endings (lazily populated). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Once populated, the &apos;<linebreak/>
+&apos; that marks the end of line number N from [1..] is at Buffer[OffsetCache[N-1]]. Since these offsets are in sorted (ascending) order, they can be binary-searched for the first one after any given offset (eg. an offset corresponding to a particular <ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref>).</para>
+<para>Since we&apos;re storing offsets into relatively small files (often smaller than 2^8 or 2^16 bytes), we select the offset vector element type dynamically based on the size of Buffer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="60" column="18" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structllvm_1_1_source_mgr_1_1_src_buffer_1adf87f950eaf42aa3a6dfb4d88f3e9464" prot="public" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+        <definition>SMLoc llvm::SourceMgr::SrcBuffer::IncludeLoc</definition>
+        <argsstring></argsstring>
+        <name>IncludeLoc</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::IncludeLoc</qualifiedname>
+        <briefdescription>
+<para>This is the location of the parent include, or null if at the top level. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="75" column="11" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structllvm_1_1_source_mgr_1_1_src_buffer_1a8c1f472af87b314ae240adc28946a425" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned SourceMgr::SrcBuffer::getLineNumber</definition>
+        <argsstring>(const char *Ptr) const</argsstring>
+        <name>getLineNumber</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::getLineNumber</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Ptr</declname>
+        </param>
+        <briefdescription>
+<para>Look up a given <computeroutput>Ptr</computeroutput> in the buffer, determining which line it came from. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="64" column="14" bodyfile="lib/Support/SourceMgr.cpp" bodystart="122" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_source_mgr_1_1_src_buffer_1a3cf5f05ba6bea3104e50632037ae90de" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned SourceMgr::SrcBuffer::getLineNumberSpecialized</definition>
+        <argsstring>(const char *Ptr) const</argsstring>
+        <name>getLineNumberSpecialized</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::getLineNumberSpecialized</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+          <declname>Ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="66" column="14" bodyfile="lib/Support/SourceMgr.cpp" bodystart="104" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_source_mgr_1_1_src_buffer_1a02b3f98369467373f5c102200aec3f89" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>const char * SourceMgr::SrcBuffer::getPointerForLineNumber</definition>
+        <argsstring>(unsigned LineNo) const</argsstring>
+        <name>getPointerForLineNumber</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::getPointerForLineNumber</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>LineNo</declname>
+        </param>
+        <briefdescription>
+<para>Return a pointer to the first character of the specified line number or null if the line number is invalid. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="70" column="16" bodyfile="lib/Support/SourceMgr.cpp" bodystart="158" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_source_mgr_1_1_src_buffer_1a345f677ce89b28f63a3055574367eadd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classchar" kindref="compound">char</ref> *</type>
+        <definition>const char * SourceMgr::SrcBuffer::getPointerForLineNumberSpecialized</definition>
+        <argsstring>(unsigned LineNo) const</argsstring>
+        <name>getPointerForLineNumberSpecialized</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::getPointerForLineNumberSpecialized</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>LineNo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="72" column="16" bodyfile="lib/Support/SourceMgr.cpp" bodystart="135" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_source_mgr_1_1_src_buffer_1abc0d599470aca875909175a4f35002b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SourceMgr::SrcBuffer::SrcBuffer</definition>
+        <argsstring>()=default</argsstring>
+        <name>SrcBuffer</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::SrcBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="77" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_source_mgr_1_1_src_buffer_1a3242bfbd2c0caaee92c1c3366008e035" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SourceMgr::SrcBuffer::SrcBuffer</definition>
+        <argsstring>(SrcBuffer &amp;&amp;)</argsstring>
+        <name>SrcBuffer</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::SrcBuffer</qualifiedname>
+        <param>
+          <type>SrcBuffer &amp;&amp;</type>
+          <defname>Other</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="78" column="5" bodyfile="lib/Support/SourceMgr.cpp" bodystart="170" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_source_mgr_1_1_src_buffer_1a0104013a85b5ceb013079005f7efc68c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SourceMgr::SrcBuffer::SrcBuffer</definition>
+        <argsstring>(const SrcBuffer &amp;)=delete</argsstring>
+        <name>SrcBuffer</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::SrcBuffer</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> SrcBuffer &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="79" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_source_mgr_1_1_src_buffer_1a4567142e2d02641530b9829ac6f8c2aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SrcBuffer &amp;</type>
+        <definition>SrcBuffer &amp; llvm::SourceMgr::SrcBuffer::operator=</definition>
+        <argsstring>(const SrcBuffer &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> SrcBuffer &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="80" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_source_mgr_1_1_src_buffer_1aa7331e7e0960075afe21df357c9ae5b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SourceMgr::SrcBuffer::~SrcBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>~SrcBuffer</name>
+        <qualifiedname>llvm::SourceMgr::SrcBuffer::~SrcBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="81" column="5" bodyfile="lib/Support/SourceMgr.cpp" bodystart="176" bodyend="189"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>llvm::SMLoc</label>
+        <link refid="classllvm_1_1_s_m_loc"/>
+      </node>
+      <node id="1">
+        <label>llvm::SourceMgr::SrcBuffer</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Buffer</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>OffsetCache</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>IncludeLoc</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>unique_ptr&lt; llvm::MemoryBuffer &gt;</label>
+      </node>
+      <node id="3">
+        <label>void *</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/Support/SourceMgr.h" line="46" column="3" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="46" bodyend="82"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1ae3aacf5513840bf3c2aa0eb44f7ead20" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>Buffer</name></member>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1a8c1f472af87b314ae240adc28946a425" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>getLineNumber</name></member>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1a3cf5f05ba6bea3104e50632037ae90de" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>getLineNumberSpecialized</name></member>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1a02b3f98369467373f5c102200aec3f89" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>getPointerForLineNumber</name></member>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1a345f677ce89b28f63a3055574367eadd" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>getPointerForLineNumberSpecialized</name></member>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1adf87f950eaf42aa3a6dfb4d88f3e9464" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>IncludeLoc</name></member>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1a7b57b33884ffb95baa982169cd5b0af8" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>OffsetCache</name></member>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1a4567142e2d02641530b9829ac6f8c2aa" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>operator=</name></member>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1abc0d599470aca875909175a4f35002b7" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>SrcBuffer</name></member>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1a3242bfbd2c0caaee92c1c3366008e035" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>SrcBuffer</name></member>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1a0104013a85b5ceb013079005f7efc68c" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>SrcBuffer</name></member>
+      <member refid="structllvm_1_1_source_mgr_1_1_src_buffer_1aa7331e7e0960075afe21df357c9ae5b9" prot="public" virt="non-virtual"><scope>llvm::SourceMgr::SrcBuffer</scope><name>~SrcBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

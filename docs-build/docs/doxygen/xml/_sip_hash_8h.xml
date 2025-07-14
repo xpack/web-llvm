@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_sip_hash_8h" kind="file" language="C++">
+    <compoundname>SipHash.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includedby refid="_sip_hash_8cpp" local="yes">lib/Support/SipHash.cpp</includedby>
+    <includedby refid="_a_arch64_i_sel_lowering_8cpp" local="yes">lib/Target/AArch64/AArch64ISelLowering.cpp</includedby>
+    <includedby refid="_a_arch64_subtarget_8cpp" local="yes">lib/Target/AArch64/AArch64Subtarget.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/SipHash.h</label>
+        <link refid="_sip_hash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/SipHash.h</label>
+        <link refid="_sip_hash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Support/SipHash.cpp</label>
+        <link refid="_sip_hash_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Target/AArch64/AArch64ISelLowering.cpp</label>
+        <link refid="_a_arch64_i_sel_lowering_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Target/AArch64/AArch64Subtarget.cpp</label>
+        <link refid="_a_arch64_subtarget_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===---<sp/>SipHash.h<sp/>-<sp/>An<sp/>ABI-stable<sp/>string<sp/>SipHash<sp/>---------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>An<sp/>implementation<sp/>of<sp/>SipHash,<sp/>a<sp/>hash<sp/>function<sp/>optimized<sp/>for<sp/>speed<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>short<sp/>inputs.<sp/>Based<sp/>on<sp/>the<sp/>SipHash<sp/>reference<sp/>implementation.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Also<sp/>provides<sp/>one<sp/>specific<sp/>wrapper<sp/>on<sp/>top<sp/>of<sp/>SipHash-2-4-64<sp/>to<sp/>compute</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>compute<sp/>ABI-stable<sp/>ptrauth<sp/>discriminators.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_SUPPORT_SIPHASH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_SUPPORT_SIPHASH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="27"><highlight class="comment">///<sp/>Computes<sp/>a<sp/>SipHash-2-4<sp/>64-bit<sp/>result.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a155c6d528429c339eb352bfe2a715fe7" kindref="member">getSipHash_2_4_64</ref>(<ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;uint8_t&gt;</ref><sp/>In,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>(&amp;K)[16],</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>(&amp;Out)[8]);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="31"><highlight class="comment">///<sp/>Computes<sp/>a<sp/>SipHash-2-4<sp/>128-bit<sp/>result.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1abc54d0205758f7b576ea87bd3ba70a5e" kindref="member">getSipHash_2_4_128</ref>(<ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;uint8_t&gt;</ref><sp/>In,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>(&amp;K)[16],</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>(&amp;Out)[16]);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="35"><highlight class="comment">///<sp/>Compute<sp/>a<sp/>stable<sp/>non-zero<sp/>16-bit<sp/>hash<sp/>of<sp/>the<sp/>given<sp/>string.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">///<sp/>The<sp/>exact<sp/>algorithm<sp/>is<sp/>the<sp/>little-endian<sp/>interpretation<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">///<sp/>non-doubled<sp/>(i.e.<sp/>64-bit)<sp/>result<sp/>of<sp/>applying<sp/>a<sp/>SipHash-2-4<sp/>using</highlight></codeline>
+<codeline lineno="39"><highlight class="comment">///<sp/>a<sp/>specific<sp/>seed<sp/>value<sp/>which<sp/>can<sp/>be<sp/>found<sp/>in<sp/>the<sp/>source.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">///<sp/>This<sp/>64-bit<sp/>result<sp/>is<sp/>truncated<sp/>to<sp/>a<sp/>non-zero<sp/>16-bit<sp/>value.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">///<sp/>We<sp/>use<sp/>a<sp/>16-bit<sp/>discriminator<sp/>because<sp/>ARM64<sp/>can<sp/>efficiently<sp/>load</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">///<sp/>a<sp/>16-bit<sp/>immediate<sp/>into<sp/>the<sp/>high<sp/>bits<sp/>of<sp/>a<sp/>register<sp/>without<sp/>disturbing</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">///<sp/>the<sp/>remainder<sp/>of<sp/>the<sp/>value,<sp/>which<sp/>serves<sp/>as<sp/>a<sp/>nice<sp/>blend<sp/>operation.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment">///<sp/>16<sp/>bits<sp/>is<sp/>also<sp/>sufficiently<sp/>compact<sp/>to<sp/>not<sp/>inflate<sp/>a<sp/>loader<sp/>relocation.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment">///<sp/>We<sp/>disallow<sp/>zero<sp/>to<sp/>guarantee<sp/>a<sp/>different<sp/>discriminator<sp/>from<sp/>the<sp/>places</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">///<sp/>in<sp/>the<sp/>ABI<sp/>that<sp/>use<sp/>a<sp/>constant<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">uint16_t<sp/><ref refid="namespacellvm_1a95bf65a141564e084f6fac52c00b6a6d" kindref="member">getPointerAuthStableSipHash</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>S);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Support/SipHash.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespaceinteractive__host" kind="namespace" language="Python">
+    <compoundname>interactive_host</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceinteractive__host_1af0b6c53060991a300bbffea33a67a8aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>interactive_host.send</definition>
+        <argsstring>(io.BufferedWriter f, Union[int, float] value, log_reader.TensorSpec spec)</argsstring>
+        <name>send</name>
+        <qualifiedname>interactive_host.send</qualifiedname>
+        <param>
+          <type>io.BufferedWriter</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>Union</type>
+          <declname>value</declname>
+          <array>[int, float]</array>
+        </param>
+        <param>
+          <type><ref refid="classlog__reader_1_1_tensor_spec" kindref="compound">log_reader.TensorSpec</ref></type>
+          <declname>spec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Send the `value` - currently just a scalar - formatted as per `spec`.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Analysis/models/interactive_host.py" line="23" column="1" bodyfile="lib/Analysis/models/interactive_host.py" bodystart="23" bodyend="34"/>
+        <referencedby refid="namespaceinteractive__host_1a0eded48c2eef46879e2f4d0fd284238b" compoundref="interactive__host_8py" startline="39" endline="96">run_interactive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceinteractive__host_1a0eded48c2eef46879e2f4d0fd284238b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>interactive_host.run_interactive</definition>
+        <argsstring>(str temp_rootname, Callable[[List[log_reader.TensorValue]], Union[int, float]] make_response, List[str] process_and_args)</argsstring>
+        <name>run_interactive</name>
+        <qualifiedname>interactive_host.run_interactive</qualifiedname>
+        <param>
+          <type>str</type>
+          <declname>temp_rootname</declname>
+        </param>
+        <param>
+          <type>Callable]</type>
+          <defname>make_response</defname>
+          <array>[[List[log_reader.TensorValue]</array>
+        </param>
+        <param>
+          <type>Union]</type>
+          <declname>make_response</declname>
+          <defname>process_and_args</defname>
+          <array>[int, float]</array>
+        </param>
+        <param>
+          <type>List</type>
+          <declname>process_and_args</declname>
+          <array>[str]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Host the compiler.
+Args:
+  temp_rootname: the base file name from which to construct the 2 pipes for
+  communicating with the compiler.
+  make_response: a function that, given the current tensor values, provides a
+  response.
+  process_and_args: the full commandline for the compiler. It it assumed it
+  contains a flag poiting to `temp_rootname` so that the InteractiveModeRunner
+  would attempt communication on the same pair as this function opens.
+
+This function sets up the communication with the compiler - via 2 files named
+`temp_rootname`.in and `temp_rootname`.out - prints out the received features,
+and sends back to the compiler an advice (which it gets from `make_response`).
+It&apos;s used for testing, and also to showcase how to set up communication in an
+interactive ML (&quot;gym&quot;) environment.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Analysis/models/interactive_host.py" line="35" column="1" bodyfile="lib/Analysis/models/interactive_host.py" bodystart="39" bodyend="96"/>
+        <references refid="namespacelog__reader_1a14b90855a54de6f662b45732cb262314" compoundref="log__reader_8py" startline="75" endline="78">log_reader.pretty_print_tensor_value</references>
+        <references refid="_archive_writer_8cpp_1aa9f638c7ae7fdd206a6c60e26bef9751" compoundref="_archive_writer_8cpp" startline="205" endline="209">print</references>
+        <references refid="namespacelog__reader_1ab40242c357e077a78fbfb8fd4a61cf90" compoundref="log__reader_8py" startline="79" endline="86">log_reader.read_header</references>
+        <references refid="namespacelog__reader_1a224d6d585cf78a7b3baeaa7474fffc13" compoundref="log__reader_8py" startline="93" endline="111">log_reader.read_one_observation</references>
+        <references refid="namespaceinteractive__host_1af0b6c53060991a300bbffea33a67a8aa" compoundref="interactive__host_8py" startline="23" endline="34">send</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Utility for testing InteractiveModelRunner.
+
+Use it from pass-specific tests by providing a main .py which calls this library&apos;s
+`run_interactive` with an appropriate callback to provide advice.
+
+From .ll tests, just call the above-mentioned main as a prefix to the opt/llc
+invocation (with the appropriate flags enabling the interactive mode)
+
+Examples:
+test/Transforms/Inline/ML/interactive-mode.ll
+test/CodeGen/MLRegAlloc/interactive-mode.ll
+</verbatim> </para>
+    </detaileddescription>
+    <location file="lib/Analysis/models/interactive_host.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,895 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_analysis_manager" kind="class" language="C++" prot="public">
+    <compoundname>llvm::AnalysisManager</compoundname>
+    <includes refid="_i_r_2_pass_manager_8h" local="yes">llvm/IR/PassManager.h</includes>
+    <innerclass refid="classllvm_1_1_analysis_manager_1_1_invalidator" prot="public">llvm::AnalysisManager::Invalidator</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename IRUnitT</type>
+      </param>
+      <param>
+        <type>typename...</type>
+        <declname>ExtraArgTs</declname>
+        <defname>ExtraArgTs</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_analysis_manager_1aa227a706b01df3e897821abd38cdf405" prot="private" static="no">
+        <type><ref refid="structllvm_1_1detail_1_1_analysis_result_concept" kindref="compound">detail::AnalysisResultConcept</ref>&lt; IRUnitT, <ref refid="classllvm_1_1_analysis_manager_1_1_invalidator" kindref="compound">Invalidator</ref> &gt;</type>
+        <definition>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::ResultConceptT =  detail::AnalysisResultConcept&lt;IRUnitT, Invalidator&gt;</definition>
+        <argsstring></argsstring>
+        <name>ResultConceptT</name>
+        <qualifiedname>llvm::AnalysisManager::ResultConceptT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="259" column="3" bodyfile="include/llvm/IR/PassManager.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_analysis_manager_1a3edb3b59ea216c36548151c2b1a14766" prot="private" static="no">
+        <type><ref refid="structllvm_1_1detail_1_1_analysis_pass_concept" kindref="compound">detail::AnalysisPassConcept</ref>&lt; IRUnitT, <ref refid="classllvm_1_1_analysis_manager_1_1_invalidator" kindref="compound">Invalidator</ref>, ExtraArgTs... &gt;</type>
+        <definition>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::PassConceptT = 
+      detail::AnalysisPassConcept&lt;IRUnitT, Invalidator, ExtraArgTs...&gt;</definition>
+        <argsstring></argsstring>
+        <name>PassConceptT</name>
+        <qualifiedname>llvm::AnalysisManager::PassConceptT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="260" column="3" bodyfile="include/llvm/IR/PassManager.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_analysis_manager_1ab6f9398a4226b26a5a676287641878a9" prot="private" static="no">
+        <type>std::list&lt; std::pair&lt; <ref refid="structllvm_1_1_analysis_key" kindref="compound">AnalysisKey</ref> *, std::unique_ptr&lt; <ref refid="structllvm_1_1detail_1_1_analysis_result_concept" kindref="compound">ResultConceptT</ref> &gt; &gt; &gt;</type>
+        <definition>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisResultListT = 
+      std::list&lt;std::pair&lt;AnalysisKey *, std::unique_ptr&lt;ResultConceptT&gt;&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>AnalysisResultListT</name>
+        <qualifiedname>llvm::AnalysisManager::AnalysisResultListT</qualifiedname>
+        <briefdescription>
+<para>List of analysis pass IDs and associated concept pointers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Requires iterators to be valid across appending new entries and arbitrary erases. Provides the analysis <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> to enable finding iterators to a given entry in maps below, and provides the storage for the actual result concept. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="269" column="3" bodyfile="include/llvm/IR/PassManager.h" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_analysis_manager_1a442b62f548be7c59c652cf403fbef3b4" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; IRUnitT *, AnalysisResultListT &gt;</type>
+        <definition>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisResultListMapT =  DenseMap&lt;IRUnitT *, AnalysisResultListT&gt;</definition>
+        <argsstring></argsstring>
+        <name>AnalysisResultListMapT</name>
+        <qualifiedname>llvm::AnalysisManager::AnalysisResultListMapT</qualifiedname>
+        <briefdescription>
+<para>Map type from IRUnitT pointer to our custom list type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="273" column="3" bodyfile="include/llvm/IR/PassManager.h" bodystart="273" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_analysis_manager_1aeebed2f97445627bc499c393c8e80882" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; std::pair&lt; <ref refid="structllvm_1_1_analysis_key" kindref="compound">AnalysisKey</ref> *, IRUnitT * &gt;, typename AnalysisResultListT::iterator &gt;</type>
+        <definition>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisResultMapT = 
+      DenseMap&lt;std::pair&lt;AnalysisKey *, IRUnitT *&gt;,
+               typename AnalysisResultListT::iterator&gt;</definition>
+        <argsstring></argsstring>
+        <name>AnalysisResultMapT</name>
+        <qualifiedname>llvm::AnalysisManager::AnalysisResultMapT</qualifiedname>
+        <briefdescription>
+<para>Map type from a pair of analysis <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> and IRUnitT pointer to an iterator into a particular result list (which is where the actual analysis result is stored). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="278" column="3" bodyfile="include/llvm/IR/PassManager.h" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_analysis_manager_1a134f995a67e3c8da28760abb1bc55ea5" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="structllvm_1_1_analysis_key" kindref="compound">AnalysisKey</ref> *, std::unique_ptr&lt; <ref refid="structllvm_1_1detail_1_1_analysis_pass_concept" kindref="compound">PassConceptT</ref> &gt; &gt;</type>
+        <definition>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisPassMapT = 
+      DenseMap&lt;AnalysisKey *, std::unique_ptr&lt;PassConceptT&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>AnalysisPassMapT</name>
+        <qualifiedname>llvm::AnalysisManager::AnalysisPassMapT</qualifiedname>
+        <briefdescription>
+<para>Map type from analysis pass <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> to pass concept pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="521" column="3" bodyfile="include/llvm/IR/PassManager.h" bodystart="521" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_analysis_manager_1a6165fb98ddb81478865918c3e1b2b7d7" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">AnalysisPassMapT</ref></type>
+        <definition>AnalysisPassMapT llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisPasses</definition>
+        <argsstring></argsstring>
+        <name>AnalysisPasses</name>
+        <qualifiedname>llvm::AnalysisManager::AnalysisPasses</qualifiedname>
+        <briefdescription>
+<para>Collection of analysis passes, indexed by <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="525" column="20" bodyfile="include/llvm/IR/PassManager.h" bodystart="525" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_analysis_manager_1af18e57efae06e5053d32594df0afbbcc" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">AnalysisResultListMapT</ref></type>
+        <definition>AnalysisResultListMapT llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisResultLists</definition>
+        <argsstring></argsstring>
+        <name>AnalysisResultLists</name>
+        <qualifiedname>llvm::AnalysisManager::AnalysisResultLists</qualifiedname>
+        <briefdescription>
+<para>Map from IR unit to a list of analysis results. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides linear time removal of all analysis results for a IR unit and the ultimate storage for a particular cached analysis result. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="531" column="26" bodyfile="include/llvm/IR/PassManager.h" bodystart="531" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_analysis_manager_1af6aa580ea41f8ad85f2dee2a40fb578d" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_dense_map" kindref="compound">AnalysisResultMapT</ref></type>
+        <definition>AnalysisResultMapT llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisResults</definition>
+        <argsstring></argsstring>
+        <name>AnalysisResults</name>
+        <qualifiedname>llvm::AnalysisManager::AnalysisResults</qualifiedname>
+        <briefdescription>
+<para>Map from an analysis <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> and IR unit to a particular cached analysis result. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="535" column="22" bodyfile="include/llvm/IR/PassManager.h" bodystart="535" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a04d20e532396b71cf376c777d6b838c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisManager</definition>
+        <argsstring>()</argsstring>
+        <name>AnalysisManager</name>
+        <qualifiedname>llvm::AnalysisManager::AnalysisManager</qualifiedname>
+        <briefdescription>
+<para>Construct an empty analysis manager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="371" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a22f4fe9d72c2287370e28fbbeabbd89f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisManager</definition>
+        <argsstring>(AnalysisManager &amp;&amp;)</argsstring>
+        <name>AnalysisManager</name>
+        <qualifiedname>llvm::AnalysisManager::AnalysisManager</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_analysis_manager" kindref="compound">AnalysisManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="372" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a2bc6bb441a5b546bf76b838ff9b5e473" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_analysis_manager" kindref="compound">AnalysisManager</ref> &amp;</type>
+        <definition>AnalysisManager&lt; IRUnitT, ExtraArgTs... &gt; &amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::operator=</definition>
+        <argsstring>(AnalysisManager &amp;&amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::AnalysisManager::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_analysis_manager" kindref="compound">AnalysisManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="373" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a92d8409cca05ebc97ee7d3180b2c00e3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>llvm::AnalysisManager::empty</qualifiedname>
+        <briefdescription>
+<para>Returns true if the analysis manager has an empty results cache. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="376" column="8" bodyfile="include/llvm/IR/PassManager.h" bodystart="376" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a4926331431f03253ee3ec8e6e3bb9d1c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::clear</definition>
+        <argsstring>(IRUnitT &amp;IR, llvm::StringRef Name)</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::AnalysisManager::clear</qualifiedname>
+        <param>
+          <type>IRUnitT &amp;</type>
+          <declname>IR</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_string_ref" kindref="compound">llvm::StringRef</ref></type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+<para>Clear any cached analysis results for a single unit of IR. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This doesn&apos;t invalidate, but instead simply deletes, the relevant results. It is useful when the IR is being removed and we want to clear out all the memory pinned for it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="388" column="8" bodyfile="include/llvm/IR/PassManagerImpl.h" bodystart="119" bodyend="133"/>
+        <references refid="classllvm_1_1_analysis_manager_1a828ff8185f881fca9e3d534781244041" compoundref="_i_r_2_pass_manager_8h" startline="429" endline="442">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getCachedResult</references>
+        <references refid="_legalizer_8cpp_1a05ab4853f7153e537774d02580e761ec" compoundref="_legalizer_8cpp" startline="80">IR</references>
+        <referencedby refid="classllvm_1_1_inliner_pass_1a78e09cea341cfdf58869920175c52d82" compoundref="_inliner_8cpp" startline="205" endline="575">llvm::InlinerPass::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a1def78d3ab800e1f9b15ac7f772862ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::AnalysisManager::clear</qualifiedname>
+        <briefdescription>
+<para>Clear all analysis results cached by this <ref refid="classllvm_1_1_analysis_manager" kindref="compound">AnalysisManager</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Like <computeroutput>clear(IRUnitT&amp;)</computeroutput>, this doesn&apos;t invalidate the results; it simply deletes them. This lets you clean up the <ref refid="classllvm_1_1_analysis_manager" kindref="compound">AnalysisManager</ref> when the set of IR units itself has potentially changed, and thus we can&apos;t even look up a a result and invalidate/clear it directly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="396" column="8" bodyfile="include/llvm/IR/PassManager.h" bodystart="396" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a03f50a72945de4b779ffd17b508974c8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename PassT</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::isPassRegistered</definition>
+        <argsstring>() const</argsstring>
+        <name>isPassRegistered</name>
+        <qualifiedname>llvm::AnalysisManager::isPassRegistered</qualifiedname>
+        <briefdescription>
+<para>Returns true if the specified analysis pass is registered. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="402" column="20" bodyfile="include/llvm/IR/PassManager.h" bodystart="402" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1aaab1fad63e4f3b8679469720a873fedd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename PassT</type>
+          </param>
+        </templateparamlist>
+        <type>PassT::Result &amp;</type>
+        <definition>PassT::Result &amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult</definition>
+        <argsstring>(IRUnitT &amp;IR, ExtraArgTs... ExtraArgs)</argsstring>
+        <name>getResult</name>
+        <qualifiedname>llvm::AnalysisManager::getResult</qualifiedname>
+        <param>
+          <type>IRUnitT &amp;</type>
+          <declname>IR</declname>
+        </param>
+        <param>
+          <type>ExtraArgTs...</type>
+          <declname>ExtraArgs</declname>
+        </param>
+        <briefdescription>
+<para>Get the result of an analysis pass for a given IR unit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Runs the analysis if a cached result is not available. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="410" column="26" bodyfile="include/llvm/IR/PassManager.h" bodystart="410" bodyend="421"/>
+        <referencedby refid="classllvm_1_1_selection_d_a_g_i_sel_1a12c711c62171c14dcedca2db5874d33e" compoundref="_selection_d_a_g_i_sel_8cpp" startline="458" endline="514">llvm::SelectionDAGISel::initializeAnalysisResults</referencedby>
+        <referencedby refid="classanonymous__namespace_02_lower_type_tests_8cpp_03_1_1_lower_type_tests_module_1a41245c88cdf19ddbfe8a2dffba0a500d" compoundref="_lower_type_tests_8cpp" startline="1835" endline="1869">anonymous_namespace{LowerTypeTests.cpp}::LowerTypeTestsModule::LowerTypeTestsModule</referencedby>
+        <referencedby refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_code_gen_prepare_1aa963097f89a02195cba904f74c5e0f71" compoundref="_code_gen_prepare_8cpp" startline="560" endline="575">anonymous_namespace{CodeGenPrepare.cpp}::CodeGenPrepare::run</referencedby>
+        <referencedby refid="classllvm_1_1_a_a_evaluator_1a9ed5f1670101ec861ebdd6c74540f4da" compoundref="_alias_analysis_evaluator_8cpp" startline="96" endline="99">llvm::AAEvaluator::run</referencedby>
+        <referencedby refid="classllvm_1_1_a_a_manager_1aeaceed25b77fd7235079349031e41839" compoundref="_alias_analysis_8cpp" startline="794" endline="799">llvm::AAManager::run</referencedby>
+        <referencedby refid="classllvm_1_1_aggressive_inst_combine_pass_1a1d380b75a626cf6035ca021b9033e8f4" compoundref="_aggressive_inst_combine_8cpp" startline="1282" endline="1301">llvm::AggressiveInstCombinePass::run</referencedby>
+        <referencedby refid="classllvm_1_1_alias_sets_printer_pass_1a3a8a27458f2832e65ace0c61bb035be7" compoundref="_alias_set_tracker_8cpp" startline="574" endline="584">llvm::AliasSetsPrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_alignment_from_assumptions_pass_1a850fc86971c292f64bfad4d9076bfea8" compoundref="_alignment_from_assumptions_8cpp" startline="301" endline="313">llvm::AlignmentFromAssumptionsPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_a_m_d_g_p_u_atomic_optimizer_pass_1a61ccbe84ff2f490892da47cd8af3d621" compoundref="_a_m_d_g_p_u_atomic_optimizer_8cpp" startline="134" endline="151">llvm::AMDGPUAtomicOptimizerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_attributor_pass_1a6b853868668b480de1fb9a5638185bbf" compoundref="_a_m_d_g_p_u_attributor_8cpp" startline="1436" endline="1446">llvm::AMDGPUAttributorPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_i_sel_d_a_g_to_d_a_g_pass_1a50f97f48ab6353d9bb2bc36ce592c7e4" compoundref="_a_m_d_g_p_u_i_sel_d_a_g_to_d_a_g_8cpp" startline="875" endline="887">llvm::AMDGPUISelDAGToDAGPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_a_m_d_g_p_u_perf_hint_analysis_pass_1abd3d261eb47ebf4c6d8fe9b40a90e726" compoundref="_a_m_d_g_p_u_perf_hint_analysis_8cpp" startline="482" endline="493">llvm::AMDGPUPerfHintAnalysisPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_a_m_d_g_p_u_promote_alloca_to_vector_pass_1a4d58a8f51935070c2ec517b3becde405" compoundref="_a_m_d_g_p_u_promote_alloca_8cpp" startline="233" endline="242">llvm::AMDGPUPromoteAllocaToVectorPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_a_m_d_g_p_u_promote_kernel_arguments_pass_1a09b7bed11d55d255fef525817e8d1a6b" compoundref="_a_m_d_g_p_u_promote_kernel_arguments_8cpp" startline="208" endline="219">llvm::AMDGPUPromoteKernelArgumentsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_rewrite_undef_for_p_h_i_pass_1a389937d71bd8740fe3be1c396949e0bb" compoundref="_a_m_d_g_p_u_rewrite_undef_for_p_h_i_8cpp" startline="180" endline="191">llvm::AMDGPURewriteUndefForPHIPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_a_m_d_g_p_u_sw_lower_l_d_s_pass_1a60fde742e4c1eaef19a09e78c111cd6a" compoundref="_a_m_d_g_p_u_sw_lower_l_d_s_8cpp" startline="1313" endline="1331">llvm::AMDGPUSwLowerLDSPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_a_m_d_g_p_u_unify_divergent_exit_nodes_pass_1a3e73b9a5c7212271285ef6c38d1cd26d" compoundref="_a_m_d_g_p_u_unify_divergent_exit_nodes_8cpp" startline="343" endline="355">llvm::AMDGPUUnifyDivergentExitNodesPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_annotation_remarks_pass_1a1dd7b1feb9652fcb6ea5e6741029b063" compoundref="_annotation_remarks_8cpp" startline="85" endline="90">llvm::AnnotationRemarksPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_argument_promotion_pass_1afe0f49f9daec2532b14ded30ed46ff28" compoundref="_argument_promotion_8cpp" startline="900" endline="950">llvm::ArgumentPromotionPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_assume_builder_pass_1aca0fa8f3093912d8045361e2f6b79cac" compoundref="_assume_bundle_builder_8cpp" startline="577" endline="589">llvm::AssumeBuilderPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_assume_simplify_pass_1a378f8b2a8e11ac78939bd1c732f05d2e" compoundref="_assume_bundle_builder_8cpp" startline="565" endline="575">llvm::AssumeSimplifyPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_assumption_printer_pass_1a140e7194c82dc0eda75b3602736a0b83" compoundref="_assumption_cache_8cpp" startline="227" endline="237">llvm::AssumptionPrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_attributor_c_g_s_c_c_pass_1a305cbdd90350f05f5ee772811d596ded" compoundref="_attributor_8cpp" startline="4037" endline="4066">llvm::AttributorCGSCCPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_attributor_light_c_g_s_c_c_pass_1a1725467ef5883a44e7777d681c6a4d32" compoundref="_attributor_8cpp" startline="4093" endline="4123">llvm::AttributorLightCGSCCPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_attributor_light_pass_1af4dc3e41c843da6385d1252386d4c03e" compoundref="_attributor_8cpp" startline="4068" endline="4091">llvm::AttributorLightPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_attributor_pass_1aba65d47dce0a15a90eb4e519ffc4929c" compoundref="_attributor_8cpp" startline="4017" endline="4035">llvm::AttributorPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_basic_a_a_1ab69d4d2a49531dbe7734c261a0578604" compoundref="_basic_alias_analysis_8cpp" startline="1962" endline="1967">llvm::BasicAA::run</referencedby>
+        <referencedby refid="structllvm_1_1_b_d_c_e_pass_1afbbfc5e8696e402cd67ebdc99da7c47a" compoundref="_b_d_c_e_8cpp" startline="202" endline="210">llvm::BDCEPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_bitcode_writer_pass_1a2cf5fec0ba55756093b6c7e6c8f31c00" compoundref="_bitcode_writer_pass_8cpp" startline="23" endline="35">llvm::BitcodeWriterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_block_frequency_analysis_1ae5af9e07de7320c60fc8c89057e69354" compoundref="_block_frequency_info_8cpp" startline="333" endline="340">llvm::BlockFrequencyAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_block_frequency_printer_pass_1a5a6cbafd8221cce28bfb4fe7aca32f94" compoundref="_block_frequency_info_8cpp" startline="343" endline="349">llvm::BlockFrequencyPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_bounds_checking_pass_1aaeef3ef960131b08e172917320b9507d" compoundref="_bounds_checking_8cpp" startline="286" endline="294">llvm::BoundsCheckingPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_branch_probability_analysis_1a16f8c5851cffc6f908a232089fc71de6" compoundref="_branch_probability_info_8cpp" startline="1316" endline="1324">llvm::BranchProbabilityAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_branch_probability_printer_pass_1af8bbfa323a4917223612dff12067110b" compoundref="_branch_probability_info_8cpp" startline="1327" endline="1332">llvm::BranchProbabilityPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_call_graph_d_o_t_printer_pass_1a7d72837594bc13f77f2d84bcfd0752de" compoundref="_call_printer_8cpp" startline="256" endline="268">llvm::CallGraphDOTPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_call_graph_printer_pass_1a3bb83e1831d2ffb599b81c6bd047a7b9" compoundref="_call_graph_8cpp" startline="306" endline="310">llvm::CallGraphPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_call_graph_s_c_cs_printer_pass_1adab3cbb8d806b7d4d2138bd93e92c99a" compoundref="_call_graph_8cpp" startline="312" endline="336">llvm::CallGraphSCCsPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_call_graph_viewer_pass_1aaea10b30adce800d7d54b5394a49567b" compoundref="_call_printer_8cpp" startline="270" endline="283">llvm::CallGraphViewerPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_call_site_splitting_pass_1a758aec9b799aa0d0559635cfc6144f36" compoundref="_call_site_splitting_8cpp" startline="538" endline="549">llvm::CallSiteSplittingPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_c_f_g_only_printer_pass_1af4633166ee31522ede36144c2cadde39" compoundref="_c_f_g_printer_8cpp" startline="122" endline="130">llvm::CFGOnlyPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_c_f_g_only_viewer_pass_1a2c9830e7108892805b14bca50f644d0c" compoundref="_c_f_g_printer_8cpp" startline="102" endline="110">llvm::CFGOnlyViewerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_c_f_g_printer_pass_1a4d6be8adf1d7c561f9a47831f910fd91" compoundref="_c_f_g_printer_8cpp" startline="112" endline="120">llvm::CFGPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_c_f_g_viewer_pass_1a4ec76f0493f0ee9679e2a15343680ccf" compoundref="_c_f_g_printer_8cpp" startline="93" endline="100">llvm::CFGViewerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_c_g_s_c_c_to_function_pass_adaptor_1a44a083f826f2f2a189d3979eb43dd5ed" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="505" endline="577">llvm::CGSCCToFunctionPassAdaptor::run</referencedby>
+        <referencedby refid="classllvm_1_1_constant_hoisting_pass_1abe3f0e309e575379e5bae02d1907f394" compoundref="_constant_hoisting_8cpp" startline="964" endline="979">llvm::ConstantHoistingPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_constraint_elimination_pass_1a42aea849d980d7bce1c0ef31ac326e87" compoundref="_constraint_elimination_8cpp" startline="1942" endline="1957">llvm::ConstraintEliminationPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_coro_annotation_elide_pass_1a411202dc502ac666302ba81c40e94b10" compoundref="_coro_annotation_elide_8cpp" startline="107" endline="184">llvm::CoroAnnotationElidePass::run</referencedby>
+        <referencedby refid="structllvm_1_1_coro_elide_pass_1a6dfdc223099c4ca952c8b0369027e34d" compoundref="_coro_elide_8cpp" startline="467" endline="488">llvm::CoroElidePass::run</referencedby>
+        <referencedby refid="structllvm_1_1_coro_split_pass_1a47f6589634ad33a13369ace133b9f4b2" compoundref="_coro_split_8cpp" startline="2219" endline="2290">llvm::CoroSplitPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_correlated_value_propagation_pass_1a1672fc6d49348158aa95dbb4ae80224c" compoundref="_correlated_value_propagation_8cpp" startline="1326" endline="1352">llvm::CorrelatedValuePropagationPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_cost_model_printer_pass_1a6685ffe146df7448fc95cd7fcec89e55" compoundref="_cost_model_8cpp" startline="48" endline="76">llvm::CostModelPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_cycle_info_printer_pass_1a5fe94fefc760afe4f7b178e72299aa39" compoundref="_cycle_analysis_8cpp" startline="29" endline="35">llvm::CycleInfoPrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_cycle_info_verifier_pass_1af9fcac728641055cca5bdb95469dc5e4" compoundref="_cycle_analysis_8cpp" startline="37" endline="42">llvm::CycleInfoVerifierPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_data_flow_sanitizer_pass_1a763709e61e42f6df707528b509adf8de" compoundref="_data_flow_sanitizer_8cpp" startline="3469" endline="3488">llvm::DataFlowSanitizerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_d_c_e_pass_1ae0adbbdfa4d74b93465ac5dd85124af4" compoundref="_d_c_e_8cpp" startline="109" endline="116">llvm::DCEPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_d_d_g_analysis_printer_pass_1aa18a597cd04af57bb4061499d5d5640c" compoundref="_d_d_g_8cpp" startline="315" endline="321">llvm::DDGAnalysisPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_d_d_g_dot_printer_pass_1ad73a209beeea1475814429bdd8bdeda5" compoundref="_d_d_g_printer_8cpp" startline="32" endline="37">llvm::DDGDotPrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_delinearization_printer_pass_1af564d4ce1f4c1029592d1a923b0d2c43" compoundref="_delinearization_8cpp" startline="615" endline="620">llvm::DelinearizationPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_demanded_bits_analysis_1a6004ad957fdd5fcccada1f2e8508265b" compoundref="_demanded_bits_8cpp" startline="573" endline="578">llvm::DemandedBitsAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_demanded_bits_printer_pass_1a3f85a7e646826596cd811e66f0df417f" compoundref="_demanded_bits_8cpp" startline="580" endline="584">llvm::DemandedBitsPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_devirt_s_c_c_repeated_pass_1a11597e1847c3156c4866aa0a43a1b71b" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="358" endline="503">llvm::DevirtSCCRepeatedPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_d_f_a_jump_threading_pass_1a1e2cfc4a731613030f8f416677999fa0" compoundref="_d_f_a_jump_threading_8cpp" startline="1412" endline="1428">llvm::DFAJumpThreadingPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_dominance_frontier_analysis_1a4216ac958d2e020933cafd0f0b43b712" compoundref="_dominance_frontier_8cpp" startline="80" endline="85">llvm::DominanceFrontierAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_dominance_frontier_printer_pass_1aae343d5e2c1b700a31142af232a990cf" compoundref="_dominance_frontier_8cpp" startline="91" endline="96">llvm::DominanceFrontierPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_dominator_tree_printer_pass_1a4e7ca1ff82e0d63a88d574a545380fea" compoundref="_dominators_8cpp" startline="382" endline="388">llvm::DominatorTreePrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_dominator_tree_verifier_pass_1a680c63d627c9e32ca9f2ba34e52c6543" compoundref="_dominators_8cpp" startline="390" endline="396">llvm::DominatorTreeVerifierPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_d_s_e_pass_1a29b9f8c28e2ba0531f66bd82e8c5a32e" compoundref="_dead_store_elimination_8cpp" startline="2564" endline="2588">llvm::DSEPass::run</referencedby>
+        <referencedby refid="classllvm_1_1dxil_1_1_shader_flags_analysis_1aac5850fcb98ccf20d9a084c65b224df9" compoundref="_d_x_i_l_shader_flags_8cpp" startline="180" endline="188">llvm::dxil::ShaderFlagsAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1dxil_1_1_shader_flags_analysis_printer_1a0784c57dc0671927404b56c94ec983c8" compoundref="_d_x_i_l_shader_flags_8cpp" startline="190" endline="207">llvm::dxil::ShaderFlagsAnalysisPrinter::run</referencedby>
+        <referencedby refid="classllvm_1_1_d_x_i_l_metadata_analysis_printer_pass_1a853a7e2cfb272918dbcf0f260f091598" compoundref="_d_x_i_l_metadata_analysis_8cpp" startline="101" endline="106">llvm::DXILMetadataAnalysisPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_d_x_i_l_resource_binding_analysis_1a25a190212c3eb0ea291ac64cfff1f665" compoundref="_analysis_2_d_x_i_l_resource_8cpp" startline="778" endline="784">llvm::DXILResourceBindingAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_d_x_i_l_resource_binding_printer_pass_1a9c5f08a05826fa28ba48d255e06f1b97" compoundref="_analysis_2_d_x_i_l_resource_8cpp" startline="787" endline="793">llvm::DXILResourceBindingPrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_early_c_s_e_pass_1a1977dd7d302009cd95b32ad3a5dd8db6" compoundref="_early_c_s_e_8cpp" startline="1839" endline="1858">llvm::EarlyCSEPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_early_if_converter_pass_1a9f45d5f14e7be68f178eadf56bd84d25" compoundref="_early_if_conversion_8cpp" startline="1120" endline="1136">llvm::EarlyIfConverterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_expand_reductions_pass_1a9fea76fcf757718eb4aafcd72cb89038" compoundref="_expand_reductions_8cpp" startline="186" endline="194">llvm::ExpandReductionsPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_fix_irreducible_pass_1a61707c67652fa7e327bb8ac607164e09" compoundref="_fix_irreducible_8cpp" startline="359" endline="373">llvm::FixIrreduciblePass::run</referencedby>
+        <referencedby refid="structllvm_1_1_flatten_c_f_g_pass_1ac48dd5c80bc3b98f2e2f5aa65117456f" compoundref="_flatten_c_f_g_pass_8cpp" startline="96" endline="106">llvm::FlattenCFGPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_float2_int_pass_1ad9900fbd867b1e73f7da240f0e7a28c1" compoundref="_float2_int_8cpp" startline="503" endline="511">llvm::Float2IntPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_function_analysis_manager_c_g_s_c_c_proxy_1a0b67cd81e4ea0371cae072a28008e469" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="666" endline="685">llvm::FunctionAnalysisManagerCGSCCProxy::run</referencedby>
+        <referencedby refid="classllvm_1_1_function_properties_printer_pass_1aac1f30e6e61c72eaa61dc3daf83dc588" compoundref="_function_properties_analysis_8cpp" startline="301" endline="307">llvm::FunctionPropertiesPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_function_to_loop_pass_adaptor_1aee681bfb37f62d30a1d0a1f47d73b4f1" compoundref="_loop_pass_manager_8cpp" startline="197" endline="360">llvm::FunctionToLoopPassAdaptor::run</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_o_v_profiler_pass_1abe3a54029a1d4094373deb485452f033" compoundref="_g_c_o_v_profiling_8cpp" startline="557" endline="578">llvm::GCOVProfilerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_global_opt_pass_1a0be1afba37502be6858f2a1c38955be8" compoundref="_global_opt_8cpp" startline="2900" endline="2934">llvm::GlobalOptPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_globals_a_a_1a13e2d1113ed664d73521d89676ba6e9d" compoundref="_globals_mod_ref_8cpp" startline="996" endline="1004">llvm::GlobalsAA::run</referencedby>
+        <referencedby refid="structllvm_1_1_guard_widening_pass_1a13571b5fc50d701864f8b3de9b930b7f" compoundref="_guard_widening_8cpp" startline="979" endline="1007">llvm::GuardWideningPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_g_v_n_hoist_pass_1a73462db6e4114fd6c543b9b3de65a504" compoundref="_g_v_n_hoist_8cpp" startline="1203" endline="1217">llvm::GVNHoistPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_g_v_n_pass_1a25dcf17194b012b2b35388798cac2da7" compoundref="_g_v_n_8cpp" startline="829" endline="859">llvm::GVNPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_hardware_loops_pass_1a7b139351e6b64d570e4ee5b7ece478ea" compoundref="_hardware_loops_8cpp" startline="268" endline="290">llvm::HardwareLoopsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_hot_cold_splitting_pass_1a1428bc0c1945db2bcb0bc0b17447c18c" compoundref="_hot_cold_splitting_8cpp" startline="806" endline="834">llvm::HotColdSplittingPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_ind_var_simplify_pass_1a00bd6521a4f23d764d5d1403e7728e8f" compoundref="_ind_var_simplify_8cpp" startline="2061" endline="2082">llvm::IndVarSimplifyPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_infer_address_spaces_pass_1a8750fe658baa71eeba987c3bea8bf83e" compoundref="_infer_address_spaces_8cpp" startline="1421" endline="1435">llvm::InferAddressSpacesPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_infer_alignment_pass_1ad5a046232f4066339175c677ff26b9f5" compoundref="_infer_alignment_8cpp" startline="76" endline="83">llvm::InferAlignmentPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_infer_function_attrs_pass_1a43509c520610b43c4b366bee12dc1f4b" compoundref="_infer_function_attrs_8cpp" startline="38" endline="53">llvm::InferFunctionAttrsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_inject_t_l_i_mappings_1a132043059b6f75e1cdca29b58c58d872" compoundref="_inject_t_l_i_mappings_8cpp" startline="135" endline="141">llvm::InjectTLIMappings::run</referencedby>
+        <referencedby refid="classllvm_1_1_inline_advisor_analysis_printer_pass_1af0f697cf524e464ace6a8652e4dbb128" compoundref="_inline_advisor_8cpp" startline="639" endline="656">llvm::InlineAdvisorAnalysisPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_inliner_pass_1a78e09cea341cfdf58869920175c52d82" compoundref="_inliner_8cpp" startline="205" endline="575">llvm::InlinerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_inline_size_estimator_analysis_printer_pass_1a5e90152cff8dae138bbd12056eeb56ca" compoundref="_inline_size_estimator_analysis_8cpp" startline="275" endline="280">llvm::InlineSizeEstimatorAnalysisPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combine_pass_1aa1ffc7ad08181545bbc25eabac7f5aae" compoundref="_instruction_combining_8cpp" startline="5598" endline="5632">llvm::InstCombinePass::run</referencedby>
+        <referencedby refid="classllvm_1_1_instr_profiling_lowering_pass_1a610148cfab0328ada1642b17b9a9e71c" compoundref="_instr_profiling_8cpp" startline="674" endline="686">llvm::InstrProfilingLoweringPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_inst_simplify_pass_1ad073cb9259c01c880086405f8776a106" compoundref="_inst_simplify_pass_8cpp" startline="123" endline="137">llvm::InstSimplifyPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_i_p_s_c_c_p_pass_1a7c77a408787021dc65c12646cee2ac43" compoundref="_i_p_o_2_s_c_c_p_8cpp" startline="369" endline="398">llvm::IPSCCPPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_i_r_c_e_pass_1ac7e45d3f509c7e40c4d6666a24e88f73" compoundref="_inductive_range_check_elimination_8cpp" startline="901" endline="957">llvm::IRCEPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_i_r_outliner_pass_1a5b9a8fe2c3b6834817b2c12b08441cff" compoundref="_i_r_outliner_8cpp" startline="3020" endline="3043">llvm::IROutlinerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_i_r_similarity_analysis_printer_pass_1a8dde7acadd30b1860704841855a1a07d" compoundref="_i_r_similarity_identifier_8cpp" startline="1510" endline="1534">llvm::IRSimilarityAnalysisPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_i_v_users_printer_pass_1acaca26216fbb3760b644841037f422d7" compoundref="_i_v_users_printer_8cpp" startline="15" endline="20">llvm::IVUsersPrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_jump_table_to_switch_pass_1a84778fc53894f05e88ce0cc794561742" compoundref="_jump_table_to_switch_8cpp" startline="145" endline="190">llvm::JumpTableToSwitchPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_jump_threading_pass_1a48dd43ef05b66261790497edbdac92d9" compoundref="_jump_threading_8cpp" startline="236" endline="278">llvm::JumpThreadingPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_lazy_call_graph_analysis_1a2b4c0dcc83d56146b52f6825c093b9db" compoundref="_lazy_call_graph_8h" startline="1272" endline="1279">llvm::LazyCallGraphAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_lazy_call_graph_d_o_t_printer_pass_1a172985546be95f992c665ac5d82e4a08" compoundref="_lazy_call_graph_8cpp" startline="2060" endline="2072">llvm::LazyCallGraphDOTPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_lazy_call_graph_printer_pass_1a2860c75599e4f96204b58e3c3be96dfe" compoundref="_lazy_call_graph_8cpp" startline="2025" endline="2040">llvm::LazyCallGraphPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_lazy_value_info_printer_pass_1ab0c9c93431b62e36767c973517bf1733" compoundref="_lazy_value_info_8cpp" startline="2095" endline="2102">llvm::LazyValueInfoPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_l_c_s_s_a_pass_1a7ae4df8ff3ca478772f6f055bf88bd1f" compoundref="_l_c_s_s_a_8cpp" startline="554" endline="569">llvm::LCSSAPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_lint_pass_1a414d1a9e191f52da209fd34c264a0cd4" compoundref="_lint_8cpp" startline="740" endline="755">llvm::LintPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_live_debug_variables_analysis_1a9fefe50c560d6fab257603f7e8b20ecc" compoundref="_live_debug_variables_8cpp" startline="1325" endline="1333">llvm::LiveDebugVariablesAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_live_debug_variables_printer_pass_1ab768a4034fa150ccf9784887c90ea58c" compoundref="_live_debug_variables_8cpp" startline="1336" endline="1341">llvm::LiveDebugVariablesPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_live_intervals_analysis_1ada57f166f3386be2ce76727b30484e79" compoundref="_live_intervals_8cpp" startline="65" endline="69">llvm::LiveIntervalsAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_live_intervals_printer_pass_1a27fc3994cdeaf984273c9ec315423631" compoundref="_live_intervals_8cpp" startline="72" endline="77">llvm::LiveIntervalsPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_live_reg_matrix_analysis_1a2b601beea6193fd88698584c85cdadcd" compoundref="_live_reg_matrix_8cpp" startline="295" endline="302">llvm::LiveRegMatrixAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_live_stacks_printer_pass_1aa3bb974f54082b4cda61faff8b9756c0" compoundref="_live_stacks_8cpp" startline="80" endline="84">llvm::LiveStacksPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_live_variables_printer_pass_1a9b4943b4e128bc059ad8261448328184" compoundref="_live_variables_8cpp" startline="53" endline="58">llvm::LiveVariablesPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_load_store_vectorizer_pass_1a78465c41b72ca43acdbbfc47cbce3d76" compoundref="_load_store_vectorizer_8cpp" startline="409" endline="425">llvm::LoadStoreVectorizerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_access_info_printer_pass_1ac64f34186e4e16d5b0baca6d232c810d" compoundref="_loop_access_analysis_printer_8cpp" startline="19" endline="34">llvm::LoopAccessInfoPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_analysis_1aea38b668f2d98b7e9f64b8b3c2e524dc" compoundref="_loop_info_8cpp" startline="969" endline="979">llvm::LoopAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_data_prefetch_pass_1af1020d68a0e1a023973890cf0e079c28" compoundref="_loop_data_prefetch_8cpp" startline="171" endline="192">llvm::LoopDataPrefetchPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_distribute_pass_1ab4ccb40cf0dd5fd358dd5e0f0d4d7c6f" compoundref="_loop_distribute_8cpp" startline="996" endline="1011">llvm::LoopDistributePass::run</referencedby>
+        <referencedby refid="structllvm_1_1_loop_extractor_pass_1ac1cd83190da80057c6903402d80cc1f7" compoundref="_loop_extractor_8cpp" startline="261" endline="280">llvm::LoopExtractorPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_fuse_pass_1a971f40ada3f1410759faede02bfbace7" compoundref="_loop_fuse_8cpp" startline="2069" endline="2102">llvm::LoopFusePass::run</referencedby>
+        <referencedby refid="structllvm_1_1_loop_load_elimination_pass_1af81bad0018d7e67a1c92d785305426b0" compoundref="_loop_load_elimination_8cpp" startline="679" endline="704">llvm::LoopLoadEliminationPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_printer_pass_1accccc20ac629c11b33de7dcb9fbc8449" compoundref="_loop_info_8cpp" startline="981" endline="987">llvm::LoopPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_simplify_pass_1a294bd885b054adcb86315a9112ea0b33" compoundref="_loop_simplify_8cpp" startline="822" endline="859">llvm::LoopSimplifyPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_strength_reduce_pass_1a4e475c0fcd6ade09109db20acb073a77" compoundref="_loop_strength_reduce_8cpp" startline="7167" endline="7178">llvm::LoopStrengthReducePass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_unroll_pass_1a62ed17cf8aa893362e6c3c1f6d8a0898" compoundref="_loop_unroll_pass_8cpp" startline="1593" endline="1680">llvm::LoopUnrollPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_loop_vectorize_pass_1af3b0e58cfdb2c6c663cd47a8808ba70a" compoundref="_loop_vectorize_8cpp" startline="10816" endline="10863">llvm::LoopVectorizePass::run</referencedby>
+        <referencedby refid="structllvm_1_1_loop_verifier_pass_1ac0ce536f08ade507773b16d2ceb9e8d1" compoundref="_loop_info_8cpp" startline="1251" endline="1257">llvm::LoopVerifierPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_versioning_pass_1ab85aee23551eb41e8d1d7e01e1fd3f98" compoundref="_loop_versioning_8cpp" startline="298" endline="308">llvm::LoopVersioningPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_lower_allow_check_pass_1a0333cadd9ec11ea319d1fd3d3e0e6f05" compoundref="_lower_allow_check_pass_8cpp" startline="150" endline="164">llvm::LowerAllowCheckPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_lower_constant_intrinsics_pass_1ab82707f4044f916e7c0ce1955b987cba" compoundref="_lower_constant_intrinsics_8cpp" startline="160" endline="169">llvm::LowerConstantIntrinsicsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_lower_matrix_intrinsics_pass_1a7b05a9de14294b7a5a7904cc8d5c8e1e" compoundref="_lower_matrix_intrinsics_8cpp" startline="2644" endline="2658">llvm::LowerMatrixIntrinsicsPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_lower_switch_pass_1a7ed296f67da3966a7e2c0dd6f4fbcf9e" compoundref="_lower_switch_8cpp" startline="603" endline="609">llvm::LowerSwitchPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_machine_block_frequency_analysis_1ae20ca4ab784e07cd8a7c6ecfdf29db08" compoundref="_machine_block_frequency_info_8cpp" startline="167" endline="172">llvm::MachineBlockFrequencyAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_machine_block_frequency_printer_pass_1aa35b27316428c32c7d320f53174fdbd5" compoundref="_machine_block_frequency_info_8cpp" startline="175" endline="182">llvm::MachineBlockFrequencyPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_machine_branch_probability_printer_pass_1a7aef24d9b265073b477cd3781bb733ef" compoundref="_machine_branch_probability_info_8cpp" startline="49" endline="60">llvm::MachineBranchProbabilityPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_machine_c_s_e_pass_1a495f06046288f4b8207cd36d72d19939" compoundref="_machine_c_s_e_8cpp" startline="953" endline="971">llvm::MachineCSEPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_machine_dominator_tree_printer_pass_1adba4d4be92ffca419c2d16979f1c6d11" compoundref="_machine_dominators_8cpp" startline="80" endline="85">llvm::MachineDominatorTreePrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_machine_loop_analysis_1a81d45818327732898308fbe130126f3e" compoundref="_machine_loop_info_8cpp" startline="36" endline="39">llvm::MachineLoopAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_machine_loop_printer_pass_1ab87752c40887e452b51a8300347641de" compoundref="_machine_loop_info_8cpp" startline="42" endline="47">llvm::MachineLoopPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_machine_optimization_remark_emitter_analysis_1a362fbd1b0bdfc30a7b45a625fcf582c5" compoundref="_machine_optimization_remark_emitter_8cpp" startline="100" endline="107">llvm::MachineOptimizationRemarkEmitterAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_machine_post_dominator_tree_printer_pass_1a3979191544a4fa418cb6332df5edd481" compoundref="_machine_post_dominators_8cpp" startline="51" endline="57">llvm::MachinePostDominatorTreePrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_machine_trace_metrics_analysis_1a845e43b0a7e3fa930353004b91b6842c" compoundref="_machine_trace_metrics_8cpp" startline="43" endline="46">llvm::MachineTraceMetricsAnalysis::run</referencedby>
+        <referencedby refid="structllvm_1_1_machine_trace_metrics_verifier_pass_1a6ba933eae8cb10287475af486e7b1602" compoundref="_machine_trace_metrics_8cpp" startline="49" endline="53">llvm::MachineTraceMetricsVerifierPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_mem_cpy_opt_pass_1a07c3f5129a977e2f949212878c3042ae" compoundref="_mem_cpy_optimizer_8cpp" startline="2153" endline="2169">llvm::MemCpyOptPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_memory_dependence_analysis_1a19bc33a610ce16b681fe59559cd987d9" compoundref="_memory_dependence_analysis_8cpp" startline="1711" endline="1717">llvm::MemoryDependenceAnalysis::run</referencedby>
+        <referencedby refid="structllvm_1_1_memory_sanitizer_pass_1adfd94cfcef9d896734905bd5a18a05df" compoundref="_memory_sanitizer_8cpp" startline="732" endline="761">llvm::MemorySanitizerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_analysis_1a0edf62c9bbb9566682c697dfb8fb2ed5" compoundref="_memory_s_s_a_8cpp" startline="2366" endline="2371">llvm::MemorySSAAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_printer_pass_1ab228481c477a8f642742650e2f03c231" compoundref="_memory_s_s_a_8cpp" startline="2382" endline="2396">llvm::MemorySSAPrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_memory_s_s_a_verifier_pass_1a5fa2dbea1ad6cf5950da7d2a642a73bd" compoundref="_memory_s_s_a_8cpp" startline="2408" endline="2413">llvm::MemorySSAVerifierPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_memory_s_s_a_walker_printer_pass_1a9982e0fb4d45bbefee3aa1a790306610" compoundref="_memory_s_s_a_8cpp" startline="2398" endline="2406">llvm::MemorySSAWalkerPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_mem_prof_context_disambiguation_1ac43814024a542d89728f88411b553e6d" compoundref="_mem_prof_context_disambiguation_8cpp" startline="4891" endline="4900">llvm::MemProfContextDisambiguation::run</referencedby>
+        <referencedby refid="classllvm_1_1_mem_prof_use_pass_1a301e9c18f7576c32229ca4c2a06fb8e4" compoundref="_mem_profiler_8cpp" startline="1228" endline="1288">llvm::MemProfUsePass::run</referencedby>
+        <referencedby refid="classllvm_1_1_merged_load_store_motion_pass_1af9d31b63718e1ad6d4e0881e49a415bd" compoundref="_merged_load_store_motion_8cpp" startline="383" endline="393">llvm::MergedLoadStoreMotionPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_merge_i_cmps_pass_1a96cfc6defc256b49f69f6fb8bfbf8c87" compoundref="_merge_i_cmps_8cpp" startline="915" endline="927">llvm::MergeICmpsPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_meta_renamer_pass_1a1f547e81e18e412faa9f0a8a71cbd90c" compoundref="_meta_renamer_8cpp" startline="227" endline="236">llvm::MetaRenamerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_module_summary_index_analysis_1a2aa0bcdd9165815fc18c689df7f2c7f5" compoundref="_module_summary_analysis_8cpp" startline="1128" endline="1144">llvm::ModuleSummaryIndexAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_module_to_post_order_c_g_s_c_c_pass_adaptor_1a0ff99def687659818bdb4a25afd82c94" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="134" endline="356">llvm::ModuleToPostOrderCGSCCPassAdaptor::run</referencedby>
+        <referencedby refid="classllvm_1_1_move_auto_init_pass_1a55a3f992f62d23ae617927c2de5a81c9" compoundref="_move_auto_init_8cpp" startline="219" endline="232">llvm::MoveAutoInitPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_must_be_executed_context_printer_pass_1a1b1a19034ac7bbb0481e54e850fc431a" compoundref="_must_execute_8cpp" startline="760" endline="786">llvm::MustBeExecutedContextPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_must_execute_printer_pass_1ac776766336198f23f11dc141cd0278d7" compoundref="_must_execute_8cpp" startline="749" endline="757">llvm::MustExecutePrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_nary_reassociate_pass_1a44a686152f979478fbbac82b70bf85fb" compoundref="_nary_reassociate_8cpp" startline="182" endline="197">llvm::NaryReassociatePass::run</referencedby>
+        <referencedby refid="classllvm_1_1_new_g_v_n_pass_1a6b1b7ab1a677eb8039694b4dfe6cb997" compoundref="_new_g_v_n_8cpp" startline="4269" endline="4286">llvm::NewGVNPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_obj_c_a_r_c_contract_pass_1a37aa96fbe116641ca7204a785341c962" compoundref="_obj_c_a_r_c_contract_8cpp" startline="752" endline="767">llvm::ObjCARCContractPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_obj_c_a_r_c_opt_pass_1a02b31ca54388bfecbdd6593b7563d146" compoundref="_obj_c_a_r_c_opts_8cpp" startline="2494" endline="2508">llvm::ObjCARCOptPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_open_m_p_opt_c_g_s_c_c_pass_1a9d4366d9c2f6de53d6f2edce548577ab" compoundref="_open_m_p_opt_8cpp" startline="5833" endline="5902">llvm::OpenMPOptCGSCCPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_open_m_p_opt_pass_1ad0812a5ba88f8645505134a108f639b2" compoundref="_open_m_p_opt_8cpp" startline="5720" endline="5831">llvm::OpenMPOptPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_optimization_remark_emitter_analysis_1a82def85e95d702c5c226841c3d8205b8" compoundref="_optimization_remark_emitter_8cpp" startline="129" endline="148">llvm::OptimizationRemarkEmitterAnalysis::run</referencedby>
+        <referencedby refid="structllvm_1_1_p_a_eval_pass_1a7f0dda30879f62ea4eefdc53cfbb0e1d" compoundref="_provenance_analysis_evaluator_8cpp" startline="33" endline="64">llvm::PAEvalPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_partial_inliner_pass_1a022b0aa595cef197b5b0c655cd18ad9c" compoundref="_partial_inlining_8cpp" startline="1453" endline="1484">llvm::PartialInlinerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_partially_inline_lib_calls_pass_1a0e2ff100989ce66c294cfe38904c6cf1" compoundref="_partially_inline_lib_calls_8cpp" startline="162" endline="172">llvm::PartiallyInlineLibCallsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_pass_manager_1a6d74effaad77f6ecb91e1806993cda8f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="61" endline="131">llvm::PassManager&lt; LazyCallGraph::SCC, CGSCCAnalysisManager, LazyCallGraph &amp;, CGSCCUpdateResult &amp; &gt;::run</referencedby>
+        <referencedby refid="classllvm_1_1_peephole_optimizer_pass_1a80af47b78e07ddb33af6e7d86af034df" compoundref="_peephole_optimizer_8cpp" startline="1647" endline="1663">llvm::PeepholeOptimizerPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_p_g_o_force_function_attrs_pass_1a5a7425ff46058c5adf7da1d9a58c4000" compoundref="_p_g_o_force_function_attrs_8cpp" startline="33" endline="65">llvm::PGOForceFunctionAttrsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_phi_values_printer_pass_1a21d9889708699714c41846b90164e285" compoundref="_phi_values_8cpp" startline="195" endline="204">llvm::PhiValuesPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_physical_register_usage_info_printer_pass_1ac906046b0d9451273e8073b46cdfa74c" compoundref="_register_usage_info_8cpp" startline="119" endline="124">llvm::PhysicalRegisterUsageInfoPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_place_safepoints_pass_1a4c1a6d3206d9f1278836bdc314e56141" compoundref="_place_safepoints_8cpp" startline="376" endline="385">llvm::PlaceSafepointsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_post_dominator_tree_printer_pass_1a5a8a80e5f89a52ac0fb8e2ee24c3960b" compoundref="_post_dominators_8cpp" startline="108" endline="113">llvm::PostDominatorTreePrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_post_order_function_attrs_pass_1a8312d250d0f7b4407b4bad97293e5865" compoundref="_function_attrs_8cpp" startline="2272" endline="2330">llvm::PostOrderFunctionAttrsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_predicate_info_printer_pass_1a3d2162a259a40a3c7fecd27694e24a8d" compoundref="_predicate_info_8cpp" startline="841" endline="851">llvm::PredicateInfoPrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_predicate_info_verifier_pass_1aa6365590a30ab595458b49c30b231661" compoundref="_predicate_info_8cpp" startline="904" endline="911">llvm::PredicateInfoVerifierPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_pre_i_sel_intrinsic_lowering_pass_1a6c4bdf5cd38f45ec8052f395f32f63ee" compoundref="_pre_i_sel_intrinsic_lowering_8cpp" startline="521" endline="537">llvm::PreISelIntrinsicLoweringPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_print_m_i_r_pass_1a354177020e92f5ab2dd0433a47123270" compoundref="_m_i_r_printing_pass_8cpp" startline="28" endline="37">llvm::PrintMIRPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_print_module_pass_1abb1b61a3833aedd2fa62272bfd6740f3" compoundref="_i_r_printer_2_i_r_printing_passes_8cpp" startline="35" endline="72">llvm::PrintModulePass::run</referencedby>
+        <referencedby refid="classllvm_1_1_profile_summary_printer_pass_1aff1db3108eff5862498fecfa0d419d72" compoundref="_profile_summary_info_8cpp" startline="247" endline="261">llvm::ProfileSummaryPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_promote_pass_1aca8a105910e7bb81285435f553e71872" compoundref="_mem2_reg_8cpp" startline="61" endline="70">llvm::PromotePass::run</referencedby>
+        <referencedby refid="classllvm_1_1_pseudo_probe_update_pass_1a1eef7e13ba8f6964ddd2f64c8a85d8b8" compoundref="_sample_profile_probe_8cpp" startline="502" endline="514">llvm::PseudoProbeUpdatePass::run</referencedby>
+        <referencedby refid="structllvm_1_1_recompute_globals_a_a_pass_1abd209c0e2c06b211cbd147ad96b70890" compoundref="_globals_mod_ref_8cpp" startline="1006" endline="1022">llvm::RecomputeGlobalsAAPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_region_info_analysis_1aeb18bff655e7a0fdfbf8143b8beec782" compoundref="_region_info_8cpp" startline="189" endline="197">llvm::RegionInfoAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_region_info_printer_pass_1a226463c4c73a0f1fc36d8d3256911f72" compoundref="_region_info_8cpp" startline="202" endline="208">llvm::RegionInfoPrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_region_info_verifier_pass_1a9e4421b3ea5f943378bff6877592acf2" compoundref="_region_info_8cpp" startline="210" endline="215">llvm::RegionInfoVerifierPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_reg_to_mem_pass_1a0a8fbb23329369eafe88acc194f6336d" compoundref="_reg2_mem_8cpp" startline="97" endline="108">llvm::RegToMemPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_reg_usage_info_collector_pass_1a387db9c3806e18b7691b075381d0ac09" compoundref="_reg_usage_info_collector_8cpp" startline="108" endline="116">llvm::RegUsageInfoCollectorPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_reg_usage_info_propagation_pass_1ab365c22ad0becb1f9a4f0fc2d85f088f" compoundref="_reg_usage_info_propagate_8cpp" startline="118" endline="126">llvm::RegUsageInfoPropagationPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_rel_lookup_table_converter_pass_1a3b1519f165c877970b589c9f53db69eb" compoundref="_rel_lookup_table_converter_8cpp" startline="201" endline="216">llvm::RelLookupTableConverterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_replace_with_veclib_1ac03e0f62c8cbbdd055546686f847183c" compoundref="_replace_with_veclib_8cpp" startline="229" endline="249">llvm::ReplaceWithVeclib::run</referencedby>
+        <referencedby refid="classllvm_1_1_reverse_post_order_function_attrs_pass_1a711463cdc12e518aaca8c394a0f82139" compoundref="_function_attrs_8cpp" startline="2410" endline="2419">llvm::ReversePostOrderFunctionAttrsPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_rewrite_statepoints_for_g_c_1af56b6dd2da7f65fa682eaf6a16cdb36a" compoundref="_rewrite_statepoints_for_g_c_8cpp" startline="132" endline="163">llvm::RewriteStatepointsForGC::run</referencedby>
+        <referencedby refid="classllvm_1_1_safepoint_i_r_verifier_pass_1af94bb71714afbf2f143e6535c8264e56" compoundref="_safepoint_i_r_verifier_8cpp" startline="201" endline="208">llvm::SafepointIRVerifierPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_sample_profile_loader_pass_1a324d3696b255beea7cfd1e8b901b2363" compoundref="_sample_profile_8cpp" startline="2345" endline="2378">llvm::SampleProfileLoaderPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_sandbox_vectorizer_pass_1a551ef06f642e5ab4d0e22806eb5bb4ac" compoundref="_sandbox_vectorizer_8cpp" startline="51" endline="64">llvm::SandboxVectorizerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_analysis_1acbc87d909d53e5f43fde82950e15b59d" compoundref="_scalar_evolution_8cpp" startline="14664" endline="14671">llvm::ScalarEvolutionAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_printer_pass_1a5701836bcbb5fc1663cbaf72ea475bc0" compoundref="_scalar_evolution_8cpp" startline="14680" endline="14688">llvm::ScalarEvolutionPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_scalar_evolution_verifier_pass_1a922e2e00f7528f19fdece7de80099fc2" compoundref="_scalar_evolution_8cpp" startline="14674" endline="14677">llvm::ScalarEvolutionVerifierPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_scalarize_masked_mem_intrin_pass_1ab805176ab5d08e2a34fadbc760bca5a6" compoundref="_scalarize_masked_mem_intrin_8cpp" startline="1049" endline="1058">llvm::ScalarizeMaskedMemIntrinPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_scalarizer_pass_1a250da10ea723b93bcd9f52cd0bca4d7e" compoundref="_scalarizer_8cpp" startline="1328" endline="1336">llvm::ScalarizerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_c_p_pass_1ad9201f5b1be7f1b9cbff7b2b631b2256" compoundref="_scalar_2_s_c_c_p_8cpp" startline="121" endline="132">llvm::SCCPPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_e_v_a_a_1ab52c682b31b74ce3fe18ff10e5e2bbac" compoundref="_scalar_evolution_alias_analysis_8cpp" startline="154" endline="156">llvm::SCEVAA::run</referencedby>
+        <referencedby refid="classllvm_1_1_separate_const_offset_from_g_e_p_pass_1a949e76f284f0977c83f729850a8b8a8b" compoundref="_separate_const_offset_from_g_e_p_8cpp" startline="1401" endline="1414">llvm::SeparateConstOffsetFromGEPPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_fix_s_g_p_r_copies_pass_1aa09db25356e6c1389f8c477c5555e298" compoundref="_s_i_fix_s_g_p_r_copies_8cpp" startline="1149" endline="1160">llvm::SIFixSGPRCopiesPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_load_store_optimizer_pass_1a73bd665c6e03c1dc196c107a450e228a" compoundref="_s_i_load_store_optimizer_8cpp" startline="2586" endline="2604">llvm::SILoadStoreOptimizerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_lower_i1_copies_pass_1a0af1fadc28e71aac6e7e74c59686a02b" compoundref="_s_i_lower_i1_copies_8cpp" startline="882" endline="895">llvm::SILowerI1CopiesPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_lower_s_g_p_r_spills_pass_1acc251fdad2ff98bf8f116ecbd8e93b14" compoundref="_s_i_lower_s_g_p_r_spills_8cpp" startline="556" endline="564">llvm::SILowerSGPRSpillsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_simple_loop_unswitch_pass_1ae7088b7b5c8bd069497f13e3e1990eff" compoundref="_simple_loop_unswitch_8cpp" startline="3682" endline="3716">llvm::SimpleLoopUnswitchPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_simplify_c_f_g_pass_1a1196be608a7f568e9cb19fe11f80ebe2" compoundref="_simplify_c_f_g_pass_8cpp" startline="374" endline="387">llvm::SimplifyCFGPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_sinking_pass_1a07a25f4cfc32581da84eea1e0ced7f2e" compoundref="_sink_8cpp" startline="229" endline="240">llvm::SinkingPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_optimize_v_g_p_r_live_range_pass_1a7bf8baafeef111584b003c06f997080a" compoundref="_s_i_optimize_v_g_p_r_live_range_8cpp" startline="652" endline="669">llvm::SIOptimizeVGPRLiveRangePass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_pre_allocate_w_w_m_regs_pass_1ae0b2123e3a8afffcdfc0e364d088f39a" compoundref="_s_i_pre_allocate_w_w_m_regs_8cpp" startline="263" endline="270">llvm::SIPreAllocateWWMRegsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_slot_indexes_printer_pass_1afedda4628bf652e8255f1e6a6378d744" compoundref="_slot_indexes_8cpp" startline="30" endline="35">llvm::SlotIndexesPrinterPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_s_l_p_vectorizer_pass_1aaec443311cb572adf0e2db9db82279ef" compoundref="_s_l_p_vectorizer_8cpp" startline="18496" endline="18514">llvm::SLPVectorizerPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_speculative_execution_pass_1a75693e29732ce9935478d5fdc533c67d" compoundref="_speculative_execution_8cpp" startline="350" endline="361">llvm::SpeculativeExecutionPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_spill_placement_analysis_1a2856ed5854959844cc1615dcc351614f" compoundref="_spill_placement_8cpp" startline="203" endline="210">llvm::SpillPlacementAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_p_i_r_v_convergence_region_analysis_1ac6c45e1270072876327eef85a8f73ea9" compoundref="_s_p_i_r_v_convergence_region_analysis_8cpp" startline="333" endline="339">llvm::SPIRVConvergenceRegionAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_r_o_a_pass_1a6cca3e145c2eb9050c6b4b94e2f760a0" compoundref="_s_r_o_a_8cpp" startline="5772" endline="5785">llvm::SROAPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_stack_coloring_pass_1a693535db98527be92419386a4baba10a" compoundref="_stack_coloring_8cpp" startline="1195" endline="1201">llvm::StackColoringPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_stack_safety_analysis_1a3843b659bf378a511aadde4a6d10aa72" compoundref="_stack_safety_analysis_8cpp" startline="1036" endline="1041">llvm::StackSafetyAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_stack_safety_global_analysis_1aa68230712fbc6c2839196d128777e5c5" compoundref="_stack_safety_analysis_8cpp" startline="1074" endline="1083">llvm::StackSafetyGlobalAnalysis::run</referencedby>
+        <referencedby refid="classllvm_1_1_stack_safety_global_printer_pass_1ac43f3f00ee89cc0fd16d5ba5323eef37" compoundref="_stack_safety_analysis_8cpp" startline="1085" endline="1090">llvm::StackSafetyGlobalPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_stack_safety_printer_pass_1a418ed81d84497654db26995150b7c57a" compoundref="_stack_safety_analysis_8cpp" startline="1043" endline="1048">llvm::StackSafetyPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_straight_line_strength_reduce_pass_1a40a452b8f3a3f5538eed5201e5bfdcc4" compoundref="_straight_line_strength_reduce_8cpp" startline="722" endline="737">llvm::StraightLineStrengthReducePass::run</referencedby>
+        <referencedby refid="structllvm_1_1_structurize_c_f_g_pass_1aeb3e7a1f92ba7129a43fdfe85ea9c000" compoundref="_structurize_c_f_g_8cpp" startline="1360" endline="1392">llvm::StructurizeCFGPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_tail_call_elim_pass_1ab754a2815f5333ff5f443593896814dc" compoundref="_tail_recursion_elimination_8cpp" startline="948" endline="968">llvm::TailCallElimPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_tail_duplicate_pass_base_1a0780ac5d6a2962adf46e1c611e6ca6fa" compoundref="_tail_duplication_8cpp" startline="109" endline="133">llvm::TailDuplicatePassBase&lt; DerivedT, PreRegAlloc &gt;::run</referencedby>
+        <referencedby refid="classllvm_1_1_thin_l_t_o_bitcode_writer_pass_1a407be825a5084267d383681109e30df9" compoundref="_thin_l_t_o_bitcode_writer_8cpp" startline="580" endline="597">llvm::ThinLTOBitcodeWriterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_type_promotion_pass_1addcc6ab5729a0a8e495cdc585f02234c" compoundref="_type_promotion_8cpp" startline="1041" endline="1055">llvm::TypePromotionPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_uniformity_info_printer_pass_1a60f393028e23ebd547f6b141ccb51c43" compoundref="_uniformity_analysis_8cpp" startline="133" endline="139">llvm::UniformityInfoPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_unify_loop_exits_pass_1afa18953dc3062e2c68866c9065b12bcb" compoundref="_unify_loop_exits_8cpp" startline="224" endline="237">llvm::UnifyLoopExitsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_verifier_pass_1a27b98c15f4931023c6e5f739d9df2a02" compoundref="_verifier_8cpp" startline="7755" endline="7761">llvm::VerifierPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_verifier_pass_1a6112c8ef2aa7acf00aa9b0ce02eb3711" compoundref="_verifier_8cpp" startline="7747" endline="7753">llvm::VerifierPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_virt_reg_map_printer_pass_1a101be45b1a9d89ebbd7df78a0f9ffa85" compoundref="_virt_reg_map_8cpp" startline="178" endline="182">llvm::VirtRegMapPrinterPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_warn_missed_transformations_pass_1aa622d589f82389844d93eca02d865d4c" compoundref="_warn_missed_transforms_8cpp" startline="93" endline="105">llvm::WarnMissedTransformationsPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_whole_program_devirt_pass_1af94d9399906155205bf6afa17427d5c7" compoundref="_whole_program_devirt_8cpp" startline="788" endline="810">llvm::WholeProgramDevirtPass::run</referencedby>
+        <referencedby refid="classanonymous__namespace_02_sample_profile_8cpp_03_1_1_sample_profile_loader_1a358b28b8ab641a2a22ed8849a2dff2cf" compoundref="_sample_profile_8cpp" startline="2250" endline="2335">anonymous_namespace{SampleProfile.cpp}::SampleProfileLoader::runOnFunction</referencedby>
+        <referencedby refid="_c_g_s_c_c_pass_manager_8cpp_1a490117b63072462d035a6933fdb94c1f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="874" endline="1174">updateCGAndAnalysisManagerForPass</referencedby>
+        <referencedby refid="_c_g_s_c_c_pass_manager_8cpp_1ab31c9b14b5bd6245b789fb6ed28a7aeb" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="769" endline="799">updateNewSCCFunctionAnalyses</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a828ff8185f881fca9e3d534781244041" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename PassT</type>
+          </param>
+        </templateparamlist>
+        <type>PassT::Result *</type>
+        <definition>PassT::Result * llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getCachedResult</definition>
+        <argsstring>(IRUnitT &amp;IR) const</argsstring>
+        <name>getCachedResult</name>
+        <qualifiedname>llvm::AnalysisManager::getCachedResult</qualifiedname>
+        <param>
+          <type>IRUnitT &amp;</type>
+          <declname>IR</declname>
+        </param>
+        <briefdescription>
+<para>Get the cached result of an analysis pass for a given IR unit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method never runs the analysis.</para>
+<para><simplesect kind="return"><para>null if there is no cached result. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="429" column="26" bodyfile="include/llvm/IR/PassManager.h" bodystart="429" bodyend="442"/>
+        <referencedby refid="classllvm_1_1_analysis_manager_1a4926331431f03253ee3ec8e6e3bb9d1c" compoundref="_pass_manager_impl_8h" startline="119" endline="133">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::clear</referencedby>
+        <referencedby refid="_c_g_s_c_c_pass_manager_8cpp_1aa64f6bcd5ace031369edc14aa406d745" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="813" endline="872">incorporateNewSCCRange</referencedby>
+        <referencedby refid="classllvm_1_1_analysis_manager_1a64b2a209a16bcd41375b5cae12690eaa" compoundref="_pass_manager_impl_8h" startline="172" endline="227">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::invalidate</referencedby>
+        <referencedby refid="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_code_gen_prepare_1aa963097f89a02195cba904f74c5e0f71" compoundref="_code_gen_prepare_8cpp" startline="560" endline="575">anonymous_namespace{CodeGenPrepare.cpp}::CodeGenPrepare::run</referencedby>
+        <referencedby refid="structllvm_1_1_assume_builder_pass_1aca0fa8f3093912d8045361e2f6b79cac" compoundref="_assume_bundle_builder_8cpp" startline="577" endline="589">llvm::AssumeBuilderPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_assume_simplify_pass_1a378f8b2a8e11ac78939bd1c732f05d2e" compoundref="_assume_bundle_builder_8cpp" startline="565" endline="575">llvm::AssumeSimplifyPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_break_critical_edges_pass_1a5f8ef6ce9ef2eb4568d48e3530b5652d" compoundref="_break_critical_edges_8cpp" startline="83" endline="95">llvm::BreakCriticalEdgesPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_extra_function_pass_manager_1ae66709ae0e3be48ab315ad2ac6ae6fa7" compoundref="_extra_pass_manager_8h" startline="67" endline="73">llvm::ExtraFunctionPassManager&lt; MarkerTy &gt;::run</referencedby>
+        <referencedby refid="classllvm_1_1_extra_loop_pass_manager_1abc9e4c26ae75979993c43cbd6392104c" compoundref="_extra_pass_manager_8h" startline="91" endline="98">llvm::ExtraLoopPassManager&lt; MarkerTy &gt;::run</referencedby>
+        <referencedby refid="structllvm_1_1_fix_irreducible_pass_1a61707c67652fa7e327bb8ac607164e09" compoundref="_fix_irreducible_8cpp" startline="359" endline="373">llvm::FixIrreduciblePass::run</referencedby>
+        <referencedby refid="structllvm_1_1_guard_widening_pass_1a13571b5fc50d701864f8b3de9b930b7f" compoundref="_guard_widening_8cpp" startline="979" endline="1007">llvm::GuardWideningPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_g_v_n_pass_1a25dcf17194b012b2b35388798cac2da7" compoundref="_g_v_n_8cpp" startline="829" endline="859">llvm::GVNPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_infer_address_spaces_pass_1a8750fe658baa71eeba987c3bea8bf83e" compoundref="_infer_address_spaces_8cpp" startline="1421" endline="1435">llvm::InferAddressSpacesPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combine_pass_1aa1ffc7ad08181545bbc25eabac7f5aae" compoundref="_instruction_combining_8cpp" startline="5598" endline="5632">llvm::InstCombinePass::run</referencedby>
+        <referencedby refid="structllvm_1_1_jump_table_to_switch_pass_1a84778fc53894f05e88ce0cc794561742" compoundref="_jump_table_to_switch_8cpp" startline="145" endline="190">llvm::JumpTableToSwitchPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_l_c_s_s_a_pass_1a7ae4df8ff3ca478772f6f055bf88bd1f" compoundref="_l_c_s_s_a_8cpp" startline="554" endline="569">llvm::LCSSAPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_simplify_pass_1a294bd885b054adcb86315a9112ea0b33" compoundref="_loop_simplify_8cpp" startline="822" endline="859">llvm::LoopSimplifyPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_loop_unroll_pass_1a62ed17cf8aa893362e6c3c1f6d8a0898" compoundref="_loop_unroll_pass_8cpp" startline="1593" endline="1680">llvm::LoopUnrollPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_lower_constant_intrinsics_pass_1ab82707f4044f916e7c0ce1955b987cba" compoundref="_lower_constant_intrinsics_8cpp" startline="160" endline="169">llvm::LowerConstantIntrinsicsPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_lower_switch_pass_1a7ed296f67da3966a7e2c0dd6f4fbcf9e" compoundref="_lower_switch_8cpp" startline="603" endline="609">llvm::LowerSwitchPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_merge_i_cmps_pass_1a96cfc6defc256b49f69f6fb8bfbf8c87" compoundref="_merge_i_cmps_8cpp" startline="915" endline="927">llvm::MergeICmpsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_module_to_post_order_c_g_s_c_c_pass_adaptor_1a0ff99def687659818bdb4a25afd82c94" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="134" endline="356">llvm::ModuleToPostOrderCGSCCPassAdaptor::run</referencedby>
+        <referencedby refid="classllvm_1_1_partially_inline_lib_calls_pass_1a0e2ff100989ce66c294cfe38904c6cf1" compoundref="_partially_inline_lib_calls_8cpp" startline="162" endline="172">llvm::PartiallyInlineLibCallsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_pass_manager_1a6d74effaad77f6ecb91e1806993cda8f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="61" endline="131">llvm::PassManager&lt; LazyCallGraph::SCC, CGSCCAnalysisManager, LazyCallGraph &amp;, CGSCCUpdateResult &amp; &gt;::run</referencedby>
+        <referencedby refid="structllvm_1_1_recompute_globals_a_a_pass_1abd209c0e2c06b211cbd147ad96b70890" compoundref="_globals_mod_ref_8cpp" startline="1006" endline="1022">llvm::RecomputeGlobalsAAPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_scalarize_masked_mem_intrin_pass_1ab805176ab5d08e2a34fadbc760bca5a6" compoundref="_scalarize_masked_mem_intrin_8cpp" startline="1049" endline="1058">llvm::ScalarizeMaskedMemIntrinPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_c_c_p_pass_1ad9201f5b1be7f1b9cbff7b2b631b2256" compoundref="_scalar_2_s_c_c_p_8cpp" startline="121" endline="132">llvm::SCCPPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_lower_control_flow_pass_1a8b4643be70785c8f090659b3ab19d73e" compoundref="_s_i_lower_control_flow_8cpp" startline="882" endline="899">llvm::SILowerControlFlowPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_lower_s_g_p_r_spills_pass_1acc251fdad2ff98bf8f116ecbd8e93b14" compoundref="_s_i_lower_s_g_p_r_spills_8cpp" startline="556" endline="564">llvm::SILowerSGPRSpillsPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_lower_w_w_m_copies_pass_1a8190b1c16b87f7d2ff20607bc4efb554" compoundref="_s_i_lower_w_w_m_copies_8cpp" startline="126" endline="135">llvm::SILowerWWMCopiesPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_s_l_p_vectorizer_pass_1aaec443311cb572adf0e2db9db82279ef" compoundref="_s_l_p_vectorizer_8cpp" startline="18496" endline="18514">llvm::SLPVectorizerPass::run</referencedby>
+        <referencedby refid="structllvm_1_1_tail_call_elim_pass_1ab754a2815f5333ff5f443593896814dc" compoundref="_tail_recursion_elimination_8cpp" startline="948" endline="968">llvm::TailCallElimPass::run</referencedby>
+        <referencedby refid="_c_g_s_c_c_pass_manager_8cpp_1a490117b63072462d035a6933fdb94c1f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="874" endline="1174">updateCGAndAnalysisManagerForPass</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a29648f060d2dd1e126ed17733813cf0a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename PassT</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::verifyNotInvalidated</definition>
+        <argsstring>(IRUnitT &amp;IR, typename PassT::Result *Result) const</argsstring>
+        <name>verifyNotInvalidated</name>
+        <qualifiedname>llvm::AnalysisManager::verifyNotInvalidated</qualifiedname>
+        <param>
+          <type>IRUnitT &amp;</type>
+          <declname>IR</declname>
+        </param>
+        <param>
+          <type>typename PassT::Result *</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+<para>Verify that the given Result cannot be invalidated, assert otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="446" column="8" bodyfile="include/llvm/IR/PassManager.h" bodystart="446" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a91ff894f756175a693c85bf73f79de9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename PassBuilderT</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::registerPass</definition>
+        <argsstring>(PassBuilderT &amp;&amp;PassBuilder)</argsstring>
+        <name>registerPass</name>
+        <qualifiedname>llvm::AnalysisManager::registerPass</qualifiedname>
+        <param>
+          <type>PassBuilderT &amp;&amp;</type>
+          <declname>PassBuilder</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classllvm_1_1_register" kindref="compound">Register</ref> an analysis pass with the manager. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The parameter is a callable whose result is an analysis pass. This allows passing in a lambda to construct the analysis.</para>
+<para>The analysis type to register is the type returned by calling the <computeroutput><ref refid="classllvm_1_1_pass_builder" kindref="compound">PassBuilder</ref></computeroutput> argument. If that type has already been registered, then the argument will not be called and this function will return false. Otherwise, we register the analysis returned by calling <computeroutput>PassBuilder()</computeroutput>, and this function returns true.</para>
+<para>(Note: Although the return value of this function indicates whether or not an analysis was previously registered, you should just register all the analyses you might want and let this class run them lazily. This idiom lets us minimize the number of times we have to look up analyses in our hashtable.) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="471" column="8" bodyfile="include/llvm/IR/PassManager.h" bodystart="471" bodyend="484"/>
+        <referencedby refid="classllvm_1_1_pass_builder_1a3c2e12459e81e47a53dc49484af24bc2" compoundref="_pass_builder_8cpp" startline="2211" endline="2233">llvm::PassBuilder::crossRegisterProxies</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a64b2a209a16bcd41375b5cae12690eaa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::invalidate</definition>
+        <argsstring>(IRUnitT &amp;IR, const PreservedAnalyses &amp;PA)</argsstring>
+        <name>invalidate</name>
+        <qualifiedname>llvm::AnalysisManager::invalidate</qualifiedname>
+        <param>
+          <type>IRUnitT &amp;</type>
+          <declname>IR</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_preserved_analyses" kindref="compound">PreservedAnalyses</ref> &amp;</type>
+          <declname>PA</declname>
+        </param>
+        <briefdescription>
+<para>Invalidate cached analyses for an IR unit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Walk through all of the analyses pertaining to this unit of IR and invalidate them, unless they are preserved by the <ref refid="classllvm_1_1_preserved_analyses" kindref="compound">PreservedAnalyses</ref> set. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="490" column="8" bodyfile="include/llvm/IR/PassManagerImpl.h" bodystart="172" bodyend="227"/>
+        <references refid="classllvm_1_1_preserved_analyses_1a2de5aab2964e0b9266423d5f6c375051" compoundref="llvm_2_i_r_2_analysis_8h" startline="289" endline="291">llvm::PreservedAnalyses::allAnalysesInSetPreserved</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a">E</references>
+        <references refid="classllvm_1_1_dense_map_base_1a49c487a9395a6c384be8544cfb2cfccf" compoundref="_dense_map_8h" startline="98" endline="98">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::empty</references>
+        <references refid="classllvm_1_1_dense_map_base_1a65520b9c67759099e313d0f4e7b5ff9e" compoundref="_dense_map_8h" startline="84" endline="86">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end</references>
+        <references refid="classllvm_1_1_dense_map_base_1a0c047f127ed4380a6f383d70bec4eb94" compoundref="_dense_map_8h" startline="156" endline="162">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::find</references>
+        <references refid="classllvm_1_1_analysis_manager_1a828ff8185f881fca9e3d534781244041" compoundref="_i_r_2_pass_manager_8h" startline="429" endline="442">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getCachedResult</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="classllvm_1_1_dense_map_base_1adb33f3ede2f5bfc9b3ee658aaf648492" compoundref="_dense_map_8h" startline="211" endline="213">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::insert</references>
+        <references refid="_legalizer_8cpp_1a05ab4853f7153e537774d02580e761ec" compoundref="_legalizer_8cpp" startline="80">IR</references>
+        <references refid="classllvm_1_1_dense_map_base_1a0b2ca98dc28c61793ff5c90d23e5f14e" compoundref="_dense_map_8h" startline="194" endline="198">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::lookup</references>
+        <references refid="classllvm_1_1_pass_instrumentation_1a698253acb40299131fecdb9489f88fcd" compoundref="_pass_instrumentation_8h" startline="309" endline="313">llvm::PassInstrumentation::runAnalysisInvalidated</references>
+        <referencedby refid="_c_g_s_c_c_pass_manager_8cpp_1aa64f6bcd5ace031369edc14aa406d745" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="813" endline="872">incorporateNewSCCRange</referencedby>
+        <referencedby refid="classllvm_1_1_devirt_s_c_c_repeated_pass_1a11597e1847c3156c4866aa0a43a1b71b" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="358" endline="503">llvm::DevirtSCCRepeatedPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_function_to_machine_function_pass_adaptor_1a1c8aea757190a42fd931c0d95a4f2721" compoundref="_machine_pass_manager_8cpp" startline="109" endline="131">llvm::FunctionToMachineFunctionPassAdaptor::run</referencedby>
+        <referencedby refid="classllvm_1_1_i_r_c_e_pass_1ac7e45d3f509c7e40c4d6666a24e88f73" compoundref="_inductive_range_check_elimination_8cpp" startline="901" endline="957">llvm::IRCEPass::run</referencedby>
+        <referencedby refid="classllvm_1_1_pass_manager_1a6d74effaad77f6ecb91e1806993cda8f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="61" endline="131">llvm::PassManager&lt; LazyCallGraph::SCC, CGSCCAnalysisManager, LazyCallGraph &amp;, CGSCCUpdateResult &amp; &gt;::run</referencedby>
+        <referencedby refid="_c_g_s_c_c_pass_manager_8cpp_1a490117b63072462d035a6933fdb94c1f" compoundref="_c_g_s_c_c_pass_manager_8cpp" startline="874" endline="1174">updateCGAndAnalysisManagerForPass</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a896a2d0697604f08f99fe7b019ad3bfd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1detail_1_1_analysis_pass_concept" kindref="compound">PassConceptT</ref> &amp;</type>
+        <definition>PassConceptT &amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::lookUpPass</definition>
+        <argsstring>(AnalysisKey *ID)</argsstring>
+        <name>lookUpPass</name>
+        <qualifiedname>llvm::AnalysisManager::lookUpPass</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_analysis_key" kindref="compound">AnalysisKey</ref> *</type>
+          <declname>ID</declname>
+        </param>
+        <briefdescription>
+<para>Look up a registered analysis pass. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="494" column="16" bodyfile="include/llvm/IR/PassManager.h" bodystart="494" bodyend="499"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a7b69a92067fc1113f29d9d4ca1d6c3ff" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1detail_1_1_analysis_pass_concept" kindref="compound">PassConceptT</ref> &amp;</type>
+        <definition>const PassConceptT &amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::lookUpPass</definition>
+        <argsstring>(AnalysisKey *ID) const</argsstring>
+        <name>lookUpPass</name>
+        <qualifiedname>llvm::AnalysisManager::lookUpPass</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_analysis_key" kindref="compound">AnalysisKey</ref> *</type>
+          <declname>ID</declname>
+        </param>
+        <briefdescription>
+<para>Look up a registered analysis pass. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="502" column="22" bodyfile="include/llvm/IR/PassManager.h" bodystart="502" bodyend="507"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1a7c21e9b71e06095567ef2d8749ec18b6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1detail_1_1_analysis_result_concept" kindref="compound">ResultConceptT</ref> &amp;</type>
+        <definition>AnalysisManager&lt; IRUnitT, ExtraArgTs... &gt;::ResultConceptT &amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResultImpl</definition>
+        <argsstring>(AnalysisKey *ID, IRUnitT &amp;IR, ExtraArgTs... ExtraArgs)</argsstring>
+        <name>getResultImpl</name>
+        <qualifiedname>llvm::AnalysisManager::getResultImpl</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_analysis_key" kindref="compound">AnalysisKey</ref> *</type>
+          <declname>ID</declname>
+        </param>
+        <param>
+          <type>IRUnitT &amp;</type>
+          <declname>IR</declname>
+        </param>
+        <param>
+          <type>ExtraArgTs...</type>
+          <declname>ExtraArgs</declname>
+        </param>
+        <briefdescription>
+<para>Get an analysis result, running the pass if necessary. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="510" column="18" bodyfile="include/llvm/IR/PassManagerImpl.h" bodystart="137" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_analysis_manager_1ad87204b3132c8461e2b6f0e3629da6a5" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1detail_1_1_analysis_result_concept" kindref="compound">ResultConceptT</ref> *</type>
+        <definition>ResultConceptT * llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getCachedResultImpl</definition>
+        <argsstring>(AnalysisKey *ID, IRUnitT &amp;IR) const</argsstring>
+        <name>getCachedResultImpl</name>
+        <qualifiedname>llvm::AnalysisManager::getCachedResultImpl</qualifiedname>
+        <param>
+          <type><ref refid="structllvm_1_1_analysis_key" kindref="compound">AnalysisKey</ref> *</type>
+          <declname>ID</declname>
+        </param>
+        <param>
+          <type>IRUnitT &amp;</type>
+          <declname>IR</declname>
+        </param>
+        <briefdescription>
+<para>Get a cached analysis result or return null. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/PassManager.h" line="514" column="18" bodyfile="include/llvm/IR/PassManager.h" bodystart="514" bodyend="518"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A container for analyses that lazily runs them and caches their results. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class can manage analyses for any IR unit where the address of the IR unit sufficies as its identity. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="6">
+        <label>llvm::AnalysisManager&lt; Function &gt;</label>
+        <link refid="classllvm_1_1_analysis_manager"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; Function &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;</label>
+        <link refid="classllvm_1_1_analysis_manager"/>
+      </node>
+      <node id="2">
+        <label>llvm::AnalysisManager&lt; LazyCallGraph::SCC, LazyCallGraph &amp; &gt;</label>
+        <link refid="classllvm_1_1_analysis_manager"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; LazyCallGraph::SCC, LazyCallGraph &amp; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::AnalysisManager&lt; Loop, LoopStandardAnalysisResults &amp; &gt;</label>
+        <link refid="classllvm_1_1_analysis_manager"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; Loop, LoopStandardAnalysisResults &amp; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::AnalysisManager&lt; MachineFunction &gt;</label>
+        <link refid="classllvm_1_1_analysis_manager"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; MachineFunction &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm::AnalysisManager&lt; Module &gt;</label>
+        <link refid="classllvm_1_1_analysis_manager"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; Module &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/llvm/IR/PassManager.h" line="253" column="14" bodyfile="include/llvm/IR/PassManager.h" bodystart="253" bodyend="536"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_analysis_manager_1a04d20e532396b71cf376c777d6b838c9" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>AnalysisManager</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a22f4fe9d72c2287370e28fbbeabbd89f" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>AnalysisManager</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a6165fb98ddb81478865918c3e1b2b7d7" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>AnalysisPasses</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a134f995a67e3c8da28760abb1bc55ea5" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>AnalysisPassMapT</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a442b62f548be7c59c652cf403fbef3b4" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>AnalysisResultListMapT</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1af18e57efae06e5053d32594df0afbbcc" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>AnalysisResultLists</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1ab6f9398a4226b26a5a676287641878a9" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>AnalysisResultListT</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1aeebed2f97445627bc499c393c8e80882" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>AnalysisResultMapT</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1af6aa580ea41f8ad85f2dee2a40fb578d" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>AnalysisResults</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a4926331431f03253ee3ec8e6e3bb9d1c" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>clear</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a1def78d3ab800e1f9b15ac7f772862ff" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>clear</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a92d8409cca05ebc97ee7d3180b2c00e3" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>empty</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a828ff8185f881fca9e3d534781244041" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>getCachedResult</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1ad87204b3132c8461e2b6f0e3629da6a5" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>getCachedResultImpl</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1aaab1fad63e4f3b8679469720a873fedd" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>getResult</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a7c21e9b71e06095567ef2d8749ec18b6" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>getResultImpl</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a64b2a209a16bcd41375b5cae12690eaa" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>invalidate</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a03f50a72945de4b779ffd17b508974c8" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>isPassRegistered</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a896a2d0697604f08f99fe7b019ad3bfd" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>lookUpPass</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a7b69a92067fc1113f29d9d4ca1d6c3ff" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>lookUpPass</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a2bc6bb441a5b546bf76b838ff9b5e473" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a3edb3b59ea216c36548151c2b1a14766" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>PassConceptT</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a91ff894f756175a693c85bf73f79de9e" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>registerPass</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1aa227a706b01df3e897821abd38cdf405" prot="private" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>ResultConceptT</name></member>
+      <member refid="classllvm_1_1_analysis_manager_1a29648f060d2dd1e126ed17733813cf0a" prot="public" virt="non-virtual"><scope>llvm::AnalysisManager</scope><name>verifyNotInvalidated</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

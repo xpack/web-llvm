@@ -1,0 +1,1043 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_source_mgr" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SourceMgr</compoundname>
+    <includes refid="_support_2_source_mgr_8h" local="yes">llvm/Support/SourceMgr.h</includes>
+    <innerclass refid="structllvm_1_1_source_mgr_1_1_src_buffer" prot="private">llvm::SourceMgr::SrcBuffer</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777" prot="public" static="no" strong="no">
+        <type></type>
+        <name>DiagKind</name>
+        <qualifiedname>llvm::SourceMgr::DiagKind</qualifiedname>
+        <enumvalue id="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777adaf658d40b0b4eb15c0350864c87c2b8" prot="public">
+          <name>DK_Error</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777a6bcc8ac9374461ed0599334db63365d0" prot="public">
+          <name>DK_Warning</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777ae5a15719ab746bdc7713c4784fc1c6ea" prot="public">
+          <name>DK_Remark</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777ad5935d1ea3df60ee7ba90b8e23fa6b42" prot="public">
+          <name>DK_Note</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="33" column="3" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="33" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_source_mgr_1acf78be89ec851a45f37a776a5a58bfe8" prot="public" static="no">
+        <type>void(*)(<ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_m_diagnostic" kindref="compound">SMDiagnostic</ref> &amp;, void *Context)</type>
+        <definition>using llvm::SourceMgr::DiagHandlerTy =  void (*)(const SMDiagnostic &amp;, void *Context)</definition>
+        <argsstring></argsstring>
+        <name>DiagHandlerTy</name>
+        <qualifiedname>llvm::SourceMgr::DiagHandlerTy</qualifiedname>
+        <briefdescription>
+<para>Clients that want to handle their own diagnostics in a custom way can register a function pointer+context as a diagnostic handler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It gets called each time PrintMessage is invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="43" column="3" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_source_mgr_1a953b5aaaa8ba761726dda1530996d7fc" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; SrcBuffer &gt;</type>
+        <definition>std::vector&lt;SrcBuffer&gt; llvm::SourceMgr::Buffers</definition>
+        <argsstring></argsstring>
+        <name>Buffers</name>
+        <qualifiedname>llvm::SourceMgr::Buffers</qualifiedname>
+        <briefdescription>
+<para>This is all of the buffers that we are reading from. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="85" column="15" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_source_mgr_1a327607e571184c8cc980373deba24baf" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; llvm::SourceMgr::IncludeDirectories</definition>
+        <argsstring></argsstring>
+        <name>IncludeDirectories</name>
+        <qualifiedname>llvm::SourceMgr::IncludeDirectories</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="88" column="15" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_source_mgr_1a9292998b7687dd2cbef425121708f056" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_source_mgr_1acf78be89ec851a45f37a776a5a58bfe8" kindref="member">DiagHandlerTy</ref></type>
+        <definition>DiagHandlerTy llvm::SourceMgr::DiagHandler</definition>
+        <argsstring></argsstring>
+        <name>DiagHandler</name>
+        <qualifiedname>llvm::SourceMgr::DiagHandler</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="90" column="17" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_source_mgr_1ac12c71999dbc4fe3a959eda864316782" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* llvm::SourceMgr::DiagContext</definition>
+        <argsstring></argsstring>
+        <name>DiagContext</name>
+        <qualifiedname>llvm::SourceMgr::DiagContext</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="91" column="8" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a201d6394a54bc3a9b7f9d6c0f0bb3757" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SourceMgr::isValidBufferID</definition>
+        <argsstring>(unsigned i) const</argsstring>
+        <name>isValidBufferID</name>
+        <qualifiedname>llvm::SourceMgr::isValidBufferID</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="93" column="8" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="93" bodyend="93"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a832a884d4405c7a6640c36e2f6497708" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SourceMgr::SourceMgr</definition>
+        <argsstring>()=default</argsstring>
+        <name>SourceMgr</name>
+        <qualifiedname>llvm::SourceMgr::SourceMgr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="96" column="3"/>
+        <referencedby refid="classllvm_1_1_source_mgr_1a389537f7afe774704e6ffa69d122f274">operator=</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a10196833265cc9d121e23cb1a3b3b0b8">operator=</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1aeee27450833a4616b24ed4646141073f">SourceMgr</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a1c44b700923a396138319d1b298d53a6">SourceMgr</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1af9c533e5b4fb98dcc0fbf4df792aaf96" compoundref="_support_2_source_mgr_8h" startline="157" endline="167">takeSourceBuffersFrom</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1aeee27450833a4616b24ed4646141073f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SourceMgr::SourceMgr</definition>
+        <argsstring>(const SourceMgr &amp;)=delete</argsstring>
+        <name>SourceMgr</name>
+        <qualifiedname>llvm::SourceMgr::SourceMgr</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="97" column="3"/>
+        <references refid="classllvm_1_1_source_mgr_1a832a884d4405c7a6640c36e2f6497708">SourceMgr</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a389537f7afe774704e6ffa69d122f274" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+        <definition>SourceMgr &amp; llvm::SourceMgr::operator=</definition>
+        <argsstring>(const SourceMgr &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::SourceMgr::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="98" column="13"/>
+        <references refid="classllvm_1_1_source_mgr_1a832a884d4405c7a6640c36e2f6497708">SourceMgr</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a1c44b700923a396138319d1b298d53a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SourceMgr::SourceMgr</definition>
+        <argsstring>(SourceMgr &amp;&amp;)=default</argsstring>
+        <name>SourceMgr</name>
+        <qualifiedname>llvm::SourceMgr::SourceMgr</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="99" column="3"/>
+        <references refid="classllvm_1_1_source_mgr_1a832a884d4405c7a6640c36e2f6497708">SourceMgr</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a10196833265cc9d121e23cb1a3b3b0b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+        <definition>SourceMgr &amp; llvm::SourceMgr::operator=</definition>
+        <argsstring>(SourceMgr &amp;&amp;)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::SourceMgr::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="100" column="13"/>
+        <references refid="classllvm_1_1_source_mgr_1a832a884d4405c7a6640c36e2f6497708">SourceMgr</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a8954d61a9cd561f541c84c150f5fc5b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SourceMgr::~SourceMgr</definition>
+        <argsstring>()=default</argsstring>
+        <name>~SourceMgr</name>
+        <qualifiedname>llvm::SourceMgr::~SourceMgr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="101" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a1d00e16a69c913f50f7e6b1f4a23d056" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; std::string &gt;</type>
+        <definition>ArrayRef&lt; std::string &gt; llvm::SourceMgr::getIncludeDirs</definition>
+        <argsstring>() const</argsstring>
+        <name>getIncludeDirs</name>
+        <qualifiedname>llvm::SourceMgr::getIncludeDirs</qualifiedname>
+        <briefdescription>
+<para>Return the include directories of this source manager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="104" column="12" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="104" bodyend="104"/>
+        <referencedby refid="namespacellvm_1af5bd59cf74666a7da28269e983745b04" compoundref="_table_gen_2_parser_8cpp" startline="16" endline="41">llvm::TableGenParseFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a4623f407b4e8c9d13883dc50bf6cd9ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SourceMgr::setIncludeDirs</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;Dirs)</argsstring>
+        <name>setIncludeDirs</name>
+        <qualifiedname>llvm::SourceMgr::setIncludeDirs</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::vector&lt; std::string &gt; &amp;</type>
+          <declname>Dirs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="106" column="8" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="106" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1ad324bef18696e3fcd110ffb2d33a2b58" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SourceMgr::setDiagHandler</definition>
+        <argsstring>(DiagHandlerTy DH, void *Ctx=nullptr)</argsstring>
+        <name>setDiagHandler</name>
+        <qualifiedname>llvm::SourceMgr::setDiagHandler</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr_1acf78be89ec851a45f37a776a5a58bfe8" kindref="member">DiagHandlerTy</ref></type>
+          <declname>DH</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>Ctx</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Specify a diagnostic handler to be invoked every time PrintMessage is called. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>Ctx</computeroutput> is passed into the handler when it is invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="112" column="8" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="112" bodyend="115"/>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a9f274211d8e2baf7f13ec1e030e09de6" compoundref="_virtual_file_system_8cpp" startline="2176" endline="2216">llvm::vfs::RedirectingFileSystem::create</referencedby>
+        <referencedby refid="_y_a_m_l_remark_parser_8cpp_1a08be5fbbd5b0a3cc5ddc2a582fbd200d" compoundref="_y_a_m_l_remark_parser_8cpp" startline="54" endline="58">setupSM</referencedby>
+        <referencedby refid="classllvm_1_1remarks_1_1_y_a_m_l_parse_error_1aee75e19211cebf7bf53859a98bd5ac61" compoundref="_y_a_m_l_remark_parser_8cpp" startline="37" endline="52">llvm::remarks::YAMLParseError::YAMLParseError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a25349c8e3db02cc6c6984dd1b2f56978" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_source_mgr_1acf78be89ec851a45f37a776a5a58bfe8" kindref="member">DiagHandlerTy</ref></type>
+        <definition>DiagHandlerTy llvm::SourceMgr::getDiagHandler</definition>
+        <argsstring>() const</argsstring>
+        <name>getDiagHandler</name>
+        <qualifiedname>llvm::SourceMgr::getDiagHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="117" column="17" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="117" bodyend="117"/>
+        <referencedby refid="namespacellvm_1af5bd59cf74666a7da28269e983745b04" compoundref="_table_gen_2_parser_8cpp" startline="16" endline="41">llvm::TableGenParseFile</referencedby>
+        <referencedby refid="classllvm_1_1remarks_1_1_y_a_m_l_parse_error_1aee75e19211cebf7bf53859a98bd5ac61" compoundref="_y_a_m_l_remark_parser_8cpp" startline="37" endline="52">llvm::remarks::YAMLParseError::YAMLParseError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a1a459669ba9af7d72ba179fbd8e6a240" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * llvm::SourceMgr::getDiagContext</definition>
+        <argsstring>() const</argsstring>
+        <name>getDiagContext</name>
+        <qualifiedname>llvm::SourceMgr::getDiagContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="118" column="8" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="118" bodyend="118"/>
+        <referencedby refid="namespacellvm_1af5bd59cf74666a7da28269e983745b04" compoundref="_table_gen_2_parser_8cpp" startline="16" endline="41">llvm::TableGenParseFile</referencedby>
+        <referencedby refid="classllvm_1_1remarks_1_1_y_a_m_l_parse_error_1aee75e19211cebf7bf53859a98bd5ac61" compoundref="_y_a_m_l_remark_parser_8cpp" startline="37" endline="52">llvm::remarks::YAMLParseError::YAMLParseError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1aff646a871ca58ccd8d16633b7b88eaaf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> SrcBuffer &amp;</type>
+        <definition>const SrcBuffer &amp; llvm::SourceMgr::getBufferInfo</definition>
+        <argsstring>(unsigned i) const</argsstring>
+        <name>getBufferInfo</name>
+        <qualifiedname>llvm::SourceMgr::getBufferInfo</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="120" column="19" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="120" bodyend="123"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1_source_mgr_1aff3380c7e96d28b108876d8e7b66e341" compoundref="_source_mgr_8cpp" startline="234" endline="259">FindLocForLineAndColumn</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1af8ebf8281d0ee499c10e259b917e4b1a" compoundref="_source_mgr_8cpp" startline="216" endline="230">getFormattedLocationNoOffset</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a494d75fe0bc43f9c6b8821f983205649" compoundref="_source_mgr_8cpp" startline="192" endline="206">getLineAndColumn</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a700008f59fc3d0ac675878b0432b59e4" compoundref="_source_mgr_8cpp" startline="261" endline="272">PrintIncludeStack</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a042b7e85ad239f80f6a079283a9faee6" compoundref="_source_mgr_8cpp" startline="335" endline="350">PrintMessage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a56740d2dab215f8642e6acf4ff49c62d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_memory_buffer" kindref="compound">MemoryBuffer</ref> *</type>
+        <definition>const MemoryBuffer * llvm::SourceMgr::getMemoryBuffer</definition>
+        <argsstring>(unsigned i) const</argsstring>
+        <name>getMemoryBuffer</name>
+        <qualifiedname>llvm::SourceMgr::getMemoryBuffer</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="125" column="22" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="125" bodyend="128"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classanonymous__namespace_02_m_i_parser_8cpp_03_1_1_m_i_parser_1a7d46d39efe0be42a72faf3e6db59de3f" compoundref="_m_i_parser_8cpp" startline="598" endline="613">anonymous_namespace{MIParser.cpp}::MIParser::error</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1acdf08ebc749ce91001ea768a16da0605" compoundref="_source_mgr_8cpp" startline="274" endline="333">GetMessage</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_machine_function_info_1a06cda8485133e5602199f315fd0c304e" compoundref="_s_i_machine_function_info_8cpp" startline="741" endline="781">llvm::SIMachineFunctionInfo::initializeBaseYamlFields</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_target_machine_1a546e4834a3dc92d96ef8b7598f552a45" compoundref="_a_m_d_g_p_u_target_machine_8cpp" startline="1710" endline="1915">llvm::GCNTargetMachine::parseMachineFunctionInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a5d21b555e4cfc2a1be47148889ef48b8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SourceMgr::getNumBuffers</definition>
+        <argsstring>() const</argsstring>
+        <name>getNumBuffers</name>
+        <qualifiedname>llvm::SourceMgr::getNumBuffers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="130" column="12" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="130" bodyend="130"/>
+        <referencedby refid="classllvm_1_1_source_mgr_1a208a36067279ac9669eb29f34ae9daed" compoundref="_support_2_source_mgr_8h" startline="132" endline="135">getMainFileID</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1af9c533e5b4fb98dcc0fbf4df792aaf96" compoundref="_support_2_source_mgr_8h" startline="157" endline="167">takeSourceBuffersFrom</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a208a36067279ac9669eb29f34ae9daed" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SourceMgr::getMainFileID</definition>
+        <argsstring>() const</argsstring>
+        <name>getMainFileID</name>
+        <qualifiedname>llvm::SourceMgr::getMainFileID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="132" column="12" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="132" bodyend="135"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_source_mgr_1a5d21b555e4cfc2a1be47148889ef48b8" compoundref="_support_2_source_mgr_8h" startline="130" endline="130">getNumBuffers</references>
+        <referencedby refid="classanonymous__namespace_02_m_i_parser_8cpp_03_1_1_m_i_parser_1a7d46d39efe0be42a72faf3e6db59de3f" compoundref="_m_i_parser_8cpp" startline="598" endline="613">anonymous_namespace{MIParser.cpp}::MIParser::error</referencedby>
+        <referencedby refid="classllvm_1_1_s_i_machine_function_info_1a06cda8485133e5602199f315fd0c304e" compoundref="_s_i_machine_function_info_8cpp" startline="741" endline="781">llvm::SIMachineFunctionInfo::initializeBaseYamlFields</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_n_target_machine_1a546e4834a3dc92d96ef8b7598f552a45" compoundref="_a_m_d_g_p_u_target_machine_8cpp" startline="1710" endline="1915">llvm::GCNTargetMachine::parseMachineFunctionInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a63fc7559491478903a3d4d365de5da36" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+        <definition>SMLoc llvm::SourceMgr::getParentIncludeLoc</definition>
+        <argsstring>(unsigned i) const</argsstring>
+        <name>getParentIncludeLoc</name>
+        <qualifiedname>llvm::SourceMgr::getParentIncludeLoc</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="137" column="9" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="137" bodyend="140"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1afe70aa1105a855036bdeb6426cac27db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SourceMgr::AddNewSourceBuffer</definition>
+        <argsstring>(std::unique_ptr&lt; MemoryBuffer &gt; F, SMLoc IncludeLoc)</argsstring>
+        <name>AddNewSourceBuffer</name>
+        <qualifiedname>llvm::SourceMgr::AddNewSourceBuffer</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_buffer" kindref="compound">MemoryBuffer</ref> &gt;</type>
+          <declname>F</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>IncludeLoc</declname>
+        </param>
+        <briefdescription>
+<para>Add a new source buffer to this source manager. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This takes ownership of the memory buffer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="144" column="12" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="144" bodyend="151"/>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
+        <referencedby refid="classllvm_1_1_source_mgr_1ade78f93269ac7fa03b8ed1806262443d" compoundref="_source_mgr_8cpp" startline="41" endline="50">AddIncludeFile</referencedby>
+        <referencedby refid="classllvm_1_1_file_check_pattern_context_1a7137a381bae270178ff79807b1d096d3" compoundref="_file_check_8cpp" startline="2512" endline="2648">llvm::FileCheckPatternContext::defineCmdlineVariables</referencedby>
+        <referencedby refid="classllvm_1_1_m_i_r_parser_impl_1a3518bb886d39c70ab9163440243d2d5b" compoundref="_m_i_r_parser_8cpp" startline="538" endline="669">llvm::MIRParserImpl::initializeMachineFunction</referencedby>
+        <referencedby refid="_asm_parser_2_parser_8cpp_1a982f596dc670886cba9172ea00cb7a48" compoundref="_asm_parser_2_parser_8cpp" startline="24" endline="36">parseAssemblyInto</referencedby>
+        <referencedby refid="namespacellvm_1abf2c472d771169c6100c6302079309da" compoundref="_asm_parser_2_parser_8cpp" startline="188" endline="198">llvm::parseConstantValue</referencedby>
+        <referencedby refid="namespacellvm_1a693d5398216b0ca25097c2bde8fe6284" compoundref="_asm_parser_2_parser_8cpp" startline="229" endline="242">llvm::parseDIExpressionBodyAtBeginning</referencedby>
+        <referencedby refid="_asm_parser_2_parser_8cpp_1a3f2868a82e652c99a57c4dd99683af87" compoundref="_asm_parser_2_parser_8cpp" startline="144" endline="156">parseSummaryIndexAssemblyInto</referencedby>
+        <referencedby refid="namespacellvm_1add17c7296500b889d12eb44d547a59ba" compoundref="_asm_parser_2_parser_8cpp" startline="200" endline="215">llvm::parseType</referencedby>
+        <referencedby refid="namespacellvm_1a35d32e57764638fe887f59392490e49c" compoundref="_asm_parser_2_parser_8cpp" startline="216" endline="227">llvm::parseTypeAtBeginning</referencedby>
+        <referencedby refid="classllvm_1_1_file_check_1a20fa01b6cdae5b207cf5dcdda4fced04" compoundref="_file_check_8cpp" startline="1773" endline="1971">llvm::FileCheck::readCheckFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1af9c533e5b4fb98dcc0fbf4df792aaf96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SourceMgr::takeSourceBuffersFrom</definition>
+        <argsstring>(SourceMgr &amp;SrcMgr, SMLoc MainBufferIncludeLoc=SMLoc())</argsstring>
+        <name>takeSourceBuffersFrom</name>
+        <qualifiedname>llvm::SourceMgr::takeSourceBuffersFrom</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref> &amp;</type>
+          <declname>SrcMgr</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>MainBufferIncludeLoc</declname>
+          <defval><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Takes the source buffers from the given source manager and append them to the current manager. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>MainBufferIncludeLoc</computeroutput> is an optional include location to attach to the main buffer of <computeroutput>SrcMgr</computeroutput> after it gets moved to the current manager. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="157" column="8" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="157" bodyend="167"/>
+        <references refid="classllvm_1_1_source_mgr_1a5d21b555e4cfc2a1be47148889ef48b8" compoundref="_support_2_source_mgr_8h" startline="130" endline="130">getNumBuffers</references>
+        <references refid="classllvm_1_1_source_mgr_1a832a884d4405c7a6640c36e2f6497708">SourceMgr</references>
+        <references refid="namespacellvm_1a5f3f23062c5d5636bee27c54f4a407f0" compoundref="_table_gen_2_error_8cpp" startline="24">llvm::SrcMgr</references>
+        <referencedby refid="namespacellvm_1af5bd59cf74666a7da28269e983745b04" compoundref="_table_gen_2_parser_8cpp" startline="16" endline="41">llvm::TableGenParseFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1ade78f93269ac7fa03b8ed1806262443d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned SourceMgr::AddIncludeFile</definition>
+        <argsstring>(const std::string &amp;Filename, SMLoc IncludeLoc, std::string &amp;IncludedFile)</argsstring>
+        <name>AddIncludeFile</name>
+        <qualifiedname>llvm::SourceMgr::AddIncludeFile</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Filename</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>IncludeLoc</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>IncludedFile</declname>
+        </param>
+        <briefdescription>
+<para>Search for a file with the specified name in the current directory or in one of the IncludeDirs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If no file is found, this returns 0, otherwise it returns the buffer <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> of the stacked file. The full path to the included file can be found in <computeroutput>IncludedFile</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="175" column="12" bodyfile="lib/Support/SourceMgr.cpp" bodystart="41" bodyend="50"/>
+        <references refid="classllvm_1_1_source_mgr_1afe70aa1105a855036bdeb6426cac27db" compoundref="_support_2_source_mgr_8h" startline="144" endline="151">AddNewSourceBuffer</references>
+        <references refid="classllvm_1_1_source_mgr_1a0c8517e1b412dcd4f30cdce1c9541cc9" compoundref="_source_mgr_8cpp" startline="53" endline="71">OpenIncludeFile</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a0c8517e1b412dcd4f30cdce1c9541cc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error_or" kindref="compound">ErrorOr</ref>&lt; std::unique_ptr&lt; <ref refid="classllvm_1_1_memory_buffer" kindref="compound">MemoryBuffer</ref> &gt; &gt;</type>
+        <definition>ErrorOr&lt; std::unique_ptr&lt; MemoryBuffer &gt; &gt; SourceMgr::OpenIncludeFile</definition>
+        <argsstring>(const std::string &amp;Filename, std::string &amp;IncludedFile)</argsstring>
+        <name>OpenIncludeFile</name>
+        <qualifiedname>llvm::SourceMgr::OpenIncludeFile</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+          <declname>Filename</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>IncludedFile</declname>
+        </param>
+        <briefdescription>
+<para>Search for a file with the specified name in the current directory or in one of the IncludeDirs, and try to open it <bold>without</bold> adding to the <ref refid="classllvm_1_1_source_mgr" kindref="compound">SourceMgr</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the opened file is intended to be added to the source manager, prefer <computeroutput>AddIncludeFile</computeroutput> instead.</para>
+<para>If no file is found, this returns an <ref refid="classllvm_1_1_error" kindref="compound">Error</ref>, otherwise it returns the buffer of the stacked file. The full path to the included file can be found in <computeroutput>IncludedFile</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="187" column="3" bodyfile="lib/Support/SourceMgr.cpp" bodystart="53" bodyend="71"/>
+        <references refid="namespacellvm_1_1sys_1_1path_1acb80894344c78dacf8d5ff8c23be697d" compoundref="_path_8cpp" startline="456" endline="459">llvm::sys::path::append</references>
+        <references refid="classllvm_1_1_memory_buffer_1aa98611beefe78f907beeee7305cc8174" compoundref="_memory_buffer_8cpp" startline="260" endline="266">llvm::MemoryBuffer::getFile</references>
+        <referencedby refid="classllvm_1_1_source_mgr_1ade78f93269ac7fa03b8ed1806262443d" compoundref="_source_mgr_8cpp" startline="41" endline="50">AddIncludeFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a757ccf4ae54f435c3828c704ca65798e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned SourceMgr::FindBufferContainingLoc</definition>
+        <argsstring>(SMLoc Loc) const</argsstring>
+        <name>FindBufferContainingLoc</name>
+        <qualifiedname>llvm::SourceMgr::FindBufferContainingLoc</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <briefdescription>
+<para>Return the <ref refid="namespacellvm_1_1_calling_conv_1abdf8cf606905c10634e831390981b0ed" kindref="member">ID</ref> of the buffer containing the specified location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>0 is returned if the buffer is not found. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="192" column="12" bodyfile="lib/Support/SourceMgr.cpp" bodystart="73" bodyend="81"/>
+        <referencedby refid="classllvm_1_1_source_mgr_1af8ebf8281d0ee499c10e259b917e4b1a" compoundref="_source_mgr_8cpp" startline="216" endline="230">getFormattedLocationNoOffset</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a494d75fe0bc43f9c6b8821f983205649" compoundref="_source_mgr_8cpp" startline="192" endline="206">getLineAndColumn</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1acdf08ebc749ce91001ea768a16da0605" compoundref="_source_mgr_8cpp" startline="274" endline="333">GetMessage</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a700008f59fc3d0ac675878b0432b59e4" compoundref="_source_mgr_8cpp" startline="261" endline="272">PrintIncludeStack</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a042b7e85ad239f80f6a079283a9faee6" compoundref="_source_mgr_8cpp" startline="335" endline="350">PrintMessage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1af84919a22333087fc39465b1826a8208" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SourceMgr::FindLineNumber</definition>
+        <argsstring>(SMLoc Loc, unsigned BufferID=0) const</argsstring>
+        <name>FindLineNumber</name>
+        <qualifiedname>llvm::SourceMgr::FindLineNumber</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BufferID</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Find the line number for the specified location in the specified file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is not a fast method. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="196" column="12" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="196" bodyend="198"/>
+        <references refid="classllvm_1_1_source_mgr_1a494d75fe0bc43f9c6b8821f983205649" compoundref="_source_mgr_8cpp" startline="192" endline="206">getLineAndColumn</references>
+        <referencedby refid="classllvm_1_1_source_mgr_1af8ebf8281d0ee499c10e259b917e4b1a" compoundref="_source_mgr_8cpp" startline="216" endline="230">getFormattedLocationNoOffset</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a700008f59fc3d0ac675878b0432b59e4" compoundref="_source_mgr_8cpp" startline="261" endline="272">PrintIncludeStack</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a494d75fe0bc43f9c6b8821f983205649" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classunsigned" kindref="compound">unsigned</ref>, <ref refid="classunsigned" kindref="compound">unsigned</ref> &gt;</type>
+        <definition>std::pair&lt; unsigned, unsigned &gt; SourceMgr::getLineAndColumn</definition>
+        <argsstring>(SMLoc Loc, unsigned BufferID=0) const</argsstring>
+        <name>getLineAndColumn</name>
+        <qualifiedname>llvm::SourceMgr::getLineAndColumn</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BufferID</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Find the line and column number for the specified location in the specified file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is not a fast method. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="202" column="13" bodyfile="lib/Support/SourceMgr.cpp" bodystart="192" bodyend="206"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_string_ref_1a7a7c222449f3208a532168c90bfb654d" compoundref="_string_ref_8h" startline="400" endline="402">llvm::StringRef::find_last_of</references>
+        <references refid="classllvm_1_1_source_mgr_1a757ccf4ae54f435c3828c704ca65798e" compoundref="_source_mgr_8cpp" startline="73" endline="81">FindBufferContainingLoc</references>
+        <references refid="classllvm_1_1_source_mgr_1aff646a871ca58ccd8d16633b7b88eaaf" compoundref="_support_2_source_mgr_8h" startline="120" endline="123">getBufferInfo</references>
+        <references refid="classllvm_1_1_string_ref_1ad0f54a163ac500b144590640c6f1eb6b" compoundref="_string_ref_8h" startline="53">llvm::StringRef::npos</references>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+        <referencedby refid="structllvm_1_1_file_check_diag_1a61b7d723c27bc645be803cb48a7f103f" compoundref="_file_check_8cpp" startline="1457" endline="1468">llvm::FileCheckDiag::FileCheckDiag</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1af84919a22333087fc39465b1826a8208" compoundref="_support_2_source_mgr_8h" startline="196" endline="198">FindLineNumber</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1acdf08ebc749ce91001ea768a16da0605" compoundref="_source_mgr_8cpp" startline="274" endline="333">GetMessage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1af8ebf8281d0ee499c10e259b917e4b1a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SourceMgr::getFormattedLocationNoOffset</definition>
+        <argsstring>(SMLoc Loc, bool IncludePath=false) const</argsstring>
+        <name>getFormattedLocationNoOffset</name>
+        <qualifiedname>llvm::SourceMgr::getFormattedLocationNoOffset</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>IncludePath</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Get a string with the <computeroutput><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></computeroutput> filename and line number formatted in the standard style. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a string with the source location formatted in the standard style, but without the line offset.</para>
+<para>If <computeroutput>IncludePath</computeroutput> is true, the path is included. If false, only the file name and extension are included. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="207" column="15" bodyfile="lib/Support/SourceMgr.cpp" bodystart="216" bodyend="230"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_source_mgr_1a757ccf4ae54f435c3828c704ca65798e" compoundref="_source_mgr_8cpp" startline="73" endline="81">FindBufferContainingLoc</references>
+        <references refid="classllvm_1_1_source_mgr_1af84919a22333087fc39465b1826a8208" compoundref="_support_2_source_mgr_8h" startline="196" endline="198">FindLineNumber</references>
+        <references refid="classllvm_1_1_source_mgr_1aff646a871ca58ccd8d16633b7b88eaaf" compoundref="_support_2_source_mgr_8h" startline="120" endline="123">getBufferInfo</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1aff3380c7e96d28b108876d8e7b66e341" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+        <definition>SMLoc SourceMgr::FindLocForLineAndColumn</definition>
+        <argsstring>(unsigned BufferID, unsigned LineNo, unsigned ColNo)</argsstring>
+        <name>FindLocForLineAndColumn</name>
+        <qualifiedname>llvm::SourceMgr::FindLocForLineAndColumn</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>BufferID</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>LineNo</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>ColNo</declname>
+        </param>
+        <briefdescription>
+<para>Given a line and column number in a mapped buffer, turn it into an <ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This will return a null <ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref> if the line/column location is invalid. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="212" column="9" bodyfile="lib/Support/SourceMgr.cpp" bodystart="234" bodyend="259"/>
+        <references refid="classllvm_1_1_source_mgr_1aff646a871ca58ccd8d16633b7b88eaaf" compoundref="_support_2_source_mgr_8h" startline="120" endline="123">getBufferInfo</references>
+        <references refid="classllvm_1_1_s_m_loc_1a16ebb09610e55f63cfc55f28e3a56ad5" compoundref="_s_m_loc_8h" startline="36" endline="40">llvm::SMLoc::getFromPointer</references>
+        <references refid="classllvm_1_1_string_ref_1ad0f54a163ac500b144590640c6f1eb6b" compoundref="_string_ref_8h" startline="53">llvm::StringRef::npos</references>
+        <references refid="_target_library_info_8cpp_1aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053" compoundref="_target_library_info_8cpp" startline="77">Ptr</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a5fb499d84f3af1286e8d508a760aa396" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SourceMgr::PrintMessage</definition>
+        <argsstring>(raw_ostream &amp;OS, SMLoc Loc, DiagKind Kind, const Twine &amp;Msg, ArrayRef&lt; SMRange &gt; Ranges={}, ArrayRef&lt; SMFixIt &gt; FixIts={}, bool ShowColors=true) const</argsstring>
+        <name>PrintMessage</name>
+        <qualifiedname>llvm::SourceMgr::PrintMessage</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777" kindref="member">DiagKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_s_m_range" kindref="compound">SMRange</ref> &gt;</type>
+          <declname>Ranges</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_s_m_fix_it" kindref="compound">SMFixIt</ref> &gt;</type>
+          <declname>FixIts</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ShowColors</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+<para>Emit a message about the specified location with the specified string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ShowColors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Display colored messages if output is a terminal and the default error handler is used. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="219" column="8" bodyfile="lib/Support/SourceMgr.cpp" bodystart="352" bodyend="357"/>
+        <references refid="classllvm_1_1_source_mgr_1acdf08ebc749ce91001ea768a16da0605" compoundref="_source_mgr_8cpp" startline="274" endline="333">GetMessage</references>
+        <references refid="classllvm_1_1_source_mgr_1a5fb499d84f3af1286e8d508a760aa396" compoundref="_source_mgr_8cpp" startline="352" endline="357">PrintMessage</references>
+        <referencedby refid="structllvm_1_1_file_check_string_1ac71c43fb658be4df9989f55be8447e1d" compoundref="_file_check_8cpp" startline="2329" endline="2466">llvm::FileCheckString::CheckDag</referencedby>
+        <referencedby refid="structllvm_1_1_file_check_string_1a36305f86aafd6d41b0c449eac6476efd" compoundref="_file_check_8cpp" startline="2246" endline="2283">llvm::FileCheckString::CheckNext</referencedby>
+        <referencedby refid="structllvm_1_1_file_check_string_1a82944774d532e6adc41c92e29a00e2e9" compoundref="_file_check_8cpp" startline="2285" endline="2305">llvm::FileCheckString::CheckSame</referencedby>
+        <referencedby refid="classllvm_1_1vfs_1_1_redirecting_file_system_1a9f274211d8e2baf7f13ec1e030e09de6" compoundref="_virtual_file_system_8cpp" startline="2176" endline="2216">llvm::vfs::RedirectingFileSystem::create</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_object_streamer_1aa660e7b419602632507f83ec8a1520aa" compoundref="_m_c_object_streamer_8cpp" startline="755" endline="781">llvm::MCObjectStreamer::emitFill</referencedby>
+        <referencedby refid="classllvm_1_1_pattern_1ae173fad50624dec05877e86be7b7e429" compoundref="_file_check_8cpp" startline="764" endline="1055">llvm::Pattern::parsePattern</referencedby>
+        <referencedby refid="classllvm_1_1_pattern_1a3331028c9eef66f4022ac3efa310af7d" compoundref="_file_check_8cpp" startline="1313" endline="1357">llvm::Pattern::printFuzzyMatch</referencedby>
+        <referencedby refid="_file_check_8cpp_1adadd7e41a96b9e407d8e07cb45a0d6e2" compoundref="_file_check_8cpp" startline="1975" endline="2040">printMatch</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a5fb499d84f3af1286e8d508a760aa396" compoundref="_source_mgr_8cpp" startline="352" endline="357">PrintMessage</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1abd60e3f6be5b0af5c3b08eb81c9a7aed" compoundref="_source_mgr_8cpp" startline="359" endline="363">PrintMessage</referencedby>
+        <referencedby refid="_file_check_8cpp_1a5d394830d4143542278afee43f527b48" compoundref="_file_check_8cpp" startline="2045" endline="2124">printNoMatch</referencedby>
+        <referencedby refid="classllvm_1_1_pattern_1a3a4e8a88439506522a2a0f3850802d3f" compoundref="_file_check_8cpp" startline="1205" endline="1237">llvm::Pattern::printSubstitutions</referencedby>
+        <referencedby refid="classllvm_1_1_pattern_1a91f729b936911342abb6b606e0606cdc" compoundref="_file_check_8cpp" startline="1239" endline="1290">llvm::Pattern::printVariableDefs</referencedby>
+        <referencedby refid="classllvm_1_1_file_check_1a20fa01b6cdae5b207cf5dcdda4fced04" compoundref="_file_check_8cpp" startline="1773" endline="1971">llvm::FileCheck::readCheckFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1abd60e3f6be5b0af5c3b08eb81c9a7aed" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SourceMgr::PrintMessage</definition>
+        <argsstring>(SMLoc Loc, DiagKind Kind, const Twine &amp;Msg, ArrayRef&lt; SMRange &gt; Ranges={}, ArrayRef&lt; SMFixIt &gt; FixIts={}, bool ShowColors=true) const</argsstring>
+        <name>PrintMessage</name>
+        <qualifiedname>llvm::SourceMgr::PrintMessage</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777" kindref="member">DiagKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_s_m_range" kindref="compound">SMRange</ref> &gt;</type>
+          <declname>Ranges</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_s_m_fix_it" kindref="compound">SMFixIt</ref> &gt;</type>
+          <declname>FixIts</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ShowColors</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+<para>Emits a diagnostic to <ref refid="namespacellvm_1a9a7b5c68c90f85baaedaa854cc5002cc" kindref="member">llvm::errs()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="225" column="8" bodyfile="lib/Support/SourceMgr.cpp" bodystart="359" bodyend="363"/>
+        <references refid="namespacellvm_1a9a7b5c68c90f85baaedaa854cc5002cc" compoundref="raw__ostream_8cpp" startline="907" endline="915">llvm::errs</references>
+        <references refid="classllvm_1_1_source_mgr_1a5fb499d84f3af1286e8d508a760aa396" compoundref="_source_mgr_8cpp" startline="352" endline="357">PrintMessage</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a042b7e85ad239f80f6a079283a9faee6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SourceMgr::PrintMessage</definition>
+        <argsstring>(raw_ostream &amp;OS, const SMDiagnostic &amp;Diagnostic, bool ShowColors=true) const</argsstring>
+        <name>PrintMessage</name>
+        <qualifiedname>llvm::SourceMgr::PrintMessage</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_s_m_diagnostic" kindref="compound">SMDiagnostic</ref> &amp;</type>
+          <declname>Diagnostic</declname>
+        </param>
+        <param>
+          <type><ref refid="classbool" kindref="compound">bool</ref></type>
+          <declname>ShowColors</declname>
+          <defval><ref refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" kindref="member">true</ref></defval>
+        </param>
+        <briefdescription>
+<para>Emits a manually-constructed diagnostic to the given output stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ShowColors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Display colored messages if output is a terminal and the default error handler is used. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="234" column="8" bodyfile="lib/Support/SourceMgr.cpp" bodystart="335" bodyend="350"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_source_mgr_1a757ccf4ae54f435c3828c704ca65798e" compoundref="_source_mgr_8cpp" startline="73" endline="81">FindBufferContainingLoc</references>
+        <references refid="classllvm_1_1_source_mgr_1aff646a871ca58ccd8d16633b7b88eaaf" compoundref="_support_2_source_mgr_8h" startline="120" endline="123">getBufferInfo</references>
+        <references refid="classllvm_1_1_s_m_diagnostic_1a7f7639f70813f4388a60639d770ae0de" compoundref="_support_2_source_mgr_8h" startline="306" endline="306">llvm::SMDiagnostic::getLoc</references>
+        <references refid="classllvm_1_1_s_m_loc_1abb1e94b8fff61f549bcbd5a2780f6796" compoundref="_s_m_loc_8h" startline="29" endline="29">llvm::SMLoc::isValid</references>
+        <references refid="classllvm_1_1_s_m_diagnostic_1a0653e9bbc6598528d50ec97cad565b74" compoundref="_source_mgr_8cpp" startline="484" endline="615">llvm::SMDiagnostic::print</references>
+        <references refid="classllvm_1_1_source_mgr_1a700008f59fc3d0ac675878b0432b59e4" compoundref="_source_mgr_8cpp" startline="261" endline="272">PrintIncludeStack</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1acdf08ebc749ce91001ea768a16da0605" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_s_m_diagnostic" kindref="compound">SMDiagnostic</ref></type>
+        <definition>SMDiagnostic SourceMgr::GetMessage</definition>
+        <argsstring>(SMLoc Loc, DiagKind Kind, const Twine &amp;Msg, ArrayRef&lt; SMRange &gt; Ranges={}, ArrayRef&lt; SMFixIt &gt; FixIts={}) const</argsstring>
+        <name>GetMessage</name>
+        <qualifiedname>llvm::SourceMgr::GetMessage</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>Loc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777" kindref="member">DiagKind</ref></type>
+          <declname>Kind</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_twine" kindref="compound">Twine</ref> &amp;</type>
+          <declname>Msg</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_s_m_range" kindref="compound">SMRange</ref> &gt;</type>
+          <declname>Ranges</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>&lt; <ref refid="classllvm_1_1_s_m_fix_it" kindref="compound">SMFixIt</ref> &gt;</type>
+          <declname>FixIts</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Return an <ref refid="classllvm_1_1_s_m_diagnostic" kindref="compound">SMDiagnostic</ref> at the specified location with the specified string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the kind of message (e.g., &quot;error&quot;) which is prefixed to the message. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="242" column="16" bodyfile="lib/Support/SourceMgr.cpp" bodystart="274" bodyend="333"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_source_mgr_1a757ccf4ae54f435c3828c704ca65798e" compoundref="_source_mgr_8cpp" startline="73" endline="81">FindBufferContainingLoc</references>
+        <references refid="classllvm_1_1_memory_buffer_1ae4604d3bedbb15e6c516f9357d3b773e" compoundref="_memory_buffer_8h" startline="67" endline="67">llvm::MemoryBuffer::getBufferEnd</references>
+        <references refid="classllvm_1_1_memory_buffer_1a2037f11968aa30bfda0b4de9f335624d" compoundref="_memory_buffer_8h" startline="76" endline="76">llvm::MemoryBuffer::getBufferIdentifier</references>
+        <references refid="classllvm_1_1_memory_buffer_1af1972b9a0324e0311ad641eac2de2b7f" compoundref="_memory_buffer_8h" startline="66" endline="66">llvm::MemoryBuffer::getBufferStart</references>
+        <references refid="classllvm_1_1_s_m_loc_1a16ebb09610e55f63cfc55f28e3a56ad5" compoundref="_s_m_loc_8h" startline="36" endline="40">llvm::SMLoc::getFromPointer</references>
+        <references refid="classllvm_1_1_source_mgr_1a494d75fe0bc43f9c6b8821f983205649" compoundref="_source_mgr_8cpp" startline="192" endline="206">getLineAndColumn</references>
+        <references refid="classllvm_1_1_source_mgr_1a56740d2dab215f8642e6acf4ff49c62d" compoundref="_support_2_source_mgr_8h" startline="125" endline="128">getMemoryBuffer</references>
+        <references refid="classllvm_1_1_small_vector_template_base_1af42bfbc067df27c19ee2fc859df58799" compoundref="_small_vector_8h" startline="413" endline="417">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</references>
+        <references refid="classllvm_1_1_twine_1a4c1c1093a7749409c70838678514cc7c" compoundref="_twine_8cpp" startline="17" endline="30">llvm::Twine::str</references>
+        <referencedby refid="classanonymous__namespace_02_m_i_parser_8cpp_03_1_1_m_i_parser_1a7d46d39efe0be42a72faf3e6db59de3f" compoundref="_m_i_parser_8cpp" startline="598" endline="613">anonymous_namespace{MIParser.cpp}::MIParser::error</referencedby>
+        <referencedby refid="classllvm_1_1_error_diagnostic_1afd2d10db0e8822de9860636d612a13af" compoundref="_file_check_impl_8h" startline="508" endline="512">llvm::ErrorDiagnostic::get</referencedby>
+        <referencedby refid="namespacellvm_1add17c7296500b889d12eb44d547a59ba" compoundref="_asm_parser_2_parser_8cpp" startline="200" endline="215">llvm::parseType</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a5fb499d84f3af1286e8d508a760aa396" compoundref="_source_mgr_8cpp" startline="352" endline="357">PrintMessage</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_context_1aac3107671801e6bb16ef896f382759cd" compoundref="_m_c_context_8cpp" startline="1072" endline="1077">llvm::MCContext::reportError</referencedby>
+        <referencedby refid="classllvm_1_1_m_c_context_1a99057f5cbc5ee5f973d463d4c30abe7d" compoundref="_m_c_context_8cpp" startline="1079" endline="1089">llvm::MCContext::reportWarning</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_source_mgr_1a700008f59fc3d0ac675878b0432b59e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SourceMgr::PrintIncludeStack</definition>
+        <argsstring>(SMLoc IncludeLoc, raw_ostream &amp;OS) const</argsstring>
+        <name>PrintIncludeStack</name>
+        <qualifiedname>llvm::SourceMgr::PrintIncludeStack</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_s_m_loc" kindref="compound">SMLoc</ref></type>
+          <declname>IncludeLoc</declname>
+        </param>
+        <param>
+          <type><ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> &amp;</type>
+          <declname>OS</declname>
+        </param>
+        <briefdescription>
+<para>Prints the names of included files and the line of the file they were included from. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A diagnostic handler can use this before printing its custom formatted message.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>IncludeLoc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The location of the include. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classllvm_1_1raw__ostream" kindref="compound">raw_ostream</ref> to print on. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Support/SourceMgr.h" line="252" column="8" bodyfile="lib/Support/SourceMgr.cpp" bodystart="261" bodyend="272"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_source_mgr_1a757ccf4ae54f435c3828c704ca65798e" compoundref="_source_mgr_8cpp" startline="73" endline="81">FindBufferContainingLoc</references>
+        <references refid="classllvm_1_1_source_mgr_1af84919a22333087fc39465b1826a8208" compoundref="_support_2_source_mgr_8h" startline="196" endline="198">FindLineNumber</references>
+        <references refid="classllvm_1_1_source_mgr_1aff646a871ca58ccd8d16633b7b88eaaf" compoundref="_support_2_source_mgr_8h" startline="120" endline="123">getBufferInfo</references>
+        <references refid="classllvm_1_1_source_mgr_1a700008f59fc3d0ac675878b0432b59e4" compoundref="_source_mgr_8cpp" startline="261" endline="272">PrintIncludeStack</references>
+        <referencedby refid="classllvm_1_1_source_mgr_1a700008f59fc3d0ac675878b0432b59e4" compoundref="_source_mgr_8cpp" startline="261" endline="272">PrintIncludeStack</referencedby>
+        <referencedby refid="classllvm_1_1_source_mgr_1a042b7e85ad239f80f6a079283a9faee6" compoundref="_source_mgr_8cpp" startline="335" endline="350">PrintMessage</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This owns the files read by a parser, handles include stacks, and handles diagnostic wrangling. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/llvm/Support/SourceMgr.h" line="31" column="1" bodyfile="include/llvm/Support/SourceMgr.h" bodystart="31" bodyend="253"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_source_mgr_1ade78f93269ac7fa03b8ed1806262443d" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>AddIncludeFile</name></member>
+      <member refid="classllvm_1_1_source_mgr_1afe70aa1105a855036bdeb6426cac27db" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>AddNewSourceBuffer</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a953b5aaaa8ba761726dda1530996d7fc" prot="private" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>Buffers</name></member>
+      <member refid="classllvm_1_1_source_mgr_1ac12c71999dbc4fe3a959eda864316782" prot="private" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>DiagContext</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a9292998b7687dd2cbef425121708f056" prot="private" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>DiagHandler</name></member>
+      <member refid="classllvm_1_1_source_mgr_1acf78be89ec851a45f37a776a5a58bfe8" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>DiagHandlerTy</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>DiagKind</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777adaf658d40b0b4eb15c0350864c87c2b8" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>DK_Error</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777ad5935d1ea3df60ee7ba90b8e23fa6b42" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>DK_Note</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777ae5a15719ab746bdc7713c4784fc1c6ea" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>DK_Remark</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a346262ff27e71aff626fe6548ef8a777a6bcc8ac9374461ed0599334db63365d0" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>DK_Warning</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a757ccf4ae54f435c3828c704ca65798e" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>FindBufferContainingLoc</name></member>
+      <member refid="classllvm_1_1_source_mgr_1af84919a22333087fc39465b1826a8208" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>FindLineNumber</name></member>
+      <member refid="classllvm_1_1_source_mgr_1aff3380c7e96d28b108876d8e7b66e341" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>FindLocForLineAndColumn</name></member>
+      <member refid="classllvm_1_1_source_mgr_1aff646a871ca58ccd8d16633b7b88eaaf" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>getBufferInfo</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a1a459669ba9af7d72ba179fbd8e6a240" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>getDiagContext</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a25349c8e3db02cc6c6984dd1b2f56978" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>getDiagHandler</name></member>
+      <member refid="classllvm_1_1_source_mgr_1af8ebf8281d0ee499c10e259b917e4b1a" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>getFormattedLocationNoOffset</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a1d00e16a69c913f50f7e6b1f4a23d056" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>getIncludeDirs</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a494d75fe0bc43f9c6b8821f983205649" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>getLineAndColumn</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a208a36067279ac9669eb29f34ae9daed" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>getMainFileID</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a56740d2dab215f8642e6acf4ff49c62d" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>getMemoryBuffer</name></member>
+      <member refid="classllvm_1_1_source_mgr_1acdf08ebc749ce91001ea768a16da0605" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>GetMessage</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a5d21b555e4cfc2a1be47148889ef48b8" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>getNumBuffers</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a63fc7559491478903a3d4d365de5da36" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>getParentIncludeLoc</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a327607e571184c8cc980373deba24baf" prot="private" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>IncludeDirectories</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a201d6394a54bc3a9b7f9d6c0f0bb3757" prot="private" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>isValidBufferID</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a0c8517e1b412dcd4f30cdce1c9541cc9" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>OpenIncludeFile</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a389537f7afe774704e6ffa69d122f274" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a10196833265cc9d121e23cb1a3b3b0b8" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a700008f59fc3d0ac675878b0432b59e4" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>PrintIncludeStack</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a5fb499d84f3af1286e8d508a760aa396" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>PrintMessage</name></member>
+      <member refid="classllvm_1_1_source_mgr_1abd60e3f6be5b0af5c3b08eb81c9a7aed" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>PrintMessage</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a042b7e85ad239f80f6a079283a9faee6" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>PrintMessage</name></member>
+      <member refid="classllvm_1_1_source_mgr_1ad324bef18696e3fcd110ffb2d33a2b58" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>setDiagHandler</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a4623f407b4e8c9d13883dc50bf6cd9ae" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>setIncludeDirs</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a832a884d4405c7a6640c36e2f6497708" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>SourceMgr</name></member>
+      <member refid="classllvm_1_1_source_mgr_1aeee27450833a4616b24ed4646141073f" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>SourceMgr</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a1c44b700923a396138319d1b298d53a6" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>SourceMgr</name></member>
+      <member refid="classllvm_1_1_source_mgr_1af9c533e5b4fb98dcc0fbf4df792aaf96" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>takeSourceBuffersFrom</name></member>
+      <member refid="classllvm_1_1_source_mgr_1a8954d61a9cd561f541c84c150f5fc5b6" prot="public" virt="non-virtual"><scope>llvm::SourceMgr</scope><name>~SourceMgr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

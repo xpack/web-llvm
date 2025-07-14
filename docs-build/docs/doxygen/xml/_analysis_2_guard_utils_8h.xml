@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_analysis_2_guard_utils_8h" kind="file" language="C++">
+    <compoundname>GuardUtils.h</compoundname>
+    <includedby refid="_alias_set_tracker_8cpp" local="yes">lib/Analysis/AliasSetTracker.cpp</includedby>
+    <includedby refid="_analysis_2_guard_utils_8cpp" local="yes">lib/Analysis/GuardUtils.cpp</includedby>
+    <includedby refid="_value_tracking_8cpp" local="yes">lib/Analysis/ValueTracking.cpp</includedby>
+    <includedby refid="_early_c_s_e_8cpp" local="yes">lib/Transforms/Scalar/EarlyCSE.cpp</includedby>
+    <includedby refid="_guard_widening_8cpp" local="yes">lib/Transforms/Scalar/GuardWidening.cpp</includedby>
+    <includedby refid="_jump_threading_8cpp" local="yes">lib/Transforms/Scalar/JumpThreading.cpp</includedby>
+    <includedby refid="_l_i_c_m_8cpp" local="yes">lib/Transforms/Scalar/LICM.cpp</includedby>
+    <includedby refid="_loop_predication_8cpp" local="yes">lib/Transforms/Scalar/LoopPredication.cpp</includedby>
+    <includedby refid="_make_guards_explicit_8cpp" local="yes">lib/Transforms/Scalar/MakeGuardsExplicit.cpp</includedby>
+    <includedby refid="_simple_loop_unswitch_8cpp" local="yes">lib/Transforms/Scalar/SimpleLoopUnswitch.cpp</includedby>
+    <includedby refid="_transforms_2_utils_2_guard_utils_8cpp" local="yes">lib/Transforms/Utils/GuardUtils.cpp</includedby>
+    <includedby refid="_simplify_c_f_g_8cpp" local="yes">lib/Transforms/Utils/SimplifyCFG.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Analysis/GuardUtils.h</label>
+        <link refid="_analysis_2_guard_utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Analysis/AliasSetTracker.cpp</label>
+        <link refid="_alias_set_tracker_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Analysis/GuardUtils.cpp</label>
+        <link refid="_analysis_2_guard_utils_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Analysis/ValueTracking.cpp</label>
+        <link refid="_value_tracking_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/Transforms/Scalar/EarlyCSE.cpp</label>
+        <link refid="_early_c_s_e_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/Transforms/Scalar/GuardWidening.cpp</label>
+        <link refid="_guard_widening_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/Transforms/Scalar/JumpThreading.cpp</label>
+        <link refid="_jump_threading_8cpp"/>
+      </node>
+      <node id="8">
+        <label>lib/Transforms/Scalar/LICM.cpp</label>
+        <link refid="_l_i_c_m_8cpp"/>
+      </node>
+      <node id="9">
+        <label>lib/Transforms/Scalar/LoopPredication.cpp</label>
+        <link refid="_loop_predication_8cpp"/>
+      </node>
+      <node id="10">
+        <label>lib/Transforms/Scalar/MakeGuardsExplicit.cpp</label>
+        <link refid="_make_guards_explicit_8cpp"/>
+      </node>
+      <node id="11">
+        <label>lib/Transforms/Scalar/SimpleLoopUnswitch.cpp</label>
+        <link refid="_simple_loop_unswitch_8cpp"/>
+      </node>
+      <node id="12">
+        <label>lib/Transforms/Utils/GuardUtils.cpp</label>
+        <link refid="_transforms_2_utils_2_guard_utils_8cpp"/>
+      </node>
+      <node id="13">
+        <label>lib/Transforms/Utils/SimplifyCFG.cpp</label>
+        <link refid="_simplify_c_f_g_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===--<sp/>GuardUtils.h<sp/>-<sp/>Utils<sp/>for<sp/>work<sp/>with<sp/>guards<sp/>---------------*-<sp/>C++<sp/>-*-===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Utils<sp/>that<sp/>are<sp/>used<sp/>to<sp/>perform<sp/>analyzes<sp/>related<sp/>to<sp/>guards<sp/>and<sp/>their</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>conditions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_ANALYSIS_GUARDUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_ANALYSIS_GUARDUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_use" kindref="compound">Use</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_user" kindref="compound">User</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="23"><highlight class="comment">///<sp/>Returns<sp/>true<sp/>iff<sp/>\p<sp/>U<sp/>has<sp/>semantics<sp/>of<sp/>a<sp/>guard<sp/>expressed<sp/>in<sp/>a<sp/>form<sp/>of<sp/>call</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">///<sp/>of<sp/>llvm.experimental.guard<sp/>intrinsic.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a656efdcee3deb029763304d3e741a2d1" kindref="member">isGuard</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_user" kindref="compound">User</ref><sp/>*U);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="27"><highlight class="comment">///<sp/>Returns<sp/>true<sp/>iff<sp/>\p<sp/>V<sp/>has<sp/>semantics<sp/>of<sp/>llvm.experimental.widenable.condition</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">///<sp/>call</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a6690168645999ab5733bdaffdfea4a79" kindref="member">isWidenableCondition</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*V);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="31"><highlight class="comment">///<sp/>Returns<sp/>true<sp/>iff<sp/>\p<sp/>U<sp/>is<sp/>a<sp/>widenable<sp/>branch<sp/>(that<sp/>is,</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">///<sp/>extractWidenableCondition<sp/>returns<sp/>widenable<sp/>condition).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a9d7f27a51d40f21ec17a854a6a5d5d4f" kindref="member">isWidenableBranch</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_user" kindref="compound">User</ref><sp/>*U);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="35"><highlight class="comment">///<sp/>Returns<sp/>true<sp/>iff<sp/>\p<sp/>U<sp/>has<sp/>semantics<sp/>of<sp/>a<sp/>guard<sp/>expressed<sp/>in<sp/>a<sp/>form<sp/>of<sp/>a</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">///<sp/>widenable<sp/>conditional<sp/>branch<sp/>to<sp/>deopt<sp/>block.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1aa36af57c5a44173f32eb7b4c9011c298" kindref="member">isGuardAsWidenableBranch</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_user" kindref="compound">User</ref><sp/>*U);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="39"><highlight class="comment">///<sp/>If<sp/>U<sp/>is<sp/>widenable<sp/>branch<sp/>looking<sp/>like:</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">///<sp/><sp/><sp/>%cond<sp/>=<sp/>...</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">///<sp/><sp/><sp/>%wc<sp/>=<sp/>call<sp/>i1<sp/>@llvm.experimental.widenable.condition()</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">///<sp/><sp/><sp/>%branch_cond<sp/>=<sp/>and<sp/>i1<sp/>%cond,<sp/>%wc</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">///<sp/><sp/><sp/>br<sp/>i1<sp/>%branch_cond,<sp/>label<sp/>%if_true_bb,<sp/>label<sp/>%if_false_bb<sp/>;<sp/>&lt;---<sp/>U</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">///<sp/>The<sp/>function<sp/>returns<sp/>true,<sp/>and<sp/>the<sp/>values<sp/>%cond<sp/>and<sp/>%wc<sp/>and<sp/>blocks</highlight></codeline>
+<codeline lineno="45"><highlight class="comment">///<sp/>%if_true_bb,<sp/>if_false_bb<sp/>are<sp/>returned<sp/>in</highlight></codeline>
+<codeline lineno="46"><highlight class="comment">///<sp/>the<sp/>parameters<sp/>(Condition,<sp/>WidenableCondition,<sp/>IfTrueBB<sp/>and<sp/>IfFalseFF)</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">///<sp/>respectively.<sp/>If<sp/>\p<sp/>U<sp/>does<sp/>not<sp/>match<sp/>this<sp/>pattern,<sp/>return<sp/>false.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a745200db7bc2a7a3c17fa379fb1b56c3" kindref="member">parseWidenableBranch</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_user" kindref="compound">User</ref><sp/>*U,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*&amp;Condition,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*&amp;WidenableCondition,<sp/><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref><sp/>*&amp;IfTrueBB,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref><sp/>*&amp;IfFalseBB);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment">///<sp/>Analogous<sp/>to<sp/>the<sp/>above,<sp/>but<sp/>return<sp/>the<sp/>Uses<sp/>so<sp/>that<sp/>they<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="53"><highlight class="comment">///<sp/>modified.<sp/>Unlike<sp/>previous<sp/>version,<sp/>Condition<sp/>is<sp/>optional<sp/>and<sp/>may<sp/>be<sp/>null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a745200db7bc2a7a3c17fa379fb1b56c3" kindref="member">parseWidenableBranch</ref>(<ref refid="classllvm_1_1_user" kindref="compound">User</ref><sp/>*U,<sp/><ref refid="classllvm_1_1_use" kindref="compound">Use</ref><sp/>*&amp;<ref refid="_r_i_s_c_v_redundant_copy_elimination_8cpp_1a193847098793cdbab306803186676899" kindref="member">Cond</ref>,<sp/><ref refid="classllvm_1_1_use" kindref="compound">Use</ref><sp/>*&amp;WC,<sp/><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref><sp/>*&amp;IfTrueBB,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref><sp/>*&amp;IfFalseBB);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>guard<sp/>condition<sp/>is<sp/>expected<sp/>to<sp/>be<sp/>in<sp/>form<sp/>of:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>cond1<sp/>&amp;&amp;<sp/>cond2<sp/>&amp;&amp;<sp/>cond3<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/>or<sp/>in<sp/>case<sp/>of<sp/>widenable<sp/>branch:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>cond1<sp/>&amp;&amp;<sp/>cond2<sp/>&amp;&amp;<sp/>cond3<sp/>&amp;&amp;<sp/>widenable_contidion<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Method<sp/>collects<sp/>the<sp/>list<sp/>of<sp/>checks,<sp/>but<sp/>skips<sp/>widenable_condition.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1a4816bb91a3b2d18ae4231a09325e06b7" kindref="member">parseWidenableGuard</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_user" kindref="compound">User</ref><sp/>*U,<sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">llvm::SmallVectorImpl&lt;Value *&gt;</ref><sp/>&amp;Checks);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Returns<sp/>widenable_condition<sp/>if<sp/>it<sp/>exists<sp/>in<sp/>the<sp/>expression<sp/>tree<sp/>rooting<sp/>from</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">//<sp/>\p<sp/>U<sp/>and<sp/>has<sp/>only<sp/>one<sp/>use.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>*<ref refid="namespacellvm_1a3ad3ae2984b7253781a642194234bcdb" kindref="member">extractWidenableCondition</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_user" kindref="compound">User</ref><sp/>*U);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_ANALYSIS_GUARDUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Analysis/GuardUtils.h"/>
+  </compounddef>
+</doxygen>

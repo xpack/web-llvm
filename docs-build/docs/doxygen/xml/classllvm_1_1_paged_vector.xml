@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_paged_vector" kind="class" language="C++" prot="public">
+    <compoundname>llvm::PagedVector</compoundname>
+    <includes refid="_paged_vector_8h" local="yes">llvm/ADT/PagedVector.h</includes>
+    <innerclass refid="classllvm_1_1_paged_vector_1_1_materialized_iterator" prot="public">llvm::PagedVector::MaterializedIterator</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename <ref refid="class_t" kindref="compound">T</ref></type>
+      </param>
+      <param>
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <declname>PageSize</declname>
+        <defname>PageSize</defname>
+        <defval>1024 / sizeof(<ref refid="class_t" kindref="compound">T</ref>)</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_paged_vector_1aaf970444c92dc8b818d421f62a175ce8" prot="public" static="no">
+        <type><ref refid="class_t" kindref="compound">T</ref></type>
+        <definition>using llvm::PagedVector&lt; T, PageSize &gt;::value_type =  T</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>llvm::PagedVector::value_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="57" column="3" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_paged_vector_1ac8e12595752d313217ae091be44ca41e" prot="private" static="no" mutable="no">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::PagedVector&lt; T, PageSize &gt;::Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <qualifiedname>llvm::PagedVector::Size</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The actual number of elements in the vector which can be accessed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="46" column="10" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_paged_vector_1a2b0cb6a80c7244984f7d127d8c4f3ec8" prot="private" static="no" mutable="yes">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; <ref refid="class_t" kindref="compound">T</ref> *, 0 &gt;</type>
+        <definition>SmallVector&lt;T *, 0&gt; llvm::PagedVector&lt; T, PageSize &gt;::PageToDataPtrs</definition>
+        <argsstring></argsstring>
+        <name>PageToDataPtrs</name>
+        <qualifiedname>llvm::PagedVector::PageToDataPtrs</qualifiedname>
+        <briefdescription>
+<para>The position of the initial element of the page in the Data vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Pages are allocated contiguously in the Data vector. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="50" column="23" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_paged_vector_1a55514676a6e47c76dbe522633ce84d27" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_pointer_int_pair" kindref="compound">PointerIntPair</ref>&lt; <ref refid="namespacellvm_1a8e612822d4ba7bb36c9c79582a567108" kindref="member">BumpPtrAllocator</ref> *, 1, <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+        <definition>PointerIntPair&lt;BumpPtrAllocator *, 1, bool&gt; llvm::PagedVector&lt; T, PageSize &gt;::Allocator</definition>
+        <argsstring></argsstring>
+        <name>Allocator</name>
+        <qualifiedname>llvm::PagedVector::Allocator</qualifiedname>
+        <briefdescription>
+<para>Actual page data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All the page elements are allocated on the first access of any of the elements of the page. Elements are default constructed and elements of the page are stored contiguously. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="54" column="18" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a8d0d4219201ac3a28aa03fde24f19651" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::PagedVector&lt; T, PageSize &gt;::PagedVector</definition>
+        <argsstring>()</argsstring>
+        <name>PagedVector</name>
+        <qualifiedname>llvm::PagedVector::PagedVector</qualifiedname>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We build our own allocator and mark it as such with <computeroutput>true</computeroutput> in the second pair element. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="61" column="3" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="61" bodyend="61"/>
+        <references refid="_basic_alias_analysis_8cpp_1af6d5cafbdfc5313e65d990120021a3ec" compoundref="_basic_alias_analysis_8cpp" startline="1983">true</references>
+        <referencedby refid="classllvm_1_1_paged_vector_1_1_materialized_iterator_1ad4775618f78009529c1512a353a8e156" compoundref="_paged_vector_8h" startline="179" endline="180">llvm::PagedVector&lt; T, PageSize &gt;::MaterializedIterator::MaterializedIterator</referencedby>
+        <referencedby refid="classllvm_1_1_paged_vector_1a179fd4f598894d58ef90b5ce535c35d4">llvm::PagedVector&lt; T, PageSize &gt;::operator=</referencedby>
+        <referencedby refid="classllvm_1_1_paged_vector_1a3f857b4da79647992f8332c17853eb19">llvm::PagedVector&lt; T, PageSize &gt;::operator=</referencedby>
+        <referencedby refid="classllvm_1_1_paged_vector_1a88305bcd1ac1e94ddc8b9a1378e5296b">llvm::PagedVector&lt; T, PageSize &gt;::PagedVector</referencedby>
+        <referencedby refid="classllvm_1_1_paged_vector_1ace137743164c650abe6140575d21f4c0">llvm::PagedVector&lt; T, PageSize &gt;::PagedVector</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a109b0b303de1667f3caebc8e2452b192" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::PagedVector&lt; T, PageSize &gt;::PagedVector</definition>
+        <argsstring>(BumpPtrAllocator *A)</argsstring>
+        <name>PagedVector</name>
+        <qualifiedname>llvm::PagedVector::PagedVector</qualifiedname>
+        <param>
+          <type><ref refid="namespacellvm_1a8e612822d4ba7bb36c9c79582a567108" kindref="member">BumpPtrAllocator</ref> *</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="62" column="12" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="62" bodyend="64"/>
+        <references refid="_builtin_g_cs_8cpp_1a2e38c85003a042421cde1647632d0b72">A</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a5a3013afefe003311f35dc59ba71eef6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::PagedVector&lt; T, PageSize &gt;::~PagedVector</definition>
+        <argsstring>()</argsstring>
+        <name>~PagedVector</name>
+        <qualifiedname>llvm::PagedVector::~PagedVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="66" column="3" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="66" bodyend="71"/>
+        <references refid="classllvm_1_1_paged_vector_1af58646d64130955cca8107daeebdb8d8" compoundref="_paged_vector_8h" startline="150" endline="164">llvm::PagedVector&lt; T, PageSize &gt;::clear</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a88305bcd1ac1e94ddc8b9a1378e5296b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::PagedVector&lt; T, PageSize &gt;::PagedVector</definition>
+        <argsstring>(const PagedVector &amp;)=delete</argsstring>
+        <name>PagedVector</name>
+        <qualifiedname>llvm::PagedVector::PagedVector</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_paged_vector" kindref="compound">PagedVector</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="74" column="3"/>
+        <references refid="classllvm_1_1_paged_vector_1a8d0d4219201ac3a28aa03fde24f19651" compoundref="_paged_vector_8h" startline="61" endline="61">llvm::PagedVector&lt; T, PageSize &gt;::PagedVector</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1ace137743164c650abe6140575d21f4c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::PagedVector&lt; T, PageSize &gt;::PagedVector</definition>
+        <argsstring>(PagedVector &amp;&amp;)=delete</argsstring>
+        <name>PagedVector</name>
+        <qualifiedname>llvm::PagedVector::PagedVector</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_paged_vector" kindref="compound">PagedVector</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="75" column="3"/>
+        <references refid="classllvm_1_1_paged_vector_1a8d0d4219201ac3a28aa03fde24f19651" compoundref="_paged_vector_8h" startline="61" endline="61">llvm::PagedVector&lt; T, PageSize &gt;::PagedVector</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a179fd4f598894d58ef90b5ce535c35d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_paged_vector" kindref="compound">PagedVector</ref> &amp;</type>
+        <definition>PagedVector &amp; llvm::PagedVector&lt; T, PageSize &gt;::operator=</definition>
+        <argsstring>(const PagedVector &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::PagedVector::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_paged_vector" kindref="compound">PagedVector</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="76" column="15"/>
+        <references refid="classllvm_1_1_paged_vector_1a8d0d4219201ac3a28aa03fde24f19651" compoundref="_paged_vector_8h" startline="61" endline="61">llvm::PagedVector&lt; T, PageSize &gt;::PagedVector</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a3f857b4da79647992f8332c17853eb19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_paged_vector" kindref="compound">PagedVector</ref> &amp;</type>
+        <definition>PagedVector &amp; llvm::PagedVector&lt; T, PageSize &gt;::operator=</definition>
+        <argsstring>(PagedVector &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::PagedVector::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_paged_vector" kindref="compound">PagedVector</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="77" column="15"/>
+        <references refid="classllvm_1_1_paged_vector_1a8d0d4219201ac3a28aa03fde24f19651" compoundref="_paged_vector_8h" startline="61" endline="61">llvm::PagedVector&lt; T, PageSize &gt;::PagedVector</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a63e3ad7aaf150227878cef2db7eb45df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_t" kindref="compound">T</ref> &amp;</type>
+        <definition>T &amp; llvm::PagedVector&lt; T, PageSize &gt;::operator[]</definition>
+        <argsstring>(size_t Index) const</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>llvm::PagedVector::operator[]</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+<para>Look up an element at position <computeroutput>Index</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the associated page is not filled, it will be filled with default constructed elements. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="82" column="5" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="82" bodyend="95"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="_compiler_8h_1a104cae72182bec0ab951e3faea6ce509" compoundref="_compiler_8h" startline="320">LLVM_UNLIKELY</references>
+        <references refid="_implicit_null_checks_8cpp_1a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1ae352f14abff61be868ca4a4f2246dcd4" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::PagedVector&lt; T, PageSize &gt;::capacity</definition>
+        <argsstring>() const</argsstring>
+        <name>capacity</name>
+        <qualifiedname>llvm::PagedVector::capacity</qualifiedname>
+        <briefdescription>
+<para>Return the capacity of the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>I.e. the maximum size it can be expanded to with the resize method without allocating more pages. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="99" column="11" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="99" bodyend="101"/>
+        <references refid="_implicit_null_checks_8cpp_1a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a2184ad1cb218226d0837ffa1c1abf4a3" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::PagedVector&lt; T, PageSize &gt;::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <qualifiedname>llvm::PagedVector::size</qualifiedname>
+        <briefdescription>
+<para>Return the size of the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="104" column="11" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="104" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a84c9c19fca5d62dc0c891cdc7153ae15" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PagedVector&lt; T, PageSize &gt;::resize</definition>
+        <argsstring>(size_t NewSize)</argsstring>
+        <name>resize</name>
+        <qualifiedname>llvm::PagedVector::resize</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>NewSize</declname>
+        </param>
+        <briefdescription>
+<para>Resize the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Notice that the constructor of the elements will not be invoked until an element of a given page is accessed, at which point all the elements of the page will be constructed.</para>
+<para>If the new size is smaller than the current size, the elements of the pages that are not needed anymore will be destroyed, however, elements of the last page will not be destroyed.</para>
+<para>For these reason the usage of this vector is discouraged if you rely on the construction / destructor of the elements to be invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="116" column="8" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="116" bodyend="144"/>
+        <references refid="classllvm_1_1_paged_vector_1af58646d64130955cca8107daeebdb8d8" compoundref="_paged_vector_8h" startline="150" endline="164">llvm::PagedVector&lt; T, PageSize &gt;::clear</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="regcomp_8c_1a0240ac851181b84ac374872dc5434ee4">N</references>
+        <references refid="_implicit_null_checks_8cpp_1a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a15e89fa9933cfb26cb2644112b0f6d7d" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::PagedVector&lt; T, PageSize &gt;::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>llvm::PagedVector::empty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="146" column="9" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="146" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1af58646d64130955cca8107daeebdb8d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::PagedVector&lt; T, PageSize &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::PagedVector::clear</qualifiedname>
+        <briefdescription>
+<para>Clear the vector, i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>clear the allocated pages, the whole page lookup index and reset the size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="150" column="8" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="150" bodyend="164"/>
+        <references refid="_implicit_null_checks_8cpp_1a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</references>
+        <references refid="_mips16_i_sel_lowering_8cpp_1a0acb682b8260ab1c60b918599864e2e5" compoundref="_mips16_i_sel_lowering_8cpp" startline="341">T</references>
+        <referencedby refid="classllvm_1_1_paged_vector_1a84c9c19fca5d62dc0c891cdc7153ae15" compoundref="_paged_vector_8h" startline="116" endline="144">llvm::PagedVector&lt; T, PageSize &gt;::resize</referencedby>
+        <referencedby refid="classllvm_1_1_paged_vector_1a5a3013afefe003311f35dc59ba71eef6" compoundref="_paged_vector_8h" startline="66" endline="71">llvm::PagedVector&lt; T, PageSize &gt;::~PagedVector</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a7a08262e5983c976ef07d9b9dbe139c1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_paged_vector_1_1_materialized_iterator" kindref="compound">MaterializedIterator</ref></type>
+        <definition>MaterializedIterator llvm::PagedVector&lt; T, PageSize &gt;::materialized_begin</definition>
+        <argsstring>() const</argsstring>
+        <name>materialized_begin</name>
+        <qualifiedname>llvm::PagedVector::materialized_begin</qualifiedname>
+        <briefdescription>
+<para>Iterators over the materialized elements of the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This includes all the elements belonging to allocated pages, even if they have not been accessed yet. It&apos;s enough to access one element of a page to materialize all the elements of the page. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="245" column="24" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="245" bodyend="252"/>
+        <references refid="_implicit_null_checks_8cpp_1a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</references>
+        <referencedby refid="classllvm_1_1_paged_vector_1ad593ff492a93b297b8196ec339d78867" compoundref="_paged_vector_8h" startline="259" endline="261">llvm::PagedVector&lt; T, PageSize &gt;::materialized</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1a0c1044d785d4724b99dfb762a68009ca" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_paged_vector_1_1_materialized_iterator" kindref="compound">MaterializedIterator</ref></type>
+        <definition>MaterializedIterator llvm::PagedVector&lt; T, PageSize &gt;::materialized_end</definition>
+        <argsstring>() const</argsstring>
+        <name>materialized_end</name>
+        <qualifiedname>llvm::PagedVector::materialized_end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="254" column="24" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="254" bodyend="256"/>
+        <referencedby refid="classllvm_1_1_paged_vector_1ad593ff492a93b297b8196ec339d78867" compoundref="_paged_vector_8h" startline="259" endline="261">llvm::PagedVector&lt; T, PageSize &gt;::materialized</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_paged_vector_1ad593ff492a93b297b8196ec339d78867" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1iterator__range" kindref="compound">llvm::iterator_range</ref>&lt; <ref refid="classllvm_1_1_paged_vector_1_1_materialized_iterator" kindref="compound">MaterializedIterator</ref> &gt;</type>
+        <definition>llvm::iterator_range&lt; MaterializedIterator &gt; llvm::PagedVector&lt; T, PageSize &gt;::materialized</definition>
+        <argsstring>() const</argsstring>
+        <name>materialized</name>
+        <qualifiedname>llvm::PagedVector::materialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/PagedVector.h" line="259" column="3" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="259" bodyend="261"/>
+        <references refid="classllvm_1_1_paged_vector_1a7a08262e5983c976ef07d9b9dbe139c1" compoundref="_paged_vector_8h" startline="245" endline="252">llvm::PagedVector&lt; T, PageSize &gt;::materialized_begin</references>
+        <references refid="classllvm_1_1_paged_vector_1a0c1044d785d4724b99dfb762a68009ca" compoundref="_paged_vector_8h" startline="254" endline="256">llvm::PagedVector&lt; T, PageSize &gt;::materialized_end</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A vector that allocates memory in pages. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Order is kept, but memory is allocated only when one element of the page is accessed. This introduces a level of indirection, but it is useful when you have a sparsely initialised vector where the full size is allocated upfront.</para>
+<para>As a side effect the elements are initialised later than in a normal vector. On the first access to one of the elements of a given page, all the elements of the page are initialised. This also means that the elements of the page are initialised beyond the size of the vector.</para>
+<para>Similarly on destruction the elements are destroyed only when the page is not needed anymore, delaying invoking the destructor of the elements.</para>
+<para>Notice that this has iterators only on materialized elements. This is deliberately done under the assumption you would dereference the elements while iterating, therefore materialising them and losing the gains in terms of memory usage this container provides. If you have such a use case, you probably want to use a normal std::vector or a <ref refid="classllvm_1_1_small_vector" kindref="compound">llvm::SmallVector</ref>. </para>
+    </detaileddescription>
+    <location file="include/llvm/ADT/PagedVector.h" line="42" column="18" bodyfile="include/llvm/ADT/PagedVector.h" bodystart="42" bodyend="262"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_paged_vector_1a55514676a6e47c76dbe522633ce84d27" prot="private" virt="non-virtual"><scope>llvm::PagedVector</scope><name>Allocator</name></member>
+      <member refid="classllvm_1_1_paged_vector_1ae352f14abff61be868ca4a4f2246dcd4" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>capacity</name></member>
+      <member refid="classllvm_1_1_paged_vector_1af58646d64130955cca8107daeebdb8d8" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>clear</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a15e89fa9933cfb26cb2644112b0f6d7d" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>empty</name></member>
+      <member refid="classllvm_1_1_paged_vector_1ad593ff492a93b297b8196ec339d78867" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>materialized</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a7a08262e5983c976ef07d9b9dbe139c1" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>materialized_begin</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a0c1044d785d4724b99dfb762a68009ca" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>materialized_end</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a179fd4f598894d58ef90b5ce535c35d4" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a3f857b4da79647992f8332c17853eb19" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a63e3ad7aaf150227878cef2db7eb45df" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>operator[]</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a8d0d4219201ac3a28aa03fde24f19651" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>PagedVector</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a109b0b303de1667f3caebc8e2452b192" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>PagedVector</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a88305bcd1ac1e94ddc8b9a1378e5296b" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>PagedVector</name></member>
+      <member refid="classllvm_1_1_paged_vector_1ace137743164c650abe6140575d21f4c0" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>PagedVector</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a2b0cb6a80c7244984f7d127d8c4f3ec8" prot="private" virt="non-virtual"><scope>llvm::PagedVector</scope><name>PageToDataPtrs</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a84c9c19fca5d62dc0c891cdc7153ae15" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>resize</name></member>
+      <member refid="classllvm_1_1_paged_vector_1ac8e12595752d313217ae091be44ca41e" prot="private" virt="non-virtual"><scope>llvm::PagedVector</scope><name>Size</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a2184ad1cb218226d0837ffa1c1abf4a3" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>size</name></member>
+      <member refid="classllvm_1_1_paged_vector_1aaf970444c92dc8b818d421f62a175ce8" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>value_type</name></member>
+      <member refid="classllvm_1_1_paged_vector_1a5a3013afefe003311f35dc59ba71eef6" prot="public" virt="non-virtual"><scope>llvm::PagedVector</scope><name>~PagedVector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

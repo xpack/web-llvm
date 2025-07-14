@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_s_h_a1_8h" kind="file" language="C++">
+    <compoundname>SHA1.h</compoundname>
+    <includes local="no">array</includes>
+    <includes local="no">cstdint</includes>
+    <includedby refid="raw__sha1__ostream_8h" local="yes">include/llvm/Support/raw_sha1_ostream.h</includedby>
+    <includedby refid="_bitcode_analyzer_8cpp" local="yes">lib/Bitcode/Reader/BitcodeAnalyzer.cpp</includedby>
+    <includedby refid="_bitcode_writer_8cpp" local="yes">lib/Bitcode/Writer/BitcodeWriter.cpp</includedby>
+    <includedby refid="_l_t_o_8cpp" local="yes">lib/LTO/LTO.cpp</includedby>
+    <includedby refid="_thin_l_t_o_code_generator_8cpp" local="yes">lib/LTO/ThinLTOCodeGenerator.cpp</includedby>
+    <includedby refid="_s_h_a1_8cpp" local="yes">lib/Support/SHA1.cpp</includedby>
+    <includedby refid="_d_x_i_l_bitcode_writer_8cpp" local="yes">lib/Target/DirectX/DXILWriter/DXILBitcodeWriter.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/SHA1.h</label>
+        <link refid="_s_h_a1_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>array</label>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/SHA1.h</label>
+        <link refid="_s_h_a1_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/llvm/Support/raw_sha1_ostream.h</label>
+        <link refid="raw__sha1__ostream_8h"/>
+      </node>
+      <node id="3">
+        <label>lib/Bitcode/Reader/BitcodeAnalyzer.cpp</label>
+        <link refid="_bitcode_analyzer_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Bitcode/Writer/BitcodeWriter.cpp</label>
+        <link refid="_bitcode_writer_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/LTO/LTO.cpp</label>
+        <link refid="_l_t_o_8cpp"/>
+      </node>
+      <node id="6">
+        <label>lib/LTO/ThinLTOCodeGenerator.cpp</label>
+        <link refid="_thin_l_t_o_code_generator_8cpp"/>
+      </node>
+      <node id="7">
+        <label>lib/Support/SHA1.cpp</label>
+        <link refid="_s_h_a1_8cpp"/>
+      </node>
+      <node id="8">
+        <label>lib/Target/DirectX/DXILWriter/DXILBitcodeWriter.cpp</label>
+        <link refid="_d_x_i_l_bitcode_writer_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classllvm_1_1_s_h_a1" prot="public">llvm::SHA1</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//==-<sp/>SHA1.h<sp/>-<sp/>SHA1<sp/>implementation<sp/>for<sp/>LLVM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--*-<sp/>C++<sp/>-*-==//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>code<sp/>is<sp/>taken<sp/>from<sp/>public<sp/>domain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(http://oauth.googlecode.com/svn/code/c/liboauth/src/sha1.c)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>and<sp/>modified<sp/>by<sp/>wrapping<sp/>it<sp/>in<sp/>a<sp/>C++<sp/>interface<sp/>for<sp/>LLVM,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>and<sp/>removing<sp/>unnecessary<sp/>code.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_SUPPORT_SHA1_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_SUPPORT_SHA1_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="25"><highlight class="comment">///<sp/>A<sp/>class<sp/>that<sp/>wrap<sp/>the<sp/>SHA1<sp/>algorithm.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classllvm_1_1_s_h_a1" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_s_h_a1_1a42317297215f1ed61251a3b349546c50" kindref="member">SHA1</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28" refid="classllvm_1_1_s_h_a1_1a42317297215f1ed61251a3b349546c50" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_s_h_a1_1a42317297215f1ed61251a3b349546c50" kindref="member">SHA1</ref>()<sp/>{<sp/><ref refid="classllvm_1_1_s_h_a1_1a859ad0642b7522eba6124e9c3302e674" kindref="member">init</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/>///<sp/>Reinitialize<sp/>the<sp/>internal<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_s_h_a1_1a859ad0642b7522eba6124e9c3302e674" kindref="member">init</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/>///<sp/>Digest<sp/>more<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_s_h_a1_1a58395fd08227a05b497a31b8a913645b" kindref="member">update</ref>(<ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;uint8_t&gt;</ref><sp/><ref refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" kindref="member">Data</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/>///<sp/>Digest<sp/>more<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_s_h_a1_1a58395fd08227a05b497a31b8a913645b" kindref="member">update</ref>(<ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref><sp/>Str);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/>///<sp/>Return<sp/>the<sp/>current<sp/>raw<sp/>160-bits<sp/>SHA1<sp/>for<sp/>the<sp/>digested<sp/>data</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/>///<sp/>since<sp/>the<sp/>last<sp/>call<sp/>to<sp/>init().<sp/>This<sp/>call<sp/>will<sp/>add<sp/>data<sp/>to<sp/>the<sp/>internal</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/>///<sp/>state<sp/>and<sp/>as<sp/>such<sp/>is<sp/>not<sp/>suited<sp/>for<sp/>getting<sp/>an<sp/>intermediate<sp/>result</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/>///<sp/>(see<sp/>result()).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>std::array&lt;uint8_t,<sp/>20&gt;<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/>///<sp/>Return<sp/>the<sp/>current<sp/>raw<sp/>160-bits<sp/>SHA1<sp/>for<sp/>the<sp/>digested<sp/>data</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/>///<sp/>since<sp/>the<sp/>last<sp/>call<sp/>to<sp/>init().<sp/>This<sp/>is<sp/>suitable<sp/>for<sp/>getting<sp/>the<sp/>SHA1<sp/>at</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/>///<sp/>any<sp/>time<sp/>without<sp/>invalidating<sp/>the<sp/>internal<sp/>state<sp/>so<sp/>that<sp/>more<sp/>calls<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/>///<sp/>made<sp/>into<sp/>update.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>std::array&lt;uint8_t,<sp/>20&gt;<sp/><ref refid="classllvm_1_1_s_h_a1_1a7eb2516a7f44fe4a89a56996aab632c9" kindref="member">result</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/>///<sp/>Returns<sp/>a<sp/>raw<sp/>160-bit<sp/>SHA1<sp/>hash<sp/>for<sp/>the<sp/>given<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::array&lt;uint8_t,<sp/>20&gt;<sp/><ref refid="classllvm_1_1_s_h_a1_1a771a2527f4fc7271de7eb00506db476d" kindref="member">hash</ref>(<ref refid="classllvm_1_1_array_ref" kindref="compound">ArrayRef&lt;uint8_t&gt;</ref><sp/><ref refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" kindref="member">Data</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/>///<sp/>Define<sp/>some<sp/>constants.</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/>///<sp/>&quot;static<sp/>constexpr&quot;<sp/>would<sp/>be<sp/>cleaner<sp/>but<sp/>MSVC<sp/>does<sp/>not<sp/>support<sp/>it<sp/>yet.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{<sp/>BLOCK_LENGTH<sp/>=<sp/>64<sp/>};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{<sp/>HASH_LENGTH<sp/>=<sp/>20<sp/>};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>State</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63" refid="classllvm_1_1_s_h_a1_1a5f5a883e08798590a31ee234b9d6cc44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classllvm_1_1_s_h_a1_1a5f5a883e08798590a31ee234b9d6cc44" kindref="member">C</ref>[BLOCK_LENGTH];</highlight></codeline>
+<codeline lineno="64" refid="classllvm_1_1_s_h_a1_1ae51e8ae347d38a05773822757769de5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="classllvm_1_1_s_h_a1_1ae51e8ae347d38a05773822757769de5c" kindref="member">L</ref>[BLOCK_LENGTH<sp/>/<sp/>4];</highlight></codeline>
+<codeline lineno="65" refid="classllvm_1_1_s_h_a1_1a4b5e0595fd83b46a269b1aed05ed7beb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="classllvm_1_1_s_h_a1_1a4b5e0595fd83b46a269b1aed05ed7beb" kindref="member">Buffer</ref>;</highlight></codeline>
+<codeline lineno="66" refid="classllvm_1_1_s_h_a1_1a8db41e19bd7e377f8f6173b518f62291" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="classllvm_1_1_s_h_a1_1a8db41e19bd7e377f8f6173b518f62291" kindref="member">State</ref>[HASH_LENGTH<sp/>/<sp/>4];</highlight></codeline>
+<codeline lineno="67" refid="classllvm_1_1_s_h_a1_1a7f132895bfa07be435caf859babe1d69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint32__t" kindref="compound">uint32_t</ref><sp/><ref refid="classllvm_1_1_s_h_a1_1a7f132895bfa07be435caf859babe1d69" kindref="member">ByteCount</ref>;</highlight></codeline>
+<codeline lineno="68" refid="classllvm_1_1_s_h_a1_1ae5c37043a33dbbccc5235057f6ef743d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="classllvm_1_1_s_h_a1_1ae5c37043a33dbbccc5235057f6ef743d" kindref="member">BufferOffset</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>}<sp/>InternalState;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>writebyte(<ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="_static_data_splitter_8cpp_1ad2fefd8832b4b1ea3dbb1f621063bbff" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hashBlock();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addUncounted(<ref refid="classuint8__t" kindref="compound">uint8_t</ref><sp/><ref refid="_static_data_splitter_8cpp_1ad2fefd8832b4b1ea3dbb1f621063bbff" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tar_writer_8cpp_1a498738d65e5a3c57d210f97b7a475d54" kindref="member">pad</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">(std::array&lt;<ref refid="classuint32__t" kindref="compound">uint32_t</ref>,<sp/>HASH_LENGTH<sp/>/<sp/>4&gt;<sp/>&amp;HashResult);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>llvm<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Support/SHA1.h"/>
+  </compounddef>
+</doxygen>

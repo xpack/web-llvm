@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_o_m_p_grid_values_8h" kind="file" language="C++">
+    <compoundname>OMPGridValues.h</compoundname>
+    <includedby refid="_o_m_p_i_r_builder_8h" local="yes">include/llvm/Frontend/OpenMP/OMPIRBuilder.h</includedby>
+    <includedby refid="_o_m_p_i_r_builder_8cpp" local="yes">lib/Frontend/OpenMP/OMPIRBuilder.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Frontend/OpenMP/OMPGridValues.h</label>
+        <link refid="_o_m_p_grid_values_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/llvm/Frontend/OpenMP/OMPIRBuilder.h</label>
+        <link refid="_o_m_p_i_r_builder_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>lib/Frontend/OpenMP/OMP.cpp</label>
+        <link refid="_o_m_p_8cpp"/>
+      </node>
+      <node id="4">
+        <label>lib/Frontend/OpenMP/OMPIRBuilder.cpp</label>
+        <link refid="_o_m_p_i_r_builder_8cpp"/>
+      </node>
+      <node id="5">
+        <label>lib/Transforms/IPO/OpenMPOpt.cpp</label>
+        <link refid="_open_m_p_opt_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structllvm_1_1omp_1_1_g_v" prot="public">llvm::omp::GV</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <innernamespace refid="namespacellvm_1_1omp">llvm::omp</innernamespace>
+    <briefdescription>
+<para>Provides definitions for Target specific Grid Values. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//====---<sp/>OMPGridValues.h<sp/>-<sp/>Language-specific<sp/>address<sp/>spaces<sp/>--*-<sp/>C++<sp/>-*-====//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">///<sp/>\file</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">///<sp/>\brief<sp/>Provides<sp/>definitions<sp/>for<sp/>Target<sp/>specific<sp/>Grid<sp/>Values</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_FRONTEND_OPENMP_OMPGRIDVALUES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_FRONTEND_OPENMP_OMPGRIDVALUES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm_1_1omp" kindref="compound">omp</ref><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="21"><highlight class="comment">///<sp/>\brief<sp/>Defines<sp/>various<sp/>target-specific<sp/>GPU<sp/>grid<sp/>values<sp/>that<sp/>must<sp/>be</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">///<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>consistent<sp/>between<sp/>host<sp/>RTL<sp/>(plugin),<sp/>device<sp/>RTL,<sp/>and<sp/>clang.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">///<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>We<sp/>can<sp/>change<sp/>grid<sp/>values<sp/>for<sp/>a<sp/>&quot;fat&quot;<sp/>binary<sp/>so<sp/>that<sp/>different</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">///<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>passes<sp/>get<sp/>the<sp/>correct<sp/>values<sp/>when<sp/>generating<sp/>code<sp/>for<sp/>a</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">///<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>multi-target<sp/>binary.<sp/>Both<sp/>amdgcn<sp/>and<sp/>nvptx<sp/>values<sp/>are<sp/>stored<sp/>in</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">///<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this<sp/>file.<sp/>In<sp/>the<sp/>future,<sp/>should<sp/>there<sp/>be<sp/>differences<sp/>between<sp/>GPUs</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">///<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>of<sp/>the<sp/>same<sp/>architecture,<sp/>then<sp/>simply<sp/>make<sp/>a<sp/>different<sp/>array<sp/>and</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">///<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use<sp/>the<sp/>new<sp/>array<sp/>name.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">///<sp/>Example<sp/>usage<sp/>in<sp/>clang:</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">///<sp/><sp/><sp/>const<sp/>unsigned<sp/>slot_size<sp/>=</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">///<sp/><sp/><sp/>ctx.GetTargetInfo().getGridValue().GV_Warp_Size;</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">///<sp/>Example<sp/>usage<sp/>in<sp/>libomptarget/deviceRTLs:</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">///<sp/><sp/><sp/>#include<sp/>&quot;llvm/Frontend/OpenMP/OMPGridValues.h&quot;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">///<sp/><sp/><sp/>#ifdef<sp/>__AMDGPU__</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">///<sp/><sp/><sp/><sp/><sp/>#define<sp/>GRIDVAL<sp/>AMDGPUGridValues</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">///<sp/><sp/><sp/>#else</highlight></codeline>
+<codeline lineno="39"><highlight class="comment">///<sp/><sp/><sp/><sp/><sp/>#define<sp/>GRIDVAL<sp/>NVPTXGridValues</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">///<sp/><sp/><sp/>#endif</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">///<sp/><sp/><sp/>...<sp/>Then<sp/>use<sp/>this<sp/>reference<sp/>for<sp/>GV_Warp_Size<sp/>in<sp/>the<sp/>deviceRTL<sp/>source.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">///<sp/><sp/><sp/>llvm::omp::GRIDVAL().GV_Warp_Size</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">///<sp/>Example<sp/>usage<sp/>in<sp/>libomptarget<sp/>hsa<sp/>plugin:</highlight></codeline>
+<codeline lineno="45"><highlight class="comment">///<sp/><sp/><sp/>#include<sp/>&quot;llvm/Frontend/OpenMP/OMPGridValues.h&quot;</highlight></codeline>
+<codeline lineno="46"><highlight class="comment">///<sp/><sp/><sp/>#define<sp/>GRIDVAL<sp/>AMDGPUGridValues</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">///<sp/><sp/><sp/>...<sp/>Then<sp/>use<sp/>this<sp/>reference<sp/>to<sp/>access<sp/>GV_Warp_Size<sp/>in<sp/>the<sp/>hsa<sp/>plugin.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">///<sp/><sp/><sp/>llvm::omp::GRIDVAL().GV_Warp_Size</highlight></codeline>
+<codeline lineno="49"><highlight class="comment">///</highlight></codeline>
+<codeline lineno="50"><highlight class="comment">///<sp/>Example<sp/>usage<sp/>in<sp/>libomptarget<sp/>cuda<sp/>plugin:</highlight></codeline>
+<codeline lineno="51"><highlight class="comment">///<sp/><sp/><sp/><sp/>#include<sp/>&quot;llvm/Frontend/OpenMP/OMPGridValues.h&quot;</highlight></codeline>
+<codeline lineno="52"><highlight class="comment">///<sp/><sp/><sp/><sp/>#define<sp/>GRIDVAL<sp/>NVPTXGridValues</highlight></codeline>
+<codeline lineno="53"><highlight class="comment">///<sp/><sp/><sp/>...<sp/>Then<sp/>use<sp/>this<sp/>reference<sp/>to<sp/>access<sp/>GV_Warp_Size<sp/>in<sp/>the<sp/>cuda<sp/>plugin.</highlight></codeline>
+<codeline lineno="54"><highlight class="comment">///<sp/><sp/><sp/><sp/>llvm::omp::GRIDVAL().GV_Warp_Size</highlight></codeline>
+<codeline lineno="55"><highlight class="comment">///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="structllvm_1_1omp_1_1_g_v" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structllvm_1_1omp_1_1_g_v" kindref="compound">GV</ref><sp/>{</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/>///<sp/>The<sp/>size<sp/>reserved<sp/>for<sp/>data<sp/>in<sp/>a<sp/>shared<sp/>memory<sp/>slot.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="structllvm_1_1omp_1_1_g_v_1a3382e977c39f5cca523c66e5c39819b8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v_1a3382e977c39f5cca523c66e5c39819b8" kindref="member">GV_Slot_Size</ref>;</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/>///<sp/>The<sp/>default<sp/>value<sp/>of<sp/>maximum<sp/>number<sp/>of<sp/>threads<sp/>in<sp/>a<sp/>worker<sp/>warp.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="structllvm_1_1omp_1_1_g_v_1ab03009604fe992e76c28719dae7b17bf" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v_1ab03009604fe992e76c28719dae7b17bf" kindref="member">GV_Warp_Size</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="structllvm_1_1omp_1_1_g_v_1a0b7087d8d3604af8163085885b47ff5b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v_1a0b7087d8d3604af8163085885b47ff5b" kindref="member">warpSlotSize</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v_1ab03009604fe992e76c28719dae7b17bf" kindref="member">GV_Warp_Size</ref><sp/>*<sp/><ref refid="structllvm_1_1omp_1_1_g_v_1a3382e977c39f5cca523c66e5c39819b8" kindref="member">GV_Slot_Size</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/>///<sp/>the<sp/>maximum<sp/>number<sp/>of<sp/>teams.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="structllvm_1_1omp_1_1_g_v_1afd17104f2b3e9251160c40c1d46a6901" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v_1afd17104f2b3e9251160c40c1d46a6901" kindref="member">GV_Max_Teams</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>default<sp/>number<sp/>of<sp/>teams<sp/>in<sp/>the<sp/>absence<sp/>of<sp/>any<sp/>other<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="structllvm_1_1omp_1_1_g_v_1a8069cfe4d5d95efa9fe71c245b59bf42" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v_1a8069cfe4d5d95efa9fe71c245b59bf42" kindref="member">GV_Default_Num_Teams</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>An<sp/>alternative<sp/>to<sp/>the<sp/>heavy<sp/>data<sp/>sharing<sp/>infrastructure<sp/>that<sp/>uses<sp/>global</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>memory<sp/>is<sp/>one<sp/>that<sp/>uses<sp/>device<sp/>__shared__<sp/>memory.<sp/><sp/>The<sp/>amount<sp/>of<sp/>such<sp/>space</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>(in<sp/>bytes)<sp/>reserved<sp/>by<sp/>the<sp/>OpenMP<sp/>runtime<sp/>is<sp/>noted<sp/>here.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="structllvm_1_1omp_1_1_g_v_1aeab2bd06f53172bbb83ff3a405236549" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v_1aeab2bd06f53172bbb83ff3a405236549" kindref="member">GV_SimpleBufferSize</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>absolute<sp/>maximum<sp/>team<sp/>size<sp/>for<sp/>a<sp/>working<sp/>group</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="structllvm_1_1omp_1_1_g_v_1aff9a6e8168ef13b93b5ff49914e33c70" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v_1aff9a6e8168ef13b93b5ff49914e33c70" kindref="member">GV_Max_WG_Size</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>default<sp/>maximum<sp/>team<sp/>size<sp/>for<sp/>a<sp/>working<sp/>group</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="structllvm_1_1omp_1_1_g_v_1ac5d84ee7def2e310c9a44e51b7165c89" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v_1ac5d84ee7def2e310c9a44e51b7165c89" kindref="member">GV_Default_WG_Size</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="structllvm_1_1omp_1_1_g_v_1a03b526999aac8c51ca01582c05d7df24" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v_1a03b526999aac8c51ca01582c05d7df24" kindref="member">maxWarpNumber</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v_1aff9a6e8168ef13b93b5ff49914e33c70" kindref="member">GV_Max_WG_Size</ref><sp/>/<sp/><ref refid="structllvm_1_1omp_1_1_g_v_1ab03009604fe992e76c28719dae7b17bf" kindref="member">GV_Warp_Size</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="86"><highlight class="comment">///<sp/>For<sp/>AMDGPU<sp/>GPUs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="namespacellvm_1_1omp_1a34b491de92222a321fa120eb158b22b9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v" kindref="compound">GV</ref><sp/><ref refid="namespacellvm_1_1omp_1a34b491de92222a321fa120eb158b22b9" kindref="member">AMDGPUGridValues64</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>256,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Slot_Size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>64,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Warp_Size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>(1<sp/>&lt;&lt;<sp/>16),<sp/></highlight><highlight class="comment">//<sp/>GV_Max_Teams</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>440,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Default_Num_Teams</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>896,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_SimpleBufferSize</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>1024,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Max_WG_Size,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>256,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Default_WG_Size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="namespacellvm_1_1omp_1a43060ccb6734ae95b07c8baf6ab37910" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v" kindref="compound">GV</ref><sp/><ref refid="namespacellvm_1_1omp_1a43060ccb6734ae95b07c8baf6ab37910" kindref="member">AMDGPUGridValues32</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>256,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Slot_Size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>32,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Warp_Size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>(1<sp/>&lt;&lt;<sp/>16),<sp/></highlight><highlight class="comment">//<sp/>GV_Max_Teams</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>440,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Default_Num_Teams</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>896,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_SimpleBufferSize</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>1024,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Max_WG_Size,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>256,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Default_WG_Size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="namespacellvm_1_1omp_1a54d82933792ec7eef3f24eb847c6acd9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>wavesize&gt;<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v" kindref="compound">GV</ref><sp/>&amp;<ref refid="namespacellvm_1_1omp_1a54d82933792ec7eef3f24eb847c6acd9" kindref="member">getAMDGPUGridValues</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(wavesize<sp/>==<sp/>32<sp/>||<sp/>wavesize<sp/>==<sp/>64,<sp/></highlight><highlight class="stringliteral">&quot;Unexpected<sp/>wavesize&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>wavesize<sp/>==<sp/>32<sp/>?<sp/><ref refid="namespacellvm_1_1omp_1a43060ccb6734ae95b07c8baf6ab37910" kindref="member">AMDGPUGridValues32</ref><sp/>:<sp/><ref refid="namespacellvm_1_1omp_1a34b491de92222a321fa120eb158b22b9" kindref="member">AMDGPUGridValues64</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="112"><highlight class="comment">///<sp/>For<sp/>Nvidia<sp/>GPUs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="namespacellvm_1_1omp_1a82196e4d5e3224c1cdd60f16e40af476" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structllvm_1_1omp_1_1_g_v" kindref="compound">GV</ref><sp/><ref refid="namespacellvm_1_1omp_1a82196e4d5e3224c1cdd60f16e40af476" kindref="member">NVPTXGridValues</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>256,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Slot_Size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>32,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Warp_Size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>(1<sp/>&lt;&lt;<sp/>16),<sp/></highlight><highlight class="comment">//<sp/>GV_Max_Teams</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>3200,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Default_Num_Teams</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>896,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_SimpleBufferSize</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>1024,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Max_WG_Size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>128,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GV_Default_WG_Size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>omp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LLVM_FRONTEND_OPENMP_OMPGRIDVALUES_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Frontend/OpenMP/OMPGridValues.h"/>
+  </compounddef>
+</doxygen>

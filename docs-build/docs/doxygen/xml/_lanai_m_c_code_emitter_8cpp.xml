@@ -1,0 +1,1373 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_lanai_m_c_code_emitter_8cpp" kind="file" language="C++">
+    <compoundname>LanaiMCCodeEmitter.cpp</compoundname>
+    <includes refid="_lanai_alu_code_8h" local="yes">LanaiAluCode.h</includes>
+    <includes refid="_lanai_base_info_8h" local="yes">MCTargetDesc/LanaiBaseInfo.h</includes>
+    <includes refid="_lanai_fixup_kinds_8h" local="yes">MCTargetDesc/LanaiFixupKinds.h</includes>
+    <includes refid="_lanai_m_c_expr_8h" local="yes">MCTargetDesc/LanaiMCExpr.h</includes>
+    <includes refid="_small_vector_8h" local="yes">llvm/ADT/SmallVector.h</includes>
+    <includes refid="_statistic_8h" local="yes">llvm/ADT/Statistic.h</includes>
+    <includes refid="_m_c_code_emitter_8h" local="yes">llvm/MC/MCCodeEmitter.h</includes>
+    <includes refid="_m_c_expr_8h" local="yes">llvm/MC/MCExpr.h</includes>
+    <includes refid="_m_c_fixup_8h" local="yes">llvm/MC/MCFixup.h</includes>
+    <includes refid="_m_c_inst_8h" local="yes">llvm/MC/MCInst.h</includes>
+    <includes refid="_m_c_instr_info_8h" local="yes">llvm/MC/MCInstrInfo.h</includes>
+    <includes refid="_m_c_subtarget_info_8h" local="yes">llvm/MC/MCSubtargetInfo.h</includes>
+    <includes refid="_casting_8h" local="yes">llvm/Support/Casting.h</includes>
+    <includes refid="_endian_stream_8h" local="yes">llvm/Support/EndianStream.h</includes>
+    <includes local="no">cassert</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="yes">LanaiGenMCCodeEmitter.inc</includes>
+    <incdepgraph>
+      <node id="43">
+        <label>llvm-c/DataTypes.h</label>
+        <link refid="llvm-c_2_data_types_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>llvm/ADT/ADL.h</label>
+        <link refid="_a_d_l_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>llvm/ADT/ArrayRef.h</label>
+        <link refid="_array_ref_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>llvm/ADT/DenseMap.h</label>
+        <link refid="_dense_map_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>llvm/ADT/DenseMapInfo.h</label>
+        <link refid="_dense_map_info_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>llvm/ADT/EpochTracker.h</label>
+        <link refid="_epoch_tracker_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>llvm/ADT/Hashing.h</label>
+        <link refid="_hashing_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>llvm/ADT/STLExtras.h</label>
+        <link refid="_s_t_l_extras_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>llvm/ADT/STLForwardCompat.h</label>
+        <link refid="_s_t_l_forward_compat_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>llvm/ADT/STLFunctionalExtras.h</label>
+        <link refid="_s_t_l_functional_extras_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>llvm/ADT/SmallVector.h</label>
+        <link refid="_small_vector_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>llvm/ADT/Statistic.h</label>
+        <link refid="_statistic_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm/ADT/StringRef.h</label>
+        <link refid="_string_ref_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm/ADT/StringSwitch.h</label>
+        <link refid="_string_switch_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>llvm/ADT/Twine.h</label>
+        <link refid="_twine_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>llvm/ADT/bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>llvm/ADT/iterator.h</label>
+        <link refid="iterator_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>llvm/ADT/iterator_range.h</label>
+        <link refid="iterator__range_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>llvm/MC/LaneBitmask.h</label>
+        <link refid="_lane_bitmask_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>llvm/MC/MCCodeEmitter.h</label>
+        <link refid="_m_c_code_emitter_8h"/>
+      </node>
+      <node id="72">
+        <label>llvm/MC/MCExpr.h</label>
+        <link refid="_m_c_expr_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>llvm/MC/MCFixup.h</label>
+        <link refid="_m_c_fixup_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>llvm/MC/MCInst.h</label>
+        <link refid="_m_c_inst_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>llvm/MC/MCInstrDesc.h</label>
+        <link refid="_m_c_instr_desc_8h"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>llvm/MC/MCInstrInfo.h</label>
+        <link refid="_m_c_instr_info_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>llvm/MC/MCInstrItineraries.h</label>
+        <link refid="_m_c_instr_itineraries_8h"/>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>llvm/MC/MCRegister.h</label>
+        <link refid="_m_c_register_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>llvm/MC/MCRegisterInfo.h</label>
+        <link refid="_m_c_register_info_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>llvm/MC/MCSchedule.h</label>
+        <link refid="_m_c_schedule_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>llvm/MC/MCSubtargetInfo.h</label>
+        <link refid="_m_c_subtarget_info_8h"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>llvm/MC/MCTargetOptions.h</label>
+        <link refid="_m_c_target_options_8h"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>llvm/MC/MCValue.h</label>
+        <link refid="_m_c_value_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>llvm/Support/AlignOf.h</label>
+        <link refid="_align_of_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>llvm/Support/Casting.h</label>
+        <link refid="_casting_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>llvm/Support/Compiler.h</label>
+        <link refid="_compiler_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>llvm/Support/Compression.h</label>
+        <link refid="_compression_8h"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>llvm/Support/DataTypes.h</label>
+        <link refid="llvm_2_support_2_data_types_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>llvm/Support/Endian.h</label>
+        <link refid="_endian_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>llvm/Support/EndianStream.h</label>
+        <link refid="_endian_stream_8h"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>llvm/Support/ErrorHandling.h</label>
+        <link refid="llvm_2_support_2_error_handling_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>llvm/Support/Format.h</label>
+        <link refid="_format_8h"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>llvm/Support/MathExtras.h</label>
+        <link refid="_math_extras_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>llvm/Support/MemAlloc.h</label>
+        <link refid="_mem_alloc_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>llvm/Support/PointerLikeTypeTraits.h</label>
+        <link refid="_pointer_like_type_traits_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>llvm/Support/Printable.h</label>
+        <link refid="_printable_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>llvm/Support/ReverseIteration.h</label>
+        <link refid="_reverse_iteration_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>llvm/Support/SMLoc.h</label>
+        <link refid="_s_m_loc_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>llvm/Support/SwapByteOrder.h</label>
+        <link refid="_swap_byte_order_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>llvm/Support/VersionTuple.h</label>
+        <link refid="_version_tuple_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>llvm/Support/raw_ostream.h</label>
+        <link refid="raw__ostream_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>llvm/Support/type_traits.h</label>
+        <link refid="type__traits_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>llvm/TargetParser/SubtargetFeature.h</label>
+        <link refid="_subtarget_feature_8h"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>llvm/TargetParser/Triple.h</label>
+        <link refid="_triple_8h"/>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>LanaiAluCode.h</label>
+        <link refid="_lanai_alu_code_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>MCTargetDesc/LanaiBaseInfo.h</label>
+        <link refid="_lanai_base_info_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>MCTargetDesc/LanaiFixupKinds.h</label>
+        <link refid="_lanai_fixup_kinds_8h"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>lib/Target/Lanai/MCTargetDesc/LanaiMCCodeEmitter.cpp</label>
+        <link refid="_lanai_m_c_code_emitter_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>MCTargetDesc/LanaiMCExpr.h</label>
+        <link refid="_lanai_m_c_expr_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>LanaiMCTargetDesc.h</label>
+        <link refid="_lanai_m_c_target_desc_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>LanaiGenInstrInfo.inc</label>
+      </node>
+      <node id="94">
+        <label>LanaiGenMCCodeEmitter.inc</label>
+      </node>
+      <node id="69">
+        <label>LanaiGenRegisterInfo.inc</label>
+      </node>
+      <node id="71">
+        <label>LanaiGenSubtargetInfo.inc</label>
+      </node>
+      <node id="21">
+        <label>algorithm</label>
+      </node>
+      <node id="60">
+        <label>array</label>
+      </node>
+      <node id="79">
+        <label>atomic</label>
+      </node>
+      <node id="6">
+        <label>cassert</label>
+      </node>
+      <node id="37">
+        <label>climits</label>
+      </node>
+      <node id="7">
+        <label>cstddef</label>
+      </node>
+      <node id="8">
+        <label>cstdint</label>
+      </node>
+      <node id="62">
+        <label>cstdio</label>
+      </node>
+      <node id="39">
+        <label>cstdlib</label>
+      </node>
+      <node id="22">
+        <label>cstring</label>
+      </node>
+      <node id="57">
+        <label>functional</label>
+      </node>
+      <node id="48">
+        <label>initializer_list</label>
+      </node>
+      <node id="44">
+        <label>inttypes.h</label>
+      </node>
+      <node id="20">
+        <label>iterator</label>
+      </node>
+      <node id="23">
+        <label>limits</label>
+      </node>
+      <node id="32">
+        <label>llvm/Config/abi-breaking.h</label>
+      </node>
+      <node id="16">
+        <label>llvm/Config/llvm-config.h</label>
+      </node>
+      <node id="36">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="58">
+        <label>memory</label>
+      </node>
+      <node id="49">
+        <label>new</label>
+      </node>
+      <node id="14">
+        <label>optional</label>
+      </node>
+      <node id="17">
+        <label>stddef.h</label>
+      </node>
+      <node id="45">
+        <label>stdint.h</label>
+      </node>
+      <node id="24">
+        <label>string</label>
+      </node>
+      <node id="25">
+        <label>string_view</label>
+      </node>
+      <node id="46">
+        <label>sys/types.h</label>
+      </node>
+      <node id="65">
+        <label>system_error</label>
+      </node>
+      <node id="9">
+        <label>tuple</label>
+      </node>
+      <node id="10">
+        <label>type_traits</label>
+      </node>
+      <node id="11">
+        <label>utility</label>
+      </node>
+      <node id="61">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter" prot="public">llvm::anonymous_namespace{LanaiMCCodeEmitter.cpp}::LanaiMCCodeEmitter</innerclass>
+    <innernamespace refid="namespacellvm">llvm</innernamespace>
+    <innernamespace refid="namespacellvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03">llvm::anonymous_namespace{LanaiMCCodeEmitter.cpp}</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="_lanai_m_c_code_emitter_8cpp_1ad78e062f62e0d6e453941fb4ca843e4d" prot="public" static="no">
+        <name>DEBUG_TYPE</name>
+        <initializer>&quot;mccodeemitter&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Lanai/MCTargetDesc/LanaiMCCodeEmitter.cpp" line="30" column="9" bodyfile="lib/Target/Lanai/MCTargetDesc/LanaiMCCodeEmitter.cpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_lanai_m_c_code_emitter_8cpp_1ab011e01ce4f38acbf30a95de5c65db77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>STATISTIC</definition>
+        <argsstring>(MCNumEmitted, &quot;Number of MC instructions emitted&quot;)</argsstring>
+        <name>STATISTIC</name>
+        <param>
+          <type>MCNumEmitted</type>
+        </param>
+        <param>
+          <type>&quot;Number of MC <ref refid="_atomic_expand_pass_8cpp_1a1bcc06b1cb86bd0ea08f33323190bdaa" kindref="member">instructions</ref> emitted&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/Target/Lanai/MCTargetDesc/LanaiMCCodeEmitter.cpp" line="32" column="1" declfile="lib/Target/Lanai/MCTargetDesc/LanaiMCCodeEmitter.cpp" declline="32" declcolumn="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//===--<sp/>LanaiMCCodeEmitter.cpp<sp/>-<sp/>Convert<sp/>Lanai<sp/>code<sp/>to<sp/>machine<sp/>code<sp/>-------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>implements<sp/>the<sp/>LanaiMCCodeEmitter<sp/>class.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//===----------------------------------------------------------------------===//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_lanai_alu_code_8h" kindref="compound">LanaiAluCode.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_lanai_base_info_8h" kindref="compound">MCTargetDesc/LanaiBaseInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_lanai_fixup_kinds_8h" kindref="compound">MCTargetDesc/LanaiFixupKinds.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_lanai_m_c_expr_8h" kindref="compound">MCTargetDesc/LanaiMCExpr.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_small_vector_8h" kindref="compound">llvm/ADT/SmallVector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_statistic_8h" kindref="compound">llvm/ADT/Statistic.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_code_emitter_8h" kindref="compound">llvm/MC/MCCodeEmitter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_expr_8h" kindref="compound">llvm/MC/MCExpr.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_fixup_8h" kindref="compound">llvm/MC/MCFixup.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_inst_8h" kindref="compound">llvm/MC/MCInst.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_instr_info_8h" kindref="compound">llvm/MC/MCInstrInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_m_c_subtarget_info_8h" kindref="compound">llvm/MC/MCSubtargetInfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_casting_8h" kindref="compound">llvm/Support/Casting.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_endian_stream_8h" kindref="compound">llvm/Support/EndianStream.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="_lanai_m_c_code_emitter_8cpp_1ad78e062f62e0d6e453941fb4ca843e4d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBUG_TYPE<sp/>&quot;mccodeemitter&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="_lanai_m_c_code_emitter_8cpp_1ab011e01ce4f38acbf30a95de5c65db77" refkind="member"><highlight class="normal"><ref refid="_statistic_8h_1ad6117415b93e5675d5a6c8e1855b3b2f" kindref="member">STATISTIC</ref>(MCNumEmitted,<sp/></highlight><highlight class="stringliteral">&quot;Number<sp/>of<sp/>MC<sp/>instructions<sp/>emitted&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="namespacellvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a0ad0ec98d15b6281b821e4f223328f2f" kindref="member">LanaiMCCodeEmitter</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_code_emitter_1a30a6103435c200ed0b3923ecf30249d1" kindref="member">MCCodeEmitter</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a0ad0ec98d15b6281b821e4f223328f2f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a0ad0ec98d15b6281b821e4f223328f2f" kindref="member">LanaiMCCodeEmitter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_instr_info" kindref="compound">MCInstrInfo</ref><sp/>&amp;MCII,<sp/><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;<ref refid="namespacellvm_1_1_calling_conv_1ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb" kindref="member">C</ref>)<sp/>{}</highlight></codeline>
+<codeline lineno="41" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1ab3bda710bd3d71bda050178d55997f35" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1ab3bda710bd3d71bda050178d55997f35" kindref="member">LanaiMCCodeEmitter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a0ad0ec98d15b6281b821e4f223328f2f" kindref="member">LanaiMCCodeEmitter</ref><sp/>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a55e078135627e18fca969d74543c10f4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a55e078135627e18fca969d74543c10f4" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a0ad0ec98d15b6281b821e4f223328f2f" kindref="member">LanaiMCCodeEmitter</ref><sp/>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a528fcfdc0ec563b3c322baa48f811d30" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a528fcfdc0ec563b3c322baa48f811d30" kindref="member">~LanaiMCCodeEmitter</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>functions<sp/>below<sp/>are<sp/>called<sp/>by<sp/>TableGen<sp/>generated<sp/>functions<sp/>for<sp/>getting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>binary<sp/>encoding<sp/>of<sp/>instructions/opereands.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>getBinaryCodeForInstr<sp/>-<sp/>TableGen&apos;erated<sp/>function<sp/>for<sp/>getting<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>binary<sp/>encoding<sp/>for<sp/>an<sp/>instruction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a8d360c08396a822cbf5aee4fa091e921" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classuint64__t" kindref="compound">uint64_t</ref><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a8d360c08396a822cbf5aee4fa091e921" kindref="member">getBinaryCodeForInstr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>getMachineOpValue<sp/>-<sp/>Return<sp/>binary<sp/>encoding<sp/>of<sp/>operand.<sp/>If<sp/>the<sp/>machine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>operand<sp/>requires<sp/>relocation,<sp/>record<sp/>the<sp/>relocation<sp/>and<sp/>return<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a0e3a46287a3ec80268b6629a7298532b" kindref="member">getMachineOpValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>&amp;MCOp,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a1660300cab17a3aa42a7648d7ef16d59" kindref="member">getRiMemoryOpValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>OpNo,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1abdd107007255b33a321fb54311fbab99" kindref="member">getRrMemoryOpValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>OpNo,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1acb6e80d03942494b5ccb861bc69ae7c4" kindref="member">getSplsOpValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>OpNo,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="_a_r_m_m_c_code_emitter_8cpp_1ac71adedf5a7e045a327f230a16a3984d" kindref="member">getBranchTargetOpValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>OpNo,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1ac982e3d8a19d54e768649683c082289b" kindref="member">encodeInstruction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;char&gt;</ref><sp/>&amp;CB,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a46a0f1afb1b60dcdb5c74c0c17aeb272" kindref="member">adjustPqBitsRmAndRrm</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;STI)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1ac8e15f930752ddca9609a2d54eebe88b" kindref="member">adjustPqBitsSpls</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;STI)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>anonymous<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="namespacellvm_1a7d3d3a355228d2f64fa312abbd7abfbf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_lanai_1af443c46d786f3821876e56ccfffa7765" kindref="member">Lanai::Fixups</ref><sp/><ref refid="namespacellvm_1a7d3d3a355228d2f64fa312abbd7abfbf" kindref="member">FixupKind</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*Expr)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" kindref="member">isa&lt;MCSymbolRefExpr&gt;</ref>(Expr))</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_lanai_1af443c46d786f3821876e56ccfffa7765a466a72976376ce773b6a30d65e4e5f28" kindref="member">Lanai::FIXUP_LANAI_21</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_lanai_m_c_expr" kindref="compound">LanaiMCExpr</ref><sp/>*McExpr<sp/>=<sp/><ref refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" kindref="member">dyn_cast&lt;LanaiMCExpr&gt;</ref>(Expr))<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_lanai_m_c_expr_1ad9cc57639700272986d246093a5ad1c8" kindref="member">LanaiMCExpr::VariantKind</ref><sp/>ExprKind<sp/>=<sp/>McExpr-&gt;getKind();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(ExprKind)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_lanai_m_c_expr_1ad9cc57639700272986d246093a5ad1c8a109977497b87b76b87fa10bd7bca40bc" kindref="member">LanaiMCExpr::VK_Lanai_None</ref>:</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_lanai_1af443c46d786f3821876e56ccfffa7765a466a72976376ce773b6a30d65e4e5f28" kindref="member">Lanai::FIXUP_LANAI_21</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_lanai_m_c_expr_1ad9cc57639700272986d246093a5ad1c8ad6161e225a7527044494a229142ba329" kindref="member">LanaiMCExpr::VK_Lanai_ABS_HI</ref>:</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_lanai_1af443c46d786f3821876e56ccfffa7765afd36ba7cedb640f17cac2d2857d7966b" kindref="member">Lanai::FIXUP_LANAI_HI16</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_lanai_m_c_expr_1ad9cc57639700272986d246093a5ad1c8a817d6b866eaba4761a3e1aaad6311b13" kindref="member">LanaiMCExpr::VK_Lanai_ABS_LO</ref>:</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_lanai_1af443c46d786f3821876e56ccfffa7765af5e05d58327b72ff1ebf97a767c17c37" kindref="member">Lanai::FIXUP_LANAI_LO16</ref>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_lanai_1af443c46d786f3821876e56ccfffa7765" kindref="member">Lanai::Fixups</ref>(0);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">//<sp/>getMachineOpValue<sp/>-<sp/>Return<sp/>binary<sp/>encoding<sp/>of<sp/>operand.<sp/>If<sp/>the<sp/>machine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">//<sp/>operand<sp/>requires<sp/>relocation,<sp/>record<sp/>the<sp/>relocation<sp/>and<sp/>return<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a0e3a46287a3ec80268b6629a7298532b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a0e3a46287a3ec80268b6629a7298532b" kindref="member">LanaiMCCodeEmitter::getMachineOpValue</ref>(</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>&amp;MCOp,<sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(MCOp.<ref refid="classllvm_1_1_m_c_operand_1a7a8c7eea0aa4890f25a4b83e1f0a0b6f" kindref="member">isReg</ref>())</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1adfa3ea495f3bf972e75bbad9e4e0d151" kindref="member">getLanaiRegisterNumbering</ref>(MCOp.<ref refid="classllvm_1_1_m_c_operand_1a94abf618eb8001b802910ab872a7d1d9" kindref="member">getReg</ref>());</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(MCOp.<ref refid="classllvm_1_1_m_c_operand_1a5f639fdcd3fc673fcbdb47f2e88b2b41" kindref="member">isImm</ref>())</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(MCOp.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>());</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>MCOp<sp/>must<sp/>be<sp/>an<sp/>expression</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(MCOp.<ref refid="classllvm_1_1_m_c_operand_1ae23b2e8269fe15dbe5ebb3394438960c" kindref="member">isExpr</ref>());</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_expr" kindref="compound">MCExpr</ref><sp/>*Expr<sp/>=<sp/>MCOp.<ref refid="classllvm_1_1_m_c_operand_1ac9408fbc60922d24b01c1efcbd4ba52b" kindref="member">getExpr</ref>();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>the<sp/>symbolic<sp/>reference<sp/>side<sp/>of<sp/>a<sp/>binary<sp/>expression.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Expr-&gt;<ref refid="classllvm_1_1_m_c_expr_1af5d6e67c11188675c1309e098afac194" kindref="member">getKind</ref>()<sp/>==<sp/><ref refid="classllvm_1_1_m_c_expr_1a83112ba0cecd7a7add9f1f9c441d606fad39c4375f2de701a811385670a699a51" kindref="member">MCExpr::Binary</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_binary_expr" kindref="compound">MCBinaryExpr</ref><sp/>*<ref refid="class_binary_expr" kindref="compound">BinaryExpr</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keyword">const<sp/></highlight><highlight class="normal"><ref refid="classllvm_1_1_m_c_binary_expr" kindref="compound">MCBinaryExpr</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(Expr);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>Expr<sp/>=<sp/><ref refid="class_binary_expr" kindref="compound">BinaryExpr</ref>-&gt;getLHS();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="namespacellvm_1a92ca992e52dddc420f4b069cae06dfbe" kindref="member">isa&lt;LanaiMCExpr&gt;</ref>(Expr)<sp/>||<sp/>Expr-&gt;<ref refid="classllvm_1_1_m_c_expr_1af5d6e67c11188675c1309e098afac194" kindref="member">getKind</ref>()<sp/>==<sp/><ref refid="classllvm_1_1_m_c_expr_1a83112ba0cecd7a7add9f1f9c441d606fa8cbc19c1660252a30c030fa945999a91" kindref="member">MCExpr::SymbolRef</ref>);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Push<sp/>fixup<sp/>(all<sp/>info<sp/>is<sp/>contained<sp/>within)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>Fixups.push_back(</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_fixup_1abdf37854fa6eb68017b96486df443a32" kindref="member">MCFixup::create</ref>(0,<sp/>MCOp.<ref refid="classllvm_1_1_m_c_operand_1ac9408fbc60922d24b01c1efcbd4ba52b" kindref="member">getExpr</ref>(),<sp/><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58" kindref="member">MCFixupKind</ref>(<ref refid="namespacellvm_1a7d3d3a355228d2f64fa312abbd7abfbf" kindref="member">FixupKind</ref>(Expr))));</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Helper<sp/>function<sp/>to<sp/>adjust<sp/>P<sp/>and<sp/>Q<sp/>bits<sp/>on<sp/>load<sp/>and<sp/>store<sp/>instructions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="namespacellvm_1ad74efac97a18b61ef91f69e7a25532ce" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ad74efac97a18b61ef91f69e7a25532ce" kindref="member">adjustPqBits</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>PBitShift,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>QBitShift)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>AluOp<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(3);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>AluCode<sp/>=<sp/>AluOp.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>P<sp/>bit<sp/>to<sp/>one<sp/>iff<sp/>the<sp/>immediate<sp/>is<sp/>nonzero<sp/>and<sp/>not<sp/>a<sp/>post-op</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>instruction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>Op2<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(2);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>&amp;=<sp/>~(1<sp/>&lt;&lt;<sp/>PBitShift);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="namespacellvm_1_1_l_p_a_c_1ac9561348a5db976ea3ff9e29b8efed89" kindref="member">LPAC::isPostOp</ref>(AluCode)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>((Op2.<ref refid="classllvm_1_1_m_c_operand_1a5f639fdcd3fc673fcbdb47f2e88b2b41" kindref="member">isImm</ref>()<sp/>&amp;&amp;<sp/>Op2.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>()<sp/>!=<sp/>0)<sp/>||</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a7a8c7eea0aa4890f25a4b83e1f0a0b6f" kindref="member">isReg</ref>()<sp/>&amp;&amp;<sp/>Op2.<ref refid="classllvm_1_1_m_c_operand_1a94abf618eb8001b802910ab872a7d1d9" kindref="member">getReg</ref>()<sp/>!=<sp/>Lanai::R0)<sp/>||<sp/>(Op2.<ref refid="classllvm_1_1_m_c_operand_1ae23b2e8269fe15dbe5ebb3394438960c" kindref="member">isExpr</ref>())))</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>|=<sp/>(1<sp/>&lt;&lt;<sp/>PBitShift);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>Q<sp/>bit<sp/>to<sp/>one<sp/>iff<sp/>it<sp/>is<sp/>a<sp/>post-<sp/>or<sp/>pre-op<sp/>instruction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(0).<ref refid="classllvm_1_1_m_c_operand_1a7a8c7eea0aa4890f25a4b83e1f0a0b6f" kindref="member">isReg</ref>()<sp/>&amp;&amp;<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(1).<ref refid="classllvm_1_1_m_c_operand_1a7a8c7eea0aa4890f25a4b83e1f0a0b6f" kindref="member">isReg</ref>()<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Expected<sp/>register<sp/>operand.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>&amp;=<sp/>~(1<sp/>&lt;&lt;<sp/>QBitShift);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1_1_l_p_a_c_1af1b67731af52d82eb9854d6db403b621" kindref="member">LPAC::modifiesOp</ref>(AluCode)<sp/>&amp;&amp;<sp/>((Op2.<ref refid="classllvm_1_1_m_c_operand_1a5f639fdcd3fc673fcbdb47f2e88b2b41" kindref="member">isImm</ref>()<sp/>&amp;&amp;<sp/>Op2.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>()<sp/>!=<sp/>0)<sp/>||</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a7a8c7eea0aa4890f25a4b83e1f0a0b6f" kindref="member">isReg</ref>()<sp/>&amp;&amp;<sp/>Op2.<ref refid="classllvm_1_1_m_c_operand_1a94abf618eb8001b802910ab872a7d1d9" kindref="member">getReg</ref>()<sp/>!=<sp/>Lanai::R0)))</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>|=<sp/>(1<sp/>&lt;&lt;<sp/>QBitShift);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a46a0f1afb1b60dcdb5c74c0c17aeb272" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a46a0f1afb1b60dcdb5c74c0c17aeb272" kindref="member">LanaiMCCodeEmitter::adjustPqBitsRmAndRrm</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;STI)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ad74efac97a18b61ef91f69e7a25532ce" kindref="member">adjustPqBits</ref>(Inst,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,<sp/>17,<sp/>16);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1ac8e15f930752ddca9609a2d54eebe88b" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1ac8e15f930752ddca9609a2d54eebe88b" kindref="member">LanaiMCCodeEmitter::adjustPqBitsSpls</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;STI)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1ad74efac97a18b61ef91f69e7a25532ce" kindref="member">adjustPqBits</ref>(Inst,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,<sp/>11,<sp/>10);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1ac982e3d8a19d54e768649683c082289b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1ac982e3d8a19d54e768649683c082289b" kindref="member">LanaiMCCodeEmitter::encodeInstruction</ref>(</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;char&gt;</ref><sp/>&amp;CB,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>instruction<sp/>encoding<sp/>and<sp/>emit<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref><sp/>=<sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a8d360c08396a822cbf5aee4fa091e921" kindref="member">getBinaryCodeForInstr</ref>(Inst,<sp/>Fixups,<sp/>SubtargetInfo);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>++MCNumEmitted;<sp/></highlight><highlight class="comment">//<sp/>Keep<sp/>track<sp/>of<sp/>the<sp/>number<sp/>of<sp/>emitted<sp/>insns.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><ref refid="namespacellvm_1_1support_1_1endian_1add1f2d1d972957d22186f4ec92f985f6" kindref="member">support::endian::write&lt;uint32_t&gt;</ref>(CB,<sp/><ref refid="classllvm_1_1_value" kindref="compound">Value</ref>,<sp/><ref refid="namespacellvm_1ae1e26e57357947b25e392fd18ab000dbad861877da56b8b4ceb35c8cbfdf65bb4" kindref="member">llvm::endianness::big</ref>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Encode<sp/>Lanai<sp/>Memory<sp/>Operand</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a1660300cab17a3aa42a7648d7ef16d59" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a1660300cab17a3aa42a7648d7ef16d59" kindref="member">LanaiMCCodeEmitter::getRiMemoryOpValue</ref>(</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>OpNo,<sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Encoding;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>Op1<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(OpNo<sp/>+<sp/>0);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>Op2<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(OpNo<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>AluOp<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(OpNo<sp/>+<sp/>2);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Op1.<ref refid="classllvm_1_1_m_c_operand_1a7a8c7eea0aa4890f25a4b83e1f0a0b6f" kindref="member">isReg</ref>()<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;First<sp/>operand<sp/>is<sp/>not<sp/>register.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>((Op2.<ref refid="classllvm_1_1_m_c_operand_1a5f639fdcd3fc673fcbdb47f2e88b2b41" kindref="member">isImm</ref>()<sp/>||<sp/>Op2.<ref refid="classllvm_1_1_m_c_operand_1ae23b2e8269fe15dbe5ebb3394438960c" kindref="member">isExpr</ref>())<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Second<sp/>operand<sp/>is<sp/>neither<sp/>an<sp/>immediate<sp/>nor<sp/>an<sp/>expression.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>((<ref refid="namespacellvm_1_1_l_p_a_c_1a12ec23eae67df792dea7a369dced8f6e" kindref="member">LPAC::getAluOp</ref>(AluOp.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>())<sp/>==<sp/><ref refid="namespacellvm_1_1_l_p_a_c_1ab2e8fd263c886a713ccba7505c1b2ee0a25d8ba0c31384de6b8eaf87262199804" kindref="member">LPAC::ADD</ref>)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Register<sp/>immediate<sp/>only<sp/>supports<sp/>addition<sp/>operator&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/>Encoding<sp/>=<sp/>(<ref refid="namespacellvm_1adfa3ea495f3bf972e75bbad9e4e0d151" kindref="member">getLanaiRegisterNumbering</ref>(Op1.<ref refid="classllvm_1_1_m_c_operand_1a94abf618eb8001b802910ab872a7d1d9" kindref="member">getReg</ref>())<sp/>&lt;&lt;<sp/>18);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a5f639fdcd3fc673fcbdb47f2e88b2b41" kindref="member">isImm</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="namespacellvm_1a1a1e51a5952c3afa00875df90e7ae6f8" kindref="member">isInt&lt;16&gt;</ref>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>())<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Constant<sp/>value<sp/>truncated<sp/>(limited<sp/>to<sp/>16-bit)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>Encoding<sp/>|=<sp/>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>()<sp/>&amp;<sp/>0xffff);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>()<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1_1_l_p_a_c_1a0cbb5fce8a0eddbb1a2c3e1e1de932d3" kindref="member">LPAC::isPreOp</ref>(AluOp.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>()))</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Encoding<sp/>|=<sp/>(0x3<sp/>&lt;&lt;<sp/>16);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1_1_l_p_a_c_1ac9561348a5db976ea3ff9e29b8efed89" kindref="member">LPAC::isPostOp</ref>(AluOp.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>()))</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Encoding<sp/>|=<sp/>(0x1<sp/>&lt;&lt;<sp/>16);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a0e3a46287a3ec80268b6629a7298532b" kindref="member">getMachineOpValue</ref>(Inst,<sp/>Op2,<sp/>Fixups,<sp/>SubtargetInfo);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Encoding;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1abdd107007255b33a321fb54311fbab99" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1abdd107007255b33a321fb54311fbab99" kindref="member">LanaiMCCodeEmitter::getRrMemoryOpValue</ref>(</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>OpNo,<sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Encoding;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>Op1<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(OpNo<sp/>+<sp/>0);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>Op2<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(OpNo<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>AluMCOp<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(OpNo<sp/>+<sp/>2);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Op1.<ref refid="classllvm_1_1_m_c_operand_1a7a8c7eea0aa4890f25a4b83e1f0a0b6f" kindref="member">isReg</ref>()<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;First<sp/>operand<sp/>is<sp/>not<sp/>register.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/>Encoding<sp/>=<sp/>(<ref refid="namespacellvm_1adfa3ea495f3bf972e75bbad9e4e0d151" kindref="member">getLanaiRegisterNumbering</ref>(Op1.<ref refid="classllvm_1_1_m_c_operand_1a94abf618eb8001b802910ab872a7d1d9" kindref="member">getReg</ref>())<sp/>&lt;&lt;<sp/>15);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a7a8c7eea0aa4890f25a4b83e1f0a0b6f" kindref="member">isReg</ref>()<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Second<sp/>operand<sp/>is<sp/>not<sp/>register.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/>Encoding<sp/>|=<sp/>(<ref refid="namespacellvm_1adfa3ea495f3bf972e75bbad9e4e0d151" kindref="member">getLanaiRegisterNumbering</ref>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a94abf618eb8001b802910ab872a7d1d9" kindref="member">getReg</ref>())<sp/>&lt;&lt;<sp/>10);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(AluMCOp.<ref refid="classllvm_1_1_m_c_operand_1a5f639fdcd3fc673fcbdb47f2e88b2b41" kindref="member">isImm</ref>()<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Third<sp/>operator<sp/>is<sp/>not<sp/>immediate.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>BBB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>AluOp<sp/>=<sp/>AluMCOp.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>();</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/>Encoding<sp/>|=<sp/><ref refid="namespacellvm_1_1_l_p_a_c_1a54701527fd88d4bfb1426c2d2e9d1ddd" kindref="member">LPAC::encodeLanaiAluCode</ref>(AluOp)<sp/>&lt;&lt;<sp/>5;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>P<sp/>and<sp/>Q</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1_1_l_p_a_c_1a0cbb5fce8a0eddbb1a2c3e1e1de932d3" kindref="member">LPAC::isPreOp</ref>(AluOp))</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>Encoding<sp/>|=<sp/>(0x3<sp/>&lt;&lt;<sp/>8);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1_1_l_p_a_c_1ac9561348a5db976ea3ff9e29b8efed89" kindref="member">LPAC::isPostOp</ref>(AluOp))</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>Encoding<sp/>|=<sp/>(0x1<sp/>&lt;&lt;<sp/>8);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>JJJJ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1_1_l_p_a_c_1a12ec23eae67df792dea7a369dced8f6e" kindref="member">LPAC::getAluOp</ref>(AluOp))<sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_l_p_a_c_1ab2e8fd263c886a713ccba7505c1b2ee0a1c925551fe6b6594e1981c73692667c5" kindref="member">LPAC::SHL</ref>:</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_l_p_a_c_1ab2e8fd263c886a713ccba7505c1b2ee0af6a627123e84eb41d500bcb8f9e2f8b6" kindref="member">LPAC::SRL</ref>:</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>Encoding<sp/>|=<sp/>0x10;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacellvm_1_1_l_p_a_c_1ab2e8fd263c886a713ccba7505c1b2ee0a6f47b0d8fbc54652a45b103c20197a4f" kindref="member">LPAC::SRA</ref>:</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>Encoding<sp/>|=<sp/>0x18;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Encoding;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1acb6e80d03942494b5ccb861bc69ae7c4" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1acb6e80d03942494b5ccb861bc69ae7c4" kindref="member">LanaiMCCodeEmitter::getSplsOpValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>OpNo,</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Encoding;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>Op1<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(OpNo<sp/>+<sp/>0);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>Op2<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(OpNo<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>AluOp<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(OpNo<sp/>+<sp/>2);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(Op1.<ref refid="classllvm_1_1_m_c_operand_1a7a8c7eea0aa4890f25a4b83e1f0a0b6f" kindref="member">isReg</ref>()<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;First<sp/>operand<sp/>is<sp/>not<sp/>register.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>((Op2.<ref refid="classllvm_1_1_m_c_operand_1a5f639fdcd3fc673fcbdb47f2e88b2b41" kindref="member">isImm</ref>()<sp/>||<sp/>Op2.<ref refid="classllvm_1_1_m_c_operand_1ae23b2e8269fe15dbe5ebb3394438960c" kindref="member">isExpr</ref>())<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Second<sp/>operand<sp/>is<sp/>neither<sp/>an<sp/>immediate<sp/>nor<sp/>an<sp/>expression.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>((<ref refid="namespacellvm_1_1_l_p_a_c_1a12ec23eae67df792dea7a369dced8f6e" kindref="member">LPAC::getAluOp</ref>(AluOp.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>())<sp/>==<sp/><ref refid="namespacellvm_1_1_l_p_a_c_1ab2e8fd263c886a713ccba7505c1b2ee0a25d8ba0c31384de6b8eaf87262199804" kindref="member">LPAC::ADD</ref>)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Register<sp/>immediate<sp/>only<sp/>supports<sp/>addition<sp/>operator&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/>Encoding<sp/>=<sp/>(<ref refid="namespacellvm_1adfa3ea495f3bf972e75bbad9e4e0d151" kindref="member">getLanaiRegisterNumbering</ref>(Op1.<ref refid="classllvm_1_1_m_c_operand_1a94abf618eb8001b802910ab872a7d1d9" kindref="member">getReg</ref>())<sp/>&lt;&lt;<sp/>12);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a5f639fdcd3fc673fcbdb47f2e88b2b41" kindref="member">isImm</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(<ref refid="namespacellvm_1a1a1e51a5952c3afa00875df90e7ae6f8" kindref="member">isInt&lt;10&gt;</ref>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>())<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Constant<sp/>value<sp/>truncated<sp/>(limited<sp/>to<sp/>10-bit)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>Encoding<sp/>|=<sp/>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>()<sp/>&amp;<sp/>0x3ff);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Op2.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>()<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1_1_l_p_a_c_1a0cbb5fce8a0eddbb1a2c3e1e1de932d3" kindref="member">LPAC::isPreOp</ref>(AluOp.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>()))</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Encoding<sp/>|=<sp/>(0x3<sp/>&lt;&lt;<sp/>10);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacellvm_1_1_l_p_a_c_1ac9561348a5db976ea3ff9e29b8efed89" kindref="member">LPAC::isPostOp</ref>(AluOp.<ref refid="classllvm_1_1_m_c_operand_1a4509c43893edc940979f690c468664c1" kindref="member">getImm</ref>()))</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Encoding<sp/>|=<sp/>(0x1<sp/>&lt;&lt;<sp/>10);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a0e3a46287a3ec80268b6629a7298532b" kindref="member">getMachineOpValue</ref>(Inst,<sp/>Op2,<sp/>Fixups,<sp/>SubtargetInfo);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Encoding;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286" refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a6e49231451b0b2b51a7e033254ccb415" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a6e49231451b0b2b51a7e033254ccb415" kindref="member">LanaiMCCodeEmitter::getBranchTargetOpValue</ref>(</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_inst" kindref="compound">MCInst</ref><sp/>&amp;Inst,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>OpNo,<sp/><ref refid="classllvm_1_1_small_vector_impl" kindref="compound">SmallVectorImpl&lt;MCFixup&gt;</ref><sp/>&amp;Fixups,</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_subtarget_info" kindref="compound">MCSubtargetInfo</ref><sp/>&amp;SubtargetInfo)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref><sp/>&amp;MCOp<sp/>=<sp/>Inst.<ref refid="classllvm_1_1_m_c_inst_1aef5de3ac30fe221c5b4e702574ab46a9" kindref="member">getOperand</ref>(OpNo);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(MCOp.<ref refid="classllvm_1_1_m_c_operand_1a7a8c7eea0aa4890f25a4b83e1f0a0b6f" kindref="member">isReg</ref>()<sp/>||<sp/>MCOp.<ref refid="classllvm_1_1_m_c_operand_1a5f639fdcd3fc673fcbdb47f2e88b2b41" kindref="member">isImm</ref>())</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1anonymous__namespace_02_lanai_m_c_code_emitter_8cpp_03_1_1_lanai_m_c_code_emitter_1a0e3a46287a3ec80268b6629a7298532b" kindref="member">getMachineOpValue</ref>(Inst,<sp/>MCOp,<sp/>Fixups,<sp/>SubtargetInfo);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/>Fixups.push_back(<ref refid="classllvm_1_1_m_c_fixup_1abdf37854fa6eb68017b96486df443a32" kindref="member">MCFixup::create</ref>(</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>MCOp.<ref refid="classllvm_1_1_m_c_operand_1ac9408fbc60922d24b01c1efcbd4ba52b" kindref="member">getExpr</ref>(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="namespacellvm_1a84cef097f15848752272d38769011f58" kindref="member">MCFixupKind</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespacellvm_1_1_lanai_1af443c46d786f3821876e56ccfffa7765a08ba4368cab217d2b9c7f97e353a33e4" kindref="member">Lanai::FIXUP_LANAI_25</ref>)));</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;LanaiGenMCCodeEmitter.inc&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><ref refid="classllvm_1_1_m_c_code_emitter" kindref="compound">llvm::MCCodeEmitter</ref><sp/>*</highlight></codeline>
+<codeline lineno="304" refid="namespacellvm_1a259a77628603402e87b993706723bfd0" refkind="member"><highlight class="normal"><ref refid="namespacellvm_1a259a77628603402e87b993706723bfd0" kindref="member">llvm::createLanaiMCCodeEmitter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_m_c_instr_info" kindref="compound">MCInstrInfo</ref><sp/>&amp;InstrInfo,</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1_m_c_context" kindref="compound">MCContext</ref><sp/>&amp;context)<sp/>{</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>LanaiMCCodeEmitter(InstrInfo,<sp/>context);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="lib/Target/Lanai/MCTargetDesc/LanaiMCCodeEmitter.cpp"/>
+  </compounddef>
+</doxygen>

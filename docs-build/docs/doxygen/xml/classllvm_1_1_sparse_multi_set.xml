@@ -1,0 +1,974 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_sparse_multi_set" kind="class" language="C++" prot="public">
+    <compoundname>llvm::SparseMultiSet</compoundname>
+    <includes refid="_sparse_multi_set_8h" local="yes">llvm/ADT/SparseMultiSet.h</includes>
+    <innerclass refid="classllvm_1_1_sparse_multi_set_1_1iterator__base" prot="public">llvm::SparseMultiSet::iterator_base</innerclass>
+    <innerclass refid="structllvm_1_1_sparse_multi_set_1_1_s_m_s_node" prot="private">llvm::SparseMultiSet::SMSNode</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename <ref refid="class_value_t" kindref="compound">ValueT</ref></type>
+      </param>
+      <param>
+        <type>typename KeyFunctorT</type>
+        <defval><ref refid="structllvm_1_1identity" kindref="compound">identity</ref>&lt;<ref refid="classunsigned" kindref="compound">unsigned</ref>&gt;</defval>
+      </param>
+      <param>
+        <type>typename SparseT</type>
+        <defval><ref refid="classuint8__t" kindref="compound">uint8_t</ref></defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_multi_set_1ad039913e011b603056874997f4ccc438" prot="private" static="no">
+        <type>typename KeyFunctorT::argument_type</type>
+        <definition>using llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::KeyT =  typename KeyFunctorT::argument_type</definition>
+        <argsstring></argsstring>
+        <name>KeyT</name>
+        <qualifiedname>llvm::SparseMultiSet::KeyT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="120" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_multi_set_1ab4ce4893dc34479447853671cf8b5253" prot="private" static="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector</ref>&lt; SMSNode, 8 &gt;</type>
+        <definition>using llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::DenseT =  SmallVector&lt;SMSNode, 8&gt;</definition>
+        <argsstring></argsstring>
+        <name>DenseT</name>
+        <qualifiedname>llvm::SparseMultiSet::DenseT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="121" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_multi_set_1ab8dffcfeacb8cce39fd14cceadb3ceea" prot="public" static="no">
+        <type><ref refid="class_value_t" kindref="compound">ValueT</ref></type>
+        <definition>using llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::value_type =  ValueT</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>llvm::SparseMultiSet::value_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="185" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_multi_set_1a5c3aafdeec18d298f96df3eb4b46ada2" prot="public" static="no">
+        <type><ref refid="class_value_t" kindref="compound">ValueT</ref> &amp;</type>
+        <definition>using llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::reference =  ValueT &amp;</definition>
+        <argsstring></argsstring>
+        <name>reference</name>
+        <qualifiedname>llvm::SparseMultiSet::reference</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="186" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_multi_set_1a8b3f3a95746eeb974958d3605c8c2521" prot="public" static="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_value_t" kindref="compound">ValueT</ref> &amp;</type>
+        <definition>using llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::const_reference =  const ValueT &amp;</definition>
+        <argsstring></argsstring>
+        <name>const_reference</name>
+        <qualifiedname>llvm::SparseMultiSet::const_reference</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="187" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_multi_set_1a4cfb52a7ffa678488c329f891f823338" prot="public" static="no">
+        <type><ref refid="class_value_t" kindref="compound">ValueT</ref> *</type>
+        <definition>using llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::pointer =  ValueT *</definition>
+        <argsstring></argsstring>
+        <name>pointer</name>
+        <qualifiedname>llvm::SparseMultiSet::pointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="188" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_multi_set_1ad1badaaa7449797da1b668e687b6de23" prot="public" static="no">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_value_t" kindref="compound">ValueT</ref> *</type>
+        <definition>using llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::const_pointer =  const ValueT *</definition>
+        <argsstring></argsstring>
+        <name>const_pointer</name>
+        <qualifiedname>llvm::SparseMultiSet::const_pointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="189" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_multi_set_1a3a0e116fdaa2041ec3d61c9d110b0c2f" prot="public" static="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>using llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::size_type =  unsigned</definition>
+        <argsstring></argsstring>
+        <name>size_type</name>
+        <qualifiedname>llvm::SparseMultiSet::size_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="190" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1_1iterator__base" kindref="compound">iterator_base</ref>&lt; <ref refid="classllvm_1_1_sparse_multi_set" kindref="compound">SparseMultiSet</ref> * &gt;</type>
+        <definition>using llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::iterator =  iterator_base&lt;SparseMultiSet *&gt;</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <qualifiedname>llvm::SparseMultiSet::iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="311" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="311" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_multi_set_1a13be60676bc49a4629a0bfd8bf671174" prot="public" static="no">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1_1iterator__base" kindref="compound">iterator_base</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_sparse_multi_set" kindref="compound">SparseMultiSet</ref> * &gt;</type>
+        <definition>using llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::const_iterator =  iterator_base&lt;const SparseMultiSet *&gt;</definition>
+        <argsstring></argsstring>
+        <name>const_iterator</name>
+        <qualifiedname>llvm::SparseMultiSet::const_iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="312" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classllvm_1_1_sparse_multi_set_1aedf030829902cd1a8e3ed4a24820e3a7" prot="public" static="no">
+        <type>std::pair&lt; <ref refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" kindref="member">iterator</ref>, <ref refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" kindref="member">iterator</ref> &gt;</type>
+        <definition>using llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::RangePair =  std::pair&lt;iterator, iterator&gt;</definition>
+        <argsstring></argsstring>
+        <name>RangePair</name>
+        <qualifiedname>llvm::SparseMultiSet::RangePair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="315" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="315" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_sparse_multi_set_1a3d5c7c332cc0b999f4c9ebd6d8c78a7a" prot="private" static="no" mutable="no">
+        <type><ref refid="classllvm_1_1_small_vector" kindref="compound">DenseT</ref></type>
+        <definition>DenseT llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::Dense</definition>
+        <argsstring></argsstring>
+        <name>Dense</name>
+        <qualifiedname>llvm::SparseMultiSet::Dense</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="122" column="10" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_sparse_multi_set_1a677c556469b7f6237a95eefa14776f01" prot="private" static="no" mutable="no">
+        <type>SparseT *</type>
+        <definition>SparseT* llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::Sparse</definition>
+        <argsstring></argsstring>
+        <name>Sparse</name>
+        <qualifiedname>llvm::SparseMultiSet::Sparse</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="123" column="11" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_sparse_multi_set_1ae3a33a15ec5113d36ae441f2a111daa3" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::Universe</definition>
+        <argsstring></argsstring>
+        <name>Universe</name>
+        <qualifiedname>llvm::SparseMultiSet::Universe</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="124" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_sparse_multi_set_1aef597c1d5e3f4d977307ce5bf69e3ffe" prot="private" static="no" mutable="no">
+        <type>KeyFunctorT</type>
+        <definition>KeyFunctorT llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::KeyIndexOf</definition>
+        <argsstring></argsstring>
+        <name>KeyIndexOf</name>
+        <qualifiedname>llvm::SparseMultiSet::KeyIndexOf</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="125" column="15" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_sparse_multi_set_1a7cae4d2b1cf27f0463f51856ce7476af" prot="private" static="no" mutable="no">
+        <type><ref refid="structllvm_1_1_sparse_set_val_functor" kindref="compound">SparseSetValFunctor</ref>&lt; KeyT, <ref refid="class_value_t" kindref="compound">ValueT</ref>, KeyFunctorT &gt;</type>
+        <definition>SparseSetValFunctor&lt;KeyT, ValueT, KeyFunctorT&gt; llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::ValIndexOf</definition>
+        <argsstring></argsstring>
+        <name>ValIndexOf</name>
+        <qualifiedname>llvm::SparseMultiSet::ValIndexOf</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="126" column="23" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_sparse_multi_set_1af825be22b4ef291e85ef0f74b0a840f6" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::FreelistIdx</definition>
+        <argsstring></argsstring>
+        <name>FreelistIdx</name>
+        <qualifiedname>llvm::SparseMultiSet::FreelistIdx</qualifiedname>
+        <initializer>= SMSNode::INVALID</initializer>
+        <briefdescription>
+<para>We have a built-in recycler for reusing tombstone slots. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This recycler puts a singly-linked free list into tombstone slots, allowing us quick erasure, iterator preservation, and dense size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="131" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_sparse_multi_set_1ac1e9473acbb3ca404e3b57f2fc2afab2" prot="private" static="no" mutable="no">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::NumFree</definition>
+        <argsstring></argsstring>
+        <name>NumFree</name>
+        <qualifiedname>llvm::SparseMultiSet::NumFree</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="132" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a6c283a279de2c059b44b47055902d931" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::sparseIndex</definition>
+        <argsstring>(const ValueT &amp;Val) const</argsstring>
+        <name>sparseIndex</name>
+        <qualifiedname>llvm::SparseMultiSet::sparseIndex</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_value_t" kindref="compound">ValueT</ref> &amp;</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="134" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="134" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a616152c51e1d8fa2afc6fb4da430356f" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::sparseIndex</definition>
+        <argsstring>(const SMSNode &amp;N) const</argsstring>
+        <name>sparseIndex</name>
+        <qualifiedname>llvm::SparseMultiSet::sparseIndex</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> SMSNode &amp;</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="139" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="139" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a976d6c2891a6abc45814f504c0b8ea68" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::isHead</definition>
+        <argsstring>(const SMSNode &amp;D) const</argsstring>
+        <name>isHead</name>
+        <qualifiedname>llvm::SparseMultiSet::isHead</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> SMSNode &amp;</type>
+          <declname>D</declname>
+        </param>
+        <briefdescription>
+<para>Whether the given entry is the head of the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>List heads&apos;s previous pointers are to the tail of the list, allowing for efficient access to the list tail. D must be a valid entry node. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="144" column="8" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1afd07013b976c74dc76fc24246a182e15" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::isSingleton</definition>
+        <argsstring>(const SMSNode &amp;N) const</argsstring>
+        <name>isSingleton</name>
+        <qualifiedname>llvm::SparseMultiSet::isSingleton</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> SMSNode &amp;</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Whether the given entry is a singleton entry, i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>the only entry with that key. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="151" column="8" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="151" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a8187526ec61c0b1bcc4b402c702793e5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+        <definition>unsigned llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::addValue</definition>
+        <argsstring>(const ValueT &amp;V, unsigned Prev, unsigned Next)</argsstring>
+        <name>addValue</name>
+        <qualifiedname>llvm::SparseMultiSet::addValue</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_value_t" kindref="compound">ValueT</ref> &amp;</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Prev</declname>
+        </param>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Next</declname>
+        </param>
+        <briefdescription>
+<para>Add in the given SMSNode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses a free entry in our freelist if available. Returns the index of the added node. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="159" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="159" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1aa5bff4e7767b1cee69df628fa5319fa6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::makeTombstone</definition>
+        <argsstring>(unsigned Idx)</argsstring>
+        <name>makeTombstone</name>
+        <qualifiedname>llvm::SparseMultiSet::makeTombstone</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <briefdescription>
+<para>Make the current index a new tombstone. Pushes it onto the freelist. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="177" column="8" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="177" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1addec8e14b0fbd90dd80040e5508ebd19" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" kindref="member">iterator</ref></type>
+        <definition>iterator llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::unlink</definition>
+        <argsstring>(const SMSNode &amp;N)</argsstring>
+        <name>unlink</name>
+        <qualifiedname>llvm::SparseMultiSet::unlink</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> SMSNode &amp;</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Unlink the node from its list. Returns the next node in the list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="489" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="489" bodyend="517"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1ac25748f56dc1c73fd9c021d5dbc751bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::SparseMultiSet</definition>
+        <argsstring>()=default</argsstring>
+        <name>SparseMultiSet</name>
+        <qualifiedname>llvm::SparseMultiSet::SparseMultiSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="192" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a8943b7ab698dabcabebe73bb98fe340c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::SparseMultiSet</definition>
+        <argsstring>(const SparseMultiSet &amp;)=delete</argsstring>
+        <name>SparseMultiSet</name>
+        <qualifiedname>llvm::SparseMultiSet::SparseMultiSet</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_sparse_multi_set" kindref="compound">SparseMultiSet</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="193" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1aac9658f836f5eaea6f157afb14c7239a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set" kindref="compound">SparseMultiSet</ref> &amp;</type>
+        <definition>SparseMultiSet &amp; llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::operator=</definition>
+        <argsstring>(const SparseMultiSet &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>llvm::SparseMultiSet::operator=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_sparse_multi_set" kindref="compound">SparseMultiSet</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="194" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1ad48508707ac902124dfd05481728014f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::~SparseMultiSet</definition>
+        <argsstring>()</argsstring>
+        <name>~SparseMultiSet</name>
+        <qualifiedname>llvm::SparseMultiSet::~SparseMultiSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="195" column="3" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="195" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1af781b01667ff848f2b07b4b51660a714" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::setUniverse</definition>
+        <argsstring>(unsigned U)</argsstring>
+        <name>setUniverse</name>
+        <qualifiedname>llvm::SparseMultiSet::setUniverse</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+<para>Set the universe size which determines the largest key the set can hold. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The universe must be sized before any elements can be added.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Universe size. All object keys must be less than U. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="202" column="8" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="202" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a6123d1aa335e5d9c6299050c2cc5193e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" kindref="member">iterator</ref></type>
+        <definition>iterator llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <qualifiedname>llvm::SparseMultiSet::end</qualifiedname>
+        <briefdescription>
+<para>Returns an iterator past this container. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that such an iterator cannot be decremented, but will compare equal to other end iterators. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="319" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="319" bodyend="319"/>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1a14465cc22942098bf446b8d96d018cd4" compoundref="_sparse_multi_set_8h" startline="395" endline="397">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::contains</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1a7f0300f83a134efc4ff02bb922d10cd2" compoundref="_sparse_multi_set_8h" startline="386" endline="392">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::count</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1ab911382d02334b8421f4dbca8c53ff27" compoundref="_sparse_multi_set_8h" startline="482" endline="485">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::eraseAll</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1a16a780296035cd55839932310e5dc672" compoundref="_sparse_multi_set_8h" startline="354" endline="368">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::findIndex</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1aa107631835001303a52fc79b695d2f41" compoundref="_sparse_multi_set_8h" startline="401" endline="406">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::getTail</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1a8586fb88f0c2e2236a1552292cba1dd3" compoundref="_sparse_multi_set_8h" startline="419" endline="440">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::insert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a9dc8a38575ad6af2633fd5bd0e7aba9d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1a13be60676bc49a4629a0bfd8bf671174" kindref="member">const_iterator</ref></type>
+        <definition>const_iterator llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <qualifiedname>llvm::SparseMultiSet::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="320" column="18" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="320" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a02504d447f0362be1ffc1cc19f6e48ef" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>llvm::SparseMultiSet::empty</qualifiedname>
+        <briefdescription>
+<para>Returns true if the set is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is not the same as <ref refid="classllvm_1_1_bit_vector_1ae308e6ee93ceb33e921d72d659230669" kindref="member">BitVector::empty()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="328" column="8" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="328" bodyend="328"/>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1af781b01667ff848f2b07b4b51660a714" compoundref="_sparse_multi_set_8h" startline="202" endline="215">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::setUniverse</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a5bb43880c7874561f71afdebbc59e2ed" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1a3a0e116fdaa2041ec3d61c9d110b0c2f" kindref="member">size_type</ref></type>
+        <definition>size_type llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <qualifiedname>llvm::SparseMultiSet::size</qualifiedname>
+        <briefdescription>
+<para>Returns the number of elements in the set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is not the same as <ref refid="classllvm_1_1_bit_vector_1abf86e1383aec181a5a2d9967eb8070fd" kindref="member">BitVector::size()</ref> which returns the size of the universe. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="335" column="13" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="335" bodyend="338"/>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1a02504d447f0362be1ffc1cc19f6e48ef" compoundref="_sparse_multi_set_8h" startline="328" endline="328">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::empty</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a2554bf4e6f211e29c3e80fd4c9141c79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::SparseMultiSet::clear</qualifiedname>
+        <briefdescription>
+<para>Clears the set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a very fast constant time operation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="342" column="8" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="342" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a16a780296035cd55839932310e5dc672" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" kindref="member">iterator</ref></type>
+        <definition>iterator llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::findIndex</definition>
+        <argsstring>(unsigned Idx)</argsstring>
+        <name>findIndex</name>
+        <qualifiedname>llvm::SparseMultiSet::findIndex</qualifiedname>
+        <param>
+          <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
+          <declname>Idx</declname>
+        </param>
+        <briefdescription>
+<para>Find an element by its index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid index to find. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An iterator to the element identified by key, or <ref refid="classllvm_1_1_sparse_multi_set_1a6123d1aa335e5d9c6299050c2cc5193e" kindref="member">end()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="354" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="354" bodyend="368"/>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1a007d043f89bfaefaec158a7e93b39832" compoundref="_sparse_multi_set_8h" startline="375" endline="377">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::find</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1a61aff372ad2255f01e286bc010c9f575" compoundref="_sparse_multi_set_8h" startline="379" endline="382">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::find</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1a8586fb88f0c2e2236a1552292cba1dd3" compoundref="_sparse_multi_set_8h" startline="419" endline="440">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::insert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a007d043f89bfaefaec158a7e93b39832" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" kindref="member">iterator</ref></type>
+        <definition>iterator llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::find</definition>
+        <argsstring>(const KeyT &amp;Key)</argsstring>
+        <name>find</name>
+        <qualifiedname>llvm::SparseMultiSet::find</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> KeyT &amp;</type>
+          <declname>Key</declname>
+        </param>
+        <briefdescription>
+<para>Find an element by its key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid key to find. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An iterator to the element identified by key, or <ref refid="classllvm_1_1_sparse_multi_set_1a6123d1aa335e5d9c6299050c2cc5193e" kindref="member">end()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="375" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="375" bodyend="377"/>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1a14465cc22942098bf446b8d96d018cd4" compoundref="_sparse_multi_set_8h" startline="395" endline="397">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::contains</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1a7f0300f83a134efc4ff02bb922d10cd2" compoundref="_sparse_multi_set_8h" startline="386" endline="392">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::count</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1ac92517e8c9066cbd446b0589a50c16f6" compoundref="_sparse_multi_set_8h" startline="411" endline="415">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::equal_range</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1ab911382d02334b8421f4dbca8c53ff27" compoundref="_sparse_multi_set_8h" startline="482" endline="485">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::eraseAll</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1a9bbecf0bb2b7cc5819bb54f53fbf4622" compoundref="_sparse_multi_set_8h" startline="400" endline="400">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::getHead</referencedby>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1aa107631835001303a52fc79b695d2f41" compoundref="_sparse_multi_set_8h" startline="401" endline="406">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::getTail</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a61aff372ad2255f01e286bc010c9f575" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1a13be60676bc49a4629a0bfd8bf671174" kindref="member">const_iterator</ref></type>
+        <definition>const_iterator llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::find</definition>
+        <argsstring>(const KeyT &amp;Key) const</argsstring>
+        <name>find</name>
+        <qualifiedname>llvm::SparseMultiSet::find</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> KeyT &amp;</type>
+          <declname>Key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="379" column="18" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="379" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a7f0300f83a134efc4ff02bb922d10cd2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1a3a0e116fdaa2041ec3d61c9d110b0c2f" kindref="member">size_type</ref></type>
+        <definition>size_type llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::count</definition>
+        <argsstring>(const KeyT &amp;Key) const</argsstring>
+        <name>count</name>
+        <qualifiedname>llvm::SparseMultiSet::count</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> KeyT &amp;</type>
+          <declname>Key</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of elements identified by Key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This will be linear in the number of elements of that key. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="386" column="13" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="386" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a14465cc22942098bf446b8d96d018cd4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::contains</definition>
+        <argsstring>(const KeyT &amp;Key) const</argsstring>
+        <name>contains</name>
+        <qualifiedname>llvm::SparseMultiSet::contains</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> KeyT &amp;</type>
+          <declname>Key</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if this set contains an element identified by Key. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="395" column="8" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="395" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a9bbecf0bb2b7cc5819bb54f53fbf4622" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" kindref="member">iterator</ref></type>
+        <definition>iterator llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::getHead</definition>
+        <argsstring>(const KeyT &amp;Key)</argsstring>
+        <name>getHead</name>
+        <qualifiedname>llvm::SparseMultiSet::getHead</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> KeyT &amp;</type>
+          <declname>Key</declname>
+        </param>
+        <briefdescription>
+<para>Return the head and tail of the subset&apos;s list, otherwise returns <ref refid="classllvm_1_1_sparse_multi_set_1a6123d1aa335e5d9c6299050c2cc5193e" kindref="member">end()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="400" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="400" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1aa107631835001303a52fc79b695d2f41" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" kindref="member">iterator</ref></type>
+        <definition>iterator llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::getTail</definition>
+        <argsstring>(const KeyT &amp;Key)</argsstring>
+        <name>getTail</name>
+        <qualifiedname>llvm::SparseMultiSet::getTail</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> KeyT &amp;</type>
+          <declname>Key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="401" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="401" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1ac92517e8c9066cbd446b0589a50c16f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1aedf030829902cd1a8e3ed4a24820e3a7" kindref="member">RangePair</ref></type>
+        <definition>RangePair llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::equal_range</definition>
+        <argsstring>(const KeyT &amp;K)</argsstring>
+        <name>equal_range</name>
+        <qualifiedname>llvm::SparseMultiSet::equal_range</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> KeyT &amp;</type>
+          <declname>K</declname>
+        </param>
+        <briefdescription>
+<para>The bounds of the range of items sharing Key K. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>First member is the head of the list, and the second member is a decrementable end iterator for that key. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="411" column="13" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="411" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a8586fb88f0c2e2236a1552292cba1dd3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" kindref="member">iterator</ref></type>
+        <definition>iterator llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::insert</definition>
+        <argsstring>(const ValueT &amp;Val)</argsstring>
+        <name>insert</name>
+        <qualifiedname>llvm::SparseMultiSet::insert</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="class_value_t" kindref="compound">ValueT</ref> &amp;</type>
+          <declname>Val</declname>
+        </param>
+        <briefdescription>
+<para>Insert a new element at the tail of the subset list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an iterator to the newly added entry. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="419" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="419" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1a3ab390f0c1123852f16664da01de672a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" kindref="member">iterator</ref></type>
+        <definition>iterator llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::erase</definition>
+        <argsstring>(iterator I)</argsstring>
+        <name>erase</name>
+        <qualifiedname>llvm::SparseMultiSet::erase</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" kindref="member">iterator</ref></type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Erases an existing element identified by a valid iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This invalidates iterators pointing at the same entry, but <ref refid="classllvm_1_1_sparse_multi_set_1a3ab390f0c1123852f16664da01de672a" kindref="member">erase()</ref> returns an iterator pointing to the next element in the subset&apos;s list. This makes it possible to erase selected elements while iterating over the subset:</para>
+<para>tie(I, E) = Set.equal_range(Key); while (I != E) if (<ref refid="_modulo_schedule_8cpp_1a106e32122c569cdb42ddf61ecbb0aad1" kindref="member">test(*I)</ref>) I = Set.erase(I); else ++I;</para>
+<para>Note that if the last element in the subset list is erased, this will return an end iterator which can be decremented to get the new tail (if it exists):</para>
+<para>tie(B, I) = Set.equal_range(Key); for (bool isBegin = B == I; !isBegin; /* empty *<zwj/>/) { isBegin = (<ndash/>I) == B; if (<ref refid="_modulo_schedule_8cpp_1a106e32122c569cdb42ddf61ecbb0aad1" kindref="member">test(I)</ref>) break; I = erase(I); } </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="466" column="12" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="466" bodyend="478"/>
+        <referencedby refid="classllvm_1_1_sparse_multi_set_1ab911382d02334b8421f4dbca8c53ff27" compoundref="_sparse_multi_set_8h" startline="482" endline="485">llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;::eraseAll</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_sparse_multi_set_1ab911382d02334b8421f4dbca8c53ff27" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;::eraseAll</definition>
+        <argsstring>(const KeyT &amp;K)</argsstring>
+        <name>eraseAll</name>
+        <qualifiedname>llvm::SparseMultiSet::eraseAll</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> KeyT &amp;</type>
+          <declname>K</declname>
+        </param>
+        <briefdescription>
+<para>Erase all elements with the given key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This invalidates all iterators of that key. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/ADT/SparseMultiSet.h" line="482" column="8" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="482" bodyend="485"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Fast multiset implementation for objects that can be identified by small unsigned keys. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classllvm_1_1_sparse_multi_set" kindref="compound">SparseMultiSet</ref> allocates memory proportional to the size of the key universe, so it is not recommended for building composite data structures. It is useful for algorithms that require a single set with fast operations.</para>
+<para>Compared to <ref refid="classllvm_1_1_dense_set" kindref="compound">DenseSet</ref> and <ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>, <ref refid="classllvm_1_1_sparse_multi_set" kindref="compound">SparseMultiSet</ref> provides constant-time fast <ref refid="classllvm_1_1_sparse_multi_set_1a2554bf4e6f211e29c3e80fd4c9141c79" kindref="member">clear()</ref> as fast as a vector. The <ref refid="classllvm_1_1_sparse_multi_set_1a007d043f89bfaefaec158a7e93b39832" kindref="member">find()</ref>, <ref refid="classllvm_1_1_sparse_multi_set_1a8586fb88f0c2e2236a1552292cba1dd3" kindref="member">insert()</ref>, and <ref refid="classllvm_1_1_sparse_multi_set_1a3ab390f0c1123852f16664da01de672a" kindref="member">erase()</ref> operations are all constant time, and typically faster than a hash table. The iteration order doesn&apos;t depend on numerical key values, it only depends on the order of <ref refid="classllvm_1_1_sparse_multi_set_1a8586fb88f0c2e2236a1552292cba1dd3" kindref="member">insert()</ref> and <ref refid="classllvm_1_1_sparse_multi_set_1a3ab390f0c1123852f16664da01de672a" kindref="member">erase()</ref> operations. Iteration order is the insertion order. Iteration is only provided over elements of equivalent keys, but iterators are bidirectional.</para>
+<para>Compared to <ref refid="classllvm_1_1_bit_vector" kindref="compound">BitVector</ref>, SparseMultiSet&lt;unsigned&gt; uses 8x-40x more memory, but offers constant-time <ref refid="classllvm_1_1_sparse_multi_set_1a2554bf4e6f211e29c3e80fd4c9141c79" kindref="member">clear()</ref> and <ref refid="_n_v_v_m_reflect_8cpp_1ac934769d93af95250952646a3829df4c" kindref="member">size()</ref> operations as well as fast iteration independent on the size of the universe.</para>
+<para><ref refid="classllvm_1_1_sparse_multi_set" kindref="compound">SparseMultiSet</ref> contains a dense vector holding all the objects and a sparse array holding indexes into the dense vector. Most of the memory is used by the sparse array which is the size of the key universe. The SparseT template parameter provides a space/speed tradeoff for sets holding many elements.</para>
+<para>When SparseT is <ref refid="classuint32__t" kindref="compound">uint32_t</ref>, <ref refid="classllvm_1_1_sparse_multi_set_1a007d043f89bfaefaec158a7e93b39832" kindref="member">find()</ref> only touches up to 3 cache lines, but the sparse array uses 4 x Universe bytes.</para>
+<para>When SparseT is <ref refid="classuint8__t" kindref="compound">uint8_t</ref> (the default), <ref refid="classllvm_1_1_sparse_multi_set_1a007d043f89bfaefaec158a7e93b39832" kindref="member">find()</ref> touches up to 3+[N/256] cache lines, but the sparse array is 4x smaller. N is the number of elements in the set.</para>
+<para>For sets that may grow to thousands of elements, SparseT should be set to <ref refid="classuint16__t" kindref="compound">uint16_t</ref> or <ref refid="classuint32__t" kindref="compound">uint32_t</ref>.</para>
+<para>Multiset behavior is provided by providing doubly linked lists for values that are inlined in the dense vector. <ref refid="classllvm_1_1_sparse_multi_set" kindref="compound">SparseMultiSet</ref> is a good choice when one desires a growable number of entries per key, as it will retain the <ref refid="classllvm_1_1_sparse_set" kindref="compound">SparseSet</ref> algorithmic properties despite being growable. Thus, it is often a better choice than a <ref refid="classllvm_1_1_sparse_set" kindref="compound">SparseSet</ref> of growable containers or a vector of vectors. <ref refid="classllvm_1_1_sparse_multi_set" kindref="compound">SparseMultiSet</ref> also keeps iterators valid after erasure (provided the iterators don&apos;t point to the element erased), allowing for more intuitive and fast removal.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_value_t" kindref="compound">ValueT</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of objects in the set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>KeyFunctorT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A functor that computes an unsigned index from <ref refid="class_key_t" kindref="compound">KeyT</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SparseT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An unsigned integer type. See above. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>llvm::SparseMultiSet&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;</label>
+        <link refid="classllvm_1_1_sparse_multi_set"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; PhysRegSUOper, identity&lt; unsigned &gt;, uint16_t &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>llvm::SparseMultiSet&lt; VReg2SUnit, VirtReg2IndexFunctor &gt;</label>
+        <link refid="classllvm_1_1_sparse_multi_set"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; VReg2SUnit, VirtReg2IndexFunctor &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>llvm::SparseMultiSet&lt; VReg2SUnitOperIdx, VirtReg2IndexFunctor &gt;</label>
+        <link refid="classllvm_1_1_sparse_multi_set"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; VReg2SUnitOperIdx, VirtReg2IndexFunctor &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::SparseMultiSet&lt; ValueT, KeyFunctorT, SparseT &gt;</label>
+        <link refid="classllvm_1_1_sparse_multi_set"/>
+      </node>
+    </inheritancegraph>
+    <location file="include/llvm/ADT/SparseMultiSet.h" line="86" column="1" bodyfile="include/llvm/ADT/SparseMultiSet.h" bodystart="86" bodyend="518"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_sparse_multi_set_1a8187526ec61c0b1bcc4b402c702793e5" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>addValue</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a2554bf4e6f211e29c3e80fd4c9141c79" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>clear</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a13be60676bc49a4629a0bfd8bf671174" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>const_iterator</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1ad1badaaa7449797da1b668e687b6de23" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>const_pointer</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a8b3f3a95746eeb974958d3605c8c2521" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>const_reference</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a14465cc22942098bf446b8d96d018cd4" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>contains</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a7f0300f83a134efc4ff02bb922d10cd2" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>count</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a3d5c7c332cc0b999f4c9ebd6d8c78a7a" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>Dense</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1ab4ce4893dc34479447853671cf8b5253" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>DenseT</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a02504d447f0362be1ffc1cc19f6e48ef" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>empty</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a6123d1aa335e5d9c6299050c2cc5193e" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>end</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a9dc8a38575ad6af2633fd5bd0e7aba9d" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>end</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1ac92517e8c9066cbd446b0589a50c16f6" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>equal_range</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a3ab390f0c1123852f16664da01de672a" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>erase</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1ab911382d02334b8421f4dbca8c53ff27" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>eraseAll</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a007d043f89bfaefaec158a7e93b39832" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>find</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a61aff372ad2255f01e286bc010c9f575" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>find</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a16a780296035cd55839932310e5dc672" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>findIndex</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1af825be22b4ef291e85ef0f74b0a840f6" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>FreelistIdx</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a9bbecf0bb2b7cc5819bb54f53fbf4622" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>getHead</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1aa107631835001303a52fc79b695d2f41" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>getTail</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a8586fb88f0c2e2236a1552292cba1dd3" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>insert</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a976d6c2891a6abc45814f504c0b8ea68" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>isHead</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1afd07013b976c74dc76fc24246a182e15" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>isSingleton</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1ada97379dfb89c01fb4065e33bf180f0e" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>iterator</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1aef597c1d5e3f4d977307ce5bf69e3ffe" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>KeyIndexOf</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1ad039913e011b603056874997f4ccc438" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>KeyT</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1aa5bff4e7767b1cee69df628fa5319fa6" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>makeTombstone</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1ac1e9473acbb3ca404e3b57f2fc2afab2" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>NumFree</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1aac9658f836f5eaea6f157afb14c7239a" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>operator=</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a4cfb52a7ffa678488c329f891f823338" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>pointer</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1aedf030829902cd1a8e3ed4a24820e3a7" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>RangePair</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a5c3aafdeec18d298f96df3eb4b46ada2" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>reference</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1af781b01667ff848f2b07b4b51660a714" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>setUniverse</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a5bb43880c7874561f71afdebbc59e2ed" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>size</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a3a0e116fdaa2041ec3d61c9d110b0c2f" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>size_type</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a677c556469b7f6237a95eefa14776f01" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>Sparse</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a6c283a279de2c059b44b47055902d931" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>sparseIndex</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a616152c51e1d8fa2afc6fb4da430356f" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>sparseIndex</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1ac25748f56dc1c73fd9c021d5dbc751bd" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>SparseMultiSet</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a8943b7ab698dabcabebe73bb98fe340c" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>SparseMultiSet</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1ae3a33a15ec5113d36ae441f2a111daa3" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>Universe</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1addec8e14b0fbd90dd80040e5508ebd19" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>unlink</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1a7cae4d2b1cf27f0463f51856ce7476af" prot="private" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>ValIndexOf</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1ab8dffcfeacb8cce39fd14cceadb3ceea" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>value_type</name></member>
+      <member refid="classllvm_1_1_sparse_multi_set_1ad48508707ac902124dfd05481728014f" prot="public" virt="non-virtual"><scope>llvm::SparseMultiSet</scope><name>~SparseMultiSet</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

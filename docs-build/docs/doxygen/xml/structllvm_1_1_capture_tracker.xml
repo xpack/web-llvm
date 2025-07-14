@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structllvm_1_1_capture_tracker" kind="struct" language="C++" prot="public" abstract="yes">
+    <compoundname>llvm::CaptureTracker</compoundname>
+    <derivedcompoundref refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_captures_before" prot="public" virt="non-virtual">anonymous_namespace{CaptureTracking.cpp}::CapturesBefore</derivedcompoundref>
+    <derivedcompoundref refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_earliest_captures" prot="public" virt="non-virtual">anonymous_namespace{CaptureTracking.cpp}::EarliestCaptures</derivedcompoundref>
+    <derivedcompoundref refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_simple_capture_tracker" prot="public" virt="non-virtual">anonymous_namespace{CaptureTracking.cpp}::SimpleCaptureTracker</derivedcompoundref>
+    <derivedcompoundref refid="structanonymous__namespace_02_function_attrs_8cpp_03_1_1_argument_uses_tracker" prot="public" virt="non-virtual">anonymous_namespace{FunctionAttrs.cpp}::ArgumentUsesTracker</derivedcompoundref>
+    <includes refid="_capture_tracking_8h" local="yes">llvm/Analysis/CaptureTracking.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structllvm_1_1_capture_tracker_1aae5a13586806eb127d41a16c178ec15f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>CaptureTracker::~CaptureTracker</definition>
+        <argsstring>()</argsstring>
+        <name>~CaptureTracker</name>
+        <qualifiedname>llvm::CaptureTracker::~CaptureTracker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CaptureTracking.h" line="84" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_capture_tracker_1a736d928ff83259d1318e7f3bd079cfa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void llvm::CaptureTracker::tooManyUses</definition>
+        <argsstring>()=0</argsstring>
+        <name>tooManyUses</name>
+        <qualifiedname>llvm::CaptureTracker::tooManyUses</qualifiedname>
+        <reimplementedby refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_captures_before_1ab81680d41e08ed51e46429695b9ed780">tooManyUses</reimplementedby>
+        <reimplementedby refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_earliest_captures_1a9bee3cf935e17c24637319fc402e1667">tooManyUses</reimplementedby>
+        <reimplementedby refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_simple_capture_tracker_1ad5a1c4d387d926c0b09402e1e1e0c9e0">tooManyUses</reimplementedby>
+        <reimplementedby refid="structanonymous__namespace_02_function_attrs_8cpp_03_1_1_argument_uses_tracker_1ac3159d15771421a42528b46cf900a56c">tooManyUses</reimplementedby>
+        <briefdescription>
+<para>tooManyUses - The depth of traversal has breached a limit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There may be capturing instructions that will not be passed into <ref refid="structllvm_1_1_capture_tracker_1ae3425ae1022a2f2713b0047bb12a468d" kindref="member">captured()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CaptureTracking.h" line="88" column="18"/>
+        <referencedby refid="_instruction_simplify_8cpp_1aec29f5580509ec9a7592200e09b7aa27" compoundref="_instruction_simplify_8cpp" startline="2683" endline="2829">computePointerICmp</referencedby>
+        <referencedby refid="namespacellvm_1a89d936a98d65c79ddb962452b2d670bd" compoundref="_capture_tracking_8cpp" startline="407" endline="456">llvm::PointerMayBeCaptured</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_capture_tracker_1a14c74061cc326f6b674c5b11c2e8420f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CaptureTracker::shouldExplore</definition>
+        <argsstring>(const Use *U)</argsstring>
+        <name>shouldExplore</name>
+        <qualifiedname>llvm::CaptureTracker::shouldExplore</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> *</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+<para>shouldExplore - This is the use of a value derived from the pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To prune the search (ie., assume that none of its users could possibly capture) return false. To search it, return true.</para>
+<para>U-&gt;getUser() is always an <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CaptureTracking.h" line="95" column="18" bodyfile="lib/Analysis/CaptureTracking.cpp" bodystart="57" bodyend="57"/>
+        <referencedby refid="namespacellvm_1a89d936a98d65c79ddb962452b2d670bd" compoundref="_capture_tracking_8cpp" startline="407" endline="456">llvm::PointerMayBeCaptured</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_capture_tracker_1ae3425ae1022a2f2713b0047bb12a468d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>virtual bool llvm::CaptureTracker::captured</definition>
+        <argsstring>(const Use *U)=0</argsstring>
+        <name>captured</name>
+        <qualifiedname>llvm::CaptureTracker::captured</qualifiedname>
+        <reimplementedby refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_captures_before_1a3cff3d7972218ba6932358aff66905fe">captured</reimplementedby>
+        <reimplementedby refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_earliest_captures_1acc3304c7668514d15b7e9d6d61676ce5">captured</reimplementedby>
+        <reimplementedby refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_simple_capture_tracker_1a6134360027974f69765c931b0c22074e">captured</reimplementedby>
+        <reimplementedby refid="structanonymous__namespace_02_function_attrs_8cpp_03_1_1_argument_uses_tracker_1aa35ba8c73830d12eea5dda2a41aba718">captured</reimplementedby>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_use" kindref="compound">Use</ref> *</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+<para>captured - Information about the pointer was captured by the user of use U. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true to stop the traversal or false to continue looking for more capturing instructions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CaptureTracking.h" line="100" column="18"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <referencedby refid="_instruction_simplify_8cpp_1aec29f5580509ec9a7592200e09b7aa27" compoundref="_instruction_simplify_8cpp" startline="2683" endline="2829">computePointerICmp</referencedby>
+        <referencedby refid="namespacellvm_1a89d936a98d65c79ddb962452b2d670bd" compoundref="_capture_tracking_8cpp" startline="407" endline="456">llvm::PointerMayBeCaptured</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structllvm_1_1_capture_tracker_1a684899edefe864cb9411de38e995986c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool CaptureTracker::isDereferenceableOrNull</definition>
+        <argsstring>(Value *O, const DataLayout &amp;DL)</argsstring>
+        <name>isDereferenceableOrNull</name>
+        <qualifiedname>llvm::CaptureTracker::isDereferenceableOrNull</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
+          <declname>O</declname>
+        </param>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_data_layout" kindref="compound">DataLayout</ref> &amp;</type>
+          <declname>DL</declname>
+        </param>
+        <briefdescription>
+<para>isDereferenceableOrNull - Overload to allow clients with additional knowledge about pointer dereferenceability to provide it and thereby avoid conservative responses when a pointer is compared to null. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/Analysis/CaptureTracking.h" line="105" column="18" bodyfile="lib/Analysis/CaptureTracking.cpp" bodystart="59" bodyend="72"/>
+        <references refid="_a_r_m_s_l_s_hardening_8cpp_1ad467c4ab9119043f9b7750ab986be61a" compoundref="_a_r_m_s_l_s_hardening_8cpp" startline="73">DL</references>
+        <referencedby refid="namespacellvm_1a89d936a98d65c79ddb962452b2d670bd" compoundref="_capture_tracking_8cpp" startline="407" endline="456">llvm::PointerMayBeCaptured</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This callback is used in conjunction with PointerMayBeCaptured. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>In addition to the interface here, you&apos;ll need to provide your own getters to see whether anything was captured. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>anonymous_namespace{CaptureTracking.cpp}::CapturesBefore</label>
+        <link refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_captures_before"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>anonymous_namespace{CaptureTracking.cpp}::EarliestCaptures</label>
+        <link refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_earliest_captures"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>anonymous_namespace{CaptureTracking.cpp}::SimpleCaptureTracker</label>
+        <link refid="structanonymous__namespace_02_capture_tracking_8cpp_03_1_1_simple_capture_tracker"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>anonymous_namespace{FunctionAttrs.cpp}::ArgumentUsesTracker</label>
+        <link refid="structanonymous__namespace_02_function_attrs_8cpp_03_1_1_argument_uses_tracker"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::CaptureTracker</label>
+        <link refid="structllvm_1_1_capture_tracker"/>
+      </node>
+    </inheritancegraph>
+    <location file="include/llvm/Analysis/CaptureTracking.h" line="83" column="3" bodyfile="include/llvm/Analysis/CaptureTracking.h" bodystart="83" bodyend="106"/>
+    <listofallmembers>
+      <member refid="structllvm_1_1_capture_tracker_1ae3425ae1022a2f2713b0047bb12a468d" prot="public" virt="pure-virtual"><scope>llvm::CaptureTracker</scope><name>captured</name></member>
+      <member refid="structllvm_1_1_capture_tracker_1a684899edefe864cb9411de38e995986c" prot="public" virt="virtual"><scope>llvm::CaptureTracker</scope><name>isDereferenceableOrNull</name></member>
+      <member refid="structllvm_1_1_capture_tracker_1a14c74061cc326f6b674c5b11c2e8420f" prot="public" virt="virtual"><scope>llvm::CaptureTracker</scope><name>shouldExplore</name></member>
+      <member refid="structllvm_1_1_capture_tracker_1a736d928ff83259d1318e7f3bd079cfa8" prot="public" virt="pure-virtual"><scope>llvm::CaptureTracker</scope><name>tooManyUses</name></member>
+      <member refid="structllvm_1_1_capture_tracker_1aae5a13586806eb127d41a16c178ec15f" prot="public" virt="virtual"><scope>llvm::CaptureTracker</scope><name>~CaptureTracker</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

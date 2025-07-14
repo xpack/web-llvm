@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1_g_c_strategy" kind="class" language="C++" prot="public">
+    <compoundname>llvm::GCStrategy</compoundname>
+    <derivedcompoundref refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_core_c_l_r_g_c" prot="public" virt="non-virtual">anonymous_namespace{BuiltinGCs.cpp}::CoreCLRGC</derivedcompoundref>
+    <derivedcompoundref refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_erlang_g_c" prot="public" virt="non-virtual">anonymous_namespace{BuiltinGCs.cpp}::ErlangGC</derivedcompoundref>
+    <derivedcompoundref refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_ocaml_g_c" prot="public" virt="non-virtual">anonymous_namespace{BuiltinGCs.cpp}::OcamlGC</derivedcompoundref>
+    <derivedcompoundref refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_shadow_stack_g_c" prot="public" virt="non-virtual">anonymous_namespace{BuiltinGCs.cpp}::ShadowStackGC</derivedcompoundref>
+    <derivedcompoundref refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_statepoint_g_c" prot="public" virt="non-virtual">anonymous_namespace{BuiltinGCs.cpp}::StatepointGC</derivedcompoundref>
+    <includes refid="_g_c_strategy_8h" local="yes">llvm/IR/GCStrategy.h</includes>
+    <sectiondef kind="user-defined">
+      <header>Statepoint Specific Properties</header>
+      <memberdef kind="function" id="classllvm_1_1_g_c_strategy_1a6bbb5320403c4748de766cc6efc5e55e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::optional&lt; <ref refid="classbool" kindref="compound">bool</ref> &gt;</type>
+        <definition>virtual std::optional&lt; bool &gt; llvm::GCStrategy::isGCManagedPointer</definition>
+        <argsstring>(const Type *Ty) const</argsstring>
+        <name>isGCManagedPointer</name>
+        <qualifiedname>llvm::GCStrategy::isGCManagedPointer</qualifiedname>
+        <reimplementedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_core_c_l_r_g_c_1a7b5844a0f3f8ef4d67cd6603f7ab3e49">isGCManagedPointer</reimplementedby>
+        <reimplementedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_statepoint_g_c_1a32fa2acd693359684d5659d41ef2f02e">isGCManagedPointer</reimplementedby>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_type" kindref="compound">Type</ref> *</type>
+          <declname>Ty</declname>
+        </param>
+        <briefdescription>
+<para>If the type specified can be reliably distinguished, returns true for pointers to GC managed locations and false for pointers to non-GC managed locations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note a <ref refid="classllvm_1_1_g_c_strategy" kindref="compound">GCStrategy</ref> can always return &apos;std::nullopt&apos; (i.e. an empty optional indicating it can&apos;t reliably distinguish. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="101" column="25" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="101" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_c_strategy_1a86859e2cfd56ae04d6baef2f512e22fd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GCStrategy::useRS4GC</definition>
+        <argsstring>() const</argsstring>
+        <name>useRS4GC</name>
+        <qualifiedname>llvm::GCStrategy::useRS4GC</qualifiedname>
+        <briefdescription>
+<para>Returns true if the <ref refid="structllvm_1_1_rewrite_statepoints_for_g_c" kindref="compound">RewriteStatepointsForGC</ref> pass should run on functions using this GC. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="107" column="8" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="107" bodyend="111"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="classllvm_1_1_g_c_strategy_1a32c75ebeabf283b9a98b1b5641a2885e" compoundref="_g_c_strategy_8h" startline="74">UseRS4GC</references>
+        <references refid="classllvm_1_1_g_c_strategy_1a7b2fe86699990ff4cec0233e3daf651d" compoundref="_g_c_strategy_8h" startline="92" endline="92">useStatepoints</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>GCRoot Specific Properties</header>
+      <description><para>These properties and overrides only apply to collector strategies using <ref refid="structllvm_1_1_g_c_root" kindref="compound">GCRoot</ref>. </para>
+</description>
+      <memberdef kind="function" id="classllvm_1_1_g_c_strategy_1a80ea3bc520b9a03eae28fc6857a79f24" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GCStrategy::needsSafePoints</definition>
+        <argsstring>() const</argsstring>
+        <name>needsSafePoints</name>
+        <qualifiedname>llvm::GCStrategy::needsSafePoints</qualifiedname>
+        <briefdescription>
+<para>True if safe points need to be inferred on call sites. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="127" column="8" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="127" bodyend="127"/>
+        <references refid="classllvm_1_1_g_c_strategy_1a876df2ee9b43a6e37c7e25cdbc5ee458" compoundref="_g_c_strategy_8h" startline="79">NeededSafePoints</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classllvm_1_1_g_c_strategy_1a5b0052c613569d8b1bd3b87a3e133423" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class GCModuleInfo</definition>
+        <argsstring></argsstring>
+        <name>GCModuleInfo</name>
+        <qualifiedname>llvm::GCStrategy::GCModuleInfo</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_g_c_module_info" kindref="compound">GCModuleInfo</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="65" column="16" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="65" bodyend="-1"/>
+        <references refid="classllvm_1_1_g_c_strategy_1a5b0052c613569d8b1bd3b87a3e133423" compoundref="_g_c_strategy_8h" startline="65">GCModuleInfo</references>
+        <referencedby refid="classllvm_1_1_g_c_strategy_1a5b0052c613569d8b1bd3b87a3e133423" compoundref="_g_c_strategy_8h" startline="65">GCModuleInfo</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_g_c_strategy_1a2b41b74548936c21212303f8626286e6" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string llvm::GCStrategy::Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <qualifiedname>llvm::GCStrategy::Name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="67" column="15" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classllvm_1_1_g_c_strategy_1a6d4b88865bc96bd6a93c3076e210af61" prot="protected" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GCStrategy::UseStatepoints</definition>
+        <argsstring></argsstring>
+        <name>UseStatepoints</name>
+        <qualifiedname>llvm::GCStrategy::UseStatepoints</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="70" column="8" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_core_c_l_r_g_c_1ad855caa394ad8edf75f93cbd521dee22" compoundref="_builtin_g_cs_8cpp" startline="100" endline="107">anonymous_namespace{BuiltinGCs.cpp}::CoreCLRGC::CoreCLRGC</referencedby>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_statepoint_g_c_1ad783af64abf7eede187e42abfcbd4f22" compoundref="_builtin_g_cs_8cpp" startline="67" endline="74">anonymous_namespace{BuiltinGCs.cpp}::StatepointGC::StatepointGC</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_strategy_1a7b2fe86699990ff4cec0233e3daf651d" compoundref="_g_c_strategy_8h" startline="92" endline="92">useStatepoints</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_c_strategy_1a32c75ebeabf283b9a98b1b5641a2885e" prot="protected" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GCStrategy::UseRS4GC</definition>
+        <argsstring></argsstring>
+        <name>UseRS4GC</name>
+        <qualifiedname>llvm::GCStrategy::UseRS4GC</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Uses gc.statepoints as opposed to gc.roots, if set, NeededSafePoints and UsesMetadata should be left at their default values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="74" column="8" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_core_c_l_r_g_c_1ad855caa394ad8edf75f93cbd521dee22" compoundref="_builtin_g_cs_8cpp" startline="100" endline="107">anonymous_namespace{BuiltinGCs.cpp}::CoreCLRGC::CoreCLRGC</referencedby>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_statepoint_g_c_1ad783af64abf7eede187e42abfcbd4f22" compoundref="_builtin_g_cs_8cpp" startline="67" endline="74">anonymous_namespace{BuiltinGCs.cpp}::StatepointGC::StatepointGC</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_strategy_1a86859e2cfd56ae04d6baef2f512e22fd" compoundref="_g_c_strategy_8h" startline="107" endline="111">useRS4GC</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_c_strategy_1a876df2ee9b43a6e37c7e25cdbc5ee458" prot="protected" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GCStrategy::NeededSafePoints</definition>
+        <argsstring></argsstring>
+        <name>NeededSafePoints</name>
+        <qualifiedname>llvm::GCStrategy::NeededSafePoints</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>If UseStatepoints is set, this determines whether the <ref refid="structllvm_1_1_rewrite_statepoints_for_g_c" kindref="compound">RewriteStatepointsForGC</ref> pass should rewrite this function&apos;s calls. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This should only be set if UseStatepoints is set. if set, calls are inferred to be safepoints </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="79" column="8" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_core_c_l_r_g_c_1ad855caa394ad8edf75f93cbd521dee22" compoundref="_builtin_g_cs_8cpp" startline="100" endline="107">anonymous_namespace{BuiltinGCs.cpp}::CoreCLRGC::CoreCLRGC</referencedby>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_erlang_g_c_1a448b4082c6e640d8c6373f86896ea839" compoundref="_builtin_g_cs_8cpp" startline="29" endline="32">anonymous_namespace{BuiltinGCs.cpp}::ErlangGC::ErlangGC</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_strategy_1a80ea3bc520b9a03eae28fc6857a79f24" compoundref="_g_c_strategy_8h" startline="127" endline="127">needsSafePoints</referencedby>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_ocaml_g_c_1a5f857693031a2dc678526f64cc899121" compoundref="_builtin_g_cs_8cpp" startline="40" endline="43">anonymous_namespace{BuiltinGCs.cpp}::OcamlGC::OcamlGC</referencedby>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_statepoint_g_c_1ad783af64abf7eede187e42abfcbd4f22" compoundref="_builtin_g_cs_8cpp" startline="67" endline="74">anonymous_namespace{BuiltinGCs.cpp}::StatepointGC::StatepointGC</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classllvm_1_1_g_c_strategy_1a5d53780e41b87b0b8cb0e4a822f38281" prot="protected" static="no" mutable="no">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GCStrategy::UsesMetadata</definition>
+        <argsstring></argsstring>
+        <name>UsesMetadata</name>
+        <qualifiedname>llvm::GCStrategy::UsesMetadata</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>If set, backend must emit metadata tables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="80" column="8" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_core_c_l_r_g_c_1ad855caa394ad8edf75f93cbd521dee22" compoundref="_builtin_g_cs_8cpp" startline="100" endline="107">anonymous_namespace{BuiltinGCs.cpp}::CoreCLRGC::CoreCLRGC</referencedby>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_erlang_g_c_1a448b4082c6e640d8c6373f86896ea839" compoundref="_builtin_g_cs_8cpp" startline="29" endline="32">anonymous_namespace{BuiltinGCs.cpp}::ErlangGC::ErlangGC</referencedby>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_ocaml_g_c_1a5f857693031a2dc678526f64cc899121" compoundref="_builtin_g_cs_8cpp" startline="40" endline="43">anonymous_namespace{BuiltinGCs.cpp}::OcamlGC::OcamlGC</referencedby>
+        <referencedby refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_statepoint_g_c_1ad783af64abf7eede187e42abfcbd4f22" compoundref="_builtin_g_cs_8cpp" startline="67" endline="74">anonymous_namespace{BuiltinGCs.cpp}::StatepointGC::StatepointGC</referencedby>
+        <referencedby refid="classllvm_1_1_g_c_strategy_1a79b51aca35066f7e941e54bb504d8755" compoundref="_g_c_strategy_8h" startline="118" endline="118">usesMetadata</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1_g_c_strategy_1abc5b7efa0f9360dac6bbd35ab553cb0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GCStrategy::GCStrategy</definition>
+        <argsstring>()</argsstring>
+        <name>GCStrategy</name>
+        <qualifiedname>llvm::GCStrategy::GCStrategy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="83" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_c_strategy_1aed755642573059053607d5642eb99da9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual llvm::GCStrategy::~GCStrategy</definition>
+        <argsstring>()=default</argsstring>
+        <name>~GCStrategy</name>
+        <qualifiedname>llvm::GCStrategy::~GCStrategy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="84" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_c_strategy_1ae253aa14fb9f8582e089850f07616599" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> std::string &amp;</type>
+        <definition>const std::string &amp; llvm::GCStrategy::getName</definition>
+        <argsstring>() const</argsstring>
+        <name>getName</name>
+        <qualifiedname>llvm::GCStrategy::getName</qualifiedname>
+        <briefdescription>
+<para>Return the name of the GC strategy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the value of the collector name string specified on functions which use this strategy. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="88" column="21" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="88" bodyend="88"/>
+        <referencedby refid="classanonymous__namespace_02_erlang_g_c_printer_8cpp_03_1_1_erlang_g_c_printer_1a574679a34186d5db3a7b14b0ce5c5078" compoundref="_erlang_g_c_printer_8cpp" startline="42" endline="115">anonymous_namespace{ErlangGCPrinter.cpp}::ErlangGCPrinter::finishAssembly</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_c_strategy_1a7b2fe86699990ff4cec0233e3daf651d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GCStrategy::useStatepoints</definition>
+        <argsstring>() const</argsstring>
+        <name>useStatepoints</name>
+        <qualifiedname>llvm::GCStrategy::useStatepoints</qualifiedname>
+        <briefdescription>
+<para>Returns true if this strategy is expecting the use of gc.statepoints, and false otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="92" column="8" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="92" bodyend="92"/>
+        <references refid="classllvm_1_1_g_c_strategy_1a6d4b88865bc96bd6a93c3076e210af61" compoundref="_g_c_strategy_8h" startline="70">UseStatepoints</references>
+        <referencedby refid="classllvm_1_1_g_c_strategy_1a86859e2cfd56ae04d6baef2f512e22fd" compoundref="_g_c_strategy_8h" startline="107" endline="111">useRS4GC</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1_g_c_strategy_1a79b51aca35066f7e941e54bb504d8755" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::GCStrategy::usesMetadata</definition>
+        <argsstring>() const</argsstring>
+        <name>usesMetadata</name>
+        <qualifiedname>llvm::GCStrategy::usesMetadata</qualifiedname>
+        <briefdescription>
+<para>If set, appropriate metadata tables must be emitted by the back-end (assembler, JIT, or otherwise). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default stackmap information can be found in the StackMap section as described in the documentation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/IR/GCStrategy.h" line="118" column="8" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="118" bodyend="118"/>
+        <references refid="classllvm_1_1_g_c_strategy_1a5d53780e41b87b0b8cb0e4a822f38281" compoundref="_g_c_strategy_8h" startline="80">UsesMetadata</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1_g_c_strategy" kindref="compound">GCStrategy</ref> describes a garbage collector algorithm&apos;s code generation requirements, and provides overridable hooks for those needs which cannot be abstractly described. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classllvm_1_1_g_c_strategy" kindref="compound">GCStrategy</ref> objects must be looked up through the <ref refid="classllvm_1_1_function" kindref="compound">Function</ref>. The objects themselves are owned by the Context and must be immutable. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>anonymous_namespace{BuiltinGCs.cpp}::CoreCLRGC</label>
+        <link refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_core_c_l_r_g_c"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>anonymous_namespace{BuiltinGCs.cpp}::ErlangGC</label>
+        <link refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_erlang_g_c"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>anonymous_namespace{BuiltinGCs.cpp}::OcamlGC</label>
+        <link refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_ocaml_g_c"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>anonymous_namespace{BuiltinGCs.cpp}::ShadowStackGC</label>
+        <link refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_shadow_stack_g_c"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>anonymous_namespace{BuiltinGCs.cpp}::StatepointGC</label>
+        <link refid="classanonymous__namespace_02_builtin_g_cs_8cpp_03_1_1_statepoint_g_c"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>llvm::GCStrategy</label>
+        <link refid="classllvm_1_1_g_c_strategy"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>bool</label>
+        <link refid="classbool"/>
+      </node>
+      <node id="1">
+        <label>llvm::GCStrategy</label>
+        <link refid="classllvm_1_1_g_c_strategy"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>NeededSafePoints</edgelabel>
+          <edgelabel>UseRS4GC</edgelabel>
+          <edgelabel>UseStatepoints</edgelabel>
+          <edgelabel>UsesMetadata</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/llvm/IR/GCStrategy.h" line="63" column="1" bodyfile="include/llvm/IR/GCStrategy.h" bodystart="63" bodyend="130"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1_g_c_strategy_1a5b0052c613569d8b1bd3b87a3e133423" prot="private" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>GCModuleInfo</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1abc5b7efa0f9360dac6bbd35ab553cb0d" prot="public" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>GCStrategy</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1ae253aa14fb9f8582e089850f07616599" prot="public" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>getName</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1a6bbb5320403c4748de766cc6efc5e55e" prot="public" virt="virtual"><scope>llvm::GCStrategy</scope><name>isGCManagedPointer</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1a2b41b74548936c21212303f8626286e6" prot="private" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>Name</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1a876df2ee9b43a6e37c7e25cdbc5ee458" prot="protected" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>NeededSafePoints</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1a80ea3bc520b9a03eae28fc6857a79f24" prot="public" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>needsSafePoints</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1a32c75ebeabf283b9a98b1b5641a2885e" prot="protected" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>UseRS4GC</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1a86859e2cfd56ae04d6baef2f512e22fd" prot="public" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>useRS4GC</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1a5d53780e41b87b0b8cb0e4a822f38281" prot="protected" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>UsesMetadata</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1a79b51aca35066f7e941e54bb504d8755" prot="public" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>usesMetadata</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1a6d4b88865bc96bd6a93c3076e210af61" prot="protected" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>UseStatepoints</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1a7b2fe86699990ff4cec0233e3daf651d" prot="public" virt="non-virtual"><scope>llvm::GCStrategy</scope><name>useStatepoints</name></member>
+      <member refid="classllvm_1_1_g_c_strategy_1aed755642573059053607d5642eb99da9" prot="public" virt="virtual"><scope>llvm::GCStrategy</scope><name>~GCStrategy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

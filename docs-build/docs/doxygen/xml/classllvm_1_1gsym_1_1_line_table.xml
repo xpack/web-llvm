@@ -1,0 +1,533 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classllvm_1_1gsym_1_1_line_table" kind="class" language="C++" prot="public">
+    <compoundname>llvm::gsym::LineTable</compoundname>
+    <includes refid="_line_table_8h" local="yes">llvm/DebugInfo/GSYM/LineTable.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classllvm_1_1gsym_1_1_line_table_1af25a12a71512acf7a5a97a056a385423" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">gsym::LineEntry</ref> &gt;</type>
+        <definition>typedef std::vector&lt;gsym::LineEntry&gt; llvm::gsym::LineTable::Collection</definition>
+        <argsstring></argsstring>
+        <name>Collection</name>
+        <qualifiedname>llvm::gsym::LineTable::Collection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="119" column="23" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classllvm_1_1gsym_1_1_line_table_1a2e12f091ad0ba1c5318adfdeb4d1fd3c" prot="private" static="no" mutable="no">
+        <type>Collection</type>
+        <definition>Collection llvm::gsym::LineTable::Lines</definition>
+        <argsstring></argsstring>
+        <name>Lines</name>
+        <qualifiedname>llvm::gsym::LineTable::Lines</qualifiedname>
+        <briefdescription>
+<para>All line entries in the line table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="120" column="14" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a9bca453dce01051bae3751cbb4d14fef" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">Expected</ref>&lt; <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> &gt;</type>
+        <definition>Expected&lt; LineEntry &gt; LineTable::lookup</definition>
+        <argsstring>(DataExtractor &amp;Data, uint64_t BaseAddr, uint64_t Addr)</argsstring>
+        <name>lookup</name>
+        <qualifiedname>llvm::gsym::LineTable::lookup</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_data_extractor" kindref="compound">DataExtractor</ref> &amp;</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>BaseAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>Addr</declname>
+        </param>
+        <briefdescription>
+<para>Lookup a single address within a line table&apos;s data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Clients have the option to decode an entire line table using <ref refid="classllvm_1_1gsym_1_1_line_table_1a45c433311387761ffb00f0aea6be6675" kindref="member">LineTable::decode()</ref> or just find a single matching entry using this function. The benefit of using this function is that parsed <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> objects that do not match will not be stored in an array. This will avoid memory allocation costs and parsing can stop once a match has been found.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The binary stream to read the data from. This object must have the data for the <ref refid="classllvm_1_1gsym_1_1_line_table" kindref="compound">LineTable</ref> object starting at offset zero. The data can contain more data than needed.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>BaseAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base address to use when decoding the line table. This will be the <ref refid="structllvm_1_1gsym_1_1_function_info" kindref="compound">FunctionInfo</ref>&apos;s start address and will be used to initialize the line table row prior to parsing any opcodes.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> object if a match is found, error otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="139" column="19" bodyfile="lib/DebugInfo/GSYM/LineTable.cpp" bodystart="266" bodyend="282"/>
+        <references refid="namespacellvm_1a4d2fd926089a58d482fb67a362e11bad" compoundref="llvm_2_support_2_error_8h" startline="1291" endline="1296">llvm::createStringError</references>
+        <references refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" compoundref="_instr_prof_8h" startline="189">llvm::Data</references>
+        <references refid="_line_table_8cpp_1a45e99fb329714d8911cb5e116eb8a3bc" compoundref="_line_table_8cpp" startline="54" endline="120">parse</references>
+        <referencedby refid="structllvm_1_1gsym_1_1_function_info_1a5d896568c18192e090d13f4831e4abb1" compoundref="_function_info_8cpp" startline="239" endline="361">llvm::gsym::FunctionInfo::lookup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a45c433311387761ffb00f0aea6be6675" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_expected" kindref="compound">llvm::Expected</ref>&lt; <ref refid="classllvm_1_1gsym_1_1_line_table" kindref="compound">LineTable</ref> &gt;</type>
+        <definition>llvm::Expected&lt; LineTable &gt; LineTable::decode</definition>
+        <argsstring>(DataExtractor &amp;Data, uint64_t BaseAddr)</argsstring>
+        <name>decode</name>
+        <qualifiedname>llvm::gsym::LineTable::decode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1_data_extractor" kindref="compound">DataExtractor</ref> &amp;</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>BaseAddr</declname>
+        </param>
+        <briefdescription>
+<para>Decode an <ref refid="classllvm_1_1gsym_1_1_line_table" kindref="compound">LineTable</ref> object from a binary data stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The binary stream to read the data from. This object must have the data for the <ref refid="classllvm_1_1gsym_1_1_line_table" kindref="compound">LineTable</ref> object starting at offset zero. The data can contain more data than needed.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>BaseAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base address to use when decoding the line table. This will be the <ref refid="structllvm_1_1gsym_1_1_function_info" kindref="compound">FunctionInfo</ref>&apos;s start address and will be used to initialize the line table row prior to parsing any opcodes.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An <ref refid="classllvm_1_1gsym_1_1_line_table" kindref="compound">LineTable</ref> or an error describing the issue that was encountered during decoding. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="154" column="25" bodyfile="lib/DebugInfo/GSYM/LineTable.cpp" bodystart="251" bodyend="261"/>
+        <references refid="namespacellvm_1aa20539e89704d20b98b97e9c3feac934" compoundref="_instr_prof_8h" startline="189">llvm::Data</references>
+        <references refid="_line_table_8cpp_1a45e99fb329714d8911cb5e116eb8a3bc" compoundref="_line_table_8cpp" startline="54" endline="120">parse</references>
+        <referencedby refid="structllvm_1_1gsym_1_1_function_info_1aea38a34c36c8f1cb37754bd3bd336053" compoundref="_function_info_8cpp" startline="41" endline="117">llvm::gsym::FunctionInfo::decode</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a41c4a2acdbcfaf2a18a61b60d42a9dc4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classllvm_1_1_error" kindref="compound">llvm::Error</ref></type>
+        <definition>llvm::Error LineTable::encode</definition>
+        <argsstring>(FileWriter &amp;O, uint64_t BaseAddr) const</argsstring>
+        <name>encode</name>
+        <qualifiedname>llvm::gsym::LineTable::encode</qualifiedname>
+        <param>
+          <type><ref refid="classllvm_1_1gsym_1_1_file_writer" kindref="compound">FileWriter</ref> &amp;</type>
+          <declname>O</declname>
+        </param>
+        <param>
+          <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
+          <declname>BaseAddr</declname>
+        </param>
+        <briefdescription>
+<para>Encode this <ref refid="classllvm_1_1gsym_1_1_line_table" kindref="compound">LineTable</ref> object into <ref refid="classllvm_1_1gsym_1_1_file_writer" kindref="compound">FileWriter</ref> stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>O</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The binary stream to write the data to at the current file position.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>BaseAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base address to use when decoding the line table. This will be the <ref refid="structllvm_1_1gsym_1_1_function_info" kindref="compound">FunctionInfo</ref>&apos;s start address.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An error object that indicates success or failure or the encoding process. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="166" column="15" bodyfile="lib/DebugInfo/GSYM/LineTable.cpp" bodystart="122" bodyend="246"/>
+        <references refid="structllvm_1_1gsym_1_1_line_entry_1abf4509caa6884e20728dd5b8e08b925a" compoundref="_line_entry_8h" startline="23">llvm::gsym::LineEntry::Addr</references>
+        <references refid="_line_table_8cpp_1a90de7cef943238ae1b541e31b373ed68ad70cf2d6845766439609f1cd17b9609c" compoundref="_line_table_8cpp" startline="20">AdvanceLine</references>
+        <references refid="_line_table_8cpp_1a90de7cef943238ae1b541e31b373ed68afdf828b840cddca16f427cc3f2b72fac" compoundref="_line_table_8cpp" startline="19">AdvancePC</references>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a4d2fd926089a58d482fb67a362e11bad" compoundref="llvm_2_support_2_error_8h" startline="1291" endline="1296">llvm::createStringError</references>
+        <references refid="_line_table_8cpp_1ad9cd4a2e1984be7b783ac9bb124fa83b" compoundref="_line_table_8cpp" startline="34" endline="50">encodeSpecial</references>
+        <references refid="_line_table_8cpp_1a90de7cef943238ae1b541e31b373ed68afd55184035d28c16fb83e0a80ecd57a6" compoundref="_line_table_8cpp" startline="17">EndSequence</references>
+        <references refid="structllvm_1_1gsym_1_1_line_entry_1a193c4a1af11b83092b6db93d02219b1e" compoundref="_line_entry_8h" startline="24">llvm::gsym::LineEntry::File</references>
+        <references refid="namespacellvm_1a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04" compoundref="_mod_ref_8h" startline="68">llvm::First</references>
+        <references refid="_m_d5_8cpp_1ac0eafdc9ee161b71e7af98af736952fd" compoundref="_m_d5_8cpp" startline="58">I</references>
+        <references refid="llvm-c_2_data_types_8h_1ad0d744f05898e32d01f73f8af3cd2071" compoundref="llvm-c_2_data_types_8h" startline="71">INT64_MAX</references>
+        <references refid="llvm-c_2_data_types_8h_1ab21f12f372f67b8ff0aa3432336ede67" compoundref="llvm-c_2_data_types_8h" startline="74">INT64_MIN</references>
+        <references refid="classllvm_1_1gsym_1_1_line_table_1abada6578389b8ebe5ade2c69fbc67b02" compoundref="_line_table_8h" startline="190" endline="192">isValid</references>
+        <references refid="structllvm_1_1gsym_1_1_line_entry_1a7648b354c70ebeac2fa9001116b84d11" compoundref="_line_entry_8h" startline="25">llvm::gsym::LineEntry::Line</references>
+        <references refid="_line_table_8cpp_1a90de7cef943238ae1b541e31b373ed68a814ad7183f3b1f1aafd5d82aeef1e44d" compoundref="_line_table_8cpp" startline="18">SetFile</references>
+        <references refid="classllvm_1_1_error_1a4dfd0813c3d0e0a30439b5a3e9196b59" compoundref="llvm_2_support_2_error_8h" startline="337" endline="337">llvm::Error::success</references>
+        <references refid="classllvm_1_1gsym_1_1_file_writer_1a3d4ccfc2f70d9b024d7489a9e943389e" compoundref="_file_writer_8cpp" startline="19" endline="24">llvm::gsym::FileWriter::writeSLEB</references>
+        <references refid="classllvm_1_1gsym_1_1_file_writer_1a45e4989cbade2289d6496aa80c97a748" compoundref="_file_writer_8cpp" startline="33" endline="35">llvm::gsym::FileWriter::writeU8</references>
+        <references refid="classllvm_1_1gsym_1_1_file_writer_1a155ed5ec938a9850383cdd2db34cbd32" compoundref="_file_writer_8cpp" startline="26" endline="31">llvm::gsym::FileWriter::writeULEB</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a217bee3953337d99533f6683f7950af3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::gsym::LineTable::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>llvm::gsym::LineTable::empty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="167" column="8" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="167" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a484474b41779995f4f3456843e60b415" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::gsym::LineTable::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>llvm::gsym::LineTable::clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="168" column="8" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="168" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1ad4a0913f724310afc36be1408fa57856" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> &gt;</type>
+        <definition>std::optional&lt; LineEntry &gt; llvm::gsym::LineTable::first</definition>
+        <argsstring>() const</argsstring>
+        <name>first</name>
+        <qualifiedname>llvm::gsym::LineTable::first</qualifiedname>
+        <briefdescription>
+<para>Return the first line entry if the line table isn&apos;t empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An optional line entry with the first line entry if the line table isn&apos;t empty, or std::nullopt if the line table is emtpy. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="173" column="17" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="173" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a2bd2491a276829c6fc65a1c8efba65b1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> &gt;</type>
+        <definition>std::optional&lt; LineEntry &gt; llvm::gsym::LineTable::last</definition>
+        <argsstring>() const</argsstring>
+        <name>last</name>
+        <qualifiedname>llvm::gsym::LineTable::last</qualifiedname>
+        <briefdescription>
+<para>Return the last line entry if the line table isn&apos;t empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An optional line entry with the last line entry if the line table isn&apos;t empty, or std::nullopt if the line table is emtpy. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="182" column="17" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="182" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a1fe621e467048c0813e3fc66b832c906" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void llvm::gsym::LineTable::push</definition>
+        <argsstring>(const LineEntry &amp;LE)</argsstring>
+        <name>push</name>
+        <qualifiedname>llvm::gsym::LineTable::push</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> &amp;</type>
+          <declname>LE</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="187" column="8" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="187" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1abada6578389b8ebe5ade2c69fbc67b02" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::gsym::LineTable::isValid</definition>
+        <argsstring>() const</argsstring>
+        <name>isValid</name>
+        <qualifiedname>llvm::gsym::LineTable::isValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="190" column="10" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="190" bodyend="192"/>
+        <referencedby refid="classllvm_1_1gsym_1_1_line_table_1a41c4a2acdbcfaf2a18a61b60d42a9dc4" compoundref="_line_table_8cpp" startline="122" endline="246">encode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a7a631a78ed3f47224a14d2e391208ef5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+        <definition>size_t llvm::gsym::LineTable::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <qualifiedname>llvm::gsym::LineTable::size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="193" column="10" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="193" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1ad0a2722f6595b429275a76e8a0152366" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> &amp;</type>
+        <definition>LineEntry &amp; llvm::gsym::LineTable::get</definition>
+        <argsstring>(size_t i)</argsstring>
+        <name>get</name>
+        <qualifiedname>llvm::gsym::LineTable::get</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="196" column="13" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="196" bodyend="199"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <referencedby refid="classllvm_1_1gsym_1_1_line_table_1ab990738ca07fca98fb5cbf4dc47f8917" compoundref="_line_table_8h" startline="204" endline="206">operator[]</referencedby>
+        <referencedby refid="classllvm_1_1gsym_1_1_line_table_1ab506aa5ef834c571ce43d6dc74838272" compoundref="_line_table_8h" startline="207" endline="209">operator[]</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a9030fbde393b57bd09a081845dcb2158" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> &amp;</type>
+        <definition>const LineEntry &amp; llvm::gsym::LineTable::get</definition>
+        <argsstring>(size_t i) const</argsstring>
+        <name>get</name>
+        <qualifiedname>llvm::gsym::LineTable::get</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="200" column="19" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="200" bodyend="203"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1ab990738ca07fca98fb5cbf4dc47f8917" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> &amp;</type>
+        <definition>LineEntry &amp; llvm::gsym::LineTable::operator[]</definition>
+        <argsstring>(size_t i)</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>llvm::gsym::LineTable::operator[]</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="204" column="13" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="204" bodyend="206"/>
+        <references refid="classllvm_1_1gsym_1_1_line_table_1ad0a2722f6595b429275a76e8a0152366" compoundref="_line_table_8h" startline="196" endline="199">get</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1ab506aa5ef834c571ce43d6dc74838272" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> &amp;</type>
+        <definition>const LineEntry &amp; llvm::gsym::LineTable::operator[]</definition>
+        <argsstring>(size_t i) const</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>llvm::gsym::LineTable::operator[]</qualifiedname>
+        <param>
+          <type><ref refid="classsize__t" kindref="compound">size_t</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="207" column="19" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="207" bodyend="209"/>
+        <references refid="classllvm_1_1gsym_1_1_line_table_1ad0a2722f6595b429275a76e8a0152366" compoundref="_line_table_8h" startline="196" endline="199">get</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a0e120191429c9e3cf0044a6f0cf26bd9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::gsym::LineTable::operator==</definition>
+        <argsstring>(const LineTable &amp;RHS) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>llvm::gsym::LineTable::operator==</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1gsym_1_1_line_table" kindref="compound">LineTable</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="210" column="8" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="210" bodyend="212"/>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1af0e709ed389aaf92b2206ff6d0903521" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::gsym::LineTable::operator!=</definition>
+        <argsstring>(const LineTable &amp;RHS) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>llvm::gsym::LineTable::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1gsym_1_1_line_table" kindref="compound">LineTable</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="213" column="8" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="213" bodyend="215"/>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1abb2099d6ab7cf0271c0acd2dd1118fc1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbool" kindref="compound">bool</ref></type>
+        <definition>bool llvm::gsym::LineTable::operator&lt;</definition>
+        <argsstring>(const LineTable &amp;RHS) const</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>llvm::gsym::LineTable::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1gsym_1_1_line_table" kindref="compound">LineTable</ref> &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="216" column="3" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="216" bodyend="222"/>
+        <references refid="_x86_partial_reduction_8cpp_1a87b8bfbbe9d8f7146d7f20a5fb42efd0" compoundref="_x86_partial_reduction_8cpp" startline="74">RHS</references>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a119cd252e6fc513ba5c9d70c025bd52c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Collection::const_iterator</type>
+        <definition>Collection::const_iterator llvm::gsym::LineTable::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <qualifiedname>llvm::gsym::LineTable::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="223" column="30" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="223" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classllvm_1_1gsym_1_1_line_table_1a2b37505e8ebfa0e0f45dc0c9eb3a8206" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Collection::const_iterator</type>
+        <definition>Collection::const_iterator llvm::gsym::LineTable::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <qualifiedname>llvm::gsym::LineTable::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="224" column="30" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="224" bodyend="224"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classllvm_1_1gsym_1_1_line_table" kindref="compound">LineTable</ref> class contains deserialized versions of line tables for each function&apos;s address ranges. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>When saved to disk, the line table is encoded using a modified version of the DWARF line tables that only tracks address to source file and line.</para>
+<para>ENCODING</para>
+<para>The line table starts with a small prolog that contains the following values:</para>
+<para>ENCODING NAME DESCRIPTION ======== =========== ==================================================== SLEB MinDelta The min line delta for special opcodes that advance the address and line number. SLEB MaxDelta The max line delta for single byte opcodes that advance the address and line number. ULEB FirstLine The value of the first source line number to initialize the <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> with.</para>
+<para>Once these prolog items are read, we initialize a <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> struct with the start address of the function from the <ref refid="structllvm_1_1gsym_1_1_function_info" kindref="compound">FunctionInfo</ref>&apos;s address range, a default file index of 1, and the line number set to &quot;FirstLine&quot; from the prolog above:</para>
+<para><ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> Row(BaseAddr, 1, FirstLine);</para>
+<para>The line table state machine is now initialized and ready to be parsed. The stream that follows this encodes the line entries in a compact form. Some opcodes cause &quot;Row&quot; to be modified and some opcodes may also push &quot;Row&quot; onto the end of the &quot;LineTable.Lines&quot; vector. The end result is a vector of <ref refid="structllvm_1_1gsym_1_1_line_entry" kindref="compound">LineEntry</ref> structs that is sorted in ascending address order.</para>
+<para>NORMAL OPCODES</para>
+<para>The opcodes 0 through 3 are normal in opcodes. Their encoding and descriptions are listed below:</para>
+<para>ENCODING ENUMERATION VALUE DESCRIPTION ======== ================ ===== ======================================== LTOC_EndSequence 0x00 Parsing is done. ULEB LTOC_SetFile 0x01 Row.File = ULEB ULEB LTOC_AdvancePC 0x02 Row.Addr += ULEB, push &quot;Row&quot;. SLEB LTOC_AdvanceLine 0x03 Row.Line += SLEB LTOC_FirstSpecial 0x04 First special opcode (see SPECIAL OPCODES below).</para>
+<para>SPECIAL OPCODES</para>
+<para>Opcodes LTOC_FirstSpecial through 255 are special opcodes that always increment both the Row.Addr and Row.Line and push &quot;Row&quot; onto the LineEntry.Lines array. They do this by using some of the bits to increment/decrement the source line number, and some of the bits to increment the address. Line numbers can go up or down when making line tables, where addresses always only increase since line tables are sorted by address.</para>
+<para>In order to calculate the amount to increment the line and address for these special opcodes, we calculate the number of values reserved for the line increment/decrement using the &quot;MinDelta&quot; and &quot;MaxDelta&quot; from the prolog: <verbatim>const int64_t LineRange = MaxDelta - MinDelta + 1;
+</verbatim></para>
+<para>Then we can adjust the opcode to not include any of the normal opcodes: <verbatim>const uint8_t AdjustedOp = Opcode - LTOC_FirstSpecial;
+</verbatim></para>
+<para>And we can calculate the line offset, and address offset: <verbatim>const int64_t LineDelta = MinDelta + (AdjustedOp % LineRange);
+const uint64_t AddrDelta = (AdjustedOp / LineRange);
+</verbatim></para>
+<para>And use these to modify our &quot;Row&quot;: <verbatim>Row.Line += LineDelta;
+Row.Addr += AddrDelta;
+</verbatim></para>
+<para>And push a row onto the line table: <verbatim>Lines.push_back(Row);
+</verbatim></para>
+<para>This is verify similar to the way that DWARF encodes its line tables. The only difference is the DWARF line tables have more normal opcodes and the &quot;Row&quot; contains more members, like source column number, bools for end of prologue, beginnging of epilogue, is statement and many others. There are also more complex rules that happen for the extra normal opcodes. By leaving these extra opcodes out, we leave more bits for the special opcodes that allows us to encode line tables in fewer bytes than standard DWARF encodings.</para>
+<para>Opcodes that will push &quot;Row&quot; onto the LineEntry.Lines include the LTOC_AdvancePC opcode and all special opcodes. All other opcodes only modify the current &quot;Row&quot;, or cause the line table to end. </para>
+    </detaileddescription>
+    <location file="include/llvm/DebugInfo/GSYM/LineTable.h" line="118" column="1" bodyfile="include/llvm/DebugInfo/GSYM/LineTable.h" bodystart="118" bodyend="226"/>
+    <listofallmembers>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a119cd252e6fc513ba5c9d70c025bd52c" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>begin</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a484474b41779995f4f3456843e60b415" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>clear</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1af25a12a71512acf7a5a97a056a385423" prot="private" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>Collection</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a45c433311387761ffb00f0aea6be6675" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>decode</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a217bee3953337d99533f6683f7950af3" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>empty</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a41c4a2acdbcfaf2a18a61b60d42a9dc4" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>encode</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a2b37505e8ebfa0e0f45dc0c9eb3a8206" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>end</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1ad4a0913f724310afc36be1408fa57856" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>first</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1ad0a2722f6595b429275a76e8a0152366" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>get</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a9030fbde393b57bd09a081845dcb2158" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>get</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1abada6578389b8ebe5ade2c69fbc67b02" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>isValid</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a2bd2491a276829c6fc65a1c8efba65b1" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>last</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a2e12f091ad0ba1c5318adfdeb4d1fd3c" prot="private" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>Lines</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a9bca453dce01051bae3751cbb4d14fef" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>lookup</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1af0e709ed389aaf92b2206ff6d0903521" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>operator!=</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1abb2099d6ab7cf0271c0acd2dd1118fc1" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>operator&lt;</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a0e120191429c9e3cf0044a6f0cf26bd9" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>operator==</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1ab990738ca07fca98fb5cbf4dc47f8917" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>operator[]</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1ab506aa5ef834c571ce43d6dc74838272" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>operator[]</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a1fe621e467048c0813e3fc66b832c906" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>push</name></member>
+      <member refid="classllvm_1_1gsym_1_1_line_table_1a7a631a78ed3f47224a14d2e391208ef5" prot="public" virt="non-virtual"><scope>llvm::gsym::LineTable</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

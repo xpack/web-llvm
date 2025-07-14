@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="_auto_convert_8h" kind="file" language="C++">
+    <compoundname>AutoConvert.h</compoundname>
+    <includedby refid="_init_l_l_v_m_8cpp" local="yes">lib/Support/InitLLVM.cpp</includedby>
+    <includedby refid="raw__ostream_8cpp" local="yes">lib/Support/raw_ostream.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/llvm/Support/AutoConvert.h</label>
+        <link refid="_auto_convert_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/Support/InitLLVM.cpp</label>
+        <link refid="_init_l_l_v_m_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/Support/raw_ostream.cpp</label>
+        <link refid="raw__ostream_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*===-<sp/>AutoConvert.h<sp/>-<sp/>Auto<sp/>conversion<sp/>between<sp/>ASCII/EBCDIC<sp/>-----*-<sp/>C++<sp/>-*-===//</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">//</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">//<sp/>Part<sp/>of<sp/>the<sp/>LLVM<sp/>Project,<sp/>under<sp/>the<sp/>Apache<sp/>License<sp/>v2.0<sp/>with<sp/>LLVM<sp/>Exceptions.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">//<sp/>See<sp/>https://llvm.org/LICENSE.txt<sp/>for<sp/>license<sp/>information.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>Apache-2.0<sp/>WITH<sp/>LLVM-exception</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">//</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">//===----------------------------------------------------------------------===//</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">//</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">//<sp/>This<sp/>file<sp/>contains<sp/>functions<sp/>used<sp/>for<sp/>auto<sp/>conversion<sp/>between</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">//<sp/>ASCII/EBCDIC<sp/>codepages<sp/>specific<sp/>to<sp/>z/OS.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">//</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">//===----------------------------------------------------------------------===*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LLVM_SUPPORT_AUTOCONVERT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LLVM_SUPPORT_AUTOCONVERT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__MVS__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;_Ccsid.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_error_or_8h" kindref="compound">llvm/Support/ErrorOr.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;system_error&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__cplusplus<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CCSID_IBM_1047<sp/>1047</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CCSID_UTF_8<sp/>1208</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CCSID_ISO8859_1<sp/>819</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__cplusplus<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>enablezOSAutoConversion(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FD);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>disablezOSAutoConversion(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FD);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>restorezOSStdHandleAutoConversion(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FD);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__cplusplus<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacellvm" kindref="compound">llvm</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="41"><highlight class="comment">/**<sp/>\brief<sp/>Disable<sp/>the<sp/>z/OS<sp/>enhanced<sp/>ASCII<sp/>auto-conversion<sp/>for<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>descriptor.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">std::error_code<sp/>disablezOSAutoConversion(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FD);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="46"><highlight class="comment">/**<sp/>\brief<sp/>Query<sp/>the<sp/>z/OS<sp/>enhanced<sp/>ASCII<sp/>auto-conversion<sp/>status<sp/>of<sp/>a<sp/>file</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>descriptor<sp/>and<sp/>force<sp/>the<sp/>conversion<sp/>if<sp/>the<sp/>file<sp/>is<sp/>not<sp/>tagged<sp/>with<sp/>a</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>codepage.</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">std::error_code<sp/>enablezOSAutoConversion(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FD);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment">/**<sp/>Restore<sp/>the<sp/>z/OS<sp/>enhanced<sp/>ASCII<sp/>auto-conversion<sp/>for<sp/>the<sp/>std<sp/>handle.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">std::error_code<sp/>restorezOSStdHandleAutoConversion(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FD);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="55"><highlight class="comment">/**<sp/>\brief<sp/>Set<sp/>the<sp/>tag<sp/>information<sp/>for<sp/>a<sp/>file<sp/>descriptor.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">std::error_code<sp/>setzOSFileTag(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FD,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>CCSID,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Text);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>the<sp/>tag<sp/>ccsid<sp/>for<sp/>a<sp/>file<sp/>name<sp/>or<sp/>a<sp/>file<sp/>descriptor.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="classllvm_1_1_error_or" kindref="compound">ErrorOr&lt;__ccsid_t&gt;</ref><sp/>getzOSFileTag(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*FileName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FD<sp/>=<sp/>-1);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Query<sp/>the<sp/>file<sp/>tag<sp/>to<sp/>determine<sp/>if<sp/>it<sp/>needs<sp/>conversion<sp/>to<sp/>UTF-8<sp/>codepage.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="classllvm_1_1_error_or" kindref="compound">ErrorOr&lt;bool&gt;</ref><sp/>needzOSConversion(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*FileName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FD<sp/>=<sp/>-1);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>llvm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__MVS__<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LLVM_SUPPORT_AUTOCONVERT_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="include/llvm/Support/AutoConvert.h"/>
+  </compounddef>
+</doxygen>
